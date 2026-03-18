@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎓 Professor 论文知识库 — Boss Team Research</title>
+    <style>
+        :root {
+            --bg: #ffffff;
+            --bg-secondary: #f7f8fa;
+            --bg-card: #ffffff;
+            --bg-hover: #f3f4f6;
+            --border: #e5e7eb;
+            --border-hover: #0d9488;
+            --text: #1a1a2e;
+            --text-dim: #4a4a6a;
+            --text-muted: #9ca3af;
+            --accent: #0d9488;
+            --accent-light: #0f766e;
+            --accent-bg: rgba(13,148,136,0.05);
+            --accent-border: rgba(13,148,136,0.15);
+            --green: #059669;
+            --yellow: #d97706;
+            --red: #dc2626;
+            --radius: 10px;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Noto Sans SC', 'PingFang SC', 'Helvetica Neue', sans-serif;
+            background: var(--bg-secondary);
+            color: var(--text);
+            line-height: 1.8;
+            font-size: 15px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .app { display: flex; min-height: 100vh; }
+
+        /* Sidebar */
+        .sidebar {
+            width: 280px;
+            background: #ffffff;
+            border-right: 1px solid var(--border);
+            position: fixed;
+            top: 0; left: 0; bottom: 0;
+            overflow-y: auto;
+            z-index: 100;
+            transition: transform 0.3s ease;
+        }
+        .sidebar-header {
+            padding: 24px 20px 18px;
+            border-bottom: 1px solid var(--border);
+        }
+        .sidebar-header h1 {
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--text);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .sidebar-header .subtitle {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
+        .sidebar-nav { padding: 10px; }
+        .nav-section { margin-bottom: 6px; }
+        .nav-section-title {
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            padding: 10px 10px 6px;
+        }
+        .nav-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 9px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.15s ease;
+            font-size: 14px;
+            color: var(--text-dim);
+            user-select: none;
+            border: 1px solid transparent;
+        }
+        .nav-item:hover { background: var(--bg-secondary); color: var(--text); }
+        .nav-item.active {
+            background: var(--accent-bg);
+            color: var(--accent);
+            border-color: var(--accent-border);
+            font-weight: 500;
+        }
+        .nav-item .icon { font-size: 15px; width: 20px; text-align: center; }
+        .nav-item .count {
+            margin-left: auto;
+            font-size: 11px;
+            background: var(--bg-secondary);
+            padding: 1px 8px;
+            border-radius: 10px;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+        .nav-item.active .count {
+            background: rgba(13,148,136,0.1);
+            color: var(--accent);
+        }
+
+        /* Main */
+        .main { margin-left: 280px; flex: 1; min-height: 100vh; }
+
+        /* Topbar */
+        .topbar {
+            position: sticky; top: 0; z-index: 50;
+            background: rgba(255,255,255,0.92);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border);
+            padding: 14px 32px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        .topbar-title { font-size: 16px; font-weight: 600; color: var(--text); white-space: nowrap; }
+        .search-box { flex: 1; max-width: 460px; position: relative; }
+        .search-box input {
+            width: 100%;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 9px 14px 9px 36px;
+            color: var(--text);
+            font-size: 14px;
+            outline: none;
+            transition: all 0.2s;
+        }
+        .search-box input:focus {
+            border-color: var(--accent);
+            background: #fff;
+            box-shadow: 0 0 0 3px rgba(13,148,136,0.1);
+        }
+        .search-box input::placeholder { color: var(--text-muted); }
+        .search-box .search-icon {
+            position: absolute; left: 12px; top: 50%; transform: translateY(-50%);
+            font-size: 14px; color: var(--text-muted);
+        }
+        .search-box .clear-btn {
+            position: absolute; right: 10px; top: 50%; transform: translateY(-50%);
+            background: none; border: none; color: var(--text-muted);
+            cursor: pointer; font-size: 16px; display: none; padding: 2px 4px;
+        }
+        .search-box .clear-btn.visible { display: block; }
+        .stats-badge {
+            font-size: 12px; color: var(--text-muted);
+            background: var(--bg-secondary);
+            padding: 6px 14px; border-radius: 20px;
+            border: 1px solid var(--border);
+            white-space: nowrap;
+        }
+        .kbd-hint {
+            font-size: 11px; color: var(--text-muted);
+            border: 1px solid var(--border); padding: 2px 6px;
+            border-radius: 4px; background: var(--bg-secondary);
+            position: absolute; right: 12px; top: 50%; transform: translateY(-50%);
+        }
+        .search-box input:focus ~ .kbd-hint,
+        .search-box .clear-btn.visible ~ .kbd-hint { display: none; }
+
+        /* Content */
+        .content { padding: 28px 40px; }
+
+        /* Overview cards */
+        .overview-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 14px; margin-bottom: 32px;
+        }
+        .overview-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 20px; text-align: center;
+            box-shadow: var(--shadow-sm);
+        }
+        .overview-card .num { font-size: 30px; font-weight: 700; color: var(--accent); }
+        .overview-card .label { font-size: 12.5px; color: var(--text-muted); margin-top: 4px; }
+
+        /* Section title */
+        .section-title {
+            font-size: 12px; font-weight: 600; color: var(--accent);
+            text-transform: uppercase; letter-spacing: 1.5px;
+            margin: 28px 0 14px;
+            display: flex; align-items: center; gap: 8px;
+        }
+        .section-title .icon { font-size: 16px; }
+
+        /* Paper card */
+        .paper {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 22px 26px; margin-bottom: 14px;
+            transition: all 0.2s ease;
+            cursor: default;
+            box-shadow: var(--shadow-sm);
+            animation: fadeIn 0.3s ease forwards;
+            opacity: 0;
+        }
+        .paper:hover {
+            border-color: var(--border-hover);
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-md);
+        }
+        .paper.highlight {
+            background: linear-gradient(135deg, rgba(13,148,136,0.03) 0%, rgba(5,150,105,0.02) 100%);
+            border-left: 3px solid var(--accent);
+        }
+        @keyframes fadeIn { to { opacity: 1; } }
+        .paper:nth-child(1) { animation-delay: 0s; }
+        .paper:nth-child(2) { animation-delay: 0.04s; }
+        .paper:nth-child(3) { animation-delay: 0.08s; }
+        .paper:nth-child(4) { animation-delay: 0.12s; }
+        .paper:nth-child(5) { animation-delay: 0.16s; }
+
+        .paper h3 { font-size: 16px; font-weight: 600; color: var(--text); margin-bottom: 6px; line-height: 1.55; }
+        .paper .venue { font-size: 12.5px; color: var(--accent); margin-bottom: 8px; font-weight: 500; }
+        .paper .meta-row {
+            display: flex; gap: 12px; flex-wrap: wrap;
+            font-size: 12px; color: var(--text-muted); margin-bottom: 12px;
+        }
+        .paper .meta-row span { display: flex; align-items: center; gap: 4px; }
+
+        /* Innovation points */
+        .innovations {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 14px 18px;
+            margin-bottom: 14px;
+        }
+        .innovations-title {
+            font-size: 12px; font-weight: 600; color: var(--accent);
+            margin-bottom: 8px; display: flex; align-items: center; gap: 6px;
+        }
+        .innovations ul {
+            list-style: none; padding: 0;
+        }
+        .innovations li {
+            font-size: 14px; color: var(--text-dim);
+            line-height: 1.75; padding: 3px 0;
+            padding-left: 18px; position: relative;
+        }
+        .innovations li::before {
+            content: "▸"; position: absolute; left: 0;
+            color: var(--accent); font-weight: bold;
+        }
+
+        .paper .summary {
+            font-size: 14.5px; color: var(--text-dim);
+            line-height: 1.85; margin-bottom: 14px;
+        }
+        .paper .summary mark {
+            background: rgba(245,158,11,0.18);
+            color: #92400e; padding: 1px 4px; border-radius: 3px;
+        }
+
+        .tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 10px; }
+        .tag {
+            display: inline-block; font-size: 11px;
+            padding: 2px 9px; border-radius: 4px; font-weight: 500;
+        }
+        .tag-green { color: var(--green); background: rgba(5,150,105,0.08); border: 1px solid rgba(5,150,105,0.18); }
+        .tag-yellow { color: var(--yellow); background: rgba(217,119,6,0.08); border: 1px solid rgba(217,119,6,0.18); }
+        .tag-red { color: var(--red); background: rgba(220,38,38,0.07); border: 1px solid rgba(220,38,38,0.15); }
+        .tag-blue { color: #2563eb; background: rgba(37,99,235,0.06); border: 1px solid rgba(37,99,235,0.15); }
+        .tag-teal { color: var(--accent); background: var(--accent-bg); border: 1px solid var(--accent-border); }
+
+        .links { display: flex; gap: 8px; flex-wrap: wrap; }
+        .links a {
+            display: inline-flex; align-items: center; gap: 4px;
+            font-size: 12.5px; color: var(--accent); text-decoration: none;
+            padding: 5px 13px; border-radius: 6px;
+            background: var(--accent-bg);
+            border: 1px solid var(--accent-border);
+            transition: all 0.15s ease; font-weight: 500;
+        }
+        .links a:hover {
+            background: rgba(13,148,136,0.1);
+            border-color: rgba(13,148,136,0.25);
+        }
+
+        /* Empty state */
+        .empty-state { text-align: center; padding: 80px 32px; color: var(--text-muted); }
+        .empty-state .icon { font-size: 48px; margin-bottom: 16px; }
+        .empty-state h3 { font-size: 18px; color: var(--text-dim); margin-bottom: 8px; }
+
+        /* Mobile */
+        .hamburger {
+            display: none; background: none; border: none;
+            color: var(--text); font-size: 22px; cursor: pointer; padding: 4px;
+        }
+        .sidebar-overlay {
+            display: none; position: fixed; inset: 0;
+            background: rgba(0,0,0,0.3); z-index: 99;
+        }
+
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.12); border-radius: 3px; }
+
+        @media (max-width: 768px) {
+            .sidebar { transform: translateX(-100%); }
+            .sidebar.open { transform: translateX(0); }
+            .sidebar-overlay.open { display: block; }
+            .main { margin-left: 0; }
+            .hamburger { display: block; }
+            .content { padding: 20px 16px; }
+            .topbar { padding: 12px 16px; }
+            .overview-cards { grid-template-columns: repeat(2, 1fr); }
+        }
+    </style>
+</head>
+<body>
+
+<div class="app">
+    <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h1>🎓 Professor</h1>
+            <div class="subtitle">Boss Team · 论文精读知识库</div>
+        </div>
+        <nav class="sidebar-nav" id="sidebarNav"></nav>
+    </aside>
+
+    <div class="main">
+        <div class="topbar">
+            <button class="hamburger" onclick="toggleSidebar()">☰</button>
+            <div class="topbar-title" id="topbarTitle">知识库概览</div>
+            <div class="search-box">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="searchInput" placeholder="搜索论文标题、创新点、标签..." autocomplete="off">
+                <button class="clear-btn" id="clearBtn" onclick="clearSearch()">✕</button>
+                <span class="kbd-hint">⌘K</span>
+            </div>
+            <div class="stats-badge" id="statsBadge"></div>
+        </div>
+        <div class="content" id="content"></div>
+    </div>
+</div>
+
+<script>
+// ===== Professor 论文知识库数据 =====
+// 每次新增论文，只需在此数组中追加一条记录即可
+const PAPERS_DB = [
+    {
+        id: "forcevla2",
+        date: "2026-03-18",
+        addedDate: "2026-03-18",
+        category: "VLA",
+        categoryIcon: "🧠",
+        title: "ForceVLA2: Unleashing Hybrid Force-Position Control with Force Awareness for Contact-Rich Manipulation",
+        venue: "CVPR 2026 · arXiv 2603.15169",
+        authors: "Yang Li, Zhaxizhuoma, Hongru Jiang, Junjie Xia et al.",
+        institutions: "复旦大学, 上海交大, 新加坡国立大学, 上海大学, 西交大, 中关村学院, Lumos Robotics",
+        summary: "首个在 VLA 框架中实现端到端混合力-位控制的模型。解决了具身智能在接触丰富操作中仅依赖位置控制、缺乏力感知的根本问题，在擦拭、按压、装配等任务中大幅超越 π0 和 π0.5。",
+        innovations: [
+            "显式力感知突破位置控制局限：首次在 VLA 中引入显式力感知和混合力-位控制，让机器人在接触丰富任务中不再「蛮干」",
+            "力提示词 + 跨尺度 MoE 架构：VLM 专家端引入「基于力的提示词」建立力感知任务概念；动作专家端设计 Cross-scale MoE 将概念与实时力信号自适应融合",
+            "闭环混合力-位控制：根据实时接触力信号做闭环调节——接触力太大就退让、太小就加压，非预设固定策略"
+        ],
+        results: "5 个接触丰富任务上 vs π0 +48.0%，vs π0.5 +35.0%；有效缓解手臂过载和接触不稳定",
+        dataset: "ForceVLA2-Dataset：5 种任务、1000 条轨迹，含多视角图像 + 力信号 + 本体感知",
+        tags: [["CVPR 2026","red"],["Force Control","green"],["MoE","green"],["Contact-Rich","blue"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2603.15169"],["📑 PDF","https://arxiv.org/pdf/2603.15169"],["🌐 项目主页","https://sites.google.com/view/force-vla2/home"]],
+        highlight: true,
+        bossNotes: "与 FACTO 零空间投影的约束控制思路互补——ForceVLA2 走端到端力感知，FACTO 走几何约束投影"
+    }
+];
+
+// ===== 领域分类顺序 =====
+const categoryOrder = ["VLA","Robotics","World Model","LLM / VLM","Embodied AI","RL","Industry"];
+
+// ===== 衍生数据 =====
+const allDates = [...new Set(PAPERS_DB.map(p => p.addedDate))].sort().reverse();
+const allCategories = [...new Set(PAPERS_DB.map(p => p.category))];
+
+// ===== 状态 =====
+let currentView = "overview";
+let searchQuery = "";
+
+// ===== 初始化 =====
+document.addEventListener("DOMContentLoaded", () => {
+    renderSidebar();
+    renderView();
+    setupSearch();
+    setupKeyboard();
+    updateStatsBadge();
+});
+
+// ===== 侧边栏 =====
+function renderSidebar() {
+    const nav = document.getElementById("sidebarNav");
+    let html = "";
+
+    html += `<div class="nav-section">
+        <div class="nav-section-title">快速访问</div>
+        <div class="nav-item ${currentView==='overview'?'active':''}" onclick="setView('overview')">
+            <span class="icon">📊</span> 知识库概览
+            <span class="count">${PAPERS_DB.length}</span>
+        </div>
+        <div class="nav-item ${currentView==='all'?'active':''}" onclick="setView('all')">
+            <span class="icon">📚</span> 全部论文
+            <span class="count">${PAPERS_DB.length}</span>
+        </div>
+    </div>`;
+
+    // 按领域
+    html += `<div class="nav-section">
+        <div class="nav-section-title">按领域</div>`;
+    categoryOrder.forEach(cat => {
+        const papers = PAPERS_DB.filter(p => p.category === cat);
+        if (papers.length === 0) return;
+        const icon = papers[0].categoryIcon;
+        const active = currentView === `category:${cat}`;
+        html += `<div class="nav-item ${active?'active':''}" onclick="setView('category:${cat}')">
+            <span class="icon">${icon}</span> ${cat}
+            <span class="count">${papers.length}</span>
+        </div>`;
+    });
+    html += `</div>`;
+
+    // 按收录日期
+    html += `<div class="nav-section">
+        <div class="nav-section-title">按收录日期</div>`;
+    allDates.forEach(d => {
+        const papers = PAPERS_DB.filter(p => p.addedDate === d);
+        const isLatest = d === allDates[0];
+        const label = formatDateLabel(d);
+        const active = currentView === `date:${d}`;
+        html += `<div class="nav-item ${active?'active':''}" onclick="setView('date:${d}')">
+            <span class="icon">${isLatest?'🟢':'📅'}</span> ${label}
+            <span class="count">${papers.length}</span>
+        </div>`;
+    });
+    html += `</div>`;
+
+    nav.innerHTML = html;
+}
+
+// ===== 视图切换 =====
+function setView(view) {
+    currentView = view;
+    searchQuery = "";
+    document.getElementById("searchInput").value = "";
+    document.getElementById("clearBtn").classList.remove("visible");
+    renderSidebar();
+    renderView();
+    updateStatsBadge();
+    document.getElementById("sidebar").classList.remove("open");
+    document.getElementById("sidebarOverlay").classList.remove("open");
+}
+
+function renderView() {
+    const content = document.getElementById("content");
+    const title = document.getElementById("topbarTitle");
+
+    if (searchQuery) {
+        title.textContent = `搜索: "${searchQuery}"`;
+        renderSearchResults(content);
+        return;
+    }
+
+    switch (true) {
+        case currentView === "overview":
+            title.textContent = "🎓 知识库概览";
+            renderOverview(content);
+            break;
+        case currentView === "all":
+            title.textContent = "📚 全部论文";
+            renderAllView(content);
+            break;
+        case currentView.startsWith("date:"):
+            const date = currentView.split(":")[1];
+            title.textContent = `📅 ${formatDateLabel(date)}`;
+            renderDateView(content, date);
+            break;
+        case currentView.startsWith("category:"):
+            const cat = currentView.split(":").slice(1).join(":");
+            const icon = PAPERS_DB.find(p => p.category === cat)?.categoryIcon || '📂';
+            title.textContent = `${icon} ${cat}`;
+            renderCategoryView(content, cat);
+            break;
+    }
+}
+
+// ===== 概览视图 =====
+function renderOverview(container) {
+    let html = `<div class="overview-cards">
+        <div class="overview-card"><div class="num">${PAPERS_DB.length}</div><div class="label">精读论文总数</div></div>
+        <div class="overview-card"><div class="num">${allCategories.length}</div><div class="label">覆盖领域</div></div>
+        <div class="overview-card"><div class="num">${PAPERS_DB.filter(p=>p.highlight).length}</div><div class="label">重磅论文</div></div>
+        <div class="overview-card"><div class="num">${allDates.length}</div><div class="label">收录天数</div></div>
+    </div>`;
+
+    // 最近收录
+    html += `<div class="section-title"><span class="icon">⚡</span> 最近收录</div>`;
+    const recentPapers = [...PAPERS_DB].sort((a, b) => b.addedDate.localeCompare(a.addedDate)).slice(0, 5);
+    recentPapers.forEach(p => html += renderPaperCard(p));
+
+    container.innerHTML = html;
+}
+
+// ===== 全部视图 =====
+function renderAllView(container) {
+    let html = `<div class="overview-cards">
+        <div class="overview-card"><div class="num">${PAPERS_DB.length}</div><div class="label">精读论文总数</div></div>
+        <div class="overview-card"><div class="num">${allCategories.length}</div><div class="label">覆盖领域</div></div>
+        <div class="overview-card"><div class="num">${PAPERS_DB.filter(p=>p.highlight).length}</div><div class="label">重磅论文</div></div>
+    </div>`;
+
+    categoryOrder.forEach(cat => {
+        const catPapers = PAPERS_DB.filter(p => p.category === cat);
+        if (catPapers.length === 0) return;
+        catPapers.sort((a, b) => b.addedDate.localeCompare(a.addedDate));
+        const icon = catPapers[0].categoryIcon;
+        html += renderSectionTitle(cat, icon, catPapers.length);
+        catPapers.forEach(p => html += renderPaperCard(p));
+    });
+
+    container.innerHTML = html;
+}
+
+// ===== 日期视图 =====
+function renderDateView(container, date) {
+    const papers = PAPERS_DB.filter(p => p.addedDate === date);
+    let html = "";
+
+    categoryOrder.forEach(cat => {
+        const catPapers = papers.filter(p => p.category === cat);
+        if (catPapers.length === 0) return;
+        html += renderSectionTitle(cat, catPapers[0].categoryIcon, catPapers.length);
+        catPapers.forEach(p => html += renderPaperCard(p));
+    });
+
+    container.innerHTML = html;
+}
+
+// ===== 领域视图 =====
+function renderCategoryView(container, category) {
+    const papers = PAPERS_DB.filter(p => p.category === category);
+    papers.sort((a, b) => b.addedDate.localeCompare(a.addedDate));
+
+    let html = `<div class="overview-cards">
+        <div class="overview-card"><div class="num">${papers.length}</div><div class="label">该领域论文</div></div>
+        <div class="overview-card"><div class="num">${papers.filter(p=>p.highlight).length}</div><div class="label">重磅论文</div></div>
+    </div>`;
+
+    papers.forEach(p => html += renderPaperCard(p));
+    container.innerHTML = html;
+}
+
+// ===== 搜索 =====
+function renderSearchResults(container) {
+    const q = searchQuery.toLowerCase();
+    const results = PAPERS_DB.filter(p =>
+        p.title.toLowerCase().includes(q) ||
+        p.summary.toLowerCase().includes(q) ||
+        p.category.toLowerCase().includes(q) ||
+        p.venue.toLowerCase().includes(q) ||
+        p.innovations.some(i => i.toLowerCase().includes(q)) ||
+        p.tags.some(t => t[0].toLowerCase().includes(q)) ||
+        (p.bossNotes && p.bossNotes.toLowerCase().includes(q))
+    );
+
+    if (results.length === 0) {
+        container.innerHTML = `<div class="empty-state">
+            <div class="icon">🔍</div>
+            <h3>没有找到匹配的结果</h3>
+            <p>试试其他关键词，如 "force"、"VLA"、"MoE"</p>
+        </div>`;
+        return;
+    }
+
+    let html = `<div style="margin-bottom:20px;font-size:14px;color:var(--text-dim)">
+        找到 <strong style="color:var(--accent)">${results.length}</strong> 条匹配结果
+    </div>`;
+    results.forEach(p => html += renderPaperCard(p, q));
+    container.innerHTML = html;
+}
+
+// ===== 渲染辅助 =====
+function renderSectionTitle(cat, icon, count) {
+    return `<div class="section-title">
+        <span class="icon">${icon}</span> ${cat}
+        <span style="margin-left:auto;font-size:11px;color:var(--text-muted);letter-spacing:0;text-transform:none">${count} 篇</span>
+    </div>`;
+}
+
+function renderPaperCard(paper, highlightQuery) {
+    const cls = paper.highlight ? "paper highlight" : "paper";
+    let summary = paper.summary;
+    let title = paper.title;
+
+    if (highlightQuery) {
+        const re = new RegExp(`(${escapeRegex(highlightQuery)})`, "gi");
+        summary = summary.replace(re, "<mark>$1</mark>");
+        title = title.replace(re, "<mark>$1</mark>");
+    }
+
+    const tagsHtml = paper.tags.map(([label, color]) => {
+        const cls = color === "red" ? "tag-red" : color === "yellow" ? "tag-yellow" : color === "blue" ? "tag-blue" : color === "teal" ? "tag-teal" : "tag-green";
+        return `<span class="tag ${cls}">${label}</span>`;
+    }).join("");
+
+    const linksHtml = paper.links.map(([label, url]) =>
+        `<a href="${url}" target="_blank">${label}</a>`
+    ).join("");
+
+    // 创新点
+    let innovationsHtml = "";
+    if (paper.innovations && paper.innovations.length > 0) {
+        let items = paper.innovations.map(i => {
+            let text = i;
+            if (highlightQuery) {
+                const re = new RegExp(`(${escapeRegex(highlightQuery)})`, "gi");
+                text = text.replace(re, "<mark>$1</mark>");
+            }
+            return `<li>${text}</li>`;
+        }).join("");
+        innovationsHtml = `<div class="innovations">
+            <div class="innovations-title">💡 核心创新点</div>
+            <ul>${items}</ul>
+        </div>`;
+    }
+
+    // 额外信息
+    let metaHtml = `<div class="meta-row">`;
+    if (paper.authors) metaHtml += `<span>👤 ${paper.authors}</span>`;
+    metaHtml += `<span>📅 收录于 ${paper.addedDate}</span>`;
+    metaHtml += `</div>`;
+
+    // 实验结果
+    let resultsHtml = "";
+    if (paper.results) {
+        resultsHtml = `<div style="font-size:13.5px;color:var(--green);margin-bottom:10px;padding:8px 12px;background:rgba(5,150,105,0.05);border-radius:6px;border:1px solid rgba(5,150,105,0.12)">
+            📊 <strong>效果：</strong>${paper.results}
+        </div>`;
+    }
+
+    // Boss 备注
+    let notesHtml = "";
+    if (paper.bossNotes) {
+        notesHtml = `<div style="font-size:13px;color:var(--yellow);margin-bottom:10px;padding:8px 12px;background:rgba(217,119,6,0.05);border-radius:6px;border:1px solid rgba(217,119,6,0.12)">
+            📝 <strong>Boss 备注：</strong>${paper.bossNotes}
+        </div>`;
+    }
+
+    return `<div class="${cls}">
+        <div class="tags">${tagsHtml}</div>
+        <h3>${title}</h3>
+        <div class="venue">${paper.venue}</div>
+        ${metaHtml}
+        <div class="summary">${summary}</div>
+        ${innovationsHtml}
+        ${resultsHtml}
+        ${notesHtml}
+        <div class="links">${linksHtml}</div>
+    </div>`;
+}
+
+// ===== 搜索功能 =====
+function setupSearch() {
+    const input = document.getElementById("searchInput");
+    const clearBtn = document.getElementById("clearBtn");
+    let debounceTimer;
+
+    input.addEventListener("input", () => {
+        clearTimeout(debounceTimer);
+        const val = input.value.trim();
+        clearBtn.classList.toggle("visible", val.length > 0);
+        debounceTimer = setTimeout(() => {
+            if (val.length > 0) {
+                searchQuery = val;
+                currentView = "search";
+                renderSidebar();
+                renderView();
+                updateStatsBadge();
+            } else if (searchQuery) {
+                searchQuery = "";
+                currentView = "overview";
+                renderSidebar();
+                renderView();
+                updateStatsBadge();
+            }
+        }, 250);
+    });
+}
+
+function clearSearch() {
+    document.getElementById("searchInput").value = "";
+    document.getElementById("clearBtn").classList.remove("visible");
+    searchQuery = "";
+    currentView = "overview";
+    renderSidebar();
+    renderView();
+    updateStatsBadge();
+    document.getElementById("searchInput").focus();
+}
+
+function setupKeyboard() {
+    document.addEventListener("keydown", (e) => {
+        if ((e.metaKey || e.ctrlKey) && e.key === "k") {
+            e.preventDefault();
+            document.getElementById("searchInput").focus();
+        }
+        if (e.key === "Escape") {
+            document.getElementById("searchInput").blur();
+            if (searchQuery) clearSearch();
+        }
+    });
+}
+
+// ===== 工具函数 =====
+function formatDateLabel(dateStr) {
+    const d = new Date(dateStr + "T00:00:00");
+    const weekdays = ["日","一","二","三","四","五","六"];
+    const m = d.getMonth() + 1;
+    const day = d.getDate();
+    const w = weekdays[d.getDay()];
+    if (dateStr === allDates[0]) return `${m}/${day}（周${w}）· 最新`;
+    return `${m}/${day}（周${w}）`;
+}
+
+function updateStatsBadge() {
+    const badge = document.getElementById("statsBadge");
+    if (searchQuery) {
+        const count = PAPERS_DB.filter(p =>
+            p.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+            p.summary.toLowerCase().includes(searchQuery.toLowerCase()) ||
+            p.innovations.some(i => i.toLowerCase().includes(searchQuery.toLowerCase()))
+        ).length;
+        badge.textContent = `${count} 条结果`;
+    } else {
+        badge.textContent = `共 ${PAPERS_DB.length} 篇精读`;
+    }
+}
+
+function escapeRegex(str) {
+    return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+function toggleSidebar() {
+    document.getElementById("sidebar").classList.toggle("open");
+    document.getElementById("sidebarOverlay").classList.toggle("open");
+}
+</script>
+
+</body>
+</html>
