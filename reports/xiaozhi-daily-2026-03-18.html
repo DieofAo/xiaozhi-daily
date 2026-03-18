@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔬 小小志科研日报 — 2026-03-18</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Noto Sans SC', 'Helvetica Neue', sans-serif;
+            background: #0a0a0f;
+            color: #e0e0e8;
+            line-height: 1.8;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .page {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 48px 24px 80px;
+        }
+
+        /* Header */
+        header {
+            margin-bottom: 48px;
+            padding: 40px 32px;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            border-radius: 16px;
+            border: 1px solid rgba(255,255,255,0.08);
+            position: relative;
+            overflow: hidden;
+        }
+        header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -30%;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(99,102,241,0.15) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        header h1 {
+            font-size: 28px;
+            font-weight: 700;
+            color: #fff;
+            letter-spacing: -0.3px;
+            position: relative;
+        }
+        header .meta {
+            font-size: 14px;
+            color: rgba(255,255,255,0.5);
+            margin-top: 8px;
+            position: relative;
+        }
+        header .badge {
+            display: inline-block;
+            background: rgba(99,102,241,0.2);
+            color: #a5b4fc;
+            font-size: 12px;
+            padding: 4px 12px;
+            border-radius: 20px;
+            margin-top: 12px;
+            border: 1px solid rgba(99,102,241,0.3);
+            position: relative;
+        }
+
+        /* Section */
+        .section {
+            margin-bottom: 40px;
+        }
+        .section-title {
+            font-size: 13px;
+            font-weight: 600;
+            color: #6366f1;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(99,102,241,0.2);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .section-title .icon {
+            font-size: 18px;
+        }
+
+        /* Paper Card */
+        .paper {
+            background: #12121a;
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 16px;
+            transition: all 0.2s ease;
+        }
+        .paper:hover {
+            border-color: rgba(99,102,241,0.3);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+        .paper h3 {
+            font-size: 17px;
+            font-weight: 600;
+            color: #f0f0f5;
+            margin-bottom: 4px;
+            line-height: 1.5;
+        }
+        .paper .venue {
+            font-size: 12px;
+            color: #6366f1;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+        .paper .summary {
+            font-size: 14px;
+            color: #a0a0b0;
+            line-height: 1.75;
+            margin-bottom: 14px;
+        }
+        .paper .links {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        .paper .links a {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 12px;
+            color: #a5b4fc;
+            text-decoration: none;
+            padding: 5px 12px;
+            border-radius: 6px;
+            background: rgba(99,102,241,0.1);
+            border: 1px solid rgba(99,102,241,0.2);
+            transition: all 0.15s ease;
+        }
+        .paper .links a:hover {
+            background: rgba(99,102,241,0.2);
+            border-color: rgba(99,102,241,0.4);
+        }
+        .paper .tag {
+            display: inline-block;
+            font-size: 11px;
+            color: #10b981;
+            background: rgba(16,185,129,0.1);
+            border: 1px solid rgba(16,185,129,0.2);
+            padding: 2px 8px;
+            border-radius: 4px;
+            margin-right: 6px;
+            margin-bottom: 8px;
+        }
+        .paper .tag.hot {
+            color: #f59e0b;
+            background: rgba(245,158,11,0.1);
+            border-color: rgba(245,158,11,0.2);
+        }
+        .paper .tag.new {
+            color: #ef4444;
+            background: rgba(239,68,68,0.1);
+            border-color: rgba(239,68,68,0.2);
+        }
+
+        /* Highlight Card */
+        .highlight {
+            background: linear-gradient(135deg, rgba(99,102,241,0.08) 0%, rgba(16,185,129,0.05) 100%);
+            border: 1px solid rgba(99,102,241,0.15);
+        }
+
+        /* Footer Stats */
+        .stats {
+            background: #12121a;
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 12px;
+            padding: 24px 32px;
+            margin-top: 48px;
+        }
+        .stats h3 {
+            font-size: 14px;
+            font-weight: 600;
+            color: #888;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+        .stat-item {
+            text-align: center;
+        }
+        .stat-item .num {
+            font-size: 28px;
+            font-weight: 700;
+            color: #6366f1;
+        }
+        .stat-item .label {
+            font-size: 12px;
+            color: #666;
+            margin-top: 4px;
+        }
+
+        .divider {
+            height: 1px;
+            background: rgba(255,255,255,0.05);
+            margin: 40px 0;
+        }
+
+        /* Industry */
+        .industry {
+            background: #0f0f18;
+            border: 1px solid rgba(245,158,11,0.15);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 16px;
+        }
+        .industry h3 {
+            font-size: 17px;
+            font-weight: 600;
+            color: #f0f0f5;
+            margin-bottom: 10px;
+        }
+        .industry .summary {
+            font-size: 14px;
+            color: #a0a0b0;
+            line-height: 1.75;
+            margin-bottom: 14px;
+        }
+        .industry .links {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        .industry .links a {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 12px;
+            color: #fbbf24;
+            text-decoration: none;
+            padding: 5px 12px;
+            border-radius: 6px;
+            background: rgba(245,158,11,0.1);
+            border: 1px solid rgba(245,158,11,0.2);
+            transition: all 0.15s ease;
+        }
+        .industry .links a:hover {
+            background: rgba(245,158,11,0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <header>
+            <h1>🔬 小小志科研日报</h1>
+            <div class="meta">2026 年 3 月 18 日（周三）｜Boss Team · Research Division</div>
+            <div class="badge">📡 覆盖 arXiv · HuggingFace · Robotics Daily · Google · 行业新闻</div>
+        </header>
+
+        <!-- ===== Robotics & Manipulation ===== -->
+        <div class="section">
+            <div class="section-title">
+                <span class="icon">🤖</span>
+                Robotics — 机器人操作与抓取
+            </div>
+
+            <div class="paper highlight">
+                <span class="tag new">🔥 重磅</span>
+                <span class="tag">Zero-Shot</span>
+                <span class="tag">Sim-to-Real</span>
+                <h3>MolmoB0T: Large-Scale Simulation Enables Zero-Shot Manipulation</h3>
+                <div class="venue">Allen Institute for AI (Ai2) · arXiv 2603.16861 · 2026-03-17</div>
+                <div class="summary">
+                    Ai2 提出的 MolmoB0T 挑战了"仅靠仿真不够"的主流观点。通过完全开源的 MolmoBot-Engine 程序化数据生成管道，生成了 180 万条机器人交互轨迹（MolmoBot-Data）。训练了三种策略（MolmoBot/Pi0/SPOC），在 Franka FR3 和 Rainbow Robotics RB-Y1 两个平台上实现<strong>零样本真实世界迁移</strong>。桌面抓取任务中 MolmoBot 达到 79.2% 成功率，大幅超越 π₀.₅ 的 39.2%。证明了程序化环境生成 + 多样化铰接资产可以产生广泛泛化到现实世界的鲁棒操作策略。
+                </div>
+                <div class="links">
+                    <a href="https://arxiv.org/abs/2603.16861" target="_blank">📄 arXiv</a>
+                    <a href="https://arxiv.org/pdf/2603.16861" target="_blank">📑 PDF</a>
+                    <a href="https://allenai.org/blog/molmobot-robot-manipulation" target="_blank">📝 Blog</a>
+                </div>
+            </div>
+
+            <div class="paper">
+                <span class="tag">6-DoF</span>
+                <span class="tag">RGB-only</span>
+                <h3>MG-Grasp: Metric-Scale Geometric 6-DoF Grasping Framework with Sparse RGB Observations</h3>
+                <div class="venue">arXiv 2603.16270 · 2026-03-17</div>
+                <div class="summary">
+                    提出无深度传感器的 6-DoF 抓取框架。利用双视图 3D 基础模型结合相机内外参，从稀疏 RGB 图像重建度量级、多视图一致的密集点云，在此基础上生成稳定的 6-DoF 抓取姿态。在 GraspNet-1Billion 数据集和真实世界实验中均达到 SOTA 性能，为去掉深度相机的轻量化机器人方案提供了可行路径。
+                </div>
+                <div class="links">
+                    <a href="https://arxiv.org/abs/2603.16270" target="_blank">📄 arXiv</a>
+                    <a href="https://arxiv.org/pdf/2603.16270" target="_blank">📑 PDF</a>
+                </div>
+            </div>
+
+            <div class="paper">
+                <span class="tag">RL</span>
+                <span class="tag">Process Reasoning</span>
+                <h3>PRIMO R1: From Passive Observer to Active Critic — RL Elicits Process Reasoning for Robotic Manipulation</h3>
+                <div class="venue">上海交通大学 · arXiv 2603.15600 · 2026-03-16</div>
+                <div class="summary">
+                    将视频多模态 LLM 从被动"观察者"转变为主动"批评者"。PRIMO R1 是一个 7B 框架，利用基于结果的强化学习激励思维链生成，实现长视距操作中的进度估计。在平均绝对误差上比专门推理基线降低 50%，在 RoboFail 故障检测基准上达到 67.0%，超越 OpenAI o1 等闭源模型 6 个百分点。
+                </div>
+                <div class="links">
+                    <a href="https://arxiv.org/abs/2603.15600" target="_blank">📄 arXiv</a>
+                    <a href="https://arxiv.org/pdf/2603.15600" target="_blank">📑 PDF</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== VLA ===== -->
+        <div class="section">
+            <div class="section-title">
+                <span class="icon">🧠</span>
+                VLA — Vision-Language-Action
+            </div>
+
+            <div class="paper highlight">
+                <span class="tag new">NEW</span>
+                <span class="tag">Velocity Feedforward</span>
+                <span class="tag">π₀.₅</span>
+                <h3>Enabling Dynamic Tracking in VLA Models via Time-Discrete and Time-Continuous Velocity Feedforward</h3>
+                <div class="venue">arXiv 2603.16218 · 2026-03-17</div>
+                <div class="summary">
+                    解决 VLA 模型在刚性工业机器人上部署时「柔顺性 vs 响应速度」的根本矛盾。提出两种从 VLA 中提取速度目标的方法：时间离散有限差分近似（可直接桥接现有模型）和连续三次 B 样条动作空间（原生 C² 连续轨迹）。两种方法均为模型无关的即插即用方案，在 π₀.₅ 上微调后，在接触密集的 cube-in-hole 任务中显著提升执行速度和成功率。
+                </div>
+                <div class="links">
+                    <a href="https://arxiv.org/abs/2603.16218" target="_blank">📄 arXiv</a>
+                    <a href="https://arxiv.org/pdf/2603.16218" target="_blank">📑 PDF</a>
+                </div>
+            </div>
+
+            <div class="paper">
+                <span class="tag">Video-Action</span>
+                <span class="tag">Self-Distillation</span>
+                <h3>S-VAM: Shortcut Video-Action Model by Self-Distilling Geometric and Semantic Foresight</h3>
+                <div class="venue">arXiv 2603.16195 · 2026-03-17</div>
+                <div class="summary">
+                    视频动作模型（VAM）的新范式：通过自蒸馏策略将多步去噪的几何+语义预判压缩到<strong>单次前向传播</strong>。从扩散模型自身的多步生成视频中提取视觉基础模型表示作为教师目标，轻量级解耦器作为学生直接映射单步特征。在仿真和真实世界中均超越 SOTA，实现高效且精确的机器人操作。
+                </div>
+                <div class="links">
+                    <a href="https://arxiv.org/abs/2603.16195" target="_blank">📄 arXiv</a>
+                    <a href="https://haodong-yan.github.io/S-VAM/" target="_blank">🌐 项目主页</a>
+                </div>
+            </div>
+
+            <div class="paper">
+                <span class="tag">VLM Reward</span>
+                <span class="tag">Online RL</span>
+                <h3>Large Reward Models: Generalizable Online Robot Reward Generation with VLMs</h3>
+                <div class="venue">arXiv 2603.16065 · 2026-03-17</div>
+                <div class="summary">
+                    将基础 VLM 调整为在线奖励生成器，实现在线策略优化。在大规模多源数据集上训练的鲁棒奖励模型能根据当前视觉观察制定多方面奖励信号（过程奖励 + 完成奖励 + 时间对比奖励）。在长视距操作基准上，仅用 30 次 RL 迭代就显著提升初始 IL 策略的成功率，且奖励模型完全以<strong>零样本</strong>方式运作。
+                </div>
+                <div class="links">
+                    <a href="https://arxiv.org/abs/2603.16065" target="_blank">📄 arXiv</a>
+                    <a href="https://arxiv.org/pdf/2603.16065" target="_blank">📑 PDF</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== World Model ===== -->
+        <div class="section">
+            <div class="section-title">
+                <span class="icon">🌍</span>
+                World Model — 世界模型与 4D 仿真
+            </div>
+
+            <div class="paper highlight">
+                <span class="tag hot">⭐ 54 upvotes</span>
+                <span class="tag">4D Generation</span>
+                <span class="tag">URDF</span>
+                <h3>Kinema4D: Kinematic 4D World Modeling for Spatiotemporal Embodied Simulation</h3>
+                <div class="venue">arXiv 2603.16669 · 2026-03-17 · HuggingFace Daily Top 3</div>
+                <div class="summary">
+                    基于动作条件的 4D 生成式机器人模拟器。将机器人-世界交互解耦为：(1) 通过 URDF 运动学驱动的精确 4D 机器人控制轨迹，(2) 将轨迹投影为点图作为时空视觉信号，控制生成模型合成环境反应动力学（同步 RGB/点图序列）。配套发布 Robo4D-200k 数据集（201,426 条高质量 4D 标注交互片段），展示了符合物理规律、几何一致且形态无关的零样本迁移能力。
+                </div>
+                <div class="links">
+                    <a href="https://arxiv.org/abs/2603.16669" target="_blank">📄 arXiv</a>
+                    <a href="https://mutianxu.github.io/Kinema4D-project-page/" target="_blank">🌐 项目主页</a>
+                </div>
+            </div>
+
+            <div class="paper">
+                <span class="tag">3D Gaming</span>
+                <span class="tag">Camera Pose</span>
+                <h3>WorldCam: Interactive Autoregressive 3D Gaming Worlds with Camera Pose as a Unifying Geometric Representation</h3>
+                <div class="venue">Adobe · arXiv 2603.16871 · 2026-03-17 · 41 upvotes</div>
+                <div class="summary">
+                    将相机位姿确立为统一的几何表示，同时实现即时动作控制和长期 3D 一致性。在 Lie 代数中定义基于物理的连续动作空间，通过相机嵌入器注入生成模型确保精确的动作对齐。利用全局相机位姿作为空间索引检索历史观察，实现长视距导航中的几何一致回访。配套发布 3000 分钟真人游戏数据集（附相机轨迹和文本描述）。
+                </div>
+                <div class="links">
+                    <a href="https://arxiv.org/abs/2603.16871" target="_blank">📄 arXiv</a>
+                    <a href="https://arxiv.org/pdf/2603.16871" target="_blank">📑 PDF</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== LLM & VLM ===== -->
+        <div class="section">
+            <div class="section-title">
+                <span class="icon">💡</span>
+                LLM / VLM — 大模型新进展
+            </div>
+
+            <div class="paper highlight">
+                <span class="tag hot">⭐ 50 upvotes</span>
+                <span class="tag">Video Diffusion</span>
+                <span class="tag">Reasoning</span>
+                <h3>Demystifying Video Reasoning</h3>
+                <div class="venue">arXiv 2603.16870 · 2026-03-17 · HuggingFace Daily Top 4</div>
+                <div class="summary">
+                    挑战了视频模型推理的"帧链"(Chain-of-Frames) 假说，揭示了根本不同的机制——<strong>"步骤链"(Chain-of-Steps)</strong>：推理主要在扩散去噪步骤中产生，模型在早期步骤探索多个候选解并逐渐收敛。发现了三种新兴推理行为：(1) 工作记忆实现持久引用，(2) 自我修正从错误中间解恢复，(3) 感知先于行动。在扩散 Transformer 中发现了自我进化的功能特化层级结构。对理解视频生成模型的推理机制具有重要意义。
+                </div>
+                <div class="links">
+                    <a href="https://arxiv.org/abs/2603.16870" target="_blank">📄 arXiv</a>
+                    <a href="https://huggingface.co/papers/2603.16870" target="_blank">🤗 HuggingFace</a>
+                </div>
+            </div>
+
+            <div class="paper">
+                <span class="tag">Online Learning</span>
+                <span class="tag">Experiential</span>
+                <h3>Online Experiential Learning for Language Models</h3>
+                <div class="venue">Microsoft Research · arXiv 2603.16856 · 2026-03-17 · 26 upvotes</div>
+                <div class="summary">
+                    微软提出在线体验学习（OEL）框架，让 LLM 从自身的部署经验中持续改进。两阶段循环：(1) 从用户交互轨迹中提取可转移的体验知识，(2) 通过在线策略上下文蒸馏整合到模型参数中。在基于文本的游戏环境中，OEL 在多个模型规模上取得一致改进，同时提高任务准确性和 Token 效率，并保持分布外性能。
+                </div>
+                <div class="links">
+                    <a href="https://arxiv.org/abs/2603.16856" target="_blank">📄 arXiv</a>
+                    <a href="https://huggingface.co/papers/2603.16856" target="_blank">🤗 HuggingFace</a>
+                </div>
+            </div>
+
+            <div class="paper">
+                <span class="tag">Hallucination</span>
+                <span class="tag">Decoding</span>
+                <h3>Thinking in Uncertainty: Mitigating Hallucinations in MLRMs with Latent Entropy-Aware Decoding</h3>
+                <div class="venue">Cornell University · arXiv 2603.13366 · 2026-03-09 · 34 upvotes</div>
+                <div class="summary">
+                    提出 LEAD（Latent Entropy-Aware Decoding）——一种即插即用的解码策略。核心思想：模型在高熵状态下采用概率加权的连续嵌入（叠加推理），熵降低后切回离散 Token 嵌入。结合先验引导的视觉锚定注入策略，在多个基准测试中有效缓解多模态大推理模型的幻觉问题。
+                </div>
+                <div class="links">
+                    <a href="https://arxiv.org/abs/2603.13366" target="_blank">📄 arXiv</a>
+                    <a href="https://huggingface.co/papers/2603.13366" target="_blank">🤗 HuggingFace</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== Embodied AI / VLN ===== -->
+        <div class="section">
+            <div class="section-title">
+                <span class="icon">🏠</span>
+                Embodied AI — 具身智能与视觉导航
+            </div>
+
+            <div class="paper">
+                <span class="tag">VLN</span>
+                <span class="tag">GRPO</span>
+                <h3>NavGRPO: Trajectory-Diversity-Driven Robust Vision-and-Language Navigation</h3>
+                <div class="venue">arXiv · 2026-03-16</div>
+                <div class="summary">
+                    基于 Group Relative Policy Optimization (GRPO) 的 VLN 框架，通过探索多样化轨迹提高导航鲁棒性。在 R2R 和 REVERIE 基准测试中 SPL 分别提升 +3.0% 和 +1.71%，表明 RL 策略优化在导航任务中的显著潜力。
+                </div>
+                <div class="links">
+                    <a href="https://arxiv.org" target="_blank">📄 arXiv</a>
+                </div>
+            </div>
+
+            <div class="paper">
+                <span class="tag">VLN</span>
+                <span class="tag">Inverse Dynamics</span>
+                <h3>NaVIDA: Vision-Language Navigation with Inverse Dynamics Augmentation</h3>
+                <div class="venue">arXiv · 2026-03-16</div>
+                <div class="summary">
+                    引入逆动力学监督（IDS）作为显式目标，将动作基础的视觉动态嵌入策略学习中。提出分层概率动作分块（HPAC）扩展有效规划范围，为 VLN 中的动作生成提供了新的视角。
+                </div>
+                <div class="links">
+                    <a href="https://arxiv.org" target="_blank">📄 arXiv</a>
+                </div>
+            </div>
+
+            <div class="paper">
+                <span class="tag">VLN</span>
+                <span class="tag">Hierarchical Memory</span>
+                <h3>HiMemVLN: Enhancing Zero-Shot VLN with Hierarchical Memory System</h3>
+                <div class="venue">arXiv · 2026-03-16</div>
+                <div class="summary">
+                    解决开源 LLM 在 VLN 中的"导航健忘症"问题，提出分层记忆系统增强视觉感知回忆和长期定位。对提升零样本 VLN 中的可靠性具有实际意义。
+                </div>
+                <div class="links">
+                    <a href="https://github.com/lvkailin0118/HiMemVLN" target="_blank">💻 GitHub</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== Industry ===== -->
+        <div class="section">
+            <div class="section-title">
+                <span class="icon">🏭</span>
+                Industry — 行业动态
+            </div>
+
+            <div class="industry">
+                <span class="tag hot">开源发布</span>
+                <h3>🐜 蚂蚁 Robbyant 开源 LingBot-VLA —— 机器人「通用大脑」</h3>
+                <div class="summary">
+                    蚂蚁集团旗下 Robbyant 于 3/13 开源 LingBot-VLA 模型，定位为跨形态的"通用大脑"。在 20,000+ 小时真实世界交互数据上预训练，涵盖 9 种主流双臂机器人配置。已适配 Galaxea Dynamics、AgileX 等多家厂商，支持单臂/双臂/人形平台。训练速度比 StarVLA 和 OpenPI 快 1.5~2.8 倍。在 GM-100 基准（100 个真实任务）和 RoboTwin 2.0 仿真基准上均取得领先成绩。开源内容包括模型权重、数据处理/微调/评估完整工具链。
+                </div>
+                <div class="links">
+                    <a href="https://github.com/Robbyant/lingbot-vla" target="_blank">💻 GitHub</a>
+                    <a href="https://arxiv.org/abs/2601.18692" target="_blank">📄 技术报告</a>
+                    <a href="https://huggingface.co/collections/robbyant/lingbot-vla" target="_blank">🤗 HuggingFace</a>
+                </div>
+            </div>
+
+            <div class="industry">
+                <span class="tag hot">深度分析</span>
+                <h3>📊 VLA and World Models: Embodied AI Awakened — 行业趋势深度解读</h3>
+                <div class="summary">
+                    Long Chen 在 LinkedIn 发表的深度分析（3/16），梳理具身 AI 从 1.0（规则驱动）→ 2.0（数据驱动/端到端）→ 3.0（认知驱动/VLA）的演进路径。关键观点：VLA 和世界模型并非对立，而是互补路径；Flow Matching 是 2025 年动作生成的重要突破；2026 年重点方向包括强化学习（突破纯模仿局限）、终身学习、从视频中学习物理常识、以及物理 AI 安全。
+                </div>
+                <div class="links">
+                    <a href="https://www.linkedin.com/pulse/vla-world-models-embodied-ai-awakened-long-chen-y0cpc" target="_blank">📝 LinkedIn</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Stats -->
+        <div class="stats">
+            <h3>📊 检索统计</h3>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="num">6</div>
+                    <div class="label">检索来源</div>
+                </div>
+                <div class="stat-item">
+                    <div class="num">14</div>
+                    <div class="label">新研究/动态</div>
+                </div>
+                <div class="stat-item">
+                    <div class="num">5</div>
+                    <div class="label">覆盖领域</div>
+                </div>
+            </div>
+            <div style="margin-top: 16px; font-size: 12px; color: #555; text-align: center;">
+                来源：arXiv · HuggingFace Daily Papers · Robotics arXiv Daily · Embodied-AI-Daily · Google · 行业新闻<br>
+                时间范围：2026-03-16 ~ 2026-03-18 · 已排除往期已汇报内容
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 32px; font-size: 12px; color: #444;">
+            Generated by 🔬 小小志 · Boss Team Research Division · Powered by WorkBuddy
+        </div>
+    </div>
+</body>
+</html>

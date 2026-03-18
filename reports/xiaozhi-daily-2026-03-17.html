@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小小志科研情报 — 2026-03-17</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Noto Sans SC', 'Helvetica Neue', sans-serif;
+            background: #fafafa;
+            color: #1a1a1a;
+            line-height: 1.8;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .page {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 48px 24px 80px;
+        }
+
+        /* Header */
+        header {
+            margin-bottom: 48px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid #e5e5e5;
+        }
+        header h1 {
+            font-size: 26px;
+            font-weight: 700;
+            color: #111;
+            letter-spacing: -0.3px;
+        }
+        header .meta {
+            font-size: 14px;
+            color: #888;
+            margin-top: 6px;
+        }
+
+        /* Section */
+        .section {
+            margin-bottom: 40px;
+        }
+        .section-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #333;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #111;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .section-count {
+            font-size: 12px;
+            font-weight: 400;
+            color: #999;
+            letter-spacing: 0;
+            text-transform: none;
+        }
+
+        /* Paper item */
+        .item {
+            margin-bottom: 28px;
+            padding-bottom: 28px;
+            border-bottom: 1px solid #eee;
+        }
+        .item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        .item-title {
+            font-size: 17px;
+            font-weight: 600;
+            color: #111;
+            margin-bottom: 4px;
+            line-height: 1.5;
+        }
+        .item-meta {
+            font-size: 13px;
+            color: #999;
+            margin-bottom: 10px;
+        }
+        .item-tag {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 600;
+            padding: 2px 8px;
+            border-radius: 3px;
+            margin-right: 6px;
+            vertical-align: middle;
+        }
+        .tag-nature { background: #e8f5e9; color: #2e7d32; }
+        .tag-hot { background: #fff3e0; color: #e65100; }
+        .tag-new { background: #e3f2fd; color: #1565c0; }
+        .tag-open { background: #f3e5f5; color: #7b1fa2; }
+
+        .item-summary {
+            font-size: 15px;
+            color: #444;
+            line-height: 1.85;
+        }
+        .item-links {
+            margin-top: 10px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .item-links a {
+            font-size: 13px;
+            color: #555;
+            text-decoration: none;
+            padding: 4px 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            transition: all 0.15s;
+        }
+        .item-links a:hover {
+            border-color: #999;
+            color: #111;
+            background: #f5f5f5;
+        }
+
+        /* Stats */
+        .stats {
+            margin-top: 48px;
+            padding: 24px;
+            background: #f5f5f5;
+            border-radius: 8px;
+        }
+        .stats h3 {
+            font-size: 14px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 16px;
+        }
+        .stats-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 32px;
+        }
+        .stats-item {
+            text-align: center;
+        }
+        .stats-num {
+            font-size: 28px;
+            font-weight: 700;
+            color: #111;
+        }
+        .stats-label {
+            font-size: 12px;
+            color: #888;
+            margin-top: 2px;
+        }
+        .stats-note {
+            font-size: 12px;
+            color: #aaa;
+            margin-top: 16px;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            font-size: 12px;
+            color: #ccc;
+            margin-top: 48px;
+            padding-top: 24px;
+            border-top: 1px solid #eee;
+        }
+
+        @media (max-width: 640px) {
+            .page { padding: 32px 16px 60px; }
+            header h1 { font-size: 22px; }
+            .item-title { font-size: 16px; }
+            .item-summary { font-size: 14px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="page">
+
+<header>
+    <h1>小小志 · 每日科研情报</h1>
+    <div class="meta">2026 年 3 月 17 日 · Robotics / VLA / Embodied AI / RL / LLM / World Model / VLM</div>
+</header>
+
+<!-- VLA -->
+<div class="section">
+    <div class="section-title">
+        VLA — Vision-Language-Action
+        <span class="section-count">5 篇</span>
+    </div>
+
+    <div class="item">
+        <div class="item-title">NS-VLA: Towards Neuro-Symbolic Vision-Language-Action Models</div>
+        <div class="item-meta">Ziyue Zhu, Shangyang Wu, Shuai Zhao et al. · arXiv 2603.09542 · Mar 10</div>
+        <div class="item-summary">
+            <span class="item-tag tag-hot">方法创新</span>
+            首个将神经符号推理融合进 VLA 的框架。通过符号编码器将视觉和语言特征嵌入结构化基元，配合符号求解器实现数据高效的动作排序，并利用在线强化学习进行探索优化。在机械臂操作基准测试中，单次训练和数据扰动设置下均优于现有方法，展现了卓越的零样本泛化能力和数据效率。
+        </div>
+        <div class="item-links">
+            <a href="https://arxiv.org/abs/2603.09542" target="_blank">arXiv</a>
+            <a href="https://zuzuzzy.github.io/NS-VLA/" target="_blank">Project</a>
+            <a href="https://github.com/Zuzuzzy/NS-VLA" target="_blank">GitHub</a>
+            <a href="https://huggingface.co/zuzuzzy/NS-VLA" target="_blank">Model</a>
+            <a href="https://huggingface.co/datasets/zuzuzzy/NS-VLA-Dataset" target="_blank">Dataset</a>
+        </div>
+    </div>
+
+    <div class="item">
+        <div class="item-title">ReMem-VLA: Empowering VLA with Memory via Dual-Level Recurrent Queries</div>
+        <div class="item-meta">Hang Li, Fengyi Shen, Dong Chen et al. · arXiv 2603.12942 · Mar 13</div>
+        <div class="item-summary">
+            <span class="item-tag tag-hot">突破性</span>
+            解决 VLA 模型的"健忘症"——引入双层循环记忆查询：帧级查询传递短期记忆，块级查询携带长期上下文，无需额外训练成本。还引入了"过去观测预测"辅助目标增强视觉记忆。在空间、顺序、情节、时间等多维度测试中显著超越 π0.5、OpenVLA-OFT 和 MemoryVLA。
+        </div>
+        <div class="item-links">
+            <a href="https://arxiv.org/abs/2603.12942" target="_blank">arXiv</a>
+        </div>
+    </div>
+
+    <div class="item">
+        <div class="item-title">APPLV: Adaptive Planner Parameter Learning from VLA Model</div>
+        <div class="item-meta">Yuanjie Lu, Beichen Wang et al. · arXiv 2603.08862 · Mar 9</div>
+        <div class="item-summary">
+            另辟蹊径——不让 VLA 直接输出动作，而是让它预测经典导航规划器的参数。用预训练 VLM 加回归头来配置传统路径规划器，结合监督学习和强化学习两种微调策略。在 BARN 数据集和真实机器人上验证，导航性能和泛化能力均优于直接动作输出的方法。
+        </div>
+        <div class="item-links">
+            <a href="https://arxiv.org/abs/2603.08862" target="_blank">arXiv</a>
+        </div>
+    </div>
+
+    <div class="item">
+        <div class="item-title">TacVLA: Contact-Aware Tactile Fusion for Robust VLA Manipulation</div>
+        <div class="item-meta">Kaidi Zhang, Heng Zhang, Zhengtong Xu et al. · arXiv 2603.12665 · Mar 13</div>
+        <div class="item-summary">
+            给 VLA 加上"触觉"——将触觉传感器融合进 Transformer 策略骨干，引入接触感知机制增强精细操作能力。机器人不仅能"看"和"听"，还能"摸"，对抓取易碎物体、精确装配等任务意义重大。
+        </div>
+        <div class="item-links">
+            <a href="https://arxiv.org/abs/2603.12665" target="_blank">arXiv</a>
+            <a href="https://sites.google.com/view/tacvla" target="_blank">Project</a>
+        </div>
+    </div>
+
+    <div class="item">
+        <div class="item-title">SAMoE-VLA: Scene Adaptive Mixture-of-Experts VLA for Autonomous Driving</div>
+        <div class="item-meta">Zihan You et al. · arXiv 2603.08113 · Mar 10</div>
+        <div class="item-summary">
+            将 MoE 架构引入自动驾驶 VLA。通过场景自适应的专家门控机制，动态调度不同专家处理不同场景类型，在保持模型效率的同时显著提升跨场景泛化能力。
+        </div>
+        <div class="item-links">
+            <a href="https://arxiv.org/abs/2603.08113" target="_blank">arXiv</a>
+            <a href="https://github.com/mike08700000/SAMoE-VLA" target="_blank">GitHub</a>
+        </div>
+    </div>
+</div>
+
+<!-- Robotics & Embodied AI -->
+<div class="section">
+    <div class="section-title">
+        Robotics & Embodied AI
+        <span class="section-count">3 篇</span>
+    </div>
+
+    <div class="item">
+        <div class="item-title">ROS-LLM: A Robot Operating System Framework for Using LLMs in Embodied AI</div>
+        <div class="item-meta">Christopher E. Mower, Yuhui Wan et al. · Nature Machine Intelligence · Mar 16</div>
+        <div class="item-summary">
+            <span class="item-tag tag-nature">Nature</span>
+            <span class="item-tag tag-open">开源</span>
+            将 LLM Agent 接入 ROS，构建完整的具身智能框架。非专家用自然语言就能控制机器人，Agent 自动将语言指令转换为动作，支持内联代码和行为树两种执行模式，还能通过模仿学习新技能并持续自优化。完整代码已开源。
+        </div>
+        <div class="item-links">
+            <a href="https://www.nature.com/articles/s42256-026-01186-z" target="_blank">Nature MI</a>
+            <a href="https://rosllm.github.io/" target="_blank">Project</a>
+            <a href="https://github.com/Auromix/ROS-LLM" target="_blank">GitHub</a>
+        </div>
+    </div>
+
+    <div class="item">
+        <div class="item-title">千卡大规模训练：AI 原生云具身智能基础设施优化</div>
+        <div class="item-meta">Chen Zhou, Haoran Sun et al. · arXiv 2603.11101 · Mar 11</div>
+        <div class="item-summary">
+            <span class="item-tag tag-hot">工程突破</span>
+            首次构建基于 LeRobot 的云端千卡分布式具身智能训练平台。对 GR00T-N1.5 模型，千卡集群将单轮训练从 15 小时压缩到 22 分钟（40x 加速）。技术亮点：变长 FlashAttention + Data Packing（188% 提速）、π-0.5 注意力优化（165%）、FP8 量化（140%）。
+        </div>
+        <div class="item-links">
+            <a href="https://arxiv.org/abs/2603.11101" target="_blank">arXiv</a>
+        </div>
+    </div>
+
+    <div class="item">
+        <div class="item-title">Adaptive Capacity Allocation for Vision Language Action Models</div>
+        <div class="item-meta">arXiv 2603.07404 · Mar 8</div>
+        <div class="item-summary">
+            解决 VLA 模型部署到新环境的迁移问题。提出自适应容量分配策略，让 VLA 在保持原有能力的同时高效适配新场景，降低了实际部署门槛。
+        </div>
+        <div class="item-links">
+            <a href="https://arxiv.org/abs/2603.07404" target="_blank">arXiv</a>
+        </div>
+    </div>
+</div>
+
+<!-- World Model -->
+<div class="section">
+    <div class="section-title">
+        World Model
+        <span class="section-count">2 篇</span>
+    </div>
+
+    <div class="item">
+        <div class="item-title">WorldVLM: Combining World Model Forecasting and Vision-Language Reasoning</div>
+        <div class="item-meta">Stefan Englmeier, Katharina Winter, Fabian B. Flohr · arXiv 2603.14497 · Mar 15</div>
+        <div class="item-summary">
+            <span class="item-tag tag-new">昨日</span>
+            将世界模型和 VLM 统一到一个混合架构中用于自动驾驶。VLM 负责高层语义推理生成行为命令，WM 负责预测环境动态——两者互补：VLM 擅长上下文理解但空间推理弱，WM 擅长动态预测但缺乏语义，让它们各司其职又协同工作。
+        </div>
+        <div class="item-links">
+            <a href="https://arxiv.org/abs/2603.14497" target="_blank">arXiv</a>
+        </div>
+    </div>
+
+    <div class="item">
+        <div class="item-title">MetaWorld-X: Hierarchical World Modeling via VLM-Orchestrated Experts for Humanoid</div>
+        <div class="item-meta">Yutong Shen, Hangxu Liu et al. · arXiv 2603.08572 · Mar 9</div>
+        <div class="item-summary">
+            人形机器人的分层世界模型框架。将复杂 loco-manipulation 控制分解为多个专家策略，每个专家在人类运动先验约束下通过 RL 训练。上层由 VLM 驱动的智能路由器根据语义动态组合专家策略，有效避免高自由度系统中的技能间梯度干扰。
+        </div>
+        <div class="item-links">
+            <a href="https://arxiv.org/abs/2603.08572" target="_blank">arXiv</a>
+            <a href="https://syt2004.github.io/metaworldX/" target="_blank">Project</a>
+        </div>
+    </div>
+</div>
+
+<!-- RL -->
+<div class="section">
+    <div class="section-title">
+        RL — 强化学习
+        <span class="section-count">3 篇</span>
+    </div>
+
+    <div class="item">
+        <div class="item-title">Adaptive Efficient Rollout Optimization for Group-Based Reinforcement Learning</div>
+        <div class="item-meta">arXiv 2602.14338 · Feb 2026</div>
+        <div class="item-summary">
+            针对 GRPO 提出自适应高效展开优化。在 RLVR 场景下，优化了展开策略的采样效率，减少不必要的计算开销，让 LLM 的 RL 微调更快更省。
+        </div>
+        <div class="item-links">
+            <a href="https://arxiv.org/abs/2602.14338" target="_blank">arXiv</a>
+        </div>
+    </div>
+
+    <div class="item">
+        <div class="item-title">AllMem: A Memory-Centric Recipe for Efficient Long-Context Modeling</div>
+        <div class="item-meta">arXiv 2602.13680 · Feb 2026</div>
+        <div class="item-summary">
+            以记忆为中心的长上下文高效建模方案。通过记忆机制替代部分注意力计算，在保持性能的前提下大幅降低长上下文的处理成本。对需要处理超长序列的 RL 和推理场景尤其重要。
+        </div>
+        <div class="item-links">
+            <a href="https://arxiv.org/abs/2602.13680" target="_blank">arXiv</a>
+        </div>
+    </div>
+
+    <div class="item">
+        <div class="item-title">Elo-Evolve: A Co-Evolutionary Framework for Language Model Alignment</div>
+        <div class="item-meta">arXiv 2602.13575 · Feb 2026</div>
+        <div class="item-summary">
+            RLHF 对齐新范式——让模型和评估系统共同进化，用动态相对评估替代固定绝对奖励，实现更稳定高效的对齐训练。
+        </div>
+        <div class="item-links">
+            <a href="https://arxiv.org/abs/2602.13575" target="_blank">arXiv</a>
+        </div>
+    </div>
+</div>
+
+<!-- LLM & VLM -->
+<div class="section">
+    <div class="section-title">
+        LLM & VLM 动态
+        <span class="section-count">3 条</span>
+    </div>
+
+    <div class="item">
+        <div class="item-title">NVIDIA Nemotron 3 Super (120B A12B) 开源发布</div>
+        <div class="item-meta">NVIDIA · Mar 11</div>
+        <div class="item-summary">
+            <span class="item-tag tag-open">开源</span>
+            120B 参数 MoE 激活 12B，GPQA 得分 0.8，定位为高性能开源推理模型。
+        </div>
+        <div class="item-links">
+            <a href="https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-NVFP4" target="_blank">HuggingFace</a>
+            <a href="https://github.com/NVIDIA-NeMo/Nemotron" target="_blank">GitHub</a>
+            <a href="https://developer.nvidia.com/nemotron" target="_blank">NVIDIA</a>
+            <a href="https://build.nvidia.com/nvidia/nemotron-3-super-120b-a12b/modelcard" target="_blank">NIM</a>
+        </div>
+    </div>
+
+    <div class="item">
+        <div class="item-title">xAI Grok-4.20 Beta 三连发</div>
+        <div class="item-meta">xAI · Mar 9</div>
+        <div class="item-summary">
+            一次发布推理版、非推理版和 Multi-Agent 版本。Multi-Agent 版本原生支持多智能体协作，可能代表商业 LLM 从单模型走向多 Agent 系统的趋势。
+        </div>
+        <div class="item-links">
+            <a href="https://llm-stats.com/llm-updates" target="_blank">LLM Stats</a>
+        </div>
+    </div>
+
+    <div class="item">
+        <div class="item-title">OpenAI GPT-5.4 · Qwen3.5 系列开源</div>
+        <div class="item-meta">OpenAI / 阿里云 · Mar 2–5</div>
+        <div class="item-summary">
+            GPT-5.4（专有，GPQA 0.9，目前最高分）；Qwen3.5 系列三个开源版本（0.8B/2B/4B），其中 4B 模型 GPQA 达 0.8，小模型性能追平大模型趋势越来越明显。
+        </div>
+        <div class="item-links">
+            <a href="https://llm-stats.com/llm-updates" target="_blank">LLM Stats</a>
+        </div>
+    </div>
+</div>
+
+<!-- 行业热点 -->
+<div class="section">
+    <div class="section-title">
+        行业热点
+        <span class="section-count">1 条</span>
+    </div>
+
+    <div class="item">
+        <div class="item-title">2026 年具身智能 VLA 技术路线深度对比</div>
+        <div class="item-meta">IT之家 · Mar 15</div>
+        <div class="item-summary">
+            深度对比全域全身 VLA 和分层专家组合两条技术路线的优劣，对理解当前 VLA 工业化进程很有参考价值。
+        </div>
+        <div class="item-links">
+            <a href="https://www.ithome.com/0/929/265.htm" target="_blank">IT之家</a>
+        </div>
+    </div>
+</div>
+
+<!-- Stats -->
+<div class="stats">
+    <h3>检索统计</h3>
+    <div class="stats-row">
+        <div class="stats-item">
+            <div class="stats-num">17</div>
+            <div class="stats-label">研究 / 动态</div>
+        </div>
+        <div class="stats-item">
+            <div class="stats-num">3</div>
+            <div class="stats-label">检索来源</div>
+        </div>
+        <div class="stats-item">
+            <div class="stats-num">6</div>
+            <div class="stats-label">覆盖领域</div>
+        </div>
+        <div class="stats-item">
+            <div class="stats-num">2</div>
+            <div class="stats-label">昨日 / 今日新发</div>
+        </div>
+    </div>
+    <div class="stats-note">
+        来源：arXiv · Google Scholar · Nature · llm-stats.com · IT之家 · Semantic Scholar<br>
+        时间范围：2026-03-16 ~ 2026-03-17
+    </div>
+</div>
+
+<footer>
+    小小志 · Boss Team 科研 Researcher · 2026-03-17
+</footer>
+
+</div>
+
+</body>
+</html>
