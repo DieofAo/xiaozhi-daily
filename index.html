@@ -515,7 +515,7 @@ const PAPERS_DB = [
         categoryIcon: "🤖",
         title: "MolmoB0T: Large-Scale Simulation Enables Zero-Shot Manipulation",
         venue: "Allen Institute for AI (Ai2) · arXiv 2603.16861 · 2026-03-17",
-        summary: "Ai2 提出的 MolmoB0T 挑战了"仅靠仿真不够"的主流观点。通过完全开源的 MolmoBot-Engine 程序化数据生成管道，生成了 180 万条机器人交互轨迹（MolmoBot-Data）。训练了三种策略（MolmoBot/Pi0/SPOC），在 Franka FR3 和 Rainbow Robotics RB-Y1 两个平台上实现零样本真实世界迁移。桌面抓取任务中 MolmoBot 达到 79.2% 成功率，大幅超越 π₀.₅ 的 39.2%。",
+        summary: "Ai2 提出的 MolmoB0T 挑战了「仅靠仿真不够」的主流观点。通过完全开源的 MolmoBot-Engine 程序化数据生成管道，生成了 180 万条机器人交互轨迹（MolmoBot-Data）。训练了三种策略（MolmoBot/Pi0/SPOC），在 Franka FR3 和 Rainbow Robotics RB-Y1 两个平台上实现零样本真实世界迁移。桌面抓取任务中 MolmoBot 达到 79.2% 成功率，大幅超越 π₀.₅ 的 39.2%。",
         tags: [["🔥 重磅","red"],["Zero-Shot","green"],["Sim-to-Real","green"]],
         links: [["📄 arXiv","https://arxiv.org/abs/2603.16861"],["📑 PDF","https://arxiv.org/pdf/2603.16861"],["📝 Blog","https://allenai.org/blog/molmobot-robot-manipulation"]],
         highlight: true
@@ -536,7 +536,7 @@ const PAPERS_DB = [
         categoryIcon: "🤖",
         title: "PRIMO R1: From Passive Observer to Active Critic — RL Elicits Process Reasoning for Robotic Manipulation",
         venue: "上海交通大学 · arXiv 2603.15600 · 2026-03-16",
-        summary: "将视频多模态 LLM 从被动"观察者"转变为主动"批评者"。PRIMO R1 是一个 7B 框架，利用基于结果的强化学习激励思维链生成，实现长视距操作中的进度估计。在平均绝对误差上比专门推理基线降低 50%，在 RoboFail 故障检测基准上达到 67.0%，超越 OpenAI o1 等闭源模型 6 个百分点。",
+        summary: "将视频多模态 LLM 从被动「观察者」转变为主动「批评者」。PRIMO R1 是一个 7B 框架，利用基于结果的强化学习激励思维链生成，实现长视距操作中的进度估计。在平均绝对误差上比专门推理基线降低 50%，在 RoboFail 故障检测基准上达到 67.0%，超越 OpenAI o1 等闭源模型 6 个百分点。",
         tags: [["RL","green"],["Process Reasoning","green"]],
         links: [["📄 arXiv","https://arxiv.org/abs/2603.15600"],["📑 PDF","https://arxiv.org/pdf/2603.15600"]]
     },
@@ -598,7 +598,7 @@ const PAPERS_DB = [
         categoryIcon: "💡",
         title: "Demystifying Video Reasoning",
         venue: "arXiv 2603.16870 · 2026-03-17 · HuggingFace Daily Top 4",
-        summary: "挑战了视频模型推理的"帧链"(Chain-of-Frames) 假说，揭示了根本不同的机制——"步骤链"(Chain-of-Steps)：推理主要在扩散去噪步骤中产生，模型在早期步骤探索多个候选解并逐渐收敛。发现了三种新兴推理行为：工作记忆实现持久引用、自我修正从错误中间解恢复、感知先于行动。",
+        summary: "挑战了视频模型推理的「帧链」(Chain-of-Frames) 假说，揭示了根本不同的机制——「步骤链」(Chain-of-Steps)：推理主要在扩散去噪步骤中产生，模型在早期步骤探索多个候选解并逐渐收敛。发现了三种新兴推理行为：工作记忆实现持久引用、自我修正从错误中间解恢复、感知先于行动。",
         tags: [["⭐ 50 upvotes","yellow"],["Video Diffusion","green"],["Reasoning","green"]],
         links: [["📄 arXiv","https://arxiv.org/abs/2603.16870"],["🤗 HuggingFace","https://huggingface.co/papers/2603.16870"]],
         highlight: true
@@ -649,7 +649,7 @@ const PAPERS_DB = [
         categoryIcon: "🏠",
         title: "HiMemVLN: Enhancing Zero-Shot VLN with Hierarchical Memory System",
         venue: "arXiv · 2026-03-16",
-        summary: "解决开源 LLM 在 VLN 中的"导航健忘症"问题，提出分层记忆系统增强视觉感知回忆和长期定位。对提升零样本 VLN 中的可靠性具有实际意义。",
+        summary: "解决开源 LLM 在 VLN 中的「导航健忘症」问题，提出分层记忆系统增强视觉感知回忆和长期定位。对提升零样本 VLN 中的可靠性具有实际意义。",
         tags: [["VLN","green"],["Hierarchical Memory","green"]],
         links: [["💻 GitHub","https://github.com/lvkailin0118/HiMemVLN"]]
     },
@@ -659,7 +659,7 @@ const PAPERS_DB = [
         categoryIcon: "🏭",
         title: "🐜 蚂蚁 Robbyant 开源 LingBot-VLA —— 机器人「通用大脑」",
         venue: "蚂蚁集团 · 2026-03-13",
-        summary: "蚂蚁集团旗下 Robbyant 开源 LingBot-VLA 模型，定位为跨形态的"通用大脑"。在 20,000+ 小时真实世界交互数据上预训练，涵盖 9 种主流双臂机器人配置。训练速度比 StarVLA 和 OpenPI 快 1.5~2.8 倍。开源内容包括模型权重、数据处理/微调/评估完整工具链。",
+        summary: "蚂蚁集团旗下 Robbyant 开源 LingBot-VLA 模型，定位为跨形态的「通用大脑」。在 20,000+ 小时真实世界交互数据上预训练，涵盖 9 种主流双臂机器人配置。训练速度比 StarVLA 和 OpenPI 快 1.5~2.8 倍。开源内容包括模型权重、数据处理/微调/评估完整工具链。",
         tags: [["开源发布","yellow"]],
         links: [["💻 GitHub","https://github.com/Robbyant/lingbot-vla"],["📄 技术报告","https://arxiv.org/abs/2601.18692"],["🤗 HuggingFace","https://huggingface.co/collections/robbyant/lingbot-vla"]],
         isIndustry: true
@@ -693,7 +693,7 @@ const PAPERS_DB = [
         categoryIcon: "🧠",
         title: "ReMem-VLA: Empowering VLA with Memory via Dual-Level Recurrent Queries",
         venue: "Hang Li, Fengyi Shen et al. · arXiv 2603.12942 · Mar 13",
-        summary: "解决 VLA 模型的"健忘症"——引入双层循环记忆查询：帧级查询传递短期记忆，块级查询携带长期上下文，无需额外训练成本。在空间、顺序、情节、时间等多维度测试中显著超越 π0.5、OpenVLA-OFT 和 MemoryVLA。",
+        summary: "解决 VLA 模型的「健忘症」——引入双层循环记忆查询：帧级查询传递短期记忆，块级查询携带长期上下文，无需额外训练成本。在空间、顺序、情节、时间等多维度测试中显著超越 π0.5、OpenVLA-OFT 和 MemoryVLA。",
         tags: [["突破性","yellow"]],
         links: [["📄 arXiv","https://arxiv.org/abs/2603.12942"]],
         highlight: true
@@ -714,7 +714,7 @@ const PAPERS_DB = [
         categoryIcon: "🧠",
         title: "TacVLA: Contact-Aware Tactile Fusion for Robust VLA Manipulation",
         venue: "Kaidi Zhang et al. · arXiv 2603.12665 · Mar 13",
-        summary: "给 VLA 加上"触觉"——将触觉传感器融合进 Transformer 策略骨干，引入接触感知机制增强精细操作能力。机器人不仅能"看"和"听"，还能"摸"，对抓取易碎物体、精确装配等任务意义重大。",
+        summary: "给 VLA 加上「触觉」——将触觉传感器融合进 Transformer 策略骨干，引入接触感知机制增强精细操作能力。机器人不仅能「看」和「听」，还能「摸」，对抓取易碎物体、精确装配等任务意义重大。",
         tags: [["Tactile","blue"]],
         links: [["📄 arXiv","https://arxiv.org/abs/2603.12665"],["🌐 Project","https://sites.google.com/view/tacvla"]]
     },
