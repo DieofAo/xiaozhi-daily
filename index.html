@@ -899,22 +899,7 @@ function renderSidebar() {
         </div>
     </div>`;
 
-    // By date
-    html += `<div class="nav-section">
-        <div class="nav-section-title">按日期</div>`;
-    allDates.forEach(d => {
-        const papers = getDatePapers(d);
-        const isToday = d === allDates[0];
-        const label = formatDateLabel(d);
-        const active = currentView === `date:${d}`;
-        html += `<div class="nav-item ${active?'active':''}" onclick="setView('date:${d}')">
-            <span class="icon">${isToday?'🟢':'📅'}</span> ${label}
-            <span class="count">${papers.length}</span>
-        </div>`;
-    });
-    html += `</div>`;
-
-    // By category
+    // By category (领域在前)
     html += `<div class="nav-section">
         <div class="nav-section-title">按领域</div>`;
     categoryOrder.forEach(cat => {
@@ -924,6 +909,21 @@ function renderSidebar() {
         const active = currentView === `category:${cat}`;
         html += `<div class="nav-item ${active?'active':''}" onclick="setView('category:${cat}')">
             <span class="icon">${icon}</span> ${cat}
+            <span class="count">${papers.length}</span>
+        </div>`;
+    });
+    html += `</div>`;
+
+    // By date (日期在后)
+    html += `<div class="nav-section">
+        <div class="nav-section-title">按日期</div>`;
+    allDates.forEach(d => {
+        const papers = getDatePapers(d);
+        const isToday = d === allDates[0];
+        const label = formatDateLabel(d);
+        const active = currentView === `date:${d}`;
+        html += `<div class="nav-item ${active?'active':''}" onclick="setView('date:${d}')">
+            <span class="icon">${isToday?'🟢':'📅'}</span> ${label}
             <span class="count">${papers.length}</span>
         </div>`;
     });
@@ -1010,21 +1010,15 @@ function renderAllView(container) {
         <div class="overview-card"><div class="num">${PAPERS_DB.filter(p=>p.highlight).length}</div><div class="label">重磅论文</div></div>
     </div>`;
 
-    allDates.forEach(date => {
-        const papers = getDatePapers(date);
-        const isToday = date === allDates[0];
-        html += `<div class="date-header">
-            <div class="date-badge ${isToday?'today':''}">${formatDateLabel(date)}</div>
-            <div class="date-line"></div>
-            <div class="date-count">${papers.length} 篇</div>
-        </div>`;
-
-        const grouped = groupByCategory(papers);
-        categoryOrder.forEach(cat => {
-            if (!grouped[cat]) return;
-            html += renderSectionTitle(cat, grouped[cat][0].categoryIcon, grouped[cat].length);
-            grouped[cat].forEach(p => html += renderPaperCard(p));
-        });
+    // 按类别分组，每个类别内按日期倒序（由近到远）
+    categoryOrder.forEach(cat => {
+        const catPapers = PAPERS_DB.filter(p => p.category === cat);
+        if (catPapers.length === 0) return;
+        // 按日期倒序排列
+        catPapers.sort((a, b) => b.date.localeCompare(a.date));
+        const icon = catPapers[0].categoryIcon;
+        html += renderSectionTitle(cat, icon, catPapers.length);
+        catPapers.forEach(p => html += renderPaperCard(p));
     });
 
     container.innerHTML = html;
