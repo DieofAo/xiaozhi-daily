@@ -519,6 +519,91 @@
 <script>
 // ===== DATA =====
 const PAPERS_DB = [
+    // === 2026-03-19 (Fallback from 2026-03-18 arXiv) ===
+    {
+        date: "2026-03-19",
+        category: "Robotics",
+        categoryIcon: "🤖",
+        title: "GMT: Goal-Conditioned Multimodal Transformer for 6-DOF Object Trajectory Synthesis in 3D Scenes",
+        venue: "TU Munich · arXiv 2603.17993 · 2026-03-18",
+        summary: "合成可控的 6-DOF 物体操控轨迹是机器人与复杂场景交互的核心能力。现有方法通常依赖 2D 或部分 3D 表示，难以捕捉完整场景几何。GMT 提出多模态 Transformer 框架，从 3D 场景中直接生成目标条件下的 6 自由度物体操控轨迹，具备精确的空间推理能力和物理可行性。",
+        tags: [["🔥 重磅","red"],["6-DOF","green"],["Multimodal Transformer","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2603.17993"],["📑 PDF","https://arxiv.org/pdf/2603.17993"]],
+        highlight: true
+    },
+    {
+        date: "2026-03-19",
+        category: "Robotics",
+        categoryIcon: "🤖",
+        title: "Single-Fiber OFDR-Based Shape Sensing of Concentric Tube Steerable Drilling Robots",
+        venue: "arXiv 2603.17990 · 2026-03-18",
+        summary: "提出基于光频域反射仪（OFDR）的同心管可转向钻进机器人形状感知方法。与传统 FBG 方法不同，OFDR 能沿光纤全长进行连续应变测量，空间分辨率更高。设计了形状感知组件（SSA），将单根 OFDR 光纤与平 NiTi 线集成，实现对细长柔性机器人体的精确形状重建。",
+        tags: [["Shape Sensing","green"],["OFDR","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2603.17990"],["📑 PDF","https://arxiv.org/pdf/2603.17990"]]
+    },
+    {
+        date: "2026-03-19",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Unified Spatio-Temporal Token Scoring for Efficient Video VLMs",
+        venue: "arXiv 2603.18004 · 2026-03-18",
+        summary: "Token 剪枝是提升视觉语言模型（VLM）计算效率的关键，在视频任务中时间冗余尤为突出。本文提出统一的时空 Token 评分机制，同时在 ViT 和 LLM 层面实现高效 Token 管理，在保持模型精度的同时显著降低视频 VLM 的计算开销。",
+        tags: [["Token Pruning","green"],["Video VLM","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2603.18004"],["📑 PDF","https://arxiv.org/pdf/2603.18004"]],
+        highlight: true
+    },
+    {
+        date: "2026-03-19",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Universal Skeleton Understanding via Differentiable Rendering and MLLMs",
+        venue: "arXiv 2603.18003 · 2026-03-18",
+        summary: "多模态大语言模型（MLLM）虽然视觉-语言推理能力强大，但无法直接处理骨架这类结构化非视觉数据。SkeletonLLM 通过可微渲染将任意骨架格式转换为视觉表示，实现了通用的骨架理解能力，突破了跨异构骨架格式的泛化限制。",
+        tags: [["Skeleton","green"],["Differentiable Rendering","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2603.18003"],["📑 PDF","https://arxiv.org/pdf/2603.18003"]]
+    },
+    {
+        date: "2026-03-19",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Loc3R-VLM: Language-based Localization and 3D Reasoning with Vision-Language Models",
+        venue: "arXiv 2603.18002 · 2026-03-18",
+        summary: "MLLM 在连接视觉与语言方面取得了显著进展，但在空间理解和视角感知推理上仍力不从心。Loc3R-VLM 为 2D 视觉语言模型注入来自单目视频的高级 3D 理解能力，灵感来自人类空间认知——不依赖显式 3D 重建，而是让模型学会在 3D 空间中进行语言驱动的定位和推理。",
+        tags: [["3D Localization","green"],["Monocular Video","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2603.18002"],["📑 PDF","https://arxiv.org/pdf/2603.18002"]]
+    },
+    {
+        date: "2026-03-19",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Feeling the Space: Egomotion-Aware Video Representation for Efficient 3D Scene Understanding",
+        venue: "University of Michigan · arXiv 2603.17980 · 2026-03-18",
+        summary: "近期 MLLM 在 3D 场景的空间推理方面展现出巨大潜力，但通常依赖点云或 BEV 地图等计算密集的 3D 表示。本文利用 IMU 同步采集的自运动模态数据增强 MLLM，提出自运动感知视频表示方法，在保持高效的同时实现精准的 3D 场景理解。",
+        tags: [["Egomotion","green"],["IMU","green"],["3D Scene","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2603.17980"],["📑 PDF","https://arxiv.org/pdf/2603.17980"]]
+    },
+    {
+        date: "2026-03-19",
+        category: "Embodied AI",
+        categoryIcon: "🏠",
+        title: "AgentFactory: A Self-Evolving Framework Through Executable Subagent Accumulation and Reuse",
+        venue: "arXiv 2603.18000 · 2026-03-18",
+        summary: "现有 Agent 自演进方法主要将成功经验记录为文本提示或反思，在复杂场景中无法可靠保证高效重执行。AgentFactory 提出全新的自演进范式：将成功的任务解决方案保存为可执行的子 Agent 代码（而非文本经验），并基于执行反馈持续优化。积累的子 Agent 可在新任务中被发现和复用，形成不断壮大的能力库。",
+        tags: [["🔥 重磅","red"],["Self-Evolution","green"],["Code-as-Experience","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2603.18000"],["📑 PDF","https://arxiv.org/pdf/2603.18000"]],
+        highlight: true
+    },
+    {
+        date: "2026-03-19",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Toward Scalable Automated Repository-Level Datasets for Software Vulnerability Detection",
+        venue: "arXiv 2603.17974 · 2026-03-18",
+        summary: "软件漏洞数量持续增长且难以检测。虽然基于学习的漏洞检测已有进展，但现有基准大多以函数为中心，无法捕捉真实的、可执行的跨过程场景。本文提出自动化基准生成器，在仓库级别注入真实漏洞模式，解决现有数据集规模与真实性不可兼得的难题。",
+        tags: [["Vulnerability","green"],["Benchmark","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2603.17974"],["📑 PDF","https://arxiv.org/pdf/2603.17974"]]
+    },
+
     // === 2026-03-18 ===
     {
         date: "2026-03-18",

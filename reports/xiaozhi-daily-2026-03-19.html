@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔬 小小志科研日报 — 2026-03-19</title>
+    <style>
+        :root {
+            --bg: #ffffff;
+            --bg-secondary: #f7f8fa;
+            --bg-card: #ffffff;
+            --bg-hover: #f3f4f6;
+            --border: #e5e7eb;
+            --border-hover: #2563eb;
+            --text: #1a1a2e;
+            --text-dim: #4a4a6a;
+            --text-muted: #9ca3af;
+            --accent: #2563eb;
+            --accent-light: #1d4ed8;
+            --accent-bg: rgba(37,99,235,0.05);
+            --accent-border: rgba(37,99,235,0.15);
+            --green: #059669;
+            --yellow: #d97706;
+            --red: #dc2626;
+            --radius: 10px;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Noto Sans SC', 'PingFang SC', 'Helvetica Neue', sans-serif;
+            background: var(--bg-secondary);
+            color: var(--text);
+            line-height: 1.85;
+            font-size: 15px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .page {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 48px 24px 80px;
+        }
+
+        /* Header */
+        header {
+            margin-bottom: 32px;
+            padding: 36px 32px;
+            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 50%, #1e40af 100%);
+            border-radius: 16px;
+            position: relative;
+            overflow: hidden;
+        }
+        header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 280px;
+            height: 280px;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        header h1 {
+            font-size: 26px;
+            font-weight: 700;
+            color: #fff;
+            letter-spacing: -0.3px;
+            position: relative;
+        }
+        header .meta {
+            font-size: 14px;
+            color: rgba(255,255,255,0.7);
+            margin-top: 8px;
+            position: relative;
+        }
+        header .badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.15);
+            color: rgba(255,255,255,0.9);
+            font-size: 12px;
+            padding: 4px 12px;
+            border-radius: 20px;
+            margin-top: 12px;
+            border: 1px solid rgba(255,255,255,0.2);
+            position: relative;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 13px;
+            color: var(--accent);
+            text-decoration: none;
+            margin-bottom: 16px;
+            padding: 6px 12px;
+            border-radius: 8px;
+            transition: background 0.15s ease;
+        }
+        .back-link:hover {
+            background: var(--accent-bg);
+        }
+
+        /* Fallback Note */
+        .fallback-note {
+            background: #fffbeb;
+            border: 1px solid #fde68a;
+            border-radius: var(--radius);
+            padding: 14px 20px;
+            margin-bottom: 28px;
+            font-size: 13.5px;
+            color: #92400e;
+            line-height: 1.6;
+        }
+        .fallback-note strong { color: #b45309; }
+
+        /* Section */
+        .section {
+            margin-bottom: 36px;
+        }
+        .section-title {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--accent-bg);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .section-title .icon {
+            font-size: 18px;
+        }
+
+        /* Paper Card */
+        .paper {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 22px 24px;
+            margin-bottom: 14px;
+            transition: all 0.2s ease;
+            box-shadow: var(--shadow-sm);
+        }
+        .paper:hover {
+            border-color: var(--accent-border);
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-md);
+        }
+        .paper h3 {
+            font-size: 16.5px;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 4px;
+            line-height: 1.5;
+        }
+        .paper .venue {
+            font-size: 12.5px;
+            color: var(--accent);
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+        .paper .summary {
+            font-size: 14.5px;
+            color: var(--text-dim);
+            line-height: 1.85;
+            margin-bottom: 14px;
+        }
+        .paper .links {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        .paper .links a {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 12px;
+            color: var(--accent);
+            text-decoration: none;
+            padding: 5px 12px;
+            border-radius: 6px;
+            background: var(--accent-bg);
+            border: 1px solid var(--accent-border);
+            transition: all 0.15s ease;
+        }
+        .paper .links a:hover {
+            background: rgba(37,99,235,0.1);
+            border-color: rgba(37,99,235,0.3);
+        }
+        .paper .tag {
+            display: inline-block;
+            font-size: 11px;
+            color: var(--green);
+            background: rgba(5,150,105,0.06);
+            border: 1px solid rgba(5,150,105,0.15);
+            padding: 2px 8px;
+            border-radius: 4px;
+            margin-right: 6px;
+            margin-bottom: 8px;
+        }
+        .paper .tag.hot {
+            color: var(--yellow);
+            background: rgba(217,119,6,0.06);
+            border-color: rgba(217,119,6,0.15);
+        }
+        .paper .tag.new {
+            color: var(--red);
+            background: rgba(220,38,38,0.06);
+            border-color: rgba(220,38,38,0.15);
+        }
+
+        /* Highlight Card */
+        .highlight {
+            border-left: 3px solid var(--accent);
+        }
+
+        /* Stats */
+        .stats {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 24px 32px;
+            margin-top: 40px;
+            box-shadow: var(--shadow-sm);
+        }
+        .stats h3 {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+        .stat-item { text-align: center; }
+        .stat-item .num {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--accent);
+        }
+        .stat-item .label {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 28px;
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        @media (max-width: 640px) {
+            .page { padding: 20px 16px 60px; }
+            header { padding: 24px 20px; }
+            header h1 { font-size: 22px; }
+            .paper { padding: 18px 16px; }
+            .stats-grid { grid-template-columns: 1fr; gap: 12px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <a class="back-link" href="index.html">← 返回知识库</a>
+
+        <header>
+            <h1>🔬 小小志科研日报</h1>
+            <div class="meta">2026 年 3 月 19 日（周四）｜Boss Team · Research Division</div>
+            <div class="badge">📡 覆盖 arXiv · HuggingFace · Robotics Daily · Google · 行业新闻</div>
+        </header>
+
+        <!-- Fallback Note -->
+        <div class="fallback-note">
+            ⏪ <strong>注意</strong>：3 月 19 日当天暂无新数据入库（arXiv 索引延迟属正常现象），以下展示 <strong>3 月 18 日</strong> 的最新内容。
+        </div>
+
+        <!-- ===== Robotics ===== -->
+        <div class="section">
+            <div class="section-title">
+                <span class="icon">🦾</span>
+                Robotics — 机器人操控与感知
+            </div>
+
+            <div class="paper highlight">
+                <span class="tag new">NEW</span>
+                <span class="tag">6-DOF</span>
+                <span class="tag">Multimodal Transformer</span>
+                <h3>GMT: Goal-Conditioned Multimodal Transformer for 6-DOF Object Trajectory Synthesis in 3D Scenes</h3>
+                <div class="venue">TU Munich · arXiv 2603.17993 · 2026-03-18</div>
+                <div class="summary">
+                    合成可控的 6-DOF 物体操控轨迹是机器人与复杂场景交互的核心能力。现有方法通常依赖 2D 或部分 3D 表示，难以捕捉完整场景几何。GMT 提出了一种多模态 Transformer 框架，从 3D 场景中直接生成目标条件下的 6 自由度物体操控轨迹，具备精确的空间推理能力和物理可行性。在多样化 3D 环境中展示了出色的轨迹合成精度。
+                </div>
+                <div class="links">
+                    <a href="https://arxiv.org/abs/2603.17993" target="_blank">📄 arXiv</a>
+                    <a href="https://arxiv.org/pdf/2603.17993" target="_blank">📑 PDF</a>
+                </div>
+            </div>
+
+            <div class="paper">
+                <span class="tag">Shape Sensing</span>
+                <span class="tag">OFDR</span>
+                <h3>Single-Fiber OFDR-Based Shape Sensing of Concentric Tube Steerable Drilling Robots</h3>
+                <div class="venue">arXiv 2603.17990 · 2026-03-18</div>
+                <div class="summary">
+                    提出一种基于光频域反射仪（OFDR）的同心管可转向钻进机器人形状感知方法。与传统 FBG 方法不同，OFDR 能沿光纤全长进行连续应变测量，空间分辨率更高。设计了形状感知组件（SSA），将单根 OFDR 光纤与平 NiTi 线集成，实现了对细长柔性机器人体的精确形状重建，为医疗/工业场景下的柔性机器人提供了实用传感方案。
+                </div>
+                <div class="links">
+                    <a href="https://arxiv.org/abs/2603.17990" target="_blank">📄 arXiv</a>
+                    <a href="https://arxiv.org/pdf/2603.17990" target="_blank">📑 PDF</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== Multimodal / VLM ===== -->
+        <div class="section">
+            <div class="section-title">
+                <span class="icon">🎨</span>
+                Multimodal — 多模态理解与 3D 推理
+            </div>
+
+            <div class="paper highlight">
+                <span class="tag hot">亮点</span>
+                <span class="tag">Token Pruning</span>
+                <span class="tag">Video VLM</span>
+                <h3>Unified Spatio-Temporal Token Scoring for Efficient Video VLMs</h3>
+                <div class="venue">arXiv 2603.18004 · 2026-03-18</div>
+                <div class="summary">
+                    Token 剪枝是提升视觉语言模型（VLM）计算效率的关键，在视频任务中时间冗余尤为突出。现有方法要么仅在 ViT 内部针对单模态感知任务剪枝（不适配下游 VL 任务），要么仅在 LLM 内剪枝却保留 ViT 输出完整。本文提出统一的时空 Token 评分机制，同时在 ViT 和 LLM 层面实现高效 Token 管理，在保持模型精度的同时显著降低视频 VLM 的计算开销。
+                </div>
+                <div class="links">
+                    <a href="https://arxiv.org/abs/2603.18004" target="_blank">📄 arXiv</a>
+                    <a href="https://arxiv.org/pdf/2603.18004" target="_blank">📑 PDF</a>
+                </div>
+            </div>
+
+            <div class="paper">
+                <span class="tag">Skeleton</span>
+                <span class="tag">Differentiable Rendering</span>
+                <h3>Universal Skeleton Understanding via Differentiable Rendering and MLLMs</h3>
+                <div class="venue">arXiv 2603.18003 · 2026-03-18</div>
+                <div class="summary">
+                    多模态大语言模型（MLLM）虽然视觉-语言推理能力强大，但无法直接处理骨架这类结构化非视觉数据。现有方法要么将骨架动态压缩为有损特征向量做文本对齐，要么将运动量化为离散 Token（跨异构骨架格式泛化性差）。SkeletonLLM 通过可微渲染将任意骨架格式转换为视觉表示，实现了通用的骨架理解能力。
+                </div>
+                <div class="links">
+                    <a href="https://arxiv.org/abs/2603.18003" target="_blank">📄 arXiv</a>
+                    <a href="https://arxiv.org/pdf/2603.18003" target="_blank">📑 PDF</a>
+                </div>
+            </div>
+
+            <div class="paper">
+                <span class="tag">3D Localization</span>
+                <span class="tag">Monocular Video</span>
+                <h3>Loc3R-VLM: Language-based Localization and 3D Reasoning with Vision-Language Models</h3>
+                <div class="venue">arXiv 2603.18002 · 2026-03-18</div>
+                <div class="summary">
+                    MLLM 在连接视觉与语言方面取得了显著进展，但在空间理解和视角感知推理上仍力不从心。Loc3R-VLM 为 2D 视觉语言模型注入来自单目视频的高级 3D 理解能力。灵感来自人类空间认知——不依赖显式 3D 重建，而是让模型学会在 3D 空间中进行语言驱动的定位和推理。
+                </div>
+                <div class="links">
+                    <a href="https://arxiv.org/abs/2603.18002" target="_blank">📄 arXiv</a>
+                    <a href="https://arxiv.org/pdf/2603.18002" target="_blank">📑 PDF</a>
+                </div>
+            </div>
+
+            <div class="paper">
+                <span class="tag">Egomotion</span>
+                <span class="tag">IMU</span>
+                <span class="tag">3D Scene</span>
+                <h3>Feeling the Space: Egomotion-Aware Video Representation for Efficient 3D Scene Understanding</h3>
+                <div class="venue">University of Michigan · arXiv 2603.17980 · 2026-03-18</div>
+                <div class="summary">
+                    近期 MLLM 在 3D 场景的空间推理方面展现出巨大潜力，但通常依赖点云或 BEV 地图等计算密集的 3D 表示，或缺乏物理锚定来解决尺度歧义。本文利用 IMU 同步采集的自运动模态数据增强 MLLM，提出了一种新颖的自运动感知视频表示方法，在保持高效的同时实现精准的 3D 场景理解。
+                </div>
+                <div class="links">
+                    <a href="https://arxiv.org/abs/2603.17980" target="_blank">📄 arXiv</a>
+                    <a href="https://arxiv.org/pdf/2603.17980" target="_blank">📑 PDF</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== Agent ===== -->
+        <div class="section">
+            <div class="section-title">
+                <span class="icon">🧩</span>
+                Agent — 智能体框架
+            </div>
+
+            <div class="paper highlight">
+                <span class="tag hot">亮点</span>
+                <span class="tag">Self-Evolution</span>
+                <span class="tag">Code-as-Experience</span>
+                <h3>AgentFactory: A Self-Evolving Framework Through Executable Subagent Accumulation and Reuse</h3>
+                <div class="venue">arXiv 2603.18000 · 2026-03-18</div>
+                <div class="summary">
+                    构建基于 LLM 的智能体日益重要。现有 Agent 自演进方法主要将成功经验记录为文本提示或反思，这在复杂场景中无法可靠保证高效重执行。AgentFactory 提出全新的自演进范式：将成功的任务解决方案保存为可执行的子 Agent 代码（而非文本经验），并基于执行反馈持续优化这些子 Agent。这些积累的子 Agent 可以在新任务中被发现和复用，形成不断壮大的能力库。
+                </div>
+                <div class="links">
+                    <a href="https://arxiv.org/abs/2603.18000" target="_blank">📄 arXiv</a>
+                    <a href="https://arxiv.org/pdf/2603.18000" target="_blank">📑 PDF</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== Other ===== -->
+        <div class="section">
+            <div class="section-title">
+                <span class="icon">📄</span>
+                Other — 其他相关
+            </div>
+
+            <div class="paper">
+                <span class="tag">Vulnerability</span>
+                <span class="tag">Benchmark</span>
+                <h3>Toward Scalable Automated Repository-Level Datasets for Software Vulnerability Detection</h3>
+                <div class="venue">arXiv 2603.17974 · 2026-03-18</div>
+                <div class="summary">
+                    软件漏洞数量持续增长且难以检测。虽然基于学习的漏洞检测已有进展，但现有基准大多以函数为中心，无法捕捉真实的、可执行的跨过程场景。本文提出一种自动化基准生成器，在仓库级别注入真实漏洞模式，有望解决现有数据集规模与真实性不可兼得的难题。
+                </div>
+                <div class="links">
+                    <a href="https://arxiv.org/abs/2603.17974" target="_blank">📄 arXiv</a>
+                    <a href="https://arxiv.org/pdf/2603.17974" target="_blank">📑 PDF</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Stats -->
+        <div class="stats">
+            <h3>📊 检索统计</h3>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="num">3</div>
+                    <div class="label">检索来源</div>
+                </div>
+                <div class="stat-item">
+                    <div class="num">8</div>
+                    <div class="label">新研究/动态</div>
+                </div>
+                <div class="stat-item">
+                    <div class="num">4</div>
+                    <div class="label">覆盖领域</div>
+                </div>
+            </div>
+            <div style="margin-top: 16px; font-size: 12px; color: var(--text-muted); text-align: center;">
+                来源：arXiv · HuggingFace · X/Twitter（后两者当日无新数据）<br>
+                数据日期：2026-03-18（Fallback）· 自动生成于 2026-03-19
+            </div>
+        </div>
+
+        <div class="footer">
+            Generated by 🔬 小小志 · Boss Team Research Division · Powered by WorkBuddy
+        </div>
+    </div>
+</body>
+</html>
