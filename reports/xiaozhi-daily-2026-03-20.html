@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🔬 小小志科研日报 — 2026.03.20</title>
+<style>
+  :root {
+    --bg: #0d1117;
+    --surface: #161b22;
+    --surface2: #1c2333;
+    --border: #30363d;
+    --text: #e6edf3;
+    --text-dim: #8b949e;
+    --accent: #58a6ff;
+    --accent2: #3fb950;
+    --accent3: #d2a8ff;
+    --accent4: #f97583;
+    --accent5: #f0883e;
+    --accent6: #79c0ff;
+    --tag-robotics: #f97583;
+    --tag-vla: #58a6ff;
+    --tag-embodied: #3fb950;
+    --tag-rl: #d2a8ff;
+    --tag-llm: #f0883e;
+    --tag-world: #79c0ff;
+    --tag-vlm: #ffa657;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans SC', sans-serif;
+    line-height: 1.7;
+    padding: 0;
+  }
+  .container { max-width: 960px; margin: 0 auto; padding: 40px 24px; }
+  
+  /* Header */
+  .header {
+    text-align: center;
+    padding: 48px 24px;
+    background: linear-gradient(135deg, #0d1117 0%, #1a1f36 50%, #0d1117 100%);
+    border-bottom: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 30% 50%, rgba(88,166,255,0.06) 0%, transparent 50%),
+                radial-gradient(circle at 70% 50%, rgba(210,168,255,0.04) 0%, transparent 50%);
+    animation: pulse 8s ease-in-out infinite;
+  }
+  @keyframes pulse { 0%,100% { opacity: 0.5; } 50% { opacity: 1; } }
+  .header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    position: relative;
+    background: linear-gradient(90deg, var(--accent), var(--accent3));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .header .date {
+    color: var(--text-dim);
+    font-size: 0.95rem;
+    margin-top: 8px;
+    position: relative;
+  }
+  .header .subtitle {
+    color: var(--text-dim);
+    font-size: 0.85rem;
+    margin-top: 4px;
+    position: relative;
+  }
+
+  /* Tags */
+  .tag {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin: 2px 3px;
+  }
+  .tag-robotics { background: rgba(249,117,131,0.15); color: var(--tag-robotics); }
+  .tag-vla { background: rgba(88,166,255,0.15); color: var(--tag-vla); }
+  .tag-embodied { background: rgba(63,185,80,0.15); color: var(--tag-embodied); }
+  .tag-rl { background: rgba(210,168,255,0.15); color: var(--tag-rl); }
+  .tag-llm { background: rgba(240,136,62,0.15); color: var(--tag-llm); }
+  .tag-world { background: rgba(121,192,255,0.15); color: var(--tag-world); }
+  .tag-vlm { background: rgba(255,166,87,0.15); color: var(--tag-vlm); }
+
+  /* Section */
+  .section {
+    margin-top: 40px;
+  }
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--border);
+    margin-bottom: 20px;
+  }
+  .section-icon {
+    font-size: 1.5rem;
+  }
+  .section-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--text);
+  }
+  .section-count {
+    margin-left: auto;
+    background: var(--surface2);
+    color: var(--text-dim);
+    padding: 2px 10px;
+    border-radius: 10px;
+    font-size: 0.8rem;
+  }
+
+  /* Paper Card */
+  .paper {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin-bottom: 16px;
+    transition: border-color 0.2s, transform 0.15s;
+  }
+  .paper:hover {
+    border-color: var(--accent);
+    transform: translateY(-1px);
+  }
+  .paper-title {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 8px;
+    line-height: 1.4;
+  }
+  .paper-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 10px;
+    align-items: center;
+  }
+  .paper-source {
+    font-size: 0.75rem;
+    color: var(--text-dim);
+    background: var(--surface2);
+    padding: 2px 8px;
+    border-radius: 6px;
+  }
+  .paper-summary {
+    color: var(--text-dim);
+    font-size: 0.9rem;
+    line-height: 1.65;
+    margin-bottom: 12px;
+  }
+  .paper-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .paper-links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 12px;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+  .link-paper {
+    background: rgba(88,166,255,0.1);
+    color: var(--accent);
+    border: 1px solid rgba(88,166,255,0.2);
+  }
+  .link-paper:hover { background: rgba(88,166,255,0.2); }
+  .link-project {
+    background: rgba(63,185,80,0.1);
+    color: var(--accent2);
+    border: 1px solid rgba(63,185,80,0.2);
+  }
+  .link-project:hover { background: rgba(63,185,80,0.2); }
+  .link-code {
+    background: rgba(210,168,255,0.1);
+    color: var(--accent3);
+    border: 1px solid rgba(210,168,255,0.2);
+  }
+  .link-code:hover { background: rgba(210,168,255,0.2); }
+  .link-news {
+    background: rgba(240,136,62,0.1);
+    color: var(--accent5);
+    border: 1px solid rgba(240,136,62,0.2);
+  }
+  .link-news:hover { background: rgba(240,136,62,0.2); }
+
+  /* Highlights */
+  .highlight-box {
+    background: linear-gradient(135deg, rgba(88,166,255,0.05) 0%, rgba(210,168,255,0.05) 100%);
+    border: 1px solid rgba(88,166,255,0.2);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin-bottom: 16px;
+  }
+  .highlight-box .fire { font-size: 1.2rem; }
+
+  /* Footer */
+  .footer {
+    margin-top: 48px;
+    padding: 24px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    text-align: center;
+  }
+  .footer .stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+  .stat-item {
+    padding: 12px;
+    background: var(--surface2);
+    border-radius: 8px;
+  }
+  .stat-num {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent);
+  }
+  .stat-label {
+    font-size: 0.8rem;
+    color: var(--text-dim);
+    margin-top: 4px;
+  }
+  .footer .sig {
+    color: var(--text-dim);
+    font-size: 0.8rem;
+    margin-top: 12px;
+  }
+
+  /* New badge */
+  .new-badge {
+    display: inline-block;
+    background: var(--accent4);
+    color: #fff;
+    font-size: 0.65rem;
+    font-weight: 700;
+    padding: 1px 6px;
+    border-radius: 4px;
+    margin-left: 6px;
+    vertical-align: middle;
+    text-transform: uppercase;
+  }
+
+  @media (max-width: 600px) {
+    .container { padding: 20px 12px; }
+    .header h1 { font-size: 1.4rem; }
+    .paper { padding: 16px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>🔬 小小志科研日报</h1>
+  <div class="date">2026 年 3 月 20 日 · Friday</div>
+  <div class="subtitle">Robotics · VLA · Embodied AI · RL · LLM · World Model · VLM</div>
+</div>
+
+<div class="container">
+
+<!-- ===== 🔥 Today's Highlights ===== -->
+<div class="section">
+  <div class="section-header">
+    <span class="section-icon">🔥</span>
+    <span class="section-title">今日看点</span>
+  </div>
+  <div class="highlight-box">
+    <p style="font-size:0.95rem; color: var(--text);">
+      <strong>今日 arXiv cs.RO 新增 49 篇，cs.AI 新增 355 篇</strong>——VLA 领域继续爆发：<strong>FASTER</strong> 将流式 VLA 推理压缩至单步毫秒级反应；<strong>OmniVTA</strong> 发布 2.1 万条视触觉轨迹数据集；<strong>V-Dreamer</strong> 用视频生成先验自动化仿真环境构建，实现每小时 600 条合成轨迹；Nature Machine Intelligence 发表 <strong>ROS-LLM 框架</strong>，连接 LLM 与 ROS 实现通用具身智能。此外，斯坦福 AI Lab 博客推介 <strong>VAGEN</strong>——用 RL 训练 VLM 构建内部世界模型。
+    </p>
+  </div>
+</div>
+
+<!-- ===== 🤖 VLA Section ===== -->
+<div class="section">
+  <div class="section-header">
+    <span class="section-icon">🤖</span>
+    <span class="section-title">VLA · 视觉-语言-动作模型</span>
+    <span class="section-count">6 篇</span>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">FASTER: Rethinking Real-Time Flow VLAs <span class="new-badge">Today</span></div>
+    <div class="paper-meta">
+      <span class="tag tag-vla">VLA</span>
+      <span class="tag tag-robotics">Robotics</span>
+      <span class="paper-source">arXiv 2603.19199</span>
+    </div>
+    <div class="paper-summary">
+      实时执行是 VLA 模型部署的关键瓶颈。FASTER 提出了一种全新的异步推理范式——将流式 VLA（如 Flow Matching 策略）的采样过程压缩为单步即时反应，无需多步去噪迭代。在保持轨迹平滑性的前提下，实现毫秒级动作响应延迟，显著优于现有异步方法。这是将 VLA 推向真实物理部署的重要一步。
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2603.19199" class="link-paper" target="_blank">📄 arXiv</a>
+      <a href="https://arxiv.org/pdf/2603.19199" class="link-paper" target="_blank">PDF</a>
+      <a href="https://huggingface.co/papers/2603.19199" class="link-project" target="_blank">🤗 HF Discussion</a>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">Not All Features Are Created Equal: A Mechanistic Study of VLA Models <span class="new-badge">Today</span></div>
+    <div class="paper-meta">
+      <span class="tag tag-vla">VLA</span>
+      <span class="tag tag-vlm">VLM</span>
+      <span class="paper-source">arXiv 2603.19233</span>
+    </div>
+    <div class="paper-summary">
+      VLA 模型如何将多模态输入转化为动作仍是黑箱。本文首次使用稀疏自编码器（SAE）对 VLA 内部表征进行机制性分析，发现视觉路径在动作生成中占据主导地位，而语言路径的贡献存在显著差异。研究揭示了 VLA 中可解释的特征层级结构，为模型压缩和调试提供了重要依据。
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/html/2603.19233v1" class="link-paper" target="_blank">📄 arXiv</a>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">CycleVLA: Proactive Self-Correcting VLA via Subtask Backtracking <span class="new-badge">Updated</span></div>
+    <div class="paper-meta">
+      <span class="tag tag-vla">VLA</span>
+      <span class="tag tag-embodied">Embodied AI</span>
+      <span class="paper-source">arXiv 2601.02295 (replaced)</span>
+    </div>
+    <div class="paper-summary">
+      来自牛津和剑桥的 CycleVLA 今日更新。不同于事后检测故障再纠错的传统方案，CycleVLA 赋予 VLA 模型"主动自我纠错"能力：通过子任务回溯和最小贝叶斯风险解码，在失败实际发生前预测并恢复。该方法在长序列操作任务中显著提升成功率。
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2601.02295" class="link-paper" target="_blank">📄 arXiv</a>
+      <a href="https://dannymcy.github.io/cyclevla/" class="link-project" target="_blank">🌐 项目主页</a>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">Enhancing Linguistic Generalization of VLA: Fine-Tuning OpenVLA via Instruction Augmentation</div>
+    <div class="paper-meta">
+      <span class="tag tag-vla">VLA</span>
+      <span class="tag tag-llm">LLM</span>
+      <span class="paper-source">arXiv 2603.16044</span>
+    </div>
+    <div class="paper-summary">
+      语言泛化是 VLA 的核心挑战——机器人需要理解多样化的自然语言指令。本文提出参数高效微调策略，为 Bridge Dataset V2 合成通用指令集来增强 OpenVLA 的语言理解能力。微调后模型能更好地建立视觉观察和语言命令间的鲁棒映射，适应多样环境下的多样指令表达。
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2603.16044" class="link-paper" target="_blank">📄 arXiv</a>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">Value Vision-Language-Action Planning & Search <span class="new-badge">Today</span></div>
+    <div class="paper-meta">
+      <span class="tag tag-vla">VLA</span>
+      <span class="tag tag-rl">RL</span>
+      <span class="paper-source">arXiv (cs.RO, today)</span>
+    </div>
+    <div class="paper-summary">
+      将价值估计引入 VLA 规划过程——结合视觉-语言-动作模型与树搜索/价值引导，在规划阶段评估不同动作序列的长期回报。这为解决 VLA 模型短视决策问题提供了新思路，使机器人能在复杂操作中做出更有远见的决策。
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/list/cs.RO/new" class="link-paper" target="_blank">📄 arXiv cs.RO</a>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">TwinRL-VLA: Digital Twin-Driven RL for VLA Models <span class="new-badge">Updated</span></div>
+    <div class="paper-meta">
+      <span class="tag tag-vla">VLA</span>
+      <span class="tag tag-rl">RL</span>
+      <span class="paper-source">arXiv (replaced today)</span>
+    </div>
+    <div class="paper-summary">
+      今日更新——利用数字孪生环境驱动 VLA 模型的强化学习优化。在数字孪生中构建高保真仿真副本，为 VLA 策略提供丰富的在线交互训练数据，弥合离线模仿学习与在线 RL 之间的鸿沟。
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/list/cs.RO/new" class="link-paper" target="_blank">📄 arXiv cs.RO</a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 🌍 World Model Section ===== -->
+<div class="section">
+  <div class="section-header">
+    <span class="section-icon">🌍</span>
+    <span class="section-title">World Model · 世界模型</span>
+    <span class="section-count">4 篇</span>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">V-Dreamer: Automating Robotic Simulation & Trajectory Synthesis via Video Generation Priors <span class="new-badge">Today</span></div>
+    <div class="paper-meta">
+      <span class="tag tag-world">World Model</span>
+      <span class="tag tag-robotics">Robotics</span>
+      <span class="paper-source">arXiv 2603.18811</span>
+    </div>
+    <div class="paper-summary">
+      V-Dreamer 提出从自然语言指令出发，利用 LLM + 3D 生成模型自动构建物理合理的仿真环境，并通过视频生成先验合成可执行的专家轨迹。几何约束验证确保场景的物理可行性。该框架实现每小时约 600 条轨迹的高吞吐量——仅使用其合成数据训练的策略即可在真实机器人上取得可观效果，大幅减少对人工场景设计和真实数据的依赖。
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2603.18811" class="link-paper" target="_blank">📄 arXiv</a>
+      <a href="https://www.alphaxiv.org/zh/overview/2603.18811v1" class="link-news" target="_blank">📖 中文解读</a>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">OmniVTA: Visuo-Tactile World Modeling for Contact-Rich Manipulation <span class="new-badge">Today</span></div>
+    <div class="paper-meta">
+      <span class="tag tag-world">World Model</span>
+      <span class="tag tag-robotics">Robotics</span>
+      <span class="paper-source">arXiv 2603.19201</span>
+    </div>
+    <div class="paper-summary">
+      发布 OmniViTac——大规模视触觉-动作对齐数据集，含 21,879 条轨迹、86 种任务、100+ 操作物体。在此基础上提出 OmniVTA 框架：集成自监督触觉编码器、视觉-触觉世界模型、慢-快双速操作策略，在接触丰富的擦拭和装配等任务上达到 SOTA。填补了世界模型在触觉感知维度的空白。
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2603.19201" class="link-paper" target="_blank">📄 arXiv</a>
+      <a href="https://mrsecant.github.io/OmniVTA/" class="link-project" target="_blank">🌐 项目主页</a>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">HanoiWorld: JEPA-based World Model for Autonomous Vehicle Control <span class="new-badge">Today</span></div>
+    <div class="paper-meta">
+      <span class="tag tag-world">World Model</span>
+      <span class="tag tag-rl">RL</span>
+      <span class="paper-source">arXiv (cs.RO, today)</span>
+    </div>
+    <div class="paper-summary">
+      基于 JEPA（联合嵌入预测架构）构建自动驾驶世界模型，在潜空间中预测环境动态变化。不同于基于像素重建的传统方法，JEPA 在抽象表征空间中学习预测，降低计算负担的同时保持对环境的结构化理解。为机器人控制提供了新的世界模型范式。
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/list/cs.RO/new" class="link-paper" target="_blank">📄 arXiv cs.RO</a>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">Explicit World Models for Reliable Human-Robot Collaboration <span class="new-badge">Today</span></div>
+    <div class="paper-meta">
+      <span class="tag tag-world">World Model</span>
+      <span class="tag tag-embodied">Embodied AI</span>
+      <span class="paper-source">arXiv (cs.RO, today)</span>
+    </div>
+    <div class="paper-summary">
+      提出显式世界模型方法用于人机协作——机器人需要理解人类意图和行为预期才能可靠协作。通过构建可解释的结构化世界模型，让机器人对共享环境的状态变化做出可预测的推理，提升人机协作的可靠性和安全性。
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/list/cs.RO/new" class="link-paper" target="_blank">📄 arXiv cs.RO</a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 🦾 Robotics Section ===== -->
+<div class="section">
+  <div class="section-header">
+    <span class="section-icon">🦾</span>
+    <span class="section-title">Robotics · 机器人操作与系统</span>
+    <span class="section-count">5 篇</span>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">Action-Sketcher: From Reasoning to Action via Visual Sketches for Long-Horizon Manipulation <span class="new-badge">Today</span></div>
+    <div class="paper-meta">
+      <span class="tag tag-robotics">Robotics</span>
+      <span class="tag tag-vlm">VLM</span>
+      <span class="paper-source">arXiv (cs.RO, today)</span>
+    </div>
+    <div class="paper-summary">
+      机器人在复杂多步任务中常因空间定位不准或时序规划断裂而失败。Action-Sketcher 引入可编辑的视觉草图作为中间表示，将抽象语言指令转化为具象的几何规划——机器人"先画草图再行动"，在长序列操作任务中显著提升成功率。来自北大、中科院等多机构合作。
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/list/cs.RO/new" class="link-paper" target="_blank">📄 arXiv cs.RO</a>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">DemoBot: Learning Bimanual Dexterous Manipulation from Third-Person Human Videos <span class="new-badge">Today</span></div>
+    <div class="paper-meta">
+      <span class="tag tag-robotics">Robotics</span>
+      <span class="tag tag-embodied">Embodied AI</span>
+      <span class="paper-source">arXiv (cs.RO, today)</span>
+    </div>
+    <div class="paper-summary">
+      从第三人称视角的人类视频中学习双手灵巧操作——DemoBot 跨越视角差异和形态差异，将人类演示转化为灵巧手机器人可执行的策略。这种方法大幅降低了机器人技能获取的成本，无需遥操作数据采集。
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/list/cs.RO/new" class="link-paper" target="_blank">📄 arXiv cs.RO</a>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">RAPiD: Rapid Adaptation via Particle Dynamics for Deformable Object Manipulation <span class="new-badge">Today</span></div>
+    <div class="paper-meta">
+      <span class="tag tag-robotics">Robotics</span>
+      <span class="tag tag-rl">RL</span>
+      <span class="paper-source">arXiv (cs.RO, today)</span>
+    </div>
+    <div class="paper-summary">
+      可变形物体操作（如布料、绳索）是机器人操控的难题。RAPiD 利用粒子动力学模型进行快速域适应，在仿真与真实环境间建立可靠迁移。通过物理结构先验加速适应过程，成功在真实机器人上完成多种可变形物体操作任务。
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/list/cs.RO/new" class="link-paper" target="_blank">📄 arXiv cs.RO</a>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">Learning Diffusion Policy from Primitive Skills for Robot Manipulation <span class="new-badge">Today</span></div>
+    <div class="paper-meta">
+      <span class="tag tag-robotics">Robotics</span>
+      <span class="tag tag-rl">RL</span>
+      <span class="paper-source">arXiv (cs.RO, today)</span>
+    </div>
+    <div class="paper-summary">
+      将扩散策略与原语技能分解结合——先从演示中提取原子化的操作原语，再用扩散模型学习组合它们完成复杂任务。这种分层方法提升了数据效率和任务泛化能力，比直接端到端学习更加sample-efficient。
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/list/cs.RO/new" class="link-paper" target="_blank">📄 arXiv cs.RO</a>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">ManiDreams: Open-Source Library for Uncertainty-Aware Intuitive Physics Planning <span class="new-badge">Today</span></div>
+    <div class="paper-meta">
+      <span class="tag tag-robotics">Robotics</span>
+      <span class="tag tag-world">World Model</span>
+      <span class="paper-source">arXiv (cs.RO, today)</span>
+    </div>
+    <div class="paper-summary">
+      发布开源库 ManiDreams——基于不确定性感知的直觉物理模型进行操作规划。机器人在执行任务前"想象"物体在物理交互中的可能行为及其不确定性，据此优化动作序列。为物理推理驱动的机器人操作提供了可复现的研究基础设施。
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/list/cs.RO/new" class="link-paper" target="_blank">📄 arXiv cs.RO</a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 🧩 Embodied AI Section ===== -->
+<div class="section">
+  <div class="section-header">
+    <span class="section-icon">🧩</span>
+    <span class="section-title">Embodied AI · 具身智能</span>
+    <span class="section-count">3 篇</span>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">Nature: A Robot Operating System Framework for Embodied Intelligence with LLMs</div>
+    <div class="paper-meta">
+      <span class="tag tag-embodied">Embodied AI</span>
+      <span class="tag tag-llm">LLM</span>
+      <span class="paper-source">Nature Machine Intelligence · 本周发表</span>
+    </div>
+    <div class="paper-summary">
+      Nature Machine Intelligence 发表的 ROS-LLM 框架——将大语言模型直接连接至机器人操作系统（ROS），实现通用具身智能。LLM agent 通过 ROS 接口感知环境、规划任务、调用底层技能，在多种真实机器人任务上展示了灵活的自然语言交互和任务完成能力。论文已开源完整框架代码，为具身智能研究提供了即插即用的基础设施。
+    </div>
+    <div class="paper-links">
+      <a href="https://www.nature.com/articles/s42256-026-01186-z" class="link-paper" target="_blank">📄 Nature</a>
+      <a href="https://bioengineer.org/robot-os-framework-integrates-large-language-models/" class="link-news" target="_blank">📰 新闻报道</a>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">GoalVLM: Zero-Shot Multi-Agent Object-Goal Navigation with VLM <span class="new-badge">Today</span></div>
+    <div class="paper-meta">
+      <span class="tag tag-embodied">Embodied AI</span>
+      <span class="tag tag-vlm">VLM</span>
+      <span class="paper-source">arXiv (cs.RO, today)</span>
+    </div>
+    <div class="paper-summary">
+      将 VLM 直接整合到多智能体系统的决策循环中，结合 SAM3 实现文本提示的目标检测与分割，以及 SpaceOM 进行空间推理，实现了零样本开放词汇的物体目标导航。多个智能体协作搜索大场景中的指定物体，无需针对特定环境的训练数据。
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/list/cs.RO/new" class="link-paper" target="_blank">📄 arXiv cs.RO</a>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">Modeling the Mental World for Embodied AI: A Comprehensive Review <span class="new-badge">Today</span></div>
+    <div class="paper-meta">
+      <span class="tag tag-embodied">Embodied AI</span>
+      <span class="tag tag-world">World Model</span>
+      <span class="paper-source">arXiv (cs.RO, today)</span>
+    </div>
+    <div class="paper-summary">
+      全面综述具身 AI 的"心智世界建模"——系统梳理了如何让机器人拥有类似人类的世界模型，包括物理直觉、因果推理、目标想象等能力。覆盖最新的视频预测世界模型、交互式仿真、因果推理等方向，是理解当前具身智能世界模型研究全景的优质参考。
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/list/cs.RO/new" class="link-paper" target="_blank">📄 arXiv cs.RO</a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 🧠 RL Section ===== -->
+<div class="section">
+  <div class="section-header">
+    <span class="section-icon">🧠</span>
+    <span class="section-title">RL · 强化学习</span>
+    <span class="section-count">3 篇</span>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">Large Reward Models: Generalizable Online Robot Reward Generation with VLMs</div>
+    <div class="paper-meta">
+      <span class="tag tag-rl">RL</span>
+      <span class="tag tag-vlm">VLM</span>
+      <span class="paper-source">arXiv 2603.16065 · USC + Toyota</span>
+    </div>
+    <div class="paper-summary">
+      来自 USC Physical Superintelligence Lab 和 Toyota Research 的重要工作。RL 精炼机器人策略的效能严重受限于奖励设计。本文提出 Large Reward Models (LRM)——基于 SOTA VLM（Qwen3-VL-8B），在大规模多源数据集（真实机器人轨迹 + 人-物交互 + 合成数据）上训练通用奖励模型。发布 LRM-4B/8B 两个模型权重，支持泛化到新任务和新环境的在线奖励评估。
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2603.16065" class="link-paper" target="_blank">📄 arXiv</a>
+      <a href="https://huggingface.co/USC-PSI-Lab/LRM-models" class="link-code" target="_blank">🤗 模型权重</a>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">PRIMO R1: From Passive Observer to Active Critic — RL Elicits Process Reasoning for Manipulation</div>
+    <div class="paper-meta">
+      <span class="tag tag-rl">RL</span>
+      <span class="tag tag-robotics">Robotics</span>
+      <span class="paper-source">arXiv 2603.15600</span>
+    </div>
+    <div class="paper-summary">
+      将多模态大模型（MLLM）从被动观察者转变为"主动评论家"——PRIMO R1 通过 RL 训练 MLLM 显式推理任务进展过程，为机器人操作提供细粒度的过程奖励信号（而非仅有结果奖励）。在多种环境中取得平均 82.90 的相对准确率，大幅优于纯结果奖励的基线方法。
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2603.15600" class="link-paper" target="_blank">📄 arXiv</a>
+      <a href="https://huggingface.co/papers/2603.15600" class="link-project" target="_blank">🤗 HF Discussion</a>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">VAGEN: Teaching VLMs to Build World Models via RL</div>
+    <div class="paper-meta">
+      <span class="tag tag-rl">RL</span>
+      <span class="tag tag-vlm">VLM</span>
+      <span class="tag tag-world">World Model</span>
+      <span class="paper-source">Stanford AI Lab Blog · 本周推介</span>
+    </div>
+    <div class="paper-summary">
+      斯坦福 AI Lab 博客本周推介——VAGEN 通过 RL 训练 3B 参数的 VLM agent 构建内部世界模型。核心创新：将交互环境建模为 POMDP，在每一步要求 agent 通过结构化状态估计（StateEstimation tag）显式推理环境状态变化。RL 奖励引导 agent 学会将视觉观察转化为可靠的内部状态表征，在多个交互任务上优于纯模仿学习方法。代码已开源。
+    </div>
+    <div class="paper-links">
+      <a href="https://ai.stanford.edu/blog/vagen/" class="link-news" target="_blank">📖 Stanford Blog</a>
+      <a href="https://arxiv.org/abs/2510.16907" class="link-paper" target="_blank">📄 arXiv</a>
+      <a href="https://github.com/mll-lab-nu/VAGEN" class="link-code" target="_blank">💻 GitHub</a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 🎨 LLM / VLM / Multimodal Section ===== -->
+<div class="section">
+  <div class="section-header">
+    <span class="section-icon">🎨</span>
+    <span class="section-title">LLM · VLM · 多模态</span>
+    <span class="section-count">4 篇</span>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">SG-CoT: Scene Graph + Chain-of-Thought for LLM-based Robot Planning <span class="new-badge">Today</span></div>
+    <div class="paper-meta">
+      <span class="tag tag-llm">LLM</span>
+      <span class="tag tag-embodied">Embodied AI</span>
+      <span class="paper-source">arXiv (cs.RO, today)</span>
+    </div>
+    <div class="paper-summary">
+      LLM 作为机器人规划器时常面临指令歧义问题——"把杯子放到桌子上"在多桌场景中哪张桌子？SG-CoT 通过构建场景图并结合思维链推理，让 LLM 在结构化的空间-语义表征中消歧，提升了 LLM 规划器在复杂场景中的准确性。
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/list/cs.RO/new" class="link-paper" target="_blank">📄 arXiv cs.RO</a>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">LLM-Based Agentic Exploration for Robot Navigation & Manipulation <span class="new-badge">Today</span></div>
+    <div class="paper-meta">
+      <span class="tag tag-llm">LLM</span>
+      <span class="tag tag-robotics">Robotics</span>
+      <span class="paper-source">arXiv (cs.RO, today)</span>
+    </div>
+    <div class="paper-summary">
+      构建基于 LLM 的智能体探索框架，通过技能编排（Skill Orchestration）实现机器人的自主导航与操作。LLM 作为高层决策者，根据环境反馈动态调度底层技能模块，在未知环境中完成探索、定位和操作的完整闭环。
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/list/cs.RO/new" class="link-paper" target="_blank">📄 arXiv cs.RO</a>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">Memento-Skills: Autonomous Agent Self-Design System <span class="new-badge">Today</span></div>
+    <div class="paper-meta">
+      <span class="tag tag-llm">LLM</span>
+      <span class="tag tag-rl">Agent</span>
+      <span class="paper-source">arXiv (cs.AI, today)</span>
+    </div>
+    <div class="paper-summary">
+      cs.AI 今日亮点——Memento-Skills 让 AI 智能体能自主设计和改进针对特定任务的 agent。系统从经验中学习什么策略有效，并自动迭代优化 agent 架构和提示策略。这是 meta-agent（造 agent 的 agent）方向的重要进展。
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/list/cs.AI/new" class="link-paper" target="_blank">📄 arXiv cs.AI</a>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">OpenAI 发布 GPT-5.4 mini / nano</div>
+    <div class="paper-meta">
+      <span class="tag tag-llm">LLM</span>
+      <span class="paper-source">Industry · 3 月 17 日</span>
+    </div>
+    <div class="paper-summary">
+      OpenAI 于本周发布 GPT-5.4 mini 和 GPT-5.4 nano 两个轻量级模型。与此同时，OpenAI 战略转型消息传出——计划将 ChatGPT、Codex 和 Atlas 浏览器合并为桌面"超级应用"。另外值得关注：开发者工具收购潮持续，OpenAI 收购 Astral，Anthropic 收购 Bun，Google DeepMind 收购 Antigravity 团队。
+    </div>
+    <div class="paper-links">
+      <a href="https://llm-stats.com/ai-news" class="link-news" target="_blank">📰 LLM Stats</a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 🛠️ Simulation & Platforms ===== -->
+<div class="section">
+  <div class="section-header">
+    <span class="section-icon">🛠️</span>
+    <span class="section-title">仿真平台与工具</span>
+    <span class="section-count">2 篇</span>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">Genie Sim 3.0: High-Fidelity Comprehensive Simulation for Humanoid Robot <span class="new-badge">Updated</span></div>
+    <div class="paper-meta">
+      <span class="tag tag-robotics">Robotics</span>
+      <span class="tag tag-embodied">Embodied AI</span>
+      <span class="paper-source">arXiv 2601.02078 (updated) · AGIBOT</span>
+    </div>
+    <div class="paper-summary">
+      AGIBOT 的 Genie Sim 3.0 今日在 arXiv 更新——基于 NVIDIA Isaac Sim 的统一人形机器人仿真平台。包含 LLM 驱动的场景生成器、VLM 自动评估基准、5,140 个高保真仿真物体、10,000+ 小时仿真数据集。平台和数据集已完全开源，为具身智能研究提供从场景生成到模型评估的完整闭环。
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2601.02078" class="link-paper" target="_blank">📄 arXiv</a>
+      <a href="https://github.com/AgibotTech/genie_sim" class="link-code" target="_blank">💻 GitHub</a>
+      <a href="https://agibot-world.com/genie-sim" class="link-project" target="_blank">🌐 项目主页</a>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">RAPID: Intelligent Disassembly Platform with LLM Agents for EV Batteries <span class="new-badge">Today</span></div>
+    <div class="paper-meta">
+      <span class="tag tag-robotics">Robotics</span>
+      <span class="tag tag-llm">LLM</span>
+      <span class="paper-source">arXiv (cs.RO, today)</span>
+    </div>
+    <div class="paper-summary">
+      面向电动汽车电池拆卸的智能平台——结合 LLM agent 进行任务规划和异常处理，通过视觉感知系统自适应定位拆卸目标。展示了 LLM 驱动的工业机器人在实际制造场景中的应用潜力。
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/list/cs.RO/new" class="link-paper" target="_blank">📄 arXiv cs.RO</a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Footer ===== -->
+<div class="footer">
+  <div class="stats">
+    <div class="stat-item">
+      <div class="stat-num">27</div>
+      <div class="stat-label">研究条目</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">6</div>
+      <div class="stat-label">领域分区</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">5+</div>
+      <div class="stat-label">检索来源</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">49</div>
+      <div class="stat-label">cs.RO 今日新增</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">355</div>
+      <div class="stat-label">cs.AI 今日新增</div>
+    </div>
+  </div>
+  <div class="sig">
+    检索来源：arXiv cs.RO/cs.AI/cs.LG/cs.CV · Google Scholar · Nature Machine Intelligence · Stanford AI Lab · LLM Stats · HuggingFace Papers<br>
+    <span style="color:var(--accent);">🔬 小小志</span> · boss-team 科研助理 · 2026.03.20 17:00
+  </div>
+</div>
+
+</div>
+</body>
+</html>
