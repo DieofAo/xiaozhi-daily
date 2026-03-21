@@ -381,6 +381,30 @@ const PAPERS_DB = [
         links: [["📄 arXiv","https://arxiv.org/abs/2603.15169"],["📑 PDF","https://arxiv.org/pdf/2603.15169"],["🌐 项目主页","https://sites.google.com/view/force-vla2/home"]],
         highlight: true,
         bossNotes: "与 FACTO 零空间投影的约束控制思路互补——ForceVLA2 走端到端力感知，FACTO 走几何约束投影"
+    },
+    {
+        id: "pi-rlt",
+        date: "2026-03-19",
+        addedDate: "2026-03-21",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "Precise Manipulation with Efficient Online RL (RLT)",
+        venue: "Physical Intelligence (π) · 2026-03-19",
+        authors: "Charles Xu, Jost Tobias Springenberg, Michael Equi, Ali Amin, Adnan Esmail, Sergey Levine, Liyiming Ke",
+        institutions: "Physical Intelligence (π)",
+        summary: "将大型 VLA 模型（如 π₀）的表征能力与高效在线 RL 相结合，通过「RL Tokens」压缩表示 + 极小 Actor-Critic 网络，在真实机器人上仅用分钟级数据实现精细操作的大幅提升，无需微调整个大型网络。专注解决高精度、灵巧度和速度要求极高的「最后一毫米」关键阶段。",
+        innovations: [
+            "RL Token 信息瓶颈：在预训练 VLA 上添加编码器-解码器 Transformer，通过信息瓶颈生成压缩的 RL Token 表示，冻结后作为下游 RL 策略的紧凑输入",
+            "轻量级板载实时学习：极小的 Actor + Critic 网络以 RL Token 为输入，支持机器人板载每秒数百次更新，实现真正的在线实时适应",
+            "参考动作正则化：Actor 接收 VLA 预测动作作为输入，学习「编辑」而非替换原始策略，保持接近 VLA 行为并仅在发现更优替代时偏离",
+            "极致数据效率：以太网插入任务仅用 15 分钟机器人数据即实现显著提升，螺丝拧紧等任务提升约 3 倍吞吐量"
+        ],
+        results: "电动螺丝刀 ~3x 提升 · 扎带 ~2x · 以太网插接 ~2.3x · 电源线插接 ~1.8x；RLT 中位 66 步 vs 人类遥操作 146 步 vs 基础模型 228 步，速度超越人类演示",
+        dataset: "四项高难度精细操作任务（M3 螺丝亚毫米精度、扎带、以太网线、电源线），仅需分钟到小时级真实世界数据",
+        tags: [["Physical Intelligence","red"],["Robotics","green"],["VLA","green"],["RL","blue"],["Online Learning","teal"]],
+        links: [["🌐 研究页面","https://www.pi.website/research/rlt"],["📑 PDF","https://www.pi.website/download/rlt.pdf"]],
+        highlight: true,
+        bossNotes: "π 的「最后一毫米」方案——不动大模型，只用 RL Token + 轻量策略做精细阶段优化，与 ForceVLA2 的力控方案形成互补视角"
     }
 ];
 
