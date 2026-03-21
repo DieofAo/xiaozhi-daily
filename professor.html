@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🎓 Professor 论文知识库 — Boss Team Research</title>
+    <title>🎓 Professor 知识库 — Boss Team Research</title>
     <style>
         :root {
             --bg: #ffffff;
@@ -300,6 +300,130 @@
         .empty-state .icon { font-size: 48px; margin-bottom: 16px; }
         .empty-state h3 { font-size: 18px; color: var(--text-dim); margin-bottom: 8px; }
 
+        /* Top Tabs */
+        .top-tabs {
+            display: flex;
+            gap: 0;
+            border-bottom: 2px solid var(--border);
+            margin-bottom: 24px;
+        }
+        .top-tab {
+            padding: 12px 28px;
+            font-size: 14.5px;
+            font-weight: 600;
+            color: var(--text-muted);
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+            margin-bottom: -2px;
+            transition: all 0.2s ease;
+            user-select: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .top-tab:hover { color: var(--text-dim); }
+        .top-tab.active-papers {
+            color: var(--accent);
+            border-bottom-color: var(--accent);
+        }
+        .top-tab.active-ideas {
+            color: #7c3aed;
+            border-bottom-color: #7c3aed;
+        }
+        .top-tab .tab-count {
+            font-size: 11px;
+            padding: 1px 8px;
+            border-radius: 10px;
+            font-weight: 500;
+        }
+        .top-tab.active-papers .tab-count {
+            background: rgba(13,148,136,0.1);
+            color: var(--accent);
+        }
+        .top-tab.active-ideas .tab-count {
+            background: rgba(124,58,237,0.1);
+            color: #7c3aed;
+        }
+
+        /* Idea card */
+        .idea {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 22px 26px; margin-bottom: 14px;
+            transition: all 0.2s ease;
+            cursor: default;
+            box-shadow: var(--shadow-sm);
+            animation: fadeIn 0.3s ease forwards;
+            opacity: 0;
+            border-left: 3px solid #7c3aed;
+        }
+        .idea:hover {
+            border-color: #7c3aed;
+            border-left-color: #7c3aed;
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-md);
+        }
+        .idea:nth-child(1) { animation-delay: 0s; }
+        .idea:nth-child(2) { animation-delay: 0.04s; }
+        .idea:nth-child(3) { animation-delay: 0.08s; }
+
+        .idea h3 { font-size: 16px; font-weight: 600; color: var(--text); margin-bottom: 6px; line-height: 1.55; }
+        .idea .idea-meta {
+            display: flex; gap: 12px; flex-wrap: wrap;
+            font-size: 12px; color: var(--text-muted); margin-bottom: 12px;
+        }
+        .idea .idea-meta span { display: flex; align-items: center; gap: 4px; }
+        .idea .idea-content {
+            font-size: 14.5px; color: var(--text-dim);
+            line-height: 1.85; margin-bottom: 14px;
+        }
+        .idea .idea-content mark {
+            background: rgba(124,58,237,0.12);
+            color: #5b21b6; padding: 1px 4px; border-radius: 3px;
+        }
+
+        /* Idea status badge */
+        .idea-status {
+            display: inline-flex; align-items: center; gap: 5px;
+            font-size: 12px; font-weight: 600;
+            padding: 3px 12px; border-radius: 20px;
+            margin-bottom: 10px;
+        }
+        .idea-status-new { background: rgba(124,58,237,0.08); color: #7c3aed; border: 1px solid rgba(124,58,237,0.2); }
+        .idea-status-exploring { background: rgba(37,99,235,0.08); color: #2563eb; border: 1px solid rgba(37,99,235,0.2); }
+        .idea-status-validated { background: rgba(5,150,105,0.08); color: #059669; border: 1px solid rgba(5,150,105,0.2); }
+        .idea-status-abandoned { background: rgba(107,114,128,0.08); color: #6b7280; border: 1px solid rgba(107,114,128,0.2); }
+
+        /* Idea source box */
+        .idea-source {
+            background: rgba(124,58,237,0.04);
+            border: 1px solid rgba(124,58,237,0.12);
+            border-radius: 8px;
+            padding: 12px 16px;
+            margin-bottom: 14px;
+        }
+        .idea-source-title {
+            font-size: 12px; font-weight: 600; color: #7c3aed;
+            margin-bottom: 6px; display: flex; align-items: center; gap: 6px;
+        }
+        .idea-source-item {
+            font-size: 13.5px; color: var(--text-dim);
+            line-height: 1.7; padding: 2px 0;
+        }
+        .idea-source-item a {
+            color: #7c3aed; text-decoration: none;
+            border-bottom: 1px dashed rgba(124,58,237,0.3);
+        }
+        .idea-source-item a:hover { border-bottom-color: #7c3aed; }
+
+        /* Idea tags — purple scheme */
+        .tag-purple { color: #7c3aed; background: rgba(124,58,237,0.06); border: 1px solid rgba(124,58,237,0.15); }
+        .tag-indigo { color: #4f46e5; background: rgba(79,70,229,0.06); border: 1px solid rgba(79,70,229,0.15); }
+
+        /* Ideas overview accent override */
+        .ideas-accent .overview-card .num { color: #7c3aed; }
+
         /* Mobile */
         .hamburger {
             display: none; background: none; border: none;
@@ -334,7 +458,7 @@
     <aside class="sidebar" id="sidebar">
         <div class="sidebar-header">
             <h1>🎓 Professor</h1>
-            <div class="subtitle">Boss Team · 论文精读知识库</div>
+            <div class="subtitle">Boss Team · 论文精读 · 灵感库</div>
         </div>
         <nav class="sidebar-nav" id="sidebarNav"></nav>
     </aside>
@@ -345,7 +469,7 @@
             <div class="topbar-title" id="topbarTitle">知识库概览</div>
             <div class="search-box">
                 <span class="search-icon">🔍</span>
-                <input type="text" id="searchInput" placeholder="搜索论文标题、创新点、标签..." autocomplete="off">
+                <input type="text" id="searchInput" placeholder="搜索论文、灵感、标签..." autocomplete="off">
                 <button class="clear-btn" id="clearBtn" onclick="clearSearch()">✕</button>
                 <span class="kbd-hint">⌘K</span>
             </div>
@@ -357,7 +481,6 @@
 
 <script>
 // ===== Professor 论文知识库数据 =====
-// 每次新增论文，只需在此数组中追加一条记录即可
 const PAPERS_DB = [
     {
         id: "forcevla2",
@@ -408,14 +531,38 @@ const PAPERS_DB = [
     }
 ];
 
-// ===== 领域分类顺序 =====
+// ===== Ideas 灵感库数据 =====
+const IDEAS_DB = [
+    {
+        id: "representation-for-rl",
+        date: "2026-03-21",
+        status: "new",
+        statusLabel: "💡 New",
+        title: "RL 性能提升的关键在于表示而非算法本身",
+        content: "对于 RL 算法，可以不改变 RL 算法本身，而是使用不同的表示（representation）作为输入给 RL。π RLT 的做法是从 VLA 大模型中提取压缩的「RL Token」表示，作为轻量级 Actor-Critic 网络的输入接口，而非直接用原始观测或完整 VLA 特征。这启发了一个更通用的思路：RL 的性能提升不一定需要改进 RL 算法本身，关键在于如何构造/选择更好的状态表示输入给 RL。\n\n可以进一步探索的方向：\n• 不同的信息瓶颈粒度对 RL 收敛速度的影响\n• 从不同预训练模型（视觉、语言、多模态）提取表示用于同一 RL 任务的对比实验\n• 表示的压缩程度与任务复杂度之间的最优平衡点\n• 将此思路推广到 World Model 的潜空间表示作为 RL 输入",
+        sources: [
+            { title: "π RLT: Precise Manipulation with Efficient Online RL", url: "https://www.pi.website/research/rlt", type: "paper" },
+            { title: "π RLT PDF", url: "https://www.pi.website/download/rlt.pdf", type: "pdf" }
+        ],
+        tags: [["RL","blue"],["Representation","purple"],["VLA","green"],["Information Bottleneck","indigo"]],
+    }
+];
+
+// ===== 配置 =====
 const categoryOrder = ["VLA","Robotics","World Model","LLM / VLM","Embodied AI","RL","Industry"];
+const ideaStatusMap = {
+    "new": { label: "💡 New", cls: "idea-status-new" },
+    "exploring": { label: "🔬 Exploring", cls: "idea-status-exploring" },
+    "validated": { label: "✅ Validated", cls: "idea-status-validated" },
+    "abandoned": { label: "❌ Abandoned", cls: "idea-status-abandoned" }
+};
 
 // ===== 衍生数据 =====
 const allDates = [...new Set(PAPERS_DB.map(p => p.addedDate))].sort().reverse();
 const allCategories = [...new Set(PAPERS_DB.map(p => p.category))];
 
 // ===== 状态 =====
+let activeTab = "papers"; // "papers" or "ideas"
 let currentView = "overview";
 let searchQuery = "";
 
@@ -428,52 +575,107 @@ document.addEventListener("DOMContentLoaded", () => {
     updateStatsBadge();
 });
 
+// ===== Tab 切换 =====
+function switchTab(tab) {
+    activeTab = tab;
+    currentView = "overview";
+    searchQuery = "";
+    document.getElementById("searchInput").value = "";
+    document.getElementById("clearBtn").classList.remove("visible");
+    renderSidebar();
+    renderView();
+    updateStatsBadge();
+}
+
 // ===== 侧边栏 =====
 function renderSidebar() {
     const nav = document.getElementById("sidebarNav");
     let html = "";
 
-    html += `<div class="nav-section">
-        <div class="nav-section-title">快速访问</div>
-        <div class="nav-item ${currentView==='overview'?'active':''}" onclick="setView('overview')">
-            <span class="icon">📊</span> 知识库概览
-            <span class="count">${PAPERS_DB.length}</span>
-        </div>
-        <div class="nav-item ${currentView==='all'?'active':''}" onclick="setView('all')">
-            <span class="icon">📚</span> 全部论文
-            <span class="count">${PAPERS_DB.length}</span>
-        </div>
-    </div>`;
-
-    // 按领域
-    html += `<div class="nav-section">
-        <div class="nav-section-title">按领域</div>`;
-    categoryOrder.forEach(cat => {
-        const papers = PAPERS_DB.filter(p => p.category === cat);
-        if (papers.length === 0) return;
-        const icon = papers[0].categoryIcon;
-        const active = currentView === `category:${cat}`;
-        html += `<div class="nav-item ${active?'active':''}" onclick="setView('category:${cat}')">
-            <span class="icon">${icon}</span> ${cat}
-            <span class="count">${papers.length}</span>
+    if (activeTab === "papers") {
+        html += `<div class="nav-section">
+            <div class="nav-section-title">快速访问</div>
+            <div class="nav-item ${currentView==='overview'?'active':''}" onclick="setView('overview')">
+                <span class="icon">📊</span> 知识库概览
+                <span class="count">${PAPERS_DB.length}</span>
+            </div>
+            <div class="nav-item ${currentView==='all'?'active':''}" onclick="setView('all')">
+                <span class="icon">📚</span> 全部论文
+                <span class="count">${PAPERS_DB.length}</span>
+            </div>
         </div>`;
-    });
-    html += `</div>`;
 
-    // 按收录日期
-    html += `<div class="nav-section">
-        <div class="nav-section-title">按收录日期</div>`;
-    allDates.forEach(d => {
-        const papers = PAPERS_DB.filter(p => p.addedDate === d);
-        const isLatest = d === allDates[0];
-        const label = formatDateLabel(d);
-        const active = currentView === `date:${d}`;
-        html += `<div class="nav-item ${active?'active':''}" onclick="setView('date:${d}')">
-            <span class="icon">${isLatest?'🟢':'📅'}</span> ${label}
-            <span class="count">${papers.length}</span>
+        html += `<div class="nav-section">
+            <div class="nav-section-title">按领域</div>`;
+        categoryOrder.forEach(cat => {
+            const papers = PAPERS_DB.filter(p => p.category === cat);
+            if (papers.length === 0) return;
+            const icon = papers[0].categoryIcon;
+            const active = currentView === `category:${cat}`;
+            html += `<div class="nav-item ${active?'active':''}" onclick="setView('category:${cat}')">
+                <span class="icon">${icon}</span> ${cat}
+                <span class="count">${papers.length}</span>
+            </div>`;
+        });
+        html += `</div>`;
+
+        html += `<div class="nav-section">
+            <div class="nav-section-title">按收录日期</div>`;
+        allDates.forEach(d => {
+            const papers = PAPERS_DB.filter(p => p.addedDate === d);
+            const isLatest = d === allDates[0];
+            const label = formatDateLabel(d);
+            const active = currentView === `date:${d}`;
+            html += `<div class="nav-item ${active?'active':''}" onclick="setView('date:${d}')">
+                <span class="icon">${isLatest?'🟢':'📅'}</span> ${label}
+                <span class="count">${papers.length}</span>
+            </div>`;
+        });
+        html += `</div>`;
+    } else {
+        // Ideas sidebar
+        const ideaDates = [...new Set(IDEAS_DB.map(i => i.date))].sort().reverse();
+        const statusCounts = {};
+        IDEAS_DB.forEach(i => { statusCounts[i.status] = (statusCounts[i.status] || 0) + 1; });
+
+        html += `<div class="nav-section">
+            <div class="nav-section-title">快速访问</div>
+            <div class="nav-item ${currentView==='overview'?'active':''}" onclick="setView('overview')">
+                <span class="icon">✨</span> 灵感概览
+                <span class="count">${IDEAS_DB.length}</span>
+            </div>
+            <div class="nav-item ${currentView==='all-ideas'?'active':''}" onclick="setView('all-ideas')">
+                <span class="icon">💡</span> 全部灵感
+                <span class="count">${IDEAS_DB.length}</span>
+            </div>
         </div>`;
-    });
-    html += `</div>`;
+
+        html += `<div class="nav-section">
+            <div class="nav-section-title">按状态</div>`;
+        Object.entries(ideaStatusMap).forEach(([key, val]) => {
+            const count = statusCounts[key] || 0;
+            if (count === 0) return;
+            const active = currentView === `idea-status:${key}`;
+            html += `<div class="nav-item ${active?'active':''}" onclick="setView('idea-status:${key}')">
+                <span class="icon">${val.label.split(' ')[0]}</span> ${val.label.split(' ').slice(1).join(' ')}
+                <span class="count">${count}</span>
+            </div>`;
+        });
+        html += `</div>`;
+
+        html += `<div class="nav-section">
+            <div class="nav-section-title">按日期</div>`;
+        ideaDates.forEach(d => {
+            const ideas = IDEAS_DB.filter(i => i.date === d);
+            const label = formatDateLabel(d, true);
+            const active = currentView === `idea-date:${d}`;
+            html += `<div class="nav-item ${active?'active':''}" onclick="setView('idea-date:${d}')">
+                <span class="icon">📅</span> ${label}
+                <span class="count">${ideas.length}</span>
+            </div>`;
+        });
+        html += `</div>`;
+    }
 
     nav.innerHTML = html;
 }
@@ -495,60 +697,95 @@ function renderView() {
     const content = document.getElementById("content");
     const title = document.getElementById("topbarTitle");
 
+    // Top tabs
+    let tabsHtml = `<div class="top-tabs">
+        <div class="top-tab ${activeTab==='papers'?'active-papers':''}" onclick="switchTab('papers')">
+            📚 Papers
+            <span class="tab-count">${PAPERS_DB.length}</span>
+        </div>
+        <div class="top-tab ${activeTab==='ideas'?'active-ideas':''}" onclick="switchTab('ideas')">
+            💡 Ideas
+            <span class="tab-count">${IDEAS_DB.length}</span>
+        </div>
+    </div>`;
+
     if (searchQuery) {
         title.textContent = `搜索: "${searchQuery}"`;
-        renderSearchResults(content);
+        if (activeTab === "papers") {
+            content.innerHTML = tabsHtml + renderSearchResultsHtml();
+        } else {
+            content.innerHTML = tabsHtml + renderIdeaSearchResultsHtml();
+        }
         return;
     }
 
-    switch (true) {
-        case currentView === "overview":
-            title.textContent = "🎓 知识库概览";
-            renderOverview(content);
-            break;
-        case currentView === "all":
-            title.textContent = "📚 全部论文";
-            renderAllView(content);
-            break;
-        case currentView.startsWith("date:"):
-            const date = currentView.split(":")[1];
-            title.textContent = `📅 ${formatDateLabel(date)}`;
-            renderDateView(content, date);
-            break;
-        case currentView.startsWith("category:"):
-            const cat = currentView.split(":").slice(1).join(":");
-            const icon = PAPERS_DB.find(p => p.category === cat)?.categoryIcon || '📂';
-            title.textContent = `${icon} ${cat}`;
-            renderCategoryView(content, cat);
-            break;
+    if (activeTab === "papers") {
+        switch (true) {
+            case currentView === "overview":
+                title.textContent = "🎓 知识库概览";
+                content.innerHTML = tabsHtml + renderPapersOverviewHtml();
+                break;
+            case currentView === "all":
+                title.textContent = "📚 全部论文";
+                content.innerHTML = tabsHtml + renderAllPapersHtml();
+                break;
+            case currentView.startsWith("date:"):
+                const date = currentView.split(":")[1];
+                title.textContent = `📅 ${formatDateLabel(date)}`;
+                content.innerHTML = tabsHtml + renderDateViewHtml(date);
+                break;
+            case currentView.startsWith("category:"):
+                const cat = currentView.split(":").slice(1).join(":");
+                const icon = PAPERS_DB.find(p => p.category === cat)?.categoryIcon || '📂';
+                title.textContent = `${icon} ${cat}`;
+                content.innerHTML = tabsHtml + renderCategoryViewHtml(cat);
+                break;
+        }
+    } else {
+        switch (true) {
+            case currentView === "overview":
+                title.textContent = "✨ 灵感概览";
+                content.innerHTML = tabsHtml + renderIdeasOverviewHtml();
+                break;
+            case currentView === "all-ideas":
+                title.textContent = "💡 全部灵感";
+                content.innerHTML = tabsHtml + renderAllIdeasHtml();
+                break;
+            case currentView.startsWith("idea-status:"):
+                const status = currentView.split(":")[1];
+                const statusInfo = ideaStatusMap[status];
+                title.textContent = `${statusInfo.label}`;
+                content.innerHTML = tabsHtml + renderIdeaStatusViewHtml(status);
+                break;
+            case currentView.startsWith("idea-date:"):
+                const ideaDate = currentView.split(":")[1];
+                title.textContent = `📅 ${formatDateLabel(ideaDate, true)}`;
+                content.innerHTML = tabsHtml + renderIdeaDateViewHtml(ideaDate);
+                break;
+        }
     }
 }
 
-// ===== 概览视图 =====
-function renderOverview(container) {
+// ===== Papers 视图 =====
+function renderPapersOverviewHtml() {
     let html = `<div class="overview-cards">
         <div class="overview-card"><div class="num">${PAPERS_DB.length}</div><div class="label">精读论文总数</div></div>
         <div class="overview-card"><div class="num">${allCategories.length}</div><div class="label">覆盖领域</div></div>
         <div class="overview-card"><div class="num">${PAPERS_DB.filter(p=>p.highlight).length}</div><div class="label">重磅论文</div></div>
         <div class="overview-card"><div class="num">${allDates.length}</div><div class="label">收录天数</div></div>
     </div>`;
-
-    // 最近收录
     html += `<div class="section-title"><span class="icon">⚡</span> 最近收录</div>`;
     const recentPapers = [...PAPERS_DB].sort((a, b) => b.addedDate.localeCompare(a.addedDate)).slice(0, 5);
     recentPapers.forEach(p => html += renderPaperCard(p));
-
-    container.innerHTML = html;
+    return html;
 }
 
-// ===== 全部视图 =====
-function renderAllView(container) {
+function renderAllPapersHtml() {
     let html = `<div class="overview-cards">
         <div class="overview-card"><div class="num">${PAPERS_DB.length}</div><div class="label">精读论文总数</div></div>
         <div class="overview-card"><div class="num">${allCategories.length}</div><div class="label">覆盖领域</div></div>
         <div class="overview-card"><div class="num">${PAPERS_DB.filter(p=>p.highlight).length}</div><div class="label">重磅论文</div></div>
     </div>`;
-
     categoryOrder.forEach(cat => {
         const catPapers = PAPERS_DB.filter(p => p.category === cat);
         if (catPapers.length === 0) return;
@@ -557,41 +794,33 @@ function renderAllView(container) {
         html += renderSectionTitle(cat, icon, catPapers.length);
         catPapers.forEach(p => html += renderPaperCard(p));
     });
-
-    container.innerHTML = html;
+    return html;
 }
 
-// ===== 日期视图 =====
-function renderDateView(container, date) {
+function renderDateViewHtml(date) {
     const papers = PAPERS_DB.filter(p => p.addedDate === date);
     let html = "";
-
     categoryOrder.forEach(cat => {
         const catPapers = papers.filter(p => p.category === cat);
         if (catPapers.length === 0) return;
         html += renderSectionTitle(cat, catPapers[0].categoryIcon, catPapers.length);
         catPapers.forEach(p => html += renderPaperCard(p));
     });
-
-    container.innerHTML = html;
+    return html;
 }
 
-// ===== 领域视图 =====
-function renderCategoryView(container, category) {
+function renderCategoryViewHtml(category) {
     const papers = PAPERS_DB.filter(p => p.category === category);
     papers.sort((a, b) => b.addedDate.localeCompare(a.addedDate));
-
     let html = `<div class="overview-cards">
         <div class="overview-card"><div class="num">${papers.length}</div><div class="label">该领域论文</div></div>
         <div class="overview-card"><div class="num">${papers.filter(p=>p.highlight).length}</div><div class="label">重磅论文</div></div>
     </div>`;
-
     papers.forEach(p => html += renderPaperCard(p));
-    container.innerHTML = html;
+    return html;
 }
 
-// ===== 搜索 =====
-function renderSearchResults(container) {
+function renderSearchResultsHtml() {
     const q = searchQuery.toLowerCase();
     const results = PAPERS_DB.filter(p =>
         p.title.toLowerCase().includes(q) ||
@@ -602,21 +831,84 @@ function renderSearchResults(container) {
         p.tags.some(t => t[0].toLowerCase().includes(q)) ||
         (p.bossNotes && p.bossNotes.toLowerCase().includes(q))
     );
-
     if (results.length === 0) {
-        container.innerHTML = `<div class="empty-state">
+        return `<div class="empty-state">
             <div class="icon">🔍</div>
-            <h3>没有找到匹配的结果</h3>
+            <h3>没有找到匹配的论文</h3>
             <p>试试其他关键词，如 "force"、"VLA"、"MoE"</p>
         </div>`;
-        return;
     }
-
     let html = `<div style="margin-bottom:20px;font-size:14px;color:var(--text-dim)">
         找到 <strong style="color:var(--accent)">${results.length}</strong> 条匹配结果
     </div>`;
     results.forEach(p => html += renderPaperCard(p, q));
-    container.innerHTML = html;
+    return html;
+}
+
+// ===== Ideas 视图 =====
+function renderIdeasOverviewHtml() {
+    const statusCounts = {};
+    IDEAS_DB.forEach(i => { statusCounts[i.status] = (statusCounts[i.status] || 0) + 1; });
+    const ideaTags = [...new Set(IDEAS_DB.flatMap(i => i.tags.map(t => t[0])))];
+
+    let html = `<div class="overview-cards ideas-accent">
+        <div class="overview-card"><div class="num">${IDEAS_DB.length}</div><div class="label">灵感总数</div></div>
+        <div class="overview-card"><div class="num">${statusCounts['new'] || 0}</div><div class="label">💡 New</div></div>
+        <div class="overview-card"><div class="num">${statusCounts['exploring'] || 0}</div><div class="label">🔬 Exploring</div></div>
+        <div class="overview-card"><div class="num">${ideaTags.length}</div><div class="label">涉及标签</div></div>
+    </div>`;
+    html += `<div class="section-title" style="color:#7c3aed"><span class="icon">⚡</span> 最新灵感</div>`;
+    const recentIdeas = [...IDEAS_DB].sort((a, b) => b.date.localeCompare(a.date)).slice(0, 5);
+    recentIdeas.forEach(i => html += renderIdeaCard(i));
+    return html;
+}
+
+function renderAllIdeasHtml() {
+    const sorted = [...IDEAS_DB].sort((a, b) => b.date.localeCompare(a.date));
+    let html = `<div class="overview-cards ideas-accent">
+        <div class="overview-card"><div class="num">${IDEAS_DB.length}</div><div class="label">灵感总数</div></div>
+    </div>`;
+    sorted.forEach(i => html += renderIdeaCard(i));
+    return html;
+}
+
+function renderIdeaStatusViewHtml(status) {
+    const ideas = IDEAS_DB.filter(i => i.status === status);
+    ideas.sort((a, b) => b.date.localeCompare(a.date));
+    let html = `<div class="overview-cards ideas-accent">
+        <div class="overview-card"><div class="num">${ideas.length}</div><div class="label">该状态灵感</div></div>
+    </div>`;
+    ideas.forEach(i => html += renderIdeaCard(i));
+    return html;
+}
+
+function renderIdeaDateViewHtml(date) {
+    const ideas = IDEAS_DB.filter(i => i.date === date);
+    let html = "";
+    ideas.forEach(i => html += renderIdeaCard(i));
+    return html;
+}
+
+function renderIdeaSearchResultsHtml() {
+    const q = searchQuery.toLowerCase();
+    const results = IDEAS_DB.filter(i =>
+        i.title.toLowerCase().includes(q) ||
+        i.content.toLowerCase().includes(q) ||
+        i.tags.some(t => t[0].toLowerCase().includes(q)) ||
+        i.sources.some(s => s.title.toLowerCase().includes(q))
+    );
+    if (results.length === 0) {
+        return `<div class="empty-state">
+            <div class="icon">🔍</div>
+            <h3>没有找到匹配的灵感</h3>
+            <p>试试其他关键词，如 "RL"、"表示"、"representation"</p>
+        </div>`;
+    }
+    let html = `<div style="margin-bottom:20px;font-size:14px;color:var(--text-dim)">
+        找到 <strong style="color:#7c3aed">${results.length}</strong> 条匹配结果
+    </div>`;
+    results.forEach(i => html += renderIdeaCard(i, q));
+    return html;
 }
 
 // ===== 渲染辅助 =====
@@ -647,7 +939,6 @@ function renderPaperCard(paper, highlightQuery) {
         `<a href="${url}" target="_blank">${label}</a>`
     ).join("");
 
-    // 创新点
     let innovationsHtml = "";
     if (paper.innovations && paper.innovations.length > 0) {
         let items = paper.innovations.map(i => {
@@ -664,13 +955,11 @@ function renderPaperCard(paper, highlightQuery) {
         </div>`;
     }
 
-    // 额外信息
     let metaHtml = `<div class="meta-row">`;
     if (paper.authors) metaHtml += `<span>👤 ${paper.authors}</span>`;
     metaHtml += `<span>📅 收录于 ${paper.addedDate}</span>`;
     metaHtml += `</div>`;
 
-    // 实验结果
     let resultsHtml = "";
     if (paper.results) {
         resultsHtml = `<div style="font-size:13.5px;color:var(--green);margin-bottom:10px;padding:8px 12px;background:rgba(5,150,105,0.05);border-radius:6px;border:1px solid rgba(5,150,105,0.12)">
@@ -678,7 +967,6 @@ function renderPaperCard(paper, highlightQuery) {
         </div>`;
     }
 
-    // Boss 备注
     let notesHtml = "";
     if (paper.bossNotes) {
         notesHtml = `<div style="font-size:13px;color:var(--yellow);margin-bottom:10px;padding:8px 12px;background:rgba(217,119,6,0.05);border-radius:6px;border:1px solid rgba(217,119,6,0.12)">
@@ -696,6 +984,48 @@ function renderPaperCard(paper, highlightQuery) {
         ${resultsHtml}
         ${notesHtml}
         <div class="links">${linksHtml}</div>
+    </div>`;
+}
+
+function renderIdeaCard(idea, highlightQuery) {
+    const statusInfo = ideaStatusMap[idea.status] || ideaStatusMap["new"];
+    let title = idea.title;
+    let contentText = idea.content.replace(/\n/g, '<br>');
+
+    if (highlightQuery) {
+        const re = new RegExp(`(${escapeRegex(highlightQuery)})`, "gi");
+        title = title.replace(re, "<mark>$1</mark>");
+        contentText = contentText.replace(re, "<mark>$1</mark>");
+    }
+
+    const tagsHtml = idea.tags.map(([label, color]) => {
+        const cls = color === "red" ? "tag-red" : color === "yellow" ? "tag-yellow" : color === "blue" ? "tag-blue" : color === "teal" ? "tag-teal" : color === "purple" ? "tag-purple" : color === "indigo" ? "tag-indigo" : "tag-green";
+        return `<span class="tag ${cls}">${label}</span>`;
+    }).join("");
+
+    let sourcesHtml = "";
+    if (idea.sources && idea.sources.length > 0) {
+        const sourceItems = idea.sources.map(s => {
+            const typeIcon = s.type === "paper" ? "📄" : s.type === "pdf" ? "📑" : s.type === "project" ? "🌐" : "🔗";
+            return `<div class="idea-source-item">${typeIcon} <a href="${s.url}" target="_blank">${s.title}</a></div>`;
+        }).join("");
+        sourcesHtml = `<div class="idea-source">
+            <div class="idea-source-title">🔗 启发来源</div>
+            ${sourceItems}
+        </div>`;
+    }
+
+    return `<div class="idea">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
+            <span class="idea-status ${statusInfo.cls}">${statusInfo.label}</span>
+            <div class="tags" style="margin-bottom:0">${tagsHtml}</div>
+        </div>
+        <h3>${title}</h3>
+        <div class="idea-meta">
+            <span>📅 ${idea.date}</span>
+        </div>
+        <div class="idea-content">${contentText}</div>
+        ${sourcesHtml}
     </div>`;
 }
 
@@ -752,27 +1082,40 @@ function setupKeyboard() {
 }
 
 // ===== 工具函数 =====
-function formatDateLabel(dateStr) {
+function formatDateLabel(dateStr, forIdeas) {
     const d = new Date(dateStr + "T00:00:00");
     const weekdays = ["日","一","二","三","四","五","六"];
     const m = d.getMonth() + 1;
     const day = d.getDate();
     const w = weekdays[d.getDay()];
-    if (dateStr === allDates[0]) return `${m}/${day}（周${w}）· 最新`;
+    const refDates = forIdeas ? [...new Set(IDEAS_DB.map(i => i.date))].sort().reverse() : allDates;
+    if (dateStr === refDates[0]) return `${m}/${day}（周${w}）· 最新`;
     return `${m}/${day}（周${w}）`;
 }
 
 function updateStatsBadge() {
     const badge = document.getElementById("statsBadge");
     if (searchQuery) {
-        const count = PAPERS_DB.filter(p =>
-            p.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-            p.summary.toLowerCase().includes(searchQuery.toLowerCase()) ||
-            p.innovations.some(i => i.toLowerCase().includes(searchQuery.toLowerCase()))
-        ).length;
-        badge.textContent = `${count} 条结果`;
+        if (activeTab === "papers") {
+            const count = PAPERS_DB.filter(p =>
+                p.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                p.summary.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                p.innovations.some(i => i.toLowerCase().includes(searchQuery.toLowerCase()))
+            ).length;
+            badge.textContent = `${count} 条结果`;
+        } else {
+            const count = IDEAS_DB.filter(i =>
+                i.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                i.content.toLowerCase().includes(searchQuery.toLowerCase())
+            ).length;
+            badge.textContent = `${count} 条结果`;
+        }
     } else {
-        badge.textContent = `共 ${PAPERS_DB.length} 篇精读`;
+        if (activeTab === "papers") {
+            badge.textContent = `共 ${PAPERS_DB.length} 篇精读`;
+        } else {
+            badge.textContent = `共 ${IDEAS_DB.length} 条灵感`;
+        }
     }
 }
 
