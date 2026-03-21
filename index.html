@@ -519,6 +519,18 @@
 <script>
 // ===== DATA =====
 const PAPERS_DB = [
+    // === 2026-03-21 ===
+    {
+        date: "2026-03-21",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "Precise Manipulation with Efficient Online RL (RLT)",
+        venue: "Physical Intelligence (π) · 2026-03-19",
+        summary: "Physical Intelligence 最新工作。现有 VLA 基础模型在需要亚毫米级精度的操作阶段（如拧螺丝、插接线缆）表现不足。RLT 提出在 VLA 模型中提取压缩的 \"RL Token\" 表示，为轻量级 Actor-Critic 网络提供紧凑输入接口，实现机器人板载实时在线强化学习（每秒数百次更新），无需微调整个大型 VLA。在四项高精度任务上：螺丝驱动提升约 3x 吞吐量、以太网插接提升约 2.3x，仅需 15 分钟真实数据。以太网任务中 RLT 中位执行 66 步 vs 人类 146 步——一半试运行速度超过数据集中任何一次人工演示。作者：Charles Xu, Jost Tobias Springenberg, Michael Equi, Ali Amin, Adnan Esmail, Sergey Levine, Liyiming Ke。",
+        tags: [["VLA","green"],["RL","green"],["Robotics","green"]],
+        links: [["🌐 研究页面","https://www.pi.website/research/rlt"],["📄 PDF","https://www.pi.website/download/rlt.pdf"]],
+        highlight: true
+    },
     // === 2026-03-20 ===,
     {
         date: "2026-03-20",

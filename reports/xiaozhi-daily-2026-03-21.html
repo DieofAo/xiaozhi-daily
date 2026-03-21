@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🔬 小小志科研日报 — 2026.03.21</title>
+<style>
+  :root {
+    --bg: #0d1117;
+    --surface: #161b22;
+    --surface2: #1c2333;
+    --border: #30363d;
+    --text: #e6edf3;
+    --text-dim: #8b949e;
+    --accent: #58a6ff;
+    --accent2: #3fb950;
+    --accent3: #d2a8ff;
+    --accent4: #f97583;
+    --accent5: #f0883e;
+    --accent6: #79c0ff;
+    --tag-robotics: #f97583;
+    --tag-vla: #58a6ff;
+    --tag-embodied: #3fb950;
+    --tag-rl: #d2a8ff;
+    --tag-llm: #f0883e;
+    --tag-world: #79c0ff;
+    --tag-vlm: #ffa657;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans SC', sans-serif;
+    line-height: 1.7;
+    padding: 0;
+  }
+  .container { max-width: 960px; margin: 0 auto; padding: 40px 24px; }
+  
+  /* Header */
+  .header {
+    text-align: center;
+    padding: 48px 24px;
+    background: linear-gradient(135deg, #0d1117 0%, #1a1f36 50%, #0d1117 100%);
+    border-bottom: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 30% 50%, rgba(88,166,255,0.06) 0%, transparent 50%),
+                radial-gradient(circle at 70% 50%, rgba(210,168,255,0.04) 0%, transparent 50%);
+    animation: pulse 8s ease-in-out infinite;
+  }
+  @keyframes pulse { 0%,100% { opacity: 0.5; } 50% { opacity: 1; } }
+  .header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    position: relative;
+    background: linear-gradient(90deg, var(--accent), var(--accent3));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .header .date {
+    color: var(--text-dim);
+    font-size: 0.95rem;
+    margin-top: 8px;
+    position: relative;
+  }
+  .header .subtitle {
+    color: var(--text-dim);
+    font-size: 0.85rem;
+    margin-top: 4px;
+    position: relative;
+  }
+
+  /* Tags */
+  .tag {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin: 2px 3px;
+  }
+  .tag-robotics { background: rgba(249,117,131,0.15); color: var(--tag-robotics); }
+  .tag-vla { background: rgba(88,166,255,0.15); color: var(--tag-vla); }
+  .tag-embodied { background: rgba(63,185,80,0.15); color: var(--tag-embodied); }
+  .tag-rl { background: rgba(210,168,255,0.15); color: var(--tag-rl); }
+  .tag-llm { background: rgba(240,136,62,0.15); color: var(--tag-llm); }
+  .tag-world { background: rgba(121,192,255,0.15); color: var(--tag-world); }
+  .tag-vlm { background: rgba(255,166,87,0.15); color: var(--tag-vlm); }
+
+  /* Section */
+  .section {
+    margin-top: 40px;
+  }
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--border);
+    margin-bottom: 20px;
+  }
+  .section-icon {
+    font-size: 1.5rem;
+  }
+  .section-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--text);
+  }
+  .section-count {
+    margin-left: auto;
+    background: var(--surface2);
+    color: var(--text-dim);
+    padding: 2px 10px;
+    border-radius: 10px;
+    font-size: 0.8rem;
+  }
+
+  /* Paper Card */
+  .paper {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin-bottom: 16px;
+    transition: border-color 0.2s, transform 0.15s;
+  }
+  .paper:hover {
+    border-color: var(--accent);
+    transform: translateY(-1px);
+  }
+  .paper-title {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 8px;
+    line-height: 1.4;
+  }
+  .paper-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 10px;
+    align-items: center;
+  }
+  .paper-source {
+    font-size: 0.75rem;
+    color: var(--text-dim);
+    background: var(--surface2);
+    padding: 2px 8px;
+    border-radius: 6px;
+  }
+  .paper-summary {
+    color: var(--text-dim);
+    font-size: 0.9rem;
+    line-height: 1.65;
+    margin-bottom: 12px;
+  }
+  .paper-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .paper-links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 12px;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+  .link-paper {
+    background: rgba(88,166,255,0.1);
+    color: var(--accent);
+    border: 1px solid rgba(88,166,255,0.2);
+  }
+  .link-paper:hover { background: rgba(88,166,255,0.2); }
+  .link-project {
+    background: rgba(63,185,80,0.1);
+    color: var(--accent2);
+    border: 1px solid rgba(63,185,80,0.2);
+  }
+  .link-project:hover { background: rgba(63,185,80,0.2); }
+  .link-code {
+    background: rgba(210,168,255,0.1);
+    color: var(--accent3);
+    border: 1px solid rgba(210,168,255,0.2);
+  }
+  .link-code:hover { background: rgba(210,168,255,0.2); }
+  .link-news {
+    background: rgba(240,136,62,0.1);
+    color: var(--accent5);
+    border: 1px solid rgba(240,136,62,0.2);
+  }
+  .link-news:hover { background: rgba(240,136,62,0.2); }
+
+  /* Highlights */
+  .highlight-box {
+    background: linear-gradient(135deg, rgba(88,166,255,0.05) 0%, rgba(210,168,255,0.05) 100%);
+    border: 1px solid rgba(88,166,255,0.2);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin-bottom: 16px;
+  }
+  .highlight-box .fire { font-size: 1.2rem; }
+
+  /* Footer */
+  .footer {
+    margin-top: 48px;
+    padding: 24px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    text-align: center;
+  }
+  .footer .stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+  .stat-item {
+    padding: 12px;
+    background: var(--surface2);
+    border-radius: 8px;
+  }
+  .stat-num {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent);
+  }
+  .stat-label {
+    font-size: 0.8rem;
+    color: var(--text-dim);
+    margin-top: 4px;
+  }
+  .footer .sig {
+    color: var(--text-dim);
+    font-size: 0.8rem;
+    margin-top: 12px;
+  }
+
+  /* New badge */
+  .new-badge {
+    display: inline-block;
+    background: var(--accent4);
+    color: #fff;
+    font-size: 0.65rem;
+    font-weight: 700;
+    padding: 1px 6px;
+    border-radius: 4px;
+    margin-left: 6px;
+    vertical-align: middle;
+    text-transform: uppercase;
+  }
+
+  @media (max-width: 600px) {
+    .container { padding: 20px 12px; }
+    .header h1 { font-size: 1.4rem; }
+    .paper { padding: 16px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>🔬 小小志科研日报</h1>
+  <div class="date">2026 年 3 月 21 日 · Saturday</div>
+  <div class="subtitle">Robotics · VLA · Embodied AI · RL · LLM · World Model · VLM</div>
+</div>
+
+<div class="container">
+
+<!-- ===== 🔥 Today's Highlights ===== -->
+<div class="section">
+  <div class="section-header">
+    <span class="section-icon">🔥</span>
+    <span class="section-title">今日看点</span>
+  </div>
+  <div class="highlight-box">
+    <p style="font-size:0.95rem; color: var(--text);">
+      <strong>Physical Intelligence (π) 发布 RLT</strong>——通过在 VLA 模型中提取 RL Token，仅需几分钟真实数据即可在线微调精细操作策略。在螺丝拧入、以太网插接等高精度任务上实现 <strong>2-3 倍吞吐量提升</strong>，以太网任务中 <strong>速度超越人类遥操作</strong>。这是 VLA + 在线 RL 方向的里程碑式进展，展示了基础模型"最后一毫米"快速适应的可行路径。
+    </p>
+  </div>
+</div>
+
+<!-- ===== 🤖 VLA Section ===== -->
+<div class="section">
+  <div class="section-header">
+    <span class="section-icon">🤖</span>
+    <span class="section-title">VLA · 视觉-语言-动作模型</span>
+    <span class="section-count">1 篇</span>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">Precise Manipulation with Efficient Online RL (RLT) <span class="new-badge">New</span></div>
+    <div class="paper-meta">
+      <span class="tag tag-vla">VLA</span>
+      <span class="tag tag-rl">RL</span>
+      <span class="tag tag-robotics">Robotics</span>
+      <span class="paper-source">Physical Intelligence (π) · 2026-03-19</span>
+    </div>
+    <div class="paper-summary">
+      Physical Intelligence 最新工作。现有 VLA 基础模型在需要亚毫米级精度的操作阶段（如拧螺丝、插接线缆）表现不足。RLT 提出在 VLA 模型中提取压缩的 "RL Token" 表示，为轻量级 Actor-Critic 网络提供紧凑输入接口，实现机器人板载实时在线强化学习（每秒数百次更新），无需微调整个大型 VLA。在四项高精度任务上：螺丝驱动提升约 3x 吞吐量、以太网插接提升约 2.3x，仅需 15 分钟真实数据。以太网任务中 RLT 中位执行 66 步 vs 人类 146 步——一半试运行速度超过数据集中任何一次人工演示。作者：Charles Xu, Jost Tobias Springenberg, Michael Equi, Ali Amin, Adnan Esmail, Sergey Levine, Liyiming Ke。
+    </div>
+    <div class="paper-links">
+      <a href="https://www.pi.website/research/rlt" class="link-project" target="_blank">🌐 研究页面</a>
+      <a href="https://www.pi.website/download/rlt.pdf" class="link-paper" target="_blank">📄 PDF</a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Footer ===== -->
+<div class="footer">
+  <div class="stats">
+    <div class="stat-item">
+      <div class="stat-num">1</div>
+      <div class="stat-label">研究条目</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">1</div>
+      <div class="stat-label">领域分区</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">π</div>
+      <div class="stat-label">重点机构</div>
+    </div>
+  </div>
+  <div class="sig">
+    检索来源：Physical Intelligence 官网<br>
+    <span style="color:var(--accent);">📚 Professor</span> · boss-team 知识库助理 · 2026.03.21 16:00
+  </div>
+</div>
+
+</div>
+</body>
+</html>
