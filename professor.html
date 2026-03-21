@@ -545,6 +545,19 @@ const IDEAS_DB = [
             { title: "π RLT PDF", url: "https://www.pi.website/download/rlt.pdf", type: "pdf" }
         ],
         tags: [["RL","blue"],["Representation","purple"],["VLA","green"],["Information Bottleneck","indigo"]],
+    },
+    {
+        id: "attention-propagation-for-long-chain-reasoning",
+        date: "2026-03-21",
+        status: "new",
+        statusLabel: "💡 New",
+        title: "长链推理中的注意力回溯：不要忽略最初的重要性",
+        content: "受 Kimi 团队 Attention Residuals 论文启发。AttnRes 揭示了一个被长期忽视的问题：Transformer 标准残差连接使用固定单位权重累加所有层输出，导致早期层的贡献随深度被逐渐稀释。AttnRes 用 Softmax 注意力替代固定累加，使每层能选择性地关注早期重要表示。\n\n由此联想到一个更通用的决策/推理层面的 idea：在长链思考（long-chain reasoning）或多步决策过程中，后期步骤往往过度关注近期因素，忽略了最初阶段的关键决定因素。正如 AttnRes 让深层网络能「回看」早期层的贡献，我们在推理/决策过程中也应该引入类似的注意力回溯机制——按重要性从高到低分配注意力权重，而非简单地按时间衰减。\n\n可以进一步探索的方向：\n• 在 Chain-of-Thought 推理中引入跨步骤注意力，让后续推理步骤能显式回顾并加权早期关键推理节点\n• 在 RL 的 credit assignment 问题中，用类似 AttnRes 的机制替代固定折扣因子 γ，实现基于内容的动态回溯\n• 在 Agent 多步规划中，每个规划步骤都对所有历史步骤做注意力加权，避免「只看眼前」的短视规划\n• 将 Attention Residuals 的 Block 分块思想应用到分层决策：局部精细注意力 + 全局粗粒度回溯",
+        sources: [
+            { title: "Attention Residuals (Kimi / Moonshot AI)", url: "https://arxiv.org/abs/2603.15031", type: "paper" },
+            { title: "GitHub: MoonshotAI/Attention-Residuals", url: "https://github.com/MoonshotAI/Attention-Residuals", type: "project" }
+        ],
+        tags: [["Transformer","green"],["Attention","purple"],["Reasoning","blue"],["Credit Assignment","indigo"],["Architecture","teal"]],
     }
 ];
 
