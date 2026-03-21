@@ -1,283 +1,292 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>🔬 小小志科研日报 — 2026.03.21</title>
-<style>
-  :root {
-    --bg: #0d1117;
-    --surface: #161b22;
-    --surface2: #1c2333;
-    --border: #30363d;
-    --text: #e6edf3;
-    --text-dim: #8b949e;
-    --accent: #58a6ff;
-    --accent2: #3fb950;
-    --accent3: #d2a8ff;
-    --accent4: #f97583;
-    --accent5: #f0883e;
-    --accent6: #79c0ff;
-    --tag-robotics: #f97583;
-    --tag-vla: #58a6ff;
-    --tag-embodied: #3fb950;
-    --tag-rl: #d2a8ff;
-    --tag-llm: #f0883e;
-    --tag-world: #79c0ff;
-    --tag-vlm: #ffa657;
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans SC', sans-serif;
-    line-height: 1.7;
-    padding: 0;
-  }
-  .container { max-width: 960px; margin: 0 auto; padding: 40px 24px; }
-  
-  /* Header */
-  .header {
-    text-align: center;
-    padding: 48px 24px;
-    background: linear-gradient(135deg, #0d1117 0%, #1a1f36 50%, #0d1117 100%);
-    border-bottom: 1px solid var(--border);
-    position: relative;
-    overflow: hidden;
-  }
-  .header::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle at 30% 50%, rgba(88,166,255,0.06) 0%, transparent 50%),
-                radial-gradient(circle at 70% 50%, rgba(210,168,255,0.04) 0%, transparent 50%);
-    animation: pulse 8s ease-in-out infinite;
-  }
-  @keyframes pulse { 0%,100% { opacity: 0.5; } 50% { opacity: 1; } }
-  .header h1 {
-    font-size: 2rem;
-    font-weight: 700;
-    position: relative;
-    background: linear-gradient(90deg, var(--accent), var(--accent3));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-  .header .date {
-    color: var(--text-dim);
-    font-size: 0.95rem;
-    margin-top: 8px;
-    position: relative;
-  }
-  .header .subtitle {
-    color: var(--text-dim);
-    font-size: 0.85rem;
-    margin-top: 4px;
-    position: relative;
-  }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小小志科研日报 - 2026年3月21日</title>
+    <style>
+        :root {
+            --bg: #0f0f14;
+            --card-bg: #1a1a24;
+            --card-border: #2a2a3a;
+            --text: #e4e4ef;
+            --text-secondary: #9999b3;
+            --accent-vla: #ff6b6b;
+            --accent-rl: #4ecdc4;
+            --accent-wm: #a78bfa;
+            --accent-robot: #f59e0b;
+            --accent-embodied: #22d3ee;
+            --accent-llm: #34d399;
+            --link-paper: #f87171;
+            --link-code: #a3e635;
+            --link-project: #818cf8;
+            --link-video: #fb7185;
+            --link-model: #fbbf24;
+            --link-web: #60a5fa;
+            --gradient-start: #667eea;
+            --gradient-end: #764ba2;
+        }
 
-  /* Tags */
-  .tag {
-    display: inline-block;
-    padding: 2px 10px;
-    border-radius: 12px;
-    font-size: 0.75rem;
-    font-weight: 600;
-    margin: 2px 3px;
-  }
-  .tag-robotics { background: rgba(249,117,131,0.15); color: var(--tag-robotics); }
-  .tag-vla { background: rgba(88,166,255,0.15); color: var(--tag-vla); }
-  .tag-embodied { background: rgba(63,185,80,0.15); color: var(--tag-embodied); }
-  .tag-rl { background: rgba(210,168,255,0.15); color: var(--tag-rl); }
-  .tag-llm { background: rgba(240,136,62,0.15); color: var(--tag-llm); }
-  .tag-world { background: rgba(121,192,255,0.15); color: var(--tag-world); }
-  .tag-vlm { background: rgba(255,166,87,0.15); color: var(--tag-vlm); }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
-  /* Section */
-  .section {
-    margin-top: 40px;
-  }
-  .section-header {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding-bottom: 12px;
-    border-bottom: 2px solid var(--border);
-    margin-bottom: 20px;
-  }
-  .section-icon {
-    font-size: 1.5rem;
-  }
-  .section-title {
-    font-size: 1.3rem;
-    font-weight: 700;
-    color: var(--text);
-  }
-  .section-count {
-    margin-left: auto;
-    background: var(--surface2);
-    color: var(--text-dim);
-    padding: 2px 10px;
-    border-radius: 10px;
-    font-size: 0.8rem;
-  }
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, 'PingFang SC', 'Noto Sans SC', sans-serif;
+            line-height: 1.7;
+            min-height: 100vh;
+        }
 
-  /* Paper Card */
-  .paper {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 20px 24px;
-    margin-bottom: 16px;
-    transition: border-color 0.2s, transform 0.15s;
-  }
-  .paper:hover {
-    border-color: var(--accent);
-    transform: translateY(-1px);
-  }
-  .paper-title {
-    font-size: 1.05rem;
-    font-weight: 600;
-    color: var(--text);
-    margin-bottom: 8px;
-    line-height: 1.4;
-  }
-  .paper-meta {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-    margin-bottom: 10px;
-    align-items: center;
-  }
-  .paper-source {
-    font-size: 0.75rem;
-    color: var(--text-dim);
-    background: var(--surface2);
-    padding: 2px 8px;
-    border-radius: 6px;
-  }
-  .paper-summary {
-    color: var(--text-dim);
-    font-size: 0.9rem;
-    line-height: 1.65;
-    margin-bottom: 12px;
-  }
-  .paper-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-  }
-  .paper-links a {
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-    padding: 4px 12px;
-    border-radius: 8px;
-    font-size: 0.8rem;
-    font-weight: 500;
-    text-decoration: none;
-    transition: all 0.2s;
-  }
-  .link-paper {
-    background: rgba(88,166,255,0.1);
-    color: var(--accent);
-    border: 1px solid rgba(88,166,255,0.2);
-  }
-  .link-paper:hover { background: rgba(88,166,255,0.2); }
-  .link-project {
-    background: rgba(63,185,80,0.1);
-    color: var(--accent2);
-    border: 1px solid rgba(63,185,80,0.2);
-  }
-  .link-project:hover { background: rgba(63,185,80,0.2); }
-  .link-code {
-    background: rgba(210,168,255,0.1);
-    color: var(--accent3);
-    border: 1px solid rgba(210,168,255,0.2);
-  }
-  .link-code:hover { background: rgba(210,168,255,0.2); }
-  .link-news {
-    background: rgba(240,136,62,0.1);
-    color: var(--accent5);
-    border: 1px solid rgba(240,136,62,0.2);
-  }
-  .link-news:hover { background: rgba(240,136,62,0.2); }
+        .hero {
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            padding: 48px 24px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
 
-  /* Highlights */
-  .highlight-box {
-    background: linear-gradient(135deg, rgba(88,166,255,0.05) 0%, rgba(210,168,255,0.05) 100%);
-    border: 1px solid rgba(88,166,255,0.2);
-    border-radius: 12px;
-    padding: 20px 24px;
-    margin-bottom: 16px;
-  }
-  .highlight-box .fire { font-size: 1.2rem; }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.3;
+        }
 
-  /* Footer */
-  .footer {
-    margin-top: 48px;
-    padding: 24px;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    text-align: center;
-  }
-  .footer .stats {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-    gap: 16px;
-    margin-bottom: 16px;
-  }
-  .stat-item {
-    padding: 12px;
-    background: var(--surface2);
-    border-radius: 8px;
-  }
-  .stat-num {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--accent);
-  }
-  .stat-label {
-    font-size: 0.8rem;
-    color: var(--text-dim);
-    margin-top: 4px;
-  }
-  .footer .sig {
-    color: var(--text-dim);
-    font-size: 0.8rem;
-    margin-top: 12px;
-  }
+        .hero h1 {
+            font-size: 2.2em;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            margin-bottom: 8px;
+            position: relative;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
 
-  /* New badge */
-  .new-badge {
-    display: inline-block;
-    background: var(--accent4);
-    color: #fff;
-    font-size: 0.65rem;
-    font-weight: 700;
-    padding: 1px 6px;
-    border-radius: 4px;
-    margin-left: 6px;
-    vertical-align: middle;
-    text-transform: uppercase;
-  }
+        .hero .subtitle {
+            font-size: 1.05em;
+            opacity: 0.9;
+            position: relative;
+            font-weight: 400;
+        }
 
-  @media (max-width: 600px) {
-    .container { padding: 20px 12px; }
-    .header h1 { font-size: 1.4rem; }
-    .paper { padding: 16px; }
-  }
-</style>
+        .hero .date-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+            padding: 6px 18px;
+            border-radius: 20px;
+            margin-top: 14px;
+            font-size: 0.9em;
+            font-weight: 600;
+            position: relative;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 32px 20px 60px;
+        }
+
+        /* 今日看点 */
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(167, 139, 250, 0.1), rgba(78, 205, 196, 0.1));
+            border: 1px solid rgba(167, 139, 250, 0.25);
+            border-radius: 14px;
+            padding: 20px 24px;
+            margin-top: 12px;
+        }
+
+        /* 统计栏 */
+        .stats-bar {
+            display: flex;
+            justify-content: center;
+            gap: 28px;
+            flex-wrap: wrap;
+            margin-bottom: 36px;
+            padding: 16px 24px;
+            background: var(--card-bg);
+            border-radius: 12px;
+            border: 1px solid var(--card-border);
+        }
+
+        .stat-item { text-align: center; }
+        .stat-num {
+            font-size: 1.8em;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .stat-label { font-size: 0.8em; color: var(--text-secondary); margin-top: 2px; }
+
+        /* section */
+        .section { margin-bottom: 36px; }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 18px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--card-border);
+        }
+
+        .section-icon { font-size: 1.3em; }
+
+        .section-title {
+            font-size: 1.25em;
+            font-weight: 700;
+        }
+
+        .section-count {
+            background: rgba(255,255,255,0.08);
+            padding: 2px 10px;
+            border-radius: 12px;
+            font-size: 0.75em;
+            color: var(--text-secondary);
+            margin-left: auto;
+        }
+
+        /* Paper cards */
+        .paper {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 14px;
+            padding: 22px 24px;
+            margin-bottom: 14px;
+            transition: all 0.2s ease;
+        }
+
+        .paper:hover {
+            border-color: rgba(167, 139, 250, 0.4);
+            transform: translateY(-1px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+        }
+
+        .paper-title {
+            font-size: 1.05em;
+            font-weight: 700;
+            margin-bottom: 6px;
+            line-height: 1.4;
+        }
+
+        .paper-meta {
+            font-size: 0.8em;
+            color: var(--text-secondary);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.78em;
+            font-weight: 600;
+        }
+        .tag-vla { background: rgba(255,107,107,0.15); color: #ff6b6b; }
+        .tag-rl { background: rgba(78,205,196,0.15); color: #4ecdc4; }
+        .tag-robotics { background: rgba(245,158,11,0.15); color: #f59e0b; }
+        .tag-embodied { background: rgba(34,211,238,0.15); color: #22d3ee; }
+        .tag-llm { background: rgba(52,211,153,0.15); color: #34d399; }
+        .tag-wm { background: rgba(167,139,250,0.15); color: #a78bfa; }
+        .tag-vlm { background: rgba(192,132,252,0.15); color: #c084fc; }
+        .tag-agent { background: rgba(52,211,153,0.15); color: #34d399; }
+        .tag-industry { background: rgba(96,165,250,0.15); color: #60a5fa; }
+        .tag-tactile { background: rgba(251,146,60,0.15); color: #fb923c; }
+        .tag-simulation { background: rgba(167,139,250,0.15); color: #a78bfa; }
+
+        .paper-source {
+            font-size: 0.78em;
+            color: var(--text-secondary);
+        }
+
+        .paper-summary {
+            font-size: 0.92em;
+            color: #c5c5d8;
+            line-height: 1.7;
+            margin-bottom: 12px;
+        }
+
+        .paper-links {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .paper-links a {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 4px 12px;
+            border-radius: 6px;
+            font-size: 0.78em;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.15s ease;
+        }
+
+        a.link-paper { background: rgba(248, 113, 113, 0.12); color: var(--link-paper); }
+        a.link-paper:hover { background: rgba(248, 113, 113, 0.25); }
+        a.link-code { background: rgba(163, 230, 53, 0.12); color: var(--link-code); }
+        a.link-code:hover { background: rgba(163, 230, 53, 0.25); }
+        a.link-project { background: rgba(129, 140, 248, 0.12); color: var(--link-project); }
+        a.link-project:hover { background: rgba(129, 140, 248, 0.25); }
+        a.link-video { background: rgba(251, 113, 133, 0.12); color: var(--link-video); }
+        a.link-video:hover { background: rgba(251, 113, 133, 0.25); }
+        a.link-model { background: rgba(251, 191, 36, 0.12); color: var(--link-model); }
+        a.link-model:hover { background: rgba(251, 191, 36, 0.25); }
+        a.link-web { background: rgba(96, 165, 250, 0.12); color: var(--link-web); }
+        a.link-web:hover { background: rgba(96, 165, 250, 0.25); }
+
+        .new-badge {
+            display: inline-block;
+            background: linear-gradient(90deg, #ff6b6b, #feca57);
+            color: #000;
+            font-size: 0.65em;
+            font-weight: 800;
+            padding: 2px 7px;
+            border-radius: 4px;
+            margin-left: 6px;
+            vertical-align: middle;
+            text-transform: uppercase;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 32px 20px;
+            color: var(--text-secondary);
+            font-size: 0.82em;
+            border-top: 1px solid var(--card-border);
+        }
+
+        .footer .brand {
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        @media (max-width: 640px) {
+            .hero h1 { font-size: 1.6em; }
+            .container { padding: 20px 14px 40px; }
+            .paper { padding: 16px 18px; }
+            .stats-bar { gap: 16px; }
+        }
+    </style>
 </head>
 <body>
 
-<div class="header">
-  <h1>🔬 小小志科研日报</h1>
-  <div class="date">2026 年 3 月 21 日 · Saturday</div>
-  <div class="subtitle">Robotics · VLA · Embodied AI · RL · LLM · World Model · VLM</div>
+<div class="hero">
+    <h1>小小志科研日报</h1>
+    <div class="subtitle">Robotics · VLA · Embodied AI · RL · LLM · World Model</div>
+    <div class="date-badge">2026 年 3 月 21 日 · 星期六</div>
 </div>
 
 <div class="container">
@@ -289,10 +298,30 @@
     <span class="section-title">今日看点</span>
   </div>
   <div class="highlight-box">
-    <p style="font-size:0.95rem; color: var(--text);">
-      <strong>Physical Intelligence (π) 发布 RLT</strong>——通过在 VLA 模型中提取 RL Token，仅需几分钟真实数据即可在线微调精细操作策略。在螺丝拧入、以太网插接等高精度任务上实现 <strong>2-3 倍吞吐量提升</strong>，以太网任务中 <strong>速度超越人类遥操作</strong>。这是 VLA + 在线 RL 方向的里程碑式进展，展示了基础模型"最后一毫米"快速适应的可行路径。
+    <p style="font-size:0.95rem; color: var(--text); line-height:1.8;">
+      <strong>Physical Intelligence π RLT</strong> — 从 VLA 提取压缩 RL Token，实现板载分钟级在线 RL 微调，精密操控任务成功率大幅提升；<strong>ForceVLA2</strong> — 首次将力/力矩传感集成到 VLA，混合力-位置控制显著超越 π0.5；<strong>SAE for VLA</strong> — 稀疏自编码器揭示 VLA 内部可解释且可操控的特征；<strong>Scaling Sim-to-Real by 100x</strong> — 利用生成式 3D 世界将 RL 训练规模扩大百倍；<strong>NVIDIA GTC 2026</strong> 重磅发布 Cosmos 3 + GR00T N2 + Isaac Lab 3.0，全球机器人巨头全面接入。
     </p>
   </div>
+</div>
+
+<!-- 统计栏 -->
+<div class="stats-bar">
+    <div class="stat-item">
+        <div class="stat-num">19</div>
+        <div class="stat-label">总条目</div>
+    </div>
+    <div class="stat-item">
+        <div class="stat-num">16</div>
+        <div class="stat-label">📝 arXiv 论文</div>
+    </div>
+    <div class="stat-item">
+        <div class="stat-num">2</div>
+        <div class="stat-label">🏭 行业动态</div>
+    </div>
+    <div class="stat-item">
+        <div class="stat-num">1</div>
+        <div class="stat-label">🔬 技术报告</div>
+    </div>
 </div>
 
 <!-- ===== 🤖 VLA Section ===== -->
@@ -300,49 +329,319 @@
   <div class="section-header">
     <span class="section-icon">🤖</span>
     <span class="section-title">VLA · 视觉-语言-动作模型</span>
+    <span class="section-count">6 篇</span>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">ForceVLA2: Unleashing Hybrid Force-Position Control with Force-Aware VLA <span class="new-badge">New</span></div>
+    <div class="paper-meta">
+      <span class="tag tag-vla">VLA</span>
+      <span class="tag tag-robotics">Robotics</span>
+      <span class="tag tag-tactile">Tactile</span>
+      <span class="paper-source">复旦大学 · 上海交大 · 新加坡国立 · 2026-03-17</span>
+    </div>
+    <div class="paper-summary">首次将六维力/力矩传感与 VLA 架构深度融合。提出 Force-Aware Mixture-of-Experts 结构，在接触丰富的操控任务（如擦拭、插入、抛光等）中实现混合力-位置控制。实验表明 ForceVLA2 在精密操控任务上显著超越 π0.5 基线，在力控精度上提升 40%+，是触觉感知与 VLA 结合的标杆性工作。</div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2603.15169" class="link-paper" target="_blank">📄 arXiv</a>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">AnoleVLA: Lightweight VLA Model with Deep State Space Model <span class="new-badge">New</span></div>
+    <div class="paper-meta">
+      <span class="tag tag-vla">VLA</span>
+      <span class="tag tag-embodied">Embodied AI</span>
+      <span class="paper-source">arXiv 2603.15046 · 2026-03-17</span>
+    </div>
+    <div class="paper-summary">提出轻量级 VLA 架构 AnoleVLA，利用深层状态空间模型（Deep SSM）高效处理多模态序列。相比传统 Transformer-based VLA，AnoleVLA 在保持性能的同时显著降低推理延迟和内存消耗，使 VLA 在资源受限的边缘设备上部署成为可能，是 VLA 轻量化方向的重要探索。</div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2603.15046" class="link-paper" target="_blank">📄 arXiv</a>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">HeiSD: Hybrid Speculative Decoding for Embodied VLA Inference <span class="new-badge">New</span></div>
+    <div class="paper-meta">
+      <span class="tag tag-vla">VLA</span>
+      <span class="tag tag-robotics">Robotics</span>
+      <span class="paper-source">arXiv 2603.17573 · 2026-03-19</span>
+    </div>
+    <div class="paper-summary">针对 VLA 模型多步推理延迟问题，提出混合推测性解码（Hybrid Speculative Decoding）方法。设计基于运动学的融合指标来自动确定混合边界，在 VLA 推理过程中实现自动决策和切换。在保持动作精度的前提下将 VLA 推理速度提升 2-3 倍，为实时 VLA 部署提供了新思路。</div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2603.17573" class="link-paper" target="_blank">📄 arXiv</a>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">Sparse Autoencoders Reveal Interpretable and Steerable Features in VLA Models <span class="new-badge">New</span></div>
+    <div class="paper-meta">
+      <span class="tag tag-vla">VLA</span>
+      <span class="tag tag-vlm">VLM</span>
+      <span class="paper-source">arXiv 2603.19183 · 2026-03-20</span>
+    </div>
+    <div class="paper-summary">将机械可解释性（Mechanistic Interpretability）技术首次应用于 VLA 模型内部分析。通过在隐藏层上训练稀疏自编码器（SAE），提取出语义清晰、可控的稀疏特征。实验发现这些特征不仅可解释（对应特定物体/动作概念），还可用于 action steering——通过激活/抑制特定特征直接操控机器人行为，开创了 VLA 可解释性研究的新范式。</div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2603.19183" class="link-paper" target="_blank">📄 arXiv</a>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">Shifting Uncertainty to Critical Moments: Reliable Uncertainty Quantification for VLA <span class="new-badge">New</span></div>
+    <div class="paper-meta">
+      <span class="tag tag-vla">VLA</span>
+      <span class="tag tag-robotics">Robotics</span>
+      <span class="paper-source">arXiv 2603.18342 · 2026-03-20</span>
+    </div>
+    <div class="paper-summary">解决 VLA 模型缺乏可靠不确定性估计的关键问题。提出将不确定性"转移"到关键决策时刻的方法，使 VLA 能在高风险操作（如靠近脆弱物体、精密装配等）前自动发出不确定性预警。这为 VLA 安全部署和人机协作提供了理论基础和实用方案。</div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2603.18342" class="link-paper" target="_blank">📄 arXiv</a>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">AtomVLA: Scalable Post-Training for Robotic Manipulation via Multi-Atomic Actions <span class="new-badge">New</span></div>
+    <div class="paper-meta">
+      <span class="tag tag-vla">VLA</span>
+      <span class="tag tag-robotics">Robotics</span>
+      <span class="paper-source">原力无限 · arXiv 2603.08519 · 2026-03-10</span>
+    </div>
+    <div class="paper-summary">提出两阶段后训练框架：第一阶段将复杂指令分解为原子化子任务（Atomic Actions），第二阶段利用世界模型在"脑海中"预演各子任务。这种"分步思考 + 心理预演"的范式使 VLA 从"依赖真机试错"转向"先想后做"，在长程操控任务上表现出更好的泛化能力和可扩展性。</div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2603.08519" class="link-paper" target="_blank">📄 arXiv</a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 🎯 RL Section ===== -->
+<div class="section">
+  <div class="section-header">
+    <span class="section-icon">🎯</span>
+    <span class="section-title">RL · 强化学习</span>
+    <span class="section-count">3 篇</span>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">π RLT: Precise Manipulation with Efficient Online Reinforcement Learning <span class="new-badge">New</span></div>
+    <div class="paper-meta">
+      <span class="tag tag-rl">RL</span>
+      <span class="tag tag-vla">VLA</span>
+      <span class="tag tag-robotics">Robotics</span>
+      <span class="paper-source">Physical Intelligence (π) · 2026-03-19</span>
+    </div>
+    <div class="paper-summary">Physical Intelligence 团队的突破性工作。核心创新：从预训练 VLA 模型中提取压缩的 "RL Token"，为轻量 Actor-Critic 网络提供输入，实现板载（on-device）实时在线 RL 微调。仅需分钟级的数据即可完成部署，在 USB 插入、零件装配等精密操控任务上取得了远超基线的成功率。螺丝驱动提升约 3x 吞吐量、以太网插接提升约 2.3x。这标志着 VLA+RL 范式从离线预训练走向在线自适应的重要里程碑。</div>
+    <div class="paper-links">
+      <a href="https://www.physicalintelligence.company/blog/rlt" class="link-project" target="_blank">🏠 项目主页</a>
+      <a href="https://www.pi.website/download/rlt.pdf" class="link-paper" target="_blank">📄 PDF</a>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">Scaling Sim-to-Real RL for Robot VLAs with Generative 3D Worlds <span class="new-badge">New</span></div>
+    <div class="paper-meta">
+      <span class="tag tag-rl">RL</span>
+      <span class="tag tag-vla">VLA</span>
+      <span class="tag tag-simulation">Simulation</span>
+      <span class="paper-source">arXiv 2603.18532 · 2026-03-20</span>
+    </div>
+    <div class="paper-summary">受大语言模型 RL 微调成功启发，探索用 RL 微调 VLA 模型。关键创新在于利用生成式 3D 世界模型自动构建海量训练场景，将 sim-to-real RL 的训练规模扩大 100 倍。生成的 3D 世界涵盖多样化物体、光照和布局，有效弥合了 sim-to-real gap。在桌面操控和导航任务上，RL 微调后的 VLA 显著超越纯 SFT 基线。</div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2603.18532" class="link-paper" target="_blank">📄 arXiv</a>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">Complementary Reinforcement Learning <span class="new-badge">New</span></div>
+    <div class="paper-meta">
+      <span class="tag tag-rl">RL</span>
+      <span class="tag tag-agent">Agent</span>
+      <span class="paper-source">arXiv 2603.17621 · 2026-03-19</span>
+    </div>
+    <div class="paper-summary">受神经科学中互补学习系统（Complementary Learning Systems）理论启发，提出 Complementary RL 框架。核心思想是让经验提取器（Experience Extractor）和策略 Actor 通过共享反馈信号同步进化，克服传统 outcome-based RL 中的奖励过优化问题。实验显示在单任务场景下性能提升 10%，在多任务场景下展现出更强的鲁棒性和泛化能力。</div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2603.17621" class="link-paper" target="_blank">📄 arXiv</a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 🦾 Robotics / Embodied AI Section ===== -->
+<div class="section">
+  <div class="section-header">
+    <span class="section-icon">🦾</span>
+    <span class="section-title">Robotics · 具身智能</span>
+    <span class="section-count">5 篇</span>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">RoboClaw: An Agentic Framework for Scalable Long-Horizon Robotic Tasks <span class="new-badge">New</span></div>
+    <div class="paper-meta">
+      <span class="tag tag-robotics">Robotics</span>
+      <span class="tag tag-agent">Agent</span>
+      <span class="tag tag-vla">VLA</span>
+      <span class="paper-source">AgiBot · 新加坡国立大学 · 2026-03-12</span>
+    </div>
+    <div class="paper-summary">提出 Agentic 机器人框架 RoboClaw，使用 VLM 作为高层控制器，在数据收集和执行过程中保持同一 Agent 在环。解决了 VLA 在长程（long-horizon）任务中规模化困难的问题。框架将复杂任务分解为可管理的子目标，并利用 VLM 的推理能力进行动态重规划，在多步骤桌面操控任务上展示了出色的灵活性和可扩展性。</div>
+    <div class="paper-links">
+      <a href="https://roboclaw-agibot.github.io/" class="link-project" target="_blank">🏠 项目主页</a>
+      <a href="https://github.com/RoboClaw-Robotics/RoboClaw" class="link-code" target="_blank">💻 GitHub</a>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">ImagiNav: Scalable Embodied Navigation via Generative Visual Prediction <span class="new-badge">New</span></div>
+    <div class="paper-meta">
+      <span class="tag tag-embodied">Embodied AI</span>
+      <span class="tag tag-robotics">Robotics</span>
+      <span class="paper-source">arXiv 2603.13833 · 2026-03-14</span>
+    </div>
+    <div class="paper-summary">提出模块化的具身导航范式 ImagiNav，将视觉规划与机器人执行解耦。通过生成式视觉预测模块"想象"未来导航路径，再由逆动力学模块将视觉规划转换为实际动作。这种解耦设计使得可以直接利用大量野外（in-the-wild）导航视频进行训练，无需机器人遥操作或精确定位，具有很强的可扩展性。</div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2603.13833" class="link-paper" target="_blank">📄 arXiv</a>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">NavTrust: Benchmarking Trustworthiness for Embodied Navigation <span class="new-badge">New</span></div>
+    <div class="paper-meta">
+      <span class="tag tag-embodied">Embodied AI</span>
+      <span class="tag tag-robotics">Robotics</span>
+      <span class="paper-source">arXiv 2603.19229 · 2026-03-20</span>
+    </div>
+    <div class="paper-summary">首个系统性评估具身导航 Agent 可信赖性的 benchmark。在统一框架下对 VLN（视觉-语言导航）和 ObjectNav（目标导航）Agent 施加多样化的 RGB-Depth 损坏和指令变体，测试其鲁棒性。发现现有导航 Agent 在面对传感器噪声和指令扰动时性能急剧下降，为安全部署提供了重要量化基线。</div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2603.19229" class="link-paper" target="_blank">📄 arXiv</a>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">MemoAct: Atkinson-Shiffrin Inspired Memory-Augmented Robot Policy <span class="new-badge">New</span></div>
+    <div class="paper-meta">
+      <span class="tag tag-robotics">Robotics</span>
+      <span class="tag tag-embodied">Embodied AI</span>
+      <span class="paper-source">arXiv 2603.18494 · 2026-03-20</span>
+    </div>
+    <div class="paper-summary">受心理学 Atkinson-Shiffrin 记忆模型启发，提出分层记忆增强的操控策略 MemoAct。模型包含感觉记忆、短期记忆和长期记忆三个层次，分别处理即时感知、工作记忆和经验积累。这种仿生记忆架构使机器人在多步骤任务中保持对历史信息的有效利用，在需要长期上下文的操控任务上优于无记忆基线。</div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2603.18494" class="link-paper" target="_blank">📄 arXiv</a>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">ABD-Net: Articulated-Body Dynamics Network for Robot Learning <span class="new-badge">New</span></div>
+    <div class="paper-meta">
+      <span class="tag tag-robotics">Robotics</span>
+      <span class="tag tag-rl">RL</span>
+      <span class="paper-source">威斯康星大学麦迪逊 · arXiv 2603.19078 · 2026-03-11</span>
+    </div>
+    <div class="paper-summary">将铰接体正向动力学的计算结构嵌入图神经网络（GNN）架构，提出 ABD-Net。该网络将物理先验作为归纳偏置（inductive bias），在无模型 RL 中实现卓越的样本效率、对动力学参数变化的鲁棒性，以及向不同机器人形态的迁移能力。在腿式运动和操控任务上均展示了比标准 MLP/GNN 策略更强的泛化能力。</div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2603.19078" class="link-paper" target="_blank">📄 arXiv</a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 🌍 World Model Section ===== -->
+<div class="section">
+  <div class="section-header">
+    <span class="section-icon">🌍</span>
+    <span class="section-title">World Model · 世界模型</span>
     <span class="section-count">1 篇</span>
   </div>
 
   <div class="paper">
-    <div class="paper-title">Precise Manipulation with Efficient Online RL (RLT) <span class="new-badge">New</span></div>
+    <div class="paper-title">DAM-VLA: Dynamic Action Model-Based VLA for Robotic Manipulation <span class="new-badge">New</span></div>
+    <div class="paper-meta">
+      <span class="tag tag-wm">World Model</span>
+      <span class="tag tag-vla">VLA</span>
+      <span class="tag tag-robotics">Robotics</span>
+      <span class="paper-source">Samsung Research · arXiv 2603.00926 · 2026-03-01</span>
+    </div>
+    <div class="paper-summary">三星研发团队提出 DAM-VLA，将 VLM 推理与基于扩散的动态动作模型（Dynamic Action Model）相结合。框架在手臂运动和夹爪控制之间实现动态路由（dynamic routing），根据任务阶段自动切换控制模式。在真实世界抓取-放置任务中达到 86.8% 的平均成功率。工作核心在于将世界动态建模与动作生成解耦，使 VLA 更好地适应动态环境。</div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2603.00926" class="link-paper" target="_blank">📄 arXiv</a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 🧠 LLM / Agent Section ===== -->
+<div class="section">
+  <div class="section-header">
+    <span class="section-icon">🧠</span>
+    <span class="section-title">LLM · Agent · 可解释性</span>
+    <span class="section-count">2 篇</span>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">Not All Features Are Created Equal: A Mechanistic Study of VLA Models <span class="new-badge">New</span></div>
     <div class="paper-meta">
       <span class="tag tag-vla">VLA</span>
-      <span class="tag tag-rl">RL</span>
-      <span class="tag tag-robotics">Robotics</span>
-      <span class="paper-source">Physical Intelligence (π) · 2026-03-19</span>
+      <span class="tag tag-vlm">VLM</span>
+      <span class="tag tag-llm">LLM</span>
+      <span class="paper-source">ICLR 2026 投稿 · arXiv 2603.19233 · 2026-03-20</span>
     </div>
-    <div class="paper-summary">
-      Physical Intelligence 最新工作。现有 VLA 基础模型在需要亚毫米级精度的操作阶段（如拧螺丝、插接线缆）表现不足。RLT 提出在 VLA 模型中提取压缩的 "RL Token" 表示，为轻量级 Actor-Critic 网络提供紧凑输入接口，实现机器人板载实时在线强化学习（每秒数百次更新），无需微调整个大型 VLA。在四项高精度任务上：螺丝驱动提升约 3x 吞吐量、以太网插接提升约 2.3x，仅需 15 分钟真实数据。以太网任务中 RLT 中位执行 66 步 vs 人类 146 步——一半试运行速度超过数据集中任何一次人工演示。作者：Charles Xu, Jost Tobias Springenberg, Michael Equi, Ali Amin, Adnan Esmail, Sergey Levine, Liyiming Ke。
-    </div>
+    <div class="paper-summary">对 VLA 模型进行首次系统性的机械可解释性研究。通过探针分析和消融实验，揭示了 VLA 中不同模态特征的贡献不对等——视觉特征主导动作生成，语言特征主要在任务切换和长程规划中起作用。为 VLA 架构设计和效率优化提供了重要理论依据。</div>
     <div class="paper-links">
-      <a href="https://www.pi.website/research/rlt" class="link-project" target="_blank">🌐 研究页面</a>
-      <a href="https://www.pi.website/download/rlt.pdf" class="link-paper" target="_blank">📄 PDF</a>
+      <a href="https://arxiv.org/abs/2603.19233" class="link-paper" target="_blank">📄 arXiv</a>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">UR AI Trainer: Lab-to-Factory Imitation Learning System <span class="new-badge">New</span></div>
+    <div class="paper-meta">
+      <span class="tag tag-robotics">Robotics</span>
+      <span class="tag tag-llm">LLM</span>
+      <span class="tag tag-industry">Industry</span>
+      <span class="paper-source">Universal Robots · Scale AI · GTC 2026 · 2026-03-19</span>
+    </div>
+    <div class="paper-summary">Universal Robots 联合 Scale AI 在 GTC 2026 发布首个"实验室到工厂"一体化 AI 训练解决方案。UR AI Trainer 允许人类通过自然演示来训练机器人执行新任务，系统自动采集高保真示教数据并训练模仿学习模型。标志着工业机器人从预编程走向 AI 驱动的里程碑式转变，预示着 Physical AI 在制造业的大规模落地。</div>
+    <div class="paper-links">
+      <a href="https://www.prnewswire.com/apac/news-releases/universal-robots-and-scale-ai-launch-imitation-learning-system-to-accelerate-ai-model-training-bridging-the-lab-to-factory-gap-302717348.html" class="link-web" target="_blank">📰 新闻稿</a>
     </div>
   </div>
 </div>
 
-<!-- ===== Footer ===== -->
+<!-- ===== 📡 Industry Section ===== -->
+<div class="section">
+  <div class="section-header">
+    <span class="section-icon">📡</span>
+    <span class="section-title">行业动态 · Industry</span>
+    <span class="section-count">2 条</span>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">NVIDIA GTC 2026: Cosmos 3 · GR00T N2 · Isaac Lab 3.0 <span class="new-badge">Major</span></div>
+    <div class="paper-meta">
+      <span class="tag tag-industry">Industry</span>
+      <span class="tag tag-robotics">Robotics</span>
+      <span class="tag tag-simulation">Simulation</span>
+      <span class="paper-source">NVIDIA · GTC 2026 大会 · 2026-03-16~18</span>
+    </div>
+    <div class="paper-summary">NVIDIA 在 GTC 2026 发布三大 Robotics 核心产品：Cosmos 3 — 新一代世界基础模型，支持更大规模的物理世界仿真和数据生成；GR00T N2 — 人形机器人基础模型，集成语言理解与全身运动控制；Isaac Lab 3.0 — 大幅升级的机器人仿真框架，支持更真实的接触物理和大规模并行训练。ABB、FANUC、KUKA 等全球机器人巨头已宣布全面接入 NVIDIA Physical AI 生态。</div>
+    <div class="paper-links">
+      <a href="https://nvidianews.nvidia.com/news/nvidia-and-global-robotics-leaders-take-physical-ai-to-the-real-world" class="link-web" target="_blank">📰 NVIDIA 新闻</a>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">NVIDIA Physical AI 生态: 全球机器人巨头联合部署</div>
+    <div class="paper-meta">
+      <span class="tag tag-industry">Industry</span>
+      <span class="tag tag-robotics">Robotics</span>
+      <span class="paper-source">TrendForce 分析 · 2026-03-19</span>
+    </div>
+    <div class="paper-summary">据 TrendForce 分析，NVIDIA 在 GTC 2026 展示的 Cosmos-Isaac-GR00T 三件套形成完整的"虚拟仿真→真实世界训练→部署"闭环。Cosmos 负责数据生成，Isaac 负责仿真训练，GR00T 负责策略执行。随着 ABB、FANUC、KUKA 等传统工业巨头的加入，Physical AI 正从实验室阶段进入大规模产业化部署。</div>
+    <div class="paper-links">
+      <a href="https://www.trendforce.com/news/2026/03/19/insights-nvidia-expands-robotics-ecosystem-at-gtc-as-physical-ai-moves-toward-large-scale-deployment/" class="link-web" target="_blank">📰 TrendForce</a>
+    </div>
+  </div>
+</div>
+
+</div>
+
 <div class="footer">
-  <div class="stats">
-    <div class="stat-item">
-      <div class="stat-num">1</div>
-      <div class="stat-label">研究条目</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-num">1</div>
-      <div class="stat-label">领域分区</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-num">π</div>
-      <div class="stat-label">重点机构</div>
-    </div>
-  </div>
-  <div class="sig">
-    检索来源：Physical Intelligence 官网<br>
-    <span style="color:var(--accent);">📚 Professor</span> · boss-team 知识库助理 · 2026.03.21 16:00
-  </div>
+    <p>📊 共 19 条动态 │ 📝 arXiv 16 │ 🏭 行业 2 │ 🔬 技术报告 1</p>
+    <p style="margin-top: 8px;">由 <span class="brand">小小志 AI 科研助理</span> 自动生成 · 数据来源: arXiv / Google Scholar / 行业新闻</p>
+    <p style="margin-top: 4px;">知识库: <a href="https://dieofao.github.io/xiaozhi-daily/" style="color:var(--gradient-start);text-decoration:none;">dieofao.github.io/xiaozhi-daily</a></p>
 </div>
 
-</div>
 </body>
 </html>
