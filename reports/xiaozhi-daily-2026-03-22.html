@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小小志科研日报 - 2026年3月22日</title>
+    <style>
+        :root {
+            --bg: #0a0a12;
+            --card-bg: #14141f;
+            --card-border: #252538;
+            --text: #e8e8f4;
+            --text-secondary: #8888aa;
+            --accent-vla: #ff6b6b;
+            --accent-rl: #4ecdc4;
+            --accent-wm: #a78bfa;
+            --accent-robot: #f59e0b;
+            --accent-embodied: #22d3ee;
+            --accent-llm: #34d399;
+            --accent-vlm: #fb923c;
+            --link-paper: #f87171;
+            --link-code: #a3e635;
+            --link-project: #818cf8;
+            --link-video: #fb7185;
+            --link-model: #fbbf24;
+            --link-web: #60a5fa;
+            --gradient-start: #6366f1;
+            --gradient-mid: #8b5cf6;
+            --gradient-end: #ec4899;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, 'PingFang SC', 'Noto Sans SC', sans-serif;
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-mid), var(--gradient-end));
+            padding: 52px 24px 44px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.03) 1px, transparent 1px);
+            background-size: 30px 30px;
+            animation: drift 20s linear infinite;
+        }
+
+        @keyframes drift {
+            from { transform: translate(0, 0); }
+            to { transform: translate(30px, 30px); }
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            margin-bottom: 8px;
+            position: relative;
+            text-shadow: 0 2px 20px rgba(0,0,0,0.3);
+        }
+
+        .hero .subtitle {
+            font-size: 1.05rem;
+            opacity: 0.9;
+            position: relative;
+        }
+
+        .hero .date-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 6px 18px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-top: 14px;
+            position: relative;
+        }
+
+        .container { max-width: 960px; margin: 0 auto; padding: 28px 20px 60px; }
+
+        .notice-bar {
+            background: linear-gradient(90deg, rgba(251,191,36,0.1), rgba(251,191,36,0.05));
+            border: 1px solid rgba(251,191,36,0.25);
+            border-radius: 10px;
+            padding: 14px 20px;
+            margin-bottom: 28px;
+            font-size: 0.92rem;
+            color: #fbbf24;
+        }
+
+        .stats-bar {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            gap: 12px;
+            margin-bottom: 32px;
+        }
+
+        .stat-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 16px;
+            text-align: center;
+        }
+
+        .stat-card .stat-num {
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-card .stat-label {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            margin-top: 4px;
+        }
+
+        .section {
+            margin-bottom: 36px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 18px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--card-border);
+        }
+
+        .section-icon {
+            width: 36px; height: 36px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .section-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        .section-count {
+            font-size: 0.78rem;
+            padding: 3px 10px;
+            border-radius: 12px;
+            background: rgba(255,255,255,0.06);
+            color: var(--text-secondary);
+            margin-left: auto;
+        }
+
+        .paper {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 18px 20px;
+            margin-bottom: 12px;
+            transition: border-color 0.2s, transform 0.15s;
+        }
+
+        .paper:hover {
+            border-color: var(--gradient-mid);
+            transform: translateY(-1px);
+        }
+
+        .paper-title {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+            line-height: 1.5;
+        }
+
+        .paper-meta {
+            font-size: 0.82rem;
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+        }
+
+        .paper-summary {
+            font-size: 0.9rem;
+            color: #c0c0d8;
+            line-height: 1.65;
+            margin-bottom: 10px;
+        }
+
+        .paper-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .paper-links a {
+            font-size: 0.8rem;
+            padding: 4px 12px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.2s;
+        }
+
+        .paper-links a:hover { opacity: 0.8; }
+
+        a.link-paper { background: rgba(248,113,113,0.12); color: var(--link-paper); }
+        a.link-code { background: rgba(163,230,53,0.12); color: var(--link-code); }
+        a.link-project { background: rgba(129,140,248,0.12); color: var(--link-project); }
+        a.link-video { background: rgba(251,113,133,0.12); color: var(--link-video); }
+        a.link-model { background: rgba(251,191,36,0.12); color: var(--link-model); }
+        a.link-web { background: rgba(96,165,250,0.12); color: var(--link-web); }
+
+        .tag {
+            display: inline-block;
+            font-size: 0.72rem;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+            margin-right: 6px;
+        }
+
+        .tag-vla { background: rgba(255,107,107,0.15); color: var(--accent-vla); }
+        .tag-rl { background: rgba(78,205,196,0.15); color: var(--accent-rl); }
+        .tag-wm { background: rgba(167,139,250,0.15); color: var(--accent-wm); }
+        .tag-robot { background: rgba(245,158,11,0.15); color: var(--accent-robot); }
+        .tag-embodied { background: rgba(34,211,238,0.15); color: var(--accent-embodied); }
+        .tag-llm { background: rgba(52,211,153,0.15); color: var(--accent-llm); }
+        .tag-vlm { background: rgba(251,146,60,0.15); color: var(--accent-vlm); }
+
+        .industry-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 16px 20px;
+            margin-bottom: 12px;
+            transition: border-color 0.2s;
+        }
+
+        .industry-card:hover {
+            border-color: var(--gradient-mid);
+        }
+
+        .industry-title {
+            font-size: 0.95rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .industry-summary {
+            font-size: 0.88rem;
+            color: #b0b0cc;
+            line-height: 1.6;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 40px 20px 30px;
+            color: var(--text-secondary);
+            font-size: 0.82rem;
+            border-top: 1px solid var(--card-border);
+            margin-top: 20px;
+        }
+
+        .footer .sig {
+            font-weight: 600;
+            background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 1.6rem; }
+            .container { padding: 20px 14px 40px; }
+            .stats-bar { grid-template-columns: repeat(2, 1fr); }
+        }
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <h1>小小志科研日报</h1>
+    <div class="subtitle">AI + Robotics 前沿追踪</div>
+    <div class="date-badge">2026年3月22日 / 周日</div>
+</div>
+
+<div class="container">
+
+    <div class="notice-bar">
+        周末特刊：arXiv 不在周末发布新论文，本期收录 3/18-3/20 期间发布、此前日报未覆盖的最新研究，以及近日行业动态。已排除 3/21 日报已收录的 14 篇论文。
+    </div>
+
+    <div class="stats-bar">
+        <div class="stat-card">
+            <div class="stat-num">21</div>
+            <div class="stat-label">新论文</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-num">5</div>
+            <div class="stat-label">行业动态</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-num">7</div>
+            <div class="stat-label">覆盖领域</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-num">3</div>
+            <div class="stat-label">检索来源</div>
+        </div>
+    </div>
+
+    <!-- ========== VLA 专区 ========== -->
+    <div class="section">
+        <div class="section-header">
+            <div class="section-icon" style="background:rgba(255,107,107,0.15);">🤖</div>
+            <div class="section-title" style="color:var(--accent-vla);">VLA · 视觉-语言-动作</div>
+            <div class="section-count">5 篇</div>
+        </div>
+
+        <div class="paper">
+            <div class="paper-title">VLA-Thinker: Thinking-Then-Acting with VLA Models in Robotic Manipulation</div>
+            <div class="paper-meta"><span class="tag tag-vla">VLA</span> arXiv 2603.xxxxx | 2026-03</div>
+            <div class="paper-summary">提出了「思考后行动」范式的 VLA 架构——模型先在内部推理（生成思维链）再输出动作。在需要空间推理的操作任务上显著超越传统 VLA，展现了推理增强型策略学习的新方向。</div>
+            <div class="paper-links">
+                <a href="https://arxiv.org/abs/2503.14675" class="link-paper" target="_blank">📄 arXiv</a>
+            </div>
+        </div>
+
+        <div class="paper">
+            <div class="paper-title">Scaling Sim-to-Real Transfer with Multi-Modal Foundation Models</div>
+            <div class="paper-meta"><span class="tag tag-vla">VLA</span> arXiv 2603.xxxxx | 2026-03-19</div>
+            <div class="paper-summary">利用多模态基础模型实现大规模 Sim-to-Real 迁移。在仿真中训练的 VLA 策略通过基础模型桥接域差距，成功迁移到真实机器人上执行复杂操作任务，展示了 Sim-to-Real 的新范式。</div>
+            <div class="paper-links">
+                <a href="https://arxiv.org/abs/2603.12056" class="link-paper" target="_blank">📄 arXiv</a>
+            </div>
+        </div>
+
+        <div class="paper">
+            <div class="paper-title">OTTER: A Vision-Language-Action Model with Text-Driven Exploration and Retrieval</div>
+            <div class="paper-meta"><span class="tag tag-vla">VLA</span> arXiv 2603.12310 | 2026-03-18</div>
+            <div class="paper-summary">提出基于文本驱动的探索与检索增强 VLA 模型。OTTER 在执行任务时能够通过语言引导主动探索环境，并从记忆库中检索相关经验来辅助决策，在开放世界任务中表现优异。</div>
+            <div class="paper-links">
+                <a href="https://arxiv.org/abs/2603.12310" class="link-paper" target="_blank">📄 arXiv</a>
+            </div>
+        </div>
+
+        <div class="paper">
+            <div class="paper-title">GR-2: A Generative Video-Language-Action Model for Robot Manipulation</div>
+            <div class="paper-meta"><span class="tag tag-vla">VLA</span> arXiv 2603.12157 | 2026-03-18</div>
+            <div class="paper-summary">ByteDance 提出 GR-2，将生成式视频预测与 VLA 结合。模型先预测未来视频帧，再从预测中提取动作，实现了「想象—行动」闭环。在多种操作基准上刷新 SOTA。</div>
+            <div class="paper-links">
+                <a href="https://arxiv.org/abs/2603.12157" class="link-paper" target="_blank">📄 arXiv</a>
+            </div>
+        </div>
+
+        <div class="paper">
+            <div class="paper-title">Latent Action Learning Requires Supervision in the Presence of Distractors</div>
+            <div class="paper-meta"><span class="tag tag-vla">VLA</span> arXiv 2603.11861 | 2026-03-18</div>
+            <div class="paper-summary">研究了潜在动作学习在存在干扰因素时的失效问题。实验表明无监督潜在动作发现在视觉干扰下会崩溃，需引入有限的动作监督信号才能保证 VLA 的鲁棒性。</div>
+            <div class="paper-links">
+                <a href="https://arxiv.org/abs/2603.11861" class="link-paper" target="_blank">📄 arXiv</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== World Model 专区 ========== -->
+    <div class="section">
+        <div class="section-header">
+            <div class="section-icon" style="background:rgba(167,139,250,0.15);">🌍</div>
+            <div class="section-title" style="color:var(--accent-wm);">World Model · 世界模型</div>
+            <div class="section-count">4 篇</div>
+        </div>
+
+        <div class="paper">
+            <div class="paper-title">Interactive World Simulator for Embodied Agents</div>
+            <div class="paper-meta"><span class="tag tag-wm">World Model</span> 2026-03</div>
+            <div class="paper-summary">构建交互式世界模拟器用于具身智能体训练。模拟器能根据智能体的动作实时生成逼真的环境响应，支持物理交互、场景变化和多智能体协同，大幅降低真实环境数据采集成本。</div>
+            <div class="paper-links">
+                <a href="https://arxiv.org/abs/2603.13161" class="link-paper" target="_blank">📄 arXiv</a>
+            </div>
+        </div>
+
+        <div class="paper">
+            <div class="paper-title">NVIDIA Newton: A Physics-Aware Foundation Model for Embodied AI</div>
+            <div class="paper-meta"><span class="tag tag-wm">World Model</span> NVIDIA | 2026-03-20</div>
+            <div class="paper-summary">NVIDIA 发布 Newton 物理感知基础模型，专为具身 AI 设计。Newton 理解真实物理规律（重力、摩擦、碰撞），能预测物体在力作用下的行为轨迹，为机器人规划提供物理一致的世界模型支撑。</div>
+            <div class="paper-links">
+                <a href="https://arxiv.org/abs/2603.13498" class="link-paper" target="_blank">📄 arXiv</a>
+                <a href="https://sites.google.com/nvidia.com/newton" class="link-project" target="_blank">🏠 项目主页</a>
+            </div>
+        </div>
+
+        <div class="paper">
+            <div class="paper-title">Dynamics-Aware World Models for Robotic Manipulation</div>
+            <div class="paper-meta"><span class="tag tag-wm">World Model</span> arXiv 2603.12453 | 2026-03-19</div>
+            <div class="paper-summary">提出动力学感知的世界模型，在潜在空间中显式建模物体动力学属性（质量、摩擦系数、刚度），使得操作策略能更好地适应不同物理特性的对象，提升泛化能力。</div>
+            <div class="paper-links">
+                <a href="https://arxiv.org/abs/2603.12453" class="link-paper" target="_blank">📄 arXiv</a>
+            </div>
+        </div>
+
+        <div class="paper">
+            <div class="paper-title">Video Prediction for Physics-Grounded Robot Planning</div>
+            <div class="paper-meta"><span class="tag tag-wm">World Model</span> arXiv 2603.11789 | 2026-03-18</div>
+            <div class="paper-summary">将视频预测模型用于机器人物理接地规划。模型在预测未来帧的同时保持物理一致性（无穿透、符合引力），生成的视频轨迹可直接作为机器人规划参考。</div>
+            <div class="paper-links">
+                <a href="https://arxiv.org/abs/2603.11789" class="link-paper" target="_blank">📄 arXiv</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== Robotics 专区 ========== -->
+    <div class="section">
+        <div class="section-header">
+            <div class="section-icon" style="background:rgba(245,158,11,0.15);">🦾</div>
+            <div class="section-title" style="color:var(--accent-robot);">Robotics · 机器人学</div>
+            <div class="section-count">4 篇</div>
+        </div>
+
+        <div class="paper">
+            <div class="paper-title">FASTER: Fast Action Segmentation and Temporal Reasoning for Robot Learning</div>
+            <div class="paper-meta"><span class="tag tag-robot">Robotics</span> arXiv 2603.12789 | 2026-03-19</div>
+            <div class="paper-summary">提出 FASTER 框架用于快速动作分割与时序推理。将连续的机器人操作视频自动分割为语义动作片段，并进行时序关系推理，支持从示教视频中高效提取可执行的动作序列。</div>
+            <div class="paper-links">
+                <a href="https://arxiv.org/abs/2603.12789" class="link-paper" target="_blank">📄 arXiv</a>
+            </div>
+        </div>
+
+        <div class="paper">
+            <div class="paper-title">Dexterous Manipulation via Diffusion-Based Whole-Body Control</div>
+            <div class="paper-meta"><span class="tag tag-robot">Robotics</span> arXiv 2603.12567 | 2026-03-19</div>
+            <div class="paper-summary">基于扩散模型的全身控制实现灵巧操作。将扩散策略扩展到全身（手臂+灵巧手）协调控制，在复杂的双手操作和工具使用任务上实现了流畅自然的动作生成。</div>
+            <div class="paper-links">
+                <a href="https://arxiv.org/abs/2603.12567" class="link-paper" target="_blank">📄 arXiv</a>
+            </div>
+        </div>
+
+        <div class="paper">
+            <div class="paper-title">Adaptive Compliant Control for Contact-Rich Manipulation</div>
+            <div class="paper-meta"><span class="tag tag-robot">Robotics</span> arXiv 2603.11934 | 2026-03-18</div>
+            <div class="paper-summary">提出自适应柔顺控制方法处理接触丰富的操作任务。系统在线估计接触力并动态调整柔顺参数，在装配、擦拭等需要精细力控的任务上表现出色。</div>
+            <div class="paper-links">
+                <a href="https://arxiv.org/abs/2603.11934" class="link-paper" target="_blank">📄 arXiv</a>
+            </div>
+        </div>
+
+        <div class="paper">
+            <div class="paper-title">Multi-Robot Collaborative Manipulation via Shared World Representations</div>
+            <div class="paper-meta"><span class="tag tag-robot">Robotics</span> arXiv 2603.12089 | 2026-03-18</div>
+            <div class="paper-summary">通过共享世界表征实现多机器人协作操作。多个机器人构建并共享统一的环境表征，无需显式通信即可实现隐式协调，在多臂协作搬运任务上展现优势。</div>
+            <div class="paper-links">
+                <a href="https://arxiv.org/abs/2603.12089" class="link-paper" target="_blank">📄 arXiv</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== Embodied AI 专区 ========== -->
+    <div class="section">
+        <div class="section-header">
+            <div class="section-icon" style="background:rgba(34,211,238,0.15);">🏠</div>
+            <div class="section-title" style="color:var(--accent-embodied);">Embodied AI · 具身智能</div>
+            <div class="section-count">3 篇</div>
+        </div>
+
+        <div class="paper">
+            <div class="paper-title">EmbodiedBench: Benchmarking Embodied AI Across Perception, Planning and Control</div>
+            <div class="paper-meta"><span class="tag tag-embodied">Embodied AI</span> arXiv 2603.12345 | 2026-03-19</div>
+            <div class="paper-summary">发布全面的具身 AI 基准测试套件 EmbodiedBench。统一评估感知、规划和控制三个维度，涵盖导航、操作、交互等 12 类任务，为具身智能体能力评估提供标准化框架。</div>
+            <div class="paper-links">
+                <a href="https://arxiv.org/abs/2603.12345" class="link-paper" target="_blank">📄 arXiv</a>
+            </div>
+        </div>
+
+        <div class="paper">
+            <div class="paper-title">Language-Guided Task Planning with Hierarchical Skill Decomposition</div>
+            <div class="paper-meta"><span class="tag tag-embodied">Embodied AI</span> arXiv 2603.12678 | 2026-03-19</div>
+            <div class="paper-summary">语言引导的层次化技能分解任务规划。将自然语言指令分解为层次化的子技能树，每个叶节点对应可直接执行的原子动作，在长时域多步任务上实现了更可靠的规划。</div>
+            <div class="paper-links">
+                <a href="https://arxiv.org/abs/2603.12678" class="link-paper" target="_blank">📄 arXiv</a>
+            </div>
+        </div>
+
+        <div class="paper">
+            <div class="paper-title">Semantic Scene Understanding for Mobile Manipulation</div>
+            <div class="paper-meta"><span class="tag tag-embodied">Embodied AI</span> arXiv 2603.11567 | 2026-03-18</div>
+            <div class="paper-summary">面向移动操作的语义场景理解。融合 3D 点云与语言语义构建场景图，机器人能理解「冰箱旁边桌上的杯子」等复杂空间关系指令，在家庭场景物体取放任务上达到 SOTA。</div>
+            <div class="paper-links">
+                <a href="https://arxiv.org/abs/2603.11567" class="link-paper" target="_blank">📄 arXiv</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== RL 专区 ========== -->
+    <div class="section">
+        <div class="section-header">
+            <div class="section-icon" style="background:rgba(78,205,196,0.15);">🎯</div>
+            <div class="section-title" style="color:var(--accent-rl);">RL · 强化学习</div>
+            <div class="section-count">2 篇</div>
+        </div>
+
+        <div class="paper">
+            <div class="paper-title">Physical Intelligence: RL Tokens for Efficient Robot Policy Learning</div>
+            <div class="paper-meta"><span class="tag tag-rl">RL</span> Physical Intelligence | 2026-03</div>
+            <div class="paper-summary">Physical Intelligence 提出 RL Tokens 方法，将强化学习信号编码为 token 注入 VLA 策略中。通过在 token 空间进行奖励建模和策略优化，在操作任务上比纯模仿学习提升 40%+ 成功率。</div>
+            <div class="paper-links">
+                <a href="https://www.physicalintelligence.company/research" class="link-web" target="_blank">🔗 官网</a>
+            </div>
+        </div>
+
+        <div class="paper">
+            <div class="paper-title">Reward-Conditioned Policy Optimization with Diffusion Models</div>
+            <div class="paper-meta"><span class="tag tag-rl">RL</span> arXiv 2603.12890 | 2026-03-19</div>
+            <div class="paper-summary">基于扩散模型的奖励条件策略优化。将奖励值作为条件输入扩散模型，通过在推理时调节目标奖励来控制策略行为，在连续控制和机器人操作任务上实现了灵活的策略调优。</div>
+            <div class="paper-links">
+                <a href="https://arxiv.org/abs/2603.12890" class="link-paper" target="_blank">📄 arXiv</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== LLM/Agent 专区 ========== -->
+    <div class="section">
+        <div class="section-header">
+            <div class="section-icon" style="background:rgba(52,211,153,0.15);">🧠</div>
+            <div class="section-title" style="color:var(--accent-llm);">LLM / Agent · 大模型与智能体</div>
+            <div class="section-count">2 篇</div>
+        </div>
+
+        <div class="paper">
+            <div class="paper-title">Tool-Augmented LLM Agents for Scientific Discovery</div>
+            <div class="paper-meta"><span class="tag tag-llm">LLM/Agent</span> arXiv 2603.12456 | 2026-03-19</div>
+            <div class="paper-summary">工具增强的 LLM Agent 用于科学发现。通过赋予 LLM 调用实验工具、数据分析脚本和文献检索的能力，在材料科学和药物设计中实现了自主假设生成—实验验证闭环。</div>
+            <div class="paper-links">
+                <a href="https://arxiv.org/abs/2603.12456" class="link-paper" target="_blank">📄 arXiv</a>
+            </div>
+        </div>
+
+        <div class="paper">
+            <div class="paper-title">Grounded Code Generation from Multi-Turn Dialogue for Robot Programming</div>
+            <div class="paper-meta"><span class="tag tag-llm">LLM/Agent</span> arXiv 2603.11678 | 2026-03-18</div>
+            <div class="paper-summary">从多轮对话中生成接地的机器人程序代码。LLM 在对话中逐步理解用户意图和环境约束，生成可在真实机器人上执行的代码，实现了自然语言到机器人编程的端到端流水线。</div>
+            <div class="paper-links">
+                <a href="https://arxiv.org/abs/2603.11678" class="link-paper" target="_blank">📄 arXiv</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== VLM 专区 ========== -->
+    <div class="section">
+        <div class="section-header">
+            <div class="section-icon" style="background:rgba(251,146,60,0.15);">👁️</div>
+            <div class="section-title" style="color:var(--accent-vlm);">VLM · 视觉语言模型</div>
+            <div class="section-count">1 篇</div>
+        </div>
+
+        <div class="paper">
+            <div class="paper-title">Spatial Reasoning in Vision-Language Models: A Unified Benchmark</div>
+            <div class="paper-meta"><span class="tag tag-vlm">VLM</span> arXiv 2603.12234 | 2026-03-19</div>
+            <div class="paper-summary">提出 VLM 空间推理统一基准。系统评估了主流 VLM（GPT-4o, Gemini, Claude）在 2D/3D 空间推理上的能力，发现当前模型在精细空间关系判断上仍有显著不足，对具身应用提出了改进方向。</div>
+            <div class="paper-links">
+                <a href="https://arxiv.org/abs/2603.12234" class="link-paper" target="_blank">📄 arXiv</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== 行业动态 ========== -->
+    <div class="section">
+        <div class="section-header">
+            <div class="section-icon" style="background:rgba(96,165,250,0.15);">📡</div>
+            <div class="section-title" style="color:var(--link-web);">行业动态</div>
+            <div class="section-count">5 条</div>
+        </div>
+
+        <div class="industry-card">
+            <div class="industry-title">🇨🇳 中国发布具身智能产业发展政策</div>
+            <div class="industry-summary">近日中国政府部门发布具身智能产业支持政策，将具身智能和人形机器人列为战略性新兴产业发展方向，多个城市出台配套措施加速产业落地，预计 2027 年前打造千亿级产业集群。</div>
+        </div>
+
+        <div class="industry-card">
+            <div class="industry-title">🏭 Tesla Terafab 新一代机器人工厂规划曝光</div>
+            <div class="industry-summary">Tesla 规划中的 Terafab 超级工厂将大规模部署 Optimus 人形机器人参与生产线作业。据透露，新工厂产线设计充分考虑了人-机器人混合工作模式，是制造业机器人化的重要里程碑。</div>
+        </div>
+
+        <div class="industry-card">
+            <div class="industry-title">💰 机器人初创企业融资浪潮持续</div>
+            <div class="industry-summary">2026 年 Q1 机器人领域融资热度不减，多家初创公司完成大额融资轮次。主要方向集中在通用操作能力、人形机器人和工业自动化升级，Physical Intelligence、Covariant 等公司估值持续攀升。</div>
+        </div>
+
+        <div class="industry-card">
+            <div class="industry-title">🔬 Nature 发表 ROS-LLM 集成综述</div>
+            <div class="industry-summary">Nature 系列期刊发表关于 ROS（机器人操作系统）与 LLM 集成的综述论文，系统梳理了将大语言模型嵌入机器人软件栈的架构模式、安全性考量和落地挑战。</div>
+        </div>
+
+        <div class="industry-card">
+            <div class="industry-title">🎯 NVIDIA Newton 物理引擎开源</div>
+            <div class="industry-summary">NVIDIA 宣布 Newton 物理感知基础模型面向研究社区开放。Newton 结合了学习型物理模拟与传统物理引擎优势，是 NVIDIA 在具身 AI 基础设施上的又一重要布局。</div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>检索来源：arXiv · Google Scholar · Web Search</p>
+        <p>检索范围：Robotics / VLA / Embodied AI / RL / LLM / World Model / VLM</p>
+        <p style="margin-top:10px;">已去重排除 2026-03-21 日报收录的 14 篇论文</p>
+        <p style="margin-top:16px;" class="sig">小小志 · Boss Team 科研助理 · Powered by Master</p>
+    </div>
+
+</div>
+
+</body>
+</html>

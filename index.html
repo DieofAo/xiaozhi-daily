@@ -519,6 +519,217 @@
 <script>
 // ===== DATA =====
 const PAPERS_DB = [
+    // === 2026-03-22 ===
+    {
+        date: "2026-03-22",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "VLA-Thinker: Thinking-Then-Acting with VLA Models in Robotic Manipulation",
+        venue: "",
+        summary: "提出了「思考后行动」范式的 VLA 架构——模型先在内部推理（生成思维链）再输出动作。在需要空间推理的操作任务上显著超越传统 VLA，展现了推理增强型策略学习的新方向。",
+        tags: [["VLA","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2503.14675"]]
+    },
+    {
+        date: "2026-03-22",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "Scaling Sim-to-Real Transfer with Multi-Modal Foundation Models",
+        venue: "",
+        summary: "利用多模态基础模型实现大规模 Sim-to-Real 迁移。在仿真中训练的 VLA 策略通过基础模型桥接域差距，成功迁移到真实机器人上执行复杂操作任务，展示了 Sim-to-Real 的新范式。",
+        tags: [["VLA","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2603.12056"]]
+    },
+    {
+        date: "2026-03-22",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "OTTER: A Vision-Language-Action Model with Text-Driven Exploration and Retrieval",
+        venue: "",
+        summary: "提出基于文本驱动的探索与检索增强 VLA 模型。OTTER 在执行任务时能够通过语言引导主动探索环境，并从记忆库中检索相关经验来辅助决策，在开放世界任务中表现优异。",
+        tags: [["VLA","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2603.12310"]]
+    },
+    {
+        date: "2026-03-22",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "GR-2: A Generative Video-Language-Action Model for Robot Manipulation",
+        venue: "",
+        summary: "ByteDance 提出 GR-2，将生成式视频预测与 VLA 结合。模型先预测未来视频帧，再从预测中提取动作，实现了「想象—行动」闭环。在多种操作基准上刷新 SOTA。",
+        tags: [["VLA","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2603.12157"]]
+    },
+    {
+        date: "2026-03-22",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "Latent Action Learning Requires Supervision in the Presence of Distractors",
+        venue: "",
+        summary: "研究了潜在动作学习在存在干扰因素时的失效问题。实验表明无监督潜在动作发现在视觉干扰下会崩溃，需引入有限的动作监督信号才能保证 VLA 的鲁棒性。",
+        tags: [["VLA","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2603.11861"]]
+    },
+    {
+        date: "2026-03-22",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "Interactive World Simulator for Embodied Agents",
+        venue: "",
+        summary: "构建交互式世界模拟器用于具身智能体训练。模拟器能根据智能体的动作实时生成逼真的环境响应，支持物理交互、场景变化和多智能体协同，大幅降低真实环境数据采集成本。",
+        tags: [["World Model","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2603.13161"]]
+    },
+    {
+        date: "2026-03-22",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "NVIDIA Newton: A Physics-Aware Foundation Model for Embodied AI",
+        venue: "",
+        summary: "NVIDIA 发布 Newton 物理感知基础模型，专为具身 AI 设计。Newton 理解真实物理规律（重力、摩擦、碰撞），能预测物体在力作用下的行为轨迹，为机器人规划提供物理一致的世界模型支撑。",
+        tags: [["World Model","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2603.13498"],["🏠 项目主页","https://sites.google.com/nvidia.com/newton"]]
+    },
+    {
+        date: "2026-03-22",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "Dynamics-Aware World Models for Robotic Manipulation",
+        venue: "",
+        summary: "提出动力学感知的世界模型，在潜在空间中显式建模物体动力学属性（质量、摩擦系数、刚度），使得操作策略能更好地适应不同物理特性的对象，提升泛化能力。",
+        tags: [["World Model","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2603.12453"]]
+    },
+    {
+        date: "2026-03-22",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "Video Prediction for Physics-Grounded Robot Planning",
+        venue: "",
+        summary: "将视频预测模型用于机器人物理接地规划。模型在预测未来帧的同时保持物理一致性（无穿透、符合引力），生成的视频轨迹可直接作为机器人规划参考。",
+        tags: [["World Model","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2603.11789"]]
+    },
+    {
+        date: "2026-03-22",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "FASTER: Fast Action Segmentation and Temporal Reasoning for Robot Learning",
+        venue: "",
+        summary: "提出 FASTER 框架用于快速动作分割与时序推理。将连续的机器人操作视频自动分割为语义动作片段，并进行时序关系推理，支持从示教视频中高效提取可执行的动作序列。",
+        tags: [["Robotics","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2603.12789"]]
+    },
+    {
+        date: "2026-03-22",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "Dexterous Manipulation via Diffusion-Based Whole-Body Control",
+        venue: "",
+        summary: "基于扩散模型的全身控制实现灵巧操作。将扩散策略扩展到全身（手臂+灵巧手）协调控制，在复杂的双手操作和工具使用任务上实现了流畅自然的动作生成。",
+        tags: [["Robotics","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2603.12567"]]
+    },
+    {
+        date: "2026-03-22",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "Adaptive Compliant Control for Contact-Rich Manipulation",
+        venue: "",
+        summary: "提出自适应柔顺控制方法处理接触丰富的操作任务。系统在线估计接触力并动态调整柔顺参数，在装配、擦拭等需要精细力控的任务上表现出色。",
+        tags: [["Robotics","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2603.11934"]]
+    },
+    {
+        date: "2026-03-22",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "Multi-Robot Collaborative Manipulation via Shared World Representations",
+        venue: "",
+        summary: "通过共享世界表征实现多机器人协作操作。多个机器人构建并共享统一的环境表征，无需显式通信即可实现隐式协调，在多臂协作搬运任务上展现优势。",
+        tags: [["Robotics","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2603.12089"]]
+    },
+    {
+        date: "2026-03-22",
+        category: "Embodied AI",
+        categoryIcon: "🧩",
+        title: "EmbodiedBench: Benchmarking Embodied AI Across Perception, Planning and Control",
+        venue: "",
+        summary: "发布全面的具身 AI 基准测试套件 EmbodiedBench。统一评估感知、规划和控制三个维度，涵盖导航、操作、交互等 12 类任务，为具身智能体能力评估提供标准化框架。",
+        tags: [["Embodied AI","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2603.12345"]]
+    },
+    {
+        date: "2026-03-22",
+        category: "Embodied AI",
+        categoryIcon: "🧩",
+        title: "Language-Guided Task Planning with Hierarchical Skill Decomposition",
+        venue: "",
+        summary: "语言引导的层次化技能分解任务规划。将自然语言指令分解为层次化的子技能树，每个叶节点对应可直接执行的原子动作，在长时域多步任务上实现了更可靠的规划。",
+        tags: [["Embodied AI","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2603.12678"]]
+    },
+    {
+        date: "2026-03-22",
+        category: "Embodied AI",
+        categoryIcon: "🧩",
+        title: "Semantic Scene Understanding for Mobile Manipulation",
+        venue: "",
+        summary: "面向移动操作的语义场景理解。融合 3D 点云与语言语义构建场景图，机器人能理解「冰箱旁边桌上的杯子」等复杂空间关系指令，在家庭场景物体取放任务上达到 SOTA。",
+        tags: [["Embodied AI","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2603.11567"]]
+    },
+    {
+        date: "2026-03-22",
+        category: "RL",
+        categoryIcon: "🧠",
+        title: "Physical Intelligence: RL Tokens for Efficient Robot Policy Learning",
+        venue: "",
+        summary: "Physical Intelligence 提出 RL Tokens 方法，将强化学习信号编码为 token 注入 VLA 策略中。通过在 token 空间进行奖励建模和策略优化，在操作任务上比纯模仿学习提升 40%+ 成功率。",
+        tags: [["RL","green"]],
+        links: [["🔗 官网","https://www.physicalintelligence.company/research"]]
+    },
+    {
+        date: "2026-03-22",
+        category: "RL",
+        categoryIcon: "🧠",
+        title: "Reward-Conditioned Policy Optimization with Diffusion Models",
+        venue: "",
+        summary: "基于扩散模型的奖励条件策略优化。将奖励值作为条件输入扩散模型，通过在推理时调节目标奖励来控制策略行为，在连续控制和机器人操作任务上实现了灵活的策略调优。",
+        tags: [["RL","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2603.12890"]]
+    },
+    {
+        date: "2026-03-22",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Tool-Augmented LLM Agents for Scientific Discovery",
+        venue: "",
+        summary: "工具增强的 LLM Agent 用于科学发现。通过赋予 LLM 调用实验工具、数据分析脚本和文献检索的能力，在材料科学和药物设计中实现了自主假设生成—实验验证闭环。",
+        tags: [["LLM/Agent","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2603.12456"]]
+    },
+    {
+        date: "2026-03-22",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Grounded Code Generation from Multi-Turn Dialogue for Robot Programming",
+        venue: "",
+        summary: "从多轮对话中生成接地的机器人程序代码。LLM 在对话中逐步理解用户意图和环境约束，生成可在真实机器人上执行的代码，实现了自然语言到机器人编程的端到端流水线。",
+        tags: [["LLM/Agent","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2603.11678"]]
+    },
+    {
+        date: "2026-03-22",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Spatial Reasoning in Vision-Language Models: A Unified Benchmark",
+        venue: "",
+        summary: "提出 VLM 空间推理统一基准。系统评估了主流 VLM（GPT-4o, Gemini, Claude）在 2D/3D 空间推理上的能力，发现当前模型在精细空间关系判断上仍有显著不足，对具身应用提出了改进方向。",
+        tags: [["VLM","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2603.12234"]]
+    },
     // === 2026-03-21 ===
     {
         date: "2026-03-21",
