@@ -21,6 +21,7 @@
             --accent-llm: #fb923c;
             --accent-vlm: #facc15;
             --accent-multimodal: #c084fc;
+            --accent-info: #38bdf8;
             --border-color: #1e293b;
             --glow-vla: rgba(129,140,248,0.15);
             --glow-wam: rgba(167,139,250,0.15);
@@ -30,6 +31,7 @@
             --glow-llm: rgba(251,146,60,0.15);
             --glow-vlm: rgba(250,204,21,0.15);
             --glow-multimodal: rgba(192,132,252,0.15);
+            --glow-info: rgba(56,189,248,0.15);
         }
         * { margin:0; padding:0; box-sizing:border-box; }
         body {
@@ -148,6 +150,7 @@
         .tag-llm { background: var(--glow-llm); color: var(--accent-llm); border: 1px solid rgba(251,146,60,0.3); }
         .tag-vlm { background: var(--glow-vlm); color: var(--accent-vlm); border: 1px solid rgba(250,204,21,0.3); }
         .tag-multimodal { background: var(--glow-multimodal); color: var(--accent-multimodal); border: 1px solid rgba(192,132,252,0.3); }
+        .tag-info { background: var(--glow-info); color: var(--accent-info); border: 1px solid rgba(56,189,248,0.3); }
         .section-title {
             font-size: 1.35rem;
             font-weight: 700;
@@ -184,7 +187,7 @@
             margin-bottom: 10px;
             flex-wrap: wrap;
         }
-        .paper-abstract {
+        .paper-summary {
             font-size: 0.88rem;
             color: var(--text-secondary);
             line-height: 1.7;
@@ -213,8 +216,8 @@
         a.link-project:hover { background: rgba(251,146,60,0.2); }
         a.link-model { background: rgba(192,132,252,0.1); color: #c084fc; border: 1px solid rgba(192,132,252,0.2); }
         a.link-model:hover { background: rgba(192,132,252,0.2); }
-        a.link-news { background: rgba(250,204,21,0.1); color: #facc15; border: 1px solid rgba(250,204,21,0.2); }
-        a.link-news:hover { background: rgba(250,204,21,0.2); }
+        a.link-news { background: rgba(56,189,248,0.1); color: #38bdf8; border: 1px solid rgba(56,189,248,0.2); }
+        a.link-news:hover { background: rgba(56,189,248,0.2); }
         .highlight-box {
             background: linear-gradient(135deg, rgba(129,140,248,0.08) 0%, rgba(167,139,250,0.08) 100%);
             border: 1px solid rgba(129,140,248,0.2);
@@ -240,6 +243,48 @@
             margin-top: 8px;
             flex-shrink: 0;
         }
+        /* Informations 模块特殊样式 */
+        .info-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 20px 24px;
+            margin-bottom: 14px;
+            transition: all 0.2s ease;
+            border-left: 3px solid var(--accent-info);
+        }
+        .info-card:hover {
+            background: var(--bg-card-hover);
+            border-color: rgba(56,189,248,0.25);
+            border-left-color: var(--accent-info);
+            transform: translateY(-1px);
+        }
+        .info-title {
+            font-size: 1.05rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            line-height: 1.5;
+            color: var(--text-primary);
+        }
+        .info-meta {
+            display: flex;
+            gap: 16px;
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+        }
+        .info-summary {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 12px;
+        }
+        .info-links {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
         .footer {
             text-align: center;
             padding: 40px 0;
@@ -251,7 +296,7 @@
         @media (max-width: 640px) {
             .hero h1 { font-size: 1.6rem; }
             .stats-bar { gap: 12px; }
-            .paper { padding: 16px; }
+            .paper, .info-card { padding: 16px; }
         }
     </style>
 </head>
@@ -266,9 +311,9 @@
             周末 arXiv 无新论文入库，X/Twitter RSS 源当日不可用。本期展示上周（3/15–3/19）经验证的真实论文精选 + 本周行业动态，共计 14 条。HuggingFace 自动采集到 1 条新模型。
         </div>
         <div class="stats-bar">
-            <div class="stat-item"><span class="stat-num">14</span> 条研究动态</div>
+            <div class="stat-item"><span class="stat-num">8</span> 篇论文/模型</div>
+            <div class="stat-item"><span class="stat-num">6</span> 条行业资讯</div>
             <div class="stat-item"><span class="stat-num">5</span> 大领域</div>
-            <div class="stat-item"><span class="stat-num">3</span> 来源渠道</div>
         </div>
     </div>
 </div>
@@ -300,6 +345,93 @@
         </div>
     </div>
 
+    <!-- ===== Informations · 行业资讯 ===== -->
+    <div class="section">
+        <div class="section-header">
+            <span class="section-icon">📡</span>
+            <span class="section-title">Informations · 行业资讯</span>
+            <span class="section-count">6 条</span>
+        </div>
+
+        <div class="info-card">
+            <div class="info-title">Unitree Robotics 提交上海 IPO 申请：融资 6.1 亿美元</div>
+            <div class="info-meta">
+                <span class="tag tag-robotics">Robotics</span>
+                <span class="tag tag-info">IPO</span>
+                <span>2026-03-23</span>
+            </div>
+            <div class="info-summary">宇树机器人（Unitree Robotics）向上海证券交易所提交 IPO 申请，计划融资 42 亿元人民币（约 6.1 亿美元），有望成为中国首家人形机器人上市公司。得益于 335% 的收入增长，人形机器人业务已占其总收入的 51.5%。</div>
+            <div class="info-links">
+                <a href="https://creati.ai/ai-news/2026-03-23/" class="link-news" target="_blank">📰 新闻来源</a>
+            </div>
+        </div>
+
+        <div class="info-card">
+            <div class="info-title">小米发布 MiMo-V2 三模型：Pro / Omni / TTS</div>
+            <div class="info-meta">
+                <span class="tag tag-multimodal">Multimodal</span>
+                <span class="tag tag-info">新品发布</span>
+                <span>2026-03-23</span>
+            </div>
+            <div class="info-summary">小米发布三款 MiMo-V2 系列 AI 模型：MiMo-V2-Pro（智能体任务）、MiMo-V2-Omni（全模态感知）、MiMo-V2-TTS（情感语音合成）。总参数超 1 万亿，具备多模态感知和情感语音能力，在智能体基准测试中可媲美 Claude Opus 4.6。面向手机端和机器人场景。</div>
+            <div class="info-links">
+                <a href="https://creati.ai/ai-news/2026-03-23/" class="link-news" target="_blank">📰 新闻来源</a>
+            </div>
+        </div>
+
+        <div class="info-card">
+            <div class="info-title">Physical Intelligence 发布 RL Tokens：快速微调机器人任务</div>
+            <div class="info-meta">
+                <span class="tag tag-robotics">Robotics</span>
+                <span class="tag tag-rl">RL</span>
+                <span>2026-03 周报</span>
+            </div>
+            <div class="info-summary">Physical Intelligence 开发的 RL Tokens 技术可将 π-0.6 模型的表示压缩成微小的 actor/critic 网络，实现几分钟内微调精确机器人任务。该技术使机器人在一致性和速度上经常胜过人类远程操作。</div>
+            <div class="info-links">
+                <a href="https://www.theneuron.ai/ai-news-digests/arouond-the-horn-digest-weekof-march-21-2026/" class="link-news" target="_blank">📰 新闻来源</a>
+            </div>
+        </div>
+
+        <div class="info-card">
+            <div class="info-title">Meta V-JEPA 2.1：纯视频预训练的 2B 视觉模型</div>
+            <div class="info-meta">
+                <span class="tag tag-multimodal">Multimodal</span>
+                <span class="tag tag-vlm">VLM</span>
+                <span>2026-03 周报</span>
+            </div>
+            <div class="info-summary">Meta 发布 V-JEPA 2.1，扩展至 20 亿参数和 1.42 亿张图像训练规模，通过纯视频预训练实现了与 DINOv3 质量相当的空间连贯特征。该模型无需标注数据即可学习强大的视觉表示。</div>
+            <div class="info-links">
+                <a href="https://www.theneuron.ai/ai-news-digests/arouond-the-horn-digest-weekof-march-21-2026/" class="link-news" target="_blank">📰 新闻来源</a>
+            </div>
+        </div>
+
+        <div class="info-card">
+            <div class="info-title">Skild AI 部署 "Skild Brain" 到 ABB/UR 工厂产线</div>
+            <div class="info-meta">
+                <span class="tag tag-robotics">Robotics</span>
+                <span class="tag tag-info">落地部署</span>
+                <span>2026-03 周报</span>
+            </div>
+            <div class="info-summary">Skild AI 与 ABB Robotics、Universal Robots 和 NVIDIA 合作，将通用机器人基础模型"Skild Brain"部署到真实制造和工厂产线。这标志着通用机器人策略从实验室走向实际工业应用的重要里程碑。</div>
+            <div class="info-links">
+                <a href="https://www.theneuron.ai/ai-news-digests/arouond-the-horn-digest-weekof-march-21-2026/" class="link-news" target="_blank">📰 新闻来源</a>
+            </div>
+        </div>
+
+        <div class="info-card">
+            <div class="info-title">HuggingFace 2026 春季报告：机器人数据集激增 23 倍</div>
+            <div class="info-meta">
+                <span class="tag tag-llm">LLM</span>
+                <span class="tag tag-info">生态报告</span>
+                <span>2026-03 周报</span>
+            </div>
+            <div class="info-summary">HuggingFace 发布 2026 春季开源报告：平台拥有 1300 万用户、200 万+ 模型、50 万+ 数据集；中国产模型占全部下载量的 41%；机器人数据集使用量激增 23 倍，成为平台最大类别；超过 30% 的财富 500 强企业拥有经验证的 HF 账户。Xperience-10M 成为世界上最大的真实人类 4D 交互数据集。</div>
+            <div class="info-links">
+                <a href="https://www.theneuron.ai/ai-news-digests/arouond-the-horn-digest-weekof-march-21-2026/" class="link-news" target="_blank">📰 新闻来源</a>
+            </div>
+        </div>
+    </div>
+
     <!-- ===== VLA 领域 ===== -->
     <div class="section">
         <div class="section-header">
@@ -312,7 +444,7 @@
             <div class="paper-title">VLA-Thinker: Boosting Vision-Language-Action Models through Thinking-with-Image Reasoning <span class="new-badge">New</span></div>
             <div class="paper-meta">
                 <span class="tag tag-vla">VLA</span>
-                <span class="tag tag-reasoning">推理增强</span>
+                <span class="tag tag-vla">推理增强</span>
                 <span class="paper-source">arXiv 2603.14523 · 2026-03-15</span>
             </div>
             <div class="paper-summary">提出"思维与图像"推理框架 VLA-Thinker，将感知建模为可动态调用的推理动作。通过两阶段训练（SFT 冷启动 + GRPO 强化学习），在 LIBERO 上达到 97.5% 的成功率，在 RoboTwin 2.0 长跨度任务中也取得了显著提升。该方法使 VLA 模型能够在执行过程中主动重新审视环境并解决歧义。</div>
@@ -326,7 +458,7 @@
             <div class="paper-title">Not All Features Are Created Equal: A Mechanistic Study of Vision-Language-Action Models <span class="new-badge">New</span></div>
             <div class="paper-meta">
                 <span class="tag tag-vla">VLA</span>
-                <span class="tag tag-analysis">机制分析</span>
+                <span class="tag tag-vla">机制分析</span>
                 <span class="paper-source">arXiv 2603.19233 · ICLR 2026 Workshop · 2026-03-19</span>
             </div>
             <div class="paper-summary">对 6 个 VLA 模型（80M-7B 参数）进行深入机制研究，在 394,000+ 回放片段上应用激活注入、稀疏自编码器和线性探针。关键发现：视觉路径主导动作生成（99.8% 的 X-VLA 片段与源轨迹对齐）；语言敏感性取决于任务结构而非模型设计；多路径架构中专家路径编码运动程序、VLM 路径编码目标语义。发布交互探索工具 Action Atlas。</div>
@@ -340,7 +472,7 @@
             <div class="paper-title">AnyCamVLA: Zero-Shot Camera Adaptation for Viewpoint Robust Vision-Language-Action Models <span class="new-badge">New</span></div>
             <div class="paper-meta">
                 <span class="tag tag-vla">VLA</span>
-                <span class="tag tag-zeroshot">零样本适配</span>
+                <span class="tag tag-vla">零样本适配</span>
                 <span class="paper-source">arXiv 2603.05868 · 2026-03-06</span>
             </div>
             <div class="paper-summary">提出零样本相机适应框架，无需额外演示数据或微调即可处理测试时相机视点变化。核心方法是使用前馈新视图合成模型实时虚拟调整相机观测以匹配训练配置。在 LIBERO 基准和真实机器人场景（包括手持相机）中均优于数据增强和 3D 特征增强的基线方法。</div>
@@ -354,7 +486,7 @@
             <div class="paper-title">MultihopSpatial: Multi-hop Compositional Spatial Reasoning Benchmark for VLM <span class="new-badge">New</span></div>
             <div class="paper-meta">
                 <span class="tag tag-vla">VLA</span>
-                <span class="tag tag-benchmark">Benchmark</span>
+                <span class="tag tag-vla">Benchmark</span>
                 <span class="paper-source">arXiv 2603.18892 · 2026-03-19</span>
             </div>
             <div class="paper-summary">面向 VLA 部署的空间推理基准，包含 1-3 跳的组合查询，引入 Acc@50IoU 指标同时评估推理和视觉定位能力。对 37 个 SOTA VLM 的评估表明组合空间推理仍是巨大挑战。在该语料库上进行 RL 后训练可增强 VLM 空间推理能力及下游操作性能。</div>
@@ -376,8 +508,8 @@
         <div class="paper">
             <div class="paper-title">Kinema4D: Kinematic 4D World Modeling for Spatiotemporal Embodied Simulation <span class="new-badge">New</span></div>
             <div class="paper-meta">
-                <span class="tag tag-worldmodel">World Model</span>
-                <span class="tag tag-simulation">4D 模拟</span>
+                <span class="tag tag-wam">World Model</span>
+                <span class="tag tag-embodied">4D 模拟</span>
                 <span class="paper-source">arXiv 2603.16669 · 2026-03-17</span>
             </div>
             <div class="paper-summary">提出以动作为条件的 4D 生成式机器人模拟器 Kinema4D，将机器人-世界交互解耦为精确运动学 4D 机器人控制和生成式环境反应建模。策划了 Robo4D-200k 数据集（201,426 个高质量 4D 标注交互片段）。首次展示了潜在的零样本迁移能力，为下一代具身模拟提供了高保真基础。</div>
@@ -391,7 +523,7 @@
             <div class="paper-title">GSMem: 3D Gaussian Splatting as Persistent Spatial Memory for Zero-Shot Embodied Exploration <span class="new-badge">New</span></div>
             <div class="paper-meta">
                 <span class="tag tag-embodied">Embodied AI</span>
-                <span class="tag tag-3dgs">3DGS</span>
+                <span class="tag tag-embodied">3DGS</span>
                 <span class="paper-source">arXiv 2603.19137 · 2026-03-19</span>
             </div>
             <div class="paper-summary">提出基于 3DGS 的零样本具身探索框架 GSMem，利用 3D 高斯溅射作为持久空间记忆，赋予智能体"空间回忆"能力——从先前未占据的最佳视点渲染新颖视图。采用混合探索策略将 VLM 语义评分与 3DGS 覆盖率目标结合，在具身问答和终身导航中展现了强大的鲁棒性。</div>
@@ -405,7 +537,7 @@
             <div class="paper-title">GHOST: Fast Category-agnostic Hand-Object Interaction Reconstruction from RGB Videos <span class="new-badge">New</span></div>
             <div class="paper-meta">
                 <span class="tag tag-embodied">Embodied AI</span>
-                <span class="tag tag-3d">3D 重建</span>
+                <span class="tag tag-embodied">3D 重建</span>
                 <span class="paper-source">arXiv 2603.18912 · 2026-03-19</span>
             </div>
             <div class="paper-summary">使用 2D 高斯溅射从单目 RGB 视频快速重建动态手物交互，无需特定类别模板。引入几何先验检索、抓取感知对齐和手部感知背景损失三项创新。在 ARCTIC、HO3D 及野外数据集上达到 SOTA 准确性，速度比现有类别无关方法快一个数量级。</div>
@@ -416,12 +548,12 @@
         </div>
     </div>
 
-    <!-- ===== Multimodal / LLM ===== -->
+    <!-- ===== Multimodal ===== -->
     <div class="section">
         <div class="section-header">
             <span class="section-icon">🎨</span>
             <span class="section-title">Multimodal · 多模态模型</span>
-            <span class="section-count">3 条</span>
+            <span class="section-count">1 条</span>
         </div>
 
         <div class="paper">
@@ -434,102 +566,6 @@
             <div class="paper-summary">SkyAsl 在 HuggingFace 上发布的多模态视觉语言模型 Nanbeige4.1-VLM。（自动数据源采集）</div>
             <div class="paper-links">
                 <a href="https://huggingface.co/SkyAsl/Nanbeige4.1-VLM" class="link-model" target="_blank">🤗 模型</a>
-            </div>
-        </div>
-
-        <div class="paper">
-            <div class="paper-title">小米发布 MiMo-V2 三模型：Pro / Omni / TTS</div>
-            <div class="paper-meta">
-                <span class="tag tag-multimodal">Multimodal</span>
-                <span class="tag tag-agent">Agent</span>
-                <span class="paper-source">行业动态 · 2026-03-23</span>
-            </div>
-            <div class="paper-summary">小米发布三款 MiMo-V2 系列 AI 模型：MiMo-V2-Pro（智能体任务）、MiMo-V2-Omni（全模态感知）、MiMo-V2-TTS（情感语音合成）。总参数超 1 万亿，具备多模态感知和情感语音能力，在智能体基准测试中可媲美 Claude Opus 4.6。面向手机端和机器人场景。</div>
-            <div class="paper-links">
-                <a href="https://creati.ai/ai-news/2026-03-23/" class="link-news" target="_blank">📰 新闻来源</a>
-            </div>
-        </div>
-
-        <div class="paper">
-            <div class="paper-title">Meta V-JEPA 2.1：纯视频预训练的 2B 视觉模型</div>
-            <div class="paper-meta">
-                <span class="tag tag-multimodal">Multimodal</span>
-                <span class="tag tag-vlm">VLM</span>
-                <span class="paper-source">行业动态 · 2026-03 周报</span>
-            </div>
-            <div class="paper-summary">Meta 发布 V-JEPA 2.1，扩展至 20 亿参数和 1.42 亿张图像训练规模，通过纯视频预训练实现了与 DINOv3 质量相当的空间连贯特征。该模型无需标注数据即可学习强大的视觉表示。</div>
-            <div class="paper-links">
-                <a href="https://www.theneuron.ai/ai-news-digests/arouond-the-horn-digest-weekof-march-21-2026/" class="link-news" target="_blank">📰 新闻来源</a>
-            </div>
-        </div>
-    </div>
-
-    <!-- ===== Robotics ===== -->
-    <div class="section">
-        <div class="section-header">
-            <span class="section-icon">🦾</span>
-            <span class="section-title">Robotics · 机器人</span>
-            <span class="section-count">3 条</span>
-        </div>
-
-        <div class="paper">
-            <div class="paper-title">Unitree Robotics 提交上海 IPO 申请：融资 6.1 亿美元</div>
-            <div class="paper-meta">
-                <span class="tag tag-robotics">Robotics</span>
-                <span class="tag tag-industry">IPO</span>
-                <span class="paper-source">行业动态 · 2026-03-23</span>
-            </div>
-            <div class="paper-summary">宇树机器人（Unitree Robotics）向上海证券交易所提交 IPO 申请，计划融资 42 亿元人民币（约 6.1 亿美元），有望成为中国首家人形机器人上市公司。得益于 335% 的收入增长，人形机器人业务已占其总收入的 51.5%。</div>
-            <div class="paper-links">
-                <a href="https://creati.ai/ai-news/2026-03-23/" class="link-news" target="_blank">📰 新闻来源</a>
-            </div>
-        </div>
-
-        <div class="paper">
-            <div class="paper-title">Physical Intelligence 发布 RL Tokens：快速微调机器人任务</div>
-            <div class="paper-meta">
-                <span class="tag tag-robotics">Robotics</span>
-                <span class="tag tag-rl">RL</span>
-                <span class="paper-source">行业动态 · 2026-03 周报</span>
-            </div>
-            <div class="paper-summary">Physical Intelligence 开发的 RL Tokens 技术可将 π-0.6 模型的表示压缩成微小的 actor/critic 网络，实现几分钟内微调精确机器人任务。该技术使机器人在一致性和速度上经常胜过人类远程操作。</div>
-            <div class="paper-links">
-                <a href="https://www.theneuron.ai/ai-news-digests/arouond-the-horn-digest-weekof-march-21-2026/" class="link-news" target="_blank">📰 新闻来源</a>
-            </div>
-        </div>
-
-        <div class="paper">
-            <div class="paper-title">Skild AI 部署 "Skild Brain" 到 ABB/UR 工厂产线</div>
-            <div class="paper-meta">
-                <span class="tag tag-robotics">Robotics</span>
-                <span class="tag tag-deploy">部署</span>
-                <span class="paper-source">行业动态 · 2026-03 周报</span>
-            </div>
-            <div class="paper-summary">Skild AI 与 ABB Robotics、Universal Robots 和 NVIDIA 合作，将通用机器人基础模型"Skild Brain"部署到真实制造和工厂产线。这标志着通用机器人策略从实验室走向实际工业应用的重要里程碑。</div>
-            <div class="paper-links">
-                <a href="https://www.theneuron.ai/ai-news-digests/arouond-the-horn-digest-weekof-march-21-2026/" class="link-news" target="_blank">📰 新闻来源</a>
-            </div>
-        </div>
-    </div>
-
-    <!-- ===== 开源生态 ===== -->
-    <div class="section">
-        <div class="section-header">
-            <span class="section-icon">🧠</span>
-            <span class="section-title">LLM · 开源生态与行业趋势</span>
-            <span class="section-count">1 条</span>
-        </div>
-
-        <div class="paper">
-            <div class="paper-title">HuggingFace 2026 春季报告：机器人数据集激增 23 倍</div>
-            <div class="paper-meta">
-                <span class="tag tag-llm">LLM</span>
-                <span class="tag tag-ecosystem">开源生态</span>
-                <span class="paper-source">行业动态 · 2026-03 周报</span>
-            </div>
-            <div class="paper-summary">HuggingFace 发布 2026 春季开源报告：平台拥有 1300 万用户、200 万+ 模型、50 万+ 数据集；中国产模型占全部下载量的 41%；机器人数据集使用量激增 23 倍，成为平台最大类别；超过 30% 的财富 500 强企业拥有经验证的 HF 账户。Xperience-10M 成为世界上最大的真实人类 4D 交互数据集。</div>
-            <div class="paper-links">
-                <a href="https://www.theneuron.ai/ai-news-digests/arouond-the-horn-digest-weekof-march-21-2026/" class="link-news" target="_blank">📰 新闻来源</a>
             </div>
         </div>
     </div>
