@@ -528,6 +528,27 @@ const PAPERS_DB = [
         links: [["🌐 研究页面","https://www.pi.website/research/rlt"],["📑 PDF","https://www.pi.website/download/rlt.pdf"]],
         highlight: true,
         bossNotes: "π 的「最后一毫米」方案——不动大模型，只用 RL Token + 轻量策略做精细阶段优化，与 ForceVLA2 的力控方案形成互补视角"
+    },
+    {
+        id: "faster-flow-vla",
+        date: "2026-03-19",
+        addedDate: "2026-03-23",
+        category: "VLA",
+        categoryIcon: "🧠",
+        title: "FASTER: Rethinking Real-Time Flow VLAs",
+        venue: "arXiv 2603.19199 · cs.RO / cs.CV · 2026-03-19",
+        authors: "Yuxiang Lu, Zhe Liu, Xianzhe Fan, Zhenya Yang, Jinghua Hou, Junyi Li, Kaixin Ding, Hengshuang Zhao",
+        institutions: "港中文 MMLab (Hengshuang Zhao 组)",
+        summary: "系统分析了 Flow-based VLA 的实时反应延迟瓶颈，指出标准固定调度要求完成全部去噪步骤后才能开始执行动作，形成反应延迟的关键瓶颈。提出 Horizon-Aware Schedule 自适应优先采样近期动作，将即时反应的去噪压缩 10 倍（如 π₀.₅、X-VLA 的 10 步→1 步），配合流式 client-server 管线，在消费级 GPU 上实现前所未有的实时响应。在高度动态的乒乓球任务中验证了通用策略的实时控制能力。",
+        innovations: [
+            "反应延迟的系统分析：揭示反应时间由 Time to First Action (TTFA) 和执行步长联合决定的均匀分布，重新定义 action chunking 中的「反应」概念",
+            "Horizon-Aware Schedule：自适应调度 flow sampling 优先级，近期动作用更多采样步数精细去噪，远期动作用更少步数粗略估计，将即时反应压缩 10 倍",
+            "流式 Client-Server 管线：推理与执行并行化，不等全部采样完成即可开始动作执行，进一步降低端到端延迟"
+        ],
+        results: "在 π₀.₅ 和 X-VLA 上将即时反应从 10 步压缩至 1 步，消费级 GPU 上端到端延迟大幅降低；动态乒乓球任务验证实时控制能力",
+        tags: [["VLA","green"],["Real-Time","red"],["Flow Matching","blue"],["Robotics","green"],["Action Chunking","teal"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2603.19199"],["📑 PDF","https://arxiv.org/pdf/2603.19199"],["🌐 项目主页","https://innovator-zero.github.io/FASTER"]],
+        highlight: true
     }
 ];
 
