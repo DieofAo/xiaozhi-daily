@@ -549,6 +549,27 @@ const PAPERS_DB = [
         tags: [["VLA","green"],["Real-Time","red"],["Flow Matching","blue"],["Robotics","green"],["Action Chunking","teal"]],
         links: [["📄 arXiv","https://arxiv.org/abs/2603.19199"],["📑 PDF","https://arxiv.org/pdf/2603.19199"],["🌐 项目主页","https://innovator-zero.github.io/FASTER"]],
         highlight: true
+    },
+    {
+        id: "psi-zero",
+        date: "2026-03-12",
+        addedDate: "2026-03-23",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "Ψ₀ (Psi-Zero): An Open Foundation Model Towards Universal Humanoid Loco-Manipulation",
+        venue: "arXiv 2603.12263 · cs.RO · 2026-03-12",
+        authors: "Songlin Wei, Hongyi Jing, Boqian Li, Zhenyu Zhao, Jiageng Mao, Zhenhao Ni, Sicheng He, Jie Liu, Xiawei Liu, Kaidi Kang, Sheng Zang, Weiduo Yuan, Marco Pavone, Di Huang, Yue Wang",
+        institutions: "北京大学 (Yue Wang, Di Huang), Stanford (Marco Pavone)",
+        summary: "面向通用人形机器人移动-操作联合任务的开放基础模型。指出现有方法直接混合人类和人形机器人数据共同训练是次优的，因为两者运动学和运动模式存在根本差异。提出解耦学习策略：先用大规模第一人称人类视频自回归预训练 VLM 主干获取通用视觉-动作表征，再用高质量人形机器人数据后训练 flow-based 动作专家学习精确关节控制。仅用 800 小时人类视频 + 30 小时真实机器人数据，在多项任务上以超 40% 的优势击败使用 10 倍以上数据的基线。承诺开源完整生态。",
+        innovations: [
+            "解耦学习范式：将学习过程拆分为两个阶段——人类视频预训练获取通用表征 + 人形机器人数据后训练学习精确控制，避免运动学差异导致的数据效率损失",
+            "高质量小数据胜过低质量大数据：800h 高质量第一人称人类操作视频 + 30h 真实机器人轨迹，优于 10 倍规模的噪声互联网数据或异构跨实体机器人数据",
+            "完整开源生态：承诺开源数据处理和训练管线、人形基础模型、实时动作推理引擎"
+        ],
+        results: "多任务整体成功率比 10 倍数据量基线高 40%+；仅 800h 人类视频 + 30h 机器人数据达到 SOTA",
+        tags: [["Humanoid","red"],["VLA","green"],["Foundation Model","blue"],["Loco-Manipulation","teal"],["Open Source","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2603.12263"],["📑 PDF","https://arxiv.org/pdf/2603.12263"]],
+        highlight: true
     }
 ];
 
