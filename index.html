@@ -519,6 +519,154 @@
 <script>
 // ===== DATA =====
 const PAPERS_DB = [
+    // === 2026-03-23 ===
+    {
+        date: "2026-03-23",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "VLA-Thinker: Boosting Vision-Language-Action Models through Thinking-with-Image Reasoning",
+        venue: "arXiv 2603.14523 · 2026-03-15",
+        summary: "提出\"思维与图像\"推理框架 VLA-Thinker，将感知建模为可动态调用的推理动作。通过两阶段训练（SFT 冷启动 + GRPO 强化学习），在 LIBERO 上达到 97.5% 的成功率，在 RoboTwin 2.0 长跨度任务中也取得了显著提升。该方法使 VLA 模型能够在执行过程中主动重新审视环境并解决歧义。",
+        tags: [["VLA","green"],["推理增强","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2603.14523"],["🏠 项目主页","https://cywang735.github.io/VLA-Thinker/"]],
+        highlight: true
+    },
+    {
+        date: "2026-03-23",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "Not All Features Are Created Equal: A Mechanistic Study of Vision-Language-Action Models",
+        venue: "arXiv 2603.19233 · ICLR 2026 Workshop · 2026-03-19",
+        summary: "对 6 个 VLA 模型（80M-7B 参数）进行深入机制研究，在 394,000+ 回放片段上应用激活注入、稀疏自编码器和线性探针。关键发现：视觉路径主导动作生成（99.8% 的 X-VLA 片段与源轨迹对齐）；语言敏感性取决于任务结构而非模型设计；多路径架构中专家路径编码运动程序、VLM 路径编码目标语义。发布交互探索工具 Action Atlas。",
+        tags: [["VLA","green"],["机制分析","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2603.19233"],["🏠 Action Atlas","https://action-atlas.com"]],
+        highlight: true
+    },
+    {
+        date: "2026-03-23",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "AnyCamVLA: Zero-Shot Camera Adaptation for Viewpoint Robust Vision-Language-Action Models",
+        venue: "arXiv 2603.05868 · 2026-03-06",
+        summary: "提出零样本相机适应框架，无需额外演示数据或微调即可处理测试时相机视点变化。核心方法是使用前馈新视图合成模型实时虚拟调整相机观测以匹配训练配置。在 LIBERO 基准和真实机器人场景（包括手持相机）中均优于数据增强和 3D 特征增强的基线方法。",
+        tags: [["VLA","green"],["零样本适配","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2603.05868"],["🏠 项目主页","https://heo0224.github.io/AnyCamVLA/"]],
+        highlight: true
+    },
+    {
+        date: "2026-03-23",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "MultihopSpatial: Multi-hop Compositional Spatial Reasoning Benchmark for VLM",
+        venue: "arXiv 2603.18892 · 2026-03-19",
+        summary: "面向 VLA 部署的空间推理基准，包含 1-3 跳的组合查询，引入 Acc@50IoU 指标同时评估推理和视觉定位能力。对 37 个 SOTA VLM 的评估表明组合空间推理仍是巨大挑战。在该语料库上进行 RL 后训练可增强 VLM 空间推理能力及下游操作性能。",
+        tags: [["VLA","green"],["Benchmark","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2603.18892"],["🏠 项目主页","https://youngwanlee.github.io/multihopspatial"]],
+        highlight: true
+    },
+    {
+        date: "2026-03-23",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "Kinema4D: Kinematic 4D World Modeling for Spatiotemporal Embodied Simulation",
+        venue: "arXiv 2603.16669 · 2026-03-17",
+        summary: "提出以动作为条件的 4D 生成式机器人模拟器 Kinema4D，将机器人-世界交互解耦为精确运动学 4D 机器人控制和生成式环境反应建模。策划了 Robo4D-200k 数据集（201,426 个高质量 4D 标注交互片段）。首次展示了潜在的零样本迁移能力，为下一代具身模拟提供了高保真基础。",
+        tags: [["World Model","green"],["4D 模拟","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2603.16669"],["🏠 项目主页","https://mutianxu.github.io/Kinema4D-project-page/"]],
+        highlight: true
+    },
+    {
+        date: "2026-03-23",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "GSMem: 3D Gaussian Splatting as Persistent Spatial Memory for Zero-Shot Embodied Exploration",
+        venue: "arXiv 2603.19137 · 2026-03-19",
+        summary: "提出基于 3DGS 的零样本具身探索框架 GSMem，利用 3D 高斯溅射作为持久空间记忆，赋予智能体\"空间回忆\"能力——从先前未占据的最佳视点渲染新颖视图。采用混合探索策略将 VLM 语义评分与 3DGS 覆盖率目标结合，在具身问答和终身导航中展现了强大的鲁棒性。",
+        tags: [["Embodied AI","green"],["3DGS","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2603.19137"],["🏠 项目主页","https://vulab-ai.github.io/GSMem/"]],
+        highlight: true
+    },
+    {
+        date: "2026-03-23",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "GHOST: Fast Category-agnostic Hand-Object Interaction Reconstruction from RGB Videos",
+        venue: "arXiv 2603.18912 · 2026-03-19",
+        summary: "使用 2D 高斯溅射从单目 RGB 视频快速重建动态手物交互，无需特定类别模板。引入几何先验检索、抓取感知对齐和手部感知背景损失三项创新。在 ARCTIC、HO3D 及野外数据集上达到 SOTA 准确性，速度比现有类别无关方法快一个数量级。",
+        tags: [["Embodied AI","green"],["3D 重建","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2603.18912"],["💻 代码","https://github.com/ATAboukhadra/GHOST"]],
+        highlight: true
+    },
+    {
+        date: "2026-03-23",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "Nanbeige4.1-VLM",
+        venue: "HuggingFace · SkyAsl · 2026-03-23",
+        summary: "SkyAsl 在 HuggingFace 上发布的多模态视觉语言模型 Nanbeige4.1-VLM。（自动数据源采集）",
+        tags: [["Multimodal","green"],["VLM","green"]],
+        links: [["🤗 模型","https://huggingface.co/SkyAsl/Nanbeige4.1-VLM"]]
+    },
+    {
+        date: "2026-03-23",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "小米发布 MiMo-V2 三模型：Pro / Omni / TTS",
+        venue: "行业动态 · 2026-03-23",
+        summary: "小米发布三款 MiMo-V2 系列 AI 模型：MiMo-V2-Pro（智能体任务）、MiMo-V2-Omni（全模态感知）、MiMo-V2-TTS（情感语音合成）。总参数超 1 万亿，具备多模态感知和情感语音能力，在智能体基准测试中可媲美 Claude Opus 4.6。面向手机端和机器人场景。",
+        tags: [["Multimodal","green"],["Agent","green"]],
+        links: [["📰 新闻来源","https://creati.ai/ai-news/2026-03-23/"]]
+    },
+    {
+        date: "2026-03-23",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "Meta V-JEPA 2.1：纯视频预训练的 2B 视觉模型",
+        venue: "行业动态 · 2026-03 周报",
+        summary: "Meta 发布 V-JEPA 2.1，扩展至 20 亿参数和 1.42 亿张图像训练规模，通过纯视频预训练实现了与 DINOv3 质量相当的空间连贯特征。该模型无需标注数据即可学习强大的视觉表示。",
+        tags: [["Multimodal","green"],["VLM","green"]],
+        links: [["📰 新闻来源","https://www.theneuron.ai/ai-news-digests/arouond-the-horn-digest-weekof-march-21-2026/"]]
+    },
+    {
+        date: "2026-03-23",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "Unitree Robotics 提交上海 IPO 申请：融资 6.1 亿美元",
+        venue: "行业动态 · 2026-03-23",
+        summary: "宇树机器人（Unitree Robotics）向上海证券交易所提交 IPO 申请，计划融资 42 亿元人民币（约 6.1 亿美元），有望成为中国首家人形机器人上市公司。得益于 335% 的收入增长，人形机器人业务已占其总收入的 51.5%。",
+        tags: [["Robotics","green"],["IPO","green"]],
+        links: [["📰 新闻来源","https://creati.ai/ai-news/2026-03-23/"]]
+    },
+    {
+        date: "2026-03-23",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "Physical Intelligence 发布 RL Tokens：快速微调机器人任务",
+        venue: "行业动态 · 2026-03 周报",
+        summary: "Physical Intelligence 开发的 RL Tokens 技术可将 π-0.6 模型的表示压缩成微小的 actor/critic 网络，实现几分钟内微调精确机器人任务。该技术使机器人在一致性和速度上经常胜过人类远程操作。",
+        tags: [["Robotics","green"],["RL","green"]],
+        links: [["📰 新闻来源","https://www.theneuron.ai/ai-news-digests/arouond-the-horn-digest-weekof-march-21-2026/"]]
+    },
+    {
+        date: "2026-03-23",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "Skild AI 部署 \"Skild Brain\" 到 ABB/UR 工厂产线",
+        venue: "行业动态 · 2026-03 周报",
+        summary: "Skild AI 与 ABB Robotics、Universal Robots 和 NVIDIA 合作，将通用机器人基础模型\"Skild Brain\"部署到真实制造和工厂产线。这标志着通用机器人策略从实验室走向实际工业应用的重要里程碑。",
+        tags: [["Robotics","green"],["部署","green"]],
+        links: [["📰 新闻来源","https://www.theneuron.ai/ai-news-digests/arouond-the-horn-digest-weekof-march-21-2026/"]]
+    },
+    {
+        date: "2026-03-23",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "HuggingFace 2026 春季报告：机器人数据集激增 23 倍",
+        venue: "行业动态 · 2026-03 周报",
+        summary: "HuggingFace 发布 2026 春季开源报告：平台拥有 1300 万用户、200 万+ 模型、50 万+ 数据集；中国产模型占全部下载量的 41%；机器人数据集使用量激增 23 倍，成为平台最大类别；超过 30% 的财富 500 强企业拥有经验证的 HF 账户。Xperience-10M 成为世界上最大的真实人类 4D 交互数据集。",
+        tags: [["LLM","green"],["开源生态","green"]],
+        links: [["📰 新闻来源","https://www.theneuron.ai/ai-news-digests/arouond-the-horn-digest-weekof-march-21-2026/"]]
+    },
     // === 2026-03-22 ===
     {
         date: "2026-03-22",

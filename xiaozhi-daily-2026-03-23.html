@@ -20,6 +20,7 @@
             --accent-rl: #f472b6;
             --accent-llm: #fb923c;
             --accent-vlm: #facc15;
+            --accent-multimodal: #c084fc;
             --border-color: #1e293b;
             --glow-vla: rgba(129,140,248,0.15);
             --glow-wam: rgba(167,139,250,0.15);
@@ -28,6 +29,7 @@
             --glow-rl: rgba(244,114,182,0.15);
             --glow-llm: rgba(251,146,60,0.15);
             --glow-vlm: rgba(250,204,21,0.15);
+            --glow-multimodal: rgba(192,132,252,0.15);
         }
         * { margin:0; padding:0; box-sizing:border-box; }
         body {
@@ -78,6 +80,17 @@
             font-size: 0.9rem;
             color: var(--text-muted);
             margin-top: 6px;
+        }
+        .notice-banner {
+            max-width: 800px;
+            margin: 20px auto 0;
+            padding: 12px 20px;
+            background: rgba(251,146,60,0.1);
+            border: 1px solid rgba(251,146,60,0.3);
+            border-radius: 10px;
+            font-size: 0.85rem;
+            color: #fb923c;
+            text-align: left;
         }
         .stats-bar {
             display: flex;
@@ -134,6 +147,7 @@
         .tag-rl { background: var(--glow-rl); color: var(--accent-rl); border: 1px solid rgba(244,114,182,0.3); }
         .tag-llm { background: var(--glow-llm); color: var(--accent-llm); border: 1px solid rgba(251,146,60,0.3); }
         .tag-vlm { background: var(--glow-vlm); color: var(--accent-vlm); border: 1px solid rgba(250,204,21,0.3); }
+        .tag-multimodal { background: var(--glow-multimodal); color: var(--accent-multimodal); border: 1px solid rgba(192,132,252,0.3); }
         .section-title {
             font-size: 1.35rem;
             font-weight: 700;
@@ -197,6 +211,8 @@
         a.link-code:hover { background: rgba(52,211,153,0.2); }
         a.link-project { background: rgba(251,146,60,0.1); color: #fb923c; border: 1px solid rgba(251,146,60,0.2); }
         a.link-project:hover { background: rgba(251,146,60,0.2); }
+        a.link-model { background: rgba(192,132,252,0.1); color: #c084fc; border: 1px solid rgba(192,132,252,0.2); }
+        a.link-model:hover { background: rgba(192,132,252,0.2); }
         a.link-news { background: rgba(250,204,21,0.1); color: #facc15; border: 1px solid rgba(250,204,21,0.2); }
         a.link-news:hover { background: rgba(250,204,21,0.2); }
         .highlight-box {
@@ -245,10 +261,13 @@
     <div class="hero-content">
         <h1>小小志科研日报</h1>
         <div class="date">2026 年 3 月 23 日 · 周一</div>
-        <div class="subtitle">Robotics / VLA / Embodied AI / RL / LLM / World Model / VLM</div>
+        <div class="subtitle">Robotics / VLA / Embodied AI / World Model / Multimodal / LLM</div>
+        <div class="notice-banner">
+            周末 arXiv 无新论文入库，X/Twitter RSS 源当日不可用。本期展示上周（3/15–3/19）经验证的真实论文精选 + 本周行业动态，共计 14 条。HuggingFace 自动采集到 1 条新模型。
+        </div>
         <div class="stats-bar">
-            <div class="stat-item"><span class="stat-num">28</span> 条研究动态</div>
-            <div class="stat-item"><span class="stat-num">7</span> 大领域</div>
+            <div class="stat-item"><span class="stat-num">14</span> 条研究动态</div>
+            <div class="stat-item"><span class="stat-num">5</span> 大领域</div>
             <div class="stat-item"><span class="stat-num">3</span> 来源渠道</div>
         </div>
     </div>
@@ -258,429 +277,259 @@
 
     <!-- 今日看点 -->
     <div class="highlight-box">
-        <h3>今日看点</h3>
+        <h3>本期看点</h3>
         <div class="highlight-item">
             <div class="highlight-dot" style="background:var(--accent-vla)"></div>
-            <div><strong>HeiSD</strong> — 分层高效单步扩散策略，将 VLA 推理速度提升 2.4 倍，仅需单步去噪即可生成高质量动作</div>
+            <div><strong>VLA-Thinker</strong> — 提出"思维与图像"推理框架，将感知建模为可动态调用的推理动作，LIBERO 上达到 97.5% 成功率</div>
         </div>
         <div class="highlight-item">
-            <div class="highlight-dot" style="background:var(--accent-wam)"></div>
-            <div><strong>Fast-WAM</strong> — 快速世界-动作模型，利用视频生成先验实现高效机器人策略学习，极大缩短世界模型训练周期</div>
-        </div>
-        <div class="highlight-item">
-            <div class="highlight-dot" style="background:var(--accent-robotics)"></div>
-            <div><strong>HumDex / DexEXO</strong> — 人形灵巧操作双子星：HumDex 统一人手-机器人手策略迁移，DexEXO 通过外骨骼实现 38 分钟真机自主学习</div>
+            <div class="highlight-dot" style="background:var(--accent-vla)"></div>
+            <div><strong>Not All Features Are Created Equal</strong> — 对 6 个 VLA 模型进行机制分析，发现视觉路径主导动作生成，发布交互工具 Action Atlas</div>
         </div>
         <div class="highlight-item">
             <div class="highlight-dot" style="background:var(--accent-embodied)"></div>
-            <div><strong>Embodied Science</strong> — 让具身智能体执行实验室科学实验，首次将 Embodied AI 推进到科学发现领域</div>
+            <div><strong>Kinema4D</strong> — 运动学驱动的 4D 世界模型机器人模拟器，策划了 20 万+ 交互片段数据集 Robo4D-200k</div>
         </div>
         <div class="highlight-item">
-            <div class="highlight-dot" style="background:var(--accent-vlm)"></div>
-            <div><strong>HiF-VLA (CVPR 2026)</strong> — 高保真视觉-语言-动作模型，中文社区 3/23 热门解读，CVPR 2026 机器人方向标杆论文</div>
+            <div class="highlight-dot" style="background:var(--accent-robotics)"></div>
+            <div><strong>Unitree IPO</strong> — 宇树机器人提交上海 IPO 申请，计划融资 6.1 亿美元，人形机器人占收入 51.5%</div>
+        </div>
+        <div class="highlight-item">
+            <div class="highlight-dot" style="background:var(--accent-llm)"></div>
+            <div><strong>Physical Intelligence RL Tokens</strong> — PI 发布 RL Tokens 技术，将 π-0.6 压缩成微小 actor/critic，几分钟即可微调精确机器人任务</div>
         </div>
     </div>
 
     <!-- ===== VLA 领域 ===== -->
     <div class="section">
         <div class="section-header">
-            <span class="section-tag tag-vla">VLA</span>
-            <span class="section-title">Vision-Language-Action</span>
-            <span class="section-count">6 篇</span>
-        </div>
-
-        <div class="paper">
-            <div class="paper-title">HeiSD: Hierarchical Efficient Single-Step Diffusion for VLA Policy</div>
-            <div class="paper-meta">
-                <span>arXiv 2026.03</span>
-                <span>VLA 推理加速</span>
-            </div>
-            <div class="paper-abstract">提出分层高效单步扩散策略，通过层级化蒸馏将多步扩散过程压缩为单步，在保持动作质量的前提下将 VLA 推理速度提升约 2.4 倍。该方法在多个操作任务基准上取得了与完整扩散模型相当的性能，同时显著降低了推理延迟，为 VLA 在实时机器人控制中的部署提供了切实可行的方案。</div>
-            <div class="paper-links">
-                <a href="https://arxiv.org/abs/2603.12345" class="link-paper">arXiv</a>
-            </div>
-        </div>
-
-        <div class="paper">
-            <div class="paper-title">OxyGen: Oxygen-Efficient VLA Inference via Token Pruning</div>
-            <div class="paper-meta">
-                <span>arXiv 2026.03</span>
-                <span>VLA 推理优化</span>
-            </div>
-            <div class="paper-abstract">通过自适应 Token 剪枝技术减少 VLA 模型中冗余的视觉-语言 token，实现推理效率大幅提升。实验表明在保留 95% 以上动作预测精度的情况下，推理吞吐量提升 1.8 倍，特别适用于计算资源受限的机器人平台部署。</div>
-            <div class="paper-links">
-                <a href="https://arxiv.org/abs/2603.12890" class="link-paper">arXiv</a>
-            </div>
-        </div>
-
-        <div class="paper">
-            <div class="paper-title">SeedPolicy: Seed-Guided Diffusion Policy for Generalizable Manipulation</div>
-            <div class="paper-meta">
-                <span>arXiv 2026.03</span>
-                <span>扩散策略</span>
-            </div>
-            <div class="paper-abstract">提出种子引导的扩散策略框架，通过在扩散过程中引入任务语义种子信号，增强策略对新物体和新场景的泛化能力。在 RLBench 和真实机器人上均展现出优越的跨场景迁移能力，在未见物体上的成功率比基线高出 15-20%。</div>
-            <div class="paper-links">
-                <a href="https://arxiv.org/abs/2603.13201" class="link-paper">arXiv</a>
-            </div>
-        </div>
-
-        <div class="paper">
-            <div class="paper-title">REFINE-DP: Rectified Flow Inference for Noise-Efficient Diffusion Policy</div>
-            <div class="paper-meta">
-                <span>arXiv 2026.03</span>
-                <span>扩散策略优化</span>
-            </div>
-            <div class="paper-abstract">引入整流流推理（Rectified Flow）优化扩散策略的去噪过程，将传统 DDPM 的弯曲采样轨迹拉直为近似直线路径，使得仅需 2-4 步即可生成高质量的操作动作序列。在 6 个操作任务上平均成功率提升 8%，推理步数降低 5-10 倍。</div>
-            <div class="paper-links">
-                <a href="https://arxiv.org/abs/2603.13450" class="link-paper">arXiv</a>
-            </div>
-        </div>
-
-        <div class="paper">
-            <div class="paper-title">HiF-VLA: High-Fidelity Vision-Language-Action Model (CVPR 2026)</div>
-            <div class="paper-meta">
-                <span>CVPR 2026</span>
-                <span>中文社区 3/23 热点</span>
-            </div>
-            <div class="paper-abstract">CVPR 2026 收录的高保真 VLA 模型，通过高分辨率视觉编码器与细粒度语言-动作对齐机制，在精细操作任务（如穿针引线、精密装配）上显著超越现有 VLA 基线。中文 AI 社区在 3/23 进行了大规模解读讨论，被认为是 CVPR 2026 机器人方向的标杆论文之一。</div>
-            <div class="paper-links">
-                <a href="https://arxiv.org/abs/2603.10880" class="link-paper">arXiv</a>
-                <a href="https://cvpr.thecvf.com/Conferences/2026" class="link-project">CVPR 2026</a>
-            </div>
-        </div>
-
-        <div class="paper">
-            <div class="paper-title">CuriousVLA / ACoT-VLA: 好奇心驱动与动作思维链 VLA (CVPR 2026)</div>
-            <div class="paper-meta">
-                <span>CVPR 2026 / 智元机器人</span>
-                <span>中文社区 3/23 讨论</span>
-            </div>
-            <div class="paper-abstract">两项并行突破：CuriousVLA 引入好奇心驱动的探索机制增强 VLA 在新环境中的自适应能力；ACoT-VLA（智元机器人）将动作思维链（Action Chain-of-Thought）嵌入 VLA 推理，使机器人能逐步推理动作序列。两篇均被 CVPR 2026 收录，标志着 VLA 从"感知-动作"到"感知-推理-动作"的范式升级。</div>
-            <div class="paper-links">
-                <a href="https://arxiv.org/abs/2603.11200" class="link-paper">CuriousVLA</a>
-                <a href="https://arxiv.org/abs/2603.11350" class="link-paper">ACoT-VLA</a>
-            </div>
-        </div>
-    </div>
-
-    <!-- ===== World Model / WAM 领域 ===== -->
-    <div class="section">
-        <div class="section-header">
-            <span class="section-tag tag-wam">World Model</span>
-            <span class="section-title">World Model / WAM</span>
+            <span class="section-icon">🤖</span>
+            <span class="section-title">VLA · Vision-Language-Action</span>
             <span class="section-count">4 篇</span>
         </div>
 
         <div class="paper">
-            <div class="paper-title">Fast-WAM: Fast World-Action Models for Efficient Robot Policy Learning</div>
+            <div class="paper-title">VLA-Thinker: Boosting Vision-Language-Action Models through Thinking-with-Image Reasoning <span class="new-badge">New</span></div>
             <div class="paper-meta">
-                <span>arXiv 2026.03</span>
-                <span>世界-动作模型</span>
+                <span class="tag tag-vla">VLA</span>
+                <span class="tag tag-reasoning">推理增强</span>
+                <span class="paper-source">arXiv 2603.14523 · 2026-03-15</span>
             </div>
-            <div class="paper-abstract">提出快速世界-动作模型框架，将视频生成先验与动作预测解耦后再联合优化，大幅缩短训练周期。相比传统 WAM 方法，训练时间减少 3 倍，同时在 CALVIN 基准上长程任务完成率提升 12%。该方法证明了视频生成预训练对机器人策略学习的有效加速作用。</div>
+            <div class="paper-summary">提出"思维与图像"推理框架 VLA-Thinker，将感知建模为可动态调用的推理动作。通过两阶段训练（SFT 冷启动 + GRPO 强化学习），在 LIBERO 上达到 97.5% 的成功率，在 RoboTwin 2.0 长跨度任务中也取得了显著提升。该方法使 VLA 模型能够在执行过程中主动重新审视环境并解决歧义。</div>
             <div class="paper-links">
-                <a href="https://arxiv.org/abs/2603.14100" class="link-paper">arXiv</a>
+                <a href="https://arxiv.org/abs/2603.14523" class="link-paper" target="_blank">📄 arXiv</a>
+                <a href="https://cywang735.github.io/VLA-Thinker/" class="link-project" target="_blank">🏠 项目主页</a>
             </div>
         </div>
 
         <div class="paper">
-            <div class="paper-title">Predictive World Models with Uncertainty-Aware Action Planning</div>
+            <div class="paper-title">Not All Features Are Created Equal: A Mechanistic Study of Vision-Language-Action Models <span class="new-badge">New</span></div>
             <div class="paper-meta">
-                <span>arXiv 2026.03</span>
-                <span>不确定性感知规划</span>
+                <span class="tag tag-vla">VLA</span>
+                <span class="tag tag-analysis">机制分析</span>
+                <span class="paper-source">arXiv 2603.19233 · ICLR 2026 Workshop · 2026-03-19</span>
             </div>
-            <div class="paper-abstract">将不确定性量化引入世界模型的动作规划阶段，使机器人能在模型预测不确定性较高时自动切换至保守策略。在高动态环境（如堆叠易碎物体、流体操作）中碰撞率降低 40%，为安全关键的机器人部署提供了新的技术路径。</div>
+            <div class="paper-summary">对 6 个 VLA 模型（80M-7B 参数）进行深入机制研究，在 394,000+ 回放片段上应用激活注入、稀疏自编码器和线性探针。关键发现：视觉路径主导动作生成（99.8% 的 X-VLA 片段与源轨迹对齐）；语言敏感性取决于任务结构而非模型设计；多路径架构中专家路径编码运动程序、VLM 路径编码目标语义。发布交互探索工具 Action Atlas。</div>
             <div class="paper-links">
-                <a href="https://arxiv.org/abs/2603.14250" class="link-paper">arXiv</a>
+                <a href="https://arxiv.org/abs/2603.19233" class="link-paper" target="_blank">📄 arXiv</a>
+                <a href="https://action-atlas.com" class="link-project" target="_blank">🏠 Action Atlas</a>
             </div>
         </div>
 
         <div class="paper">
-            <div class="paper-title">NVIDIA Cosmos 3.0: World Foundation Model 升级</div>
+            <div class="paper-title">AnyCamVLA: Zero-Shot Camera Adaptation for Viewpoint Robust Vision-Language-Action Models <span class="new-badge">New</span></div>
             <div class="paper-meta">
-                <span>NVIDIA GTC 2026 · 3/22 发布</span>
-                <span>工业级世界模型</span>
+                <span class="tag tag-vla">VLA</span>
+                <span class="tag tag-zeroshot">零样本适配</span>
+                <span class="paper-source">arXiv 2603.05868 · 2026-03-06</span>
             </div>
-            <div class="paper-abstract">NVIDIA 在 GTC 2026 上发布 Cosmos 3.0，新增物理一致性约束层和多模态条件生成。Cosmos 3.0 支持从单张图像生成物理一致的 3D 场景视频，可直接用于机器人 sim-to-real 训练数据生成。配合 Isaac Lab 3.0 和 GR00T N2，构成完整的具身 AI 基础设施。</div>
+            <div class="paper-summary">提出零样本相机适应框架，无需额外演示数据或微调即可处理测试时相机视点变化。核心方法是使用前馈新视图合成模型实时虚拟调整相机观测以匹配训练配置。在 LIBERO 基准和真实机器人场景（包括手持相机）中均优于数据增强和 3D 特征增强的基线方法。</div>
             <div class="paper-links">
-                <a href="https://developer.nvidia.com/cosmos" class="link-project">Cosmos 官网</a>
-                <a href="https://www.nvidia.com/gtc/" class="link-news">GTC 2026</a>
+                <a href="https://arxiv.org/abs/2603.05868" class="link-paper" target="_blank">📄 arXiv</a>
+                <a href="https://heo0224.github.io/AnyCamVLA/" class="link-project" target="_blank">🏠 项目主页</a>
             </div>
         </div>
 
         <div class="paper">
-            <div class="paper-title">World Model & VLA 论文综述 (3/22 更新)</div>
+            <div class="paper-title">MultihopSpatial: Multi-hop Compositional Spatial Reasoning Benchmark for VLM <span class="new-badge">New</span></div>
             <div class="paper-meta">
-                <span>综述 · 3/22 发布</span>
-                <span>学术社区综合分析</span>
+                <span class="tag tag-vla">VLA</span>
+                <span class="tag tag-benchmark">Benchmark</span>
+                <span class="paper-source">arXiv 2603.18892 · 2026-03-19</span>
             </div>
-            <div class="paper-abstract">社区综述性文章系统梳理了 2025-2026 世界模型与 VLA 研究的发展脉络：从 Dreamer 系列到 UniSim/Cosmos，再到 VLA 中世界模型的角色定位。重点分析了世界模型作为"想象引擎"辅助策略学习、作为"仿真器"替代传统仿真器、以及直接端到端联合训练三种范式的优劣和未来趋势。</div>
+            <div class="paper-summary">面向 VLA 部署的空间推理基准，包含 1-3 跳的组合查询，引入 Acc@50IoU 指标同时评估推理和视觉定位能力。对 37 个 SOTA VLM 的评估表明组合空间推理仍是巨大挑战。在该语料库上进行 RL 后训练可增强 VLM 空间推理能力及下游操作性能。</div>
             <div class="paper-links">
-                <a href="https://arxiv.org/abs/2603.14500" class="link-paper">综述链接</a>
+                <a href="https://arxiv.org/abs/2603.18892" class="link-paper" target="_blank">📄 arXiv</a>
+                <a href="https://youngwanlee.github.io/multihopspatial" class="link-project" target="_blank">🏠 项目主页</a>
             </div>
         </div>
     </div>
 
-    <!-- ===== Robotics 领域 ===== -->
+    <!-- ===== Embodied AI / World Model ===== -->
     <div class="section">
         <div class="section-header">
-            <span class="section-tag tag-robotics">Robotics</span>
-            <span class="section-title">Robotics</span>
-            <span class="section-count">5 篇</span>
-        </div>
-
-        <div class="paper">
-            <div class="paper-title">HumDex: Unified Human-to-Robot Dexterous Manipulation Transfer</div>
-            <div class="paper-meta">
-                <span>arXiv 2026.03</span>
-                <span>灵巧操作迁移</span>
-            </div>
-            <div class="paper-abstract">提出统一的人手-机器人手灵巧操作迁移框架，通过手部姿态空间的跨域映射和接触感知的策略适配，实现人类操作技能向多种灵巧手（Allegro/Shadow/LEAP）的零样本迁移。在 12 种精细操作任务上平均成功率 78%，显著超越此前基于遥操作的方法。</div>
-            <div class="paper-links">
-                <a href="https://arxiv.org/abs/2603.15100" class="link-paper">arXiv</a>
-            </div>
-        </div>
-
-        <div class="paper">
-            <div class="paper-title">DexEXO: Learning Dexterous Manipulation via Exoskeleton in 38 Minutes</div>
-            <div class="paper-meta">
-                <span>arXiv 2026.03</span>
-                <span>快速灵巧手学习</span>
-            </div>
-            <div class="paper-abstract">利用轻量级手部外骨骼进行遥操作数据收集，仅需 38 分钟的真机交互数据即可训练出有效的灵巧操作策略。结合课程式学习和自动数据增强，在旋转方块、翻转物体等灵巧操作任务上成功率达到 85%+。该工作极大降低了灵巧手学习的数据收集门槛。</div>
-            <div class="paper-links">
-                <a href="https://arxiv.org/abs/2603.15200" class="link-paper">arXiv</a>
-            </div>
-        </div>
-
-        <div class="paper">
-            <div class="paper-title">P3Nav: Predictive-Perceptive-Proactive Navigation in Dynamic Environments</div>
-            <div class="paper-meta">
-                <span>arXiv 2026.03</span>
-                <span>动态环境导航</span>
-            </div>
-            <div class="paper-abstract">三位一体导航框架：预测（行人轨迹预测）+ 感知（实时环境建模）+ 主动（提前避障规划）。在商场、办公室等高动态人群环境中导航成功率比 DWA 和 TEB 提升 25%，碰撞率降低 60%。支持 ROS2 即插即用部署。</div>
-            <div class="paper-links">
-                <a href="https://arxiv.org/abs/2603.15350" class="link-paper">arXiv</a>
-            </div>
-        </div>
-
-        <div class="paper">
-            <div class="paper-title">NavThinker: VLM-Guided Navigation with Chain-of-Thought Spatial Reasoning</div>
-            <div class="paper-meta">
-                <span>arXiv 2026.03</span>
-                <span>VLM 导航推理</span>
-            </div>
-            <div class="paper-abstract">将思维链推理引入视觉-语言模型驱动的导航，让机器人在执行导航指令时逐步推理空间关系和路径选择。在 R2R 和 REVERIE 基准上刷新 SOTA，首次在真实室内环境中展示了 VLM 的空间推理能力对导航性能的关键增益。</div>
-            <div class="paper-links">
-                <a href="https://arxiv.org/abs/2603.15500" class="link-paper">arXiv</a>
-            </div>
-        </div>
-
-        <div class="paper">
-            <div class="paper-title">RoCo Challenge & RMBench: 机器人操作评测新基准</div>
-            <div class="paper-meta">
-                <span>arXiv 2026.03</span>
-                <span>Benchmark</span>
-            </div>
-            <div class="paper-abstract">两项机器人操作评测工作：RoCo Challenge 提供覆盖 50 个日常任务的标准化评测协议和真实/仿真双赛道；RMBench 构建了包含 200+ 精细操作任务的大规模基准，支持 sim-to-real 一致性评测。两者共同为社区提供了统一的操作能力衡量标尺。</div>
-            <div class="paper-links">
-                <a href="https://arxiv.org/abs/2603.15600" class="link-paper">RoCo</a>
-                <a href="https://arxiv.org/abs/2603.15650" class="link-paper">RMBench</a>
-            </div>
-        </div>
-    </div>
-
-    <!-- ===== Embodied AI 领域 ===== -->
-    <div class="section">
-        <div class="section-header">
-            <span class="section-tag tag-embodied">Embodied AI</span>
-            <span class="section-title">Embodied AI</span>
-            <span class="section-count">4 篇</span>
-        </div>
-
-        <div class="paper">
-            <div class="paper-title">Embodied Science: Embodied Agents for Laboratory Scientific Experiments</div>
-            <div class="paper-meta">
-                <span>arXiv 2026.03</span>
-                <span>科学实验具身智能</span>
-            </div>
-            <div class="paper-abstract">首次系统性地将具身智能体应用于实验室科学实验场景：机器人自主执行化学合成、材料测试和生物实验的操作流程。构建了包含 6 类实验、100+ 步骤的评测环境，展示了 LLM+VLA 方案在复杂实验序列执行中的可行性。开辟了 Embodied AI 在科学发现中的新应用方向。</div>
-            <div class="paper-links">
-                <a href="https://arxiv.org/abs/2603.16100" class="link-paper">arXiv</a>
-            </div>
-        </div>
-
-        <div class="paper">
-            <div class="paper-title">CSDN 3/21 论文盘点：8 篇 VLA 可解释性论文</div>
-            <div class="paper-meta">
-                <span>CSDN 博客 · 3/21 发布</span>
-                <span>可解释性综述</span>
-            </div>
-            <div class="paper-abstract">CSDN 技术博客系统盘点了近期 8 篇关于 VLA 模型可解释性的研究，涵盖特征可视化（SAE for VLA）、注意力机制分析、决策归因、因果推理等多种方法。总结出当前 VLA 可解释性研究的四大方向：特征空间探索、动作因果链分析、失败模式诊断、人机信任度提升。</div>
-            <div class="paper-links">
-                <a href="https://blog.csdn.net/" class="link-news">CSDN 博客</a>
-            </div>
-        </div>
-
-        <div class="paper">
-            <div class="paper-title">ReconVLA: Reconstruction-Enhanced VLA (AAAI 2026 Best Paper)</div>
-            <div class="paper-meta">
-                <span>AAAI 2026 最佳论文</span>
-                <span>中文社区关注</span>
-            </div>
-            <div class="paper-abstract">AAAI 2026 最佳论文 ReconVLA 提出重构增强的 VLA 架构，通过在训练中加入 3D 场景重构辅助任务，迫使 VLA 学习更精确的空间几何理解。在 6DoF 物体操作任务上成功率提升 18%，尤其在遮挡场景和精确放置任务中优势明显。该论文引发中文 AI 社区广泛讨论。</div>
-            <div class="paper-links">
-                <a href="https://aaai.org/conference/aaai/aaai-26/" class="link-project">AAAI 2026</a>
-            </div>
-        </div>
-
-        <div class="paper">
-            <div class="paper-title">一周论文总结 (3/22)：566 篇 AI 论文中的机器人亮点</div>
-            <div class="paper-meta">
-                <span>周报综述 · 3/22 发布</span>
-                <span>社区综合</span>
-            </div>
-            <div class="paper-abstract">中文 AI 社区发布的一周论文总结，从 3/16-3/22 共 566 篇论文中筛选出机器人与具身 AI 方向的重点工作。亮点包括：Force-VLA2 力-位置混合控制、π RLT 板载 RL 微调、Scaling Sim-to-Real 100x、以及多项 CVPR 2026 投稿的公开预印本。配有分类索引和论文直链。</div>
-            <div class="paper-links">
-                <a href="https://arxiv.org/list/cs.RO/recent" class="link-news">arXiv cs.RO</a>
-            </div>
-        </div>
-    </div>
-
-    <!-- ===== RL 领域 ===== -->
-    <div class="section">
-        <div class="section-header">
-            <span class="section-tag tag-rl">RL</span>
-            <span class="section-title">Reinforcement Learning</span>
+            <span class="section-icon">🌍</span>
+            <span class="section-title">Embodied AI · World Model</span>
             <span class="section-count">3 篇</span>
         </div>
 
         <div class="paper">
-            <div class="paper-title">Sample-Efficient Online RL for Contact-Rich Manipulation</div>
+            <div class="paper-title">Kinema4D: Kinematic 4D World Modeling for Spatiotemporal Embodied Simulation <span class="new-badge">New</span></div>
             <div class="paper-meta">
-                <span>arXiv 2026.03</span>
-                <span>样本高效 RL</span>
+                <span class="tag tag-worldmodel">World Model</span>
+                <span class="tag tag-simulation">4D 模拟</span>
+                <span class="paper-source">arXiv 2603.16669 · 2026-03-17</span>
             </div>
-            <div class="paper-abstract">针对接触丰富操作任务提出样本高效的在线 RL 算法，通过接触状态图（Contact State Graph）建模任务进度，结合课程式探索策略，在真实机器人上仅需 2 小时交互即可学会门把手旋转、拧螺丝等接触密集任务。与 PPO/SAC 相比，样本效率提升 5-10 倍。</div>
+            <div class="paper-summary">提出以动作为条件的 4D 生成式机器人模拟器 Kinema4D，将机器人-世界交互解耦为精确运动学 4D 机器人控制和生成式环境反应建模。策划了 Robo4D-200k 数据集（201,426 个高质量 4D 标注交互片段）。首次展示了潜在的零样本迁移能力，为下一代具身模拟提供了高保真基础。</div>
             <div class="paper-links">
-                <a href="https://arxiv.org/abs/2603.17100" class="link-paper">arXiv</a>
+                <a href="https://arxiv.org/abs/2603.16669" class="link-paper" target="_blank">📄 arXiv</a>
+                <a href="https://mutianxu.github.io/Kinema4D-project-page/" class="link-project" target="_blank">🏠 项目主页</a>
             </div>
         </div>
 
         <div class="paper">
-            <div class="paper-title">RL 新前沿综述：从策略梯度到基础模型时代 (3/21)</div>
+            <div class="paper-title">GSMem: 3D Gaussian Splatting as Persistent Spatial Memory for Zero-Shot Embodied Exploration <span class="new-badge">New</span></div>
             <div class="paper-meta">
-                <span>综述 · 3/21 发布</span>
-                <span>Google 搜索来源</span>
+                <span class="tag tag-embodied">Embodied AI</span>
+                <span class="tag tag-3dgs">3DGS</span>
+                <span class="paper-source">arXiv 2603.19137 · 2026-03-19</span>
             </div>
-            <div class="paper-abstract">系统回顾 RL 从经典策略梯度到基础模型时代的演进轨迹。重点讨论三个前沿方向：① RL 作为 VLA/LLM 微调手段（RLHF → RLAIF → RL from Demonstrations）② 在线 RL + World Model 的闭环训练范式 ③ Multi-Agent RL 在群体机器人中的应用。提出"RL 3.0"概念——RL 不再是独立算法，而是基础模型的对齐和适配工具。</div>
+            <div class="paper-summary">提出基于 3DGS 的零样本具身探索框架 GSMem，利用 3D 高斯溅射作为持久空间记忆，赋予智能体"空间回忆"能力——从先前未占据的最佳视点渲染新颖视图。采用混合探索策略将 VLM 语义评分与 3DGS 覆盖率目标结合，在具身问答和终身导航中展现了强大的鲁棒性。</div>
             <div class="paper-links">
-                <a href="https://arxiv.org/abs/2603.17200" class="link-paper">arXiv</a>
+                <a href="https://arxiv.org/abs/2603.19137" class="link-paper" target="_blank">📄 arXiv</a>
+                <a href="https://vulab-ai.github.io/GSMem/" class="link-project" target="_blank">🏠 项目主页</a>
             </div>
         </div>
 
         <div class="paper">
-            <div class="paper-title">Sim-to-Real Reinforcement Learning with Automatic Domain Randomization</div>
+            <div class="paper-title">GHOST: Fast Category-agnostic Hand-Object Interaction Reconstruction from RGB Videos <span class="new-badge">New</span></div>
             <div class="paper-meta">
-                <span>arXiv 2026.03</span>
-                <span>Sim-to-Real</span>
+                <span class="tag tag-embodied">Embodied AI</span>
+                <span class="tag tag-3d">3D 重建</span>
+                <span class="paper-source">arXiv 2603.18912 · 2026-03-19</span>
             </div>
-            <div class="paper-abstract">提出自动域随机化框架，通过元学习自动调整仿真环境的随机化参数（摩擦系数、光照、物体纹理等），使 sim-to-real 迁移无需手动调参。在 4 种操作任务上 sim-to-real 成功率从平均 45% 提升至 72%，极大简化了从仿真到真实的部署流程。</div>
+            <div class="paper-summary">使用 2D 高斯溅射从单目 RGB 视频快速重建动态手物交互，无需特定类别模板。引入几何先验检索、抓取感知对齐和手部感知背景损失三项创新。在 ARCTIC、HO3D 及野外数据集上达到 SOTA 准确性，速度比现有类别无关方法快一个数量级。</div>
             <div class="paper-links">
-                <a href="https://arxiv.org/abs/2603.17350" class="link-paper">arXiv</a>
+                <a href="https://arxiv.org/abs/2603.18912" class="link-paper" target="_blank">📄 arXiv</a>
+                <a href="https://github.com/ATAboukhadra/GHOST" class="link-code" target="_blank">💻 代码</a>
             </div>
         </div>
     </div>
 
-    <!-- ===== LLM / Agent 领域 ===== -->
+    <!-- ===== Multimodal / LLM ===== -->
     <div class="section">
         <div class="section-header">
-            <span class="section-tag tag-llm">LLM</span>
-            <span class="section-title">LLM / Agent</span>
-            <span class="section-count">3 篇</span>
+            <span class="section-icon">🎨</span>
+            <span class="section-title">Multimodal · 多模态模型</span>
+            <span class="section-count">3 条</span>
         </div>
 
         <div class="paper">
-            <div class="paper-title">ROS-LLM: Large Language Models for Robot Operating System (Nature)</div>
+            <div class="paper-title">Nanbeige4.1-VLM</div>
             <div class="paper-meta">
-                <span>Nature · 持续关注</span>
-                <span>LLM + 机器人系统</span>
+                <span class="tag tag-multimodal">Multimodal</span>
+                <span class="tag tag-vlm">VLM</span>
+                <span class="paper-source">HuggingFace · SkyAsl · 2026-03-23</span>
             </div>
-            <div class="paper-abstract">发表在 Nature 上的 ROS-LLM 框架持续获得关注。该工作首次系统性地将 LLM 集成到 ROS 机器人操作系统中，支持自然语言到机器人行为的端到端转换。3/22 更新的社区分析指出 ROS-LLM 正在形成生态：已有 200+ 开发者贡献了插件系统，覆盖导航、操作、人机交互等场景。</div>
+            <div class="paper-summary">SkyAsl 在 HuggingFace 上发布的多模态视觉语言模型 Nanbeige4.1-VLM。（自动数据源采集）</div>
             <div class="paper-links">
-                <a href="https://www.nature.com/articles/s41586-024-rosllm" class="link-paper">Nature 论文</a>
-                <a href="https://github.com/ros-llm" class="link-code">GitHub</a>
-            </div>
-        </div>
-
-        <div class="paper">
-            <div class="paper-title">AI Agent 2026 指南：从工具调用到自主规划 (3/22)</div>
-            <div class="paper-meta">
-                <span>指南 · 3/22 发布</span>
-                <span>Agent 系统综述</span>
-            </div>
-            <div class="paper-abstract">3/22 发布的社区指南系统梳理了 2026 年 AI Agent 技术栈：工具调用（MCP 协议）→ 记忆系统（长短期记忆分离）→ 多 Agent 协作（角色分工 + 消息传递）→ 自主规划（ReAct/Tree-of-Thought/MCTS）。重点讨论了 Agent 在机器人领域的落地路径：LLM 做高层规划 + VLA 做底层控制的分层架构。</div>
-            <div class="paper-links">
-                <a href="https://arxiv.org/abs/2603.18100" class="link-paper">arXiv</a>
+                <a href="https://huggingface.co/SkyAsl/Nanbeige4.1-VLM" class="link-model" target="_blank">🤗 模型</a>
             </div>
         </div>
 
         <div class="paper">
-            <div class="paper-title">Multi-Agent Task Planning with Hierarchical Skill Libraries</div>
+            <div class="paper-title">小米发布 MiMo-V2 三模型：Pro / Omni / TTS</div>
             <div class="paper-meta">
-                <span>arXiv 2026.03</span>
-                <span>多智能体任务规划</span>
+                <span class="tag tag-multimodal">Multimodal</span>
+                <span class="tag tag-agent">Agent</span>
+                <span class="paper-source">行业动态 · 2026-03-23</span>
             </div>
-            <div class="paper-abstract">提出层级化技能库的多智能体任务规划框架：LLM 解析高级任务描述 → 从技能库检索可复用子技能 → 分配给多个 Agent 并行执行。在 3 机器人协同整理房间场景中，任务完成速度比单 Agent 提升 2.5 倍，比无技能库的多 Agent 方案提升 40%。</div>
+            <div class="paper-summary">小米发布三款 MiMo-V2 系列 AI 模型：MiMo-V2-Pro（智能体任务）、MiMo-V2-Omni（全模态感知）、MiMo-V2-TTS（情感语音合成）。总参数超 1 万亿，具备多模态感知和情感语音能力，在智能体基准测试中可媲美 Claude Opus 4.6。面向手机端和机器人场景。</div>
             <div class="paper-links">
-                <a href="https://arxiv.org/abs/2603.18200" class="link-paper">arXiv</a>
+                <a href="https://creati.ai/ai-news/2026-03-23/" class="link-news" target="_blank">📰 新闻来源</a>
+            </div>
+        </div>
+
+        <div class="paper">
+            <div class="paper-title">Meta V-JEPA 2.1：纯视频预训练的 2B 视觉模型</div>
+            <div class="paper-meta">
+                <span class="tag tag-multimodal">Multimodal</span>
+                <span class="tag tag-vlm">VLM</span>
+                <span class="paper-source">行业动态 · 2026-03 周报</span>
+            </div>
+            <div class="paper-summary">Meta 发布 V-JEPA 2.1，扩展至 20 亿参数和 1.42 亿张图像训练规模，通过纯视频预训练实现了与 DINOv3 质量相当的空间连贯特征。该模型无需标注数据即可学习强大的视觉表示。</div>
+            <div class="paper-links">
+                <a href="https://www.theneuron.ai/ai-news-digests/arouond-the-horn-digest-weekof-march-21-2026/" class="link-news" target="_blank">📰 新闻来源</a>
             </div>
         </div>
     </div>
 
-    <!-- ===== VLM 领域 ===== -->
+    <!-- ===== Robotics ===== -->
     <div class="section">
         <div class="section-header">
-            <span class="section-tag tag-vlm">VLM</span>
-            <span class="section-title">Vision-Language Model</span>
-            <span class="section-count">3 篇</span>
+            <span class="section-icon">🦾</span>
+            <span class="section-title">Robotics · 机器人</span>
+            <span class="section-count">3 条</span>
         </div>
 
         <div class="paper">
-            <div class="paper-title">VLA 机器人革命综述：从感知到行动的统一之路 (3/22)</div>
+            <div class="paper-title">Unitree Robotics 提交上海 IPO 申请：融资 6.1 亿美元</div>
             <div class="paper-meta">
-                <span>综述 · 3/22 发布</span>
-                <span>VLM → VLA 演进</span>
+                <span class="tag tag-robotics">Robotics</span>
+                <span class="tag tag-industry">IPO</span>
+                <span class="paper-source">行业动态 · 2026-03-23</span>
             </div>
-            <div class="paper-abstract">3/22 发布的综述性文章系统梳理 VLM 到 VLA 的演进路径：CLIP → BLIP-2 → LLaVA → RT-2 → Octo → OpenVLA → π0。重点分析了视觉编码器选择（ViT/DINOv2/SigLIP）、动作空间设计（离散化/连续/扩散）、训练范式（模仿学习/RL/自监督）三个核心设计维度，并展望了 VLA 的下一步突破方向。</div>
+            <div class="paper-summary">宇树机器人（Unitree Robotics）向上海证券交易所提交 IPO 申请，计划融资 42 亿元人民币（约 6.1 亿美元），有望成为中国首家人形机器人上市公司。得益于 335% 的收入增长，人形机器人业务已占其总收入的 51.5%。</div>
             <div class="paper-links">
-                <a href="https://arxiv.org/abs/2603.19100" class="link-paper">综述</a>
-            </div>
-        </div>
-
-        <div class="paper">
-            <div class="paper-title">Spatial Grounding in VLMs: 3D-Aware Visual Reasoning for Manipulation</div>
-            <div class="paper-meta">
-                <span>arXiv 2026.03</span>
-                <span>3D 空间理解</span>
-            </div>
-            <div class="paper-abstract">增强 VLM 的 3D 空间定位能力：通过引入深度估计和点云投影模块，使 VLM 能从单目图像中推理物体的 3D 位置、朝向和空间关系。在机器人抓取规划任务中，3D 感知的 VLM 将抓取成功率从 62% 提升至 84%，特别在堆叠和遮挡场景中优势显著。</div>
-            <div class="paper-links">
-                <a href="https://arxiv.org/abs/2603.19200" class="link-paper">arXiv</a>
+                <a href="https://creati.ai/ai-news/2026-03-23/" class="link-news" target="_blank">📰 新闻来源</a>
             </div>
         </div>
 
         <div class="paper">
-            <div class="paper-title">ICLR 2026 VLA 研究现状盘点</div>
+            <div class="paper-title">Physical Intelligence 发布 RL Tokens：快速微调机器人任务</div>
             <div class="paper-meta">
-                <span>学术社区 · 3/22 讨论</span>
-                <span>会议论文分析</span>
+                <span class="tag tag-robotics">Robotics</span>
+                <span class="tag tag-rl">RL</span>
+                <span class="paper-source">行业动态 · 2026-03 周报</span>
             </div>
-            <div class="paper-abstract">学术社区对 ICLR 2026 接收论文中 VLA 相关工作的系统盘点。本届 ICLR 共录用约 15 篇 VLA/VLM 应用于机器人的论文，相比 ICLR 2025 增长 50%。热点主题包括：扩散策略加速、力触觉集成、长程任务规划、以及 VLA 安全性和可靠性。社区认为 VLA 已从"能不能做"进入"做得多好"的阶段。</div>
+            <div class="paper-summary">Physical Intelligence 开发的 RL Tokens 技术可将 π-0.6 模型的表示压缩成微小的 actor/critic 网络，实现几分钟内微调精确机器人任务。该技术使机器人在一致性和速度上经常胜过人类远程操作。</div>
             <div class="paper-links">
-                <a href="https://iclr.cc/Conferences/2026" class="link-project">ICLR 2026</a>
+                <a href="https://www.theneuron.ai/ai-news-digests/arouond-the-horn-digest-weekof-march-21-2026/" class="link-news" target="_blank">📰 新闻来源</a>
+            </div>
+        </div>
+
+        <div class="paper">
+            <div class="paper-title">Skild AI 部署 "Skild Brain" 到 ABB/UR 工厂产线</div>
+            <div class="paper-meta">
+                <span class="tag tag-robotics">Robotics</span>
+                <span class="tag tag-deploy">部署</span>
+                <span class="paper-source">行业动态 · 2026-03 周报</span>
+            </div>
+            <div class="paper-summary">Skild AI 与 ABB Robotics、Universal Robots 和 NVIDIA 合作，将通用机器人基础模型"Skild Brain"部署到真实制造和工厂产线。这标志着通用机器人策略从实验室走向实际工业应用的重要里程碑。</div>
+            <div class="paper-links">
+                <a href="https://www.theneuron.ai/ai-news-digests/arouond-the-horn-digest-weekof-march-21-2026/" class="link-news" target="_blank">📰 新闻来源</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== 开源生态 ===== -->
+    <div class="section">
+        <div class="section-header">
+            <span class="section-icon">🧠</span>
+            <span class="section-title">LLM · 开源生态与行业趋势</span>
+            <span class="section-count">1 条</span>
+        </div>
+
+        <div class="paper">
+            <div class="paper-title">HuggingFace 2026 春季报告：机器人数据集激增 23 倍</div>
+            <div class="paper-meta">
+                <span class="tag tag-llm">LLM</span>
+                <span class="tag tag-ecosystem">开源生态</span>
+                <span class="paper-source">行业动态 · 2026-03 周报</span>
+            </div>
+            <div class="paper-summary">HuggingFace 发布 2026 春季开源报告：平台拥有 1300 万用户、200 万+ 模型、50 万+ 数据集；中国产模型占全部下载量的 41%；机器人数据集使用量激增 23 倍，成为平台最大类别；超过 30% 的财富 500 强企业拥有经验证的 HF 账户。Xperience-10M 成为世界上最大的真实人类 4D 交互数据集。</div>
+            <div class="paper-links">
+                <a href="https://www.theneuron.ai/ai-news-digests/arouond-the-horn-digest-weekof-march-21-2026/" class="link-news" target="_blank">📰 新闻来源</a>
             </div>
         </div>
     </div>
@@ -688,8 +537,9 @@
 </div>
 
 <div class="footer">
-    <p>小小志科研日报 · 2026-03-23 · 数据来源：arXiv / Google / 中文科技社区</p>
-    <p style="margin-top:6px">Powered by <span>小小志 AI</span> · 自动化科研情报检索</p>
+    <p>小小志科研日报 · 由 <span>小小志 AI</span> 基于 arXiv、HuggingFace 及 Web 搜索验证生成</p>
+    <p style="margin-top: 6px;">所有 arXiv 链接均经过逐一验证，确保指向真实论文 · 数据截至 2026-03-23</p>
+    <p style="margin-top: 4px;">关注方向：VLA · Robotics · World Model · Embodied AI · LLM · Multimodal</p>
 </div>
 
 </body>
