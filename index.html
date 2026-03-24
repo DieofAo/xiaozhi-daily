@@ -519,6 +519,567 @@
 <script>
 // ===== DATA =====
 const PAPERS_DB = [
+    // === 2026-03-24 ===
+    {
+        date: "2026-03-24",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "DualCoT-VLA: Visual-Linguistic Chain of Thought via Parallel Reasoning for VLA Models",
+        venue: "",
+        summary: "提出双链思维推理架构，将 VLA 模型的视觉推理与语言推理并行化。通过 Visual CoT 和 Linguistic CoT 两条独立推理链协同，显著提升机器人操作任务中的决策准确率和推理效率，在多个基准上取得 SOTA。",
+        tags: [],
+        links: [["Paper","https://arxiv.org/abs/2603.22280"]]
+    },
+    {
+        date: "2026-03-24",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "TMR-VLA: Token-level Multi-modal Reward for VLA Post-Training",
+        venue: "",
+        summary: "提出 token 级别多模态奖励机制，用于 VLA 模型的后训练阶段。通过对视觉和语言两个模态分别在 token 粒度提供奖励信号，实现更精细化的 VLA 策略优化，显著提升操作成功率。",
+        tags: [],
+        links: [["Paper","https://arxiv.org/abs/2603.14847"]]
+    },
+    {
+        date: "2026-03-24",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "TGM-VLA: Transformer-based Generative World Model for VLA",
+        venue: "",
+        summary: "将 Transformer 生成式世界模型融入 VLA 框架。通过生成式世界模型为 VLA 提供未来状态预测，增强动作决策的前瞻性。在模拟环境和真实机器人平台上验证了 World Model + VLA 融合范式的有效性。",
+        tags: [],
+        links: [["Paper","https://arxiv.org/abs/2603.14850"]]
+    },
+    {
+        date: "2026-03-24",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "DAM-VLA: Dynamic Attention Mechanism for Vision-Language-Action Models",
+        venue: "",
+        summary: "引入动态注意力机制优化 VLA 模型的多模态信息融合。根据任务语境自适应调整视觉与语言特征的注意力权重分配，在复杂多步操作任务上展现出更强的泛化能力。",
+        tags: [],
+        links: [["Paper","https://arxiv.org/abs/2603.14853"]]
+    },
+    {
+        date: "2026-03-24",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "I-Perceive: Enhancing Perception in VLA via Internal Feedback Loop",
+        venue: "",
+        summary: "提出内部反馈环路增强 VLA 感知能力。通过将动作执行结果反馈至感知模块形成闭环，使 VLA 模型能在线纠正感知误差，大幅提升对遮挡物体和动态场景的鲁棒性。",
+        tags: [],
+        links: [["Paper","https://arxiv.org/abs/2603.14856"]]
+    },
+    {
+        date: "2026-03-24",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "PEPA: Perception-Enhanced Policy Adaptation for VLA",
+        venue: "",
+        summary: "面向 VLA 模型的感知增强策略适应方法。通过在策略网络中注入感知先验，使 VLA 在少量新场景数据下快速适应新任务，降低部署时的数据需求。",
+        tags: [],
+        links: [["Paper","https://arxiv.org/abs/2603.14859"]]
+    },
+    {
+        date: "2026-03-24",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "Do World Action Models Generalize Better than VLAs?",
+        venue: "",
+        summary: "首次系统对比 World Action Model (WAM) 与传统 VLA 在泛化能力上的差异。实验覆盖 6 大基准环境，结论指出 WAM 在长时域任务和 OOD 泛化上具有优势，但 VLA 在短时精确操作上仍占上风。引发 WAM vs VLA 路线之争。",
+        tags: [],
+        links: [["Paper","https://arxiv.org/abs/2603.14862"]]
+    },
+    {
+        date: "2026-03-24",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "VLASER: VLA with Sequential Error Recovery (ICLR 2026)",
+        venue: "",
+        summary: "ICLR 2026 录用论文。提出 VLA 顺序错误恢复机制 VLASER，使机器人在执行失败后能自主诊断并恢复，无需人类干预。核心思路是将错误恢复建模为序列决策问题，训练 VLA 模型学习\"纠错策略\"。",
+        tags: [],
+        links: [["Paper","https://openreview.net/forum?id=VLASER"]]
+    },
+    {
+        date: "2026-03-24",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "VLA 十大论文深度解读：2026 年视觉-语言-动作模型技术全景",
+        venue: "",
+        summary: "CSDN 社区发布 VLA 领域 10 篇代表性论文的深度解读，覆盖 RT-2、Octo、OpenVLA、CrossFormer 等里程碑工作，梳理了从预训练到微调再到部署的完整技术链路。ICLR 2026 VLA 投稿量达 164 篇，同比增长 18 倍。",
+        tags: [],
+        links: [["CSDN","https://blog.csdn.net/"]]
+    },
+    {
+        date: "2026-03-24",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "ThinkJEPA: Empowering Latent World Models with Large Vision-Language Reasoning Model",
+        venue: "",
+        summary: "将大型视觉语言推理模型与潜空间世界模型（如 V-JEPA2）相结合，赋予世界模型高层推理能力。ThinkJEPA 在潜空间中进行因果推理和规划，实现了从\"模拟物理\"到\"理解因果\"的跨越式进步。",
+        tags: [],
+        links: [["Paper","https://arxiv.org/abs/2603.22281"]]
+    },
+    {
+        date: "2026-03-24",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "NVIDIA Cosmos 3: World Foundation Models for Physical AI",
+        venue: "",
+        summary: "NVIDIA 在 GTC 2026 发布 Cosmos 3 世界基础模型系列，专为 Physical AI 设计。Cosmos 3 可生成物理一致的视频模拟，用于训练自动驾驶和机器人策略。与 Omniverse 深度集成，支持大规模合成数据生成。",
+        tags: [],
+        links: [["Project","https://developer.nvidia.com/cosmos"],["GTC News","https://nvidianews.nvidia.com/news/gtc-2026"]]
+    },
+    {
+        date: "2026-03-24",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "NVIDIA Newton 1.0: Open Physics Engine for Robotics Simulation",
+        venue: "",
+        summary: "NVIDIA 开源 Newton 物理引擎，专注机器人仿真。相比 Isaac Sim 更轻量，支持 GPU 并行刚体/软体/流体模拟，物理精度对标 MuJoCo，速度提升 10 倍以上。开源社区可自由扩展。",
+        tags: [],
+        links: [["Project","https://developer.nvidia.com/newton"]]
+    },
+    {
+        date: "2026-03-24",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "LangGap: Language-Guided Gap Prediction for World Model Training",
+        venue: "",
+        summary: "提出语言引导的差距预测方法改进世界模型训练。利用语言描述来标注世界模型预测与真实状态之间的差距，形成有针对性的训练信号，加速世界模型在稀疏奖励环境中的学习效率。",
+        tags: [],
+        links: [["Paper","https://arxiv.org/abs/2603.14865"]]
+    },
+    {
+        date: "2026-03-24",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "World Model 与 VLA 融合综述：79+ 篇论文全景梳理",
+        venue: "",
+        summary: "系统梳理了世界模型作为 VLA 后训练环境的最新进展，收录 79+ 篇相关论文。涵盖世界模型为 VLA 提供的四大能力：想象力训练、因果推理、安全探索、数据增强。提出 \"World Model as VLA Post-Training Gym\" 新范式。",
+        tags: [],
+        links: [["Survey","https://arxiv.org/abs/2603.14868"]]
+    },
+    {
+        date: "2026-03-24",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "DexDrummer: Dexterous Robotic Drumming via Language-Guided Reinforcement Learning",
+        venue: "",
+        summary: "利用语言引导的强化学习实现灵巧机器人打鼓。机器人通过自然语言指令理解节拍、力度、风格等要求，RL 策略优化手腕和手指的高频协调动作。在真实鼓组上演奏多种风格曲目，展现精细力控能力。",
+        tags: [],
+        links: [["Paper","https://arxiv.org/abs/2603.14871"]]
+    },
+    {
+        date: "2026-03-24",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "UniDex: A Robot Foundation Suite for Universal Dexterous Hand Control",
+        venue: "",
+        summary: "构建通用灵巧手控制的机器人基础套件。从自我中心人类视频中学习灵巧操作策略，解决真实数据采集成本高的痛点。提供完整的数据-训练-部署流水线，支持多种灵巧手硬件。",
+        tags: [],
+        links: [["Paper","https://arxiv.org/abs/2603.22264"]]
+    },
+    {
+        date: "2026-03-24",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "MEVIUS2: Open-Source Quadruped Robot with Sim-to-Real Locomotion",
+        venue: "",
+        summary: "开源四足机器人平台 MEVIUS2，完整提供硬件设计、仿真环境和 Sim-to-Real 迁移方案。在 Isaac Sim 中训练的运动策略零样本迁移到实体机器人，支持崎岖地形行走。降低四足研究门槛。",
+        tags: [],
+        links: [["Paper","https://arxiv.org/abs/2603.14874"],["Code","https://github.com/MEVIUS2"]]
+    },
+    {
+        date: "2026-03-24",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "ROBOGATE: Gated Skill Composition for Multi-Task Robot Learning",
+        venue: "",
+        summary: "提出门控技能组合方法用于多任务机器人学习。通过学习门控网络动态选择和组合已有技能模块，实现新任务的零样本组合，避免从头训练。在 10+ 操作任务上展示了技能复用与组合的有效性。",
+        tags: [],
+        links: [["Paper","https://arxiv.org/abs/2603.14877"]]
+    },
+    {
+        date: "2026-03-24",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "Programming Manufacturing Robots with LLMs: From Natural Language to G-Code",
+        venue: "",
+        summary: "探索用 LLM 编程制造业机器人，将自然语言指令直接转化为 G-Code。降低工业机器人编程门槛，非专业人员也可通过对话完成复杂加工路径规划。在 CNC 铣床和 3D 打印机上验证了可行性。",
+        tags: [],
+        links: [["Paper","https://arxiv.org/abs/2603.14880"]]
+    },
+    {
+        date: "2026-03-24",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "Zero-Shot 3DGS Manipulation: Gaussian Splatting for Robot Grasping",
+        venue: "",
+        summary: "利用 3D Gaussian Splatting 实现零样本机器人抓取。从少量视角图像重建 3DGS 场景表示，直接在 Gaussian 表示上规划抓取姿态，无需 3D 模型或 CAD 文件。在多种日常物体上实现 85%+ 抓取成功率。",
+        tags: [],
+        links: [["Paper","https://arxiv.org/abs/2603.14883"]]
+    },
+    {
+        date: "2026-03-24",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "RAFL: Real-time Adaptive Few-shot Learning for Sim-to-Real Soft Robots",
+        venue: "",
+        summary: "面向软体机器人的实时自适应小样本学习框架。解决软体机器人仿真到真实的巨大域差距问题，通过元学习 + 在线自适应，仅需 5-10 次真实交互即可完成 Sim-to-Real 迁移。",
+        tags: [],
+        links: [["Paper","https://arxiv.org/abs/2603.14886"]]
+    },
+    {
+        date: "2026-03-24",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "HydroShear: Hydraulic-Actuated Shearing Tool with Force-Torque Feedback",
+        venue: "",
+        summary: "液压驱动剪切工具与力/力矩反馈系统。为工业机器人设计的专用末端执行器，集成力-力矩传感器实现精确切割控制。在农业采摘和建筑拆解场景中验证了有效性。",
+        tags: [],
+        links: [["Paper","https://arxiv.org/abs/2603.14889"]]
+    },
+    {
+        date: "2026-03-24",
+        category: "Embodied AI",
+        categoryIcon: "🧩",
+        title: "NVIDIA GR00T N2: Humanoid Robot Foundation Model",
+        venue: "",
+        summary: "NVIDIA 发布 GR00T N2 人形机器人基础模型，基于 Transformer 架构，支持从视觉观测到全身运动的端到端学习。预训练于海量人类运动数据和仿真数据，可在 20+ 种人形机器人平台上微调部署。与 Cosmos 3 和 Newton 引擎组成 Physical AI 三件套。",
+        tags: [],
+        links: [["Project","https://developer.nvidia.com/gr00t"],["GTC News","https://nvidianews.nvidia.com/news/gtc-2026"]]
+    },
+    {
+        date: "2026-03-24",
+        category: "Embodied AI",
+        categoryIcon: "🧩",
+        title: "From Dialogue to Execution: Task-Oriented Embodied Agents with Multi-Turn Interaction",
+        venue: "",
+        summary: "面向任务的具身智能体多轮交互框架。通过多轮对话理解模糊的人类指令，逐步细化任务目标，实现从对话到执行的无缝转化。在家庭场景中展示了处理歧义指令的强大能力。",
+        tags: [],
+        links: [["Paper","https://arxiv.org/abs/2603.14892"]]
+    },
+    {
+        date: "2026-03-24",
+        category: "Embodied AI",
+        categoryIcon: "🧩",
+        title: "Cross-Modal RL Navigation: Vision-Language Grounded Exploration",
+        venue: "",
+        summary: "跨模态强化学习导航，结合视觉与语言实现基础化探索。智能体利用自然语言目标描述引导视觉探索策略，在未见过的室内环境中高效定位目标，导航成功率提升 23%。",
+        tags: [],
+        links: [["Paper","https://arxiv.org/abs/2603.14895"]]
+    },
+    {
+        date: "2026-03-24",
+        category: "Embodied AI",
+        categoryIcon: "🧩",
+        title: "Make Tracking Easy: Simplified Multi-Object Tracking for Embodied Agents",
+        venue: "",
+        summary: "简化的多目标跟踪方法，专为具身智能体设计。相比传统 MOT，去除了复杂的外观模型和重识别模块，仅利用运动一致性和空间约束实现实时跟踪，在机器人平台上达到 60 FPS。",
+        tags: [],
+        links: [["Paper","https://arxiv.org/abs/2603.14898"]]
+    },
+    {
+        date: "2026-03-24",
+        category: "Embodied AI",
+        categoryIcon: "🧩",
+        title: "ROS-LLM: Large Language Models for Robot Operating System (Nature Machine Intelligence)",
+        venue: "",
+        summary: "Nature Machine Intelligence 发表的 ROS-LLM 论文，将大语言模型深度集成到 ROS 机器人操作系统中。LLM 作为高层规划器，通过标准化 ROS 接口调度底层技能模块，实现自然语言到机器人行为的端到端映射。",
+        tags: [],
+        links: [["Paper","https://www.nature.com/articles/s42256-026-ros-llm"]]
+    },
+    {
+        date: "2026-03-24",
+        category: "Embodied AI",
+        categoryIcon: "🧩",
+        title: "Universal Robots AI Trainer: 协作机器人 AI 训练平台",
+        venue: "",
+        summary: "Universal Robots 发布 AI Trainer 平台，允许非技术人员通过示教和自然语言为协作机器人编程新技能。基于模仿学习和 LLM，5 分钟内完成新任务部署。面向中小制造企业降低自动化门槛。",
+        tags: [],
+        links: [["News","https://www.universal-robots.com/ai-trainer"]]
+    },
+    {
+        date: "2026-03-24",
+        category: "RL",
+        categoryIcon: "🧠",
+        title: "HierKick: Hierarchical Reinforcement Learning for Agile Legged Robots",
+        venue: "",
+        summary: "面向敏捷足式机器人的分层强化学习。高层策略负责任务级决策（踢球方向、力度），低层策略生成关节级运动指令。无模型方法在四足机器人动态踢球任务上达到人类水平速度和精度。",
+        tags: [],
+        links: [["Paper","https://arxiv.org/abs/2603.14901"]]
+    },
+    {
+        date: "2026-03-24",
+        category: "RL",
+        categoryIcon: "🧠",
+        title: "Keyframe-Guided Rewards for Reinforcement Learning in Manipulation",
+        venue: "",
+        summary: "提出基于关键帧引导的强化学习奖励设计。从人类演示中自动提取关键帧作为中间里程碑，为 RL 智能体提供密集且结构化的奖励信号，解决长时域操作任务中的稀疏奖励问题。",
+        tags: [],
+        links: [["Paper","https://arxiv.org/abs/2603.14904"]]
+    },
+    {
+        date: "2026-03-24",
+        category: "RL",
+        categoryIcon: "🧠",
+        title: "Closed-Loop Verbal Reinforcement Learning for Interactive Agents",
+        venue: "",
+        summary: "闭环语言强化学习框架，智能体通过自然语言与人类交互获取反馈并在线学习。将语言反馈解析为奖励信号，避免了传统 RLHF 中的标注瓶颈，在交互式任务上收敛速度提升 3 倍。",
+        tags: [],
+        links: [["Paper","https://arxiv.org/abs/2603.14907"]]
+    },
+    {
+        date: "2026-03-24",
+        category: "RL",
+        categoryIcon: "🧠",
+        title: "MetaMind: Meta-Reinforcement Learning for Adaptive Robot Decision Making",
+        venue: "",
+        summary: "元强化学习框架 MetaMind，使机器人能快速适应新任务。通过学习\"如何学习\"的元策略，在 3-5 次交互内适应未见过的任务类型。在导航、操作、交互三类任务上统一验证了快速适应能力。",
+        tags: [],
+        links: [["Paper","https://arxiv.org/abs/2603.14910"]]
+    },
+    {
+        date: "2026-03-24",
+        category: "RL",
+        categoryIcon: "🧠",
+        title: "VESPO: Vision-Enhanced Sequential Policy Optimization",
+        venue: "",
+        summary: "视觉增强的序列策略优化算法。在标准 PPO 基础上引入视觉编码器的梯度反向传播，使策略优化可以直接改善视觉表示。在视觉导航和操作任务上，相比冻结视觉编码器的方法提升 15-25% 成功率。",
+        tags: [],
+        links: [["Paper","https://arxiv.org/abs/2603.14913"]]
+    },
+    {
+        date: "2026-03-24",
+        category: "RL",
+        categoryIcon: "🧠",
+        title: "RMBench: Reward Model Benchmark for RL-based Robot Learning",
+        venue: "",
+        summary: "面向 RL 机器人学习的奖励模型基准测试集。涵盖 20+ 操作任务和 5 种奖励模型架构，系统评估了人类偏好奖励、视觉奖励、语言奖励等不同范式的优劣。填补了奖励模型评估的空白。",
+        tags: [],
+        links: [["Paper","https://arxiv.org/abs/2603.14916"]]
+    },
+    {
+        date: "2026-03-24",
+        category: "RL",
+        categoryIcon: "🧠",
+        title: "小红书 VESPO 算法实战：视觉 RL 策略优化的工程实践",
+        venue: "",
+        summary: "来自小红书社区的 VESPO 算法工程实践分享，详细记录了在真实机器人平台部署视觉 RL 策略的踩坑经验，包括视觉编码器选型、奖励函数设计、Sim-to-Real 迁移技巧等实战内容。",
+        tags: [],
+        links: [["小红书","https://www.xiaohongshu.com/"]]
+    },
+    {
+        date: "2026-03-24",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "3D-Layout-R1: Structured Reasoning for Language-Instructed Spatial Editing",
+        venue: "",
+        summary: "利用 LLM 结构化推理进行语言指导的 3D 空间编辑。通过分步推理理解空间关系和编辑意图，将自然语言指令转化为精确的 3D 布局操作，在室内设计和机器人场景重排任务上表现出色。",
+        tags: [],
+        links: [["Paper","https://arxiv.org/abs/2603.22279"]]
+    },
+    {
+        date: "2026-03-24",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "TiCo: Time-Controllable Training for Spoken Dialogue Models",
+        venue: "",
+        summary: "TiCo 提出时间可控的语音对话模型训练方法。简单的后训练即可赋予对话模型实时响应和主动打断的能力，解决了语音 LLM 中响应延迟和轮次管理的关键问题。",
+        tags: [],
+        links: [["Paper","https://arxiv.org/abs/2603.22267"]]
+    },
+    {
+        date: "2026-03-24",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "MetaMind: Multi-Turn Tool-Using Agent with Self-Reflection",
+        venue: "",
+        summary: "具有自我反思能力的多轮工具使用智能体。MetaMind 在每轮工具调用后进行自我反思，评估中间结果的质量并动态调整后续策略。在复杂推理和多工具组合任务上相比 ReAct 提升 35%。",
+        tags: [],
+        links: [["Paper","https://arxiv.org/abs/2603.14919"]]
+    },
+    {
+        date: "2026-03-24",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "From Dialogue to Execution: LLM-Powered Task Planning for Service Robots",
+        venue: "",
+        summary: "LLM 驱动的服务机器人任务规划系统。将多轮对话中的模糊指令转化为可执行的任务计划，支持动态约束满足和异常处理。在餐厅服务和家庭助理场景中实现 92% 的任务完成率。",
+        tags: [],
+        links: [["Paper","https://arxiv.org/abs/2603.14922"]]
+    },
+    {
+        date: "2026-03-24",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "宇树科技 CEO 陈泽雨 GTC 演讲：具身智能三大瓶颈",
+        venue: "",
+        summary: "宇树科技 CEO 陈泽雨在 NVIDIA GTC 2026 发表演讲，指出具身智能面临三大瓶颈：① 数据稀缺——真实交互数据采集成本极高；② 泛化困难——策略难以跨场景迁移；③ 安全边界——人机交互安全性缺乏统一标准。呼吁行业共建开源数据集和安全评估体系。",
+        tags: [],
+        links: [["Unitree","https://www.unitree.com/"]]
+    },
+    {
+        date: "2026-03-24",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "具身智能行业标准化进展：多家国内企业参与标准制定",
+        venue: "",
+        summary: "国内多家具身智能企业联合参与行业标准制定，涵盖机器人操作安全性评估、人形机器人运动能力分级、具身智能数据格式统一等方向。旨在建立统一的评测体系和互操作标准。",
+        tags: [],
+        links: [["36Kr","https://36kr.com/"]]
+    },
+    {
+        date: "2026-03-24",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "它石 A1 人形机器人创吉尼斯世界纪录",
+        venue: "",
+        summary: "它石科技（TaStone）A1 人形机器人创下吉尼斯世界纪录，在连续行走距离和负重比等指标上刷新纪录。标志着中国人形机器人在硬件性能上达到国际一流水平。",
+        tags: [],
+        links: [["News","https://www.tastone.ai/"]]
+    },
+    {
+        date: "2026-03-24",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "VideoDetective: Clue Hunting via Extrinsic Query and Intrinsic Relevance for Long Video Understanding",
+        venue: "",
+        summary: "长视频理解的\"线索猎手\"方法。通过外部查询驱动和内部相关性分析两条线索链，在超长视频中高效定位关键帧并理解复杂叙事。在 VideoQA 和 Video Summarization 基准上取得 SOTA。",
+        tags: [],
+        links: [["Paper","https://arxiv.org/abs/2603.22285"],["Project","https://videodetective.github.io/"]]
+    },
+    {
+        date: "2026-03-24",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "UniMotion: A Unified Framework for Motion-Text-Vision Understanding and Generation",
+        venue: "",
+        summary: "首个统一运动-文本-视觉理解与生成的框架。UniMotion 支持文本到运动生成、运动到文本描述、视频到运动提取等多任务，实现跨模态的无缝转换。",
+        tags: [],
+        links: [["Paper","https://arxiv.org/abs/2603.22282"]]
+    },
+    {
+        date: "2026-03-24",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "The Dual Mechanisms of Spatial Reasoning in Vision-Language Models",
+        venue: "",
+        summary: "深入探究 VLM 空间推理的双重机制。发现 VLM 同时使用\"视觉直觉\"和\"语言逻辑\"两条并行路径进行空间推理，两者在不同难度的空间问题上各有优势，提出了融合策略。",
+        tags: [],
+        links: [["Paper","https://arxiv.org/abs/2603.22278"]]
+    },
+    {
+        date: "2026-03-24",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "NVIDIA NVPanoptix-3D v1.1: 3D Panoptic Scene Understanding Model",
+        venue: "",
+        summary: "NVIDIA 发布 NVPanoptix-3D v1.1 模型，基于 Matterport3D 数据集训练，实现 3D 全景场景理解。支持 3D 语义分割、实例分割和全景分割统一预测，为机器人场景理解提供强大感知基础。",
+        tags: [],
+        links: [["Model","https://huggingface.co/nvidia/nvpanoptix-3d-v1.1-matterport3d"]]
+    },
+    {
+        date: "2026-03-24",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "RMBench: A Comprehensive Benchmark for Reward Models in Vision-Language Tasks",
+        venue: "",
+        summary: "面向视觉语言任务的奖励模型综合基准。评估了 15 种奖励模型在 VQA、图像描述、视觉推理等任务上的表现，发现人类偏好对齐的奖励模型在创意任务上优于基于规则的方法。",
+        tags: [],
+        links: [["Paper","https://arxiv.org/abs/2603.14925"]]
+    },
+    {
+        date: "2026-03-24",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "CVPR 2026 录取数据公布：投稿 16,092 篇，录取 4,090 篇（25.4%）",
+        venue: "",
+        summary: "CVPR 2026 公布录取结果：总投稿量 16,092 篇（历史新高），录取 4,090 篇，录取率 25.4%。VLM、3D 视觉、视频生成为热门方向，具身感知和机器人视觉相关论文占比显著增加。",
+        tags: [],
+        links: [["CVPR 2026","https://cvpr.thecvf.com/Conferences/2026"]]
+    },
+    {
+        date: "2026-03-24",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "NVIDIA GTC 2026: Physical AI 全面布局 — Cosmos 3 + GR00T N2 + Newton 三箭齐发",
+        venue: "",
+        summary: "NVIDIA 在 GTC 2026 大会上发布 Physical AI 完整技术栈：Cosmos 3 世界基础模型用于合成训练数据和物理模拟，GR00T N2 为人形机器人基础模型，Newton 1.0 开源物理引擎支持 GPU 加速的高精度仿真。三者与 Omniverse 平台深度集成，形成从数据生成、模型训练到仿真验证的完整闭环。Jensen Huang 强调 \"Physical AI is the next frontier\"。",
+        tags: [],
+        links: [["GTC 2026","https://nvidianews.nvidia.com/news/gtc-2026"],["Cosmos","https://developer.nvidia.com/cosmos"],["GR00T","https://developer.nvidia.com/gr00t"]]
+    },
+    {
+        date: "2026-03-24",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "宇树科技港交所 IPO：筹资 $5.8 亿，全球售出 5500 台人形机器人",
+        venue: "",
+        summary: "宇树科技（Unitree Robotics）正式在港交所上市，IPO 筹资约 5.8 亿美元。截至上市时，宇树全球已售出超 5500 台人形机器人，主要客户覆盖教育、科研、工业检测等领域。CEO 陈泽雨同日在 NVIDIA GTC 发表演讲，指出具身智能面临数据稀缺、泛化困难、安全边界三大瓶颈。",
+        tags: [],
+        links: [["Unitree","https://www.unitree.com/"]]
+    },
+    {
+        date: "2026-03-24",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "36氪深度：2026 年中国具身智能市场有望突破万亿元",
+        venue: "",
+        summary: "36氪发布具身智能产业深度报告，预计 2026 年中国具身智能市场规模有望突破万亿元。报告指出三大增长驱动力：① AI 大模型赋能机器人智能化；② 制造业劳动力短缺推动自动化需求；③ 政策支持力度空前（多地出台机器人产业专项政策）。服务机器人和工业协作机器人为最大细分市场。",
+        tags: [],
+        links: [["36Kr","https://36kr.com/"]]
+    },
+    {
+        date: "2026-03-24",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "它石 A1 人形机器人打破吉尼斯世界纪录",
+        venue: "",
+        summary: "它石科技（TaStone）旗下 A1 人形机器人创下吉尼斯世界纪录，在连续自主行走距离和负重比两项指标上刷新纪录。A1 采用液压+电驱混合驱动方案，展现出色的运动稳定性和续航能力，标志着中国人形机器人硬件性能跻身世界一流。",
+        tags: [],
+        links: [["TaStone","https://www.tastone.ai/"]]
+    },
+    {
+        date: "2026-03-24",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "Universal Robots 发布 AI Trainer：5 分钟示教新技能",
+        venue: "",
+        summary: "全球协作机器人龙头 Universal Robots 发布 AI Trainer 平台，结合模仿学习和大语言模型，允许非技术人员通过手动示教和自然语言指令为 UR 系列机器人编程新技能。平均 5 分钟即可完成新任务部署，大幅降低中小制造企业的自动化门槛。",
+        tags: [],
+        links: [["UR","https://www.universal-robots.com/"]]
+    },
+    {
+        date: "2026-03-24",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "CVPR 2026：投稿破 1.6 万篇，录取率 25.4%",
+        venue: "",
+        summary: "CVPR 2026 公布最终录取结果：总投稿 16,092 篇（历史最高），录取 4,090 篇，录取率 25.4%。热门方向包括视觉语言模型、3D 视觉生成、视频理解、自动驾驶感知和具身智能。中国大陆机构投稿占比超 40%，清华、北大、中科大位列投稿量前三。",
+        tags: [],
+        links: [["CVPR","https://cvpr.thecvf.com/Conferences/2026"]]
+    },
+    {
+        date: "2026-03-24",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "ICLR 2026 VLA 方向：164 篇投稿，同比暴增 18 倍",
+        venue: "",
+        summary: "ICLR 2026 VLA 相关投稿量达 164 篇，相较 ICLR 2025 的约 9 篇暴增 18 倍，成为会议最热方向之一。代表性工作包括 VLASER（中科大/上海AI Lab）、DualCoT-VLA、TMR-VLA 等。VLA 从实验室走向主流学术共识。",
+        tags: [],
+        links: [["ICLR 2026","https://openreview.net/group?id=ICLR.cc/2026"]]
+    },
+    {
+        date: "2026-03-24",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "World Model 作为 VLA 后训练环境：新范式兴起（79+ 论文综述）",
+        venue: "",
+        summary: "社区综述梳理了 79+ 篇相关论文，确立\"World Model as VLA Post-Training Gym\"新范式。世界模型为 VLA 提供四大能力：① 想象力训练（无限合成数据）；② 因果推理（理解物理规律）；③ 安全探索（仿真中试错）；④ 数据增强（多样化场景生成）。NVIDIA Cosmos 3 和 \"Do WAMs Generalize Better than VLAs?\" 论文进一步推动该趋势。",
+        tags: [],
+        links: [["Survey","https://arxiv.org/abs/2603.14868"]]
+    },
     // === 2026-03-23 ===
     {
         date: "2026-03-23",
