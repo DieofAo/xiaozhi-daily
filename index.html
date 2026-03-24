@@ -522,193 +522,13 @@ const PAPERS_DB = [
     // === 2026-03-24 ===
     {
         date: "2026-03-24",
-        category: "VLA",
-        categoryIcon: "🤖",
-        title: "DualCoT-VLA: Visual-Linguistic Chain of Thought via Parallel Reasoning for Vision-Language-Action Models",
-        venue: "",
-        summary: "提出双链思维推理架构，将 VLA 模型的视觉推理与语言推理并行化。Visual CoT 负责低级空间理解，Linguistic CoT 负责高级任务规划，通过可学习查询令牌将自回归推理转为单步前向推理。在 LIBERO 和 RoboCasa GR1 基准及真实机器人上取得 SOTA。",
-        tags: [],
-        links: [["arXiv","https://arxiv.org/abs/2603.22280"],["PDF","https://arxiv.org/pdf/2603.22280"]]
-    },
-    {
-        date: "2026-03-24",
-        category: "VLA",
-        categoryIcon: "🤖",
-        title: "StageCraft: Execution Aware Mitigation of Distractor and Obstruction Failures in VLA Models",
-        venue: "",
-        summary: "一种无训练方法，通过 VLM 推理操纵环境初始状态来提升 VLA 执行成功率。将策略展开视频和成功标签输入 VLM，推断需要移除的干扰物/障碍物。即插即用模块，在三个现实世界任务域中绝对提升 40%。",
-        tags: [],
-        links: [["arXiv","https://arxiv.org/abs/2603.20659"],["PDF","https://arxiv.org/pdf/2603.20659"]]
-    },
-    {
-        date: "2026-03-24",
-        category: "VLA",
-        categoryIcon: "🤖",
-        title: "Speedup Patch: Learning a Plug-and-Play Policy to Accelerate Embodied Manipulation",
-        venue: "",
-        summary: "轻量级、策略无关的加速框架 SuP，通过外部调度器自适应下采样动作块消除冗余。利用世界模型做安全约束的离线 RL 优化。在 Libero、Bigym 及真实世界任务上实现 1.8x 加速，保持原始成功率。",
-        tags: [],
-        links: [["arXiv","https://arxiv.org/abs/2603.20658"],["PDF","https://arxiv.org/pdf/2603.20658"]]
-    },
-    {
-        date: "2026-03-24",
-        category: "VLA",
-        categoryIcon: "🤖",
-        title: "UniDex: A Robot Foundation Suite for Universal Dexterous Hand Control from Egocentric Human Videos",
-        venue: "",
-        summary: "通用灵巧手控制基础套件。构建含 50K 轨迹的 UniDex-Dataset（8 种灵巧手，6-24 DoF），提出 FAAS 统一动作空间和 3D VLA 策略 UniDex-VLA。在工具使用任务上达 81% 平均任务进度，零样本跨手泛化。",
-        tags: [],
-        links: [["arXiv","https://arxiv.org/abs/2603.22264"],["PDF","https://arxiv.org/pdf/2603.22264"]]
-    },
-    {
-        date: "2026-03-24",
-        category: "World Model",
-        categoryIcon: "🌍",
-        title: "ThinkJEPA: Empowering Latent World Models with Large Vision-Language Reasoning Model",
-        venue: "",
-        summary: "将 VLM 推理能力注入 JEPA 风格潜空间世界模型。双时间路径架构：密集 JEPA 分支捕捉细粒度运动，均匀采样 VLM \"thinker\" 提供长期语义引导。分层金字塔模块将多层 VLM 表示压缩为潜空间兼容的引导特征。在手部操作轨迹预测上优于纯 VLM 和纯 JEPA 基线。",
-        tags: [],
-        links: [["arXiv","https://arxiv.org/abs/2603.22281"],["PDF","https://arxiv.org/pdf/2603.22281"]]
-    },
-    {
-        date: "2026-03-24",
-        category: "World Model",
-        categoryIcon: "🌍",
-        title: "Cortical Policy: A Dual-Stream View Transformer for Robotic Manipulation",
-        venue: "",
-        summary: "受人脑皮层双流处理启发的机器人操作方法。静态视角流通过 3D 基础模型对齐几何一致关键点增强空间理解；动态视角流通过自中心注视估计实现自适应调整。在 RLBench、COLOSSEUM 和真实任务上大幅超越 SOTA。",
-        tags: [],
-        links: [["arXiv","https://arxiv.org/abs/2603.21051"],["PDF","https://arxiv.org/pdf/2603.21051"]]
-    },
-    {
-        date: "2026-03-24",
-        category: "Robotics",
-        categoryIcon: "🦾",
-        title: "MEVIUS2: Practical Open-Source Quadruped Robot with Sheet Metal Welding and Multimodal Perception",
-        venue: "",
-        summary: "开源四足机器人，尺寸对标 Boston Dynamics Spot。钣金焊接+金属加工构建高耐久车身，集成激光雷达和 HDR 相机。RL 策略实现崎岖地形行走。全部硬件/软件/训练环境开源。",
-        tags: [],
-        links: [["arXiv","https://arxiv.org/abs/2603.22031"],["PDF","https://arxiv.org/pdf/2603.22031"],["Project","https://haraduka.github.io/mevius2-hardware/"],["Code","https://github.com/haraduka/mevius2"]]
-    },
-    {
-        date: "2026-03-24",
-        category: "Robotics",
-        categoryIcon: "🦾",
-        title: "RAFL: Generalizable Sim-to-Real of Soft Robots with Residual Acceleration Field Learning",
-        venue: "",
-        summary: "面向软体机器人 Sim-to-Real 的残差加速度场学习框架。通过元素级校正动力学场增强基础仿真器，基于局部特征实现跨形状零样本泛化。端到端训练于稀疏标记观测，支持持续细化。",
-        tags: [],
-        links: [["arXiv","https://arxiv.org/abs/2603.22039"],["PDF","https://arxiv.org/pdf/2603.22039"]]
-    },
-    {
-        date: "2026-03-24",
-        category: "Robotics",
-        categoryIcon: "🦾",
-        title: "Programming Manufacturing Robots with Imperfect AI: LLMs as Tuning Experts for FDM Print Configuration Selection",
-        venue: "",
-        summary: "将 LLM 嵌入贝叶斯优化闭环，为 FDM 3D 打印机器人自动调参。LLM 根据结构化诊断信息提出自然语言调整方案，编译为机器可执行的优化引导。在 100 个 Thingi10k 零件上，78% 达到最优配置，0% 可能失败率。",
-        tags: [],
-        links: [["arXiv","https://arxiv.org/abs/2603.22118"],["PDF","https://arxiv.org/pdf/2603.22118"]]
-    },
-    {
-        date: "2026-03-24",
-        category: "Robotics",
-        categoryIcon: "🦾",
-        title: "Sim-to-Real of Humanoid Locomotion Policies via Joint Torque Space Perturbation Injection",
-        venue: "",
-        summary: "通过关节力矩空间扰动注入改进人形机器人运动策略的 Sim-to-Real 迁移。在仿真训练阶段引入结构化扰动，增强策略对真实硬件不确定性的鲁棒性。",
-        tags: [],
-        links: [["arXiv","https://arxiv.org/abs/2603.21880"],["PDF","https://arxiv.org/pdf/2603.21880"]]
-    },
-    {
-        date: "2026-03-24",
-        category: "Robotics",
-        categoryIcon: "🦾",
-        title: "BiPreManip: Learning Affordance-Based Bimanual Preparatory Manipulation through Anticipatory Collaboration",
-        venue: "",
-        summary: "基于可供性的双臂预备操作学习。通过预期协作机制，使双臂机器人在正式执行前学习预备性动作（如调整物体姿态、清理路径），提升双臂协作任务的成功率。",
-        tags: [],
-        links: [["arXiv","https://arxiv.org/abs/2603.21723"],["PDF","https://arxiv.org/pdf/2603.21723"]]
-    },
-    {
-        date: "2026-03-24",
-        category: "Embodied AI",
-        categoryIcon: "🧩",
-        title: "A Robot Operating System Framework for Using Large Language Models in Embodied AI",
-        venue: "",
-        summary: "Nature Machine Intelligence 正刊。将 LLM 智能体深度集成到 ROS，支持内联代码和行为树两种执行模式，通过模仿学习新技能并自动优化。在长时域任务、桌面重排、动态优化等多场景验证鲁棒性和通用性。使用开源预训练 LLM，完整代码开源。",
-        tags: [],
-        links: [["Paper","https://www.nature.com/articles/s42256-026-01186-z"],["Code","https://github.com/huawei-noah/HEBO/tree/master/ROSLLM"]]
-    },
-    {
-        date: "2026-03-24",
-        category: "Embodied AI",
-        categoryIcon: "🧩",
-        title: "Rheos: Modelling Continuous Motion Dynamics in Hierarchical 3D Scene Graphs",
-        venue: "",
-        summary: "将连续方向运动模型嵌入层次化 3D 场景图的动态层。每个节点维护半包裹高斯混合模型捕捉多模态方向流，采用储层采样和 BIC 扫描实现在线更新。在模拟行人环境中优于离散基线。开源实现。",
-        tags: [],
-        links: [["arXiv","https://arxiv.org/abs/2603.20239"],["PDF","https://arxiv.org/pdf/2603.20239"]]
-    },
-    {
-        date: "2026-03-24",
-        category: "Embodied AI",
-        categoryIcon: "🧩",
-        title: "SwiftBot: A Decentralized Platform for LLM-Powered Federated Robotic Task Execution",
-        venue: "",
-        summary: "面向 LLM 驱动的联邦机器人任务执行的去中心化平台。多机器人通过联邦学习共享任务经验，LLM 作为高层规划器分配任务，无需集中式服务器。",
-        tags: [],
-        links: [["arXiv","https://arxiv.org/abs/2603.20234"],["PDF","https://arxiv.org/pdf/2603.20234"]]
-    },
-    {
-        date: "2026-03-24",
-        category: "LLM / VLM",
-        categoryIcon: "💡",
-        title: "VideoDetective: Clue Hunting via both Extrinsic Query and Intrinsic Relevance for Long Video Understanding",
-        venue: "",
-        summary: "长视频理解的\"线索猎手\"方法。外部查询驱动和内部相关性分析两条线索链协同，在超长视频中高效定位关键帧。在 VideoQA 和 Video Summarization 基准上取得 SOTA。",
-        tags: [],
-        links: [["arXiv","https://arxiv.org/abs/2603.22285"],["PDF","https://arxiv.org/pdf/2603.22285"],["Project","https://videodetective.github.io/"]]
-    },
-    {
-        date: "2026-03-24",
-        category: "LLM / VLM",
-        categoryIcon: "💡",
-        title: "UniMotion: A Unified Framework for Motion-Text-Vision Understanding and Generation",
-        venue: "",
-        summary: "首个统一运动-文本-视觉理解与生成的框架。支持文本到运动生成、运动到文本描述、视频到运动提取等多任务，实现跨模态无缝转换。",
-        tags: [],
-        links: [["arXiv","https://arxiv.org/abs/2603.22282"],["PDF","https://arxiv.org/pdf/2603.22282"]]
-    },
-    {
-        date: "2026-03-24",
-        category: "LLM / VLM",
-        categoryIcon: "💡",
-        title: "The Dual Mechanisms of Spatial Reasoning in Vision-Language Models",
-        venue: "",
-        summary: "揭示 VLM 空间推理的双重机制：语言模型骨干在视觉 token 上表示内容无关的空间关系，但主导性空间信息来源于视觉编码器——其表示全局分布在所有图像 token 中（含背景区域）。全局增强视觉空间表示可提升空间推理性能。",
-        tags: [],
-        links: [["arXiv","https://arxiv.org/abs/2603.22278"],["PDF","https://arxiv.org/pdf/2603.22278"]]
-    },
-    {
-        date: "2026-03-24",
-        category: "LLM / VLM",
-        categoryIcon: "💡",
-        title: "3D-Layout-R1: Structured Reasoning for Language-Instructed Spatial Editing",
-        venue: "",
-        summary: "利用结构化推理进行语言指导的 3D 空间编辑。分步推理理解空间关系和编辑意图，将自然语言指令转化为精确的 3D 布局操作，在室内设计和机器人场景重排任务上表现出色。",
-        tags: [],
-        links: [["arXiv","https://arxiv.org/abs/2603.22279"],["PDF","https://arxiv.org/pdf/2603.22279"]]
-    },
-    {
-        date: "2026-03-24",
         category: "Informations",
         categoryIcon: "📡",
         title: "NVIDIA GTC 2026: Physical AI 全面布局 — Cosmos 3 + GR00T N2 + Newton 三箭齐发",
         venue: "",
         summary: "NVIDIA 在 GTC 2026 发布 Physical AI 完整技术栈：Cosmos 3 统一世界生成/视觉推理/动作模拟的首个机器人智能世界基础模型；GR00T N2 人形机器人基础模型（预计年底发布，在 MolmoSpaces 和 RoboArena 排名第一，成功率是领先 VLA 模型的 2 倍以上）；Newton 1.0 物理引擎随 Isaac Lab 3.0 进入早期访问，支持多物理仿真和灵巧操作。合作伙伴包括 ABB、FANUC、KUKA、Universal Robots、三星等。Open Physical AI Data Factory Blueprint 将于 4 月在 GitHub 开源。",
-        tags: [],
-        links: [["NVIDIA News","https://nvidianews.nvidia.com/news/nvidia-and-global-robotics-leaders-take-physical-ai-to-the-real-world"],["GTC Recap","https://deeperinsights.com/ai-blog/nvidia-gtc-2026-highlights/"],["Details","https://blockchain.news/news/nvidia-cosmos-3-groot-n2-robotics-partnerships-gtc-2026"]]
+        tags: [["Robotics","green"],["GTC 2026","green"]],
+        links: [["📰 NVIDIA News","https://nvidianews.nvidia.com/news/nvidia-and-global-robotics-leaders-take-physical-ai-to-the-real-world"],["📰 GTC Recap","https://deeperinsights.com/ai-blog/nvidia-gtc-2026-highlights/"],["📰 Details","https://blockchain.news/news/nvidia-cosmos-3-groot-n2-robotics-partnerships-gtc-2026"]]
     },
     {
         date: "2026-03-24",
@@ -717,8 +537,8 @@ const PAPERS_DB = [
         title: "NVIDIA 携手全球机器人巨头推进 Physical AI 量产落地",
         venue: "",
         summary: "TrendForce 分析指出，NVIDIA 在 GTC 2026 整合 Cosmos、Isaac 和 GR00T 形成虚实训练到部署的完整链路。医疗领域推出 Cosmos-H-Surgical 和 GR00T-H，合作伙伴包括 CMR Surgical、强生和美敦力。自动驾驶方面推出新 Alpamayo VLA 模型处理长尾场景，Drive Hyperion 平台已被日产、比亚迪、吉利、现代和 Uber L4 采用。",
-        tags: [],
-        links: [["TrendForce","https://www.trendforce.com/news/2026/03/19/insights-nvidia-expands-robotics-ecosystem-at-gtc-as-physical-ai-moves-toward-large-scale-deployment/"]]
+        tags: [["Robotics","green"],["产业落地","green"]],
+        links: [["📰 TrendForce","https://www.trendforce.com/news/2026/03/19/insights-nvidia-expands-robotics-ecosystem-at-gtc-as-physical-ai-moves-toward-large-scale-deployment/"]]
     },
     {
         date: "2026-03-24",
@@ -727,8 +547,8 @@ const PAPERS_DB = [
         title: "ICLR 2026 VLA 方向分析：164 篇投稿，同比增长 18 倍",
         venue: "",
         summary: "来自 mbreuss.github.io 的深度分析显示，ICLR 2026 VLA 相关投稿量达 164 篇，相较 ICLR 2025 的约 9 篇暴增 18 倍。研究热点涵盖离散扩散 VLA、推理模型等方向，VLA 从实验室走向主流学术共识。",
-        tags: [],
-        links: [["Analysis","https://mbreuss.github.io/blog_post_iclr_26_vla.html"]]
+        tags: [["VLA","green"],["学术分析","green"]],
+        links: [["📰 Analysis","https://mbreuss.github.io/blog_post_iclr_26_vla.html"]]
     },
     {
         date: "2026-03-24",
@@ -737,8 +557,8 @@ const PAPERS_DB = [
         title: "Nature Machine Intelligence: What Matters in Building VLA Models",
         venue: "",
         summary: "Li et al. 在 Nature Machine Intelligence 发表 VLA 模型对比研究，系统比较不同 VLA 架构并揭示构建有用 VLA 模型的关键因素。",
-        tags: [],
-        links: [["Paper","https://www.nature.com/articles/s42256-025-01168-7"]]
+        tags: [["VLA","green"],["综述研究","green"]],
+        links: [["📰 Paper","https://www.nature.com/articles/s42256-025-01168-7"]]
     },
     {
         date: "2026-03-24",
@@ -747,8 +567,8 @@ const PAPERS_DB = [
         title: "VLA 领域完整综述：架构、学习范式与真实世界应用",
         venue: "",
         summary: "全面综述 Vision-Language-Action 模型在机器人领域的应用，涵盖架构设计、学习范式和真实世界部署。",
-        tags: [],
-        links: [["Survey Site","https://vla-survey.github.io/"]]
+        tags: [["VLA","green"],["综述","green"]],
+        links: [["📰 Survey Site","https://vla-survey.github.io/"]]
     },
     {
         date: "2026-03-24",
@@ -757,8 +577,188 @@ const PAPERS_DB = [
         title: "Kinema4D: 4D 世界模型用于时空具身推理",
         venue: "",
         summary: "利用视频生成突破传统仿真的视觉/物理约束，构建运动学 4D 世界模型用于具身 AI 的时空推理和机器人-世界交互模拟。",
-        tags: [],
-        links: [["arXiv","https://arxiv.org/abs/2603.16669"],["PDF","https://arxiv.org/pdf/2603.16669"]]
+        tags: [["World Model","green"],["4D 模拟","green"]],
+        links: [["📰 arXiv","https://arxiv.org/abs/2603.16669"]]
+    },
+    {
+        date: "2026-03-24",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "DualCoT-VLA: Visual-Linguistic Chain of Thought via Parallel Reasoning for Vision-Language-Action Models",
+        venue: "",
+        summary: "提出双链思维推理架构，将 VLA 模型的视觉推理与语言推理并行化。Visual CoT 负责低级空间理解，Linguistic CoT 负责高级任务规划，通过可学习查询令牌将自回归推理转为单步前向推理。在 LIBERO 和 RoboCasa GR1 基准及真实机器人上取得 SOTA。",
+        tags: [["VLA","green"],["推理增强","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2603.22280"],["📋 PDF","https://arxiv.org/pdf/2603.22280"]]
+    },
+    {
+        date: "2026-03-24",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "StageCraft: Execution Aware Mitigation of Distractor and Obstruction Failures in VLA Models",
+        venue: "",
+        summary: "一种无训练方法，通过 VLM 推理操纵环境初始状态来提升 VLA 执行成功率。将策略展开视频和成功标签输入 VLM，推断需要移除的干扰物/障碍物。即插即用模块，在三个现实世界任务域中绝对提升 40%。",
+        tags: [["VLA","green"],["即插即用","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2603.20659"],["📋 PDF","https://arxiv.org/pdf/2603.20659"]]
+    },
+    {
+        date: "2026-03-24",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "Speedup Patch: Learning a Plug-and-Play Policy to Accelerate Embodied Manipulation",
+        venue: "",
+        summary: "轻量级、策略无关的加速框架 SuP，通过外部调度器自适应下采样动作块消除冗余。利用世界模型做安全约束的离线 RL 优化。在 Libero、Bigym 及真实世界任务上实现 1.8x 加速，保持原始成功率。",
+        tags: [["VLA","green"],["RL","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2603.20658"],["📋 PDF","https://arxiv.org/pdf/2603.20658"]]
+    },
+    {
+        date: "2026-03-24",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "UniDex: A Robot Foundation Suite for Universal Dexterous Hand Control from Egocentric Human Videos",
+        venue: "",
+        summary: "通用灵巧手控制基础套件。构建含 50K 轨迹的 UniDex-Dataset（8 种灵巧手，6-24 DoF），提出 FAAS 统一动作空间和 3D VLA 策略 UniDex-VLA。在工具使用任务上达 81% 平均任务进度，零样本跨手泛化。",
+        tags: [["VLA","green"],["灵巧手","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2603.22264"],["📋 PDF","https://arxiv.org/pdf/2603.22264"]]
+    },
+    {
+        date: "2026-03-24",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "ThinkJEPA: Empowering Latent World Models with Large Vision-Language Reasoning Model",
+        venue: "",
+        summary: "将 VLM 推理能力注入 JEPA 风格潜空间世界模型。双时间路径架构：密集 JEPA 分支捕捉细粒度运动，均匀采样 VLM \"thinker\" 提供长期语义引导。分层金字塔模块将多层 VLM 表示压缩为潜空间兼容的引导特征。在手部操作轨迹预测上优于纯 VLM 和纯 JEPA 基线。",
+        tags: [["World Model","green"],["VLM","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2603.22281"],["📋 PDF","https://arxiv.org/pdf/2603.22281"]]
+    },
+    {
+        date: "2026-03-24",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "Cortical Policy: A Dual-Stream View Transformer for Robotic Manipulation",
+        venue: "",
+        summary: "受人脑皮层双流处理启发的机器人操作方法。静态视角流通过 3D 基础模型对齐几何一致关键点增强空间理解；动态视角流通过自中心注视估计实现自适应调整。在 RLBench、COLOSSEUM 和真实任务上大幅超越 SOTA。",
+        tags: [["World Model","green"],["操作","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2603.21051"],["📋 PDF","https://arxiv.org/pdf/2603.21051"]]
+    },
+    {
+        date: "2026-03-24",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "MEVIUS2: Practical Open-Source Quadruped Robot with Sheet Metal Welding and Multimodal Perception",
+        venue: "",
+        summary: "开源四足机器人，尺寸对标 Boston Dynamics Spot。钣金焊接+金属加工构建高耐久车身，集成激光雷达和 HDR 相机。RL 策略实现崎岖地形行走。全部硬件/软件/训练环境开源。",
+        tags: [["Robotics","green"],["开源硬件","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2603.22031"],["📋 PDF","https://arxiv.org/pdf/2603.22031"],["🏠 项目主页","https://haraduka.github.io/mevius2-hardware/"],["💻 代码","https://github.com/haraduka/mevius2"]]
+    },
+    {
+        date: "2026-03-24",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "RAFL: Generalizable Sim-to-Real of Soft Robots with Residual Acceleration Field Learning",
+        venue: "",
+        summary: "面向软体机器人 Sim-to-Real 的残差加速度场学习框架。通过元素级校正动力学场增强基础仿真器，基于局部特征实现跨形状零样本泛化。端到端训练于稀疏标记观测，支持持续细化。",
+        tags: [["Robotics","green"],["Sim-to-Real","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2603.22039"],["📋 PDF","https://arxiv.org/pdf/2603.22039"]]
+    },
+    {
+        date: "2026-03-24",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "Programming Manufacturing Robots with Imperfect AI: LLMs as Tuning Experts for FDM Print Configuration Selection",
+        venue: "",
+        summary: "将 LLM 嵌入贝叶斯优化闭环，为 FDM 3D 打印机器人自动调参。LLM 根据结构化诊断信息提出自然语言调整方案，编译为机器可执行的优化引导。在 100 个 Thingi10k 零件上，78% 达到最优配置，0% 可能失败率。",
+        tags: [["Robotics","green"],["LLM","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2603.22118"],["📋 PDF","https://arxiv.org/pdf/2603.22118"]]
+    },
+    {
+        date: "2026-03-24",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "Sim-to-Real of Humanoid Locomotion Policies via Joint Torque Space Perturbation Injection",
+        venue: "",
+        summary: "通过关节力矩空间扰动注入改进人形机器人运动策略的 Sim-to-Real 迁移。在仿真训练阶段引入结构化扰动，增强策略对真实硬件不确定性的鲁棒性。",
+        tags: [["Robotics","green"],["RL","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2603.21880"],["📋 PDF","https://arxiv.org/pdf/2603.21880"]]
+    },
+    {
+        date: "2026-03-24",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "BiPreManip: Learning Affordance-Based Bimanual Preparatory Manipulation through Anticipatory Collaboration",
+        venue: "",
+        summary: "基于可供性的双臂预备操作学习。通过预期协作机制，使双臂机器人在正式执行前学习预备性动作（如调整物体姿态、清理路径），提升双臂协作任务的成功率。",
+        tags: [["Robotics","green"],["双臂协作","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2603.21723"],["📋 PDF","https://arxiv.org/pdf/2603.21723"]]
+    },
+    {
+        date: "2026-03-24",
+        category: "Embodied AI",
+        categoryIcon: "🧩",
+        title: "A Robot Operating System Framework for Using Large Language Models in Embodied AI",
+        venue: "",
+        summary: "Nature Machine Intelligence 正刊。将 LLM 智能体深度集成到 ROS，支持内联代码和行为树两种执行模式，通过模仿学习新技能并自动优化。在长时域任务、桌面重排、动态优化等多场景验证鲁棒性和通用性。使用开源预训练 LLM，完整代码开源。",
+        tags: [["Embodied AI","green"],["LLM","green"]],
+        links: [["📄 Paper","https://www.nature.com/articles/s42256-026-01186-z"],["💻 代码","https://github.com/huawei-noah/HEBO/tree/master/ROSLLM"]]
+    },
+    {
+        date: "2026-03-24",
+        category: "Embodied AI",
+        categoryIcon: "🧩",
+        title: "Rheos: Modelling Continuous Motion Dynamics in Hierarchical 3D Scene Graphs",
+        venue: "",
+        summary: "将连续方向运动模型嵌入层次化 3D 场景图的动态层。每个节点维护半包裹高斯混合模型捕捉多模态方向流，采用储层采样和 BIC 扫描实现在线更新。在模拟行人环境中优于离散基线。开源实现。",
+        tags: [["Embodied AI","green"],["3D 场景图","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2603.20239"],["📋 PDF","https://arxiv.org/pdf/2603.20239"]]
+    },
+    {
+        date: "2026-03-24",
+        category: "Embodied AI",
+        categoryIcon: "🧩",
+        title: "SwiftBot: A Decentralized Platform for LLM-Powered Federated Robotic Task Execution",
+        venue: "",
+        summary: "面向 LLM 驱动的联邦机器人任务执行的去中心化平台。多机器人通过联邦学习共享任务经验，LLM 作为高层规划器分配任务，无需集中式服务器。",
+        tags: [["Embodied AI","green"],["LLM","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2603.20234"],["📋 PDF","https://arxiv.org/pdf/2603.20234"]]
+    },
+    {
+        date: "2026-03-24",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "VideoDetective: Clue Hunting via both Extrinsic Query and Intrinsic Relevance for Long Video Understanding",
+        venue: "",
+        summary: "长视频理解的\"线索猎手\"方法。外部查询驱动和内部相关性分析两条线索链协同，在超长视频中高效定位关键帧。在 VideoQA 和 Video Summarization 基准上取得 SOTA。",
+        tags: [["VLM","green"],["视频理解","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2603.22285"],["📋 PDF","https://arxiv.org/pdf/2603.22285"],["🏠 项目主页","https://videodetective.github.io/"]]
+    },
+    {
+        date: "2026-03-24",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "UniMotion: A Unified Framework for Motion-Text-Vision Understanding and Generation",
+        venue: "",
+        summary: "首个统一运动-文本-视觉理解与生成的框架。支持文本到运动生成、运动到文本描述、视频到运动提取等多任务，实现跨模态无缝转换。",
+        tags: [["VLM","green"],["运动理解","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2603.22282"],["📋 PDF","https://arxiv.org/pdf/2603.22282"]]
+    },
+    {
+        date: "2026-03-24",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "The Dual Mechanisms of Spatial Reasoning in Vision-Language Models",
+        venue: "",
+        summary: "揭示 VLM 空间推理的双重机制：语言模型骨干在视觉 token 上表示内容无关的空间关系，但主导性空间信息来源于视觉编码器——其表示全局分布在所有图像 token 中（含背景区域）。全局增强视觉空间表示可提升空间推理性能。",
+        tags: [["VLM","green"],["空间推理","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2603.22278"],["📋 PDF","https://arxiv.org/pdf/2603.22278"]]
+    },
+    {
+        date: "2026-03-24",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "3D-Layout-R1: Structured Reasoning for Language-Instructed Spatial Editing",
+        venue: "",
+        summary: "利用结构化推理进行语言指导的 3D 空间编辑。分步推理理解空间关系和编辑意图，将自然语言指令转化为精确的 3D 布局操作，在室内设计和机器人场景重排任务上表现出色。",
+        tags: [["VLM","green"],["3D 编辑","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2603.22279"],["📋 PDF","https://arxiv.org/pdf/2603.22279"]]
     },
     // === 2026-03-23 ===
     {
