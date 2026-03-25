@@ -600,6 +600,16 @@ const IDEAS_DB = [
             { title: "GitHub: MoonshotAI/Attention-Residuals", url: "https://github.com/MoonshotAI/Attention-Residuals", type: "project" }
         ],
         tags: [["Transformer","green"],["Attention","purple"],["Reasoning","blue"],["Credit Assignment","indigo"],["Architecture","teal"]],
+    },
+    {
+        id: "ik-selection-via-planning",
+        date: "2026-03-25",
+        status: "new",
+        statusLabel: "💡 New",
+        title: "IK 解的筛选应在规划层解决，而非运动学层",
+        content: "核心观点：逆运动学（IK）本身能提供精准的解析解，问题不在 IK 求解精度，而在于如何从多个 IK 解中选出正确的那一个。这个筛选问题应当上推到规划层面来解决，而非在运动学层硬编码选择策略。\n\n关键论据：\n• 轨迹平滑（smoothing）本身会自然地绕过奇异位形（singularity）和关节极限边缘位置——这意味着平滑过程已经隐式地完成了一部分「坏解过滤」\n• 从规划角度出发，可以将 IK 解筛选问题分为多种 case 来分类处理（至少 3 类），针对不同场景设计不同的筛选策略\n\n可以进一步探索的方向：\n• Case 分类方案：如何界定不同场景（如自由空间运动 vs 接触操作 vs 受限空间），每种场景对 IK 解的偏好不同\n• 平滑作为隐式筛选器：量化分析轨迹平滑在去除奇异/边缘解方面的有效性和局限性\n• 规划层集成：在 motion planning pipeline 中加入 IK 解评分/排序模块，基于规划上下文（目标、约束、历史轨迹）动态选择最优 IK 解\n• 与 FACTO 约束框架的结合：零空间投影约束是否可以作为 IK 解筛选的额外依据",
+        sources: [],
+        tags: [["IK","blue"],["Motion Planning","green"],["Singularity","red"],["Trajectory Smoothing","teal"],["Robotics","purple"]],
     }
 ];
 
