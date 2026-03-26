@@ -592,7 +592,7 @@ const PAPERS_DB = [
     },
     {
         date: "2026-03-25",
-        category: "Other · 其他",
+        category: "Other",
         categoryIcon: "📄",
         title: "ReqFusion: A Multi-Provider Framework for Automated PEGS Analysis Across Software Domains",
         venue: "",
@@ -2141,7 +2141,7 @@ const PAPERS_DB = [
 // ===== DERIVED DATA =====
 const allDates = [...new Set(PAPERS_DB.map(p => p.date))].sort().reverse();
 const allCategories = [...new Set(PAPERS_DB.map(p => p.category))];
-const categoryOrder = ["Robotics","VLA","World Model","LLM / VLM","Embodied AI","RL","Industry"];
+const categoryOrder = ["VLA","Robotics","World Model","Embodied AI","Agent","Multimodal","LLM / VLM","RL","Industry","Informations","Simulation","Other"];
 
 // ===== STATE =====
 let currentView = "latest"; // "latest" | "all" | "date:YYYY-MM-DD" | "category:xxx" | "search"
@@ -2273,6 +2273,12 @@ function renderDateView(container, date, showOverview) {
         html += renderSectionTitle(cat, grouped[cat][0].categoryIcon, grouped[cat].length);
         grouped[cat].forEach(p => html += renderPaperCard(p));
     });
+    // Render any categories not in categoryOrder (fallback)
+    Object.keys(grouped).forEach(cat => {
+        if (categoryOrder.includes(cat)) return;
+        html += renderSectionTitle(cat, grouped[cat][0].categoryIcon, grouped[cat].length);
+        grouped[cat].forEach(p => html += renderPaperCard(p));
+    });
 
     container.innerHTML = html;
 }
@@ -2290,6 +2296,17 @@ function renderAllView(container) {
         const catPapers = PAPERS_DB.filter(p => p.category === cat);
         if (catPapers.length === 0) return;
         // 按日期倒序排列
+        catPapers.sort((a, b) => b.date.localeCompare(a.date));
+        const icon = catPapers[0].categoryIcon;
+        html += renderSectionTitle(cat, icon, catPapers.length);
+        catPapers.forEach(p => html += renderPaperCard(p));
+    });
+    // Render any categories not in categoryOrder (fallback)
+    const knownCats = new Set(categoryOrder);
+    const extraCats = [...new Set(PAPERS_DB.map(p => p.category))].filter(c => !knownCats.has(c));
+    extraCats.forEach(cat => {
+        const catPapers = PAPERS_DB.filter(p => p.category === cat);
+        if (catPapers.length === 0) return;
         catPapers.sort((a, b) => b.date.localeCompare(a.date));
         const icon = catPapers[0].categoryIcon;
         html += renderSectionTitle(cat, icon, catPapers.length);
