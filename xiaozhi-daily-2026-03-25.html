@@ -201,8 +201,8 @@
         <div class="paper">
             <div class="paper-title">VTAM: Video-Tactile-Action Models for Complex Physical Interaction Beyond VLAs</div>
             <div class="paper-meta">
-                <span class="section-tag tag-vla">VLA</span>
-                <span class="section-tag tag-robotics">触觉感知</span>
+                <span class="tag tag-vla">VLA</span>
+                <span class="tag tag-robotics">触觉感知</span>
                 <span>arXiv 2603.23481 · 2026-03-24</span>
             </div>
             <div class="paper-summary">Video-Action Models (VAMs) 在长时域任务中通过视觉推理表现优异，但在接触密集场景中受限于视觉无法编码细粒度力调制和接触过渡。VTAM 将触觉感知作为补充基础信号，通过轻量级模态迁移微调增强预训练视频 Transformer，引入触觉正则化损失防止视觉潜在特征主导。在接触密集操作中平均保持 90% 成功率，薯片拾放等精细任务比基线高 80%。</div>
@@ -225,8 +225,8 @@
         <div class="paper">
             <div class="paper-title">UniGRPO: Unified Policy Optimization for Reasoning-Driven Visual Generation</div>
             <div class="paper-meta">
-                <span class="section-tag tag-multimodal">Multimodal</span>
-                <span class="section-tag tag-rl">RL</span>
+                <span class="tag tag-multimodal">Multimodal</span>
+                <span class="tag tag-rl">RL</span>
                 <span>arXiv 2603.23500 · 2026-03-24</span>
             </div>
             <div class="paper-summary">面向交错文本-图像生成的统一强化学习框架。将多模态生成建模为稀疏终端奖励的 MDP，利用 GRPO 联合优化自回归推理（文本）和流匹配合成（图像）。两个关键改进：(1) 消除 CFG 保持线性无分支轨迹，适配多轮交互；(2) 用 MSE 速度场惩罚替代潜在 KL，更有效缓解 reward hacking。显著提升推理驱动的图像生成质量。</div>
@@ -239,8 +239,8 @@
         <div class="paper">
             <div class="paper-title">MedObvious: Exposing the Medical Moravec's Paradox in VLMs via Clinical Triage</div>
             <div class="paper-meta">
-                <span class="section-tag tag-multimodal">Multimodal</span>
-                <span class="section-tag tag-vlm">VLM</span>
+                <span class="tag tag-multimodal">Multimodal</span>
+                <span class="tag tag-vlm">VLM</span>
                 <span>arXiv 2603.23501 · 2026-03-24</span>
             </div>
             <div class="paper-summary">揭示医学 VLM 的"莫拉维克悖论"：模型能生成流畅诊断文本，却在基本的输入验证上失败。提出 MedObvious 基准（1,880 项任务），测试集合级一致性检查——模型须识别多面板图像集中的方向/模态不匹配和解剖违规。评估 17 种 VLM 发现：多数模型对正常输入产生异常幻觉，且随图像集扩大性能下降。</div>
@@ -253,8 +253,8 @@
         <div class="paper">
             <div class="paper-title">VISion On Request: Enhanced VLLM Efficiency with Sparse, Dynamically Selected, Vision-Language Interactions</div>
             <div class="paper-meta">
-                <span class="section-tag tag-multimodal">Multimodal</span>
-                <span class="section-tag tag-vlm">VLM 效率</span>
+                <span class="tag tag-multimodal">Multimodal</span>
+                <span class="tag tag-vlm">VLM 效率</span>
                 <span>arXiv 2603.23495 · CVPR 2026 · 2026-03-24</span>
             </div>
             <div class="paper-summary">挑战视觉 token 压缩范式。VISOR 不丢弃视觉信息，而是稀疏化图像-文本 token 交互：少量交叉注意力层提供通用视觉上下文，动态选择的自注意力层按需细化高分辨率视觉表示。单一网络支持可变计算预算，轻量策略机制按样本复杂性动态分配视觉计算。大幅降低成本的同时匹配或超越 SOTA。</div>
@@ -276,8 +276,8 @@
         <div class="paper">
             <div class="paper-title">SpecEyes: Accelerating Agentic Multimodal LLMs via Speculative Perception and Planning</div>
             <div class="paper-meta">
-                <span class="section-tag tag-agent">Agent</span>
-                <span class="section-tag tag-multimodal">MLLM</span>
+                <span class="tag tag-agent">Agent</span>
+                <span class="tag tag-multimodal">MLLM</span>
                 <span>arXiv 2603.23483 · 2026-03-24</span>
             </div>
             <div class="paper-summary">针对 Agentic MLLM（如 o3、Gemini Agentic Vision）的推测加速框架。核心思路：轻量级无工具 MLLM 作为推测规划器预测执行轨迹，认知门控机制量化自验证置信度实现提前终止。异构并行漏斗利用小模型无状态并发掩盖大模型有状态串行。在 V* Bench、HR-Bench、POPE 上实现 1.1-3.35x 加速，准确率最高提升 6.7%。</div>
@@ -291,8 +291,8 @@
         <div class="paper">
             <div class="paper-title">AgentRVOS: Reasoning over Object Tracks for Zero-Shot Referring Video Object Segmentation</div>
             <div class="paper-meta">
-                <span class="section-tag tag-agent">Agent</span>
-                <span class="section-tag tag-vlm">视频分割</span>
+                <span class="tag tag-agent">Agent</span>
+                <span class="tag tag-vlm">视频分割</span>
                 <span>arXiv 2603.23489 · 2026-03-24</span>
             </div>
             <div class="paper-summary">免训练的指代视频目标分割智能体流程。传统方法要求 MLLM 在没有对象级证据前就做时间决策。AgentRVOS 让 SAM3 先通过掩码轨迹在全时空范围提供可靠感知，MLLM 再基于查询在对象级证据上推理识别目标，由时间存在信息引导迭代剪枝。多基准上优于现有免训练方法。</div>
@@ -315,8 +315,8 @@
         <div class="paper">
             <div class="paper-title">Failure of Contextual Invariance in Gender Inference with Large Language Models</div>
             <div class="paper-meta">
-                <span class="section-tag tag-llm">LLM</span>
-                <span class="section-tag tag-llm">偏见分析</span>
+                <span class="tag tag-llm">LLM</span>
+                <span class="tag tag-llm">偏见分析</span>
                 <span>arXiv 2603.23485 · 2026-03-24</span>
             </div>
             <div class="paper-summary">揭示 LLM 输出违反上下文不变性。在性别推断的代词选择任务中，引入最小的理论上非信息性话语上下文，导致模型输出出现巨大系统性偏移。非情境化设置中的文化性别刻板印象随上下文引入而减弱，而理论上无关的特征（如无关指代代词性别）反而成为最强预测因子。19%-52% 的案例中这种依赖无法归因于代词重复。</div>
@@ -338,8 +338,8 @@
         <div class="paper">
             <div class="paper-title">ReqFusion: A Multi-Provider Framework for Automated PEGS Analysis Across Software Domains</div>
             <div class="paper-meta">
-                <span class="section-tag tag-info">软件工程</span>
-                <span class="section-tag tag-llm">LLM 应用</span>
+                <span class="tag tag-info">软件工程</span>
+                <span class="tag tag-llm">LLM 应用</span>
                 <span>arXiv 2603.23482 · 2026-03-24</span>
             </div>
             <div class="paper-summary">多 LLM 提供商协作的自动化需求工程系统。集成 GPT、Claude 和 Groq 模型，从 PDF/DOCX/PPTX 中提取并分类功能性和非功能性需求，遵循 PEGS（项目-环境-目标-系统）方法论。消融实验确认 PEGS 引导的提示达到 0.88 F1（通用提示仅 0.71），分析时间减少 78%。</div>

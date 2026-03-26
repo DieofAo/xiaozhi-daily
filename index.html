@@ -527,7 +527,7 @@ const PAPERS_DB = [
         title: "TAG: Task-Adaptive Generation for Generalizable Robotic Manipulation <span class=\"highlight-badge badge-hot\">HOT</span>",
         venue: "",
         summary: "提出任务自适应生成框架 TAG，通过动态适配机制让 VLA 模型根据不同任务自动调整其策略生成过程。在多任务操作基准上展现出显著的泛化优势，尤其在未见任务上的 zero-shot 迁移能力大幅超越现有方法。",
-        tags: [],
+        tags: [["VLA","green"],["泛化","green"]],
         links: [["📄 arXiv","https://arxiv.org/abs/2603.24584"],["📋 PDF","https://arxiv.org/pdf/2603.24584"]]
     },
     {
@@ -537,7 +537,7 @@ const PAPERS_DB = [
         title: "3D-Mix for VLA: 3D Spatial Augmentation for Scalable Vision-Language-Action Models",
         venue: "",
         summary: "引入 3D 空间数据增强策略到 VLA 训练流水线，通过在 3D 空间中对场景进行混合增强（旋转、裁剪、遮挡等），显著提升 VLA 模型的空间泛化能力和数据效率，实现以更少数据达到更强的操作性能。",
-        tags: [],
+        tags: [["VLA","green"],["数据增强","green"]],
         links: [["📄 arXiv","https://arxiv.org/abs/2603.24393"],["📋 PDF","https://arxiv.org/pdf/2603.24393"]]
     },
     {
@@ -547,7 +547,7 @@ const PAPERS_DB = [
         title: "VP-VLA: Visual-Prompt Vision-Language-Action Models",
         venue: "",
         summary: "提出视觉提示驱动的 VLA 框架，通过在视觉输入中注入结构化视觉提示（如目标标记、轨迹提示），让语言模型更准确地理解空间关系和操作意图，提升细粒度操作的成功率。",
-        tags: [],
+        tags: [["VLA","green"],["视觉提示","green"]],
         links: [["📄 arXiv","https://arxiv.org/abs/2603.22003"],["📋 PDF","https://arxiv.org/pdf/2603.22003"]]
     },
     {
@@ -557,7 +557,7 @@ const PAPERS_DB = [
         title: "ΔVL: Efficient Delta-based Vision-Language Alignment for Robot Action",
         venue: "",
         summary: "引入增量式视觉-语言对齐方法 ΔVL，不需全量微调大模型，仅通过轻量级 delta 模块桥接视觉和语言表示，实现高效的 VLA 适配。训练成本降低约 10 倍，同时保持甚至超越全量微调性能。",
-        tags: [],
+        tags: [["VLA","green"],["高效适配","green"]],
         links: [["📄 arXiv","https://arxiv.org/abs/2603.08361"],["📋 PDF","https://arxiv.org/pdf/2603.08361"]]
     },
     {
@@ -567,7 +567,7 @@ const PAPERS_DB = [
         title: "AtomVLA: Atomic-level Vision-Language-Action Model for Fine-Grained Manipulation",
         venue: "",
         summary: "提出原子级 VLA 模型，将操作任务分解为更细粒度的原子动作序列（抓取、移动、放置、旋转等），每个原子动作由 VLA 模型独立预测。这种分解策略在精密装配和长链操作任务中表现优异。",
-        tags: [],
+        tags: [["VLA","green"],["原子动作","green"]],
         links: [["📄 arXiv","https://arxiv.org/abs/2603.08519"],["📋 PDF","https://arxiv.org/pdf/2603.08519"]]
     },
     {
@@ -577,7 +577,7 @@ const PAPERS_DB = [
         title: "Altered Thoughts: Rethinking VLA via Thought-Augmented Training",
         venue: "",
         summary: "在 VLA 训练中引入\"思考增强\"范式，让模型在输出动作之前先生成中间推理步骤（类似 Chain-of-Thought），增强操作决策的可解释性和准确性。在复杂多步任务上相比直接预测提升 15-25%。",
-        tags: [],
+        tags: [["VLA","green"],["推理增强","green"]],
         links: [["📄 arXiv","https://arxiv.org/abs/2603.12717"],["📋 PDF","https://arxiv.org/pdf/2603.12717"]]
     },
     {
@@ -587,7 +587,7 @@ const PAPERS_DB = [
         title: "SOMA: Socially-aware Robot Manipulation with Language-guided Spatial Reasoning <span class=\"highlight-badge badge-iros\">IROS 2026</span>",
         venue: "",
         summary: "提出社交感知的机器人操作框架 SOMA，通过语言引导的空间推理让机器人在人机共存场景中既完成操作任务又尊重社交规范。模型能理解\"不要碰别人的杯子\"\"把东西放在我这边\"等社交约束指令。",
-        tags: [],
+        tags: [["VLA","green"],["人机交互","green"]],
         links: [["📄 arXiv","https://arxiv.org/abs/2603.24100"],["📋 PDF","https://arxiv.org/pdf/2603.24100"]]
     },
     {
@@ -597,7 +597,7 @@ const PAPERS_DB = [
         title: "ABot-PhysWorld: Physical World Understanding for LLM-based Robot Agents <span class=\"highlight-badge badge-hot\">HOT</span>",
         venue: "",
         summary: "构建面向 LLM 机器人智能体的物理世界理解基准 ABot-PhysWorld，系统评估 LLM 对重力、摩擦、碰撞等物理规律的理解能力。发现当前最强 LLM 在物理推理上仍有显著短板，并提出物理知识增强的训练策略。",
-        tags: [],
+        tags: [["World Model","green"],["物理推理","green"]],
         links: [["📄 arXiv","https://arxiv.org/abs/2603.23376"],["📋 PDF","https://arxiv.org/pdf/2603.23376"]]
     },
     {
@@ -607,7 +607,7 @@ const PAPERS_DB = [
         title: "PlayWorld: World Model-Augmented Open-Ended Game-Playing Agent",
         venue: "",
         summary: "将世界模型与游戏 Agent 深度结合，让智能体在开放式游戏环境中通过内部模拟预测行动后果，实现\"先想后做\"。在 Minecraft 和 NetHack 等复杂环境中展现出类人的规划和探索能力。",
-        tags: [],
+        tags: [["World Model","green"],["游戏AI","green"]],
         links: [["📄 arXiv","https://arxiv.org/abs/2603.09030"],["📋 PDF","https://arxiv.org/pdf/2603.09030"]]
     },
     {
@@ -617,7 +617,7 @@ const PAPERS_DB = [
         title: "LeWorldModel: Learning World Model from Videos for Multi-Task Robotic Control",
         venue: "",
         summary: "从视频数据中学习世界模型用于多任务机器人控制。通过大规模视频预训练获得物理动态的先验知识，再在机器人场景中微调，实现高效的任务迁移和泛化，大幅减少实际机器人数据需求。",
-        tags: [],
+        tags: [["World Model","green"],["视频预训练","green"]],
         links: [["📄 arXiv","https://arxiv.org/abs/2603.19312"],["📋 PDF","https://arxiv.org/pdf/2603.19312"]]
     },
     {
@@ -627,7 +627,7 @@ const PAPERS_DB = [
         title: "CoWVLA: Consistent World Model for Vision-Language-Action <span class=\"highlight-badge badge-cvpr\">CVPR 2026</span>",
         venue: "",
         summary: "提出一致性世界模型 CoWVLA，将世界模型的预测一致性约束引入 VLA 训练，要求模型对同一场景的多视角预测保持空间一致。CVPR 2026 录用，在 SIMPLER 和真实机器人实验中刷新多项 SOTA。",
-        tags: [],
+        tags: [["World Model","green"],["一致性约束","green"]],
         links: [["📄 arXiv","https://arxiv.org/abs/2603.03195"],["📋 PDF","https://arxiv.org/pdf/2603.03195"]]
     },
     {
@@ -637,7 +637,7 @@ const PAPERS_DB = [
         title: "NavThinker: Navigation World Model with Chain-of-Thought Reasoning",
         venue: "",
         summary: "将链式推理引入导航世界模型，让智能体在路径规划时显式推理地标、转弯、障碍物等关键节点。在 VLN（视觉语言导航）任务上显著提升 SPL 和成功率，尤其在需要复杂推理的长距离导航中优势明显。",
-        tags: [],
+        tags: [["World Model","green"],["导航推理","green"]],
         links: [["📄 arXiv","https://arxiv.org/abs/2603.15359"],["📋 PDF","https://arxiv.org/pdf/2603.15359"]]
     },
     {
@@ -647,7 +647,7 @@ const PAPERS_DB = [
         title: "WAM vs VLA: World-Action Model 与 Vision-Language-Action 的系统性对比 <span class=\"highlight-badge badge-hot\">HOT</span>",
         venue: "",
         summary: "首次系统对比 WAM（世界-动作模型）与 VLA（视觉-语言-动作）两大路线。研究发现：WAM 在需要物理推理的任务中更优，VLA 在语言驱动的灵活任务中更强。提出混合架构建议，为\"路线之争\"提供实证参考。",
-        tags: [],
+        tags: [["World Model","green"],["系统对比","green"]],
         links: [["📄 arXiv","https://arxiv.org/abs/2603.22078"],["📋 PDF","https://arxiv.org/pdf/2603.22078"]]
     },
     {
@@ -657,7 +657,7 @@ const PAPERS_DB = [
         title: "Chameleon: Adaptive Robot Morphology via Multi-Limb Reconfiguration <span class=\"highlight-badge badge-new\">NEW</span>",
         venue: "",
         summary: "提出变色龙式自适应机器人形态，通过多肢体可重构设计让机器人根据任务和环境动态调整身体结构。一个物理平台可变形为双足、四足、甚至六足构型，并在各构型间保持运动控制的连续性。",
-        tags: [],
+        tags: [["Robotics","green"],["形态自适应","green"]],
         links: [["📄 arXiv","https://arxiv.org/abs/2603.24576"],["📋 PDF","https://arxiv.org/pdf/2603.24576"]]
     },
     {
@@ -667,7 +667,7 @@ const PAPERS_DB = [
         title: "KG-M3PO: Knowledge-Graph Multi-Modal Motion Planning and Optimization <span class=\"highlight-badge badge-icra\">ICRA 2026</span>",
         venue: "",
         summary: "将知识图谱引入多模态运动规划和优化，使机器人能利用结构化的环境和任务知识做出更智能的规划决策。ICRA 2026 录用，在复杂仓储和家庭环境中的规划效率和成功率显著优于传统方法。",
-        tags: [],
+        tags: [["Robotics","green"],["知识图谱","green"]],
         links: [["📄 arXiv","https://arxiv.org/abs/2603.24083"],["📋 PDF","https://arxiv.org/pdf/2603.24083"]]
     },
     {
@@ -677,7 +677,7 @@ const PAPERS_DB = [
         title: "Interactive World Simulator for Autonomous Robots",
         venue: "",
         summary: "构建交互式世界模拟器，让自主机器人在执行前能通过模拟预演来验证动作方案。模拟器基于神经渲染技术实时生成物理一致的场景变化预测，支持机器人在线规划和快速决策。",
-        tags: [],
+        tags: [["Robotics","green"],["仿真预演","green"]],
         links: [["📄 arXiv","https://arxiv.org/abs/2603.08546"],["📋 PDF","https://arxiv.org/pdf/2603.08546"]]
     },
     {
@@ -687,7 +687,7 @@ const PAPERS_DB = [
         title: "GeoLoco: Geometry-Aware Locomotion Policy for Quadrupedal Robots",
         venue: "",
         summary: "提出几何感知的四足运动策略 GeoLoco，利用本体感受和深度信息构建局部地形的几何表示，让四足机器人在楼梯、碎石、斜坡等复杂地形中实现更稳健的自适应行走，跌倒率降低 40%。",
-        tags: [],
+        tags: [["Robotics","green"],["四足运动","green"]],
         links: [["📄 arXiv","https://arxiv.org/abs/2603.07624"],["📋 PDF","https://arxiv.org/pdf/2603.07624"]]
     },
     {
@@ -697,7 +697,7 @@ const PAPERS_DB = [
         title: "DreamerAD: Dreaming for Autonomous Driving with World Models",
         venue: "",
         summary: "将 Dreamer 系列世界模型框架拓展到自动驾驶场景，在潜空间中进行想象式规划和决策。模型在 CARLA 和 nuPlan 上的闭环评测中表现出色，尤其在稀有危险场景的处置上优于纯模仿学习方法。",
-        tags: [],
+        tags: [["Robotics","green"],["自动驾驶","green"]],
         links: [["📄 arXiv","https://arxiv.org/abs/2603.24200"],["📋 PDF","https://arxiv.org/pdf/2603.24200"]]
     },
     {
@@ -707,7 +707,7 @@ const PAPERS_DB = [
         title: "Xiaomi-Robotics-0: 小米开源人形机器人基础模型",
         venue: "",
         summary: "小米正式开源人形机器人基础模型 Xiaomi-Robotics-0，包含运动控制策略、视觉感知模块和任务规划接口。基于小米 CyberOne 平台训练，支持社区二次开发和研究复用。",
-        tags: [],
+        tags: [["Robotics","green"],["开源模型","green"]],
         links: []
     },
     {
@@ -717,7 +717,7 @@ const PAPERS_DB = [
         title: "ELITE: Embodied Language Intelligence Through Experience",
         venue: "",
         summary: "提出通过经验学习实现具身语言智能的 ELITE 框架，让智能体在交互探索中积累经验并将其编码为可复用的知识，实现\"越用越智能\"的增量学习效果。在 Habitat 和 AI2-THOR 上展现出优秀的持续学习能力。",
-        tags: [],
+        tags: [["Embodied AI","green"],["经验学习","green"]],
         links: [["📄 arXiv","https://arxiv.org/abs/2603.24018"],["📋 PDF","https://arxiv.org/pdf/2603.24018"]]
     },
     {
@@ -727,7 +727,7 @@ const PAPERS_DB = [
         title: "Embodied Science: LLM-Driven Autonomous Scientific Experimentation",
         venue: "",
         summary: "将 LLM 驱动的自主实验系统用于科学研究，实现从假设生成、实验设计、机器人执行到结果分析的全自动科研流水线。在化学合成和材料测试场景中成功完成多项自主实验。",
-        tags: [],
+        tags: [["Embodied AI","green"],["自主实验","green"]],
         links: [["📄 arXiv","https://arxiv.org/abs/2603.19782"],["📋 PDF","https://arxiv.org/pdf/2603.19782"]]
     },
     {
@@ -737,7 +737,7 @@ const PAPERS_DB = [
         title: "Jailbreaking Embodied LLMs: Safety Vulnerabilities in Robot Action Planning",
         venue: "",
         summary: "首次系统研究具身 LLM 的安全漏洞，展示攻击者如何通过精心构造的指令让机器人执行危险动作（如推人、打碎玻璃）。提出多层安全防护框架，包括意图检测、动作约束和物理安全保障。",
-        tags: [],
+        tags: [["Embodied AI","green"],["安全研究","green"]],
         links: [["📄 arXiv","https://arxiv.org/abs/2603.01414"],["📋 PDF","https://arxiv.org/pdf/2603.01414"]]
     },
     {
@@ -747,7 +747,7 @@ const PAPERS_DB = [
         title: "ManipArena: Manipulation Arena Challenge @ CVPR 2026 <span class=\"highlight-badge badge-cvpr\">CVPR 2026</span>",
         venue: "",
         summary: "CVPR 2026 Workshop 举办 ManipArena 操作竞赛，设置多难度梯度的操作挑战任务（从单物体抓放到复杂工具使用），面向学术界和工业界开放。提交截止日期 5 月底，提供统一仿真平台和评估标准。",
-        tags: [],
+        tags: [["Embodied AI","green"],["竞赛基准","green"]],
         links: []
     },
     {
@@ -757,7 +757,7 @@ const PAPERS_DB = [
         title: "Beyond Imitation: Generative and Variational Approaches for Offline RL in Robotics",
         venue: "",
         summary: "探索超越模仿学习的离线 RL 方法，利用生成模型和变分推理从次优示范数据中提取更优策略。关键发现：扩散策略 + 变分下界优化在离线数据利用效率上远超传统 BC，尤其在数据质量参差不齐时优势显著。",
-        tags: [],
+        tags: [["RL","green"],["离线RL","green"]],
         links: [["📄 arXiv","https://arxiv.org/abs/2603.12868"],["📋 PDF","https://arxiv.org/pdf/2603.12868"]]
     },
     {
@@ -767,7 +767,7 @@ const PAPERS_DB = [
         title: "Dual Q-DM: Dual Q-Function Guided Diffusion Model for Offline RL",
         venue: "",
         summary: "提出双 Q 函数引导的扩散模型用于离线 RL，通过两个独立 Q 网络分别从乐观和悲观角度评估动作价值，引导扩散模型生成更保守且高回报的策略。在 D4RL 基准上取得新的 SOTA。",
-        tags: [],
+        tags: [["RL","green"],["扩散策略","green"]],
         links: [["📄 arXiv","https://arxiv.org/abs/2603.22713"],["📋 PDF","https://arxiv.org/pdf/2603.22713"]]
     },
     {
@@ -777,7 +777,7 @@ const PAPERS_DB = [
         title: "EZ-M: Easy Multi-Agent Reinforcement Learning via State-Message Sharing",
         venue: "",
         summary: "提出简易多智能体 RL 框架 EZ-M，通过状态-消息共享机制让多个智能体高效协调而无需复杂的通信协议。在 StarCraft II 和多机器人协作任务中展现出与复杂 MARL 方法相当的性能，但训练速度快 3-5 倍。",
-        tags: [],
+        tags: [["RL","green"],["多智能体","green"]],
         links: [["📄 arXiv","https://arxiv.org/abs/2603.01452"],["📋 PDF","https://arxiv.org/pdf/2603.01452"]]
     },
     {
@@ -787,7 +787,7 @@ const PAPERS_DB = [
         title: "RARRL: Retrieval-Augmented Reward-guided RL for Robot Skill Learning",
         venue: "",
         summary: "将检索增强机制引入奖励引导的 RL，在技能学习过程中从经验库检索相似场景来辅助奖励塑形和策略优化。显著提升机器人在长尾场景中的学习效率，减少探索浪费约 60%。",
-        tags: [],
+        tags: [["RL","green"],["检索增强","green"]],
         links: [["📄 arXiv","https://arxiv.org/abs/2603.16673"],["📋 PDF","https://arxiv.org/pdf/2603.16673"]]
     },
     {
@@ -797,7 +797,7 @@ const PAPERS_DB = [
         title: "VTAM: Video-Tactile-Action Models for Complex Physical Interaction",
         venue: "",
         summary: "提出视频-触觉-动作多模态模型 VTAM，融合视觉和触觉信号来学习复杂物理交互。触觉反馈让模型能感知力度、滑动等传统视觉难以捕获的信息，在柔性物体操作和精密装配任务中超越纯视觉 VLA 方法。",
-        tags: [],
+        tags: [["RL","green"],["触觉感知","green"]],
         links: [["📄 arXiv","https://arxiv.org/abs/2603.23481"],["📋 PDF","https://arxiv.org/pdf/2603.23481"]]
     },
     {
@@ -807,7 +807,7 @@ const PAPERS_DB = [
         title: "UniGRPO: Unified Policy Optimization for Reasoning-Driven Visual Generation",
         venue: "",
         summary: "提出统一的 GRPO 策略优化方法用于推理驱动的视觉生成，将 LLM 的推理能力与视觉生成模型统一到单一优化框架下。在推理式图像生成（如根据空间描述生成场景布局）中表现突出。",
-        tags: [],
+        tags: [["LLM","green"],["视觉生成","green"]],
         links: [["📄 arXiv","https://arxiv.org/abs/2603.23500"],["📋 PDF","https://arxiv.org/pdf/2603.23500"]]
     },
     {
@@ -817,7 +817,7 @@ const PAPERS_DB = [
         title: "VISion On Request: Enhanced VLLM Efficiency with Sparse Vision-Language Interactions",
         venue: "",
         summary: "提出按需视觉交互机制，让 VLLM 仅在需要时才激活视觉分支（而非每一步都处理图像），大幅降低视觉-语言交互的计算开销。推理速度提升 2-4 倍，精度仅损失不到 1%。",
-        tags: [],
+        tags: [["VLM","green"],["高效推理","green"]],
         links: [["📄 arXiv","https://arxiv.org/abs/2603.23501"],["📋 PDF","https://arxiv.org/pdf/2603.23501"]]
     },
     {
@@ -827,7 +827,7 @@ const PAPERS_DB = [
         title: "SpecEyes: Accelerating Agentic Multimodal LLMs via Speculative Perception <span class=\"highlight-badge badge-cvpr\">CVPR 2026</span>",
         venue: "",
         summary: "CVPR 2026 论文，提出推测式感知加速框架 SpecEyes，让多模态 LLM Agent 通过预测性感知来避免冗余的视觉计算。在 GUI Agent 和机器人视觉问答场景中实现 3-6 倍加速。",
-        tags: [],
+        tags: [["VLM","green"],["推测加速","green"]],
         links: [["📄 arXiv","https://arxiv.org/abs/2603.23495"],["📋 PDF","https://arxiv.org/pdf/2603.23495"]]
     },
     {
@@ -837,7 +837,7 @@ const PAPERS_DB = [
         title: "AgentRVOS: Reasoning over Object Tracks for Zero-Shot Referring Video Object Segmentation",
         venue: "",
         summary: "提出基于目标轨迹推理的零样本指称视频目标分割方法 AgentRVOS，利用 VLM 在视频序列中追踪和推理语言指称的目标，实现无需标注数据的视频目标分割。在 Ref-DAVIS 和 Ref-YouTube-VOS 上刷新零样本 SOTA。",
-        tags: [],
+        tags: [["VLM","green"],["视频分割","green"]],
         links: [["📄 arXiv","https://arxiv.org/abs/2603.23489"],["📋 PDF","https://arxiv.org/pdf/2603.23489"]]
     },
     {
@@ -908,7 +908,7 @@ const PAPERS_DB = [
         title: "VTAM: Video-Tactile-Action Models for Complex Physical Interaction Beyond VLAs",
         venue: "",
         summary: "Video-Action Models (VAMs) 在长时域任务中通过视觉推理表现优异，但在接触密集场景中受限于视觉无法编码细粒度力调制和接触过渡。VTAM 将触觉感知作为补充基础信号，通过轻量级模态迁移微调增强预训练视频 Transformer，引入触觉正则化损失防止视觉潜在特征主导。在接触密集操作中平均保持 90% 成功率，薯片拾放等精细任务比基线高 80%。",
-        tags: [],
+        tags: [["VLA","green"],["触觉感知","green"]],
         links: [["📄 arXiv","https://arxiv.org/abs/2603.23481"],["📋 PDF","https://arxiv.org/pdf/2603.23481"],["🏠 项目主页","https://plan-lab.github.io/projects/vtam/"]]
     },
     {
@@ -918,7 +918,7 @@ const PAPERS_DB = [
         title: "UniGRPO: Unified Policy Optimization for Reasoning-Driven Visual Generation",
         venue: "",
         summary: "面向交错文本-图像生成的统一强化学习框架。将多模态生成建模为稀疏终端奖励的 MDP，利用 GRPO 联合优化自回归推理（文本）和流匹配合成（图像）。两个关键改进：(1) 消除 CFG 保持线性无分支轨迹，适配多轮交互；(2) 用 MSE 速度场惩罚替代潜在 KL，更有效缓解 reward hacking。显著提升推理驱动的图像生成质量。",
-        tags: [],
+        tags: [["Multimodal","green"],["RL","green"]],
         links: [["📄 arXiv","https://arxiv.org/abs/2603.23500"],["📋 PDF","https://arxiv.org/pdf/2603.23500"]]
     },
     {
@@ -928,7 +928,7 @@ const PAPERS_DB = [
         title: "MedObvious: Exposing the Medical Moravec's Paradox in VLMs via Clinical Triage",
         venue: "",
         summary: "揭示医学 VLM 的\"莫拉维克悖论\"：模型能生成流畅诊断文本，却在基本的输入验证上失败。提出 MedObvious 基准（1,880 项任务），测试集合级一致性检查——模型须识别多面板图像集中的方向/模态不匹配和解剖违规。评估 17 种 VLM 发现：多数模型对正常输入产生异常幻觉，且随图像集扩大性能下降。",
-        tags: [],
+        tags: [["Multimodal","green"],["VLM","green"]],
         links: [["📄 arXiv","https://arxiv.org/abs/2603.23501"],["📋 PDF","https://arxiv.org/pdf/2603.23501"]]
     },
     {
@@ -938,7 +938,7 @@ const PAPERS_DB = [
         title: "VISion On Request: Enhanced VLLM Efficiency with Sparse, Dynamically Selected, Vision-Language Interactions",
         venue: "",
         summary: "挑战视觉 token 压缩范式。VISOR 不丢弃视觉信息，而是稀疏化图像-文本 token 交互：少量交叉注意力层提供通用视觉上下文，动态选择的自注意力层按需细化高分辨率视觉表示。单一网络支持可变计算预算，轻量策略机制按样本复杂性动态分配视觉计算。大幅降低成本的同时匹配或超越 SOTA。",
-        tags: [],
+        tags: [["Multimodal","green"],["VLM 效率","green"]],
         links: [["📄 arXiv","https://arxiv.org/abs/2603.23495"],["📋 PDF","https://arxiv.org/pdf/2603.23495"]]
     },
     {
@@ -948,7 +948,7 @@ const PAPERS_DB = [
         title: "SpecEyes: Accelerating Agentic Multimodal LLMs via Speculative Perception and Planning",
         venue: "",
         summary: "针对 Agentic MLLM（如 o3、Gemini Agentic Vision）的推测加速框架。核心思路：轻量级无工具 MLLM 作为推测规划器预测执行轨迹，认知门控机制量化自验证置信度实现提前终止。异构并行漏斗利用小模型无状态并发掩盖大模型有状态串行。在 V* Bench、HR-Bench、POPE 上实现 1.1-3.35x 加速，准确率最高提升 6.7%。",
-        tags: [],
+        tags: [["Agent","green"],["MLLM","green"]],
         links: [["📄 arXiv","https://arxiv.org/abs/2603.23483"],["📋 PDF","https://arxiv.org/pdf/2603.23483"],["💻 代码","https://github.com/MAC-AutoML/SpecEyes"]]
     },
     {
@@ -958,7 +958,7 @@ const PAPERS_DB = [
         title: "AgentRVOS: Reasoning over Object Tracks for Zero-Shot Referring Video Object Segmentation",
         venue: "",
         summary: "免训练的指代视频目标分割智能体流程。传统方法要求 MLLM 在没有对象级证据前就做时间决策。AgentRVOS 让 SAM3 先通过掩码轨迹在全时空范围提供可靠感知，MLLM 再基于查询在对象级证据上推理识别目标，由时间存在信息引导迭代剪枝。多基准上优于现有免训练方法。",
-        tags: [],
+        tags: [["Agent","green"],["视频分割","green"]],
         links: [["📄 arXiv","https://arxiv.org/abs/2603.23489"],["📋 PDF","https://arxiv.org/pdf/2603.23489"],["🏠 项目主页","https://cvlab-kaist.github.io/AgentRVOS/"]]
     },
     {
@@ -968,7 +968,7 @@ const PAPERS_DB = [
         title: "Failure of Contextual Invariance in Gender Inference with Large Language Models",
         venue: "",
         summary: "揭示 LLM 输出违反上下文不变性。在性别推断的代词选择任务中，引入最小的理论上非信息性话语上下文，导致模型输出出现巨大系统性偏移。非情境化设置中的文化性别刻板印象随上下文引入而减弱，而理论上无关的特征（如无关指代代词性别）反而成为最强预测因子。19%-52% 的案例中这种依赖无法归因于代词重复。",
-        tags: [],
+        tags: [["LLM","green"],["偏见分析","green"]],
         links: [["📄 arXiv","https://arxiv.org/abs/2603.23485"],["📋 PDF","https://arxiv.org/pdf/2603.23485"]]
     },
     {
@@ -978,7 +978,7 @@ const PAPERS_DB = [
         title: "ReqFusion: A Multi-Provider Framework for Automated PEGS Analysis Across Software Domains",
         venue: "",
         summary: "多 LLM 提供商协作的自动化需求工程系统。集成 GPT、Claude 和 Groq 模型，从 PDF/DOCX/PPTX 中提取并分类功能性和非功能性需求，遵循 PEGS（项目-环境-目标-系统）方法论。消融实验确认 PEGS 引导的提示达到 0.88 F1（通用提示仅 0.71），分析时间减少 78%。",
-        tags: [],
+        tags: [["软件工程","green"],["LLM 应用","green"]],
         links: [["📄 arXiv","https://arxiv.org/abs/2603.23482"],["📋 PDF","https://arxiv.org/pdf/2603.23482"]]
     },
     // === 2026-03-24 ===
