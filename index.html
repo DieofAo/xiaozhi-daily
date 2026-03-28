@@ -519,6 +519,99 @@
 <script>
 // ===== DATA =====
 const PAPERS_DB = [
+    // === 2026-03-27 ===
+    {
+        date: "2026-03-27",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "Vega: Learning to Drive with Natural Language Instructions",
+        venue: "",
+        summary: "Vision-language-action 模型正在重塑自动驾驶领域，本文提出 Vega 框架，通过自然语言指令驱动 VLA 模型实现可控驾驶行为。模型能理解如\"在下个路口右转\"\"靠边停车让行人先过\"等自然语言指令并执行对应驾驶动作，在城市复杂场景中展现出强大的指令跟随能力。",
+        tags: [["VLA","green"],["自动驾驶","green"]],
+        links: [["📄 arXiv","http://arxiv.org/abs/2603.25741v1"],["📋 PDF","https://arxiv.org/pdf/2603.25741"],["💻 Code","https://github.com/zuosc19/Vega"]],
+        highlight: true
+    },
+    {
+        date: "2026-03-27",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "Drive My Way: Preference Alignment of Vision-Language-Action Model for Personalized Driving",
+        venue: "",
+        summary: "人类驾驶行为具有内在的个人化特征，受长期习惯和偏好塑造。本文提出将偏好对齐引入 VLA 驾驶模型，通过学习不同驾驶员的行为偏好（激进 vs 保守、车距偏好等），让自动驾驶系统适配个人化驾驶风格，提升乘坐舒适度和用户接受度。",
+        tags: [["VLA","green"],["偏好对齐","green"]],
+        links: [["📄 arXiv","http://arxiv.org/abs/2603.25740v1"],["📋 PDF","https://arxiv.org/pdf/2603.25740"],["🏠 Project","https://dmw-cvpr.github.io/"]],
+        highlight: true
+    },
+    {
+        date: "2026-03-27",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "SoftMimicGen: A Data Generation System for Scalable Robot Learning in Deformable Object Manipulation",
+        venue: "",
+        summary: "大规模机器人数据集推动了广泛机器人技能的学习，但柔性物体操作的数据获取仍是瓶颈。SoftMimicGen 提出一套面向柔性物体操作的可扩展数据生成系统，通过模拟环境中的自动化数据增广策略，大幅降低真实数据采集成本。",
+        tags: [["Robotics","green"],["数据生成","green"]],
+        links: [["📄 arXiv","http://arxiv.org/abs/2603.25725v1"],["📋 PDF","https://arxiv.org/pdf/2603.25725"],["🏠 Project","https://softmimicgen.github.io"]]
+    },
+    {
+        date: "2026-03-27",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Back to Basics: Revisiting ASR in the Age of Voice Agents",
+        venue: "",
+        summary: "在语音 Agent 时代重新审视自动语音识别（ASR）系统。尽管 ASR 已达到接近人类的准确率，但在 Agent 交互场景（噪声环境、多轮对话、中断恢复等）中仍面临独特挑战。本文系统分析这些挑战并提出面向 Agent 场景的 ASR 优化策略。",
+        tags: [["Agent","green"],["语音识别","green"]],
+        links: [["📄 arXiv","http://arxiv.org/abs/2603.25727v1"],["📋 PDF","https://arxiv.org/pdf/2603.25727"]]
+    },
+    {
+        date: "2026-03-27",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Natural-Language Agent Harnesses",
+        venue: "",
+        summary: "Agent 性能越来越依赖于\"harness engineering\"（约束工程），但相关工程实践尚未被系统化。本文提出自然语言 Agent 约束框架，将 Agent 行为的控制、安全边界和工具使用规范统一到一个结构化的工程体系中。",
+        tags: [["Agent","green"],["工程框架","green"]],
+        links: [["📄 arXiv","http://arxiv.org/abs/2603.25723v1"],["📋 PDF","https://arxiv.org/pdf/2603.25723"]]
+    },
+    {
+        date: "2026-03-27",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "SlotVTG: Object-Centric Adapter for Generalizable Video Temporal Grounding",
+        venue: "",
+        summary: "多模态大语言模型（MLLMs）在视频时序定位（Video Temporal Grounding）上展现出强大性能。SlotVTG 引入以对象为中心的适配器，通过 Slot Attention 机制分离和追踪视频中的独立对象，显著提升时序定位的泛化能力。",
+        tags: [["Multimodal","green"],["视频理解","green"]],
+        links: [["📄 arXiv","http://arxiv.org/abs/2603.25733v1"],["📋 PDF","https://arxiv.org/pdf/2603.25733"]]
+    },
+    {
+        date: "2026-03-27",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "IndustrialCoder-Thinking",
+        venue: "",
+        summary: "由 Multilingual-Multimodal-NLP 团队发布的多模态工业代码生成模型，结合视觉理解和代码生成能力，面向工业场景的智能编程辅助。优先关注其在工业自动化、PLC 编程等场景中的实际应用价值。",
+        tags: [["Multimodal","green"],["工业代码","green"]],
+        links: [["🤗 Model","https://huggingface.co/Multilingual-Multimodal-NLP/IndustrialCoder-Thinking"]]
+    },
+    {
+        date: "2026-03-27",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Training the Knowledge Base through Evidence Distillation and Write-Back Enrichment",
+        venue: "",
+        summary: "RAG 系统中的知识库通常是静态的，本文提出通过\"证据蒸馏\"和\"回写增强\"两种机制动态训练知识库：从检索-生成交互中蒸馏高价值证据片段，再将这些高质量信息回写到知识库中，形成知识库的持续自我进化能力。",
+        tags: [["LLM","green"],["RAG 优化","green"]],
+        links: [["📄 arXiv","http://arxiv.org/abs/2603.25737v1"],["📋 PDF","https://arxiv.org/pdf/2603.25737"]]
+    },
+    {
+        date: "2026-03-27",
+        category: "Other",
+        categoryIcon: "📄",
+        title: "PSDesigner: Automated Graphic Design with a Human-Like Creative Workflow",
+        venue: "",
+        summary: "图形设计是一个创造性过程，在视觉传达中扮演关键角色。PSDesigner 提出模拟人类设计师创作流程的自动化图形设计系统，通过分步骤（构图→配色→排版→渲染）生成专业级设计作品，降低设计门槛。",
+        tags: [["Other","green"],["图形设计","green"]],
+        links: [["📄 arXiv","http://arxiv.org/abs/2603.25738v1"],["📋 PDF","https://arxiv.org/pdf/2603.25738"],["🔗 Link","https://henghuiding.com/PSDesigner/"]]
+    },
     // === 2026-03-26 ===
     {
         date: "2026-03-26",
