@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小小志科研日报 2026-03-29</title>
+    <style>
+        :root {
+            --bg-primary: #0a0e17;
+            --bg-secondary: #111827;
+            --bg-card: #1a2035;
+            --bg-card-hover: #1f2a45;
+            --text-primary: #e2e8f0;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            --accent-vla: #818cf8;
+            --accent-wam: #a78bfa;
+            --accent-robotics: #34d399;
+            --accent-embodied: #22d3ee;
+            --accent-rl: #f472b6;
+            --accent-llm: #fb923c;
+            --accent-vlm: #facc15;
+            --accent-multimodal: #facc15;
+            --accent-info: #38bdf8;
+            --accent-agent: #22d3ee;
+            --accent-other: #94a3b8;
+            --border-color: #1e293b;
+            --glow-vla: rgba(129,140,248,0.15);
+            --glow-wam: rgba(167,139,250,0.15);
+            --glow-robotics: rgba(52,211,153,0.15);
+            --glow-embodied: rgba(34,211,238,0.15);
+            --glow-rl: rgba(244,114,182,0.15);
+            --glow-llm: rgba(251,146,60,0.15);
+            --glow-vlm: rgba(250,204,21,0.15);
+            --glow-multimodal: rgba(250,204,21,0.15);
+            --glow-info: rgba(56,189,248,0.15);
+            --glow-agent: rgba(34,211,238,0.15);
+            --glow-other: rgba(148,163,184,0.15);
+        }
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body {
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans SC', sans-serif;
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+        .hero {
+            position: relative;
+            padding: 60px 0 40px;
+            text-align: center;
+            background: linear-gradient(180deg, #0f172a 0%, var(--bg-primary) 100%);
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
+            background: radial-gradient(ellipse at 30% 20%, rgba(129,140,248,0.08) 0%, transparent 50%),
+                        radial-gradient(ellipse at 70% 60%, rgba(167,139,250,0.06) 0%, transparent 50%);
+            animation: float 20s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%,100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(2deg); }
+        }
+        .hero-content { position: relative; z-index: 1; }
+        .hero h1 {
+            font-size: 2.4rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #818cf8 0%, #a78bfa 50%, #34d399 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.5px;
+        }
+        .hero .date { font-size: 1.1rem; color: var(--text-secondary); margin-top: 8px; font-weight: 300; }
+        .hero .subtitle { font-size: 0.9rem; color: var(--text-muted); margin-top: 6px; }
+        .hero .notice {
+            font-size: 0.82rem; color: var(--accent-llm); margin-top: 14px;
+            background: rgba(251,146,60,0.08); display: inline-block; padding: 4px 16px;
+            border-radius: 20px; border: 1px solid rgba(251,146,60,0.2);
+        }
+        .stats-bar {
+            display: flex; justify-content: center; gap: 32px; margin-top: 28px; flex-wrap: wrap;
+        }
+        .stat-item { text-align: center; }
+        .stat-num {
+            font-size: 1.8rem; font-weight: 700;
+            background: linear-gradient(135deg, #818cf8, #34d399);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .stat-label { font-size: 0.8rem; color: var(--text-muted); margin-top: 2px; }
+        .container { max-width: 900px; margin: 0 auto; padding: 0 20px 60px; }
+        .toc {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 20px 28px;
+            margin: 30px 0;
+        }
+        .toc-title { font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 12px; }
+        .toc-list { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; }
+        .toc-list a {
+            display: inline-block; padding: 6px 16px; border-radius: 20px; font-size: 0.85rem;
+            text-decoration: none; transition: all 0.3s; border: 1px solid var(--border-color);
+        }
+        .toc-list a:hover { transform: translateY(-1px); }
+        .toc-vla { color: var(--accent-vla); } .toc-vla:hover { background: var(--glow-vla); border-color: var(--accent-vla); }
+        .toc-robotics { color: var(--accent-robotics); } .toc-robotics:hover { background: var(--glow-robotics); border-color: var(--accent-robotics); }
+        .toc-llm { color: var(--accent-llm); } .toc-llm:hover { background: var(--glow-llm); border-color: var(--accent-llm); }
+        .toc-agent { color: var(--accent-agent); } .toc-agent:hover { background: var(--glow-agent); border-color: var(--accent-agent); }
+        .toc-multimodal { color: var(--accent-multimodal); } .toc-multimodal:hover { background: var(--glow-multimodal); border-color: var(--accent-multimodal); }
+        .toc-other { color: var(--accent-other); } .toc-other:hover { background: var(--glow-other); border-color: var(--accent-other); }
+        .section { margin-top: 40px; }
+        .section-header {
+            display: flex; align-items: center; gap: 12px; margin-bottom: 20px;
+            padding-bottom: 12px; border-bottom: 1px solid var(--border-color);
+        }
+        .section-icon {
+            width: 36px; height: 36px; border-radius: 10px; display: flex; align-items: center;
+            justify-content: center; font-size: 1.2rem; flex-shrink: 0;
+        }
+        .section-title { font-size: 1.3rem; font-weight: 700; }
+        .section-count {
+            font-size: 0.75rem; padding: 2px 10px; border-radius: 12px;
+            background: var(--bg-card); color: var(--text-muted); margin-left: auto;
+        }
+        .paper {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 20px 24px;
+            margin-bottom: 14px;
+            transition: all 0.3s;
+        }
+        .paper:hover {
+            background: var(--bg-card-hover);
+            transform: translateX(4px);
+            border-color: rgba(129,140,248,0.3);
+        }
+        .paper-title {
+            font-size: 1.05rem; font-weight: 600; color: var(--text-primary);
+            margin-bottom: 6px; line-height: 1.4;
+        }
+        .paper-meta {
+            font-size: 0.8rem; color: var(--text-muted); margin-bottom: 10px;
+            display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+        }
+        .paper-meta .tag {
+            padding: 1px 8px; border-radius: 6px; font-size: 0.72rem; font-weight: 500;
+        }
+        .tag-vla { background: var(--glow-vla); color: var(--accent-vla); }
+        .tag-robotics { background: var(--glow-robotics); color: var(--accent-robotics); }
+        .tag-llm { background: var(--glow-llm); color: var(--accent-llm); }
+        .tag-agent { background: var(--glow-agent); color: var(--accent-agent); }
+        .tag-multimodal { background: var(--glow-multimodal); color: var(--accent-multimodal); }
+        .tag-other { background: var(--glow-other); color: var(--accent-other); }
+        .paper-summary {
+            font-size: 0.92rem; color: var(--text-secondary); line-height: 1.7;
+        }
+        .paper-links {
+            margin-top: 10px; display: flex; gap: 8px; flex-wrap: wrap;
+        }
+        .paper-links a {
+            font-size: 0.78rem; padding: 3px 12px; border-radius: 6px;
+            text-decoration: none; border: 1px solid var(--border-color);
+            color: var(--text-secondary); transition: all 0.2s;
+        }
+        .paper-links a:hover { border-color: var(--accent-vla); color: var(--accent-vla); }
+        .link-paper { color: var(--accent-vla) !important; }
+        .link-pdf { color: var(--accent-wam) !important; }
+        .link-code { color: var(--accent-robotics) !important; }
+        .link-project { color: var(--accent-embodied) !important; }
+        .highlight-badge {
+            display: inline-block; padding: 1px 8px; border-radius: 6px;
+            font-size: 0.72rem; font-weight: 600; margin-left: 6px;
+        }
+        .new-badge { background: rgba(239,68,68,0.15); color: #ef4444; display: inline-block; padding: 1px 8px; border-radius: 6px; font-size: 0.72rem; font-weight: 600; margin-left: 6px; }
+        .footer {
+            text-align: center; padding: 40px 0 30px;
+            border-top: 1px solid var(--border-color);
+            margin-top: 50px;
+        }
+        .footer p { font-size: 0.82rem; color: var(--text-muted); }
+        .footer .sig {
+            font-size: 0.9rem; color: var(--text-secondary); margin-top: 8px;
+            font-style: italic;
+        }
+        @media (max-width: 640px) {
+            .hero h1 { font-size: 1.6rem; }
+            .stats-bar { gap: 20px; }
+            .container { padding: 0 14px 40px; }
+            .paper { padding: 16px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <div class="hero-content">
+        <h1>小小志科研日报</h1>
+        <div class="date">2026 年 3 月 29 日 · 星期日</div>
+        <div class="subtitle">Boss Team · 每日 AI / Robotics / Embodied Intelligence 研究速递</div>
+        <div class="notice">周末版 · arXiv 索引延迟，展示 3 月 27 日最新内容</div>
+        <div class="stats-bar">
+            <div class="stat-item">
+                <div class="stat-num">8</div>
+                <div class="stat-label">arXiv 论文</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-num">6</div>
+                <div class="stat-label">研究领域</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+
+    <div class="toc">
+        <div class="toc-title">目录导航</div>
+        <ul class="toc-list">
+            <li><a href="#vla" class="toc-vla">🤖 VLA (1)</a></li>
+            <li><a href="#robotics" class="toc-robotics">🦾 Robotics (2)</a></li>
+            <li><a href="#agent" class="toc-agent">🧩 Agent (2)</a></li>
+            <li><a href="#llm" class="toc-llm">🧠 LLM (1)</a></li>
+            <li><a href="#multimodal" class="toc-multimodal">🎨 Multimodal (1)</a></li>
+            <li><a href="#other" class="toc-other">📄 Other (1)</a></li>
+        </ul>
+    </div>
+
+    <!-- ==================== VLA ==================== -->
+    <div class="section" id="vla">
+        <div class="section-header">
+            <div class="section-icon" style="background:var(--glow-vla);">🤖</div>
+            <div class="section-title" style="color:var(--accent-vla);">VLA · Vision-Language-Action</div>
+            <span class="section-count">1 篇</span>
+        </div>
+
+        <div class="paper">
+            <div class="paper-title">VLA-OPD: Bridging Offline SFT and Online RL for Vision-Language-Action Models via On-Policy Distillation <span class="new-badge">HOT</span></div>
+            <div class="paper-meta">
+                <span>arXiv 2603.26666 · 2026-03-27</span>
+                <span class="tag tag-vla">VLA</span>
+                <span class="tag tag-vla">在线策略蒸馏</span>
+            </div>
+            <div class="paper-summary">提出在线策略 VLA 蒸馏框架 VLA-OPD，连接离线 SFT 的效率与在线 RL 的鲁棒性。核心思路是让专家教师对学生自生成的轨迹提供密集的 Token 级监督，实现策略诱导状态上的主动错误纠正。关键创新在于采用反向 KL 目标——既避免前向 KL 的模式覆盖熵爆炸，也避免硬交叉熵的过早熵崩溃，通过过滤教师认知不确定性同时保持动作多样性。在 LIBERO 和 RoboTwin2.0 上显著提升 RL 样本效率和 SFT 鲁棒性，有效缓解后训练灾难性遗忘。</div>
+            <div class="paper-links">
+                <a href="https://arxiv.org/abs/2603.26666" class="link-paper" target="_blank">📄 arXiv</a>
+                <a href="https://arxiv.org/pdf/2603.26666" class="link-pdf" target="_blank">📋 PDF</a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ==================== Robotics ==================== -->
+    <div class="section" id="robotics">
+        <div class="section-header">
+            <div class="section-icon" style="background:var(--glow-robotics);">🦾</div>
+            <div class="section-title" style="color:var(--accent-robotics);">Robotics · 机器人学</div>
+            <span class="section-count">2 篇</span>
+        </div>
+
+        <div class="paper">
+            <div class="paper-title">Ruka-v2: Tendon Driven Open-Source Dexterous Hand with Wrist and Abduction for Robot Learning <span class="new-badge">HOT</span></div>
+            <div class="paper-meta">
+                <span>arXiv 2603.26660 · 2026-03-27</span>
+                <span class="tag tag-robotics">Robotics</span>
+                <span class="tag tag-robotics">灵巧手硬件</span>
+            </div>
+            <div class="paper-summary">开源肌腱驱动灵巧手 Ruka-v2，相比 v1 新增解耦的 <b>2 自由度并联手腕</b>和手指外展/内收功能。并联手腕提供独立的屈伸和桡/尺偏，便于在狭窄环境（如橱柜内部）操作；外展功能支持抓取薄物体、手内旋转和书法等精细动作。通过远程操作用户研究评估，相比 v1 完成时间减少 <b>51.3%</b>，成功率提升 <b>21.2%</b>。演示了 13 项双臂/单臂灵巧任务及 3 项自主策略学习。所有 3D 打印文件、组装说明和控制器软件均开源。</div>
+            <div class="paper-links">
+                <a href="https://arxiv.org/abs/2603.26660" class="link-paper" target="_blank">📄 arXiv</a>
+                <a href="https://arxiv.org/pdf/2603.26660" class="link-pdf" target="_blank">📋 PDF</a>
+                <a href="https://ruka-hand-v2.github.io/" class="link-project" target="_blank">🏠 Project</a>
+            </div>
+        </div>
+
+        <div class="paper">
+            <div class="paper-title">Partial Motion Imitation for Learning Cart Pushing with Legged Manipulators</div>
+            <div class="paper-meta">
+                <span>arXiv 2603.26659 · 2026-03-27</span>
+                <span class="tag tag-robotics">Robotics</span>
+                <span class="tag tag-robotics">腿式操作</span>
+            </div>
+            <div class="paper-summary">提出局部运动模仿方法，将运动任务中学到的步态风格迁移到推车操作场景。先通过大量域随机化和地形随机化训练鲁棒运动策略，再用局部对抗运动先验（partial adversarial motion prior）仅模仿下半身运动来学习 loco-manipulation 策略。在 IsaacLab 中成功沿多样轨迹推车，并有效迁移到 MuJoCo，相比基线实现更稳定、更精确的腿式操作行为。</div>
+            <div class="paper-links">
+                <a href="https://arxiv.org/abs/2603.26659" class="link-paper" target="_blank">📄 arXiv</a>
+                <a href="https://arxiv.org/pdf/2603.26659" class="link-pdf" target="_blank">📋 PDF</a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ==================== Agent ==================== -->
+    <div class="section" id="agent">
+        <div class="section-header">
+            <div class="section-icon" style="background:var(--glow-agent);">🧩</div>
+            <div class="section-title" style="color:var(--accent-agent);">Agent · 智能体</div>
+            <span class="section-count">2 篇</span>
+        </div>
+
+        <div class="paper">
+            <div class="paper-title">Learning to Commit: Generating Organic Pull Requests via Online Repository Memory</div>
+            <div class="paper-meta">
+                <span>arXiv 2603.26664 · 2026-03-27</span>
+                <span class="tag tag-agent">Agent</span>
+                <span class="tag tag-agent">代码生成</span>
+            </div>
+            <div class="paper-summary">提出 Learning to Commit 框架，通过在线仓库记忆（Online Repository Memory）让 LLM 编码智能体生成更"有机"的 Pull Request。核心发现：现有编码智能体的 PR 常被拒绝不是因为功能错误，而是忽略了项目特定的约定、重复内部 API 或违反隐含架构约束。该框架让智能体对历史提交进行监督对比反思——尝试盲目解决历史问题，与真实差异对比，提炼为可复用的"技能"（编码风格、内部 API 用法、架构不变量）。新 PR 生成时基于累积技能调节输出，在未来已合并的 PR 上验证有效提升有机性评分。</div>
+            <div class="paper-links">
+                <a href="https://arxiv.org/abs/2603.26664" class="link-paper" target="_blank">📄 arXiv</a>
+                <a href="https://arxiv.org/pdf/2603.26664" class="link-pdf" target="_blank">📋 PDF</a>
+            </div>
+        </div>
+
+        <div class="paper">
+            <div class="paper-title">Vision2Web: A Hierarchical Benchmark for Visual Website Development with Agent Verification</div>
+            <div class="paper-meta">
+                <span>arXiv 2603.26648 · 2026-03-27</span>
+                <span class="tag tag-agent">Agent</span>
+                <span class="tag tag-agent">网站开发</span>
+            </div>
+            <div class="paper-summary">面向视觉网站开发的分层基准 Vision2Web，覆盖从静态 UI 到代码生成、交互式多页前端复刻、到长视距全栈开发三个层级。基于真实网站构建，包含 <b>193 个任务</b>（16 个类别）、918 个原型图像和 1,255 个测试用例。提出基于工作流的代理验证范式，含 GUI 代理验证器和 VLM 判断器两个互补组件。评估显示 SOTA 模型在全栈开发方面仍存在巨大性能差距。</div>
+            <div class="paper-links">
+                <a href="https://arxiv.org/abs/2603.26648" class="link-paper" target="_blank">📄 arXiv</a>
+                <a href="https://arxiv.org/pdf/2603.26648" class="link-pdf" target="_blank">📋 PDF</a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ==================== LLM ==================== -->
+    <div class="section" id="llm">
+        <div class="section-header">
+            <div class="section-icon" style="background:var(--glow-llm);">🧠</div>
+            <div class="section-title" style="color:var(--accent-llm);">LLM · 大语言模型</div>
+            <span class="section-count">1 篇</span>
+        </div>
+
+        <div class="paper">
+            <div class="paper-title">Weight Tying Biases Token Embeddings Towards the Output Space</div>
+            <div class="paper-meta">
+                <span>arXiv 2603.26663 · 2026-03-27</span>
+                <span class="tag tag-llm">LLM</span>
+                <span class="tag tag-llm">嵌入分析</span>
+            </div>
+            <div class="paper-summary">揭示权重绑定（Weight Tying）的隐含偏差机制：共享的嵌入矩阵主要为输出预测优化，而非输入表示。原因在于输出梯度在训练早期占主导地位，导致"反嵌入偏差"——早期层计算效率降低，对残差流贡献变弱。通过缩放输入梯度可减少此偏差，提供了因果证据。这些发现有助于解释为什么权重绑定在模型规模扩大时损害性能，对训练小型 LLM（嵌入占参数比例大）尤其有启示。</div>
+            <div class="paper-links">
+                <a href="https://arxiv.org/abs/2603.26663" class="link-paper" target="_blank">📄 arXiv</a>
+                <a href="https://arxiv.org/pdf/2603.26663" class="link-pdf" target="_blank">📋 PDF</a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ==================== Multimodal ==================== -->
+    <div class="section" id="multimodal">
+        <div class="section-header">
+            <div class="section-icon" style="background:var(--glow-multimodal);">🎨</div>
+            <div class="section-title" style="color:var(--accent-multimodal);">Multimodal · 多模态</div>
+            <span class="section-count">1 篇</span>
+        </div>
+
+        <div class="paper">
+            <div class="paper-title">Make Geometry Matter for Spatial Reasoning</div>
+            <div class="paper-meta">
+                <span>arXiv 2603.26639 · 2026-03-27</span>
+                <span class="tag tag-multimodal">Multimodal</span>
+                <span class="tag tag-multimodal">空间推理</span>
+            </div>
+            <div class="paper-summary">提出 GeoSR 框架，让视觉语言模型积极利用几何 Token 进行空间推理。两大核心组件：<b>几何释放掩码</b>在训练期间策略性屏蔽部分 2D 视觉 Token，削弱非几何捷径，迫使模型咨询几何 Token；<b>几何引导融合</b>通过门控路由机制自适应放大几何证据关键区域的几何 Token 贡献。在静态和动态空间推理基准上建立新 SOTA，有效克服现有方法中模型过度依赖 2D 视觉线索而忽视几何线索的问题。</div>
+            <div class="paper-links">
+                <a href="https://arxiv.org/abs/2603.26639" class="link-paper" target="_blank">📄 arXiv</a>
+                <a href="https://arxiv.org/pdf/2603.26639" class="link-pdf" target="_blank">📋 PDF</a>
+                <a href="https://suhzhang.github.io/GeoSR/" class="link-project" target="_blank">🏠 Project</a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ==================== Other ==================== -->
+    <div class="section" id="other">
+        <div class="section-header">
+            <div class="section-icon" style="background:var(--glow-other);">📄</div>
+            <div class="section-title" style="color:var(--accent-other);">Other · 其他</div>
+            <span class="section-count">1 篇</span>
+        </div>
+
+        <div class="paper">
+            <div class="paper-title">Beyond Language: Grounding Referring Expressions with Hand Pointing in Egocentric Vision</div>
+            <div class="paper-meta">
+                <span>arXiv 2603.26646 · 2026-03-27</span>
+                <span class="tag tag-other">Other</span>
+                <span class="tag tag-other">手势定位</span>
+            </div>
+            <div class="paper-summary">首个面向自我中心视角的手势指向视觉定位大规模多模态数据集 EgoPoint-Ground，包含复杂场景中超过 <b>15k</b> 个交互样本，提供手-目标框对和密集语义标注。提出 SV-CoT 基线框架，通过视觉思维链范式将定位重构为结构化推理——协同手势和语言线索，比现有方法实现 <b>11.7%</b> 绝对提升。有效缓解语义歧义，提升理解多模态物理意图的能力。</div>
+            <div class="paper-links">
+                <a href="https://arxiv.org/abs/2603.26646" class="link-paper" target="_blank">📄 arXiv</a>
+                <a href="https://arxiv.org/pdf/2603.26646" class="link-pdf" target="_blank">📋 PDF</a>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="footer">
+    <p>数据来源：arXiv · 3 月 27 日（周末回退数据）</p>
+    <div class="sig">—— 小小志 · Boss Team 科研 Researcher ——</div>
+    <p style="margin-top: 8px; font-size: 0.75rem;">VLA-OPD (2603.26666) 在线策略蒸馏 | Ruka-v2 (2603.26660) 开源灵巧手 | GeoSR (2603.26639) 几何空间推理</p>
+</div>
+
+</body>
+</html>
