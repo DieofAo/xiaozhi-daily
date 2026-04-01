@@ -519,6 +519,101 @@
 <script>
 // ===== DATA =====
 const PAPERS_DB = [
+    // === 2026-03-31 ===
+    {
+        date: "2026-03-31",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "FocusVLA: Focused Visual Utilization for Vision-Language-Action Models",
+        venue: "",
+        summary: "揭示了当前自回归 VLA 模型的三大视觉利用瓶颈：架构偏差导致忽视视觉细节、过多视觉 Token 分散注意力、任务无关视觉信息引入噪声。提出 FocusVLA 范式，包含两个核心组件：<b>模态级联注意力</b>消除捷径路径，迫使模型依赖任务相关视觉细节；<b>焦点注意力</b>动态选择任务相关视觉补丁并调节其影响力。关键发现：VLA 性能主要受限于视觉信息的<b>使用方式</b>而非视觉表示质量。在模拟和真实机器人基准上均显著提升性能并加速收敛。",
+        tags: [["VLA","green"],["视觉注意力聚焦","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2603.28740"],["📋 PDF","https://arxiv.org/pdf/2603.28740"]],
+        highlight: true
+    },
+    {
+        date: "2026-03-31",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "HandX: Scaling Bimanual Motion and Interaction Generation",
+        venue: "",
+        summary: "人体动作合成领域里程碑式工作——首个聚焦于<b>高保真双手动作和双手交互生成</b>的统一基础。核心贡献三方面：(1) 整合筛选现有数据集并采集新 MoCap 数据集，捕捉精细手指动态和双手协作；(2) 解耦注释策略——先提取运动特征（接触事件、手指弯曲等），再利用 LLM 推理能力生成细粒度语义描述，实现可扩展标注；(3) 在扩散和自回归模型上进行基准测试，观察到明显的<b>缩放趋势</b>——更大模型 + 更高质量数据 = 更连贯的双手动作。数据集已开源。",
+        tags: [["World Model","green"],["双手交互生成","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2603.28766"],["📋 PDF","https://arxiv.org/pdf/2603.28766"],["🏠 Project","https://handx-project.github.io"],["💻 Code","https://github.com/handx-project/HandX"]],
+        highlight: true
+    },
+    {
+        date: "2026-03-31",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "SOLE-R1: Video-Language Reasoning as the Sole Reward for On-Robot Reinforcement Learning",
+        venue: "",
+        summary: "提出 SOLE-R1（Self-Observing LEarner），一个<b>专门设计为在线 RL 唯一奖励信号</b>的视频语言推理模型。仅需原始视频观察和自然语言目标，即可执行逐时间步时空思维链（CoT）推理，生成密集任务进度估计作为奖励。训练管线包含大规模视频轨迹合成和时间锚定 CoT 数据生成，混合 SFT + 可验证奖励 RL 框架。核心亮点：<b>从随机初始化实现零样本在线 RL</b>——无需真实奖励、成功指标、演示或任务特定调优。在 24 个未见任务上成功，大幅超越 GPT-5 和 Gemini-3-Pro 等强基线，且对奖励 hacking 更鲁棒。",
+        tags: [["Robotics","green"],["视觉语言奖励","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2603.28730"],["📋 PDF","https://arxiv.org/pdf/2603.28730"]],
+        highlight: true
+    },
+    {
+        date: "2026-03-31",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "SHOW3D: Capturing Scenes of 3D Hands and Objects in the Wild",
+        venue: "",
+        summary: "首个在真实野外条件下大规模采集手-物交互 3D 标注的数据集。创新的无标记多摄像机系统由轻量背部支架 + VR 头显同步校准组成，支持几乎不受限的户外移动。开发了自我-外部跟踪管线生成精确 3D 真值。显著减少了环境真实感与 3D 标注准确性之间的根本权衡，在多个下游任务上验证有效性。对手部操作理解和具身智能的数据基础有重要推动意义。",
+        tags: [["Robotics","green"],["手物交互数据集","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2603.28760"],["📋 PDF","https://arxiv.org/pdf/2603.28760"]]
+    },
+    {
+        date: "2026-03-31",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "Pandora: Articulated 3D Scene Graphs from Egocentric Vision",
+        venue: "",
+        summary: "提出利用人类佩戴 Project Aria 眼镜的第一人称数据构建<b>关节式 3D 场景图</b>，弥补机器人因形态限制导致的地图盲点（如无法打开抽屉、触及高处柜子）。通过简单启发式方法从第一人称数据恢复关节物体部件模型，质量可与 SOTA 方法媲美。将模型集成到 3D 场景图表示中，增强物体动力学和容器关系理解。实际演示 Boston Dynamics Spot 机器人仅凭 3D 场景图指令检索隐藏物品。",
+        tags: [["Robotics","green"],["场景图构建","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2603.28732"],["📋 PDF","https://arxiv.org/pdf/2603.28732"]]
+    },
+    {
+        date: "2026-03-31",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Gen-Searcher: Reinforcing Agentic Search for Image Generation",
+        venue: "",
+        summary: "首次尝试训练<b>搜索增强型图像生成智能体</b>，通过多跳推理和搜索收集生成所需的文本知识和参考图像，解决冻结内部知识的根本限制。构建专用数据管线和两个高质量数据集（SFT-10k + RL-6k），提出 KnowGen 综合基准评估搜索增强生图。训练采用 SFT + 带双重奖励（文本 + 图像）的智能体 RL（GRPO），在 KnowGen 上将 Qwen-Image 提升约 16 分，WISE 上提升 15 分。数据、模型、代码全部开源。",
+        tags: [["Agent","green"],["搜索增强生成","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2603.28767"],["📋 PDF","https://arxiv.org/pdf/2603.28767"],["🔗 Demo","https://gen-searcher.vercel.app"],["💻 Code","https://github.com/tulerfeng/Gen-Searcher"]]
+    },
+    {
+        date: "2026-03-31",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "On-the-fly Repulsion in the Contextual Space for Rich Diversity in Diffusion Transformers",
+        venue: "",
+        summary: "针对 T2I 扩散模型缺乏多样性问题（对同一提示词收敛于狭窄视觉解），提出在<b>上下文空间中施加排斥力</b>的新框架。通过干预多模态注意力通道，在 Transformer 前向传播中实时重定向引导轨迹——在文本条件与图像结构结合的块之间注入干预，在构图被固定之前进行。产生显著更丰富的多样性且不牺牲保真度和语义依从性。独特优势：计算开销极小，且在现代 Turbo / 蒸馏模型中仍有效（传统基于轨迹的干预在这些模型中通常失败）。",
+        tags: [["Multimodal","green"],["扩散模型多样性","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2603.28762"],["📋 PDF","https://arxiv.org/pdf/2603.28762"],["🏠 Project","https://contextual-repulsion.github.io/"]]
+    },
+    {
+        date: "2026-03-31",
+        category: "Other",
+        categoryIcon: "📄",
+        title: "SAGAI-MID: A Generative AI-Driven Middleware for Dynamic Runtime Interoperability",
+        venue: "",
+        summary: "基于 FastAPI 的中间件 SAGAI-MID，利用 LLM 在运行时动态检测和解决架构不匹配问题。五层流水线包含混合检测（结构差异 + LLM 语义分析）、双重解决策略（按请求 LLM 转换 + 可重用适配器代码生成）和三层安全防护。在 10 个互操作性场景中（跨 6 个 LLM），最佳配置实现 0.90 pass@1 准确率。CODEGEN 策略一致优于 DIRECT 策略。",
+        tags: [["Other","green"],["AI中间件","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2603.28731"],["📋 PDF","https://arxiv.org/pdf/2603.28731"]]
+    },
+    // === 2026-03-30 ===
+    {
+        date: "2026-03-30",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "qualia-robotics/act-pickupbreadcombine12",
+        venue: "",
+        summary: "Qualia Robotics 发布的 ACT（Action Chunking with Transformers）策略模型，针对面包拾取与组合操作任务（pickupbreadcombine）进行微调。ACT 是具身操作领域的主流模仿学习架构之一，将动作序列视为 Token 进行分块预测，在桌面操作任务中表现出色。该模型体现了社区在特定操作技能上持续微调和共享预训练策略的趋势。",
+        tags: [["Robotics","green"],["ACT策略模型","green"]],
+        links: [["🤗 Model","https://huggingface.co/qualia-robotics/act-pickupbreadcombine12-e0ad61c9"]]
+    },
     // === 2026-03-29 ===
     {
         date: "2026-03-29",

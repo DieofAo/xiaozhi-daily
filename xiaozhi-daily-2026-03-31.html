@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小小志科研日报 2026-03-31</title>
+    <style>
+        :root {
+            --bg-primary: #0a0e17;
+            --bg-secondary: #111827;
+            --bg-card: #1a2035;
+            --bg-card-hover: #1f2a45;
+            --text-primary: #e2e8f0;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            --accent-vla: #818cf8;
+            --accent-wam: #a78bfa;
+            --accent-robotics: #34d399;
+            --accent-embodied: #22d3ee;
+            --accent-rl: #f472b6;
+            --accent-llm: #fb923c;
+            --accent-vlm: #facc15;
+            --accent-multimodal: #facc15;
+            --accent-info: #38bdf8;
+            --accent-agent: #22d3ee;
+            --accent-other: #94a3b8;
+            --border-color: #1e293b;
+            --glow-vla: rgba(129,140,248,0.15);
+            --glow-wam: rgba(167,139,250,0.15);
+            --glow-robotics: rgba(52,211,153,0.15);
+            --glow-embodied: rgba(34,211,238,0.15);
+            --glow-rl: rgba(244,114,182,0.15);
+            --glow-llm: rgba(251,146,60,0.15);
+            --glow-vlm: rgba(250,204,21,0.15);
+            --glow-multimodal: rgba(250,204,21,0.15);
+            --glow-info: rgba(56,189,248,0.15);
+            --glow-agent: rgba(34,211,238,0.15);
+            --glow-other: rgba(148,163,184,0.15);
+        }
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body {
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans SC', sans-serif;
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+        .hero {
+            position: relative;
+            padding: 60px 0 40px;
+            text-align: center;
+            background: linear-gradient(180deg, #0f172a 0%, var(--bg-primary) 100%);
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
+            background: radial-gradient(ellipse at 30% 20%, rgba(129,140,248,0.08) 0%, transparent 50%),
+                        radial-gradient(ellipse at 70% 60%, rgba(167,139,250,0.06) 0%, transparent 50%);
+            animation: float 20s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%,100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(2deg); }
+        }
+        .hero-content { position: relative; z-index: 1; }
+        .hero h1 {
+            font-size: 2.4rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #818cf8 0%, #a78bfa 50%, #34d399 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.5px;
+        }
+        .hero .date { font-size: 1.1rem; color: var(--text-secondary); margin-top: 8px; font-weight: 300; }
+        .hero .subtitle { font-size: 0.9rem; color: var(--text-muted); margin-top: 6px; }
+        .hero .notice {
+            font-size: 0.82rem; color: var(--accent-llm); margin-top: 14px;
+            background: rgba(251,146,60,0.08); display: inline-block; padding: 4px 16px;
+            border-radius: 20px; border: 1px solid rgba(251,146,60,0.2);
+        }
+        .stats-bar {
+            display: flex; justify-content: center; gap: 32px; margin-top: 28px; flex-wrap: wrap;
+        }
+        .stat-item { text-align: center; }
+        .stat-num {
+            font-size: 1.8rem; font-weight: 700;
+            background: linear-gradient(135deg, #818cf8, #34d399);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .stat-label { font-size: 0.8rem; color: var(--text-muted); margin-top: 2px; }
+        .container { max-width: 900px; margin: 0 auto; padding: 0 20px 60px; }
+        .toc {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 20px 28px;
+            margin: 30px 0;
+        }
+        .toc-title { font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 12px; }
+        .toc-list { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; }
+        .toc-list a {
+            display: inline-block; padding: 6px 16px; border-radius: 20px; font-size: 0.85rem;
+            text-decoration: none; transition: all 0.3s; border: 1px solid var(--border-color);
+        }
+        .toc-list a:hover { transform: translateY(-1px); }
+        .toc-vla { color: var(--accent-vla); } .toc-vla:hover { background: var(--glow-vla); border-color: var(--accent-vla); }
+        .toc-wam { color: var(--accent-wam); } .toc-wam:hover { background: var(--glow-wam); border-color: var(--accent-wam); }
+        .toc-robotics { color: var(--accent-robotics); } .toc-robotics:hover { background: var(--glow-robotics); border-color: var(--accent-robotics); }
+        .toc-agent { color: var(--accent-agent); } .toc-agent:hover { background: var(--glow-agent); border-color: var(--accent-agent); }
+        .toc-multimodal { color: var(--accent-multimodal); } .toc-multimodal:hover { background: var(--glow-multimodal); border-color: var(--accent-multimodal); }
+        .toc-other { color: var(--accent-other); } .toc-other:hover { background: var(--glow-other); border-color: var(--accent-other); }
+        .section { margin-top: 40px; }
+        .section-header {
+            display: flex; align-items: center; gap: 12px; margin-bottom: 20px;
+            padding-bottom: 12px; border-bottom: 1px solid var(--border-color);
+        }
+        .section-icon {
+            width: 36px; height: 36px; border-radius: 10px; display: flex; align-items: center;
+            justify-content: center; font-size: 1.2rem; flex-shrink: 0;
+        }
+        .section-title { font-size: 1.3rem; font-weight: 700; }
+        .section-count {
+            font-size: 0.75rem; padding: 2px 10px; border-radius: 12px;
+            background: var(--bg-card); color: var(--text-muted); margin-left: auto;
+        }
+        .paper {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 20px 24px;
+            margin-bottom: 14px;
+            transition: all 0.3s;
+        }
+        .paper:hover {
+            background: var(--bg-card-hover);
+            transform: translateX(4px);
+            border-color: rgba(129,140,248,0.3);
+        }
+        .paper-title {
+            font-size: 1.05rem; font-weight: 600; color: var(--text-primary);
+            margin-bottom: 6px; line-height: 1.4;
+        }
+        .paper-meta {
+            font-size: 0.8rem; color: var(--text-muted); margin-bottom: 10px;
+            display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+        }
+        .paper-meta .tag {
+            padding: 1px 8px; border-radius: 6px; font-size: 0.72rem; font-weight: 500;
+        }
+        .tag-vla { background: var(--glow-vla); color: var(--accent-vla); }
+        .tag-wam { background: var(--glow-wam); color: var(--accent-wam); }
+        .tag-robotics { background: var(--glow-robotics); color: var(--accent-robotics); }
+        .tag-agent { background: var(--glow-agent); color: var(--accent-agent); }
+        .tag-multimodal { background: var(--glow-multimodal); color: var(--accent-multimodal); }
+        .tag-llm { background: var(--glow-llm); color: var(--accent-llm); }
+        .tag-other { background: var(--glow-other); color: var(--accent-other); }
+        .paper-summary {
+            font-size: 0.92rem; color: var(--text-secondary); line-height: 1.7;
+        }
+        .paper-links {
+            margin-top: 10px; display: flex; gap: 8px; flex-wrap: wrap;
+        }
+        .paper-links a {
+            font-size: 0.78rem; padding: 3px 12px; border-radius: 6px;
+            text-decoration: none; border: 1px solid var(--border-color);
+            color: var(--text-secondary); transition: all 0.2s;
+        }
+        .paper-links a:hover { border-color: var(--accent-vla); color: var(--accent-vla); }
+        .link-paper { color: var(--accent-vla) !important; }
+        .link-pdf { color: var(--accent-wam) !important; }
+        .link-code { color: var(--accent-robotics) !important; }
+        .link-project { color: var(--accent-embodied) !important; }
+        .link-link { color: var(--accent-info) !important; }
+        .new-badge { background: rgba(239,68,68,0.15); color: #ef4444; display: inline-block; padding: 1px 8px; border-radius: 6px; font-size: 0.72rem; font-weight: 600; margin-left: 6px; }
+        .footer {
+            text-align: center; padding: 40px 0 30px;
+            border-top: 1px solid var(--border-color);
+            margin-top: 50px;
+        }
+        .footer p { font-size: 0.82rem; color: var(--text-muted); }
+        .footer .sig {
+            font-size: 0.9rem; color: var(--text-secondary); margin-top: 8px;
+            font-style: italic;
+        }
+        @media (max-width: 640px) {
+            .hero h1 { font-size: 1.6rem; }
+            .stats-bar { gap: 20px; }
+            .container { padding: 0 14px 40px; }
+            .paper { padding: 16px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <div class="hero-content">
+        <h1>小小志科研日报</h1>
+        <div class="date">2026 年 3 月 31 日 · 星期二</div>
+        <div class="subtitle">Boss Team · 每日 AI / Robotics / Embodied Intelligence 研究速递</div>
+        <div class="notice">arXiv 索引延迟，展示 3 月 30 日最新内容</div>
+        <div class="stats-bar">
+            <div class="stat-item">
+                <div class="stat-num">8</div>
+                <div class="stat-label">arXiv 论文</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-num">6</div>
+                <div class="stat-label">研究领域</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+
+    <div class="toc">
+        <div class="toc-title">目录导航</div>
+        <ul class="toc-list">
+            <li><a href="#vla" class="toc-vla">🤖 VLA (1)</a></li>
+            <li><a href="#wam" class="toc-wam">🌍 World Model (1)</a></li>
+            <li><a href="#robotics" class="toc-robotics">🦾 Robotics (3)</a></li>
+            <li><a href="#agent" class="toc-agent">🧩 Agent (1)</a></li>
+            <li><a href="#multimodal" class="toc-multimodal">🎨 Multimodal (1)</a></li>
+            <li><a href="#other" class="toc-other">📄 Other (1)</a></li>
+        </ul>
+    </div>
+
+    <!-- ==================== VLA ==================== -->
+    <div class="section" id="vla">
+        <div class="section-header">
+            <div class="section-icon" style="background:var(--glow-vla);">🤖</div>
+            <div class="section-title" style="color:var(--accent-vla);">VLA · Vision-Language-Action</div>
+            <span class="section-count">1 篇</span>
+        </div>
+
+        <div class="paper">
+            <div class="paper-title">FocusVLA: Focused Visual Utilization for Vision-Language-Action Models <span class="new-badge">HOT</span></div>
+            <div class="paper-meta">
+                <span>arXiv 2603.28740 · 2026-03-30</span>
+                <span class="tag tag-vla">VLA</span>
+                <span class="tag tag-vla">视觉注意力聚焦</span>
+            </div>
+            <div class="paper-summary">揭示了当前自回归 VLA 模型的三大视觉利用瓶颈：架构偏差导致忽视视觉细节、过多视觉 Token 分散注意力、任务无关视觉信息引入噪声。提出 FocusVLA 范式，包含两个核心组件：<b>模态级联注意力</b>消除捷径路径，迫使模型依赖任务相关视觉细节；<b>焦点注意力</b>动态选择任务相关视觉补丁并调节其影响力。关键发现：VLA 性能主要受限于视觉信息的<b>使用方式</b>而非视觉表示质量。在模拟和真实机器人基准上均显著提升性能并加速收敛。</div>
+            <div class="paper-links">
+                <a href="https://arxiv.org/abs/2603.28740" class="link-paper" target="_blank">📄 arXiv</a>
+                <a href="https://arxiv.org/pdf/2603.28740" class="link-pdf" target="_blank">📋 PDF</a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ==================== World Model ==================== -->
+    <div class="section" id="wam">
+        <div class="section-header">
+            <div class="section-icon" style="background:var(--glow-wam);">🌍</div>
+            <div class="section-title" style="color:var(--accent-wam);">World Model · 世界模型</div>
+            <span class="section-count">1 篇</span>
+        </div>
+
+        <div class="paper">
+            <div class="paper-title">HandX: Scaling Bimanual Motion and Interaction Generation <span class="new-badge">HOT</span></div>
+            <div class="paper-meta">
+                <span>arXiv 2603.28766 · 2026-03-30 · CVPR 2026</span>
+                <span class="tag tag-wam">World Model</span>
+                <span class="tag tag-wam">双手交互生成</span>
+            </div>
+            <div class="paper-summary">人体动作合成领域里程碑式工作——首个聚焦于<b>高保真双手动作和双手交互生成</b>的统一基础。核心贡献三方面：(1) 整合筛选现有数据集并采集新 MoCap 数据集，捕捉精细手指动态和双手协作；(2) 解耦注释策略——先提取运动特征（接触事件、手指弯曲等），再利用 LLM 推理能力生成细粒度语义描述，实现可扩展标注；(3) 在扩散和自回归模型上进行基准测试，观察到明显的<b>缩放趋势</b>——更大模型 + 更高质量数据 = 更连贯的双手动作。数据集已开源。</div>
+            <div class="paper-links">
+                <a href="https://arxiv.org/abs/2603.28766" class="link-paper" target="_blank">📄 arXiv</a>
+                <a href="https://arxiv.org/pdf/2603.28766" class="link-pdf" target="_blank">📋 PDF</a>
+                <a href="https://handx-project.github.io" class="link-project" target="_blank">🏠 Project</a>
+                <a href="https://github.com/handx-project/HandX" class="link-code" target="_blank">💻 Code</a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ==================== Robotics ==================== -->
+    <div class="section" id="robotics">
+        <div class="section-header">
+            <div class="section-icon" style="background:var(--glow-robotics);">🦾</div>
+            <div class="section-title" style="color:var(--accent-robotics);">Robotics · 机器人学</div>
+            <span class="section-count">3 篇</span>
+        </div>
+
+        <div class="paper">
+            <div class="paper-title">SOLE-R1: Video-Language Reasoning as the Sole Reward for On-Robot Reinforcement Learning <span class="new-badge">HOT</span></div>
+            <div class="paper-meta">
+                <span>arXiv 2603.28730 · 2026-03-30</span>
+                <span class="tag tag-robotics">Robotics</span>
+                <span class="tag tag-robotics">视觉语言奖励</span>
+            </div>
+            <div class="paper-summary">提出 SOLE-R1（Self-Observing LEarner），一个<b>专门设计为在线 RL 唯一奖励信号</b>的视频语言推理模型。仅需原始视频观察和自然语言目标，即可执行逐时间步时空思维链（CoT）推理，生成密集任务进度估计作为奖励。训练管线包含大规模视频轨迹合成和时间锚定 CoT 数据生成，混合 SFT + 可验证奖励 RL 框架。核心亮点：<b>从随机初始化实现零样本在线 RL</b>——无需真实奖励、成功指标、演示或任务特定调优。在 24 个未见任务上成功，大幅超越 GPT-5 和 Gemini-3-Pro 等强基线，且对奖励 hacking 更鲁棒。</div>
+            <div class="paper-links">
+                <a href="https://arxiv.org/abs/2603.28730" class="link-paper" target="_blank">📄 arXiv</a>
+                <a href="https://arxiv.org/pdf/2603.28730" class="link-pdf" target="_blank">📋 PDF</a>
+            </div>
+        </div>
+
+        <div class="paper">
+            <div class="paper-title">SHOW3D: Capturing Scenes of 3D Hands and Objects in the Wild</div>
+            <div class="paper-meta">
+                <span>arXiv 2603.28760 · 2026-03-30</span>
+                <span class="tag tag-robotics">Robotics</span>
+                <span class="tag tag-robotics">手物交互数据集</span>
+            </div>
+            <div class="paper-summary">首个在真实野外条件下大规模采集手-物交互 3D 标注的数据集。创新的无标记多摄像机系统由轻量背部支架 + VR 头显同步校准组成，支持几乎不受限的户外移动。开发了自我-外部跟踪管线生成精确 3D 真值。显著减少了环境真实感与 3D 标注准确性之间的根本权衡，在多个下游任务上验证有效性。对手部操作理解和具身智能的数据基础有重要推动意义。</div>
+            <div class="paper-links">
+                <a href="https://arxiv.org/abs/2603.28760" class="link-paper" target="_blank">📄 arXiv</a>
+                <a href="https://arxiv.org/pdf/2603.28760" class="link-pdf" target="_blank">📋 PDF</a>
+            </div>
+        </div>
+
+        <div class="paper">
+            <div class="paper-title">Pandora: Articulated 3D Scene Graphs from Egocentric Vision</div>
+            <div class="paper-meta">
+                <span>arXiv 2603.28732 · 2026-03-30 · BMVC 2025</span>
+                <span class="tag tag-robotics">Robotics</span>
+                <span class="tag tag-robotics">场景图构建</span>
+            </div>
+            <div class="paper-summary">提出利用人类佩戴 Project Aria 眼镜的第一人称数据构建<b>关节式 3D 场景图</b>，弥补机器人因形态限制导致的地图盲点（如无法打开抽屉、触及高处柜子）。通过简单启发式方法从第一人称数据恢复关节物体部件模型，质量可与 SOTA 方法媲美。将模型集成到 3D 场景图表示中，增强物体动力学和容器关系理解。实际演示 Boston Dynamics Spot 机器人仅凭 3D 场景图指令检索隐藏物品。</div>
+            <div class="paper-links">
+                <a href="https://arxiv.org/abs/2603.28732" class="link-paper" target="_blank">📄 arXiv</a>
+                <a href="https://arxiv.org/pdf/2603.28732" class="link-pdf" target="_blank">📋 PDF</a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ==================== Agent ==================== -->
+    <div class="section" id="agent">
+        <div class="section-header">
+            <div class="section-icon" style="background:var(--glow-agent);">🧩</div>
+            <div class="section-title" style="color:var(--accent-agent);">Agent · 智能体</div>
+            <span class="section-count">1 篇</span>
+        </div>
+
+        <div class="paper">
+            <div class="paper-title">Gen-Searcher: Reinforcing Agentic Search for Image Generation</div>
+            <div class="paper-meta">
+                <span>arXiv 2603.28767 · 2026-03-30</span>
+                <span class="tag tag-agent">Agent</span>
+                <span class="tag tag-agent">搜索增强生成</span>
+            </div>
+            <div class="paper-summary">首次尝试训练<b>搜索增强型图像生成智能体</b>，通过多跳推理和搜索收集生成所需的文本知识和参考图像，解决冻结内部知识的根本限制。构建专用数据管线和两个高质量数据集（SFT-10k + RL-6k），提出 KnowGen 综合基准评估搜索增强生图。训练采用 SFT + 带双重奖励（文本 + 图像）的智能体 RL（GRPO），在 KnowGen 上将 Qwen-Image 提升约 16 分，WISE 上提升 15 分。数据、模型、代码全部开源。</div>
+            <div class="paper-links">
+                <a href="https://arxiv.org/abs/2603.28767" class="link-paper" target="_blank">📄 arXiv</a>
+                <a href="https://arxiv.org/pdf/2603.28767" class="link-pdf" target="_blank">📋 PDF</a>
+                <a href="https://gen-searcher.vercel.app" class="link-link" target="_blank">🔗 Demo</a>
+                <a href="https://github.com/tulerfeng/Gen-Searcher" class="link-code" target="_blank">💻 Code</a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ==================== Multimodal ==================== -->
+    <div class="section" id="multimodal">
+        <div class="section-header">
+            <div class="section-icon" style="background:var(--glow-multimodal);">🎨</div>
+            <div class="section-title" style="color:var(--accent-multimodal);">Multimodal · 多模态</div>
+            <span class="section-count">1 篇</span>
+        </div>
+
+        <div class="paper">
+            <div class="paper-title">On-the-fly Repulsion in the Contextual Space for Rich Diversity in Diffusion Transformers</div>
+            <div class="paper-meta">
+                <span>arXiv 2603.28762 · 2026-03-30 · SIGGRAPH 2026</span>
+                <span class="tag tag-multimodal">Multimodal</span>
+                <span class="tag tag-multimodal">扩散模型多样性</span>
+            </div>
+            <div class="paper-summary">针对 T2I 扩散模型缺乏多样性问题（对同一提示词收敛于狭窄视觉解），提出在<b>上下文空间中施加排斥力</b>的新框架。通过干预多模态注意力通道，在 Transformer 前向传播中实时重定向引导轨迹——在文本条件与图像结构结合的块之间注入干预，在构图被固定之前进行。产生显著更丰富的多样性且不牺牲保真度和语义依从性。独特优势：计算开销极小，且在现代 Turbo / 蒸馏模型中仍有效（传统基于轨迹的干预在这些模型中通常失败）。</div>
+            <div class="paper-links">
+                <a href="https://arxiv.org/abs/2603.28762" class="link-paper" target="_blank">📄 arXiv</a>
+                <a href="https://arxiv.org/pdf/2603.28762" class="link-pdf" target="_blank">📋 PDF</a>
+                <a href="https://contextual-repulsion.github.io/" class="link-project" target="_blank">🏠 Project</a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ==================== Other ==================== -->
+    <div class="section" id="other">
+        <div class="section-header">
+            <div class="section-icon" style="background:var(--glow-other);">📄</div>
+            <div class="section-title" style="color:var(--accent-other);">Other · 其他</div>
+            <span class="section-count">1 篇</span>
+        </div>
+
+        <div class="paper">
+            <div class="paper-title">SAGAI-MID: A Generative AI-Driven Middleware for Dynamic Runtime Interoperability</div>
+            <div class="paper-meta">
+                <span>arXiv 2603.28731 · 2026-03-30 · SAGAI@ICSA 2026</span>
+                <span class="tag tag-other">Other</span>
+                <span class="tag tag-other">AI中间件</span>
+            </div>
+            <div class="paper-summary">基于 FastAPI 的中间件 SAGAI-MID，利用 LLM 在运行时动态检测和解决架构不匹配问题。五层流水线包含混合检测（结构差异 + LLM 语义分析）、双重解决策略（按请求 LLM 转换 + 可重用适配器代码生成）和三层安全防护。在 10 个互操作性场景中（跨 6 个 LLM），最佳配置实现 0.90 pass@1 准确率。CODEGEN 策略一致优于 DIRECT 策略。</div>
+            <div class="paper-links">
+                <a href="https://arxiv.org/abs/2603.28731" class="link-paper" target="_blank">📄 arXiv</a>
+                <a href="https://arxiv.org/pdf/2603.28731" class="link-pdf" target="_blank">📋 PDF</a>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="footer">
+    <p>数据来源：arXiv · 3 月 30 日（索引延迟回退数据）</p>
+    <div class="sig">—— 小小志 · Boss Team 科研 Researcher ——</div>
+    <p style="margin-top: 8px; font-size: 0.75rem;">SOLE-R1 零样本视觉语言奖励 RL | FocusVLA 视觉聚焦 VLA | HandX 双手交互生成 (CVPR 2026)</p>
+</div>
+
+</body>
+</html>
