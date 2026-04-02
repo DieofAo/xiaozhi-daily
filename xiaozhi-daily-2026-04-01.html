@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小小志科研日报 2026-04-01</title>
+    <style>
+        :root {
+            --bg-primary: #0a0e17;
+            --bg-secondary: #111827;
+            --bg-card: #1a2035;
+            --bg-card-hover: #1f2a45;
+            --text-primary: #e2e8f0;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            --accent-vla: #818cf8;
+            --accent-wam: #a78bfa;
+            --accent-robotics: #34d399;
+            --accent-embodied: #22d3ee;
+            --accent-rl: #f472b6;
+            --accent-llm: #fb923c;
+            --accent-vlm: #facc15;
+            --accent-multimodal: #facc15;
+            --accent-info: #38bdf8;
+            --accent-agent: #22d3ee;
+            --accent-other: #94a3b8;
+            --border-color: #1e293b;
+            --glow-vla: rgba(129,140,248,0.15);
+            --glow-wam: rgba(167,139,250,0.15);
+            --glow-robotics: rgba(52,211,153,0.15);
+            --glow-embodied: rgba(34,211,238,0.15);
+            --glow-rl: rgba(244,114,182,0.15);
+            --glow-llm: rgba(251,146,60,0.15);
+            --glow-vlm: rgba(250,204,21,0.15);
+            --glow-multimodal: rgba(250,204,21,0.15);
+            --glow-info: rgba(56,189,248,0.15);
+            --glow-agent: rgba(34,211,238,0.15);
+            --glow-other: rgba(148,163,184,0.15);
+        }
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body {
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans SC', sans-serif;
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+        .hero {
+            position: relative;
+            padding: 60px 0 40px;
+            text-align: center;
+            background: linear-gradient(180deg, #0f172a 0%, var(--bg-primary) 100%);
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
+            background: radial-gradient(ellipse at 30% 20%, rgba(129,140,248,0.08) 0%, transparent 50%),
+                        radial-gradient(ellipse at 70% 60%, rgba(167,139,250,0.06) 0%, transparent 50%);
+            animation: float 20s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%,100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(2deg); }
+        }
+        .hero-content { position: relative; z-index: 1; }
+        .hero h1 {
+            font-size: 2.4rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #818cf8 0%, #a78bfa 50%, #34d399 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.5px;
+        }
+        .hero .date { font-size: 1.1rem; color: var(--text-secondary); margin-top: 8px; font-weight: 300; }
+        .hero .subtitle { font-size: 0.9rem; color: var(--text-muted); margin-top: 6px; }
+        .hero .notice {
+            font-size: 0.82rem; color: var(--accent-llm); margin-top: 14px;
+            background: rgba(251,146,60,0.08); display: inline-block; padding: 4px 16px;
+            border-radius: 20px; border: 1px solid rgba(251,146,60,0.2);
+        }
+        .stats-bar {
+            display: flex; justify-content: center; gap: 32px; margin-top: 28px; flex-wrap: wrap;
+        }
+        .stat-item { text-align: center; }
+        .stat-num {
+            font-size: 1.8rem; font-weight: 700;
+            background: linear-gradient(135deg, #818cf8, #34d399);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .stat-label { font-size: 0.8rem; color: var(--text-muted); margin-top: 2px; }
+        .container { max-width: 900px; margin: 0 auto; padding: 0 20px 60px; }
+        .toc {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 20px 28px;
+            margin: 30px 0;
+        }
+        .toc-title { font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 12px; }
+        .toc-list { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; }
+        .toc-list a {
+            display: inline-block; padding: 6px 16px; border-radius: 20px; font-size: 0.85rem;
+            text-decoration: none; transition: all 0.3s; border: 1px solid var(--border-color);
+        }
+        .toc-list a:hover { transform: translateY(-1px); }
+        .toc-vla { color: var(--accent-vla); } .toc-vla:hover { background: var(--glow-vla); border-color: var(--accent-vla); }
+        .toc-wam { color: var(--accent-wam); } .toc-wam:hover { background: var(--glow-wam); border-color: var(--accent-wam); }
+        .toc-robotics { color: var(--accent-robotics); } .toc-robotics:hover { background: var(--glow-robotics); border-color: var(--accent-robotics); }
+        .toc-agent { color: var(--accent-agent); } .toc-agent:hover { background: var(--glow-agent); border-color: var(--accent-agent); }
+        .toc-multimodal { color: var(--accent-multimodal); } .toc-multimodal:hover { background: var(--glow-multimodal); border-color: var(--accent-multimodal); }
+        .toc-llm { color: var(--accent-llm); } .toc-llm:hover { background: var(--glow-llm); border-color: var(--accent-llm); }
+        .toc-other { color: var(--accent-other); } .toc-other:hover { background: var(--glow-other); border-color: var(--accent-other); }
+        .section { margin-top: 40px; }
+        .section-header {
+            display: flex; align-items: center; gap: 12px; margin-bottom: 20px;
+            padding-bottom: 12px; border-bottom: 1px solid var(--border-color);
+        }
+        .section-icon {
+            width: 36px; height: 36px; border-radius: 10px; display: flex; align-items: center;
+            justify-content: center; font-size: 1.2rem; flex-shrink: 0;
+        }
+        .section-title { font-size: 1.3rem; font-weight: 700; }
+        .section-count {
+            font-size: 0.75rem; padding: 2px 10px; border-radius: 12px;
+            background: var(--bg-card); color: var(--text-muted); margin-left: auto;
+        }
+        .paper {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 20px 24px;
+            margin-bottom: 14px;
+            transition: all 0.3s;
+        }
+        .paper:hover {
+            background: var(--bg-card-hover);
+            transform: translateX(4px);
+            border-color: rgba(129,140,248,0.3);
+        }
+        .paper-title {
+            font-size: 1.05rem; font-weight: 600; color: var(--text-primary);
+            margin-bottom: 6px; line-height: 1.4;
+        }
+        .paper-meta {
+            font-size: 0.8rem; color: var(--text-muted); margin-bottom: 10px;
+            display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+        }
+        .paper-meta .tag {
+            padding: 1px 8px; border-radius: 6px; font-size: 0.72rem; font-weight: 500;
+        }
+        .tag-vla { background: var(--glow-vla); color: var(--accent-vla); }
+        .tag-wam { background: var(--glow-wam); color: var(--accent-wam); }
+        .tag-robotics { background: var(--glow-robotics); color: var(--accent-robotics); }
+        .tag-agent { background: var(--glow-agent); color: var(--accent-agent); }
+        .tag-multimodal { background: var(--glow-multimodal); color: var(--accent-multimodal); }
+        .tag-llm { background: var(--glow-llm); color: var(--accent-llm); }
+        .tag-other { background: var(--glow-other); color: var(--accent-other); }
+        .paper-summary {
+            font-size: 0.92rem; color: var(--text-secondary); line-height: 1.7;
+        }
+        .paper-links {
+            margin-top: 10px; display: flex; gap: 8px; flex-wrap: wrap;
+        }
+        .paper-links a {
+            font-size: 0.78rem; padding: 3px 12px; border-radius: 6px;
+            text-decoration: none; border: 1px solid var(--border-color);
+            color: var(--text-secondary); transition: all 0.2s;
+        }
+        .paper-links a:hover { border-color: var(--accent-vla); color: var(--accent-vla); }
+        .link-paper { color: var(--accent-vla) !important; }
+        .link-pdf { color: var(--accent-wam) !important; }
+        .link-code { color: var(--accent-robotics) !important; }
+        .link-project { color: var(--accent-embodied) !important; }
+        .link-link { color: var(--accent-info) !important; }
+        .new-badge { background: rgba(239,68,68,0.15); color: #ef4444; display: inline-block; padding: 1px 8px; border-radius: 6px; font-size: 0.72rem; font-weight: 600; margin-left: 6px; }
+        .info-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 16px 20px;
+            margin-bottom: 12px;
+            transition: all 0.3s;
+        }
+        .info-card:hover { background: var(--bg-card-hover); transform: translateX(4px); }
+        .footer {
+            text-align: center; padding: 40px 0 30px;
+            border-top: 1px solid var(--border-color);
+            margin-top: 50px;
+        }
+        .footer p { font-size: 0.82rem; color: var(--text-muted); }
+        .footer .sig {
+            font-size: 0.9rem; color: var(--text-secondary); margin-top: 8px;
+            font-style: italic;
+        }
+        @media (max-width: 640px) {
+            .hero h1 { font-size: 1.6rem; }
+            .stats-bar { gap: 20px; }
+            .container { padding: 0 14px 40px; }
+            .paper { padding: 16px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <div class="hero-content">
+        <h1>小小志科研日报</h1>
+        <div class="date">2026 年 4 月 1 日 · 星期三</div>
+        <div class="subtitle">Boss Team · 每日 AI / Robotics / Embodied Intelligence 研究速递</div>
+        <div class="notice">arXiv 3/31 提交 + HuggingFace 最新发布</div>
+        <div class="stats-bar">
+            <div class="stat-item">
+                <div class="stat-num">6</div>
+                <div class="stat-label">arXiv 论文</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-num">1</div>
+                <div class="stat-label">HuggingFace</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-num">5</div>
+                <div class="stat-label">研究领域</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+
+    <div class="toc">
+        <div class="toc-title">目录导航</div>
+        <ul class="toc-list">
+            <li><a href="#vla" class="toc-vla">🤖 VLA (2)</a></li>
+            <li><a href="#wam" class="toc-wam">🌍 World Model (1)</a></li>
+            <li><a href="#robotics" class="toc-robotics">🦾 Robotics (1)</a></li>
+            <li><a href="#agent" class="toc-agent">🧩 Agent (1)</a></li>
+            <li><a href="#multimodal" class="toc-multimodal">🎨 Multimodal (1)</a></li>
+        </ul>
+    </div>
+
+    <!-- ==================== VLA ==================== -->
+    <div class="section" id="vla">
+        <div class="section-header">
+            <div class="section-icon" style="background:var(--glow-vla);">🤖</div>
+            <div class="section-title" style="color:var(--accent-vla);">VLA · Vision-Language-Action</div>
+            <span class="section-count">2 篇</span>
+        </div>
+
+        <div class="paper">
+            <div class="paper-title">DIAL: Decoupling Intent and Action via Latent World Modeling for End-to-End VLA <span class="new-badge">HOT</span></div>
+            <div class="paper-meta">
+                <span>arXiv 2603.29844 · 2026-03-31</span>
+                <span class="tag tag-vla">VLA</span>
+                <span class="tag tag-vla">意图-动作解耦</span>
+            </div>
+            <div class="paper-summary">引入 DIAL 框架，通过<b>可微分潜在意图瓶颈</b>连接高层决策和底层动作执行。系统 2（基于 VLM）在原始特征空间内合成潜在视觉预测作为意图编码；轻量级系统 1 策略通过潜在逆动力学将意图解码为精确动作。两阶段训练范式确保优化稳定性，保留预训练知识。在 RoboCasa GR1 基准确立新 SOTA，用 <b>10 倍更少的演示数据</b>即可实现优越性能，在人形机器人真实部署中展现强大零样本泛化。</div>
+            <div class="paper-links">
+                <a href="https://arxiv.org/abs/2603.29844" class="link-paper" target="_blank">📄 arXiv</a>
+                <a href="https://arxiv.org/pdf/2603.29844" class="link-pdf" target="_blank">📋 PDF</a>
+                <a href="https://xpeng-robotics.github.io/dial" class="link-project" target="_blank">🏠 Project</a>
+            </div>
+        </div>
+
+        <div class="paper">
+            <div class="paper-title">ProgressVLA: Progress-Guided Diffusion Policy for Vision-Language Robotic Manipulation</div>
+            <div class="paper-meta">
+                <span>arXiv 2603.27670 · 2026-03-29</span>
+                <span class="tag tag-vla">VLA</span>
+                <span class="tag tag-vla">进度引导扩散</span>
+            </div>
+            <div class="paper-summary">针对现有 VLA 模型缺乏进度感知的问题，提出<b>进度引导扩散策略</b>。关键创新：(1) 在大规模无监督视频-文本机器人数据上预训练的鲁棒进度估计器，预测残差仅 0.07；(2) 通过逆动力学世界模型建立可微分进度引导管道。在 CALVIN、LIBERO 基准和真实机器人部署上，相比强基线显著提升成功率和泛化能力。</div>
+            <div class="paper-links">
+                <a href="https://arxiv.org/abs/2603.27670" class="link-paper" target="_blank">📄 arXiv</a>
+                <a href="https://arxiv.org/pdf/2603.27670" class="link-pdf" target="_blank">📋 PDF</a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ==================== World Model ==================== -->
+    <div class="section" id="wam">
+        <div class="section-header">
+            <div class="section-icon" style="background:var(--glow-wam);">🌍</div>
+            <div class="section-title" style="color:var(--accent-wam);">World Model · 世界模型</div>
+            <span class="section-count">1 篇</span>
+        </div>
+
+        <div class="paper">
+            <div class="paper-title">Do World Action Models Generalize Better than VLAs? A Robustness Study <span class="new-badge">HOT</span></div>
+            <div class="paper-meta">
+                <span>arXiv 2603.22078 · 2026-03-23 (v2 4/1)</span>
+                <span class="tag tag-wam">World Model</span>
+                <span class="tag tag-wam">WAM vs VLA 鲁棒性</span>
+            </div>
+            <div class="paper-summary">对最先进 VLA 策略和世界动作模型（WAM）进行系统性<b>鲁棒性对比研究</b>。在 LIBERO-Plus 和 RoboTwin 2.0-Plus 基准上评估多种视觉和语言干扰下的性能。发现 WAM 实现了更强鲁棒性——<b>LingBot-VA 在 RoboTwin 2.0-Plus 上达 74.2% 成功率</b>，Cosmos-Policy 在 LIBERO-Plus 上达 82.2%。关键结论：明确的动态预测能力 + 网络规模视频预训练的时空先验使 WAM 泛化更好，但混合方法表现中等，整合方式很关键。</div>
+            <div class="paper-links">
+                <a href="https://arxiv.org/abs/2603.22078" class="link-paper" target="_blank">📄 arXiv</a>
+                <a href="https://arxiv.org/pdf/2603.22078" class="link-pdf" target="_blank">📋 PDF</a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ==================== Robotics ==================== -->
+    <div class="section" id="robotics">
+        <div class="section-header">
+            <div class="section-icon" style="background:var(--glow-robotics);">🦾</div>
+            <div class="section-title" style="color:var(--accent-robotics);">Robotics · 机器人学</div>
+            <span class="section-count">1 篇</span>
+        </div>
+
+        <div class="paper">
+            <div class="paper-title">Hybrid Framework for Robotic Manipulation: Integrating Reinforcement Learning and Large Language Models</div>
+            <div class="paper-meta">
+                <span>arXiv · 2026-04-01</span>
+                <span class="tag tag-robotics">Robotics</span>
+                <span class="tag tag-robotics">RL+LLM 混合框架</span>
+            </div>
+            <div class="paper-summary">提出一种结合<b>强化学习（RL）和大语言模型（LLM）</b>的混合框架用于机器人操作任务。利用 LLM 的语义理解和任务分解能力，结合 RL 的策略优化和精细控制，实现了比单一方法更强的任务完成能力和泛化性。框架支持自然语言指令驱动的机器人操作，在多类操作任务上验证了有效性。</div>
+            <div class="paper-links">
+                <a href="https://arxiv.org/list/cs.RO/recent" class="link-paper" target="_blank">📄 arXiv</a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ==================== Agent ==================== -->
+    <div class="section" id="agent">
+        <div class="section-header">
+            <div class="section-icon" style="background:var(--glow-agent);">🧩</div>
+            <div class="section-title" style="color:var(--accent-agent);">Agent · 智能体</div>
+            <span class="section-count">1 篇</span>
+        </div>
+
+        <div class="paper">
+            <div class="paper-title">SafeDMPs: Integrating Formal Safety with DMPs for Adaptive HRI</div>
+            <div class="paper-meta">
+                <span>arXiv · 2026-04-01</span>
+                <span class="tag tag-agent">Agent</span>
+                <span class="tag tag-agent">安全人机交互</span>
+            </div>
+            <div class="paper-summary">将<b>形式化安全保证</b>与动态运动基元（DMPs）结合，实现自适应人机交互的安全框架。通过融合控制理论中的安全约束和可变形运动规划，确保机器人在动态环境中与人交互时既保持运动适应性，又满足严格的安全要求。</div>
+            <div class="paper-links">
+                <a href="https://arxiv.org/list/cs.RO/recent" class="link-paper" target="_blank">📄 arXiv</a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ==================== Multimodal ==================== -->
+    <div class="section" id="multimodal">
+        <div class="section-header">
+            <div class="section-icon" style="background:var(--glow-multimodal);">🎨</div>
+            <div class="section-title" style="color:var(--accent-multimodal);">Multimodal · 多模态</div>
+            <span class="section-count">1 篇</span>
+        </div>
+
+        <div class="paper">
+            <div class="paper-title">nvidia/nemotron-ocr-v2 <span class="new-badge">NEW</span></div>
+            <div class="paper-meta">
+                <span>HuggingFace · NVIDIA · 2026-04-01</span>
+                <span class="tag tag-multimodal">Multimodal</span>
+                <span class="tag tag-multimodal">OCR 模型</span>
+            </div>
+            <div class="paper-summary">NVIDIA 发布 <b>Nemotron OCR V2</b> 模型，新一代多模态 OCR 大模型。支持图像和文档的高精度文字识别与理解，标签覆盖图像转文本、视觉问答等多个多模态任务，面向文档智能和企业应用场景。</div>
+            <div class="paper-links">
+                <a href="https://huggingface.co/nvidia/nemotron-ocr-v2" class="link-link" target="_blank">🤗 HuggingFace</a>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="footer">
+    <p>数据来源：arXiv (3/31 提交 + 4/1 上线) · HuggingFace</p>
+    <div class="sig">—— 小小志 · Boss Team 科研 Researcher ——</div>
+    <p style="margin-top: 8px; font-size: 0.75rem;">DIAL 意图-动作解耦 VLA (小鹏机器人) | WAM vs VLA 鲁棒性对比 | ProgressVLA 进度引导扩散策略</p>
+</div>
+
+</body>
+</html>

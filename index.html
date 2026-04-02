@@ -519,6 +519,191 @@
 <script>
 // ===== DATA =====
 const PAPERS_DB = [
+    // === 2026-04-02 ===
+    {
+        date: "2026-04-02",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "SoftAct: Functional Force-Aware Retargeting from Virtual Human Demos to Soft Robot Policies",
+        venue: "",
+        summary: "提出 SoftAct 框架，将人类虚拟演示中的功能性力信息迁移到软体机器人策略中。系统通过力感知重定向，让柔软的机器人手也能完成类似人手的操控任务。这是软体机器人从演示学习领域的重要进展，连接了虚拟人体仿真和真实软体执行器之间的 gap。",
+        tags: [["Robotics","green"],["软体操控","green"]],
+        links: [["📄 arXiv","http://arxiv.org/abs/2604.01224v1"],["📑 PDF","http://arxiv.org/pdf/2604.01224v1"],["🏠 Project","https://soft-act.github.io/"]]
+    },
+    {
+        date: "2026-04-02",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "Collaborative Task and Path Planning for Heterogeneous Robotic Teams using Multi-Agent PPO",
+        venue: "",
+        summary: "面向异构机器人团队的协同任务与路径规划问题，使用 Multi-Agent PPO（MAPPO）实现多机器人协同决策。针对外星探索场景，让具有不同能力的机器人高效协作完成复杂探索任务。在异构多机器人系统中联合解决任务分配和路径规划，方法优于传统分层规划器。",
+        tags: [["Robotics","green"],["多机器人协作","green"]],
+        links: [["📄 arXiv","http://arxiv.org/abs/2604.01213v1"],["📑 PDF","http://arxiv.org/pdf/2604.01213v1"],["💻 Code","https://github.com/leggedrobotics/multi_robot_global_planner"]]
+    },
+    {
+        date: "2026-04-02",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "SMASH: Sparse Mixture of Architecture and Skill Heads for Multi-Skill Humanoid Control",
+        venue: "",
+        summary: "提出 SMASH（稀疏混合架构与技能头）方法，用于人形机器人多技能控制。设计了稀疏混合专家架构实现技能间的高效切换与组合，实现了人形机器人在乒乓球等复杂运动任务中的灵活多技能表现。将 Mixture-of-Experts 理念引入机器人运动控制，显著提升多技能学习效率。",
+        tags: [["Robotics","green"],["人形机器人","green"]],
+        links: [["📄 arXiv","http://arxiv.org/abs/2604.01333v1"],["📑 PDF","http://arxiv.org/pdf/2604.01333v1"]]
+    },
+    {
+        date: "2026-04-02",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "HippoCamp: Benchmarking Contextual Agents on Personal Computers",
+        venue: "",
+        summary: "提出 HippoCamp 基准，专门评估 Agent 在个人电脑场景下的上下文理解和任务执行能力。与现有通用 benchmark 不同，HippoCamp 聚焦于 Agent 如何利用个人电脑上的上下文信息（如文件、历史记录等）来完成真实用户任务。为桌面智能体领域提供了关键评测工具。",
+        tags: [["Agent","green"],["桌面智能体","green"]],
+        links: [["📄 arXiv","http://arxiv.org/abs/2604.01221v1"],["📑 PDF","http://arxiv.org/pdf/2604.01221v1"],["🏠 Project","https://hippocamp-ai.github.io/"]]
+    },
+    {
+        date: "2026-04-02",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "YC-Bench: Benchmarking AI Agents for Long-Term Planning and Consistent Execution",
+        venue: "",
+        summary: "针对 LLM Agent 在长期规划和一致性执行方面的能力评测，提出 YC-Bench。当 Agent 面对越来越复杂的任务时，能否维持长期规划的一致性和执行的稳定性成为关键挑战。该 benchmark 系统性地评估了多种 Agent 在长周期任务中的表现差异。",
+        tags: [["Agent","green"],["规划评测","green"]],
+        links: [["📄 arXiv","http://arxiv.org/abs/2604.01212v1"],["📑 PDF","http://arxiv.org/pdf/2604.01212v1"]]
+    },
+    {
+        date: "2026-04-02",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "CliffSearch: Structured Agentic Co-Evolution over Theory and Code for Scientific Algorithm Discovery",
+        venue: "",
+        summary: "提出 CliffSearch，一种结构化的 Agent 协同进化框架，联合优化理论假设和代码实现来发现科学算法。科学算法发现本质上是迭代的——假设的提出、代码实现、实验验证不断循环。CliffSearch 让理论 Agent 和编码 Agent 协同进化，大幅提升算法发现效率。",
+        tags: [["Agent","green"],["科学发现","green"]],
+        links: [["📄 arXiv","http://arxiv.org/abs/2604.01210v1"],["📑 PDF","http://arxiv.org/pdf/2604.01210v1"],["🔗 Website","https://cliffsearch.ai"]]
+    },
+    {
+        date: "2026-04-02",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "ORBIT: Scalable and Verifiable Data Generation for Search Agents on a Tight Budget",
+        venue: "",
+        summary: "提出 ORBIT，用于在预算有限的条件下为搜索 Agent 生成可扩展、可验证的训练数据。搜索 Agent（结合 LM 与 Web 搜索的系统）正变得越来越重要，而高质量训练数据的生成成本是主要瓶颈。ORBIT 提供了一种高效的数据合成流水线，显著降低训练数据获取成本。",
+        tags: [["Agent","green"],["搜索智能体","green"]],
+        links: [["📄 arXiv","http://arxiv.org/abs/2604.01195v1"],["📑 PDF","http://arxiv.org/pdf/2604.01195v1"]]
+    },
+    {
+        date: "2026-04-02",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Universal YOCO for Efficient Depth Scaling",
+        venue: "",
+        summary: "提出 Universal YOCO（You Only Cache Once）架构的升级版本，实现更高效的深度扩展。随着 test-time scaling 的兴起，推理和 agentic 能力对模型深度提出了更高要求。该方法通过\"只缓存一次\"的思想优化 KV-Cache，使得大模型在推理时的内存开销显著降低，同时保持性能。对长上下文和复杂推理场景尤为重要。",
+        tags: [["LLM","green"],["高效架构","green"]],
+        links: [["📄 arXiv","http://arxiv.org/abs/2604.01220v1"],["📑 PDF","http://arxiv.org/pdf/2604.01220v1"]]
+    },
+    {
+        date: "2026-04-02",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "RELISH: LLM REgression with a Latent Iterative State Head",
+        venue: "",
+        summary: "提出 RELISH（REgression with a Latent Iterative State Head），一种新型的轻量级方法让大语言模型进行数值回归预测。传统 LLM 以文本 token 形式输出数字，精度和泛化性受限。RELISH 在模型头部引入迭代式隐状态机制，使 LLM 能以更自然的方式进行连续值预测，在多个回归任务上超越传统方法。",
+        tags: [["LLM","green"],["回归预测","green"]],
+        links: [["📄 arXiv","http://arxiv.org/abs/2604.01206v1"],["📑 PDF","http://arxiv.org/pdf/2604.01206v1"]]
+    },
+    {
+        date: "2026-04-02",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "DreamControl-v2: Multi-camera Consistent Video Generation for Autonomous Driving with Scalable Multi-view Scaling",
+        venue: "",
+        summary: "DreamControl-v2 解决自动驾驶中多摄像头一致性视频生成的难题。提出可扩展的多视角缩放方法，确保不同摄像头视角之间的时空一致性。作为 World Model 在自动驾驶场景下的重要应用，该方法可用于合成逼真的驾驶场景数据，为端到端自动驾驶系统提供高质量训练数据。",
+        tags: [["VLA","green"],["自动驾驶生成","green"]],
+        links: [["📄 arXiv","http://arxiv.org/abs/2604.01509v1"],["📑 PDF","http://arxiv.org/pdf/2604.01509v1"]]
+    },
+    {
+        date: "2026-04-02",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "NVIDIA Nemotron-OCR-v2",
+        venue: "",
+        summary: "NVIDIA 发布 Nemotron-OCR 第二代模型，大幅提升多模态文字识别能力。作为 NVIDIA NeMo 生态的一部分，该模型在复杂文档、多语言场景和结构化信息提取等方面表现优异。相比 v1 在准确率和推理速度上均有显著改进，支持更多文档格式和语种。",
+        tags: [["Multimodal","green"],["OCR 模型","green"]],
+        links: [["🤗 HuggingFace","https://huggingface.co/nvidia/nemotron-ocr-v2"]]
+    },
+    {
+        date: "2026-04-02",
+        category: "Other",
+        categoryIcon: "📄",
+        title: "Learning Humanoid Navigation Over Challenging Terrain",
+        venue: "",
+        summary: "研究人形机器人在复杂地形上的导航学习，包括崎岖路面、台阶和障碍物等挑战性环境。通过端到端学习方法让人形机器人自主掌握在各种困难地形上行走和导航的策略，为人形机器人走出实验室、进入真实世界环境提供关键能力支撑。",
+        tags: [["Other","green"],["人形导航","green"]],
+        links: [["📄 arXiv","http://arxiv.org/abs/2604.01473v1"],["📑 PDF","http://arxiv.org/pdf/2604.01473v1"]]
+    },
+    // === 2026-04-01 ===
+    {
+        date: "2026-04-01",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "DIAL: Decoupling Intent and Action via Latent World Modeling for End-to-End VLA",
+        venue: "",
+        summary: "引入 DIAL 框架，通过<b>可微分潜在意图瓶颈</b>连接高层决策和底层动作执行。系统 2（基于 VLM）在原始特征空间内合成潜在视觉预测作为意图编码；轻量级系统 1 策略通过潜在逆动力学将意图解码为精确动作。两阶段训练范式确保优化稳定性，保留预训练知识。在 RoboCasa GR1 基准确立新 SOTA，用 <b>10 倍更少的演示数据</b>即可实现优越性能，在人形机器人真实部署中展现强大零样本泛化。",
+        tags: [["VLA","green"],["意图-动作解耦","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2603.29844"],["📋 PDF","https://arxiv.org/pdf/2603.29844"],["🏠 Project","https://xpeng-robotics.github.io/dial"]],
+        highlight: true
+    },
+    {
+        date: "2026-04-01",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "ProgressVLA: Progress-Guided Diffusion Policy for Vision-Language Robotic Manipulation",
+        venue: "",
+        summary: "针对现有 VLA 模型缺乏进度感知的问题，提出<b>进度引导扩散策略</b>。关键创新：(1) 在大规模无监督视频-文本机器人数据上预训练的鲁棒进度估计器，预测残差仅 0.07；(2) 通过逆动力学世界模型建立可微分进度引导管道。在 CALVIN、LIBERO 基准和真实机器人部署上，相比强基线显著提升成功率和泛化能力。",
+        tags: [["VLA","green"],["进度引导扩散","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2603.27670"],["📋 PDF","https://arxiv.org/pdf/2603.27670"]]
+    },
+    {
+        date: "2026-04-01",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "Do World Action Models Generalize Better than VLAs? A Robustness Study",
+        venue: "",
+        summary: "对最先进 VLA 策略和世界动作模型（WAM）进行系统性<b>鲁棒性对比研究</b>。在 LIBERO-Plus 和 RoboTwin 2.0-Plus 基准上评估多种视觉和语言干扰下的性能。发现 WAM 实现了更强鲁棒性——<b>LingBot-VA 在 RoboTwin 2.0-Plus 上达 74.2% 成功率</b>，Cosmos-Policy 在 LIBERO-Plus 上达 82.2%。关键结论：明确的动态预测能力 + 网络规模视频预训练的时空先验使 WAM 泛化更好，但混合方法表现中等，整合方式很关键。",
+        tags: [["World Model","green"],["WAM vs VLA 鲁棒性","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2603.22078"],["📋 PDF","https://arxiv.org/pdf/2603.22078"]],
+        highlight: true
+    },
+    {
+        date: "2026-04-01",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "Hybrid Framework for Robotic Manipulation: Integrating Reinforcement Learning and Large Language Models",
+        venue: "",
+        summary: "提出一种结合<b>强化学习（RL）和大语言模型（LLM）</b>的混合框架用于机器人操作任务。利用 LLM 的语义理解和任务分解能力，结合 RL 的策略优化和精细控制，实现了比单一方法更强的任务完成能力和泛化性。框架支持自然语言指令驱动的机器人操作，在多类操作任务上验证了有效性。",
+        tags: [["Robotics","green"],["RL+LLM 混合框架","green"]],
+        links: [["📄 arXiv","https://arxiv.org/list/cs.RO/recent"]]
+    },
+    {
+        date: "2026-04-01",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "SafeDMPs: Integrating Formal Safety with DMPs for Adaptive HRI",
+        venue: "",
+        summary: "将<b>形式化安全保证</b>与动态运动基元（DMPs）结合，实现自适应人机交互的安全框架。通过融合控制理论中的安全约束和可变形运动规划，确保机器人在动态环境中与人交互时既保持运动适应性，又满足严格的安全要求。",
+        tags: [["Agent","green"],["安全人机交互","green"]],
+        links: [["📄 arXiv","https://arxiv.org/list/cs.RO/recent"]]
+    },
+    {
+        date: "2026-04-01",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "nvidia/nemotron-ocr-v2",
+        venue: "",
+        summary: "NVIDIA 发布 <b>Nemotron OCR V2</b> 模型，新一代多模态 OCR 大模型。支持图像和文档的高精度文字识别与理解，标签覆盖图像转文本、视觉问答等多个多模态任务，面向文档智能和企业应用场景。",
+        tags: [["Multimodal","green"],["OCR 模型","green"]],
+        links: [["🤗 HuggingFace","https://huggingface.co/nvidia/nemotron-ocr-v2"]],
+        highlight: true
+    },
     // === 2026-03-31 ===
     {
         date: "2026-03-31",
