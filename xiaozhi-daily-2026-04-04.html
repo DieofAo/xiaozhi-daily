@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小小志科研日报 2026-04-04</title>
+    <style>
+        :root {
+            --bg-primary: #0a0e17;
+            --bg-secondary: #111827;
+            --bg-card: #1a2035;
+            --bg-card-hover: #1f2a45;
+            --text-primary: #e2e8f0;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            --accent-vla: #818cf8;
+            --accent-wam: #a78bfa;
+            --accent-robotics: #34d399;
+            --accent-embodied: #22d3ee;
+            --accent-rl: #f472b6;
+            --accent-llm: #fb923c;
+            --accent-vlm: #facc15;
+            --accent-multimodal: #facc15;
+            --accent-info: #38bdf8;
+            --accent-agent: #22d3ee;
+            --accent-other: #94a3b8;
+            --border-color: #1e293b;
+            --glow-vla: rgba(129,140,248,0.15);
+            --glow-wam: rgba(167,139,250,0.15);
+            --glow-robotics: rgba(52,211,153,0.15);
+            --glow-embodied: rgba(34,211,238,0.15);
+            --glow-rl: rgba(244,114,182,0.15);
+            --glow-llm: rgba(251,146,60,0.15);
+            --glow-vlm: rgba(250,204,21,0.15);
+            --glow-multimodal: rgba(250,204,21,0.15);
+            --glow-info: rgba(56,189,248,0.15);
+            --glow-agent: rgba(34,211,238,0.15);
+            --glow-other: rgba(148,163,184,0.15);
+        }
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body {
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans SC', sans-serif;
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+        .hero { position: relative; padding: 60px 0 40px; text-align: center; background: linear-gradient(180deg, rgba(99,102,241,0.08) 0%, transparent 100%); }
+        .hero h1 { font-size: 2.2rem; font-weight: 700; background: linear-gradient(135deg, #818cf8 0%, #a78bfa 50%, #c084fc 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 8px; }
+        .hero .subtitle { color: var(--text-secondary); font-size: 1.05rem; }
+        .hero .date { color: var(--text-muted); font-size: 0.9rem; margin-top: 4px; }
+        .stats-bar { display: flex; justify-content: center; gap: 32px; margin: 24px auto 0; flex-wrap: wrap; }
+        .stat-item { text-align: center; }
+        .stat-number { font-size: 1.8rem; font-weight: 700; color: #818cf8; }
+        .stat-label { font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; }
+        .container { max-width: 900px; margin: 0 auto; padding: 0 20px 60px; }
+        .toc { background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 12px; padding: 20px 28px; margin-bottom: 36px; }
+        .toc h2 { font-size: 1rem; color: var(--text-muted); margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.05em; }
+        .toc-list { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; }
+        .toc-list a { display: inline-block; padding: 6px 16px; border-radius: 20px; font-size: 0.88rem; text-decoration: none; transition: all 0.2s; }
+        .toc-list a:hover { filter: brightness(1.2); transform: translateY(-1px); }
+        .section { margin-bottom: 40px; }
+        .section-header { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; padding-bottom: 12px; border-bottom: 1px solid var(--border-color); }
+        .section-icon { width: 36px; height: 36px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; }
+        .section-title { font-size: 1.3rem; font-weight: 600; }
+        .section-count { margin-left: auto; font-size: 0.8rem; color: var(--text-muted); background: var(--bg-secondary); padding: 4px 12px; border-radius: 12px; }
+        .paper { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; padding: 24px; margin-bottom: 16px; transition: all 0.3s ease; }
+        .paper:hover { background: var(--bg-card-hover); transform: translateY(-2px); }
+        .paper-title { font-size: 1.05rem; font-weight: 600; color: var(--text-primary); margin-bottom: 8px; line-height: 1.5; }
+        .paper-meta { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; }
+        .tag { display: inline-block; padding: 2px 10px; border-radius: 12px; font-size: 0.75rem; font-weight: 500; }
+        .tag-vla { background: var(--glow-vla); color: var(--accent-vla); }
+        .tag-wam { background: var(--glow-wam); color: var(--accent-wam); }
+        .tag-robotics { background: var(--glow-robotics); color: var(--accent-robotics); }
+        .tag-embodied { background: var(--glow-embodied); color: var(--accent-embodied); }
+        .tag-rl { background: var(--glow-rl); color: var(--accent-rl); }
+        .tag-llm { background: var(--glow-llm); color: var(--accent-llm); }
+        .tag-vlm { background: var(--glow-vlm); color: var(--accent-vlm); }
+        .tag-multimodal { background: var(--glow-multimodal); color: var(--accent-multimodal); }
+        .tag-info { background: var(--glow-info); color: var(--accent-info); }
+        .tag-agent { background: var(--glow-agent); color: var(--accent-agent); }
+        .tag-other { background: var(--glow-other); color: var(--accent-other); }
+        .paper-summary { color: var(--text-secondary); font-size: 0.92rem; line-height: 1.7; margin-bottom: 14px; }
+        .paper-links { display: flex; gap: 8px; flex-wrap: wrap; }
+        .paper-links a { display: inline-flex; align-items: center; gap: 4px; padding: 4px 12px; border-radius: 8px; font-size: 0.8rem; text-decoration: none; background: var(--bg-secondary); color: var(--text-secondary); border: 1px solid var(--border-color); transition: all 0.2s; }
+        .paper-links a:hover { color: var(--text-primary); border-color: var(--text-muted); }
+        .link-paper { color: #818cf8 !important; }
+        .link-pdf { color: #f472b6 !important; }
+        .link-project { color: #34d399 !important; }
+        .link-code { color: #fb923c !important; }
+        .link-hf { color: #facc15 !important; }
+        .info-card { background: linear-gradient(135deg, var(--bg-card), rgba(56,189,248,0.05)); border: 1px solid rgba(56,189,248,0.2); border-radius: 12px; padding: 24px; margin-bottom: 16px; transition: all 0.3s ease; }
+        .info-card:hover { transform: translateY(-2px); border-color: rgba(56,189,248,0.4); }
+        .info-title { font-size: 1.05rem; font-weight: 600; color: var(--accent-info); margin-bottom: 8px; line-height: 1.5; }
+        .info-summary { color: var(--text-secondary); font-size: 0.92rem; line-height: 1.7; margin-bottom: 14px; }
+        .info-links { display: flex; gap: 8px; flex-wrap: wrap; }
+        .info-links a { display: inline-flex; align-items: center; gap: 4px; padding: 4px 12px; border-radius: 8px; font-size: 0.8rem; text-decoration: none; background: var(--bg-secondary); color: var(--accent-info); border: 1px solid rgba(56,189,248,0.2); transition: all 0.2s; }
+        .info-links a:hover { border-color: var(--accent-info); }
+        .new-badge { display: inline-block; background: linear-gradient(135deg, #818cf8, #a78bfa); color: white; font-size: 0.65rem; padding: 1px 6px; border-radius: 4px; margin-right: 6px; vertical-align: middle; font-weight: 600; }
+        .footer { text-align: center; padding: 40px 20px; color: var(--text-muted); font-size: 0.85rem; border-top: 1px solid var(--border-color); }
+        .footer a { color: #818cf8; text-decoration: none; }
+        @media (max-width: 640px) { .hero h1 { font-size: 1.6rem; } .stats-bar { gap: 20px; } .stat-number { font-size: 1.4rem; } .paper { padding: 16px; } .container { padding: 0 12px 40px; } }
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <h1>小小志科研日报</h1>
+    <div class="subtitle">AI / Robotics / Embodied Intelligence</div>
+    <div class="date">2026 年 4 月 4 日 · 星期六</div>
+    <div class="stats-bar">
+        <div class="stat-item">
+            <div class="stat-number">4</div>
+            <div class="stat-label">Items</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">2</div>
+            <div class="stat-label">Categories</div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+
+    <div class="toc">
+        <h2>Categories</h2>
+        <ul class="toc-list">
+            <li><a href="#embodied" style="background:var(--glow-embodied);color:var(--accent-embodied);">Embodied AI (1)</a></li>
+            <li><a href="#info" style="background:var(--glow-info);color:var(--accent-info);">Informations (3)</a></li>
+        </ul>
+    </div>
+
+    <!-- ====== Embodied AI ====== -->
+    <div class="section" id="embodied">
+        <div class="section-header">
+            <div class="section-icon" style="background:var(--glow-embodied);">🧩</div>
+            <div class="section-title" style="color:var(--accent-embodied);">Embodied AI</div>
+            <div class="section-count">1 item</div>
+        </div>
+
+        <div class="paper" style="border-left:3px solid var(--accent-embodied);box-shadow:inset 4px 0 12px var(--glow-embodied);">
+            <div class="paper-title"><span class="new-badge">NEW</span> Agibot 宣布 4 月 7-14 日 AI 发布周，第 10,000 台人形机器人下线</div>
+            <div class="paper-meta">
+                <span class="tag tag-embodied">Embodied AI</span>
+                <span class="tag tag-robotics">人形机器人</span>
+            </div>
+            <div class="paper-summary">
+                智元机器人（Agibot）宣布将于 4 月 7-14 日举行"AI 发布周"，每天公布一项物理 AI 技术突破。就在数天前（3月30日），其第 10,000 台人形机器人正式下线，超越特斯拉量产速度。CTO 彭志辉指出，规模的衡量标准在于机器人能否在工厂中连续工作 24 小时。公司认为具身智能的未来依赖于"共同进化"系统。
+            </div>
+            <div class="paper-links">
+                <a href="https://cntechpost.com/2026/04/03/agibot-plans-daily-physical-ai-breakthroughs-april-7-release-week/" class="link-project">📰 News</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ====== Informations ====== -->
+    <div class="section" id="info">
+        <div class="section-header">
+            <div class="section-icon" style="background:var(--glow-info);">📡</div>
+            <div class="section-title" style="color:var(--accent-info);">Informations</div>
+            <div class="section-count">3 items</div>
+        </div>
+
+        <div class="info-card">
+            <div class="info-title">OpenAI 完成 1220 亿美元融资，估值 8520 亿，多名高管 IPO 前离职</div>
+            <div class="paper-meta">
+                <span class="tag tag-info">Industry</span>
+                <span class="tag tag-llm">OpenAI</span>
+            </div>
+            <div class="info-summary">
+                OpenAI 完成史上最大规模私募融资（1220 亿美元），估值达 8520 亿美元。与此同时，COO 和 AGI 部门 CEO 在公司可能于 2026 Q4 IPO 之前相继离职。Codex 应用已成为 OpenAI 使用量最大的界面，超越 VS Code 扩展。公司推出 ChatGPT Business，包含基于使用量的 Codex 席位。
+            </div>
+            <div class="info-links">
+                <a href="https://www.theneuron.ai/explainer-articles/-around-the-horn-digest-everything-that-happened-in-ai-this-weekend-saturday-sunday-april-4-5-2026/" class="link-project">📰 Source</a>
+            </div>
+        </div>
+
+        <div class="info-card">
+            <div class="info-title">Google 开源 Gemma 4 模型系列，首次采用 Apache 2.0 许可证</div>
+            <div class="paper-meta">
+                <span class="tag tag-info">Open Source</span>
+                <span class="tag tag-llm">Google</span>
+            </div>
+            <div class="info-summary">
+                Google 正式开源 Gemma 4 系列模型，首次采用 Apache 2.0 许可证。该系列覆盖从树莓派到数据中心的多种规格，支持长上下文和视觉功能。此举标志着 Google 在开源 AI 领域的重大战略转向，与 Meta Llama 系列展开正面竞争。
+            </div>
+            <div class="info-links">
+                <a href="https://www.theneuron.ai/explainer-articles/-around-the-horn-digest-everything-that-happened-in-ai-this-weekend-saturday-sunday-april-4-5-2026/" class="link-project">📰 Source</a>
+            </div>
+        </div>
+
+        <div class="info-card">
+            <div class="info-title">Anthropic 以 4 亿美元收购 Coefficient Bio，进军生物科技</div>
+            <div class="paper-meta">
+                <span class="tag tag-info">M&A</span>
+                <span class="tag tag-llm">Anthropic</span>
+            </div>
+            <div class="info-summary">
+                Anthropic 以约 4 亿美元收购生物科技初创公司 Coefficient Bio，这是其迄今最大的收购。此举旨在将 Claude 的应用从软件扩展到物理科学领域（药物发现和生物技术），标志着 AI 公司从纯软件向交叉科学领域扩张的新趋势。
+            </div>
+            <div class="info-links">
+                <a href="https://www.theneuron.ai/explainer-articles/-around-the-horn-digest-everything-that-happened-in-ai-this-weekend-saturday-sunday-april-4-5-2026/" class="link-project">📰 Source</a>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="footer">
+    <p>小小志科研日报 · 自动生成于 2026-04-04</p>
+    <p style="margin-top:8px;">
+        <a href="https://dieofao.github.io/xiaozhi-daily/">返回首页</a>
+        &nbsp;·&nbsp;
+        数据来源：arXiv · HuggingFace · X/Twitter · Web
+    </p>
+    <p style="margin-top:8px;color:var(--text-muted);font-size:0.78rem;">
+        Powered by 小小志 AI Research Assistant
+    </p>
+</div>
+
+</body>
+</html>

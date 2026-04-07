@@ -519,6 +519,293 @@
 <script>
 // ===== DATA =====
 const PAPERS_DB = [
+    // === 2026-04-07 ===
+    {
+        date: "2026-04-07",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "ARM: Advantage Reward Modeling for Long-Horizon Manipulation",
+        venue: "",
+        summary: "长视距机器人操作任务中稀疏奖励让 RL 难以分配信用。ARM 提出了一种新思路：不建模绝对进度，而是估计<strong>相对优势</strong>。核心创新是\"三态标注\"策略——将动作标为\"渐进/回退/停滞\"三类，极大降低人类标注负担并保持高一致性。在离线 RL 管线中实现自适应动作-奖励重加权，过滤次优样本。在高难度长视距毛巾折叠任务上达到 <strong>99.4% 成功率</strong>，显著超越当前 VLA 基线，且几乎无需人工干预。对 VLA 后训练范式有重要参考价值。",
+        tags: [["Robotics","green"],["奖励建模","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.03037"],["PDF","https://arxiv.org/pdf/2604.03037"]],
+        highlight: true
+    },
+    {
+        date: "2026-04-07",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "EUPE: Efficient Universal Perception Encoder",
+        venue: "",
+        summary: "Meta FAIR 提出的 EUPE 系列是面向边缘设备的紧凑型通用视觉编码器，参数量 <strong>低于 100M</strong>，却在图像理解、密集预测和 VLM 任务上媲美甚至超过同等大小的领域专家模型。核心方法是<strong>\"先扩后缩\"知识蒸馏</strong>：先从多个专家教师蒸馏到一个大型代理教师，再从该单一教师缩放为高效编码器。已开源代码和模型（GitHub + HuggingFace）。对端侧 VLA 部署有重要参考意义——为机器人系统提供了一个体积小、能力强的统一视觉前端选项。",
+        tags: [["Multimodal","green"],["视觉编码器","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2603.22387"],["PDF","https://arxiv.org/pdf/2603.22387"],["Code","https://github.com/facebookresearch/EUPE"],["HuggingFace","https://huggingface.co/collections/facebook/eupe"]]
+    },
+    {
+        date: "2026-04-07",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "HOLOS: LLM-Based Multi-Agent System for Building Agent Networks",
+        venue: "",
+        summary: "HOLOS 提出了一种基于 LLM 的多智能体系统架构，核心目标是构建可组合的\"智能体网络\"（Agent Networks）。不同于传统的单体 Agent 或简单的链式调用，HOLOS 将多个异构 Agent 组织为动态协作网络，支持灵活的任务分配和信息共享。该框架有望推动多 Agent 在复杂机器人系统（如多机协同操作、仓储调度等）中的应用。",
+        tags: [["Agent","green"],["多智能体协作","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.04932"],["PDF","https://arxiv.org/pdf/2604.04932"]]
+    },
+    {
+        date: "2026-04-07",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "智元 AI 发布周 Day 1：开源 AGIBOT WORLD 2026 全域具身智能数据集",
+        venue: "",
+        summary: "智元机器人 AGIBOT AI Week（4/7-14）正式启幕，首日重磅发布全球首个覆盖<strong>具身智能全域研究</strong>的开源数据集 AGIBOT WORLD 2026。该数据集基于海量真实场景，围绕<strong>五大具身领域研究主题</strong>构建，配备专属采集方案与精细化标注体系。将分五个阶段持续开源，覆盖更多主题与场景。这是继上月智元万台人形机器人下线后的又一里程碑——从硬件量产转向生态开放。对具身智能研究者而言，这可能是 2026 年最重要的开源数据集之一。",
+        tags: [],
+        links: [],
+        highlight: true
+    },
+    {
+        date: "2026-04-07",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "OpenAI 发布 Safety Fellowship 计划：首个面向外部研究者的 AI 安全研究奖学金",
+        venue: "",
+        summary: "OpenAI 于 4 月 6 日宣布 Safety Fellowship 计划，面向全球外部研究人员、工程师和从业者开放申请。项目周期为 2026 年 9 月 14 日至 2027 年 2 月 5 日，入选者将获得资金资助、导师指导和高级计算资源，在 AI 安全与对齐领域开展严谨的高影响力研究。这是 OpenAI 首次以结构化方式系统性资助外部安全研究，信号意义明确：安全不再只是内部事务。",
+        tags: [],
+        links: []
+    },
+    {
+        date: "2026-04-07",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "SpaceX 秘密递交 IPO 申请，目标估值超万亿美元；上市实体含 xAI 与 X",
+        venue: "",
+        summary: "SpaceX 已秘密递交 IPO 文件，目标估值超过 <strong>1 万亿美元</strong>，募资规模或达 400-800 亿美元。值得关注的是，此次上市实体整合了 Musk 旗下的 xAI（Grok 系列大模型）和 X（原 Twitter）。部分融资将用于资助 xAI 运营及偿还 Twitter 债务。这标志着 2026 年 AI/科技超级 IPO 周期的开端，或将改变 AI 行业资本格局和竞争态势。",
+        tags: [],
+        links: []
+    },
+    // === 2026-04-06 ===
+    {
+        date: "2026-04-06",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Vero: An Open RL Recipe for General Visual Reasoning",
+        venue: "",
+        summary: "完全开源的视觉推理 VLM 系列，在 30 个基准测试上匹配或超越闭源模型。核心创新：从 59 个数据集构建 Vero-600K（60 万样本），设计任务路由奖励处理异构答案格式。从 Qwen3-VL-8B-Instruct 训练，在 30 个基准中的 23 个上超越 Qwen3-VL-8B-Thinking，且无需专有思维数据。消融实验揭示不同任务类别引发定性不同的推理模式，广泛数据覆盖是 RL 扩展的主要驱动力。",
+        tags: [["LLM","green"],["视觉推理","green"]],
+        links: [["📄 arXiv","http://arxiv.org/abs/2604.04917v1"],["📑 PDF","http://arxiv.org/pdf/2604.04917v1"],["🏠 Project","https://vero-reasoning.github.io/"]],
+        highlight: true
+    },
+    {
+        date: "2026-04-06",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "TriAttention: Efficient Long Reasoning with Trigonometric KV Compression",
+        venue: "",
+        summary: "解决长推理场景下的 KV 缓存内存瓶颈。发现 RoPE 前空间中 Q/K 向量高度集中于固定中心（Q/K 集中性），利用三角级数估计键的重要性。在 AIME25 上 32K token 生成时，匹配全注意力准确率同时实现 2.5x 吞吐量提升或 10.7x KV 内存减少。使 OpenClaw 能在单个消费级 GPU 上部署，避免全注意力下的 OOM。",
+        tags: [["LLM","green"],["高效推理","green"]],
+        links: [["📄 arXiv","http://arxiv.org/abs/2604.04921v1"],["📑 PDF","http://arxiv.org/pdf/2604.04921v1"],["💻 Code","https://github.com/WeianMao/triattention"]],
+        highlight: true
+    },
+    {
+        date: "2026-04-06",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Beyond the Final Actor: Modeling the Dual Roles of Creator and Editor for Fine-Grained LLM-Generated Text Detection",
+        venue: "",
+        summary: "针对 LLM 生成文本的精细检测问题，建模\"创作者\"和\"编辑者\"的双重角色。大语言模型滥用需要精确检测合成文本中机器生成与人类编辑的边界，该方法实现句子级别的细粒度检测，为 AI 生成内容的治理提供新工具。",
+        tags: [["LLM","green"],["AI 检测","green"]],
+        links: [["📄 arXiv","http://arxiv.org/abs/2604.04932v1"],["📑 PDF","http://arxiv.org/pdf/2604.04932v1"]]
+    },
+    {
+        date: "2026-04-06",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "How AI Aggregation Affects Knowledge",
+        venue: "",
+        summary: "研究当 AI 聚合输出成为社会学习的主要信息来源时，知识传播和演化的模式将如何改变。分析 AI 系统在信息聚合中的角色对社会认知的影响，为理解 AI 在知识生态系统中的角色提供理论框架。",
+        tags: [["LLM","green"],["社会影响","green"]],
+        links: [["📄 arXiv","http://arxiv.org/abs/2604.04906v1"],["📑 PDF","http://arxiv.org/pdf/2604.04906v1"]]
+    },
+    {
+        date: "2026-04-06",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Rethinking Model Efficiency: Multi-Agent Inference with Large Models",
+        venue: "",
+        summary: "重新思考 VLM 效率：大模型用更少输出 token 可能比小模型长输出更高效。提出多智能体推理框架，保留大模型的短响应优势，必要时从小模型传输关键推理 token。颠覆\"小模型更快\"的直觉——输出 token 数量而非模型大小才是端到端延迟的真正瓶颈。",
+        tags: [["Agent","green"],["多智能体推理","green"]],
+        links: [["📄 arXiv","http://arxiv.org/abs/2604.04929v1"],["📑 PDF","http://arxiv.org/pdf/2604.04929v1"]]
+    },
+    {
+        date: "2026-04-06",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Analyzing Symbolic Properties for DRL Agents in Systems and Networking",
+        venue: "",
+        summary: "分析深度强化学习（DRL）智能体在系统与网络场景下的符号属性。DRL 在复杂控制任务中表现优异，但其决策过程缺乏可解释性。该工作通过符号分析方法为 DRL Agent 的行为提供形式化验证和理解框架。",
+        tags: [["Agent","green"],["DRL 分析","green"]],
+        links: [["📄 arXiv","http://arxiv.org/abs/2604.04914v1"],["📑 PDF","http://arxiv.org/pdf/2604.04914v1"]]
+    },
+    {
+        date: "2026-04-06",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "SpatialEdit: Benchmarking Fine-Grained Image Spatial Editing",
+        venue: "",
+        summary: "面向细粒度图像空间编辑的完整评测体系。贡献三项：(1) SpatialEdit-Bench 基准，联合评估感知合理性和几何保真度；(2) SpatialEdit-500K 合成数据集，使用 Blender 管线生成精确地面真值变换；(3) SpatialEdit-16B 基线模型。方法在通用编辑和空间操作任务上均大幅超越先前方法。",
+        tags: [["Multimodal","green"],["空间编辑","green"]],
+        links: [["📄 arXiv","http://arxiv.org/abs/2604.04911v1"],["📑 PDF","http://arxiv.org/pdf/2604.04911v1"],["💻 Code","https://github.com/EasonXiao-888/SpatialEdit"]],
+        highlight: true
+    },
+    {
+        date: "2026-04-06",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "ClickAIXR: On-Device Multimodal Vision-Language Interaction with Real-World Objects in Extended Reality",
+        venue: "",
+        summary: "提出 ClickAIXR，一个端上多模态视觉语言交互框架，在扩展现实（XR）场景中实现与真实世界物体的智能交互。将视觉语言模型部署在边缘设备上，让用户在 AR/VR 环境中通过自然语言与周围物体进行智能对话和操作，推动 XR 场景下 AI 交互的实用化。",
+        tags: [["Multimodal","green"],["XR 交互","green"]],
+        links: [["📄 arXiv","http://arxiv.org/abs/2604.04905v1"],["📑 PDF","http://arxiv.org/pdf/2604.04905v1"]]
+    },
+    {
+        date: "2026-04-06",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "NVIDIA 国家机器人周：Physical AI 加速进入农业与太阳能领域",
+        venue: "",
+        summary: "NVIDIA 在 2026 国家机器人周重点展示 Physical AI 进展：Maximo 使用 NVIDIA Isaac Sim 完成 100MW 太阳能自主安装，Aigen 将 Cosmos 基础模型部署在 Jetson Orin 上实现精准除草。关键技术栈：Isaac Sim（仿真）+ Omniverse（数字孪生）+ Jetson Orin（边缘推理）+ Cosmos（开放世界基础模型）+ 合成数据。",
+        tags: [["Industry","green"],["NVIDIA","green"]],
+        links: [["📰 NVIDIA Blog","https://blogs.nvidia.com/blog/national-robotics-week-2026/"]]
+    },
+    // === 2026-04-05 ===
+    {
+        date: "2026-04-05",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "VLA-Forget: Vision-Language-Action Unlearning for Embodied Foundation Models",
+        venue: "",
+        summary: "首次系统性地研究 VLA 模型的\"遗忘\"问题——在不降低感知、语言定位和动作控制的前提下，移除不安全、虚假或隐私敏感的行为。提出 VLA-Forget 混合遗忘框架，结合比率感知选择性编辑和层选择性推理遗忘。相比基线，遗忘效率提升 10%、感知保持提升 22%、推理保留提升 9%、量化恢复减少 55%。为 VLA 模型安全部署提供关键技术支撑。",
+        tags: [["VLA","green"],["模型遗忘","green"]],
+        links: [["📄 arXiv","http://arxiv.org/abs/2604.03956v1"],["📑 PDF","http://arxiv.org/pdf/2604.03956v1"]],
+        highlight: true
+    },
+    {
+        date: "2026-04-05",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "DriveVA: Video Action Models are Zero-Shot Drivers",
+        venue: "",
+        summary: "提出 DriveVA，一种在共享潜在生成过程中联合解码未来视觉预测和动作序列的自动驾驶世界模型。基于 DiT 架构联合预测轨迹和视频，从预训练视频生成模型继承物理先验。在 NAVSIM 上达到 90.9 PDM 分数，展现强大零样本能力——与 SOTA 相比，在 nuScenes 和 Bench2drive 上分别将 L2 误差和碰撞率降低 78.9%/83.3% 和 52.5%/52.4%。",
+        tags: [["World Model","green"],["自动驾驶","green"]],
+        links: [["📄 arXiv","http://arxiv.org/abs/2604.04198v1"],["📑 PDF","http://arxiv.org/pdf/2604.04198v1"]],
+        highlight: true
+    },
+    {
+        date: "2026-04-05",
+        category: "Embodied AI",
+        categoryIcon: "🧩",
+        title: "Generalist AI 发布 GEN-1：首个达到\"掌控力\"的通用物理 AI 基础模型",
+        venue: "",
+        summary: "Generalist AI 发布 GEN-1，基于 50 万小时人类穿戴设备数据预训练，仅需约 1 小时特定任务机器人数据即可高性能执行。平均成功率 99%（GEN-0 仅 64%），任务速度达 SOTA 的 3 倍。关键突破在于\"即兴发挥\"能力——面对未预见场景可利用物理常识创造性恢复。折叠 T 恤连续 86 次、装箱积木连续 1800 次无干预。证实机器人领域存在类似 LLM 的扩展定律。",
+        tags: [["Embodied AI","green"],["基础模型","green"]],
+        links: [["🏠 Blog","https://generalistai.com/blog/apr-02-2026-GEN-1"],["📰 News","https://siliconangle.com/2026/04/06/generalist-releases-gen-1-highly-capable-robotic-intelligence-ai-foundation-model/"]],
+        highlight: true
+    },
+    // === 2026-04-04 ===
+    {
+        date: "2026-04-04",
+        category: "Embodied AI",
+        categoryIcon: "🧩",
+        title: "Agibot 宣布 4 月 7-14 日 AI 发布周，第 10,000 台人形机器人下线",
+        venue: "",
+        summary: "智元机器人（Agibot）宣布将于 4 月 7-14 日举行\"AI 发布周\"，每天公布一项物理 AI 技术突破。就在数天前（3月30日），其第 10,000 台人形机器人正式下线，超越特斯拉量产速度。CTO 彭志辉指出，规模的衡量标准在于机器人能否在工厂中连续工作 24 小时。公司认为具身智能的未来依赖于\"共同进化\"系统。",
+        tags: [["Embodied AI","green"],["人形机器人","green"]],
+        links: [["📰 News","https://cntechpost.com/2026/04/03/agibot-plans-daily-physical-ai-breakthroughs-april-7-release-week/"]],
+        highlight: true
+    },
+    {
+        date: "2026-04-04",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "OpenAI 完成 1220 亿美元融资，估值 8520 亿，多名高管 IPO 前离职",
+        venue: "",
+        summary: "OpenAI 完成史上最大规模私募融资（1220 亿美元），估值达 8520 亿美元。与此同时，COO 和 AGI 部门 CEO 在公司可能于 2026 Q4 IPO 之前相继离职。Codex 应用已成为 OpenAI 使用量最大的界面，超越 VS Code 扩展。公司推出 ChatGPT Business，包含基于使用量的 Codex 席位。",
+        tags: [["Industry","green"],["OpenAI","green"]],
+        links: [["📰 Source","https://www.theneuron.ai/explainer-articles/-around-the-horn-digest-everything-that-happened-in-ai-this-weekend-saturday-sunday-april-4-5-2026/"]]
+    },
+    {
+        date: "2026-04-04",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "Google 开源 Gemma 4 模型系列，首次采用 Apache 2.0 许可证",
+        venue: "",
+        summary: "Google 正式开源 Gemma 4 系列模型，首次采用 Apache 2.0 许可证。该系列覆盖从树莓派到数据中心的多种规格，支持长上下文和视觉功能。此举标志着 Google 在开源 AI 领域的重大战略转向，与 Meta Llama 系列展开正面竞争。",
+        tags: [["Open Source","green"],["Google","green"]],
+        links: [["📰 Source","https://www.theneuron.ai/explainer-articles/-around-the-horn-digest-everything-that-happened-in-ai-this-weekend-saturday-sunday-april-4-5-2026/"]]
+    },
+    {
+        date: "2026-04-04",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "Anthropic 以 4 亿美元收购 Coefficient Bio，进军生物科技",
+        venue: "",
+        summary: "Anthropic 以约 4 亿美元收购生物科技初创公司 Coefficient Bio，这是其迄今最大的收购。此举旨在将 Claude 的应用从软件扩展到物理科学领域（药物发现和生物技术），标志着 AI 公司从纯软件向交叉科学领域扩张的新趋势。",
+        tags: [["M&A","green"],["Anthropic","green"]],
+        links: [["📰 Source","https://www.theneuron.ai/explainer-articles/-around-the-horn-digest-everything-that-happened-in-ai-this-weekend-saturday-sunday-april-4-5-2026/"]]
+    },
+    // === 2026-04-03 ===
+    {
+        date: "2026-04-03",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "The Compression Gap: Why Discrete Tokenization Limits Vision-Language-Action Model Scaling",
+        venue: "",
+        summary: "揭示了 VLA 模型中离散 tokenization 的根本性限制——\"压缩差距\"。当动作被离散化为固定容量码本时，视觉编码器的升级无法通过码本瓶颈传播到性能提升。在 LIBERO 基准上，连续动作表示（Diffusion Policy）升级编码器可提升 21+ 百分点，而离散化的 OAT 几乎无提升。研究表明物理 AI 的扩展需要识别信息瓶颈位置，而非盲目增大模型。",
+        tags: [["VLA","green"],["信息瓶颈","green"]],
+        links: [["📄 arXiv","http://arxiv.org/abs/2604.03191v1"],["📑 PDF","http://arxiv.org/pdf/2604.03191v1"]],
+        highlight: true
+    },
+    {
+        date: "2026-04-03",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "ExploreVLA: Dense World Modeling and Exploration for End-to-End Autonomous Driving",
+        venue: "",
+        summary: "提出统一的理解与生成框架 ExploreVLA，通过世界建模同时实现有意义的探索和密集监督。利用未来 RGB 和深度图像生成作为密集世界建模目标，世界模型的图像预测不确定性作为策略探索的内在奖励。结合安全门控奖励和 GRPO 优化，在 NAVSIM 上实现 SOTA 的 PDMS 93.7 分。",
+        tags: [["VLA","green"],["世界建模","green"]],
+        links: [["📄 arXiv","http://arxiv.org/abs/2604.02714v1"],["📑 PDF","http://arxiv.org/pdf/2604.02714v1"],["🏠 Project","https://zihaosheng.github.io/ExploreVLA/"]]
+    },
+    {
+        date: "2026-04-03",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "Hierarchical Planning with Latent World Models",
+        venue: "",
+        summary: "来自 LeCun 团队（Meta FAIR），提出在多个时间尺度上学习潜在世界模型并进行分层规划。通过多时间尺度建模，大幅降低推理时规划复杂度同时实现长时域推理。在抓取与放置任务中达到 70% 成功率（单层世界模型为 0%），规划计算时间减少高达 4 倍。模块化设计适用于各种潜在世界模型架构。",
+        tags: [["World Model","green"],["分层规划","green"]],
+        links: [["📄 arXiv","http://arxiv.org/abs/2604.03208v1"],["📑 PDF","http://arxiv.org/pdf/2604.03208v1"]],
+        highlight: true
+    },
+    {
+        date: "2026-04-03",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "Learning Task-Invariant Properties via Dreamer: Enabling Efficient Policy Transfer for Quadruped Robots",
+        venue: "",
+        summary: "提出 DreamTIP 框架，在 Dreamer 世界模型中结合任务不变属性学习（由 LLM 指导识别），增强 Sim-to-Real 迁移。ICRA 2026 收录。在八个模拟迁移任务中平均性能提升 28.1%，真实世界攀登任务成功率从基线 10% 提升至 100%。证明将任务不变属性纳入 Dreamer 是实现鲁棒机器人运动迁移的有效途径。",
+        tags: [["World Model","green"],["Sim-to-Real","green"]],
+        links: [["📄 arXiv","http://arxiv.org/abs/2604.02911v1"],["📑 PDF","http://arxiv.org/pdf/2604.02911v1"]]
+    },
+    {
+        date: "2026-04-03",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "Multi-View Video Diffusion Policy: A 3D Spatio-Temporal-Aware Video Action Model",
+        venue: "",
+        summary: "提出 MV-VDP（多视角视频扩散策略），联合建模环境的 3D 时空状态。核心思想是同时预测多视角热力图视频和 RGB 视频，不仅指定机器人应采取的动作，还预测环境对动作的响应。仅用 10 个演示轨迹即可执行复杂真实世界任务，在 Meta-World 和现实平台上一致优于 VLA 和 3D 基线模型。",
+        tags: [["Robotics","green"],["视频扩散策略","green"]],
+        links: [["📄 arXiv","http://arxiv.org/abs/2604.03181v1"],["📑 PDF","http://arxiv.org/pdf/2604.03181v1"],["🏠 Project","https://lpy1219.github.io/MV-VDP-Web/"]],
+        highlight: true
+    },
     // === 2026-04-02 ===
     {
         date: "2026-04-02",

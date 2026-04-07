@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小小志科研日报 2026-04-07</title>
+    <style>
+        :root {
+            --bg-primary: #0a0e17; --bg-secondary: #111827; --bg-card: #1a2035; --bg-card-hover: #1f2a45;
+            --text-primary: #e2e8f0; --text-secondary: #94a3b8; --text-muted: #64748b;
+            --accent-vla: #818cf8; --accent-wam: #a78bfa; --accent-robotics: #34d399; --accent-embodied: #22d3ee;
+            --accent-rl: #f472b6; --accent-llm: #fb923c; --accent-vlm: #facc15; --accent-multimodal: #facc15;
+            --accent-info: #38bdf8; --accent-agent: #22d3ee; --accent-other: #94a3b8; --border-color: #1e293b;
+            --glow-vla: rgba(129,140,248,0.15); --glow-wam: rgba(167,139,250,0.15); --glow-robotics: rgba(52,211,153,0.15);
+            --glow-embodied: rgba(34,211,238,0.15); --glow-rl: rgba(244,114,182,0.15); --glow-llm: rgba(251,146,60,0.15);
+            --glow-vlm: rgba(250,204,21,0.15); --glow-multimodal: rgba(250,204,21,0.15); --glow-info: rgba(56,189,248,0.15);
+            --glow-agent: rgba(34,211,238,0.15); --glow-other: rgba(148,163,184,0.15);
+        }
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { background: var(--bg-primary); color: var(--text-primary); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans SC', sans-serif; line-height: 1.7; min-height: 100vh; }
+        .hero { position: relative; padding: 60px 0 40px; text-align: center; background: linear-gradient(180deg, rgba(99,102,241,0.08) 0%, transparent 100%); }
+        .hero h1 { font-size: 2.2rem; font-weight: 700; background: linear-gradient(135deg, #818cf8 0%, #a78bfa 50%, #c084fc 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 8px; }
+        .hero .subtitle { color: var(--text-secondary); font-size: 1.05rem; }
+        .hero .date { color: var(--text-muted); font-size: 0.9rem; margin-top: 4px; }
+        .stats-bar { display: flex; justify-content: center; gap: 32px; margin: 24px auto 0; flex-wrap: wrap; }
+        .stat-item { text-align: center; }
+        .stat-number { font-size: 1.8rem; font-weight: 700; color: #818cf8; }
+        .stat-label { font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; }
+        .container { max-width: 900px; margin: 0 auto; padding: 0 20px 60px; }
+        .toc { background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 12px; padding: 20px 28px; margin-bottom: 36px; }
+        .toc h2 { font-size: 1rem; color: var(--text-muted); margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.05em; }
+        .toc-list { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; }
+        .toc-list a { display: inline-block; padding: 6px 16px; border-radius: 20px; font-size: 0.88rem; text-decoration: none; transition: all 0.2s; }
+        .toc-list a:hover { filter: brightness(1.2); transform: translateY(-1px); }
+        .section { margin-bottom: 40px; }
+        .section-header { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; padding-bottom: 12px; border-bottom: 1px solid var(--border-color); }
+        .section-icon { width: 36px; height: 36px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; }
+        .section-title { font-size: 1.3rem; font-weight: 600; }
+        .section-count { margin-left: auto; font-size: 0.8rem; color: var(--text-muted); background: var(--bg-secondary); padding: 4px 12px; border-radius: 12px; }
+        .paper { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; padding: 24px; margin-bottom: 16px; transition: all 0.3s ease; }
+        .paper:hover { background: var(--bg-card-hover); transform: translateY(-2px); }
+        .paper-title { font-size: 1.05rem; font-weight: 600; color: var(--text-primary); margin-bottom: 8px; line-height: 1.5; }
+        .paper-meta { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; }
+        .tag { display: inline-block; padding: 2px 10px; border-radius: 12px; font-size: 0.75rem; font-weight: 500; }
+        .tag-vla { background: var(--glow-vla); color: var(--accent-vla); } .tag-wam { background: var(--glow-wam); color: var(--accent-wam); }
+        .tag-robotics { background: var(--glow-robotics); color: var(--accent-robotics); } .tag-embodied { background: var(--glow-embodied); color: var(--accent-embodied); }
+        .tag-rl { background: var(--glow-rl); color: var(--accent-rl); } .tag-llm { background: var(--glow-llm); color: var(--accent-llm); }
+        .tag-vlm { background: var(--glow-vlm); color: var(--accent-vlm); } .tag-multimodal { background: var(--glow-multimodal); color: var(--accent-multimodal); }
+        .tag-info { background: var(--glow-info); color: var(--accent-info); } .tag-agent { background: var(--glow-agent); color: var(--accent-agent); }
+        .tag-other { background: var(--glow-other); color: var(--accent-other); }
+        .paper-summary { color: var(--text-secondary); font-size: 0.92rem; line-height: 1.7; margin-bottom: 14px; }
+        .paper-links { display: flex; gap: 8px; flex-wrap: wrap; }
+        .paper-links a { display: inline-flex; align-items: center; gap: 4px; padding: 4px 12px; border-radius: 8px; font-size: 0.8rem; text-decoration: none; background: var(--bg-secondary); color: var(--text-secondary); border: 1px solid var(--border-color); transition: all 0.2s; }
+        .paper-links a:hover { color: var(--text-primary); border-color: var(--text-muted); }
+        .link-paper { color: #818cf8 !important; } .link-pdf { color: #f472b6 !important; } .link-project { color: #34d399 !important; } .link-code { color: #fb923c !important; } .link-hf { color: #facc15 !important; }
+        .new-badge { display: inline-block; background: linear-gradient(135deg, #818cf8, #a78bfa); color: white; font-size: 0.65rem; padding: 1px 6px; border-radius: 4px; margin-right: 6px; vertical-align: middle; font-weight: 600; }
+        .info-card { background: linear-gradient(135deg, var(--bg-card), rgba(56,189,248,0.05)); border: 1px solid rgba(56,189,248,0.2); border-radius: 12px; padding: 24px; margin-bottom: 16px; transition: all 0.3s ease; }
+        .info-card:hover { transform: translateY(-2px); border-color: rgba(56,189,248,0.4); }
+        .info-title { font-size: 1.05rem; font-weight: 600; color: var(--accent-info); margin-bottom: 8px; line-height: 1.5; }
+        .info-summary { color: var(--text-secondary); font-size: 0.92rem; line-height: 1.7; margin-bottom: 14px; }
+        .info-links { display: flex; gap: 8px; flex-wrap: wrap; }
+        .info-links a { display: inline-flex; align-items: center; gap: 4px; padding: 4px 12px; border-radius: 8px; font-size: 0.8rem; text-decoration: none; background: var(--bg-secondary); color: var(--accent-info); border: 1px solid rgba(56,189,248,0.2); transition: all 0.2s; }
+        .info-links a:hover { border-color: var(--accent-info); }
+        .footer { text-align: center; padding: 40px 20px; color: var(--text-muted); font-size: 0.85rem; border-top: 1px solid var(--border-color); }
+        .footer a { color: #818cf8; text-decoration: none; }
+        @media (max-width: 640px) { .hero h1 { font-size: 1.6rem; } .stats-bar { gap: 20px; } .stat-number { font-size: 1.4rem; } .paper { padding: 16px; } .container { padding: 0 12px 40px; } }
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <h1>小小志科研日报</h1>
+    <div class="subtitle">AI / Robotics / Embodied Intelligence</div>
+    <div class="date">2026 年 4 月 7 日 · 星期二</div>
+    <div class="stats-bar">
+        <div class="stat-item">
+            <div class="stat-number">3</div>
+            <div class="stat-label">Papers</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">3</div>
+            <div class="stat-label">News</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">4</div>
+            <div class="stat-label">Categories</div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+
+    <div class="toc">
+        <h2>Categories</h2>
+        <ul class="toc-list">
+            <li><a href="#robotics" style="background:var(--glow-robotics);color:var(--accent-robotics);">Robotics (1)</a></li>
+            <li><a href="#multimodal" style="background:var(--glow-multimodal);color:var(--accent-multimodal);">Multimodal (1)</a></li>
+            <li><a href="#agent" style="background:var(--glow-agent);color:var(--accent-agent);">Agent (1)</a></li>
+            <li><a href="#info" style="background:var(--glow-info);color:var(--accent-info);">Informations (3)</a></li>
+        </ul>
+    </div>
+
+    <!-- ==================== Robotics ==================== -->
+    <div class="section" id="robotics">
+        <div class="section-header">
+            <div class="section-icon" style="background:var(--glow-robotics);">🦾</div>
+            <div class="section-title" style="color:var(--accent-robotics);">Robotics</div>
+            <span class="section-count">1 paper</span>
+        </div>
+
+        <div class="paper">
+            <div class="paper-title"><span class="new-badge">NEW</span>ARM: Advantage Reward Modeling for Long-Horizon Manipulation</div>
+            <div class="paper-meta">
+                <span class="tag tag-robotics">Robotics</span>
+                <span class="tag tag-rl">奖励建模</span>
+            </div>
+            <div class="paper-summary">
+                长视距机器人操作任务中稀疏奖励让 RL 难以分配信用。ARM 提出了一种新思路：不建模绝对进度，而是估计<strong>相对优势</strong>。核心创新是"三态标注"策略——将动作标为"渐进/回退/停滞"三类，极大降低人类标注负担并保持高一致性。在离线 RL 管线中实现自适应动作-奖励重加权，过滤次优样本。在高难度长视距毛巾折叠任务上达到 <strong>99.4% 成功率</strong>，显著超越当前 VLA 基线，且几乎无需人工干预。对 VLA 后训练范式有重要参考价值。
+            </div>
+            <div class="paper-links">
+                <a href="https://arxiv.org/abs/2604.03037" class="link-paper" target="_blank">arXiv</a>
+                <a href="https://arxiv.org/pdf/2604.03037" class="link-pdf" target="_blank">PDF</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== Multimodal ==================== -->
+    <div class="section" id="multimodal">
+        <div class="section-header">
+            <div class="section-icon" style="background:var(--glow-multimodal);">🎨</div>
+            <div class="section-title" style="color:var(--accent-multimodal);">Multimodal</div>
+            <span class="section-count">1 paper</span>
+        </div>
+
+        <div class="paper">
+            <div class="paper-title">EUPE: Efficient Universal Perception Encoder</div>
+            <div class="paper-meta">
+                <span class="tag tag-multimodal">Multimodal</span>
+                <span class="tag tag-vlm">视觉编码器</span>
+            </div>
+            <div class="paper-summary">
+                Meta FAIR 提出的 EUPE 系列是面向边缘设备的紧凑型通用视觉编码器，参数量 <strong>低于 100M</strong>，却在图像理解、密集预测和 VLM 任务上媲美甚至超过同等大小的领域专家模型。核心方法是<strong>"先扩后缩"知识蒸馏</strong>：先从多个专家教师蒸馏到一个大型代理教师，再从该单一教师缩放为高效编码器。已开源代码和模型（GitHub + HuggingFace）。对端侧 VLA 部署有重要参考意义——为机器人系统提供了一个体积小、能力强的统一视觉前端选项。
+            </div>
+            <div class="paper-links">
+                <a href="https://arxiv.org/abs/2603.22387" class="link-paper" target="_blank">arXiv</a>
+                <a href="https://arxiv.org/pdf/2603.22387" class="link-pdf" target="_blank">PDF</a>
+                <a href="https://github.com/facebookresearch/EUPE" class="link-code" target="_blank">Code</a>
+                <a href="https://huggingface.co/collections/facebook/eupe" class="link-hf" target="_blank">HuggingFace</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== Agent ==================== -->
+    <div class="section" id="agent">
+        <div class="section-header">
+            <div class="section-icon" style="background:var(--glow-agent);">🧩</div>
+            <div class="section-title" style="color:var(--accent-agent);">Agent</div>
+            <span class="section-count">1 paper</span>
+        </div>
+
+        <div class="paper">
+            <div class="paper-title">HOLOS: LLM-Based Multi-Agent System for Building Agent Networks</div>
+            <div class="paper-meta">
+                <span class="tag tag-agent">Agent</span>
+                <span class="tag tag-llm">多智能体协作</span>
+            </div>
+            <div class="paper-summary">
+                HOLOS 提出了一种基于 LLM 的多智能体系统架构，核心目标是构建可组合的"智能体网络"（Agent Networks）。不同于传统的单体 Agent 或简单的链式调用，HOLOS 将多个异构 Agent 组织为动态协作网络，支持灵活的任务分配和信息共享。该框架有望推动多 Agent 在复杂机器人系统（如多机协同操作、仓储调度等）中的应用。
+            </div>
+            <div class="paper-links">
+                <a href="https://arxiv.org/abs/2604.04932" class="link-paper" target="_blank">arXiv</a>
+                <a href="https://arxiv.org/pdf/2604.04932" class="link-pdf" target="_blank">PDF</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== Informations ==================== -->
+    <div class="section" id="info">
+        <div class="section-header">
+            <div class="section-icon" style="background:var(--glow-info);">📡</div>
+            <div class="section-title" style="color:var(--accent-info);">Informations</div>
+            <span class="section-count">3 news</span>
+        </div>
+
+        <div class="info-card">
+            <div class="info-title"><span class="new-badge">NEW</span>智元 AI 发布周 Day 1：开源 AGIBOT WORLD 2026 全域具身智能数据集</div>
+            <div class="info-summary">
+                智元机器人 AGIBOT AI Week（4/7-14）正式启幕，首日重磅发布全球首个覆盖<strong>具身智能全域研究</strong>的开源数据集 AGIBOT WORLD 2026。该数据集基于海量真实场景，围绕<strong>五大具身领域研究主题</strong>构建，配备专属采集方案与精细化标注体系。将分五个阶段持续开源，覆盖更多主题与场景。这是继上月智元万台人形机器人下线后的又一里程碑——从硬件量产转向生态开放。对具身智能研究者而言，这可能是 2026 年最重要的开源数据集之一。
+            </div>
+            <div class="info-links">
+                <a href="https://www.jiemian.com/article/14215335.html" target="_blank">界面新闻</a>
+                <a href="https://cntechpost.com/2026/04/03/agibot-plans-daily-physical-ai-breakthroughs-april-7-release-week/" target="_blank">CnTechPost</a>
+            </div>
+        </div>
+
+        <div class="info-card">
+            <div class="info-title">OpenAI 发布 Safety Fellowship 计划：首个面向外部研究者的 AI 安全研究奖学金</div>
+            <div class="info-summary">
+                OpenAI 于 4 月 6 日宣布 Safety Fellowship 计划，面向全球外部研究人员、工程师和从业者开放申请。项目周期为 2026 年 9 月 14 日至 2027 年 2 月 5 日，入选者将获得资金资助、导师指导和高级计算资源，在 AI 安全与对齐领域开展严谨的高影响力研究。这是 OpenAI 首次以结构化方式系统性资助外部安全研究，信号意义明确：安全不再只是内部事务。
+            </div>
+            <div class="info-links">
+                <a href="https://blockchain.news/ainews/openai-safety-fellowship-announced-funding-independent-ai-safety-and-alignment-research-in-2026" target="_blank">Blockchain News</a>
+            </div>
+        </div>
+
+        <div class="info-card">
+            <div class="info-title">SpaceX 秘密递交 IPO 申请，目标估值超万亿美元；上市实体含 xAI 与 X</div>
+            <div class="info-summary">
+                SpaceX 已秘密递交 IPO 文件，目标估值超过 <strong>1 万亿美元</strong>，募资规模或达 400-800 亿美元。值得关注的是，此次上市实体整合了 Musk 旗下的 xAI（Grok 系列大模型）和 X（原 Twitter）。部分融资将用于资助 xAI 运营及偿还 Twitter 债务。这标志着 2026 年 AI/科技超级 IPO 周期的开端，或将改变 AI 行业资本格局和竞争态势。
+            </div>
+            <div class="info-links">
+                <a href="https://www.readaboutai.com/april-7-2026/" target="_blank">Read About AI</a>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="footer">
+    <p>小小志科研日报 · 自动生成于 2026-04-07</p>
+    <p style="margin-top:4px;">Powered by <a href="https://dieofao.github.io/xiaozhi-daily/" target="_blank">XiaoZhi Daily</a></p>
+</div>
+
+</body>
+</html>
