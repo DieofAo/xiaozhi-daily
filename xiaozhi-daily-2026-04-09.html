@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小小志科研日报 2026-04-09</title>
+    <style>
+        :root {
+            --bg-primary: #0a0e17; --bg-secondary: #111827; --bg-card: #1a2035; --bg-card-hover: #1f2a45;
+            --text-primary: #e2e8f0; --text-secondary: #94a3b8; --text-muted: #64748b;
+            --accent-vla: #818cf8; --accent-wam: #a78bfa; --accent-robotics: #34d399; --accent-embodied: #22d3ee;
+            --accent-rl: #f472b6; --accent-llm: #fb923c; --accent-vlm: #facc15; --accent-multimodal: #facc15;
+            --accent-info: #38bdf8; --accent-agent: #22d3ee; --accent-other: #94a3b8; --border-color: #1e293b;
+            --glow-vla: rgba(129,140,248,0.15); --glow-wam: rgba(167,139,250,0.15); --glow-robotics: rgba(52,211,153,0.15);
+            --glow-embodied: rgba(34,211,238,0.15); --glow-rl: rgba(244,114,182,0.15); --glow-llm: rgba(251,146,60,0.15);
+            --glow-vlm: rgba(250,204,21,0.15); --glow-multimodal: rgba(250,204,21,0.15); --glow-info: rgba(56,189,248,0.15);
+            --glow-agent: rgba(34,211,238,0.15); --glow-other: rgba(148,163,184,0.15);
+        }
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { background: var(--bg-primary); color: var(--text-primary); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans SC', sans-serif; line-height: 1.7; min-height: 100vh; }
+        .hero { position: relative; padding: 60px 0 40px; text-align: center; background: linear-gradient(180deg, rgba(99,102,241,0.08) 0%, transparent 100%); }
+        .hero h1 { font-size: 2.2rem; font-weight: 700; background: linear-gradient(135deg, #818cf8 0%, #a78bfa 50%, #c084fc 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 8px; }
+        .hero .subtitle { color: var(--text-secondary); font-size: 1.05rem; }
+        .hero .date { color: var(--text-muted); font-size: 0.9rem; margin-top: 4px; }
+        .stats-bar { display: flex; justify-content: center; gap: 32px; margin: 24px auto 0; flex-wrap: wrap; }
+        .stat-item { text-align: center; }
+        .stat-number { font-size: 1.8rem; font-weight: 700; color: #818cf8; }
+        .stat-label { font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; }
+        .container { max-width: 900px; margin: 0 auto; padding: 0 20px 60px; }
+        .toc { background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 12px; padding: 20px 28px; margin-bottom: 36px; }
+        .toc h2 { font-size: 1rem; color: var(--text-muted); margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.05em; }
+        .toc-list { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; }
+        .toc-list a { display: inline-block; padding: 6px 16px; border-radius: 20px; font-size: 0.88rem; text-decoration: none; transition: all 0.2s; }
+        .toc-list a:hover { filter: brightness(1.2); transform: translateY(-1px); }
+        .section { margin-bottom: 40px; }
+        .section-header { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; padding-bottom: 12px; border-bottom: 1px solid var(--border-color); }
+        .section-icon { width: 36px; height: 36px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; }
+        .section-title { font-size: 1.3rem; font-weight: 600; }
+        .section-count { margin-left: auto; font-size: 0.8rem; color: var(--text-muted); background: var(--bg-secondary); padding: 4px 12px; border-radius: 12px; }
+        .paper { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; padding: 24px; margin-bottom: 16px; transition: all 0.3s ease; }
+        .paper:hover { background: var(--bg-card-hover); transform: translateY(-2px); }
+        .paper-title { font-size: 1.05rem; font-weight: 600; color: var(--text-primary); margin-bottom: 8px; line-height: 1.5; }
+        .paper-meta { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; }
+        .tag { display: inline-block; padding: 2px 10px; border-radius: 12px; font-size: 0.75rem; font-weight: 500; }
+        .tag-vla { background: var(--glow-vla); color: var(--accent-vla); } .tag-wam { background: var(--glow-wam); color: var(--accent-wam); }
+        .tag-robotics { background: var(--glow-robotics); color: var(--accent-robotics); } .tag-embodied { background: var(--glow-embodied); color: var(--accent-embodied); }
+        .tag-rl { background: var(--glow-rl); color: var(--accent-rl); } .tag-llm { background: var(--glow-llm); color: var(--accent-llm); }
+        .tag-vlm { background: var(--glow-vlm); color: var(--accent-vlm); } .tag-multimodal { background: var(--glow-multimodal); color: var(--accent-multimodal); }
+        .tag-info { background: var(--glow-info); color: var(--accent-info); } .tag-agent { background: var(--glow-agent); color: var(--accent-agent); }
+        .tag-other { background: var(--glow-other); color: var(--accent-other); }
+        .paper-summary { color: var(--text-secondary); font-size: 0.92rem; line-height: 1.7; margin-bottom: 14px; }
+        .paper-links { display: flex; gap: 8px; flex-wrap: wrap; }
+        .paper-links a { display: inline-flex; align-items: center; gap: 4px; padding: 4px 12px; border-radius: 8px; font-size: 0.8rem; text-decoration: none; background: var(--bg-secondary); color: var(--text-secondary); border: 1px solid var(--border-color); transition: all 0.2s; }
+        .paper-links a:hover { color: var(--text-primary); border-color: var(--text-muted); }
+        .link-paper { color: #818cf8 !important; } .link-pdf { color: #f472b6 !important; } .link-project { color: #34d399 !important; } .link-code { color: #fb923c !important; } .link-hf { color: #facc15 !important; }
+        .new-badge { display: inline-block; background: linear-gradient(135deg, #818cf8, #a78bfa); color: white; font-size: 0.65rem; padding: 1px 6px; border-radius: 4px; margin-right: 6px; vertical-align: middle; font-weight: 600; }
+        .hot-badge { display: inline-block; background: linear-gradient(135deg, #f43f5e, #f97316); color: white; font-size: 0.65rem; padding: 1px 6px; border-radius: 4px; margin-right: 6px; vertical-align: middle; font-weight: 600; }
+        .info-card { background: linear-gradient(135deg, var(--bg-card), rgba(56,189,248,0.05)); border: 1px solid rgba(56,189,248,0.2); border-radius: 12px; padding: 24px; margin-bottom: 16px; transition: all 0.3s ease; }
+        .info-card:hover { transform: translateY(-2px); border-color: rgba(56,189,248,0.4); }
+        .info-title { font-size: 1.05rem; font-weight: 600; color: var(--accent-info); margin-bottom: 8px; line-height: 1.5; }
+        .info-summary { color: var(--text-secondary); font-size: 0.92rem; line-height: 1.7; margin-bottom: 14px; }
+        .info-links { display: flex; gap: 8px; flex-wrap: wrap; }
+        .info-links a { display: inline-flex; align-items: center; gap: 4px; padding: 4px 12px; border-radius: 8px; font-size: 0.8rem; text-decoration: none; background: var(--bg-secondary); color: var(--accent-info); border: 1px solid rgba(56,189,248,0.2); transition: all 0.2s; }
+        .info-links a:hover { border-color: var(--accent-info); }
+        .footer { text-align: center; padding: 40px 20px; color: var(--text-muted); font-size: 0.85rem; border-top: 1px solid var(--border-color); }
+        .footer a { color: #818cf8; text-decoration: none; }
+        @media (max-width: 640px) { .hero h1 { font-size: 1.6rem; } .stats-bar { gap: 20px; } .stat-number { font-size: 1.4rem; } .paper { padding: 16px; } .container { padding: 0 12px 40px; } }
+    </style>
+</head>
+<body>
+<div class="hero">
+    <h1>小小志科研日报</h1>
+    <div class="subtitle">AI / Robotics / Embodied Intelligence</div>
+    <div class="date">2026 年 4 月 9 日 · 星期四</div>
+    <div class="stats-bar">
+        <div class="stat-item"><div class="stat-number">8</div><div class="stat-label">Papers</div></div>
+        <div class="stat-item"><div class="stat-number">3</div><div class="stat-label">Models</div></div>
+        <div class="stat-item"><div class="stat-number">4</div><div class="stat-label">Categories</div></div>
+    </div>
+</div>
+<div class="container">
+    <div class="toc">
+        <h2>Categories</h2>
+        <ul class="toc-list">
+            <li><a href="#robotics" style="background:var(--glow-robotics);color:var(--accent-robotics);">Robotics (3)</a></li>
+            <li><a href="#llm" style="background:var(--glow-llm);color:var(--accent-llm);">LLM (4)</a></li>
+            <li><a href="#multimodal" style="background:var(--glow-multimodal);color:var(--accent-multimodal);">Multimodal (1)</a></li>
+            <li><a href="#info" style="background:var(--glow-info);color:var(--accent-info);">Informations (3)</a></li>
+        </ul>
+    </div>
+
+    <!-- ====== Robotics ====== -->
+    <div class="section" id="robotics">
+        <div class="section-header">
+            <div class="section-icon" style="background:var(--glow-robotics);">🦾</div>
+            <div class="section-title" style="color:var(--accent-robotics);">Robotics</div>
+            <div class="section-count">3 papers</div>
+        </div>
+        <div class="paper" style="border-left:3px solid var(--accent-robotics);box-shadow:inset 4px 0 12px var(--glow-robotics);">
+            <div class="paper-title"><span class="hot-badge">HOT</span>TAMEn: Tactile-Aware Manipulation Engine for Closed-Loop Data Collection in Contact-Rich Tasks</div>
+            <div class="paper-meta"><span class="tag tag-robotics">Robotics</span><span class="tag tag-embodied">触觉操作</span></div>
+            <div class="paper-summary">提出触觉感知的操作引擎 TAMEn，用于接触密集任务的闭环数据采集。核心包括：<strong>跨形态可穿戴接口</strong>适配不同夹爪，<strong>双模态采集管线</strong>结合动捕精密模式与 VR 便携模式，以及金字塔数据体制统一大规模触觉预训练、双臂演示和人在回路恢复数据。基于视觉-触觉学习框架，双臂操作成功率从 34% 提升至 <strong>75%</strong>。硬件和数据集已开源，为触觉驱动的操作数据规模化提供了实用基础设施。</div>
+            <div class="paper-links"><a href="https://arxiv.org/abs/2604.07335" class="link-paper">📄 arXiv</a><a href="https://arxiv.org/pdf/2604.07335" class="link-pdf">📑 PDF</a></div>
+        </div>
+        <div class="paper" style="border-left:3px solid var(--accent-robotics);box-shadow:inset 4px 0 12px var(--glow-robotics);">
+            <div class="paper-title"><span class="hot-badge">HOT</span>RoSHI: A Versatile Robot-oriented Suit for Human Data In-the-Wild</div>
+            <div class="paper-meta"><span class="tag tag-robotics">Robotics</span><span class="tag tag-embodied">人体动捕</span></div>
+            <div class="paper-summary">面向机器人学习的混合可穿戴动捕系统。融合<strong>低成本稀疏 IMU</strong> 与 <strong>Project Aria 智能眼镜</strong>第一人称视角，在全局度量坐标系下估计穿戴者完整 3D 姿态和体型。IMU 提供抗遮挡与高速运动鲁棒性，第一人称 SLAM 锚定长时运动并稳定上半身估计。采集的运动数据已验证可用于真实世界人形机器人策略学习。规模化人体运动数据采集的实用方案。</div>
+            <div class="paper-links"><a href="https://arxiv.org/abs/2604.07331" class="link-paper">📄 arXiv</a><a href="https://arxiv.org/pdf/2604.07331" class="link-pdf">📑 PDF</a><a href="https://roshi-mocap.github.io/" class="link-project">🏠 Project</a></div>
+        </div>
+        <div class="paper" style="border-left:3px solid var(--accent-robotics);box-shadow:inset 4px 0 12px var(--glow-robotics);">
+            <div class="paper-title"><span class="new-badge">NEW</span>Robots that Learn to Evaluate Models of Collective Behavior</div>
+            <div class="paper-meta"><span class="tag tag-robotics">Robotics</span><span class="tag tag-rl">仿生交互</span></div>
+            <div class="paper-summary">基于强化学习的仿生机器鱼框架，通过与真实鱼群的<strong>闭环交互</strong>来评估计算行为模型。在仿真中训练四种不同保真度的鱼类模型（简单基准、规则模型、CNN 模型），迁移至真实机器鱼设置。通过量化 Sim-to-Real gap，发现神经网络模型在目标达成和行为指标上保真度最高。展示了具身交互如何系统性地揭示行为模型的缺陷——一个评估动物集体行为模型的通用框架。</div>
+            <div class="paper-links"><a href="https://arxiv.org/abs/2604.07303" class="link-paper">📄 arXiv</a><a href="https://arxiv.org/pdf/2604.07303" class="link-pdf">📑 PDF</a></div>
+        </div>
+    </div>
+
+    <!-- ====== LLM ====== -->
+    <div class="section" id="llm">
+        <div class="section-header">
+            <div class="section-icon" style="background:var(--glow-llm);">🧠</div>
+            <div class="section-title" style="color:var(--accent-llm);">LLM</div>
+            <div class="section-count">4 papers</div>
+        </div>
+        <div class="paper" style="border-left:3px solid var(--accent-llm);box-shadow:inset 4px 0 12px var(--glow-llm);">
+            <div class="paper-title"><span class="new-badge">NEW</span>Personalized RewardBench: Evaluating Reward Models with Human Aligned Personalization</div>
+            <div class="paper-meta"><span class="tag tag-llm">LLM</span><span class="tag tag-rl">个性化对齐</span></div>
+            <div class="paper-summary">首个评估奖励模型<strong>个性化偏好建模能力</strong>的基准。通过构建基于特定用户标准的选择/拒绝响应对，确保偏好区分是个人化的而非通用的。测试发现当前 SOTA 奖励模型在个性化方面表现不佳，准确率峰值仅 <strong>75.94%</strong>。研究还证明该基准与下游任务（Best-of-N 采样和 PPO）的性能呈更高相关性。多元化对齐是 LLM 下一阶段的关键前沿。</div>
+            <div class="paper-links"><a href="https://arxiv.org/abs/2604.07343" class="link-paper">📄 arXiv</a><a href="https://arxiv.org/pdf/2604.07343" class="link-pdf">📑 PDF</a></div>
+        </div>
+        <div class="paper" style="border-left:3px solid var(--accent-llm);box-shadow:inset 4px 0 12px var(--glow-llm);">
+            <div class="paper-title"><span class="new-badge">NEW</span>Syntax Is Easy, Semantics Is Hard: Evaluating LLMs for LTL Translation</div>
+            <div class="paper-meta"><span class="tag tag-llm">LLM</span><span class="tag tag-agent">形式化验证</span></div>
+            <div class="paper-summary">系统评估 LLM 将自然语言翻译为命题线性时序逻辑（LTL）公式的能力。发现 LLM 在<strong>语法层面表现良好</strong>，但<strong>语义理解是瓶颈</strong>——生成的 LTL 公式语法正确率高但语义等价率显著更低。揭示了 LLM 在形式化规范生成中"形似而神不至"的局限性，对机器人任务规范自动化有直接警示意义。</div>
+            <div class="paper-links"><a href="https://arxiv.org/abs/2604.07321" class="link-paper">📄 arXiv</a><a href="https://arxiv.org/pdf/2604.07321" class="link-pdf">📑 PDF</a></div>
+        </div>
+        <div class="paper" style="border-left:3px solid var(--accent-llm);box-shadow:inset 4px 0 12px var(--glow-llm);">
+            <div class="paper-title"><span class="new-badge">NEW</span>Evaluating In-Context Translation with Synchronous Context-Free Grammar Transduction</div>
+            <div class="paper-meta"><span class="tag tag-llm">LLM</span><span class="tag tag-multimodal">低资源翻译</span></div>
+            <div class="paper-summary">利用同步上下文无关文法（SCFG）转导来评估 LLM 的<strong>上下文内翻译</strong>能力，聚焦低资源语言。研究发现 LLM 在利用上下文示例时存在系统性偏差——倾向于过度依赖表面形式匹配而忽略结构级对应关系。为理解和改进 LLM 少样本翻译机制提供了形式化分析框架。</div>
+            <div class="paper-links"><a href="https://arxiv.org/abs/2604.07320" class="link-paper">📄 arXiv</a><a href="https://arxiv.org/pdf/2604.07320" class="link-pdf">📑 PDF</a></div>
+        </div>
+        <div class="paper" style="border-left:3px solid var(--accent-llm);box-shadow:inset 4px 0 12px var(--glow-llm);">
+            <div class="paper-title"><span class="new-badge">NEW</span>Chatbot-Based Assessment of Code Understanding in Automated Programming Assessment Systems</div>
+            <div class="paper-meta"><span class="tag tag-llm">LLM</span><span class="tag tag-agent">代码理解评估</span></div>
+            <div class="paper-summary">研究 LLM 如何挑战传统自动编程评估系统，并提出基于<strong>对话式聊天机器人</strong>的代码理解评估方案。通过多轮问答交互验证学生是否真正理解其提交的代码，而非仅依赖 LLM 生成的正确答案。在教育领域，这种评估范式能有效检测"AI 代写"的情况。</div>
+            <div class="paper-links"><a href="https://arxiv.org/abs/2604.07304" class="link-paper">📄 arXiv</a><a href="https://arxiv.org/pdf/2604.07304" class="link-pdf">📑 PDF</a></div>
+        </div>
+    </div>
+
+    <!-- ====== Multimodal ====== -->
+    <div class="section" id="multimodal">
+        <div class="section-header">
+            <div class="section-icon" style="background:var(--glow-multimodal);">🎨</div>
+            <div class="section-title" style="color:var(--accent-multimodal);">Multimodal</div>
+            <div class="section-count">1 paper</div>
+        </div>
+        <div class="paper" style="border-left:3px solid var(--accent-multimodal);box-shadow:inset 4px 0 12px var(--glow-multimodal);">
+            <div class="paper-title"><span class="new-badge">NEW</span>Appear2Meaning: A Cross-Cultural Benchmark for Structured Cultural Metadata Inference from Images</div>
+            <div class="paper-meta"><span class="tag tag-multimodal">Multimodal</span><span class="tag tag-vlm">文化推理</span></div>
+            <div class="paper-summary">首个用于从图像推断<strong>结构化文化元数据</strong>（创作者、起源地、年代等）的多类别跨文化基准。评估发现当前视觉语言模型在捕捉文化信号方面存在碎片化问题——不同文化背景和元数据类型之间性能差异显著。揭示 VLM 在超越视觉感知层面进行文化理解时的系统性局限。</div>
+            <div class="paper-links"><a href="https://arxiv.org/abs/2604.07338" class="link-paper">📄 arXiv</a><a href="https://arxiv.org/pdf/2604.07338" class="link-pdf">📑 PDF</a></div>
+        </div>
+    </div>
+
+    <!-- ====== Informations ====== -->
+    <div class="section" id="info">
+        <div class="section-header">
+            <div class="section-icon" style="background:var(--glow-info);">📡</div>
+            <div class="section-title" style="color:var(--accent-info);">Informations</div>
+            <div class="section-count">3 models</div>
+        </div>
+        <div class="info-card">
+            <div class="info-title">dexmg_drawer_egodex_vla_full</div>
+            <div class="paper-meta"><span class="tag tag-other">Other</span><span class="tag tag-vla">灵巧手VLA</span></div>
+            <div class="info-summary">HuggingFace 新模型发布。szang18 发布的灵巧操作 VLA 完整模型，面向抽屉操作任务的自我中心灵巧手视觉-语言-动作系统。</div>
+            <div class="info-links"><a href="https://huggingface.co/szang18/dexmg_drawer_egodex_vla_full" class="link-hf">🤗 HuggingFace</a></div>
+        </div>
+        <div class="info-card">
+            <div class="info-title">paper-classifier</div>
+            <div class="paper-meta"><span class="tag tag-vla">VLA</span><span class="tag tag-llm">论文分类</span></div>
+            <div class="info-summary">HuggingFace 新模型发布。VladKozlovskiy 发布的论文自动分类模型，可用于学术论文的主题标注和分类。</div>
+            <div class="info-links"><a href="https://huggingface.co/VladKozlovskiy/paper-classifier" class="link-hf">🤗 HuggingFace</a></div>
+        </div>
+        <div class="info-card">
+            <div class="info-title">gemma4-31b-abliterated-multimodal</div>
+            <div class="paper-meta"><span class="tag tag-multimodal">Multimodal</span><span class="tag tag-llm">开源多模态</span></div>
+            <div class="info-summary">HuggingFace 新模型发布。shreyan35 发布的 Gemma 4 31B 参数去审查多模态版本，基于 Google Gemma 4 架构的社区改进版。</div>
+            <div class="info-links"><a href="https://huggingface.co/shreyan35/gemma4-31b-abliterated-multimodal" class="link-hf">🤗 HuggingFace</a></div>
+        </div>
+    </div>
+
+</div>
+<div class="footer">
+    <p>自动生成于 2026-04-09 · <a href="index.html">返回首页</a></p>
+    <p style="margin-top:8px;">关注领域：VLA · Robotics · World Model · LLM · Multimodal · Agent</p>
+</div>
+</body>
+</html>
