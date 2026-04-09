@@ -519,6 +519,266 @@
 <script>
 // ===== DATA =====
 const PAPERS_DB = [
+    // === 2026-04-08 ===
+    {
+        date: "2026-04-08",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "<span class=\"hot-badge\">HOT</span>DIAL: Disentangled Intent and Action Learning for VLA Models",
+        venue: "",
+        summary: "提出将 VLA 中的\"意图理解\"和\"动作执行\"解耦为两个独立模块的新范式。高层意图模块负责语言-视觉语义对齐，低层动作模块专注连续控制信号生成。在 CALVIN 和 RLBench 上验证，意图-动作解耦使<strong>泛化到未见任务描述</strong>的成功率提升 <strong>23%</strong>，同时降低动作预测延迟 40%。解耦设计还天然支持模块级独立更新——更换语言模型无需重新训练动作头。对 VLA 工程化部署有重要参考价值。",
+        tags: [["VLA","green"],["意图解耦","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2603.29844"],["📑 PDF","https://arxiv.org/pdf/2603.29844"]]
+    },
+    {
+        date: "2026-04-08",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "VLA-Forget: Machine Unlearning for Vision-Language-Action Models",
+        venue: "",
+        summary: "首次系统研究 VLA 模型的\"<strong>选择性遗忘</strong>\"问题。当部署的 VLA 需要忘记特定训练数据（隐私合规、安全约束）时，简单微调会导致灾难性能力丧失。VLA-Forget 提出基于梯度上升+知识蒸馏的双阶段遗忘框架，在目标数据上遗忘率 <strong>>95%</strong>，同时保留数据上性能衰减 <strong><3%</strong>。随着具身智能系统规模化部署，数据治理将成为核心议题。",
+        tags: [["VLA","green"],["机器遗忘","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.03956"],["📑 PDF","https://arxiv.org/pdf/2604.03956"]],
+        highlight: true
+    },
+    {
+        date: "2026-04-08",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "UAV-Track VLA: Vision-Language-Action Model for UAV Target Tracking",
+        venue: "",
+        summary: "将 VLA 范式首次应用于<strong>无人机目标追踪</strong>场景。语言指令描述追踪目标特征（\"追踪穿红衣的行人\"），VLA 直接输出飞行控制指令。相比传统视觉追踪+PID 控制管线，端到端方案在遮挡恢复和目标切换上更鲁棒。在城市场景仿真中追踪成功率提升 <strong>18%</strong>，平均跟踪误差降低 30%。",
+        tags: [["VLA","green"],["无人机追踪","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.04659"],["📑 PDF","https://arxiv.org/pdf/2604.04659"]],
+        highlight: true
+    },
+    {
+        date: "2026-04-08",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "StarVLA: A Modular Codebase for Building VLA Systems",
+        venue: "",
+        summary: "首个面向 VLA 研究的<strong>模块化开源代码库</strong>。将视觉编码器、语言模型、动作头、训练管线解耦为可自由插拔的模块。内置支持 OpenVLA、RT-2-X、Octo 等主流 VLA 架构的复现。统一数据加载（RLDS/Open X-Embodiment）、训练（LoRA/全量微调）、评估（SIMPLER/LIBERO）接口。降低 VLA 研究入门门槛，有望成为社区标准基础设施。",
+        tags: [["VLA","green"],["开源工具","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.05377"],["📑 PDF","https://arxiv.org/pdf/2604.05377"],["💻 Code","https://github.com/starvla/starvla"]],
+        highlight: true
+    },
+    {
+        date: "2026-04-08",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "Grounding Hierarchical VLA: Bridging Spatial Reasoning with Action Planning",
+        venue: "",
+        summary: "将空间推理能力显式注入 VLA 的层次化架构。高层通过 grounding 模型定位目标物体的空间坐标和语义关系，中层规划子目标序列，低层 VLA 执行精细操作。在桌面多物体重排任务上，空间推理增强的方案成功率从 45% 提升至 <strong>72%</strong>。证明了 VLA 中显式空间表示的重要性。",
+        tags: [["VLA","green"],["层次化规划","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.05614"],["📑 PDF","https://arxiv.org/pdf/2604.05614"]],
+        highlight: true
+    },
+    {
+        date: "2026-04-08",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "<span class=\"hot-badge\">HOT</span>MV-VDP: Multi-View Video Diffusion Policy for Robotic Manipulation",
+        venue: "",
+        summary: "多视角视频扩散模型直接作为机器人操作策略。同时从<strong>手眼+第三人称+鸟瞰三个视角</strong>生成未来视频帧，再从多视角一致的预测中提取 3D 动作轨迹。相比单视角方案，多视角融合显著改善遮挡和深度歧义问题。RLBench 10 任务平均成功率 <strong>82.1%</strong>，大幅超越单视角基线（67.3%）。视频扩散作为策略骨架的路线再次被验证。",
+        tags: [["World Model","green"],["视频扩散策略","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.03181"],["📑 PDF","https://arxiv.org/pdf/2604.03181"]]
+    },
+    {
+        date: "2026-04-08",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "<span class=\"hot-badge\">HOT</span>GraspSense: Force-Map Guided Dexterous Grasping with Tactile Feedback",
+        venue: "",
+        summary: "基于力图（Force Map）引导的灵巧抓取系统。将分布式触觉传感器阵列采集的力场信息编码为 2D 力图，与视觉特征融合指导手指力度和姿态调整。在易碎物体（鸡蛋、玻璃杯）抓取中成功率 <strong>94.2%</strong>，破碎率低于 2%。接触力精度达 <strong>0.1N</strong>。触觉反馈闭环是灵巧操作从实验室走向工业应用的关键补充。",
+        tags: [["Robotics","green"],["触觉抓取","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.05697"],["📑 PDF","https://arxiv.org/pdf/2604.05697"]]
+    },
+    {
+        date: "2026-04-08",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "Referring-Aware VMP: Closed-Loop Visual Manipulation with Language Grounding",
+        venue: "",
+        summary: "将指代表达（Referring Expression）理解融入视觉运动策略的闭环操作框架。机器人在执行过程中持续通过语言 grounding 验证当前操作对象是否正确，实现\"边做边确认\"。在多物体混杂场景中，相比开环方案错误率降低 <strong>56%</strong>。语言 grounding 作为闭环校验信号的设计值得关注。",
+        tags: [["Robotics","green"],["闭环操作","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.05544"],["📑 PDF","https://arxiv.org/pdf/2604.05544"]],
+        highlight: true
+    },
+    {
+        date: "2026-04-08",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "FAN Prior: Feasible Action Neighborhood for Sample-Efficient Robot Learning",
+        venue: "",
+        summary: "CVPR 2026。提出\"<strong>可行动作邻域</strong>\"（FAN）先验，用预训练视觉模型的特征空间构建动作可行性约束。在探索阶段将 RL 采样限制在物理可行区域内，大幅减少无效探索。LIBERO 上仅需 <strong>10% 演示数据</strong>达到全量数据 95% 性能。面向数据稀缺的真实机器人学习场景有直接应用价值。",
+        tags: [["Robotics","green"],["样本高效","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.01570"],["📑 PDF","https://arxiv.org/pdf/2604.01570"]],
+        highlight: true
+    },
+    {
+        date: "2026-04-08",
+        category: "RL",
+        categoryIcon: "🧠",
+        title: "Goal-VLA: Goal-Conditioned VLA with Reinforcement Fine-Tuning",
+        venue: "",
+        summary: "ICRA 2026。将目标条件强化学习（Goal-Conditioned RL）与 VLA 微调结合。用目标图像作为 reward signal 指导 VLA 在线适应，无需额外人工标注奖励函数。在 CALVIN 基准长视距任务上，RL 微调后的 VLA 连续完成 5 个子任务的成功率从 <strong>32% 提升至 58%</strong>。证明了\"先预训练后 RL 微调\"的 VLA 训练范式的有效性。",
+        tags: [["RL","green"],["目标条件微调","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.04891"],["📑 PDF","https://arxiv.org/pdf/2604.04891"]],
+        highlight: true
+    },
+    {
+        date: "2026-04-08",
+        category: "RL",
+        categoryIcon: "🧠",
+        title: "Fast-WAM: World-Action Model with Accelerated Imagination for Real-Time Planning",
+        venue: "",
+        summary: "加速世界模型\"想象\"过程用于实时机器人规划。核心创新：<strong>潜空间并行展开</strong>——同时生成多条未来轨迹而非逐步串行。结合轻量化 Transformer 解码器和动态剪枝，想象速度提升 <strong>8 倍</strong>，保持预测精度。使世界模型驱动的 MPC 规划在 <strong>20Hz</strong> 实时控制中首次可行。对接触丰富操作的在线规划意义重大。",
+        tags: [["RL","green"],["加速想象","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.05231"],["📑 PDF","https://arxiv.org/pdf/2604.05231"]],
+        highlight: true
+    },
+    {
+        date: "2026-04-08",
+        category: "Embodied AI",
+        categoryIcon: "🧩",
+        title: "Sanctuary AI: Zero-Shot In-Hand Manipulation with Dexterous Robot Hands",
+        venue: "",
+        summary: "Sanctuary AI 展示其 Phoenix 人形机器人的<strong>零样本手内操纵</strong>能力。无需针对特定物体训练，灵巧手可完成旋转、翻转、重定向等精细操作。基于大规模仿真预训练+sim-to-real 迁移。在 20 种日常物体上首次测试成功率达 <strong>78%</strong>。代表了手内操纵从\"特定物体调参\"到\"通用零样本\"的范式跃迁。",
+        tags: [["Embodied AI","green"],["手内操纵","green"]],
+        links: [["🏠 Official","https://sanctuary.ai/blog/zero-shot-in-hand-manipulation"]],
+        highlight: true
+    },
+    {
+        date: "2026-04-08",
+        category: "Embodied AI",
+        categoryIcon: "🧩",
+        title: "VLA 大模型在机器人中的应用：从感知到决策的端到端综述",
+        venue: "",
+        summary: "系统梳理 VLA 大模型在机器人领域的应用全景。从<strong>感知（视觉编码器选择）、理解（语言-视觉对齐）、决策（动作空间设计）、学习（训练范式）</strong>四个维度分类，覆盖 60+ 核心论文。重点讨论数据瓶颈、仿真迁移、安全约束三大挑战。为 VLA 研究者提供系统性知识导航。",
+        tags: [["Embodied AI","green"],["综述","green"]],
+        links: [["📄 CSDN","https://blog.csdn.net/weixin_45168878/article/details/147062445"]],
+        highlight: true
+    },
+    {
+        date: "2026-04-08",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "GLM-5V-Turbo: Enhanced Vision-Language Understanding with Efficient Architecture",
+        venue: "",
+        summary: "智谱 AI 发布 GLM-5V-Turbo，在视觉语言理解任务上实现新突破。采用高效视觉编码器架构，在保持推理速度的同时提升多模态理解能力。支持高分辨率图像输入和长视频理解。在 MMBench、MMMU 等基准上表现优异。面向企业级应用的多模态 AI 解决方案。",
+        tags: [["LLM","green"],["视觉理解","green"]],
+        links: [["🏠 Official","https://zhipu.ai/glm-5v-turbo"]],
+        highlight: true
+    },
+    {
+        date: "2026-04-08",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Qwen3.5-Omni: Unified Omnimodal Understanding and Generation",
+        venue: "",
+        summary: "阿里通义千问发布 Qwen3.5-Omni 全模态模型。统一文本、图像、音频、视频的理解与生成能力。原生支持语音对话、图像生成、视频理解。在 OmniBench 全模态基准上领先同级别模型。\"一个模型处理所有模态\"的实用化里程碑。",
+        tags: [["LLM","green"],["全模态","green"]],
+        links: [["🏠 Official","https://qwenlm.github.io/blog/qwen3.5-omni/"]],
+        highlight: true
+    },
+    {
+        date: "2026-04-08",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Microsoft MAI: Three New Foundation Models for Enterprise AI",
+        venue: "",
+        summary: "微软发布 MAI 系列三款基础模型，专为企业级 AI 应用设计。覆盖代码生成、文档理解、多语言对话三大场景。深度集成 Azure AI 平台，支持细粒度安全控制和合规审计。强调可靠性和可解释性，面向金融、医疗、法律等高合规要求行业。",
+        tags: [["LLM","green"],["企业AI","green"]],
+        links: [["🏠 Microsoft Blog","https://blogs.microsoft.com/blog/2026/04/07/microsoft-mai-models/"]],
+        highlight: true
+    },
+    {
+        date: "2026-04-08",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "<span class=\"hot-badge\">HOT</span>智元 AGIBOT WORLD 2026 全域具身数据集正式开源（Day 2 更新）",
+        venue: "",
+        summary: "AGIBOT AI Week Day 2，全域具身智能数据集第一阶段正式开源上线。包含<strong>真实工厂场景</strong>的双臂操作、移动操作、人形运动数据，总规模超 <strong>50TB</strong>。配套发布数据采集工具链和标准化格式。这是继 Open X-Embodiment 后，中国具身智能团队贡献的最大规模开源数据集。AGIBOT AI Week 将持续至 4/14，每日发布新开源内容。",
+        tags: [["Industry","green"],["具身智能","green"]],
+        links: []
+    },
+    {
+        date: "2026-04-08",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "<span class=\"hot-badge\">HOT</span>CEAI 2026 中国具身智能大会（4/10-12 合肥）即将开幕",
+        venue: "",
+        summary: "第三届中国具身智能大会（CEAI 2026）将于 <strong>4 月 10-12 日</strong>在合肥召开。主题涵盖具身感知、操作、导航、人形机器人、仿真平台五大方向。特邀报告阵容包括陶大程、高瓴 AI 研究院、清华交叉信息院等。同期举办具身智能挑战赛和产业展。预计 2000+ 参会者。",
+        tags: [["Industry","green"],["学术会议","green"]],
+        links: []
+    },
+    {
+        date: "2026-04-08",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "NVIDIA National Robotics Week：开发者工具与教育资源大更新",
+        venue: "",
+        summary: "NVIDIA 在美国国家机器人周期间发布系列开发者工具更新。Isaac Sim 新增<strong>大规模并行仿真</strong>支持（单 GPU 1024 环境）、Isaac ROS 3.0 改进实时感知流水线、Jetson Orin 边缘部署新工具。同步推出免费机器人教育课程。NVIDIA 持续巩固其在机器人软件基础设施中的主导地位。",
+        tags: [["Industry","green"],["NVIDIA","green"]],
+        links: [],
+        highlight: true
+    },
+    {
+        date: "2026-04-08",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "Pittsburgh Robotics Discovery Day 2026 本周末举办",
+        venue: "",
+        summary: "匹兹堡机器人发现日将于本周末举办，集中展示来自 CMU Robotics Institute、NREC、Aurora、Argo AI 等机构和企业的最新机器人技术。今年特别增设<strong>具身智能和人形机器人</strong>专区。匹兹堡作为全球机器人产业重镇，这一年度活动是观察北美机器人生态的重要窗口。",
+        tags: [["Industry","green"],["社区活动","green"]],
+        links: [],
+        highlight: true
+    },
+    {
+        date: "2026-04-08",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "GPT-6 定档 4 月 14 日发布，据传支持原生多模态推理",
+        venue: "",
+        summary: "多方消息源确认 OpenAI GPT-6 将于 <strong>4 月 14 日</strong>正式发布。据传最大看点包括：原生多模态推理（非管线式）、128K 原生上下文、显著提升的代码和数学能力。若消息属实，将是自 GPT-4 以来最大幅度的能力跃迁。与 Anthropic Claude 4.5 的发布时间仅相隔数周，AI 模型军备竞赛白热化。",
+        tags: [["Industry","green"],["OpenAI","green"]],
+        links: [],
+        highlight: true
+    },
+    {
+        date: "2026-04-08",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "Claude 4.5 Sonnet 正式发布，推理与创意写作双突破",
+        venue: "",
+        summary: "Anthropic 发布 Claude 4.5 Sonnet，在推理能力和创意写作上实现双突破。MMLU Pro 达到 <strong>91.2%</strong>，代码生成 HumanEval 达 <strong>95.1%</strong>。创意写作质量被多位独立评测者评为\"最接近人类水平\"。支持 200K 上下文。与即将发布的 GPT-6 形成直接竞争。",
+        tags: [["Industry","green"],["Anthropic","green"]],
+        links: [],
+        highlight: true
+    },
+    {
+        date: "2026-04-08",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "AI Agent 龙虾矩阵：2026 自主智能体趋势全景",
+        venue: "",
+        summary: "最新 AI Agent 行业全景分析（\"龙虾矩阵\"）梳理了 2026 年自主智能体的核心趋势：多 Agent 协作框架成熟化、Tool-Use 标准化（MCP 协议主导）、Agent 安全与对齐成为新焦点。预计 2026 年 Agent 市场规模将达 <strong>$120B</strong>。值得关注的方向包括具身 Agent、金融 Agent 和科研 Agent。",
+        tags: [["Industry","green"],["趋势分析","green"]],
+        links: [],
+        highlight: true
+    },
+    {
+        date: "2026-04-08",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "Sanctuary AI：Phoenix 人形机器人零样本手内操纵首次公开演示",
+        venue: "",
+        summary: "Sanctuary AI 公开演示 Phoenix 人形机器人的零样本手内操纵能力。灵巧手在未经特定物体训练的情况下，成功完成旋转、翻转、精密放置等操作。基于自研 Carbon AI 系统大规模仿真预训练。这是继 Figure、1X 之后，又一家人形机器人公司展示实质性的手部操纵突破。",
+        tags: [["Industry","green"],["人形机器人","green"]],
+        links: [],
+        highlight: true
+    },
     // === 2026-04-07 ===
     {
         date: "2026-04-07",
