@@ -522,11 +522,31 @@ const PAPERS_DB = [
     // === 2026-04-09 ===
     {
         date: "2026-04-09",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "<span class=\"hot-badge\">HOT</span>A1: A Fully Transparent Open-Source, Adaptive and Efficient Truncated VLA Model",
+        venue: "",
+        summary: "完全开源的自适应高效 VLA 框架，针对低成本高吞吐推理设计。核心创新：<strong>预算感知自适应推理</strong>——监控中间 VLM 层的动作一致性触发提前退出，减少骨干网络计算达 <strong>76.6%</strong>；<strong>跨层截断流匹配</strong>在层间预热去噪，流匹配推理延迟降低 <strong>72%</strong>。在 LIBERO/VLABench 仿真和 Franka/AgiBot 真机上均达到 SOTA。RoboChallenge 平均成功率 <strong>29.00%</strong>，超越 pi0 (28.33%) 和 X-VLA (21.33%)。完整训练栈、代码、检查点全部开源。",
+        tags: [["VLA","green"],["高效推理","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.05672"],["📑 PDF","https://arxiv.org/pdf/2604.05672"]]
+    },
+    {
+        date: "2026-04-09",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "<span class=\"hot-badge\">HOT</span>SnapFlow: One-Step Action Generation for Flow-Matching VLAs via Progressive Self-Distillation",
+        venue: "",
+        summary: "即插即用的自蒸馏方法，将流匹配 VLA 的多步去噪压缩为<strong>单次前向传播</strong>。混合标准流匹配样本与一致性样本，零初始化目标时间嵌入实现\"局部速度估计\"与\"全局一步生成\"双模式切换。在 pi0.5 (3B) 上平均成功率 <strong>98.75%</strong>（略优于 10 步教师 97.75%），去噪加速 <strong>9.6x</strong>，端到端延迟从 274ms 降至 <strong>83ms</strong>。在 SmolVLA (500M) 上 MSE 降低 8.3%，端到端加速 3.56x。单 GPU 12 小时训练完成，与层蒸馏/令牌剪枝正交可组合。",
+        tags: [["VLA","green"],["推理加速","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.05656"],["📑 PDF","https://arxiv.org/pdf/2604.05656"]]
+    },
+    {
+        date: "2026-04-09",
         category: "Robotics",
         categoryIcon: "🦾",
         title: "<span class=\"hot-badge\">HOT</span>TAMEn: Tactile-Aware Manipulation Engine for Closed-Loop Data Collection in Contact-Rich Tasks",
         venue: "",
-        summary: "提出触觉感知的操作引擎 TAMEn，用于接触密集任务的闭环数据采集。核心包括：<strong>跨形态可穿戴接口</strong>适配不同夹爪，<strong>双模态采集管线</strong>结合动捕精密模式与 VR 便携模式，以及金字塔数据体制统一大规模触觉预训练、双臂演示和人在回路恢复数据。基于视觉-触觉学习框架，双臂操作成功率从 34% 提升至 <strong>75%</strong>。硬件和数据集已开源，为触觉驱动的操作数据规模化提供了实用基础设施。",
+        summary: "触觉感知的操作引擎，用于接触密集任务的闭环数据采集。核心包括：<strong>跨形态可穿戴接口</strong>适配不同夹爪，<strong>双模态采集管线</strong>结合动捕精密模式与 VR 便携模式，以及金字塔数据体制统一大规模触觉预训练、双臂演示和人在回路恢复数据。基于视觉-触觉学习框架，双臂操作成功率从 34% 提升至 <strong>75%</strong>。硬件和数据集已开源。",
         tags: [["Robotics","green"],["触觉操作","green"]],
         links: [["📄 arXiv","https://arxiv.org/abs/2604.07335"],["📑 PDF","https://arxiv.org/pdf/2604.07335"]]
     },
@@ -536,7 +556,7 @@ const PAPERS_DB = [
         categoryIcon: "🦾",
         title: "<span class=\"hot-badge\">HOT</span>RoSHI: A Versatile Robot-oriented Suit for Human Data In-the-Wild",
         venue: "",
-        summary: "面向机器人学习的混合可穿戴动捕系统。融合<strong>低成本稀疏 IMU</strong> 与 <strong>Project Aria 智能眼镜</strong>第一人称视角，在全局度量坐标系下估计穿戴者完整 3D 姿态和体型。IMU 提供抗遮挡与高速运动鲁棒性，第一人称 SLAM 锚定长时运动并稳定上半身估计。采集的运动数据已验证可用于真实世界人形机器人策略学习。规模化人体运动数据采集的实用方案。",
+        summary: "面向机器人学习的混合可穿戴动捕系统。融合<strong>低成本稀疏 IMU</strong> 与 <strong>Project Aria 智能眼镜</strong>第一人称视角，在全局度量坐标系下估计穿戴者完整 3D 姿态和体型。IMU 提供抗遮挡与高速运动鲁棒性，第一人称 SLAM 锚定长时运动并稳定上半身估计。采集的运动数据已验证可用于真实世界人形机器人策略学习。",
         tags: [["Robotics","green"],["人体动捕","green"]],
         links: [["📄 arXiv","https://arxiv.org/abs/2604.07331"],["📑 PDF","https://arxiv.org/pdf/2604.07331"],["🏠 Project","https://roshi-mocap.github.io/"]]
     },
@@ -544,11 +564,97 @@ const PAPERS_DB = [
         date: "2026-04-09",
         category: "Robotics",
         categoryIcon: "🦾",
+        title: "<span class=\"hot-badge\">HOT</span>HiPolicy: Hierarchical Multi-Frequency Action Chunking for Policy Learning",
+        venue: "",
+        summary: "解决模仿学习中长视距依赖与细粒度闭环控制的核心权衡。提出<strong>分层多频率动作分块框架</strong>：从与各频率对齐的历史观测中提取并融合分层特征，在不同频率上联合预测动作序列，同时捕捉粗略高级规划和精确反应性运动。引入<strong>熵引导执行机制</strong>，基于动作不确定性自适应平衡长期规划与细粒度控制。可无缝集成到现有 2D/3D 生成策略中，在多种仿真和真机任务上带来一致性性能提升。",
+        tags: [["Robotics","green"],["分层策略","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.06067"],["📑 PDF","https://arxiv.org/pdf/2604.06067"]]
+    },
+    {
+        date: "2026-04-09",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "BiDexGrasp: Coordinated Bimanual Dexterous Grasps across Object Geometries and Sizes",
+        venue: "",
+        summary: "解决双手灵巧抓取的<strong>数据集缺乏与生成模型</strong>瓶颈。构建了覆盖多种物体几何形状和尺寸的双手协调灵巧抓取数据集，并提出强大的抓取姿态生成模型。在双手协调场景中验证了跨物体泛化能力。双手灵巧操作是机器人走向通用操作的关键能力，本工作为该方向提供了重要的数据和方法基础设施。",
+        tags: [["Robotics","green"],["双手灵巧抓取","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.06589"],["📑 PDF","https://arxiv.org/pdf/2604.06589"]],
+        highlight: true
+    },
+    {
+        date: "2026-04-09",
+        category: "Robotics",
+        categoryIcon: "🦾",
         title: "Robots that Learn to Evaluate Models of Collective Behavior",
         venue: "",
-        summary: "基于强化学习的仿生机器鱼框架，通过与真实鱼群的<strong>闭环交互</strong>来评估计算行为模型。在仿真中训练四种不同保真度的鱼类模型（简单基准、规则模型、CNN 模型），迁移至真实机器鱼设置。通过量化 Sim-to-Real gap，发现神经网络模型在目标达成和行为指标上保真度最高。展示了具身交互如何系统性地揭示行为模型的缺陷——一个评估动物集体行为模型的通用框架。",
+        summary: "基于强化学习的仿生机器鱼框架，通过与真实鱼群的<strong>闭环交互</strong>来评估计算行为模型。在仿真中训练四种不同保真度的鱼类模型，迁移至真实机器鱼设置。通过量化 Sim-to-Real gap，发现神经网络模型在目标达成和行为指标上保真度最高。展示了具身交互如何系统性地揭示行为模型的缺陷——一个评估动物集体行为模型的通用框架。",
         tags: [["Robotics","green"],["仿生交互","green"]],
         links: [["📄 arXiv","https://arxiv.org/abs/2604.07303"],["📑 PDF","https://arxiv.org/pdf/2604.07303"]],
+        highlight: true
+    },
+    {
+        date: "2026-04-09",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "GraspSense: Physically Grounded Grasp and Grip Planning via Language-Guided Perception and Force Maps",
+        venue: "",
+        summary: "基于力图（Force Map）引导的灵巧抓取系统。将分布式触觉传感器阵列采集的力场信息编码为 2D 力图，结合<strong>语言引导感知</strong>与视觉特征融合指导手指力度和姿态调整。实现物理接地的抓取与夹持规划。触觉反馈闭环是灵巧操作从实验室走向工业应用的关键补充。",
+        tags: [["Robotics","green"],["触觉抓取","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.05697"],["📑 PDF","https://arxiv.org/pdf/2604.05697"]],
+        highlight: true
+    },
+    {
+        date: "2026-04-09",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "Robust Quadruped Locomotion via Evolutionary Reinforcement Learning",
+        venue: "",
+        summary: "ICCRE 2026。将进化策略与强化学习结合用于<strong>四足机器人鲁棒运动控制</strong>。进化搜索增强 RL 策略的探索多样性，提升在复杂地形和外部干扰下的稳定性和适应性。为四足机器人在非结构化环境中的部署提供了更鲁棒的策略学习方案。",
+        tags: [["Robotics","green"],["四足运动","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.07005"],["📑 PDF","https://arxiv.org/pdf/2604.07005"]],
+        highlight: true
+    },
+    {
+        date: "2026-04-09",
+        category: "Embodied AI",
+        categoryIcon: "🧩",
+        title: "<span class=\"hot-badge\">HOT</span>Genie Sim PanoRecon: Fast Immersive Scene Generation from Single-View Panorama",
+        venue: "",
+        summary: "AgiBot 出品。从<strong>单张全景图快速生成沉浸式 3D 场景</strong>，服务于机器人仿真和具身智能训练。解决大规模高质量 3D 场景数据的迫切需求。基于 Genie Sim 仿真平台，将全景重建速度大幅提升，为 Sim-to-Real 训练提供海量多样化环境。",
+        tags: [["Embodied AI","green"],["场景生成","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.07105"],["📑 PDF","https://arxiv.org/pdf/2604.07105"]]
+    },
+    {
+        date: "2026-04-09",
+        category: "Embodied AI",
+        categoryIcon: "🧩",
+        title: "AEROS: A Single-Agent Operating Architecture with Embodied Capability Modules",
+        venue: "",
+        summary: "提出面向具身智能的<strong>单智能体操作架构</strong>，通过模块化的具身能力模块实现感知、规划、控制的统一调度。单一智能体核心协调多种能力模块，简化多 Agent 协作的复杂度。为构建可扩展的具身智能系统提供新的架构范式。",
+        tags: [["Embodied AI","green"],["系统架构","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.07095"],["📑 PDF","https://arxiv.org/pdf/2604.07095"]],
+        highlight: true
+    },
+    {
+        date: "2026-04-09",
+        category: "Embodied AI",
+        categoryIcon: "🧩",
+        title: "KITE: Keyframe-Indexed Tokenized Evidence for VLM-Based Robot Failure Analysis",
+        venue: "",
+        summary: "ICRA 2026。将<strong>关键帧索引的标记化证据</strong>引入 VLM 驱动的机器人故障分析。通过自动提取关键帧并编码为结构化 token，使 VLM 能精确定位和诊断机器人执行失败的原因。从\"事后回放\"到\"自动诊断\"的范式跃迁，对提升机器人系统的可靠性和可维护性意义重大。",
+        tags: [["Embodied AI","green"],["故障分析","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.06943"],["📑 PDF","https://arxiv.org/pdf/2604.06943"]],
+        highlight: true
+    },
+    {
+        date: "2026-04-09",
+        category: "RL",
+        categoryIcon: "🧠",
+        title: "Differentiable Environment-Trajectory Co-Optimization for Safe Multi-Agent Navigation",
+        venue: "",
+        summary: "提出<strong>可微分的环境-轨迹协同优化</strong>框架用于多智能体安全导航。核心思路是将环境设计和轨迹优化统一到可微分框架中，通过梯度反传联合优化环境参数和导航策略。相比分别优化的方案，协同优化在安全约束满足率和导航效率上均有显著提升。对仓储物流等多机器人密集协作场景有直接应用价值。",
+        tags: [["RL","green"],["多智能体安全导航","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.07050"],["📑 PDF","https://arxiv.org/pdf/2604.07050"]],
         highlight: true
     },
     {
@@ -557,7 +663,7 @@ const PAPERS_DB = [
         categoryIcon: "💡",
         title: "Personalized RewardBench: Evaluating Reward Models with Human Aligned Personalization",
         venue: "",
-        summary: "首个评估奖励模型<strong>个性化偏好建模能力</strong>的基准。通过构建基于特定用户标准的选择/拒绝响应对，确保偏好区分是个人化的而非通用的。测试发现当前 SOTA 奖励模型在个性化方面表现不佳，准确率峰值仅 <strong>75.94%</strong>。研究还证明该基准与下游任务（Best-of-N 采样和 PPO）的性能呈更高相关性。多元化对齐是 LLM 下一阶段的关键前沿。",
+        summary: "首个评估奖励模型<strong>个性化偏好建模能力</strong>的基准。通过构建基于特定用户标准的选择/拒绝响应对，确保偏好区分是个人化的而非通用的。当前 SOTA 奖励模型在个性化方面表现不佳，准确率峰值仅 <strong>75.94%</strong>。该基准与下游任务（Best-of-N 采样和 PPO）的性能呈更高相关性。多元化对齐是 LLM 下一阶段的关键前沿。",
         tags: [["LLM","green"],["个性化对齐","green"]],
         links: [["📄 arXiv","https://arxiv.org/abs/2604.07343"],["📑 PDF","https://arxiv.org/pdf/2604.07343"]],
         highlight: true
@@ -577,34 +683,42 @@ const PAPERS_DB = [
         date: "2026-04-09",
         category: "LLM / VLM",
         categoryIcon: "💡",
-        title: "Evaluating In-Context Translation with Synchronous Context-Free Grammar Transduction",
-        venue: "",
-        summary: "利用同步上下文无关文法（SCFG）转导来评估 LLM 的<strong>上下文内翻译</strong>能力，聚焦低资源语言。研究发现 LLM 在利用上下文示例时存在系统性偏差——倾向于过度依赖表面形式匹配而忽略结构级对应关系。为理解和改进 LLM 少样本翻译机制提供了形式化分析框架。",
-        tags: [["LLM","green"],["低资源翻译","green"]],
-        links: [["📄 arXiv","https://arxiv.org/abs/2604.07320"],["📑 PDF","https://arxiv.org/pdf/2604.07320"]],
-        highlight: true
-    },
-    {
-        date: "2026-04-09",
-        category: "LLM / VLM",
-        categoryIcon: "💡",
-        title: "Chatbot-Based Assessment of Code Understanding in Automated Programming Assessment Systems",
-        venue: "",
-        summary: "研究 LLM 如何挑战传统自动编程评估系统，并提出基于<strong>对话式聊天机器人</strong>的代码理解评估方案。通过多轮问答交互验证学生是否真正理解其提交的代码，而非仅依赖 LLM 生成的正确答案。在教育领域，这种评估范式能有效检测\"AI 代写\"的情况。",
-        tags: [["LLM","green"],["代码理解评估","green"]],
-        links: [["📄 arXiv","https://arxiv.org/abs/2604.07304"],["📑 PDF","https://arxiv.org/pdf/2604.07304"]],
-        highlight: true
-    },
-    {
-        date: "2026-04-09",
-        category: "Multimodal",
-        categoryIcon: "🎨",
         title: "Appear2Meaning: A Cross-Cultural Benchmark for Structured Cultural Metadata Inference from Images",
         venue: "",
         summary: "首个用于从图像推断<strong>结构化文化元数据</strong>（创作者、起源地、年代等）的多类别跨文化基准。评估发现当前视觉语言模型在捕捉文化信号方面存在碎片化问题——不同文化背景和元数据类型之间性能差异显著。揭示 VLM 在超越视觉感知层面进行文化理解时的系统性局限。",
-        tags: [["Multimodal","green"],["文化推理","green"]],
+        tags: [["LLM","green"],["文化推理","green"]],
         links: [["📄 arXiv","https://arxiv.org/abs/2604.07338"],["📑 PDF","https://arxiv.org/pdf/2604.07338"]],
         highlight: true
+    },
+    {
+        date: "2026-04-09",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "<span class=\"hot-badge\">HOT</span>千寻智能 30 天融资 30 亿元，雷军 + 马云罕见联手",
+        venue: "",
+        summary: "4 月 7 日千寻智能完成新一轮 <strong>10 亿元</strong>融资，由雷军旗下顺为资本与马云旗下云锋基金联合领投。叠加此前近 20 亿元融资，30 天内累计融资约 <strong>30 亿元</strong>，估值跃升至 <strong>200 亿元</strong>，成为国内第三家达此估值的非上市具身智能公司。千寻定位\"机器人通用大脑构建者\"，主攻通用具身大模型研发。",
+        tags: [["Industry","green"],["具身智能","green"]],
+        links: []
+    },
+    {
+        date: "2026-04-09",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "<span class=\"hot-badge\">HOT</span>2026 Q1 具身智能融资接近 300 亿，百亿估值公司增至 13 家",
+        venue: "",
+        summary: "开年仅 3 个月，国内具身智能赛道融资超 <strong>30 起</strong>，总额约 <strong>200-300 亿元</strong>。宇树科技于 3 月 20 日获上交所受理<strong>科创板 IPO</strong> 申请（拟融 42 亿元），银河通用机器人 3 月初完成 25 亿元融资，智平方、千寻智能、自变量机器人相继跻身百亿估值。行业呈现\"大额融资密集、头部效应凸显、全产业链覆盖\"格局。",
+        tags: [["Industry","green"],["融资盘点","green"]],
+        links: []
+    },
+    {
+        date: "2026-04-09",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "<span class=\"hot-badge\">HOT</span>GLM-5.1 发布：754B 参数开源旗舰，支持 8 小时自主任务",
+        venue: "",
+        summary: "Z.AI（原智谱 AI）4 月 7 日发布下一代开源旗舰 <strong>GLM-5.1</strong>，<strong>754B 参数</strong>，面向 Agentic 工程与长周期任务设计。SWE-Bench Pro 得分 <strong>58.4</strong>（SOTA），支持单次任务连续自主运行长达 <strong>8 小时</strong>。在长程任务（闭环优化、工程交付）上显著超越前代。代码和权重开源。",
+        tags: [["Industry","green"],["大模型","green"]],
+        links: []
     },
     {
         date: "2026-04-09",
@@ -615,16 +729,6 @@ const PAPERS_DB = [
         summary: "HuggingFace 新模型发布。szang18 发布的灵巧操作 VLA 完整模型，面向抽屉操作任务的自我中心灵巧手视觉-语言-动作系统。",
         tags: [["Other","green"],["灵巧手VLA","green"]],
         links: [["🤗 HuggingFace","https://huggingface.co/szang18/dexmg_drawer_egodex_vla_full"]]
-    },
-    {
-        date: "2026-04-09",
-        category: "Informations",
-        categoryIcon: "📡",
-        title: "paper-classifier",
-        venue: "",
-        summary: "HuggingFace 新模型发布。VladKozlovskiy 发布的论文自动分类模型，可用于学术论文的主题标注和分类。",
-        tags: [["VLA","green"],["论文分类","green"]],
-        links: [["🤗 HuggingFace","https://huggingface.co/VladKozlovskiy/paper-classifier"]]
     },
     {
         date: "2026-04-09",
