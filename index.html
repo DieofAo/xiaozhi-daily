@@ -519,6 +519,140 @@
 <script>
 // ===== DATA =====
 const PAPERS_DB = [
+    // === 2026-04-10 ===
+    {
+        date: "2026-04-10",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "<span class=\"hot-badge\">HOT</span>RoboAgent: Capability-Driven Embodied Task Planning with Single Vision-Language Model",
+        venue: "",
+        summary: "CVPR 2026。提出<strong>能力驱动的具身任务规划</strong>框架，仅使用单个视觉语言模型（VLM）完成从感知到规划的全链路。核心创新：构建「能力图谱」将机器人可执行的原语操作与 VLM 的语义理解对齐，让规划器在生成指令时天然满足执行可行性约束。区别于传统多模块级联（VLM → LLM → 控制器），RoboAgent 在单一 VLM 内完成视觉接地、任务分解和动作序列生成。在多种台面操作和导航任务上验证了端到端效果。",
+        tags: [["VLA","green"],["任务规划","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.07774"],["📑 PDF","https://arxiv.org/pdf/2604.07774"]]
+    },
+    {
+        date: "2026-04-10",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "<span class=\"hot-badge\">HOT</span>SIM1: A Physics-Aligned Simulator for Deformable Object Manipulation",
+        venue: "",
+        summary: "物理对齐的可变形物体操作仿真器。解决传统仿真器在布料、绳索等柔性物体上 Sim-to-Real 差距大的痛点。核心创新：通过<strong>可微分物理引擎</strong>与真实世界触觉/视觉数据联合优化材质参数，实现仿真与真实物理行为的精确对齐。零样本迁移成功率达 <strong>90%</strong>，数据效率提升至 <strong>1:15</strong>（仅需真实数据的 1/15 即可完成策略训练）。可变形物体操作是机器人走向日常生活（叠衣、烹饪、护理）的关键难题，本工作为该方向提供了高保真仿真基础设施。",
+        tags: [["Robotics","green"],["物理仿真","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.08544"],["📑 PDF","https://arxiv.org/pdf/2604.08544"]]
+    },
+    {
+        date: "2026-04-10",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "<span class=\"hot-badge\">HOT</span>Sumo: Dynamic Whole-Body Loco-Manipulation for Legged Robots",
+        venue: "",
+        summary: "面向足式机器人的<strong>动态全身移动操作</strong>框架。突破传统\"先移动后操作\"的分离范式，让四足机器人在行走过程中同时用身体和四肢完成重物搬运、推拉等操作任务。核心技术：层级化的全身控制器，高层策略规划全身运动轨迹，低层跟踪器协调四肢力矩实现稳定的动态操作。在重物搬运（超过体重 50%）等极端任务上验证了鲁棒性。足式机器人从\"行走机器\"向\"操作工人\"进化的关键一步。",
+        tags: [["Robotics","green"],["全身操作","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.08508"],["📑 PDF","https://arxiv.org/pdf/2604.08508"]]
+    },
+    {
+        date: "2026-04-10",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "<span class=\"hot-badge\">HOT</span>HEX: Humanoid-aligned Experts for Cross-Embodiment Whole-Body Manipulation",
+        venue: "",
+        summary: "面向人形机器人的<strong>跨形态全身操作</strong>框架。核心挑战：不同人形平台（Unitree H1, Figure 02 等）在自由度、关节限位、力矩能力上差异巨大，导致策略难以迁移。HEX 提出「人形对齐专家」架构——共享骨干网络提取跨平台通用的操作语义特征，专家头（Expert Heads）适配各平台的运动学/动力学约束。在真实人形机器人上实现了<strong>全身操作 SOTA</strong>，包括抓取、搬运、放置等多步任务，成功率显著超越单一平台训练方案。",
+        tags: [["Robotics","green"],["人形机器人","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.07993"],["📑 PDF","https://arxiv.org/pdf/2604.07993"]]
+    },
+    {
+        date: "2026-04-10",
+        category: "Embodied AI",
+        categoryIcon: "🧩",
+        title: "<span class=\"hot-badge\">HOT</span>EgoVerse: A Large-Scale Egocentric Video Dataset for Robotic Learning",
+        venue: "",
+        summary: "大规模自我中心人类活动数据集，专为机器人学习设计。规模空前：<strong>1,362 小时</strong>视频，来自 <strong>2,087 位</strong>示范者的日常操作行为，39 位作者联合贡献。覆盖厨房操作、物品整理、工具使用等丰富的日常场景。核心价值：为「从人类视频学习机器人技能」（Learning from Human Videos）提供了迄今最大、最多样的训练数据源。自我中心视角天然对齐了人类与机器人的操作视角，减少了视角迁移的 gap。",
+        tags: [["Embodied AI","green"],["大规模数据集","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.07607"],["📑 PDF","https://arxiv.org/pdf/2604.07607"]]
+    },
+    {
+        date: "2026-04-10",
+        category: "Embodied AI",
+        categoryIcon: "🧩",
+        title: "<span class=\"hot-badge\">HOT</span>ActiveGlasses: Ego-Centric Human Demo to Robot Manipulation with Active Vision",
+        venue: "",
+        summary: "从<strong>自我中心人类演示到机器人操作</strong>的主动视觉迁移框架。核心创新：不仅学习\"做什么\"，还学习\"看哪里\"——通过主动视觉策略让机器人自主调整注视方向以获取最优操作视角。戴上智能眼镜的人类演示自然包含了头部运动（即注意力分配）信息，ActiveGlasses 将其解耦为操作策略和视觉策略两个子模块。实现了<strong>零样本迁移</strong>：从人类演示直接部署到机器人，无需任何机器人数据微调。主动感知是弥合人-机演示差距的关键能力。",
+        tags: [["Embodied AI","green"],["主动视觉","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.08534"],["📑 PDF","https://arxiv.org/pdf/2604.08534"]]
+    },
+    {
+        date: "2026-04-10",
+        category: "RL",
+        categoryIcon: "🧠",
+        title: "<span class=\"hot-badge\">HOT</span>ViVa: A Video-Generative Value Model for Robot Reinforcement Learning",
+        venue: "",
+        summary: "将<strong>预训练视频生成模型</strong>用于机器人强化学习的价值估计。核心 insight：大规模视频生成模型已隐式编码了物理世界的动态先验和\"什么状态更好\"的价值判断。ViVa 将视频生成器改造为价值函数——给定当前状态，生成多条未来轨迹视频，通过评估生成轨迹的质量作为状态价值估计。无需手工设计奖励函数，直接利用视频先验指导机器人探索和策略优化。在操作任务上验证了视频先验对稀疏奖励 RL 的显著加速效果。视觉基础模型赋能具身 RL 的新范式。",
+        tags: [["RL","green"],["视频价值模型","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.08168"],["📑 PDF","https://arxiv.org/pdf/2604.08168"]]
+    },
+    {
+        date: "2026-04-10",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "<span class=\"hot-badge\">HOT</span>智元机器人发布 GO-2 具身基座大模型，首创「动作思维链」",
+        venue: "",
+        summary: "4 月 9 日智元机器人（AgiBot）发布新一代具身基座大模型 <strong>GO-2</strong>，核心创新「<strong>Action-of-Thought</strong>」（动作思维链）——在动作生成前引入中间推理步骤，让机器人在执行操作前显式地\"思考\"任务分解、物理约束和安全检查。类比 LLM 的 Chain-of-Thought，但面向物理世界的动作序列。GO-2 同步集成 Genie Sim 3.0 仿真平台和大规模操作数据集。",
+        tags: [["Industry","green"],["具身智能","green"]],
+        links: []
+    },
+    {
+        date: "2026-04-10",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "<span class=\"hot-badge\">HOT</span>TrendForce：2026 年中国人形机器人产量同比暴增 94%",
+        venue: "",
+        summary: "集邦咨询（TrendForce）4 月 9 日发布报告，2026 年中国人形机器人产量预计同比增长 <strong>94%</strong>，其中宇树科技（Unitree）和智元机器人（AgiBot）合计占据约 <strong>80%</strong> 市场份额。报告指出中国已成为全球人形机器人制造和部署的绝对领跑者，工业场景（仓储、巡检、装配）是主要落地方向。",
+        tags: [["Industry","green"],["市场分析","green"]],
+        links: []
+    },
+    {
+        date: "2026-04-10",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "<span class=\"hot-badge\">HOT</span>NVIDIA 国家机器人周 2026：mimic-video 10x 采样效率 + RoboLab + Cosmos Reason",
+        venue: "",
+        summary: "NVIDIA 在 2026 美国国家机器人周上集中展示多项重大进展：<strong>mimic-video</strong> 实现 <strong>10 倍</strong>样本效率提升，仅需少量人类演示视频即可训练机器人策略；<strong>RoboLab</strong> 统一仿真平台整合 Isaac Sim + Omniverse，支持百万级并行 GPU 仿真；<strong>Cosmos Reason</strong> 世界模型新增物理推理能力，可预测操作后果并辅助机器人决策。",
+        tags: [["Industry","green"],["技术发布","green"]],
+        links: []
+    },
+    {
+        date: "2026-04-10",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "字节跳动发布 Seeduplex 全双工语音大模型",
+        venue: "",
+        summary: "4 月 10 日字节跳动发布 <strong>Seeduplex</strong> 全双工语音大模型，实现<strong>真正的语音实时交互</strong>——AI 可以在用户说话的同时进行理解、思考和回应，无需等待用户停顿。对标 OpenAI 的 GPT-4o Advanced Voice，核心技术栈基于字节自研的流式推理架构。对话质量和响应延迟均达到领先水平。语音交互是机器人人机协作的核心界面之一。",
+        tags: [["Industry","green"],["语音大模型","green"]],
+        links: [],
+        highlight: true
+    },
+    {
+        date: "2026-04-10",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "D-Robotics 完成 1.5 亿美元 B2 轮融资",
+        venue: "",
+        summary: "4 月 8 日，D-Robotics（地平线旗下机器人芯片公司）宣布完成 <strong>1.5 亿美元</strong> B2 轮融资。D-Robotics 聚焦机器人专用 AI 芯片（计算平台、传感器融合处理器），为具身智能终端提供边缘端算力基座。本轮融资将加速下一代机器人芯片的流片和量产。",
+        tags: [["Industry","green"],["融资","green"]],
+        links: [],
+        highlight: true
+    },
+    {
+        date: "2026-04-10",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "Tesla 发布 Optimus V3 人形机器人",
+        venue: "",
+        summary: "4 月 6 日 Tesla 发布第三代人形机器人 <strong>Optimus V3</strong>。相比 V2 版本，V3 在灵巧操作能力（22 自由度手部）、行走稳定性和自主导航上均有显著提升。Tesla 表示 Optimus 已在 Fremont 工厂内部完成超过 <strong>1,000 小时</strong>的连续作业测试（零件搬运、质检辅助）。Elon Musk 重申 2027 年量产目标。",
+        tags: [["Industry","green"],["人形机器人","green"]],
+        links: [],
+        highlight: true
+    },
     // === 2026-04-09 ===
     {
         date: "2026-04-09",
