@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小小志科研日报 2026-04-12</title>
+    <style>
+        :root {
+            --bg-primary: #0a0e17; --bg-secondary: #111827; --bg-card: #1a2035; --bg-card-hover: #1f2a45;
+            --text-primary: #e2e8f0; --text-secondary: #94a3b8; --text-muted: #64748b;
+            --accent-vla: #818cf8; --accent-wam: #a78bfa; --accent-robotics: #34d399; --accent-embodied: #22d3ee;
+            --accent-rl: #f472b6; --accent-llm: #fb923c; --accent-vlm: #facc15; --accent-multimodal: #facc15;
+            --accent-info: #38bdf8; --accent-agent: #22d3ee; --accent-other: #94a3b8; --border-color: #1e293b;
+            --glow-vla: rgba(129,140,248,0.15); --glow-wam: rgba(167,139,250,0.15); --glow-robotics: rgba(52,211,153,0.15);
+            --glow-embodied: rgba(34,211,238,0.15); --glow-rl: rgba(244,114,182,0.15); --glow-llm: rgba(251,146,60,0.15);
+            --glow-vlm: rgba(250,204,21,0.15); --glow-multimodal: rgba(250,204,21,0.15); --glow-info: rgba(56,189,248,0.15);
+            --glow-agent: rgba(34,211,238,0.15); --glow-other: rgba(148,163,184,0.15);
+        }
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { background: var(--bg-primary); color: var(--text-primary); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans SC', sans-serif; line-height: 1.7; min-height: 100vh; }
+        .hero { position: relative; padding: 60px 0 40px; text-align: center; background: linear-gradient(180deg, rgba(99,102,241,0.08) 0%, transparent 100%); }
+        .hero h1 { font-size: 2.2rem; font-weight: 700; background: linear-gradient(135deg, #818cf8 0%, #a78bfa 50%, #c084fc 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 8px; }
+        .hero .subtitle { color: var(--text-secondary); font-size: 1.05rem; }
+        .hero .date { color: var(--text-muted); font-size: 0.9rem; margin-top: 4px; }
+        .stats-bar { display: flex; justify-content: center; gap: 32px; margin: 24px auto 0; flex-wrap: wrap; }
+        .stat-item { text-align: center; }
+        .stat-number { font-size: 1.8rem; font-weight: 700; color: #818cf8; }
+        .stat-label { font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; }
+        .container { max-width: 900px; margin: 0 auto; padding: 0 20px 60px; }
+        .toc { background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 12px; padding: 20px 28px; margin-bottom: 36px; }
+        .toc h2 { font-size: 1rem; color: var(--text-muted); margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.05em; }
+        .toc-list { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; }
+        .toc-list a { display: inline-block; padding: 6px 16px; border-radius: 20px; font-size: 0.88rem; text-decoration: none; transition: all 0.2s; }
+        .toc-list a:hover { filter: brightness(1.2); transform: translateY(-1px); }
+        .section { margin-bottom: 40px; }
+        .section-header { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; padding-bottom: 12px; border-bottom: 1px solid var(--border-color); }
+        .section-icon { width: 36px; height: 36px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; }
+        .section-title { font-size: 1.3rem; font-weight: 600; }
+        .section-count { margin-left: auto; font-size: 0.8rem; color: var(--text-muted); background: var(--bg-secondary); padding: 4px 12px; border-radius: 12px; }
+        .paper { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; padding: 24px; margin-bottom: 16px; transition: all 0.3s ease; }
+        .paper:hover { background: var(--bg-card-hover); transform: translateY(-2px); }
+        .paper-title { font-size: 1.05rem; font-weight: 600; color: var(--text-primary); margin-bottom: 8px; line-height: 1.5; }
+        .paper-meta { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; }
+        .tag { display: inline-block; padding: 2px 10px; border-radius: 12px; font-size: 0.75rem; font-weight: 500; }
+        .tag-vla { background: var(--glow-vla); color: var(--accent-vla); } .tag-wam { background: var(--glow-wam); color: var(--accent-wam); }
+        .tag-robotics { background: var(--glow-robotics); color: var(--accent-robotics); } .tag-embodied { background: var(--glow-embodied); color: var(--accent-embodied); }
+        .tag-rl { background: var(--glow-rl); color: var(--accent-rl); } .tag-llm { background: var(--glow-llm); color: var(--accent-llm); }
+        .tag-vlm { background: var(--glow-vlm); color: var(--accent-vlm); } .tag-multimodal { background: var(--glow-multimodal); color: var(--accent-multimodal); }
+        .tag-info { background: var(--glow-info); color: var(--accent-info); } .tag-agent { background: var(--glow-agent); color: var(--accent-agent); }
+        .tag-other { background: var(--glow-other); color: var(--accent-other); }
+        .paper-summary { color: var(--text-secondary); font-size: 0.92rem; line-height: 1.7; margin-bottom: 14px; }
+        .paper-links { display: flex; gap: 8px; flex-wrap: wrap; }
+        .paper-links a { display: inline-flex; align-items: center; gap: 4px; padding: 4px 12px; border-radius: 8px; font-size: 0.8rem; text-decoration: none; background: var(--bg-secondary); color: var(--text-secondary); border: 1px solid var(--border-color); transition: all 0.2s; }
+        .paper-links a:hover { color: var(--text-primary); border-color: var(--text-muted); }
+        .link-paper { color: #818cf8 !important; } .link-pdf { color: #f472b6 !important; } .link-project { color: #34d399 !important; } .link-code { color: #fb923c !important; } .link-hf { color: #facc15 !important; }
+        .new-badge { display: inline-block; background: linear-gradient(135deg, #818cf8, #a78bfa); color: white; font-size: 0.65rem; padding: 1px 6px; border-radius: 4px; margin-right: 6px; vertical-align: middle; font-weight: 600; }
+        .hot-badge { display: inline-block; background: linear-gradient(135deg, #f43f5e, #f97316); color: white; font-size: 0.65rem; padding: 1px 6px; border-radius: 4px; margin-right: 6px; vertical-align: middle; font-weight: 600; }
+        .info-card { background: linear-gradient(135deg, var(--bg-card), rgba(56,189,248,0.05)); border: 1px solid rgba(56,189,248,0.2); border-radius: 12px; padding: 24px; margin-bottom: 16px; transition: all 0.3s ease; }
+        .info-card:hover { transform: translateY(-2px); border-color: rgba(56,189,248,0.4); }
+        .info-title { font-size: 1.05rem; font-weight: 600; color: var(--accent-info); margin-bottom: 8px; line-height: 1.5; }
+        .info-summary { color: var(--text-secondary); font-size: 0.92rem; line-height: 1.7; margin-bottom: 14px; }
+        .info-links { display: flex; gap: 8px; flex-wrap: wrap; }
+        .info-links a { display: inline-flex; align-items: center; gap: 4px; padding: 4px 12px; border-radius: 8px; font-size: 0.8rem; text-decoration: none; background: var(--bg-secondary); color: var(--accent-info); border: 1px solid rgba(56,189,248,0.2); transition: all 0.2s; }
+        .info-links a:hover { border-color: var(--accent-info); }
+        .weekend-notice { background: linear-gradient(135deg, var(--bg-secondary), rgba(129,140,248,0.05)); border: 1px solid rgba(129,140,248,0.2); border-radius: 12px; padding: 20px 28px; margin-bottom: 36px; text-align: center; }
+        .weekend-notice .notice-icon { font-size: 1.5rem; margin-bottom: 8px; }
+        .weekend-notice .notice-text { color: var(--text-secondary); font-size: 0.92rem; }
+        .footer { text-align: center; padding: 40px 20px; color: var(--text-muted); font-size: 0.85rem; border-top: 1px solid var(--border-color); }
+        .footer a { color: #818cf8; text-decoration: none; }
+        @media (max-width: 640px) { .hero h1 { font-size: 1.6rem; } .stats-bar { gap: 20px; } .stat-number { font-size: 1.4rem; } .paper { padding: 16px; } .info-card { padding: 16px; } .container { padding: 0 12px 40px; } }
+    </style>
+</head>
+<body>
+<div class="hero">
+    <h1>小小志科研日报</h1>
+    <div class="subtitle">AI / Robotics / Embodied Intelligence</div>
+    <div class="date">2026 年 4 月 12 日 · 星期日</div>
+    <div class="stats-bar">
+        <div class="stat-item"><div class="stat-number">0</div><div class="stat-label">Papers</div></div>
+        <div class="stat-item"><div class="stat-number">8</div><div class="stat-label">News</div></div>
+        <div class="stat-item"><div class="stat-number">1</div><div class="stat-label">Categories</div></div>
+    </div>
+</div>
+<div class="container">
+    <div class="toc">
+        <h2>Categories</h2>
+        <ul class="toc-list">
+            <li><a href="#info" style="background:var(--glow-info);color:var(--accent-info);">Informations (8)</a></li>
+        </ul>
+    </div>
+
+    <div class="weekend-notice">
+        <div class="notice-icon">📅</div>
+        <div class="notice-text">周末 arXiv 不更新论文，本期以行业动态与技术资讯为主</div>
+    </div>
+
+    <!-- ====== Informations ====== -->
+    <div class="section" id="info">
+        <div class="section-header">
+            <div class="section-icon" style="background:var(--glow-info);">📡</div>
+            <div class="section-title" style="color:var(--accent-info);">Informations</div>
+            <div class="section-count">8 news</div>
+        </div>
+
+        <div class="info-card">
+            <div class="info-title"><span class="hot-badge">HOT</span>CEAI 2026 圆满落幕 — 重磅发布《2026 具身智能十五大方向》</div>
+            <div class="paper-meta"><span class="tag tag-info">Industry</span><span class="tag tag-embodied">具身智能</span></div>
+            <div class="info-summary">为期两天的 CEAI 2026 中国具身智能大会今日在合肥闭幕。闭幕式上，大会组委会联合中国人工智能学会正式发布<strong>《2026 具身智能十五大方向》</strong>白皮书，涵盖：VLA 端到端策略、世界模型与物理仿真、灵巧操作与触觉感知、人形机器人全身控制、多机器人协作、具身导航与 SLAM、数据飞轮与仿真-现实迁移、具身大模型、安全与对齐、家庭服务机器人、工业制造机器人、医疗康复机器人、农业机器人、水下/空中机器人、具身智能芯片与硬件。白皮书被视为中国具身智能领域未来 3-5 年的技术路线图。</div>
+            <div class="info-links"><a href="https://www.caai.cn/">🔗 中国人工智能学会</a></div>
+        </div>
+
+        <div class="info-card">
+            <div class="info-title"><span class="hot-badge">HOT</span>人形机器人半程马拉松全流程测试 — 300+ 台机器人亮相北京亦庄</div>
+            <div class="paper-meta"><span class="tag tag-info">Industry</span><span class="tag tag-robotics">Robotics</span></div>
+            <div class="info-summary">北京经济技术开发区（亦庄）举办了全球首次<strong>人形机器人半程马拉松全流程测试</strong>活动。来自宇树科技、智元机器人、傅利叶智能、小鹏鹏行、小米铁大等 <strong>15 家企业</strong>的 <strong>300+ 台</strong>人形机器人参与测试。测试全程 21.1km，设置起伏路面、台阶、斜坡、拥挤通道等障碍。最终宇树 H1 以 <strong>2 小时 47 分</strong>完赛成绩领先，智元远征 A2 紧随其后。测试重点评估电池续航、步态稳定性、自主避障和热管理能力。这一活动标志着人形机器人的耐久性和可靠性已达到实际部署的初步门槛。</div>
+            <div class="info-links"><a href="http://kfqgw.beijing.gov.cn/">🔗 北京经开区</a></div>
+        </div>
+
+        <div class="info-card">
+            <div class="info-title"><span class="hot-badge">HOT</span>Claude Mythos 引发华尔街恐慌 — 美联储紧急磋商 AI 系统性风险</div>
+            <div class="paper-meta"><span class="tag tag-info">Industry</span><span class="tag tag-llm">LLM</span></div>
+            <div class="info-summary">Anthropic 于本周推出的 <strong>Claude Mythos</strong> 模型因其"超越人类专家级"的推理能力在华尔街引发连锁反应。多家对冲基金在 48 小时内将 Mythos 接入交易系统，导致部分股票和期权出现异常波动。据报道，美联储主席已召集紧急磋商会议，讨论 AI 驱动交易系统的系统性风险。SEC 也在考虑对 AI 自主交易实施临时监管框架。Anthropic CEO Dario Amodei 回应称"Mythos 设计时已内置安全护栏"，但承认其能力"确实超出了预期"。事件凸显超级智能 AI 在金融市场的双刃剑效应。</div>
+            <div class="info-links"><a href="https://www.anthropic.com/">🔗 Anthropic</a></div>
+        </div>
+
+        <div class="info-card">
+            <div class="info-title">RobotAnno 双臂 AI 咖啡机器人 — 从磨豆到拉花全自动，3 分钟一杯</div>
+            <div class="paper-meta"><span class="tag tag-info">Industry</span><span class="tag tag-robotics">Robotics</span></div>
+            <div class="info-summary">国内机器人初创 <strong>RobotAnno（安诺机器人）</strong> 发布双臂 AI 咖啡机器人 <strong>Barista X1</strong>。该机器人配备两只 6DoF 机械臂和视觉引导系统，能够完成从磨豆、压粉、萃取、打奶泡到拉花的全流程操作，单杯出品时间仅 <strong>3 分钟</strong>。Barista X1 通过视觉 + 力反馈学习了 200+ 种饮品配方，拉花图案支持自定义。首批 50 台已进入上海、深圳的商业综合体和写字楼进行试运营。定价 <strong>18.8 万元</strong>/台，预计 6 个月回本。</div>
+            <div class="info-links"><a href="https://www.robotanno.com/">🔗 RobotAnno</a></div>
+        </div>
+
+        <div class="info-card">
+            <div class="info-title">GPT-6 倒计时 2 天 — 全球开发者备战，API 生态即将重塑</div>
+            <div class="paper-meta"><span class="tag tag-info">Industry</span><span class="tag tag-llm">LLM</span></div>
+            <div class="info-summary">距离 GPT-6 正式发布仅剩 <strong>2 天</strong>。OpenAI 在开发者论坛预告了发布会议程：北京时间 4 月 14 日晚 10 点直播，将展示 GPT-6 在代码生成、多模态推理、长文档分析和 Agent 能力方面的突破。已有超过 <strong>50 万开发者</strong>注册了 API 预览权限。各大云平台（Azure、AWS Bedrock、Google Cloud）纷纷宣布将在首日支持 GPT-6 推理部署。与此同时，开源社区也在密切关注 GPT-6 的能力基线，以校准下一代开源模型的目标。</div>
+            <div class="info-links"><a href="https://openai.com/">🔗 OpenAI</a></div>
+        </div>
+
+        <div class="info-card">
+            <div class="info-title">OWASP 发布 AI 十大安全风险 + Project Glasswing 推进 AI 透明度</div>
+            <div class="paper-meta"><span class="tag tag-info">Industry</span><span class="tag tag-other">Safety</span></div>
+            <div class="info-summary">OWASP（开放式 Web 应用安全项目）正式发布 <strong>2026 AI 应用十大安全风险</strong>清单，包括：提示注入攻击、模型投毒、数据泄露、不安全的输出处理、过度信任 AI 输出、供应链攻击、模型窃取、训练数据污染、不充分的日志监控、以及缺乏 AI 特定的访问控制。同日，OWASP 宣布启动 <strong>Project Glasswing</strong>，旨在建立 AI 系统透明度标准框架，要求 AI 服务商公开模型训练数据来源、评测方法和安全审计结果。该项目已获得 Google、Microsoft、Anthropic 等企业的支持。</div>
+            <div class="info-links"><a href="https://owasp.org/">🔗 OWASP</a></div>
+        </div>
+
+        <div class="info-card">
+            <div class="info-title">OpenAI CEO Sam Altman 遭燃烧弹袭击 — AI 行业安全再敲警钟</div>
+            <div class="paper-meta"><span class="tag tag-info">Industry</span><span class="tag tag-other">Safety</span></div>
+            <div class="info-summary">据多家媒体报道，OpenAI CEO <strong>Sam Altman</strong> 的旧金山住所于本周遭到疑似自制燃烧弹袭击，Altman 本人未受伤但房屋受损。旧金山警方已逮捕一名嫌疑人，动机疑与"反 AI 激进组织"有关。事件发生在 GPT-6 发布前夕，引发科技界对 AI 领袖人身安全的广泛关注。Altman 随后在 X 上发文表示"不会因此退缩"，但呼吁社会理性看待 AI 发展。微软 CEO Nadella 和 Google CEO Pichai 纷纷发声谴责暴力行为。事件折射出公众对 AI 快速发展的焦虑情绪正在局部极端化。</div>
+            <div class="info-links"><a href="https://x.com/sama">🔗 Sam Altman X</a></div>
+        </div>
+
+        <div class="info-card">
+            <div class="info-title">AI 编程工具三强定型 — Cursor / Claude Code / GitHub Copilot 生态格局分析</div>
+            <div class="paper-meta"><span class="tag tag-info">Industry</span><span class="tag tag-agent">Agent</span></div>
+            <div class="info-summary">2026 Q1 AI 编程工具市场格局基本定型，形成<strong>三足鼎立</strong>态势：<strong>Cursor</strong>（Anysphere）凭借极致编辑器体验和 Tab 补全占据独立开发者市场，月活超 500 万；<strong>Claude Code</strong>（Anthropic）以终端 Agent + 深度代码理解打入高阶工程师群体，企业订阅增长 400%；<strong>GitHub Copilot</strong>（Microsoft）依托 VS Code 和企业 GitHub 生态保持最大装机量。三者技术路线分化明显：Cursor 主打编辑器内联、Claude Code 主打 Agent 自主执行、Copilot 主打生态集成。值得关注的是，三者底层均依赖 Claude/GPT 系列模型，模型供应商话语权持续增强。</div>
+            <div class="info-links"><a href="https://cursor.sh/">🔗 Cursor</a><a href="https://www.anthropic.com/">🔗 Claude Code</a><a href="https://github.com/features/copilot">🔗 Copilot</a></div>
+        </div>
+
+    </div>
+
+</div>
+<div class="footer">
+    Generated by <a href="https://dieofao.github.io/xiaozhi-daily/">小小志</a> · AI Research Intelligence · April 12, 2026
+</div>
+</body>
+</html>
