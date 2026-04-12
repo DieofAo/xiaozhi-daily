@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小小志科研日报 2026-04-11</title>
+    <style>
+        :root {
+            --bg-primary: #0a0e17; --bg-secondary: #111827; --bg-card: #1a2035; --bg-card-hover: #1f2a45;
+            --text-primary: #e2e8f0; --text-secondary: #94a3b8; --text-muted: #64748b;
+            --accent-vla: #818cf8; --accent-wam: #a78bfa; --accent-robotics: #34d399; --accent-embodied: #22d3ee;
+            --accent-rl: #f472b6; --accent-llm: #fb923c; --accent-vlm: #facc15; --accent-multimodal: #facc15;
+            --accent-info: #38bdf8; --accent-agent: #22d3ee; --accent-other: #94a3b8; --border-color: #1e293b;
+            --glow-vla: rgba(129,140,248,0.15); --glow-wam: rgba(167,139,250,0.15); --glow-robotics: rgba(52,211,153,0.15);
+            --glow-embodied: rgba(34,211,238,0.15); --glow-rl: rgba(244,114,182,0.15); --glow-llm: rgba(251,146,60,0.15);
+            --glow-vlm: rgba(250,204,21,0.15); --glow-multimodal: rgba(250,204,21,0.15); --glow-info: rgba(56,189,248,0.15);
+            --glow-agent: rgba(34,211,238,0.15); --glow-other: rgba(148,163,184,0.15);
+        }
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { background: var(--bg-primary); color: var(--text-primary); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans SC', sans-serif; line-height: 1.7; min-height: 100vh; }
+        .hero { position: relative; padding: 60px 0 40px; text-align: center; background: linear-gradient(180deg, rgba(99,102,241,0.08) 0%, transparent 100%); }
+        .hero h1 { font-size: 2.2rem; font-weight: 700; background: linear-gradient(135deg, #818cf8 0%, #a78bfa 50%, #c084fc 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 8px; }
+        .hero .subtitle { color: var(--text-secondary); font-size: 1.05rem; }
+        .hero .date { color: var(--text-muted); font-size: 0.9rem; margin-top: 4px; }
+        .stats-bar { display: flex; justify-content: center; gap: 32px; margin: 24px auto 0; flex-wrap: wrap; }
+        .stat-item { text-align: center; }
+        .stat-number { font-size: 1.8rem; font-weight: 700; color: #818cf8; }
+        .stat-label { font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; }
+        .container { max-width: 900px; margin: 0 auto; padding: 0 20px 60px; }
+        .toc { background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 12px; padding: 20px 28px; margin-bottom: 36px; }
+        .toc h2 { font-size: 1rem; color: var(--text-muted); margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.05em; }
+        .toc-list { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; }
+        .toc-list a { display: inline-block; padding: 6px 16px; border-radius: 20px; font-size: 0.88rem; text-decoration: none; transition: all 0.2s; }
+        .toc-list a:hover { filter: brightness(1.2); transform: translateY(-1px); }
+        .section { margin-bottom: 40px; }
+        .section-header { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; padding-bottom: 12px; border-bottom: 1px solid var(--border-color); }
+        .section-icon { width: 36px; height: 36px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; }
+        .section-title { font-size: 1.3rem; font-weight: 600; }
+        .section-count { margin-left: auto; font-size: 0.8rem; color: var(--text-muted); background: var(--bg-secondary); padding: 4px 12px; border-radius: 12px; }
+        .paper { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; padding: 24px; margin-bottom: 16px; transition: all 0.3s ease; }
+        .paper:hover { background: var(--bg-card-hover); transform: translateY(-2px); }
+        .paper-title { font-size: 1.05rem; font-weight: 600; color: var(--text-primary); margin-bottom: 8px; line-height: 1.5; }
+        .paper-meta { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; }
+        .tag { display: inline-block; padding: 2px 10px; border-radius: 12px; font-size: 0.75rem; font-weight: 500; }
+        .tag-vla { background: var(--glow-vla); color: var(--accent-vla); } .tag-wam { background: var(--glow-wam); color: var(--accent-wam); }
+        .tag-robotics { background: var(--glow-robotics); color: var(--accent-robotics); } .tag-embodied { background: var(--glow-embodied); color: var(--accent-embodied); }
+        .tag-rl { background: var(--glow-rl); color: var(--accent-rl); } .tag-llm { background: var(--glow-llm); color: var(--accent-llm); }
+        .tag-vlm { background: var(--glow-vlm); color: var(--accent-vlm); } .tag-multimodal { background: var(--glow-multimodal); color: var(--accent-multimodal); }
+        .tag-info { background: var(--glow-info); color: var(--accent-info); } .tag-agent { background: var(--glow-agent); color: var(--accent-agent); }
+        .tag-other { background: var(--glow-other); color: var(--accent-other); }
+        .paper-summary { color: var(--text-secondary); font-size: 0.92rem; line-height: 1.7; margin-bottom: 14px; }
+        .paper-links { display: flex; gap: 8px; flex-wrap: wrap; }
+        .paper-links a { display: inline-flex; align-items: center; gap: 4px; padding: 4px 12px; border-radius: 8px; font-size: 0.8rem; text-decoration: none; background: var(--bg-secondary); color: var(--text-secondary); border: 1px solid var(--border-color); transition: all 0.2s; }
+        .paper-links a:hover { color: var(--text-primary); border-color: var(--text-muted); }
+        .link-paper { color: #818cf8 !important; } .link-pdf { color: #f472b6 !important; } .link-project { color: #34d399 !important; } .link-code { color: #fb923c !important; } .link-hf { color: #facc15 !important; }
+        .new-badge { display: inline-block; background: linear-gradient(135deg, #818cf8, #a78bfa); color: white; font-size: 0.65rem; padding: 1px 6px; border-radius: 4px; margin-right: 6px; vertical-align: middle; font-weight: 600; }
+        .hot-badge { display: inline-block; background: linear-gradient(135deg, #f43f5e, #f97316); color: white; font-size: 0.65rem; padding: 1px 6px; border-radius: 4px; margin-right: 6px; vertical-align: middle; font-weight: 600; }
+        .info-card { background: linear-gradient(135deg, var(--bg-card), rgba(56,189,248,0.05)); border: 1px solid rgba(56,189,248,0.2); border-radius: 12px; padding: 24px; margin-bottom: 16px; transition: all 0.3s ease; }
+        .info-card:hover { transform: translateY(-2px); border-color: rgba(56,189,248,0.4); }
+        .info-title { font-size: 1.05rem; font-weight: 600; color: var(--accent-info); margin-bottom: 8px; line-height: 1.5; }
+        .info-summary { color: var(--text-secondary); font-size: 0.92rem; line-height: 1.7; margin-bottom: 14px; }
+        .info-links { display: flex; gap: 8px; flex-wrap: wrap; }
+        .info-links a { display: inline-flex; align-items: center; gap: 4px; padding: 4px 12px; border-radius: 8px; font-size: 0.8rem; text-decoration: none; background: var(--bg-secondary); color: var(--accent-info); border: 1px solid rgba(56,189,248,0.2); transition: all 0.2s; }
+        .info-links a:hover { border-color: var(--accent-info); }
+        .weekend-notice { background: linear-gradient(135deg, var(--bg-secondary), rgba(129,140,248,0.05)); border: 1px solid rgba(129,140,248,0.2); border-radius: 12px; padding: 20px 28px; margin-bottom: 36px; text-align: center; }
+        .weekend-notice .notice-icon { font-size: 1.5rem; margin-bottom: 8px; }
+        .weekend-notice .notice-text { color: var(--text-secondary); font-size: 0.92rem; }
+        .footer { text-align: center; padding: 40px 20px; color: var(--text-muted); font-size: 0.85rem; border-top: 1px solid var(--border-color); }
+        .footer a { color: #818cf8; text-decoration: none; }
+        @media (max-width: 640px) { .hero h1 { font-size: 1.6rem; } .stats-bar { gap: 20px; } .stat-number { font-size: 1.4rem; } .paper { padding: 16px; } .info-card { padding: 16px; } .container { padding: 0 12px 40px; } }
+    </style>
+</head>
+<body>
+<div class="hero">
+    <h1>小小志科研日报</h1>
+    <div class="subtitle">AI / Robotics / Embodied Intelligence</div>
+    <div class="date">2026 年 4 月 11 日 · 星期六</div>
+    <div class="stats-bar">
+        <div class="stat-item"><div class="stat-number">0</div><div class="stat-label">Papers</div></div>
+        <div class="stat-item"><div class="stat-number">8</div><div class="stat-label">News</div></div>
+        <div class="stat-item"><div class="stat-number">1</div><div class="stat-label">Categories</div></div>
+    </div>
+</div>
+<div class="container">
+    <div class="toc">
+        <h2>Categories</h2>
+        <ul class="toc-list">
+            <li><a href="#info" style="background:var(--glow-info);color:var(--accent-info);">Informations (8)</a></li>
+        </ul>
+    </div>
+
+    <div class="weekend-notice">
+        <div class="notice-icon">📅</div>
+        <div class="notice-text">周末 arXiv 不更新论文，本期以行业动态与技术资讯为主</div>
+    </div>
+
+    <!-- ====== Informations ====== -->
+    <div class="section" id="info">
+        <div class="section-header">
+            <div class="section-icon" style="background:var(--glow-info);">📡</div>
+            <div class="section-title" style="color:var(--accent-info);">Informations</div>
+            <div class="section-count">8 news</div>
+        </div>
+
+        <div class="info-card">
+            <div class="info-title"><span class="hot-badge">HOT</span>CEAI 2026 中国具身智能大会在合肥开幕 — 1500+ 参会者共论具身未来</div>
+            <div class="paper-meta"><span class="tag tag-info">Industry</span><span class="tag tag-embodied">具身智能</span></div>
+            <div class="info-summary">2026 中国具身智能大会（CEAI 2026）4 月 11 日在合肥滨湖国际会展中心正式开幕。大会由中国人工智能学会主办，安徽省人民政府支持，超 <strong>1500 名</strong>产学研代表参会。安徽省省长出席致辞，强调安徽将打造"具身智能第一省"。大会设置主论坛 + 12 个专题论坛，覆盖人形机器人、VLA、触觉感知、仿真平台等核心议题。华为、宇树科技、智元机器人等头部企业悉数亮相。大会将持续两天，明日发布重磅报告《2026 具身智能十五大方向》。</div>
+            <div class="info-links"><a href="https://www.ah.gov.cn/">🔗 安徽省政府</a></div>
+        </div>
+
+        <div class="info-card">
+            <div class="info-title"><span class="hot-badge">HOT</span>GPT-6 倒计时 3 天 — 代号 Spud，200 万 Token 上下文，性能较 o3 提升 40%</div>
+            <div class="paper-meta"><span class="tag tag-info">Industry</span><span class="tag tag-llm">LLM</span></div>
+            <div class="info-summary">OpenAI 预定 4 月 14 日发布 GPT-6（内部代号 <strong>Spud</strong>）。据多方泄露信息汇总：上下文窗口达 <strong>200 万 Token</strong>（GPT-4o 的 16 倍），多模态推理性能较 o3 提升约 40%，原生支持代码执行、实时搜索和工具调用。定价方面预计 API 成本较 GPT-4o 降低 30%。Sam Altman 在 X 上暗示"下周一切都会不同"。全球 AI 社区进入最后倒计时。</div>
+            <div class="info-links"><a href="https://openai.com/">🔗 OpenAI</a></div>
+        </div>
+
+        <div class="info-card">
+            <div class="info-title"><span class="hot-badge">HOT</span>DeepSeek V4 官宣 — 梁文锋确认 4 月下旬发布，万亿参数 MoE 架构</div>
+            <div class="paper-meta"><span class="tag tag-info">Industry</span><span class="tag tag-llm">LLM</span></div>
+            <div class="info-summary">深度求索创始人梁文锋在接受采访时正式确认 <strong>DeepSeek V4</strong> 将于 4 月下旬发布。V4 采用全新的万亿参数 MoE 架构（激活参数约 370B），训练数据量达 <strong>20T Token</strong>，在内部评测中多项指标已超越 GPT-4.5 和 Claude Opus。V4 将同步开放 API 和开源权重。此前 DeepSeek V3/R1 系列已在全球开源 LLM 排行榜上长期霸榜。中美大模型竞赛进入新赛段。</div>
+            <div class="info-links"><a href="https://www.deepseek.com/">🔗 DeepSeek</a></div>
+        </div>
+
+        <div class="info-card">
+            <div class="info-title">阿里千问 Qwen3.6-Plus 日处理 1.4 万亿 Token — 全球首个突破万亿日吞吐的开源模型</div>
+            <div class="paper-meta"><span class="tag tag-info">Industry</span><span class="tag tag-llm">LLM</span></div>
+            <div class="info-summary">阿里云宣布通义千问 <strong>Qwen3.6-Plus</strong> 日均处理量突破 <strong>1.4 万亿 Token</strong>，成为全球首个达到此量级的开源大模型。Qwen3.6-Plus 基于千问 3.6 系列的 MoE 架构，在数学推理、代码生成和多语言理解方面持续领先。阿里同步发布了优化后的推理引擎，单卡 H100 推理吞吐较上一版本提升 2.3 倍。这一里程碑标志着开源模型在商业规模化部署上已具备与闭源模型匹敌的能力。</div>
+            <div class="info-links"><a href="https://qwen.readthedocs.io/">🔗 Qwen Docs</a></div>
+        </div>
+
+        <div class="info-card">
+            <div class="info-title">Anthropic 年化收入突破 300 亿美元 — AI 独角兽商业化加速</div>
+            <div class="paper-meta"><span class="tag tag-info">Industry</span><span class="tag tag-llm">LLM</span></div>
+            <div class="info-summary">据 The Information 援引知情人士报道，Anthropic 年化收入已突破 <strong>300 亿美元</strong>，较 2025 年底增长近 3 倍。增长主要来自企业 API 订阅（占比超 70%）和 Claude Pro 消费级订阅的爆发式增长。Claude Opus 系列和新推出的 Claude Mythos 是核心收入驱动。Anthropic 已成为仅次于 OpenAI 的全球第二大 AI 公司，估值超 <strong>1500 亿美元</strong>。公司正与多家投资机构洽谈新一轮融资。</div>
+            <div class="info-links"><a href="https://www.anthropic.com/">🔗 Anthropic</a></div>
+        </div>
+
+        <div class="info-card">
+            <div class="info-title">追觅科技 2 亿年薪抢人 + 魔法原子完成 5 亿 A 轮 — 机器人行业人才大战升级</div>
+            <div class="paper-meta"><span class="tag tag-info">Industry</span><span class="tag tag-robotics">Robotics</span></div>
+            <div class="info-summary">追觅科技被曝开出 <strong>2 亿人民币年薪</strong>包挖角顶级具身智能人才，刷新国内机器人行业薪资记录。同日，专注原子级精密操作的机器人初创公司<strong>魔法原子</strong>（MagicAtom）宣布完成 <strong>5 亿人民币 A 轮融资</strong>，由红杉中国和高瓴创投联合领投。魔法原子致力于将大模型驱动的精密操作能力应用于半导体制造和生物实验自动化领域。两则消息折射出具身智能赛道资本持续升温，人才争夺进入白热化阶段。</div>
+            <div class="info-links"><a href="https://www.dreame.cn/">🔗 追觅科技</a></div>
+        </div>
+
+        <div class="info-card">
+            <div class="info-title">UniX AI Panther 三代人形机器人首次家庭部署 — 能叠衣服、洗碗、遛狗</div>
+            <div class="paper-meta"><span class="tag tag-info">Industry</span><span class="tag tag-embodied">具身智能</span></div>
+            <div class="info-summary">美国具身智能初创公司 <strong>UniX AI</strong> 宣布其第三代人形机器人 <strong>Panther</strong> 已完成首批家庭场景部署试点。Panther 身高 165cm、重 58kg，配备双臂 7DoF 灵巧手和全身 34 自由度。通过 VLA 端到端策略，Panther 可在家庭场景中完成叠衣服、装卸洗碗机、清理桌面、甚至牵绳遛狗等任务。首批 10 台测试机已进入湾区 10 个家庭，为期 3 个月。家庭服务机器人从实验室走向真实家庭迈出关键一步。</div>
+            <div class="info-links"><a href="https://unix-ai.com/">🔗 UniX AI</a></div>
+        </div>
+
+        <div class="info-card">
+            <div class="info-title">教育部发布《AI + 教育行动计划》— 高校 AI 课程将全面覆盖本科教育</div>
+            <div class="paper-meta"><span class="tag tag-info">Industry</span><span class="tag tag-other">Policy</span></div>
+            <div class="info-summary">教育部正式发布《人工智能 + 教育行动计划（2026-2030）》，明确提出到 <strong>2028 年</strong>所有本科高校须开设至少一门 AI 通识必修课，AI 相关硕士点扩招至 <strong>500 个</strong>。计划鼓励高校与企业联合建设 AI 实训平台，推动大模型辅助教学工具进入课堂。同时设立 <strong>50 亿专项基金</strong>支持 AI 教育基础设施建设。此举被视为中国应对全球 AI 人才竞争的战略性举措，也将为机器人和具身智能方向输送更多新生力量。</div>
+            <div class="info-links"><a href="https://www.moe.gov.cn/">🔗 教育部</a></div>
+        </div>
+
+    </div>
+
+</div>
+<div class="footer">
+    Generated by <a href="https://dieofao.github.io/xiaozhi-daily/">小小志</a> · AI Research Intelligence · April 11, 2026
+</div>
+</body>
+</html>
