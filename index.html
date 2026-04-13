@@ -522,6 +522,106 @@ const PAPERS_DB = [
     // === 2026-04-13 ===
     {
         date: "2026-04-13",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "VAG: Dual-Stream Video-Action Generation for Embodied Data Synthesis",
+        venue: "",
+        summary: "提出 VAG——基于流匹配的双流统一框架，首次实现视频和动作的联合生成。通过同步去噪 + 自适应 3D 池化将全局视频上下文传递至动作分支，解决了现有世界模型不直接产生配对动作轨迹的根本问题。在仿真和真实环境中生成的视频-动作对支持可执行轨迹回放，合成预训练数据显著提升下游策略泛化能力，是具身数据合成的重要突破。",
+        tags: [["VLA","green"],["数据合成","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.09330"],["PDF","https://arxiv.org/pdf/2604.09330"]]
+    },
+    {
+        date: "2026-04-13",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "V-CAGE: Vision-Closed-Loop Agentic Generation Engine for Robotic Manipulation",
+        venue: "",
+        summary: "提出 V-CAGE——首个用于 VLA 训练数据自主合成的智能体框架。核心创新三个：(1) 修复引导的场景构建确保语义结构 + 运动学可达；(2) VLM 闭环视觉批评者严格过滤静默失败并切断错误传播链；(3) 感知驱动压缩算法实现 90%+ 文件缩减且不损害 VLA 训练效果。端到端自动化流水线，实现了大规模高质量机器人操作数据集的可扩展合成。",
+        tags: [["VLA","green"],["数据引擎","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.09036"],["PDF","https://arxiv.org/pdf/2604.09036"]]
+    },
+    {
+        date: "2026-04-13",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "2D or 3D: Who Governs Salience in VLA Models? — Tri-Stage Token Pruning with Modality Salience Awareness",
+        venue: "",
+        summary: "首次系统研究多视觉模态 VLA (MVLA) 中 2D 与 3D token 的显著性差异。提出三阶段分析框架，捕捉不同阶段 2D/3D 模态显著性的动态变化规律，并据此设计三阶段 token 剪枝方案。实现 2.55x 推理加速，精度损失极小，开销仅 5.8%。这对部署多模态 VLA 到边缘设备有重要实用价值。",
+        tags: [["VLA","green"],["推理加速","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.09244"],["PDF","https://arxiv.org/pdf/2604.09244"]]
+    },
+    {
+        date: "2026-04-13",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "Toward Hardware-Agnostic Quadrupedal World Models via Morphology Conditioning",
+        venue: "",
+        summary: "首个实现跨形态零样本泛化的四足世界模型 (QWM)。核心思路是将环境动力学与机器人形态解耦——通过物理形态编码器 + 奖励归一化器，将工程规格显式注入世界模型（而非隐式从运动历史推断）。在 Spot、Go1 等不同四足平台上实现零样本控制。论文诚实指出 QWM 是分布有界的插值器而非通用物理引擎，但这确实是腿式运动世界模型的里程碑。",
+        tags: [["World Model","green"],["四足泛化","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.08780"],["PDF","https://arxiv.org/pdf/2604.08780"]]
+    },
+    {
+        date: "2026-04-13",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "WOMBET: World Model-based Experience Transfer for Robust and Sample-efficient RL",
+        venue: "",
+        summary: "提出 WOMBET——联合优化数据生成与迁移的世界模型框架（L4DC 2026）。在源任务中学习世界模型，通过不确定性惩罚规划生成高质量合成轨迹，筛选高回报+低认知不确定性数据，再以自适应采样在目标任务中在线微调。理论证明不确定性惩罚目标提供真实回报下界。连续控制基准上显著优于强基线的样本效率和最终性能。",
+        tags: [["World Model","green"],["经验迁移","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.08958"],["PDF","https://arxiv.org/pdf/2604.08958"]]
+    },
+    {
+        date: "2026-04-13",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "TouchAnything: Diffusion-Guided 3D Reconstruction from Sparse Robot Touches",
+        venue: "",
+        summary: "提出 TouchAnything——利用预训练 2D 视觉扩散模型作为几何先验，从极稀疏的机器人触摸数据重建 3D 物体。核心是将重建表述为优化问题：触觉一致性约束 + 扩散先验引导双重驱动。仅需几次触摸即可准确重建，实现了对未见物体的开放世界 3D 重建能力。解决了遮挡/暗光下视觉不可靠时的形状感知难题。",
+        tags: [["Robotics","green"],["触觉感知","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.08945"],["PDF","https://arxiv.org/pdf/2604.08945"]]
+    },
+    {
+        date: "2026-04-13",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "LEGO: Latent-space Exploration for Geometry-aware Optimization of Humanoid Kinematic Design",
+        venue: "",
+        summary: "ICRA 2026 | 提出数据驱动的人形机器人运动学设计自动优化方法。创新点：(1) 基于螺旋理论关节轴表示 + 等距流形学习，从现有机械设计中构建紧凑保几何的潜在空间；(2) 通过运动重定向 + Procrustes 分析直接从人类运动数据定义损失函数，完全绕过手工设计任务特定损失。无梯度优化在潜在空间中搜索最优设计。与 Boss 的 7-DoF IK 研究方向高度相关！",
+        tags: [["Robotics","green"],["设计优化","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.08636"],["PDF","https://arxiv.org/pdf/2604.08636"]]
+    },
+    {
+        date: "2026-04-13",
+        category: "Embodied AI",
+        categoryIcon: "🧩",
+        title: "AssemLM: Spatial Reasoning MLLM for Robotic Assembly",
+        venue: "",
+        summary: "首个面向机器人组装任务的空间推理多模态大模型。整合组装手册 + 点云 + 文本指令，通过专用点云编码器捕获细粒度几何和旋转特征，预测任务关键的 6D 组装姿态。同时推出 AssemBench——90 万样本的大规模组装基准，配有精确 6D 姿态标注。真实机器人实验证明可执行细粒度多步组装。将 VLM 空间推理从 2D 推进到完整 3D 几何。",
+        tags: [["Embodied AI","green"],["空间推理","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.08983"],["PDF","https://arxiv.org/pdf/2604.08983"],["Project","https://assemlmhome.github.io/"]]
+    },
+    {
+        date: "2026-04-13",
+        category: "Embodied AI",
+        categoryIcon: "🧩",
+        title: "3D-VCD: Hallucination Mitigation in 3D-LLM Embodied Agents through Visual Contrastive Decoding",
+        venue: "",
+        summary: "CVPR 2026 | 首个面向 3D 具身智能体的推断时幻觉缓解框架。核心思路：对 3D 场景图中以对象为中心的表示施加语义和几何扰动（类别替换、坐标损坏等），构建扭曲场景图，然后对比原始/扭曲上下文下的预测，抑制对场景证据不敏感（可能由语言先验驱动）的 token。无需重新训练即可持续改进基于事实的推理能力。",
+        tags: [["Embodied AI","green"],["幻觉缓解","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.08645"],["PDF","https://arxiv.org/pdf/2604.08645"]]
+    },
+    {
+        date: "2026-04-13",
+        category: "Reinforcement Learning",
+        categoryIcon: "📄",
+        title: "SafeMind: A Risk-Aware Differentiable Control Framework for Adaptive and Safe Quadruped Locomotion",
+        venue: "",
+        summary: "提出 SafeMind——将概率控制障碍函数 (CBF) 与语义上下文理解、元自适应风险校准统一的可微分安全控制框架。通过嵌入可微 QP 的方差感知障碍约束显式建模认知+偶然不确定性，语义编码器根据感知/语言线索调节安全裕度。在 Unitree A1 和 ANYmal C 上 200Hz 部署验证：安全违规降低 3-10x，能耗降低 10-15%。",
+        tags: [["RL","green"],["安全控制","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.09474"],["PDF","https://arxiv.org/pdf/2604.09474"]]
+    },
+    {
+        date: "2026-04-13",
         category: "Informations",
         categoryIcon: "📡",
         title: "GPT-6 明日全球发布：5-6 万亿参数 Symphony 架构，OpenAI 的\"翻身之战\"",
