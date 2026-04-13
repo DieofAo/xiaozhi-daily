@@ -519,6 +519,67 @@
 <script>
 // ===== DATA =====
 const PAPERS_DB = [
+    // === 2026-04-13 ===
+    {
+        date: "2026-04-13",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "GPT-6 明日全球发布：5-6 万亿参数 Symphony 架构，OpenAI 的\"翻身之战\"",
+        venue: "",
+        summary: "OpenAI GPT-6（代号 Spud）确认 4/14 全球同步发布。核心升级：5-6 万亿参数 MoE 架构（实际激活约 10%）、200 万 Token 上下文、全新 \"Symphony（交响乐）\" 双系统推理框架（System-1 快速直觉 + System-2 逻辑校验）。产品形态巨变——ChatGPT + Codex + Atlas 三合一超级应用。定价 $2.5/百万 Token（与 GPT-5.4 持平，内部称\"神话级智能 Sonnet 级定价\"）。训练成本超 20 亿美元、10 万张 H100、研发 18 个月。",
+        tags: [["LLM","green"],["重磅发布","green"]],
+        links: []
+    },
+    {
+        date: "2026-04-13",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "LMGenDrive: 首个统一 LLM 理解 + 生成式世界模型的端到端闭环驾驶框架",
+        venue: "",
+        summary: "受人类\"理解+想象\"统一能力启发，LMGenDrive 首次将 LLM 多模态理解与生成式世界模型结合用于端到端闭环驾驶。输入多视角相机 + 语言指令，联合生成未来驾驶视频和控制信号。提出渐进式三阶段训练策略。在闭环基准上显著超越先前方法，特别是在指令遵循、时空理解和罕见场景鲁棒性方面。",
+        tags: [["World Model","green"],["端到端驾驶","green"]],
+        links: []
+    },
+    {
+        date: "2026-04-13",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "Generative Simulation for Physical HRI: text2sim2real 零样本框架",
+        venue: "",
+        summary: "首个面向物理人机交互 (pHRI) 的生成式仿真流水线。利用 LLM + VLM 根据自然语言提示自动生成 pHRI 场景（软体人体模型、场景布局、机器人轨迹），采集合成演示数据训练视觉模仿学习策略。在抓挠和洗澡两个辅助任务用户研究中，实现 80%+ 零样本 sim2real 成功率。",
+        tags: [["Robotics","green"],["人机交互","green"]],
+        links: []
+    },
+    {
+        date: "2026-04-13",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "Task-Aware Bimanual Affordance: VLM 引导的双臂语义-几何联合推理",
+        venue: "",
+        summary: "将双臂操作重构为功能定位 + 手臂分配的联合问题。分层框架：多视角 RGB-D 融合 3D 场景表示 → 生成全局 6-DoF 抓取候选 → VLM 查询任务相关功能区域和手臂分配 → 空间+语义双重筛选。覆盖并行操作、协调稳定、工具使用、人机交接四类九个真实任务，任务成功率超越几何和语义基线。",
+        tags: [["Robotics","green"],["双臂操作","green"]],
+        links: []
+    },
+    {
+        date: "2026-04-13",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "NVIDIA B200 全球断货：话题热度单日暴涨 625%",
+        venue: "",
+        summary: "NVIDIA B200 GPU 全球断货成为热议话题。原因叠加：超大模型训练需求超预期、HBM4 内存产能瓶颈、云厂商提前囤货、地缘出口管制。中小企业训练成本上涨，AMD MI300X 和华为昇腾 910C 等替代方案需求激增。这场算力短缺正在重塑全球 AI 研发格局。",
+        tags: [["Industry","green"],["算力危机","green"]],
+        links: []
+    },
+    {
+        date: "2026-04-13",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "Physics-Informed RL for Map-Free Racing: 不到 1% 计算量超越人类 12%",
+        venue: "",
+        summary: "提出物理信息驱动的深度 RL 方法实现无地图自主竞速。通过深度测量的光谱分布参数化非线性车辆动力学，使用基于物理的非几何奖励函数。关键突破：(1) 计算量不到行为克隆和 MBRL 的 1%；(2) 通过隐式值水平截断替代显式碰撞惩罚，消除 sim2real gap；(3) OOD 赛道上比人类演示高出 12%。",
+        tags: [["RL","green"],["自主竞速","green"]],
+        links: []
+    },
     // === 2026-04-12 ===
     {
         date: "2026-04-12",
