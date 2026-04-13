@@ -424,6 +424,170 @@
         /* Ideas overview accent override */
         .ideas-accent .overview-card .num { color: #7c3aed; }
 
+        /* ===== Project Module ===== */
+        .project-hero {
+            background: linear-gradient(135deg, #0d9488 0%, #059669 50%, #0284c7 100%);
+            border-radius: var(--radius);
+            padding: 32px 36px;
+            margin-bottom: 24px;
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+        }
+        .project-hero::before {
+            content: "";
+            position: absolute; right: -40px; top: -40px;
+            width: 200px; height: 200px;
+            background: rgba(255,255,255,0.06);
+            border-radius: 50%;
+        }
+        .project-hero h2 { font-size: 22px; font-weight: 700; margin-bottom: 6px; }
+        .project-hero .subtitle { font-size: 14px; opacity: 0.85; margin-bottom: 16px; }
+        .project-hero .status-row { display: flex; gap: 12px; flex-wrap: wrap; }
+        .project-hero .status-chip {
+            display: inline-flex; align-items: center; gap: 5px;
+            background: rgba(255,255,255,0.18); padding: 5px 14px;
+            border-radius: 20px; font-size: 12px; font-weight: 600;
+            backdrop-filter: blur(4px);
+        }
+
+        .project-section {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            margin-bottom: 18px;
+            box-shadow: var(--shadow-sm);
+            overflow: hidden;
+        }
+        .project-section-header {
+            display: flex; align-items: center; gap: 10px;
+            padding: 18px 24px;
+            border-bottom: 1px solid var(--border);
+            cursor: pointer;
+            user-select: none;
+            transition: background 0.15s;
+        }
+        .project-section-header:hover { background: var(--bg-secondary); }
+        .project-section-header .icon { font-size: 18px; }
+        .project-section-header h3 { font-size: 15px; font-weight: 600; color: var(--text); flex: 1; }
+        .project-section-header .toggle { font-size: 12px; color: var(--text-muted); transition: transform 0.2s; }
+        .project-section-header .toggle.collapsed { transform: rotate(-90deg); }
+        .project-section-body { padding: 20px 24px; }
+        .project-section-body.collapsed { display: none; }
+
+        .project-section-body p {
+            font-size: 14.5px; color: var(--text-dim); line-height: 1.85; margin-bottom: 12px;
+        }
+        .project-section-body ul {
+            list-style: none; padding: 0; margin-bottom: 12px;
+        }
+        .project-section-body li {
+            font-size: 14px; color: var(--text-dim); line-height: 1.8;
+            padding: 4px 0 4px 20px; position: relative;
+        }
+        .project-section-body li::before {
+            content: "▸"; position: absolute; left: 0;
+            color: var(--accent); font-weight: bold;
+        }
+        .project-section-body code {
+            background: var(--bg-secondary); padding: 1px 6px;
+            border-radius: 4px; font-size: 13px; color: #c7254e;
+            border: 1px solid var(--border);
+        }
+        .project-section-body strong { color: var(--text); }
+
+        /* Roadmap timeline */
+        .roadmap-phase {
+            display: flex; gap: 16px; margin-bottom: 18px;
+            padding: 16px 20px;
+            background: var(--bg-secondary);
+            border-radius: 8px;
+            border-left: 3px solid var(--accent);
+            position: relative;
+        }
+        .roadmap-phase.phase-done { border-left-color: var(--green); }
+        .roadmap-phase.phase-active { border-left-color: #2563eb; background: rgba(37,99,235,0.04); }
+        .roadmap-phase.phase-future { border-left-color: var(--text-muted); opacity: 0.75; }
+        .roadmap-phase .phase-num {
+            width: 32px; height: 32px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 13px; font-weight: 700; flex-shrink: 0;
+            background: var(--accent); color: #fff;
+        }
+        .roadmap-phase.phase-done .phase-num { background: var(--green); }
+        .roadmap-phase.phase-active .phase-num { background: #2563eb; }
+        .roadmap-phase.phase-future .phase-num { background: var(--text-muted); }
+        .roadmap-phase .phase-content { flex: 1; }
+        .roadmap-phase .phase-title { font-size: 14.5px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
+        .roadmap-phase .phase-desc { font-size: 13.5px; color: var(--text-dim); line-height: 1.7; }
+
+        /* Methods comparison */
+        .method-card {
+            border: 1px solid var(--border); border-radius: 8px;
+            padding: 16px 20px; margin-bottom: 12px;
+            transition: all 0.15s;
+        }
+        .method-card:hover { border-color: var(--border-hover); }
+        .method-card .method-name { font-size: 14.5px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
+        .method-card .method-year { font-size: 12px; color: var(--accent); font-weight: 500; margin-bottom: 6px; }
+        .method-card .method-desc { font-size: 13.5px; color: var(--text-dim); line-height: 1.7; margin-bottom: 8px; }
+        .method-card .method-pros-cons { display: flex; gap: 16px; font-size: 12.5px; }
+        .method-card .pros { color: var(--green); }
+        .method-card .cons { color: var(--red); }
+
+        /* Tips */
+        .tip-item {
+            padding: 14px 18px; margin-bottom: 10px;
+            background: var(--bg-secondary);
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+        .tip-item .tip-label {
+            font-size: 11px; font-weight: 600; text-transform: uppercase;
+            letter-spacing: 1px; margin-bottom: 6px;
+        }
+        .tip-label-engineering { color: #2563eb; }
+        .tip-label-theory { color: #7c3aed; }
+        .tip-label-pitfall { color: var(--red); }
+        .tip-label-insight { color: var(--yellow); }
+        .tip-item .tip-text { font-size: 14px; color: var(--text-dim); line-height: 1.75; }
+
+        /* Changelog */
+        .changelog-entry {
+            display: flex; gap: 14px; padding: 10px 0;
+            border-bottom: 1px solid rgba(229,231,235,0.5);
+        }
+        .changelog-entry:last-child { border-bottom: none; }
+        .changelog-date {
+            font-size: 12px; color: var(--accent); font-weight: 600;
+            white-space: nowrap; min-width: 80px; padding-top: 2px;
+        }
+        .changelog-text { font-size: 13.5px; color: var(--text-dim); line-height: 1.7; }
+
+        /* Paper ref in project */
+        .paper-ref {
+            display: flex; align-items: center; gap: 10px;
+            padding: 10px 14px; margin-bottom: 8px;
+            background: var(--bg-secondary); border-radius: 8px;
+            border: 1px solid var(--border);
+            transition: all 0.15s; cursor: pointer;
+        }
+        .paper-ref:hover { border-color: var(--border-hover); background: var(--bg-hover); }
+        .paper-ref .ref-icon { font-size: 16px; }
+        .paper-ref .ref-title { font-size: 13.5px; color: var(--text); font-weight: 500; flex: 1; }
+        .paper-ref .ref-year { font-size: 11px; color: var(--text-muted); }
+
+        /* Project nav active */
+        .top-tab.active-projects {
+            color: #059669;
+            border-bottom-color: #059669;
+        }
+        .top-tab.active-projects .tab-count {
+            background: rgba(5,150,105,0.1);
+            color: #059669;
+        }
+        .projects-accent .overview-card .num { color: #059669; }
+
         /* Mobile */
         .hamburger {
             display: none; background: none; border: none;
@@ -458,7 +622,7 @@
     <aside class="sidebar" id="sidebar">
         <div class="sidebar-header">
             <h1>🎓 Professor</h1>
-            <div class="subtitle">Boss Team · 论文精读 · 灵感库</div>
+            <div class="subtitle">Boss Team · 研究项目 · 论文精读 · 灵感库</div>
         </div>
         <nav class="sidebar-nav" id="sidebarNav"></nav>
     </aside>
@@ -885,6 +1049,95 @@ const IDEAS_DB = [
     }
 ];
 
+// ===== Projects 研究项目库 =====
+const PROJECTS_DB = [
+    {
+        id: "irm-base-placement",
+        title: "IRM Base Placement Optimization",
+        subtitle: "基于逆可达性地图的移动机械臂底盘放置优化",
+        status: "active",
+        statusLabel: "Active Research",
+        startDate: "2026-04-13",
+        lastUpdate: "2026-04-13",
+        icon: "🚀",
+
+        // 问题定义
+        problem: {
+            statement: "给定末端执行器（EE）轨迹——一系列 SE(3) poses，找到一个（或多个）可行的移动机械臂底盘放置位姿，使得机器人能够到达轨迹上的每一个 pose，同时满足关节极限、自碰撞、环境碰撞等约束。",
+            formalization: [
+                "对每个 EE pose T_world_ee[i]，采样关节空间配置 q",
+                "正运动学：T_base_ee = FK(q)",
+                "逆变换求 base pose：T_world_base = T_world_ee[i] * inv(T_base_ee)",
+                "约束过滤：关节极限 ∩ 自碰撞检测 ∩ 环境碰撞检测",
+                "轨迹可行性 = 所有帧可行 base pose 集合的交集非空"
+            ],
+            keyChallenge: [
+                "6D SE(3) 空间的体素化导致存储爆炸（维度诅咒）",
+                "交集为空时需要多 base 序列规划",
+                "障碍物感知的 base placement 需要实时碰撞检测",
+                "可达性 vs 灵巧性（manipulability）的权衡",
+                "在线实时规划 vs 离线预计算的 trade-off"
+            ]
+        },
+
+        // 技术路线
+        roadmap: [
+            { phase: 1, title: "RM4D 原型搭建", desc: "基于 RM4D 的 4D 离散化构建 IRM，实现正逆向可达性查询和轨迹可行 base 集合的交集计算。利用 6/7 轴臂的旋转对称性实现 100 倍存储压缩。", status: "active" },
+            { phase: 2, title: "Manipulability 加权", desc: "在每个体素中集成 Manipulability Index，按灵巧性对候选 base pose 排序。参考 RichMap 思路存储多维度质量信息。", status: "future" },
+            { phase: 3, title: "可微化精修", desc: "将离散 RM 转化为可微连续标量场（SVM/NN），支持梯度优化。嵌入 NLP 求解器（如 IPOPT）做 base placement 的连续优化。", status: "future" },
+            { phase: 4, title: "多 Base 序列规划", desc: "处理交集为空的情况——用 Set Cover 算法将轨迹分段，每段对应一个可行 base pose，最小化导航+操作总成本。", status: "future" }
+        ],
+
+        // 方法谱系
+        methods: [
+            { name: "体素 IRM (Vahrenkamp 2013)", year: "2013", desc: "IRM 奠基之作。6D SE(3) 体素化预计算逆可达性地图，交集约束验证轨迹可行性。", pros: "概念清晰，理论严谨", cons: "6D 存储爆炸，分辨率受限" },
+            { name: "RM4D 维度约简 (Rudorfer 2024)", year: "2024", desc: "利用旋转对称性将 6D 降至 4D，单一结构支持正逆查询。", pros: "存储降 100 倍，查询统一", cons: "依赖旋转对称假设" },
+            { name: "B* 在线优化 (2025)", year: "2025", desc: "分支定界搜索，不依赖预计算数据库，在线优化 base placement。", pros: "无需预计算，高精度", cons: "计算时间较长" },
+            { name: "Differentiable RM (Murooka 2025)", year: "2025", desc: "SVM/NN 学习连续可微的可达性评分函数，支持梯度优化。", pros: "可嵌入 NLP 求解器", cons: "学习质量依赖训练数据" },
+            { name: "PlaceNet / BaSeNet (2025)", year: "2025", desc: "端到端深度学习，从点云+目标 pose 直接预测 base placement。", pros: "端到端，实时推理", cons: "泛化性/精度保证不如几何方法" },
+            { name: "Grand_RM 图 RL (2025)", year: "2025", desc: "GNN+RL 动态生成适应环境变化的可达性地图。", pros: "动态适应环境", cons: "计算开销大" }
+        ],
+
+        // 工程/理论 Tips
+        tips: [
+            { type: "engineering", text: "RM4D 开源实现基于 PyBullet，可直接 pip install 复现。关键参数：离散分辨率 0.05m，角度分辨率 15 度。" },
+            { type: "engineering", text: "Reuleaux ROS 包虽已 archived，但仍是理解 IRM 工程实现的最佳参考。可以 fork 后适配 ROS2。" },
+            { type: "theory", text: "4D 约简的核心假设：机械臂基座绕 z 轴旋转等价。对于非标准安装（如侧装、倒装）需要修改映射函数。" },
+            { type: "theory", text: "Reachability Index (RI) 量化的是该 base pose 可达 EE 姿态的数量，Manipulability Index 量化的是可达质量——两者应结合使用。" },
+            { type: "insight", text: "可微化是关键突破口：将离散体素转化为连续函数后，base placement 可以和 FACTO 的约束框架无缝结合——可达性评分作为约束函数嵌入 NLP。" },
+            { type: "pitfall", text: "纯采样方法在高维空间极易遗漏最优解。B* 的分支定界比均匀采样快 5 个数量级，优先考虑。" },
+            { type: "insight", text: "SRS IK 解析近似（Idea #4）可替代 IRM 中的随机采样求逆步骤，提速 10-100 倍——枚举 SRS 多组解直接得到候选 base pose。" },
+            { type: "engineering", text: "开源工具优先级：RM4D (PyBullet) > COMPAS FAB (Python) > scikit-robot > Reuleaux (ROS1, archived)" }
+        ],
+
+        // 关联论文 ID（引用 PAPERS_DB）
+        paperRefs: ["rm4d-reachability", "vahrenkamp-irm-2013", "reuleaux-2017", "bstar-2025", "placenet-2025", "differentiable-rm-2025", "grand-rm-2025", "richmap-2026", "basenet-2025", "multi-base-2025", "moma-pos-2024", "remani-planner-2025"],
+
+        // 关联 Idea ID（引用 IDEAS_DB）
+        ideaRefs: ["irm-base-placement-project", "srs-analytic-ik-plus-numerical-refinement", "ik-selection-via-planning"],
+
+        // 更新日志
+        changelog: [
+            { date: "2026-04-13", text: "项目创建。完成全领域调研（25+ 篇论文），梳理方法谱系（体素 IRM → RM4D → B* → 可微 RM → 深度学习 → 图 RL），确定 4 阶段实现路线。12 篇核心论文入库 Professor。" }
+        ],
+
+        // 关联研究
+        relatedResearch: [
+            "FACTO 零空间投影：在数值精修阶段可施加约束",
+            "SRS IK 解析近似（Idea #4）：可替代采样求逆步骤",
+            "IK 解筛选策略（Idea #3）：规划层筛选 + 轨迹平滑可集成到 base placement 后的轨迹验证"
+        ],
+
+        // 开源工具
+        tools: [
+            { name: "RM4D", url: "https://github.com/mrudorfer/RM4D", desc: "Python/PyBullet, 4D 可达性地图" },
+            { name: "Reuleaux", url: "https://github.com/ros-planning/reuleaux", desc: "ROS 可达性分析包 (archived)" },
+            { name: "COMPAS FAB", url: "https://github.com/compas-dev/compas_fab", desc: "Python 机器人制造规划框架" },
+            { name: "scikit-robot", url: "https://github.com/jsk-ros-pkg/scikit-robot", desc: "Python 机器人学工具" }
+        ]
+    }
+];
+
 // ===== 配置 =====
 const categoryOrder = ["VLA","Robotics","Mobile Manipulation","World Model","LLM / VLM","Embodied AI","RL","Industry"];
 const ideaStatusMap = {
@@ -899,7 +1152,7 @@ const allDates = [...new Set(PAPERS_DB.map(p => p.addedDate))].sort().reverse();
 const allCategories = [...new Set(PAPERS_DB.map(p => p.category))];
 
 // ===== 状态 =====
-let activeTab = "papers"; // "papers" or "ideas"
+let activeTab = "projects"; // "projects", "papers" or "ideas"
 let currentView = "overview";
 let searchQuery = "";
 
@@ -929,7 +1182,25 @@ function renderSidebar() {
     const nav = document.getElementById("sidebarNav");
     let html = "";
 
-    if (activeTab === "papers") {
+    if (activeTab === "projects") {
+        html += `<div class="nav-section">
+            <div class="nav-section-title">研究项目</div>
+            <div class="nav-item ${currentView==='overview'?'active':''}" onclick="setView('overview')">
+                <span class="icon">🔬</span> 项目概览
+                <span class="count">${PROJECTS_DB.length}</span>
+            </div>
+        </div>`;
+        html += `<div class="nav-section">
+            <div class="nav-section-title">我的项目</div>`;
+        PROJECTS_DB.forEach(proj => {
+            const active = currentView === `project:${proj.id}`;
+            html += `<div class="nav-item ${active?'active':''}" onclick="setView('project:${proj.id}')">
+                <span class="icon">${proj.icon}</span> ${proj.title.length > 18 ? proj.title.substring(0,18)+'...' : proj.title}
+                <span class="count">${proj.paperRefs.length}📄</span>
+            </div>`;
+        });
+        html += `</div>`;
+    } else if (activeTab === "papers") {
         html += `<div class="nav-section">
             <div class="nav-section-title">快速访问</div>
             <div class="nav-item ${currentView==='overview'?'active':''}" onclick="setView('overview')">
@@ -1036,6 +1307,10 @@ function renderView() {
 
     // Top tabs
     let tabsHtml = `<div class="top-tabs">
+        <div class="top-tab ${activeTab==='projects'?'active-projects':''}" onclick="switchTab('projects')">
+            🔬 Projects
+            <span class="tab-count">${PROJECTS_DB.length}</span>
+        </div>
         <div class="top-tab ${activeTab==='papers'?'active-papers':''}" onclick="switchTab('papers')">
             📚 Papers
             <span class="tab-count">${PAPERS_DB.length}</span>
@@ -1048,7 +1323,9 @@ function renderView() {
 
     if (searchQuery) {
         title.textContent = `搜索: "${searchQuery}"`;
-        if (activeTab === "papers") {
+        if (activeTab === "projects") {
+            content.innerHTML = tabsHtml + renderProjectSearchResultsHtml();
+        } else if (activeTab === "papers") {
             content.innerHTML = tabsHtml + renderSearchResultsHtml();
         } else {
             content.innerHTML = tabsHtml + renderIdeaSearchResultsHtml();
@@ -1056,7 +1333,22 @@ function renderView() {
         return;
     }
 
-    if (activeTab === "papers") {
+    if (activeTab === "projects") {
+        switch (true) {
+            case currentView === "overview":
+                title.textContent = "🔬 研究项目";
+                content.innerHTML = tabsHtml + renderProjectsOverviewHtml();
+                break;
+            case currentView.startsWith("project:"):
+                const projId = currentView.split(":").slice(1).join(":");
+                const proj = PROJECTS_DB.find(p => p.id === projId);
+                if (proj) {
+                    title.textContent = `${proj.icon} ${proj.title}`;
+                    content.innerHTML = tabsHtml + renderProjectDetailHtml(proj);
+                }
+                break;
+        }
+    } else if (activeTab === "papers") {
         switch (true) {
             case currentView === "overview":
                 title.textContent = "🎓 知识库概览";
@@ -1248,6 +1540,251 @@ function renderIdeaSearchResultsHtml() {
     return html;
 }
 
+// ===== Projects 视图 =====
+function renderProjectsOverviewHtml() {
+    const activeProjects = PROJECTS_DB.filter(p => p.status === "active");
+    const totalPapers = PROJECTS_DB.reduce((sum, p) => sum + p.paperRefs.length, 0);
+    const totalTips = PROJECTS_DB.reduce((sum, p) => sum + p.tips.length, 0);
+
+    let html = `<div class="overview-cards projects-accent">
+        <div class="overview-card"><div class="num">${PROJECTS_DB.length}</div><div class="label">研究项目</div></div>
+        <div class="overview-card"><div class="num">${activeProjects.length}</div><div class="label">进行中</div></div>
+        <div class="overview-card"><div class="num">${totalPapers}</div><div class="label">关联论文</div></div>
+        <div class="overview-card"><div class="num">${totalTips}</div><div class="label">经验 Tips</div></div>
+    </div>`;
+
+    PROJECTS_DB.forEach(proj => {
+        html += `<div class="project-hero" onclick="setView('project:${proj.id}')" style="cursor:pointer">
+            <h2>${proj.icon} ${proj.title}</h2>
+            <div class="subtitle">${proj.subtitle}</div>
+            <div class="status-row">
+                <span class="status-chip">📌 ${proj.statusLabel}</span>
+                <span class="status-chip">📄 ${proj.paperRefs.length} 篇论文</span>
+                <span class="status-chip">💡 ${proj.ideaRefs.length} 条灵感</span>
+                <span class="status-chip">🛠 ${proj.tips.length} Tips</span>
+                <span class="status-chip">📅 更新于 ${proj.lastUpdate}</span>
+            </div>
+        </div>`;
+    });
+    return html;
+}
+
+function renderProjectDetailHtml(proj) {
+    let html = "";
+
+    // Hero
+    html += `<div class="project-hero">
+        <h2>${proj.icon} ${proj.title}</h2>
+        <div class="subtitle">${proj.subtitle}</div>
+        <div class="status-row">
+            <span class="status-chip">📌 ${proj.statusLabel}</span>
+            <span class="status-chip">📅 始于 ${proj.startDate}</span>
+            <span class="status-chip">🔄 更新于 ${proj.lastUpdate}</span>
+            <span class="status-chip">📄 ${proj.paperRefs.length} 篇论文</span>
+            <span class="status-chip">💡 ${proj.ideaRefs.length} 条灵感</span>
+        </div>
+    </div>`;
+
+    // 问题定义
+    html += `<div class="project-section">
+        <div class="project-section-header" onclick="toggleSection(this)">
+            <span class="icon">🎯</span>
+            <h3>问题定义 Problem Statement</h3>
+            <span class="toggle">▼</span>
+        </div>
+        <div class="project-section-body">
+            <p><strong>${proj.problem.statement}</strong></p>
+            <p style="font-size:13px;color:var(--accent);font-weight:600;margin-top:12px;margin-bottom:8px">数学形式化</p>
+            <ul>${proj.problem.formalization.map(f => `<li><code>${f}</code></li>`).join("")}</ul>
+            <p style="font-size:13px;color:var(--red);font-weight:600;margin-top:12px;margin-bottom:8px">核心挑战</p>
+            <ul>${proj.problem.keyChallenge.map(c => `<li>${c}</li>`).join("")}</ul>
+        </div>
+    </div>`;
+
+    // 技术路线
+    html += `<div class="project-section">
+        <div class="project-section-header" onclick="toggleSection(this)">
+            <span class="icon">🗺️</span>
+            <h3>技术路线 Roadmap</h3>
+            <span class="toggle">▼</span>
+        </div>
+        <div class="project-section-body">`;
+    proj.roadmap.forEach(r => {
+        const cls = r.status === "done" ? "phase-done" : r.status === "active" ? "phase-active" : "phase-future";
+        const statusIcon = r.status === "done" ? "✅" : r.status === "active" ? "🔵" : "⏳";
+        html += `<div class="roadmap-phase ${cls}">
+            <div class="phase-num">${r.phase}</div>
+            <div class="phase-content">
+                <div class="phase-title">${statusIcon} ${r.title}</div>
+                <div class="phase-desc">${r.desc}</div>
+            </div>
+        </div>`;
+    });
+    html += `</div></div>`;
+
+    // 方法谱系
+    html += `<div class="project-section">
+        <div class="project-section-header" onclick="toggleSection(this)">
+            <span class="icon">📊</span>
+            <h3>方法谱系 Methods Landscape</h3>
+            <span class="toggle">▼</span>
+        </div>
+        <div class="project-section-body">`;
+    proj.methods.forEach(m => {
+        html += `<div class="method-card">
+            <div class="method-name">${m.name}</div>
+            <div class="method-year">${m.year}</div>
+            <div class="method-desc">${m.desc}</div>
+            <div class="method-pros-cons">
+                <span class="pros">✅ ${m.pros}</span>
+                <span class="cons">❌ ${m.cons}</span>
+            </div>
+        </div>`;
+    });
+    html += `</div></div>`;
+
+    // Tips
+    html += `<div class="project-section">
+        <div class="project-section-header" onclick="toggleSection(this)">
+            <span class="icon">💡</span>
+            <h3>经验 Tips & Insights</h3>
+            <span class="toggle">▼</span>
+        </div>
+        <div class="project-section-body">`;
+    proj.tips.forEach(t => {
+        const labelCls = t.type === "engineering" ? "tip-label-engineering" : t.type === "theory" ? "tip-label-theory" : t.type === "pitfall" ? "tip-label-pitfall" : "tip-label-insight";
+        const labelText = t.type === "engineering" ? "🔧 ENGINEERING" : t.type === "theory" ? "📐 THEORY" : t.type === "pitfall" ? "⚠️ PITFALL" : "💡 INSIGHT";
+        html += `<div class="tip-item">
+            <div class="tip-label ${labelCls}">${labelText}</div>
+            <div class="tip-text">${t.text}</div>
+        </div>`;
+    });
+    html += `</div></div>`;
+
+    // 关联论文
+    html += `<div class="project-section">
+        <div class="project-section-header" onclick="toggleSection(this)">
+            <span class="icon">📄</span>
+            <h3>关联论文 (${proj.paperRefs.length})</h3>
+            <span class="toggle">▼</span>
+        </div>
+        <div class="project-section-body">`;
+    proj.paperRefs.forEach(refId => {
+        const paper = PAPERS_DB.find(p => p.id === refId);
+        if (paper) {
+            const link = paper.links && paper.links[0] ? paper.links[0][1] : "#";
+            html += `<div class="paper-ref" onclick="window.open('${link}','_blank')">
+                <span class="ref-icon">${paper.categoryIcon || '📄'}</span>
+                <span class="ref-title">${paper.title}</span>
+                <span class="ref-year">${paper.venue.split('·')[0].trim()}</span>
+            </div>`;
+        }
+    });
+    html += `</div></div>`;
+
+    // 关联 Ideas
+    if (proj.ideaRefs && proj.ideaRefs.length > 0) {
+        html += `<div class="project-section">
+            <div class="project-section-header" onclick="toggleSection(this)">
+                <span class="icon">💡</span>
+                <h3>关联灵感 (${proj.ideaRefs.length})</h3>
+                <span class="toggle">▼</span>
+            </div>
+            <div class="project-section-body">`;
+        proj.ideaRefs.forEach(refId => {
+            const idea = IDEAS_DB.find(i => i.id === refId);
+            if (idea) {
+                const statusInfo = ideaStatusMap[idea.status] || ideaStatusMap["new"];
+                html += `<div class="paper-ref" style="border-left:3px solid #7c3aed">
+                    <span class="ref-icon">${statusInfo.label.split(' ')[0]}</span>
+                    <span class="ref-title">${idea.title}</span>
+                    <span class="ref-year">${idea.date}</span>
+                </div>`;
+            }
+        });
+        html += `</div></div>`;
+    }
+
+    // 关联研究
+    if (proj.relatedResearch && proj.relatedResearch.length > 0) {
+        html += `<div class="project-section">
+            <div class="project-section-header" onclick="toggleSection(this)">
+                <span class="icon">🔗</span>
+                <h3>关联研究</h3>
+                <span class="toggle">▼</span>
+            </div>
+            <div class="project-section-body">
+                <ul>${proj.relatedResearch.map(r => `<li>${r}</li>`).join("")}</ul>
+            </div>
+        </div>`;
+    }
+
+    // 开源工具
+    if (proj.tools && proj.tools.length > 0) {
+        html += `<div class="project-section">
+            <div class="project-section-header" onclick="toggleSection(this)">
+                <span class="icon">🛠</span>
+                <h3>开源工具</h3>
+                <span class="toggle">▼</span>
+            </div>
+            <div class="project-section-body">`;
+        proj.tools.forEach(t => {
+            html += `<div class="paper-ref" onclick="window.open('${t.url}','_blank')">
+                <span class="ref-icon">💻</span>
+                <span class="ref-title"><strong>${t.name}</strong> — ${t.desc}</span>
+            </div>`;
+        });
+        html += `</div></div>`;
+    }
+
+    // 更新日志
+    html += `<div class="project-section">
+        <div class="project-section-header" onclick="toggleSection(this)">
+            <span class="icon">📝</span>
+            <h3>更新日志 Changelog</h3>
+            <span class="toggle">▼</span>
+        </div>
+        <div class="project-section-body">`;
+    proj.changelog.forEach(c => {
+        html += `<div class="changelog-entry">
+            <span class="changelog-date">${c.date}</span>
+            <span class="changelog-text">${c.text}</span>
+        </div>`;
+    });
+    html += `</div></div>`;
+
+    return html;
+}
+
+function renderProjectSearchResultsHtml() {
+    const q = searchQuery.toLowerCase();
+    const results = PROJECTS_DB.filter(p =>
+        p.title.toLowerCase().includes(q) ||
+        p.subtitle.toLowerCase().includes(q) ||
+        p.problem.statement.toLowerCase().includes(q) ||
+        p.tips.some(t => t.text.toLowerCase().includes(q)) ||
+        p.methods.some(m => m.name.toLowerCase().includes(q) || m.desc.toLowerCase().includes(q))
+    );
+    if (results.length === 0) {
+        return `<div class="empty-state"><div class="icon">🔍</div><h3>没有找到匹配的项目</h3></div>`;
+    }
+    let html = `<div style="margin-bottom:20px;font-size:14px;color:var(--text-dim)">找到 <strong style="color:#059669">${results.length}</strong> 个匹配项目</div>`;
+    results.forEach(proj => {
+        html += `<div class="project-hero" onclick="setView('project:${proj.id}')" style="cursor:pointer">
+            <h2>${proj.icon} ${proj.title}</h2>
+            <div class="subtitle">${proj.subtitle}</div>
+        </div>`;
+    });
+    return html;
+}
+
+function toggleSection(header) {
+    const body = header.nextElementSibling;
+    const toggle = header.querySelector('.toggle');
+    body.classList.toggle('collapsed');
+    toggle.classList.toggle('collapsed');
+}
+
 // ===== 渲染辅助 =====
 function renderSectionTitle(cat, icon, count) {
     return `<div class="section-title">
@@ -1433,7 +1970,13 @@ function formatDateLabel(dateStr, forIdeas) {
 function updateStatsBadge() {
     const badge = document.getElementById("statsBadge");
     if (searchQuery) {
-        if (activeTab === "papers") {
+        if (activeTab === "projects") {
+            const count = PROJECTS_DB.filter(p =>
+                p.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                p.subtitle.toLowerCase().includes(searchQuery.toLowerCase())
+            ).length;
+            badge.textContent = `${count} 个项目`;
+        } else if (activeTab === "papers") {
             const count = PAPERS_DB.filter(p =>
                 p.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
                 p.summary.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -1448,7 +1991,9 @@ function updateStatsBadge() {
             badge.textContent = `${count} 条结果`;
         }
     } else {
-        if (activeTab === "papers") {
+        if (activeTab === "projects") {
+            badge.textContent = `共 ${PROJECTS_DB.length} 个项目`;
+        } else if (activeTab === "papers") {
             badge.textContent = `共 ${PAPERS_DB.length} 篇精读`;
         } else {
             badge.textContent = `共 ${IDEAS_DB.length} 条灵感`;
