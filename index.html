@@ -519,6 +519,127 @@
 <script>
 // ===== DATA =====
 const PAPERS_DB = [
+    // === 2026-04-12 ===
+    {
+        date: "2026-04-12",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "HY-Embodied-0.5: Foundation Models for Embodied Intelligence",
+        venue: "",
+        summary: "腾讯 Robotics X 联合混元团队发布专为具身智能打造的基础模型 HY-Embodied-0.5。采用创新的 Mixture-of-Transformers (MoT) 架构，包含 MoT-2B（4B 参数，推理时仅激活 2.2B）和 MoE-32B 两个版本。核心创新在于：(1) 针对时空视觉感知和复杂具身推理进行深度优化，弥合通用 VLM 与物理智能体之间的鸿沟；(2) \"大变小\"在线策略蒸馏——将 32B 的逐步推理和规划能力蒸馏到 2B 模型；(3) 超过 100 万具身和空间特定数据点训练，22 项基准评测中 16 项 SOTA。MoT-2B 在 CV-Bench 89.2、DA-2K 92.3、3DSRBench 57.0 等多项指标上超越 Qwen3-VL 4B 和 MiMo-Embodied 7B，是当前最强的轻量级具身基础模型之一。",
+        tags: [["VLA","green"],["Embodied Foundation","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.07430"],["PDF","https://arxiv.org/pdf/2604.07430"],["GitHub","https://github.com/Tencent-Hunyuan/HY-Embodied"],["HuggingFace","https://huggingface.co/tencent/HY-Embodied-0.5"]]
+    },
+    {
+        date: "2026-04-12",
+        category: "Embodied AI",
+        categoryIcon: "🧩",
+        title: "GO-2 (Genie Operator-2): Action Chain-of-Thought for Embodied Intelligence",
+        venue: "",
+        summary: "智元机器人发布新一代具身基座大模型 GO-2（Genie Operator-2），解决长期困扰具身智能的\"语义-运动鸿沟\"——机器人能理解指令但执行失败的问题。核心创新包括：(1) 首创\"动作思维链\"（Action Chain-of-Thought），让机器人在动作空间中直接推理规划，而非先语义理解再转换为动作；(2) \"异步双系统\"架构，将高层规划与底层执行解耦，实现思考与行动的并行处理；(3) 统一架构中打通从逻辑推理到精准动作执行的全链路。GO-2 在多项操作基准中取得 SOTA，标志着具身智能从\"理解意图\"到\"稳定执行\"的关键跨越。",
+        tags: [["Embodied AI","green"],["Action CoT","green"]],
+        links: [["详细报道","https://news.qq.com/rain/a/20260409A07LKR00"],["IT之家","https://www.ithome.com/0/937/397.htm"],["知乎解读","https://zhuanlan.zhihu.com/p/2025568777346007189"]]
+    },
+    {
+        date: "2026-04-12",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "GPT-6 定档 4 月 14 日：200 万 Token、性能暴涨 40%、超级应用形态",
+        venue: "",
+        summary: "OpenAI 正式确认 GPT-6（代号 \"Spud/土豆\"）将于 4 月 14 日全球上线。预训练已于 3 月 17 日在德州 Stargate 超级集群完成，后训练全部结束。关键升级：(1) 200 万 Token 超长上下文，具备长时记忆能力；(2) 较 GPT-5.4 性能提升约 40%，重点强化代码生成、逻辑推理与智能体任务；(3) 终极形态是将 ChatGPT + Codex 编程引擎 + Atlas 浏览器融合为统一超级应用，实现桌面级自主 Agent。发布前 OpenAI 刚完成 1220 亿美元融资，估值 8520 亿美元创硅谷历史纪录。Polymarket 预测市场给出 78% 按期发布概率。",
+        tags: [["LLM","green"],["Industry","green"]],
+        links: [["Elser 详解","https://www.elser.ai/zh/blog/what-is-gpt-6"],["36Kr","https://www.36kr.com/p/3754726863012361"],["腾讯新闻","https://news.qq.com/rain/a/20260408A02H8A00"]]
+    },
+    {
+        date: "2026-04-12",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "Claude Mythos：Anthropic 最强模型\"强到不敢公开\"，启动 Project Glasswing 安全联防",
+        venue: "",
+        summary: "Anthropic 确认 Claude Mythos 的存在，SWE-Bench Pro 得分 97.6%，但采取前所未有的限制策略：不提供公开 API，仅通过 \"Project Glasswing\" 向约 50 家组织（AWS、Apple、Microsoft、Google、NVIDIA、JPMorgan 等）提供受限访问，指定用途仅限防御性安全扫描。定价预览期输入 $25/百万、输出 $125/百万。核心能力为扫描操作系统内核和大型代码库发现可利用缺陷——Anthropic 认为其攻击性潜力过于危险，不适合广泛发布。同时，Claude Code 源码（51.2 万行 TypeScript）此前因配置失误泄露。",
+        tags: [["LLM","green"],["Safety","green"]],
+        links: [["WhatLLM 深度分析","https://whatllm.org/blog/new-ai-models-april-2026"],["DevFolkers","https://www.devflokers.com/blog/latest-ai-news-developments-april-2026"]]
+    },
+    {
+        date: "2026-04-12",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "CEAI 2026 合肥闭幕：发布《十五大方向》白皮书，宇树+智元包揽 80% 市场",
+        venue: "",
+        summary: "第三届中国具身智能大会（CEAI 2026）4 月 10-12 日在合肥举办，安徽省长王清宪与何友、江碧涛、于海斌、吴枫等院士会前座谈。大会发布《2026 具身智能十五大方向》白皮书，涵盖 VLA 基座模型、仿真-实迁移、触觉感知等前沿议题。产业格局已定：宇树科技（已实现规模盈利，净利率达行业 30 倍）和智元机器人（第 10000 台远征 A3 已下线）合计包揽约 80% 市场份额，行业进入头部集中阶段。2026 下半年将进入商业化关键期。",
+        tags: [["Embodied AI","green"],["Conference","green"]],
+        links: [["安徽省政府","https://www.ah.gov.cn/zwyw/jryw/565508331.html"],["澎湃新闻","https://www.thepaper.cn/newsDetail_forward_32950654"]]
+    },
+    {
+        date: "2026-04-12",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "NVIDIA 国家机器人周：NemoClaw 自然语言控制、PeritasAI 手术 AI、OceanSim 水下仿真",
+        venue: "",
+        summary: "NVIDIA 在国家机器人周（4 月 10 日）集中展示 Physical AI 突破：(1) NemoClaw 实现用自然语言命令导航 Nova Carter 机器人，无需编码；(2) PeritasAI 多代理手术 AI 实现实时感知和无菌协调；(3) OceanSim（密歇根大学）GPU 加速水下仿真器；(4) RoboLab 通用机器人策略基准；(5) Doosan Robotics 用 Cosmos Reason 单摄像头推断箱内物品并自适应抓取；(6) Mimic Robotics 视频动作模型实现 10x 样本效率提升。同时公布 MassRobotics Fellowship 第二期名单。",
+        tags: [["Robotics","green"],["NVIDIA","green"]],
+        links: [["NVIDIA Blog","https://blogs.nvidia.com/blog/national-robotics-week-2026/"]]
+    },
+    {
+        date: "2026-04-12",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "人形机器人半程马拉松全流程测试：4 月 11-12 日北京亦庄，几十支队伍实测",
+        venue: "",
+        summary: "4 月 11 日晚至 12 日凌晨，2026 人形机器人半程马拉松在北京亦庄举行全流程全要素测试。本次测试全面模拟赛道通行、流程调度、设备协同等场景，几十支队伍参加，分为自主导航赛队和遥控赛队两大组别。这是全球首个大规模人形机器人长距离行走实测活动，此前 300+ 台机器人已完成注册报名，正式比赛日期待定。测试结果将为赛事组织和机器人耐久性评估提供关键数据。",
+        tags: [["Robotics","green"],["Competition","green"]],
+        links: [["光明网","https://m.gmw.cn/2026-04/12/content_1304414573.htm"]]
+    },
+    {
+        date: "2026-04-12",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "Meta Muse Spark 发布：GPQA 0.9，新一代专有推理模型",
+        venue: "",
+        summary: "Meta 于 4 月 8 日发布 Muse Spark 专有模型，在 GPQA（研究生水平问答基准）上达到 0.9 分的极高水准，与 Zhipu GLM-5.1、Qwen 3.6-Plus 并列 GPQA 0.9 俱乐部。该模型标志着 Meta 在专有模型赛道的回归——此前 Meta 以 Llama 开源战略著称，Muse Spark 的发布意味着 Meta 开始走\"开源+专有\"双轨路线。",
+        tags: [["LLM","green"],["Release","green"]],
+        links: [["LLM Stats","https://llm-stats.com/llm-updates"]]
+    },
+    {
+        date: "2026-04-12",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "中国人形机器人出海提速：CES 过半参展商来自中国，宇树/智元海外营收逼近 50%",
+        venue: "",
+        summary: "据新浪 AI 热点报道，中国人形机器人产业出海加速。2026 CES 展上超过半数人形机器人参展商来自中国，宇树、智元等头部厂商海外业务营收占比已逼近 50%。TrendForce 数据显示 2026 年人形机器人产量同比增长 94%。行业正经历根本性转变——从实验室 Demo 走向真实生产线，五大独角兽（宇树、智元、银河通用、Figure、Apptronik）的横向对比成为热议话题。",
+        tags: [["Robotics","green"],["Market","green"]],
+        links: [["新浪热点","https://k.sina.cn/article_7857201856_1d45362c00190485ns.html"],["IT之家","https://www.ithome.com/0/937/557.htm"]]
+    },
+    {
+        date: "2026-04-12",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "OWASP 发布 AI Agent 十大安全风险：提示注入 + 供应链攻击居首",
+        venue: "",
+        summary: "OWASP 正式发布 AI Agent 十大安全风险白皮书，将提示注入（Prompt Injection）和供应链攻击列为最大威胁。随着 AI Agent 在企业中大规模部署，安全问题日益凸显。同时 Anthropic 的 Glasswing 联防计划从另一个角度印证了前沿 AI 模型安全治理的紧迫性。中国方面也在加速构建 AI 安全标准体系。",
+        tags: [["Agent","green"],["Safety","green"]],
+        links: [["AI 新闻快讯","https://www.gaovi.com/index.php/archives/206/"]]
+    },
+    {
+        date: "2026-04-12",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "AI 编程三强定型：Cursor Composer 2 / Claude Code / GitHub Copilot",
+        venue: "",
+        summary: "AI 编程助手市场格局基本确定：Cursor 凭借 Composer 2 引领多智能体协作编程；Claude Code 技术领先（SWE-bench 80.8%）；GitHub Copilot 依托生态优势稳居首位。同时开源阵营 OpenClaw 发布 2026.4.10 版本登顶 GitHub 年度热门。Google Gemma 4 系列（4 个版本，Apache 2.0）原生支持文本/图像/音频，E2B/E4B 专为移动端和边缘设备设计。",
+        tags: [["Agent","green"],["Tools","green"]],
+        links: [["AI 新闻快讯","https://www.gaovi.com/index.php/archives/206/"]]
+    },
+    {
+        date: "2026-04-12",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "开源模型追平闭源：GLM-5.1 MIT 开源 754B 击败 Claude Opus 4.6",
+        venue: "",
+        summary: "Zhipu AI（智谱）以 MIT 许可发布 GLM-5.1（754B MoE，每次前向传播激活 40B，200K 上下文），在 SWE-Bench Pro 上击败 Claude Opus 4.6 和 GPT-5.4。自托管仅需电力成本，API 约 $1/$3.2 每百万 Token。与 Anthropic 的封闭策略形成鲜明对比，标志着开源模型在特定基准上已不再\"落后 6 个月\"，而是正面领先。同期 Google Gemma 4 系列（Apache 2.0）、PrismML Bonsai 8B（1-bit 量化，可跑树莓派）也密集发布。",
+        tags: [["LLM","green"],["Open Source","green"]],
+        links: [["WhatLLM 分析","https://whatllm.org/blog/new-ai-models-april-2026"],["LLM Stats","https://llm-stats.com/llm-updates"]]
+    },
     // === 2026-04-13 ===
     {
         date: "2026-04-13",
@@ -678,87 +799,6 @@ const PAPERS_DB = [
         venue: "",
         summary: "提出物理信息驱动的深度 RL 方法实现无地图自主竞速。通过深度测量的光谱分布参数化非线性车辆动力学，使用基于物理的非几何奖励函数。关键突破：(1) 计算量不到行为克隆和 MBRL 的 1%；(2) 通过隐式值水平截断替代显式碰撞惩罚，消除 sim2real gap；(3) OOD 赛道上比人类演示高出 12%。",
         tags: [["RL","green"],["自主竞速","green"]],
-        links: []
-    },
-    // === 2026-04-12 ===
-    {
-        date: "2026-04-12",
-        category: "Informations",
-        categoryIcon: "📡",
-        title: "<span class=\"hot-badge\">HOT</span>CEAI 2026 圆满落幕 — 重磅发布《2026 具身智能十五大方向》",
-        venue: "",
-        summary: "为期两天的 CEAI 2026 中国具身智能大会今日在合肥闭幕。闭幕式上，大会组委会联合中国人工智能学会正式发布<strong>《2026 具身智能十五大方向》</strong>白皮书，涵盖：VLA 端到端策略、世界模型与物理仿真、灵巧操作与触觉感知、人形机器人全身控制、多机器人协作、具身导航与 SLAM、数据飞轮与仿真-现实迁移、具身大模型、安全与对齐、家庭服务机器人、工业制造机器人、医疗康复机器人、农业机器人、水下/空中机器人、具身智能芯片与硬件。白皮书被视为中国具身智能领域未来 3-5 年的技术路线图。",
-        tags: [["Industry","green"],["具身智能","green"]],
-        links: []
-    },
-    {
-        date: "2026-04-12",
-        category: "Informations",
-        categoryIcon: "📡",
-        title: "<span class=\"hot-badge\">HOT</span>人形机器人半程马拉松全流程测试 — 300+ 台机器人亮相北京亦庄",
-        venue: "",
-        summary: "北京经济技术开发区（亦庄）举办了全球首次<strong>人形机器人半程马拉松全流程测试</strong>活动。来自宇树科技、智元机器人、傅利叶智能、小鹏鹏行、小米铁大等 <strong>15 家企业</strong>的 <strong>300+ 台</strong>人形机器人参与测试。测试全程 21.1km，设置起伏路面、台阶、斜坡、拥挤通道等障碍。最终宇树 H1 以 <strong>2 小时 47 分</strong>完赛成绩领先，智元远征 A2 紧随其后。测试重点评估电池续航、步态稳定性、自主避障和热管理能力。这一活动标志着人形机器人的耐久性和可靠性已达到实际部署的初步门槛。",
-        tags: [["Industry","green"],["Robotics","green"]],
-        links: []
-    },
-    {
-        date: "2026-04-12",
-        category: "Informations",
-        categoryIcon: "📡",
-        title: "<span class=\"hot-badge\">HOT</span>Claude Mythos 引发华尔街恐慌 — 美联储紧急磋商 AI 系统性风险",
-        venue: "",
-        summary: "Anthropic 于本周推出的 <strong>Claude Mythos</strong> 模型因其\"超越人类专家级\"的推理能力在华尔街引发连锁反应。多家对冲基金在 48 小时内将 Mythos 接入交易系统，导致部分股票和期权出现异常波动。据报道，美联储主席已召集紧急磋商会议，讨论 AI 驱动交易系统的系统性风险。SEC 也在考虑对 AI 自主交易实施临时监管框架。Anthropic CEO Dario Amodei 回应称\"Mythos 设计时已内置安全护栏\"，但承认其能力\"确实超出了预期\"。事件凸显超级智能 AI 在金融市场的双刃剑效应。",
-        tags: [["Industry","green"],["LLM","green"]],
-        links: []
-    },
-    {
-        date: "2026-04-12",
-        category: "Informations",
-        categoryIcon: "📡",
-        title: "RobotAnno 双臂 AI 咖啡机器人 — 从磨豆到拉花全自动，3 分钟一杯",
-        venue: "",
-        summary: "国内机器人初创 <strong>RobotAnno（安诺机器人）</strong> 发布双臂 AI 咖啡机器人 <strong>Barista X1</strong>。该机器人配备两只 6DoF 机械臂和视觉引导系统，能够完成从磨豆、压粉、萃取、打奶泡到拉花的全流程操作，单杯出品时间仅 <strong>3 分钟</strong>。Barista X1 通过视觉 + 力反馈学习了 200+ 种饮品配方，拉花图案支持自定义。首批 50 台已进入上海、深圳的商业综合体和写字楼进行试运营。定价 <strong>18.8 万元</strong>/台，预计 6 个月回本。",
-        tags: [["Industry","green"],["Robotics","green"]],
-        links: []
-    },
-    {
-        date: "2026-04-12",
-        category: "Informations",
-        categoryIcon: "📡",
-        title: "GPT-6 倒计时 2 天 — 全球开发者备战，API 生态即将重塑",
-        venue: "",
-        summary: "距离 GPT-6 正式发布仅剩 <strong>2 天</strong>。OpenAI 在开发者论坛预告了发布会议程：北京时间 4 月 14 日晚 10 点直播，将展示 GPT-6 在代码生成、多模态推理、长文档分析和 Agent 能力方面的突破。已有超过 <strong>50 万开发者</strong>注册了 API 预览权限。各大云平台（Azure、AWS Bedrock、Google Cloud）纷纷宣布将在首日支持 GPT-6 推理部署。与此同时，开源社区也在密切关注 GPT-6 的能力基线，以校准下一代开源模型的目标。",
-        tags: [["Industry","green"],["LLM","green"]],
-        links: []
-    },
-    {
-        date: "2026-04-12",
-        category: "Informations",
-        categoryIcon: "📡",
-        title: "OWASP 发布 AI 十大安全风险 + Project Glasswing 推进 AI 透明度",
-        venue: "",
-        summary: "OWASP（开放式 Web 应用安全项目）正式发布 <strong>2026 AI 应用十大安全风险</strong>清单，包括：提示注入攻击、模型投毒、数据泄露、不安全的输出处理、过度信任 AI 输出、供应链攻击、模型窃取、训练数据污染、不充分的日志监控、以及缺乏 AI 特定的访问控制。同日，OWASP 宣布启动 <strong>Project Glasswing</strong>，旨在建立 AI 系统透明度标准框架，要求 AI 服务商公开模型训练数据来源、评测方法和安全审计结果。该项目已获得 Google、Microsoft、Anthropic 等企业的支持。",
-        tags: [["Industry","green"],["Safety","green"]],
-        links: []
-    },
-    {
-        date: "2026-04-12",
-        category: "Informations",
-        categoryIcon: "📡",
-        title: "OpenAI CEO Sam Altman 遭燃烧弹袭击 — AI 行业安全再敲警钟",
-        venue: "",
-        summary: "据多家媒体报道，OpenAI CEO <strong>Sam Altman</strong> 的旧金山住所于本周遭到疑似自制燃烧弹袭击，Altman 本人未受伤但房屋受损。旧金山警方已逮捕一名嫌疑人，动机疑与\"反 AI 激进组织\"有关。事件发生在 GPT-6 发布前夕，引发科技界对 AI 领袖人身安全的广泛关注。Altman 随后在 X 上发文表示\"不会因此退缩\"，但呼吁社会理性看待 AI 发展。微软 CEO Nadella 和 Google CEO Pichai 纷纷发声谴责暴力行为。事件折射出公众对 AI 快速发展的焦虑情绪正在局部极端化。",
-        tags: [["Industry","green"],["Safety","green"]],
-        links: []
-    },
-    {
-        date: "2026-04-12",
-        category: "Informations",
-        categoryIcon: "📡",
-        title: "AI 编程工具三强定型 — Cursor / Claude Code / GitHub Copilot 生态格局分析",
-        venue: "",
-        summary: "2026 Q1 AI 编程工具市场格局基本定型，形成<strong>三足鼎立</strong>态势：<strong>Cursor</strong>（Anysphere）凭借极致编辑器体验和 Tab 补全占据独立开发者市场，月活超 500 万；<strong>Claude Code</strong>（Anthropic）以终端 Agent + 深度代码理解打入高阶工程师群体，企业订阅增长 400%；<strong>GitHub Copilot</strong>（Microsoft）依托 VS Code 和企业 GitHub 生态保持最大装机量。三者技术路线分化明显：Cursor 主打编辑器内联、Claude Code 主打 Agent 自主执行、Copilot 主打生态集成。值得关注的是，三者底层均依赖 Claude/GPT 系列模型，模型供应商话语权持续增强。",
-        tags: [["Industry","green"],["Agent","green"]],
         links: []
     },
     // === 2026-04-11 ===
