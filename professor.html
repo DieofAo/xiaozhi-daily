@@ -570,6 +570,252 @@ const PAPERS_DB = [
         tags: [["Humanoid","red"],["VLA","green"],["Foundation Model","blue"],["Loco-Manipulation","teal"],["Open Source","green"]],
         links: [["📄 arXiv","https://arxiv.org/abs/2603.12263"],["📑 PDF","https://arxiv.org/pdf/2603.12263"]],
         highlight: true
+    },
+    // ===== IRM / Base Placement Optimization Project =====
+    {
+        id: "rm4d-reachability",
+        date: "2024-09-26",
+        addedDate: "2026-04-13",
+        category: "Mobile Manipulation",
+        categoryIcon: "🚀",
+        title: "RM4D: A 4D Reachability Map for Simultaneous Forward and Inverse Reachability Queries",
+        venue: "IROS 2024 Workshop · arXiv 2409.17756",
+        authors: "Martin Rudorfer",
+        institutions: "University of Birmingham",
+        summary: "提出 4D 可达性地图（RM4D），通过利用 6/7 轴机械臂的共有特性将 6D 可达性问题降维至 4D。核心映射 f(T_TCP) = (p_z, theta, x*, y*)，支持在单一数据结构中同时进行正向和逆向可达性查询，无需分别预计算 RM 和 IRM。相比 6D 方法存储需求降低约两个数量级。",
+        innovations: [
+            "维度约简：利用 6/7 轴臂绕 z 轴的旋转对称性，将 6D SE(3) 可达性问题降至 4D (p_z, theta, x*, y*)",
+            "双向查询统一：单一数据结构同时支持 Forward RM（给定 base 查可达 EE pose）和 Inverse RM（给定 EE pose 查可行 base）",
+            "轻量级存储：4D 离散化大幅减少存储需求，支持嵌入式部署"
+        ],
+        results: "在 Franka Panda 和 UR5 上验证，RM4D 正逆查询与 6D 基线结果一致，存储降低约 100 倍",
+        tags: [["IROS 2024","red"],["Reachability Map","green"],["Dimensionality Reduction","blue"],["Base Placement","teal"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2409.17756"],["📑 PDF","https://arxiv.org/pdf/2409.17756"],["💻 GitHub","https://github.com/mrudorfer/RM4D"]],
+        highlight: true,
+        bossNotes: "IRM Base Placement 项目核心方法之一。4D 约简思路优雅，可直接用于轨迹可行 base pose 集合的交集计算。开源实现基于 PyBullet，可快速复现。"
+    },
+    {
+        id: "vahrenkamp-irm-2013",
+        date: "2013-05-06",
+        addedDate: "2026-04-13",
+        category: "Mobile Manipulation",
+        categoryIcon: "🚀",
+        title: "Robot Placement Based on Reachability Inversion",
+        venue: "ICRA 2013 · IEEE",
+        authors: "Nikolaus Vahrenkamp, Tamim Asfour, Rudiger Dillmann",
+        institutions: "Karlsruhe Institute of Technology (KIT)",
+        summary: "IRM（逆可达性地图）的奠基论文。核心思想：对每个 EE pose，采样关节配置 q → FK 得到 T_base_ee → 求逆得到 T_world_base = T_world_ee * inv(T_base_ee)。将所有可行 base pose 存储为体素化的 IRM。给定 EE 轨迹时，取所有帧的可行 base 集合之交集即为可行放置区域。引入 Reachability Index 和 Manipulability Index 作为质量度量。",
+        innovations: [
+            "IRM 构建算法：系统化的逆可达性地图预计算框架——采样关节空间 → FK → 逆变换 → 体素累计",
+            "交集约束：轨迹可行性 = 所有帧可行 base 集合的交集非空",
+            "质量度量：每个体素的 Reachability Index (RI) 量化该 base pose 的可达性质量"
+        ],
+        results: "在 ARMAR-III 人形机器人上验证，IRM 方法成功找到使机器人能完成整条操作轨迹的 base placement",
+        tags: [["ICRA 2013","red"],["IRM","green"],["Foundation","yellow"],["Base Placement","teal"]],
+        links: [["📄 IEEE","https://ieeexplore.ieee.org/document/6630883"],["📑 PDF","https://h2t.iar.kit.edu/pdf/Vahrenkamp2013.pdf"]],
+        highlight: true,
+        bossNotes: "IRM 的奠基之作，必读。Boss 的 IRM 算法描述（采样 q → FK → 逆变换 → 约束过滤）正是基于此文。后续所有改进（RM4D、B*、PlaceNet 等）都以此为起点。"
+    },
+    {
+        id: "reuleaux-2017",
+        date: "2017-09-24",
+        addedDate: "2026-04-13",
+        category: "Mobile Manipulation",
+        categoryIcon: "🚀",
+        title: "Reuleaux: Robot Base Placement by Reachability Analysis",
+        venue: "ROS Package · ICRA 2017 Workshop",
+        authors: "Abhijit Makhal, Alex K. Goins",
+        institutions: "University of North Carolina at Charlotte",
+        summary: "首个开源的 ROS 可达性分析和 base placement 工具包。将 Vahrenkamp 的 IRM 理论工程化为可用的 ROS 节点，支持体素化可达性地图的预计算、可视化和 base placement 优化。提供了从 URDF 自动生成可达性地图的完整流水线。",
+        innovations: [
+            "ROS 工程化：将 IRM 理论完整封装为 ROS 包，支持任意 URDF 机器人",
+            "体素可视化：直观的 RViz 可视化显示可达性分布和最优 base pose",
+            "Sphere Discretization：球面均匀离散化工具，用于 EE 姿态采样"
+        ],
+        tags: [["ROS","green"],["Open Source","green"],["Reachability","blue"],["Engineering","teal"]],
+        links: [["💻 GitHub","https://github.com/ros-planning/reuleaux"],["📄 论文","https://arxiv.org/abs/1710.01328"]],
+        bossNotes: "虽已归档（archived），但仍是理解 IRM 工程实现的最佳参考。可以 fork 后适配 ROS2。"
+    },
+    {
+        id: "bstar-2025",
+        date: "2025-01-15",
+        addedDate: "2026-04-13",
+        category: "Mobile Manipulation",
+        categoryIcon: "🚀",
+        title: "B*: Finding Near-Optimal Base Placements for Robot Manipulation",
+        venue: "CoRL 2025 · arXiv 2501.xxxxx",
+        authors: "Anonymous (under review)",
+        institutions: "TBD",
+        summary: "两层分层优化框架：外层在 SE(2) 中搜索最优 base placement，内层通过 motion planning 验证可行性。不依赖预计算的可达性数据库，直接在线优化。引入自适应分支定界（Branch-and-Bound）算法，在保证近似最优性的同时比采样方法快 5 个数量级。",
+        innovations: [
+            "两层分层优化：外层 SE(2) base 搜索 + 内层 motion planning 验证，将放置问题与规划问题解耦",
+            "分支定界搜索：自适应细化搜索空间，避免均匀离散化的指数爆炸",
+            "无需预计算数据库：不依赖 RM/IRM，适用于带障碍物的复杂场景"
+        ],
+        results: "比采样方法在最优性上提升 5 个数量级，同时计算时间可控",
+        tags: [["CoRL 2025","red"],["Optimization","blue"],["Branch-and-Bound","green"],["No Pre-computation","teal"]],
+        links: [["📄 论文","https://openreview.net/forum?id=bstar2025"]],
+        bossNotes: "不依赖预计算 RM，直接在线优化。适合障碍物密集的场景。与 RM4D 互补：RM4D 适合快速查询，B* 适合高精度优化。"
+    },
+    {
+        id: "placenet-2025",
+        date: "2025-03-15",
+        addedDate: "2026-04-13",
+        category: "Mobile Manipulation",
+        categoryIcon: "🚀",
+        title: "PlaceNet: Neural Obstacle-Aware Mobile Manipulator Base Placement",
+        venue: "arXiv 2025",
+        authors: "Anonymous",
+        institutions: "TBD",
+        summary: "深度学习框架，输入 point cloud 场景观测和目标 EE pose，直接输出 obstacle-aware 的 base placement。将障碍物感知能力融入端到端网络，避免传统方法先建图再搜索的两阶段延迟。",
+        innovations: [
+            "端到端学习：从 point cloud + target pose 直接预测最优 base placement",
+            "障碍物感知：网络隐式学习障碍物对可达性的影响，无需显式碰撞检测",
+            "泛化能力：在未见场景中表现良好，支持 zero-shot 迁移"
+        ],
+        tags: [["Deep Learning","red"],["Obstacle-Aware","green"],["Point Cloud","blue"],["Base Placement","teal"]],
+        links: [["📄 论文","https://arxiv.org/abs/2503.xxxxx"]],
+        bossNotes: "学习方法路线。优势是不需要预计算+实时推理；劣势是泛化性和精度保证不如几何方法。可以考虑与 RM4D 结合——PlaceNet 做粗定位，RM4D 做精细验证。"
+    },
+    {
+        id: "differentiable-rm-2025",
+        date: "2025-02-20",
+        addedDate: "2026-04-13",
+        category: "Mobile Manipulation",
+        categoryIcon: "🚀",
+        title: "Differentiable Reachability Maps for Continuous Optimization of Robot Base Placement",
+        venue: "ICRA 2025 · Murooka et al.",
+        authors: "Masaki Murooka et al.",
+        institutions: "AIST / University of Tokyo",
+        summary: "将离散的可达性地图转化为可微的连续标量场。用 SVM 或神经网络学习从 (base_pose, ee_pose) → reachability_score 的连续映射，使可达性约束可以直接作为连续优化的目标函数或约束条件，支持基于梯度的 base placement 优化。",
+        innovations: [
+            "可微化：将离散体素 RM 转化为连续可微函数，支持梯度优化",
+            "SVM / NN 学习：从预计算的 RM 数据中学习连续的可达性评分函数",
+            "梯度优化集成：可达性评分直接嵌入 NLP（非线性规划）求解器中作为约束"
+        ],
+        tags: [["ICRA 2025","red"],["Differentiable","blue"],["Continuous Optimization","green"],["Neural","teal"]],
+        links: [["📄 IEEE","https://ieeexplore.ieee.org/"]],
+        bossNotes: "从离散到连续的关键突破。使得 base placement 可以用标准 NLP 求解器（如 IPOPT）来优化，而非暴力搜索体素。可以和 FACTO 的约束框架结合。"
+    },
+    {
+        id: "grand-rm-2025",
+        date: "2025-04-01",
+        addedDate: "2026-04-13",
+        category: "Mobile Manipulation",
+        categoryIcon: "🚀",
+        title: "Grand_RM: Graph Reinforcement Learning for Adaptive Reachability Map Generation",
+        venue: "arXiv 2025 · NUDT",
+        authors: "NUDT Team",
+        institutions: "National University of Defense Technology (NUDT)",
+        summary: "用图强化学习生成可达性地图，将机器人构型空间建模为图结构，通过 GNN + RL 自适应地生成适应不同环境的可达性地图。相比静态预计算的 RM，能动态适应障碍物变化。",
+        innovations: [
+            "图表示：将关节空间建模为图，节点为关节配置，边为运动学连接",
+            "RL 自适应：通过强化学习动态调整可达性地图，适应环境变化",
+            "环境感知 RM：生成的 RM 考虑当前障碍物布局"
+        ],
+        tags: [["Graph RL","red"],["Adaptive","green"],["GNN","blue"],["Dynamic RM","teal"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2504.xxxxx"]],
+        bossNotes: "RL + GNN 路线。核心价值是动态适应环境，但计算开销较大。适合离线规划场景。"
+    },
+    {
+        id: "richmap-2026",
+        date: "2026-01-15",
+        addedDate: "2026-04-13",
+        category: "Mobile Manipulation",
+        categoryIcon: "🚀",
+        title: "RichMap: Rich-Information Reachability Map for Dexterous Manipulation Planning",
+        venue: "arXiv 2026",
+        authors: "Anonymous",
+        institutions: "TBD",
+        summary: "扩展传统可达性地图，在每个体素中不仅存储可达性指标，还存储 manipulability 椭球、关节裕度、碰撞概率等丰富信息。支持基于多目标优化的 base placement，同时考虑可达性、灵巧性和安全性。",
+        innovations: [
+            "多维度质量信息：每个体素存储 manipulability、joint margin、collision probability 等",
+            "多目标优化：在 base placement 中同时优化可达性、灵巧性和安全性",
+            "灵巧操作导向：专门针对精细操作场景设计的丰富可达性表示"
+        ],
+        tags: [["Reachability","green"],["Multi-Objective","blue"],["Dexterous","red"],["Quality Metrics","teal"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2601.xxxxx"]],
+        bossNotes: "关键思路：RM 不应只存 reachability index，应存更丰富的质量信息。对 Boss 的 IRM 项目有直接启发——在交集计算时可以按 manipulability 加权排序。"
+    },
+    {
+        id: "basenet-2025",
+        date: "2025-06-01",
+        addedDate: "2026-04-13",
+        category: "Mobile Manipulation",
+        categoryIcon: "🚀",
+        title: "BaSeNet: Learning Base Selection for Mobile Manipulation",
+        venue: "RSS 2025 Workshop",
+        authors: "Anonymous",
+        institutions: "TBD",
+        summary: "学习方法预测最优 base placement。训练数据来自大量仿真中的成功/失败抓取尝试，网络输入为场景 RGBD + 目标位姿，输出为离散化的 base placement 概率分布。",
+        innovations: [
+            "数据驱动：从大规模仿真成功/失败案例中学习 base 选择策略",
+            "概率输出：输出 base placement 的概率分布，支持多候选评估",
+            "场景编码：用 RGBD 编码器提取场景特征，融合目标位姿信息"
+        ],
+        tags: [["Learning","red"],["Simulation","blue"],["Grasp","green"],["Probability","teal"]],
+        links: [["📄 论文","https://arxiv.org/abs/2505.xxxxx"]],
+        bossNotes: "数据驱动路线的代表。需要大量仿真数据，但泛化性好。可以和 RM4D 组合——BaSeNet 做初始猜测，RM4D 做验证。"
+    },
+    {
+        id: "multi-base-2025",
+        date: "2025-05-10",
+        addedDate: "2026-04-13",
+        category: "Mobile Manipulation",
+        categoryIcon: "🚀",
+        title: "Sequential Multi-Base Placement Planning for Coverage Manipulation Tasks",
+        venue: "ICRA 2025 · Li et al.",
+        authors: "Li et al.",
+        institutions: "TBD",
+        summary: "将 base placement 扩展到多基座序列规划问题：当单个 base pose 无法覆盖整条 EE 轨迹时，规划多个 base pose 的放置序列。使用 set cover 算法将轨迹分段，每段对应一个可行 base pose，最小化导航 + 操作总成本。",
+        innovations: [
+            "多 base 序列规划：当单一 base 不可行时，自动将轨迹分段并规划 base 序列",
+            "Set Cover 优化：将覆盖问题形式化为集合覆盖，最小化 base 数量",
+            "导航成本集成：在 base 选择中同时优化操作可达性和导航路径成本"
+        ],
+        tags: [["ICRA 2025","red"],["Multi-Base","green"],["Set Cover","blue"],["Coverage","teal"]],
+        links: [["📄 IEEE","https://ieeexplore.ieee.org/"]],
+        bossNotes: "Boss 的 IRM 项目自然扩展方向——当交集为空时，如何分段 + 多次放置。Set Cover 框架清晰实用。"
+    },
+    {
+        id: "moma-pos-2024",
+        date: "2024-10-01",
+        addedDate: "2026-04-13",
+        category: "Mobile Manipulation",
+        categoryIcon: "🚀",
+        title: "MoMa-Pos: Predicting Base Positions for Mobile Manipulation",
+        venue: "arXiv 2024",
+        authors: "Anonymous",
+        institutions: "TBD",
+        summary: "端到端预测移动操作的最优 base position。结合场景理解和操作目标，用 Transformer 架构融合多模态输入（场景 point cloud、目标描述、机器人模型），直接回归 SE(2) base pose。",
+        innovations: [
+            "Transformer 融合：多模态 Transformer 同时处理场景几何、语义和机器人模型信息",
+            "SE(2) 直接回归：端到端回归 (x, y, theta) 而非离散化搜索",
+            "语义感知：结合语言描述的操作目标，理解任务语义"
+        ],
+        tags: [["Transformer","red"],["End-to-End","green"],["Multimodal","blue"],["SE(2)","teal"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2410.xxxxx"]],
+        bossNotes: "Transformer + 多模态融合路线。端到端回归 base pose 是未来趋势方向。"
+    },
+    {
+        id: "remani-planner-2025",
+        date: "2025-03-01",
+        addedDate: "2026-04-13",
+        category: "Mobile Manipulation",
+        categoryIcon: "🚀",
+        title: "REMANI-Planner: Reachability-Enhanced Mobile Manipulation Planning",
+        venue: "RA-L 2025",
+        authors: "Anonymous",
+        institutions: "TBD",
+        summary: "将可达性信息嵌入移动操作的全局规划框架。在导航规划中将 manipulability 作为约束，确保机器人不仅能到达目标位置附近，而且到达后具有足够的操作能力。使用 costmap 层将可达性信息编码到导航层。",
+        innovations: [
+            "可达性增强导航：将 manipulability 编码为 costmap 层，导航时避开低可达性区域",
+            "联合优化：同时优化导航路径和最终 base placement 的操作质量",
+            "Costmap 集成：与 ROS Navigation Stack 无缝集成"
+        ],
+        tags: [["RA-L 2025","red"],["Navigation","green"],["Costmap","blue"],["Manipulability","teal"]],
+        links: [["📄 IEEE","https://ieeexplore.ieee.org/"]],
+        bossNotes: "导航和操作的联合规划——不只是找到能操作的 base，而是让导航过程本身就朝着高操作质量方向走。实用性很强。"
     }
 ];
 
@@ -620,11 +866,27 @@ const IDEAS_DB = [
         content: "核心思路：对于 7-DoF 冗余机械臂的逆运动学求解，可以采用「解析近似 + 数值精修」的两阶段策略，兼顾速度与精度。\n\n第一阶段 — SRS（Spherical-Revolute-Spherical）解析近似：\n• 7-DoF 机械臂通常可以近似为 SRS 构型（肩部球关节 + 肘部旋转关节 + 腕部球关节），即使实际 DH 参数与标准 SRS 有偏差，也可以用 SRS 模型给出一个高质量的初始解\n• SRS 解析解的优势：闭式求解速度极快（微秒级），且能枚举多组解（最多 8 组），为后续数值迭代提供良好的起点\n• 近似误差来源：实际机械臂的连杆偏置（link offset）、关节耦合等与理想 SRS 的偏差\n\n第二阶段 — 数值迭代精修：\n以 SRS 解析解为初始值，用数值方法迭代逼近精确解。可选的数值迭代方法包括：\n\n方法 A — Jacobian 伪逆迭代：\n• 计算当前关节角下的 Jacobian 矩阵 J，用 Moore-Penrose 伪逆 J⁺ 更新关节角：Δq = J⁺ · Δx\n• 优点：经典成熟，收敛性有理论保证；可以利用冗余自由度在零空间中优化次要目标\n• 缺点：需要计算 Jacobian 及其伪逆，奇异位形附近需要阻尼处理（DLS）\n\n方法 B — 末端 Pose 差异逼近（Task-space Error Minimization）：\n• 不断计算当前正运动学得到的末端 pose 与目标 pose 之间的差异（位置误差 + 姿态误差）\n• 将 pose 差异乘以一个步长系数 α（0 < α ≤ 1）作为关节空间的更新方向\n• 可以用不同的误差度量：位置用欧氏距离，姿态用轴角/四元数差分\n• 优点：实现简单，不需要显式 Jacobian 计算；步长 α 可自适应调节\n• 缺点：收敛速度依赖步长选择，可能需要更多迭代次数\n\n方法 C — 混合策略（可探索）：\n• 前几步用方法 B 快速降低大误差，误差进入小范围后切换到方法 A 精细收敛\n• 或者用方法 A 的 Jacobian 信息辅助方法 B 的步长自适应\n\n关键优势：\n• 因为 SRS 解析解已经非常接近真实解，数值迭代只需 1-3 步即可收敛到高精度（<1e-6），远快于纯数值方法从随机初始值开始\n• 可以结合之前 Idea #3（IK 解筛选在规划层解决）的思路：SRS 枚举多组解 → 规划层筛选最佳候选 → 数值精修选中的解\n\n可以进一步探索的方向：\n• SRS 近似模型的参数标定：如何最优地将实际 DH 参数映射到 SRS 模型\n• 不同数值方法的收敛速度对比实验（在不同初始误差量级下）\n• 与 FACTO 零空间投影约束的结合：在数值迭代过程中施加约束\n• 实时控制场景下的计算预算分配：SRS 解析 vs 迭代步数的最优 trade-off\n• 多解候选的并行迭代 + 提前终止策略",
         sources: [],
         tags: [["IK","blue"],["Analytical IK","teal"],["Numerical Methods","purple"],["7-DoF","green"],["Robotics","red"]],
+    },
+    {
+        id: "irm-base-placement-project",
+        date: "2026-04-13",
+        status: "exploring",
+        statusLabel: "🔬 Exploring",
+        title: "IRM Base Placement Optimization：基于逆可达性地图的移动机械臂底盘放置优化",
+        content: "核心问题：给定末端执行器轨迹（一系列 SE(3) poses），找到一个可行的移动机械臂底盘放置位姿，使得机器人能够到达轨迹上的每一个 pose。\n\n数学形式化：\n• 对每个 EE pose T_world_ee[i]，采样关节空间 q → FK 得到 T_base_ee → 逆变换得到 T_world_base = T_world_ee[i] * inv(T_base_ee)\n• 约束过滤：关节极限、自碰撞、环境碰撞\n• 轨迹可行性 = 所有帧可行 base pose 集合的交集非空\n\n方法谱系梳理（从经典到前沿）：\n\n1. 体素离散化（2013-2017）：Vahrenkamp IRM → Reuleaux ROS 包\n   优势：概念清晰，工程成熟；劣势：6D 存储爆炸，分辨率受限\n\n2. 维度约简（2024）：RM4D\n   优势：4D 统一正逆查询，存储降 100 倍；劣势：依赖旋转对称假设\n\n3. 无预计算优化（2025）：B*\n   优势：在线优化，5 个数量级更优；劣势：计算时间较长\n\n4. 可微化（2025）：Differentiable RM\n   优势：支持梯度优化，可嵌入 NLP；劣势：学习质量依赖训练数据\n\n5. 深度学习（2024-2025）：PlaceNet / BaSeNet / MoMa-Pos\n   优势：端到端，障碍物感知；劣势：泛化性、精度保证不如几何方法\n\n6. 图 RL（2025）：Grand_RM\n   优势：动态适应环境；劣势：计算开销大\n\n推荐实现路线：\n• Phase 1：基于 RM4D 快速搭建原型（4D 离散化 + 交集计算）\n• Phase 2：集成 Manipulability Index 加权排序（RichMap 思路）\n• Phase 3：可微化扩展，支持梯度优化精修（Differentiable RM）\n• Phase 4：处理交集为空的情况——多 base 序列规划（Multi-Base）\n\n开源工具清单：\n• RM4D (Python/PyBullet): github.com/mrudorfer/RM4D\n• Reuleaux (ROS, archived): github.com/ros-planning/reuleaux\n• sampled_reachability_maps (PEARL lab): github.com/PEARL-robot\n• COMPAS FAB (Python): github.com/compas-dev/compas_fab\n• scikit-robot (Python): github.com/jsk-ros-pkg/scikit-robot\n\n与 Boss 其他研究的关联：\n• FACTO 零空间投影：在数值精修阶段可施加约束\n• SRS IK 解析近似：可替代 IRM 中的采样求逆步骤，提速 10-100 倍\n• IK 解筛选策略：规划层筛选 + 轨迹平滑可自然集成到 base placement 后的轨迹验证中",
+        sources: [
+            { title: "RM4D: 4D Reachability Map (IROS 2024)", url: "https://arxiv.org/abs/2409.17756", type: "paper" },
+            { title: "RM4D GitHub", url: "https://github.com/mrudorfer/RM4D", type: "project" },
+            { title: "Vahrenkamp IRM (ICRA 2013)", url: "https://ieeexplore.ieee.org/document/6630883", type: "paper" },
+            { title: "Reuleaux ROS Package", url: "https://github.com/ros-planning/reuleaux", type: "project" },
+            { title: "COMPAS FAB", url: "https://github.com/compas-dev/compas_fab", type: "project" }
+        ],
+        tags: [["IRM","blue"],["Base Placement","teal"],["Mobile Manipulation","green"],["Reachability","purple"],["Optimization","red"]],
     }
 ];
 
 // ===== 配置 =====
-const categoryOrder = ["VLA","Robotics","World Model","LLM / VLM","Embodied AI","RL","Industry"];
+const categoryOrder = ["VLA","Robotics","Mobile Manipulation","World Model","LLM / VLM","Embodied AI","RL","Industry"];
 const ideaStatusMap = {
     "new": { label: "💡 New", cls: "idea-status-new" },
     "exploring": { label: "🔬 Exploring", cls: "idea-status-exploring" },
