@@ -434,6 +434,116 @@
             margin-top: 4px;
         }
 
+        /* Daily Overview / 今日必看 */
+        .daily-overview {
+            background: linear-gradient(135deg, rgba(251,146,60,0.06) 0%, rgba(129,140,248,0.06) 100%);
+            border: 1px solid rgba(251,146,60,0.2);
+            border-radius: var(--radius);
+            padding: 24px;
+            margin-bottom: 28px;
+            position: relative;
+            overflow: hidden;
+        }
+        .daily-overview::before {
+            content: '';
+            position: absolute;
+            left: 0; top: 0; bottom: 0;
+            width: 4px;
+            background: linear-gradient(180deg, #fb923c, #818cf8);
+            border-radius: 4px 0 0 4px;
+        }
+        .daily-overview .ov-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 14px;
+        }
+        .daily-overview .ov-badge {
+            background: linear-gradient(135deg, #fb923c, #f472b6);
+            color: white;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 3px 10px;
+            border-radius: 6px;
+            letter-spacing: 0.05em;
+        }
+        .daily-overview .ov-title {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+        .daily-overview .ov-subtitle {
+            font-size: 13px;
+            color: var(--text-dim);
+            margin-bottom: 16px;
+            padding-left: 2px;
+        }
+        .daily-overview .ov-picks {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .daily-overview .ov-pick {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            padding: 10px 14px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .daily-overview .ov-pick:hover {
+            background: var(--bg-hover);
+            border-color: var(--accent);
+            transform: translateX(2px);
+        }
+        .daily-overview .ov-pick-idx {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 22px;
+            height: 22px;
+            border-radius: 6px;
+            background: rgba(129,140,248,0.12);
+            color: var(--accent);
+            font-size: 11px;
+            font-weight: 700;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+        .daily-overview .ov-pick-content {
+            flex: 1;
+            min-width: 0;
+        }
+        .daily-overview .ov-pick-title {
+            font-size: 13.5px;
+            font-weight: 500;
+            color: var(--text-primary);
+            line-height: 1.5;
+        }
+        .daily-overview .ov-pick-tags {
+            display: flex;
+            gap: 6px;
+            margin-top: 4px;
+        }
+        .daily-overview .ov-stats {
+            display: flex;
+            gap: 16px;
+            margin-top: 16px;
+            padding-top: 14px;
+            border-top: 1px solid var(--border);
+        }
+        .daily-overview .ov-stat {
+            font-size: 12px;
+            color: var(--text-dim);
+        }
+        .daily-overview .ov-stat strong {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .sidebar {
@@ -4666,6 +4776,177 @@ const PAPERS_DB = [
     }
 ];
 
+const DAILY_OVERVIEW = {
+    "2026-04-13": {
+        bannerTitle: "GPT-6 明日全球发布 · arXiv 周一大量新论文涌入",
+        bannerSubtitle: "5-6 万亿参数 Symphony 架构 | cs.RO 37 篇新论文 | 10 篇精选 + 6 条行业动态",
+        picks: ["VAG: Dual-Stream Video-Action Generation for Embodied Data Synthesis","V-CAGE: Vision-Closed-Loop Agentic Generation Engine for Robotic Manipulation","2D or 3D: Who Governs Salience in VLA Models? — Tri-Stage Token Pruning with Modality Salience Awareness"],
+        totalPapers: 10,
+        totalNews: 6
+    },
+    "2026-04-12": {
+        bannerTitle: "",
+        bannerSubtitle: "",
+        picks: ["HY-Embodied-0.5: Foundation Models for Embodied Intelligence","GO-2 (Genie Operator-2): Action Chain-of-Thought for Embodied Intelligence","GPT-6 定档 4 月 14 日：200 万 Token、性能暴涨 40%、超级应用形态"],
+        totalPapers: 2,
+        totalNews: 10
+    },
+    "2026-04-10": {
+        bannerTitle: "",
+        bannerSubtitle: "",
+        picks: ["字节跳动发布 Seeduplex 全双工语音大模型","D-Robotics 完成 1.5 亿美元 B2 轮融资","Tesla 发布 Optimus V3 人形机器人"],
+        totalPapers: 7,
+        totalNews: 6
+    },
+    "2026-04-09": {
+        bannerTitle: "",
+        bannerSubtitle: "",
+        picks: ["BiDexGrasp: Coordinated Bimanual Dexterous Grasps across Object Geometries and Sizes","Robots that Learn to Evaluate Models of Collective Behavior","GraspSense: Physically Grounded Grasp and Grip Planning via Language-Guided Perception and Force Maps","Robust Quadruped Locomotion via Evolutionary Reinforcement Learning","AEROS: A Single-Agent Operating Architecture with Embodied Capability Modules"],
+        totalPapers: 16,
+        totalNews: 5
+    },
+    "2026-04-08": {
+        bannerTitle: "",
+        bannerSubtitle: "",
+        picks: ["VLA-Forget: Machine Unlearning for Vision-Language-Action Models","UAV-Track VLA: Vision-Language-Action Model for UAV Target Tracking","StarVLA: A Modular Codebase for Building VLA Systems","Grounding Hierarchical VLA: Bridging Spatial Reasoning with Action Planning","Referring-Aware VMP: Closed-Loop Visual Manipulation with Language Grounding"],
+        totalPapers: 16,
+        totalNews: 8
+    },
+    "2026-04-07": {
+        bannerTitle: "",
+        bannerSubtitle: "",
+        picks: ["Veo-Act: Leveraging Video Diffusion Priors as World Models for VLA Planning","E-VLA: Event Camera Augmented Vision-Language-Action Model","Adaptive Action Chunking with Entropy-Driven Variable Horizon for VLA","DriveDreamer-Policy: Geometry-Grounded World Model for Autonomous Driving Policy","GRIT: Dexterous Grasping from Sparse Taxonomy for Generalizable Robotic Hands"],
+        totalPapers: 18,
+        totalNews: 7
+    },
+    "2026-04-06": {
+        bannerTitle: "",
+        bannerSubtitle: "",
+        picks: ["Vero: An Open RL Recipe for General Visual Reasoning","TriAttention: Efficient Long Reasoning with Trigonometric KV Compression","SpatialEdit: Benchmarking Fine-Grained Image Spatial Editing"],
+        totalPapers: 8,
+        totalNews: 1
+    },
+    "2026-04-05": {
+        bannerTitle: "",
+        bannerSubtitle: "",
+        picks: ["VLA-Forget: Vision-Language-Action Unlearning for Embodied Foundation Models","DriveVA: Video Action Models are Zero-Shot Drivers","Generalist AI 发布 GEN-1：首个达到\"掌控力\"的通用物理 AI 基础模型"],
+        totalPapers: 3,
+        totalNews: 0
+    },
+    "2026-04-04": {
+        bannerTitle: "",
+        bannerSubtitle: "",
+        picks: ["Agibot 宣布 4 月 7-14 日 AI 发布周，第 10,000 台人形机器人下线"],
+        totalPapers: 1,
+        totalNews: 3
+    },
+    "2026-04-03": {
+        bannerTitle: "",
+        bannerSubtitle: "",
+        picks: ["The Compression Gap: Why Discrete Tokenization Limits Vision-Language-Action Model Scaling","Hierarchical Planning with Latent World Models","Multi-View Video Diffusion Policy: A 3D Spatio-Temporal-Aware Video Action Model"],
+        totalPapers: 5,
+        totalNews: 0
+    },
+    "2026-04-02": {
+        bannerTitle: "",
+        bannerSubtitle: "",
+        picks: ["SoftAct: Functional Force-Aware Retargeting from Virtual Human Demos to Soft Robot Policies","Collaborative Task and Path Planning for Heterogeneous Robotic Teams using Multi-Agent PPO","SMASH: Sparse Mixture of Architecture and Skill Heads for Multi-Skill Humanoid Control"],
+        totalPapers: 12,
+        totalNews: 0
+    },
+    "2026-04-01": {
+        bannerTitle: "",
+        bannerSubtitle: "",
+        picks: ["DIAL: Decoupling Intent and Action via Latent World Modeling for End-to-End VLA","Do World Action Models Generalize Better than VLAs? A Robustness Study","nvidia/nemotron-ocr-v2"],
+        totalPapers: 6,
+        totalNews: 0
+    },
+    "2026-03-31": {
+        bannerTitle: "",
+        bannerSubtitle: "",
+        picks: ["FocusVLA: Focused Visual Utilization for Vision-Language-Action Models","HandX: Scaling Bimanual Motion and Interaction Generation","SOLE-R1: Video-Language Reasoning as the Sole Reward for On-Robot Reinforcement Learning"],
+        totalPapers: 8,
+        totalNews: 0
+    },
+    "2026-03-30": {
+        bannerTitle: "",
+        bannerSubtitle: "",
+        picks: ["qualia-robotics/act-pickupbreadcombine12"],
+        totalPapers: 1,
+        totalNews: 0
+    },
+    "2026-03-29": {
+        bannerTitle: "",
+        bannerSubtitle: "",
+        picks: ["VLA-OPD: Bridging Offline SFT and Online RL for Vision-Language-Action Models via On-Policy Distillation","Ruka-v2: Tendon Driven Open-Source Dexterous Hand with Wrist and Abduction for Robot Learning"],
+        totalPapers: 8,
+        totalNews: 0
+    },
+    "2026-03-28": {
+        bannerTitle: "",
+        bannerSubtitle: "",
+        picks: ["MMaDA-VLA: Large Diffusion VLA Model with Unified Multi-Modal Instruction and Generation","π, But Make It Fly: Physics-Guided Transfer of VLA Models to Aerial Manipulation","Persistent Robot World Models: Stabilizing Multi-Step Rollouts via Reinforcement Learning","FODMP: Fast One-Step Diffusion of Movement Primitives for Time-Dependent Robot Actions","MuscleMimic: Unlocking Full-Body Musculoskeletal Motor Learning at Scale"],
+        totalPapers: 15,
+        totalNews: 6
+    },
+    "2026-03-27": {
+        bannerTitle: "",
+        bannerSubtitle: "",
+        picks: ["Vega: Learning to Drive with Natural Language Instructions","Drive My Way: Preference Alignment of Vision-Language-Action Model for Personalized Driving"],
+        totalPapers: 9,
+        totalNews: 0
+    },
+    "2026-03-26": {
+        bannerTitle: "",
+        bannerSubtitle: "",
+        picks: ["TAG: Task-Adaptive Generation for Generalizable Robotic Manipulation","3D-Mix for VLA: 3D Spatial Augmentation for Scalable Vision-Language-Action Models","VP-VLA: Visual-Prompt Vision-Language-Action Models"],
+        totalPapers: 32,
+        totalNews: 6
+    },
+    "2026-03-25": {
+        bannerTitle: "",
+        bannerSubtitle: "",
+        picks: ["VTAM: Video-Tactile-Action Models for Complex Physical Interaction Beyond VLAs"],
+        totalPapers: 8,
+        totalNews: 0
+    },
+    "2026-03-24": {
+        bannerTitle: "",
+        bannerSubtitle: "",
+        picks: ["DualCoT-VLA: Visual-Linguistic Chain of Thought via Parallel Reasoning for Vision-Language-Action Models","StageCraft: Execution Aware Mitigation of Distractor and Obstruction Failures in VLA Models","Speedup Patch: Learning a Plug-and-Play Policy to Accelerate Embodied Manipulation"],
+        totalPapers: 18,
+        totalNews: 6
+    },
+    "2026-03-23": {
+        bannerTitle: "",
+        bannerSubtitle: "",
+        picks: ["VLA-Thinker: Boosting Vision-Language-Action Models through Thinking-with-Image Reasoning","Not All Features Are Created Equal: A Mechanistic Study of Vision-Language-Action Models","AnyCamVLA: Zero-Shot Camera Adaptation for Viewpoint Robust Vision-Language-Action Models","MultihopSpatial: Multi-hop Compositional Spatial Reasoning Benchmark for VLM","Kinema4D: Kinematic 4D World Modeling for Spatiotemporal Embodied Simulation"],
+        totalPapers: 8,
+        totalNews: 6
+    },
+    "2026-03-22": {
+        bannerTitle: "",
+        bannerSubtitle: "",
+        picks: ["VLA-Thinker: Thinking-Then-Acting with VLA Models in Robotic Manipulation","Scaling Sim-to-Real Transfer with Multi-Modal Foundation Models","OTTER: A Vision-Language-Action Model with Text-Driven Exploration and Retrieval"],
+        totalPapers: 21,
+        totalNews: 0
+    },
+    "2026-03-21": {
+        bannerTitle: "",
+        bannerSubtitle: "",
+        picks: ["ForceVLA2: Unleashing Hybrid Force-Position Control with Force-Aware VLA","AnoleVLA: Lightweight VLA Model with Deep State Space Model","HeiSD: Hybrid Speculative Decoding for Embodied VLA Inference","Sparse Autoencoders Reveal Interpretable and Steerable Features in VLA Models","Shifting Uncertainty to Critical Moments: Reliable Uncertainty Quantification for VLA"],
+        totalPapers: 19,
+        totalNews: 0
+    },
+    "2026-03-20": {
+        bannerTitle: "",
+        bannerSubtitle: "",
+        picks: ["FASTER: Rethinking Real-Time Flow VLAs","Not All Features Are Created Equal: A Mechanistic Study of VLA Models","CycleVLA: Proactive Self-Correcting VLA via Subtask Backtracking","Value Vision-Language-Action Planning & Search","TwinRL-VLA: Digital Twin-Driven RL for VLA Models"],
+        totalPapers: 27,
+        totalNews: 0
+    }
+};
+
 // ===== DERIVED DATA =====
 const allDates = [...new Set(PAPERS_DB.map(p => p.date))].sort().reverse();
 const allCategories = [...new Set(PAPERS_DB.map(p => p.category))];
@@ -4781,6 +5062,74 @@ function renderView() {
     }
 }
 
+function renderDailyOverview(date, papers) {
+    // 获取 DAILY_OVERVIEW 数据（如果有）
+    const ov = (typeof DAILY_OVERVIEW !== "undefined" && DAILY_OVERVIEW[date]) ? DAILY_OVERVIEW[date] : null;
+
+    // 精选论文列表：优先用 DAILY_OVERVIEW.picks，其次用 highlight 标记，最后用 VLA/Robotics/WM 分类自动选
+    let pickPapers = [];
+    if (ov && ov.picks && ov.picks.length > 0) {
+        // 按 picks 标题匹配论文
+        ov.picks.forEach(title => {
+            const found = papers.find(p => p.title === title);
+            if (found) pickPapers.push(found);
+        });
+    }
+    if (pickPapers.length === 0) {
+        // fallback: highlight 论文
+        pickPapers = papers.filter(p => p.highlight);
+    }
+    if (pickPapers.length === 0) {
+        // fallback: VLA/World Model/Robotics 分类前 3 篇
+        const priorityCats = new Set(["VLA", "World Model", "Robotics", "Embodied AI"]);
+        pickPapers = papers.filter(p => priorityCats.has(p.category)).slice(0, 3);
+    }
+    if (pickPapers.length === 0) {
+        // 完全没有可精选的内容，不渲染 overview
+        return "";
+    }
+
+    // banner 标题和副标题
+    const bannerTitle = (ov && ov.bannerTitle) ? ov.bannerTitle : "今日精选";
+    const bannerSubtitle = (ov && ov.bannerSubtitle) ? ov.bannerSubtitle : "";
+
+    // 统计
+    const totalPapers = (ov && ov.totalPapers) ? ov.totalPapers : papers.filter(p => p.category !== "Informations").length;
+    const totalNews = (ov && ov.totalNews) ? ov.totalNews : papers.filter(p => p.category === "Informations").length;
+
+    let picksHtml = "";
+    pickPapers.forEach((p, i) => {
+        const tagsHtml = p.tags.map(([label]) => {
+            return `<span class="tag tag-green" style="font-size:11px;padding:1px 7px;">${label}</span>`;
+        }).join("");
+        picksHtml += `<div class="ov-pick" onclick="document.querySelector('h3')&&Array.from(document.querySelectorAll('.paper h3,.paper.highlight h3')).find(el=>el.textContent.includes('${p.title.substring(0,30).replace(/'/g,"\\'")}'))?.scrollIntoView({behavior:'smooth',block:'center'})">
+            <div class="ov-pick-idx">${i + 1}</div>
+            <div class="ov-pick-content">
+                <div class="ov-pick-title">${p.title}</div>
+                <div class="ov-pick-tags">${tagsHtml}</div>
+            </div>
+        </div>`;
+    });
+
+    let subtitleHtml = bannerSubtitle ? `<div class="ov-subtitle">${bannerSubtitle}</div>` : "";
+
+    let statsHtml = `<div class="ov-stats">
+        <div class="ov-stat"><strong>${totalPapers}</strong> 篇论文</div>
+        <div class="ov-stat"><strong>${totalNews}</strong> 条资讯</div>
+        <div class="ov-stat"><strong>${pickPapers.length}</strong> 篇精选</div>
+    </div>`;
+
+    return `<div class="daily-overview">
+        <div class="ov-header">
+            <div class="ov-badge">TODAY'S PICKS</div>
+            <div class="ov-title">${bannerTitle}</div>
+        </div>
+        ${subtitleHtml}
+        <div class="ov-picks">${picksHtml}</div>
+        ${statsHtml}
+    </div>`;
+}
+
 function renderDateView(container, date, showOverview) {
     const papers = getDatePapers(date);
     let html = "";
@@ -4793,6 +5142,9 @@ function renderDateView(container, date, showOverview) {
             <div class="overview-card"><div class="num">${papers.length}</div><div class="label">今日新增</div></div>
         </div>`;
     }
+
+    // Daily Overview 精选模块
+    html += renderDailyOverview(date, papers);
 
     // Group by category
     const grouped = groupByCategory(papers);
