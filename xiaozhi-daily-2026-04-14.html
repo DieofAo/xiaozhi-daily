@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🔬 小小志科研日报 — 2026-04-14</title>
+<style>
+:root {
+  --bg: #0d1117; --card: #161b22; --border: #30363d;
+  --text: #e6edf3; --dim: #8b949e; --accent: #58a6ff;
+  --vla: #da3633; --wam: #8957e5; --robotics: #238636;
+  --embodied: #d29922; --rl: #f78166; --llm: #3fb950;
+  --vlm: #79c0ff; --info: #768390; --multimodal: #d2a8ff;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { background:var(--bg); color:var(--text); font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; line-height:1.6; }
+.container { max-width:960px; margin:0 auto; padding:20px; }
+header { text-align:center; padding:40px 0 30px; border-bottom:1px solid var(--border); margin-bottom:30px; }
+header h1 { font-size:2em; background:linear-gradient(135deg,#58a6ff,#da3633,#8957e5); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+header .date { color:var(--dim); font-size:1.1em; margin-top:8px; }
+header .subtitle { color:var(--accent); font-size:0.95em; margin-top:4px; }
+.section { margin-bottom:36px; }
+.section h2 { font-size:1.4em; margin-bottom:16px; padding-left:12px; border-left:4px solid var(--accent); color:var(--accent); }
+.section h2.vla { border-color:var(--vla); color:var(--vla); }
+.section h2.wam { border-color:var(--wam); color:var(--wam); }
+.section h2.robotics { border-color:var(--robotics); color:var(--robotics); }
+.section h2.embodied { border-color:var(--embodied); color:var(--embodied); }
+.section h2.rl { border-color:var(--rl); color:var(--rl); }
+.section h2.llm { border-color:var(--llm); color:var(--llm); }
+.section h2.vlm { border-color:var(--vlm); color:var(--vlm); }
+.section h2.info { border-color:var(--info); color:var(--info); }
+.paper { background:var(--card); border:1px solid var(--border); border-radius:10px; padding:18px; margin-bottom:14px; transition:border-color .2s; }
+.paper:hover { border-color:var(--accent); }
+.paper-title { font-size:1.05em; font-weight:600; margin-bottom:6px; }
+.paper-meta { display:flex; flex-wrap:wrap; gap:6px; margin-bottom:8px; align-items:center; }
+.tag { font-size:0.75em; padding:2px 8px; border-radius:12px; font-weight:500; }
+.tag-vla { background:rgba(218,54,51,0.2); color:var(--vla); }
+.tag-wam { background:rgba(137,87,229,0.2); color:var(--wam); }
+.tag-robotics { background:rgba(35,134,54,0.2); color:var(--robotics); }
+.tag-embodied { background:rgba(210,153,34,0.2); color:var(--embodied); }
+.tag-rl { background:rgba(247,129,102,0.2); color:var(--rl); }
+.tag-llm { background:rgba(63,185,80,0.2); color:var(--llm); }
+.tag-vlm { background:rgba(121,192,255,0.2); color:var(--vlm); }
+.tag-info { background:rgba(118,131,144,0.2); color:var(--info); }
+.tag-multimodal { background:rgba(210,168,255,0.2); color:var(--multimodal); }
+.paper-summary { color:var(--dim); font-size:0.92em; margin-bottom:10px; }
+.paper-links { display:flex; flex-wrap:wrap; gap:6px; }
+.paper-links a { font-size:0.8em; padding:3px 10px; border-radius:6px; background:rgba(88,166,255,0.1); color:var(--accent); text-decoration:none; border:1px solid rgba(88,166,255,0.3); transition:all .2s; }
+.paper-links a:hover { background:rgba(88,166,255,0.25); }
+.info-card { background:linear-gradient(135deg,rgba(118,131,144,0.1),rgba(88,166,255,0.05)); border:1px solid var(--border); border-radius:10px; padding:18px; margin-bottom:14px; }
+.info-card .paper-title { color:var(--accent); }
+.stats { background:var(--card); border:1px solid var(--border); border-radius:10px; padding:20px; margin-top:30px; text-align:center; }
+.stats h3 { color:var(--accent); margin-bottom:12px; }
+.stats-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:12px; }
+.stat-item { padding:10px; }
+.stat-num { font-size:1.6em; font-weight:700; color:var(--accent); }
+.stat-label { font-size:0.82em; color:var(--dim); }
+.hot-pick { background:linear-gradient(135deg,rgba(218,54,51,0.08),rgba(137,87,229,0.08)); border:1px solid rgba(218,54,51,0.3); border-radius:10px; padding:20px; margin-bottom:30px; }
+.hot-pick h3 { color:var(--vla); margin-bottom:10px; font-size:1.15em; }
+.hot-pick p { color:var(--dim); font-size:0.92em; }
+footer { text-align:center; padding:30px 0; color:var(--dim); font-size:0.85em; border-top:1px solid var(--border); margin-top:30px; }
+.floating-note { background:rgba(210,153,34,0.1); border:1px solid rgba(210,153,34,0.3); border-radius:8px; padding:12px 16px; margin-bottom:14px; font-size:0.88em; color:var(--embodied); }
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+  <h1>🔬 小小志科研日报</h1>
+  <div class="date">2026 年 4 月 14 日 · 周二</div>
+  <div class="subtitle">Robotics · VLA · Embodied AI · World Model · RL · LLM · VLM</div>
+</header>
+
+<div class="hot-pick">
+  <h3>🔥 今日看点</h3>
+  <p><strong>GPT-6 正式发布日</strong> — 200 万 Token 上下文、5-6 万亿参数、Symphony 全模态架构，AI 史上最大模型今日上线。<strong>arXiv 论文大爆发</strong> — cs.RO 新增 50+ 篇，VLA 方向尤为密集：StarVLA-α 单模型超 π₀.₅ 20%、DA-PTQ 解决 VLA 量化漂移、Grounded World Model 在 WISER 上 87% vs VLA 的 22%。<strong>灵初智能开源 10 万小时手部操作数据集</strong>，Psi-R2 登顶 MolmoSpace。</p>
+</div>
+
+<div class="floating-note">
+  📌 <strong>Boss 关注提醒</strong>：CLAW (2604.11251) 为 Unitree G1 人形机器人生成语言标注全身运动数据，与 Boss 的 floating base / whole-body control 研究方向直接相关。OmniUMI (2604.10647) 的触觉+力反馈+阻抗控制框架也值得关注。
+</div>
+
+<!-- ===== VLA Section ===== -->
+<div class="section" id="vla">
+  <h2 class="vla">🤖 VLA · Vision-Language-Action（7 篇）</h2>
+
+  <div class="paper vla">
+    <div class="paper-title">StarVLA-α: Reducing Complexity in Vision-Language-Action Systems</div>
+    <div class="paper-meta">
+      <span class="tag tag-vla">VLA</span>
+      <span class="tag tag-robotics">简洁设计</span>
+    </div>
+    <div class="paper-summary">提出简洁而强大的 VLA 基准 StarVLA-α，刻意最小化架构和管道复杂性以减少实验混杂因素。系统重新评估动作建模策略、机器人预训练和接口工程等关键设计轴。在 LIBERO、SimplerEnv、RoboTwin 和 RoboCasa 统一多基准上保持高度竞争力，表明强大 VLM 主干加最小设计已足够。单一通用模型在 RoboChallenge 上比 π₀.₅ 高 20%。</div>
+    <div class="paper-links">
+      <a class="link-paper" href="https://arxiv.org/abs/2604.11757">arXiv</a>
+      <a class="link-pdf" href="https://arxiv.org/pdf/2604.11757">PDF</a>
+      <a href="https://github.com/starVLA/starVLA">GitHub</a>
+    </div>
+  </div>
+
+  <div class="paper vla">
+    <div class="paper-title">DA-PTQ: Drift-Aware Post-Training Quantization for Efficient VLA Models</div>
+    <div class="paper-meta">
+      <span class="tag tag-vla">VLA</span>
+      <span class="tag tag-robotics">模型压缩</span>
+    </div>
+    <div class="paper-summary">首次识别 VLA 模型量化中的时间误差累积问题——量化扰动在视觉-语言-动作接口处逐步放大，导致执行轨迹的运动学漂移。提出 DA-PTQ 方法，包含跨空间表示补偿和运动驱动的混合精度分配两个组件，将量化表述为序列决策中的漂移感知优化。低比特设置下达到全精度模型相当性能。</div>
+    <div class="paper-links">
+      <a class="link-paper" href="https://arxiv.org/abs/2604.11572">arXiv</a>
+      <a class="link-pdf" href="https://arxiv.org/pdf/2604.11572">PDF</a>
+    </div>
+  </div>
+
+  <div class="paper vla">
+    <div class="paper-title">AnySlot: Goal-Conditioned VLA Policies for Zero-Shot Slot-Level Placement</div>
+    <div class="paper-meta">
+      <span class="tag tag-vla">VLA</span>
+      <span class="tag tag-robotics">精密放置</span>
+    </div>
+    <div class="paper-summary">通过引入显式空间视觉目标作为中间表征，解决复合语言指令下的精确物体放置挑战。分层设计将高级槽位选择与低级执行分离，确保语义准确性和空间鲁棒性。引入 SlotBench 基准（9 个任务类别），零样本性能显著超过平面 VLA 基线。</div>
+    <div class="paper-links">
+      <a class="link-paper" href="https://arxiv.org/abs/2604.10432">arXiv</a>
+      <a class="link-pdf" href="https://arxiv.org/pdf/2604.10432">PDF</a>
+    </div>
+  </div>
+
+  <div class="paper vla">
+    <div class="paper-title">LARY: Latent Action Representation Benchmark for Vision-to-Action Alignment</div>
+    <div class="paper-meta">
+      <span class="tag tag-vla">VLA</span>
+      <span class="tag tag-vlm">表示学习</span>
+    </div>
+    <div class="paper-summary">建立评估潜在动作表示的统一基准框架，包含 100 万+ 视频（1000 小时）、151 个动作类别、62 万图像对和 59.5 万条动作轨迹。关键发现：未经动作监督训练的通用视觉基础模型一致优于专门的具身潜在动作模型；基于潜在视觉空间的表示比像素空间更好地对齐物理动作空间。</div>
+    <div class="paper-links">
+      <a class="link-paper" href="https://arxiv.org/abs/2604.11689">arXiv</a>
+      <a class="link-pdf" href="https://arxiv.org/pdf/2604.11689">PDF</a>
+    </div>
+  </div>
+
+  <div class="paper vla">
+    <div class="paper-title">CLAW: Composable Language-Annotated Whole-body Motion Generation</div>
+    <div class="paper-meta">
+      <span class="tag tag-vla">VLA</span>
+      <span class="tag tag-embodied">人形运动</span>
+    </div>
+    <div class="paper-summary">为 Unitree G1 人形机器人可扩展生成语言标注全身运动数据。开发交互式网络平台，包含可组合运动规划（方向/速度/高度参数化）、实时键盘和时间轴编辑、MuJoCo 仿真控制和自动标注引擎。支持 50Hz 物理可行轨迹采样和多样化语言描述风格。已开源。</div>
+    <div class="paper-links">
+      <a class="link-paper" href="https://arxiv.org/abs/2604.11251">arXiv</a>
+      <a class="link-pdf" href="https://arxiv.org/pdf/2604.11251">PDF</a>
+    </div>
+  </div>
+
+  <div class="paper vla">
+    <div class="paper-title">OmniUMI: Physically Grounded Robot Learning via Human-Aligned Multimodal Interaction</div>
+    <div class="paper-meta">
+      <span class="tag tag-vla">VLA</span>
+      <span class="tag tag-robotics">触觉+力</span>
+    </div>
+    <div class="paper-summary">统一框架同步采集 RGB、深度、轨迹、触觉、内部抓握力和外部交互力。通过共享 embodiment 设计保持采集-部署一致性，提供双向夹爪力反馈。扩展扩散策略加入视觉/触觉/力观察模块，通过阻抗控制统一调节运动和接触行为。在力敏感拾取、交互式擦除和触觉引导释放任务上验证。</div>
+    <div class="paper-links">
+      <a class="link-paper" href="https://arxiv.org/abs/2604.10647">arXiv</a>
+      <a class="link-pdf" href="https://arxiv.org/pdf/2604.10647">PDF</a>
+    </div>
+  </div>
+
+  <div class="paper vla">
+    <div class="paper-title">WARPED: Wrist-Aligned Rendering for Robot Policy Learning from Human Demos</div>
+    <div class="paper-meta">
+      <span class="tag tag-vla">VLA</span>
+      <span class="tag tag-robotics">人类演示</span>
+    </div>
+    <div class="paper-summary">从自中心 RGB 视频合成逼真腕部视图观测来训练机器人策略。使用视觉基础模型初始化交互场景，追踪手部和物体，重定向到机器人末端执行器，通过高斯溅射合成渲染。在 5 项桌面操纵任务中达到与遥操作数据训练相当的成功率，数据收集时间减少 5-8 倍。</div>
+    <div class="paper-links">
+      <a class="link-paper" href="https://arxiv.org/abs/2604.10809">arXiv</a>
+      <a class="link-pdf" href="https://arxiv.org/pdf/2604.10809">PDF</a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== World Model Section ===== -->
+<div class="section" id="wam">
+  <h2 class="wam">🌍 World Model（4 篇）</h2>
+
+  <div class="paper wam">
+    <div class="paper-title">Grounded World Model for Semantically Generalizable Planning</div>
+    <div class="paper-meta">
+      <span class="tag tag-wam">World Model</span>
+      <span class="tag tag-vla">语义泛化</span>
+    </div>
+    <div class="paper-summary">在视觉-语言对齐隐空间中学习世界模型，将 MPC 转化为 VLA。通过行动未来结果与任务指令的相似度评分，实现对未见视觉信号和新表达方式的语义泛化。WISER 基准测试集成功率 87%，而传统 VLA 仅 22%（尽管在训练集上达 90%），展示了显著的泛化优势。</div>
+    <div class="paper-links">
+      <a class="link-paper" href="https://arxiv.org/abs/2604.11751">arXiv</a>
+      <a class="link-pdf" href="https://arxiv.org/pdf/2604.11751">PDF</a>
+    </div>
+  </div>
+
+  <div class="paper wam">
+    <div class="paper-title">WM-DAgger: Efficient Data Aggregation for Imitation Learning with World Models</div>
+    <div class="paper-meta">
+      <span class="tag tag-wam">World Model</span>
+      <span class="tag tag-rl">模仿学习</span>
+    </div>
+    <div class="paper-summary">利用世界模型合成 OOD 恢复数据，无需人工干预解决模仿学习复合误差问题。包含纠正动作合成模块（防止误导性监督）和一致性引导过滤模块（筛除物理不合理轨迹）。少样本设置下（仅 5 个演示），软包推动任务成功率达 93.3%。</div>
+    <div class="paper-links">
+      <a class="link-paper" href="https://arxiv.org/abs/2604.11351">arXiv</a>
+      <a class="link-pdf" href="https://arxiv.org/pdf/2604.11351">PDF</a>
+    </div>
+  </div>
+
+  <div class="paper wam">
+    <div class="paper-title">AIM: Intent-Aware Unified World Action Modeling with Spatial Value Maps</div>
+    <div class="paper-meta">
+      <span class="tag tag-wam">World Model</span>
+      <span class="tag tag-rl">价值预测</span>
+    </div>
+    <div class="paper-summary">预测对齐的空间价值图作为显式中间表征，弥合预训练视频模型与机器人控制的差距。采用混合 Transformer + 意图因果注意力 + 自蒸馏 RL。30K 操纵轨迹数据集上 RoboTwin 2.0 基准平均成功率 94.0%，在长地平线和接触敏感任务上尤为突出。</div>
+    <div class="paper-links">
+      <a class="link-paper" href="https://arxiv.org/abs/2604.11135">arXiv</a>
+      <a class="link-pdf" href="https://arxiv.org/pdf/2604.11135">PDF</a>
+    </div>
+  </div>
+
+  <div class="paper wam">
+    <div class="paper-title">3D-Anchored Lookahead Planning via World-Model-Based MCTS</div>
+    <div class="paper-meta">
+      <span class="tag tag-wam">World Model</span>
+      <span class="tag tag-robotics">场景记忆</span>
+    </div>
+    <div class="paper-summary">将 MCTS 与 3D 一致世界模型结合，维持持久 c2w 锚点实现遮挡下存活和重新规划。5 步顺序到达任务（需空间记忆）成功率 0.650，贪婪基线仅 0.006（Δ=+0.645）。消融研究：树搜索空间记忆贡献 82% 收益，更深前瞻贡献 17%。</div>
+    <div class="paper-links">
+      <a class="link-paper" href="https://arxiv.org/abs/2604.11302">arXiv</a>
+      <a class="link-pdf" href="https://arxiv.org/pdf/2604.11302">PDF</a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Robotics Section ===== -->
+<div class="section" id="robotics">
+  <h2 class="robotics">🦾 Robotics（4 篇）</h2>
+
+  <div class="paper robotics">
+    <div class="paper-title">AffordSim: Scalable Data Generator for Affordance-Aware Robotic Manipulation</div>
+    <div class="paper-meta">
+      <span class="tag tag-robotics">Robotics</span>
+      <span class="tag tag-embodied">可供性</span>
+    </div>
+    <div class="paper-summary">首个将开放词汇 3D 可供性预测集成到操纵数据生成管道的仿真框架。基于 NVIDIA Isaac Sim，支持 Franka FR3/Panda/UR5e/Kinova，含 VLM 驱动任务生成和 3D 高斯重建域随机化。50 任务基准（7 类）：抓取 53-93% 成功率，但倒入窄容器（1-43%）和杯挂（0-47%）仍是挑战。零样本 Sim2Real 在 Franka FR3 上验证。</div>
+    <div class="paper-links">
+      <a class="link-paper" href="https://arxiv.org/abs/2604.11674">arXiv</a>
+      <a class="link-pdf" href="https://arxiv.org/pdf/2604.11674">PDF</a>
+    </div>
+  </div>
+
+  <div class="paper robotics">
+    <div class="paper-title">ComSim: Scalable Real-World Robot Data Generation via Compositional Simulation</div>
+    <div class="paper-meta">
+      <span class="tag tag-robotics">Robotics</span>
+      <span class="tag tag-wam">Sim2Real</span>
+    </div>
+    <div class="paper-summary">提出组合式模拟，结合经典和神经模拟生成准确的动作-视频对。采用闭环 real-sim-real 数据增强管道，训练神经模拟器将经典模拟视频转换为真实世界表示，显著降低 sim2real 域间隙。从小规模真实数据出发生成大规模多样化训练数据，提高策略成功率。</div>
+    <div class="paper-links">
+      <a class="link-paper" href="https://arxiv.org/abs/2604.11386">arXiv</a>
+      <a class="link-pdf" href="https://arxiv.org/pdf/2604.11386">PDF</a>
+    </div>
+  </div>
+
+  <div class="paper robotics">
+    <div class="paper-title">ViserDex: Visual Sim-to-Real for Robust Dexterous In-hand Reorientation</div>
+    <div class="paper-meta">
+      <span class="tag tag-robotics">Robotics</span>
+      <span class="tag tag-rl">灵巧手</span>
+    </div>
+    <div class="paper-summary">利用 3D 高斯溅射（3DGS）弥合单目 RGB 灵巧手操作的视觉 Sim2Real 差距。在高斯表示空间中进行物理一致的预渲染增强生成域随机化数据，结合课程 RL + 师生蒸馏。消费级硬件可独立训练，在 5 种物体上成功验证重定向，即使在挑战性光照下也能工作。</div>
+    <div class="paper-links">
+      <a class="link-paper" href="https://arxiv.org/abs/2604.11138">arXiv</a>
+      <a class="link-pdf" href="https://arxiv.org/pdf/2604.11138">PDF</a>
+    </div>
+  </div>
+
+  <div class="paper robotics">
+    <div class="paper-title">AffordGen: Diverse Demonstrations for Generalizable Manipulation with Afford Correspondence</div>
+    <div class="paper-meta">
+      <span class="tag tag-robotics">Robotics</span>
+      <span class="tag tag-vla">零样本泛化</span>
+    </div>
+    <div class="paper-summary">利用 3D 生成模型和视觉基础模型的语义对应关系，从大规模 3D 网格中生成新操纵轨迹。训练闭环视觉运动策略，将可供性语义泛化与端到端学习的鲁棒性结合。在模拟和真实世界中达到高成功率，对完全未见物体实现零样本泛化。</div>
+    <div class="paper-links">
+      <a class="link-paper" href="https://arxiv.org/abs/2604.10579">arXiv</a>
+      <a class="link-pdf" href="https://arxiv.org/pdf/2604.10579">PDF</a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Embodied AI Section ===== -->
+<div class="section" id="embodied">
+  <h2 class="embodied">🏠 Embodied AI（2 篇）</h2>
+
+  <div class="paper embodied">
+    <div class="paper-title">EmbodiedGovBench: Governance, Recovery, and Upgrade Safety in Embodied Agent Systems</div>
+    <div class="paper-meta">
+      <span class="tag tag-embodied">Embodied AI</span>
+      <span class="tag tag-robotics">安全治理</span>
+    </div>
+    <div class="paper-summary">提出面向治理的具身代理评估基准，超越传统任务成功率指标。涵盖 7 个治理维度：未授权能力调用、运行时漂移鲁棒性、恢复成功、策略可移植性、版本升级安全性、人类覆盖响应性和审计完整性。跨越单机器人和集群设置，定义了场景模板、扰动算子和治理指标。</div>
+    <div class="paper-links">
+      <a class="link-paper" href="https://arxiv.org/abs/2604.11174">arXiv</a>
+      <a class="link-pdf" href="https://arxiv.org/pdf/2604.11174">PDF</a>
+    </div>
+  </div>
+
+  <div class="paper embodied">
+    <div class="paper-title">Ro-SLM: Onboard Small Language Models for Robot Task Planning (ACL 2026)</div>
+    <div class="paper-meta">
+      <span class="tag tag-embodied">Embodied AI</span>
+      <span class="tag tag-llm">小模型</span>
+    </div>
+    <div class="paper-summary">通过蒸馏 LLM 知识实现 SLM 驱动的板载机器人操作，解决云端依赖和计算受限问题。利用 LLM 生成多样化任务指令和真值代码，LLM 作为奖励函数指导 SLM 微调。在无人机操作任务上从无法支持到实现接近 LLM 性能。ACL 2026 录用。</div>
+    <div class="paper-links">
+      <a class="link-paper" href="https://arxiv.org/abs/2604.10929">arXiv</a>
+      <a class="link-pdf" href="https://arxiv.org/pdf/2604.10929">PDF</a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== RL Section ===== -->
+<div class="section" id="rl">
+  <h2 class="rl">🎯 RL · 强化学习（1 篇）</h2>
+
+  <div class="paper rl">
+    <div class="paper-title">ScoRe-Flow: Score-Based RL for Flow Matching Robot Control</div>
+    <div class="paper-meta">
+      <span class="tag tag-rl">RL</span>
+      <span class="tag tag-robotics">流匹配</span>
+    </div>
+    <div class="paper-summary">提出基于得分函数的 RL 微调方法，实现对 Flow Matching 策略随机转移均值和方差的解耦控制。通过得分函数调节漂移将探索引导向高概率区域，得分可从速度场闭式获得无需辅助网络。D4RL 运动任务比 SOTA 收敛快 2.4 倍，Robomimic 和 Franka Kitchen 成功率提高 5.4%。</div>
+    <div class="paper-links">
+      <a class="link-paper" href="https://arxiv.org/abs/2604.10962">arXiv</a>
+      <a class="link-pdf" href="https://arxiv.org/pdf/2604.10962">PDF</a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Industry News Section ===== -->
+<div class="section" id="info">
+  <h2 class="info">📰 行业动态（6 条）</h2>
+
+  <div class="info-card">
+    <div class="paper-title">🚀 GPT-6 正式发布（TODAY）— 200 万 Token · Symphony 全模态架构</div>
+    <div class="paper-meta"><span class="tag tag-llm">LLM</span><span class="tag tag-info">Industry</span></div>
+    <div class="paper-summary">OpenAI GPT-6（代号 "Spud"）今日全球同步发布。5-6 万亿参数（MoE 架构，实际激活约 10%），200 万 Token 上下文（约 150 万字），性能比 GPT-5.4 提升 40%，推理能耗降低 40%。Symphony 架构原生统一文本/图像/音频/视频，双系统推理框架（快思考 System-1 + 慢思考 System-2）。定价基本持平：输入 $2.5/百万 Token，输出 $12/百万 Token。</div>
+    <div class="paper-links">
+      <a href="https://news.qq.com/rain/a/20260409A021OB00">QQ 新闻</a>
+      <a href="https://www.sohu.com/a/1009429532_122725837">搜狐深度</a>
+    </div>
+  </div>
+
+  <div class="info-card">
+    <div class="paper-title">🧠 灵初智能发布 Psi-R2 + 开源 10 万小时人类手部操作数据集</div>
+    <div class="paper-meta"><span class="tag tag-vla">VLA</span><span class="tag tag-embodied">数据集</span></div>
+    <div class="paper-summary">灵初智能发布 Psi-R2（世界行动模型）和 Psi-W0（动作条件型世界模型），首批开源 1000 小时核心数据。总储备 10 万小时（行业最大），覆盖 294 种场景、4821 种任务、1382 种物体，含触觉数据和 30% 失败样本。Psi-R2 登顶 MolmoSpace，成功率比同类 VLA 高 10 倍，推理延迟 &lt;100ms。</div>
+    <div class="paper-links">
+      <a href="https://zhuanlan.zhihu.com/p/2027079237929111792">知乎深度</a>
+      <a href="https://www.sh.chinanews.com.cn/kjjy/2026-04-12/145930.shtml">中新网</a>
+    </div>
+  </div>
+
+  <div class="info-card">
+    <div class="paper-title">🏃 北京人形机器人半马全规模测试完成 — 100+ 队伍，4/19 正式赛</div>
+    <div class="paper-meta"><span class="tag tag-robotics">Robotics</span><span class="tag tag-info">Industry</span></div>
+    <div class="paper-summary">4 月 11-12 日夜间完成全规模测试，70+ 队伍参与（含 4 支国际队），官方赛事 100+ 队伍（同比增长近 5 倍）。自主导航约 40%，遥控约 60%。测试覆盖城市干道和生态公园复杂地形，验证环境感知、续航、步态控制、应急响应等关键能力。世界首个人形机器人马拉松，距正式赛仅 5 天。</div>
+    <div class="paper-links">
+      <a href="https://news.cgtn.com/news/2026-04-12/Beijing-completes-full-scale-test-for-humanoid-robot-half-marathon-1MhezccF19m/p.html">CGTN</a>
+    </div>
+  </div>
+
+  <div class="info-card">
+    <div class="paper-title">💰 具身智能 Q1 资本核爆 — 210 起融资、300 亿+、日均 3 亿入场</div>
+    <div class="paper-meta"><span class="tag tag-info">Funding</span><span class="tag tag-embodied">Embodied AI</span></div>
+    <div class="paper-summary">2026 年 Q1 创历史新高：210 起融资、193 家企业、超 300 亿元（日均 3-5 亿）。单笔 10 亿+ 达 14 起（2024 全年仅 1 起）。百亿独角兽增至 14 家。最快节奏：智平方 1 年 12 轮，千寻智能 26 个月达百亿估值。国家大基金三期首次入场，红杉/高瓴/深创投/小米/百度等密集出手。</div>
+    <div class="paper-links">
+      <a href="https://www.thepaper.cn/newsDetail_forward_32915170">澎湃深度</a>
+    </div>
+  </div>
+
+  <div class="info-card">
+    <div class="paper-title">📊 TrendForce: 2026 年中国人形机器人产量年增 94%</div>
+    <div class="paper-meta"><span class="tag tag-robotics">Robotics</span><span class="tag tag-info">Market</span></div>
+    <div class="paper-summary">宇树+智元合计囊括近 80% 出货。宇树 2025 年人形收入首超四足（51%+），毛利 60%，计划年产 7.5 万台人形 + 11.5 万台四足；智元 3 月完成第 1 万台"远征 A3"，仅用 3 个月。2026H2 全球进入商业化关键期，焦点从底层技术转向用户价值提供。</div>
+    <div class="paper-links">
+      <a href="https://www.trendforce.cn/presscenter/news/20260409-13006.html">TrendForce</a>
+    </div>
+  </div>
+
+  <div class="info-card">
+    <div class="paper-title">📜 中国具身智能白皮书（2026）发布 — 十五大重点方向</div>
+    <div class="paper-meta"><span class="tag tag-embodied">Embodied AI</span><span class="tag tag-info">Policy</span></div>
+    <div class="paper-summary">中国人工智能学会在第三届 CEAI 大会（合肥）发布白皮书。核心论述：机器人与大模型将深度融合，自学习和进化能力持续增强。强调"手、眼、脑闭环协同"，重新定义具身智能为软硬件结合的智能体。十五大方向含具身感知、具身数据集、具身世界模型、群体具身智能等。</div>
+    <div class="paper-links">
+      <a href="https://www.chinanews.com.cn/cj/2026/04-11/10602163.shtml">中新网</a>
+    </div>
+  </div>
+</div>
+
+<!-- Stats -->
+<div class="stats">
+  <h3>📊 检索统计</h3>
+  <div class="stats-grid">
+    <div class="stat-item"><div class="stat-num">18</div><div class="stat-label">新论文</div></div>
+    <div class="stat-item"><div class="stat-num">6</div><div class="stat-label">行业动态</div></div>
+    <div class="stat-item"><div class="stat-num">7</div><div class="stat-label">领域分区</div></div>
+    <div class="stat-item"><div class="stat-num">6</div><div class="stat-label">检索来源</div></div>
+  </div>
+  <p style="margin-top:12px;font-size:0.82em;color:var(--dim);">来源：arXiv cs.RO/cs.AI/cs.CV/cs.LG · Google · 中文社区（知乎/CSDN/澎湃/中新网/TrendForce）<br>所有 arXiv 论文 ID 均经 web_fetch 逐篇验证，排除昨日已收录 14 篇</p>
+</div>
+
+<footer>
+  <p>🔬 小小志科研日报 · Boss Team · 2026-04-14<br>
+  「今天的前沿，就是明天的工程」</p>
+</footer>
+</div>
+</body>
+</html>
