@@ -5272,14 +5272,14 @@ const DAILY_OVERVIEW = {
     "2026-04-15": {
         bannerTitle: "",
         bannerSubtitle: "",
-        picks: ["VGA: Vision-Geometry-Action Mapping for Robotic Manipulation","HazardArena: A Benchmark for Evaluating Semantic Safety in VLA Models","TAX-DPD: Task-Aware Cross-Domain Disentangled Point Diffusion for Object Placement"],
+        picks: ["VGA: Vision-Geometry-Action Mapping for Robotic Manipulation","Efficient World Models with Context-Aware Tokenization","Touch Dreaming: Enabling Humanoid Robot Manipulation with Tactile Sensing","WHOLE-MoMa: Offline Reinforcement Learning for Whole-Body Mobile Manipulation","Relax: An Open-Source RL Training Engine by REDnote"],
         totalPapers: 19,
         totalNews: 6
     },
     "2026-04-14": {
         bannerTitle: "",
         bannerSubtitle: "",
-        picks: ["StarVLA-α: Reducing Complexity in Vision-Language-Action Systems","DA-PTQ: Drift-Aware Post-Training Quantization for Efficient VLA Models","AnySlot: Goal-Conditioned VLA Policies for Zero-Shot Slot-Level Placement"],
+        picks: ["StarVLA-α: Reducing Complexity in Vision-Language-Action Systems","Grounded World Model for Semantically Generalizable Planning","AffordSim: Scalable Data Generator for Affordance-Aware Robotic Manipulation","EmbodiedGovBench: Governance, Recovery, and Upgrade Safety in Embodied Agent Systems","ScoRe-Flow: Score-Based RL for Flow Matching Robot Control"],
         totalPapers: 18,
         totalNews: 6
     },
@@ -5586,9 +5586,22 @@ function renderDailyOverview(date, papers) {
         pickPapers = papers.filter(p => p.highlight);
     }
     if (pickPapers.length === 0) {
-        // fallback: VLA/World Model/Robotics 分类前 3 篇
-        const priorityCats = new Set(["VLA", "World Model", "Robotics", "Embodied AI"]);
-        pickPapers = papers.filter(p => priorityCats.has(p.category)).slice(0, 3);
+        // fallback: 从优先分类中均匀轮选，避免全被 VLA 占据
+        const priorityCats = ["VLA", "World Model", "Robotics", "Embodied AI", "RL"];
+        const catPapers = {};
+        priorityCats.forEach(cat => { catPapers[cat] = papers.filter(p => p.category === cat); });
+        let idx = 0;
+        while (pickPapers.length < 5) {
+            let added = false;
+            priorityCats.forEach(cat => {
+                if (catPapers[cat] && idx < catPapers[cat].length && pickPapers.length < 5) {
+                    pickPapers.push(catPapers[cat][idx]);
+                    added = true;
+                }
+            });
+            idx++;
+            if (!added) break;
+        }
     }
     if (pickPapers.length === 0) {
         // 完全没有可精选的内容，不渲染 overview
