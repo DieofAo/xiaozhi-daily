@@ -5272,14 +5272,14 @@ const DAILY_OVERVIEW = {
     "2026-04-15": {
         bannerTitle: "",
         bannerSubtitle: "",
-        picks: ["VGA: Vision-Geometry-Action Mapping for Robotic Manipulation","Efficient World Models with Context-Aware Tokenization","Touch Dreaming: Enabling Humanoid Robot Manipulation with Tactile Sensing","WHOLE-MoMa: Offline Reinforcement Learning for Whole-Body Mobile Manipulation","Relax: An Open-Source RL Training Engine by REDnote"],
+        picks: ["Tree Learning: Multi-Skill Continual Learning for Humanoid Robots","HY-Embodied-0.5: Tencent's Embodied AI Foundation Model","Gemini Robotics-ER 1.6: New Capabilities for Robot Foundation Models"],
         totalPapers: 19,
         totalNews: 6
     },
     "2026-04-14": {
         bannerTitle: "",
         bannerSubtitle: "",
-        picks: ["StarVLA-α: Reducing Complexity in Vision-Language-Action Systems","Grounded World Model for Semantically Generalizable Planning","AffordSim: Scalable Data Generator for Affordance-Aware Robotic Manipulation","EmbodiedGovBench: Governance, Recovery, and Upgrade Safety in Embodied Agent Systems","ScoRe-Flow: Score-Based RL for Flow Matching Robot Control"],
+        picks: ["LARY: Latent Action Representation Benchmark for Vision-to-Action Alignment","WM-DAgger: Efficient Data Aggregation for Imitation Learning with World Models","AffordSim: Scalable Data Generator for Affordance-Aware Robotic Manipulation"],
         totalPapers: 18,
         totalNews: 6
     },
@@ -5586,22 +5586,25 @@ function renderDailyOverview(date, papers) {
         pickPapers = papers.filter(p => p.highlight);
     }
     if (pickPapers.length === 0) {
-        // fallback: 从优先分类中均匀轮选，避免全被 VLA 占据
-        const priorityCats = ["VLA", "World Model", "Robotics", "Embodied AI", "RL"];
-        const catPapers = {};
-        priorityCats.forEach(cat => { catPapers[cat] = papers.filter(p => p.category === cat); });
-        let idx = 0;
-        while (pickPapers.length < 5) {
-            let added = false;
-            priorityCats.forEach(cat => {
-                if (catPapers[cat] && idx < catPapers[cat].length && pickPapers.length < 5) {
-                    pickPapers.push(catPapers[cat][idx]);
-                    added = true;
-                }
-            });
-            idx++;
-            if (!added) break;
-        }
+        // fallback: 基于特征热度评分，不限分类不凑数
+        const coreCats = new Set(["VLA", "World Model", "Robotics", "Embodied AI", "RL"]);
+        const scored = papers
+            .filter(p => p.category !== "Informations")
+            .map(p => {
+                let score = 0;
+                // 链接数量反映资源丰富度（代码/项目/模型）
+                score += Math.min((p.links || []).length, 5) * 6;
+                // 核心分类加权
+                if (coreCats.has(p.category)) score += 5;
+                // 有 highlight 标记
+                if (p.highlight) score += 20;
+                return { paper: p, score };
+            })
+            .filter(x => x.score > 0)
+            .sort((a, b) => b.score - a.score)
+            .slice(0, 5)
+            .map(x => x.paper);
+        pickPapers = scored;
     }
     if (pickPapers.length === 0) {
         // 完全没有可精选的内容，不渲染 overview
