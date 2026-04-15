@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🔬 小小志科研日报 — 2026-04-15</title>
+<style>
+:root {
+  --bg: #0d1117; --card: #161b22; --border: #30363d;
+  --text: #e6edf3; --dim: #8b949e; --accent: #58a6ff;
+  --vla: #da3633; --wam: #8957e5; --robotics: #238636;
+  --embodied: #d29922; --rl: #f78166; --llm: #3fb950;
+  --vlm: #79c0ff; --info: #768390; --multimodal: #d2a8ff;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { background:var(--bg); color:var(--text); font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; line-height:1.6; }
+.container { max-width:960px; margin:0 auto; padding:20px; }
+header { text-align:center; padding:40px 0 30px; border-bottom:1px solid var(--border); margin-bottom:30px; }
+header h1 { font-size:2em; background:linear-gradient(135deg,#58a6ff,#da3633,#8957e5); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+header .date { color:var(--dim); font-size:1.1em; margin-top:8px; }
+header .subtitle { color:var(--accent); font-size:0.95em; margin-top:4px; }
+.section { margin-bottom:36px; }
+.section h2 { font-size:1.4em; margin-bottom:16px; padding-left:12px; border-left:4px solid var(--accent); color:var(--accent); }
+.section h2.vla { border-color:var(--vla); color:var(--vla); }
+.section h2.wam { border-color:var(--wam); color:var(--wam); }
+.section h2.robotics { border-color:var(--robotics); color:var(--robotics); }
+.section h2.embodied { border-color:var(--embodied); color:var(--embodied); }
+.section h2.rl { border-color:var(--rl); color:var(--rl); }
+.section h2.llm { border-color:var(--llm); color:var(--llm); }
+.section h2.vlm { border-color:var(--vlm); color:var(--vlm); }
+.section h2.info { border-color:var(--info); color:var(--info); }
+.section h2.multimodal { border-color:var(--multimodal); color:var(--multimodal); }
+.paper { background:var(--card); border:1px solid var(--border); border-radius:10px; padding:18px; margin-bottom:14px; transition:border-color .2s; }
+.paper:hover { border-color:var(--accent); }
+.paper-title { font-size:1.05em; font-weight:600; margin-bottom:6px; }
+.paper-meta { display:flex; flex-wrap:wrap; gap:6px; margin-bottom:8px; align-items:center; }
+.tag { font-size:0.75em; padding:2px 8px; border-radius:12px; font-weight:500; }
+.tag-vla { background:rgba(218,54,51,0.2); color:var(--vla); }
+.tag-wam { background:rgba(137,87,229,0.2); color:var(--wam); }
+.tag-robotics { background:rgba(35,134,54,0.2); color:var(--robotics); }
+.tag-embodied { background:rgba(210,153,34,0.2); color:var(--embodied); }
+.tag-rl { background:rgba(247,129,102,0.2); color:var(--rl); }
+.tag-llm { background:rgba(63,185,80,0.2); color:var(--llm); }
+.tag-vlm { background:rgba(121,192,255,0.2); color:var(--vlm); }
+.tag-info { background:rgba(118,131,144,0.2); color:var(--info); }
+.tag-multimodal { background:rgba(210,168,255,0.2); color:var(--multimodal); }
+.paper-summary { color:var(--dim); font-size:0.92em; margin-bottom:10px; }
+.paper-links { display:flex; flex-wrap:wrap; gap:6px; }
+.paper-links a { font-size:0.8em; padding:3px 10px; border-radius:6px; background:rgba(88,166,255,0.1); color:var(--accent); text-decoration:none; border:1px solid rgba(88,166,255,0.3); transition:all .2s; }
+.paper-links a:hover { background:rgba(88,166,255,0.25); }
+.info-card { background:linear-gradient(135deg,rgba(118,131,144,0.1),rgba(88,166,255,0.05)); border:1px solid var(--border); border-radius:10px; padding:18px; margin-bottom:14px; }
+.info-card .paper-title { color:var(--accent); }
+.stats { background:var(--card); border:1px solid var(--border); border-radius:10px; padding:20px; margin-top:30px; text-align:center; }
+.stats h3 { color:var(--accent); margin-bottom:12px; }
+.stats-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:12px; }
+.stat-item { padding:10px; }
+.stat-num { font-size:1.6em; font-weight:700; color:var(--accent); }
+.stat-label { font-size:0.82em; color:var(--dim); }
+.hot-pick { background:linear-gradient(135deg,rgba(218,54,51,0.08),rgba(137,87,229,0.08)); border:1px solid rgba(218,54,51,0.3); border-radius:10px; padding:20px; margin-bottom:30px; }
+.hot-pick h3 { color:var(--vla); margin-bottom:10px; font-size:1.15em; }
+.hot-pick p { color:var(--dim); font-size:0.92em; }
+footer { text-align:center; padding:30px 0; color:var(--dim); font-size:0.85em; border-top:1px solid var(--border); margin-top:30px; }
+.floating-note { background:rgba(210,153,34,0.1); border:1px solid rgba(210,153,34,0.3); border-radius:8px; padding:12px 16px; margin-bottom:14px; font-size:0.88em; color:var(--embodied); }
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+  <h1>🔬 小小志科研日报</h1>
+  <div class="date">2026 年 4 月 15 日 · 周三</div>
+  <div class="subtitle">Robotics · VLA · Embodied AI · World Model · RL · LLM · VLM</div>
+</header>
+
+<div class="hot-pick">
+  <h3>🔥 今日看点</h3>
+  <p><strong>Gemini Robotics-ER 1.6 发布</strong> — Google DeepMind 最新机器人基础模型，新增仪表读数、指向动作、多视角成功检测三大能力，覆盖工业与家庭场景。<strong>AgiBot G2 正式入驻南昌工厂</strong> — 99.9% 操作成功率、310 件/小时吞吐量，具身 AI 工业落地标杆。<strong>arXiv 论文精选</strong> — VGA 实现视觉→几何→动作的全新操作范式；WHOLE-MoMa 用离线 RL 解锁 mobile manipulation；FastGrasp 实现人形全身快速灵巧抓取。<strong>小红书开源 Relax 训练引擎</strong>，GigaWorld-Policy 训练效率提升 10 倍。</p>
+</div>
+
+<div class="floating-note">
+  📌 <strong>Boss 关注提醒</strong>：WHOLE-MoMa (2604.12509) 直接聚焦 offline RL for whole-body mobile manipulation，与 Boss 的 floating base / whole-body control 研究方向高度契合。FastGrasp (2604.12879) 人形全身快速灵巧抓取也值得关注。AutoMoMa (2604.12565) 专攻 mobile manipulator 可扩展轨迹生成。此外，FACTO 论文复现的零空间投影约束部分仍未完成，提醒 Boss 安排时间推进。
+</div>
+
+<!-- ===== VLA Section ===== -->
+<div class="section" id="vla">
+  <h2 class="vla">🤖 VLA · Vision-Language-Action（4 篇）</h2>
+
+  <div class="paper vla">
+    <div class="paper-title">VGA: Vision-Geometry-Action Mapping for Robotic Manipulation</div>
+    <div class="paper-meta">
+      <span class="tag tag-vla">VLA</span>
+      <span class="tag tag-robotics">操作范式</span>
+    </div>
+    <div class="paper-summary">提出全新的"视觉→几何→动作"操作范式，通过中间几何表征桥接视觉感知与机器人动作生成。核心思路：先从视觉观察构建 3D 几何理解，再基于几何约束生成精确的操作动作序列。在多种操作任务上显著优于端到端 VLA 方法，特别是在需要精确空间推理的任务中表现突出。</div>
+    <div class="paper-links">
+      <a class="link-paper" href="https://arxiv.org/abs/2604.12908">arXiv</a>
+      <a class="link-pdf" href="https://arxiv.org/pdf/2604.12908">PDF</a>
+    </div>
+  </div>
+
+  <div class="paper vla">
+    <div class="paper-title">HazardArena: A Benchmark for Evaluating Semantic Safety in VLA Models</div>
+    <div class="paper-meta">
+      <span class="tag tag-vla">VLA</span>
+      <span class="tag tag-embodied">安全评估</span>
+    </div>
+    <div class="paper-summary">首个针对 VLA 模型语义安全性的系统化评估基准。在多种真实场景中测试 VLA 是否会执行不安全的指令（如将刀递向人脸、忽略障碍物等），揭示当前主流 VLA 模型在安全方面存在显著盲区。提出一套安全评价指标体系和防御增强策略。</div>
+    <div class="paper-links">
+      <a class="link-paper" href="https://arxiv.org/abs/2604.12447">arXiv</a>
+      <a class="link-pdf" href="https://arxiv.org/pdf/2604.12447">PDF</a>
+    </div>
+  </div>
+
+  <div class="paper vla">
+    <div class="paper-title">TAX-DPD: Task-Aware Cross-Domain Disentangled Point Diffusion for Object Placement</div>
+    <div class="paper-meta">
+      <span class="tag tag-vla">VLA</span>
+      <span class="tag tag-multimodal">精确放置</span>
+    </div>
+    <div class="paper-summary">提出任务感知跨域解耦点扩散方法，用于精确的物体放置任务。将放置问题分解为目标位姿估计和放置轨迹规划两个解耦子问题，通过点云扩散模型实现跨域泛化。在新物体、新场景的零样本放置任务中展现强泛化能力。</div>
+    <div class="paper-links">
+      <a class="link-paper" href="https://arxiv.org/abs/2604.11793">arXiv</a>
+      <a class="link-pdf" href="https://arxiv.org/pdf/2604.11793">PDF</a>
+    </div>
+  </div>
+
+  <div class="paper vla">
+    <div class="paper-title">DeCoNav: Decoupled Learning for Cooperative Visual Language Navigation</div>
+    <div class="paper-meta">
+      <span class="tag tag-vla">VLA</span>
+      <span class="tag tag-vlm">协作导航</span>
+    </div>
+    <div class="paper-summary">提出解耦学习框架用于多智能体协作视觉语言导航，将全局规划与局部执行解耦。解决了多智能体 VLN 中的通信开销和协调难题，在 REVERIE 和 CVDN 基准上取得 SOTA。</div>
+    <div class="paper-links">
+      <a class="link-paper" href="https://arxiv.org/abs/2604.12486">arXiv</a>
+      <a class="link-pdf" href="https://arxiv.org/pdf/2604.12486">PDF</a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Robotics Section ===== -->
+<div class="section" id="robotics">
+  <h2 class="robotics">🦾 Robotics（5 篇）</h2>
+
+  <div class="paper robotics">
+    <div class="paper-title">Touch Dreaming: Enabling Humanoid Robot Manipulation with Tactile Sensing</div>
+    <div class="paper-meta">
+      <span class="tag tag-robotics">Robotics</span>
+      <span class="tag tag-embodied">触觉感知</span>
+    </div>
+    <div class="paper-summary">为人形机器人配备高密度触觉传感，实现从"看到就抓"到"摸到才精"的操作升级。将触觉信号深度集成到操作策略中，人形机器人在精细操作（如组装小零件、拿取易碎物品）中成功率提升 35%+。开源触觉-操作联合数据集。</div>
+    <div class="paper-links">
+      <a class="link-paper" href="https://arxiv.org/abs/2604.13015">arXiv</a>
+      <a class="link-pdf" href="https://arxiv.org/pdf/2604.13015">PDF</a>
+    </div>
+  </div>
+
+  <div class="paper robotics">
+    <div class="paper-title">XRZero-G0: A Dexterous Manipulation Demonstration Data Collection System</div>
+    <div class="paper-meta">
+      <span class="tag tag-robotics">Robotics</span>
+      <span class="tag tag-embodied">数据采集</span>
+    </div>
+    <div class="paper-summary">基于 XR（扩展现实）技术构建零重力环境下的灵巧操作示教数据采集系统。结合手部追踪和力反馈手套，操作员可直觉式示教复杂灵巧动作。高效采集大规模高质量示教数据，为灵巧手策略学习提供可扩展数据管线。</div>
+    <div class="paper-links">
+      <a class="link-paper" href="https://arxiv.org/abs/2604.13001">arXiv</a>
+      <a class="link-pdf" href="https://arxiv.org/pdf/2604.13001">PDF</a>
+    </div>
+  </div>
+
+  <div class="paper robotics">
+    <div class="paper-title">GraG: Fast Hand-Object 3D Reconstruction with Grasp Geometry</div>
+    <div class="paper-meta">
+      <span class="tag tag-robotics">Robotics</span>
+      <span class="tag tag-vlm">3D 重建</span>
+    </div>
+    <div class="paper-summary">利用抓取几何先验实现快速手-物体联合 3D 重建。关键洞察：手部抓取约束提供了强大的形状和位姿先验，可大幅减少重建所需的观察数量。从单张 RGB 图像在 50ms 内完成手-物体联合重建，精度接近多视角方法。适用于机器人抓取规划和操作仿真。</div>
+    <div class="paper-links">
+      <a class="link-paper" href="https://arxiv.org/abs/2604.12929">arXiv</a>
+      <a class="link-pdf" href="https://arxiv.org/pdf/2604.12929">PDF</a>
+    </div>
+  </div>
+
+  <div class="paper robotics">
+    <div class="paper-title">FastGrasp: Efficient Whole-body Fast Dexterous Grasping for Humanoid Robots</div>
+    <div class="paper-meta">
+      <span class="tag tag-robotics">Robotics</span>
+      <span class="tag tag-embodied">灵巧抓取</span>
+    </div>
+    <div class="paper-summary">实现人形机器人全身协调快速灵巧抓取。将抓取规划和全身运动控制统一优化，使人形机器人能在 &lt;1s 内完成从感知到执行的全链路。关键技术：层次化策略（全身姿态→手臂轨迹→灵巧手闭合）+ 实时碰撞规避。在 Unitree H1 上实现真机验证。</div>
+    <div class="paper-links">
+      <a class="link-paper" href="https://arxiv.org/abs/2604.12879">arXiv</a>
+      <a class="link-pdf" href="https://arxiv.org/pdf/2604.12879">PDF</a>
+    </div>
+  </div>
+
+  <div class="paper robotics">
+    <div class="paper-title">AutoMoMa: Scalable Trajectory Generation for Mobile Manipulators</div>
+    <div class="paper-meta">
+      <span class="tag tag-robotics">Robotics</span>
+      <span class="tag tag-embodied">移动操作</span>
+    </div>
+    <div class="paper-summary">面向移动操作机器人的可扩展轨迹生成框架。自动化处理底盘运动+机械臂操作的联合规划，支持大规模并行生成高质量轨迹数据。为移动操作策略的数据驱动训练提供可扩展基础设施。在多种家庭和工业场景中验证。</div>
+    <div class="paper-links">
+      <a class="link-paper" href="https://arxiv.org/abs/2604.12565">arXiv</a>
+      <a class="link-pdf" href="https://arxiv.org/pdf/2604.12565">PDF</a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Embodied AI Section ===== -->
+<div class="section" id="embodied">
+  <h2 class="embodied">🌍 Embodied AI（3 篇）</h2>
+
+  <div class="paper embodied">
+    <div class="paper-title">WHOLE-MoMa: Offline Reinforcement Learning for Whole-Body Mobile Manipulation</div>
+    <div class="paper-meta">
+      <span class="tag tag-embodied">Embodied AI</span>
+      <span class="tag tag-rl">离线 RL</span>
+    </div>
+    <div class="paper-summary">首个将离线 RL 系统化应用于全身移动操作的工作。核心挑战：mobile manipulation 涉及底盘移动+臂操作+全身协调的高维联合动作空间，传统在线 RL 探索效率极低。WHOLE-MoMa 从离线数据集高效学习全身协调策略，包含分层状态表征和约束感知的策略优化。在模拟和真机上验证，复杂长程操作任务成功率显著提升。</div>
+    <div class="paper-links">
+      <a class="link-paper" href="https://arxiv.org/abs/2604.12509">arXiv</a>
+      <a class="link-pdf" href="https://arxiv.org/pdf/2604.12509">PDF</a>
+    </div>
+  </div>
+
+  <div class="paper embodied">
+    <div class="paper-title">Tree Learning: Multi-Skill Continual Learning for Humanoid Robots</div>
+    <div class="paper-meta">
+      <span class="tag tag-embodied">Embodied AI</span>
+      <span class="tag tag-rl">持续学习</span>
+    </div>
+    <div class="paper-summary">为人形机器人设计的多技能持续学习框架。核心思想：将技能组织为树状结构，共享底层运动原语（locomotion primitives）并逐步分化高层操作技能。有效解决灾难性遗忘问题，每次学新技能时旧技能保持率 &gt;95%。在 12+ 种人形运动和操作技能上验证。</div>
+    <div class="paper-links">
+      <a class="link-paper" href="https://arxiv.org/abs/2604.12909">arXiv</a>
+      <a class="link-pdf" href="https://arxiv.org/pdf/2604.12909">PDF</a>
+    </div>
+  </div>
+
+  <div class="paper embodied">
+    <div class="paper-title">Learning Contact-Rich Manipulation from Large-Scale Human Video</div>
+    <div class="paper-meta">
+      <span class="tag tag-embodied">Embodied AI</span>
+      <span class="tag tag-vlm">视频学习</span>
+    </div>
+    <div class="paper-summary">从大规模人类视频中学习接触丰富的操作技能。利用互联网级人类操作视频作为隐式先验，通过视觉对比学习提取操作几何和力交互模式。零样本迁移到机器人平台，在门把手操作、抽屉开关等接触密集任务上表现出色。</div>
+    <div class="paper-links">
+      <a class="link-paper" href="https://arxiv.org/abs/2604.12784">arXiv</a>
+      <a class="link-pdf" href="https://arxiv.org/pdf/2604.12784">PDF</a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== RL Section ===== -->
+<div class="section" id="rl">
+  <h2 class="rl">🎯 RL · Reinforcement Learning（2 篇）</h2>
+
+  <div class="paper rl">
+    <div class="paper-title">Relax: An Open-Source RL Training Engine by REDnote</div>
+    <div class="paper-meta">
+      <span class="tag tag-rl">RL</span>
+      <span class="tag tag-llm">训练框架</span>
+    </div>
+    <div class="paper-summary">小红书开源 RL 训练引擎 Relax（4 月 15 日发布）。专为大模型 RLHF/PPO/DPO 训练优化，支持分布式异步训练和自适应 KL 散度控制。核心优势：训练效率比 TRL 提升 3-5 倍，支持 70B+ 参数模型在 8 卡 A100 上训练。已开源完整代码和训练 recipe。</div>
+    <div class="paper-links">
+      <a href="https://github.com/rednote-ai/relax">GitHub</a>
+    </div>
+  </div>
+
+  <div class="paper rl">
+    <div class="paper-title">GigaWorld-Policy: 10x More Efficient Training for Embodied Agents</div>
+    <div class="paper-meta">
+      <span class="tag tag-rl">RL</span>
+      <span class="tag tag-embodied">训练效率</span>
+    </div>
+    <div class="paper-summary">极佳视界（4 月 14 日）发布 GigaWorld-Policy，核心卖点是具身智能训练效率 10 倍提升。通过世界模型辅助的策略学习 + 高效并行仿真环境，将原本需要数天的训练压缩到数小时。在 manipulation 和 locomotion 任务上验证效果。</div>
+    <div class="paper-links">
+      <a href="https://gigaworld.ai/">Official</a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== World Model Section ===== -->
+<div class="section" id="wam">
+  <h2 class="wam">🌐 World Model（2 篇）</h2>
+
+  <div class="paper wam">
+    <div class="paper-title">Genie Envisioner 2.0: Interactive World Model by AgiBot</div>
+    <div class="paper-meta">
+      <span class="tag tag-wam">World Model</span>
+      <span class="tag tag-embodied">交互式</span>
+    </div>
+    <div class="paper-summary">智元机器人发布 Genie Envisioner 2.0 交互式世界模型。支持用户输入动作指令后生成对应的视觉预测结果，实现"想象→验证→执行"的规划闭环。在机器人操作和导航任务中作为策略的辅助评估工具，减少真实试错成本。结合 AgiBot 的硬件平台实现端到端验证。</div>
+    <div class="paper-links">
+      <a href="https://agibot.com/envisioner">Official</a>
+    </div>
+  </div>
+
+  <div class="paper wam">
+    <div class="paper-title">Efficient World Models with Context-Aware Tokenization</div>
+    <div class="paper-meta">
+      <span class="tag tag-wam">World Model</span>
+      <span class="tag tag-llm">高效建模</span>
+    </div>
+    <div class="paper-summary">提出上下文感知 Token 化方法提升世界模型效率。关键洞察：环境中不同区域的信息密度差异巨大，对高动态区域使用更多 token、对静态背景使用更少 token。在 Atari 和机器人仿真环境上，相同参数量下预测精度提升 20%+，推理速度提升 3 倍。</div>
+    <div class="paper-links">
+      <a class="link-paper" href="https://arxiv.org/abs/2604.12631">arXiv</a>
+      <a class="link-pdf" href="https://arxiv.org/pdf/2604.12631">PDF</a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== LLM Section ===== -->
+<div class="section" id="llm">
+  <h2 class="llm">🧠 LLM · Large Language Model（2 篇）</h2>
+
+  <div class="paper llm">
+    <div class="paper-title">智元 GO-2: VLA Foundation Model for Embodied Intelligence</div>
+    <div class="paper-meta">
+      <span class="tag tag-llm">LLM</span>
+      <span class="tag tag-vla">VLA 基座</span>
+    </div>
+    <div class="paper-summary">智元机器人发布 GO-2 VLA 基座大模型，统一视觉理解、语言指令解析和动作生成。支持多种机器人形态（人形、轮式、机械臂），通过形态适配层实现一模型多平台部署。在 20+ 种操作任务上取得统一 SOTA，延迟 &lt;150ms。</div>
+    <div class="paper-links">
+      <a href="https://agibot.com/go2">Official</a>
+    </div>
+  </div>
+
+  <div class="paper llm">
+    <div class="paper-title">HY-Embodied-0.5: Tencent's Embodied AI Foundation Model</div>
+    <div class="paper-meta">
+      <span class="tag tag-llm">LLM</span>
+      <span class="tag tag-embodied">具身基座</span>
+    </div>
+    <div class="paper-summary">腾讯发布 HY-Embodied-0.5 具身智能基座模型。基于混元大模型底座，融合视觉-语言-动作三模态。支持仿真到真机的 sim-to-real 迁移，覆盖桌面操作、家庭服务、工业巡检等场景。开放 API 接口供开发者接入。</div>
+    <div class="paper-links">
+      <a href="https://hunyuan.tencent.com/">Official</a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== VLM Section ===== -->
+<div class="section" id="vlm">
+  <h2 class="vlm">👁️ VLM · Vision-Language Model（1 篇）</h2>
+
+  <div class="paper vlm">
+    <div class="paper-title">Gemini Robotics-ER 1.6: New Capabilities for Robot Foundation Models</div>
+    <div class="paper-meta">
+      <span class="tag tag-vlm">VLM</span>
+      <span class="tag tag-robotics">基座模型</span>
+    </div>
+    <div class="paper-summary">Google DeepMind 发布 Gemini Robotics-ER 1.6 更新（4 月 14 日）。三大新能力：(1) 仪表读数识别——从模拟/真实仪表盘读取精确数值；(2) 指向动作——基于自然语言指令执行精确指向；(3) 多视角成功检测——融合多个摄像头视角判断任务完成状态。覆盖工业检测和家庭服务双场景。</div>
+    <div class="paper-links">
+      <a href="https://deepmind.google/technologies/gemini/robotics/">Official</a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Industry News Section ===== -->
+<div class="section" id="info">
+  <h2 class="info">📰 行业动态（6 条）</h2>
+
+  <div class="info-card">
+    <div class="paper-title">🏭 AgiBot G2 入驻南昌工厂 — 99.9% 成功率、310 件/小时</div>
+    <div class="paper-meta"><span class="tag tag-robotics">Robotics</span><span class="tag tag-info">Industry</span></div>
+    <div class="paper-summary">AgiBot（智元机器人）G2 人形机器人 4 月 14 日正式部署南昌制造工厂产线。数据亮点：操作成功率 99.9%，产线吞吐量 310 件/小时，7×24 无人值守运行。G2 在装配、搬运、质检三个工位完成全自主操作，标志着人形机器人从实验室走向真正的工业规模应用。</div>
+    <div class="paper-links">
+      <a href="https://agibot.com/news/g2-factory">AgiBot</a>
+    </div>
+  </div>
+
+  <div class="info-card">
+    <div class="paper-title">🤖 GEN-1 by Generalist AI — 99% 成功率、速度提升 3 倍</div>
+    <div class="paper-meta"><span class="tag tag-robotics">Robotics</span><span class="tag tag-info">Product</span></div>
+    <div class="paper-summary">Generalist AI 发布通用操作机器人 GEN-1。核心指标：标准操作任务 99% 成功率，相比人工速度提升 3 倍。采用模块化设计，可快速适配不同产线需求。主打中小制造企业"即插即用"场景。</div>
+    <div class="paper-links">
+      <a href="https://generalist.ai/gen1">Official</a>
+    </div>
+  </div>
+
+  <div class="info-card">
+    <div class="paper-title">📦 灵初智能 Psi-R2 数据开源 — 10 万小时操作数据集持续释放</div>
+    <div class="paper-meta"><span class="tag tag-vla">VLA</span><span class="tag tag-embodied">数据集</span></div>
+    <div class="paper-summary">灵初智能持续开源 Psi-R2 数据集（继 4 月 12 日首批 1000 小时后持续扩充）。总储备 10 万小时手部操作数据，覆盖 294 种场景、4821 种任务。社区反馈积极，已有 10+ 团队接入测试。本周新增家庭整理和厨房操作子集。</div>
+    <div class="paper-links">
+      <a href="https://github.com/lingchu-ai/psi-r2-data">GitHub</a>
+    </div>
+  </div>
+
+  <div class="info-card">
+    <div class="paper-title">🏛️ 工信部发布 AI+ 应用场景目录 — 具身智能列入重点方向</div>
+    <div class="paper-meta"><span class="tag tag-info">Policy</span><span class="tag tag-embodied">政策</span></div>
+    <div class="paper-summary">工信部近日发布 2026 年度 AI+ 重点应用场景推荐目录，具身智能首次作为独立方向列入。重点场景包括：智慧工厂（人形+协作机器人）、无人配送、家庭服务机器人、农业采摘。配套政策含专项资金、示范园区和人才培养计划。</div>
+    <div class="paper-links">
+      <a href="https://www.miit.gov.cn/">工信部</a>
+    </div>
+  </div>
+
+  <div class="info-card">
+    <div class="paper-title">🎓 CEAI 2026 第三届具身智能大会精彩回顾</div>
+    <div class="paper-meta"><span class="tag tag-embodied">Embodied AI</span><span class="tag tag-info">Conference</span></div>
+    <div class="paper-summary">第三届中国具身智能大会（CEAI 2026）4 月 11-13 日在合肥落幕。参会超 3000 人，100+ 论文报告。热点议题：世界模型在机器人中的应用、人形机器人灵巧操作、具身数据集标准化。最佳论文奖授予"数据飞轮驱动的自适应操作策略"。</div>
+    <div class="paper-links">
+      <a href="https://ceai2026.org/">CEAI 2026</a>
+    </div>
+  </div>
+
+  <div class="info-card">
+    <div class="paper-title">📊 小红书 Relax RL 训练引擎正式开源（4/15）</div>
+    <div class="paper-meta"><span class="tag tag-rl">RL</span><span class="tag tag-llm">开源工具</span></div>
+    <div class="paper-summary">小红书今日正式开源 Relax RL 训练引擎。专为大模型 RLHF 场景优化，支持 PPO/DPO/GRPO 多种对齐算法。核心创新：异步分布式架构 + 自适应 KL 控制。70B 参数模型在 8 卡 A100 上训练效率比 TRL 提升 3-5 倍。GitHub 首日 Star 破千。</div>
+    <div class="paper-links">
+      <a href="https://github.com/rednote-ai/relax">GitHub</a>
+    </div>
+  </div>
+</div>
+
+<!-- Stats -->
+<div class="stats">
+  <h3>📊 检索统计</h3>
+  <div class="stats-grid">
+    <div class="stat-item"><div class="stat-num">19</div><div class="stat-label">新论文/项目</div></div>
+    <div class="stat-item"><div class="stat-num">6</div><div class="stat-label">行业动态</div></div>
+    <div class="stat-item"><div class="stat-num">8</div><div class="stat-label">领域分区</div></div>
+    <div class="stat-item"><div class="stat-num">5</div><div class="stat-label">检索来源</div></div>
+  </div>
+  <p style="margin-top:12px;font-size:0.82em;color:var(--dim);">来源：arXiv cs.RO/cs.AI/cs.CV · Google · 小红书 · 中文科技社区<br>所有 arXiv 论文 ID 均经 web_fetch 逐篇验证，排除 04-14 已收录 18 篇论文 + 6 条新闻</p>
+</div>
+
+<footer>
+  <p>🔬 小小志科研日报 · Boss Team · 2026-04-15<br>
+  「今天的前沿，就是明天的工程」</p>
+</footer>
+</div>
+</body>
+</html>

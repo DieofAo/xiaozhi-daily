@@ -629,6 +629,257 @@
 <script>
 // ===== DATA =====
 const PAPERS_DB = [
+    // === 2026-04-15 ===
+    {
+        date: "2026-04-15",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "VGA: Vision-Geometry-Action Mapping for Robotic Manipulation",
+        venue: "",
+        summary: "提出全新的\"视觉→几何→动作\"操作范式，通过中间几何表征桥接视觉感知与机器人动作生成。核心思路：先从视觉观察构建 3D 几何理解，再基于几何约束生成精确的操作动作序列。在多种操作任务上显著优于端到端 VLA 方法，特别是在需要精确空间推理的任务中表现突出。",
+        tags: [["VLA","green"],["操作范式","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.12908"],["PDF","https://arxiv.org/pdf/2604.12908"]]
+    },
+    {
+        date: "2026-04-15",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "HazardArena: A Benchmark for Evaluating Semantic Safety in VLA Models",
+        venue: "",
+        summary: "首个针对 VLA 模型语义安全性的系统化评估基准。在多种真实场景中测试 VLA 是否会执行不安全的指令（如将刀递向人脸、忽略障碍物等），揭示当前主流 VLA 模型在安全方面存在显著盲区。提出一套安全评价指标体系和防御增强策略。",
+        tags: [["VLA","green"],["安全评估","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.12447"],["PDF","https://arxiv.org/pdf/2604.12447"]]
+    },
+    {
+        date: "2026-04-15",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "TAX-DPD: Task-Aware Cross-Domain Disentangled Point Diffusion for Object Placement",
+        venue: "",
+        summary: "提出任务感知跨域解耦点扩散方法，用于精确的物体放置任务。将放置问题分解为目标位姿估计和放置轨迹规划两个解耦子问题，通过点云扩散模型实现跨域泛化。在新物体、新场景的零样本放置任务中展现强泛化能力。",
+        tags: [["VLA","green"],["精确放置","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.11793"],["PDF","https://arxiv.org/pdf/2604.11793"]]
+    },
+    {
+        date: "2026-04-15",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "DeCoNav: Decoupled Learning for Cooperative Visual Language Navigation",
+        venue: "",
+        summary: "提出解耦学习框架用于多智能体协作视觉语言导航，将全局规划与局部执行解耦。解决了多智能体 VLN 中的通信开销和协调难题，在 REVERIE 和 CVDN 基准上取得 SOTA。",
+        tags: [["VLA","green"],["协作导航","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.12486"],["PDF","https://arxiv.org/pdf/2604.12486"]]
+    },
+    {
+        date: "2026-04-15",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "Touch Dreaming: Enabling Humanoid Robot Manipulation with Tactile Sensing",
+        venue: "",
+        summary: "为人形机器人配备高密度触觉传感，实现从\"看到就抓\"到\"摸到才精\"的操作升级。将触觉信号深度集成到操作策略中，人形机器人在精细操作（如组装小零件、拿取易碎物品）中成功率提升 35%+。开源触觉-操作联合数据集。",
+        tags: [["Robotics","green"],["触觉感知","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.13015"],["PDF","https://arxiv.org/pdf/2604.13015"]]
+    },
+    {
+        date: "2026-04-15",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "XRZero-G0: A Dexterous Manipulation Demonstration Data Collection System",
+        venue: "",
+        summary: "基于 XR（扩展现实）技术构建零重力环境下的灵巧操作示教数据采集系统。结合手部追踪和力反馈手套，操作员可直觉式示教复杂灵巧动作。高效采集大规模高质量示教数据，为灵巧手策略学习提供可扩展数据管线。",
+        tags: [["Robotics","green"],["数据采集","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.13001"],["PDF","https://arxiv.org/pdf/2604.13001"]]
+    },
+    {
+        date: "2026-04-15",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "GraG: Fast Hand-Object 3D Reconstruction with Grasp Geometry",
+        venue: "",
+        summary: "利用抓取几何先验实现快速手-物体联合 3D 重建。关键洞察：手部抓取约束提供了强大的形状和位姿先验，可大幅减少重建所需的观察数量。从单张 RGB 图像在 50ms 内完成手-物体联合重建，精度接近多视角方法。适用于机器人抓取规划和操作仿真。",
+        tags: [["Robotics","green"],["3D 重建","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.12929"],["PDF","https://arxiv.org/pdf/2604.12929"]]
+    },
+    {
+        date: "2026-04-15",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "FastGrasp: Efficient Whole-body Fast Dexterous Grasping for Humanoid Robots",
+        venue: "",
+        summary: "实现人形机器人全身协调快速灵巧抓取。将抓取规划和全身运动控制统一优化，使人形机器人能在 <1s 内完成从感知到执行的全链路。关键技术：层次化策略（全身姿态→手臂轨迹→灵巧手闭合）+ 实时碰撞规避。在 Unitree H1 上实现真机验证。",
+        tags: [["Robotics","green"],["灵巧抓取","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.12879"],["PDF","https://arxiv.org/pdf/2604.12879"]]
+    },
+    {
+        date: "2026-04-15",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "AutoMoMa: Scalable Trajectory Generation for Mobile Manipulators",
+        venue: "",
+        summary: "面向移动操作机器人的可扩展轨迹生成框架。自动化处理底盘运动+机械臂操作的联合规划，支持大规模并行生成高质量轨迹数据。为移动操作策略的数据驱动训练提供可扩展基础设施。在多种家庭和工业场景中验证。",
+        tags: [["Robotics","green"],["移动操作","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.12565"],["PDF","https://arxiv.org/pdf/2604.12565"]]
+    },
+    {
+        date: "2026-04-15",
+        category: "Embodied AI",
+        categoryIcon: "🧩",
+        title: "WHOLE-MoMa: Offline Reinforcement Learning for Whole-Body Mobile Manipulation",
+        venue: "",
+        summary: "首个将离线 RL 系统化应用于全身移动操作的工作。核心挑战：mobile manipulation 涉及底盘移动+臂操作+全身协调的高维联合动作空间，传统在线 RL 探索效率极低。WHOLE-MoMa 从离线数据集高效学习全身协调策略，包含分层状态表征和约束感知的策略优化。在模拟和真机上验证，复杂长程操作任务成功率显著提升。",
+        tags: [["Embodied AI","green"],["离线 RL","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.12509"],["PDF","https://arxiv.org/pdf/2604.12509"]]
+    },
+    {
+        date: "2026-04-15",
+        category: "Embodied AI",
+        categoryIcon: "🧩",
+        title: "Tree Learning: Multi-Skill Continual Learning for Humanoid Robots",
+        venue: "",
+        summary: "为人形机器人设计的多技能持续学习框架。核心思想：将技能组织为树状结构，共享底层运动原语（locomotion primitives）并逐步分化高层操作技能。有效解决灾难性遗忘问题，每次学新技能时旧技能保持率 >95%。在 12+ 种人形运动和操作技能上验证。",
+        tags: [["Embodied AI","green"],["持续学习","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.12909"],["PDF","https://arxiv.org/pdf/2604.12909"]]
+    },
+    {
+        date: "2026-04-15",
+        category: "Embodied AI",
+        categoryIcon: "🧩",
+        title: "Learning Contact-Rich Manipulation from Large-Scale Human Video",
+        venue: "",
+        summary: "从大规模人类视频中学习接触丰富的操作技能。利用互联网级人类操作视频作为隐式先验，通过视觉对比学习提取操作几何和力交互模式。零样本迁移到机器人平台，在门把手操作、抽屉开关等接触密集任务上表现出色。",
+        tags: [["Embodied AI","green"],["视频学习","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.12784"],["PDF","https://arxiv.org/pdf/2604.12784"]]
+    },
+    {
+        date: "2026-04-15",
+        category: "RL",
+        categoryIcon: "🧠",
+        title: "Relax: An Open-Source RL Training Engine by REDnote",
+        venue: "",
+        summary: "小红书开源 RL 训练引擎 Relax（4 月 15 日发布）。专为大模型 RLHF/PPO/DPO 训练优化，支持分布式异步训练和自适应 KL 散度控制。核心优势：训练效率比 TRL 提升 3-5 倍，支持 70B+ 参数模型在 8 卡 A100 上训练。已开源完整代码和训练 recipe。",
+        tags: [["RL","green"],["训练框架","green"]],
+        links: []
+    },
+    {
+        date: "2026-04-15",
+        category: "RL",
+        categoryIcon: "🧠",
+        title: "GigaWorld-Policy: 10x More Efficient Training for Embodied Agents",
+        venue: "",
+        summary: "极佳视界（4 月 14 日）发布 GigaWorld-Policy，核心卖点是具身智能训练效率 10 倍提升。通过世界模型辅助的策略学习 + 高效并行仿真环境，将原本需要数天的训练压缩到数小时。在 manipulation 和 locomotion 任务上验证效果。",
+        tags: [["RL","green"],["训练效率","green"]],
+        links: []
+    },
+    {
+        date: "2026-04-15",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "Genie Envisioner 2.0: Interactive World Model by AgiBot",
+        venue: "",
+        summary: "智元机器人发布 Genie Envisioner 2.0 交互式世界模型。支持用户输入动作指令后生成对应的视觉预测结果，实现\"想象→验证→执行\"的规划闭环。在机器人操作和导航任务中作为策略的辅助评估工具，减少真实试错成本。结合 AgiBot 的硬件平台实现端到端验证。",
+        tags: [["World Model","green"],["交互式","green"]],
+        links: []
+    },
+    {
+        date: "2026-04-15",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "Efficient World Models with Context-Aware Tokenization",
+        venue: "",
+        summary: "提出上下文感知 Token 化方法提升世界模型效率。关键洞察：环境中不同区域的信息密度差异巨大，对高动态区域使用更多 token、对静态背景使用更少 token。在 Atari 和机器人仿真环境上，相同参数量下预测精度提升 20%+，推理速度提升 3 倍。",
+        tags: [["World Model","green"],["高效建模","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.12631"],["PDF","https://arxiv.org/pdf/2604.12631"]]
+    },
+    {
+        date: "2026-04-15",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "智元 GO-2: VLA Foundation Model for Embodied Intelligence",
+        venue: "",
+        summary: "智元机器人发布 GO-2 VLA 基座大模型，统一视觉理解、语言指令解析和动作生成。支持多种机器人形态（人形、轮式、机械臂），通过形态适配层实现一模型多平台部署。在 20+ 种操作任务上取得统一 SOTA，延迟 <150ms。",
+        tags: [["LLM","green"],["VLA 基座","green"]],
+        links: []
+    },
+    {
+        date: "2026-04-15",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "HY-Embodied-0.5: Tencent's Embodied AI Foundation Model",
+        venue: "",
+        summary: "腾讯发布 HY-Embodied-0.5 具身智能基座模型。基于混元大模型底座，融合视觉-语言-动作三模态。支持仿真到真机的 sim-to-real 迁移，覆盖桌面操作、家庭服务、工业巡检等场景。开放 API 接口供开发者接入。",
+        tags: [["LLM","green"],["具身基座","green"]],
+        links: []
+    },
+    {
+        date: "2026-04-15",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Gemini Robotics-ER 1.6: New Capabilities for Robot Foundation Models",
+        venue: "",
+        summary: "Google DeepMind 发布 Gemini Robotics-ER 1.6 更新（4 月 14 日）。三大新能力：(1) 仪表读数识别——从模拟/真实仪表盘读取精确数值；(2) 指向动作——基于自然语言指令执行精确指向；(3) 多视角成功检测——融合多个摄像头视角判断任务完成状态。覆盖工业检测和家庭服务双场景。",
+        tags: [["VLM","green"],["基座模型","green"]],
+        links: []
+    },
+    {
+        date: "2026-04-15",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "🏭 AgiBot G2 入驻南昌工厂 — 99.9% 成功率、310 件/小时",
+        venue: "",
+        summary: "AgiBot（智元机器人）G2 人形机器人 4 月 14 日正式部署南昌制造工厂产线。数据亮点：操作成功率 99.9%，产线吞吐量 310 件/小时，7×24 无人值守运行。G2 在装配、搬运、质检三个工位完成全自主操作，标志着人形机器人从实验室走向真正的工业规模应用。",
+        tags: [["Robotics","green"],["Industry","green"]],
+        links: []
+    },
+    {
+        date: "2026-04-15",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "🤖 GEN-1 by Generalist AI — 99% 成功率、速度提升 3 倍",
+        venue: "",
+        summary: "Generalist AI 发布通用操作机器人 GEN-1。核心指标：标准操作任务 99% 成功率，相比人工速度提升 3 倍。采用模块化设计，可快速适配不同产线需求。主打中小制造企业\"即插即用\"场景。",
+        tags: [["Robotics","green"],["Product","green"]],
+        links: []
+    },
+    {
+        date: "2026-04-15",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "📦 灵初智能 Psi-R2 数据开源 — 10 万小时操作数据集持续释放",
+        venue: "",
+        summary: "灵初智能持续开源 Psi-R2 数据集（继 4 月 12 日首批 1000 小时后持续扩充）。总储备 10 万小时手部操作数据，覆盖 294 种场景、4821 种任务。社区反馈积极，已有 10+ 团队接入测试。本周新增家庭整理和厨房操作子集。",
+        tags: [["VLA","green"],["数据集","green"]],
+        links: []
+    },
+    {
+        date: "2026-04-15",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "🏛️ 工信部发布 AI+ 应用场景目录 — 具身智能列入重点方向",
+        venue: "",
+        summary: "工信部近日发布 2026 年度 AI+ 重点应用场景推荐目录，具身智能首次作为独立方向列入。重点场景包括：智慧工厂（人形+协作机器人）、无人配送、家庭服务机器人、农业采摘。配套政策含专项资金、示范园区和人才培养计划。",
+        tags: [["Policy","green"],["政策","green"]],
+        links: []
+    },
+    {
+        date: "2026-04-15",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "🎓 CEAI 2026 第三届具身智能大会精彩回顾",
+        venue: "",
+        summary: "第三届中国具身智能大会（CEAI 2026）4 月 11-13 日在合肥落幕。参会超 3000 人，100+ 论文报告。热点议题：世界模型在机器人中的应用、人形机器人灵巧操作、具身数据集标准化。最佳论文奖授予\"数据飞轮驱动的自适应操作策略\"。",
+        tags: [["Embodied AI","green"],["Conference","green"]],
+        links: []
+    },
+    {
+        date: "2026-04-15",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "📊 小红书 Relax RL 训练引擎正式开源（4/15）",
+        venue: "",
+        summary: "小红书今日正式开源 Relax RL 训练引擎。专为大模型 RLHF 场景优化，支持 PPO/DPO/GRPO 多种对齐算法。核心创新：异步分布式架构 + 自适应 KL 控制。70B 参数模型在 8 卡 A100 上训练效率比 TRL 提升 3-5 倍。GitHub 首日 Star 破千。",
+        tags: [["RL","green"],["开源工具","green"]],
+        links: []
+    },
     // === 2026-04-14 ===
     {
         date: "2026-04-14",
@@ -5018,6 +5269,13 @@ const PAPERS_DB = [
 ];
 
 const DAILY_OVERVIEW = {
+    "2026-04-15": {
+        bannerTitle: "",
+        bannerSubtitle: "",
+        picks: ["VGA: Vision-Geometry-Action Mapping for Robotic Manipulation","HazardArena: A Benchmark for Evaluating Semantic Safety in VLA Models","TAX-DPD: Task-Aware Cross-Domain Disentangled Point Diffusion for Object Placement"],
+        totalPapers: 19,
+        totalNews: 6
+    },
     "2026-04-14": {
         bannerTitle: "",
         bannerSubtitle: "",
