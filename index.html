@@ -629,6 +629,237 @@
 <script>
 // ===== DATA =====
 const PAPERS_DB = [
+    // === 2026-04-16 ===
+    {
+        date: "2026-04-16",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "HiVLA: A Visual-Grounded-Centric Hierarchical Embodied Manipulation System",
+        venue: "",
+        summary: "提出以视觉定位为核心的层级化框架 HiVLA，显式解耦高层语义规划与低层运动控制。高层 VLM 规划器进行任务分解和视觉定位（生成子任务指令+精确目标边界框），低层引入基于 flow-matching 的扩散 Transformer（DiT）动作专家配合级联交叉注意力机制。在长时域技能组合和杂乱场景小物体精细操作上显著超越端到端 SOTA。",
+        tags: [["VLA","green"],["层级规划","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.14125"],["PDF","https://arxiv.org/pdf/2604.14125"]]
+    },
+    {
+        date: "2026-04-16",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "Goal2Skill: Long-Horizon Manipulation with Adaptive Planning and Reflection",
+        venue: "",
+        summary: "双系统框架解决长时域具身操作：高层 VLM 规划器维护结构化任务记忆、执行目标分解和错误驱动纠正；低层 VLA 视觉运动控制器通过扩散模型生成动作。两系统形成闭环实现记忆感知推理和自适应重规划。在 RMBench 上平均成功率 32.4%（最强基线 9.8%），消融实验证实结构化记忆和闭环恢复对长时域操作的重要性。",
+        tags: [["VLA","green"],["长时域操作","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.13942"],["PDF","https://arxiv.org/pdf/2604.13942"]]
+    },
+    {
+        date: "2026-04-16",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "Jump-Start RL with Vision-Language-Action Regularization (VLAJS)",
+        venue: "",
+        summary: "将稀疏 VLA 引导与 on-policy RL 结合：在 PPO 上增加方向性动作一致性正则化，早期训练阶段将 RL 智能体动作与 VLA 引导软对齐并逐步退火，无需模仿学习或演示数据。在 6 个操控任务上（含 Franka Panda 真实机器人），样本效率超越 PPO 和蒸馏基线，多个任务减少 50%+ 环境交互，展示零样本 sim-to-real 迁移。",
+        tags: [["VLA","green"],["强化学习","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.13733"],["PDF","https://arxiv.org/pdf/2604.13733"]]
+    },
+    {
+        date: "2026-04-16",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "UMI-3D: Extending Universal Manipulation Interface from Vision-Limited to 3D Spatial Perception",
+        venue: "",
+        summary: "UMI 的多模态 3D 扩展：在腕戴式接口中集成轻量 LiDAR 传感器实现 LiDAR-centric SLAM，开发硬件同步多模态感知管线和统一时空标定框架。在保留原始 2D 视觉运动策略的同时，显著提高数据质量，支持大型可变形物体和铰接物体操作等原版 UMI 无法完成的任务。端到端管线全部开源。",
+        tags: [["VLA","green"],["数据采集","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.14089"],["PDF","https://arxiv.org/pdf/2604.14089"]]
+    },
+    {
+        date: "2026-04-16",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "Vectorizing Projection in Manifold-Constrained Motion Planning for Real-Time Whole-Body Control",
+        venue: "",
+        summary: "提出 CPU SIMD 加速的流形约束运动规划器，通过将基于投影的约束满足方法重新视为可并行化结构，利用 SIMD 并行性实现约束满足规划。相比 SOTA 实现 100-1000x 加速，首次实现实时约束运动规划。在真实人形机器人上演示了实时全身准静态规划生成。该工作对流形投影的向量化处理思路与 null-space projection 方法论相关。",
+        tags: [["Robotics","green"],["全身控制","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.13323"],["PDF","https://arxiv.org/pdf/2604.13323"]]
+    },
+    {
+        date: "2026-04-16",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "Singularity Avoidance in Inverse Kinematics: A Unified Treatment of Classical and Learning-based Methods",
+        venue: "",
+        summary: "首次统一综述经典和学习型 IK 奇异性规避方法：覆盖 Jacobian 正则化、黎曼可操作性跟踪、约束优化和数据驱动范式。在 Franka Panda 上对 12 种 IK 求解器基准测试。关键发现：纯学习方法表现差（MLP 0% 成功率），但混合热启动架构效果极佳（IKFlow 59%→100%，CycleIK 0%→98.6%，GGIK 0%→100%）。DLS 可从 207mm 初始误差收敛。",
+        tags: [["Robotics","green"],["逆运动学","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.13405"],["PDF","https://arxiv.org/pdf/2604.13405"]]
+    },
+    {
+        date: "2026-04-16",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "Scale-Invariant Sampling in Multi-Arm Bandit Motion Planning for Object Extraction",
+        venue: "",
+        summary: "针对拆卸任务中毫米级间隙的物体提取问题，提出尺度不变采样策略：利用增长-收缩搜索探索构型空间中有用的高熵采样尺度，再通过 PCA 寻找提取方向。嵌入 MAB-RRT 规划器，在 8 个 3D 物体提取场景（螺栓、齿轮、销钉等）中 7 个场景成功率提升一个数量级。已被 WAFR 2026 接收。",
+        tags: [["Robotics","green"],["运动规划","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.14026"],["PDF","https://arxiv.org/pdf/2604.14026"]]
+    },
+    {
+        date: "2026-04-16",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "Mosaic: An Extensible Framework for Composing Rule-Based and Learned Motion Planners",
+        venue: "",
+        summary: "通过仲裁图整合规则型和学习型运动规划器：轨迹验证与评分和生成解耦，引入规划器间冗余性。在 nuPlan Val14 闭环基准达 95.48 CLS-NR（SOTA），责任碰撞减少 30%，interPlan 基准上比最佳组成规划器提升 23.3%，且无需重训练。代码开源。",
+        tags: [["Robotics","green"],["自动驾驶","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.13853"],["PDF","https://arxiv.org/pdf/2604.13853"]]
+    },
+    {
+        date: "2026-04-16",
+        category: "Embodied AI",
+        categoryIcon: "🧩",
+        title: "ESCAPE: Episodic Spatial Memory and Adaptive Execution Policy for Long-Horizon Mobile Manipulation",
+        venue: "",
+        summary: "面向长时程移动操作的感知-定位-执行紧耦合框架：时空融合建图模块构建无深度依赖的持久化 3D 空间记忆，记忆驱动目标定位模块生成精确交互掩码，自适应执行策略动态协调全局导航与反应式局部操作。在 ALFRED 基准达 SOTA（测试已见 65.09%、未见 60.79%），路径长度加权指标显著提升。",
+        tags: [["Embodied AI","green"],["移动操作","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.13633"],["PDF","https://arxiv.org/pdf/2604.13633"]]
+    },
+    {
+        date: "2026-04-16",
+        category: "Embodied AI",
+        categoryIcon: "🧩",
+        title: "EmbodiedClaw: Conversational Workflow Execution for Embodied AI Development",
+        venue: "",
+        summary: "提出具身 AI 开发新范式：用户通过对话表达目标和约束，系统自动规划并执行开发工作流。EmbodiedClaw 将环境创建、基准转换、轨迹合成、模型评估等高频研究活动转化为可执行技能。实验证明在减少人工工程工作量的同时提升了可执行性、一致性和可复现性。标志着具身 AI 开发从手动工具链向对话式可执行工作流的转变。",
+        tags: [["Embodied AI","green"],["开发工具","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.13800"],["PDF","https://arxiv.org/pdf/2604.13800"]]
+    },
+    {
+        date: "2026-04-16",
+        category: "Embodied AI",
+        categoryIcon: "🧩",
+        title: "Artificial Tripartite Intelligence: A Bio-Inspired, Sensor-First Architecture for Physical AI",
+        venue: "",
+        summary: "面向物理 AI 的仿生三部智能架构（ATI）：L1 脑干提供反射式安全控制，L2 小脑执行传感器校准，L3/L4 大脑推理支持技能选择和深度推理。在动态光照和运动条件下的移动摄像头原型中，ATI 将端到端准确率从 53.8% 提升至 88%，同时减少 43.3% 远程 L4 调用。展示了为具身 AI 协同设计感知与推理的价值。",
+        tags: [["Physical AI","green"],["传感器架构","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.13959"],["PDF","https://arxiv.org/pdf/2604.13959"]]
+    },
+    {
+        date: "2026-04-16",
+        category: "RL",
+        categoryIcon: "🧠",
+        title: "Reward Hacking in the Era of Large Models: Mechanisms, Emergent Misalignment, Challenges",
+        venue: "",
+        summary: "42 页重磅综述，提出代理压缩假说（PCH）统一理解奖励黑客问题。系统分析 RLHF/RLAIF/RLVR 体制下的冗长偏差、谄媚倾向、幻觉式论证、基准过拟合等表现，以及多模态场景的感知-推理解耦和评估器操纵。将检测和缓解策略按目标压缩、优化放大和评估器-策略共适应三维度组织，指出可扩展监督和智能体自主性方面的开放挑战。",
+        tags: [["RL","green"],["对齐安全","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.13602"],["PDF","https://arxiv.org/pdf/2604.13602"]]
+    },
+    {
+        date: "2026-04-16",
+        category: "RL",
+        categoryIcon: "🧠",
+        title: "Soft Q(lambda): Multi-step Off-policy Method for Entropy Regularised RL Using Eligibility Traces",
+        venue: "",
+        summary: "提出基于资格迹的多步离策略熵正则化强化学习方法 Soft Q(lambda)，将经典的 TD(lambda) 与 SAC 框架结合。通过资格迹实现多步回报估计，在保持离策略效率的同时改善信用分配。理论分析和实验验证了在连续控制任务上的样本效率提升。",
+        tags: [["RL","green"],["理论方法","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.13780"],["PDF","https://arxiv.org/pdf/2604.13780"]]
+    },
+    {
+        date: "2026-04-16",
+        category: "RL",
+        categoryIcon: "🧠",
+        title: "DiPO: Disentangled Perplexity Policy Optimization for Fine-grained Exploration-Exploitation Trade-Off",
+        venue: "",
+        summary: "提出解耦困惑度策略优化方法 DiPO，针对 LLM 强化学习中的探索-利用权衡问题。通过将困惑度分解为可控成分，实现更细粒度的策略优化控制，在 LLM 对齐任务上展现出更好的探索效率和最终性能。",
+        tags: [["RL","green"],["LLM 对齐","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.13902"],["PDF","https://arxiv.org/pdf/2604.13902"]]
+    },
+    {
+        date: "2026-04-16",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "The Cognitive Companion: A Lightweight Parallel Monitoring Architecture for LLM Agent Reasoning Degradation",
+        venue: "",
+        summary: "LLM Agent 多步骤任务中推理退化（循环、漂移、卡死）发生率高达 30%。提出 Cognitive Companion 并行监控架构：LLM-based 版本降低重复率 52-62%（开销 11%），Probe-based 版本基于第 28 层隐藏状态训练达 AUROC 0.840 且零推理开销。关键发现是效果依赖任务类型，在循环易发任务上最有帮助。",
+        tags: [["LLM","green"],["Agent 可靠性","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.13759"],["PDF","https://arxiv.org/pdf/2604.13759"]]
+    },
+    {
+        date: "2026-04-16",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "TREX: Automating LLM Fine-tuning via Agent-Driven Tree-based Exploration",
+        venue: "",
+        summary: "通过 Agent 驱动的树搜索自动化 LLM 微调流程。TREX 将微调配置空间建模为搜索树，利用 LLM Agent 自主探索数据选择、超参数调优和训练策略组合。在多个下游任务上，自动搜索的配置比人工调优达到可比甚至更好的性能，大幅降低微调门槛。",
+        tags: [["LLM","green"],["自动微调","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.14116"],["PDF","https://arxiv.org/pdf/2604.14116"]]
+    },
+    {
+        date: "2026-04-16",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "pi-Play: Multi-Agent Self-Play via Privileged Self-Distillation without External Data",
+        venue: "",
+        summary: "发现自博弈中自然产生的问题构造路径（QCP）是一种新的特权信息来源。提出 pi-Play 多智能体自进化框架：出题者生成任务及 QCP，教师模型利用 QCP 作为特权上下文对学生模型进行密集监督，将稀疏奖励自博弈转化为密集反馈自进化循环。无需外部数据即超越全监督搜索智能体，进化效率提升 2-3x。",
+        tags: [["LLM","green"],["自博弈","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.14054"],["PDF","https://arxiv.org/pdf/2604.14054"]]
+    },
+    {
+        date: "2026-04-16",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Reward Design for Physical Reasoning in Vision-Language Models",
+        venue: "",
+        summary: "系统性研究 GRPO 训练 VLM 物理推理的奖励设计，比较四种语义丰富度递增的奖励信号（格式、准确性、复合评分标准、注意力权重）。在 PhyX 基准（6 个物理领域，3000 题）上用 IBM Granite Vision 3.3 实验。关键发现：准确性奖励整体最强；注意力权重内部奖励无需空间标注即将空间推理准确率从 0.27 提升至 0.50。",
+        tags: [["VLM","green"],["奖励设计","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.13993"],["PDF","https://arxiv.org/pdf/2604.13993"]]
+    },
+    {
+        date: "2026-04-16",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "InnoEX 2026 香港创新科技博览会机器人展示（4月13-16日）",
+        venue: "",
+        summary: "香港创新科技博览会 InnoEX 2026 于 4 月 13-16 日在香港会议展览中心举行，展示了来自全球的机器人技术和 AI 应用创新成果，涵盖服务机器人、工业自动化和人形机器人等领域。",
+        tags: [],
+        links: []
+    },
+    {
+        date: "2026-04-16",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "地平线机器人（D-Robotics）完成 1.5 亿美元 B2 轮融资",
+        venue: "",
+        summary: "专注于机器人边缘计算芯片的地平线机器人（D-Robotics）完成 1.5 亿美元 B2 轮融资，加速面向具身智能场景的专用芯片研发和量产。",
+        tags: [],
+        links: []
+    },
+    {
+        date: "2026-04-16",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "OpenAI 发布 ChatGPT for Excel 插件",
+        venue: "",
+        summary: "OpenAI 正式推出 ChatGPT for Excel 插件，用户可在 Microsoft Excel 中直接调用 ChatGPT 进行数据分析、公式生成和自然语言查询，标志着 AI 办公工具进一步整合。",
+        tags: [],
+        links: []
+    },
+    {
+        date: "2026-04-16",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "Google Gemini 原生 Mac 应用发布",
+        venue: "",
+        summary: "Google 发布 Gemini 原生 macOS 桌面应用，提供本地化的 AI 助手体验，支持多模态输入和系统级集成，与 Apple 生态深度融合。",
+        tags: [],
+        links: []
+    },
+    {
+        date: "2026-04-16",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "Spirit AI 30 天融资 30 亿元人民币",
+        venue: "",
+        summary: "中国 AI 初创企业 Spirit AI 在 30 天内完成 30 亿元人民币融资，创下国内 AI 领域单月融资纪录，聚焦大模型基础设施和行业应用。",
+        tags: [],
+        links: []
+    },
     // === 2026-04-15 ===
     {
         date: "2026-04-15",
@@ -5269,6 +5500,13 @@ const PAPERS_DB = [
 ];
 
 const DAILY_OVERVIEW = {
+    "2026-04-16": {
+        bannerTitle: "",
+        bannerSubtitle: "",
+        picks: ["UMI-3D: Extending Universal Manipulation Interface from Vision-Limited to 3D Spatial Perception","Singularity Avoidance in Inverse Kinematics: A Unified Treatment of Classical and Learning-based Methods","Soft Q(lambda): Multi-step Off-policy Method for Entropy Regularised RL Using Eligibility Traces","TREX: Automating LLM Fine-tuning via Agent-Driven Tree-based Exploration"],
+        totalPapers: 18,
+        totalNews: 5
+    },
     "2026-04-15": {
         bannerTitle: "",
         bannerSubtitle: "",

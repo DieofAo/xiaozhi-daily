@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🔬 小小志科研日报 — 2026-04-16</title>
+<style>
+:root {
+  --bg: #0d1117; --card: #161b22; --border: #30363d;
+  --text: #e6edf3; --dim: #8b949e; --accent: #58a6ff;
+  --vla: #da3633; --wam: #8957e5; --robotics: #238636;
+  --embodied: #d29922; --rl: #f78166; --llm: #3fb950;
+  --vlm: #79c0ff; --info: #768390; --multimodal: #d2a8ff;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { background:var(--bg); color:var(--text); font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; line-height:1.6; }
+.container { max-width:960px; margin:0 auto; padding:20px; }
+header { text-align:center; padding:40px 0 30px; border-bottom:1px solid var(--border); margin-bottom:30px; }
+header h1 { font-size:2em; background:linear-gradient(135deg,#58a6ff,#da3633,#8957e5); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+header .date { color:var(--dim); font-size:1.1em; margin-top:8px; }
+header .subtitle { color:var(--accent); font-size:0.95em; margin-top:4px; }
+.highlight-box { background:linear-gradient(135deg,rgba(218,54,51,0.1),rgba(137,87,229,0.1)); border:1px solid rgba(88,166,255,0.3); border-radius:12px; padding:20px; margin-bottom:30px; }
+.highlight-box h3 { color:var(--accent); margin-bottom:10px; font-size:1.1em; }
+.highlight-box p { color:var(--dim); font-size:0.92em; line-height:1.7; }
+.highlight-box .boss-alert { background:rgba(218,54,51,0.15); border:1px solid var(--vla); border-radius:8px; padding:10px 14px; margin-top:10px; color:var(--vla); font-size:0.9em; }
+.section { margin-bottom:36px; }
+.section h2 { font-size:1.4em; margin-bottom:16px; padding-left:12px; border-left:4px solid var(--accent); color:var(--accent); }
+.section h2.vla { border-color:var(--vla); color:var(--vla); }
+.section h2.wam { border-color:var(--wam); color:var(--wam); }
+.section h2.robotics { border-color:var(--robotics); color:var(--robotics); }
+.section h2.embodied { border-color:var(--embodied); color:var(--embodied); }
+.section h2.rl { border-color:var(--rl); color:var(--rl); }
+.section h2.llm { border-color:var(--llm); color:var(--llm); }
+.section h2.vlm { border-color:var(--vlm); color:var(--vlm); }
+.section h2.info { border-color:var(--info); color:var(--info); }
+.section h2.multimodal { border-color:var(--multimodal); color:var(--multimodal); }
+.paper { background:var(--card); border:1px solid var(--border); border-radius:10px; padding:18px; margin-bottom:14px; transition:border-color .2s; }
+.paper:hover { border-color:var(--accent); }
+.paper-title { font-size:1.05em; font-weight:600; margin-bottom:6px; }
+.paper-meta { display:flex; flex-wrap:wrap; gap:6px; margin-bottom:8px; align-items:center; }
+.tag { font-size:0.75em; padding:2px 8px; border-radius:12px; font-weight:500; }
+.tag-vla { background:rgba(218,54,51,0.2); color:var(--vla); }
+.tag-wam { background:rgba(137,87,229,0.2); color:var(--wam); }
+.tag-robotics { background:rgba(35,134,54,0.2); color:var(--robotics); }
+.tag-embodied { background:rgba(210,153,34,0.2); color:var(--embodied); }
+.tag-rl { background:rgba(247,129,102,0.2); color:var(--rl); }
+.tag-llm { background:rgba(63,185,80,0.2); color:var(--llm); }
+.tag-vlm { background:rgba(121,192,255,0.2); color:var(--vlm); }
+.tag-info { background:rgba(118,131,144,0.2); color:var(--info); }
+.tag-multimodal { background:rgba(210,168,255,0.2); color:var(--multimodal); }
+.paper-summary { color:var(--dim); font-size:0.92em; margin-bottom:10px; }
+.paper-links { display:flex; flex-wrap:wrap; gap:6px; }
+.paper-links a { font-size:0.8em; padding:3px 10px; border-radius:6px; background:rgba(88,166,255,0.1); color:var(--accent); text-decoration:none; border:1px solid rgba(88,166,255,0.3); transition:all .2s; }
+.paper-links a:hover { background:rgba(88,166,255,0.25); }
+.info-card { background:var(--card); border:1px solid var(--border); border-radius:10px; padding:18px; margin-bottom:14px; transition:border-color .2s; }
+.info-card:hover { border-color:var(--info); }
+.info-title { font-size:1.05em; font-weight:600; margin-bottom:6px; }
+.info-summary { color:var(--dim); font-size:0.92em; margin-bottom:10px; }
+.info-links { display:flex; flex-wrap:wrap; gap:6px; }
+.info-links a { font-size:0.8em; padding:3px 10px; border-radius:6px; background:rgba(118,131,144,0.1); color:var(--info); text-decoration:none; border:1px solid rgba(118,131,144,0.3); transition:all .2s; }
+.info-links a:hover { background:rgba(118,131,144,0.25); }
+.stats { text-align:center; padding:30px 0; border-top:1px solid var(--border); margin-top:20px; color:var(--dim); font-size:0.85em; }
+.stats .numbers { display:flex; justify-content:center; gap:30px; margin-bottom:10px; }
+.stats .num { font-size:1.8em; font-weight:700; color:var(--accent); }
+.stats .label { font-size:0.85em; color:var(--dim); }
+footer { text-align:center; padding:20px 0; color:var(--dim); font-size:0.8em; border-top:1px solid var(--border); margin-top:10px; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <h1>小小志科研日报</h1>
+  <div class="date">2026-04-16 Wednesday/Thursday</div>
+  <div class="subtitle">Boss Team Research Intelligence — VLA / Robotics / Embodied AI / RL / LLM / World Model / VLM</div>
+</header>
+
+<!-- Boss 研究关注提醒 -->
+<div class="highlight-box">
+  <h3>Boss 研究关注</h3>
+  <p>今日有 <strong>2 篇论文</strong> 与 Boss 当前研究方向（floating base / whole-body control / IK / mobile manipulation）<strong>高度相关</strong>：</p>
+  <div class="boss-alert">
+    <strong>[Robotics]</strong> Vectorizing Projection in Manifold-Constrained Motion Planning for Real-Time Whole-Body Control — CPU SIMD 加速流形约束规划，人形全身控制实时化，100-1000x 加速。<strong>与 Boss 的 null-space projection / whole-body control 研究直接相关！</strong>
+  </div>
+  <div class="boss-alert" style="margin-top:8px;">
+    <strong>[Robotics]</strong> Singularity Avoidance in IK: A Unified Treatment of Classical and Learning-based Methods — 12 种 IK 求解器基准测试，混合热启动架构（IKFlow 59%→100%），<strong>与 Boss 的 IK / base placement 研究直接相关！</strong>
+  </div>
+  <p style="margin-top:10px; color:var(--rl);">FACTO 提醒：零空间投影（Null-space Projection）约束部分尚未实现，今日 Vectorizing Projection 论文的流形投影加速方法可能有参考价值。</p>
+</div>
+
+<!-- ============ VLA ============ -->
+<div class="section" id="vla">
+  <h2 class="vla">VLA &middot; Vision-Language-Action</h2>
+
+  <div class="paper vla">
+    <div class="paper-title">HiVLA: A Visual-Grounded-Centric Hierarchical Embodied Manipulation System</div>
+    <div class="paper-meta">
+      <span class="tag tag-vla">VLA</span>
+      <span class="tag tag-embodied">层级规划</span>
+    </div>
+    <div class="paper-summary">提出以视觉定位为核心的层级化框架 HiVLA，显式解耦高层语义规划与低层运动控制。高层 VLM 规划器进行任务分解和视觉定位（生成子任务指令+精确目标边界框），低层引入基于 flow-matching 的扩散 Transformer（DiT）动作专家配合级联交叉注意力机制。在长时域技能组合和杂乱场景小物体精细操作上显著超越端到端 SOTA。</div>
+    <div class="paper-links">
+      <a class="link-paper" href="https://arxiv.org/abs/2604.14125">arXiv</a>
+      <a class="link-pdf" href="https://arxiv.org/pdf/2604.14125">PDF</a>
+      <a href="https://tianshuoy.github.io/HiVLA-page/">Project</a>
+    </div>
+  </div>
+
+  <div class="paper vla">
+    <div class="paper-title">Goal2Skill: Long-Horizon Manipulation with Adaptive Planning and Reflection</div>
+    <div class="paper-meta">
+      <span class="tag tag-vla">VLA</span>
+      <span class="tag tag-embodied">长时域操作</span>
+    </div>
+    <div class="paper-summary">双系统框架解决长时域具身操作：高层 VLM 规划器维护结构化任务记忆、执行目标分解和错误驱动纠正；低层 VLA 视觉运动控制器通过扩散模型生成动作。两系统形成闭环实现记忆感知推理和自适应重规划。在 RMBench 上平均成功率 32.4%（最强基线 9.8%），消融实验证实结构化记忆和闭环恢复对长时域操作的重要性。</div>
+    <div class="paper-links">
+      <a class="link-paper" href="https://arxiv.org/abs/2604.13942">arXiv</a>
+      <a class="link-pdf" href="https://arxiv.org/pdf/2604.13942">PDF</a>
+    </div>
+  </div>
+
+  <div class="paper vla">
+    <div class="paper-title">Jump-Start RL with Vision-Language-Action Regularization (VLAJS)</div>
+    <div class="paper-meta">
+      <span class="tag tag-vla">VLA</span>
+      <span class="tag tag-rl">强化学习</span>
+    </div>
+    <div class="paper-summary">将稀疏 VLA 引导与 on-policy RL 结合：在 PPO 上增加方向性动作一致性正则化，早期训练阶段将 RL 智能体动作与 VLA 引导软对齐并逐步退火，无需模仿学习或演示数据。在 6 个操控任务上（含 Franka Panda 真实机器人），样本效率超越 PPO 和蒸馏基线，多个任务减少 50%+ 环境交互，展示零样本 sim-to-real 迁移。</div>
+    <div class="paper-links">
+      <a class="link-paper" href="https://arxiv.org/abs/2604.13733">arXiv</a>
+      <a class="link-pdf" href="https://arxiv.org/pdf/2604.13733">PDF</a>
+    </div>
+  </div>
+
+  <div class="paper vla">
+    <div class="paper-title">UMI-3D: Extending Universal Manipulation Interface from Vision-Limited to 3D Spatial Perception</div>
+    <div class="paper-meta">
+      <span class="tag tag-vla">VLA</span>
+      <span class="tag tag-robotics">数据采集</span>
+    </div>
+    <div class="paper-summary">UMI 的多模态 3D 扩展：在腕戴式接口中集成轻量 LiDAR 传感器实现 LiDAR-centric SLAM，开发硬件同步多模态感知管线和统一时空标定框架。在保留原始 2D 视觉运动策略的同时，显著提高数据质量，支持大型可变形物体和铰接物体操作等原版 UMI 无法完成的任务。端到端管线全部开源。</div>
+    <div class="paper-links">
+      <a class="link-paper" href="https://arxiv.org/abs/2604.14089">arXiv</a>
+      <a class="link-pdf" href="https://arxiv.org/pdf/2604.14089">PDF</a>
+      <a href="https://umi-3d.github.io">Project</a>
+    </div>
+  </div>
+</div>
+
+<!-- ============ Robotics ============ -->
+<div class="section" id="robotics">
+  <h2 class="robotics">Robotics &middot; 机器人学</h2>
+
+  <div class="paper robotics" style="border-color:var(--vla);">
+    <div class="paper-title">Vectorizing Projection in Manifold-Constrained Motion Planning for Real-Time Whole-Body Control</div>
+    <div class="paper-meta">
+      <span class="tag tag-robotics">Robotics</span>
+      <span class="tag tag-embodied">全身控制</span>
+      <span class="tag" style="background:rgba(218,54,51,0.3); color:#ff6b6b; font-weight:700;">Boss 关注</span>
+    </div>
+    <div class="paper-summary">提出 CPU SIMD 加速的流形约束运动规划器，通过将基于投影的约束满足方法重新视为可并行化结构，利用 SIMD 并行性实现约束满足规划。相比 SOTA 实现 100-1000x 加速，首次实现实时约束运动规划。在真实人形机器人上演示了实时全身准静态规划生成。该工作对流形投影的向量化处理思路与 null-space projection 方法论相关。</div>
+    <div class="paper-links">
+      <a class="link-paper" href="https://arxiv.org/abs/2604.13323">arXiv</a>
+      <a class="link-pdf" href="https://arxiv.org/pdf/2604.13323">PDF</a>
+      <a href="https://commalab.org/papers/mcvamp/">Project</a>
+    </div>
+  </div>
+
+  <div class="paper robotics" style="border-color:var(--vla);">
+    <div class="paper-title">Singularity Avoidance in Inverse Kinematics: A Unified Treatment of Classical and Learning-based Methods</div>
+    <div class="paper-meta">
+      <span class="tag tag-robotics">Robotics</span>
+      <span class="tag tag-robotics">逆运动学</span>
+      <span class="tag" style="background:rgba(218,54,51,0.3); color:#ff6b6b; font-weight:700;">Boss 关注</span>
+    </div>
+    <div class="paper-summary">首次统一综述经典和学习型 IK 奇异性规避方法：覆盖 Jacobian 正则化、黎曼可操作性跟踪、约束优化和数据驱动范式。在 Franka Panda 上对 12 种 IK 求解器基准测试。关键发现：纯学习方法表现差（MLP 0% 成功率），但混合热启动架构效果极佳（IKFlow 59%→100%，CycleIK 0%→98.6%，GGIK 0%→100%）。DLS 可从 207mm 初始误差收敛。</div>
+    <div class="paper-links">
+      <a class="link-paper" href="https://arxiv.org/abs/2604.13405">arXiv</a>
+      <a class="link-pdf" href="https://arxiv.org/pdf/2604.13405">PDF</a>
+    </div>
+  </div>
+
+  <div class="paper robotics">
+    <div class="paper-title">Scale-Invariant Sampling in Multi-Arm Bandit Motion Planning for Object Extraction</div>
+    <div class="paper-meta">
+      <span class="tag tag-robotics">Robotics</span>
+      <span class="tag tag-robotics">运动规划</span>
+    </div>
+    <div class="paper-summary">针对拆卸任务中毫米级间隙的物体提取问题，提出尺度不变采样策略：利用增长-收缩搜索探索构型空间中有用的高熵采样尺度，再通过 PCA 寻找提取方向。嵌入 MAB-RRT 规划器，在 8 个 3D 物体提取场景（螺栓、齿轮、销钉等）中 7 个场景成功率提升一个数量级。已被 WAFR 2026 接收。</div>
+    <div class="paper-links">
+      <a class="link-paper" href="https://arxiv.org/abs/2604.14026">arXiv</a>
+      <a class="link-pdf" href="https://arxiv.org/pdf/2604.14026">PDF</a>
+    </div>
+  </div>
+
+  <div class="paper robotics">
+    <div class="paper-title">Mosaic: An Extensible Framework for Composing Rule-Based and Learned Motion Planners</div>
+    <div class="paper-meta">
+      <span class="tag tag-robotics">Robotics</span>
+      <span class="tag tag-robotics">自动驾驶</span>
+    </div>
+    <div class="paper-summary">通过仲裁图整合规则型和学习型运动规划器：轨迹验证与评分和生成解耦，引入规划器间冗余性。在 nuPlan Val14 闭环基准达 95.48 CLS-NR（SOTA），责任碰撞减少 30%，interPlan 基准上比最佳组成规划器提升 23.3%，且无需重训练。代码开源。</div>
+    <div class="paper-links">
+      <a class="link-paper" href="https://arxiv.org/abs/2604.13853">arXiv</a>
+      <a class="link-pdf" href="https://arxiv.org/pdf/2604.13853">PDF</a>
+      <a href="https://github.com/KIT-MRT/mosaic">GitHub</a>
+    </div>
+  </div>
+</div>
+
+<!-- ============ Embodied AI ============ -->
+<div class="section" id="embodied">
+  <h2 class="embodied">Embodied AI &middot; 具身智能</h2>
+
+  <div class="paper embodied">
+    <div class="paper-title">ESCAPE: Episodic Spatial Memory and Adaptive Execution Policy for Long-Horizon Mobile Manipulation</div>
+    <div class="paper-meta">
+      <span class="tag tag-embodied">Embodied AI</span>
+      <span class="tag tag-robotics">移动操作</span>
+    </div>
+    <div class="paper-summary">面向长时程移动操作的感知-定位-执行紧耦合框架：时空融合建图模块构建无深度依赖的持久化 3D 空间记忆，记忆驱动目标定位模块生成精确交互掩码，自适应执行策略动态协调全局导航与反应式局部操作。在 ALFRED 基准达 SOTA（测试已见 65.09%、未见 60.79%），路径长度加权指标显著提升。</div>
+    <div class="paper-links">
+      <a class="link-paper" href="https://arxiv.org/abs/2604.13633">arXiv</a>
+      <a class="link-pdf" href="https://arxiv.org/pdf/2604.13633">PDF</a>
+    </div>
+  </div>
+
+  <div class="paper embodied">
+    <div class="paper-title">EmbodiedClaw: Conversational Workflow Execution for Embodied AI Development</div>
+    <div class="paper-meta">
+      <span class="tag tag-embodied">Embodied AI</span>
+      <span class="tag tag-llm">开发工具</span>
+    </div>
+    <div class="paper-summary">提出具身 AI 开发新范式：用户通过对话表达目标和约束，系统自动规划并执行开发工作流。EmbodiedClaw 将环境创建、基准转换、轨迹合成、模型评估等高频研究活动转化为可执行技能。实验证明在减少人工工程工作量的同时提升了可执行性、一致性和可复现性。标志着具身 AI 开发从手动工具链向对话式可执行工作流的转变。</div>
+    <div class="paper-links">
+      <a class="link-paper" href="https://arxiv.org/abs/2604.13800">arXiv</a>
+      <a class="link-pdf" href="https://arxiv.org/pdf/2604.13800">PDF</a>
+    </div>
+  </div>
+
+  <div class="paper embodied">
+    <div class="paper-title">Artificial Tripartite Intelligence: A Bio-Inspired, Sensor-First Architecture for Physical AI</div>
+    <div class="paper-meta">
+      <span class="tag tag-embodied">Physical AI</span>
+      <span class="tag tag-embodied">传感器架构</span>
+    </div>
+    <div class="paper-summary">面向物理 AI 的仿生三部智能架构（ATI）：L1 脑干提供反射式安全控制，L2 小脑执行传感器校准，L3/L4 大脑推理支持技能选择和深度推理。在动态光照和运动条件下的移动摄像头原型中，ATI 将端到端准确率从 53.8% 提升至 88%，同时减少 43.3% 远程 L4 调用。展示了为具身 AI 协同设计感知与推理的价值。</div>
+    <div class="paper-links">
+      <a class="link-paper" href="https://arxiv.org/abs/2604.13959">arXiv</a>
+      <a class="link-pdf" href="https://arxiv.org/pdf/2604.13959">PDF</a>
+    </div>
+  </div>
+</div>
+
+<!-- ============ RL ============ -->
+<div class="section" id="rl">
+  <h2 class="rl">RL &middot; Reinforcement Learning</h2>
+
+  <div class="paper rl">
+    <div class="paper-title">Reward Hacking in the Era of Large Models: Mechanisms, Emergent Misalignment, Challenges</div>
+    <div class="paper-meta">
+      <span class="tag tag-rl">RL</span>
+      <span class="tag tag-llm">对齐安全</span>
+    </div>
+    <div class="paper-summary">42 页重磅综述，提出代理压缩假说（PCH）统一理解奖励黑客问题。系统分析 RLHF/RLAIF/RLVR 体制下的冗长偏差、谄媚倾向、幻觉式论证、基准过拟合等表现，以及多模态场景的感知-推理解耦和评估器操纵。将检测和缓解策略按目标压缩、优化放大和评估器-策略共适应三维度组织，指出可扩展监督和智能体自主性方面的开放挑战。</div>
+    <div class="paper-links">
+      <a class="link-paper" href="https://arxiv.org/abs/2604.13602">arXiv</a>
+      <a class="link-pdf" href="https://arxiv.org/pdf/2604.13602">PDF</a>
+    </div>
+  </div>
+
+  <div class="paper rl">
+    <div class="paper-title">Soft Q(lambda): Multi-step Off-policy Method for Entropy Regularised RL Using Eligibility Traces</div>
+    <div class="paper-meta">
+      <span class="tag tag-rl">RL</span>
+      <span class="tag tag-rl">理论方法</span>
+    </div>
+    <div class="paper-summary">提出基于资格迹的多步离策略熵正则化强化学习方法 Soft Q(lambda)，将经典的 TD(lambda) 与 SAC 框架结合。通过资格迹实现多步回报估计，在保持离策略效率的同时改善信用分配。理论分析和实验验证了在连续控制任务上的样本效率提升。</div>
+    <div class="paper-links">
+      <a class="link-paper" href="https://arxiv.org/abs/2604.13780">arXiv</a>
+      <a class="link-pdf" href="https://arxiv.org/pdf/2604.13780">PDF</a>
+    </div>
+  </div>
+
+  <div class="paper rl">
+    <div class="paper-title">DiPO: Disentangled Perplexity Policy Optimization for Fine-grained Exploration-Exploitation Trade-Off</div>
+    <div class="paper-meta">
+      <span class="tag tag-rl">RL</span>
+      <span class="tag tag-llm">LLM 对齐</span>
+    </div>
+    <div class="paper-summary">提出解耦困惑度策略优化方法 DiPO，针对 LLM 强化学习中的探索-利用权衡问题。通过将困惑度分解为可控成分，实现更细粒度的策略优化控制，在 LLM 对齐任务上展现出更好的探索效率和最终性能。</div>
+    <div class="paper-links">
+      <a class="link-paper" href="https://arxiv.org/abs/2604.13902">arXiv</a>
+      <a class="link-pdf" href="https://arxiv.org/pdf/2604.13902">PDF</a>
+    </div>
+  </div>
+</div>
+
+<!-- ============ LLM ============ -->
+<div class="section" id="llm">
+  <h2 class="llm">LLM &middot; Large Language Models</h2>
+
+  <div class="paper llm">
+    <div class="paper-title">The Cognitive Companion: A Lightweight Parallel Monitoring Architecture for LLM Agent Reasoning Degradation</div>
+    <div class="paper-meta">
+      <span class="tag tag-llm">LLM</span>
+      <span class="tag tag-llm">Agent 可靠性</span>
+    </div>
+    <div class="paper-summary">LLM Agent 多步骤任务中推理退化（循环、漂移、卡死）发生率高达 30%。提出 Cognitive Companion 并行监控架构：LLM-based 版本降低重复率 52-62%（开销 11%），Probe-based 版本基于第 28 层隐藏状态训练达 AUROC 0.840 且零推理开销。关键发现是效果依赖任务类型，在循环易发任务上最有帮助。</div>
+    <div class="paper-links">
+      <a class="link-paper" href="https://arxiv.org/abs/2604.13759">arXiv</a>
+      <a class="link-pdf" href="https://arxiv.org/pdf/2604.13759">PDF</a>
+    </div>
+  </div>
+
+  <div class="paper llm">
+    <div class="paper-title">TREX: Automating LLM Fine-tuning via Agent-Driven Tree-based Exploration</div>
+    <div class="paper-meta">
+      <span class="tag tag-llm">LLM</span>
+      <span class="tag tag-llm">自动微调</span>
+    </div>
+    <div class="paper-summary">通过 Agent 驱动的树搜索自动化 LLM 微调流程。TREX 将微调配置空间建模为搜索树，利用 LLM Agent 自主探索数据选择、超参数调优和训练策略组合。在多个下游任务上，自动搜索的配置比人工调优达到可比甚至更好的性能，大幅降低微调门槛。</div>
+    <div class="paper-links">
+      <a class="link-paper" href="https://arxiv.org/abs/2604.14116">arXiv</a>
+      <a class="link-pdf" href="https://arxiv.org/pdf/2604.14116">PDF</a>
+    </div>
+  </div>
+
+  <div class="paper llm">
+    <div class="paper-title">pi-Play: Multi-Agent Self-Play via Privileged Self-Distillation without External Data</div>
+    <div class="paper-meta">
+      <span class="tag tag-llm">LLM</span>
+      <span class="tag tag-rl">自博弈</span>
+    </div>
+    <div class="paper-summary">发现自博弈中自然产生的问题构造路径（QCP）是一种新的特权信息来源。提出 pi-Play 多智能体自进化框架：出题者生成任务及 QCP，教师模型利用 QCP 作为特权上下文对学生模型进行密集监督，将稀疏奖励自博弈转化为密集反馈自进化循环。无需外部数据即超越全监督搜索智能体，进化效率提升 2-3x。</div>
+    <div class="paper-links">
+      <a class="link-paper" href="https://arxiv.org/abs/2604.14054">arXiv</a>
+      <a class="link-pdf" href="https://arxiv.org/pdf/2604.14054">PDF</a>
+    </div>
+  </div>
+</div>
+
+<!-- ============ VLM ============ -->
+<div class="section" id="vlm">
+  <h2 class="vlm">VLM &middot; Vision-Language Models</h2>
+
+  <div class="paper vlm">
+    <div class="paper-title">Reward Design for Physical Reasoning in Vision-Language Models</div>
+    <div class="paper-meta">
+      <span class="tag tag-vlm">VLM</span>
+      <span class="tag tag-rl">奖励设计</span>
+    </div>
+    <div class="paper-summary">系统性研究 GRPO 训练 VLM 物理推理的奖励设计，比较四种语义丰富度递增的奖励信号（格式、准确性、复合评分标准、注意力权重）。在 PhyX 基准（6 个物理领域，3000 题）上用 IBM Granite Vision 3.3 实验。关键发现：准确性奖励整体最强；注意力权重内部奖励无需空间标注即将空间推理准确率从 0.27 提升至 0.50。</div>
+    <div class="paper-links">
+      <a class="link-paper" href="https://arxiv.org/abs/2604.13993">arXiv</a>
+      <a class="link-pdf" href="https://arxiv.org/pdf/2604.13993">PDF</a>
+    </div>
+  </div>
+</div>
+
+<!-- ============ Informations ============ -->
+<div class="section" id="info">
+  <h2 class="info">Informations &middot; 行业动态</h2>
+
+  <div class="info-card">
+    <div class="info-title">InnoEX 2026 香港创新科技博览会机器人展示（4月13-16日）</div>
+    <div class="info-summary">香港创新科技博览会 InnoEX 2026 于 4 月 13-16 日在香港会议展览中心举行，展示了来自全球的机器人技术和 AI 应用创新成果，涵盖服务机器人、工业自动化和人形机器人等领域。</div>
+    <div class="info-links">
+      <a href="https://www.hktdc.com/event/innovationexpoconnect/en">Event</a>
+    </div>
+  </div>
+
+  <div class="info-card">
+    <div class="info-title">地平线机器人（D-Robotics）完成 1.5 亿美元 B2 轮融资</div>
+    <div class="info-summary">专注于机器人边缘计算芯片的地平线机器人（D-Robotics）完成 1.5 亿美元 B2 轮融资，加速面向具身智能场景的专用芯片研发和量产。</div>
+    <div class="info-links">
+      <a href="https://www.d-robotics.cc/">Official</a>
+    </div>
+  </div>
+
+  <div class="info-card">
+    <div class="info-title">OpenAI 发布 ChatGPT for Excel 插件</div>
+    <div class="info-summary">OpenAI 正式推出 ChatGPT for Excel 插件，用户可在 Microsoft Excel 中直接调用 ChatGPT 进行数据分析、公式生成和自然语言查询，标志着 AI 办公工具进一步整合。</div>
+    <div class="info-links">
+      <a href="https://openai.com">OpenAI</a>
+    </div>
+  </div>
+
+  <div class="info-card">
+    <div class="info-title">Google Gemini 原生 Mac 应用发布</div>
+    <div class="info-summary">Google 发布 Gemini 原生 macOS 桌面应用，提供本地化的 AI 助手体验，支持多模态输入和系统级集成，与 Apple 生态深度融合。</div>
+    <div class="info-links">
+      <a href="https://gemini.google.com">Gemini</a>
+    </div>
+  </div>
+
+  <div class="info-card">
+    <div class="info-title">Spirit AI 30 天融资 30 亿元人民币</div>
+    <div class="info-summary">中国 AI 初创企业 Spirit AI 在 30 天内完成 30 亿元人民币融资，创下国内 AI 领域单月融资纪录，聚焦大模型基础设施和行业应用。</div>
+    <div class="info-links">
+      <a href="https://aitoolly.com">Source</a>
+    </div>
+  </div>
+</div>
+
+<!-- Stats -->
+<div class="stats">
+  <div class="numbers">
+    <div><div class="num">17</div><div class="label">Papers</div></div>
+    <div><div class="num">5</div><div class="label">Industry</div></div>
+    <div><div class="num">7</div><div class="label">Domains</div></div>
+    <div><div class="num">2</div><div class="label">Boss Alert</div></div>
+  </div>
+  <p>Data sources: arXiv (cs.RO, cs.AI, cs.LG, cs.CV) &middot; Google Scholar &middot; AI News</p>
+  <p>Coverage: 2026-04-15 ~ 2026-04-16 | Generated: 2026-04-16 17:15 CST</p>
+</div>
+
+<footer>
+  <p>小小志科研日报 &copy; 2026 Boss Team | Powered by 小小志 AI Research Assistant</p>
+  <p>All links verified via web_fetch | Deduplication against 2026-04-15 report applied</p>
+</footer>
+
+</div>
+</body>
+</html>
