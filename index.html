@@ -629,6 +629,257 @@
 <script>
 // ===== DATA =====
 const PAPERS_DB = [
+    // === 2026-04-17 ===
+    {
+        date: "2026-04-17",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "World-Value-Action (WAV) Model: Implicit Planning for VLA via World Model and Value Function       <span class=\"boss-tag\">Boss Pick</span>",
+        venue: "",
+        summary: "提出 WAV 模型，将世界模型、轨迹价值函数和动作生成统一在一个框架中。世界模型预测未来状态，价值函数评估长期效用，动作生成被形式化为在潜在空间中的推理过程。与显式规划不同，WAV 实现了隐式规划——在推理时在潜在空间中搜索高价值动作序列。在 CALVIN 和 SimplerEnv 基准上显著超越现有 VLA 基线。",
+        tags: [["VLA","green"],["World Model","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.14732"],["PDF","https://arxiv.org/pdf/2604.14732"]]
+    },
+    {
+        date: "2026-04-17",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "HiST-AT: Hierarchical Spatiotemporal Action Tokenizer for In-Context Imitation Learning",
+        venue: "",
+        summary: "提出分层时空动作分词器 HiST-AT，用于上下文模仿学习。通过分层编码时空动作结构，使模型能从少量演示中高效学习。在多个基准上取得 SOTA 表现，为 VLA 的上下文学习能力提供了新的动作表示方案。",
+        tags: [["VLA","green"],["模仿学习","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.15215"],["PDF","https://arxiv.org/pdf/2604.15215"]]
+    },
+    {
+        date: "2026-04-17",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "R3D: Revisiting 3D Policy Learning — Scaling Transformer-based 3D Diffusion Policies",
+        venue: "",
+        summary: "重新审视 3D 策略学习，通过扩展基于 Transformer 的 3D 扩散策略实现更好的操作性能。结合 3D 点云输入与扩散模型生成连续动作，在模拟和真实机器人操作中均有显著提升。",
+        tags: [["VLA","green"],["3D 策略","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.15281"],["PDF","https://arxiv.org/pdf/2604.15281"],["Project","https://r3d-policy.github.io"]]
+    },
+    {
+        date: "2026-04-17",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "SpaceMind: Modular Self-Evolving Embodied VLM Agent for Autonomous On-Orbit Servicing",
+        venue: "",
+        summary: "面向自主在轨服务的模块化自进化具身 VLM 智能体。SpaceMind 将视觉语言模型用于太空场景理解、任务规划和自主决策，实现在轨卫星维修等复杂操作的端到端执行。框架支持模块化升级和自我进化，代码已开源。",
+        tags: [["World Model","green"],["太空具身","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.14399"],["PDF","https://arxiv.org/pdf/2604.14399"],["Code","https://github.com/spacemind-ai/spacemind"]]
+    },
+    {
+        date: "2026-04-17",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "DockAnywhere: Data-Efficient Mobile Manipulation via Novel Demonstration Generation       <span class=\"boss-tag\">Boss Pick</span>",
+        venue: "",
+        summary: "移动操作是使机器人能够在家庭和工厂等广阔环境中进行交互的基本能力。DockAnywhere 将依赖停靠点的基座运动与跨视角不变的接触丰富操作技能进行解耦，通过新颖的演示生成方法大幅降低数据需求。已被 RA-L 录用，为数据高效的移动操作学习提供了新范式。",
+        tags: [["Robotics","green"],["移动操作","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.15023"],["PDF","https://arxiv.org/pdf/2604.15023"]]
+    },
+    {
+        date: "2026-04-17",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "Switch: Agile Skill Switching for Humanoid Robots via Skill Graph and Online Scheduler       <span class=\"boss-tag\">Boss Pick</span>",
+        venue: "",
+        summary: "针对人形机器人提出敏捷技能切换系统。构建技能图（Skill Graph），基于多技能运动数据中的运动学相似性连接不同技能节点，在线调度器能够在任意时刻实现无缝技能切换。整体分层多技能系统使人形机器人能够流畅执行复杂连续动作序列。",
+        tags: [["Robotics","green"],["人形机器人","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.14834"],["PDF","https://arxiv.org/pdf/2604.14834"]]
+    },
+    {
+        date: "2026-04-17",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "DEX-Mouse: A Low-Cost Portable Force-Feedback Interface for Dexterous Hand Data Collection",
+        venue: "",
+        summary: "仅需 $150 的低成本便携式力反馈接口，用于灵巧手数据采集。通过鼠标形态的设备实现直觉式灵巧操作遥操作，大幅降低数据采集门槛。系统已开源，为灵巧操作研究提供了经济可行的数据采集方案。",
+        tags: [["Robotics","green"],["灵巧手","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.15013"],["PDF","https://arxiv.org/pdf/2604.15013"],["Code","https://github.com/dex-mouse/dex-mouse"]]
+    },
+    {
+        date: "2026-04-17",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "HRDexDB: A Large-Scale Dexterous Hand Grasp Dataset (1400 Trials, 100 Objects, Multimodal)",
+        venue: "",
+        summary: "大规模灵巧手抓取数据集，包含 1400 次试验、100 个物体的多模态数据。涵盖视觉、触觉、力/力矩传感等多种模态，为灵巧抓取算法的训练和评估提供了标准化基准。",
+        tags: [["Robotics","green"],["灵巧抓取","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.14944"],["PDF","https://arxiv.org/pdf/2604.14944"]]
+    },
+    {
+        date: "2026-04-17",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "Differentiable Object Pose Connectivity Metrics for Regrasp Sequence Optimization",
+        venue: "",
+        summary: "提出可微的物体位姿连通性度量，用于重抓序列优化。将离散的重抓规划问题转化为连续可微优化，通过梯度下降高效搜索最优重抓序列，在复杂物体重定向任务中显著提升规划效率。",
+        tags: [["Robotics","green"],["重抓规划","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.14733"],["PDF","https://arxiv.org/pdf/2604.14733"]]
+    },
+    {
+        date: "2026-04-17",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "Vision-based Safe Human-Robot Collaboration with Conformal Prediction Uncertainty Guarantees",
+        venue: "",
+        summary: "基于视觉的安全人机协作框架，通过一致性预测（Conformal Prediction）提供不确定性保证。在人体姿态估计的不确定性量化基础上设计安全约束，确保机器人在人类附近作业时的碰撞安全性有严格的概率保证。",
+        tags: [["Robotics","green"],["安全协作","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.15221"],["PDF","https://arxiv.org/pdf/2604.15221"]]
+    },
+    {
+        date: "2026-04-17",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "GNPF-kCT: POMDP-based Object Search with Growing State Space and Hybrid Action Domain",
+        venue: "",
+        summary: "将室内物体搜索建模为高维 POMDP，提出 GNPF-kCT 在线求解器。核心包含增长状态空间、混合动作域、神经过程网络过滤和 k-center 聚类离散化。在 Gazebo 仿真和真实环境中超越 POMDP 基线和 LLM 方法，实现更快更可靠的目标定位。",
+        tags: [["Robotics","green"],["POMDP 搜索","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.14965"],["PDF","https://arxiv.org/pdf/2604.14965"],["Project","https://sites.google.com/view/gnpfkct"]]
+    },
+    {
+        date: "2026-04-17",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "CAL2M: Calibration-Free Kilometer-Level SLAM with Visual Geometry Foundation Models",
+        venue: "",
+        summary: "完全无标定的千米级视觉 SLAM 框架 CAL2M，兼容任意视觉几何基础模型。核心创新：辅助眼机制消除尺度模糊、对极引导的内参校正、锚点传播的非线性全局对齐。突破了传统方法对相机内参预标定的依赖。已投 IEEE TPAMI。",
+        tags: [["Robotics","green"],["SLAM","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.14795"],["PDF","https://arxiv.org/pdf/2604.14795"],["Code","https://github.com/IRMVLab/CALM"]]
+    },
+    {
+        date: "2026-04-17",
+        category: "Embodied AI",
+        categoryIcon: "🧩",
+        title: "CART: Context-Aware Terrain Adaptation for Legged Robots",
+        venue: "",
+        summary: "面向足式机器人的上下文感知地形适应框架 CART，通过环境上下文信息动态调整步态和运动策略。在多种复杂地形（崎岖路面、斜坡、台阶）上实现 45% 的稳定性提升，为足式机器人的野外部署提供了鲁棒的适应能力。",
+        tags: [["Embodied AI","green"],["地形适应","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.14344"],["PDF","https://arxiv.org/pdf/2604.14344"]]
+    },
+    {
+        date: "2026-04-17",
+        category: "Embodied AI",
+        categoryIcon: "🧩",
+        title: "ADAPT: Benchmarking Commonsense Planning under Unspecified Affordance Constraints",
+        venue: "",
+        summary: "新基准 ADAPT 用于评估具身智能体在未明确指定可供性约束下的常识推理与规划能力。揭示了当前大语言模型在处理隐含物理约束时的不足，为具身常识规划提供了系统化的评估框架。",
+        tags: [["Embodied AI","green"],["常识规划","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.14902"],["PDF","https://arxiv.org/pdf/2604.14902"]]
+    },
+    {
+        date: "2026-04-17",
+        category: "Embodied AI",
+        categoryIcon: "🧩",
+        title: "Abstract Sim2Real Transfer through Approximate Information States",
+        venue: "",
+        summary: "通过近似信息状态实现抽象的 Sim2Real 迁移。与传统依赖视觉/物理域随机化的方法不同，本方法在信息状态层面建立仿真到真实的桥接，提供了更具理论基础的迁移框架。",
+        tags: [["Embodied AI","green"],["Sim2Real","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.15289"],["PDF","https://arxiv.org/pdf/2604.15289"]]
+    },
+    {
+        date: "2026-04-17",
+        category: "RL",
+        categoryIcon: "🧠",
+        title: "Model-Based RL Exploiting Passive Body Dynamics for Biped Locomotion       <span class=\"boss-tag\">Boss Pick</span>",
+        venue: "",
+        summary: "利用被动身体动力学的基于模型强化学习方法实现双足运动。核心思想是让学习到的世界模型显式建模和利用机械结构的被动动力学特性（如摆腿的自然摆动），而非完全依赖主动控制。这是首个将被动动力学概念与 MBRL 结合的工作，为节能高效的足式运动提供了新思路。",
+        tags: [["RL","green"],["双足运动","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.14565"],["PDF","https://arxiv.org/pdf/2604.14565"]]
+    },
+    {
+        date: "2026-04-17",
+        category: "RL",
+        categoryIcon: "🧠",
+        title: "Nonasymptotic Theory of Gain-Dependent Error Dynamics in Behavior Cloning",
+        venue: "",
+        summary: "首篇从理论角度解释为什么柔顺控制器能改善行为克隆（BC）性能的工作。建立了增益依赖的误差动力学非渐近理论，证明低增益（高柔顺性）控制器能有效抑制 BC 的误差累积。对 VLA 策略部署时的控制器参数选择有直接指导意义。",
+        tags: [["RL","green"],["行为克隆理论","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.14484"],["PDF","https://arxiv.org/pdf/2604.14484"]]
+    },
+    {
+        date: "2026-04-17",
+        category: "RL",
+        categoryIcon: "🧠",
+        title: "Energy-based Regularization for Neural MPC in Omnidirectional Aerial Robots",
+        venue: "",
+        summary: "针对全向飞行机器人提出基于能量的正则化损失，用于训练学习残差动力学的神经网络 MPC。能量正则化鼓励 NN 产生稳定系统能量的控制修正，在真实飞行实验中 MAE 降低 23%，稳定性显著提升。代码已开源。",
+        tags: [["RL","green"],["神经 MPC","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.14678"],["PDF","https://arxiv.org/pdf/2604.14678"],["Code","https://github.com/johanneskbl/jsk_aerial_robot/tree/develop/neural_MPC"]]
+    },
+    {
+        date: "2026-04-17",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "MHHTOF: Momentum-Constrained Hybrid Heuristic Trajectory Optimization for Visually Impaired Scenarios",
+        venue: "",
+        summary: "面向视觉障碍场景的动量约束混合启发式轨迹优化框架。包含启发式轨迹采样、动量约束优化、残差增强 DRL 精细化和双阶段代价建模。在 Frenet 空间和笛卡尔空间融合多目标约束，收敛速度提升 2 倍，在复杂动态场景中实现更平稳安全的运动规划。",
+        tags: [["Multimodal","green"],["轨迹优化","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.14986"],["PDF","https://arxiv.org/pdf/2604.14986"]]
+    },
+    {
+        date: "2026-04-17",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "SpaceMind: 自主在轨服务的模块化自进化具身 VLM 智能体",
+        venue: "",
+        summary: "<em>（同 World Model 版块收录，此处列出多模态分类视角）</em>SpaceMind 结合视觉语言模型的多模态理解能力与具身控制，实现太空在轨操作的自主决策。模块化架构支持功能扩展与自我进化。",
+        tags: [["Multimodal","green"],["太空 AI","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.14399"],["PDF","https://arxiv.org/pdf/2604.14399"]]
+    },
+    {
+        date: "2026-04-17",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "智元机器人 2026 APC 全球合作伙伴大会（4月17日）",
+        venue: "",
+        summary: "智元机器人举办 2026 年度 APC 大会，发布 4 款新机器人（精灵 G 系列升级版、中型四足、灵犀 X 系列新机型、家庭服务机器人）、4 个基于 GO-2 的 AI 大模型、7 套行业解决方案。2026 年营收目标 5 亿元。面向工业、商业、家庭三大场景全面布局具身智能生态。",
+        tags: [["行业动态","green"],["具身智能","green"]],
+        links: []
+    },
+    {
+        date: "2026-04-17",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "高德发布四足机器人 ABot，携 M0/N0/World 三款模型亮相",
+        venue: "",
+        summary: "高德地图于 4 月 16 日发布自研四足机器人 ABot，搭载 M0（实景建模）、N0（导航决策）、World（世界模型）三款 AI 模型。目标应用于城市实景数据采集和室内外无缝导航。标志着地图服务商向机器人赛道延伸。",
+        tags: [["行业动态","green"],["四足机器人","green"]],
+        links: []
+    },
+    {
+        date: "2026-04-17",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "斯坦福 2026 AI Index 年度报告发布",
+        venue: "",
+        summary: "Stanford HAI 发布 2026 AI Index 年度报告。核心数据：中美 AI 差距缩小至 2.7%；全球 AI 投资达 2524 亿美元（同比+65%）；AI 产业应用率首超 80%；开源模型性能追平闭源；机器人和具身智能成为增长最快的细分赛道。",
+        tags: [["行业动态","green"],["AI 趋势","green"]],
+        links: []
+    },
+    {
+        date: "2026-04-17",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "CVPR 2026 机器人专题前瞻：具身智能论文数量翻倍",
+        venue: "",
+        summary: "CVPR 2026 将于 6 月举办，机器人与具身智能相关论文接收量较 2025 年增长约 100%。VLA、World Model、3D 操作策略等方向成为热点。Workshop 数量从 2025 年的 3 个增至 8 个，反映社区对具身视觉的高度关注。",
+        tags: [["行业动态","green"],["学术会议","green"]],
+        links: []
+    },
+    {
+        date: "2026-04-17",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "Open Source Robotics 动态：Dexterous Hand 开源生态持续壮大",
+        venue: "",
+        summary: "本周灵巧手开源生态新增两大资源：DEX-Mouse（$150 力反馈采集接口，已开源）和 HRDexDB（1400 次多模态抓取数据集）。加上此前的 LEAP Hand 和 Faive Hand，低成本灵巧操作研究的基础设施日趋完善。",
+        tags: [["行业动态","green"],["开源硬件","green"]],
+        links: []
+    },
     // === 2026-04-16 ===
     {
         date: "2026-04-16",
@@ -5500,6 +5751,13 @@ const PAPERS_DB = [
 ];
 
 const DAILY_OVERVIEW = {
+    "2026-04-17": {
+        bannerTitle: "",
+        bannerSubtitle: "",
+        picks: ["HiST-AT: Hierarchical Spatiotemporal Action Tokenizer for In-Context Imitation Learning","SpaceMind: Modular Self-Evolving Embodied VLM Agent for Autonomous On-Orbit Servicing","DEX-Mouse: A Low-Cost Portable Force-Feedback Interface for Dexterous Hand Data Collection","CAL2M: Calibration-Free Kilometer-Level SLAM with Visual Geometry Foundation Models","Energy-based Regularization for Neural MPC in Omnidirectional Aerial Robots"],
+        totalPapers: 20,
+        totalNews: 5
+    },
     "2026-04-16": {
         bannerTitle: "",
         bannerSubtitle: "",
