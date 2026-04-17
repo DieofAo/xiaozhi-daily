@@ -273,7 +273,7 @@ a.link-code {
   <h1>小小志科研日报</h1>
   <div class="date">2026 年 4 月 17 日 · 星期五</div>
   <div class="stats">
-    <div class="stat-item">arXiv 论文 <strong>20</strong> 篇</div>
+    <div class="stat-item">论文 <strong>21</strong> 篇</div>
     <div class="stat-item">行业动态 <strong>5</strong> 条</div>
     <div class="stat-item">数据源 arXiv · Google · 微信</div>
     <div class="stat-item">覆盖 7 大领域</div>
@@ -283,6 +283,7 @@ a.link-code {
 <div class="boss-alert">
   <h3>Boss 关注提醒</h3>
   <ul>
+    <li><span class="paper-id" style="color:#ff6b6b;">TODAY HEADLINE</span> <strong>π0.7 — Physical Intelligence</strong> — VLA 领域里程碑！首次展示组合泛化（Compositional Generalization），单一通用模型匹配/超越 RL 专家模型，零样本跨形态迁移叠衣服，被称为"机器人的 GPT-3 时刻"。公司估值 $11B <em>(VLA / Foundation Model)</em></li>
     <li><span class="paper-id">2604.15023</span> <strong>DockAnywhere</strong> — 数据高效的移动操作框架，将底盘运动与操作技能解耦，RA-L 已录用 <em>(Mobile Manipulation)</em></li>
     <li><span class="paper-id">2604.14834</span> <strong>Switch</strong> — 人形机器人敏捷技能切换，技能图 + 在线调度器实现无缝过渡 <em>(Humanoid / Whole-body)</em></li>
     <li><span class="paper-id">2604.14732</span> <strong>WAV Model</strong> — 世界模型 + 价值函数 + VLA 融合，潜空间推理做隐式规划 <em>(VLA + World Model)</em></li>
@@ -296,8 +297,26 @@ a.link-code {
   <h2>
     <span class="section-icon">🤖</span>
     <span class="section-title">VLA · 视觉-语言-动作</span>
-    <span class="section-count">3 篇</span>
+    <span class="section-count">4 篇</span>
   </h2>
+
+  <div class="paper boss-pick" style="border: 1px solid #ff6b6b44; background: linear-gradient(135deg, #2d1a1a 0%, #1a1d2e 100%);">
+    <div class="paper-title">π0.7: A Steerable Generalist Robotic Foundation Model with Emergent Capabilities
+      <span class="boss-tag">Boss Pick</span>
+    </div>
+    <div class="paper-meta">
+      <span class="tag tag-vla">VLA</span>
+      <span class="tag tag-robotics">Foundation Model</span>
+    </div>
+    <div class="paper-summary">
+      Physical Intelligence 发布的通用机器人基础模型 π0.7，被称为"机器人领域的 GPT-3 时刻"。核心突破在于<strong>组合泛化（Compositional Generalization）</strong>——模型首次展示了将不同场景学到的技能重新组合解决未见任务的能力。架构包含 VLA 主模型 + 动作专家 + 高层策略 + 轻量级世界模型（生成视觉子目标），通过多模态提示框架（语言指令 + 元数据 + 控制模态 + 视觉子目标）统一异构训练数据。关键结果：(1) 单一通用模型在折衣、做咖啡、折箱等任务上匹配/超越各任务独立 RL 专家模型 π*0.6；(2) UR5e 双臂零样本跨形态叠衣服，成功率与专家遥操作者首次使用该硬件相当；(3) 空气炸锅烤红薯仅凭 2 条间接相关数据 + 语言教练即可完成；(4) 能力增长呈超线性扩展。基于 Gemma3 4B，VLA 推理单张 H100 可达 38ms。80+ 作者包含 Chelsea Finn、Sergey Levine 等。公司估值 $56B，传闻新一轮融资估值 $11B。
+    </div>
+    <div class="paper-links">
+      <a class="link-paper" href="https://www.pi.website/blog/pi07" target="_blank">Blog</a>
+      <a class="link-pdf" href="https://www.pi.website/download/pi07.pdf" target="_blank">PDF</a>
+      <a class="link-project" href="https://github.com/Physical-Intelligence/openpi" target="_blank">OpenPI (GitHub)</a>
+    </div>
+  </div>
 
   <div class="paper boss-pick">
     <div class="paper-title">World-Value-Action (WAV) Model: Implicit Planning for VLA via World Model and Value Function
