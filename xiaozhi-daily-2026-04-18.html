@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>小小志科研日报 — 2026-04-18</title>
+<style>
+:root {
+  --bg: #0f1117;
+  --card-bg: #1a1d2e;
+  --card-border: #2a2d3e;
+  --text: #e0e0e0;
+  --text-muted: #8b8fa3;
+  --accent: #6c5ce7;
+  --accent-light: #a29bfe;
+  --vla: #e17055;
+  --wam: #00b894;
+  --robotics: #0984e3;
+  --embodied: #6c5ce7;
+  --rl: #fdcb6e;
+  --llm: #fd79a8;
+  --vlm: #00cec9;
+  --multimodal: #e056a0;
+  --agent: #74b9ff;
+  --info: #636e72;
+  --highlight-bg: linear-gradient(135deg, #2d1f4e 0%, #1a1d2e 100%);
+  --boss-tag-bg: #ff6b6b;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', sans-serif;
+  line-height: 1.7;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+.header {
+  text-align: center;
+  padding: 40px 0 30px;
+  border-bottom: 1px solid var(--card-border);
+  margin-bottom: 30px;
+}
+.header h1 {
+  font-size: 28px;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--accent-light), var(--vla));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 8px;
+}
+.header .date {
+  color: var(--text-muted);
+  font-size: 14px;
+}
+.header .stats {
+  margin-top: 12px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.header .stat-item {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 8px;
+  padding: 6px 14px;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+.header .stat-item strong {
+  color: var(--accent-light);
+}
+.boss-alert {
+  background: linear-gradient(135deg, #2d1a1a 0%, #1a1d2e 100%);
+  border: 1px solid #ff6b6b44;
+  border-radius: 12px;
+  padding: 18px 22px;
+  margin-bottom: 28px;
+}
+.boss-alert h3 {
+  color: #ff6b6b;
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+.boss-alert ul {
+  list-style: none;
+  padding: 0;
+}
+.boss-alert li {
+  padding: 6px 0;
+  font-size: 14px;
+  border-bottom: 1px solid #ffffff0a;
+}
+.boss-alert li:last-child { border-bottom: none; }
+.boss-alert .tag-boss {
+  background: var(--boss-tag-bg);
+  color: #fff;
+  font-size: 11px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-right: 6px;
+  font-weight: 600;
+}
+.section {
+  margin-bottom: 32px;
+}
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--card-border);
+}
+.section-icon {
+  font-size: 22px;
+}
+.section-title {
+  font-size: 18px;
+  font-weight: 600;
+}
+.section-count {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  padding: 2px 10px;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+.paper {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  padding: 18px 20px;
+  margin-bottom: 14px;
+  transition: border-color 0.2s;
+}
+.paper:hover {
+  border-color: var(--accent);
+}
+.paper.highlight {
+  background: var(--highlight-bg);
+  border-color: var(--accent);
+}
+.paper-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #fff;
+}
+.paper-meta {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+.tag {
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+}
+.tag-vla { background: var(--vla); color: #fff; }
+.tag-wam { background: var(--wam); color: #fff; }
+.tag-robotics { background: var(--robotics); color: #fff; }
+.tag-embodied { background: var(--embodied); color: #fff; }
+.tag-rl { background: var(--rl); color: #333; }
+.tag-llm { background: var(--llm); color: #fff; }
+.tag-vlm { background: var(--vlm); color: #fff; }
+.tag-multimodal { background: var(--multimodal); color: #fff; }
+.tag-agent { background: var(--agent); color: #333; }
+.tag-info { background: var(--info); color: #fff; }
+.paper-summary {
+  font-size: 14px;
+  color: var(--text);
+  line-height: 1.8;
+  margin-bottom: 12px;
+}
+.paper-links {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.paper-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  text-decoration: none;
+  border: 1px solid var(--card-border);
+  color: var(--accent-light);
+  transition: all 0.2s;
+}
+.paper-links a:hover {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+.info-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  padding: 16px 20px;
+  margin-bottom: 12px;
+  transition: border-color 0.2s;
+}
+.info-card:hover {
+  border-color: var(--info);
+}
+.info-card.highlight {
+  background: var(--highlight-bg);
+  border-color: var(--accent);
+}
+.info-title {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: #fff;
+}
+.info-source {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+.info-summary {
+  font-size: 14px;
+  color: var(--text);
+  line-height: 1.7;
+  margin-bottom: 10px;
+}
+.info-links {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.info-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  text-decoration: none;
+  border: 1px solid var(--card-border);
+  color: var(--accent-light);
+  transition: all 0.2s;
+}
+.info-links a:hover {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+.weekend-note {
+  background: linear-gradient(135deg, #1e2a3a 0%, #1a1d2e 100%);
+  border: 1px solid #34495e55;
+  border-radius: 12px;
+  padding: 16px 22px;
+  margin-bottom: 28px;
+  text-align: center;
+}
+.weekend-note .icon { font-size: 24px; margin-bottom: 6px; }
+.weekend-note .title { font-size: 14px; font-weight: 600; color: var(--accent-light); margin-bottom: 4px; }
+.weekend-note .desc { font-size: 13px; color: var(--text-muted); }
+.footer {
+  text-align: center;
+  padding: 30px 0 20px;
+  border-top: 1px solid var(--card-border);
+  margin-top: 40px;
+  color: var(--text-muted);
+  font-size: 13px;
+}
+.footer .search-stats {
+  margin-top: 12px;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.footer .search-stats span {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 6px;
+  padding: 4px 10px;
+  font-size: 12px;
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>小小志科研日报</h1>
+  <div class="date">2026-04-18 周六 &nbsp;|&nbsp; Vol. 周末特刊</div>
+  <div class="stats">
+    <span class="stat-item">论文 <strong>5</strong> 篇</span>
+    <span class="stat-item">行业动态 <strong>7</strong> 条</span>
+    <span class="stat-item">来源 <strong>6</strong> 个</span>
+    <span class="stat-item">总计 <strong>12</strong> 条</span>
+  </div>
+</div>
+
+<div class="weekend-note">
+  <div class="icon">📅</div>
+  <div class="title">周六特刊 — arXiv 不更新，聚焦 HuggingFace 热门论文 + 行业重磅动态</div>
+  <div class="desc">本期亮点：智元 APC 2026 全线发布（5 款硬件 + 8 大模型） | 明日人形机器人半马 | ATEC2026 具身图灵测试</div>
+</div>
+
+<div class="boss-alert">
+  <h3>🔥 Boss 重点关注</h3>
+  <ul>
+    <li><span class="tag-boss">关注</span> <strong>HiVLA</strong> — 层次化 VLA 解耦高层规划与低层控制，DiT 动作专家 + 视觉定位，长时程精细操控 SOTA</li>
+    <li><span class="tag-boss">关注</span> <strong>智元 APC 2026</strong> — 第 10,000 台下线，G2 Air 单臂移动操作、OmniHand 3 Ultra-T 22 DoF 灵巧手、GO-2 Action CoT VLA 基座</li>
+    <li><span class="tag-boss">关注</span> <strong>人形机器人半马</strong> — 明日开跑，100+ 队伍参赛（含宇树、天工Ultra、荣耀），近四成自主导航</li>
+    <li><span class="tag-boss">关注</span> <strong>ATEC2026</strong> — 蚂蚁集团主办具身 AI 极限挑战赛，仿真→真实世界全链评估，总奖金 $34 万</li>
+  </ul>
+</div>
+
+<!-- =================== VLA =================== -->
+<div class="section" id="vla">
+  <div class="section-header">
+    <span class="section-icon">🤖</span>
+    <span class="section-title">VLA &middot; Vision-Language-Action</span>
+    <span class="section-count">1 篇</span>
+  </div>
+
+  <div class="paper highlight">
+    <div class="paper-title">HiVLA: A Visual-Grounded-Centric Hierarchical Embodied Manipulation System</div>
+    <div class="paper-meta">
+      <span class="tag tag-vla">VLA</span>
+      <span class="tag tag-embodied">层次化操控</span>
+    </div>
+    <div class="paper-summary">
+      针对端到端 VLA 模型在窄域控制数据微调后丧失 VLM 深层推理能力的根本矛盾，HiVLA 提出以视觉定位为核心的层次化框架：高层 VLM 规划器执行任务分解与目标边界框生成（保留零样本推理），低层采用基于流匹配的扩散 Transformer（DiT）动作专家，配备级联交叉注意力依次融合全局上下文、高分辨率目标裁剪和技能语义。两组件独立可改进，在仿真和真实世界中显著优于端到端基线，尤其在长时域技能组合和杂乱场景小物体精细操控表现突出。
+    </div>
+    <div class="paper-links">
+      <a class="link-paper" href="https://arxiv.org/abs/2604.14125">📄 arXiv</a>
+      <a class="link-pdf" href="https://arxiv.org/pdf/2604.14125">📋 PDF</a>
+      <a href="https://tianshuoy.github.io/HiVLA-page/">🏠 Project</a>
+    </div>
+  </div>
+</div>
+
+<!-- =================== World Model =================== -->
+<div class="section" id="wam">
+  <div class="section-header">
+    <span class="section-icon">🌍</span>
+    <span class="section-title">World Model</span>
+    <span class="section-count">1 篇</span>
+  </div>
+
+  <div class="paper highlight">
+    <div class="paper-title">HY-World 2.0: A Multi-Modal World Model for Reconstructing, Generating, and Simulating 3D Worlds</div>
+    <div class="paper-meta">
+      <span class="tag tag-wam">World Model</span>
+      <span class="tag tag-multimodal">3D 生成</span>
+    </div>
+    <div class="paper-summary">
+      腾讯混元团队发布 HY-World 2.0，一个多模态 3D 世界模型框架，支持从文本、单/多视角图像和视频输入生成 3D 世界。四阶段管线：HY-Pano 2.0（全景保真度增强）→ WorldNav（轨迹规划与 3D 场景理解）→ WorldStereo 2.0（一致性记忆关键帧视图生成）→ WorldMirror 2.0（前馈通用 3D 预测）。采用 3D 高斯泼溅表征，配套 WorldLens 高性能渲染平台（引擎无关架构 + 自动 IBL 光照 + 碰撞检测 + 角色交互）。在开源方法中达到 SOTA，性能媲美闭源 Marble 模型。代码权重已开源。
+    </div>
+    <div class="paper-links">
+      <a class="link-paper" href="https://arxiv.org/abs/2604.14268">📄 arXiv</a>
+      <a class="link-pdf" href="https://arxiv.org/pdf/2604.14268">📋 PDF</a>
+      <a href="https://3d-models.hunyuan.tencent.com/world/">🏠 Project</a>
+      <a href="https://github.com/Tencent-Hunyuan/HY-World-2.0">💻 Code (1022⭐)</a>
+    </div>
+  </div>
+</div>
+
+<!-- =================== Multimodal / RL =================== -->
+<div class="section" id="multimodal">
+  <div class="section-header">
+    <span class="section-icon">🎨</span>
+    <span class="section-title">Multimodal &middot; RL</span>
+    <span class="section-count">1 篇</span>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">RAD-2: Scaling Reinforcement Learning in a Generator-Discriminator Framework</div>
+    <div class="paper-meta">
+      <span class="tag tag-rl">RL</span>
+      <span class="tag tag-multimodal">自动驾驶</span>
+    </div>
+    <div class="paper-summary">
+      提出生成器-判别器闭环自动驾驶规划框架：扩散生成器产出多样化轨迹候选，RL 优化的判别器根据长期驾驶质量重排序。核心创新包括时序一致性组相对策略优化（TC-GRPO，缓解信用分配）、在策略生成器优化（闭环反馈→结构化纵向信号）、BEV-Warp 高吞吐仿真环境（BEV 特征空间直接闭环评估）。解耦生成与评估避免稀疏标量奖励直接作用于高维轨迹空间。实验：碰撞率降低 56%，真实部署中城市场景驾驶平滑性显著提升。
+    </div>
+    <div class="paper-links">
+      <a class="link-paper" href="https://arxiv.org/abs/2604.15308">📄 arXiv</a>
+      <a class="link-pdf" href="https://arxiv.org/pdf/2604.15308">📋 PDF</a>
+      <a href="https://hgao-cv.github.io/RAD-2/">🏠 Project</a>
+      <a href="https://github.com/hustvl/RAD">💻 Code (205⭐)</a>
+    </div>
+  </div>
+</div>
+
+<!-- =================== Agent / LLM =================== -->
+<div class="section" id="agent">
+  <div class="section-header">
+    <span class="section-icon">🧩</span>
+    <span class="section-title">Agent &middot; LLM</span>
+    <span class="section-count">2 篇</span>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">Dive into Claude Code: The Design Space of Today's and Future AI Agent Systems</div>
+    <div class="paper-meta">
+      <span class="tag tag-agent">Agent</span>
+      <span class="tag tag-llm">架构分析</span>
+    </div>
+    <div class="paper-summary">
+      VILA Lab 对 Claude Code 进行首次全面逆向架构分析：基于公开 TypeScript 源码识别出五大设计哲学（人类决策权威、安全保障、可靠执行、能力放大、上下文适应性）映射为 13 条设计原则。核心架构是简单 while 循环（调用模型→运行工具→重复），但外围系统复杂——7 模式权限系统 + ML 分类器、5 层上下文压缩流水线、4 种扩展机制（MCP/插件/技能/钩子）、worktree 隔离子代理。与 OpenClaw 对比揭示部署场景对架构决策的深刻影响，提出 6 个开放设计方向。
+    </div>
+    <div class="paper-links">
+      <a class="link-paper" href="https://arxiv.org/abs/2604.14228">📄 arXiv</a>
+      <a class="link-pdf" href="https://arxiv.org/pdf/2604.14228">📋 PDF</a>
+      <a href="https://github.com/VILA-Lab/Dive-into-Claude-Code">💻 Code (100⭐)</a>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">DR3-Eval: Towards Realistic and Reproducible Deep Research Evaluation</div>
+    <div class="paper-meta">
+      <span class="tag tag-agent">Agent</span>
+      <span class="tag tag-llm">评测基准</span>
+    </div>
+    <div class="paper-summary">
+      提出面向深度研究代理（DRA）的真实且可复现评测基准 DR3-Eval。针对动态网络和模糊任务定义的评估痛点，为每个任务构建静态研究沙箱语料库（含支持文档、干扰项和噪声），模拟开放网络复杂性同时保证完全可验证。五维评估框架：信息召回率、事实准确性、引用覆盖率、指令遵循度、深度质量，已验证与人类判断高度一致。实验表明基准极具挑战性，揭示当前 SOTA 模型在检索鲁棒性和幻觉控制方面的关键失败模式。
+    </div>
+    <div class="paper-links">
+      <a class="link-paper" href="https://arxiv.org/abs/2604.14683">📄 arXiv</a>
+      <a class="link-pdf" href="https://arxiv.org/pdf/2604.14683">📋 PDF</a>
+      <a href="https://github.com/NJU-LINK/DR3-Eval">💻 Code (18⭐)</a>
+    </div>
+  </div>
+</div>
+
+<!-- =================== 行业动态 =================== -->
+<div class="section" id="informations">
+  <div class="section-header">
+    <span class="section-icon">📰</span>
+    <span class="section-title">Informations &middot; 行业动态</span>
+    <span class="section-count">7 条</span>
+  </div>
+
+  <div class="info-card highlight">
+    <div class="info-title">智元 APC 2026 全线发布：5 款硬件 + 8 大模型，宣布「部署态元年」</div>
+    <div class="info-source">PRNewswire / 智元 · 2026-04-17/18</div>
+    <div class="info-summary">
+      2026 智元合作伙伴大会（APC 2026）于 4 月 17-18 日在上海举行，30+ 国家 2500+ 合作伙伴参会，宣布「部署态元年」。五款新硬件：<strong>A3</strong>（173cm/55kg 舞台人形，0.218kW/kg 功率重量比，10h 续航，100 台同步表演）、<strong>G2 Air</strong>（轻量单臂移动操作，7DoF/3kg 负载/1.5m/s）、<strong>OmniHand 3 Ultra-T</strong>（22+3 DoF 腱驱灵巧手，500g/10:1 负载比/全手 3D 触觉/掌心摄像头）、<strong>D2 Max</strong>（全球首款 L3 全地形自主四足）、<strong>MEgo</strong>（无本体数据采集系统 + Engine 自动处理平台）。八大模型按「一体三智」架构：运动智能 BFM（单次演示模仿）+ GCFM（文本/音频/视频→动作）；操作智能 AGIBOT WORLD 2026（生产级开源数据集）+ GO-2（Action Chain-of-Thought VLA 基座）+ GE-2（世界行动模型）+ Genie Sim 3.0（NL→数字孪生 Sim-to-Real）+ SOP（在线学习系统）；交互智能 WITA Omni（业界首个机器人原生端到端多模态交互模型）。关键里程碑：第 10,000 台机器人下线。
+    </div>
+    <div class="info-links">
+      <a href="https://laotiantimes.com/2026/04/18/agibot-unveils-new-generation-of-embodied-ai-robots-and-models-accelerating-real-world-deployment-of-physical-ai/">🔗 英文详情</a>
+      <a href="https://www.prnewswire.com/apac/news-releases/agibot-declares-2026-deployment-year-one--at-apc-2026-accelerating-the-era-of-embodied-ai-productivity-302746179.html">🔗 PRNewswire</a>
+      <a href="https://news.qq.com/rain/a/20260417A08M6700">🔗 腾讯新闻</a>
+    </div>
+  </div>
+
+  <div class="info-card highlight">
+    <div class="info-title">2026 北京亦庄人形机器人半程马拉松 — 明日鸣枪，100+ 队伍参赛</div>
+    <div class="info-source">CCTV / 澎湃 / 新华网 · 2026-04-18</div>
+    <div class="info-summary">
+      4 月 19 日 7:30 北京亦庄开跑，参赛规模比去年增长近 5 倍，超 100 支队伍、近四成选择全自主导航（无领航员/无外部信号）。明星队伍：<strong>天工 Ultra</strong>（去年冠军，3 台全自主，自研高扭矩关节+液冷散热）、<strong>宇树科技</strong>（首次官方参赛，H1 微调版，内测最佳半马 50 分钟，最高速超 10m/s）、<strong>荣耀「闪电」</strong>（4/11 测试赛第一名）、松延动力小顽童 N2（去年亚军）等。赛制亮点：遥控组成绩×1.2 加权鼓励自主、自主导航人工干预超 3 次自动转遥控、北斗厘米级定位肩章、7 个补给点、「机器人救护车」。奖项含最佳续航奖（不换电完赛）、最佳步态控制奖（线上票选最美跑姿）。
+    </div>
+    <div class="info-links">
+      <a href="https://news.cctv.com/2026/04/18/ARTII20cxd63D74BYuwP3uYE260418.shtml">🔗 CCTV</a>
+      <a href="https://www.thepaper.cn/newsDetail_forward_32993801">🔗 澎湃新闻</a>
+      <a href="https://www.xinhuanet.com/20260418/ac7ce69bb64742fba6eabe293438ec34/c.html">🔗 新华网</a>
+    </div>
+  </div>
+
+  <div class="info-card">
+    <div class="info-title">ATEC2026 具身 AI 极限挑战赛启动 —— 被称为「具身 AI 图灵测试」</div>
+    <div class="info-source">Business Wire / 蚂蚁集团 · 2026-04-17</div>
+    <div class="info-summary">
+      蚂蚁集团旗下 ATEC 联合港中文、上海创新研究院等主办，清华、北大、复旦等联合组织。评估腿式机器人（人形/四足+机械臂/轮腿）在开放动态环境中的运动+操作+环境改造综合能力。赛程：4-5 月报名 → 5-6 月仿真资格赛（Robot Hiking + Table Clean-up）→ 9 月匹兹堡 / 10 月上海 / 11 月香港真实世界初赛 → 12 月香港室外总决赛。总奖金 $34 万 + 算力资源 + 差旅补贴。框架核心：仿真→真实世界迁移→真实世界验证，评估 Sim-to-Real 可靠性。
+    </div>
+    <div class="info-links">
+      <a href="https://www.businesswire.com/news/home/20260417363920/en/ATEC2026-Launches-as-the-Turing-Test-for-Embodied-AI-Challenging-Robots-to-Survive-the-Real-World">🔗 Business Wire</a>
+      <a href="https://www.atecup.com/competitions/ATEC2026">🔗 官方报名</a>
+    </div>
+  </div>
+
+  <div class="info-card">
+    <div class="info-title">OpenAI 关闭 Sora 视频生成项目，CPO Kevin Weil 和技术负责人 Bill Peebles 离职</div>
+    <div class="info-source">TechCrunch / The Verge · 2026-04-17</div>
+    <div class="info-summary">
+      OpenAI 正式关闭旗下 AI 视频生成项目 Sora，科学团队解散。首席产品官 Kevin Weil 和 Sora 技术负责人 Bill Peebles 均已离职。此举标志着 OpenAI 战略重心从消费者「登月项目」向企业 AI 解决方案转移，进一步聚焦核心模型能力建设和企业市场变现。
+    </div>
+    <div class="info-links">
+      <a href="https://aitoolly.com/ai-news/2026-04-18">🔗 AI News Digest</a>
+    </div>
+  </div>
+
+  <div class="info-card">
+    <div class="info-title">融资热潮：DeepSeek 拟 $100 亿估值融 $3 亿，Cursor 拟 $500 亿估值融 $20 亿+</div>
+    <div class="info-source">Tech in Asia / TechCrunch · 2026-04-17</div>
+    <div class="info-summary">
+      此前多次拒绝 VC 和大厂投资的 DeepSeek 态度转变，拟以 $100 亿估值融资 $3 亿。AI 代码编辑器 Cursor 企业增长迅猛，本轮拟由 a16z 和 Thrive Capital 领投，估值 $500 亿融资超 $20 亿。两大融资反映 AI 基础工具赛道的巨大市场信心。
+    </div>
+    <div class="info-links">
+      <a href="https://aitoolly.com/ai-news/2026-04-18">🔗 AI News Digest</a>
+    </div>
+  </div>
+
+  <div class="info-card">
+    <div class="info-title">它石智航（TARS AI）完成 $4.55 亿融资，刷新中国具身智能单轮纪录</div>
+    <div class="info-source">OLA China · 2026-04-16</div>
+    <div class="info-summary">
+      上海具身智能创业公司它石智航（TARS AI）4 月 16 日宣布完成新一轮 $4.55 亿融资，刷新中国具身智能领域单轮融资纪录。结合此前 Q1 中国具身 AI 领域总融资已超 2025 全年一半，产业资本加速涌入。
+    </div>
+    <div class="info-links">
+      <a href="https://olachina.org/tars-ai/">🔗 详情</a>
+    </div>
+  </div>
+
+  <div class="info-card">
+    <div class="info-title">NVIDIA Nemotron-OCR v2：合成数据驱动的多语言高速 OCR 模型</div>
+    <div class="info-source">Hugging Face Blog · 2026-04-17</div>
+    <div class="info-summary">
+      NVIDIA 发布 Nemotron-OCR v2，通过合成数据策略解决多语种 OCR 数据稀缺问题，实现高速多语言文字识别。已通过 PyPI 发布 Python 包，可直接集成。
+    </div>
+    <div class="info-links">
+      <a href="https://aitoolly.com/ai-news/2026-04-18">🔗 AI News Digest</a>
+    </div>
+  </div>
+
+</div>
+
+<!-- =================== Footer =================== -->
+<div class="footer">
+  <p>小小志科研日报 &middot; 自动生成于 2026-04-18 20:50 CST</p>
+  <p style="margin-top:6px;">关注：VLA &middot; Robotics &middot; World Model &middot; Embodied AI &middot; RL &middot; LLM &middot; Agent</p>
+  <div class="search-stats">
+    <span>🔍 arXiv (周六休刊)</span>
+    <span>🤗 HuggingFace 热门 8 篇</span>
+    <span>🌐 Google 搜索 30+ 条</span>
+    <span>📱 中文社区 20+ 条</span>
+    <span>📊 去重后收录 12 条</span>
+  </div>
+</div>
+
+</body>
+</html>
