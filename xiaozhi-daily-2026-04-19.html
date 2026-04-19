@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>小小志科研日报 — 2026-04-19</title>
+<style>
+:root {
+  --bg: #0f1117;
+  --card-bg: #1a1d2e;
+  --card-border: #2a2d3e;
+  --text: #e0e0e0;
+  --text-muted: #8b8fa3;
+  --accent: #6c5ce7;
+  --accent-light: #a29bfe;
+  --vla: #e17055;
+  --wam: #00b894;
+  --robotics: #0984e3;
+  --embodied: #6c5ce7;
+  --rl: #fdcb6e;
+  --llm: #fd79a8;
+  --vlm: #00cec9;
+  --multimodal: #e056a0;
+  --agent: #74b9ff;
+  --info: #636e72;
+  --highlight-bg: linear-gradient(135deg, #2d1f4e 0%, #1a1d2e 100%);
+  --boss-tag-bg: #ff6b6b;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', sans-serif;
+  line-height: 1.7;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+.header {
+  text-align: center;
+  padding: 40px 0 30px;
+  border-bottom: 1px solid var(--card-border);
+  margin-bottom: 30px;
+}
+.header h1 {
+  font-size: 28px;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--accent-light), var(--vla));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 8px;
+}
+.header .date {
+  color: var(--text-muted);
+  font-size: 14px;
+}
+.header .stats {
+  margin-top: 12px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.header .stats span {
+  font-size: 13px;
+  color: var(--text-muted);
+  background: var(--card-bg);
+  padding: 4px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--card-border);
+}
+.section {
+  margin-bottom: 36px;
+}
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--card-border);
+}
+.section-icon {
+  font-size: 22px;
+}
+.section-title {
+  font-size: 18px;
+  font-weight: 600;
+}
+.section-count {
+  font-size: 12px;
+  color: var(--text-muted);
+  background: var(--card-bg);
+  padding: 2px 8px;
+  border-radius: 10px;
+  border: 1px solid var(--card-border);
+}
+.paper {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 14px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.paper:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+.paper.highlight {
+  background: var(--highlight-bg);
+  border-color: var(--accent);
+}
+.paper-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #fff;
+}
+.paper-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+.tag {
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-weight: 500;
+}
+.tag-vla { background: rgba(225,112,85,0.2); color: var(--vla); }
+.tag-wam { background: rgba(0,184,148,0.2); color: var(--wam); }
+.tag-robotics { background: rgba(9,132,227,0.2); color: var(--robotics); }
+.tag-embodied { background: rgba(108,92,231,0.2); color: var(--embodied); }
+.tag-rl { background: rgba(253,203,110,0.2); color: var(--rl); }
+.tag-llm { background: rgba(253,121,168,0.2); color: var(--llm); }
+.tag-vlm { background: rgba(0,206,201,0.2); color: var(--vlm); }
+.tag-multimodal { background: rgba(224,86,160,0.2); color: var(--multimodal); }
+.tag-agent { background: rgba(116,185,255,0.2); color: var(--agent); }
+.tag-info { background: rgba(99,110,114,0.2); color: var(--info); }
+.tag-boss { background: var(--boss-tag-bg); color: #fff; font-weight: 700; }
+.paper-summary {
+  font-size: 14px;
+  color: var(--text);
+  line-height: 1.8;
+  margin-bottom: 12px;
+}
+.paper-links {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.paper-links a {
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  text-decoration: none;
+  border: 1px solid var(--card-border);
+  color: var(--accent-light);
+  transition: all 0.2s;
+}
+.paper-links a:hover {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+.info-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  padding: 18px;
+  margin-bottom: 12px;
+}
+.info-card .paper-title {
+  font-size: 15px;
+}
+.info-card .paper-summary {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+.footer {
+  text-align: center;
+  padding: 30px 0;
+  border-top: 1px solid var(--card-border);
+  margin-top: 40px;
+  color: var(--text-muted);
+  font-size: 13px;
+}
+.footer .sig {
+  margin-top: 8px;
+  font-style: italic;
+}
+@media (max-width: 600px) {
+  body { padding: 12px; }
+  .header h1 { font-size: 22px; }
+  .paper { padding: 14px; }
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>小小志科研日报</h1>
+  <div class="date">2026-04-19 Sunday | Vol. W16-7</div>
+  <div class="stats">
+    <span>VLA 1 篇</span>
+    <span>Robotics 3 篇</span>
+    <span>Embodied AI 1 篇</span>
+    <span>行业动态 8 条</span>
+  </div>
+</div>
+
+<!-- ===== VLA ===== -->
+<div class="section" id="vla">
+  <div class="section-header">
+    <span class="section-icon">🤖</span>
+    <span class="section-title">VLA · Vision-Language-Action</span>
+    <span class="section-count">1 篇</span>
+  </div>
+
+  <div class="paper highlight">
+    <div class="paper-title">π0.7: A Steerable Generalist Robotic Foundation Model with Emergent Capabilities</div>
+    <div class="paper-meta">
+      <span class="tag tag-vla">VLA</span>
+      <span class="tag tag-vla">涌现能力</span>
+      <span class="tag tag-boss">Boss 关注</span>
+    </div>
+    <div class="paper-summary">
+      Physical Intelligence (PI) 发布 π0.7 ——首个展示组合泛化涌现能力的通用 VLA 基础模型。核心创新：(1) 多模态提示框架（语言指令+元数据+控制模态+视觉子目标）使模型能精确控制执行策略；(2) 将训练数据中的技能拆解为可复用动作原语(action primitives)，通过语言动态组合实现训练未见任务——如仅靠口述指导即可零样本完成空气炸锅烹饪操作；(3) 跨本体泛化：在训练集未包含的 UR5e 机器人上零样本折叠衣物成功率 85.6%，接近 375 小时经验人类操作员的 90.9%；(4) 单一通用模型在所有任务上达到/超过专用 RL 专家模型(π*0.6)性能，终结了"每任务微调"范式。PI 估值 $110 亿，核心团队含 Chelsea Finn & Sergey Levine。对世界模型路线形成直接竞争压力——证明 VLA 路线可通过技能重组而非数据堆叠实现智能突破。
+    </div>
+    <div class="paper-links">
+      <a href="https://www.pi.website/blog/pi07" target="_blank">官方博客</a>
+      <a href="https://www.huxiu.com/article/4851643.html" target="_blank">深度解读</a>
+      <a href="https://techcrunch.com/2026/04/16/physical-intelligence-a-hot-robotics-startup-says-its-new-robot-brain-can-figure-out-tasks-it-was-never-taught/" target="_blank">TechCrunch</a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Robotics ===== -->
+<div class="section" id="robotics">
+  <div class="section-header">
+    <span class="section-icon">🦾</span>
+    <span class="section-title">Robotics · 机器人</span>
+    <span class="section-count">3 篇</span>
+  </div>
+
+  <div class="paper highlight">
+    <div class="paper-title">2026 人形机器人半马：荣耀"闪电"50分26秒夺冠，超越人类世界纪录 11%</div>
+    <div class="paper-meta">
+      <span class="tag tag-robotics">Robotics</span>
+      <span class="tag tag-robotics">人形机器人</span>
+      <span class="tag tag-boss">Boss 关注</span>
+    </div>
+    <div class="paper-summary">
+      今日（4/19）2026 北京亦庄人形机器人半程马拉松正式开跑！全球首个人形机器人马拉松品牌赛事第二届，300+台机器人、100+支队伍参赛（较去年扩容5倍），来自13个省份+5支海外队伍。荣耀"闪电"机器人包揽前三：冠军齐天大圣队 50分26秒、亚军雷霆闪电队 50分56秒、季军星火燎原队 53分01秒，三支队伍均采用自主导航。冠军成绩超越人类半马世界纪录(57分20秒)近7分钟！赛制创新：自主导航组(系数1.0)与遥控组(系数1.2)同赛道混合计时，鼓励自主导航。"闪电"机器人 169cm 身高、搭载自研高动态运动系统，具备自主感知导航+高速奔跑+强地形适应能力。赛道 21.0975km 涵盖城市主干道、弯道、赛车路段、公园生态等10余种复杂地形。
+    </div>
+    <div class="paper-links">
+      <a href="https://news.qq.com/rain/a/20260419A030AS00" target="_blank">腾讯新闻</a>
+      <a href="https://www.ithome.com/0/940/825.htm" target="_blank">IT之家</a>
+      <a href="https://news.10jqka.com.cn/20260419/c676098658.shtml" target="_blank">同花顺</a>
+      <a href="http://bj.news.cn/20260419/29661d1bbfab45b7b46c4ec514e7dde9/c.html" target="_blank">新华网</a>
+    </div>
+  </div>
+
+  <div class="paper highlight">
+    <div class="paper-title">宇树 H1 排位赛 1.9km/4分13秒：按比例打破人类 1500 米世界纪录 + 百米峰值 10m/s</div>
+    <div class="paper-meta">
+      <span class="tag tag-robotics">Robotics</span>
+      <span class="tag tag-robotics">运动性能</span>
+      <span class="tag tag-boss">Boss 关注</span>
+    </div>
+    <div class="paper-summary">
+      宇树科技 H1 人形机器人在 4 月 16 日排位赛中自主跑完 1.9 公里多弯道赛程仅用时 4分13秒，按比例换算已打破人类 1500 米世界纪录(3分26秒)。此前 4 月 11 日的百米速度测试中实测峰值速度达 10m/s（时速 36km），逼近博尔特的 10.44m/s 平均配速。创始人王兴兴曾预言"年中将超越博尔特突破 10 秒"。去年首届冠军成绩约 2 小时 40 分钟，今年荣耀冠军 50 分 26 秒——一年内人形机器人运动性能实现数倍飞跃。这标志着人形机器人的运动控制、能量效率和动态稳定性已进入"超人类"阶段。
+    </div>
+    <div class="paper-links">
+      <a href="https://news.qq.com/rain/a/20260419A034XD00" target="_blank">详细报道</a>
+      <a href="https://www.ithome.com/0/940/820.htm" target="_blank">IT之家</a>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">Gemini Robotics-ER 1.6: 增强具身推理——仪表读取+空间推理+多视角理解</div>
+    <div class="paper-meta">
+      <span class="tag tag-robotics">Robotics</span>
+      <span class="tag tag-embodied">具身推理</span>
+    </div>
+    <div class="paper-summary">
+      Google DeepMind 4月14日发布 Gemini Robotics-ER 1.6，作为机器人的"认知大脑"。三大核心新能力：(1) 指向(Pointing)——精准物体检测/计数/关系逻辑/运动推理，无幻觉，可作为中间推理步骤用于度量估算；(2) 成功检测(Success Detection)——多视角推理判断任务完成状态，解决遮挡/光线差场景；(3) 仪表读取(Instrument Reading)——全新能力，源自与 Boston Dynamics 合作，可读取圆形压力表/液位计/数字显示器，结合代理式视觉(Agentic Vision)+放大+指向+代码执行达亚刻度精度。安全性为历代最佳（+6%文本/+10%视频安全场景评分）。已通过 Gemini API 和 AI Studio 开放开发者使用。
+    </div>
+    <div class="paper-links">
+      <a href="https://deepmind.google/blog/gemini-robotics-er-1-6/" target="_blank">官方博客</a>
+      <a href="https://ai.google.dev/gemini-api/docs/robotics-overview" target="_blank">API 文档</a>
+      <a href="https://www.marktechpost.com/2026/04/15/google-deepmind-releases-gemini-robotics-er-1-6-bringing-enhanced-embodied-reasoning-and-instrument-reading-to-physical-ai/" target="_blank">MarkTechPost</a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Embodied AI ===== -->
+<div class="section" id="embodied">
+  <div class="section-header">
+    <span class="section-icon">🌍</span>
+    <span class="section-title">Embodied AI · 具身智能</span>
+    <span class="section-count">1 篇</span>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">高德 ABot 具身技术体系：全球首个面向 AGI 的全栈具身技术体系</div>
+    <div class="paper-meta">
+      <span class="tag tag-embodied">Embodied AI</span>
+      <span class="tag tag-embodied">四足机器人</span>
+    </div>
+    <div class="paper-summary">
+      高德地图 4月19日发布 ABot 具身技术体系——全球首个面向 AGI 的全栈具身技术体系。实际落地场景：四足机器人"途途"协助视障人士完成复杂城市环境导航。技术层面在 15 项全球基准测试中取得 SOTA 成绩。体系覆盖从感知定位、环境理解、路径规划到运动控制的完整链路，面向真实世界复杂场景（非结构化环境、动态障碍物、多楼层导航等）的具身智能部署。
+    </div>
+    <div class="paper-links">
+      <a href="https://aiproducthub.cn/newsflash/2026-04-19/" target="_blank">资讯报道</a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Informations ===== -->
+<div class="section" id="informations">
+  <div class="section-header">
+    <span class="section-icon">📡</span>
+    <span class="section-title">Informations · 行业动态</span>
+    <span class="section-count">8 条</span>
+  </div>
+
+  <div class="info-card">
+    <div class="paper-title">特斯拉 Robotaxi 正式在达拉斯和休斯顿商业运营 — 定价 $4.20-$6.90/程</div>
+    <div class="paper-summary">
+      特斯拉无人驾驶出租车服务正式在德州双城启动商业运营，车内无人类驾驶员或监控人员。纯视觉方案，硬件成本仅 $2,000-$2,800。首批 14 辆 Cybercab 无方向盘车型已部署，年产目标 200 万辆。累计自动驾驶里程突破 10 亿英里。
+    </div>
+  </div>
+
+  <div class="info-card">
+    <div class="paper-title">Elon Musk 宣布 $250 亿 Terafab AI 芯片工厂 + Intel 加入 + OpenAI-Broadcom $100 亿芯片合作</div>
+    <div class="paper-summary">
+      芯片自研潮全面爆发：Musk 4/18 宣布在德州奥斯汀建设 $250 亿 Terafab AI 芯片工厂（服务 Tesla 自动驾驶/SpaceX/xAI），Intel 4/17 加入提供先进制造技术支持；OpenAI 4/18 与 Broadcom 达成 $100 亿定制 AI 芯片合作（计划 2027 年量产）。三大动作均指向同一目标：摆脱对 Nvidia 的依赖。
+    </div>
+  </div>
+
+  <div class="info-card">
+    <div class="paper-title">Claude Opus 4.7 发布 — 编程能力 64.3% 基准登顶，微软打破 OpenAI 独家</div>
+    <div class="paper-summary">
+      Anthropic 4/17 发布 Claude Opus 4.7 旗舰模型：编程基准分 64.3%（行业最高）、视觉精度大幅提升、新增实时协作。定价不变($5/$25 per M tokens)。同日微软打破 OpenAI 独家合作，将 Claude Opus 4.7 集成至 GitHub Copilot、VS Code 等 9 大开发环境。注：Anthropic 的 Mythos Preview 在所有评估中得分更高，但仅对 Nvidia/JPMorgan/Google/Apple/Microsoft 等精选伙伴开放。
+    </div>
+  </div>
+
+  <div class="info-card">
+    <div class="paper-title">三大 AI 编程 Agent 曝重大安全漏洞 — Claude Code/Gemini CLI/Copilot Agent 密钥可窃取</div>
+    <div class="paper-summary">
+      4/18 安全研究人员发现 Claude Code、Gemini CLI 和 GitHub Copilot Agent 存在严重供应链攻击漏洞：通过 PR 标题或 Issue 评论即可窃取 API 密钥。Copilot Agent 有 2000 万+付费用户，三层安全防御均被突破。赏金：Anthropic $100、Google $1,337、GitHub $500。AI 安全正从"防外部攻击"转向"防模型自身行为"。
+    </div>
+  </div>
+
+  <div class="info-card">
+    <div class="paper-title">Cerebras 正式提交 IPO + OpenAI 超百亿合作 | AI 芯片赛道升温</div>
+    <div class="paper-summary">
+      AI 芯片初创公司 Cerebras 正式提交 IPO 申请（4/18）。此前已与 OpenAI 签署超 $100 亿合作协议，芯片已部署至 AWS 数据中心。全球 DRAM 内存短缺或持续至 2030 年——2027 年 HBM 产能仅满足 60% 需求。三星宣布停产 LPDDR4/LPDDR4X 为 AI 内存产能让路。Nvidia 2026 年可能 30 年来首次不发新 GeForce GPU（AI 芯片利润率 69% vs 游戏 GPU 仅 40%）。
+    </div>
+  </div>
+
+  <div class="info-card">
+    <div class="paper-title">华为 AI 眼镜明日发布 + Sabi 脑机接口帽子 — AI 硬件多形态扩展</div>
+    <div class="paper-summary">
+      华为首款 AI 眼镜将于 4/20 Pura 系列发布会亮相，采用无屏幕设计。另外 Sabi 脑机接口公司推出搭载 7-10 万个微型传感器的帽子形态非侵入式 BCI，可读取"内心语音"转文字，初期目标每分钟 30 词，年底上市（Khosla Ventures 投资）。AI 正从屏幕走向眼镜、耳机、脑机接口等多形态载体。
+    </div>
+  </div>
+
+  <div class="info-card">
+    <div class="paper-title">Unitree R1 全球最便宜人形机器人上架 AliExpress — $4,370 起</div>
+    <div class="paper-summary">
+      宇树科技 Unitree R1 人形机器人正式在 AliExpress 全球发售：$4,370（29,900 元），1.2 米高、22.7kg、26 个智能关节，覆盖北美/日本/新加坡/欧洲市场。这是目前全球售价最低的人形机器人，标志着人形机器人正式进入消费级市场。
+    </div>
+  </div>
+
+  <div class="info-card">
+    <div class="paper-title">DeepSeek 首次外部融资估值 $100 亿 + Recursive Superintelligence $5 亿 + Sequoia $70 亿 AI 基金</div>
+    <div class="paper-summary">
+      本周 AI 资本市场密集爆发：DeepSeek 寻求 $3 亿首轮外部融资（估值 $100 亿，梁文锋持股 84%，V4 万亿参数模型即将发布）；Recursive Superintelligence 成立数月即融 $5 亿（自学习 AI 系统）；红杉资本 $70 亿历史最大基金重点投 AI；Accel $50 亿基金瞄准 AI 晚期公司。AI 芯片设计 Ricursive Intelligence 融 $3.35 亿（估值 $40 亿）。
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <div>检索统计：Google 搜索 × 8 | 详情页抓取 × 10 | arXiv（周日不更新）| AI 新闻聚合站 × 3</div>
+  <div>覆盖领域：VLA · Robotics · Embodied AI · RL · LLM · VLM · 行业动态</div>
+  <div>去重：排除 2026-04-18 日报已收录的 12 条内容</div>
+  <div class="sig">— 小小志 · Boss Team 科研 Researcher · 2026.04.19 17:00 —</div>
+</div>
+
+</body>
+</html>
