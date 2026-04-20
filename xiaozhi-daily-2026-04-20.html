@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>小小志科研日报 — 2026-04-20</title>
+<style>
+:root {
+  --bg: #0f1117;
+  --card-bg: #1a1d2e;
+  --card-border: #2a2d3e;
+  --text: #e0e0e0;
+  --text-muted: #8b8fa3;
+  --accent: #6c5ce7;
+  --accent-light: #a29bfe;
+  --vla: #e17055;
+  --wam: #00b894;
+  --robotics: #0984e3;
+  --embodied: #6c5ce7;
+  --rl: #fdcb6e;
+  --llm: #fd79a8;
+  --vlm: #00cec9;
+  --multimodal: #e056a0;
+  --agent: #74b9ff;
+  --info: #636e72;
+  --highlight-bg: linear-gradient(135deg, #2d1f4e 0%, #1a1d2e 100%);
+  --boss-tag-bg: #ff6b6b;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', sans-serif;
+  line-height: 1.7;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+.header {
+  text-align: center;
+  padding: 40px 0 30px;
+  border-bottom: 1px solid var(--card-border);
+  margin-bottom: 30px;
+}
+.header h1 {
+  font-size: 28px;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--accent-light), var(--vla));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 8px;
+}
+.header .date {
+  color: var(--text-muted);
+  font-size: 14px;
+}
+.header .stats {
+  margin-top: 12px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.header .stats span {
+  font-size: 13px;
+  color: var(--text-muted);
+  background: var(--card-bg);
+  padding: 4px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--card-border);
+}
+.section {
+  margin-bottom: 36px;
+}
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--card-border);
+}
+.section-icon {
+  font-size: 22px;
+}
+.section-title {
+  font-size: 18px;
+  font-weight: 600;
+}
+.section-count {
+  font-size: 12px;
+  color: var(--text-muted);
+  background: var(--card-bg);
+  padding: 2px 8px;
+  border-radius: 8px;
+  border: 1px solid var(--card-border);
+}
+.paper {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  padding: 18px;
+  margin-bottom: 14px;
+  transition: border-color 0.2s;
+}
+.paper:hover {
+  border-color: var(--accent);
+}
+.paper.highlight {
+  background: var(--highlight-bg);
+  border-color: var(--accent);
+}
+.paper-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #fff;
+}
+.paper-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+.tag {
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-weight: 500;
+}
+.tag-vla { background: rgba(225,112,85,0.2); color: var(--vla); }
+.tag-wam { background: rgba(0,184,148,0.2); color: var(--wam); }
+.tag-robotics { background: rgba(9,132,227,0.2); color: var(--robotics); }
+.tag-embodied { background: rgba(108,92,231,0.2); color: var(--embodied); }
+.tag-rl { background: rgba(253,203,110,0.2); color: var(--rl); }
+.tag-llm { background: rgba(253,121,168,0.2); color: var(--llm); }
+.tag-vlm { background: rgba(0,206,201,0.2); color: var(--vlm); }
+.tag-multimodal { background: rgba(224,86,160,0.2); color: var(--multimodal); }
+.tag-agent { background: rgba(116,185,255,0.2); color: var(--agent); }
+.tag-info { background: rgba(99,110,114,0.2); color: var(--info); }
+.tag-boss { background: var(--boss-tag-bg); color: #fff; font-weight: 700; }
+.paper-summary {
+  font-size: 14px;
+  color: var(--text);
+  line-height: 1.8;
+  margin-bottom: 12px;
+}
+.paper-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.paper-links a {
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  text-decoration: none;
+  border: 1px solid var(--card-border);
+  color: var(--accent-light);
+  transition: all 0.2s;
+}
+.paper-links a:hover {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+.info-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  padding: 18px;
+  margin-bottom: 14px;
+  border-left: 3px solid var(--info);
+}
+.info-card.hot {
+  border-left-color: var(--vla);
+}
+.info-title {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #fff;
+}
+.info-summary {
+  font-size: 14px;
+  color: var(--text);
+  line-height: 1.8;
+  margin-bottom: 10px;
+}
+.info-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.info-links a {
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  text-decoration: none;
+  border: 1px solid var(--card-border);
+  color: var(--accent-light);
+  transition: all 0.2s;
+}
+.info-links a:hover {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+.footer {
+  text-align: center;
+  padding: 30px 0;
+  border-top: 1px solid var(--card-border);
+  margin-top: 20px;
+  color: var(--text-muted);
+  font-size: 13px;
+}
+.footer .sig {
+  margin-top: 8px;
+  font-style: italic;
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>小小志科研日报</h1>
+  <div class="date">2026-04-20 / Monday / arXiv 周一大更新</div>
+  <div class="stats">
+    <span>arXiv cs.RO 新增 29 篇</span>
+    <span>精选论文 10 篇</span>
+    <span>行业动态 8 条</span>
+    <span>检索源 6+</span>
+  </div>
+</div>
+
+<!-- ==================== VLA ==================== -->
+<div class="section" id="vla">
+  <div class="section-header">
+    <span class="section-icon">🤖</span>
+    <span class="section-title" style="color:var(--vla)">VLA</span>
+    <span class="section-count">3 篇</span>
+  </div>
+
+  <div class="paper highlight">
+    <div class="paper-title">ChemBot: Long-Term Memory for VLA-based Agents in Open-World Task Execution</div>
+    <div class="paper-meta">
+      <span class="tag tag-vla">VLA</span>
+      <span class="tag tag-agent">长期记忆</span>
+    </div>
+    <div class="paper-summary">提出 ChemBot 双层闭环框架，将自主 AI 智能体与进度感知的 Skill-VLA 模型整合，用于分层任务分解与执行。核心创新在于 <strong>双层记忆架构</strong>：将成功轨迹整合为可检索资产，实现长期经验积累避免重复试错。通过 MCP 服务器协调子智能体与工具编排，并实现基于未来状态的异步推理解决 VLA 推理延迟导致的轨迹断裂问题。在协作机器人上的化学实验自动化场景中，操作安全性、精度和成功率均显著优于现有 VLA 基线。</div>
+    <div class="paper-links">
+      <a class="link-paper" href="https://arxiv.org/abs/2604.15671">arXiv</a>
+      <a class="link-pdf" href="https://arxiv.org/pdf/2604.15671">PDF</a>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">VADF: Vision-Adaptive Diffusion Policy Framework for Efficient Robotic Manipulation</div>
+    <div class="paper-meta">
+      <span class="tag tag-vla">VLA</span>
+      <span class="tag tag-robotics">扩散策略</span>
+    </div>
+    <div class="paper-summary">提出 VADF，一个视觉驱动的双自适应扩散策略框架，<strong>模型无关</strong>可集成任意扩散策略架构。训练阶段通过自适应损失网络（ALN）进行硬负样本挖掘加速收敛；推理阶段通过层次化视觉任务分割器（HVTS）将任务分解为简单/复杂子指令，简单动作用更短噪声步+更长执行序列，复杂动作反之。同时解决扩散策略训练收敛慢和推理效率低两大瓶颈，显著提升早期成功率并降低超时失败。</div>
+    <div class="paper-links">
+      <a class="link-paper" href="https://arxiv.org/abs/2604.15938">arXiv</a>
+      <a class="link-pdf" href="https://arxiv.org/pdf/2604.15938">PDF</a>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">Foundation Models in Robotics: A Comprehensive Review</div>
+    <div class="paper-meta">
+      <span class="tag tag-vla">VLA</span>
+      <span class="tag tag-llm">综述</span>
+    </div>
+    <div class="paper-summary">一篇覆盖极为全面的综述论文（8位作者），将基础模型在机器人领域的应用划分为<strong>五个研究阶段</strong>（从早期 NLP/CV 整合到当前多感官泛化与真实世界部署），构建了六维高粒度分类体系（基础模型类型/架构/学习范式/知识融合阶段/机器人任务/应用领域），涵盖 LLM、VFM、VLM、VLA 四大模型类型。核心结论：机器人领域正经历从固定单任务到自适应通用智能体的根本范式转变。</div>
+    <div class="paper-links">
+      <a class="link-paper" href="https://arxiv.org/abs/2604.15395">arXiv</a>
+      <a class="link-pdf" href="https://arxiv.org/pdf/2604.15395">PDF</a>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== World Model ==================== -->
+<div class="section" id="wam">
+  <div class="section-header">
+    <span class="section-icon">🌍</span>
+    <span class="section-title" style="color:var(--wam)">World Model</span>
+    <span class="section-count">1 篇</span>
+  </div>
+
+  <div class="paper highlight">
+    <div class="paper-title">Digital Cousins: Generative High-Fidelity Simulation for Generalizable Robot Learning</div>
+    <div class="paper-meta">
+      <span class="tag tag-wam">World Model</span>
+      <span class="tag tag-embodied">仿真泛化</span>
+    </div>
+    <div class="paper-summary">提出 <strong>"Digital Cousins"（数字表亲）</strong>概念，与传统 Digital Twin 精确 1:1 复制不同，它从真实全景图像自动生成语义/几何上相似但有变化的大量仿真场景变体。结合高质量物理引擎和多房间拼接技术构建大规模环境支持长时程导航任务。实验验证了强 sim-to-real 相关性，并证明大规模扩展 Digital Cousins 数据生成可显著提升对未见场景和物体变化的泛化能力——以多样性取代精确复制，有效解决真实数据成本高、多样性不足的瓶颈。</div>
+    <div class="paper-links">
+      <a class="link-paper" href="https://arxiv.org/abs/2604.15805">arXiv</a>
+      <a class="link-pdf" href="https://arxiv.org/pdf/2604.15805">PDF</a>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== Robotics ==================== -->
+<div class="section" id="robotics">
+  <div class="section-header">
+    <span class="section-icon">🦾</span>
+    <span class="section-title" style="color:var(--robotics)">Robotics</span>
+    <span class="section-count">4 篇</span>
+  </div>
+
+  <div class="paper highlight">
+    <div class="paper-title">IterIEKF: Iterated Invariant EKF for Quadruped Robot Odometry</div>
+    <div class="paper-meta">
+      <span class="tag tag-robotics">Robotics</span>
+      <span class="tag tag-boss">Boss 关注</span>
+    </div>
+    <div class="paper-summary">为四足机器人引入<strong>迭代不变扩展卡尔曼滤波（IterIEKF）</strong>的新型开源状态估计算法。将机器人状态建模在李群上，更新步骤仅依赖本体感受测量（足端速度运动学约束 + 基座坐标系速度），无需外部传感器（GPS/视觉），因此对环境条件具有内在鲁棒性。在数值仿真和真实数据集上，IterIEKF 在精度和一致性两个指标上均优于标准 IEKF 和 SO(3) 卡尔曼滤波变体。<em>与 Boss 的 floating base 状态估计研究直接相关。</em></div>
+    <div class="paper-links">
+      <a class="link-paper" href="https://arxiv.org/abs/2604.15449">arXiv</a>
+      <a class="link-pdf" href="https://arxiv.org/pdf/2604.15449">PDF</a>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">ShapeGen: Robotic Data Generation for Category-Level Manipulation</div>
+    <div class="paper-meta">
+      <span class="tag tag-robotics">Robotics</span>
+      <span class="tag tag-embodied">数据生成</span>
+    </div>
+    <div class="paper-summary">提出 ShapeGen，一种<strong>无模拟器、3D</strong>的形状变化操控数据生成方法。分两阶段：首先训练形状间空间变形构建即插即用 Shape Library；然后通过功能感知生成流水线，仅需最少人工标注即可产出物理合理且功能正确的新演示数据。核心思路是学习不同形状间功能对应点实现跨形状数据迁移，在真实世界验证了对类别级操控的形状泛化提升。</div>
+    <div class="paper-links">
+      <a class="link-paper" href="https://arxiv.org/abs/2604.15569">arXiv</a>
+      <a class="link-pdf" href="https://arxiv.org/pdf/2604.15569">PDF</a>
+      <a href="https://wangyr22.github.io/ShapeGen/">Project</a>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">One-Shot Cross-Geometry Skill Transfer through Part Decomposition</div>
+    <div class="paper-meta">
+      <span class="tag tag-robotics">Robotics</span>
+      <span class="tag tag-embodied">ICRA 2026</span>
+    </div>
+    <div class="paper-summary">ICRA 2026 论文。通过<strong>语义部件分解</strong>实现一次性跨几何形状技能迁移。利用数据高效的生成式形状模型，将交互点从演示物体的部件准确迁移到新物体上，并自主构建目标函数优化对齐。核心思路是以部件级别匹配替代整体物体匹配，显著扩大了可迁移的物体几何范围。在仿真和真实环境中仅需单次演示即可成功迁移多种技能。</div>
+    <div class="paper-links">
+      <a class="link-paper" href="https://arxiv.org/abs/2604.15455">arXiv</a>
+      <a class="link-pdf" href="https://arxiv.org/pdf/2604.15455">PDF</a>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">NeuroMesh: Unified Neural Inference for Decentralized Multi-Robot Collaboration</div>
+    <div class="paper-meta">
+      <span class="tag tag-robotics">Robotics</span>
+      <span class="tag tag-agent">RA-L</span>
+    </div>
+    <div class="paper-summary">RA-L 已接收。提出 NeuroMesh，一个<strong>多域、跨平台、模块化</strong>的去中心化神经推理框架，将观测编码、消息传递、聚合、任务解码标准化为统一流水线。结合双聚合范式（reduction-based + broadcast-based）和并行化架构将周期时间与端到端延迟解耦。高性能 C++ 实现 + Zenoh 通信 + GPU/CPU 混合推理。在空中+地面异构机器人团队上验证了协作感知、去中心化控制和任务分配三大核心任务。计划开源。</div>
+    <div class="paper-links">
+      <a class="link-paper" href="https://arxiv.org/abs/2604.15475">arXiv</a>
+      <a class="link-pdf" href="https://arxiv.org/pdf/2604.15475">PDF</a>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== Embodied AI ==================== -->
+<div class="section" id="embodied">
+  <div class="section-header">
+    <span class="section-icon">🧩</span>
+    <span class="section-title" style="color:var(--embodied)">Embodied AI</span>
+    <span class="section-count">1 篇</span>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">Continual Hand-Eye Calibration for Open-world Robotic Manipulation</div>
+    <div class="paper-meta">
+      <span class="tag tag-embodied">Embodied AI</span>
+      <span class="tag tag-robotics">持续学习</span>
+    </div>
+    <div class="paper-summary">提出持续手眼标定框架，使机器人能通过<strong>空间感知回放策略（SARS）</strong>和<strong>结构保持双蒸馏（SPDD）</strong>来适应顺序遇到的开放世界操控场景。SARS 构建几何均匀的回放缓冲区确保位姿空间全面覆盖；SPDD 将定位知识解耦为粗粒度场景布局和细粒度位姿精度两层分别蒸馏。多个公开数据集验证了显著的抗场景遗忘性能——在适应新场景的同时保持历史场景精度不退化。</div>
+    <div class="paper-links">
+      <a class="link-paper" href="https://arxiv.org/abs/2604.15814">arXiv</a>
+      <a class="link-pdf" href="https://arxiv.org/pdf/2604.15814">PDF</a>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== RL ==================== -->
+<div class="section" id="rl">
+  <div class="section-header">
+    <span class="section-icon">🎯</span>
+    <span class="section-title" style="color:var(--rl)">RL</span>
+    <span class="section-count">1 篇</span>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">FARS: Fuzzy Logic Theory-based Adaptive Reward Shaping for Robust RL</div>
+    <div class="paper-meta">
+      <span class="tag tag-rl">RL</span>
+      <span class="tag tag-robotics">奖励设计</span>
+    </div>
+    <div class="paper-summary">提出基于模糊逻辑的自适应奖励塑造方法（FARS），将人类专家直觉编码为<strong>可解释的模糊规则</strong>，根据智能体状态自适应调整奖励贡献，在快速运动与精确控制间实现平滑过渡。在自主无人机竞速仿真基准上验证：学习行为更稳定、收敛更快、跨随机种子性能变异性降低，在难度较高环境中成功率提升约 5%。降低了 RL 对超参数的敏感性。</div>
+    <div class="paper-links">
+      <a class="link-paper" href="https://arxiv.org/abs/2604.15772">arXiv</a>
+      <a class="link-pdf" href="https://arxiv.org/pdf/2604.15772">PDF</a>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== Informations ==================== -->
+<div class="section" id="info">
+  <div class="section-header">
+    <span class="section-icon">📰</span>
+    <span class="section-title" style="color:var(--info)">Informations</span>
+    <span class="section-count">8 条</span>
+  </div>
+
+  <div class="info-card hot">
+    <div class="info-title">苏度科技具身首秀：0真机数据 + Zero-shot + 98%首次抓取成功率</div>
+    <div class="paper-meta">
+      <span class="tag tag-embodied">Embodied AI</span>
+      <span class="tag tag-boss">Boss 关注</span>
+    </div>
+    <div class="info-summary">估值突破<strong>20亿美元</strong>的上海苏度科技发布首个技术成果 <strong>#Sudo R1</strong>。在60分钟连续测试中对100+从未见过的物体（透明/金属/软质/反光/不规则）实现约98%首次抓取成功率、两次尝试接近100%。核心突破：<strong>纯仿真训练路线</strong>——0真机数据、0遥操作、0人工标注、Zero-shot 开箱即用。行业唯一实现"世界模型与强化学习一体化设计"的团队。投资方包括宁德时代溥泉资本、高瓴创投、阿里、腾讯、蚂蚁等。核心团队来自复旦苏昊教授（ImageNet/ShapeNet/PointNet 缔造者之一）。首次验证了"纯仿真训练 + 零真机数据"路线在真实世界中的可行性。</div>
+    <div class="info-links">
+      <a href="https://www.sudo.ai/">Official</a>
+      <a href="https://www.aitntnews.com/newDetail.html?newId=24261">Report</a>
+    </div>
+  </div>
+
+  <div class="info-card hot">
+    <div class="info-title">World Engine：Post-Training 开启 Physical AGI 新纪元</div>
+    <div class="paper-meta">
+      <span class="tag tag-wam">World Model</span>
+      <span class="tag tag-boss">Boss 关注</span>
+    </div>
+    <div class="info-summary">港大李弘扬团队联合华为发布 <strong>World Engine（世界引擎）</strong>，以 Post-Training 范式推动 Physical AGI。三大模块形成闭环飞轮：难例挖掘+行为世界模型扩散生成 → 3DGS 高保真闭环仿真 → 强化学习后训练。关键发现：光喂数据做模仿学习几乎无效，RL 才是开关；必须聚焦难例而非普通场景；仿真环境中其他车辆对自车做出反应时闭环成功率从 76%→89%。在华为 ADS 4.0 工业验证中切入碰撞下降 45.5%，上海 200km 实车路测全程无需人工介入。核心范式可迁移到具身智能领域。</div>
+    <div class="info-links">
+      <a href="https://opendrivelab.com/WorldEngine/">Project</a>
+      <a href="https://github.com/OpenDriveLab/WorldEngine">GitHub</a>
+    </div>
+  </div>
+
+  <div class="info-card hot">
+    <div class="info-title">自变量机器人完成近 20 亿元 B 轮融资，小米战投+红杉中国领投</div>
+    <div class="paper-meta">
+      <span class="tag tag-embodied">Embodied AI</span>
+      <span class="tag tag-info">融资</span>
+    </div>
+    <div class="info-summary">具身智能公司自变量机器人完成近<strong>20亿元</strong>B轮融资，小米战投与红杉中国联合领投。此前已获美团（A轮）、阿里（A+轮）、字节跳动（A++轮）领投，成为国内唯一同时获得<strong>字节、美团、阿里、小米四大互联网巨头</strong>投资的具身智能企业。自研端到端具身基础模型 <strong>WALL-A</strong>，多模态统一表征（视觉/语言/触觉/动作→连续高维 Token 序列），基于单一 Transformer 架构。已与 58 到家合作推出机器人家庭保洁商业化服务。</div>
+    <div class="info-links">
+      <a href="https://finance.sina.com.cn/stock/t/2026-04-20/doc-inhvayqc9880865.shtml">Source</a>
+    </div>
+  </div>
+
+  <div class="info-card hot">
+    <div class="info-title">马斯克暴走官宣：Grok 5 就是 AGI！五月连轰两代万亿参数模型</div>
+    <div class="paper-meta">
+      <span class="tag tag-llm">LLM</span>
+      <span class="tag tag-info">重磅</span>
+    </div>
+    <div class="info-summary">马斯克在 X 平台上直接宣称 <strong>"Grok 5 就是 AGI"</strong>。xAI 路线图：Grok 4.3 Beta（0.5T，已上线）→ Grok 4.4（1T，5月初）→ Grok 4.5（1.5T，5月底）→ Grok 5（6T，日期未定）。Colossus 2 集群 55万块 GB200/GB300 GPU、2GW 功率，同时训练 7 个模型含 10T 参数版本。Grok 5 架构演进为动态智能体生成+跨领域专业化。Karpathy 反驳称"AGI仍需十年"。5月将成为 AI 竞赛关键节点：xAI vs OpenAI（GPT-5.5）vs Anthropic（Opus 4.7）。</div>
+    <div class="info-links">
+      <a href="https://finance.sina.com.cn/wm/2026-04-20/doc-inhvcmef8570662.shtml">Source</a>
+    </div>
+  </div>
+
+  <div class="info-card">
+    <div class="info-title">影身智能完成多轮融资，累计近亿元，原生 3D 数据重定义机器人认知</div>
+    <div class="paper-meta">
+      <span class="tag tag-wam">World Model</span>
+      <span class="tag tag-info">融资</span>
+    </div>
+    <div class="info-summary">全球首家以<strong>"原生3D动态世界模型"</strong>为核心技术路线的具身智能企业。独创 V-4D-A（视觉-4D-动作）架构，打通 3D 数据获取→模型训练→物理运行→场景落地完整闭环。仅需 4-5 个百元级 RGB 摄像头即可实时 3D 数据采集重建（影身360系统）。训练效率是视频数据的 <strong>20 倍</strong>。已在制鞋柔性智造落地：8小时 3000 双鞋，不同款式切换无需人工干预。Pre-A 轮由深高投领投。</div>
+    <div class="info-links">
+      <a href="https://www.aitntnews.com/newDetail.html?newId=24254">Source</a>
+    </div>
+  </div>
+
+  <div class="info-card">
+    <div class="info-title">DeepSeek V4 定档4月下旬：万亿参数 MoE + 百万Token + 华为昇腾首批支持</div>
+    <div class="paper-meta">
+      <span class="tag tag-llm">LLM</span>
+      <span class="tag tag-info">发布</span>
+    </div>
+    <div class="info-summary">DeepSeek V4 采用<strong>万亿参数 MoE 架构</strong>，支持百万 Token 上下文，推理速度提升 35 倍。首批支持华为昇腾 950 芯片。此前 DeepSeek 以 100 亿美元估值完成 3 亿美元融资。V4 的发布将进一步拉低顶级 AI 能力门槛。</div>
+    <div class="info-links">
+      <a href="https://www.gaovi.com/index.php/archives/335/">Source</a>
+    </div>
+  </div>
+
+  <div class="info-card">
+    <div class="info-title">商汤医疗再获超 5 亿元融资，估值突破 10 亿美元独角兽</div>
+    <div class="paper-meta">
+      <span class="tag tag-info">融资</span>
+      <span class="tag tag-vlm">AI+医疗</span>
+    </div>
+    <div class="info-summary">商汤医疗完成超 5 亿元新一轮融资，估值突破 <strong>10 亿美元</strong>，正式成为独角兽。AI+医疗赛道持续升温。</div>
+    <div class="info-links">
+      <a href="https://www.aitntnews.com/newDetail.html?newId=24253">Source</a>
+    </div>
+  </div>
+
+  <div class="info-card">
+    <div class="info-title">腾讯朱雀实验室：4 小时自主发现 33 个 0day 漏洞</div>
+    <div class="paper-meta">
+      <span class="tag tag-agent">AI Agent</span>
+      <span class="tag tag-info">安全</span>
+    </div>
+    <div class="info-summary">腾讯朱雀实验室 AI 系统 4 小时内自主攻破 FreeBSD 等主流服务器，发现 <strong>33 个 0day 漏洞</strong>并完成完整攻击链搭建。网络安全攻防逻辑被彻底改写——AI 安全从技术议题升级为科技博弈新战线。同期 Anthropic 联合 45 家机构发布 Project Glasswing + Claude Mythos 防御性网络安全模型。</div>
+    <div class="info-links">
+      <a href="https://www.gaovi.com/index.php/archives/335/">Source</a>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <div>arXiv cs.RO 29 篇 | arXiv cs.AI/cs.CV/cs.LG 500+ 篇 | Google/AITNT/gaovi 综合检索 | 筛选精度：人工复核全部 arXiv ID</div>
+  <div class="sig">-- 小小志 | Boss Team Researcher | 2026-04-20 17:00 --</div>
+</div>
+
+</body>
+</html>

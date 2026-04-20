@@ -629,6 +629,187 @@
 <script>
 // ===== DATA =====
 const PAPERS_DB = [
+    // === 2026-04-20 ===
+    {
+        date: "2026-04-20",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "ChemBot: Long-Term Memory for VLA-based Agents in Open-World Task Execution",
+        venue: "",
+        summary: "提出 ChemBot 双层闭环框架，将自主 AI 智能体与进度感知的 Skill-VLA 模型整合，用于分层任务分解与执行。核心创新在于 双层记忆架构：将成功轨迹整合为可检索资产，实现长期经验积累避免重复试错。通过 MCP 服务器协调子智能体与工具编排，并实现基于未来状态的异步推理解决 VLA 推理延迟导致的轨迹断裂问题。在协作机器人上的化学实验自动化场景中，操作安全性、精度和成功率均显著优于现有 VLA 基线。",
+        tags: [["VLA","green"],["长期记忆","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.15671"],["PDF","https://arxiv.org/pdf/2604.15671"]]
+    },
+    {
+        date: "2026-04-20",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "VADF: Vision-Adaptive Diffusion Policy Framework for Efficient Robotic Manipulation",
+        venue: "",
+        summary: "提出 VADF，一个视觉驱动的双自适应扩散策略框架，模型无关可集成任意扩散策略架构。训练阶段通过自适应损失网络（ALN）进行硬负样本挖掘加速收敛；推理阶段通过层次化视觉任务分割器（HVTS）将任务分解为简单/复杂子指令，简单动作用更短噪声步+更长执行序列，复杂动作反之。同时解决扩散策略训练收敛慢和推理效率低两大瓶颈，显著提升早期成功率并降低超时失败。",
+        tags: [["VLA","green"],["扩散策略","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.15938"],["PDF","https://arxiv.org/pdf/2604.15938"]]
+    },
+    {
+        date: "2026-04-20",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "Foundation Models in Robotics: A Comprehensive Review",
+        venue: "",
+        summary: "一篇覆盖极为全面的综述论文（8位作者），将基础模型在机器人领域的应用划分为五个研究阶段（从早期 NLP/CV 整合到当前多感官泛化与真实世界部署），构建了六维高粒度分类体系（基础模型类型/架构/学习范式/知识融合阶段/机器人任务/应用领域），涵盖 LLM、VFM、VLM、VLA 四大模型类型。核心结论：机器人领域正经历从固定单任务到自适应通用智能体的根本范式转变。",
+        tags: [["VLA","green"],["综述","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.15395"],["PDF","https://arxiv.org/pdf/2604.15395"]]
+    },
+    {
+        date: "2026-04-20",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "Digital Cousins: Generative High-Fidelity Simulation for Generalizable Robot Learning",
+        venue: "",
+        summary: "提出 \"Digital Cousins\"（数字表亲）概念，与传统 Digital Twin 精确 1:1 复制不同，它从真实全景图像自动生成语义/几何上相似但有变化的大量仿真场景变体。结合高质量物理引擎和多房间拼接技术构建大规模环境支持长时程导航任务。实验验证了强 sim-to-real 相关性，并证明大规模扩展 Digital Cousins 数据生成可显著提升对未见场景和物体变化的泛化能力——以多样性取代精确复制，有效解决真实数据成本高、多样性不足的瓶颈。",
+        tags: [["World Model","green"],["仿真泛化","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.15805"],["PDF","https://arxiv.org/pdf/2604.15805"]]
+    },
+    {
+        date: "2026-04-20",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "IterIEKF: Iterated Invariant EKF for Quadruped Robot Odometry",
+        venue: "",
+        summary: "为四足机器人引入迭代不变扩展卡尔曼滤波（IterIEKF）的新型开源状态估计算法。将机器人状态建模在李群上，更新步骤仅依赖本体感受测量（足端速度运动学约束 + 基座坐标系速度），无需外部传感器（GPS/视觉），因此对环境条件具有内在鲁棒性。在数值仿真和真实数据集上，IterIEKF 在精度和一致性两个指标上均优于标准 IEKF 和 SO(3) 卡尔曼滤波变体。与 Boss 的 floating base 状态估计研究直接相关。",
+        tags: [["Robotics","green"],["Boss 关注","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.15449"],["PDF","https://arxiv.org/pdf/2604.15449"]]
+    },
+    {
+        date: "2026-04-20",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "ShapeGen: Robotic Data Generation for Category-Level Manipulation",
+        venue: "",
+        summary: "提出 ShapeGen，一种无模拟器、3D的形状变化操控数据生成方法。分两阶段：首先训练形状间空间变形构建即插即用 Shape Library；然后通过功能感知生成流水线，仅需最少人工标注即可产出物理合理且功能正确的新演示数据。核心思路是学习不同形状间功能对应点实现跨形状数据迁移，在真实世界验证了对类别级操控的形状泛化提升。",
+        tags: [["Robotics","green"],["数据生成","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.15569"],["PDF","https://arxiv.org/pdf/2604.15569"]]
+    },
+    {
+        date: "2026-04-20",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "One-Shot Cross-Geometry Skill Transfer through Part Decomposition",
+        venue: "",
+        summary: "ICRA 2026 论文。通过语义部件分解实现一次性跨几何形状技能迁移。利用数据高效的生成式形状模型，将交互点从演示物体的部件准确迁移到新物体上，并自主构建目标函数优化对齐。核心思路是以部件级别匹配替代整体物体匹配，显著扩大了可迁移的物体几何范围。在仿真和真实环境中仅需单次演示即可成功迁移多种技能。",
+        tags: [["Robotics","green"],["ICRA 2026","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.15455"],["PDF","https://arxiv.org/pdf/2604.15455"]]
+    },
+    {
+        date: "2026-04-20",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "NeuroMesh: Unified Neural Inference for Decentralized Multi-Robot Collaboration",
+        venue: "",
+        summary: "RA-L 已接收。提出 NeuroMesh，一个多域、跨平台、模块化的去中心化神经推理框架，将观测编码、消息传递、聚合、任务解码标准化为统一流水线。结合双聚合范式（reduction-based + broadcast-based）和并行化架构将周期时间与端到端延迟解耦。高性能 C++ 实现 + Zenoh 通信 + GPU/CPU 混合推理。在空中+地面异构机器人团队上验证了协作感知、去中心化控制和任务分配三大核心任务。计划开源。",
+        tags: [["Robotics","green"],["RA-L","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.15475"],["PDF","https://arxiv.org/pdf/2604.15475"]]
+    },
+    {
+        date: "2026-04-20",
+        category: "Embodied AI",
+        categoryIcon: "🧩",
+        title: "Continual Hand-Eye Calibration for Open-world Robotic Manipulation",
+        venue: "",
+        summary: "提出持续手眼标定框架，使机器人能通过空间感知回放策略（SARS）和结构保持双蒸馏（SPDD）来适应顺序遇到的开放世界操控场景。SARS 构建几何均匀的回放缓冲区确保位姿空间全面覆盖；SPDD 将定位知识解耦为粗粒度场景布局和细粒度位姿精度两层分别蒸馏。多个公开数据集验证了显著的抗场景遗忘性能——在适应新场景的同时保持历史场景精度不退化。",
+        tags: [["Embodied AI","green"],["持续学习","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.15814"],["PDF","https://arxiv.org/pdf/2604.15814"]]
+    },
+    {
+        date: "2026-04-20",
+        category: "RL",
+        categoryIcon: "🧠",
+        title: "FARS: Fuzzy Logic Theory-based Adaptive Reward Shaping for Robust RL",
+        venue: "",
+        summary: "提出基于模糊逻辑的自适应奖励塑造方法（FARS），将人类专家直觉编码为可解释的模糊规则，根据智能体状态自适应调整奖励贡献，在快速运动与精确控制间实现平滑过渡。在自主无人机竞速仿真基准上验证：学习行为更稳定、收敛更快、跨随机种子性能变异性降低，在难度较高环境中成功率提升约 5%。降低了 RL 对超参数的敏感性。",
+        tags: [["RL","green"],["奖励设计","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.15772"],["PDF","https://arxiv.org/pdf/2604.15772"]]
+    },
+    {
+        date: "2026-04-20",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "苏度科技具身首秀：0真机数据 + Zero-shot + 98%首次抓取成功率",
+        venue: "",
+        summary: "估值突破20亿美元的上海苏度科技发布首个技术成果 #Sudo R1。在60分钟连续测试中对100+从未见过的物体（透明/金属/软质/反光/不规则）实现约98%首次抓取成功率、两次尝试接近100%。核心突破：纯仿真训练路线——0真机数据、0遥操作、0人工标注、Zero-shot 开箱即用。行业唯一实现\"世界模型与强化学习一体化设计\"的团队。投资方包括宁德时代溥泉资本、高瓴创投、阿里、腾讯、蚂蚁等。核心团队来自复旦苏昊教授（ImageNet/ShapeNet/PointNet 缔造者之一）。首次验证了\"纯仿真训练 + 零真机数据\"路线在真实世界中的可行性。",
+        tags: [["Embodied AI","green"],["Boss 关注","green"]],
+        links: []
+    },
+    {
+        date: "2026-04-20",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "World Engine：Post-Training 开启 Physical AGI 新纪元",
+        venue: "",
+        summary: "港大李弘扬团队联合华为发布 World Engine（世界引擎），以 Post-Training 范式推动 Physical AGI。三大模块形成闭环飞轮：难例挖掘+行为世界模型扩散生成 → 3DGS 高保真闭环仿真 → 强化学习后训练。关键发现：光喂数据做模仿学习几乎无效，RL 才是开关；必须聚焦难例而非普通场景；仿真环境中其他车辆对自车做出反应时闭环成功率从 76%→89%。在华为 ADS 4.0 工业验证中切入碰撞下降 45.5%，上海 200km 实车路测全程无需人工介入。核心范式可迁移到具身智能领域。",
+        tags: [["World Model","green"],["Boss 关注","green"]],
+        links: []
+    },
+    {
+        date: "2026-04-20",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "自变量机器人完成近 20 亿元 B 轮融资，小米战投+红杉中国领投",
+        venue: "",
+        summary: "具身智能公司自变量机器人完成近20亿元B轮融资，小米战投与红杉中国联合领投。此前已获美团（A轮）、阿里（A+轮）、字节跳动（A++轮）领投，成为国内唯一同时获得字节、美团、阿里、小米四大互联网巨头投资的具身智能企业。自研端到端具身基础模型 WALL-A，多模态统一表征（视觉/语言/触觉/动作→连续高维 Token 序列），基于单一 Transformer 架构。已与 58 到家合作推出机器人家庭保洁商业化服务。",
+        tags: [["Embodied AI","green"],["融资","green"]],
+        links: []
+    },
+    {
+        date: "2026-04-20",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "马斯克暴走官宣：Grok 5 就是 AGI！五月连轰两代万亿参数模型",
+        venue: "",
+        summary: "马斯克在 X 平台上直接宣称 \"Grok 5 就是 AGI\"。xAI 路线图：Grok 4.3 Beta（0.5T，已上线）→ Grok 4.4（1T，5月初）→ Grok 4.5（1.5T，5月底）→ Grok 5（6T，日期未定）。Colossus 2 集群 55万块 GB200/GB300 GPU、2GW 功率，同时训练 7 个模型含 10T 参数版本。Grok 5 架构演进为动态智能体生成+跨领域专业化。Karpathy 反驳称\"AGI仍需十年\"。5月将成为 AI 竞赛关键节点：xAI vs OpenAI（GPT-5.5）vs Anthropic（Opus 4.7）。",
+        tags: [["LLM","green"],["重磅","green"]],
+        links: []
+    },
+    {
+        date: "2026-04-20",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "影身智能完成多轮融资，累计近亿元，原生 3D 数据重定义机器人认知",
+        venue: "",
+        summary: "全球首家以\"原生3D动态世界模型\"为核心技术路线的具身智能企业。独创 V-4D-A（视觉-4D-动作）架构，打通 3D 数据获取→模型训练→物理运行→场景落地完整闭环。仅需 4-5 个百元级 RGB 摄像头即可实时 3D 数据采集重建（影身360系统）。训练效率是视频数据的 20 倍。已在制鞋柔性智造落地：8小时 3000 双鞋，不同款式切换无需人工干预。Pre-A 轮由深高投领投。",
+        tags: [["World Model","green"],["融资","green"]],
+        links: []
+    },
+    {
+        date: "2026-04-20",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "DeepSeek V4 定档4月下旬：万亿参数 MoE + 百万Token + 华为昇腾首批支持",
+        venue: "",
+        summary: "DeepSeek V4 采用万亿参数 MoE 架构，支持百万 Token 上下文，推理速度提升 35 倍。首批支持华为昇腾 950 芯片。此前 DeepSeek 以 100 亿美元估值完成 3 亿美元融资。V4 的发布将进一步拉低顶级 AI 能力门槛。",
+        tags: [["LLM","green"],["发布","green"]],
+        links: []
+    },
+    {
+        date: "2026-04-20",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "商汤医疗再获超 5 亿元融资，估值突破 10 亿美元独角兽",
+        venue: "",
+        summary: "商汤医疗完成超 5 亿元新一轮融资，估值突破 10 亿美元，正式成为独角兽。AI+医疗赛道持续升温。",
+        tags: [["融资","green"],["AI+医疗","green"]],
+        links: []
+    },
+    {
+        date: "2026-04-20",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "腾讯朱雀实验室：4 小时自主发现 33 个 0day 漏洞",
+        venue: "",
+        summary: "腾讯朱雀实验室 AI 系统 4 小时内自主攻破 FreeBSD 等主流服务器，发现 33 个 0day 漏洞并完成完整攻击链搭建。网络安全攻防逻辑被彻底改写——AI 安全从技术议题升级为科技博弈新战线。同期 Anthropic 联合 45 家机构发布 Project Glasswing + Claude Mythos 防御性网络安全模型。",
+        tags: [["AI Agent","green"],["安全","green"]],
+        links: []
+    },
     // === 2026-04-19 ===
     {
         date: "2026-04-19",
