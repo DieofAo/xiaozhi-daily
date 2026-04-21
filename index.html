@@ -629,6 +629,197 @@
 <script>
 // ===== DATA =====
 const PAPERS_DB = [
+    // === 2026-04-21 ===
+    {
+        date: "2026-04-21",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "Unmasking the Illusion of Embodied Reasoning in VLA Models",
+        venue: "",
+        summary: "今日最重磅论文！提出 BeTTER 基准，通过靶向因果干预与运动学隔离，揭露当前 SOTA VLA 模型在动态场景下的「灾难性失败」——词汇-运动学捷径、行为惯性、语义特征坍塌三大症状。机理分析追溯到容量压缩与短视下采样两大架构瓶颈，指出高度静态的评估协议人为抬高了成绩。真实机器人实验验证了这些问题并非仿真伪影。结论：未来 VLA 必须解决高频控制与高层推理之间的结构性矛盾。",
+        tags: [["VLA","green"],["推理幻觉分析","green"],["Boss 必读","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.18000"],["PDF","https://arxiv.org/pdf/2604.18000"]]
+    },
+    {
+        date: "2026-04-21",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "OmniVLA-RL: A VLA Model with Spatial Understanding and Online RL",
+        venue: "",
+        summary: "提出 Mix-of-Transformers（MoT）架构，协同集成推理专家、空间专家和动作专家三类模块，解决多模态融合不充分问题。核心创新 Flow-GSPO 将流匹配重建模为 SDE 过程，并整合分组分段策略优化（GSPO），同时提升动作精度和 RL 训练稳定性。在 LIBERO 和 LIBERO-Plus 基准上显著超越当前 SOTA。",
+        tags: [["VLA","green"],["在线强化学习","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.17706"],["PDF","https://arxiv.org/pdf/2604.17706"]]
+    },
+    {
+        date: "2026-04-21",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "ST-π: Structured SpatioTemporal VLA for Robotic Manipulation",
+        venue: "",
+        summary: "将 VLA 中的时空推理从隐式转为显式结构化：时空 VLM 将 4D 观测编码到潜在空间，生成因果有序的 chunk 级动作提示（含子任务、空间定位、时间定位）；时空动作专家通过双生成器引导机制联合建模空间依赖性与时间因果性，预测步级动作。附带结构化时空标注的真实世界数据集。代码已开源。",
+        tags: [["VLA","green"],["时空结构化","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.17880"],["PDF","https://arxiv.org/pdf/2604.17880"]]
+    },
+    {
+        date: "2026-04-21",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "ReFineVLA: Multimodal Reasoning-Aware Generalist Robotic Policies",
+        venue: "",
+        summary: "通过教师引导框架为 VLA 注入显式推理能力：专家教师模型为机器人数据集生成推理理由（reasoning rationales），在推理增强数据集上微调预训练 VLA，保持底层泛化能力不受损。注意力图可视化证明模型在视觉-语言域与动作域间展现有意义的一致性。在 SimplerEnv 的 WidowX 和 Google Robot 任务上均取得 SOTA。",
+        tags: [["VLA","green"],["推理增强","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.17800"],["PDF","https://arxiv.org/pdf/2604.17800"]]
+    },
+    {
+        date: "2026-04-21",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "AnchorRefine: Trajectory Anchor and Residual Refinement for VLA Models",
+        venue: "",
+        summary: "受人类「全局规划 + 持续局部调整」的操控模式启发，将 VLA 动作建模分解为轨迹锚点（粗粒度运动骨架）和残差精细化（执行级偏差校正）两个层次，并引入决策感知的夹爪精细化机制。兼容回归式和扩散式两类 VLA 骨干。仿真成功率提升最高 7.8%，真实机器人提升最高 18%。",
+        tags: [["VLA","green"],["轨迹精修","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.17787"],["PDF","https://arxiv.org/pdf/2604.17787"]]
+    },
+    {
+        date: "2026-04-21",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "OFlow: Object-Aware Temporal Flow Matching for Robust Manipulation",
+        venue: "",
+        summary: "提出在共享语义潜在空间中统一时序前瞻与对象感知推理：利用时序流匹配预测未来潜在表征，将其分解为对象感知表示以聚焦物理相关线索，条件化连续动作生成。即插即用集成到现有 VLA 管线。在 LIBERO、LIBERO-Plus、MetaWorld、SimplerEnv 和真实世界任务上一致提升鲁棒性。",
+        tags: [["VLA","green"],["时序预测","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.17876"],["PDF","https://arxiv.org/pdf/2604.17876"]]
+    },
+    {
+        date: "2026-04-21",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "FLASH: Fast Learning via GPU-Accelerated Simulation for Deformable Manipulation",
+        venue: "",
+        summary: "打破可变形物体仿真「精度-速度-稳定性」三角困境！GPU 原生物理引擎从底层重新设计，基于 NCP 求解器实现细粒度并行。单张 RTX 5090 上支持 300 万+ 自由度、30 FPS 实时仿真。仅在合成数据上训练数分钟即可实现零样本 sim-to-real 迁移，成功完成毛巾折叠和衣物折叠，无需任何真实世界演示数据。",
+        tags: [["Robotics","green"],["GPU 仿真","green"],["Boss 必读","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.17513"],["PDF","https://arxiv.org/pdf/2604.17513"]]
+    },
+    {
+        date: "2026-04-21",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "SpaceDex: Generalizable Dexterous Grasping in Tiered Workspaces",
+        venue: "",
+        summary: "面向分层工作空间的层次化灵巧抓取框架：高层 VLM 规划器跨多视角推理遮挡和高度关系，生成零样本分割与掩码跟踪引导；低层引入臂-手特征分离网络，将机械臂全局轨迹控制与灵巧手抓取模式选择在特征层面解耦。融合多视角视觉+指尖触觉传感。100 次真实试验中成功率 63%，比强桌面基线高 24 个百分点。",
+        tags: [["Robotics","green"],["灵巧抓取","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.17888"],["PDF","https://arxiv.org/pdf/2604.17888"]]
+    },
+    {
+        date: "2026-04-21",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "DART: Learning-Enhanced MPC for Dual-Arm Non-Prehensile Manipulation",
+        venue: "",
+        summary: "首个用于托盘上非抓取双臂操控的框架！将非线性 MPC 与阻抗控制器结合，系统性对比三种互补的动力学建模策略：基于物理的解析模型、在线回归辨识模型（可实时自适应）、RL 动力学模型（可跨物体泛化）。在不同质量/几何/摩擦系数的物体上揭示了三种策略的权衡关系。有项目主页。",
+        tags: [["Robotics","green"],["MPC + RL","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.17833"],["PDF","https://arxiv.org/pdf/2604.17833"]]
+    },
+    {
+        date: "2026-04-21",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "MM-Hand: 21-DOF Multi-modal Modular Dexterous Robotic Hand",
+        venue: "",
+        summary: "开源 21 自由度多模态灵巧手：远程腱驱动将电机外置，释放手内空间用于集成关节角度传感器、触觉传感器、电机反馈和手掌内立体视觉。模块化 3D 打印结构+快速腱连接器方便维护。1 米远程腱鞘传输下指尖力达 25N。硬件设计与软件框架完全开源。",
+        tags: [["Robotics","green"],["灵巧手硬件","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.17245"],["PDF","https://arxiv.org/pdf/2604.17245"]]
+    },
+    {
+        date: "2026-04-21",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "Rapid Deployment Pipeline for Autonomous Humanoid Grasping",
+        venue: "",
+        summary: "将 Roboflow 自动标注+YOLOv8、Meta SAM 3D 重建、FoundationPose 零样本位姿跟踪三大基础模型集成为端到端流水线，新物体上线周期从 1-2 天缩短至约 30 分钟。仅需智能手机即可完成数据采集。在 Unitree G1 人形机器人上验证：mAP@0.5=0.995，位姿跟踪精度 σ<1.05mm，多位置抓取均成功。",
+        tags: [["Robotics","green"],["基础模型","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.17258"],["PDF","https://arxiv.org/pdf/2604.17258"]]
+    },
+    {
+        date: "2026-04-21",
+        category: "Embodied AI",
+        categoryIcon: "🧩",
+        title: "Learning Whole-Body Humanoid Locomotion via Motion Generation and Tracking",
+        venue: "",
+        summary: "提出「生成-跟踪」两阶段人形全身运动框架：先在人类动作数据上训练扩散模型实时生成地形感知的参考动作，同时用 RL 训练全身参考跟踪器；再通过闭环微调（冻结生成器 + fine-tune 跟踪器）提升对不完美参考的鲁棒性。在 Unitree G1 上部署，机载感知与计算，成功自主穿越箱子、栏杆、楼梯等多种复杂地形。与 Boss 的 floating base 研究方向高度相关！",
+        tags: [["Embodied AI","green"],["人形运动","green"],["Boss 必读","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.17335"],["PDF","https://arxiv.org/pdf/2604.17335"]]
+    },
+    {
+        date: "2026-04-21",
+        category: "Embodied AI",
+        categoryIcon: "🧩",
+        title: "COIN: Chain Of Interaction Benchmark for Embodied Reasoning",
+        venue: "",
+        summary: "提出评估交互式因果推理的真实世界基准：COIN-50（50 个日常场景）+ COIN-Primitive（基础原语）+ COIN-Composition（组合任务），附带 1,000 个 AR 遥操作示范。设计上下文无关/依赖两大评估范式。对 CodeAsPolicy、VLA、H-VLA 评测发现：当前模型的核心瓶颈在于视觉理解与运动执行之间的显著鸿沟。",
+        tags: [["Embodied AI","green"],["交互推理","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.16886"],["PDF","https://arxiv.org/pdf/2604.16886"]]
+    },
+    {
+        date: "2026-04-21",
+        category: "Embodied AI",
+        categoryIcon: "🧩",
+        title: "LongBench: Evaluating Robotic Manipulation on Real-World Long-Horizon Tasks",
+        venue: "",
+        summary: "面向长时域操作的真实世界基准，含 1,000+ 个 episode。按能力和歧义性组织任务，涵盖执行鲁棒性、时间一致性、上下文推理三个维度。对 6 种 SOTA 策略的评测发现：全可观测设置下执行鲁棒性是主要瓶颈；基于记忆的方法并不能一致改善上下文推理。核心价值：帮助理解「为什么做不成」而非仅衡量「能不能做成」。",
+        tags: [["Embodied AI","green"],["长时域评测","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.16788"],["PDF","https://arxiv.org/pdf/2604.16788"]]
+    },
+    {
+        date: "2026-04-21",
+        category: "RL",
+        categoryIcon: "🧠",
+        title: "Rewind-IL: Online Failure Detection and State Respawning for Imitation Learning",
+        venue: "",
+        summary: "提出无需训练的在线安全保障框架，适用于生成式动作分块模仿策略：TIDE（时间跨块差异估计）零样本失败检测器通过分裂共形预测校准；状态重生机制利用 VLM 在示范中识别语义恢复检查点，失败时将机器人「倒带」到经验证的安全中间状态重新推理。形成「监控-检测-倒带-重启」完整闭环。可跨策略迁移至 flow-matching 等不同架构。",
+        tags: [["RL","green"],["失败恢复","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.16683"],["PDF","https://arxiv.org/pdf/2604.16683"]]
+    },
+    {
+        date: "2026-04-21",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "SYMBOLIZER: Symbolic Model-free Task Planning with VLMs",
+        venue: "",
+        summary: "将 VLM 与经典符号搜索结合用于 TAMP 中的长 horizon 推理：仅需描述对象间关系的提升谓词，利用 VLM 从图像零样本实例化符号状态，规划通过领域无关的启发式搜索完成（目标计数+基于宽度），无需手工设计的动作模型。在 ProDG 和 ViPlan 基准上达到 SOTA。证明符号搜索优于直接 VLM 规划。",
+        tags: [["VLM","green"],["任务规划","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.17830"],["PDF","https://arxiv.org/pdf/2604.17830"]]
+    },
+    {
+        date: "2026-04-21",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "跨维智能发布 DexWorldModel — 面向灵巧手的世界模型",
+        venue: "",
+        summary: "跨维智能发布灵巧手专用世界模型 DexWorldModel，主张世界模型需在行动层面评估而非仅做视频预测。该模型能预测灵巧手操作的物理后果，为「想得到就做得到」的机器人控制提供新思路。这是国内首个专注于灵巧操作的世界模型。",
+        tags: [],
+        links: []
+    },
+    {
+        date: "2026-04-21",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "Science Robotics 发表大行为模型（LBM）严格评估研究",
+        venue: "",
+        summary: "Science Robotics 最新论文对以扩散策略为代表的多任务机器人操控大行为模型进行了系统性严格评估，在仿真和真实机器人上全面测试。研究揭示了当前 LBM 在泛化和鲁棒性方面的真实水平，对该领域的期望进行了理性校准。",
+        tags: [],
+        links: []
+    },
+    {
+        date: "2026-04-21",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "ICLR 2026 论文集上线 — 多篇机器人/具身AI相关 Spotlight",
+        venue: "",
+        summary: "ICLR 2026 完整论文列表已上线，包含多篇机器人相关工作：Geometry-aware 4D Video Generation for Robot Manipulation、VCWorld（虚拟细胞世界模型）、BFM-Zero（人形机器人无监督 RL 行为基础模型）、From REINFORCE to Dr. GRPO（统一 LLM 后训练视角）等。",
+        tags: [],
+        links: []
+    },
     // === 2026-04-20 ===
     {
         date: "2026-04-20",
@@ -6194,6 +6385,13 @@ const PAPERS_DB = [
 ];
 
 const DAILY_OVERVIEW = {
+    "2026-04-21": {
+        bannerTitle: "",
+        bannerSubtitle: "",
+        picks: ["ReFineVLA: Multimodal Reasoning-Aware Generalist Robotic Policies","OFlow: Object-Aware Temporal Flow Matching for Robust Manipulation","Rapid Deployment Pipeline for Autonomous Humanoid Grasping","COIN: Chain Of Interaction Benchmark for Embodied Reasoning","Rewind-IL: Online Failure Detection and State Respawning for Imitation Learning"],
+        totalPapers: 16,
+        totalNews: 3
+    },
     "2026-04-19": {
         bannerTitle: "",
         bannerSubtitle: "",
