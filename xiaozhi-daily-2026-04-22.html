@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>小小志科研日报 — 2026-04-22</title>
+<style>
+:root {
+  --bg: #0f1117;
+  --card-bg: #1a1d2e;
+  --card-border: #2a2d3e;
+  --text: #e0e0e0;
+  --text-muted: #8b8fa3;
+  --accent: #6c5ce7;
+  --accent-light: #a29bfe;
+  --vla: #e17055;
+  --wam: #00b894;
+  --robotics: #0984e3;
+  --embodied: #6c5ce7;
+  --rl: #fdcb6e;
+  --llm: #fd79a8;
+  --vlm: #00cec9;
+  --multimodal: #e056a0;
+  --agent: #74b9ff;
+  --info: #636e72;
+  --highlight-bg: linear-gradient(135deg, #2d1f4e 0%, #1a1d2e 100%);
+  --boss-tag-bg: #ff6b6b;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', sans-serif;
+  line-height: 1.7;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+.header {
+  text-align: center;
+  padding: 40px 0 30px;
+  border-bottom: 1px solid var(--card-border);
+  margin-bottom: 30px;
+}
+.header h1 {
+  font-size: 28px;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--accent-light), var(--vla));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 8px;
+}
+.header .date {
+  color: var(--text-muted);
+  font-size: 14px;
+}
+.header .stats {
+  margin-top: 12px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.header .stats span {
+  font-size: 13px;
+  color: var(--text-muted);
+  background: var(--card-bg);
+  padding: 4px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--card-border);
+}
+.section {
+  margin-bottom: 36px;
+}
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--card-border);
+}
+.section-icon {
+  font-size: 22px;
+}
+.section-title {
+  font-size: 18px;
+  font-weight: 600;
+}
+.section-count {
+  font-size: 12px;
+  color: var(--text-muted);
+  background: var(--card-bg);
+  padding: 2px 8px;
+  border-radius: 8px;
+  border: 1px solid var(--card-border);
+}
+.paper {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  padding: 18px;
+  margin-bottom: 14px;
+  transition: border-color 0.2s;
+}
+.paper:hover {
+  border-color: var(--accent);
+}
+.paper.highlight {
+  background: var(--highlight-bg);
+  border-color: var(--accent);
+}
+.paper-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #fff;
+}
+.paper-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+.tag {
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-weight: 500;
+}
+.tag-vla { background: rgba(225,112,85,0.2); color: var(--vla); }
+.tag-wam { background: rgba(0,184,148,0.2); color: var(--wam); }
+.tag-robotics { background: rgba(9,132,227,0.2); color: var(--robotics); }
+.tag-embodied { background: rgba(108,92,231,0.2); color: var(--embodied); }
+.tag-rl { background: rgba(253,203,110,0.2); color: var(--rl); }
+.tag-llm { background: rgba(253,121,168,0.2); color: var(--llm); }
+.tag-vlm { background: rgba(0,206,201,0.2); color: var(--vlm); }
+.tag-multimodal { background: rgba(224,86,160,0.2); color: var(--multimodal); }
+.tag-agent { background: rgba(116,185,255,0.2); color: var(--agent); }
+.tag-info { background: rgba(99,110,114,0.2); color: var(--info); }
+.tag-boss { background: var(--boss-tag-bg); color: #fff; font-weight: 700; }
+.paper-summary {
+  font-size: 14px;
+  color: var(--text);
+  line-height: 1.8;
+  margin-bottom: 12px;
+}
+.paper-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.paper-links a {
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  text-decoration: none;
+  border: 1px solid var(--card-border);
+  color: var(--accent-light);
+  transition: all 0.2s;
+}
+.paper-links a:hover {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+.info-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  padding: 18px;
+  margin-bottom: 14px;
+  border-left: 3px solid var(--info);
+}
+.info-card.hot {
+  border-left-color: var(--vla);
+}
+.info-title {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #fff;
+}
+.info-summary {
+  font-size: 14px;
+  color: var(--text);
+  line-height: 1.8;
+  margin-bottom: 10px;
+}
+.info-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.info-links a {
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  text-decoration: none;
+  border: 1px solid var(--card-border);
+  color: var(--accent-light);
+  transition: all 0.2s;
+}
+.info-links a:hover {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+.footer {
+  text-align: center;
+  padding: 30px 0;
+  border-top: 1px solid var(--card-border);
+  margin-top: 20px;
+  color: var(--text-muted);
+  font-size: 13px;
+}
+.footer .sig {
+  margin-top: 8px;
+  font-style: italic;
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>小小志科研日报</h1>
+  <div class="date">2026-04-22 · Tuesday Recap & Wednesday Fresh</div>
+  <div class="stats">
+    <span>论文 13 篇</span>
+    <span>行业动态 5 条</span>
+    <span>Boss关注 5 篇</span>
+  </div>
+</div>
+
+<!-- ===== VLA Section ===== -->
+<div class="section" id="vla">
+  <div class="section-header">
+    <span class="section-icon">🤖</span>
+    <span class="section-title">VLA · 视觉-语言-动作</span>
+    <span class="section-count">3 篇</span>
+  </div>
+
+  <div class="paper highlight">
+    <div class="paper-title">VLA Foundry: A Unified Framework for Training Vision-Language-Action Models</div>
+    <div class="paper-meta">
+      <span class="tag tag-vla">VLA</span>
+      <span class="tag tag-vla">统一框架</span>
+    </div>
+    <div class="paper-summary">提出开源框架 VLA Foundry，在单一代码库中统一 LLM、VLM 和 VLA 训练全流程。支持从零开始训练与 Hugging Face 预训练骨干（如 Qwen3-VL）微调两种模式。在 LBM Eval 仿真评估中，Qwen3-VL 骨干的多任务桌面操作策略表现优异。32 页技术报告，完整开源。</div>
+    <div class="paper-links">
+      <a class="link-paper" href="https://arxiv.org/abs/2604.19728">arXiv</a>
+      <a class="link-pdf" href="https://arxiv.org/pdf/2604.19728">PDF</a>
+    </div>
+  </div>
+
+  <div class="paper highlight">
+    <div class="paper-title">UniT: Toward a Unified Physical Language for Human-to-Humanoid Policy Learning and World Modeling</div>
+    <div class="paper-meta">
+      <span class="tag tag-vla">VLA</span>
+      <span class="tag tag-robotics">人形机器人</span>
+      <span class="tag tag-boss">Boss 关注</span>
+    </div>
+    <div class="paper-summary">建立人类到人形机器人的统一物理语言框架 UniT。采用三分支交叉重建机制（动作+视觉+融合）形成具身不可知的物理意图离散潜在空间。实现 VLA-UniT 策略学习和 WM-UniT 世界建模两大应用，充分利用大规模人类运动数据进行人形机器人迁移学习。来自小鹏机器人。</div>
+    <div class="paper-links">
+      <a class="link-paper" href="https://arxiv.org/abs/2604.19734">arXiv</a>
+      <a class="link-pdf" href="https://arxiv.org/pdf/2604.19734">PDF</a>
+      <a href="https://xpeng-robotics.github.io/unit/">Project</a>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">LiveVLN: Breaking the Stop-and-Go Loop in Vision-Language Navigation</div>
+    <div class="paper-meta">
+      <span class="tag tag-vla">VLA</span>
+      <span class="tag tag-embodied">导航连续性</span>
+    </div>
+    <div class="paper-summary">提出无训练框架 LiveVLN，为预训练 VLM 导航器添加多步动作连续性。通过执行与新观测处理时间重叠，消除传统感知-推理-执行循环的阻塞等待。在 R2R 和 RxR 基准上保持性能，真实部署中将等待时间减少 77.7%。</div>
+    <div class="paper-links">
+      <a class="link-paper" href="https://arxiv.org/abs/2604.19536">arXiv</a>
+      <a class="link-pdf" href="https://arxiv.org/pdf/2604.19536">PDF</a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== World Model Section ===== -->
+<div class="section" id="wam">
+  <div class="section-header">
+    <span class="section-icon">🌍</span>
+    <span class="section-title">World Model · 世界模型</span>
+    <span class="section-count">2 篇</span>
+  </div>
+
+  <div class="paper highlight">
+    <div class="paper-title">Mask World Model: Predicting What Matters for Robust Robot Policy Learning</div>
+    <div class="paper-meta">
+      <span class="tag tag-wam">World Model</span>
+      <span class="tag tag-robotics">鲁棒策略</span>
+    </div>
+    <div class="paper-summary">采用视频扩散架构预测语义掩码而非像素，通过几何信息瓶颈捕捉本质物理动力学和接触关系，过滤动态背景与照明变化等视觉噪声。在 LIBERO 和 RLBench 基准上显著超越最先进的 RGB 世界模型，真实机器人实验中展现优越的纹理鲁棒性和泛化能力。</div>
+    <div class="paper-links">
+      <a class="link-paper" href="https://arxiv.org/abs/2604.19683">arXiv</a>
+      <a class="link-pdf" href="https://arxiv.org/pdf/2604.19683">PDF</a>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">RoboWM-Bench: A Benchmark for Evaluating World Models in Robotic Manipulation</div>
+    <div class="paper-meta">
+      <span class="tag tag-wam">World Model</span>
+      <span class="tag tag-robotics">评估基准</span>
+    </div>
+    <div class="paper-summary">提出以操纵为中心的视频世界模型评估基准 RoboWM-Bench。将人手和机器人操纵视频中的生成行为转换为具身动作序列并通过机器人执行验证。发现常见失败模式包括空间推理错误、接触预测不稳定和非物理变形，物理不一致问题即使微调后仍存在。</div>
+    <div class="paper-links">
+      <a class="link-paper" href="https://arxiv.org/abs/2604.19092">arXiv</a>
+      <a class="link-pdf" href="https://arxiv.org/pdf/2604.19092">PDF</a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Robotics Section ===== -->
+<div class="section" id="robotics">
+  <div class="section-header">
+    <span class="section-icon">🦾</span>
+    <span class="section-title">Robotics · 机器人控制与操作</span>
+    <span class="section-count">5 篇</span>
+  </div>
+
+  <div class="paper highlight">
+    <div class="paper-title">GenerativeMPC: VLM-RAG-guided Whole-Body MPC with Virtual Impedance for Bimanual Mobile Manipulation</div>
+    <div class="paper-meta">
+      <span class="tag tag-robotics">Whole-Body MPC</span>
+      <span class="tag tag-robotics">双臂移动操纵</span>
+      <span class="tag tag-boss">Boss 关注</span>
+    </div>
+    <div class="paper-summary">提出分层网络物理框架 GenerativeMPC，显式将语义场景理解与物理控制参数关联。VLM-RAG 将视觉和语言转化为接地控制约束，为全身 MPC 输出动态速度限制和安全边距。虚拟阻抗-导纳控制实现人机交互中的上下文感知柔顺。在 MuJoCo、IsaacSim 和物理平台验证，人类附近实现 60% 速度降低。</div>
+    <div class="paper-links">
+      <a class="link-paper" href="https://arxiv.org/abs/2604.19522">arXiv</a>
+      <a class="link-pdf" href="https://arxiv.org/pdf/2604.19522">PDF</a>
+    </div>
+  </div>
+
+  <div class="paper highlight">
+    <div class="paper-title">Scalable Trajectory Generation for Whole-Body Mobile Manipulation (AutoMoMa)</div>
+    <div class="paper-meta">
+      <span class="tag tag-robotics">Mobile Manipulation</span>
+      <span class="tag tag-robotics">轨迹生成</span>
+      <span class="tag tag-boss">Boss 关注</span>
+    </div>
+    <div class="paper-summary">GPU 加速框架 AutoMoMa，统一 AKR 建模（将基座、臂和物体运动学整合为单一链）与并行化轨迹优化。达到每 GPU 小时 5000 个轨迹（比 CPU 快 80 倍），生成 500K+ 物理有效轨迹数据集，覆盖 330 个场景和多个机器人具身。同时解决规模、多样性和运动学保真度三大问题。</div>
+    <div class="paper-links">
+      <a class="link-paper" href="https://arxiv.org/abs/2604.12565">arXiv</a>
+      <a class="link-pdf" href="https://arxiv.org/pdf/2604.12565">PDF</a>
+    </div>
+  </div>
+
+  <div class="paper highlight">
+    <div class="paper-title">HEX: Humanoid-Aligned Experts for Cross-Embodiment Whole-Body Manipulation</div>
+    <div class="paper-meta">
+      <span class="tag tag-robotics">Whole-Body Control</span>
+      <span class="tag tag-vla">VLA</span>
+      <span class="tag tag-boss">Boss 关注</span>
+    </div>
+    <div class="paper-summary">针对全尺寸双足人形机器人协调操作的状态中心框架 HEX。引入人形对齐的通用状态表示用于跨异构体身可扩展学习，MoE 统一本体感觉预测器建模全身协调和时间运动动力学。轻量历史令牌 + 残差门控融合 + 流匹配动作头。在真实人形操作任务上 SOTA。17 位作者联合。</div>
+    <div class="paper-links">
+      <a class="link-paper" href="https://arxiv.org/abs/2604.07993">arXiv</a>
+      <a class="link-pdf" href="https://arxiv.org/pdf/2604.07993">PDF</a>
+      <a href="https://hex-humanoid.github.io/">Project</a>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">FastGrasp: Learning-based Whole-body Control for Fast Dexterous Grasping with Mobile Manipulators</div>
+    <div class="paper-meta">
+      <span class="tag tag-robotics">灵巧抓取</span>
+      <span class="tag tag-rl">RL</span>
+      <span class="tag tag-boss">Boss 关注</span>
+    </div>
+    <div class="paper-summary">移动机器人快速灵巧抓取框架。两阶段 RL 策略：CVAE 根据物体点云生成多样化抓取候选，执行移动底座、臂和手部的协调运动。集成触觉反馈实时调整以处理冲击效应。在模拟和真实场景中实现有效 sim-to-real 转移，覆盖多样化物体几何形状。</div>
+    <div class="paper-links">
+      <a class="link-paper" href="https://arxiv.org/abs/2604.12879">arXiv</a>
+      <a class="link-pdf" href="https://arxiv.org/pdf/2604.12879">PDF</a>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">Learning Hybrid-Control Policies for High-Precision In-Contact Manipulation Under Uncertainty</div>
+    <div class="paper-meta">
+      <span class="tag tag-robotics">混合力/位控制</span>
+      <span class="tag tag-rl">RL</span>
+    </div>
+    <div class="paper-summary">学习混合位置-力控制策略，每个维度动态选择力或位置控制模式。提出 MATCH 方法调整策略动作概率以镜像混合控制模式选择。在脆弱 peg-in-hole 任务中：成功率提高 10%，钉子破损减少 5 倍。1600+ 仿真对比实验中高噪声环境成功率 68% vs 33%。</div>
+    <div class="paper-links">
+      <a class="link-paper" href="https://arxiv.org/abs/2604.19677">arXiv</a>
+      <a class="link-pdf" href="https://arxiv.org/pdf/2604.19677">PDF</a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Embodied AI Section ===== -->
+<div class="section" id="embodied">
+  <div class="section-header">
+    <span class="section-icon">🧩</span>
+    <span class="section-title">Embodied AI · 具身智能</span>
+    <span class="section-count">1 篇</span>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">EmbodiedLGR: Integrating Lightweight Graph Representation and Retrieval for Semantic-Spatial Memory in Robotic Agents</div>
+    <div class="paper-meta">
+      <span class="tag tag-embodied">Embodied AI</span>
+      <span class="tag tag-llm">语义记忆</span>
+    </div>
+    <div class="paper-summary">VLM 驱动的代理架构 EmbodiedLGR，构建机器人操作环境的密集高效表示。混合建立-检索方法：语义图存储低级对象和位置信息，传统 RAG 保留高级场景描述。在 NaVQA 数据集上实现 SOTA 推理速度和查询时间，已成功部署在物理机器人上。</div>
+    <div class="paper-links">
+      <a class="link-paper" href="https://arxiv.org/abs/2604.18271">arXiv</a>
+      <a class="link-pdf" href="https://arxiv.org/pdf/2604.18271">PDF</a>
+      <a href="https://github.com/paolorv/lgr-agent">GitHub</a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== RL Section ===== -->
+<div class="section" id="rl">
+  <div class="section-header">
+    <span class="section-icon">🎯</span>
+    <span class="section-title">RL · 强化学习</span>
+    <span class="section-count">1 篇</span>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">Multi-Gait Learning for Humanoid Robots Using RL with Selective Adversarial Motion Prior</div>
+    <div class="paper-meta">
+      <span class="tag tag-rl">RL</span>
+      <span class="tag tag-robotics">人形步态</span>
+    </div>
+    <div class="paper-summary">利用选择性对抗运动先验的强化学习方法实现人形机器人多步态学习。通过对抗训练从人类运动数据中提取步态模式，动态选择不同运动先验以适应多种行走和跑步模式。在多步态切换场景中展现流畅过渡能力。</div>
+    <div class="paper-links">
+      <a class="link-paper" href="https://arxiv.org/abs/2604.19102">arXiv</a>
+      <a class="link-pdf" href="https://arxiv.org/pdf/2604.19102">PDF</a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Other Section ===== -->
+<div class="section" id="other">
+  <div class="section-header">
+    <span class="section-icon">📄</span>
+    <span class="section-title">Other · 其他</span>
+    <span class="section-count">1 篇</span>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">COFFAIL: A Dataset of Successful and Anomalous Robot Skill Executions in the Context of Coffee Preparation</div>
+    <div class="paper-meta">
+      <span class="tag tag-robotics">数据集</span>
+      <span class="tag tag-robotics">异常检测</span>
+    </div>
+    <div class="paper-summary">咖啡制备场景下机器人技能执行的成功与异常数据集。在厨房环境中用物理双臂机器人收集，包括成功和异常执行情节。可用于通过模仿学习训练策略，也为机器人失败检测和恢复研究提供基准。在第 2 届德国机器人大会展示。</div>
+    <div class="paper-links">
+      <a class="link-paper" href="https://arxiv.org/abs/2604.18236">arXiv</a>
+      <a class="link-pdf" href="https://arxiv.org/pdf/2604.18236">PDF</a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Industry News Section ===== -->
+<div class="section" id="informations">
+  <div class="section-header">
+    <span class="section-icon">📰</span>
+    <span class="section-title">Informations · 行业动态</span>
+    <span class="section-count">5 条</span>
+  </div>
+
+  <div class="info-card hot">
+    <div class="info-title">Boston Dynamics 宣布开始生产 Atlas 机器人，首批部署现代汽车与 Google DeepMind</div>
+    <div class="info-summary">波士顿动力宣布开始在总部生产产品版全电动 Atlas 人形机器人（56 自由度、2.3m 臂展、50kg 负重）。2026 年所有部署已承诺给现代汽车 RMAC 和 Google DeepMind。支持自主学习、自主充电、三种控制模式。现代计划向工厂部署数万台，投资 26 亿美元建造年产 30,000 台的新工厂。</div>
+    <div class="info-links">
+      <a href="https://bostondynamics.com/blog/boston-dynamics-unveils-new-atlas-robot-to-revolutionize-industry/">Boston Dynamics</a>
+    </div>
+  </div>
+
+  <div class="info-card hot">
+    <div class="info-title">AGIBOT 发布「一体三智」新一代具身 AI 机器人，已生产 10,000 台人形机器人</div>
+    <div class="info-summary">AGIBOT 推出运动+操纵+交互三智一体架构，发布 A3 人形机器人、G2 Air 移动操作臂、OmniHand 灵巧手、D2 Max 四足机器人，配备八大 AI 模型和 MEgo 数据采集系统。CEO 彭志辉表示具身智能不再是概念而是新型生产力基础设施，已实现万台生产里程碑。</div>
+    <div class="info-links">
+      <a href="https://roboticsandautomationnews.com/2026/04/21/agibot-unveils-new-generation-of-embodied-ai-robots-and-models-for-real-world-deployment/100781/">Robotics News</a>
+    </div>
+  </div>
+
+  <div class="info-card">
+    <div class="info-title">中国具身智能商业化拐点：百日融资 345 亿元，极智嘉/卧安/宇树实现盈利</div>
+    <div class="info-summary">截至 4 月 10 日，国内具身智能领域融资 345 亿元、269 起事件。极智嘉新签订单 41.37 亿（+31.7%）、卧安净利润同比增 1053%、宇树人形机器人出货 5500+ 台毛利率 60%。二级市场估值逻辑从「赌未来」转向「买现在」，关注盈利质量和现金流。</div>
+    <div class="info-links">
+      <a href="https://news.qq.com/rain/a/20260420A02VST00">21 经济报道</a>
+    </div>
+  </div>
+
+  <div class="info-card">
+    <div class="info-title">NVIDIA-Cadence 扩大合作：30 倍仿真加速弥合 Sim-to-Real 差距</div>
+    <div class="info-summary">4 月 15 日 CadenceLIVE 硅谷峰会上，Cadence Reality 数字孪生与 NVIDIA Omniverse/Isaac 深度集成，基于 Blackwell GPU 架构实现 30 倍仿真性能加速，支持摩擦、应力、热管理等精密物理参数实时仿真。NVIDIA Newton 1.0 物理引擎、Isaac Sim 6.0、Isaac Lab 3.0 全面可用。</div>
+    <div class="info-links">
+      <a href="https://en.ofweek.com/ofweek-news/detail/nvidia-cadence-expand-partnership-accelerating-physical-ai-robotics-with-high-fidelity-simulation.html">OFweek</a>
+      <a href="https://blogs.nvidia.cn/blog/national-robotics-week-2026/">NVIDIA Blog</a>
+    </div>
+  </div>
+
+  <div class="info-card">
+    <div class="info-title">ATEC2026 具身 AI「图灵测试」启动：$340K 奖池、从仿真到户外真实世界</div>
+    <div class="info-summary">ATEC2026 作为具身 AI 真实世界极限挑战正式启动。三阶段赛制：5-6 月在线模拟赛（$40K）→ 9-11 月匹兹堡/上海/香港真实场景预赛（$150K）→ 12 月香港总决赛（$150K）。评估 Locomotion、Manipulation、Environment Modification 三大能力。腿式机器人+机械臂平台。</div>
+    <div class="info-links">
+      <a href="https://www.roboticstomorrow.com/news/2026/04/17/atec2026-launches-as-the-turing-test-for-embodied-ai-challenging-robots-to-survive-the-real-world/26436/">RoboticsTomorrow</a>
+      <a href="https://www.atecup.com/competitions/ATEC2026">官网</a>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <div>共收录 13 篇论文 · 5 条行业动态 · 数据来源 arXiv / Google / HuggingFace / 中文社区</div>
+  <div class="sig">—— 小小志 · AI 科研情报助手 ——</div>
+</div>
+
+</body>
+</html>
