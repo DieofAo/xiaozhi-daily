@@ -629,6 +629,257 @@
 <script>
 // ===== DATA =====
 const PAPERS_DB = [
+    // === 2026-04-24 ===
+    {
+        date: "2026-04-24",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "LoHo-Manip: Long-Horizon Manipulation via Trace-Conditioned VLA Planning",
+        venue: "",
+        summary: "针对 VLA 在长程操作任务中的脆弱性，提出 LoHo-Manip 模块化框架。核心创新：用一个 Task-Management VLM 以滑动窗口方式管理子任务序列，生成 2D 关键点视觉轨迹（Visual Traces）作为局部控制目标，将长程决策拆解为\"反复的局部控制\"。隐式闭环机制：每步预测剩余计划，实现自动接续和重规划，无需手工恢复逻辑。在仿真和真实 Franka 机器人上展示了长程成功率、鲁棒性和 OOD 泛化的显著提升。",
+        tags: [["VLA","green"],["NEW 04-24","green"]],
+        links: []
+    },
+    {
+        date: "2026-04-24",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "ResVLA: From Noise to Intent — Anchoring Generative VLA Policies with Residual Bridges",
+        venue: "",
+        summary: "提出 ResVLA，将 VLA 策略从\"从噪声生成\"范式转变为\"从意图精修\"范式。利用频谱分析将控制解耦为确定性低频锚点（全局意图）和随机高频残差（局部动力学），通过残差扩散桥（Residual Diffusion Bridge）精修局部动态。相比标准生成基线收敛更快、对语言和机器人具身扰动更鲁棒，并在真实机器人实验中验证。",
+        tags: [["VLA","green"],["NEW 04-24","green"]],
+        links: []
+    },
+    {
+        date: "2026-04-24",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "CorridorVLA: Explicit Spatial Constraints for Generative Action Heads via Sparse Anchors",
+        venue: "",
+        summary: "针对 VLA 模型中空间引导通常隐式嵌入潜在特征的问题，提出 CorridorVLA：预测稀疏空间锚点作为增量物理变化(Δ-positions)，为 flow-matching 动作头定义显式容差走廊（Corridor）——偏离走廊的轨迹接收校正梯度，轻微偏差被容忍。在 LIBERO-Plus 上取得 3.4%–12.4% 成功率提升，GR00T-Corr 变体达 83.21%。",
+        tags: [["VLA","green"],["NEW 04-24","green"]],
+        links: []
+    },
+    {
+        date: "2026-04-24",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "PokeVLA: Empowering Pocket-Sized VLA Model with Comprehensive World Knowledge Guidance",
+        venue: "",
+        summary: "提出轻量级但强大的具身操控基础模型 PokeVLA。两阶段训练范式：(1) 在 240 万多模态样本上预训练紧凑视觉语言模型 PokeVLM，覆盖空间定位、功能感知和具身推理；(2) 通过多视角目标感知语义学习、几何对齐和动作专家注入操作表示。在 LIBERO-Plus benchmark 和真实部署中均超越同规模基线。将开源代码、模型权重和数据集。",
+        tags: [["VLA","green"],["NEW 04-23","green"]],
+        links: []
+    },
+    {
+        date: "2026-04-24",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "How VLAs (Really) Work In Open-World Environments",
+        venue: "",
+        summary: "对 SOTA VLA 模型在 BEHAVIOR1K 基准上的深入批判性分析。发现当前评估指标（成功率/部分分数）仅关注最终物体状态，忽视过程和安全性，可能夸大性能。提出新的多维评估协议，覆盖可复现性、安全性、任务感知和失败因素分析，为 VLA 的真实部署提供更可靠的评估参考。",
+        tags: [["VLA","green"],["NEW 04-24","green"]],
+        links: []
+    },
+    {
+        date: "2026-04-24",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "VistaBot: View-Robust Robot Manipulation via Spatiotemporal-Aware View Synthesis",
+        venue: "",
+        summary: "面向 VLA 在视角变化下性能退化的问题，提出 VistaBot，通过时空感知的视图合成实现视角鲁棒的机器人操控。已被 ICRA 2026 接收。核心方法是学习一个视图合成模块，在不同相机视角间转换观察，使策略对视角变化保持不变性。",
+        tags: [["VLA","green"],["ICRA 2026","green"]],
+        links: []
+    },
+    {
+        date: "2026-04-24",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "Temporal Difference Calibration in Sequential Tasks: Application to VLA Models",
+        venue: "",
+        summary: "针对 VLA 模型在顺序任务执行中的时间校准问题，提出基于时间差分（TD）方法的校准框架。改进动作时序的精确性和一致性，在多步任务链中减少时间漂移和错位，提升序列执行的可靠性。",
+        tags: [["VLA","green"],["NEW 04-23","green"]],
+        links: []
+    },
+    {
+        date: "2026-04-24",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "ST-π: Structured SpatioTemporal VLA for Robotic Manipulation",
+        venue: "",
+        summary: "面向细粒度时空操作挑战，提出结构化时空 VLA 架构 ST-π。现有方法在处理需要精确时空协调的操作任务（如穿针、装配）时表现不佳，ST-π 通过显式建模时空结构来提升对精细操作的控制精度。",
+        tags: [["VLA","green"],["Semantic Scholar","green"]],
+        links: []
+    },
+    {
+        date: "2026-04-24",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "FingerViP: Learning Real-World Dexterous Manipulation with Fingertip Visual Perception",
+        venue: "",
+        summary: "在多指手的每根指尖安装微型摄像头，结合扩散策略的全身视觉运动策略，从人类示教直接学习复杂灵巧操作。特色：相机位姿编码 + 关节电流编码增强视觉特征，实现视觉-本体感觉对齐和接触感知。在受限空间按钮按压、不稳定支撑取棒、遮挡帘后取物、开柜门+取物等高难度任务中实现 80.8% 整体成功率。将完全开源硬件和代码。",
+        tags: [["Robotics","green"],["NEW 04-24","green"]],
+        links: []
+    },
+    {
+        date: "2026-04-24",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "X2-N: A Transformable Wheel-legged Humanoid Robot with Dual-mode Locomotion and Manipulation",
+        venue: "",
+        summary: "提出高自由度可变形轮-腿人形机器人 X2-N，可在人形和轮式两种形态间无缝切换。突破传统轮腿设计固定轮脚和有限髋关节自由度的限制，配备完整上肢实现灵巧操作。基于 RL 的全身控制框架统一处理混合运动、变形和操作。展示了动态滑行运动、爬楼梯和包裹递送等能力。",
+        tags: [["Robotics","green"],["NEW 04-24","green"]],
+        links: []
+    },
+    {
+        date: "2026-04-24",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "Visual-Tactile Peg-in-Hole Assembly Learning from Peg-out-of-Hole Disassembly",
+        venue: "",
+        summary: "创新性地从\"拆解\"学习\"装配\"——通过视觉-触觉融合的策略从 Peg-out-of-Hole 拆卸过程中学习 Peg-in-Hole 装配技能。发表于 IEEE Robotics and Automation Letters，展示了逆向学习在精密装配任务中的可行性。",
+        tags: [["Manipulation","green"],["NEW 04-23","green"]],
+        links: []
+    },
+    {
+        date: "2026-04-24",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "FingerEye: Continuous and Unified Vision-Tactile Sensing for Dexterous Manipulation",
+        venue: "",
+        summary: "提出统一视觉-触觉传感方案 FingerEye，为灵巧操作提供连续的多模态感知。与 FingerViP 类似聚焦指尖感知，但采用了不同的传感融合架构，实现视觉和触觉信息的无缝统一。",
+        tags: [["Dexterous","green"],["NEW 04-23","green"]],
+        links: []
+    },
+    {
+        date: "2026-04-24",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "MISTY: High-Throughput Motion Planning via Mixer-based Single-step Drifting",
+        venue: "",
+        summary: "提出基于 Mixer 架构的高吞吐率运动规划方法 MISTY，通过单步漂移实现高效轨迹生成。相比传统采样式规划器，在保持规划质量的同时大幅提升计算效率。",
+        tags: [["Motion Planning","green"],["NEW 04-24","green"]],
+        links: []
+    },
+    {
+        date: "2026-04-24",
+        category: "Embodied AI",
+        categoryIcon: "🧩",
+        title: "Open-H-Embodiment: A Large-Scale Dataset for Enabling Foundation Models in Medical Robotics",
+        venue: "",
+        summary: "医疗机器人领域的里程碑——最大规模开源医疗机器人视频数据集，包含同步运动学数据，覆盖 49+ 机构、多个机器人平台（CMR Versius, da Vinci, dVRK 等）。亮点：(1) GR00T-H——首个开源医疗机器人视觉-语言-动作基础模型，在结构化缝合基准上 25% 成功率（其他模型 0%），体外缝合 29 步序列 64% 平均成功率；(2) Cosmos-H-Surgical-Simulator——首个多平台动作条件世界模型。",
+        tags: [["Embodied AI","green"],["213+ Authors","green"]],
+        links: []
+    },
+    {
+        date: "2026-04-24",
+        category: "Embodied AI",
+        categoryIcon: "🧩",
+        title: "A Deployable Embodied VLN System with Hierarchical Cognition and Context-Aware Exploration",
+        venue: "",
+        summary: "面向实际部署的具身视觉语言导航（VLN）系统，采用三个异步模块（实时感知、记忆整合、推理），通过认知记忆图编码场景信息，并将探索策略形式化为加权旅行维修员问题（WTRP）。在仿真和真实资源受限硬件上验证了导航成功率和效率的提升。",
+        tags: [["Navigation","green"],["NEW 04-24","green"]],
+        links: []
+    },
+    {
+        date: "2026-04-24",
+        category: "Embodied AI",
+        categoryIcon: "🧩",
+        title: "MOMO: A Framework for Seamless Physical, Verbal, and Graphical Robot Skill Learning and Adaptation",
+        venue: "",
+        summary: "来自 DLR 的综合框架 MOMO，融合物理示教、语言指令和图形界面三种交互方式进行机器人技能学习与适应。用户可以通过手把手示教、口头命令或 GUI 来教授和调整机器人技能，实现具身智能系统中人机协作的无缝衔接。",
+        tags: [["Skill Learning","green"],["NEW 04-23","green"]],
+        links: []
+    },
+    {
+        date: "2026-04-24",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "Hi-WM: Human-in-the-World-Model for Scalable Robot Post-Training",
+        venue: "",
+        summary: "提出 Human-in-the-World-Model (Hi-WM)，将世界模型作为可复用的人类修正基底，实现无需物理执行的策略后训练。支持中间状态缓存、回滚和分支，一个失败状态可产生多条修正轨迹，生成密集的局部监督信号。关键结果：真实世界成功率比基策略提升 37.9 个百分点，比世界模型闭环基线高 19.0 个百分点，世界模型评估与真实表现高度相关 (r = 0.953)。",
+        tags: [["World Model","green"],["NEW 04-24","green"]],
+        links: []
+    },
+    {
+        date: "2026-04-24",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "WorldMark: A Unified Benchmark Suite for Interactive Video World Models",
+        venue: "",
+        summary: "首个为交互式视频世界模型提供标准化测试条件的基准 WorldMark。统一动作映射层将 WASD 风格动作词汇翻译为各模型原生控制格式，500 个评估案例覆盖第一/三人称视角、写实/风格化场景和三个难度等级。配套在线 World Model Arena 平台 (warena.ai) 和排行榜。",
+        tags: [["World Model","green"],["Benchmark","green"]],
+        links: []
+    },
+    {
+        date: "2026-04-24",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "ALAS: Adaptive Long-Horizon Action Synthesis via Async-pathway Stream Disentanglement",
+        venue: "",
+        summary: "受大脑\"where-what\"双通路机制启发的跨域学习框架 ALAS，用于人-场景交互的长程任务。将环境观察和自身状态完全解耦——环境模块捕获物体功能/空间关系/场景语义实现跨域迁移，技能模块独立编码运动模式实现跨技能迁移。子任务成功率提升 23%，执行效率提升 29%。",
+        tags: [["World Model","green"],["Long-Horizon","green"]],
+        links: []
+    },
+    {
+        date: "2026-04-24",
+        category: "RL",
+        categoryIcon: "🧠",
+        title: "X2-N: RL-Based Whole-Body Control for Transformable Wheel-Legged Humanoid",
+        venue: "",
+        summary: "X2-N 的全身控制框架完全基于 强化学习设计，统一处理轮式运动、腿式运动、形态变换和操作四种模式。特别值得关注的是 RL 在高自由度混合运动模式下的应用——需要同时学习离散的形态切换决策和连续的运动控制，这对 RL 算法的表达能力和泛化性提出了高要求。",
+        tags: [["RL","green"],["Whole-Body","green"]],
+        links: []
+    },
+    {
+        date: "2026-04-24",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Tool Attention Is All You Need: Dynamic Tool Gating and Lazy Schema Loading for Eliminating the MCP/Tools Tax",
+        venue: "",
+        summary: "直击 LLM Agent 工作流中的痛点——MCP 协议的\"工具税\"（每轮 10k–60k tokens 开销）。提出 Tool Attention 中间件：用 Intent Schema Overlap (ISO) 评分+状态感知门控实现动态工具选择，双阶段懒加载 schema。核心结果：每轮工具 token 减少 95%（47.3k→2.4k），有效上下文利用率从 24% 提升至 91%。已开源。",
+        tags: [["Agent","green"],["MCP","green"]],
+        links: []
+    },
+    {
+        date: "2026-04-24",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Thinking with Reasoning Skills: Fewer Tokens, More Accuracy",
+        venue: "",
+        summary: "提出推理技能复用范式——将反复试错和深度推理中提炼的可复用推理技能存储起来，推理时检索相关技能指导求解，避免重复走弯路。显著减少推理 token 同时提升准确率，在编码和数学推理任务上验证有效性。ACL 2026 Industry Track 录用，具有很强的实际部署价值。",
+        tags: [["LLM","green"],["ACL 2026","green"]],
+        links: []
+    },
+    {
+        date: "2026-04-24",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Learning to Communicate: Toward End-to-End Optimization of Multi-Agent Language Systems",
+        venue: "",
+        summary: "面向多智能体语言系统的端到端优化，研究如何让 LLM Agent 学习更高效的通信协议。不再依赖人类预设的对话模板，而是让多个 Agent 在任务驱动下自主进化出适合的通信策略，提升协作效率。",
+        tags: [["Multi-Agent","green"],["LLM","green"]],
+        links: []
+    },
+    {
+        date: "2026-04-24",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "When Prompts Override Vision: Prompt-Induced Hallucinations in LVLMs",
+        venue: "",
+        summary: "深入研究大型视觉语言模型（LVLM）中文本提示如何压制视觉信息导致幻觉（Hallucination）。发现当文本提示与视觉内容矛盾时，模型倾向于\"相信\"文本而非\"相信\"眼睛。揭示了 VLM 在多模态融合中的根本性偏差，对安全关键应用（自动驾驶、医疗）有重要启示。",
+        tags: [["VLM","green"],["NEW 04-24","green"]],
+        links: []
+    },
+    {
+        date: "2026-04-24",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Frozen LLMs as Map-Aware Spatio-Temporal Reasoners for Vehicle Trajectory Prediction",
+        venue: "",
+        summary: "将冻结的 LLM 与地图/空间信息相结合用于车辆轨迹预测。无需微调 LLM，通过设计合适的空间编码将地图感知信息注入到 frozen LLM 中，让语言模型展现出时空推理能力。展示了 LLM \"零样本\"空间理解的潜力。",
+        tags: [["VLM","green"],["NEW 04-24","green"]],
+        links: []
+    },
     // === 2026-04-23 ===
     {
         date: "2026-04-23",
