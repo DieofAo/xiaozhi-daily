@@ -629,6 +629,187 @@
 <script>
 // ===== DATA =====
 const PAPERS_DB = [
+    // === 2026-04-23 ===
+    {
+        date: "2026-04-23",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "PokeVLA: Empowering Pocket-Sized Vision-Language-Action Model with Comprehensive World Knowledge Guidance",
+        venue: "",
+        summary: "针对口袋级别 VLA 基础模型的两阶段训练方案 PokeVLA。通过综合世界知识引导在小参数规模上实现 SOTA 性能，LIBERO-Plus 基准表现优异。模型权重、代码与预训练数据集计划全面开源。由 Yupeng Zheng 等 15 位作者合作完成。",
+        tags: [["VLA","green"],["轻量基础模型","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.20834"],["PDF","https://arxiv.org/pdf/2604.20834"]]
+    },
+    {
+        date: "2026-04-23",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "OneVL: One-Step Latent Reasoning and Planning with Vision-Language Explanation",
+        venue: "",
+        summary: "小米研究院提出 OneVL，通过单步潜在推理与规划+视觉语言解释架构，改造 Chain-of-Thought 推理瓶颈。适用于实时响应的具身场景，无需显式多轮推理即可完成复杂任务决策。HuggingFace Daily Papers 热门。",
+        tags: [["VLA","green"],["单步潜在推理","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.18486"],["PDF","https://arxiv.org/pdf/2604.18486"]]
+    },
+    {
+        date: "2026-04-23",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "DeVI: Physics-based Dexterous Human-Object Interaction via Synthetic Video Imitation",
+        venue: "",
+        summary: "利用视频生成模型合成真实人物-物体交互作为演示数据，训练物理基础的灵巧操作策略 DeVI。绕开昂贵真实示范收集，通过合成视频模仿学习闭合 sim-to-real 差距。首尔大学 SNUVCLAB 出品。",
+        tags: [["灵巧操作","green"],["视频合成","green"],["Boss 关注","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.20841"],["PDF","https://arxiv.org/pdf/2604.20841"]]
+    },
+    {
+        date: "2026-04-23",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "A Hough transform approach to safety-aware scalar field mapping using Gaussian Processes",
+        venue: "",
+        summary: "移动感知平台基于高斯过程+Hough 变换的安全感知未知标量场映射框架。适用于环境探测、污染检测、辐射扫描等场景，兼顾测绘精度与路径安全。",
+        tags: [["场地建图","green"],["安全感知","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.20799"],["PDF","https://arxiv.org/pdf/2604.20799"]]
+    },
+    {
+        date: "2026-04-23",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "OMIBench: Benchmarking Olympiad-Level Multi-Image Reasoning in Large Vision-Language Model",
+        venue: "",
+        summary: "评估 LVLM 在奥赛级多图像推理任务的基准 OMIBench。当前 LVLM 在单图任务进展显著，但涉及多图对比、图间逻辑链的高阶推理仍有明显差距。",
+        tags: [["Multimodal","green"],["VLM 基准","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.20806"],["PDF","https://arxiv.org/pdf/2604.20806"]]
+    },
+    {
+        date: "2026-04-23",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "MultiWorld: Scalable Multi-Agent Multi-View Video World Models",
+        venue: "",
+        summary: "香港大学 CIntellifusion 提出 MultiWorld，将视频世界模型扩展到可伸缩的多智能体、多视角场景，支持跨智能体一致的时间与空间动力学建模。77 Stars，代码开源。",
+        tags: [["World Model","green"],["多智能体多视角","green"],["Boss 关注","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.18564"],["PDF","https://arxiv.org/pdf/2604.18564"]]
+    },
+    {
+        date: "2026-04-23",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "AgentSPEX: An Agent SPecification and EXecution Language",
+        venue: "",
+        summary: "UIUC ScaleML Lab 提出 AgentSPEX：面向 LLM Agent 工作流的显式规约与执行语言。支持类型化步骤、分支、循环、并行、可复用子模块、显式状态管理，配带沙箱虚拟环境、检查点、验证、日志的定制化 harness，附带可视化编辑器。对标 LangGraph/DSPy/CrewAI，主打将工作流逻辑从 Python 代码解耦。",
+        tags: [["Agent","green"],["工作流规约语言","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.13346"],["PDF","https://arxiv.org/pdf/2604.13346"]]
+    },
+    {
+        date: "2026-04-23",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "AJ-Bench: Benchmarking Agent-as-a-Judge for Environment-Aware Evaluation",
+        venue: "",
+        summary: "LongCat 推出 AJ-Bench：面向环境感知评估的 Agent-as-a-Judge 基准。区分传统文本输出评判和需要理解环境状态变化的 Agent 评判能力，填补 Agent 自动评估空白。",
+        tags: [["Agent","green"],["评估基准","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.18240"],["PDF","https://arxiv.org/pdf/2604.18240"]]
+    },
+    {
+        date: "2026-04-23",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Diagnosing CFG Interpretation in LLMs",
+        venue: "",
+        summary: "随着 LLM 被接入 Agent 系统，对上下文无关文法（CFG）规范的遵循能力成为关键。本文系统诊断主流 LLM 解析与遵循 CFG 的能力盲区，为约束解码和 Tool Use 提供基础分析。",
+        tags: [["Agent","green"],["CFG 诊断","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.20811"],["PDF","https://arxiv.org/pdf/2604.20811"]]
+    },
+    {
+        date: "2026-04-23",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "TEMPO: Scaling Test-time Training for Large Reasoning Models",
+        venue: "",
+        summary: "HuggingFace 社区推荐：TEMPO 探索将 Test-time Training（TTT）扩展到大推理模型，在推理时动态适配模型参数以提升具体问题求解能力。项目主页含完整方法与评估。",
+        tags: [["LLM","green"],["测试时训练","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.19295"],["PDF","https://arxiv.org/pdf/2604.19295"]]
+    },
+    {
+        date: "2026-04-23",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "ShadowPEFT: Shadow Network for Parameter-Efficient Fine-Tuning",
+        venue: "",
+        summary: "香港理工大学提出 ShadowPEFT：通过影子网络架构实现参数高效微调，减少可训练参数规模同时保持下游任务精度。适用于资源受限的 LLM 定制场景。",
+        tags: [["LLM","green"],["参数高效微调","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.19254"],["PDF","https://arxiv.org/pdf/2604.19254"]]
+    },
+    {
+        date: "2026-04-23",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "PlayCoder: Making LLM-Generated GUI Code Playable",
+        venue: "",
+        summary: "腾讯提出 PlayCoder，专攻 LLM 生成可运行 GUI 代码的场景。强调生成代码的「可玩性」——不仅语法正确，更要能真实运行、交互成功。在代码生成+前端渲染闭环上推进。",
+        tags: [["LLM","green"],["GUI 代码生成","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.19742"],["PDF","https://arxiv.org/pdf/2604.19742"]]
+    },
+    {
+        date: "2026-04-23",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Chat2Workflow: A Benchmark for Generating Executable Visual Workflows with Natural Language",
+        venue: "",
+        summary: "腾讯+浙大 OmniAI 联合推出 Chat2Workflow：面向自然语言生成可执行可视化工作流的基准。评估 LLM 从对话需求生成可运行流程图/Workflow 的能力，面向低代码/自动化场景。",
+        tags: [["LLM","green"],["可视工作流","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.19667"],["PDF","https://arxiv.org/pdf/2604.19667"]]
+    },
+    {
+        date: "2026-04-23",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Dual-View Training for Instruction-Following Information Retrieval",
+        venue: "",
+        summary: "Snowflake 提出双视角训练框架，提升指令跟随式信息检索（IR）性能。针对复杂指令下的检索意图漂移，从查询视角与指令视角双向对齐。",
+        tags: [["LLM","green"],["指令跟随检索","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.18845"],["PDF","https://arxiv.org/pdf/2604.18845"]]
+    },
+    {
+        date: "2026-04-23",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "LLaDA2.0-Uni: Unifying Multimodal Understanding and Generation with Diffusion Large Language Model",
+        venue: "",
+        summary: "InclusionAI 推出 LLaDA2.0-Uni：统一多模态理解与生成的离散扩散大语言模型（dLLM）。用统一的扩散框架同时处理图文理解与图文生成两个方向，代码开源。",
+        tags: [["Multimodal","green"],["离散扩散 LLM","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.20796"],["PDF","https://arxiv.org/pdf/2604.20796"]]
+    },
+    {
+        date: "2026-04-23",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "CityRAG: Stepping Into a City via Spatially-Grounded Video Generation",
+        venue: "",
+        summary: "Google 提出 CityRAG：以空间检索增强生成（RAG）驱动的城市级视频生成，用户可以「走进」生成的城市场景。将检索到的空间上下文与生成扩散模型绑定，强调地理一致性。",
+        tags: [["Multimodal","green"],["空间视频生成","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.19741"],["PDF","https://arxiv.org/pdf/2604.19741"]]
+    },
+    {
+        date: "2026-04-23",
+        category: "Other",
+        categoryIcon: "📄",
+        title: "Automatic Ontology Construction Using LLMs as an External Layer of Memory, Verification, and Planning for Hybrid Intelligent Systems",
+        venue: "",
+        summary: "提出混合智能架构：LLM 作为外部记忆、验证、规划层，辅助自动本体（Ontology）构建。为符号 AI 与神经 AI 结合场景提供可落地的 LLM 接入模式。",
+        tags: [["LLM","green"],["本体构建","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.20795"],["PDF","https://arxiv.org/pdf/2604.20795"]]
+    },
+    {
+        date: "2026-04-23",
+        category: "Other",
+        categoryIcon: "📄",
+        title: "Relative Principals, Pluralistic Alignment, and the Structural Value Alignment Problem",
+        venue: "",
+        summary: "重新审视 AI 价值对齐问题：从「相对委托人」（Relative Principals）与多元主义视角切入，提出结构化价值对齐问题框架，超越单一目标函数的对齐范式。",
+        tags: [["AI 价值对齐","green"],["哲学/伦理","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.20805"],["PDF","https://arxiv.org/pdf/2604.20805"]]
+    },
     // === 2026-04-22 ===
     {
         date: "2026-04-22",
@@ -6566,6 +6747,20 @@ const PAPERS_DB = [
 ];
 
 const DAILY_OVERVIEW = {
+    "2026-04-23": {
+        bannerTitle: "",
+        bannerSubtitle: "",
+        picks: ["AgentSPEX: An Agent SPecification and EXecution Language","LLaDA2.0-Uni: Unifying Multimodal Understanding and Generation with Diffusion Large Language Model","MultiWorld: Scalable Multi-Agent Multi-View Video World Models","OneVL: One-Step Latent Reasoning and Planning with Vision-Language Explanation","DeVI: Physics-based Dexterous Human-Object Interaction via Synthetic Video Imitation"],
+        totalPapers: 18,
+        totalNews: 0
+    },
+    "2026-04-22": {
+        bannerTitle: "",
+        bannerSubtitle: "",
+        picks: ["UniT: Toward a Unified Physical Language for Human-to-Humanoid Policy Learning and World Modeling"],
+        totalPapers: 13,
+        totalNews: 5
+    },
     "2026-04-21": {
         bannerTitle: "",
         bannerSubtitle: "",

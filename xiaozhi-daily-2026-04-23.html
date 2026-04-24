@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>小小志科研日报 — 2026-04-23</title>
+<style>
+:root {
+  --bg: #0f1117;
+  --card-bg: #1a1d2e;
+  --card-border: #2a2d3e;
+  --text: #e0e0e0;
+  --text-muted: #8b8fa3;
+  --accent: #6c5ce7;
+  --accent-light: #a29bfe;
+  --vla: #e17055;
+  --wam: #00b894;
+  --robotics: #0984e3;
+  --embodied: #6c5ce7;
+  --rl: #fdcb6e;
+  --llm: #fd79a8;
+  --vlm: #00cec9;
+  --multimodal: #e056a0;
+  --agent: #74b9ff;
+  --info: #636e72;
+  --highlight-bg: linear-gradient(135deg, #2d1f4e 0%, #1a1d2e 100%);
+  --boss-tag-bg: #ff6b6b;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', sans-serif;
+  line-height: 1.7;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+.header {
+  text-align: center;
+  padding: 40px 0 30px;
+  border-bottom: 1px solid var(--card-border);
+  margin-bottom: 30px;
+}
+.header h1 {
+  font-size: 28px;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--accent-light), var(--vla));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 8px;
+}
+.header .date {
+  color: var(--text-muted);
+  font-size: 14px;
+}
+.header .stats {
+  margin-top: 12px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.header .stats span {
+  font-size: 13px;
+  color: var(--text-muted);
+  background: var(--card-bg);
+  padding: 4px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--card-border);
+}
+.section {
+  margin-bottom: 36px;
+}
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--card-border);
+}
+.section-icon {
+  font-size: 22px;
+}
+.section-title {
+  font-size: 18px;
+  font-weight: 600;
+}
+.section-count {
+  font-size: 12px;
+  color: var(--text-muted);
+  background: var(--card-bg);
+  padding: 2px 8px;
+  border-radius: 8px;
+  border: 1px solid var(--card-border);
+}
+.paper {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  padding: 18px;
+  margin-bottom: 14px;
+  transition: border-color 0.2s;
+}
+.paper:hover {
+  border-color: var(--accent);
+}
+.paper.highlight {
+  background: var(--highlight-bg);
+  border-color: var(--accent);
+}
+.paper-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #fff;
+}
+.paper-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+.tag {
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-weight: 500;
+}
+.tag-vla { background: rgba(225,112,85,0.2); color: var(--vla); }
+.tag-wam { background: rgba(0,184,148,0.2); color: var(--wam); }
+.tag-robotics { background: rgba(9,132,227,0.2); color: var(--robotics); }
+.tag-embodied { background: rgba(108,92,231,0.2); color: var(--embodied); }
+.tag-rl { background: rgba(253,203,110,0.2); color: var(--rl); }
+.tag-llm { background: rgba(253,121,168,0.2); color: var(--llm); }
+.tag-vlm { background: rgba(0,206,201,0.2); color: var(--vlm); }
+.tag-multimodal { background: rgba(224,86,160,0.2); color: var(--multimodal); }
+.tag-agent { background: rgba(116,185,255,0.2); color: var(--agent); }
+.tag-info { background: rgba(99,110,114,0.2); color: var(--info); }
+.tag-boss { background: var(--boss-tag-bg); color: #fff; font-weight: 700; }
+.paper-summary {
+  font-size: 14px;
+  color: var(--text);
+  line-height: 1.8;
+  margin-bottom: 12px;
+}
+.paper-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.paper-links a {
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  text-decoration: none;
+  border: 1px solid var(--card-border);
+  color: var(--accent-light);
+  transition: all 0.2s;
+}
+.paper-links a:hover {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+.info-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  padding: 18px;
+  margin-bottom: 14px;
+  border-left: 3px solid var(--info);
+}
+.info-card.hot {
+  border-left-color: var(--vla);
+}
+.info-title {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #fff;
+}
+.info-summary {
+  font-size: 14px;
+  color: var(--text);
+  line-height: 1.8;
+  margin-bottom: 10px;
+}
+.info-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.info-links a {
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  text-decoration: none;
+  border: 1px solid var(--card-border);
+  color: var(--accent-light);
+  transition: all 0.2s;
+}
+.info-links a:hover {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+.footer {
+  text-align: center;
+  padding: 30px 0;
+  border-top: 1px solid var(--card-border);
+  margin-top: 20px;
+  color: var(--text-muted);
+  font-size: 13px;
+}
+.footer .sig {
+  margin-top: 8px;
+  font-style: italic;
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>小小志科研日报</h1>
+  <div class="date">2026-04-23 · Thursday Recap</div>
+  <div class="stats">
+    <span>论文 16 篇</span>
+    <span>arXiv 8 篇</span>
+    <span>HF 热门 8 篇</span>
+  </div>
+</div>
+
+<!-- ===== VLA Section ===== -->
+<div class="section" id="vla">
+  <div class="section-header">
+    <span class="section-icon">🤖</span>
+    <span class="section-title">VLA · 视觉-语言-动作</span>
+    <span class="section-count">2 篇</span>
+  </div>
+
+  <div class="paper highlight">
+    <div class="paper-title">PokeVLA: Empowering Pocket-Sized Vision-Language-Action Model with Comprehensive World Knowledge Guidance</div>
+    <div class="paper-meta">
+      <span class="tag tag-vla">VLA</span>
+      <span class="tag tag-vla">轻量基础模型</span>
+    </div>
+    <div class="paper-summary">针对口袋级别 VLA 基础模型的两阶段训练方案 PokeVLA。通过综合世界知识引导在小参数规模上实现 SOTA 性能，LIBERO-Plus 基准表现优异。模型权重、代码与预训练数据集计划全面开源。由 Yupeng Zheng 等 15 位作者合作完成。</div>
+    <div class="paper-links">
+      <a class="link-paper" href="https://arxiv.org/abs/2604.20834">arXiv</a>
+      <a class="link-pdf" href="https://arxiv.org/pdf/2604.20834">PDF</a>
+      <a href="https://getterupper.github.io/PokeVLA">Project</a>
+    </div>
+  </div>
+
+  <div class="paper highlight">
+    <div class="paper-title">OneVL: One-Step Latent Reasoning and Planning with Vision-Language Explanation</div>
+    <div class="paper-meta">
+      <span class="tag tag-vla">VLA</span>
+      <span class="tag tag-vla">单步潜在推理</span>
+    </div>
+    <div class="paper-summary">小米研究院提出 OneVL，通过单步潜在推理与规划+视觉语言解释架构，改造 Chain-of-Thought 推理瓶颈。适用于实时响应的具身场景，无需显式多轮推理即可完成复杂任务决策。HuggingFace Daily Papers 热门。</div>
+    <div class="paper-links">
+      <a class="link-paper" href="https://arxiv.org/abs/2604.18486">arXiv</a>
+      <a class="link-pdf" href="https://arxiv.org/pdf/2604.18486">PDF</a>
+      <a href="https://xiaomi-embodied-intelligence.github.io/OneVL/">Project</a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Robotics Section ===== -->
+<div class="section" id="robotics">
+  <div class="section-header">
+    <span class="section-icon">🦾</span>
+    <span class="section-title">Robotics · 机器人控制与操作</span>
+    <span class="section-count">3 篇</span>
+  </div>
+
+  <div class="paper highlight">
+    <div class="paper-title">DeVI: Physics-based Dexterous Human-Object Interaction via Synthetic Video Imitation</div>
+    <div class="paper-meta">
+      <span class="tag tag-robotics">灵巧操作</span>
+      <span class="tag tag-multimodal">视频合成</span>
+      <span class="tag tag-boss">Boss 关注</span>
+    </div>
+    <div class="paper-summary">利用视频生成模型合成真实人物-物体交互作为演示数据，训练物理基础的灵巧操作策略 DeVI。绕开昂贵真实示范收集，通过合成视频模仿学习闭合 sim-to-real 差距。首尔大学 SNUVCLAB 出品。</div>
+    <div class="paper-links">
+      <a class="link-paper" href="https://arxiv.org/abs/2604.20841">arXiv</a>
+      <a class="link-pdf" href="https://arxiv.org/pdf/2604.20841">PDF</a>
+      <a href="https://snuvclab.github.io/devi/">Project</a>
+    </div>
+  </div>
+
+  <div class="paper highlight">
+    <div class="paper-title">A Hough transform approach to safety-aware scalar field mapping using Gaussian Processes</div>
+    <div class="paper-meta">
+      <span class="tag tag-robotics">场地建图</span>
+      <span class="tag tag-robotics">安全感知</span>
+    </div>
+    <div class="paper-summary">移动感知平台基于高斯过程+Hough 变换的安全感知未知标量场映射框架。适用于环境探测、污染检测、辐射扫描等场景，兼顾测绘精度与路径安全。</div>
+    <div class="paper-links">
+      <a class="link-paper" href="https://arxiv.org/abs/2604.20799">arXiv</a>
+      <a class="link-pdf" href="https://arxiv.org/pdf/2604.20799">PDF</a>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">OMIBench: Benchmarking Olympiad-Level Multi-Image Reasoning in Large Vision-Language Model</div>
+    <div class="paper-meta">
+      <span class="tag tag-multimodal">Multimodal</span>
+      <span class="tag tag-vlm">VLM 基准</span>
+    </div>
+    <div class="paper-summary">评估 LVLM 在奥赛级多图像推理任务的基准 OMIBench。当前 LVLM 在单图任务进展显著，但涉及多图对比、图间逻辑链的高阶推理仍有明显差距。</div>
+    <div class="paper-links">
+      <a class="link-paper" href="https://arxiv.org/abs/2604.20806">arXiv</a>
+      <a class="link-pdf" href="https://arxiv.org/pdf/2604.20806">PDF</a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== World Model Section ===== -->
+<div class="section" id="wam">
+  <div class="section-header">
+    <span class="section-icon">🌍</span>
+    <span class="section-title">World Model · 世界模型</span>
+    <span class="section-count">1 篇</span>
+  </div>
+
+  <div class="paper highlight">
+    <div class="paper-title">MultiWorld: Scalable Multi-Agent Multi-View Video World Models</div>
+    <div class="paper-meta">
+      <span class="tag tag-wam">World Model</span>
+      <span class="tag tag-multimodal">多智能体多视角</span>
+      <span class="tag tag-boss">Boss 关注</span>
+    </div>
+    <div class="paper-summary">香港大学 CIntellifusion 提出 MultiWorld，将视频世界模型扩展到可伸缩的多智能体、多视角场景，支持跨智能体一致的时间与空间动力学建模。77 Stars，代码开源。</div>
+    <div class="paper-links">
+      <a class="link-paper" href="https://arxiv.org/abs/2604.18564">arXiv</a>
+      <a class="link-pdf" href="https://arxiv.org/pdf/2604.18564">PDF</a>
+      <a href="https://multi-world.github.io/">Project</a>
+      <a href="https://github.com/CIntellifusion/MultiWorld">Code (77⭐)</a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Agent Section ===== -->
+<div class="section" id="agent">
+  <div class="section-header">
+    <span class="section-icon">🧩</span>
+    <span class="section-title">Agent · 智能体</span>
+    <span class="section-count">3 篇</span>
+  </div>
+
+  <div class="paper highlight">
+    <div class="paper-title">AgentSPEX: An Agent SPecification and EXecution Language</div>
+    <div class="paper-meta">
+      <span class="tag tag-agent">Agent</span>
+      <span class="tag tag-agent">工作流规约语言</span>
+    </div>
+    <div class="paper-summary">UIUC ScaleML Lab 提出 AgentSPEX：面向 LLM Agent 工作流的显式规约与执行语言。支持类型化步骤、分支、循环、并行、可复用子模块、显式状态管理，配带沙箱虚拟环境、检查点、验证、日志的定制化 harness，附带可视化编辑器。对标 LangGraph/DSPy/CrewAI，主打将工作流逻辑从 Python 代码解耦。</div>
+    <div class="paper-links">
+      <a class="link-paper" href="https://arxiv.org/abs/2604.13346">arXiv</a>
+      <a class="link-pdf" href="https://arxiv.org/pdf/2604.13346">PDF</a>
+      <a href="https://agentspex.ai/">Project</a>
+      <a href="https://github.com/ScaleML/AgentSPEX">Code (29⭐)</a>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">AJ-Bench: Benchmarking Agent-as-a-Judge for Environment-Aware Evaluation</div>
+    <div class="paper-meta">
+      <span class="tag tag-agent">Agent</span>
+      <span class="tag tag-agent">评估基准</span>
+    </div>
+    <div class="paper-summary">LongCat 推出 AJ-Bench：面向环境感知评估的 Agent-as-a-Judge 基准。区分传统文本输出评判和需要理解环境状态变化的 Agent 评判能力，填补 Agent 自动评估空白。</div>
+    <div class="paper-links">
+      <a class="link-paper" href="https://arxiv.org/abs/2604.18240">arXiv</a>
+      <a class="link-pdf" href="https://arxiv.org/pdf/2604.18240">PDF</a>
+      <a href="https://aj-bench.github.io/">Project</a>
+      <a href="https://github.com/aj-bench/AJ-Bench">Code</a>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">Diagnosing CFG Interpretation in LLMs</div>
+    <div class="paper-meta">
+      <span class="tag tag-agent">Agent</span>
+      <span class="tag tag-llm">CFG 诊断</span>
+    </div>
+    <div class="paper-summary">随着 LLM 被接入 Agent 系统，对上下文无关文法（CFG）规范的遵循能力成为关键。本文系统诊断主流 LLM 解析与遵循 CFG 的能力盲区，为约束解码和 Tool Use 提供基础分析。</div>
+    <div class="paper-links">
+      <a class="link-paper" href="https://arxiv.org/abs/2604.20811">arXiv</a>
+      <a class="link-pdf" href="https://arxiv.org/pdf/2604.20811">PDF</a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== LLM Section ===== -->
+<div class="section" id="llm">
+  <div class="section-header">
+    <span class="section-icon">🧠</span>
+    <span class="section-title">LLM · 大语言模型</span>
+    <span class="section-count">5 篇</span>
+  </div>
+
+  <div class="paper highlight">
+    <div class="paper-title">TEMPO: Scaling Test-time Training for Large Reasoning Models</div>
+    <div class="paper-meta">
+      <span class="tag tag-llm">LLM</span>
+      <span class="tag tag-llm">测试时训练</span>
+    </div>
+    <div class="paper-summary">HuggingFace 社区推荐：TEMPO 探索将 Test-time Training（TTT）扩展到大推理模型，在推理时动态适配模型参数以提升具体问题求解能力。项目主页含完整方法与评估。</div>
+    <div class="paper-links">
+      <a class="link-paper" href="https://arxiv.org/abs/2604.19295">arXiv</a>
+      <a class="link-pdf" href="https://arxiv.org/pdf/2604.19295">PDF</a>
+      <a href="https://qingyangzhang.github.io/tempo-homepage">Project</a>
+      <a href="https://github.com/QingyangZhang/TEMPO">Code (11⭐)</a>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">ShadowPEFT: Shadow Network for Parameter-Efficient Fine-Tuning</div>
+    <div class="paper-meta">
+      <span class="tag tag-llm">LLM</span>
+      <span class="tag tag-llm">参数高效微调</span>
+    </div>
+    <div class="paper-summary">香港理工大学提出 ShadowPEFT：通过影子网络架构实现参数高效微调，减少可训练参数规模同时保持下游任务精度。适用于资源受限的 LLM 定制场景。</div>
+    <div class="paper-links">
+      <a class="link-paper" href="https://arxiv.org/abs/2604.19254">arXiv</a>
+      <a class="link-pdf" href="https://arxiv.org/pdf/2604.19254">PDF</a>
+      <a href="https://github.com/ShadowLLM/shadow-peft">Code (15⭐)</a>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">PlayCoder: Making LLM-Generated GUI Code Playable</div>
+    <div class="paper-meta">
+      <span class="tag tag-llm">LLM</span>
+      <span class="tag tag-llm">GUI 代码生成</span>
+    </div>
+    <div class="paper-summary">腾讯提出 PlayCoder，专攻 LLM 生成可运行 GUI 代码的场景。强调生成代码的「可玩性」——不仅语法正确，更要能真实运行、交互成功。在代码生成+前端渲染闭环上推进。</div>
+    <div class="paper-links">
+      <a class="link-paper" href="https://arxiv.org/abs/2604.19742">arXiv</a>
+      <a class="link-pdf" href="https://arxiv.org/pdf/2604.19742">PDF</a>
+      <a href="https://github.com/Tencent/PlayCoder">Code (27⭐)</a>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">Chat2Workflow: A Benchmark for Generating Executable Visual Workflows with Natural Language</div>
+    <div class="paper-meta">
+      <span class="tag tag-llm">LLM</span>
+      <span class="tag tag-agent">可视工作流</span>
+    </div>
+    <div class="paper-summary">腾讯+浙大 OmniAI 联合推出 Chat2Workflow：面向自然语言生成可执行可视化工作流的基准。评估 LLM 从对话需求生成可运行流程图/Workflow 的能力，面向低代码/自动化场景。</div>
+    <div class="paper-links">
+      <a class="link-paper" href="https://arxiv.org/abs/2604.19667">arXiv</a>
+      <a class="link-pdf" href="https://arxiv.org/pdf/2604.19667">PDF</a>
+      <a href="https://github.com/zjunlp/Chat2Workflow">Code (17⭐)</a>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">Dual-View Training for Instruction-Following Information Retrieval</div>
+    <div class="paper-meta">
+      <span class="tag tag-llm">LLM</span>
+      <span class="tag tag-llm">指令跟随检索</span>
+    </div>
+    <div class="paper-summary">Snowflake 提出双视角训练框架，提升指令跟随式信息检索（IR）性能。针对复杂指令下的检索意图漂移，从查询视角与指令视角双向对齐。</div>
+    <div class="paper-links">
+      <a class="link-paper" href="https://arxiv.org/abs/2604.18845">arXiv</a>
+      <a class="link-pdf" href="https://arxiv.org/pdf/2604.18845">PDF</a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Multimodal Section ===== -->
+<div class="section" id="multimodal">
+  <div class="section-header">
+    <span class="section-icon">🎨</span>
+    <span class="section-title">Multimodal · 多模态</span>
+    <span class="section-count">2 篇</span>
+  </div>
+
+  <div class="paper highlight">
+    <div class="paper-title">LLaDA2.0-Uni: Unifying Multimodal Understanding and Generation with Diffusion Large Language Model</div>
+    <div class="paper-meta">
+      <span class="tag tag-multimodal">Multimodal</span>
+      <span class="tag tag-llm">离散扩散 LLM</span>
+    </div>
+    <div class="paper-summary">InclusionAI 推出 LLaDA2.0-Uni：统一多模态理解与生成的离散扩散大语言模型（dLLM）。用统一的扩散框架同时处理图文理解与图文生成两个方向，代码开源。</div>
+    <div class="paper-links">
+      <a class="link-paper" href="https://arxiv.org/abs/2604.20796">arXiv</a>
+      <a class="link-pdf" href="https://arxiv.org/pdf/2604.20796">PDF</a>
+      <a href="https://github.com/inclusionAI/LLaDA2.0-Uni">Code</a>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">CityRAG: Stepping Into a City via Spatially-Grounded Video Generation</div>
+    <div class="paper-meta">
+      <span class="tag tag-multimodal">Multimodal</span>
+      <span class="tag tag-wam">空间视频生成</span>
+    </div>
+    <div class="paper-summary">Google 提出 CityRAG：以空间检索增强生成（RAG）驱动的城市级视频生成，用户可以「走进」生成的城市场景。将检索到的空间上下文与生成扩散模型绑定，强调地理一致性。</div>
+    <div class="paper-links">
+      <a class="link-paper" href="https://arxiv.org/abs/2604.19741">arXiv</a>
+      <a class="link-pdf" href="https://arxiv.org/pdf/2604.19741">PDF</a>
+      <a href="https://cityrag.github.io/">Project</a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Other Section ===== -->
+<div class="section" id="other">
+  <div class="section-header">
+    <span class="section-icon">📄</span>
+    <span class="section-title">Other · 其他</span>
+    <span class="section-count">2 篇</span>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">Automatic Ontology Construction Using LLMs as an External Layer of Memory, Verification, and Planning for Hybrid Intelligent Systems</div>
+    <div class="paper-meta">
+      <span class="tag tag-llm">LLM</span>
+      <span class="tag tag-agent">本体构建</span>
+    </div>
+    <div class="paper-summary">提出混合智能架构：LLM 作为外部记忆、验证、规划层，辅助自动本体（Ontology）构建。为符号 AI 与神经 AI 结合场景提供可落地的 LLM 接入模式。</div>
+    <div class="paper-links">
+      <a class="link-paper" href="https://arxiv.org/abs/2604.20795">arXiv</a>
+      <a class="link-pdf" href="https://arxiv.org/pdf/2604.20795">PDF</a>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">Relative Principals, Pluralistic Alignment, and the Structural Value Alignment Problem</div>
+    <div class="paper-meta">
+      <span class="tag tag-info">AI 价值对齐</span>
+      <span class="tag tag-info">哲学/伦理</span>
+    </div>
+    <div class="paper-summary">重新审视 AI 价值对齐问题：从「相对委托人」（Relative Principals）与多元主义视角切入，提出结构化价值对齐问题框架，超越单一目标函数的对齐范式。</div>
+    <div class="paper-links">
+      <a class="link-paper" href="https://arxiv.org/abs/2604.20805">arXiv</a>
+      <a class="link-pdf" href="https://arxiv.org/pdf/2604.20805">PDF</a>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <div>共收录 16 篇论文 · 数据来源 arXiv / HuggingFace Daily Papers</div>
+  <div class="sig">—— 小小志 · AI 科研情报助手（补档）——</div>
+</div>
+
+</body>
+</html>
