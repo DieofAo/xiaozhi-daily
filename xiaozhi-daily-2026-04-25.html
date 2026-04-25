@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🔬 小小志科研日报 · 2026-04-25</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+  :root {
+    --bg-primary: #0a0e17;
+    --bg-secondary: #111827;
+    --bg-card: #1a2235;
+    --bg-card-hover: #1f2b42;
+    --border: #2a3650;
+    --text-primary: #e8edf5;
+    --text-secondary: #94a3b8;
+    --text-muted: #64748b;
+    --accent-blue: #3b82f6;
+    --accent-cyan: #06b6d4;
+    --accent-purple: #8b5cf6;
+    --accent-green: #10b981;
+    --accent-amber: #f59e0b;
+    --accent-rose: #f43f5e;
+    --accent-indigo: #6366f1;
+    --gradient-1: linear-gradient(135deg, #3b82f6, #8b5cf6);
+    --gradient-2: linear-gradient(135deg, #06b6d4, #3b82f6);
+    --gradient-3: linear-gradient(135deg, #8b5cf6, #ec4899);
+    --glow-blue: 0 0 20px rgba(59,130,246,0.15);
+    --glow-purple: 0 0 20px rgba(139,92,246,0.15);
+    --radius: 12px;
+    --radius-sm: 8px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+
+  /* ═══ Background Glow ═══ */
+  body::before {
+    content: '';
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 30% 20%, rgba(59,130,246,0.04) 0%, transparent 50%),
+                radial-gradient(circle at 70% 80%, rgba(139,92,246,0.04) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 24px;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ═══ Header ═══ */
+  .header {
+    text-align: center;
+    margin-bottom: 48px;
+    padding: 48px 32px;
+    background: linear-gradient(135deg, rgba(59,130,246,0.08), rgba(139,92,246,0.08));
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .header::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--gradient-1);
+  }
+
+  .header-icon {
+    font-size: 48px;
+    margin-bottom: 16px;
+    display: block;
+  }
+
+  .header h1 {
+    font-size: 2.2em;
+    font-weight: 700;
+    background: var(--gradient-1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 8px;
+    letter-spacing: -0.02em;
+  }
+
+  .header .subtitle {
+    font-size: 1.1em;
+    color: var(--text-secondary);
+    font-weight: 400;
+  }
+
+  .header .date-badge {
+    display: inline-block;
+    margin-top: 16px;
+    padding: 6px 20px;
+    background: rgba(59,130,246,0.12);
+    border: 1px solid rgba(59,130,246,0.3);
+    border-radius: 20px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85em;
+    color: var(--accent-blue);
+  }
+
+  /* ═══ Stats Bar ═══ */
+  .stats-bar {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 12px;
+    margin-bottom: 40px;
+  }
+
+  .stat-item {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 16px;
+    text-align: center;
+    transition: all 0.3s;
+  }
+
+  .stat-item:hover {
+    border-color: var(--accent-blue);
+    box-shadow: var(--glow-blue);
+    transform: translateY(-2px);
+  }
+
+  .stat-number {
+    font-size: 1.8em;
+    font-weight: 700;
+    background: var(--gradient-1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .stat-label {
+    font-size: 0.78em;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-top: 4px;
+  }
+
+  /* ═══ Section ═══ */
+  .section {
+    margin-bottom: 40px;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .section-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    flex-shrink: 0;
+  }
+
+  .section-title {
+    font-size: 1.3em;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+
+  .section-count {
+    margin-left: auto;
+    font-size: 0.8em;
+    color: var(--text-muted);
+    font-family: 'JetBrains Mono', monospace;
+    padding: 4px 10px;
+    background: rgba(255,255,255,0.04);
+    border-radius: 12px;
+  }
+
+  /* Colors by category */
+  .cat-robotics .section-icon { background: rgba(59,130,246,0.15); }
+  .cat-robotics .section-title { color: var(--accent-blue); }
+  .cat-vla .section-icon { background: rgba(139,92,246,0.15); }
+  .cat-vla .section-title { color: var(--accent-purple); }
+  .cat-embodied .section-icon { background: rgba(6,182,212,0.15); }
+  .cat-embodied .section-title { color: var(--accent-cyan); }
+  .cat-rl .section-icon { background: rgba(16,185,129,0.15); }
+  .cat-rl .section-title { color: var(--accent-green); }
+  .cat-llm .section-icon { background: rgba(245,158,11,0.15); }
+  .cat-llm .section-title { color: var(--accent-amber); }
+  .cat-wam .section-icon { background: rgba(244,63,94,0.15); }
+  .cat-wam .section-title { color: var(--accent-rose); }
+  .cat-vlm .section-icon { background: rgba(99,102,241,0.15); }
+  .cat-vlm .section-title { color: var(--accent-indigo); }
+  .cat-info .section-icon { background: rgba(245,158,11,0.15); }
+  .cat-info .section-title { color: var(--accent-amber); }
+
+  /* ═══ Paper Card ═══ */
+  .paper {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px 24px;
+    margin-bottom: 12px;
+    transition: all 0.3s ease;
+    position: relative;
+  }
+
+  .paper:hover {
+    background: var(--bg-card-hover);
+    border-color: rgba(59,130,246,0.3);
+    box-shadow: var(--glow-blue);
+    transform: translateY(-1px);
+  }
+
+  .paper-title {
+    font-size: 1.05em;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 6px;
+    line-height: 1.5;
+  }
+
+  .paper-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+
+  .paper-authors {
+    font-size: 0.82em;
+    color: var(--text-muted);
+    font-style: italic;
+  }
+
+  .tag {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 12px;
+    font-size: 0.72em;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+  }
+
+  .tag-vla { background: rgba(139,92,246,0.15); color: #a78bfa; border: 1px solid rgba(139,92,246,0.3); }
+  .tag-robotics { background: rgba(59,130,246,0.15); color: #60a5fa; border: 1px solid rgba(59,130,246,0.3); }
+  .tag-embodied { background: rgba(6,182,212,0.15); color: #22d3ee; border: 1px solid rgba(6,182,212,0.3); }
+  .tag-rl { background: rgba(16,185,129,0.15); color: #34d399; border: 1px solid rgba(16,185,129,0.3); }
+  .tag-llm { background: rgba(245,158,11,0.15); color: #fbbf24; border: 1px solid rgba(245,158,11,0.3); }
+  .tag-wam { background: rgba(244,63,94,0.15); color: #fb7185; border: 1px solid rgba(244,63,94,0.3); }
+  .tag-vlm { background: rgba(99,102,241,0.15); color: #818cf8; border: 1px solid rgba(99,102,241,0.3); }
+  .tag-multimodal { background: rgba(236,72,153,0.15); color: #f472b6; border: 1px solid rgba(236,72,153,0.3); }
+  .tag-info { background: rgba(245,158,11,0.15); color: #fbbf24; border: 1px solid rgba(245,158,11,0.3); }
+  .tag-dexterous { background: rgba(6,182,212,0.12); color: #67e8f9; border: 1px solid rgba(6,182,212,0.25); }
+  .tag-safety { background: rgba(16,185,129,0.12); color: #6ee7b7; border: 1px solid rgba(16,185,129,0.25); }
+  .tag-humanoid { background: rgba(139,92,246,0.12); color: #c4b5fd; border: 1px solid rgba(139,92,246,0.25); }
+  .tag-planning { background: rgba(99,102,241,0.12); color: #a5b4fc; border: 1px solid rgba(99,102,241,0.25); }
+  .tag-medical { background: rgba(244,63,94,0.12); color: #fda4af; border: 1px solid rgba(244,63,94,0.25); }
+  .tag-bimanual { background: rgba(59,130,246,0.12); color: #93c5fd; border: 1px solid rgba(59,130,246,0.25); }
+  .tag-tactile { background: rgba(6,182,212,0.12); color: #67e8f9; border: 1px solid rgba(6,182,212,0.25); }
+
+  .paper-summary {
+    font-size: 0.88em;
+    color: var(--text-secondary);
+    line-height: 1.65;
+    margin-bottom: 12px;
+  }
+
+  .paper-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .paper-links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-size: 0.78em;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.2s;
+    border: 1px solid;
+  }
+
+  .link-paper {
+    color: var(--accent-blue);
+    border-color: rgba(59,130,246,0.3) !important;
+    background: rgba(59,130,246,0.08);
+  }
+  .link-paper:hover { background: rgba(59,130,246,0.2); }
+
+  .link-pdf {
+    color: var(--accent-rose);
+    border-color: rgba(244,63,94,0.3) !important;
+    background: rgba(244,63,94,0.08);
+  }
+  .link-pdf:hover { background: rgba(244,63,94,0.2); }
+
+  .link-ext {
+    color: var(--accent-cyan);
+    border-color: rgba(6,182,212,0.3) !important;
+    background: rgba(6,182,212,0.08);
+  }
+  .link-ext:hover { background: rgba(6,182,212,0.2); }
+
+  /* ═══ Info Card (行业新闻) ═══ */
+  .info-card {
+    background: linear-gradient(135deg, rgba(245,158,11,0.05), rgba(244,63,94,0.05));
+    border: 1px solid rgba(245,158,11,0.2);
+    border-radius: var(--radius);
+    padding: 20px 24px;
+    margin-bottom: 12px;
+    transition: all 0.3s ease;
+  }
+
+  .info-card:hover {
+    border-color: rgba(245,158,11,0.4);
+    box-shadow: 0 0 20px rgba(245,158,11,0.1);
+    transform: translateY(-1px);
+  }
+
+  .info-title {
+    font-size: 1.05em;
+    font-weight: 600;
+    color: var(--accent-amber);
+    margin-bottom: 8px;
+  }
+
+  .info-source {
+    font-size: 0.78em;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+  }
+
+  .info-summary {
+    font-size: 0.88em;
+    color: var(--text-secondary);
+    line-height: 1.65;
+    margin-bottom: 12px;
+  }
+
+  /* ═══ Highlight Badge ═══ */
+  .highlight-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.68em;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-left: 8px;
+    vertical-align: middle;
+  }
+
+  .badge-hot {
+    background: rgba(244,63,94,0.15);
+    color: var(--accent-rose);
+    border: 1px solid rgba(244,63,94,0.3);
+  }
+
+  .badge-new {
+    background: rgba(16,185,129,0.15);
+    color: var(--accent-green);
+    border: 1px solid rgba(16,185,129,0.3);
+  }
+
+  .badge-boss {
+    background: rgba(245,158,11,0.15);
+    color: var(--accent-amber);
+    border: 1px solid rgba(245,158,11,0.3);
+  }
+
+  /* ═══ Footer ═══ */
+  .footer {
+    text-align: center;
+    margin-top: 56px;
+    padding: 32px;
+    border-top: 1px solid var(--border);
+    color: var(--text-muted);
+    font-size: 0.82em;
+  }
+
+  .footer .sig {
+    margin-top: 12px;
+    font-size: 0.9em;
+    color: var(--text-secondary);
+  }
+
+  /* ═══ Responsive ═══ */
+  @media (max-width: 640px) {
+    .container { padding: 20px 12px; }
+    .header { padding: 32px 16px; }
+    .header h1 { font-size: 1.6em; }
+    .paper { padding: 16px; }
+    .stats-bar { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- ═══════════ Header ═══════════ -->
+  <div class="header">
+    <span class="header-icon">🔬</span>
+    <h1>小小志科研日报</h1>
+    <div class="subtitle">Robotics · VLA · Embodied AI · RL · LLM · WAM · VLM</div>
+    <div class="date-badge">📅 2026-04-25 · Friday</div>
+  </div>
+
+  <!-- ═══════════ Stats ═══════════ -->
+  <div class="stats-bar">
+    <div class="stat-item">
+      <div class="stat-number">30</div>
+      <div class="stat-label">论文总数</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">7</div>
+      <div class="stat-label">领域覆盖</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">3</div>
+      <div class="stat-label">行业新闻</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">3</div>
+      <div class="stat-label">数据源</div>
+    </div>
+  </div>
+
+  <!-- ═══════════ 🤖 VLA ═══════════ -->
+  <div class="section cat-vla" id="vla">
+    <div class="section-header">
+      <div class="section-icon">🤖</div>
+      <div class="section-title">VLA · Vision-Language-Action</div>
+      <div class="section-count">4 papers</div>
+    </div>
+
+    <div class="paper">
+      <div class="paper-title">Long-Horizon Manipulation via Trace-Conditioned VLA Planning (LoHo-Manip) <span class="highlight-badge badge-hot">🔥 HOT</span></div>
+      <div class="paper-meta">
+        <span class="paper-authors">Isabella Liu, An-Chieh Cheng, Rui Yan et al.</span>
+        <span class="tag tag-vla">VLA</span>
+        <span class="tag tag-planning">Long-Horizon</span>
+      </div>
+      <div class="paper-summary">提出模块化框架 LoHo-Manip，将短视野 VLA 执行扩展到长视野指令跟随。使用专用 VLM 预测带进度感知的剩余规划和视觉轨迹提示，实现隐式闭环重规划，在模拟和真实 Franka 任务上展现了强劲的长视野成功率和泛化能力。</div>
+      <div class="paper-links">
+        <a class="link-paper" href="https://arxiv.org/abs/2604.21924" target="_blank">📄 arXiv</a>
+        <a class="link-pdf" href="https://arxiv.org/pdf/2604.21924" target="_blank">📑 PDF</a>
+      </div>
+    </div>
+
+    <div class="paper">
+      <div class="paper-title">VistaBot: View-Robust Robot Manipulation via Spatiotemporal-Aware View Synthesis <span class="highlight-badge badge-hot">🔥 HOT</span></div>
+      <div class="paper-meta">
+        <span class="paper-authors">Songen Gu, Yuhang Zheng, Weize Li et al.</span>
+        <span class="tag tag-vla">VLA</span>
+        <span class="tag tag-multimodal">View Synthesis</span>
+      </div>
+      <div class="paper-summary">融合前馈几何模型与视频扩散模型，实现无需测试时相机标定的视角鲁棒闭环操作。View Generalization Score 分别提升 2.79× 和 2.63×（对比 ACT 和 π₀ 策略）。</div>
+      <div class="paper-links">
+        <a class="link-paper" href="https://arxiv.org/abs/2604.21914" target="_blank">📄 arXiv</a>
+        <a class="link-pdf" href="https://arxiv.org/pdf/2604.21914" target="_blank">📑 PDF</a>
+      </div>
+    </div>
+
+    <div class="paper">
+      <div class="paper-title">JoyAI-RA 0.1: A Foundation Model for Robotic Autonomy</div>
+      <div class="paper-meta">
+        <span class="paper-authors">Tianle Zhang, Zhihao Yuan, Dafeng Chi et al.</span>
+        <span class="tag tag-vla">VLA</span>
+        <span class="tag tag-robotics">Foundation Model</span>
+      </div>
+      <div class="paper-summary">提出 VLA 基础模型 JoyAI-RA，采用多源多层预训练策略（网络数据+自我中心视频+仿真轨迹+真机数据），通过显式动作空间统一化在仿真和真实世界基准上超越 SOTA 方法。</div>
+      <div class="paper-links">
+        <a class="link-paper" href="https://arxiv.org/abs/2604.20100" target="_blank">📄 arXiv</a>
+        <a class="link-pdf" href="https://arxiv.org/pdf/2604.20100" target="_blank">📑 PDF</a>
+      </div>
+    </div>
+
+    <div class="paper">
+      <div class="paper-title">Assessing VLM-Driven Semantic-Affordance Inference for Non-Humanoid Robot Morphologies</div>
+      <div class="paper-meta">
+        <span class="paper-authors">—</span>
+        <span class="tag tag-vla">VLA/VLM</span>
+        <span class="tag tag-robotics">Affordance</span>
+      </div>
+      <div class="paper-summary">探索 VLM 能否为非人形形态机器人有效推断语义可供性，引入混合数据集结合真实标注和 VLM 生成的合成场景，填补了多样机器人形态部署 VLM 的关键空白。</div>
+      <div class="paper-links">
+        <a class="link-paper" href="https://arxiv.org/abs/2604.19509" target="_blank">📄 arXiv</a>
+        <a class="link-pdf" href="https://arxiv.org/pdf/2604.19509" target="_blank">📑 PDF</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════ 🌍 World Model ═══════════ -->
+  <div class="section cat-wam" id="wam">
+    <div class="section-header">
+      <div class="section-icon">🌍</div>
+      <div class="section-title">World Model · 世界模型</div>
+      <div class="section-count">3 papers</div>
+    </div>
+
+    <div class="paper">
+      <div class="paper-title">Mask World Model (MWM): Predicting What Matters for Robust Robot Policy Learning <span class="highlight-badge badge-hot">🔥 HOT</span></div>
+      <div class="paper-meta">
+        <span class="paper-authors">Yunfan Lou, Xiaowei Chi, Xiaojie Zhang et al.</span>
+        <span class="tag tag-wam">World Model</span>
+        <span class="tag tag-robotics">Policy Learning</span>
+      </div>
+      <div class="paper-summary">利用视频扩散架构预测语义 mask 演化而非像素，强加几何信息瓶颈以捕获核心物理动力学同时滤除视觉噪声。在 LIBERO 和 RLBench 基准上显著超越 RGB 世界模型，泛化能力更强。</div>
+      <div class="paper-links">
+        <a class="link-paper" href="https://arxiv.org/abs/2604.19683" target="_blank">📄 arXiv</a>
+        <a class="link-pdf" href="https://arxiv.org/pdf/2604.19683" target="_blank">📑 PDF</a>
+      </div>
+    </div>
+
+    <div class="paper">
+      <div class="paper-title">Hi-WM: Human-in-the-World-Model for Scalable Robot Post-Training <span class="highlight-badge badge-hot">🔥 HOT</span></div>
+      <div class="paper-meta">
+        <span class="paper-authors">Yaxuan Li, Zhongyi Zhou, Yefei Chen et al.</span>
+        <span class="tag tag-wam">World Model</span>
+        <span class="tag tag-rl">Post-Training</span>
+      </div>
+      <div class="paper-summary">提出利用学习到的世界模型作为修正基底的后训练框架，人类直接在模型中干预以提供针对失败的纠正动作。真实世界成功率平均提升 37.9 点，世界模型与真实表现高度相关 (r=0.953)。</div>
+      <div class="paper-links">
+        <a class="link-paper" href="https://arxiv.org/abs/2604.21741" target="_blank">📄 arXiv</a>
+        <a class="link-pdf" href="https://arxiv.org/pdf/2604.21741" target="_blank">📑 PDF</a>
+      </div>
+    </div>
+
+    <div class="paper">
+      <div class="paper-title">Toward Safe Autonomous Robotic Endovascular Interventions using World Models</div>
+      <div class="paper-meta">
+        <span class="paper-authors">Harry Robertshaw, Nikola Fischer, Han-Ru Wu et al.</span>
+        <span class="tag tag-wam">World Model</span>
+        <span class="tag tag-medical">Medical Robotics</span>
+      </div>
+      <div class="paper-summary">基于 TD-MPC2 世界模型框架用于自主血管内导航，仿真中达 58% 成功率，体外验证达 68%。平均尖端接触力 0.15N，远低于 1.5N 血管破裂阈值。</div>
+      <div class="paper-links">
+        <a class="link-paper" href="https://arxiv.org/abs/2604.20151" target="_blank">📄 arXiv</a>
+        <a class="link-pdf" href="https://arxiv.org/pdf/2604.20151" target="_blank">📑 PDF</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════ 🦾 Robotics ═══════════ -->
+  <div class="section cat-robotics" id="robotics">
+    <div class="section-header">
+      <div class="section-icon">🦾</div>
+      <div class="section-title">Robotics · 机器人学</div>
+      <div class="section-count">12 papers</div>
+    </div>
+
+    <div class="paper">
+      <div class="paper-title">X2-N: A Transformable Wheel-legged Humanoid Robot with Dual-mode Locomotion and Manipulation <span class="highlight-badge badge-boss">⭐ BOSS关注</span></div>
+      <div class="paper-meta">
+        <span class="paper-authors">Yan Ning, Xingzhou Chen, Delong Li et al.</span>
+        <span class="tag tag-robotics">Robotics</span>
+        <span class="tag tag-humanoid">Wheel-Legged</span>
+      </div>
+      <div class="paper-summary">高自由度可变形机器人，可在人形和轮腿形态间无缝切换。采用 RL 全身控制框架，实现混合运动、变形和操作的统一控制。<strong>Boss 关注：floating base + hybrid locomotion 方向。</strong></div>
+      <div class="paper-links">
+        <a class="link-paper" href="https://arxiv.org/abs/2604.21541" target="_blank">📄 arXiv</a>
+        <a class="link-pdf" href="https://arxiv.org/pdf/2604.21541" target="_blank">📑 PDF</a>
+      </div>
+    </div>
+
+    <div class="paper">
+      <div class="paper-title">FingerViP: Learning Real-World Dexterous Manipulation with Fingertip Visual Perception</div>
+      <div class="paper-meta">
+        <span class="paper-authors">Zhen Zhang, Weinan Wang, Hejia Sun et al.</span>
+        <span class="tag tag-robotics">Robotics</span>
+        <span class="tag tag-dexterous">Dexterous</span>
+      </div>
+      <div class="paper-summary">在多指手每根手指上嵌入微型相机实现指尖视觉感知，基于扩散策略的视觉运动策略在按钮按压、物体检索和柜门开启等真实任务上达 80.8% 成功率。</div>
+      <div class="paper-links">
+        <a class="link-paper" href="https://arxiv.org/abs/2604.21331" target="_blank">📄 arXiv</a>
+        <a class="link-pdf" href="https://arxiv.org/pdf/2604.21331" target="_blank">📑 PDF</a>
+      </div>
+    </div>
+
+    <div class="paper">
+      <div class="paper-title">FingerEye: Continuous and Unified Vision-Tactile Sensing for Dexterous Manipulation</div>
+      <div class="paper-meta">
+        <span class="paper-authors">Zhixuan Xu, Yichen Li, Xuanye Wu et al.</span>
+        <span class="tag tag-robotics">Robotics</span>
+        <span class="tag tag-tactile">Vision-Tactile</span>
+      </div>
+      <div class="paper-summary">紧凑传感器通过双目 RGB 相机和标记位姿估计提供连续视觉-触觉反馈，视触觉模仿学习策略在多样物体上实现 80.8% 灵巧操作成功率。</div>
+      <div class="paper-links">
+        <a class="link-paper" href="https://arxiv.org/abs/2604.20689" target="_blank">📄 arXiv</a>
+        <a class="link-pdf" href="https://arxiv.org/pdf/2604.20689" target="_blank">📑 PDF</a>
+      </div>
+    </div>
+
+    <div class="paper">
+      <div class="paper-title">RPG: Robust Policy Gating for Smooth Multi-Skill Transitions in Humanoid Fighting</div>
+      <div class="paper-meta">
+        <span class="paper-authors">Yucheng Xin, Jiacheng Bao, Yubo Dong et al.</span>
+        <span class="tag tag-robotics">Robotics</span>
+        <span class="tag tag-humanoid">Humanoid</span>
+      </div>
+      <div class="paper-summary">混合专家策略框架用于人形多技能平滑过渡，通过运动和时间随机化训练实现行走/跑步运动与格斗技能的无缝集成，在 Unitree G1 上验证。</div>
+      <div class="paper-links">
+        <a class="link-paper" href="https://arxiv.org/abs/2604.21355" target="_blank">📄 arXiv</a>
+        <a class="link-pdf" href="https://arxiv.org/pdf/2604.21355" target="_blank">📑 PDF</a>
+      </div>
+    </div>
+
+    <div class="paper">
+      <div class="paper-title">Learn Weightlessness: Imitate Non-Self-Stabilizing Motions on Humanoid Robot</div>
+      <div class="paper-meta">
+        <span class="paper-authors">Yucheng Xin, Jiacheng Bao, Haoran Yang et al.</span>
+        <span class="tag tag-robotics">Robotics</span>
+        <span class="tag tag-humanoid">Motion Imitation</span>
+      </div>
+      <div class="paper-summary">引入失重机制动态确定在非自稳定运动中需要放松的关节，使机器人可以执行坐下、躺下、倚靠等需要环境接触的目标运动。</div>
+      <div class="paper-links">
+        <a class="link-paper" href="https://arxiv.org/abs/2604.21351" target="_blank">📄 arXiv</a>
+        <a class="link-pdf" href="https://arxiv.org/pdf/2604.21351" target="_blank">📑 PDF</a>
+      </div>
+    </div>
+
+    <div class="paper">
+      <div class="paper-title">ETac: A Lightweight and Efficient Tactile Simulation Framework for Learning Dexterous Manipulation</div>
+      <div class="paper-meta">
+        <span class="paper-authors">Zhe Xu, Feiyu Zhao, Xiyan Huang et al.</span>
+        <span class="tag tag-robotics">Robotics</span>
+        <span class="tag tag-tactile">Tactile Sim</span>
+      </div>
+      <div class="paper-summary">数据驱动的弹性软体变形传播模型实现高保真触觉仿真，4096 并行环境下 869 FPS，盲抓策略 84.45% 成功率。</div>
+      <div class="paper-links">
+        <a class="link-paper" href="https://arxiv.org/abs/2604.20295" target="_blank">📄 arXiv</a>
+        <a class="link-pdf" href="https://arxiv.org/pdf/2604.20295" target="_blank">📑 PDF</a>
+      </div>
+    </div>
+
+    <div class="paper">
+      <div class="paper-title">Open-H-Embodiment: A Large-Scale Dataset for Foundation Models in Medical Robotics</div>
+      <div class="paper-meta">
+        <span class="paper-authors">Open-H-Embodiment Consortium et al.</span>
+        <span class="tag tag-robotics">Robotics</span>
+        <span class="tag tag-medical">Medical</span>
+      </div>
+      <div class="paper-summary">最大的开放医疗机器人视频数据集（49 机构，含 da Vinci 等多平台），基础模型 GR00T-H 在缝合基准上达 25% 端到端任务完成率。</div>
+      <div class="paper-links">
+        <a class="link-paper" href="https://arxiv.org/abs/2604.21017" target="_blank">📄 arXiv</a>
+        <a class="link-pdf" href="https://arxiv.org/pdf/2604.21017" target="_blank">📑 PDF</a>
+      </div>
+    </div>
+
+    <div class="paper">
+      <div class="paper-title">Full-Body Dynamic Safety: 3D Poisson Safety Functions for CBF-Based Safety Filters</div>
+      <div class="paper-meta">
+        <span class="paper-authors">Meg Wilkinson, Gilbert Bahati, Ryan M. Bena et al.</span>
+        <span class="tag tag-robotics">Robotics</span>
+        <span class="tag tag-safety">Safety</span>
+      </div>
+      <div class="paper-summary">基于 Poisson 方程求解全局平滑 CBF，实现整个连续机器人表面的碰撞避免保证，同时保持实时性能。</div>
+      <div class="paper-links">
+        <a class="link-paper" href="https://arxiv.org/abs/2604.21189" target="_blank">📄 arXiv</a>
+        <a class="link-pdf" href="https://arxiv.org/pdf/2604.21189" target="_blank">📑 PDF</a>
+      </div>
+    </div>
+
+    <div class="paper">
+      <div class="paper-title">BiCICLe: Bimanual Robot Manipulation via Multi-Agent In-Context Learning</div>
+      <div class="paper-meta">
+        <span class="paper-authors">Alessio Palma, Indro Spinelli, Vignesh Prasad et al.</span>
+        <span class="tag tag-robotics">Robotics</span>
+        <span class="tag tag-bimanual">Bimanual</span>
+      </div>
+      <div class="paper-summary">无需微调，让标准 LLM 通过多智能体领导-跟随框架实现 few-shot 双臂操作，TWIN 基准上 71.1% 平均成功率，超越无训练基线 6.7 个百分点。</div>
+      <div class="paper-links">
+        <a class="link-paper" href="https://arxiv.org/abs/2604.20348" target="_blank">📄 arXiv</a>
+        <a class="link-pdf" href="https://arxiv.org/pdf/2604.20348" target="_blank">📑 PDF</a>
+      </div>
+    </div>
+
+    <div class="paper">
+      <div class="paper-title">VTouch++: A Multimodal Dataset with Vision-Based Tactile Enhancement for Bimanual Manipulation</div>
+      <div class="paper-meta">
+        <span class="paper-authors">Qianxi Hua, Xinyue Li, Zheng Yan et al.</span>
+        <span class="tag tag-robotics">Robotics</span>
+        <span class="tag tag-bimanual">Bimanual Tactile</span>
+      </div>
+      <div class="paper-summary">多模态双臂操作数据集，采用基于视觉的触觉传感和矩阵式任务设计+自动数据采集流水线。</div>
+      <div class="paper-links">
+        <a class="link-paper" href="https://arxiv.org/abs/2604.20444" target="_blank">📄 arXiv</a>
+        <a class="link-pdf" href="https://arxiv.org/pdf/2604.20444" target="_blank">📑 PDF</a>
+      </div>
+    </div>
+
+    <div class="paper">
+      <div class="paper-title">A Survey of Legged Robotics in Non-Inertial Environments <span class="highlight-badge badge-boss">⭐ BOSS关注</span></div>
+      <div class="paper-meta">
+        <span class="paper-authors">I-Chia Chang, Xinyan Huang, Tzu-Yuan Lin et al.</span>
+        <span class="tag tag-robotics">Robotics</span>
+        <span class="tag tag-embodied">Legged Robot</span>
+      </div>
+      <div class="paper-summary">综述非惯性环境下腿式机器人的建模、状态估计和控制 SOTA。<strong>Boss 关注：涉及 floating base dynamics 和 base state estimation。</strong></div>
+      <div class="paper-links">
+        <a class="link-paper" href="https://arxiv.org/abs/2604.20990" target="_blank">📄 arXiv</a>
+        <a class="link-pdf" href="https://arxiv.org/pdf/2604.20990" target="_blank">📑 PDF</a>
+      </div>
+    </div>
+
+    <div class="paper">
+      <div class="paper-title">Learning Hybrid-Control Policies for High-Precision In-Contact Manipulation (MATCH)</div>
+      <div class="paper-meta">
+        <span class="paper-authors">Hunter L. Brown, Geoffrey Hollinger, Stefan Lee</span>
+        <span class="tag tag-robotics">Robotics</span>
+        <span class="tag tag-safety">Force Control</span>
+      </div>
+      <div class="paper-summary">混合位置-力控策略动态按维度选择力或位置控制，MATCH 方法在易碎插销任务上成功率提升 10%，折断减少 5×。</div>
+      <div class="paper-links">
+        <a class="link-paper" href="https://arxiv.org/abs/2604.19677" target="_blank">📄 arXiv</a>
+        <a class="link-pdf" href="https://arxiv.org/pdf/2604.19677" target="_blank">📑 PDF</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════ 🧩 Embodied AI ═══════════ -->
+  <div class="section cat-embodied" id="embodied">
+    <div class="section-header">
+      <div class="section-icon">🧩</div>
+      <div class="section-title">Embodied AI · 具身智能</div>
+      <div class="section-count">4 papers</div>
+    </div>
+
+    <div class="paper">
+      <div class="paper-title">UniT: Toward a Unified Physical Language for Human-to-Humanoid Policy Learning and World Modeling</div>
+      <div class="paper-meta">
+        <span class="paper-authors">Boyu Chen, Yi Chen, Lu Qiu et al.</span>
+        <span class="tag tag-embodied">Embodied AI</span>
+        <span class="tag tag-humanoid">Human-to-Humanoid</span>
+      </div>
+      <div class="paper-summary">建立人到人形机器人迁移的统一物理语言，通过三分支交叉重建将运动学锚定到视觉结果。达到 SOTA 数据效率和鲁棒的 OOD 泛化。</div>
+      <div class="paper-links">
+        <a class="link-paper" href="https://arxiv.org/abs/2604.19734" target="_blank">📄 arXiv</a>
+        <a class="link-pdf" href="https://arxiv.org/pdf/2604.19734" target="_blank">📑 PDF</a>
+      </div>
+    </div>
+
+    <div class="paper">
+      <div class="paper-title">Navigating the Clutter: Waypoint-Based Bi-Level Planning for Multi-Robot Systems</div>
+      <div class="paper-meta">
+        <span class="paper-authors">Jiabao Ji, Yongchao Chen, Yang Zhang et al.</span>
+        <span class="tag tag-embodied">Embodied AI</span>
+        <span class="tag tag-planning">Multi-Robot</span>
+      </div>
+      <div class="paper-summary">混合多机器人控制框架联合优化任务和运动规划，在密集障碍 BoxNet3D-OBS 基准上支持最多 9 台机器人导航。</div>
+      <div class="paper-links">
+        <a class="link-paper" href="https://arxiv.org/abs/2604.21138" target="_blank">📄 arXiv</a>
+        <a class="link-pdf" href="https://arxiv.org/pdf/2604.21138" target="_blank">📑 PDF</a>
+      </div>
+    </div>
+
+    <div class="paper">
+      <div class="paper-title">MOMO: Seamless Physical, Verbal, and Graphical Robot Skill Learning and Adaptation</div>
+      <div class="paper-meta">
+        <span class="paper-authors">Markus Knauer, Edoardo Fiorini, Maximilian Mühlbauer et al.</span>
+        <span class="tag tag-embodied">Embodied AI</span>
+        <span class="tag tag-llm">LLM-Agent</span>
+      </div>
+      <div class="paper-summary">交互式框架通过动觉触摸、自然语言和图形界面实现机器人技能适配，集成基于能量的意图检测和核化运动基元。</div>
+      <div class="paper-links">
+        <a class="link-paper" href="https://arxiv.org/abs/2604.20468" target="_blank">📄 arXiv</a>
+        <a class="link-pdf" href="https://arxiv.org/pdf/2604.20468" target="_blank">📑 PDF</a>
+      </div>
+    </div>
+
+    <div class="paper">
+      <div class="paper-title">GenerativeMPC: VLM-RAG-guided Whole-Body MPC for Bimanual Mobile Manipulation <span class="highlight-badge badge-boss">⭐ BOSS关注</span></div>
+      <div class="paper-meta">
+        <span class="paper-authors">Marcelino J. Fernando, Miguel A. Cabrera, Jeffrin Sam et al.</span>
+        <span class="tag tag-embodied">Embodied AI</span>
+        <span class="tag tag-robotics">Mobile Manip</span>
+      </div>
+      <div class="paper-summary">用 VLM+RAG 桥接语义场景理解与物理控制参数，输出动态速度限制和安全边距。靠近人类时实现 60% 降速，社会感知导航。<strong>Boss 关注：whole-body MPC + mobile manipulation。</strong></div>
+      <div class="paper-links">
+        <a class="link-paper" href="https://arxiv.org/abs/2604.19522" target="_blank">📄 arXiv</a>
+        <a class="link-pdf" href="https://arxiv.org/pdf/2604.19522" target="_blank">📑 PDF</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════ 🎯 RL ═══════════ -->
+  <div class="section cat-rl" id="rl">
+    <div class="section-header">
+      <div class="section-icon">🎯</div>
+      <div class="section-title">RL · 强化学习</div>
+      <div class="section-count">3 papers</div>
+    </div>
+
+    <div class="paper">
+      <div class="paper-title">Efficient Reinforcement Learning using Linear Koopman Dynamics for Nonlinear Robotic Systems</div>
+      <div class="paper-meta">
+        <span class="paper-authors">Wenjian Hao, Yuxuan Fang, Zehui Lu et al.</span>
+        <span class="tag tag-rl">RL</span>
+        <span class="tag tag-robotics">Koopman</span>
+      </div>
+      <div class="paper-summary">通过 Koopman 算子理论学习线性提升动力学并集成到 actor-critic 架构，在机械臂和四足平台上展现优于无模型基线的样本效率。</div>
+      <div class="paper-links">
+        <a class="link-paper" href="https://arxiv.org/abs/2604.19980" target="_blank">📄 arXiv</a>
+        <a class="link-pdf" href="https://arxiv.org/pdf/2604.19980" target="_blank">📑 PDF</a>
+      </div>
+    </div>
+
+    <div class="paper">
+      <div class="paper-title">Multi-Cycle Spatio-Temporal Adaptation in Human-Robot Teaming (RAPIDDS)</div>
+      <div class="paper-meta">
+        <span class="paper-authors">Alex Cuellar, Michael Hagenow, Julie Shah</span>
+        <span class="tag tag-rl">RL</span>
+        <span class="tag tag-embodied">HRI</span>
+      </div>
+      <div class="paper-summary">统一任务级和运动级适配，通过扩散模型对个体时空行为建模，n=32 用户研究显示效率和流畅度显著提升。</div>
+      <div class="paper-links">
+        <a class="link-paper" href="https://arxiv.org/abs/2604.19670" target="_blank">📄 arXiv</a>
+        <a class="link-pdf" href="https://arxiv.org/pdf/2604.19670" target="_blank">📑 PDF</a>
+      </div>
+    </div>
+
+    <div class="paper">
+      <div class="paper-title">Task-Driven Co-Design of Heterogeneous Multi-Robot Systems</div>
+      <div class="paper-meta">
+        <span class="paper-authors">Maximilian Stralz, Meshal Alharbi, Yujun Huang et al.</span>
+        <span class="tag tag-rl">Optimization</span>
+        <span class="tag tag-robotics">Co-Design</span>
+      </div>
+      <div class="paper-summary">形式化组合框架联合优化机器人设计、编队组成和规划，具有最优性保证并可系统性发现非显而易见的设计替代方案。</div>
+      <div class="paper-links">
+        <a class="link-paper" href="https://arxiv.org/abs/2604.21894" target="_blank">📄 arXiv</a>
+        <a class="link-pdf" href="https://arxiv.org/pdf/2604.21894" target="_blank">📑 PDF</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════ 🧠 LLM ═══════════ -->
+  <div class="section cat-llm" id="llm">
+    <div class="section-header">
+      <div class="section-icon">🧠</div>
+      <div class="section-title">LLM · 大语言模型</div>
+      <div class="section-count">2 papers</div>
+    </div>
+
+    <div class="paper">
+      <div class="paper-title">LLM-Guided Safety Agent for Edge Robotics (ISO-Compliant)</div>
+      <div class="paper-meta">
+        <span class="paper-authors">Xu Huang, Ruofan Zhang, Lu Cheng et al.</span>
+        <span class="tag tag-llm">LLM</span>
+        <span class="tag tag-safety">ISO Safety</span>
+      </div>
+      <div class="paper-summary">LLM 引导的安全代理将自然语言安全法规翻译为可执行谓词，基于 ISO 兼容的低延迟感知-计算-控制架构，朝 ISO 13849 Category 3 部署。</div>
+      <div class="paper-links">
+        <a class="link-paper" href="https://arxiv.org/abs/2604.20193" target="_blank">📄 arXiv</a>
+        <a class="link-pdf" href="https://arxiv.org/pdf/2604.20193" target="_blank">📑 PDF</a>
+      </div>
+    </div>
+
+    <div class="paper">
+      <div class="paper-title">Neuro-Symbolic Manipulation Understanding with Enriched Semantic Event Chains (eSEC-LAM)</div>
+      <div class="paper-meta">
+        <span class="paper-authors">Fatemeh Ziaeetabar</span>
+        <span class="tag tag-llm">Neuro-Symbolic</span>
+        <span class="tag tag-robotics">Manipulation</span>
+      </div>
+      <div class="paper-summary">将丰富的语义事件链转化为显式事件级符号状态用于操作理解，具有置信感知谓词和可供性先验，对感知噪声鲁棒。</div>
+      <div class="paper-links">
+        <a class="link-paper" href="https://arxiv.org/abs/2604.21053" target="_blank">📄 arXiv</a>
+        <a class="link-pdf" href="https://arxiv.org/pdf/2604.21053" target="_blank">📑 PDF</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════ 🎨 VLM ═══════════ -->
+  <div class="section cat-vlm" id="vlm">
+    <div class="section-header">
+      <div class="section-icon">🎨</div>
+      <div class="section-title">VLM · 视觉-语言模型</div>
+      <div class="section-count">2 papers</div>
+    </div>
+
+    <div class="paper">
+      <div class="paper-title">Context Unrolling in Omni Models</div>
+      <div class="paper-meta">
+        <span class="paper-authors">Ceyuan Yang, Zhijie Lin, Yang Zhao et al.</span>
+        <span class="tag tag-vlm">VLM</span>
+        <span class="tag tag-multimodal">Omni</span>
+      </div>
+      <div class="paper-summary">统一多模态模型 Omni 在文本/图像/视频/3D/隐表征上训练，展示 Context Unrolling：在多模态表征间显式推理以提升生成和理解性能。</div>
+      <div class="paper-links">
+        <a class="link-paper" href="https://arxiv.org/abs/2604.21921" target="_blank">📄 arXiv</a>
+        <a class="link-pdf" href="https://arxiv.org/pdf/2604.21921" target="_blank">📑 PDF</a>
+      </div>
+    </div>
+
+    <div class="paper">
+      <div class="paper-title">When Prompts Override Vision: Prompt-Induced Hallucinations in LVLMs (HalluScope)</div>
+      <div class="paper-meta">
+        <span class="paper-authors">Pegah Khayatan, Jayneel Parekh, Arnaud Dapogny et al.</span>
+        <span class="tag tag-vlm">VLM</span>
+        <span class="tag tag-llm">Hallucination</span>
+      </div>
+      <div class="paper-summary">HalluScope 基准揭示大视觉语言模型幻觉主要源于对文本先验的过度依赖，HalluVL-DPO 偏好优化框架有效缓解提示诱导的幻觉。</div>
+      <div class="paper-links">
+        <a class="link-paper" href="https://arxiv.org/abs/2604.21911" target="_blank">📄 arXiv</a>
+        <a class="link-pdf" href="https://arxiv.org/pdf/2604.21911" target="_blank">📑 PDF</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════ 📰 行业动态 ═══════════ -->
+  <div class="section cat-info" id="info">
+    <div class="section-header">
+      <div class="section-icon">📰</div>
+      <div class="section-title">行业动态 · Industry News</div>
+      <div class="section-count">3 news</div>
+    </div>
+
+    <div class="info-card">
+      <div class="info-title">🏓 Sony AI「Ace」乒乓球机器人登上 Nature 封面 <span class="highlight-badge badge-hot">🔥 HOT</span></div>
+      <div class="info-source">Sony AI · Nature · 2026-04-22</div>
+      <div class="info-summary">Sony AI 的 Ace 成为首个在竞技物理运动中匹配精英人类水平的自主机器人。采用 9 个 APS 相机 + EVS 事件相机的高速感知系统和无模型 RL 控制，在 ITTF 规则下 5 局 3 胜击败精英选手，发球旋转达 450 rad/s，回球率 75%+。展示了感知-决策-执行全链路 Physical AI 的里程碑突破。</div>
+      <div class="paper-links">
+        <a class="link-ext" href="https://ai.sony/news/sony-ai-announces-breakthrough-research-in-real-world-artificial-intelligence-and-robotics" target="_blank">🔗 Sony AI</a>
+      </div>
+    </div>
+
+    <div class="info-card">
+      <div class="info-title">🤖 AGIBOT APC 2026：人形机器人进入规模化部署</div>
+      <div class="info-source">AGIBOT · APC 2026 · 2026-04-18</div>
+      <div class="info-summary">AGIBOT 在上海合作伙伴大会上发布新一代人形机器人系统（长续航+快速换电+多机协同）、OmniHand 灵巧手和 Physical AI Stack 垂直集成平台。重点强调运动-操作-交互一体化训练和数字孪生持续学习。</div>
+      <div class="paper-links">
+        <a class="link-ext" href="https://www.unite.ai/agibot-signals-a-turning-point-for-humanoid-robotics-at-apc-2026/" target="_blank">🔗 Unite.AI</a>
+      </div>
+    </div>
+
+    <div class="info-card">
+      <div class="info-title">🏗️ ICRA 2026 VLA 落地新范式：具身智能轻量化突围</div>
+      <div class="info-source">ICRA 2026 · 知乎 · 2026-04-21</div>
+      <div class="info-summary">ICRA 2026 热议论文提出 VLA 实用化新范式，针对现有 VLA 模型参数量过大难以在移动操作场景部署的问题，探索轻量化架构和高效推理策略，推动 VLA 从实验室走向真实世界。</div>
+      <div class="paper-links">
+        <a class="link-ext" href="https://zhuanlan.zhihu.com/p/2030007672171406288" target="_blank">🔗 知乎</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════ Footer ═══════════ -->
+  <div class="footer">
+    <div>📊 检索统计：arXiv 7 查询 × 30-40 结果 · Google 3 查询 · 行业新闻 3 条</div>
+    <div>🔍 覆盖领域：Robotics · VLA · World Model · Embodied AI · RL · LLM · VLM</div>
+    <div>📅 数据时间窗口：2026-04-23 ~ 2026-04-25（arXiv 索引延迟 1-2 天）</div>
+    <div class="sig">—— 🤖 小小志 · Boss Team 科研 Researcher ——</div>
+  </div>
+
+</div>
+</body>
+</html>
