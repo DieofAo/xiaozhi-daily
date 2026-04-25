@@ -629,6 +629,337 @@
 <script>
 // ===== DATA =====
 const PAPERS_DB = [
+    // === 2026-04-25 ===
+    {
+        date: "2026-04-25",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "Long-Horizon Manipulation via Trace-Conditioned VLA Planning (LoHo-Manip)",
+        venue: "",
+        summary: "提出模块化框架 LoHo-Manip，将短视野 VLA 执行扩展到长视野指令跟随。使用专用 VLM 预测带进度感知的剩余规划和视觉轨迹提示，实现隐式闭环重规划，在模拟和真实 Franka 任务上展现了强劲的长视野成功率和泛化能力。",
+        tags: [["VLA","green"],["Long-Horizon","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.21924"],["📑 PDF","https://arxiv.org/pdf/2604.21924"]]
+    },
+    {
+        date: "2026-04-25",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "VistaBot: View-Robust Robot Manipulation via Spatiotemporal-Aware View Synthesis",
+        venue: "",
+        summary: "融合前馈几何模型与视频扩散模型，实现无需测试时相机标定的视角鲁棒闭环操作。View Generalization Score 分别提升 2.79× 和 2.63×（对比 ACT 和 π₀ 策略）。",
+        tags: [["VLA","green"],["View Synthesis","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.21914"],["📑 PDF","https://arxiv.org/pdf/2604.21914"]]
+    },
+    {
+        date: "2026-04-25",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "JoyAI-RA 0.1: A Foundation Model for Robotic Autonomy",
+        venue: "",
+        summary: "提出 VLA 基础模型 JoyAI-RA，采用多源多层预训练策略（网络数据+自我中心视频+仿真轨迹+真机数据），通过显式动作空间统一化在仿真和真实世界基准上超越 SOTA 方法。",
+        tags: [["VLA","green"],["Foundation Model","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.20100"],["📑 PDF","https://arxiv.org/pdf/2604.20100"]]
+    },
+    {
+        date: "2026-04-25",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "Assessing VLM-Driven Semantic-Affordance Inference for Non-Humanoid Robot Morphologies",
+        venue: "",
+        summary: "探索 VLM 能否为非人形形态机器人有效推断语义可供性，引入混合数据集结合真实标注和 VLM 生成的合成场景，填补了多样机器人形态部署 VLM 的关键空白。",
+        tags: [["VLA/VLM","green"],["Affordance","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.19509"],["📑 PDF","https://arxiv.org/pdf/2604.19509"]]
+    },
+    {
+        date: "2026-04-25",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "Mask World Model (MWM): Predicting What Matters for Robust Robot Policy Learning",
+        venue: "",
+        summary: "利用视频扩散架构预测语义 mask 演化而非像素，强加几何信息瓶颈以捕获核心物理动力学同时滤除视觉噪声。在 LIBERO 和 RLBench 基准上显著超越 RGB 世界模型，泛化能力更强。",
+        tags: [["World Model","green"],["Policy Learning","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.19683"],["📑 PDF","https://arxiv.org/pdf/2604.19683"]]
+    },
+    {
+        date: "2026-04-25",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "Hi-WM: Human-in-the-World-Model for Scalable Robot Post-Training",
+        venue: "",
+        summary: "提出利用学习到的世界模型作为修正基底的后训练框架，人类直接在模型中干预以提供针对失败的纠正动作。真实世界成功率平均提升 37.9 点，世界模型与真实表现高度相关 (r=0.953)。",
+        tags: [["World Model","green"],["Post-Training","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.21741"],["📑 PDF","https://arxiv.org/pdf/2604.21741"]]
+    },
+    {
+        date: "2026-04-25",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "Toward Safe Autonomous Robotic Endovascular Interventions using World Models",
+        venue: "",
+        summary: "基于 TD-MPC2 世界模型框架用于自主血管内导航，仿真中达 58% 成功率，体外验证达 68%。平均尖端接触力 0.15N，远低于 1.5N 血管破裂阈值。",
+        tags: [["World Model","green"],["Medical Robotics","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.20151"],["📑 PDF","https://arxiv.org/pdf/2604.20151"]]
+    },
+    {
+        date: "2026-04-25",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "X2-N: A Transformable Wheel-legged Humanoid Robot with Dual-mode Locomotion and Manipulation",
+        venue: "",
+        summary: "高自由度可变形机器人，可在人形和轮腿形态间无缝切换。采用 RL 全身控制框架，实现混合运动、变形和操作的统一控制。Boss 关注：floating base + hybrid locomotion 方向。",
+        tags: [["Robotics","green"],["Wheel-Legged","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.21541"],["📑 PDF","https://arxiv.org/pdf/2604.21541"]]
+    },
+    {
+        date: "2026-04-25",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "FingerViP: Learning Real-World Dexterous Manipulation with Fingertip Visual Perception",
+        venue: "",
+        summary: "在多指手每根手指上嵌入微型相机实现指尖视觉感知，基于扩散策略的视觉运动策略在按钮按压、物体检索和柜门开启等真实任务上达 80.8% 成功率。",
+        tags: [["Robotics","green"],["Dexterous","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.21331"],["📑 PDF","https://arxiv.org/pdf/2604.21331"]]
+    },
+    {
+        date: "2026-04-25",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "FingerEye: Continuous and Unified Vision-Tactile Sensing for Dexterous Manipulation",
+        venue: "",
+        summary: "紧凑传感器通过双目 RGB 相机和标记位姿估计提供连续视觉-触觉反馈，视触觉模仿学习策略在多样物体上实现 80.8% 灵巧操作成功率。",
+        tags: [["Robotics","green"],["Vision-Tactile","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.20689"],["📑 PDF","https://arxiv.org/pdf/2604.20689"]]
+    },
+    {
+        date: "2026-04-25",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "RPG: Robust Policy Gating for Smooth Multi-Skill Transitions in Humanoid Fighting",
+        venue: "",
+        summary: "混合专家策略框架用于人形多技能平滑过渡，通过运动和时间随机化训练实现行走/跑步运动与格斗技能的无缝集成，在 Unitree G1 上验证。",
+        tags: [["Robotics","green"],["Humanoid","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.21355"],["📑 PDF","https://arxiv.org/pdf/2604.21355"]]
+    },
+    {
+        date: "2026-04-25",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "Learn Weightlessness: Imitate Non-Self-Stabilizing Motions on Humanoid Robot",
+        venue: "",
+        summary: "引入失重机制动态确定在非自稳定运动中需要放松的关节，使机器人可以执行坐下、躺下、倚靠等需要环境接触的目标运动。",
+        tags: [["Robotics","green"],["Motion Imitation","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.21351"],["📑 PDF","https://arxiv.org/pdf/2604.21351"]]
+    },
+    {
+        date: "2026-04-25",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "ETac: A Lightweight and Efficient Tactile Simulation Framework for Learning Dexterous Manipulation",
+        venue: "",
+        summary: "数据驱动的弹性软体变形传播模型实现高保真触觉仿真，4096 并行环境下 869 FPS，盲抓策略 84.45% 成功率。",
+        tags: [["Robotics","green"],["Tactile Sim","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.20295"],["📑 PDF","https://arxiv.org/pdf/2604.20295"]]
+    },
+    {
+        date: "2026-04-25",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "Open-H-Embodiment: A Large-Scale Dataset for Foundation Models in Medical Robotics",
+        venue: "",
+        summary: "最大的开放医疗机器人视频数据集（49 机构，含 da Vinci 等多平台），基础模型 GR00T-H 在缝合基准上达 25% 端到端任务完成率。",
+        tags: [["Robotics","green"],["Medical","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.21017"],["📑 PDF","https://arxiv.org/pdf/2604.21017"]]
+    },
+    {
+        date: "2026-04-25",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "Full-Body Dynamic Safety: 3D Poisson Safety Functions for CBF-Based Safety Filters",
+        venue: "",
+        summary: "基于 Poisson 方程求解全局平滑 CBF，实现整个连续机器人表面的碰撞避免保证，同时保持实时性能。",
+        tags: [["Robotics","green"],["Safety","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.21189"],["📑 PDF","https://arxiv.org/pdf/2604.21189"]]
+    },
+    {
+        date: "2026-04-25",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "BiCICLe: Bimanual Robot Manipulation via Multi-Agent In-Context Learning",
+        venue: "",
+        summary: "无需微调，让标准 LLM 通过多智能体领导-跟随框架实现 few-shot 双臂操作，TWIN 基准上 71.1% 平均成功率，超越无训练基线 6.7 个百分点。",
+        tags: [["Robotics","green"],["Bimanual","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.20348"],["📑 PDF","https://arxiv.org/pdf/2604.20348"]]
+    },
+    {
+        date: "2026-04-25",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "VTouch++: A Multimodal Dataset with Vision-Based Tactile Enhancement for Bimanual Manipulation",
+        venue: "",
+        summary: "多模态双臂操作数据集，采用基于视觉的触觉传感和矩阵式任务设计+自动数据采集流水线。",
+        tags: [["Robotics","green"],["Bimanual Tactile","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.20444"],["📑 PDF","https://arxiv.org/pdf/2604.20444"]]
+    },
+    {
+        date: "2026-04-25",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "A Survey of Legged Robotics in Non-Inertial Environments",
+        venue: "",
+        summary: "综述非惯性环境下腿式机器人的建模、状态估计和控制 SOTA。Boss 关注：涉及 floating base dynamics 和 base state estimation。",
+        tags: [["Robotics","green"],["Legged Robot","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.20990"],["📑 PDF","https://arxiv.org/pdf/2604.20990"]]
+    },
+    {
+        date: "2026-04-25",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "Learning Hybrid-Control Policies for High-Precision In-Contact Manipulation (MATCH)",
+        venue: "",
+        summary: "混合位置-力控策略动态按维度选择力或位置控制，MATCH 方法在易碎插销任务上成功率提升 10%，折断减少 5×。",
+        tags: [["Robotics","green"],["Force Control","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.19677"],["📑 PDF","https://arxiv.org/pdf/2604.19677"]]
+    },
+    {
+        date: "2026-04-25",
+        category: "Embodied AI",
+        categoryIcon: "🧩",
+        title: "UniT: Toward a Unified Physical Language for Human-to-Humanoid Policy Learning and World Modeling",
+        venue: "",
+        summary: "建立人到人形机器人迁移的统一物理语言，通过三分支交叉重建将运动学锚定到视觉结果。达到 SOTA 数据效率和鲁棒的 OOD 泛化。",
+        tags: [["Embodied AI","green"],["Human-to-Humanoid","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.19734"],["📑 PDF","https://arxiv.org/pdf/2604.19734"]]
+    },
+    {
+        date: "2026-04-25",
+        category: "Embodied AI",
+        categoryIcon: "🧩",
+        title: "Navigating the Clutter: Waypoint-Based Bi-Level Planning for Multi-Robot Systems",
+        venue: "",
+        summary: "混合多机器人控制框架联合优化任务和运动规划，在密集障碍 BoxNet3D-OBS 基准上支持最多 9 台机器人导航。",
+        tags: [["Embodied AI","green"],["Multi-Robot","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.21138"],["📑 PDF","https://arxiv.org/pdf/2604.21138"]]
+    },
+    {
+        date: "2026-04-25",
+        category: "Embodied AI",
+        categoryIcon: "🧩",
+        title: "MOMO: Seamless Physical, Verbal, and Graphical Robot Skill Learning and Adaptation",
+        venue: "",
+        summary: "交互式框架通过动觉触摸、自然语言和图形界面实现机器人技能适配，集成基于能量的意图检测和核化运动基元。",
+        tags: [["Embodied AI","green"],["LLM-Agent","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.20468"],["📑 PDF","https://arxiv.org/pdf/2604.20468"]]
+    },
+    {
+        date: "2026-04-25",
+        category: "Embodied AI",
+        categoryIcon: "🧩",
+        title: "GenerativeMPC: VLM-RAG-guided Whole-Body MPC for Bimanual Mobile Manipulation",
+        venue: "",
+        summary: "用 VLM+RAG 桥接语义场景理解与物理控制参数，输出动态速度限制和安全边距。靠近人类时实现 60% 降速，社会感知导航。Boss 关注：whole-body MPC + mobile manipulation。",
+        tags: [["Embodied AI","green"],["Mobile Manip","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.19522"],["📑 PDF","https://arxiv.org/pdf/2604.19522"]]
+    },
+    {
+        date: "2026-04-25",
+        category: "RL",
+        categoryIcon: "🧠",
+        title: "Efficient Reinforcement Learning using Linear Koopman Dynamics for Nonlinear Robotic Systems",
+        venue: "",
+        summary: "通过 Koopman 算子理论学习线性提升动力学并集成到 actor-critic 架构，在机械臂和四足平台上展现优于无模型基线的样本效率。",
+        tags: [["RL","green"],["Koopman","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.19980"],["📑 PDF","https://arxiv.org/pdf/2604.19980"]]
+    },
+    {
+        date: "2026-04-25",
+        category: "RL",
+        categoryIcon: "🧠",
+        title: "Multi-Cycle Spatio-Temporal Adaptation in Human-Robot Teaming (RAPIDDS)",
+        venue: "",
+        summary: "统一任务级和运动级适配，通过扩散模型对个体时空行为建模，n=32 用户研究显示效率和流畅度显著提升。",
+        tags: [["RL","green"],["HRI","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.19670"],["📑 PDF","https://arxiv.org/pdf/2604.19670"]]
+    },
+    {
+        date: "2026-04-25",
+        category: "RL",
+        categoryIcon: "🧠",
+        title: "Task-Driven Co-Design of Heterogeneous Multi-Robot Systems",
+        venue: "",
+        summary: "形式化组合框架联合优化机器人设计、编队组成和规划，具有最优性保证并可系统性发现非显而易见的设计替代方案。",
+        tags: [["Optimization","green"],["Co-Design","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.21894"],["📑 PDF","https://arxiv.org/pdf/2604.21894"]]
+    },
+    {
+        date: "2026-04-25",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "LLM-Guided Safety Agent for Edge Robotics (ISO-Compliant)",
+        venue: "",
+        summary: "LLM 引导的安全代理将自然语言安全法规翻译为可执行谓词，基于 ISO 兼容的低延迟感知-计算-控制架构，朝 ISO 13849 Category 3 部署。",
+        tags: [["LLM","green"],["ISO Safety","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.20193"],["📑 PDF","https://arxiv.org/pdf/2604.20193"]]
+    },
+    {
+        date: "2026-04-25",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Neuro-Symbolic Manipulation Understanding with Enriched Semantic Event Chains (eSEC-LAM)",
+        venue: "",
+        summary: "将丰富的语义事件链转化为显式事件级符号状态用于操作理解，具有置信感知谓词和可供性先验，对感知噪声鲁棒。",
+        tags: [["Neuro-Symbolic","green"],["Manipulation","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.21053"],["📑 PDF","https://arxiv.org/pdf/2604.21053"]]
+    },
+    {
+        date: "2026-04-25",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Context Unrolling in Omni Models",
+        venue: "",
+        summary: "统一多模态模型 Omni 在文本/图像/视频/3D/隐表征上训练，展示 Context Unrolling：在多模态表征间显式推理以提升生成和理解性能。",
+        tags: [["VLM","green"],["Omni","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.21921"],["📑 PDF","https://arxiv.org/pdf/2604.21921"]]
+    },
+    {
+        date: "2026-04-25",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "When Prompts Override Vision: Prompt-Induced Hallucinations in LVLMs (HalluScope)",
+        venue: "",
+        summary: "HalluScope 基准揭示大视觉语言模型幻觉主要源于对文本先验的过度依赖，HalluVL-DPO 偏好优化框架有效缓解提示诱导的幻觉。",
+        tags: [["VLM","green"],["Hallucination","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.21911"],["📑 PDF","https://arxiv.org/pdf/2604.21911"]]
+    },
+    {
+        date: "2026-04-25",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "🏓 Sony AI「Ace」乒乓球机器人登上 Nature 封面",
+        venue: "",
+        summary: "Sony AI 的 Ace 成为首个在竞技物理运动中匹配精英人类水平的自主机器人。采用 9 个 APS 相机 + EVS 事件相机的高速感知系统和无模型 RL 控制，在 ITTF 规则下 5 局 3 胜击败精英选手，发球旋转达 450 rad/s，回球率 75%+。展示了感知-决策-执行全链路 Physical AI 的里程碑突破。",
+        tags: [],
+        links: [["🔗 Sony AI","https://ai.sony/news/sony-ai-announces-breakthrough-research-in-real-world-artificial-intelligence-and-robotics"]]
+    },
+    {
+        date: "2026-04-25",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "🤖 AGIBOT APC 2026：人形机器人进入规模化部署",
+        venue: "",
+        summary: "AGIBOT 在上海合作伙伴大会上发布新一代人形机器人系统（长续航+快速换电+多机协同）、OmniHand 灵巧手和 Physical AI Stack 垂直集成平台。重点强调运动-操作-交互一体化训练和数字孪生持续学习。",
+        tags: [],
+        links: [["🔗 Unite.AI","https://www.unite.ai/agibot-signals-a-turning-point-for-humanoid-robotics-at-apc-2026/"]]
+    },
+    {
+        date: "2026-04-25",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "🏗️ ICRA 2026 VLA 落地新范式：具身智能轻量化突围",
+        venue: "",
+        summary: "ICRA 2026 热议论文提出 VLA 实用化新范式，针对现有 VLA 模型参数量过大难以在移动操作场景部署的问题，探索轻量化架构和高效推理策略，推动 VLA 从实验室走向真实世界。",
+        tags: [],
+        links: [["🔗 知乎","https://zhuanlan.zhihu.com/p/2030007672171406288"]]
+    },
     // === 2026-04-24 ===
     {
         date: "2026-04-24",
@@ -638,7 +969,7 @@ const PAPERS_DB = [
         venue: "",
         summary: "针对 VLA 在长程操作任务中的脆弱性，提出 LoHo-Manip 模块化框架。核心创新：用一个 Task-Management VLM 以滑动窗口方式管理子任务序列，生成 2D 关键点视觉轨迹（Visual Traces）作为局部控制目标，将长程决策拆解为\"反复的局部控制\"。隐式闭环机制：每步预测剩余计划，实现自动接续和重规划，无需手工恢复逻辑。在仿真和真实 Franka 机器人上展示了长程成功率、鲁棒性和 OOD 泛化的显著提升。",
         tags: [["VLA","green"],["NEW 04-24","green"]],
-        links: []
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.21924"],["📕 PDF","https://arxiv.org/pdf/2604.21924"],["🌐 Project","https://www.liuisabella.com/LoHoManip"]]
     },
     {
         date: "2026-04-24",
@@ -648,7 +979,7 @@ const PAPERS_DB = [
         venue: "",
         summary: "提出 ResVLA，将 VLA 策略从\"从噪声生成\"范式转变为\"从意图精修\"范式。利用频谱分析将控制解耦为确定性低频锚点（全局意图）和随机高频残差（局部动力学），通过残差扩散桥（Residual Diffusion Bridge）精修局部动态。相比标准生成基线收敛更快、对语言和机器人具身扰动更鲁棒，并在真实机器人实验中验证。",
         tags: [["VLA","green"],["NEW 04-24","green"]],
-        links: []
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.21391"],["📕 PDF","https://arxiv.org/pdf/2604.21391"]]
     },
     {
         date: "2026-04-24",
@@ -658,7 +989,7 @@ const PAPERS_DB = [
         venue: "",
         summary: "针对 VLA 模型中空间引导通常隐式嵌入潜在特征的问题，提出 CorridorVLA：预测稀疏空间锚点作为增量物理变化(Δ-positions)，为 flow-matching 动作头定义显式容差走廊（Corridor）——偏离走廊的轨迹接收校正梯度，轻微偏差被容忍。在 LIBERO-Plus 上取得 3.4%–12.4% 成功率提升，GR00T-Corr 变体达 83.21%。",
         tags: [["VLA","green"],["NEW 04-24","green"]],
-        links: []
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.21241"],["📕 PDF","https://arxiv.org/pdf/2604.21241"],["💻 GitHub","https://github.com/corridorVLA"]]
     },
     {
         date: "2026-04-24",
@@ -668,7 +999,7 @@ const PAPERS_DB = [
         venue: "",
         summary: "提出轻量级但强大的具身操控基础模型 PokeVLA。两阶段训练范式：(1) 在 240 万多模态样本上预训练紧凑视觉语言模型 PokeVLM，覆盖空间定位、功能感知和具身推理；(2) 通过多视角目标感知语义学习、几何对齐和动作专家注入操作表示。在 LIBERO-Plus benchmark 和真实部署中均超越同规模基线。将开源代码、模型权重和数据集。",
         tags: [["VLA","green"],["NEW 04-23","green"]],
-        links: []
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.20834"],["📕 PDF","https://arxiv.org/pdf/2604.20834"],["🌐 Project","https://getterupper.github.io/PokeVLA"]]
     },
     {
         date: "2026-04-24",
@@ -678,7 +1009,7 @@ const PAPERS_DB = [
         venue: "",
         summary: "对 SOTA VLA 模型在 BEHAVIOR1K 基准上的深入批判性分析。发现当前评估指标（成功率/部分分数）仅关注最终物体状态，忽视过程和安全性，可能夸大性能。提出新的多维评估协议，覆盖可复现性、安全性、任务感知和失败因素分析，为 VLA 的真实部署提供更可靠的评估参考。",
         tags: [["VLA","green"],["NEW 04-24","green"]],
-        links: []
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.21192"],["📕 PDF","https://arxiv.org/pdf/2604.21192"]]
     },
     {
         date: "2026-04-24",
@@ -688,7 +1019,7 @@ const PAPERS_DB = [
         venue: "",
         summary: "面向 VLA 在视角变化下性能退化的问题，提出 VistaBot，通过时空感知的视图合成实现视角鲁棒的机器人操控。已被 ICRA 2026 接收。核心方法是学习一个视图合成模块，在不同相机视角间转换观察，使策略对视角变化保持不变性。",
         tags: [["VLA","green"],["ICRA 2026","green"]],
-        links: []
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.21914"],["📕 PDF","https://arxiv.org/pdf/2604.21914"]]
     },
     {
         date: "2026-04-24",
@@ -698,7 +1029,7 @@ const PAPERS_DB = [
         venue: "",
         summary: "针对 VLA 模型在顺序任务执行中的时间校准问题，提出基于时间差分（TD）方法的校准框架。改进动作时序的精确性和一致性，在多步任务链中减少时间漂移和错位，提升序列执行的可靠性。",
         tags: [["VLA","green"],["NEW 04-23","green"]],
-        links: []
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.20472"],["📕 PDF","https://arxiv.org/pdf/2604.20472"]]
     },
     {
         date: "2026-04-24",
@@ -708,7 +1039,7 @@ const PAPERS_DB = [
         venue: "",
         summary: "面向细粒度时空操作挑战，提出结构化时空 VLA 架构 ST-π。现有方法在处理需要精确时空协调的操作任务（如穿针、装配）时表现不佳，ST-π 通过显式建模时空结构来提升对精细操作的控制精度。",
         tags: [["VLA","green"],["Semantic Scholar","green"]],
-        links: []
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.17880"],["📕 PDF","https://arxiv.org/pdf/2604.17880"]]
     },
     {
         date: "2026-04-24",
@@ -718,7 +1049,7 @@ const PAPERS_DB = [
         venue: "",
         summary: "在多指手的每根指尖安装微型摄像头，结合扩散策略的全身视觉运动策略，从人类示教直接学习复杂灵巧操作。特色：相机位姿编码 + 关节电流编码增强视觉特征，实现视觉-本体感觉对齐和接触感知。在受限空间按钮按压、不稳定支撑取棒、遮挡帘后取物、开柜门+取物等高难度任务中实现 80.8% 整体成功率。将完全开源硬件和代码。",
         tags: [["Robotics","green"],["NEW 04-24","green"]],
-        links: []
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.21331"],["📕 PDF","https://arxiv.org/pdf/2604.21331"]]
     },
     {
         date: "2026-04-24",
@@ -728,7 +1059,7 @@ const PAPERS_DB = [
         venue: "",
         summary: "提出高自由度可变形轮-腿人形机器人 X2-N，可在人形和轮式两种形态间无缝切换。突破传统轮腿设计固定轮脚和有限髋关节自由度的限制，配备完整上肢实现灵巧操作。基于 RL 的全身控制框架统一处理混合运动、变形和操作。展示了动态滑行运动、爬楼梯和包裹递送等能力。",
         tags: [["Robotics","green"],["NEW 04-24","green"]],
-        links: []
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.21541"],["📕 PDF","https://arxiv.org/pdf/2604.21541"]]
     },
     {
         date: "2026-04-24",
@@ -738,7 +1069,7 @@ const PAPERS_DB = [
         venue: "",
         summary: "创新性地从\"拆解\"学习\"装配\"——通过视觉-触觉融合的策略从 Peg-out-of-Hole 拆卸过程中学习 Peg-in-Hole 装配技能。发表于 IEEE Robotics and Automation Letters，展示了逆向学习在精密装配任务中的可行性。",
         tags: [["Manipulation","green"],["NEW 04-23","green"]],
-        links: []
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.20712"],["📕 PDF","https://arxiv.org/pdf/2604.20712"]]
     },
     {
         date: "2026-04-24",
@@ -748,7 +1079,7 @@ const PAPERS_DB = [
         venue: "",
         summary: "提出统一视觉-触觉传感方案 FingerEye，为灵巧操作提供连续的多模态感知。与 FingerViP 类似聚焦指尖感知，但采用了不同的传感融合架构，实现视觉和触觉信息的无缝统一。",
         tags: [["Dexterous","green"],["NEW 04-23","green"]],
-        links: []
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.20689"],["📕 PDF","https://arxiv.org/pdf/2604.20689"]]
     },
     {
         date: "2026-04-24",
@@ -758,7 +1089,7 @@ const PAPERS_DB = [
         venue: "",
         summary: "提出基于 Mixer 架构的高吞吐率运动规划方法 MISTY，通过单步漂移实现高效轨迹生成。相比传统采样式规划器，在保持规划质量的同时大幅提升计算效率。",
         tags: [["Motion Planning","green"],["NEW 04-24","green"]],
-        links: []
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.21489"],["📕 PDF","https://arxiv.org/pdf/2604.21489"]]
     },
     {
         date: "2026-04-24",
@@ -768,7 +1099,7 @@ const PAPERS_DB = [
         venue: "",
         summary: "医疗机器人领域的里程碑——最大规模开源医疗机器人视频数据集，包含同步运动学数据，覆盖 49+ 机构、多个机器人平台（CMR Versius, da Vinci, dVRK 等）。亮点：(1) GR00T-H——首个开源医疗机器人视觉-语言-动作基础模型，在结构化缝合基准上 25% 成功率（其他模型 0%），体外缝合 29 步序列 64% 平均成功率；(2) Cosmos-H-Surgical-Simulator——首个多平台动作条件世界模型。",
         tags: [["Embodied AI","green"],["213+ Authors","green"]],
-        links: []
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.21017"],["📕 PDF","https://arxiv.org/pdf/2604.21017"],["🌐 Project","https://open-h.github.io/open-h-embodiment/"]]
     },
     {
         date: "2026-04-24",
@@ -778,7 +1109,7 @@ const PAPERS_DB = [
         venue: "",
         summary: "面向实际部署的具身视觉语言导航（VLN）系统，采用三个异步模块（实时感知、记忆整合、推理），通过认知记忆图编码场景信息，并将探索策略形式化为加权旅行维修员问题（WTRP）。在仿真和真实资源受限硬件上验证了导航成功率和效率的提升。",
         tags: [["Navigation","green"],["NEW 04-24","green"]],
-        links: []
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.21363"],["📕 PDF","https://arxiv.org/pdf/2604.21363"]]
     },
     {
         date: "2026-04-24",
@@ -788,7 +1119,7 @@ const PAPERS_DB = [
         venue: "",
         summary: "来自 DLR 的综合框架 MOMO，融合物理示教、语言指令和图形界面三种交互方式进行机器人技能学习与适应。用户可以通过手把手示教、口头命令或 GUI 来教授和调整机器人技能，实现具身智能系统中人机协作的无缝衔接。",
         tags: [["Skill Learning","green"],["NEW 04-23","green"]],
-        links: []
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.20468"],["📕 PDF","https://arxiv.org/pdf/2604.20468"]]
     },
     {
         date: "2026-04-24",
@@ -798,7 +1129,7 @@ const PAPERS_DB = [
         venue: "",
         summary: "提出 Human-in-the-World-Model (Hi-WM)，将世界模型作为可复用的人类修正基底，实现无需物理执行的策略后训练。支持中间状态缓存、回滚和分支，一个失败状态可产生多条修正轨迹，生成密集的局部监督信号。关键结果：真实世界成功率比基策略提升 37.9 个百分点，比世界模型闭环基线高 19.0 个百分点，世界模型评估与真实表现高度相关 (r = 0.953)。",
         tags: [["World Model","green"],["NEW 04-24","green"]],
-        links: []
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.21741"],["📕 PDF","https://arxiv.org/pdf/2604.21741"],["🌐 Project","https://hi-wm.github.io/"]]
     },
     {
         date: "2026-04-24",
@@ -808,7 +1139,7 @@ const PAPERS_DB = [
         venue: "",
         summary: "首个为交互式视频世界模型提供标准化测试条件的基准 WorldMark。统一动作映射层将 WASD 风格动作词汇翻译为各模型原生控制格式，500 个评估案例覆盖第一/三人称视角、写实/风格化场景和三个难度等级。配套在线 World Model Arena 平台 (warena.ai) 和排行榜。",
         tags: [["World Model","green"],["Benchmark","green"]],
-        links: []
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.21686"],["📕 PDF","https://arxiv.org/pdf/2604.21686"],["🏟️ Arena","https://warena.ai"]]
     },
     {
         date: "2026-04-24",
@@ -818,7 +1149,7 @@ const PAPERS_DB = [
         venue: "",
         summary: "受大脑\"where-what\"双通路机制启发的跨域学习框架 ALAS，用于人-场景交互的长程任务。将环境观察和自身状态完全解耦——环境模块捕获物体功能/空间关系/场景语义实现跨域迁移，技能模块独立编码运动模式实现跨技能迁移。子任务成功率提升 23%，执行效率提升 29%。",
         tags: [["World Model","green"],["Long-Horizon","green"]],
-        links: []
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.20721"],["📕 PDF","https://arxiv.org/pdf/2604.20721"]]
     },
     {
         date: "2026-04-24",
@@ -828,7 +1159,7 @@ const PAPERS_DB = [
         venue: "",
         summary: "X2-N 的全身控制框架完全基于 强化学习设计，统一处理轮式运动、腿式运动、形态变换和操作四种模式。特别值得关注的是 RL 在高自由度混合运动模式下的应用——需要同时学习离散的形态切换决策和连续的运动控制，这对 RL 算法的表达能力和泛化性提出了高要求。",
         tags: [["RL","green"],["Whole-Body","green"]],
-        links: []
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.21541"],["📕 PDF","https://arxiv.org/pdf/2604.21541"]]
     },
     {
         date: "2026-04-24",
@@ -838,7 +1169,7 @@ const PAPERS_DB = [
         venue: "",
         summary: "直击 LLM Agent 工作流中的痛点——MCP 协议的\"工具税\"（每轮 10k–60k tokens 开销）。提出 Tool Attention 中间件：用 Intent Schema Overlap (ISO) 评分+状态感知门控实现动态工具选择，双阶段懒加载 schema。核心结果：每轮工具 token 减少 95%（47.3k→2.4k），有效上下文利用率从 24% 提升至 91%。已开源。",
         tags: [["Agent","green"],["MCP","green"]],
-        links: []
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.21816"],["📕 PDF","https://arxiv.org/pdf/2604.21816"],["💻 GitHub","https://github.com/asadani/tool-attention"]]
     },
     {
         date: "2026-04-24",
@@ -848,7 +1179,7 @@ const PAPERS_DB = [
         venue: "",
         summary: "提出推理技能复用范式——将反复试错和深度推理中提炼的可复用推理技能存储起来，推理时检索相关技能指导求解，避免重复走弯路。显著减少推理 token 同时提升准确率，在编码和数学推理任务上验证有效性。ACL 2026 Industry Track 录用，具有很强的实际部署价值。",
         tags: [["LLM","green"],["ACL 2026","green"]],
-        links: []
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.21764"],["📕 PDF","https://arxiv.org/pdf/2604.21764"]]
     },
     {
         date: "2026-04-24",
@@ -858,7 +1189,7 @@ const PAPERS_DB = [
         venue: "",
         summary: "面向多智能体语言系统的端到端优化，研究如何让 LLM Agent 学习更高效的通信协议。不再依赖人类预设的对话模板，而是让多个 Agent 在任务驱动下自主进化出适合的通信策略，提升协作效率。",
         tags: [["Multi-Agent","green"],["LLM","green"]],
-        links: []
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.21794"],["📕 PDF","https://arxiv.org/pdf/2604.21794"]]
     },
     {
         date: "2026-04-24",
@@ -868,7 +1199,7 @@ const PAPERS_DB = [
         venue: "",
         summary: "深入研究大型视觉语言模型（LVLM）中文本提示如何压制视觉信息导致幻觉（Hallucination）。发现当文本提示与视觉内容矛盾时，模型倾向于\"相信\"文本而非\"相信\"眼睛。揭示了 VLM 在多模态融合中的根本性偏差，对安全关键应用（自动驾驶、医疗）有重要启示。",
         tags: [["VLM","green"],["NEW 04-24","green"]],
-        links: []
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.21911"],["📕 PDF","https://arxiv.org/pdf/2604.21911"]]
     },
     {
         date: "2026-04-24",
@@ -878,7 +1209,7 @@ const PAPERS_DB = [
         venue: "",
         summary: "将冻结的 LLM 与地图/空间信息相结合用于车辆轨迹预测。无需微调 LLM，通过设计合适的空间编码将地图感知信息注入到 frozen LLM 中，让语言模型展现出时空推理能力。展示了 LLM \"零样本\"空间理解的潜力。",
         tags: [["VLM","green"],["NEW 04-24","green"]],
-        links: []
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.21479"],["📕 PDF","https://arxiv.org/pdf/2604.21479"]]
     },
     // === 2026-04-23 ===
     {
@@ -6998,6 +7329,20 @@ const PAPERS_DB = [
 ];
 
 const DAILY_OVERVIEW = {
+    "2026-04-25": {
+        bannerTitle: "",
+        bannerSubtitle: "",
+        picks: ["Learn Weightlessness: Imitate Non-Self-Stabilizing Motions on Humanoid Robot"],
+        totalPapers: 30,
+        totalNews: 3
+    },
+    "2026-04-24": {
+        bannerTitle: "",
+        bannerSubtitle: "",
+        picks: ["CorridorVLA: Explicit Spatial Constraints for Generative Action Heads via Sparse Anchors","LoHo-Manip: Long-Horizon Manipulation via Trace-Conditioned VLA Planning","PokeVLA: Empowering Pocket-Sized VLA Model with Comprehensive World Knowledge Guidance","Open-H-Embodiment: A Large-Scale Dataset for Enabling Foundation Models in Medical Robotics","Hi-WM: Human-in-the-World-Model for Scalable Robot Post-Training"],
+        totalPapers: 25,
+        totalNews: 0
+    },
     "2026-04-23": {
         bannerTitle: "",
         bannerSubtitle: "",
