@@ -629,6 +629,257 @@
 <script>
 // ===== DATA =====
 const PAPERS_DB = [
+    // === 2026-04-26 ===
+    {
+        date: "2026-04-26",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "LoHo-Manip: Long-Horizon Manipulation via Trace-Conditioned VLA Planning",
+        venue: "",
+        summary: "提出 LoHo-Manip 模块化框架，将短程 VLA 执行扩展至长程指令跟踪。利用任务管理 VLM 进行高层规划，通过视觉轨迹（2D 关键点轨迹）实现隐式闭环重规划，无需手工设计恢复逻辑。在真实 Franka 机器人实验中展示了显著的长程操作性能提升。",
+        tags: [["VLA","green"],["长程操作","green"]],
+        links: []
+    },
+    {
+        date: "2026-04-26",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "ResVLA: From Noise to Intent — Anchoring Generative VLA Policies with Residual Bridges",
+        venue: "",
+        summary: "提出 ResVLA，将范式从\"从噪声生成\"转变为\"从意图精炼\"。利用频谱分析将控制解耦为确定性低频锚点和随机性高频残差，在保持竞争性能的同时展示了对语言和具身扰动的强鲁棒性。这一范式转换为生成式 VLA 策略提供了新思路。",
+        tags: [["VLA","green"],["频谱解耦","green"]],
+        links: []
+    },
+    {
+        date: "2026-04-26",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "PokeVLA: Empowering Pocket-Sized VLA Model with Comprehensive World Knowledge Guidance",
+        venue: "",
+        summary: "提出 PokeVLA 轻量级具身操作基础模型。采用两阶段训练：首先在 2.4M 多模态样本上预训练紧凑型视觉语言模型 PokeVLM，然后注入操作相关表征。在 LIBERO-Plus benchmark 上达到 SOTA 性能，证明小模型也能通过知识引导实现强大操作能力。",
+        tags: [["VLA","green"],["轻量化","green"]],
+        links: []
+    },
+    {
+        date: "2026-04-26",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "CorridorVLA: Explicit Spatial Constraints for Generative Action Heads via Sparse Anchors",
+        venue: "",
+        summary: "提出 CorridorVLA，通过预测稀疏空间锚点（增量物理变化 Δ-位置）为动作生成施加显式容差区域约束。锚点定义的\"走廊\"引导 flow-matching 动作头，在 LIBERO-Plus 上 GR00T-Corr 变体达到 83.21% 成功率，比基线提升 3.4%–12.4%。代码已开源。",
+        tags: [["VLA","green"],["空间约束","green"]],
+        links: []
+    },
+    {
+        date: "2026-04-26",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "How VLAs (Really) Work In Open-World Environments",
+        venue: "",
+        summary: "对 SOTA VLA 模型在 BEHAVIOR1K 基准上进行深入分析，评估鲁棒性、一致性、安全性和任务意识等维度。提出新的评估协议以捕捉安全违规行为，揭示了当前 VLA 模型在复杂交互场景中的真实表现与局限性。对 VLA 研究者具有重要参考价值。",
+        tags: [["VLA","green"],["评估分析","green"]],
+        links: []
+    },
+    {
+        date: "2026-04-26",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "JoyAI-RA 0.1: A Foundation Model for Robotic Autonomy",
+        venue: "",
+        summary: "提出 JoyAI-RA VLA 具身基础模型，采用多源多层预训练框架，整合网络数据、大规模第一人称人类操作视频、仿真轨迹和真实机器人数据。通过异构多源数据的显式动作空间统一，有效弥合具身间隙，在仿真和真实世界基准上均超越 SOTA，尤其擅长泛化任务。",
+        tags: [["VLA","green"],["基础模型","green"]],
+        links: []
+    },
+    {
+        date: "2026-04-26",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "VLAJS: Jump-Start RL with Vision-Language-Action Regularization",
+        venue: "",
+        summary: "提出 VLAJS，将稀疏 VLA 引导与在线策略 RL 桥接，通过方向性动作一致性正则化配合 PPO，实现超过 50% 的环境交互减少。在 Franka Panda 机器人上展示了零样本 sim-to-real 迁移，为 VLA+RL 协同提供了高效方案。",
+        tags: [["VLA","green"],["RL 加速","green"]],
+        links: []
+    },
+    {
+        date: "2026-04-26",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "Hi-WM: Human-in-the-World-Model for Scalable Robot Post-Training",
+        venue: "",
+        summary: "提出 Hi-WM（Human-in-the-World-Model）后训练框架，利用学习的世界模型作为纠正基底。人类直接在世界模型中介入，提供针对性失败纠正动作。真实世界操作任务成功率提升 37.9 个百分点，世界模型-真实世界相关性高达 r=0.953，为可扩展机器人后训练开辟了新路径。",
+        tags: [["World Model","green"],["人在环路","green"]],
+        links: []
+    },
+    {
+        date: "2026-04-26",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "Cortex 2.0: Grounding World Models in Real-World Industrial Deployment",
+        venue: "",
+        summary: "Cortex 2.0 将范式从反应式控制转向\"规划后执行\"：在视觉潜空间生成候选未来轨迹，评估成功概率和效率，仅执行最高评分方案。在单臂和双臂操作平台上跨四项任务（拣放、分拣、螺丝分拣、鞋盒拆包）一致超越 SOTA VLA 基线。证明世界模型规划可在复杂工业环境中可靠运行。",
+        tags: [["World Model","green"],["工业部署","green"]],
+        links: []
+    },
+    {
+        date: "2026-04-26",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "VistaBot: View-Robust Robot Manipulation via Spatiotemporal-Aware View Synthesis",
+        venue: "",
+        summary: "提出 VistaBot 框架，整合前馈几何模型与视频扩散模型实现视角鲁棒的闭环操作。引入视图泛化评分（VGS）度量，跨视角泛化能力分别比 ACT 提升 2.79× 和比 π₀ 提升 2.63×。已被 ICRA 2026 接收。",
+        tags: [["Manipulation","green"],["视角泛化","green"]],
+        links: []
+    },
+    {
+        date: "2026-04-26",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "FingerViP: Learning Real-World Dexterous Manipulation with Fingertip Visual Perception",
+        venue: "",
+        summary: "提出 FingerViP 系统，在多指手的每根手指上安装微型摄像头，提供连续多视角反馈。基于扩散策略的全身视觉运动策略从人类演示中学习复杂操作技能，在按钮按压、物体取回等挑战性任务上达到 80.8% 总体成功率。硬件和代码将完全开源。",
+        tags: [["灵巧操作","green"],["触觉感知","green"]],
+        links: []
+    },
+    {
+        date: "2026-04-26",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "FingerEye: Continuous and Unified Vision-Tactile Sensing for Dexterous Manipulation",
+        venue: "",
+        summary: "提出 FingerEye 传感器，在整个交互阶段提供连续视觉-触觉反馈。集成双目 RGB 相机与柔顺环形结构实现接触力感知。在硬币竖立、芯片拾取、信件取回、注射器操作等多样化灵巧操作任务中展示了优异性能。",
+        tags: [["触觉传感","green"],["灵巧操作","green"]],
+        links: []
+    },
+    {
+        date: "2026-04-26",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "Visual-Tactile Peg-in-Hole Assembly Learning from Peg-out-of-Hole Disassembly",
+        venue: "",
+        summary: "提出视觉-触觉技能学习框架，巧妙利用逆向任务（拔孔）促进插孔学习。在已见物体上达到 87.5% 成功率，未见物体上 77.1%，比直接 RL 高出 18.1%。逆向任务迁移是一个极具启发性的方法论创新。",
+        tags: [["装配学习","green"],["逆向迁移","green"]],
+        links: []
+    },
+    {
+        date: "2026-04-26",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "ETac: A Lightweight and Efficient Tactile Simulation for Learning Dexterous Manipulation",
+        venue: "",
+        summary: "提出 ETac 触觉仿真框架，通过数据驱动形变传播模型实现高保真高效率的弹性体软体交互。单张 RTX 4090 GPU 支持 4096 并行环境、869 FPS 吞吐量。盲抓取策略在四类物体上达到 84.45% 平均成功率，让基于触觉的技能学习变得高效且可扩展。",
+        tags: [["触觉仿真","green"],["大规模训练","green"]],
+        links: []
+    },
+    {
+        date: "2026-04-26",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "VTouch++: A Multimodal Dataset with Vision-Based Tactile Enhancement for Bimanual Manipulation",
+        venue: "",
+        summary: "推出 VTOUCH 数据集，包含基于视觉的触觉感知双臂操作数据。特点包括矩阵式任务设计和自动化数据收集管道。展示了跨模态检索和真实机器人泛化能力，为触觉增强双臂操作研究提供了重要数据资源。",
+        tags: [["数据集","green"],["双臂操作","green"]],
+        links: []
+    },
+    {
+        date: "2026-04-26",
+        category: "Embodied AI",
+        categoryIcon: "🧩",
+        title: "Open-H-Embodiment: A Large-Scale Dataset for Foundation Models in Medical Robotics",
+        venue: "",
+        summary: "发布最大规模开放医疗机器人数据集，横跨 49+ 机构和多种机器人平台（da Vinci、dVRK、MIRA、Maestro 等）。同时推出 GR00T-H（首个开放医疗机器人 VLA，缝合任务 25% 端到端完成率 vs 其他方法 0%）和 Cosmos-H（首个多具身手术仿真世界模型）。",
+        tags: [["医疗机器人","green"],["基础模型","green"]],
+        links: []
+    },
+    {
+        date: "2026-04-26",
+        category: "Embodied AI",
+        categoryIcon: "🧩",
+        title: "A Deployable Embodied VLN System with Hierarchical Cognition and Context-Aware Exploration",
+        venue: "",
+        summary: "提出可部署的具身视觉语言导航系统，解耦为感知、记忆整合、推理三个异步模块。增量构建认知记忆图编码场景信息，将探索问题建模为上下文感知的加权旅行修理工问题（WTRP）。在仿真和真实机器人上均展示了超越现有方法的导航成功率和效率。",
+        tags: [["视觉导航","green"],["可部署系统","green"]],
+        links: []
+    },
+    {
+        date: "2026-04-26",
+        category: "Embodied AI",
+        categoryIcon: "🧩",
+        title: "DeVI: Physics-based Dexterous Human-Object Interaction via Synthetic Video Imitation",
+        venue: "",
+        summary: "提出 DeVI 框架，利用文本条件合成视频进行物理可信的灵巧智能体控制。采用混合跟踪奖励，整合 3D 人体跟踪和 2D 物体跟踪。实现跨多种物体和交互类型的零样本泛化，为从视频到物理世界的技能迁移提供了新范式。",
+        tags: [["人物交互","green"],["物理仿真","green"]],
+        links: []
+    },
+    {
+        date: "2026-04-26",
+        category: "RL",
+        categoryIcon: "🧠",
+        title: "RPG: Robust Policy Gating for Smooth Multi-Skill Transitions in Humanoid Fighting",
+        venue: "",
+        summary: "提出 RPG 混合专家策略框架，实现人形机器人多技能平滑切换。引入运动和时间随机化提升技能切换稳定性。在 Unitree G1 人形机器人上验证，实现了流畅的长时间格斗能力，包括进攻、防御和闪避等技能的无缝衔接。",
+        tags: [["RL","green"],["人形格斗","green"]],
+        links: []
+    },
+    {
+        date: "2026-04-26",
+        category: "RL",
+        categoryIcon: "🧠",
+        title: "X2-N: A Transformable Wheel-legged Humanoid Robot with Dual-mode Locomotion and Manipulation",
+        venue: "",
+        summary: "提出 X2-N 高自由度可变形机器人，支持人形和轮式两种运动模式的无缝切换。采用基于 RL 的全身控制框架，展示了动态滑行、爬楼梯和包裹配送等任务。双模式设计兼顾了效率和灵活性，是轮腿人形机器人的工程创新。",
+        tags: [["RL 控制","green"],["轮腿人形","green"]],
+        links: []
+    },
+    {
+        date: "2026-04-26",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "BiCICLe: Bimanual Robot Manipulation via Multi-Agent In-Context Learning",
+        venue: "",
+        summary: "提出 BiCICLe，首个让标准 LLM 无需微调即可执行少样本双臂操作的框架。将双臂控制建模为多智能体 leader-follower 问题，引入\"Arms' Debate\"迭代精炼和 LLM-as-Judge 评估机制。在 TWIN 基准 13 项任务上达到 71.1% 平均成功率，超越大多数有监督方法。",
+        tags: [["LLM Agent","green"],["双臂协调","green"]],
+        links: []
+    },
+    {
+        date: "2026-04-26",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "TD Calibration: Temporal Difference Calibration in Sequential Tasks for VLA Models",
+        venue: "",
+        summary: "解决 VLA 模型在机器人控制中的不确定性量化问题。引入 Brier 分数的序列扩展，证明时间差分（TD）价值估计可作为校准机制。将不确定性校准与强化学习桥接，在仿真和真实机器人上展示了改进效果。",
+        tags: [["不确定性","green"],["校准","green"]],
+        links: []
+    },
+    {
+        date: "2026-04-26",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "🏓 Sony AI \"Ace\" 乒乓球机器人击败精英人类选手 — Nature 发表",
+        venue: "",
+        summary: "Sony AI 的自主乒乓球机器人系统 Ace 结合事件驱动视觉和强化学习，在真实比赛中击败精英人类选手，成果发表于 Nature。这是物理 AI 智能体在竞技体育中的重要里程碑，展示了 RL + 高速感知在极端动态任务中的潜力。Ace 是已知第一个在真实世界中击败精英选手的 AI 乒乓球系统。",
+        tags: [],
+        links: []
+    },
+    {
+        date: "2026-04-26",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "🤖 Tesla 在 Giga Texas 部署超 1000 台 Optimus 机器人",
+        venue: "",
+        summary: "Tesla 确认已在德克萨斯超级工厂部署超过 1000 台 Optimus 人形机器人，执行零件分拣、组件搬运和质量检查等任务。Elon Musk 在 Q1 财报电话会议上宣布 Optimus 将于 2026 年底以 $20,000 价格面向消费者发售，称其将\"比特斯拉其他所有业务加起来都更有价值\"。",
+        tags: [],
+        links: []
+    },
+    {
+        date: "2026-04-26",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "🧠 DeepSeek V4 Preview 发布：1M 上下文、开源旗舰",
+        venue: "",
+        summary: "DeepSeek 正式发布 V4 Preview 版本，包含 V4-Pro 和 V4-Flash 两个模型。V4 拥有约 1 万亿参数，采用混合专家架构（MoE），支持 1M 上下文窗口，将运行在华为昇腾处理器上。基准测试性能对标 GPT-5.5 和 Claude Opus 4.7，是首款完全基于国产芯片达到前沿性能的模型。",
+        tags: [],
+        links: []
+    },
     // === 2026-04-25 ===
     {
         date: "2026-04-25",
@@ -7329,6 +7580,13 @@ const PAPERS_DB = [
 ];
 
 const DAILY_OVERVIEW = {
+    "2026-04-26": {
+        bannerTitle: "",
+        bannerSubtitle: "",
+        picks: ["DeVI: Physics-based Dexterous Human-Object Interaction via Synthetic Video Imitation"],
+        totalPapers: 22,
+        totalNews: 3
+    },
     "2026-04-25": {
         bannerTitle: "",
         bannerSubtitle: "",
