@@ -629,6 +629,233 @@
 <script>
 // ===== DATA =====
 const PAPERS_DB = [
+    // === 2026-04-27 ===
+    {
+        date: "2026-04-27",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "LoHo-Manip: Long-Horizon Manipulation via Trace-Conditioned VLA Planning",
+        venue: "arXiv:2604.21924 · Apr 23 · Isabella Liu, An-Chieh Cheng, Xiaolong Wang, Sifei Liu et al.",
+        summary: "提出 LoHo-Manip，通过解耦任务管理 VLM 与执行器 VLA，将短视野 VLA 策略扩展到长视野指令跟随。核心创新在于预测「进度感知剩余计划」——结合显式 \"done + remaining\" 子任务序列和 2D 关键点视觉轨迹 trace prompt。每步预测剩余计划形成隐式闭环，失败步骤自动持续到下一步输出中，无需手工恢复逻辑。在模拟和真实 Franka 机器人上实现长视野成功率、鲁棒性和 OOD 泛化的强劲提升。",
+        tags: [["VLA","green"],["Long-Horizon","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.21924"],["📥 PDF","https://arxiv.org/pdf/2604.21924"],["🌐 Project","https://www.liuisabella.com/LoHoManip"]],
+        highlight: true
+    },
+    {
+        date: "2026-04-27",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "ResVLA: From Noise to Intent — Anchoring Generative VLA Policies with Residual Bridges",
+        venue: "arXiv:2604.21391 · Apr 23 · Yiming Zhong, Yaoyu He, Xinge Zhu, Yuexin Ma et al.",
+        summary: "提出 ResVLA，将生成 VLA 策略的范式从 \"Generation-from-Noise\" 转换为 \"Refinement-from-Intent\"。利用频谱分析将机器人控制解耦为确定性低频锚点（全局意图）和随机高频残差（局部动态），通过残差扩散桥锚定生成过程。在模拟实验中实现竞争性能并展现对语言和机器人形态扰动的强鲁棒性，收敛速度优于标准生成基线。",
+        tags: [["VLA","green"],["Diffusion","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.21391"],["📥 PDF","https://arxiv.org/pdf/2604.21391"]],
+        highlight: true
+    },
+    {
+        date: "2026-04-27",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "GazeVLA: Learning Human Intention for Robotic Manipulation",
+        venue: "arXiv:2604.22615 · Apr 24 · Chengyang Li, Kaiyi Xiong, Wentao Zhu et al.",
+        summary: "通过人类注视（gaze）信号建模意图作为跨越人-机体态差异的中间表示。模型先在大规模自我中心人类数据集上预训练以捕获人类意图与动作的协同关系，再在小规模机器人+人类数据上微调。推理时采用 Chain-of-Thought 范式，先预测意图再执行动作。在模拟和真实环境中持续超越强基线，在长视野和精细任务上达到 SOTA。",
+        tags: [["VLA","green"],["Human Intention","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.22615"],["📥 PDF","https://arxiv.org/pdf/2604.22615"]]
+    },
+    {
+        date: "2026-04-27",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "RedVLA: Physical Red Teaming for Vision-Language-Action Models",
+        venue: "arXiv:2604.22591 · Apr 24 · Yuhao Zhang, Yaodong Yang, Jiaming Ji et al.",
+        summary: "首个面向 VLA 物理安全的红队测试框架。通过「风险场景合成 + 风险放大」两阶段流程，从良性轨迹识别关键交互区域并放置风险因子，再通过无梯度优化迭代精炼。在 6 个 VLA 模型上实现最高 95.5% 攻击成功率，并提出轻量安全防护 SimpleVLA-Guard。代码和数据开源。",
+        tags: [["VLA","green"],["Safety","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.22591"],["📥 PDF","https://arxiv.org/pdf/2604.22591"],["🌐 Project","https://redvla.github.io"]]
+    },
+    {
+        date: "2026-04-27",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "CodeGraphVLP: Code-as-Planner Meets Semantic-Graph State for Non-Markovian VLA",
+        venue: "arXiv:2604.22238 · Apr 24 · Khoa Vo, Ngan Le et al.",
+        summary: "针对 Non-Markovian 长视野任务，结合持久化语义图状态 + 可执行代码规划器 + 进度引导视觉语言提示三个组件。语义图维护部分可观测下的任务实体和关系，代码规划器在图上执行进度检查并输出子任务指令，视觉提示则抑制杂乱物体聚焦关键证据。在真实非马尔可夫任务上超越强 VLA 基线和历史增强变体。",
+        tags: [["VLA","green"],["Code Planning","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.22238"],["📥 PDF","https://arxiv.org/pdf/2604.22238"]]
+    },
+    {
+        date: "2026-04-27",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "CorridorVLA: Explicit Spatial Constraints for Generative Action Heads via Sparse Anchors",
+        venue: "arXiv:2604.21241 · Apr 23 · Dachong Li, ZhuangZhuang Chen, Jianqiang Li et al.",
+        summary: "预测稀疏空间锚点作为增量物理变化（Δ-positions），定义一个 corridor 容忍区域来引导 flow-matching 动作头。超出 corridor 的轨迹获得校正梯度，而接触和执行噪声引起的微小偏差被容许。在 LIBERO-Plus 上为 SmolVLA 和 GR00T 带来 3.4%–12.4% 成功率提升，GR00T-Corr 达 83.21%。",
+        tags: [["VLA","green"],["Spatial Constraints","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.21241"],["📥 PDF","https://arxiv.org/pdf/2604.21241"]]
+    },
+    {
+        date: "2026-04-27",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "BeTTER: Unmasking the Illusion of Embodied Reasoning in VLA Models",
+        venue: "arXiv:2604.18000 · Apr 20 · Haiweng Xu, Sipeng Zheng, Zongqing Lu et al.",
+        summary: "引入 BeTTER 诊断基准，通过因果干预（空间布局偏移、时间外推等）和运动学隔离，解耦高级推理失败与低级执行限制。发现 SOTA VLA 在动态场景中灾难性失败：词法-运动学捷径、行为惯性和语义特征坍缩。机制分析追溯到容量压缩和近视下采样等架构瓶颈。真实机器人验证证实这不是仿真伪影。",
+        tags: [["VLA","green"],["Benchmark","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.18000"],["📥 PDF","https://arxiv.org/pdf/2604.18000"]]
+    },
+    {
+        date: "2026-04-27",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "GCImOpt: Learning Efficient Goal-Conditioned Policies by Imitating Optimal Trajectories",
+        venue: "arXiv:2604.22724 · Apr 24 · Jon Goikoetxea, Jesús F. Palacián · L4DC 2026",
+        summary: "通过模仿最优轨迹学习高效的目标条件策略，结合强化学习和模仿学习方法。已被 L4DC 2026 接收。",
+        tags: [["L4DC 2026","green"],["VLA","green"],["Goal-Conditioned","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.22724"],["📥 PDF","https://arxiv.org/pdf/2604.22724"]]
+    },
+    {
+        date: "2026-04-27",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "Hi-WM: Human-in-the-World-Model for Scalable Robot Post-Training",
+        venue: "arXiv:2604.21741 · Apr 23 · Yaxuan Li, Yichen Zhu, Jianyu Chen et al.",
+        summary: "提出 Hi-WM，将学习到的世界模型作为「可复用纠错底层」进行故障定向策略改进的后训练框架。策略先在世界模型中闭环 rollout，当出现错误时人类直接在模型中介入提供短纠正动作。支持回滚和分支——单个失败状态可复用于多条纠正延续，生成密集监督。真实世界成功率平均提升 37.9 个百分点（vs 基础策略），世界模型评估与真实性能高度相关（r = 0.953）。",
+        tags: [["World Model","green"],["Post-Training","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.21741"],["📥 PDF","https://arxiv.org/pdf/2604.21741"],["🌐 Project","https://hi-wm.github.io/"]],
+        highlight: true
+    },
+    {
+        date: "2026-04-27",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "dWorldEval: Scalable Robotic Policy Evaluation via Discrete Diffusion World Model",
+        venue: "arXiv:2604.22152 · Apr 24 · Yaxuan Li, Zhongyi Zhou, Yichen Zhu et al.",
+        summary: "提出 dWorldEval，通过离散扩散世界模型实现大规模机器人策略评估。将视觉、语言和动作映射到统一 token 空间，使用单个 transformer 去噪网络联合建模所有模态。引入 progress token 自动判定任务完成度。在 LIBERO 和 RoboTwin 基准上显著超越 WorldEval、Ctrl-World、WorldGym。",
+        tags: [["World Model","green"],["Evaluation","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.22152"],["📥 PDF","https://arxiv.org/pdf/2604.22152"]]
+    },
+    {
+        date: "2026-04-27",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "FingerViP: Learning Real-World Dexterous Manipulation with Fingertip Visual Perception",
+        venue: "arXiv:2604.21331 · Apr 23 · Zhen Zhang, K. W. Samuel Au et al.",
+        summary: "设计视觉增强指尖模块（每指嵌入微型相机），构建基于扩散的全身视觉运动策略。多视角指尖视觉大幅提升感知覆盖——结合相机位姿编码和关节电流编码增强视图-本体感觉对齐与接触感知。在密封盒内按按钮、取杆、窗帘后取物、长视野柜门开启+取物等任务上实现 80.8% 总成功率。硬件设计与代码完全开源。",
+        tags: [["Dexterous","green"],["Vision","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.21331"],["📥 PDF","https://arxiv.org/pdf/2604.21331"]],
+        highlight: true
+    },
+    {
+        date: "2026-04-27",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "LeHome: A Simulation Environment for Deformable Object Manipulation in Household Scenarios",
+        venue: "arXiv:2604.22363 · Apr 24 · Zeyi Li, Ruihai Wu et al. · ICRA 2026",
+        summary: "面向家庭场景柔性物体操作的综合仿真环境。覆盖衣物、食品等多种柔性物体，提供高保真动力学和逼真交互。支持多种机器人形态，以低成本机器人为核心焦点，弥合柔性物体仿真与实际平台之间的差距。ICRA 2026 接收。",
+        tags: [["ICRA 2026","green"],["Simulation","green"],["Deformable","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.22363"],["📥 PDF","https://arxiv.org/pdf/2604.22363"],["🌐 Project","https://lehome-web.github.io/"]]
+    },
+    {
+        date: "2026-04-27",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "Wiggle and Go! System Identification for Zero-Shot Dynamic Rope Manipulation",
+        venue: "arXiv:2604.22102 · Apr 24 · Arthur Jakobsson, Jeffrey Ichnowski et al.",
+        summary: "开发用于零样本动态绳索操作的系统辨识方法。通过少量\"wiggle\"探测动作快速估计绳索物理参数，实现直接在真实绳索上的零样本操控，无需额外训练。",
+        tags: [["Manipulation","green"],["System ID","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.22102"],["📥 PDF","https://arxiv.org/pdf/2604.22102"]]
+    },
+    {
+        date: "2026-04-27",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "Learning-Augmented Robotic Automation for Real-World Manufacturing",
+        venue: "arXiv:2604.22235 · Apr 24 · Yunho Kim, Joonho Lee et al.",
+        summary: "将学习增强方法应用于真实世界制造场景的机器人自动化，提升实际工厂环境中的机器人适应性和鲁棒性。",
+        tags: [["Manufacturing","green"],["Learning","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.22235"],["📥 PDF","https://arxiv.org/pdf/2604.22235"]]
+    },
+    {
+        date: "2026-04-27",
+        category: "Embodied AI",
+        categoryIcon: "🧩",
+        title: "A Deployable Embodied VLN System with Hierarchical Cognition and Context-Aware Exploration",
+        venue: "arXiv:2604.21363 · Apr 23 · Kuan Xu, Lihua Xie et al.",
+        summary: "可部署的视觉语言导航系统，将系统解耦为实时感知、记忆整合和推理三个异步模块。增量构建认知记忆图编码场景信息，将探索问题建模为上下文感知加权旅行修理工问题（WTRP）。在仿真和真实机器人上实现导航成功率和效率提升，同时保持资源受限硬件上的实时性能。",
+        tags: [["Embodied AI","green"],["Navigation","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.21363"],["📥 PDF","https://arxiv.org/pdf/2604.21363"]]
+    },
+    {
+        date: "2026-04-27",
+        category: "Embodied AI",
+        categoryIcon: "🧩",
+        title: "An LLM-Driven Closed-Loop Autonomous Learning Framework for Robots in Open Environments",
+        venue: "arXiv:2604.22199 · Apr 24 · Hong Su",
+        summary: "提出 LLM 驱动的闭环自主学习框架：当本地方法库中没有可复用方案时，触发自主学习流程——LLM 负责高级推理（任务分析、候选模型选择、数据收集规划），机器人从自执行和主动观察中学习，准实时训练并将验证结果固化到本地方法库。重复任务执行时间从 7.78s 降至 6.78s，LLM 调用从 1.0 降至 0.2。",
+        tags: [["Embodied AI","green"],["LLM-Driven","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.22199"],["📥 PDF","https://arxiv.org/pdf/2604.22199"]]
+    },
+    {
+        date: "2026-04-27",
+        category: "RL",
+        categoryIcon: "🧠",
+        title: "X2-N: A Transformable Wheel-legged Humanoid Robot with Dual-mode Locomotion and Manipulation",
+        venue: "arXiv:2604.21541 · Apr 23 · Yan Ning, Ling Shi et al.",
+        summary: "高自由度可变形轮腿人形机器人，可在人形和轮腿形态间无缝切换。提出基于 RL 的全身控制框架，统一混合运动、变形和操作控制。验证了溜冰式运动、爬楼梯和包裹递送等挑战性任务，展现高运动效率、强地形适应性和稳定的移动操作性能。",
+        tags: [["Humanoid","green"],["RL Control","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.21541"],["📥 PDF","https://arxiv.org/pdf/2604.21541"]],
+        highlight: true
+    },
+    {
+        date: "2026-04-27",
+        category: "RL",
+        categoryIcon: "🧠",
+        title: "RPG: Robust Policy Gating for Smooth Multi-Skill Transitions in Humanoid Fighting",
+        venue: "arXiv:2604.21355 · Apr 23 · Yucheng Xin, Xueqian Wang, Xuelong Li et al.",
+        summary: "人形机器人全身格斗控制：融合动作过渡随机化和时间随机化训练统一策略，实现敏捷格斗动作的技能间平滑稳定过渡。设计了步行/跑步运动与格斗技能的集成控制管线，支持任意时长类人持续战斗且可随时中断或切换。在 Unitree G1 真机上验证鲁棒性。",
+        tags: [["Humanoid","green"],["Multi-Skill","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.21355"],["📥 PDF","https://arxiv.org/pdf/2604.21355"]]
+    },
+    {
+        date: "2026-04-27",
+        category: "RL",
+        categoryIcon: "🧠",
+        title: "Learn Weightlessness: Imitate Non-Self-Stabilizing Motions on Humanoid Robot",
+        venue: "arXiv:2604.21351 · Apr 23 · Yucheng Xin, Xueqian Wang, Xuelong Li et al.",
+        summary: "研究人形机器人的「失重」状态——人类在非自稳定动作中选择性放松关节利用被动接触稳定身体。提出失重状态自动标注策略和失重机制（WM），动态决定哪些关节放松及放松程度。在坐椅子、躺床上、靠墙等 3 种 NSS 任务上，单次演示训练即实现对多种环境配置的泛化。Unitree G1 真机验证。",
+        tags: [["Humanoid","green"],["Imitation","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.21351"],["📥 PDF","https://arxiv.org/pdf/2604.21351"]]
+    },
+    {
+        date: "2026-04-27",
+        category: "RL",
+        categoryIcon: "🧠",
+        title: "ATRS: Adaptive Trajectory Re-splitting via Shared Neural Policy for Parallel Optimization",
+        venue: "arXiv:2604.22715 · Apr 24 · Jiajun Yu, Fei Gao, Yanjun Cao et al.",
+        summary: "使用共享神经策略进行自适应轨迹重分割以实现并行优化，投稿至 IEEE RA-L。",
+        tags: [["Optimization","green"],["Planning","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.22715"],["📥 PDF","https://arxiv.org/pdf/2604.22715"]]
+    },
+    {
+        date: "2026-04-27",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "Robotera（星动纪元）再获超 2 亿美元融资，顺丰领投",
+        venue: "2026-04-27 · cntechpost.com",
+        summary: "具身智能独角兽 Robotera（星动纪元）获超 2 亿美元新一轮融资，由顺丰领投，红杉中国、IDG 资本、中金资本跟投。距上一轮 10 亿元（1.46 亿美元）融资不到一个月。公司采用 VLA + 世界模型融合技术架构，原生大模型显著提升机器人物理操作能力。已在华北华南超 10 个物流中心批量部署，工作效率超越 85% 人类水平，可 24 小时稳定运行。计划 Q2 开始量产交付数千台机器人，年化业务增长率预计达 300%。",
+        tags: [["Embodied AI","green"],["VLA","green"]],
+        links: [["📰 Full Article","https://cntechpost.com/2026/04/27/embodied-ai-startup-robotera-raises-200-million-new-funding-round/"]],
+        highlight: true
+    },
+    {
+        date: "2026-04-27",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "无界动力（Wujie Dynamics）Angel++ 轮超 2 亿美元融资",
+        venue: "2026-04-27 · newsglobenow.com",
+        summary: "无界动力完成 Angel++ 轮超 2 亿美元融资，用于加速其原生世界模型强化学习方法（MWA™）在机器人领域的研发。该公司定位为以世界模型为核心的具身智能新势力。",
+        tags: [["World Model","green"],["RL","green"]],
+        links: [["📰 Full Article","https://www.newsglobenow.com/new328955.html"]]
+    },
     // === 2026-04-26 ===
     {
         date: "2026-04-26",
@@ -7580,6 +7807,27 @@ const PAPERS_DB = [
 ];
 
 const DAILY_OVERVIEW = {
+    "2026-04-27": {
+        bannerTitle: "",
+        bannerSubtitle: "",
+        picks: ["LoHo-Manip: Long-Horizon Manipulation via Trace-Conditioned VLA Planning","ResVLA: From Noise to Intent — Anchoring Generative VLA Policies with Residual Bridges","Hi-WM: Human-in-the-World-Model for Scalable Robot Post-Training","FingerViP: Learning Real-World Dexterous Manipulation with Fingertip Visual Perception","X2-N: A Transformable Wheel-legged Humanoid Robot with Dual-mode Locomotion and Manipulation"],
+        totalPapers: 20,
+        totalNews: 2
+    },
+    "2026-04-20": {
+        bannerTitle: "",
+        bannerSubtitle: "",
+        picks: ["ShapeGen: Robotic Data Generation for Category-Level Manipulation"],
+        totalPapers: 10,
+        totalNews: 8
+    },
+    "2026-04-11": {
+        bannerTitle: "",
+        bannerSubtitle: "",
+        picks: ["CEAI 2026 中国具身智能大会在合肥开幕 — 1500+ 参会者共论具身未来","GPT-6 倒计时 3 天 — 代号 Spud，200 万 Token 上下文，性能较 o3 提升 40%","DeepSeek V4 官宣 — 梁文锋确认 4 月下旬发布，万亿参数 MoE 架构"],
+        totalPapers: 0,
+        totalNews: 8
+    },
     "2026-04-26": {
         bannerTitle: "",
         bannerSubtitle: "",
