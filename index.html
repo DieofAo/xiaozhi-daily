@@ -629,6 +629,197 @@
 <script>
 // ===== DATA =====
 const PAPERS_DB = [
+    // === 2026-04-28 ===
+    {
+        date: "2026-04-28",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "M²-VLA: Boosting VLMs for Generalizable Manipulation via Layer Mixture and Meta-Skills",
+        venue: "VLA",
+        summary: "提出 M²-VLA，证明通用 VLM 可直接作为机器人操作的强力主干。引入 Mixture of Layers (MoL) 策略从稠密语义特征中选择性提取任务关键信息，以及 Meta Skill Module (MSM) 集成强归纳偏置以在受限模型容量下高效学习轨迹。实验在仿真和真实环境中均展现出色的零样本泛化能力，避免端到端微调带来的灾难性遗忘问题。代码和预训练模型即将开源。",
+        tags: [["VLA","green"],["Manipulation","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.24182"],["PDF","https://arxiv.org/pdf/2604.24182"]]
+    },
+    {
+        date: "2026-04-28",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "小米 Xiaomi-Robotics-0 真机后训练全流程开源",
+        venue: "VLA",
+        summary: "小米正式发布并开源 Xiaomi-Robotics-0 (4.7B参数 VLA) 的真机后训练全流程。仅用 20 小时任务数据，模型就掌握了亚毫米级精度的耳机收纳任务。引入三项关键技术：自适应加权机制 (Adaptive Loss Re-weighting)、λ 型注意力掩码和前缀动作随机遮蔽，解决动作惯性与能力遗忘问题。部署采用异步推理方案实现无缝衔接。该模型发布首月登上 HuggingFace 全球 VLA 下载榜第六。",
+        tags: [["VLA","green"],["Post-Training","green"]],
+        links: [["📄 技术报告","https://arxiv.org/abs/2602.12684"],["🏠 项目主页","https://robotics.xiaomi.com/xiaomi-robotics-0.html"],["📰 新闻","https://m.ithome.com/html/943766.htm"]]
+    },
+    {
+        date: "2026-04-28",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "Move-Then-Operate: Behavioral Phasing for Human-Like Robotic Manipulation",
+        venue: "VLA",
+        summary: "提出将机器人操作显式解耦为粗定位 (Move) 和接触交互 (Operate) 两个行为阶段的 VLA 框架。采用双专家策略并由可学习的阶段选择器路由，通过 MLLM 管线自动生成阶段标签。在 RoboTwin2 基准上达到 68.9% 平均成功率，比单体 π₀ 基线高出 24%，训练步数减少 40% 即达到峰值性能。",
+        tags: [["VLA","green"],["Dual-Expert","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.23620"],["PDF","https://arxiv.org/pdf/2604.23620"]]
+    },
+    {
+        date: "2026-04-28",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "MoSS: Modular Sensory Stream for Integrating Physical Feedback in VLAs",
+        venue: "VLA",
+        summary: "提出 MoSS 模块化感觉流框架，通过解耦的模态流和联合交叉自注意力将触觉、力矩等异构物理信号融入 VLA 的动作预测。采用两阶段训练冻结预训练参数以稳定引入新模态，并加入预测未来物理信号的辅助任务捕捉接触动力学。真实机器人实验证明触觉+力矩信号可协同提升操作成功率。",
+        tags: [["VLA","green"],["Multi-Sensory","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.23272"],["🏠 项目主页","https://jiminlx.github.io/MoSS"]]
+    },
+    {
+        date: "2026-04-28",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "DAM-VLA: Dynamic Action Model-Based VLA for Robot Manipulation (ICRA 2026)",
+        venue: "VLA",
+        summary: "三星研究院提出 DAM-VLA，首次将手臂运动（粗动作）与夹爪操作（精细动作）解耦建模。利用 DINOv2 的 class/register token 分工：class token 提供全局语义给粗动作模型，register token 提供局部几何给精细动作模型。配合双尺度加权机制（非对称高斯 + 指数衰减），Franka 真机操控成功率 86.8%，比 CogAct 提升 23.9%。本周相关解读文章广泛传播。",
+        tags: [["VLA","green"],["Arm-Gripper Decoupling","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2603.00926"],["PDF","https://arxiv.org/pdf/2603.00926"]]
+    },
+    {
+        date: "2026-04-28",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "PokeVLA: Pocket-Sized VLA with Comprehensive World Knowledge Guidance",
+        venue: "VLA",
+        summary: "提出\"袖珍型\" VLA 模型 PokeVLA，仅用 240 万样本预训练，引入综合世界知识引导以弥补模型容量不足。设计高效的空间感知机制和知识蒸馏管线，适合嵌入式部署场景。在多个操作基准上性能与大模型竞争。",
+        tags: [["VLA","green"],["Lightweight","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.20834"],["PDF","https://arxiv.org/pdf/2604.20834"]]
+    },
+    {
+        date: "2026-04-28",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "Hi-WM: Human-in-the-World-Model for Scalable Robot Post-Training",
+        venue: "World Model",
+        summary: "提出 Hi-WM，将学到的世界模型作为可复用的纠正基底用于机器人后训练。策略先在世界模型内闭环推演，当出现失败时人类直接在模型内介入提供矫正动作；支持回滚与分支，单个失败状态可复用于多次矫正，围绕困难行为产生密集监督。真实世界成功率比基础策略平均提升 37.9 个百分点，世界模型评估与真实表现高度相关 (r=0.953)，证明世界模型不仅能生成数据和评估，更是有效的纠正基底。",
+        tags: [["Post-Training","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.21741"],["PDF","https://arxiv.org/pdf/2604.21741"]]
+    },
+    {
+        date: "2026-04-28",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "DexWorldModel: Causal Latent World Modeling for Automated Embodied Tasks",
+        venue: "World Model",
+        summary: "针对生成式世界-动作模型在灵巧操作部署中的瓶颈（冗余像素重建、O(T) 内存增长、串行推理延迟），提出因果潜在世界建模方法，在潜在空间进行规划和动作生成，大幅降低计算开销，支持自动化的具身任务学习流水线。",
+        tags: [["Dexterous","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.16484"],["PDF","https://arxiv.org/pdf/2604.16484"]]
+    },
+    {
+        date: "2026-04-28",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "Learning-Augmented Robotic Automation for Real-World Manufacturing",
+        venue: "Manufacturing",
+        summary: "将学习型任务控制器和神经 3D 安全监视器集成到传统工业流程中，在电机产线上自动化柔性线缆插入和焊接任务。仅需 不到 20 分钟真实数据，系统连续运行 5 小时 10 分钟产出 108 台电机，通过率 99.4%，无需物理围栏，达到人工节拍时间的同时降低了焊接质量波动。这是学习型方法在真实制造产线上的里程碑式验证。",
+        tags: [["Manufacturing","green"],["Learning-Based","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.22235"],["PDF","https://arxiv.org/pdf/2604.22235"]]
+    },
+    {
+        date: "2026-04-28",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "LLM-Driven Closed-Loop Autonomous Learning for Robots in Open Environments",
+        venue: "Autonomous Learning",
+        summary: "提出 LLM 驱动的闭环自主学习框架：机器人面对未覆盖任务时，LLM 负责高层推理（任务分析、候选模型选择、数据采集规划），机器人从自身执行和主动观察中学习，进行准实时训练并将验证结果固化为本地方法库。循环过程逐步减少对外部 LLM 的依赖（LLM 调用从每任务 1.0 次降至 0.2 次）。",
+        tags: [["Autonomous Learning","green"],["LLM-Driven","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.22199"],["PDF","https://arxiv.org/pdf/2604.22199"]]
+    },
+    {
+        date: "2026-04-28",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "Learning Whole-Body Humanoid Locomotion via Motion Generation and Tracking",
+        venue: "Humanoid",
+        summary: "解决人形机器人全身运动控制的核心挑战：直接 RL + 奖励整形导致下肢主导行为，模仿 RL 学出协调动作但无法自适应地形。本工作将运动生成和运动跟踪解耦：运动生成模块在线感知地形并生成适应性参考运动，跟踪模块执行全身协调控制，实现上下身协同的地形自适应步态。",
+        tags: [["Humanoid","green"],["RL + Motion Gen","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.17335"],["PDF","https://arxiv.org/pdf/2604.17335"]]
+    },
+    {
+        date: "2026-04-28",
+        category: "RL",
+        categoryIcon: "🧠",
+        title: "SFT-then-RL Outperforms Mixed-Policy Methods for LLM Reasoning",
+        venue: "RL",
+        summary: "震撼发现：近期宣称超越标准 SFT→RL 管线的混合策略优化方法，其改进源于两个软件 Bug——DeepSpeed CPU 卸载优化器的梯度累积 bug（丢弃中间 micro-batch）和 OpenRLHF 的损失聚合 bug（影响 TRL/OpenRLHF/Llama-Factory）。修复后标准 SFT→RL 在数学基准上以 +3.8 / +22.2 分超越所有已发表的混合策略方法。仅 50 步 RL 的截断版本就能在更少 FLOPs 下超越混合方法。",
+        tags: [["RL","green"],["LLM Training","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.23747"],["PDF","https://arxiv.org/pdf/2604.23747"]]
+    },
+    {
+        date: "2026-04-28",
+        category: "RL",
+        categoryIcon: "🧠",
+        title: "Visual-Tactile Peg-in-Hole Assembly Learning from Peg-out-of-Hole Disassembly",
+        venue: "RL",
+        summary: "针对轴孔装配这一经典难题，提出从拔出（Peg-out-of-Hole）学习插入的逆向思路：利用拆卸动作更易探索的特点收集视觉-触觉数据，通过时间反转和域适应训练插入策略。RL 探索效率大幅提升，避免了直接在高精度装配空间中探索的困难。",
+        tags: [["RL","green"],["Assembly","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.20712"],["PDF","https://arxiv.org/pdf/2604.20712"]]
+    },
+    {
+        date: "2026-04-28",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Tandem: Large + Small LM Collaboration for Efficient Reasoning (ACL 2026)",
+        venue: "LLM",
+        summary: "提出 Tandem 协同框架：大模型 (LLM) 担任策略协调者，高效生成紧凑的关键推理洞察；小模型 (SLM) 以此为引导执行完整推理并给出最终回答。引入代价感知终止机制自适应判断何时积累了足够的推理引导以启动早停。在数学推理和代码生成上减少约 40% 计算成本，同时保持相当或更优性能。跨领域迁移无需重新训练。",
+        tags: [["LLM","green"],["Efficient Inference","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.23623"],["PDF","https://arxiv.org/pdf/2604.23623"]]
+    },
+    {
+        date: "2026-04-28",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Training LLM Agents for Spontaneous, Reward-Free Self-Evolution via World Knowledge Exploration",
+        venue: "LLM Agent",
+        summary: "现有 Agent 的\"自我进化\"依赖人类提供的奖励和规则。本工作训练 Agent 拥有内在的元进化能力：无需外部监督，Agent 通过自发的世界知识探索在未见环境中主动学习，形成可迁移的环境理解和任务执行能力，消除对人类引导的持续依赖。",
+        tags: [["LLM Agent","green"],["Self-Evolution","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.18131"],["PDF","https://arxiv.org/pdf/2604.18131"]]
+    },
+    {
+        date: "2026-04-28",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Perceval: Perception-Centric Process Reward Models for VLMs",
+        venue: "VLM",
+        summary: "针对 VLM 推理链中的感知幻觉问题，提出 Perceval——一种支持 token 级错误定位的过程奖励模型 (PRM)。它从响应中提取图像相关断言并与视觉证据逐一比对，定位含感知错误的 span。集成到 RL 训练中替代序列级优势，实现细粒度惩罚；推理时可截断错误部分让模型重新生成或反思，支持测试时扩展。在多个推理 VLM 上取得显著提升。",
+        tags: [["VLM","green"],["RLVR","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.24583"],["PDF","https://arxiv.org/pdf/2604.24583"]]
+    },
+    {
+        date: "2026-04-28",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "🤝 富士通 × 卡内基梅隆大学成立 Physical AI 联合研究中心",
+        venue: "",
+        summary: "4月23日，富士通与 CMU 宣布成立 Physical AI 联合研究中心，联合研发 AI 驱动机器人的操作系统 (OS)，计划 2026 年内发布首个版本。目标在 2030 年实现人机协同工作，面向工厂、医院等场景。演示中搭载物理 AI 的四足机器人可在行走中稳定搬运货物。这被视为生成式 AI 之后的下一关键技术方向。",
+        tags: [],
+        links: [["📰 CMU 官方","https://www.hcii.cmu.edu/news/fujitsu-cmu-joint-center-physical-ai"]]
+    },
+    {
+        date: "2026-04-28",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "🔧 特斯拉公开 Optimus V3 灵巧手 5 项专利 | 智平方发布 AlphaBrain 开源平台",
+        venue: "",
+        summary: "特斯拉公开 Optimus V3 灵巧手核心专利（25 自由度架构、前臂、腕关节、手指组件），马斯克称\"手和前臂占机器人一半以上工程难度\"。与此同时，中国公司智平方正式发布 AlphaBrain Platform——全球首个一站式具身智能模型开源社区，打通数据→训练→架构→测试全链路，包含世界模型、类脑模型等前沿技术。形成\"硬件开源 vs 大脑开源\"的产业对话。",
+        tags: [],
+        links: [["📰 特斯拉专利","https://robot.ofweek.com/2026-04/ART-898890-8140-30685636.html"],["🏠 AlphaBrain","https://www.alphabrain-platform.com/"]]
+    },
+    {
+        date: "2026-04-28",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "🏃 机器人半马跑赢人类 | 行业量产化加速",
+        venue: "",
+        summary: "2026 北京亦庄人形机器人半马中，荣耀\"闪电\"机器人以 50 分 26 秒完赛 21.097 公里，打破人类半马世界纪录（57 分 20 秒）。赛事规模 105 支队伍、300+ 台机器人，自主导航占比近 40%。同时特斯拉第三代 Optimus 预计年中亮相、7-8 月启动投产；宇树科技机器人打破 1500 米世界纪录。行业从\"蹒跚学步\"迈向\"竞速量产\"。",
+        tags: [],
+        links: [["📰 详情","https://www.sohu.com/a/1015569288_122044991"]]
+    },
     // === 2026-04-27 ===
     {
         date: "2026-04-27",
@@ -7807,6 +7998,13 @@ const PAPERS_DB = [
 ];
 
 const DAILY_OVERVIEW = {
+    "2026-04-28": {
+        bannerTitle: "",
+        bannerSubtitle: "",
+        picks: ["小米 Xiaomi-Robotics-0 真机后训练全流程开源","Training LLM Agents for Spontaneous, Reward-Free Self-Evolution via World Knowledge Exploration","M²-VLA: Boosting VLMs for Generalizable Manipulation via Layer Mixture and Meta-Skills","SFT-then-RL Outperforms Mixed-Policy Methods for LLM Reasoning","MoSS: Modular Sensory Stream for Integrating Physical Feedback in VLAs"],
+        totalPapers: 16,
+        totalNews: 3
+    },
     "2026-04-27": {
         bannerTitle: "",
         bannerSubtitle: "",

@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🔬 小小志科研日报 — 2026-04-28</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+  :root {
+    --bg-primary: #0a0e1a;
+    --bg-secondary: #111827;
+    --bg-card: #1a2035;
+    --bg-card-hover: #1e2642;
+    --border-color: #2a3550;
+    --text-primary: #e8ecf4;
+    --text-secondary: #94a3b8;
+    --text-muted: #64748b;
+    --accent-blue: #3b82f6;
+    --accent-cyan: #06b6d4;
+    --accent-purple: #8b5cf6;
+    --accent-green: #10b981;
+    --accent-orange: #f59e0b;
+    --accent-pink: #ec4899;
+    --accent-red: #ef4444;
+    --glow-blue: rgba(59, 130, 246, 0.15);
+    --glow-cyan: rgba(6, 182, 212, 0.15);
+    --glow-purple: rgba(139, 92, 246, 0.15);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+
+  .container { max-width: 1100px; margin: 0 auto; padding: 20px 24px 60px; }
+
+  /* Hero Header */
+  .hero {
+    text-align: center;
+    padding: 60px 20px 48px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 50% 50%, rgba(59,130,246,0.08) 0%, transparent 50%),
+                radial-gradient(circle at 30% 70%, rgba(139,92,246,0.06) 0%, transparent 40%);
+    animation: pulse 8s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 0.6; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.05); }
+  }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: linear-gradient(135deg, rgba(59,130,246,0.15), rgba(139,92,246,0.15));
+    border: 1px solid rgba(59,130,246,0.25);
+    border-radius: 999px; padding: 6px 18px;
+    font-size: 13px; font-weight: 500; color: var(--accent-blue);
+    position: relative; margin-bottom: 20px;
+  }
+  .hero h1 {
+    font-size: 2.4em; font-weight: 700;
+    background: linear-gradient(135deg, #fff 0%, #94a3b8 100%);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    position: relative; margin-bottom: 10px;
+  }
+  .hero .date {
+    font-size: 16px; color: var(--text-secondary);
+    font-weight: 400; position: relative;
+  }
+
+  /* Stats Bar */
+  .stats-bar {
+    display: flex; justify-content: center; gap: 32px;
+    margin: 32px 0 40px; flex-wrap: wrap; position: relative;
+  }
+  .stat-item {
+    text-align: center;
+    padding: 16px 24px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    min-width: 130px;
+  }
+  .stat-number {
+    font-size: 28px; font-weight: 700;
+    font-family: 'JetBrains Mono', monospace;
+    background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  }
+  .stat-label { font-size: 12px; color: var(--text-muted); margin-top: 4px; text-transform: uppercase; letter-spacing: 0.5px; }
+
+  /* Section */
+  .section {
+    margin-bottom: 48px;
+  }
+  .section-header {
+    display: flex; align-items: center; gap: 12px;
+    margin-bottom: 24px; padding-bottom: 12px;
+    border-bottom: 1px solid var(--border-color);
+  }
+  .section-icon {
+    width: 40px; height: 40px; border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px; flex-shrink: 0;
+  }
+  .section-title { font-size: 1.35em; font-weight: 600; }
+  .section-count {
+    font-size: 12px; font-weight: 500;
+    background: rgba(255,255,255,0.08); border-radius: 999px;
+    padding: 3px 10px; color: var(--text-muted); margin-left: auto;
+  }
+
+  /* Paper Card */
+  .paper-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    padding: 24px;
+    margin-bottom: 16px;
+    transition: all 0.25s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  .paper-card:hover {
+    background: var(--bg-card-hover);
+    border-color: rgba(59,130,246,0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+  }
+  .paper-card.hot::before {
+    content: '🔥 HOT';
+    position: absolute; top: 12px; right: 12px;
+    background: linear-gradient(135deg, #ef4444, #f97316);
+    color: white; font-size: 11px; font-weight: 700;
+    padding: 3px 10px; border-radius: 999px;
+    letter-spacing: 0.5px;
+  }
+  .paper-title {
+    font-size: 1.05em; font-weight: 600;
+    color: #f1f5f9; margin-bottom: 8px;
+    line-height: 1.5; padding-right: 60px;
+  }
+  .paper-meta {
+    display: flex; align-items: center; gap: 10px;
+    margin-bottom: 12px; flex-wrap: wrap;
+  }
+  .tag {
+    display: inline-flex; align-items: center;
+    font-size: 11px; font-weight: 600;
+    padding: 3px 10px; border-radius: 6px;
+    letter-spacing: 0.3px;
+  }
+  .tag-vla { background: rgba(139,92,246,0.15); color: #a78bfa; border: 1px solid rgba(139,92,246,0.25); }
+  .tag-robotics { background: rgba(6,182,212,0.15); color: #22d3ee; border: 1px solid rgba(6,182,212,0.25); }
+  .tag-rl { background: rgba(16,185,129,0.15); color: #34d399; border: 1px solid rgba(16,185,129,0.25); }
+  .tag-llm { background: rgba(59,130,246,0.15); color: #60a5fa; border: 1px solid rgba(59,130,246,0.25); }
+  .tag-world-model { background: rgba(245,158,11,0.15); color: #fbbf24; border: 1px solid rgba(245,158,11,0.25); }
+  .tag-vlm { background: rgba(236,72,153,0.15); color: #f472b6; border: 1px solid rgba(236,72,153,0.25); }
+  .tag-embodied { background: rgba(239,68,68,0.15); color: #f87171; border: 1px solid rgba(239,68,68,0.25); }
+  .tag-industry { background: rgba(255,255,255,0.08); color: #94a3b8; border: 1px solid rgba(255,255,255,0.1); }
+  .paper-source {
+    font-size: 11px; color: var(--text-muted);
+    font-family: 'JetBrains Mono', monospace;
+  }
+  .paper-summary {
+    font-size: 14px; color: var(--text-secondary);
+    line-height: 1.8; margin-bottom: 14px;
+  }
+  .paper-links {
+    display: flex; gap: 8px; flex-wrap: wrap;
+  }
+  .link-btn {
+    display: inline-flex; align-items: center; gap: 5px;
+    font-size: 12px; font-weight: 500;
+    padding: 6px 14px; border-radius: 8px;
+    text-decoration: none; transition: all 0.2s;
+    border: 1px solid var(--border-color);
+  }
+  .link-btn.arxiv { background: rgba(59,130,246,0.1); color: #60a5fa; border-color: rgba(59,130,246,0.25); }
+  .link-btn.arxiv:hover { background: rgba(59,130,246,0.2); }
+  .link-btn.pdf { background: rgba(239,68,68,0.1); color: #f87171; border-color: rgba(239,68,68,0.25); }
+  .link-btn.pdf:hover { background: rgba(239,68,68,0.2); }
+  .link-btn.project { background: rgba(16,185,129,0.1); color: #34d399; border-color: rgba(16,185,129,0.25); }
+  .link-btn.project:hover { background: rgba(16,185,129,0.2); }
+  .link-btn.github { background: rgba(255,255,255,0.05); color: #e2e8f0; border-color: rgba(255,255,255,0.15); }
+  .link-btn.github:hover { background: rgba(255,255,255,0.1); }
+  .link-btn.news { background: rgba(245,158,11,0.1); color: #fbbf24; border-color: rgba(245,158,11,0.25); }
+  .link-btn.news:hover { background: rgba(245,158,11,0.2); }
+
+  /* Info Card (news) */
+  .info-card {
+    background: linear-gradient(135deg, var(--bg-card), rgba(245,158,11,0.05));
+    border: 1px solid rgba(245,158,11,0.2);
+    border-radius: 14px; padding: 24px; margin-bottom: 16px;
+    transition: all 0.25s ease;
+  }
+  .info-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+  }
+  .info-title { font-size: 1.05em; font-weight: 600; color: #fbbf24; margin-bottom: 8px; }
+  .info-summary { font-size: 14px; color: var(--text-secondary); line-height: 1.8; margin-bottom: 14px; }
+
+  /* Footer */
+  .footer {
+    text-align: center; padding: 40px 20px;
+    border-top: 1px solid var(--border-color);
+    margin-top: 40px;
+  }
+  .footer-text { font-size: 13px; color: var(--text-muted); }
+  .footer-sig {
+    margin-top: 12px; font-size: 14px; font-weight: 500;
+    background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  }
+
+  @media (max-width: 640px) {
+    .hero h1 { font-size: 1.6em; }
+    .stats-bar { gap: 12px; }
+    .stat-item { min-width: 100px; padding: 12px 16px; }
+    .paper-card { padding: 18px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- Hero -->
+  <div class="hero">
+    <div class="hero-badge">🔬 DAILY RESEARCH INTELLIGENCE</div>
+    <h1>小小志科研日报</h1>
+    <div class="date">2026 年 4 月 28 日 · 星期二</div>
+  </div>
+
+  <!-- Stats -->
+  <div class="stats-bar">
+    <div class="stat-item">
+      <div class="stat-number">18</div>
+      <div class="stat-label">新研究</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">7</div>
+      <div class="stat-label">覆盖领域</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">3</div>
+      <div class="stat-label">检索来源</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">3</div>
+      <div class="stat-label">行业动态</div>
+    </div>
+  </div>
+
+  <!-- ==================== VLA ==================== -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon" style="background: rgba(139,92,246,0.15);">🤖</div>
+      <div class="section-title">VLA · Vision-Language-Action</div>
+      <div class="section-count">6 篇</div>
+    </div>
+
+    <div class="paper-card hot">
+      <div class="paper-title">M²-VLA: Boosting VLMs for Generalizable Manipulation via Layer Mixture and Meta-Skills</div>
+      <div class="paper-meta">
+        <span class="tag tag-vla">VLA</span>
+        <span class="tag tag-robotics">Manipulation</span>
+        <span class="paper-source">arXiv 2604.24182 · 27 Apr 2026</span>
+      </div>
+      <div class="paper-summary">
+        提出 M²-VLA，证明通用 VLM 可直接作为机器人操作的强力主干。引入 <strong>Mixture of Layers (MoL)</strong> 策略从稠密语义特征中选择性提取任务关键信息，以及 <strong>Meta Skill Module (MSM)</strong> 集成强归纳偏置以在受限模型容量下高效学习轨迹。实验在仿真和真实环境中均展现出色的零样本泛化能力，避免端到端微调带来的灾难性遗忘问题。代码和预训练模型即将开源。
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2604.24182" class="link-btn arxiv" target="_blank">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2604.24182" class="link-btn pdf" target="_blank">PDF</a>
+      </div>
+    </div>
+
+    <div class="paper-card hot">
+      <div class="paper-title">小米 Xiaomi-Robotics-0 真机后训练全流程开源</div>
+      <div class="paper-meta">
+        <span class="tag tag-vla">VLA</span>
+        <span class="tag tag-robotics">Post-Training</span>
+        <span class="paper-source">Industry · 27 Apr 2026</span>
+      </div>
+      <div class="paper-summary">
+        小米正式发布并开源 Xiaomi-Robotics-0 (4.7B参数 VLA) 的<strong>真机后训练全流程</strong>。仅用 20 小时任务数据，模型就掌握了亚毫米级精度的耳机收纳任务。引入三项关键技术：<strong>自适应加权机制 (Adaptive Loss Re-weighting)</strong>、<strong>λ 型注意力掩码</strong>和<strong>前缀动作随机遮蔽</strong>，解决动作惯性与能力遗忘问题。部署采用异步推理方案实现无缝衔接。该模型发布首月登上 HuggingFace 全球 VLA 下载榜第六。
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2602.12684" class="link-btn arxiv" target="_blank">📄 技术报告</a>
+        <a href="https://robotics.xiaomi.com/xiaomi-robotics-0.html" class="link-btn project" target="_blank">🏠 项目主页</a>
+        <a href="https://m.ithome.com/html/943766.htm" class="link-btn news" target="_blank">📰 新闻</a>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">Move-Then-Operate: Behavioral Phasing for Human-Like Robotic Manipulation</div>
+      <div class="paper-meta">
+        <span class="tag tag-vla">VLA</span>
+        <span class="tag tag-robotics">Dual-Expert</span>
+        <span class="paper-source">arXiv 2604.23620 · 26 Apr 2026</span>
+      </div>
+      <div class="paper-summary">
+        提出将机器人操作显式解耦为<strong>粗定位 (Move) 和接触交互 (Operate)</strong> 两个行为阶段的 VLA 框架。采用双专家策略并由可学习的阶段选择器路由，通过 MLLM 管线自动生成阶段标签。在 RoboTwin2 基准上达到 68.9% 平均成功率，比单体 π₀ 基线高出 24%，训练步数减少 40% 即达到峰值性能。
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2604.23620" class="link-btn arxiv" target="_blank">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2604.23620" class="link-btn pdf" target="_blank">PDF</a>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">MoSS: Modular Sensory Stream for Integrating Physical Feedback in VLAs</div>
+      <div class="paper-meta">
+        <span class="tag tag-vla">VLA</span>
+        <span class="tag tag-embodied">Multi-Sensory</span>
+        <span class="paper-source">arXiv 2604.23272 · 25 Apr 2026</span>
+      </div>
+      <div class="paper-summary">
+        提出 <strong>MoSS 模块化感觉流框架</strong>，通过解耦的模态流和联合交叉自注意力将触觉、力矩等异构物理信号融入 VLA 的动作预测。采用两阶段训练冻结预训练参数以稳定引入新模态，并加入预测未来物理信号的辅助任务捕捉接触动力学。真实机器人实验证明触觉+力矩信号可协同提升操作成功率。
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2604.23272" class="link-btn arxiv" target="_blank">📄 arXiv</a>
+        <a href="https://jiminlx.github.io/MoSS" class="link-btn project" target="_blank">🏠 项目主页</a>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">DAM-VLA: Dynamic Action Model-Based VLA for Robot Manipulation (ICRA 2026)</div>
+      <div class="paper-meta">
+        <span class="tag tag-vla">VLA</span>
+        <span class="tag tag-robotics">Arm-Gripper Decoupling</span>
+        <span class="paper-source">arXiv 2603.00926 · ICRA 2026 · Samsung Research</span>
+      </div>
+      <div class="paper-summary">
+        三星研究院提出 DAM-VLA，首次将<strong>手臂运动（粗动作）与夹爪操作（精细动作）解耦建模</strong>。利用 DINOv2 的 class/register token 分工：class token 提供全局语义给粗动作模型，register token 提供局部几何给精细动作模型。配合双尺度加权机制（非对称高斯 + 指数衰减），Franka 真机操控成功率 86.8%，比 CogAct 提升 23.9%。本周相关解读文章广泛传播。
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2603.00926" class="link-btn arxiv" target="_blank">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2603.00926" class="link-btn pdf" target="_blank">PDF</a>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">PokeVLA: Pocket-Sized VLA with Comprehensive World Knowledge Guidance</div>
+      <div class="paper-meta">
+        <span class="tag tag-vla">VLA</span>
+        <span class="tag tag-llm">Lightweight</span>
+        <span class="paper-source">arXiv 2604.20834 · 22→24 Apr 2026 (v2)</span>
+      </div>
+      <div class="paper-summary">
+        提出"袖珍型" VLA 模型 PokeVLA，仅用 240 万样本预训练，引入综合世界知识引导以弥补模型容量不足。设计高效的空间感知机制和知识蒸馏管线，适合嵌入式部署场景。在多个操作基准上性能与大模型竞争。
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2604.20834" class="link-btn arxiv" target="_blank">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2604.20834" class="link-btn pdf" target="_blank">PDF</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== World Model ==================== -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon" style="background: rgba(245,158,11,0.15);">🌍</div>
+      <div class="section-title">World Model · 世界模型</div>
+      <div class="section-count">2 篇</div>
+    </div>
+
+    <div class="paper-card hot">
+      <div class="paper-title">Hi-WM: Human-in-the-World-Model for Scalable Robot Post-Training</div>
+      <div class="paper-meta">
+        <span class="tag tag-world-model">World Model</span>
+        <span class="tag tag-robotics">Post-Training</span>
+        <span class="paper-source">arXiv 2604.21741 · 23 Apr 2026</span>
+      </div>
+      <div class="paper-summary">
+        提出 <strong>Hi-WM</strong>，将学到的世界模型作为<strong>可复用的纠正基底</strong>用于机器人后训练。策略先在世界模型内闭环推演，当出现失败时人类直接在模型内介入提供矫正动作；支持回滚与分支，单个失败状态可复用于多次矫正，围绕困难行为产生密集监督。真实世界成功率比基础策略平均提升 <strong>37.9 个百分点</strong>，世界模型评估与真实表现高度相关 (r=0.953)，证明世界模型不仅能生成数据和评估，更是有效的纠正基底。
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2604.21741" class="link-btn arxiv" target="_blank">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2604.21741" class="link-btn pdf" target="_blank">PDF</a>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">DexWorldModel: Causal Latent World Modeling for Automated Embodied Tasks</div>
+      <div class="paper-meta">
+        <span class="tag tag-world-model">World Model</span>
+        <span class="tag tag-embodied">Dexterous</span>
+        <span class="paper-source">arXiv 2604.16484 · 13 Apr 2026 (近期传播)</span>
+      </div>
+      <div class="paper-summary">
+        针对生成式世界-动作模型在灵巧操作部署中的瓶颈（冗余像素重建、O(T) 内存增长、串行推理延迟），提出因果潜在世界建模方法，在潜在空间进行规划和动作生成，大幅降低计算开销，支持自动化的具身任务学习流水线。
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2604.16484" class="link-btn arxiv" target="_blank">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2604.16484" class="link-btn pdf" target="_blank">PDF</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== Robotics ==================== -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon" style="background: rgba(6,182,212,0.15);">🦾</div>
+      <div class="section-title">Robotics · 机器人</div>
+      <div class="section-count">3 篇</div>
+    </div>
+
+    <div class="paper-card hot">
+      <div class="paper-title">Learning-Augmented Robotic Automation for Real-World Manufacturing</div>
+      <div class="paper-meta">
+        <span class="tag tag-robotics">Manufacturing</span>
+        <span class="tag tag-rl">Learning-Based</span>
+        <span class="paper-source">arXiv 2604.22235 · 24 Apr 2026</span>
+      </div>
+      <div class="paper-summary">
+        将学习型任务控制器和<strong>神经 3D 安全监视器</strong>集成到传统工业流程中，在电机产线上自动化柔性线缆插入和焊接任务。仅需 <strong>不到 20 分钟真实数据</strong>，系统连续运行 5 小时 10 分钟产出 108 台电机，通过率 99.4%，无需物理围栏，达到人工节拍时间的同时降低了焊接质量波动。这是学习型方法在真实制造产线上的里程碑式验证。
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2604.22235" class="link-btn arxiv" target="_blank">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2604.22235" class="link-btn pdf" target="_blank">PDF</a>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">LLM-Driven Closed-Loop Autonomous Learning for Robots in Open Environments</div>
+      <div class="paper-meta">
+        <span class="tag tag-robotics">Autonomous Learning</span>
+        <span class="tag tag-llm">LLM-Driven</span>
+        <span class="paper-source">arXiv 2604.22199 · 24 Apr 2026</span>
+      </div>
+      <div class="paper-summary">
+        提出 LLM 驱动的<strong>闭环自主学习框架</strong>：机器人面对未覆盖任务时，LLM 负责高层推理（任务分析、候选模型选择、数据采集规划），机器人从自身执行和主动观察中学习，进行准实时训练并将验证结果固化为本地方法库。循环过程逐步减少对外部 LLM 的依赖（LLM 调用从每任务 1.0 次降至 0.2 次）。
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2604.22199" class="link-btn arxiv" target="_blank">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2604.22199" class="link-btn pdf" target="_blank">PDF</a>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">Learning Whole-Body Humanoid Locomotion via Motion Generation and Tracking</div>
+      <div class="paper-meta">
+        <span class="tag tag-robotics">Humanoid</span>
+        <span class="tag tag-rl">RL + Motion Gen</span>
+        <span class="paper-source">arXiv 2604.17335 · 近期更新</span>
+      </div>
+      <div class="paper-summary">
+        解决人形机器人全身运动控制的核心挑战：直接 RL + 奖励整形导致下肢主导行为，模仿 RL 学出协调动作但无法自适应地形。本工作将<strong>运动生成和运动跟踪</strong>解耦：运动生成模块在线感知地形并生成适应性参考运动，跟踪模块执行全身协调控制，实现上下身协同的地形自适应步态。
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2604.17335" class="link-btn arxiv" target="_blank">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2604.17335" class="link-btn pdf" target="_blank">PDF</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== RL ==================== -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon" style="background: rgba(16,185,129,0.15);">🎯</div>
+      <div class="section-title">RL · 强化学习</div>
+      <div class="section-count">2 篇</div>
+    </div>
+
+    <div class="paper-card hot">
+      <div class="paper-title">SFT-then-RL Outperforms Mixed-Policy Methods for LLM Reasoning</div>
+      <div class="paper-meta">
+        <span class="tag tag-rl">RL</span>
+        <span class="tag tag-llm">LLM Training</span>
+        <span class="paper-source">arXiv 2604.23747 · 26 Apr 2026</span>
+      </div>
+      <div class="paper-summary">
+        震撼发现：近期宣称超越标准 SFT→RL 管线的混合策略优化方法，其改进源于<strong>两个软件 Bug</strong>——DeepSpeed CPU 卸载优化器的梯度累积 bug（丢弃中间 micro-batch）和 OpenRLHF 的损失聚合 bug（影响 TRL/OpenRLHF/Llama-Factory）。修复后标准 SFT→RL 在数学基准上以 <strong>+3.8 / +22.2 分</strong>超越所有已发表的混合策略方法。仅 50 步 RL 的截断版本就能在更少 FLOPs 下超越混合方法。
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2604.23747" class="link-btn arxiv" target="_blank">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2604.23747" class="link-btn pdf" target="_blank">PDF</a>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">Visual-Tactile Peg-in-Hole Assembly Learning from Peg-out-of-Hole Disassembly</div>
+      <div class="paper-meta">
+        <span class="tag tag-rl">RL</span>
+        <span class="tag tag-robotics">Assembly</span>
+        <span class="paper-source">arXiv 2604.20712 · 近期</span>
+      </div>
+      <div class="paper-summary">
+        针对轴孔装配这一经典难题，提出<strong>从拔出（Peg-out-of-Hole）学习插入</strong>的逆向思路：利用拆卸动作更易探索的特点收集视觉-触觉数据，通过时间反转和域适应训练插入策略。RL 探索效率大幅提升，避免了直接在高精度装配空间中探索的困难。
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2604.20712" class="link-btn arxiv" target="_blank">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2604.20712" class="link-btn pdf" target="_blank">PDF</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== LLM ==================== -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon" style="background: rgba(59,130,246,0.15);">🧠</div>
+      <div class="section-title">LLM · 大语言模型</div>
+      <div class="section-count">2 篇</div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">Tandem: Large + Small LM Collaboration for Efficient Reasoning (ACL 2026)</div>
+      <div class="paper-meta">
+        <span class="tag tag-llm">LLM</span>
+        <span class="tag tag-rl">Efficient Inference</span>
+        <span class="paper-source">arXiv 2604.23623 · 26 Apr 2026 · ACL 2026 Findings</span>
+      </div>
+      <div class="paper-summary">
+        提出 <strong>Tandem 协同框架</strong>：大模型 (LLM) 担任策略协调者，高效生成紧凑的关键推理洞察；小模型 (SLM) 以此为引导执行完整推理并给出最终回答。引入<strong>代价感知终止机制</strong>自适应判断何时积累了足够的推理引导以启动早停。在数学推理和代码生成上<strong>减少约 40% 计算成本</strong>，同时保持相当或更优性能。跨领域迁移无需重新训练。
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2604.23623" class="link-btn arxiv" target="_blank">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2604.23623" class="link-btn pdf" target="_blank">PDF</a>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">Training LLM Agents for Spontaneous, Reward-Free Self-Evolution via World Knowledge Exploration</div>
+      <div class="paper-meta">
+        <span class="tag tag-llm">LLM Agent</span>
+        <span class="tag tag-embodied">Self-Evolution</span>
+        <span class="paper-source">arXiv 2604.18131 · 近期</span>
+      </div>
+      <div class="paper-summary">
+        现有 Agent 的"自我进化"依赖人类提供的奖励和规则。本工作训练 Agent 拥有<strong>内在的元进化能力</strong>：无需外部监督，Agent 通过自发的世界知识探索在未见环境中主动学习，形成可迁移的环境理解和任务执行能力，消除对人类引导的持续依赖。
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2604.18131" class="link-btn arxiv" target="_blank">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2604.18131" class="link-btn pdf" target="_blank">PDF</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== VLM ==================== -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon" style="background: rgba(236,72,153,0.15);">🎨</div>
+      <div class="section-title">VLM · 视觉语言模型</div>
+      <div class="section-count">1 篇</div>
+    </div>
+
+    <div class="paper-card hot">
+      <div class="paper-title">Perceval: Perception-Centric Process Reward Models for VLMs</div>
+      <div class="paper-meta">
+        <span class="tag tag-vlm">VLM</span>
+        <span class="tag tag-rl">RLVR</span>
+        <span class="paper-source">arXiv 2604.24583 · 27 Apr 2026</span>
+      </div>
+      <div class="paper-summary">
+        针对 VLM 推理链中的感知幻觉问题，提出 <strong>Perceval</strong>——一种支持 token 级错误定位的过程奖励模型 (PRM)。它从响应中提取图像相关断言并与视觉证据逐一比对，定位含感知错误的 span。集成到 RL 训练中替代序列级优势，实现<strong>细粒度惩罚</strong>；推理时可截断错误部分让模型重新生成或反思，支持测试时扩展。在多个推理 VLM 上取得显著提升。
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2604.24583" class="link-btn arxiv" target="_blank">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2604.24583" class="link-btn pdf" target="_blank">PDF</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== Industry ==================== -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon" style="background: rgba(245,158,11,0.15);">📡</div>
+      <div class="section-title">行业动态 · Industry News</div>
+      <div class="section-count">3 条</div>
+    </div>
+
+    <div class="info-card">
+      <div class="info-title">🤝 富士通 × 卡内基梅隆大学成立 Physical AI 联合研究中心</div>
+      <div class="info-summary">
+        4月23日，富士通与 CMU 宣布成立 <strong>Physical AI 联合研究中心</strong>，联合研发 AI 驱动机器人的操作系统 (OS)，计划 2026 年内发布首个版本。目标在 2030 年实现人机协同工作，面向工厂、医院等场景。演示中搭载物理 AI 的四足机器人可在行走中稳定搬运货物。这被视为生成式 AI 之后的下一关键技术方向。
+      </div>
+      <div class="paper-links">
+        <a href="https://www.hcii.cmu.edu/news/fujitsu-cmu-joint-center-physical-ai" class="link-btn news" target="_blank">📰 CMU 官方</a>
+      </div>
+    </div>
+
+    <div class="info-card">
+      <div class="info-title">🔧 特斯拉公开 Optimus V3 灵巧手 5 项专利 | 智平方发布 AlphaBrain 开源平台</div>
+      <div class="info-summary">
+        特斯拉公开 Optimus V3 灵巧手核心专利（25 自由度架构、前臂、腕关节、手指组件），马斯克称"手和前臂占机器人一半以上工程难度"。与此同时，中国公司智平方正式发布 <strong>AlphaBrain Platform</strong>——全球首个一站式具身智能模型开源社区，打通数据→训练→架构→测试全链路，包含世界模型、类脑模型等前沿技术。形成"硬件开源 vs 大脑开源"的产业对话。
+      </div>
+      <div class="paper-links">
+        <a href="https://robot.ofweek.com/2026-04/ART-898890-8140-30685636.html" class="link-btn news" target="_blank">📰 特斯拉专利</a>
+        <a href="https://www.alphabrain-platform.com/" class="link-btn project" target="_blank">🏠 AlphaBrain</a>
+      </div>
+    </div>
+
+    <div class="info-card">
+      <div class="info-title">🏃 机器人半马跑赢人类 | 行业量产化加速</div>
+      <div class="info-summary">
+        2026 北京亦庄人形机器人半马中，荣耀"闪电"机器人以 <strong>50 分 26 秒</strong>完赛 21.097 公里，打破人类半马世界纪录（57 分 20 秒）。赛事规模 105 支队伍、300+ 台机器人，自主导航占比近 40%。同时特斯拉第三代 Optimus 预计年中亮相、7-8 月启动投产；宇树科技机器人打破 1500 米世界纪录。行业从"蹒跚学步"迈向"竞速量产"。
+      </div>
+      <div class="paper-links">
+        <a href="https://www.sohu.com/a/1015569288_122044991" class="link-btn news" target="_blank">📰 详情</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <div class="footer-text">
+      📊 检索统计：arXiv (cs.RO/cs.AI/cs.LG/cs.CV) + Google Scholar + 行业媒体 共 3 大来源<br>
+      覆盖 VLA(6) · World Model(2) · Robotics(3) · RL(2) · LLM(2) · VLM(1) · Industry(3) 共 <strong>18 篇论文 + 3 条行业动态</strong><br>
+      时间范围：2026-04-25 ~ 2026-04-28 (重点 4/27-4/28)
+    </div>
+    <div class="footer-sig">
+      🔬 小小志 · Boss Team 科研 Researcher · Powered by WorkBuddy
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
