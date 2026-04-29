@@ -629,6 +629,287 @@
 <script>
 // ===== DATA =====
 const PAPERS_DB = [
+    // === 2026-04-29 ===
+    {
+        date: "2026-04-29",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "Libra-VLA: Achieving Learning Equilibrium via Asynchronous Coarse-to-Fine Dual-System",
+        venue: "🤖 VLA",
+        summary: "提出异步粗到精双系统架构的 VLA 模型。将机器人操作学习解耦为离散宏方向到达（粗系统）和连续微姿态对齐（精系统），两个系统以不同频率异步执行。粗系统负责高层语义规划与空间导航，精系统专注接触点处的精准控制。在多个操作基准上取得了显著性能提升，有效解决了传统 VLA 学习中粗/精信号相互干扰的问题。",
+        tags: [["🤖 VLA","green"],["🔥 今日热点","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.24921"],["PDF","https://arxiv.org/pdf/2604.24921"]]
+    },
+    {
+        date: "2026-04-29",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "CorridorVLA: Explicit Spatial Constraints for Generative Action Heads via Sparse Anchors",
+        venue: "🤖 VLA",
+        summary: "通过稀疏锚点为生成式动作头引入显式空间约束。传统 VLA 模型将空间引导隐式注入 latent features，本工作提出\"走廊\"机制，用稀疏锚点界定动作的可行空间通道，使 action head 在生成连续控制信号时遵循几何约束。实验表明该方法在需要精确路径的任务中显著提升成功率。",
+        tags: [["🤖 VLA","green"],["🦾 空间推理","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.21241"],["PDF","https://arxiv.org/pdf/2604.21241"]]
+    },
+    {
+        date: "2026-04-29",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "GazeVLA: Learning Human Intention for Robotic Manipulation",
+        venue: "🤖 VLA",
+        summary: "利用人类注视（Gaze）信号学习操作意图，构建基于意图的思维链（Chain-of-Thought）推理范式。模型通过显式建模人类视觉注意力来理解操作意图，实现更精准的细粒度操作。在钩包裹、穿针等精细任务上超越 π0.5 等强基线。",
+        tags: [["🤖 VLA","green"],["🌍 人机交互","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.22615"],["PDF","https://arxiv.org/pdf/2604.22615"]]
+    },
+    {
+        date: "2026-04-29",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "Move-Then-Operate: Behavioral Phasing for Human-Like Robotic Manipulation",
+        venue: "🤖 VLA",
+        summary: "提出将机器人操作显式解耦为两个行为阶段：粗重定位（Move）和接触关键交互（Operate）。模仿人类操作的自然行为分段，分别建模大范围移动和精细接触操作，在复杂长视野任务上取得更好的鲁棒性和成功率。",
+        tags: [["🤖 VLA","green"],["🦾 操作解耦","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.23620"],["PDF","https://arxiv.org/pdf/2604.23620"]]
+    },
+    {
+        date: "2026-04-29",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "DiscreteRTC: Discrete Diffusion Policies are Natural Asynchronous Executors",
+        venue: "🤖 VLA",
+        summary: "提出用离散扩散策略实现实时分块（Real-Time Chunking）执行。相比基于 flow-matching 的 RTC 方法，在真实世界动态抓取任务中成功率提升 50%，计算成本仅为 0.7 倍。关键洞察：离散扩散天然适合异步 action chunking。",
+        tags: [["🤖 VLA","green"],["🎯 策略执行","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.25050"],["PDF","https://arxiv.org/pdf/2604.25050"]]
+    },
+    {
+        date: "2026-04-29",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "ReconVLA: Uncertainty-Guided and Failure-Aware VLA for Robotic Control",
+        venue: "🤖 VLA",
+        summary: "首次为 VLA 模型引入校准的置信度度量。使用 conformal prediction 产生带不确定性引导和故障感知的控制信号，使机器人能在执行过程中主动评估自身预测的可靠性。当置信度低于阈值时主动寻求帮助或切换保守策略，显著提升真实场景部署安全性。",
+        tags: [["🤖 VLA","green"],["🎯 不确定性","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.16677"],["PDF","https://arxiv.org/pdf/2604.16677"]]
+    },
+    {
+        date: "2026-04-29",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "Privileged Foresight Distillation: Zero-Cost Future Correction for World Action Models",
+        venue: "🌍 World Model",
+        summary: "提出特权前瞻蒸馏（PFD）：训练时利用 action-conditioned 教师模型访问未来信息进行纠错，然后蒸馏到只使用当前观测的学生模型。在 LIBERO 和 RoboTwin 操作基准上取得持续改进，且推理时几乎零额外延迟。核心思想：在训练阶段利用\"上帝视角\"纠正偏差，部署阶段不增加计算。",
+        tags: [["🌍 World Model","green"],["🔥 今日热点","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.25859"],["PDF","https://arxiv.org/pdf/2604.25859"]]
+    },
+    {
+        date: "2026-04-29",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "Mask World Model: Predicting What Matters for Robust Robot Policy Learning",
+        venue: "🌍 World Model",
+        summary: "标准世界模型追求高保真 RGB 视频预测，容易过拟合到动态背景、光照变化等无关因素。本工作提出 Mask World Model，通过遮罩机制让模型只预测与任务相关的视觉区域，显著提升了策略在干扰环境下的鲁棒性。v2 版本进一步优化了遮罩策略。",
+        tags: [["🌍 World Model","green"],["🦾 策略鲁棒性","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.19683"],["PDF","https://arxiv.org/pdf/2604.19683"]]
+    },
+    {
+        date: "2026-04-29",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "ProDrive: Proactive Planning for Autonomous Driving via Ego-Environment Co-Evolution",
+        venue: "🌍 World Model",
+        summary: "基于世界模型的主动规划框架，实现自车与环境的协同演化。联合训练轨迹规划器和 BEV 世界模型，通过预测未来场景来评估规划方案的后果，让自动驾驶系统从\"反应式\"转向\"预判式\"决策。",
+        tags: [["🌍 World Model","green"],["🌍 自动驾驶","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.25329"],["PDF","https://arxiv.org/pdf/2604.25329"]]
+    },
+    {
+        date: "2026-04-29",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "HANDFUL: Sequential Grasp-Conditioned Dexterous Manipulation with Resource Awareness",
+        venue: "🦾 Robotics",
+        summary: "灵巧手顺序操作的新范式：将手指视为有限资源进行管理。提出 HANDFUL-Bench 基准，包含推、拉、按等任务，需要机器人在持有已抓取物体的同时执行新技能。核心创新在于\"抓取条件化\"的资源感知策略，让多指灵巧手能在复杂多步操作中合理分配手指资源。",
+        tags: [["🦾 Robotics","green"],["🔥 今日热点","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.25126"],["PDF","https://arxiv.org/pdf/2604.25126"]]
+    },
+    {
+        date: "2026-04-29",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "Variational Neural Belief for Robust Dexterous Grasping under Multimodal Uncertainty",
+        venue: "🦾 Robotics",
+        summary: "将抓取获取建模为对潜在接触参数的变分推断问题。使用 Gumbel-Softmax 组件选择实现可微的 CVaR（条件风险值）优化，在接触参数不确定性下显著提升鲁棒抓取成功率。解决了粒子滤波器 belief 扩展性差、梯度优化困难的问题。",
+        tags: [["🦾 Robotics","green"],["🎯 鲁棒抓取","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.25897"],["PDF","https://arxiv.org/pdf/2604.25897"]]
+    },
+    {
+        date: "2026-04-29",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "ANCHOR: Physically Grounded Closed-Loop Framework for Home-Service Mobile Manipulation",
+        venue: "🦾 Robotics",
+        summary: "面向家庭服务的移动操作闭环框架。将符号推理与可验证的物理状态对齐，集成物理锚定任务规划、操作感知基座对齐和层级恢复机制。在真实机器人上将任务成功率从 53.3% 提升到 71.7%。",
+        tags: [["🦾 Robotics","green"],["🌍 移动操作","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.25323"],["PDF","https://arxiv.org/pdf/2604.25323"]]
+    },
+    {
+        date: "2026-04-29",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "Learning-Based Dynamics Modeling and Robust Control for Tendon-Driven Continuum Robots",
+        venue: "🦾 Robotics",
+        summary: "针对腱驱动连续体机器人（TDCR）提出可微学习框架，集成高保真动力学建模与鲁棒神经控制。基于 GRU 的双向连接动力学模型实现精准跟踪，对未见载荷展现出优越鲁棒性。",
+        tags: [["🦾 Robotics","green"],["🎯 连续体机器人","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.25691"],["PDF","https://arxiv.org/pdf/2604.25691"]]
+    },
+    {
+        date: "2026-04-29",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "GS-Playground: High-Throughput Photorealistic Simulator for Vision-Informed Robot Learning",
+        venue: "🦾 Robotics",
+        summary: "多模态仿真框架，并行物理引擎 + 3D Gaussian Splatting 渲染。640×480 分辨率下达到 10⁴ FPS，自动化 Real2Sim 工作流实现照片级真实场景重建。为视觉驱动的机器人学习提供高吞吐量训练环境。",
+        tags: [["🦾 Robotics","green"],["🌍 仿真平台","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.25459"],["PDF","https://arxiv.org/pdf/2604.25459"]]
+    },
+    {
+        date: "2026-04-29",
+        category: "Embodied AI",
+        categoryIcon: "🧩",
+        title: "MotionBricks: Scalable Real-Time Motions with Modular Latent Generative Model and Smart Primitives",
+        venue: "🌍 Embodied AI",
+        summary: "大规模实时运动生成框架，用单个模型建模超 35 万运动片段。提出\"智能基元\"统一导航和物体交互控制。15,000 FPS + 2ms 延迟的惊人实时性能，已在 Unitree G1 人形机器人上完成部署验证。",
+        tags: [["🌍 Embodied AI","green"],["🦾 运动生成","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.24833"],["PDF","https://arxiv.org/pdf/2604.24833"]]
+    },
+    {
+        date: "2026-04-29",
+        category: "Embodied AI",
+        categoryIcon: "🧩",
+        title: "KinDER: A Physical Reasoning Benchmark for Robot Learning and Planning",
+        venue: "🌍 Embodied AI",
+        summary: "运动学与动力学具身推理基准，包含 25 个程序化生成环境，13 个基线实现，以及 real-to-sim-to-real 移动操作实验。旨在系统评估机器人在物理交互中的推理能力，填补\"物理直觉\"评测空白。",
+        tags: [["🌍 Embodied AI","green"],["🎯 物理推理","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.25788"],["PDF","https://arxiv.org/pdf/2604.25788"]]
+    },
+    {
+        date: "2026-04-29",
+        category: "Embodied AI",
+        categoryIcon: "🧩",
+        title: "Egocentric Tactile and Proximity Sensors for Humanoid Collision Avoidance",
+        venue: "🌍 Embodied AI",
+        summary: "RL 驱动的人形机器人全身碰撞回避框架。在 H1-2 机器人上使用自我中心的触觉和近距离传感器，以\"躲避球\"为基准任务研究不同传感器属性如何塑造学习到的回避行为。为人形机器人在密集环境中的安全运动提供感知方案。",
+        tags: [["🌍 Embodied AI","green"],["🦾 人形感知","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.25554"],["PDF","https://arxiv.org/pdf/2604.25554"]]
+    },
+    {
+        date: "2026-04-29",
+        category: "RL",
+        categoryIcon: "🧠",
+        title: "asRoBallet: Closing the Sim2Real Gap via Friction-Aware RL for Underactuated Spherical Dynamics",
+        venue: "🎯 RL",
+        summary: "首次在人形 ballbot 硬件上成功部署强化学习！提出高保真 MuJoCo 仿真（含离散滚轮力学建模）和摩擦感知 RL 框架，实现零样本 Sim2Real 迁移。解决了欠驱动球面动力学这一极具挑战的控制问题。",
+        tags: [["🎯 RL","green"],["🔥 今日热点","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.24916"],["PDF","https://arxiv.org/pdf/2604.24916"]]
+    },
+    {
+        date: "2026-04-29",
+        category: "RL",
+        categoryIcon: "🧠",
+        title: "Multi-Gait Learning for Humanoid Robots via RL with Selective Adversarial Motion Prior",
+        venue: "🎯 RL",
+        summary: "统一 RL 框架下的多步态学习：让人形机器人掌握行走、正步、跑步、上楼梯和跳跃五种步态。使用一致的策略结构、动作空间和奖励公式，通过选择性对抗运动先验解决不同步态间稳定性与动态表达力的冲突。",
+        tags: [["🎯 RL","green"],["🦾 人形运动","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.19102"],["PDF","https://arxiv.org/pdf/2604.19102"]]
+    },
+    {
+        date: "2026-04-29",
+        category: "RL",
+        categoryIcon: "🧠",
+        title: "WOMBET: World Model-based Experience Transfer for Robust and Sample-Efficient RL",
+        venue: "🎯 RL",
+        summary: "基于世界模型的经验迁移方法：从源任务生成可靠的合成经验数据用于目标任务的策略训练。解决了 offline-to-online RL 中\"如何为迁移生成可靠数据\"的关键问题，在机器人任务中实现样本高效的鲁棒学习。",
+        tags: [["🎯 RL","green"],["🌍 世界模型迁移","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.08958"],["PDF","https://arxiv.org/pdf/2604.08958"]]
+    },
+    {
+        date: "2026-04-29",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "How Fast Should a Model Commit to Supervision? Training Reasoning Models on the Tsallis Loss Continuum",
+        venue: "🧠 LLM",
+        summary: "当初始成功概率 p₀ 极低时，RLVR 方法会\"卡住\"——本工作提出 Tsallis 损失连续统来解决这一问题。通过控制模型在训练早期\"承诺\"监督信号的速度，在仅有输出级监督的推理任务后训练中实现更稳定的学习。",
+        tags: [["🧠 LLM","green"],["🔥 今日热点","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.25907"],["PDF","https://arxiv.org/pdf/2604.25907"]]
+    },
+    {
+        date: "2026-04-29",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Generative Critics for Value Modeling in LLM Reinforcement Learning",
+        venue: "🧠 LLM",
+        summary: "微软重新审视 LLM RL 中的价值建模。论证传统判别式 critic 训练困难是因为表达力不足，提出生成式 critic 方法重新引入价值函数。通过 actor-critic 范式实现更精细的信用分配，为 LLM 推理能力的 RL 训练提供新思路。",
+        tags: [["🧠 LLM","green"],["🎯 价值建模","green"]],
+        links: [["🔗 MSR","https://www.microsoft.com/en-us/research/?p=1169011"],["📄 arXiv","https://arxiv.org/abs/2604.25907"]]
+    },
+    {
+        date: "2026-04-29",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Tandem: Riding Together with Large and Small LMs for Efficient Reasoning",
+        venue: "🧠 LLM",
+        summary: "大小模型协同推理框架：让大模型和小模型像\"双人自行车\"一样协作。大模型负责困难步骤，小模型处理简单推理，通过动态路由实现推理效率和准确率的最佳平衡。显著降低计算成本的同时保持推理质量。",
+        tags: [["🧠 LLM","green"],["🎯 高效推理","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.23623"],["PDF","https://arxiv.org/pdf/2604.23623"]]
+    },
+    {
+        date: "2026-04-29",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "PLaMo 2.1-VL: Lightweight VLM for Autonomous Devices",
+        venue: "👁️ VLM",
+        summary: "轻量级视觉语言模型，专为自主设备设计（8B/2B 两个版本），支持本地和边缘部署。核心能力聚焦 VQA 和视觉定位（Visual Grounding），在工厂任务分析（工具识别）和基础设施异常检测两个真实场景中验证。",
+        tags: [["👁️ VLM","green"],["🌍 边缘部署","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.19324"],["PDF","https://arxiv.org/pdf/2604.19324"]]
+    },
+    {
+        date: "2026-04-29",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "VLM-VPI: Vision-Language Reasoning for Vehicle-Pedestrian Interactions",
+        venue: "👁️ VLM",
+        summary: "利用视觉语言推理框架改善自动驾驶中的车-行人交互。超越传统基于几何和运动学线索的方法，引入视觉场景上下文理解和年龄相关行为变异性推理，为行人让行行为预测提供更丰富的语义理解。",
+        tags: [["👁️ VLM","green"],["🌍 自动驾驶","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.23934"],["PDF","https://arxiv.org/pdf/2604.23934"]]
+    },
+    {
+        date: "2026-04-29",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "🔥 MagicLab 魔法原子硅谷举办全球具身智能创新大会（GEIS），产品拓展至 50 国",
+        venue: "📡 行业动态",
+        summary: "4 月 28-29 日，魔法原子 MagicLab 在硅谷举办首届 Global Embodied Intelligence Summit（GEIS），以\"CONNECT\"为主题。发布下一代产品组合，宣布全球业务拓展至 50 个国家。大会汇聚国际顶尖 AI 学者、企业代表与投资人，围绕具身智能未来十年的技术演进、产业落地与生态协同展开讨论，被称为具身智能行业首个全球性高规格峰会。",
+        tags: [["📡 行业动态","green"],["🔥 今日热点","green"]],
+        links: [["🔗 新闻稿","https://en.prnasia.com/releases/apac/magiclab-robotics-unveils-its-embodied-ai-vision-in-silicon-valley-expands-global-reach-to-50-countries-531223.shtml"]]
+    },
+    {
+        date: "2026-04-29",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "Physical Intelligence π0.7：具备涌现能力的可控机器人基础模型",
+        venue: "📡 行业动态",
+        summary: "Physical Intelligence 于 4 月 16 日发布 π0.7，被业界称为机器人领域的\"GPT-2 时刻\"。该模型展现出组合泛化能力——能重组已学技能解决从未见过的任务（如操作未见过的空气炸锅、在零相关训练数据的机器人上叠衣服）。核心设计：多模态 prompting 框架（语言指导+元数据+视觉子目标），研究人员坦言\"我第一次无法预测模型能做什么\"。持续引发行业关注。",
+        tags: [["📡 行业动态","green"],["🤖 VLA","green"]],
+        links: [["🏠 官网","https://www.pi.website/"],["🔗 深度解读","https://new.qq.com/rain/a/20260417A05R9C00"]]
+    },
+    {
+        date: "2026-04-29",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "AGIBOT 发布新一代具身 AI 平台与 8 大基础模型",
+        venue: "📡 行业动态",
+        summary: "智元 AGIBOT 在 2026 合作伙伴大会上发布新一代具身 AI 产品与 8 大基础模型（统一架构）。重磅推出 GCFM（Generative Control Foundation Model），将文本/音频/视频输入实时转化为自然、上下文感知的机器人动作，支持娱乐和工业场景的动态即兴创作。标志着具身 AI 从 Demo 走向规模化产业部署的重要一步。",
+        tags: [["📡 行业动态","green"],["🌍 产业落地","green"]],
+        links: [["🔗 新闻","https://www.roboticsbusinessnews.com/news/55/2811/agibot-launches-next-gen-embodied-ai-platforms-and-foundation-models-for-scalable-deployment.html"]]
+    },
     // === 2026-04-28 ===
     {
         date: "2026-04-28",
@@ -7998,6 +8279,13 @@ const PAPERS_DB = [
 ];
 
 const DAILY_OVERVIEW = {
+    "2026-04-29": {
+        bannerTitle: "",
+        bannerSubtitle: "",
+        picks: ["MotionBricks: Scalable Real-Time Motions with Modular Latent Generative Model and Smart Primitives","Egocentric Tactile and Proximity Sensors for Humanoid Collision Avoidance","How Fast Should a Model Commit to Supervision? Training Reasoning Models on the Tsallis Loss Continuum","Tandem: Riding Together with Large and Small LMs for Efficient Reasoning"],
+        totalPapers: 25,
+        totalNews: 3
+    },
     "2026-04-28": {
         bannerTitle: "",
         bannerSubtitle: "",
