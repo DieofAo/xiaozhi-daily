@@ -629,6 +629,227 @@
 <script>
 // ===== DATA =====
 const PAPERS_DB = [
+    // === 2026-05-01 ===
+    {
+        date: "2026-05-01",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "X-WAM: Unified 4D World Action Modeling from Video Priors with Asynchronous Denoising",
+        venue: "World Action Model",
+        summary: "清华/小米/北大/中科院联合提出 X-WAM，首次在单个框架中统一实现高保真视频生成、3D空间重建和实时机器人策略执行。通过复制 Diffusion Transformer 末段块构造轻量深度预测分支获取 3D 空间信息，并提出异步噪声采样（ANS）解决高维视频多步去噪与低维动作快速解码的模态不匹配问题。在效率和质量上全面超越 UWM 等 2D-only 统一世界模型。",
+        tags: [["World Action Model","green"],["4D Reconstruction","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.26694"],["🌐 Project","https://sharinka0715.github.io/x-wam/"]]
+    },
+    {
+        date: "2026-05-01",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "DeFi: Disentangled Robot Learning via Separate Forward and Inverse Dynamics Pretraining",
+        venue: "VLA",
+        summary: "上海交大/复旦/清华等联合提出 DeFi 框架，将正动力学和逆动力学拆分开分别预训练，再整合为端到端 VLA 框架，充分利用海量无标注人类视频预训练运动先验。解决了传统 VLA 对稀缺动作标注数据依赖的问题。在 CALVIN ABC-D 基准达到 4.51 平均任务长度（SOTA +4.2%），SimplerEnv 达 51.2% 成功率，真实世界实验成功率 81.3%。",
+        tags: [["VLA","green"],["Human Video Pretraining","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.16391"]]
+    },
+    {
+        date: "2026-05-01",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "Move-Then-Operate: Behavioral Phasing for Human-Like Robotic Manipulation",
+        venue: "VLA Framework",
+        summary: "提出 Move-Then-Operate 框架，将机器人操作显式解耦为两个行为阶段：粗定位移动（Move）和接触关键交互（Operate）。灵感来自人类操作习惯——先粗略接近目标再精细执行。该 VLA 框架在两阶段分别采用不同精度的动作预测策略，有效提升操作成功率和人类相似度。",
+        tags: [["VLA Framework","green"],["Manipulation","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.23620"]]
+    },
+    {
+        date: "2026-05-01",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "Can Tabular Foundation Models Guide Exploration in Robot Policy Learning?",
+        venue: "Policy Learning",
+        summary: "探索利用表格基础模型（Tabular Foundation Models）引导机器人策略学习中的探索。针对高维连续控制中主流局部优化方法需要大量调参和初始猜测的问题，以及全局搜索方法 rollout 成本高的困境，提出利用 TFM 作为高效全局代理评分器，在梯度子空间中用 SVD+高斯采样指导探索，降低策略优化成本。（提交于 4月30日）",
+        tags: [["Policy Learning","green"],["Exploration","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.27667"]]
+    },
+    {
+        date: "2026-05-01",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "Variational Neural Belief Parameterizations for Robust Dexterous Grasping under Multimodal Uncertainty",
+        venue: "Dexterous Grasping",
+        summary: "针对灵巧抓取中接触变异性、感知不确定性和外部扰动导致的随机性，提出变分神经信念参数化方法。现有期望质量目标忽略尾部失败，而 POMDP 粒子滤波信念缩放差。本文使用变分编码器紧凑参数化多模态信念，支持基于梯度的 CVaR 优化，实现鲁棒的风险敏感灵巧抓取。",
+        tags: [["Dexterous Grasping","green"],["Risk-Sensitive POMDP","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.25897"]]
+    },
+    {
+        date: "2026-05-01",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "Mask World Model: Predicting What Matters for Robust Robot Policy Learning",
+        venue: "World Model",
+        summary: "提出掩码世界模型（MWM），利用视频扩散架构预测语义掩码演变而非像素。这种转变施加了几何信息瓶颈，迫使模型捕获必要的物理动力学和接触关系，同时过滤视觉噪声（如动态背景、光照变化）。在 LIBERO 和 RLBench 上全面超越 SOTA RGB 世界模型，真实世界实验证明卓越的泛化能力和对纹理丢失的鲁棒性。",
+        tags: [["World Model","green"],["Robust Policy","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.19683"]]
+    },
+    {
+        date: "2026-05-01",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "dWorldEval: Scalable Robotic Policy Evaluation via Discrete Diffusion World Model",
+        venue: "World Model",
+        summary: "提出 dWorldEval，使用离散扩散世界模型作为机器人策略的可扩展评估代理。针对现有世界模型将动作作为弱辅助条件、容易被视觉先验覆盖导致幻觉成功的问题，从架构层面重构设计。联合预测视觉结果和离散进度 token 实现自动成功检测。评估成功率与真实执行的皮尔逊相关系数高达 ≈0.9。",
+        tags: [["World Model","green"],["Policy Evaluation","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.22152"]]
+    },
+    {
+        date: "2026-05-01",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "Lifting Embodied World Models for Planning and Control",
+        venue: "World Model",
+        summary: "针对高维动作空间（如人形关节控制）中世界模型难以控制和规划的问题，训练一个轻量目标条件策略将高层动作映射为低层关节动作序列。将该策略与底层世界模型结合，提升（lift）其动作空间，使 CEM 等搜索方法能在低维空间高效规划，在人形控制任务中显著改善规划效率和效果。",
+        tags: [["World Model","green"],["Hierarchical Planning","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.26182"]]
+    },
+    {
+        date: "2026-05-01",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "STARRY: Spatial-Temporal Action-Centric World Modeling for Robotic Manipulation",
+        venue: "World Model",
+        summary: "指出现有 VLA 策略和世界模型增强策略未能充分建模动作相关的时空交互结构。STARRY 提出以动作为中心的时空世界建模，显式推理未来的空间-时间交互关系，为机器人操作提供更准确的动力学预测和更好的策略生成。（已在 04-30 日报中收录，此处标记为延续跟踪）",
+        tags: [["World Model","green"],["Action-Centric","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.26848"]]
+    },
+    {
+        date: "2026-05-01",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "HANDFUL: Sequential Grasp-Conditioned Dexterous Manipulation with Resource Awareness",
+        venue: "Dexterous Manipulation",
+        summary: "灵巧手在多功能操作中需要依序执行多种技能，同时维持对已抓取物体的控制——本文称之为\"资源感知\"操作。提出 HANDFUL 方法解决顺序抓取条件下的灵巧操作问题，使机器人在执行新技能时不丢失已有抓取，为多步灵巧手任务提供了系统解决方案。",
+        tags: [["Dexterous Manipulation","green"],["Sequential Skills","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.25126"]]
+    },
+    {
+        date: "2026-05-01",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "Reactive Motion Generation via Phase-varying Neural Potential Functions",
+        venue: "Motion Generation",
+        summary: "基于动力系统（DS）的 LfD 方法能从少量示范生成稳定连续的策略。本文提出相位变化神经势函数方法，在保持 DS 全局稳定性的同时，通过可学习的势场实现对环境变化的反应式运动生成，支持动态避障和目标自适应。",
+        tags: [["Motion Generation","green"],["Learning from Demonstration","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.26450"]]
+    },
+    {
+        date: "2026-05-01",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "Reference-Augmented Learning for Precise Tracking Policy of Tendon-Driven Continuum Robots",
+        venue: "Continuum Robot",
+        summary: "腱驱动连续体机器人（TDCRs）因高度非线性、路径依赖动力学和非马尔可夫特性带来巨大控制挑战。本文提出参考增强学习方法，利用历史参考信息增强策略的精确跟踪能力，为柔性机器人的精确控制提供新思路。",
+        tags: [["Continuum Robot","green"],["Learning-Based Control","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.25698"]]
+    },
+    {
+        date: "2026-05-01",
+        category: "RL",
+        categoryIcon: "🧠",
+        title: "QuietWalk: Physics-Informed RL for Ground Reaction Force-Aware Humanoid Locomotion Under Diverse Footwear",
+        venue: "Physics-Informed RL",
+        summary: "Sony 研究团队提出 QuietWalk，针对人形机器人在不同鞋类（运动鞋、高跟鞋、滑板鞋）下的低噪音行走问题。通过物理信息强化学习，将地面反作用力（GRF）作为奖励信号，在保持步态敏捷性和稳定性的同时实现安静行走。构建了三种鞋类资产模型，验证了跨鞋类泛化鲁棒性。基于 Unitree G1 平台。",
+        tags: [["Physics-Informed RL","green"],["Humanoid Locomotion","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.23702"]]
+    },
+    {
+        date: "2026-05-01",
+        category: "RL",
+        categoryIcon: "🧠",
+        title: "Learning Whole-Body Humanoid Locomotion via Motion Generation and Motion Tracking",
+        venue: "RL",
+        summary: "全身人形运动因高维控制、形态不稳定和实时地形自适应需求而极具挑战。本文提出运动生成+运动跟踪的两阶段方法：先用生成模型产生多样化参考运动，再用 RL 训练全身跟踪策略。支持基于板载感知的实时地形适应，解耦了运动规划与底层执行。",
+        tags: [["RL","green"],["Whole-Body Locomotion","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.17335"]]
+    },
+    {
+        date: "2026-05-01",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "The Surprising Universality of LLM Outputs: A Real-Time Verification Primitive",
+        venue: "LLM Verification",
+        summary: "发现前沿 LLM 输出中一个惊人的统计规律性：其词频分布服从统一的 Mandelbrot 排序规律。基于此提出一个仅需 CPU 的实时评分原语，每个 token 仅需 2.6 微秒，延迟比现有采样检测器低 5 个数量级（100,000×）。为黑盒模型的溯源与异常检测提供了全新路径——无需多次采样或访问模型内部。",
+        tags: [["LLM Verification","green"],["Statistical Pattern","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.25634"]]
+    },
+    {
+        date: "2026-05-01",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Tandem: Riding Together with Large and Small Language Models for Efficient Reasoning",
+        venue: "Efficient Reasoning",
+        summary: "提出 Tandem 框架，让 LLM 作为战略协调者生成紧凑的推理洞察（reasoning insights），然后指导更小更高效的 SLM 执行完整推理并生成最终答案。引入成本感知终止机制平衡效率与可靠性。将长链推理的计算开销显著降低，同时保持高推理质量——为大小模型协同推理提供了实用范式。",
+        tags: [["Efficient Reasoning","green"],["LLM-SLM Collaboration","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.23623"]]
+    },
+    {
+        date: "2026-05-01",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Design Structure Matrix Modularization with Large Language Models",
+        venue: "LLM Application",
+        summary: "将 LLM 应用于工程设计中的设计结构矩阵（DSM）模块化问题——将系统元素划分为内聚模块是工程设计中的基本组合优化挑战。利用 LLM 的结构理解和推理能力来解决这一 NP-hard 问题，为 LLM 在工程设计自动化中的应用提供了新的切入点。（提交于 4月30日）",
+        tags: [["LLM Application","green"],["Engineering Design","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.28018"]]
+    },
+    {
+        date: "2026-05-01",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "GLM-5V-Turbo: Toward a Native Foundation Model for Multimodal Agents",
+        venue: "Multimodal Agent",
+        summary: "智谱 AI 发布 GLM-5V-Turbo，首个原生多模态 coding 基座模型。从预训练阶段深度融合视觉与文本能力，实现视觉感知→代码生成的端到端闭环。200K 上下文窗口，支持多模态工具（画框、截图、读网页）。在 Design2Code (94.8) 和 BrowseComp-VL (51.9) 等基准上取得领先，强化 GUI Agent 和 Coding Agent 表现。",
+        tags: [["Multimodal Agent","green"],["Foundation Model","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.26752"]]
+    },
+    {
+        date: "2026-05-01",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Delineating Knowledge Boundaries for Honest Large Vision-Language Models",
+        venue: "VLM Honesty",
+        summary: "VLM 在长尾和专业领域中易产生事实幻觉，且对超出其知识的查询缺乏拒绝能力。本文提出系统框架增强 VLM 面对未知问题时的拒绝能力：利用多样本一致性探测区分已知/未知事实，构建模型特定的 \"Visual-IDK\" 数据集训练模型说\"我不知道\"，在保持已知问题准确率的同时显著减少幻觉。",
+        tags: [["VLM Honesty","green"],["Hallucination","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.26419"]]
+    },
+    {
+        date: "2026-05-01",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "🏭 1X Technologies 加州工厂开幕 — 年产万台消费级人形机器人",
+        venue: "",
+        summary: "4月30日，OpenAI 投资的挪威机器人公司 1X Technologies 在加州 Hayward 开设 58,000 平方英尺新工厂，计划首年生产 10,000 台面向消费者的人形机器人。这是全球首批规模化生产消费级人形机器人的设施之一，标志着人形机器人从实验室走向家庭的关键一步。",
+        tags: [],
+        links: []
+    },
+    {
+        date: "2026-05-01",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "🤖 普渡机器人发布 PUDU D9 — 推进通用具身 AI",
+        venue: "",
+        summary: "4月30日，全球商用服务机器人领导者普渡机器人宣布持续推进其人形机器人 PUDU D9 的开发，覆盖具身移动、具身操作和具身交互三大核心能力，作为其通用具身智能长期路线图的关键组成部分。",
+        tags: [],
+        links: []
+    },
+    {
+        date: "2026-05-01",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "🌐 中国牵头发布全球首个人形机器人数据集国际标准",
+        venue: "",
+        summary: "4月29日，上海张江 AI 小镇的国家与地方共建人形机器人创新中心牵头发布全球首个人形机器人数据集国际标准，并成立国际标准工作组。这一里程碑凸显了中国在人形机器人标准化领域的领先地位，为全球人形机器人数据生态的互通互认奠定基础。",
+        tags: [],
+        links: []
+    },
     // === 2026-04-30 ===
     {
         date: "2026-04-30",
@@ -8453,6 +8674,13 @@ const PAPERS_DB = [
 ];
 
 const DAILY_OVERVIEW = {
+    "2026-05-01": {
+        bannerTitle: "",
+        bannerSubtitle: "",
+        picks: ["GLM-5V-Turbo: Toward a Native Foundation Model for Multimodal Agents","DeFi: Disentangled Robot Learning via Separate Forward and Inverse Dynamics Pretraining","X-WAM: Unified 4D World Action Modeling from Video Priors with Asynchronous Denoising","The Surprising Universality of LLM Outputs: A Real-Time Verification Primitive","Tandem: Riding Together with Large and Small Language Models for Efficient Reasoning"],
+        totalPapers: 19,
+        totalNews: 3
+    },
     "2026-04-30": {
         bannerTitle: "",
         bannerSubtitle: "",
