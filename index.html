@@ -629,6 +629,212 @@
 <script>
 // ===== DATA =====
 const PAPERS_DB = [
+    // === 2026-05-03 ===
+    {
+        date: "2026-05-03",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "HiVLA: A Visual-Grounded-Centric Hierarchical Embodied Manipulation System",
+        venue: "arXiv 2604.14125 · 2026-04-15 · 香港大学 / 上海AI Lab / 上海交大 / 香港中文大学",
+        summary: "提出 HiVLA 分层框架，显式解耦高层语义规划与低层运动控制。高层 VLM 保留强大推理能力用于任务分解和视觉定位，低层使用基于扩散 Transformer 的动作专家（带级联交叉注意力）实现精确运动控制。在 RobotWin 基准上显著超越端到端 VLA 方法，解决了微调 VLA 时推理能力退化的核心矛盾。",
+        tags: [["VLA","green"],["Manipulation","green"],["Hierarchical","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.14125"],["Project","https://tianshuoy.github.io/HiVLA-page/"]],
+        highlight: true
+    },
+    {
+        date: "2026-05-03",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "DAM-VLA: Dynamic Action Model-Based Vision-Language-Action Framework",
+        venue: "arXiv 2603.00926 · ICRA 2026 · 三星研究院",
+        summary: "首次将机器人手臂粗动作与夹爪精细操作解耦建模。通过动态动作类型感知与路由机制，双尺度加权策略让模型根据当前操控阶段自适应分配推理资源。在多个基准上刷新 SOTA，有效解决了长时程任务中错误累积问题。",
+        tags: [["VLA","green"],["Decoupled Control","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2603.00926"]]
+    },
+    {
+        date: "2026-05-03",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "Embodied AI with Foundation Models for Mobile Service Robots: A Systematic Review",
+        venue: "arXiv 2505.20503 · 2026-05 · 系统综述",
+        summary: "系统性综述基础模型（LLM/VLM/MLLM/VLA）在移动服务机器人中的应用。涵盖感知、推理、行动全流程，梳理了如何将基础模型与具身 AI 原理结合，使移动服务机器人在动态真实环境中实现更灵活的理解、自适应行为和鲁棒任务执行。",
+        tags: [["VLA","green"],["Survey","green"],["Foundation Model","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2505.20503"]]
+    },
+    {
+        date: "2026-05-03",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "LingBot-World: 开源实时交互世界模型",
+        venue: "Robbyant (蚂蚁集团) · 2026-05 · 开源发布",
+        summary: "蚂蚁集团具身智能公司 Robbyant 开源 LingBot-World，28B 参数的动作条件化视频世界模型。核心亮点：实时 16 FPS / 720p 输出、端到端延迟 <1s、支持 10+ 分钟时序一致性。不同于被动视频生成，LingBot-World 创建可交互世界——支持键盘、相机运动和语言动作条件控制。适用于具身智能训练、自动驾驶仿真和游戏开发。Apache 许可证开源。",
+        tags: [["Embodied AI","green"],["Simulation","green"]],
+        links: [["GitHub","https://github.com/Robbyant/lingbot-world"],["Project","http://lingbot-world.pro/"]],
+        highlight: true
+    },
+    {
+        date: "2026-05-03",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "World2VLM: Distilling World Model Imagination into VLMs for Dynamic Spatial Reasoning",
+        venue: "arXiv 2604.26934 · 2026-04-29 · 中科院自动化所",
+        summary: "提出将生成式世界模型的空间想象能力蒸馏到 VLM 中的训练框架。VLM 在静态视觉理解上表现优异，但在需要想象场景如何在自我运动下演变的动态空间推理中仍有困难。World2VLM 通过轨迹生成 + 监督构建的多阶段 pipeline，让 VLM 获得「想象未来场景」的能力，显著提升动态空间推理性能。",
+        tags: [["VLM","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.26934"],["GitHub","https://github.com/WanyueZhang-ai/World2VLM"]]
+    },
+    {
+        date: "2026-05-03",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "Gemini Robotics-ER 1.5: 具身推理模型开放开发者",
+        venue: "Google DeepMind · 2026-05 · 正式开放",
+        summary: "Google DeepMind 正式向所有开发者开放 Gemini Robotics-ER 1.5——首个公开的 Gemini 机器人模型。采用「大脑-身体」分离架构：ER 1.5 负责高层具身推理（空间理解、任务规划、进度评估），搭配 Gemini Robotics 1.5 VLA 模型执行低层视觉运动控制。支持跨机器人形态迁移，无需重新训练即可处理长程多步实世界任务。",
+        tags: [["Robotics","green"],["VLA","green"],["Embodied Reasoning","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2510.03342"],["Blog","https://goo.gle/42ah10v"]],
+        highlight: true
+    },
+    {
+        date: "2026-05-03",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "RoboOS: A Hierarchical Embodied Framework for Cross-Embodiment and Multi-Agent Collaboration",
+        venue: "arXiv 2505.03673 · 2026-05 · BAAI FlagOpen",
+        summary: "首个开源具身操作系统，提出大脑-小脑层级架构。RoboBrain（基于 Qwen2.5VL-7B）作为多模态大脑负责多机器人任务规划；小脑技能库支持多种机器人形态的即插即用；实时共享时空记忆机制实现多智能体状态同步。已验证单臂、双臂、人形和轮式机器人的跨形态协作能力。",
+        tags: [["Multi-Robot","green"],["Cross-Embodiment","green"],["Multi-Agent","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2505.03673"],["GitHub","https://github.com/flagopen/roboos"],["Project","https://flagopen.github.io/roboos/"]]
+    },
+    {
+        date: "2026-05-03",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "HANDFUL: Sequential Grasp-Conditioned Dexterous Manipulation with Resource Awareness",
+        venue: "arXiv 2604.25126 · 2026-04-29 · USC / Northwestern",
+        summary: "提出灵巧手顺序抓取操控框架，机器人需在维持已抓物体控制的同时执行多种技能序列。核心创新是资源感知约束——利用手指占用信息动态调整后续操作策略。实验证明在多物体连续操控场景中表现显著优于传统方法。",
+        tags: [["Dexterous","green"],["Manipulation","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.25126"]]
+    },
+    {
+        date: "2026-05-03",
+        category: "RL",
+        categoryIcon: "🧠",
+        title: "ARTIST: Agentic Reasoning and Tool Integration for LLMs via Reinforcement Learning",
+        venue: "arXiv 2505.00024 / 2505.01441 · 2026-05 · NVIDIA",
+        summary: "NVIDIA 提出统一框架将 Agent 推理、RL 和工具集成紧密结合。模型自主决定在多轮推理链中何时/如何/调用哪些工具，通过基于结果的 RL 学习强大的工具使用策略，无需步骤级监督。在复杂数学推理和多轮函数调用任务上效果提升高达 22%，显著减少幻觉并提高工具使用准确率。",
+        tags: [["RL","green"],["LLM","green"],["Tool Use","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2505.01441"]],
+        highlight: true
+    },
+    {
+        date: "2026-05-03",
+        category: "RL",
+        categoryIcon: "🧠",
+        title: "DORA: A Scalable Asynchronous Reinforcement Learning System for Language Model Training",
+        venue: "arXiv 2604.26256 · 2026-04-29 · 美团",
+        summary: "针对 LLM RL 训练中 rollout 阶段（占 50-80% 步骤时间）被长尾生成瓶颈的问题，提出完全异步的 RL 系统 DORA。将生成与训练彻底解耦到不同 GPU 集群并行执行，配合多版本流式训练和权重过时管理策略，在相同 GPU 资源下实现高效扩展，解决了长序列生成导致的同步阻塞问题。",
+        tags: [["RL","green"],["LLM Training","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.26256"]]
+    },
+    {
+        date: "2026-05-03",
+        category: "RL",
+        categoryIcon: "🧠",
+        title: "Addressing Performance Saturation for LLM RL via Precise Entropy Curve Control",
+        venue: "arXiv 2604.26326 · 2026-04-29 · Purdue University",
+        summary: "发现并系统解决 LLM RL 训练中的性能饱和问题。通过精确控制策略熵曲线演化，避免 RL 训练过早收敛到次优解。提出自适应熵控制机制，让模型在保持探索多样性的同时稳步提升推理能力。实验表明在数学推理任务上突破了传统 RL 方法的性能天花板。",
+        tags: [["RL","green"],["LLM Reasoning","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.26326"]]
+    },
+    {
+        date: "2026-05-03",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "ProRL: 延长强化学习突破大语言模型推理极限",
+        venue: "arXiv 2026 · NVIDIA · HuggingFace 开源权重",
+        summary: "通过实验证明延长 RL（ProRL）训练可以发现基础模型无法触及的新型推理策略。提出结合 KL 散度控制、参考策略重置和多样化任务套件的新训练方法。关键发现：RL 训练的模型在各种 pass@k 评估中始终优于基础模型，包括基础模型无论尝试多少次都完全失败的场景。证明 RL 能探索和填充解空间的新区域。",
+        tags: [["LLM","green"],["RL","green"]],
+        links: [["Model","https://huggingface.co/nvidia/nemotron-research-reasoning-qwen-1.5b"]]
+    },
+    {
+        date: "2026-05-03",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "RL Scaling Law for LLM Post-Training",
+        venue: "ACL 2026 · 中科大 / 上海AI Lab",
+        summary: "首次全面刻画 LLM RL 后训练的 Scaling 行为。在 Qwen2.5 全系列（0.5B-72B）和 LLaMA 3（1B-70B）上开展大规模实证研究，系统揭示给定模型参数量、计算预算和数据量条件下 RL 后训练能达到的性能规律，为实践者提供清晰的扩展路径指引。",
+        tags: [["LLM","green"],["Scaling Law","green"]],
+        links: [["Article","https://t.cj.sina.cn/articles/view/3996876140/ee3b7d6c001016w2u"]]
+    },
+    {
+        date: "2026-05-03",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "M3-Agent: Multimodal Agent with Long-Term Memory",
+        venue: "ICLR 2026 · ByteDance Seed · 开源",
+        summary: "字节跳动推出具备长期记忆的多模态 Agent 框架。核心架构模拟人脑双线程认知：记忆化线程（持续观察世界并记录）+ 控制线程（被激活时查阅记忆并推理）。创新实体中心记忆图谱解决身份混淆、细节遗忘和知识沉淀三大痛点，实现跨模态信息长期存储与动态推理。",
+        tags: [["Multimodal","green"],["Agent","green"]],
+        links: [["OpenReview","https://openreview.net/forum?id=PMz29A7Muq"],["GitHub","https://github.com/bytedance-seed/m3-agent"]]
+    },
+    {
+        date: "2026-05-03",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "BARD: Bridging AutoRegressive and Diffusion Vision-Language Models",
+        venue: "arXiv 2604.16514v3 · 2026-04-27 · 最新修订",
+        summary: "提出渐进式块合并和分阶段蒸馏方法，将自回归 VLM 的多模态能力高效迁移到扩散模型框架中。解决自回归 VLM 逐 token 解码的推理瓶颈——通过创新的桥接架构实现两种范式优势互补：保留 AR 模型的强多模态理解能力，同时获得扩散模型的并行生成效率。",
+        tags: [["VLM","green"],["Diffusion","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.16514"]]
+    },
+    {
+        date: "2026-05-03",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Insight-V++: Advanced Long-Chain Visual Reasoning with MLLMs",
+        venue: "arXiv 2603.18118 · 2026 · 最新更新",
+        summary: "解决多模态大模型长链视觉推理的数据稀缺和训练流水线优化问题。构建高质量长链推理数据集，设计优化训练管线，使 MLLM 在复杂视觉推理任务上实现类似 LLM 的扩展测试时推理能力。证明通过精心设计的数据和训练策略，视觉推理也可以像纯文本推理一样从扩展计算中获益。",
+        tags: [["VLM","green"],["Reasoning","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2603.18118"]]
+    },
+    {
+        date: "2026-05-03",
+        category: "Embodied AI",
+        categoryIcon: "🧩",
+        title: "AGIBOT 发布新一代具身 AI 产品与基础模型",
+        venue: "AGIBOT · 2026-04-18 · 上海发布",
+        summary: "中国机器人公司 AGIBOT（智元机器人）在 2026 合作伙伴大会上发布新一代具身 AI 产品和基础模型，标志着物理 AI 大规模真实世界部署的重要一步。更新的人形平台和 AI 模型推进了商业化部署能力，目标是实现具身智能从「演示」到「落地」的跨越。",
+        tags: [["Embodied AI","green"],["Humanoid","green"]],
+        links: [["News","https://vir.com.vn/agibot-unveils-new-generation-of-embodied-ai-robots-150917.html"]],
+        highlight: true
+    },
+    {
+        date: "2026-05-03",
+        category: "Embodied AI",
+        categoryIcon: "🧩",
+        title: "LIFT-Humanoid: 人形机器人预训练与真机微调新范式",
+        venue: "ICLR 2026 · 北京通用人工智能研究院",
+        summary: "提出人形机器人「预训练 + 世界模型 + 安全真机微调」范式。在预训练数据上学习物理信息增强的世界模型，真机阶段执行确定性动作采集数据，将试错和探索放进世界模型中进行。在保证安全的前提下，用有限真机交互实现快速微调，绕开部分 sim2real 硬瓶颈。",
+        tags: [["Embodied","green"],["RL","green"]],
+        links: [["Project","https://lift-humanoid.github.io/"]]
+    },
+    {
+        date: "2026-05-03",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "CVPR 2026 具身智能方向论文爆发",
+        venue: "",
+        summary: "CVPR 2026（4月21日公布）录用超 4000 篇论文中，具身智能、世界模型和 VLA 大模型成为最热门三大方向。三个关键信号：人形机器人论文爆发、从单一任务走向通用智能、sim-to-real 范式突破。这标志着具身智能从「演示」走向「落地」的里程碑。",
+        tags: [],
+        links: [["详情","https://www.163.com/dy/article/KRPEQELI0556KHJZ_pdya11y.html"]]
+    },
+    {
+        date: "2026-05-03",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "Physical AI 2026: 机器人行业融资创新高",
+        venue: "",
+        summary: "2025年机器人公司融资达 €37.9B，具身AI市场规模 $4.44B，年增长率预计 39%。CES 2026 展出超 50 款人形机器人。NVIDIA CEO 黄仁勋称之为「机器人的 ChatGPT 时刻」。Physical AI 正从屏幕走进真实世界——仓库、手术室、配送路线和工厂车间。",
+        tags: [],
+        links: [["Source","https://wanderby.com/physical-ai-2026-what-embodied-intelligence-actually-means-and-where-robots-are-really-working/"]]
+    },
     // === 2026-05-02 ===
     {
         date: "2026-05-02",
@@ -8819,6 +9025,13 @@ const PAPERS_DB = [
 ];
 
 const DAILY_OVERVIEW = {
+    "2026-05-03": {
+        bannerTitle: "🔥 今日看点",
+        bannerSubtitle: "Robbyant（蚂蚁集团）开源 LingBot-World 世界模型，实现毫秒级实时交互；Google DeepMind 开放 Gemini Robotics-ER 1.5 具身推理模型；NVIDIA 发布 ARTIST 框架用 RL 训练 LLM 自主工具使用能力；RoboOS 多机器人协作操作系统新版发布。",
+        picks: ["HiVLA: A Visual-Grounded-Centric Hierarchical Embodied Manipulation System","LingBot-World: 开源实时交互世界模型","Gemini Robotics-ER 1.5: 具身推理模型开放开发者","ARTIST: Agentic Reasoning and Tool Integration for LLMs via Reinforcement Learning","AGIBOT 发布新一代具身 AI 产品与基础模型"],
+        totalPapers: 18,
+        totalNews: 2
+    },
     "2026-05-02": {
         bannerTitle: "",
         bannerSubtitle: "",
