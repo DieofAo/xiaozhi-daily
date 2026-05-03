@@ -629,6 +629,151 @@
 <script>
 // ===== DATA =====
 const PAPERS_DB = [
+    // === 2026-05-02 ===
+    {
+        date: "2026-05-02",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "LaST-R1: Reinforcing Action via Adaptive Physical Latent Reasoning for VLA Models",
+        venue: "VLA",
+        summary: "提出首个将强化学习引入 VLA 潜在推理空间的框架。与现有方法（显式语言推理或静态潜在推理）不同，LaST-R1 通过自适应物理潜在推理动态调节推理深度，并结合 RL 反馈优化推理-动作一致性。在多任务机器人操作基准上超越先前 SOTA（包括 imitation-only 和 explicit CoT 方法），实现了推理效率与操作精度的平衡。北京大学 & 港中文联合工作。",
+        tags: [["VLA","green"],["RL+推理","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.28192"]],
+        highlight: true
+    },
+    {
+        date: "2026-05-02",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "PokéVLA: Empowering Pocket-Sized VLA Model with Comprehensive World Knowledge Guidance",
+        venue: "VLA",
+        summary: "面向端侧部署的轻量 VLA 模型。提出世界知识引导框架（World Knowledge Guidance），通过大模型蒸馏空间意识和高层知识到袖珍 VLA 中。解决了现有小型 VLA 缺乏高层知识和空间感知的关键瓶颈。来自 CASIA、TARS Robotics、清华等团队。已被具身智能社区列为本周精选论文。",
+        tags: [["VLA","green"],["轻量部署","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.20834"]],
+        highlight: true
+    },
+    {
+        date: "2026-05-02",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "Move-Then-Operate: Behavioral Phasing for Human-Like Robotic Manipulation",
+        venue: "VLA",
+        summary: "提出显式行为分阶段 VLA 框架，将操作任务解耦为\"粗移动(Move)\"和\"接触关键交互(Operate)\"两个阶段。基于 imitation learning 训练双阶段策略，各阶段专注于不同操作模态（长距离位移 vs 精细接触）。在桌面操作任务上相比单一策略显著提升成功率，尤其是高精度装配场景。",
+        tags: [["VLA","green"],["操作分阶","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.23620"]]
+    },
+    {
+        date: "2026-05-02",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "GUI Agents with Reinforcement Learning: Toward Digital Inhabitants (综述)",
+        venue: "World Model",
+        summary: "首篇系统综述 GUI Agent + RL 范式的论文。从世界模型增强学习（dreaming within Web World Model）、混合动作空间、安全探索等维度全面梳理了 GUI 自动化领域的 RL 方法论。指出监督微调无法解决长视野信用分配和分布偏移问题，RL 是推动 GUI Agent 走向\"数字居民\"的核心方法。",
+        tags: [["World Model","green"],["RL 综述","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.27955"]]
+    },
+    {
+        date: "2026-05-02",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "STARRY: Spatial-Temporal Action-Centric World Modeling for Robotic Manipulation",
+        venue: "WAM",
+        summary: "世界模型增强型动作生成策略。联合去噪未来时空潜变量与动作序列，引入几何感知选择性注意力调制（将深度图和末端执行器几何转为 token 对齐权重）。直接将空间-时间预测与动作生成对齐，突破了现有世界模型策略中预测与执行脱节的问题。实验表明操作精度大幅领先基线。",
+        tags: [["WAM","green"],["时空建模","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.26848"]]
+    },
+    {
+        date: "2026-05-02",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "Learning Tactile-Aware Quadrupedal Loco-Manipulation Policies",
+        venue: "四足操作",
+        summary: "首次在四足机器人运动操作中系统引入触觉感知。采用分层框架：高层触觉感知模仿学习（基于 FlexiTac 传感器的真实人类示范）+ 低层大规模 RL 仿真训练的全身策略。结合触觉与本体感知实现接触密集型任务（推门、触发开关），sim-to-real 零样本迁移。Purdue、Columbia、IIT 联合工作。",
+        tags: [["四足操作","green"],["触觉+RL","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.27224"]],
+        highlight: true
+    },
+    {
+        date: "2026-05-02",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "HANDFUL: Sequential Grasp-Conditioned Dexterous Manipulation with Resource Awareness",
+        venue: "灵巧手",
+        summary: "提出资源感知型序列灵巧操作框架。核心洞察：多步操作需要\"边抓边做\"——在保持第一次抓取的同时完成后续子任务（按按钮、拧旋钮、拉抽屉）。引入资源感知抓取（Resource-Aware Grasping）为后续操作预留手指自由度。在仿真和真实 xArm7+LEAP Hand 上验证，显著优于端到端和基于示教的方法。USC & Northwestern。",
+        tags: [["灵巧手","green"],["序列操作","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.25126"]]
+    },
+    {
+        date: "2026-05-02",
+        category: "RL",
+        categoryIcon: "🧠",
+        title: "DORA: A Scalable Asynchronous Reinforcement Learning System for Language Model Training",
+        venue: "RL 系统",
+        summary: "美团提出的大规模异步 RL 训练系统，解决 LLM 后训练中 rollout 阶段（占总步时 50-80%）的长尾生成瓶颈。核心创新：全异步流式训练架构，解耦采样与训练，动态调度异构设备，消除长轨迹阻塞。支持 10,000+ 环境、20+ 领域的稳定多环境 RL 训练。已集成于 LongCat 推理模型训练中。",
+        tags: [["RL 系统","green"],["LLM 训练","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.26256"]],
+        highlight: true
+    },
+    {
+        date: "2026-05-02",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Shorthand for Thought: Compressing LLM Reasoning via Entropy-Guided Supertokens",
+        venue: "LLM",
+        summary: "首次从信息论角度分析推理 token 结构：低熵\"结构性 token\"（反复出现的模式短语）vs 高熵\"有机 token\"（问题特定推理内容）。提出熵引导超级 token 压缩方法，将低熵结构 token 合并为超级 token，大幅减少推理输出长度而几乎不损失准确率。为推理效率优化提供了全新词汇表级别的压缩视角。Writer AI。",
+        tags: [["LLM","green"],["推理压缩","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.26355"]]
+    },
+    {
+        date: "2026-05-02",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Tandem: Riding Together with Large and Small Language Models for Efficient Reasoning",
+        venue: "LLM",
+        summary: "提出 LLM+SLM 协同推理新范式：大模型作为\"战略协调者\"生成紧凑关键推理洞察（reasoning insights），小模型据此执行完整推理并生成答案。引入成本感知终止机制动态平衡效率与可靠性。在数学/代码推理基准上达到接近大模型的准确率，计算成本降低 60%+。",
+        tags: [["LLM","green"],["高效推理","green"]],
+        links: [["📄 arXiv","https://arxiv.org/abs/2604.23623"]]
+    },
+    {
+        date: "2026-05-02",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "🏛️ 杭州：全国首部具身智能机器人地方性法规正式施行（5月1日）",
+        venue: "🔗 详情                     政策法规",
+        summary: "《杭州市促进具身智能机器人产业发展条例》5 月 1 日起实施，系全国首部具身智能机器人专门立法。杭州已聚集 700+ 机器人企业，2025 年产业集群产值达 1068 亿元。从法治层面为具身智能创新提供保障。",
+        tags: [["政策法规","green"]],
+        links: [["🔗 详情","https://www.stcn.com/article/detail/3893335.html"]]
+    },
+    {
+        date: "2026-05-02",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "🎓 清华大学具身智能与机器人研究院揭牌 5 个基础研究中心（5月1日）",
+        venue: "🔗 详情                     学术机构",
+        summary: "清华具身智能与机器人研究院、EID 具身智能创新中心正式入驻北京海淀聚智园。同期揭牌 5 个基础研究中心：模型与交互、感知与控制、软硬件与本体、数据与算力、战略与标准。定位全球具身智能创新策源地。",
+        tags: [["学术机构","green"]],
+        links: [["🔗 详情","http://news.sciencenet.cn/htmlnews/2026/5/564094.shtm"]]
+    },
+    {
+        date: "2026-05-02",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "🏭 五一特献：具身机器人全面上岗产线（5月2日综合报道）",
+        venue: "🔗 详情                     产业落地",
+        summary: "智元 G2 正式上岗龙旗科技平板产线（任务周期 19-20s，成功率 99.9%），乐聚夸父部署一汽红旗工厂，海康人形机器人穿梭产线承担装配/质检/转运。帕西尼 TORA-ONE 完成头部车企车顶线束安装。具身 AI 工业化加速落地。",
+        tags: [["产业落地","green"]],
+        links: [["🔗 详情","https://new.qq.com/rain/a/20260502A03A7M00"]]
+    },
+    {
+        date: "2026-05-02",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "💰 云深处科技完成 IPO 辅导验收，大基金+京东领投（5月2日）",
+        venue: "🔗 详情                     融资上市",
+        summary: "四足机器人企业云深处科技完成 IPO 辅导验收，进入上市冲刺期。大基金领投释放国家资本拓展 AI+高端制造信号。京东战略投资布局具身智能生态。公司已完成 11 轮融资，标志着具身智能赛道资本共识达到高光时刻。",
+        tags: [["融资上市","green"]],
+        links: [["🔗 详情","https://new.qq.com/rain/a/20260502A058LK00"]]
+    },
     // === 2026-05-01 ===
     {
         date: "2026-05-01",
@@ -8674,6 +8819,13 @@ const PAPERS_DB = [
 ];
 
 const DAILY_OVERVIEW = {
+    "2026-05-02": {
+        bannerTitle: "",
+        bannerSubtitle: "",
+        picks: ["LaST-R1: Reinforcing Action via Adaptive Physical Latent Reasoning for VLA Models","PokéVLA: Empowering Pocket-Sized VLA Model with Comprehensive World Knowledge Guidance","Learning Tactile-Aware Quadrupedal Loco-Manipulation Policies","DORA: A Scalable Asynchronous Reinforcement Learning System for Language Model Training"],
+        totalPapers: 10,
+        totalNews: 4
+    },
     "2026-05-01": {
         bannerTitle: "",
         bannerSubtitle: "",
