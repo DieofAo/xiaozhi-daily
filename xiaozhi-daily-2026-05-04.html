@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>小小志科研情报 - 2026年5月4日</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans SC', sans-serif;
+  background: #0a0e1a;
+  color: #e0e6f0;
+  line-height: 1.7;
+  min-height: 100vh;
+}
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+header {
+  text-align: center;
+  margin-bottom: 48px;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, rgba(59,130,246,0.08) 0%, rgba(139,92,246,0.08) 100%);
+  border-radius: 20px;
+  border: 1px solid rgba(99,102,241,0.15);
+}
+header h1 {
+  font-size: 2rem;
+  background: linear-gradient(135deg, #60a5fa, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 8px;
+}
+header .date {
+  color: #94a3b8;
+  font-size: 1rem;
+}
+header .subtitle {
+  color: #64748b;
+  font-size: 0.9rem;
+  margin-top: 6px;
+}
+.section {
+  margin-bottom: 40px;
+}
+.section-title {
+  font-size: 1.4rem;
+  color: #f1f5f9;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(99,102,241,0.2);
+}
+.paper-card {
+  background: rgba(30,41,59,0.6);
+  border: 1px solid rgba(99,102,241,0.12);
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 16px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.paper-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(99,102,241,0.1);
+  border-color: rgba(99,102,241,0.3);
+}
+.paper-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #f8fafc;
+  margin-bottom: 8px;
+}
+.paper-meta {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-bottom: 10px;
+}
+.paper-summary {
+  font-size: 0.95rem;
+  color: #cbd5e1;
+  margin-bottom: 14px;
+  line-height: 1.8;
+}
+.paper-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.tag {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+.tag-vla { background: rgba(59,130,246,0.15); color: #60a5fa; }
+.tag-robot { background: rgba(16,185,129,0.15); color: #34d399; }
+.tag-rl { background: rgba(251,146,60,0.15); color: #fb923c; }
+.tag-llm { background: rgba(168,85,247,0.15); color: #c084fc; }
+.tag-vlm { background: rgba(236,72,153,0.15); color: #f472b6; }
+.tag-world-model { background: rgba(34,211,238,0.15); color: #22d3ee; }
+.tag-embodied { background: rgba(74,222,128,0.15); color: #4ade80; }
+.tag-agent { background: rgba(251,191,36,0.15); color: #fbbf24; }
+.tag-multimodal { background: rgba(236,72,153,0.15); color: #f472b6; }
+.tag-video { background: rgba(34,211,238,0.15); color: #22d3ee; }
+.paper-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.paper-links a {
+  display: inline-block;
+  padding: 5px 14px;
+  background: rgba(99,102,241,0.12);
+  color: #818cf8;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+.paper-links a:hover {
+  background: rgba(99,102,241,0.25);
+}
+.hot-badge {
+  margin-right: 6px;
+}
+.info-card {
+  background: rgba(30,41,59,0.4);
+  border: 1px solid rgba(251,191,36,0.15);
+  border-radius: 14px;
+  padding: 20px;
+  margin-bottom: 14px;
+}
+.info-card .paper-title {
+  color: #fbbf24;
+}
+.highlight-banner {
+  background: linear-gradient(135deg, rgba(251,146,60,0.1) 0%, rgba(236,72,153,0.1) 100%);
+  border: 1px solid rgba(251,146,60,0.2);
+  border-radius: 14px;
+  padding: 20px 24px;
+  margin-bottom: 36px;
+}
+.hl-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fb923c;
+  margin-bottom: 8px;
+}
+.hl-text {
+  font-size: 0.95rem;
+  color: #e2e8f0;
+  line-height: 1.7;
+}
+.stats {
+  text-align: center;
+  padding: 30px;
+  margin-top: 40px;
+  background: rgba(30,41,59,0.4);
+  border-radius: 14px;
+  border: 1px solid rgba(99,102,241,0.1);
+}
+.stats h3 {
+  color: #94a3b8;
+  font-size: 1rem;
+  margin-bottom: 12px;
+}
+.stats p {
+  color: #64748b;
+  font-size: 0.9rem;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+  <h1>🔬 小小志科研情报</h1>
+  <div class="date">2026年5月4日 · 星期一</div>
+  <div class="subtitle">Boss Team · Daily Research Intelligence</div>
+</header>
+
+<div class="highlight-banner">
+  <div class="hl-title">🔥 今日看点</div>
+  <div class="hl-text">UniVidX 提出统一多模态视频生成框架，支持图生视频、文生视频、视频编辑等多种任务；ByteDance Seed 发布 1D 语义 Tokenizer 实现端到端自回归图像生成；GenLIP 让 ViT 说话——生成式语言-图像预训练新范式。</div>
+</div>
+
+<section class="section">
+<h2 class="section-title">🎨 Multimodal · 多模态</h2>
+
+<div class="paper-card">
+  <div class="paper-title"><span class="hot-badge">🔥</span> UniVidX: A Unified Multimodal Framework for Versatile Video Generation via Diffusion Priors</div>
+  <div class="paper-meta">arXiv 2605.00658 · 2026-05 · HuggingFace Community</div>
+  <div class="paper-summary">提出统一的多模态视频生成框架 UniVidX，基于扩散先验实现多种视频生成任务的统一处理。支持文生视频、图生视频、视频编辑等多种模态组合，通过共享扩散模型和灵活的条件注入机制，在单一框架内覆盖多样化的视频生成需求。</div>
+  <div class="paper-tags">
+    <span class="tag tag-multimodal">Multimodal</span>
+    <span class="tag tag-video">Video Generation</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.00658">arXiv</a>
+    <a href="https://houyuanchen111.github.io/UniVidX.github.io/">Project</a>
+    <a href="https://github.com/houyuanchen111/UniVidX">Code</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title">End-to-End Autoregressive Image Generation with 1D Semantic Tokenizer</div>
+  <div class="paper-meta">arXiv 2605.00503 · 2026-05 · ByteDance Seed</div>
+  <div class="paper-summary">自回归图像建模依赖视觉 Tokenizer，本文提出 1D 语义 Tokenizer，实现端到端自回归图像生成。相比传统 2D 离散 Token 方案，1D 语义表示更紧凑高效，在保持生成质量的同时显著提升推理速度和序列压缩率。</div>
+  <div class="paper-tags">
+    <span class="tag tag-multimodal">Multimodal</span>
+    <span class="tag tag-llm">Autoregressive</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.00503">arXiv</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title">Let ViT Speak: Generative Language-Image Pre-training (GenLIP)</div>
+  <div class="paper-meta">arXiv 2605.00809 · 2026-05 · ByteDance</div>
+  <div class="paper-summary">提出生成式语言-图像预训练框架 GenLIP，让 ViT 具备「说话」能力。通过将视觉编码器与语言生成器统一训练，实现视觉特征到自然语言的直接生成。核心创新在于打破传统 CLIP 式对比学习的判别范式，转向生成式预训练，使视觉模型获得更丰富的语义理解能力。</div>
+  <div class="paper-tags">
+    <span class="tag tag-multimodal">Multimodal</span>
+    <span class="tag tag-vlm">VLM</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.00809">arXiv</a>
+    <a href="https://yanfangcs.github.io/vitspeak/">Project</a>
+    <a href="https://github.com/YanFangCS/GenLIP">Code</a>
+  </div>
+</div>
+
+</section>
+
+<section class="section">
+<h2 class="section-title">💬 LLM · 大语言模型</h2>
+
+<div class="paper-card">
+  <div class="paper-title">Themis: Training Robust Multilingual Code Reward Models for Flexible Multi-Criteria Scoring</div>
+  <div class="paper-meta">arXiv 2605.00754 · 2026-05 · Themis Team</div>
+  <div class="paper-summary">Reward Models (RMs) 已成为 LLM 对齐训练中不可或缺的组件。Themis 聚焦多语言代码奖励模型的鲁棒训练，支持灵活的多维度评分标准。解决了现有代码 RM 在跨语言泛化和多标准评估上的不足，为代码生成的 RLHF 训练提供更可靠的奖励信号。</div>
+  <div class="paper-tags">
+    <span class="tag tag-llm">LLM</span>
+    <span class="tag tag-rl">Reward Model</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.00754">arXiv</a>
+    <a href="https://github.com/iNeil77/Themis">Code</a>
+  </div>
+</div>
+
+</section>
+
+<div class="stats">
+  <h3>📊 检索统计</h3>
+  <p>检索来源：arXiv、HuggingFace Daily Papers | 覆盖多模态、LLM 等方向</p>
+  <p>本期发现：4 条新研究 | 涵盖 2 个核心领域</p>
+  <p>时间范围：2026年5月3日 - 5月4日</p>
+</div>
+
+</div>
+</body>
+</html>

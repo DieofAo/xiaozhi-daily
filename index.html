@@ -629,6 +629,48 @@
 <script>
 // ===== DATA =====
 const PAPERS_DB = [
+    // === 2026-05-04 ===
+    {
+        date: "2026-05-04",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "UniVidX: A Unified Multimodal Framework for Versatile Video Generation via Diffusion Priors",
+        venue: "arXiv 2605.00658 · 2026-05 · HuggingFace Community",
+        summary: "提出统一的多模态视频生成框架 UniVidX，基于扩散先验实现多种视频生成任务的统一处理。支持文生视频、图生视频、视频编辑等多种模态组合，通过共享扩散模型和灵活的条件注入机制，在单一框架内覆盖多样化的视频生成需求。",
+        tags: [["Multimodal","green"],["Video Generation","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.00658"],["Project","https://houyuanchen111.github.io/UniVidX.github.io/"],["Code","https://github.com/houyuanchen111/UniVidX"]],
+        highlight: true
+    },
+    {
+        date: "2026-05-04",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "End-to-End Autoregressive Image Generation with 1D Semantic Tokenizer",
+        venue: "arXiv 2605.00503 · 2026-05 · ByteDance Seed",
+        summary: "自回归图像建模依赖视觉 Tokenizer，本文提出 1D 语义 Tokenizer，实现端到端自回归图像生成。相比传统 2D 离散 Token 方案，1D 语义表示更紧凑高效，在保持生成质量的同时显著提升推理速度和序列压缩率。",
+        tags: [["Multimodal","green"],["Autoregressive","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.00503"]]
+    },
+    {
+        date: "2026-05-04",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "Let ViT Speak: Generative Language-Image Pre-training (GenLIP)",
+        venue: "arXiv 2605.00809 · 2026-05 · ByteDance",
+        summary: "提出生成式语言-图像预训练框架 GenLIP，让 ViT 具备「说话」能力。通过将视觉编码器与语言生成器统一训练，实现视觉特征到自然语言的直接生成。核心创新在于打破传统 CLIP 式对比学习的判别范式，转向生成式预训练，使视觉模型获得更丰富的语义理解能力。",
+        tags: [["Multimodal","green"],["VLM","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.00809"],["Project","https://yanfangcs.github.io/vitspeak/"],["Code","https://github.com/YanFangCS/GenLIP"]]
+    },
+    {
+        date: "2026-05-04",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Themis: Training Robust Multilingual Code Reward Models for Flexible Multi-Criteria Scoring",
+        venue: "arXiv 2605.00754 · 2026-05 · Themis Team",
+        summary: "Reward Models (RMs) 已成为 LLM 对齐训练中不可或缺的组件。Themis 聚焦多语言代码奖励模型的鲁棒训练，支持灵活的多维度评分标准。解决了现有代码 RM 在跨语言泛化和多标准评估上的不足，为代码生成的 RLHF 训练提供更可靠的奖励信号。",
+        tags: [["LLM","green"],["Reward Model","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.00754"],["Code","https://github.com/iNeil77/Themis"]]
+    },
     // === 2026-05-03 ===
     {
         date: "2026-05-03",
@@ -9025,6 +9067,13 @@ const PAPERS_DB = [
 ];
 
 const DAILY_OVERVIEW = {
+    "2026-05-04": {
+        bannerTitle: "🔥 今日看点",
+        bannerSubtitle: "UniVidX 提出统一多模态视频生成框架，支持图生视频、文生视频、视频编辑等多种任务；ByteDance Seed 发布 1D 语义 Tokenizer 实现端到端自回归图像生成；GenLIP 让 ViT 说话——生成式语言-图像预训练新范式。",
+        picks: ["UniVidX: A Unified Multimodal Framework for Versatile Video Generation via Diffusion Priors"],
+        totalPapers: 4,
+        totalNews: 0
+    },
     "2026-05-03": {
         bannerTitle: "🔥 今日看点",
         bannerSubtitle: "Robbyant（蚂蚁集团）开源 LingBot-World 世界模型，实现毫秒级实时交互；Google DeepMind 开放 Gemini Robotics-ER 1.5 具身推理模型；NVIDIA 发布 ARTIST 框架用 RL 训练 LLM 自主工具使用能力；RoboOS 多机器人协作操作系统新版发布。",
