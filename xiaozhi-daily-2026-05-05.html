@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>小小志科研情报 - 2026年5月5日</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans SC', sans-serif;
+  background: #0a0e1a;
+  color: #e0e6f0;
+  line-height: 1.7;
+  min-height: 100vh;
+}
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+header {
+  text-align: center;
+  margin-bottom: 48px;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, rgba(59,130,246,0.08) 0%, rgba(139,92,246,0.08) 100%);
+  border-radius: 20px;
+  border: 1px solid rgba(99,102,241,0.15);
+}
+header h1 {
+  font-size: 2rem;
+  background: linear-gradient(135deg, #60a5fa, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 8px;
+}
+header .date {
+  color: #94a3b8;
+  font-size: 1rem;
+}
+header .subtitle {
+  color: #64748b;
+  font-size: 0.9rem;
+  margin-top: 6px;
+}
+.section { margin-bottom: 40px; }
+.section-title {
+  font-size: 1.4rem;
+  color: #f1f5f9;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(99,102,241,0.2);
+}
+.paper-card {
+  background: rgba(30,41,59,0.6);
+  border: 1px solid rgba(99,102,241,0.12);
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 16px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.paper-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(99,102,241,0.1);
+  border-color: rgba(99,102,241,0.3);
+}
+.paper-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #f8fafc;
+  margin-bottom: 8px;
+}
+.paper-meta {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-bottom: 10px;
+}
+.paper-summary {
+  font-size: 0.95rem;
+  color: #cbd5e1;
+  margin-bottom: 14px;
+  line-height: 1.8;
+}
+.paper-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.tag {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+.tag-vla { background: rgba(59,130,246,0.15); color: #60a5fa; }
+.tag-robot { background: rgba(16,185,129,0.15); color: #34d399; }
+.tag-rl { background: rgba(251,146,60,0.15); color: #fb923c; }
+.tag-llm { background: rgba(168,85,247,0.15); color: #c084fc; }
+.tag-vlm { background: rgba(236,72,153,0.15); color: #f472b6; }
+.tag-world-model { background: rgba(34,211,238,0.15); color: #22d3ee; }
+.tag-embodied { background: rgba(74,222,128,0.15); color: #4ade80; }
+.tag-agent { background: rgba(251,191,36,0.15); color: #fbbf24; }
+.tag-multimodal { background: rgba(236,72,153,0.15); color: #f472b6; }
+.paper-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.paper-links a {
+  display: inline-block;
+  padding: 5px 14px;
+  background: rgba(99,102,241,0.12);
+  color: #818cf8;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+.paper-links a:hover {
+  background: rgba(99,102,241,0.25);
+}
+.hot-badge { margin-right: 6px; }
+.highlight-banner {
+  background: linear-gradient(135deg, rgba(251,146,60,0.1) 0%, rgba(236,72,153,0.1) 100%);
+  border: 1px solid rgba(251,146,60,0.2);
+  border-radius: 14px;
+  padding: 20px 24px;
+  margin-bottom: 36px;
+}
+.hl-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fb923c;
+  margin-bottom: 8px;
+}
+.hl-text {
+  font-size: 0.95rem;
+  color: #e2e8f0;
+  line-height: 1.7;
+}
+.stats {
+  text-align: center;
+  padding: 30px;
+  margin-top: 40px;
+  background: rgba(30,41,59,0.4);
+  border-radius: 14px;
+  border: 1px solid rgba(99,102,241,0.1);
+}
+.stats h3 { color: #94a3b8; font-size: 1rem; margin-bottom: 12px; }
+.stats p { color: #64748b; font-size: 0.9rem; }
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+  <h1>🔬 小小志科研情报</h1>
+  <div class="date">2026年5月5日 · 星期二</div>
+  <div class="subtitle">Boss Team · Daily Research Intelligence</div>
+</header>
+
+<div class="highlight-banner">
+  <div class="hl-title">🔥 今日看点</div>
+  <div class="hl-text">Being-H0.7: A Latent World-Action Model ；Embodied Interpretability: Linking Causa；Learning while Deploying: Fleet-Scale Re</div>
+</div>
+
+<section class="section">
+<h2 class="section-title">🤖 VLA · Vision-Language-Action</h2>
+
+<div class="paper-card">
+  <div class="paper-title"><span class="hot-badge">🔥</span> Being-H0.7: A Latent World-Action Model from Egocentric Videos</div>
+  <div class="paper-meta">arXiv 2605.00078 · 2026-05</div>
+  <div class="paper-summary">Visual-Language-Action models (VLAs) have advanced generalist robot control by mapping multimodal observations and language instructions directly to a...</div>
+  <div class="paper-tags">
+    <span class="tag tag-vla">VLA</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.00078">arXiv</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title">Embodied Interpretability: Linking Causal Understanding to Generalization in Vision-Language-Action Models</div>
+  <div class="paper-meta">arXiv 2605.00321 · 2026-05</div>
+  <div class="paper-summary">Vision-Language-Action (VLA) policies often fail under distribution shift, suggesting that decisions may depend on spurious visual correlations rather...</div>
+  <div class="paper-tags">
+    <span class="tag tag-vla">VLA</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.00321">arXiv</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title">Learning while Deploying: Fleet-Scale Reinforcement Learning for Generalist Robot Policies</div>
+  <div class="paper-meta">arXiv 2605.00416 · 2026-05</div>
+  <div class="paper-summary">Generalist robot policies increasingly benefit from large-scale pretraining, but offline data alone is insufficient for robust real-world deployment. ...</div>
+  <div class="paper-tags">
+    <span class="tag tag-vla">VLA</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.00416">arXiv</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title">Stereo Multistage Spatial Attention for Real-Time Mobile Manipulation Under Visual Scale Variation and Disturbances</div>
+  <div class="paper-meta">arXiv 2605.00471 · 2026-05</div>
+  <div class="paper-summary">Robots operating in open, unstructured real-world environments must rely on onboard visual perception while autonomously moving across different locat...</div>
+  <div class="paper-tags">
+    <span class="tag tag-vla">VLA</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.00471">arXiv</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title">MSACT: Multistage Spatial Alignment for Stable Low-Latency Fine Manipulation</div>
+  <div class="paper-meta">arXiv 2605.00475 · 2026-05</div>
+  <div class="paper-summary">Real-world fine manipulation, particularly in bimanual manipulation, typically requires low-latency control and stable visual localization, while coll...</div>
+  <div class="paper-tags">
+    <span class="tag tag-vla">VLA</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.00475">arXiv</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title">Thinking in Text and Images: Interleaved Vision--Language Reasoning Traces for Long-Horizon Robot Manipulation</div>
+  <div class="paper-meta">arXiv 2605.00438 · 2026-05</div>
+  <div class="paper-summary">Long-horizon robotic manipulation requires plans that are both logically coherent and geometrically grounded. Existing Vision-Language-Action policies...</div>
+  <div class="paper-tags">
+    <span class="tag tag-vla">VLA</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.00438">arXiv</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title">VLAs are Confined yet Capable of Generalizing to Novel Instructions</div>
+  <div class="paper-meta">arXiv 2505.03500 · 2026-05</div>
+  <div class="paper-summary">Vision-language-action models (VLAs) often achieve high performance on demonstrated tasks but struggle significantly when required to extrapolate, com...</div>
+  <div class="paper-tags">
+    <span class="tag tag-vla">VLA</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2505.03500">arXiv</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title">MotuBrain: An Advanced World Action Model for Robot Control</div>
+  <div class="paper-meta">arXiv 2604.27792 · 2026-05</div>
+  <div class="paper-summary">Vision-Language-Action (VLA) models generalize semantically well but often lack fine-grained modeling of world dynamics. We present MotuBrain, a unifi...</div>
+  <div class="paper-tags">
+    <span class="tag tag-vla">VLA</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2604.27792">arXiv</a>
+  </div>
+</div>
+
+</section>
+
+<section class="section">
+<h2 class="section-title">🌍 World Model · 世界模型</h2>
+
+<div class="paper-card">
+  <div class="paper-title"><span class="hot-badge">🔥</span> World Model for Robot Learning: A Comprehensive Survey</div>
+  <div class="paper-meta">arXiv 2605.00080 · 2026-05</div>
+  <div class="paper-summary">World models, which are predictive representations of how environments evolve under actions, have become a central component of robot learning. They s...</div>
+  <div class="paper-tags">
+    <span class="tag tag-world-model">World Model</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.00080">arXiv</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title">Physically Native World Models: A Hamiltonian Perspective on Generative World Modeling</div>
+  <div class="paper-meta">arXiv 2605.00412 · 2026-05</div>
+  <div class="paper-summary">World models have recently re-emerged as a central paradigm for embodied intelligence, robotics, autonomous driving, and model-based reinforcement lea...</div>
+  <div class="paper-tags">
+    <span class="tag tag-world-model">World Model</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.00412">arXiv</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title">Language Models Struggle to Use Representations Learned In-Context</div>
+  <div class="paper-meta">arXiv 2602.04212 · 2026-05</div>
+  <div class="paper-summary">-cross 
+Abstract: Though large language models (LLMs) have enabled great success across a wide variety of tasks, they still appear to fall short of on...</div>
+  <div class="paper-tags">
+    <span class="tag tag-world-model">World Model</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2602.04212">arXiv</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title">Theory Under Construction: Orchestrating Language Models for Research Software Where the Specification Evolves</div>
+  <div class="paper-meta">arXiv 2604.27209 · 2026-05</div>
+  <div class="paper-summary">-cross 
+Abstract: Large language models can now generate substantial code and draft research text, but research-software projects require more than ei...</div>
+  <div class="paper-tags">
+    <span class="tag tag-world-model">World Model</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2604.27209">arXiv</a>
+  </div>
+</div>
+
+</section>
+
+<section class="section">
+<h2 class="section-title">🦾 Robotics · 机器人</h2>
+
+<div class="paper-card">
+  <div class="paper-title"><span class="hot-badge">🔥</span> Dynamic-TD3: A Novel Algorithm for UAV Path Planning with Dynamic Obstacle Trajectory Prediction</div>
+  <div class="paper-meta">arXiv 2605.00059 · 2026-05</div>
+  <div class="paper-summary">Deep reinforcement learning (DRL) finds extensive application in autonomous drone navigation within complex, high-risk environments. However, its prac...</div>
+  <div class="paper-tags">
+    <span class="tag tag-robot">Robotics</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.00059">arXiv</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title">Predictive Spatio-Temporal Scene Graphs for Semi-Static Scenes</div>
+  <div class="paper-meta">arXiv 2605.00121 · 2026-05</div>
+  <div class="paper-summary">We have seen tremendous recent progress in our ability to build "spatio-semantic" representations that enable robots to perform complex reasoning acro...</div>
+  <div class="paper-tags">
+    <span class="tag tag-robot">Robotics</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.00121">arXiv</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title">E$^2$DT: Efficient and Effective Decision Transformer with Experience-Aware Sampling for Robotic Manipulation</div>
+  <div class="paper-meta">arXiv 2605.00159 · 2026-05</div>
+  <div class="paper-summary">In reinforcement learning (RL) for robotic manipulation, the Decision Transformer (DT) has emerged as an effective framework for addressing long-horiz...</div>
+  <div class="paper-tags">
+    <span class="tag tag-robot">Robotics</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.00159">arXiv</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title">Lucid-XR: An Extended-Reality Data Engine for Robotic Manipulation</div>
+  <div class="paper-meta">arXiv 2605.00244 · 2026-05</div>
+  <div class="paper-summary">We introduce Lucid-XR, a generative data engine for creating diverse and realistic-looking multi-modal data to train real-world robotic systems. At th...</div>
+  <div class="paper-tags">
+    <span class="tag tag-robot">Robotics</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.00244">arXiv</a> <a href="https://lucidxr.github.io">Project</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title">Task-Conditioned Uncertainty Costmaps for Legged Locomotion</div>
+  <div class="paper-meta">arXiv 2605.00261 · 2026-05</div>
+  <div class="paper-summary">Legged robots maintain dynamic feasibility through multicontact interactions with terrain. Learned foothold prediction can provide feasibility-aware c...</div>
+  <div class="paper-tags">
+    <span class="tag tag-robot">Robotics</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.00261">arXiv</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title">A Model-based Visual Contact Localization and Force Sensing System for Compliant Robotic Grippers</div>
+  <div class="paper-meta">arXiv 2605.00307 · 2026-05</div>
+  <div class="paper-summary">Grasp force estimation can help prevent robots from damaging delicate objects during manipulation and improve learning-based robotic control. Integrat...</div>
+  <div class="paper-tags">
+    <span class="tag tag-robot">Robotics</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.00307">arXiv</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title">PrefMoE: Robust Preference Modeling with Mixture-of-Experts Reward Learning</div>
+  <div class="paper-meta">arXiv 2605.00384 · 2026-05</div>
+  <div class="paper-summary">Preference-based reinforcement learning offers a scalable alternative to manual reward engineering by learning reward structures from comparative feed...</div>
+  <div class="paper-tags">
+    <span class="tag tag-robot">Robotics</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.00384">arXiv</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title">MiniVLA-Nav v1: A Multi-Scene Simulation Dataset for Language-Conditioned Robot Navigation</div>
+  <div class="paper-meta">arXiv 2605.00397 · 2026-05</div>
+  <div class="paper-summary">We present MiniVLA-Nav v1, a simulation dataset for Language-Conditioned Object Approach (LCOA) navigation: given a short natural-language instruction...</div>
+  <div class="paper-tags">
+    <span class="tag tag-robot">Robotics</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.00397">arXiv</a> <a href="https://huggingface.co/datasets/alibustami/miniVLA-Nav">Model</a>
+  </div>
+</div>
+
+</section>
+
+<section class="section">
+<h2 class="section-title">🎨 Multimodal · 多模态</h2>
+
+<div class="paper-card">
+  <div class="paper-title">TUR-DPO: Topology- and Uncertainty-Aware Direct Preference Optimization</div>
+  <div class="paper-meta">arXiv 2605.00224 · 2026-05</div>
+  <div class="paper-summary">Aligning large language models (LLMs) with human preferences is commonly done via reinforcement learning from human feedback (RLHF) with Proximal Poli...</div>
+  <div class="paper-tags">
+    <span class="tag tag-multimodal">Multimodal</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.00224">arXiv</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title">Hypergraph and Latent ODE Learning for Multimodal Root Cause Localization in Microservices</div>
+  <div class="paper-meta">arXiv 2605.00351 · 2026-05</div>
+  <div class="paper-summary">Root cause localization in cloud native microservice systems requires modeling complex service dependencies, irregular temporal dynamics, and heteroge...</div>
+  <div class="paper-tags">
+    <span class="tag tag-multimodal">Multimodal</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.00351">arXiv</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title">GaMMA: Towards Joint Global-Temporal Music Understanding in Large Multimodal Models</div>
+  <div class="paper-meta">arXiv 2605.00371 · 2026-05</div>
+  <div class="paper-summary">In this paper, we propose GaMMA, a state-of-the-art (SoTA) large multimodal model (LMM) designed to achieve comprehensive musical content understandin...</div>
+  <div class="paper-tags">
+    <span class="tag tag-multimodal">Multimodal</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.00371">arXiv</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title">Jailbreaking Vision-Language Models Through the Visual Modality</div>
+  <div class="paper-meta">arXiv 2605.00583 · 2026-05</div>
+  <div class="paper-summary">The visual modality of vision-language models (VLMs) is an underexplored attack surface for bypassing safety alignment. We introduce four jailbreak at...</div>
+  <div class="paper-tags">
+    <span class="tag tag-multimodal">Multimodal</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.00583">arXiv</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title">BlenderRAG: High-Fidelity 3D Object Generation via Retrieval-Augmented Code Synthesis</div>
+  <div class="paper-meta">arXiv 2605.00632 · 2026-05</div>
+  <div class="paper-summary">Automatic generation of executable Blender code from natural language remains challenging, with state-of-the-art LLMs producing frequent syntactic err...</div>
+  <div class="paper-tags">
+    <span class="tag tag-multimodal">Multimodal</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.00632">arXiv</a> <a href="https://github.com/MaxRondelli/BlenderRAG">Code</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title">Learning Multimodal Energy-Based Model with Multimodal Variational Auto-Encoder via MCMC Revision</div>
+  <div class="paper-meta">arXiv 2605.00644 · 2026-05</div>
+  <div class="paper-summary">Energy-based models (EBMs) are a flexible class of deep generative models and are well-suited to capture complex dependencies in multimodal data. Howe...</div>
+  <div class="paper-tags">
+    <span class="tag tag-multimodal">Multimodal</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.00644">arXiv</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title">EASE: Federated Multimodal Unlearning via Entanglement-Aware Anchor Closure</div>
+  <div class="paper-meta">arXiv 2605.00733 · 2026-05</div>
+  <div class="paper-summary">Federated Multimodal Learning (FML) trains multimodal models across decentralized clients while keeping their image-text pairs private. However, joint...</div>
+  <div class="paper-tags">
+    <span class="tag tag-multimodal">Multimodal</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.00733">arXiv</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title">Make Your LVLM KV Cache More Lightweight</div>
+  <div class="paper-meta">arXiv 2605.00789 · 2026-05</div>
+  <div class="paper-summary">Key-Value (KV) cache has become a de facto component of modern Large Vision-Language Models (LVLMs) for inference. While it enhances decoding efficien...</div>
+  <div class="paper-tags">
+    <span class="tag tag-multimodal">Multimodal</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.00789">arXiv</a>
+  </div>
+</div>
+
+</section>
+
+<section class="section">
+<h2 class="section-title">🧠 LLM · 大语言模型</h2>
+
+<div class="paper-card">
+  <div class="paper-title">Tempus: A Temporally Scalable Resource-Invariant GEMM Streaming Framework for Versal AI Edge</div>
+  <div class="paper-meta">arXiv 2605.00536 · 2026-05</div>
+  <div class="paper-summary">Scaling laws for Large Language Models (LLMs) establish that model quality improves with computational scale, yet edge deployment imposes strict const...</div>
+  <div class="paper-tags">
+    <span class="tag tag-llm">LLM</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.00536">arXiv</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title">GSDrive: Reinforcing Driving Policies by Multi-mode Trajectory Probing with 3D Gaussian Splatting Environment</div>
+  <div class="paper-meta">arXiv 2604.28111 · 2026-05</div>
+  <div class="paper-summary">End-to-end (E2E) autonomous driving presents a promising approach for translating perceptual inputs directly into driving actions. However, prohibitiv...</div>
+  <div class="paper-tags">
+    <span class="tag tag-llm">LLM</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2604.28111">arXiv</a> <a href="https://github.com/ZionGo6/GSDrive">Code</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title">Minimal, Local, Causal Explanations for Jailbreak Success in Large Language Models</div>
+  <div class="paper-meta">arXiv 2605.00123 · 2026-05</div>
+  <div class="paper-summary">Safety trained large language models (LLMs) can often be induced to answer harmful requests through jailbreak prompts. Because we lack a robust unders...</div>
+  <div class="paper-tags">
+    <span class="tag tag-llm">LLM</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.00123">arXiv</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title">ARMOR 2025: A Military-Aligned Benchmark for Evaluating Large Language Model Safety Beyond Civilian Contexts</div>
+  <div class="paper-meta">arXiv 2605.00245 · 2026-05</div>
+  <div class="paper-summary">Large language models (LLMs) are now being explored for defense applications that require reliable and legally compliant decision support. They also h...</div>
+  <div class="paper-tags">
+    <span class="tag tag-llm">LLM</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.00245">arXiv</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title">Models Recall What They Violate: Constraint Adherence in Multi-Turn LLM Ideation</div>
+  <div class="paper-meta">arXiv 2604.28031 · 2026-05</div>
+  <div class="paper-summary">When researchers iteratively refine ideas with large language models, do the models preserve fidelity to the original objective? We introduce DriftBen...</div>
+  <div class="paper-tags">
+    <span class="tag tag-llm">LLM</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2604.28031">arXiv</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title">A Survey of Reasoning-Intensive Retrieval: Progress and Challenges</div>
+  <div class="paper-meta">arXiv 2605.00063 · 2026-05</div>
+  <div class="paper-summary">Reasoning-Intensive Retrieval (RIR) targets retrieval settings where relevance is mediated by latent inferential links between a query and supporting ...</div>
+  <div class="paper-tags">
+    <span class="tag tag-llm">LLM</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.00063">arXiv</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title">XekRung Technical Report</div>
+  <div class="paper-meta">arXiv 2605.00072 · 2026-05</div>
+  <div class="paper-summary">We present XekRung, a frontier large language model for cybersecurity, designed to provide comprehensive security capabilities. To achieve this, we de...</div>
+  <div class="paper-tags">
+    <span class="tag tag-llm">LLM</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.00072">arXiv</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title">CRC-Screen: Certified DNA-Synthesis Hazard Screening Under Taxonomic Shift</div>
+  <div class="paper-meta">arXiv 2605.00074 · 2026-05</div>
+  <div class="paper-summary">DNA-synthesis providers screen incoming orders by searching the requested sequence against curated hazard lists. We show that this baseline collapses ...</div>
+  <div class="paper-tags">
+    <span class="tag tag-llm">LLM</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.00074">arXiv</a> <a href="https://github.com/najmulhasan-code/crc-screen">Code</a>
+  </div>
+</div>
+
+</section>
+
+<section class="section">
+<h2 class="section-title">🧩 Agent · 智能体</h2>
+
+<div class="paper-card">
+  <div class="paper-title">Affordance Agent Harness: Verification-Gated Skill Orchestration</div>
+  <div class="paper-meta">arXiv 2605.00663 · 2026-05</div>
+  <div class="paper-summary">Affordance grounding requires identifying where and how an agent should interact in open-world scenes, where actionable regions are often small, occlu...</div>
+  <div class="paper-tags">
+    <span class="tag tag-agent">Agent</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.00663">arXiv</a> <a href="https://tenplusgood.github.io/a-harness-page/">Project</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title">TADI: Tool-Augmented Drilling Intelligence via Agentic LLM Orchestration over Heterogeneous Wellsite Data</div>
+  <div class="paper-meta">arXiv 2605.00060 · 2026-05</div>
+  <div class="paper-summary">We present TADI (Tool-Augmented Drilling Intelligence), an agentic AI system that transforms drilling operational data into evidence-based analytical ...</div>
+  <div class="paper-tags">
+    <span class="tag tag-agent">Agent</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.00060">arXiv</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title">Are Tools All We Need? Unveiling the Tool-Use Tax in LLM Agents</div>
+  <div class="paper-meta">arXiv 2605.00136 · 2026-05</div>
+  <div class="paper-summary">Tool-augmented reasoning has become a popular direction for LLM-based agents, and it is widely assumed to improve reasoning and reliability. However, ...</div>
+  <div class="paper-tags">
+    <span class="tag tag-agent">Agent</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.00136">arXiv</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title">Causal Foundations of Collective Agency</div>
+  <div class="paper-meta">arXiv 2605.00248 · 2026-05</div>
+  <div class="paper-summary">A key challenge for the safety of advanced AI systems is the possibility that multiple simpler agents might inadvertently form a collective agent with...</div>
+  <div class="paper-tags">
+    <span class="tag tag-agent">Agent</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.00248">arXiv</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title">Agentic AI for Trip Planning Optimization Application</div>
+  <div class="paper-meta">arXiv 2605.00276 · 2026-05</div>
+  <div class="paper-summary">Trip planning for intelligent vehicles increasingly requires selecting optimal routes rather than merely producing feasible itineraries, as interactin...</div>
+  <div class="paper-tags">
+    <span class="tag tag-agent">Agent</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.00276">arXiv</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title">AgentFloor: How Far Up the tool use Ladder Can Small Open-Weight Models Go?</div>
+  <div class="paper-meta">arXiv 2605.00334 · 2026-05</div>
+  <div class="paper-summary">Production agentic systems make many model calls per user request, and most of those calls are short, structured, and routine. This raises a practical...</div>
+  <div class="paper-tags">
+    <span class="tag tag-agent">Agent</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.00334">arXiv</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title">AEM: Adaptive Entropy Modulation for Multi-Turn Agentic Reinforcement Learning</div>
+  <div class="paper-meta">arXiv 2605.00425 · 2026-05</div>
+  <div class="paper-summary">Reinforcement learning (RL) has significantly advanced the ability of large language model (LLM) agents to interact with environments and solve multi-...</div>
+  <div class="paper-tags">
+    <span class="tag tag-agent">Agent</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.00425">arXiv</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title">On the Role of Artificial Intelligence in Human-Machine Symbiosis</div>
+  <div class="paper-meta">arXiv 2605.00440 · 2026-05</div>
+  <div class="paper-summary">The evolution of artificial intelligence (AI) has rendered the boundary between humanity and computational machinery increasingly ambiguous. In the pr...</div>
+  <div class="paper-tags">
+    <span class="tag tag-agent">Agent</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.00440">arXiv</a>
+  </div>
+</div>
+
+</section>
+
+<div class="stats">
+  <h3>📊 今日统计</h3>
+  <p>arXiv 论文 44 篇 · 覆盖 VLA / Robotics / World Model / LLM / Multimodal / Agent</p>
+</div>
+
+</div>
+</body>
+</html>

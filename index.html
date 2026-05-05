@@ -629,6 +629,450 @@
 <script>
 // ===== DATA =====
 const PAPERS_DB = [
+    // === 2026-05-05 ===
+    {
+        date: "2026-05-05",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "Being-H0.7: A Latent World-Action Model from Egocentric Videos",
+        venue: "arXiv 2605.00078 · 2026-05",
+        summary: "Visual-Language-Action models (VLAs) have advanced generalist robot control by mapping multimodal observations and language instructions directly to a...",
+        tags: [["VLA","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.00078"]],
+        highlight: true
+    },
+    {
+        date: "2026-05-05",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "Embodied Interpretability: Linking Causal Understanding to Generalization in Vision-Language-Action Models",
+        venue: "arXiv 2605.00321 · 2026-05",
+        summary: "Vision-Language-Action (VLA) policies often fail under distribution shift, suggesting that decisions may depend on spurious visual correlations rather...",
+        tags: [["VLA","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.00321"]]
+    },
+    {
+        date: "2026-05-05",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "Learning while Deploying: Fleet-Scale Reinforcement Learning for Generalist Robot Policies",
+        venue: "arXiv 2605.00416 · 2026-05",
+        summary: "Generalist robot policies increasingly benefit from large-scale pretraining, but offline data alone is insufficient for robust real-world deployment. ...",
+        tags: [["VLA","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.00416"]]
+    },
+    {
+        date: "2026-05-05",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "Stereo Multistage Spatial Attention for Real-Time Mobile Manipulation Under Visual Scale Variation and Disturbances",
+        venue: "arXiv 2605.00471 · 2026-05",
+        summary: "Robots operating in open, unstructured real-world environments must rely on onboard visual perception while autonomously moving across different locat...",
+        tags: [["VLA","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.00471"]]
+    },
+    {
+        date: "2026-05-05",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "MSACT: Multistage Spatial Alignment for Stable Low-Latency Fine Manipulation",
+        venue: "arXiv 2605.00475 · 2026-05",
+        summary: "Real-world fine manipulation, particularly in bimanual manipulation, typically requires low-latency control and stable visual localization, while coll...",
+        tags: [["VLA","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.00475"]]
+    },
+    {
+        date: "2026-05-05",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "Thinking in Text and Images: Interleaved Vision--Language Reasoning Traces for Long-Horizon Robot Manipulation",
+        venue: "arXiv 2605.00438 · 2026-05",
+        summary: "Long-horizon robotic manipulation requires plans that are both logically coherent and geometrically grounded. Existing Vision-Language-Action policies...",
+        tags: [["VLA","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.00438"]]
+    },
+    {
+        date: "2026-05-05",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "VLAs are Confined yet Capable of Generalizing to Novel Instructions",
+        venue: "arXiv 2505.03500 · 2026-05",
+        summary: "Vision-language-action models (VLAs) often achieve high performance on demonstrated tasks but struggle significantly when required to extrapolate, com...",
+        tags: [["VLA","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2505.03500"]]
+    },
+    {
+        date: "2026-05-05",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "MotuBrain: An Advanced World Action Model for Robot Control",
+        venue: "arXiv 2604.27792 · 2026-05",
+        summary: "Vision-Language-Action (VLA) models generalize semantically well but often lack fine-grained modeling of world dynamics. We present MotuBrain, a unifi...",
+        tags: [["VLA","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.27792"]]
+    },
+    {
+        date: "2026-05-05",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "World Model for Robot Learning: A Comprehensive Survey",
+        venue: "arXiv 2605.00080 · 2026-05",
+        summary: "World models, which are predictive representations of how environments evolve under actions, have become a central component of robot learning. They s...",
+        tags: [],
+        links: [["arXiv","https://arxiv.org/abs/2605.00080"]],
+        highlight: true
+    },
+    {
+        date: "2026-05-05",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "Physically Native World Models: A Hamiltonian Perspective on Generative World Modeling",
+        venue: "arXiv 2605.00412 · 2026-05",
+        summary: "World models have recently re-emerged as a central paradigm for embodied intelligence, robotics, autonomous driving, and model-based reinforcement lea...",
+        tags: [],
+        links: [["arXiv","https://arxiv.org/abs/2605.00412"]]
+    },
+    {
+        date: "2026-05-05",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "Language Models Struggle to Use Representations Learned In-Context",
+        venue: "arXiv 2602.04212 · 2026-05",
+        summary: "-cross  Abstract: Though large language models (LLMs) have enabled great success across a wide variety of tasks, they still appear to fall short of on...",
+        tags: [],
+        links: [["arXiv","https://arxiv.org/abs/2602.04212"]]
+    },
+    {
+        date: "2026-05-05",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "Theory Under Construction: Orchestrating Language Models for Research Software Where the Specification Evolves",
+        venue: "arXiv 2604.27209 · 2026-05",
+        summary: "-cross  Abstract: Large language models can now generate substantial code and draft research text, but research-software projects require more than ei...",
+        tags: [],
+        links: [["arXiv","https://arxiv.org/abs/2604.27209"]]
+    },
+    {
+        date: "2026-05-05",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "Dynamic-TD3: A Novel Algorithm for UAV Path Planning with Dynamic Obstacle Trajectory Prediction",
+        venue: "arXiv 2605.00059 · 2026-05",
+        summary: "Deep reinforcement learning (DRL) finds extensive application in autonomous drone navigation within complex, high-risk environments. However, its prac...",
+        tags: [["Robotics","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.00059"]],
+        highlight: true
+    },
+    {
+        date: "2026-05-05",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "Predictive Spatio-Temporal Scene Graphs for Semi-Static Scenes",
+        venue: "arXiv 2605.00121 · 2026-05",
+        summary: "We have seen tremendous recent progress in our ability to build \"spatio-semantic\" representations that enable robots to perform complex reasoning acro...",
+        tags: [["Robotics","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.00121"]]
+    },
+    {
+        date: "2026-05-05",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "E$^2$DT: Efficient and Effective Decision Transformer with Experience-Aware Sampling for Robotic Manipulation",
+        venue: "arXiv 2605.00159 · 2026-05",
+        summary: "In reinforcement learning (RL) for robotic manipulation, the Decision Transformer (DT) has emerged as an effective framework for addressing long-horiz...",
+        tags: [["Robotics","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.00159"]]
+    },
+    {
+        date: "2026-05-05",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "Lucid-XR: An Extended-Reality Data Engine for Robotic Manipulation",
+        venue: "arXiv 2605.00244 · 2026-05",
+        summary: "We introduce Lucid-XR, a generative data engine for creating diverse and realistic-looking multi-modal data to train real-world robotic systems. At th...",
+        tags: [["Robotics","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.00244"],["Project","https://lucidxr.github.io"]]
+    },
+    {
+        date: "2026-05-05",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "Task-Conditioned Uncertainty Costmaps for Legged Locomotion",
+        venue: "arXiv 2605.00261 · 2026-05",
+        summary: "Legged robots maintain dynamic feasibility through multicontact interactions with terrain. Learned foothold prediction can provide feasibility-aware c...",
+        tags: [["Robotics","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.00261"]]
+    },
+    {
+        date: "2026-05-05",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "A Model-based Visual Contact Localization and Force Sensing System for Compliant Robotic Grippers",
+        venue: "arXiv 2605.00307 · 2026-05",
+        summary: "Grasp force estimation can help prevent robots from damaging delicate objects during manipulation and improve learning-based robotic control. Integrat...",
+        tags: [["Robotics","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.00307"]]
+    },
+    {
+        date: "2026-05-05",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "PrefMoE: Robust Preference Modeling with Mixture-of-Experts Reward Learning",
+        venue: "arXiv 2605.00384 · 2026-05",
+        summary: "Preference-based reinforcement learning offers a scalable alternative to manual reward engineering by learning reward structures from comparative feed...",
+        tags: [["Robotics","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.00384"]]
+    },
+    {
+        date: "2026-05-05",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "MiniVLA-Nav v1: A Multi-Scene Simulation Dataset for Language-Conditioned Robot Navigation",
+        venue: "arXiv 2605.00397 · 2026-05",
+        summary: "We present MiniVLA-Nav v1, a simulation dataset for Language-Conditioned Object Approach (LCOA) navigation: given a short natural-language instruction...",
+        tags: [["Robotics","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.00397"],["Model","https://huggingface.co/datasets/alibustami/miniVLA-Nav"]]
+    },
+    {
+        date: "2026-05-05",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "TUR-DPO: Topology- and Uncertainty-Aware Direct Preference Optimization",
+        venue: "arXiv 2605.00224 · 2026-05",
+        summary: "Aligning large language models (LLMs) with human preferences is commonly done via reinforcement learning from human feedback (RLHF) with Proximal Poli...",
+        tags: [["Multimodal","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.00224"]]
+    },
+    {
+        date: "2026-05-05",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "Hypergraph and Latent ODE Learning for Multimodal Root Cause Localization in Microservices",
+        venue: "arXiv 2605.00351 · 2026-05",
+        summary: "Root cause localization in cloud native microservice systems requires modeling complex service dependencies, irregular temporal dynamics, and heteroge...",
+        tags: [["Multimodal","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.00351"]]
+    },
+    {
+        date: "2026-05-05",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "GaMMA: Towards Joint Global-Temporal Music Understanding in Large Multimodal Models",
+        venue: "arXiv 2605.00371 · 2026-05",
+        summary: "In this paper, we propose GaMMA, a state-of-the-art (SoTA) large multimodal model (LMM) designed to achieve comprehensive musical content understandin...",
+        tags: [["Multimodal","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.00371"]]
+    },
+    {
+        date: "2026-05-05",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "Jailbreaking Vision-Language Models Through the Visual Modality",
+        venue: "arXiv 2605.00583 · 2026-05",
+        summary: "The visual modality of vision-language models (VLMs) is an underexplored attack surface for bypassing safety alignment. We introduce four jailbreak at...",
+        tags: [["Multimodal","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.00583"]]
+    },
+    {
+        date: "2026-05-05",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "BlenderRAG: High-Fidelity 3D Object Generation via Retrieval-Augmented Code Synthesis",
+        venue: "arXiv 2605.00632 · 2026-05",
+        summary: "Automatic generation of executable Blender code from natural language remains challenging, with state-of-the-art LLMs producing frequent syntactic err...",
+        tags: [["Multimodal","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.00632"],["Code","https://github.com/MaxRondelli/BlenderRAG"]]
+    },
+    {
+        date: "2026-05-05",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "Learning Multimodal Energy-Based Model with Multimodal Variational Auto-Encoder via MCMC Revision",
+        venue: "arXiv 2605.00644 · 2026-05",
+        summary: "Energy-based models (EBMs) are a flexible class of deep generative models and are well-suited to capture complex dependencies in multimodal data. Howe...",
+        tags: [["Multimodal","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.00644"]]
+    },
+    {
+        date: "2026-05-05",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "EASE: Federated Multimodal Unlearning via Entanglement-Aware Anchor Closure",
+        venue: "arXiv 2605.00733 · 2026-05",
+        summary: "Federated Multimodal Learning (FML) trains multimodal models across decentralized clients while keeping their image-text pairs private. However, joint...",
+        tags: [["Multimodal","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.00733"]]
+    },
+    {
+        date: "2026-05-05",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "Make Your LVLM KV Cache More Lightweight",
+        venue: "arXiv 2605.00789 · 2026-05",
+        summary: "Key-Value (KV) cache has become a de facto component of modern Large Vision-Language Models (LVLMs) for inference. While it enhances decoding efficien...",
+        tags: [["Multimodal","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.00789"]]
+    },
+    {
+        date: "2026-05-05",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Tempus: A Temporally Scalable Resource-Invariant GEMM Streaming Framework for Versal AI Edge",
+        venue: "arXiv 2605.00536 · 2026-05",
+        summary: "Scaling laws for Large Language Models (LLMs) establish that model quality improves with computational scale, yet edge deployment imposes strict const...",
+        tags: [["LLM","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.00536"]]
+    },
+    {
+        date: "2026-05-05",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "GSDrive: Reinforcing Driving Policies by Multi-mode Trajectory Probing with 3D Gaussian Splatting Environment",
+        venue: "arXiv 2604.28111 · 2026-05",
+        summary: "End-to-end (E2E) autonomous driving presents a promising approach for translating perceptual inputs directly into driving actions. However, prohibitiv...",
+        tags: [["LLM","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.28111"],["Code","https://github.com/ZionGo6/GSDrive"]]
+    },
+    {
+        date: "2026-05-05",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Minimal, Local, Causal Explanations for Jailbreak Success in Large Language Models",
+        venue: "arXiv 2605.00123 · 2026-05",
+        summary: "Safety trained large language models (LLMs) can often be induced to answer harmful requests through jailbreak prompts. Because we lack a robust unders...",
+        tags: [["LLM","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.00123"]]
+    },
+    {
+        date: "2026-05-05",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "ARMOR 2025: A Military-Aligned Benchmark for Evaluating Large Language Model Safety Beyond Civilian Contexts",
+        venue: "arXiv 2605.00245 · 2026-05",
+        summary: "Large language models (LLMs) are now being explored for defense applications that require reliable and legally compliant decision support. They also h...",
+        tags: [["LLM","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.00245"]]
+    },
+    {
+        date: "2026-05-05",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Models Recall What They Violate: Constraint Adherence in Multi-Turn LLM Ideation",
+        venue: "arXiv 2604.28031 · 2026-05",
+        summary: "When researchers iteratively refine ideas with large language models, do the models preserve fidelity to the original objective? We introduce DriftBen...",
+        tags: [["LLM","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2604.28031"]]
+    },
+    {
+        date: "2026-05-05",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "A Survey of Reasoning-Intensive Retrieval: Progress and Challenges",
+        venue: "arXiv 2605.00063 · 2026-05",
+        summary: "Reasoning-Intensive Retrieval (RIR) targets retrieval settings where relevance is mediated by latent inferential links between a query and supporting ...",
+        tags: [["LLM","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.00063"]]
+    },
+    {
+        date: "2026-05-05",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "XekRung Technical Report",
+        venue: "arXiv 2605.00072 · 2026-05",
+        summary: "We present XekRung, a frontier large language model for cybersecurity, designed to provide comprehensive security capabilities. To achieve this, we de...",
+        tags: [["LLM","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.00072"]]
+    },
+    {
+        date: "2026-05-05",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "CRC-Screen: Certified DNA-Synthesis Hazard Screening Under Taxonomic Shift",
+        venue: "arXiv 2605.00074 · 2026-05",
+        summary: "DNA-synthesis providers screen incoming orders by searching the requested sequence against curated hazard lists. We show that this baseline collapses ...",
+        tags: [["LLM","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.00074"],["Code","https://github.com/najmulhasan-code/crc-screen"]]
+    },
+    {
+        date: "2026-05-05",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Affordance Agent Harness: Verification-Gated Skill Orchestration",
+        venue: "arXiv 2605.00663 · 2026-05",
+        summary: "Affordance grounding requires identifying where and how an agent should interact in open-world scenes, where actionable regions are often small, occlu...",
+        tags: [["Agent","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.00663"],["Project","https://tenplusgood.github.io/a-harness-page/"]]
+    },
+    {
+        date: "2026-05-05",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "TADI: Tool-Augmented Drilling Intelligence via Agentic LLM Orchestration over Heterogeneous Wellsite Data",
+        venue: "arXiv 2605.00060 · 2026-05",
+        summary: "We present TADI (Tool-Augmented Drilling Intelligence), an agentic AI system that transforms drilling operational data into evidence-based analytical ...",
+        tags: [["Agent","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.00060"]]
+    },
+    {
+        date: "2026-05-05",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Are Tools All We Need? Unveiling the Tool-Use Tax in LLM Agents",
+        venue: "arXiv 2605.00136 · 2026-05",
+        summary: "Tool-augmented reasoning has become a popular direction for LLM-based agents, and it is widely assumed to improve reasoning and reliability. However, ...",
+        tags: [["Agent","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.00136"]]
+    },
+    {
+        date: "2026-05-05",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Causal Foundations of Collective Agency",
+        venue: "arXiv 2605.00248 · 2026-05",
+        summary: "A key challenge for the safety of advanced AI systems is the possibility that multiple simpler agents might inadvertently form a collective agent with...",
+        tags: [["Agent","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.00248"]]
+    },
+    {
+        date: "2026-05-05",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Agentic AI for Trip Planning Optimization Application",
+        venue: "arXiv 2605.00276 · 2026-05",
+        summary: "Trip planning for intelligent vehicles increasingly requires selecting optimal routes rather than merely producing feasible itineraries, as interactin...",
+        tags: [["Agent","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.00276"]]
+    },
+    {
+        date: "2026-05-05",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "AgentFloor: How Far Up the tool use Ladder Can Small Open-Weight Models Go?",
+        venue: "arXiv 2605.00334 · 2026-05",
+        summary: "Production agentic systems make many model calls per user request, and most of those calls are short, structured, and routine. This raises a practical...",
+        tags: [["Agent","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.00334"]]
+    },
+    {
+        date: "2026-05-05",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "AEM: Adaptive Entropy Modulation for Multi-Turn Agentic Reinforcement Learning",
+        venue: "arXiv 2605.00425 · 2026-05",
+        summary: "Reinforcement learning (RL) has significantly advanced the ability of large language model (LLM) agents to interact with environments and solve multi-...",
+        tags: [["Agent","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.00425"]]
+    },
+    {
+        date: "2026-05-05",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "On the Role of Artificial Intelligence in Human-Machine Symbiosis",
+        venue: "arXiv 2605.00440 · 2026-05",
+        summary: "The evolution of artificial intelligence (AI) has rendered the boundary between humanity and computational machinery increasingly ambiguous. In the pr...",
+        tags: [["Agent","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.00440"]]
+    },
     // === 2026-05-04 ===
     {
         date: "2026-05-04",
@@ -9067,6 +9511,13 @@ const PAPERS_DB = [
 ];
 
 const DAILY_OVERVIEW = {
+    "2026-05-05": {
+        bannerTitle: "🔥 今日看点",
+        bannerSubtitle: "Being-H0.7: A Latent World-Action Model ；Embodied Interpretability: Linking Causa；Learning while Deploying: Fleet-Scale Re",
+        picks: ["Being-H0.7: A Latent World-Action Model from Egocentric Videos","World Model for Robot Learning: A Comprehensive Survey","Dynamic-TD3: A Novel Algorithm for UAV Path Planning with Dynamic Obstacle Trajectory Prediction"],
+        totalPapers: 44,
+        totalNews: 0
+    },
     "2026-05-04": {
         bannerTitle: "🔥 今日看点",
         bannerSubtitle: "UniVidX 提出统一多模态视频生成框架，支持图生视频、文生视频、视频编辑等多种任务；ByteDance Seed 发布 1D 语义 Tokenizer 实现端到端自回归图像生成；GenLIP 让 ViT 说话——生成式语言-图像预训练新范式。",
