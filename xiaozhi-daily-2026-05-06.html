@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>小小志科研情报 - 2026年5月6日</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans SC', sans-serif;
+  background: #0a0e1a;
+  color: #e0e6f0;
+  line-height: 1.7;
+  min-height: 100vh;
+}
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+header {
+  text-align: center;
+  margin-bottom: 48px;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, rgba(59,130,246,0.08) 0%, rgba(139,92,246,0.08) 100%);
+  border-radius: 20px;
+  border: 1px solid rgba(99,102,241,0.15);
+}
+header h1 {
+  font-size: 2rem;
+  background: linear-gradient(135deg, #60a5fa, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 8px;
+}
+header .date {
+  color: #94a3b8;
+  font-size: 1rem;
+}
+header .subtitle {
+  color: #64748b;
+  font-size: 0.9rem;
+  margin-top: 6px;
+}
+.section { margin-bottom: 40px; }
+.section-title {
+  font-size: 1.4rem;
+  color: #f1f5f9;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(99,102,241,0.2);
+}
+.paper-card {
+  background: rgba(30,41,59,0.6);
+  border: 1px solid rgba(99,102,241,0.12);
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 16px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.paper-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(99,102,241,0.1);
+  border-color: rgba(99,102,241,0.3);
+}
+.paper-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #f8fafc;
+  margin-bottom: 8px;
+}
+.paper-meta {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-bottom: 10px;
+}
+.paper-summary {
+  font-size: 0.95rem;
+  color: #cbd5e1;
+  margin-bottom: 14px;
+  line-height: 1.8;
+}
+.paper-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.tag {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+.tag-vla { background: rgba(59,130,246,0.15); color: #60a5fa; }
+.tag-robot { background: rgba(16,185,129,0.15); color: #34d399; }
+.tag-rl { background: rgba(251,146,60,0.15); color: #fb923c; }
+.tag-llm { background: rgba(168,85,247,0.15); color: #c084fc; }
+.tag-vlm { background: rgba(236,72,153,0.15); color: #f472b6; }
+.tag-world-model { background: rgba(34,211,238,0.15); color: #22d3ee; }
+.tag-embodied { background: rgba(74,222,128,0.15); color: #4ade80; }
+.tag-agent { background: rgba(251,191,36,0.15); color: #fbbf24; }
+.tag-multimodal { background: rgba(236,72,153,0.15); color: #f472b6; }
+.tag-other { background: rgba(148,163,184,0.15); color: #94a3b8; }
+.info-card {
+  background: rgba(30,41,59,0.4);
+  border: 1px solid rgba(99,102,241,0.08);
+  border-radius: 14px;
+  padding: 20px 24px;
+  margin-bottom: 14px;
+}
+.paper-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.paper-links a {
+  display: inline-block;
+  padding: 5px 14px;
+  background: rgba(99,102,241,0.12);
+  color: #818cf8;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+.paper-links a:hover {
+  background: rgba(99,102,241,0.25);
+}
+.hot-badge { margin-right: 6px; }
+.highlight-banner {
+  background: linear-gradient(135deg, rgba(251,146,60,0.1) 0%, rgba(236,72,153,0.1) 100%);
+  border: 1px solid rgba(251,146,60,0.2);
+  border-radius: 14px;
+  padding: 20px 24px;
+  margin-bottom: 36px;
+}
+.hl-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fb923c;
+  margin-bottom: 8px;
+}
+.hl-text {
+  font-size: 0.95rem;
+  color: #e2e8f0;
+  line-height: 1.7;
+}
+.stats {
+  text-align: center;
+  padding: 30px;
+  margin-top: 40px;
+  background: rgba(30,41,59,0.4);
+  border-radius: 14px;
+  border: 1px solid rgba(99,102,241,0.1);
+}
+.stats h3 { color: #94a3b8; font-size: 1rem; margin-bottom: 12px; }
+.stats p { color: #64748b; font-size: 0.9rem; }
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+  <h1>🔬 小小志科研情报</h1>
+  <div class="date">2026年5月6日 · 星期三</div>
+  <div class="subtitle">Boss Team · Daily Research Intelligence</div>
+</header>
+
+<div class="highlight-banner">
+  <div class="hl-title">🔥 今日看点</div>
+  <div class="hl-text">OpenAI 发布 GPT-5.5 Instant 及系统卡；LLM 作为视觉生成通用推理器；Audio-Visual 多模态智能综述；多篇 Agent 方向论文覆盖搜索、红队测试、制造决策等场景</div>
+</div>
+
+<section class="section">
+<h2 class="section-title">🧩 Agent · Autonomous Systems</h2>
+
+<div class="paper-card">
+  <div class="paper-title"><span class="hot-badge">🔥</span> OpenSeeker-v2: Pushing the Limits of Search Agents with Informative and High-Difficulty Trajectories</div>
+  <div class="paper-meta">arXiv 2605.04036 · 2026-05</div>
+  <div class="paper-summary">Deep search capabilities have become an indispensable competency for frontier LLMs. This work pushes the limits of search agents with informative and high-difficulty trajectories.</div>
+  <div class="paper-tags">
+    <span class="tag tag-agent">Agent</span>
+    <span class="tag tag-llm">Search</span>
+  </div>
+  <div class="paper-links">
+    <a href="http://arxiv.org/abs/2605.04036v1">arXiv</a>
+    <a href="http://arxiv.org/pdf/2605.04036v1">PDF</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title">Redefining AI Red Teaming in the Agentic Era: From Weeks to Hours</div>
+  <div class="paper-meta">arXiv 2605.04019 · 2026-05</div>
+  <div class="paper-summary">AI systems are entering critical domains like healthcare, finance, and defense. This paper redefines AI red teaming in the agentic era, proposing methods to reduce evaluation time from weeks to hours.</div>
+  <div class="paper-tags">
+    <span class="tag tag-agent">Agent</span>
+    <span class="tag tag-other">Safety</span>
+  </div>
+  <div class="paper-links">
+    <a href="http://arxiv.org/abs/2605.04019v1">arXiv</a>
+    <a href="http://arxiv.org/pdf/2605.04019v1">PDF</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title">Rethinking Reasoning-Intensive Retrieval: Evaluating and Advancing Retrievers in Agentic Search Systems</div>
+  <div class="paper-meta">arXiv 2605.04018 · 2026-05</div>
+  <div class="paper-summary">Reasoning-intensive retrieval aims to surface evidence that supports downstream reasoning in agentic systems. This work evaluates and advances retrievers for complex reasoning tasks.</div>
+  <div class="paper-tags">
+    <span class="tag tag-agent">Agent</span>
+    <span class="tag tag-llm">Retrieval</span>
+  </div>
+  <div class="paper-links">
+    <a href="http://arxiv.org/abs/2605.04018v1">arXiv</a>
+    <a href="http://arxiv.org/pdf/2605.04018v1">PDF</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title">SymptomAI: Towards a Conversational AI Agent for Everyday Symptom Assessment</div>
+  <div class="paper-meta">arXiv 2605.04012 · 2026-05</div>
+  <div class="paper-summary">Language models excel at diagnostic assessments on curated medical case-studies. SymptomAI proposes a conversational AI agent for real-world everyday symptom assessment.</div>
+  <div class="paper-tags">
+    <span class="tag tag-agent">Agent</span>
+    <span class="tag tag-other">Healthcare</span>
+  </div>
+  <div class="paper-links">
+    <a href="http://arxiv.org/abs/2605.04012v1">arXiv</a>
+    <a href="http://arxiv.org/pdf/2605.04012v1">PDF</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title">Physics-Grounded Multi-Agent Architecture for Traceable, Risk-Aware Human-AI Decision Support in Manufacturing</div>
+  <div class="paper-meta">arXiv 2605.04003 · 2026-05</div>
+  <div class="paper-summary">High-precision CNC machining of free-form aerospace components requires bounded uncertainty. This paper presents a physics-grounded multi-agent architecture for traceable, risk-aware decision support.</div>
+  <div class="paper-tags">
+    <span class="tag tag-agent">Agent</span>
+    <span class="tag tag-robot">Manufacturing</span>
+  </div>
+  <div class="paper-links">
+    <a href="http://arxiv.org/abs/2605.04003v1">arXiv</a>
+    <a href="http://arxiv.org/pdf/2605.04003v1">PDF</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title">WindowsWorld: A Process-Centric Benchmark of Autonomous GUI Agents in Professional Cross-Application Environments</div>
+  <div class="paper-meta">arXiv 2604.27776 · HuggingFace Community</div>
+  <div class="paper-summary">A process-centric benchmark evaluating autonomous GUI agents in professional cross-application environments on Windows.</div>
+  <div class="paper-tags">
+    <span class="tag tag-agent">Agent</span>
+    <span class="tag tag-other">GUI</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2604.27776">arXiv</a>
+    <a href="https://arxiv.org/pdf/2604.27776">PDF</a>
+    <a href="https://github.com/HITsz-TMG/WindowsWorld">Code (14⭐)</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title">AcademiClaw: When Students Set Challenges for AI Agents</div>
+  <div class="paper-meta">arXiv 2605.02661 · HuggingFace Community</div>
+  <div class="paper-summary">A benchmark where students set challenges for AI agents, testing capabilities in academic research contexts.</div>
+  <div class="paper-tags">
+    <span class="tag tag-agent">Agent</span>
+    <span class="tag tag-other">Benchmark</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.02661">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.02661">PDF</a>
+    <a href="https://github.com/GAIR-NLP/AcademiClaw">Code (13⭐)</a>
+  </div>
+</div>
+
+</section>
+
+<section class="section">
+<h2 class="section-title">🎨 Multimodal · Vision-Language</h2>
+
+<div class="paper-card">
+  <div class="paper-title"><span class="hot-badge">🔥</span> Large Language Models are Universal Reasoners for Visual Generation</div>
+  <div class="paper-meta">arXiv 2605.04040 · 2026-05</div>
+  <div class="paper-summary">Text-to-image generation has advanced rapidly with diffusion models. This paper demonstrates that Large Language Models can serve as universal reasoners for visual generation, progressing beyond pure diffusion approaches.</div>
+  <div class="paper-tags">
+    <span class="tag tag-multimodal">Multimodal</span>
+    <span class="tag tag-llm">Generation</span>
+  </div>
+  <div class="paper-links">
+    <a href="http://arxiv.org/abs/2605.04040v1">arXiv</a>
+    <a href="http://arxiv.org/pdf/2605.04040v1">PDF</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title"><span class="hot-badge">🔥</span> Audio-Visual Intelligence in Large Foundation Models</div>
+  <div class="paper-meta">arXiv 2605.04045 · 2026-05</div>
+  <div class="paper-summary">Audio-Visual Intelligence (AVI) has emerged as a central frontier in artificial intelligence. This comprehensive survey reviews the latest advances in large foundation models for audio-visual understanding.</div>
+  <div class="paper-tags">
+    <span class="tag tag-multimodal">Multimodal</span>
+    <span class="tag tag-other">Survey</span>
+  </div>
+  <div class="paper-links">
+    <a href="http://arxiv.org/abs/2605.04045v1">arXiv</a>
+    <a href="http://arxiv.org/pdf/2605.04045v1">PDF</a>
+    <a href="https://github.com/JavisVerse/Awesome-AVI">Code</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title">Persistent Visual Memory: Sustaining Perception for Deep Generation in LVLMs</div>
+  <div class="paper-meta">arXiv 2605.00814 · HuggingFace Community</div>
+  <div class="paper-summary">Proposes persistent visual memory mechanisms for sustaining perception during deep generation tasks in Large Vision-Language Models.</div>
+  <div class="paper-tags">
+    <span class="tag tag-multimodal">Multimodal</span>
+    <span class="tag tag-vlm">VLM</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.00814">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.00814">PDF</a>
+    <a href="https://github.com/huaixuheqing/PVM">Code (5⭐)</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title">OceanPile: A Large-Scale Multimodal Ocean Corpus for Foundation Models</div>
+  <div class="paper-meta">arXiv 2605.00877 · Zhejiang University</div>
+  <div class="paper-summary">A large-scale multimodal corpus for ocean science foundation models, covering diverse marine data modalities.</div>
+  <div class="paper-tags">
+    <span class="tag tag-multimodal">Multimodal</span>
+    <span class="tag tag-other">Ocean Science</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.00877">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.00877">PDF</a>
+    <a href="http://data.oceangpt.blue/en/">Project</a>
+    <a href="https://github.com/OceanGPT/OceanPile">Code (2⭐)</a>
+  </div>
+</div>
+
+</section>
+
+<section class="section">
+<h2 class="section-title">🧠 LLM · Large Language Models</h2>
+
+<div class="paper-card">
+  <div class="paper-title">Safety and accuracy follow different scaling laws in clinical large language models</div>
+  <div class="paper-meta">arXiv 2605.04039 · 2026-05</div>
+  <div class="paper-summary">Clinical LLMs are often scaled by increasing model size, context length, retrieval capabilities. This paper reveals that safety and accuracy follow fundamentally different scaling laws in clinical settings.</div>
+  <div class="paper-tags">
+    <span class="tag tag-llm">LLM</span>
+    <span class="tag tag-other">Clinical</span>
+  </div>
+  <div class="paper-links">
+    <a href="http://arxiv.org/abs/2605.04039v1">arXiv</a>
+    <a href="http://arxiv.org/pdf/2605.04039v1">PDF</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title">From Context to Skills: Can Language Models Learn from Context Skillfully?</div>
+  <div class="paper-meta">arXiv 2604.27660 · HuggingFace Community</div>
+  <div class="paper-summary">Investigates whether language models can skillfully learn from in-context examples, examining the gap between memorization and generalization.</div>
+  <div class="paper-tags">
+    <span class="tag tag-llm">LLM</span>
+    <span class="tag tag-other">In-Context Learning</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2604.27660">arXiv</a>
+    <a href="https://arxiv.org/pdf/2604.27660">PDF</a>
+    <a href="https://github.com/S1s-Z/Ctx2Skill">Code (32⭐)</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title">Repetition over Diversity: High-Signal Data Filtering for Sample-Efficient German Language Modeling</div>
+  <div class="paper-meta">arXiv 2604.28075 · Boldt</div>
+  <div class="paper-summary">Explores high-signal data filtering strategies that favor repetition over diversity for sample-efficient language modeling in German.</div>
+  <div class="paper-tags">
+    <span class="tag tag-llm">LLM</span>
+    <span class="tag tag-other">Data Filtering</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2604.28075">arXiv</a>
+    <a href="https://arxiv.org/pdf/2604.28075">PDF</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title">Hallucinations Undermine Trust; Metacognition is a Way Forward</div>
+  <div class="paper-meta">arXiv 2605.01428 · Google</div>
+  <div class="paper-summary">Addresses the trust issue caused by hallucinations in LLMs and proposes metacognition as a promising direction to mitigate the problem.</div>
+  <div class="paper-tags">
+    <span class="tag tag-llm">LLM</span>
+    <span class="tag tag-other">Hallucination</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.01428">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.01428">PDF</a>
+  </div>
+</div>
+
+</section>
+
+<section class="section">
+<h2 class="section-title">📰 Informations · 行业动态</h2>
+
+<div class="info-card">
+  <div class="paper-title"><span class="hot-badge">🔥</span> GPT-5.5 Instant: smarter, clearer, and more personalized</div>
+  <div class="paper-summary">OpenAI 正式发布 GPT-5.5 Instant，定位为更智能、更清晰、更个性化的模型版本。</div>
+  <div class="paper-links">
+    <a href="https://openai.com/index/gpt-5-5-instant/">OpenAI Blog</a>
+  </div>
+</div>
+
+<div class="info-card">
+  <div class="paper-title"><span class="hot-badge">🔥</span> GPT-5.5 Instant System Card</div>
+  <div class="paper-summary">OpenAI 发布 GPT-5.5 Instant 的系统卡，详细说明模型能力、限制和安全评估。</div>
+  <div class="paper-links">
+    <a href="https://openai.com/index/gpt-5-5-instant-system-card/">OpenAI Blog</a>
+  </div>
+</div>
+
+<div class="info-card">
+  <div class="paper-title">Supercomputer networking to accelerate large scale AI training</div>
+  <div class="paper-summary">OpenAI 分享超算网络技术加速大规模 AI 训练的工程经验。</div>
+  <div class="paper-links">
+    <a href="https://openai.com/index/mrc-supercomputer-networking/">OpenAI Blog</a>
+  </div>
+</div>
+
+<div class="info-card">
+  <div class="paper-title">New ways to buy ChatGPT ads</div>
+  <div class="paper-summary">OpenAI 推出新的 ChatGPT 广告购买方式。</div>
+  <div class="paper-links">
+    <a href="https://openai.com/index/new-ways-to-buy-chatgpt-ads/">OpenAI Blog</a>
+  </div>
+</div>
+
+</section>
+
+<div class="stats">
+  <h3>📊 今日统计</h3>
+  <p>arXiv 论文 8 篇 · HF 热门 7 篇 · 机构博客 4 条 · 共 19 条动态</p>
+</div>
+
+</div>
+</body>
+</html>
