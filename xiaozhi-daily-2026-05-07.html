@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>小小志科研情报 - 2026年5月7日</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans SC', sans-serif;
+  background: #0a0e1a;
+  color: #e0e6f0;
+  line-height: 1.7;
+  min-height: 100vh;
+}
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+header {
+  text-align: center;
+  margin-bottom: 48px;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, rgba(59,130,246,0.08) 0%, rgba(139,92,246,0.08) 100%);
+  border-radius: 20px;
+  border: 1px solid rgba(99,102,241,0.15);
+}
+header h1 {
+  font-size: 2rem;
+  background: linear-gradient(135deg, #60a5fa, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 8px;
+}
+header .date {
+  color: #94a3b8;
+  font-size: 1rem;
+}
+header .subtitle {
+  color: #64748b;
+  font-size: 0.9rem;
+  margin-top: 6px;
+}
+.section {
+  margin-bottom: 40px;
+}
+.section-title {
+  font-size: 1.4rem;
+  color: #f1f5f9;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(99,102,241,0.2);
+}
+.paper-card {
+  background: rgba(30,41,59,0.6);
+  border: 1px solid rgba(99,102,241,0.12);
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 16px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.paper-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(99,102,241,0.1);
+  border-color: rgba(99,102,241,0.3);
+}
+.paper-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #f8fafc;
+  margin-bottom: 8px;
+}
+.paper-meta {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-bottom: 10px;
+}
+.paper-summary {
+  font-size: 0.95rem;
+  color: #cbd5e1;
+  margin-bottom: 14px;
+  line-height: 1.8;
+}
+.paper-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.tag {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+.tag-vla { background: rgba(59,130,246,0.15); color: #60a5fa; }
+.tag-robot { background: rgba(16,185,129,0.15); color: #34d399; }
+.tag-rl { background: rgba(251,146,60,0.15); color: #fb923c; }
+.tag-llm { background: rgba(168,85,247,0.15); color: #c084fc; }
+.tag-vlm { background: rgba(236,72,153,0.15); color: #f472b6; }
+.tag-world-model { background: rgba(34,211,238,0.15); color: #22d3ee; }
+.tag-embodied { background: rgba(74,222,128,0.15); color: #4ade80; }
+.tag-agent { background: rgba(251,191,36,0.15); color: #fbbf24; }
+.tag-multimodal { background: rgba(236,72,153,0.15); color: #f472b6; }
+.tag-diffusion { background: rgba(56,189,248,0.15); color: #38bdf8; }
+.tag-video { background: rgba(34,211,238,0.15); color: #22d3ee; }
+.tag-search { background: rgba(163,230,53,0.15); color: #a3e635; }
+.tag-benchmark { background: rgba(239,68,68,0.15); color: #f87171; }
+.paper-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.paper-links a {
+  display: inline-block;
+  padding: 5px 14px;
+  background: rgba(99,102,241,0.12);
+  color: #818cf8;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+.paper-links a:hover {
+  background: rgba(99,102,241,0.25);
+}
+.hot-badge {
+  margin-right: 6px;
+}
+.info-card {
+  background: rgba(30,41,59,0.4);
+  border: 1px solid rgba(251,191,36,0.15);
+  border-radius: 14px;
+  padding: 20px;
+  margin-bottom: 14px;
+}
+.info-card .paper-title {
+  color: #fbbf24;
+}
+.highlight-banner {
+  background: linear-gradient(135deg, rgba(251,146,60,0.1) 0%, rgba(236,72,153,0.1) 100%);
+  border: 1px solid rgba(251,146,60,0.2);
+  border-radius: 14px;
+  padding: 20px 24px;
+  margin-bottom: 36px;
+}
+.hl-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fb923c;
+  margin-bottom: 8px;
+}
+.hl-text {
+  font-size: 0.95rem;
+  color: #e2e8f0;
+  line-height: 1.7;
+}
+.stats {
+  text-align: center;
+  padding: 30px;
+  margin-top: 40px;
+  background: rgba(30,41,59,0.4);
+  border-radius: 14px;
+  border: 1px solid rgba(99,102,241,0.1);
+}
+.stats h3 {
+  color: #94a3b8;
+  font-size: 1rem;
+  margin-bottom: 12px;
+}
+.stats p {
+  color: #64748b;
+  font-size: 0.9rem;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+  <h1>🔬 小小志科研情报</h1>
+  <div class="date">2026年5月7日 · 星期四</div>
+  <div class="subtitle">Boss Team · Daily Research Intelligence</div>
+</header>
+
+<div class="highlight-banner">
+  <div class="hl-title">🔥 今日看点</div>
+  <div class="hl-text">ARIS 提出对抗性多 Agent 协作实现自主科研（8215⭐）；PhysForge 攻克物理驱动 3D 资产自动生成瓶颈（港大 MMLab）；PRISM 探索绕过 SFT 直接进行多模态 RL 预对齐的新范式；LoViF 2026 首届 4D 世界模型质量评估挑战赛开题；ByteDance Seed 提出预测式潜变量视频生成框架。</div>
+</div>
+
+<section class="section">
+<h2 class="section-title">🦾 Robotics · 机器人与具身智能</h2>
+
+<div class="paper-card">
+  <div class="paper-title"><span class="hot-badge">🔥</span> D-OPSD: On-Policy Self-Distillation for Continuously Tuning Step-Distilled Diffusion Models</div>
+  <div class="paper-meta">arXiv 2026 · 扩散模型持续调优</div>
+  <div class="paper-summary">高性能图像生成模型正从教师模型驱动转向在线自蒸馏范式。D-OPSD 提出一种 on-policy 自蒸馏方法，能够在不依赖外部教师模型的情况下持续提升 step-distilled 扩散模型的生成质量，为机器人视觉生成管线提供更高效的模型微调路径。</div>
+  <div class="paper-tags">
+    <span class="tag tag-robot">Robotics</span>
+    <span class="tag tag-diffusion">Diffusion</span>
+  </div>
+  <div class="paper-links">
+    <a href="http://arxiv.org/abs/2605.05204v1">arXiv</a>
+    <a href="http://arxiv.org/pdf/2605.05204v1">PDF</a>
+    <a href="https://vvvvvjdy.github.io/d-opsd/">Project</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title"><span class="hot-badge">🔥</span> PhysForge: Generating Physics-Grounded 3D Assets for Interactive Virtual World</div>
+  <div class="paper-meta">arXiv 2026 · HKU MMLab</div>
+  <div class="paper-summary">面向交互式虚拟世界的物理驱动 3D 资产生成是当前关键瓶颈。PhysForge 攻克了这一难题，能够自动合成具备真实物理属性的 3D 物体，为机器人仿真训练和具身交互环境构建提供高质量资产。</div>
+  <div class="paper-tags">
+    <span class="tag tag-robot">Robotics</span>
+    <span class="tag tag-embodied">Simulation</span>
+  </div>
+  <div class="paper-links">
+    <a href="http://arxiv.org/abs/2605.05163v1">arXiv</a>
+    <a href="http://arxiv.org/pdf/2605.05163v1">PDF</a>
+    <a href="https://hku-mmlab.github.io/PhysForge/">Project</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title"><span class="hot-badge">🔥</span> Beyond SFT-to-RL: Pre-alignment via Black-Box On-Policy Distillation for Multimodal RL (PRISM)</div>
+  <div class="paper-meta">arXiv 2026 · HKUSTGZ</div>
+  <div class="paper-summary">标准的大模型后训练流程是 SFT→RL，但 PRISM 提出了一种全新范式：通过黑盒在线策略蒸馏实现多模态 RL 的预对齐，绕过传统 SFT 步骤直接为强化学习奠定基础。这为 VLA/具身智能的训练流程优化提供了新思路。</div>
+  <div class="paper-tags">
+    <span class="tag tag-robot">Robotics</span>
+    <span class="tag tag-rl">RL</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2604.28123">arXiv</a>
+    <a href="https://arxiv.org/pdf/2604.28123">PDF</a>
+    <a href="https://xiao4579.github.io/PRISM/">Project</a>
+    <a href="https://github.com/XIAO4579/PRISM">Code (53⭐)</a>
+  </div>
+</div>
+
+</section>
+
+<section class="section">
+<h2 class="section-title">🧩 Agent · 智能体</h2>
+
+<div class="paper-card">
+  <div class="paper-title"><span class="hot-badge">🔥</span> ARIS: Autonomous Research via Adversarial Multi-Agent Collaboration</div>
+  <div class="paper-meta">HuggingFace Hot · 上海交通大学 · 8215⭐</div>
+  <div class="paper-summary">ARIS 提出通过对抗性多 Agent 协作实现自主科研——多个 AI Agent 以对抗方式相互检验和改进研究方案，自动完成从文献调研到实验设计的全流程。项目开源即获 8000+ 星标，展示了 Agent 驱动科研的巨大潜力。</div>
+  <div class="paper-tags">
+    <span class="tag tag-agent">Agent</span>
+    <span class="tag tag-llm">Multi-Agent</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.03042">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.03042">PDF</a>
+    <a href="https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep">Code (8215⭐)</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title">LongSeeker: Elastic Context Orchestration for Long-Horizon Search Agents</div>
+  <div class="paper-meta">arXiv 2026</div>
+  <div class="paper-summary">长程搜索 Agent 面临工作上下文快速膨胀的挑战。LongSeeker 提出弹性上下文编排机制，动态管理和压缩搜索过程中累积的信息，使 Agent 能在保持关键上下文的同时处理更长的搜索序列。</div>
+  <div class="paper-tags">
+    <span class="tag tag-agent">Agent</span>
+    <span class="tag tag-search">Search</span>
+  </div>
+  <div class="paper-links">
+    <a href="http://arxiv.org/abs/2605.05191v1">arXiv</a>
+    <a href="http://arxiv.org/pdf/2605.05191v1">PDF</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title">OpenSearch-VL: An Open Recipe for Frontier Multimodal Search Agents</div>
+  <div class="paper-meta">arXiv 2026</div>
+  <div class="paper-summary">深度搜索已成为前沿多模态 Agent 的关键能力。OpenSearch-VL 提供了一套开放的多模态搜索 Agent 构建方案，使得任何团队都能复现并扩展前沿的视觉-语言搜索代理，推进开放研究。</div>
+  <div class="paper-tags">
+    <span class="tag tag-agent">Agent</span>
+    <span class="tag tag-multimodal">Multimodal</span>
+  </div>
+  <div class="paper-links">
+    <a href="http://arxiv.org/abs/2605.05185v1">arXiv</a>
+    <a href="http://arxiv.org/pdf/2605.05185v1">PDF</a>
+    <a href="https://github.com/shawn0728/OpenSearch-VL">Code</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title">Design Conductor 2.0: An agent builds a TurboQuant inference accelerator in 80 hours</div>
+  <div class="paper-meta">arXiv 2026</div>
+  <div class="paper-summary">LLM Agent 在硬件设计领域的能力快速演进。Design Conductor 2.0 展示了 Agent 自主在 80 小时内构建 TurboQuant 推理加速器的全过程，标志着 AI 驱动芯片设计自动化进入新阶段。</div>
+  <div class="paper-tags">
+    <span class="tag tag-agent">Agent</span>
+    <span class="tag tag-llm">Hardware Design</span>
+  </div>
+  <div class="paper-links">
+    <a href="http://arxiv.org/abs/2605.05170v1">arXiv</a>
+    <a href="http://arxiv.org/pdf/2605.05170v1">PDF</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title">HeavySkill: Heavy Thinking as the Inner Skill in Agentic Harness</div>
+  <div class="paper-meta">HuggingFace Hot · LongCat · 32⭐</div>
+  <div class="paper-summary">将深度思考（Heavy Thinking）作为 Agent 工具链中的内部技能。HeavySkill 证明让 Agent 在执行过程中进行长链深度推理能显著提升复杂任务的完成质量，为 Agent 架构设计提供了新的思路。</div>
+  <div class="paper-tags">
+    <span class="tag tag-agent">Agent</span>
+    <span class="tag tag-llm">Reasoning</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.02396">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.02396">PDF</a>
+    <a href="https://github.com/wjn1996/HeavySkill">Code (32⭐)</a>
+  </div>
+</div>
+
+</section>
+
+<section class="section">
+<h2 class="section-title">🌍 World Model · 世界模型</h2>
+
+<div class="paper-card">
+  <div class="paper-title"><span class="hot-badge">🔥</span> LoViF 2026: The First Challenge on Holistic Quality Assessment for 4D World Model (PhyScore)</div>
+  <div class="paper-meta">arXiv 2026 · LoViF Challenge</div>
+  <div class="paper-summary">LoViF 2026 PhyScore 挑战赛是首届面向 4D 世界模型的整体质量评估竞赛。该挑战赛要求参赛者评估世界模型在物理一致性、时空连贯性等维度的生成质量，为世界模型的标准化评估体系奠定基础。</div>
+  <div class="paper-tags">
+    <span class="tag tag-world-model">World Model</span>
+    <span class="tag tag-benchmark">Benchmark</span>
+  </div>
+  <div class="paper-links">
+    <a href="http://arxiv.org/abs/2605.05187v1">arXiv</a>
+    <a href="http://arxiv.org/pdf/2605.05187v1">PDF</a>
+  </div>
+</div>
+
+</section>
+
+<section class="section">
+<h2 class="section-title">🧠 LLM · 大语言模型</h2>
+
+<div class="paper-card">
+  <div class="paper-title"><span class="hot-badge">🔥</span> Video Generation with Predictive Latents (PVVAE)</div>
+  <div class="paper-meta">HuggingFace Hot · ByteDance Seed</div>
+  <div class="paper-summary">Video VAE 使得潜变量视频生成成为可能。ByteDance Seed 提出预测式潜变量视频生成框架 PVVAE，通过预测未来帧的潜表征来驱动高质量视频合成，在效率和生成质量之间实现更好的平衡。</div>
+  <div class="paper-tags">
+    <span class="tag tag-llm">LLM</span>
+    <span class="tag tag-video">Video Generation</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.02134">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.02134">PDF</a>
+    <a href="https://zhao-yian.github.io/PVVAE/">Project</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title">MRI-Eval: A Tiered Benchmark for Evaluating LLM Performance on MRI Physics and GE Scanner Operations Knowledge</div>
+  <div class="paper-meta">arXiv 2026</div>
+  <div class="paper-summary">现有 MRI LLM 基准测试主要依赖教科书选择题。MRI-Eval 提出分层基准，从基础物理到 GE 扫描仪实际操作知识进行多层次评估，更全面地衡量 LLM 在专业医学影像领域的能力。</div>
+  <div class="paper-tags">
+    <span class="tag tag-llm">LLM</span>
+    <span class="tag tag-benchmark">Medical Benchmark</span>
+  </div>
+  <div class="paper-links">
+    <a href="http://arxiv.org/abs/2605.05175v1">arXiv</a>
+    <a href="http://arxiv.org/pdf/2605.05175v1">PDF</a>
+  </div>
+</div>
+
+</section>
+
+<section class="section">
+<h2 class="section-title">🎨 Multimodal · 多模态</h2>
+
+<div class="paper-card">
+  <div class="paper-title">X2SAM: Any Segmentation in Images and Videos</div>
+  <div class="paper-meta">HuggingFace Hot · 中山大学 · 22⭐</div>
+  <div class="paper-summary">X2SAM 将 SAM（Segment Anything）扩展为统一的图像与视频分割框架，支持任意模态输入（文本、点、框等）驱动图像和视频中的精确分割，实现真正的"任意分割"。</div>
+  <div class="paper-tags">
+    <span class="tag tag-multimodal">Multimodal</span>
+    <span class="tag tag-vlm">Segmentation</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.00891">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.00891">PDF</a>
+    <a href="https://wanghao9610.github.io/X2SAM">Project</a>
+    <a href="https://github.com/wanghao9610/X2SAM">Code (22⭐)</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title">StableI2I: Spotting Unintended Changes in Image-to-Image Transition</div>
+  <div class="paper-meta">HuggingFace Hot</div>
+  <div class="paper-summary">图像到图像转换中的非预期变化（如颜色漂移、结构扭曲）是实际应用中的痛点。StableI2I 提出检测和量化这些非预期变化的方法，帮助开发者评估和改进 I2I 模型的稳定性。</div>
+  <div class="paper-tags">
+    <span class="tag tag-multimodal">Multimodal</span>
+    <span class="tag tag-diffusion">Image-to-Image</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.04453">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.04453">PDF</a>
+    <a href="https://henry-lee-real.github.io/StableI2I_Page/">Project</a>
+    <a href="https://github.com/Henry-Lee-real/StableI2I">Code (3⭐)</a>
+  </div>
+</div>
+
+</section>
+
+<div class="stats">
+  <h3>📊 检索统计</h3>
+  <p>检索来源：arXiv、HuggingFace Daily Papers、HuggingFace Models | 覆盖 VLA · Robotics · World Model · LLM · Multimodal · Agent 等方向</p>
+  <p>本期发现：arXiv 8 篇 + HF 热门 6 篇 + HF 模型 1 个 = 共 15 条研究动态</p>
+  <p>时间范围：2026年5月6日 - 5月7日</p>
+</div>
+
+</div>
+</body>
+</html>
