@@ -629,6 +629,18 @@
 <script>
 // ===== DATA =====
 const PAPERS_DB = [
+    // === 2026-05-09 ===
+    {
+        date: "2026-05-09",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "Alignment: Teaching Claude Why",
+        venue: "",
+        summary: "Anthropic 发布关于 AI 对齐的最新研究成果。该研究探索了如何教导 AI 系统理解行为准则背后的\"为什么\"——不仅让模型知道应该做什么，更让其理解为什么应该这样做。这一方法论对提升 AI 系统的安全性和可控性具有重要意义，代表了对齐研究从规则遵循到深层理解的演进方向。",
+        tags: [["Alignment","green"],["Safety","green"]],
+        links: [["来源","https://www.anthropic.com/research/teaching-claude-why"]],
+        highlight: true
+    },
     // === 2026-05-07 ===
     {
         date: "2026-05-07",
@@ -9898,6 +9910,13 @@ const PAPERS_DB = [
 ];
 
 const DAILY_OVERVIEW = {
+    "2026-05-09": {
+        bannerTitle: "🔥 今日看点",
+        bannerSubtitle: "Anthropic 发布关于 AI 对齐（Alignment）的新研究——探索如何教导 AI 理解\"为什么\"，深入研究 AI 对齐的核心方法论与训练策略。今日 arXiv 源持续不可用，HF 热门论文均已在近期日报中收录。",
+        picks: ["Alignment: Teaching Claude Why"],
+        totalPapers: 0,
+        totalNews: 1
+    },
     "2026-05-07": {
         bannerTitle: "🔥 今日看点",
         bannerSubtitle: "ARIS 提出对抗性多 Agent 协作实现自主科研（8215⭐）；PhysForge 攻克物理驱动 3D 资产自动生成瓶颈（港大 MMLab）；PRISM 探索绕过 SFT 直接进行多模态 RL 预对齐的新范式；LoViF 2026 首届 4D 世界模型质量评估挑战赛开题；ByteDance Seed 提出预测式潜变量视频生成框架。",
