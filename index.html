@@ -629,6 +629,89 @@
 <script>
 // ===== DATA =====
 const PAPERS_DB = [
+    // === 2026-05-10 ===
+    {
+        date: "2026-05-10",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "Multi-Robot Coordination in V2X Environments",
+        venue: "arXiv 2026 · Multi-Robot Systems",
+        summary: "提出一种车联网（V2X）通信框架，实现复杂城市环境中社交机器人的去中心化合作。该框架利用 V2X 技术使多机器人系统能够在没有中心控制的情况下进行有效协调，解决了真实城市场景中多机器人协作的通信和决策挑战。",
+        tags: [["Robotics","green"],["Multi-Agent","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.06662"],["PDF","https://arxiv.org/pdf/2605.06662"]],
+        highlight: true
+    },
+    {
+        date: "2026-05-10",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "Beyond Negative Rollouts: Positive-Only Policy Optimization with Implicit Negative Gradients",
+        venue: "arXiv 2026 · Reinforcement Learning",
+        summary: "针对带可验证奖励的强化学习（RLVR）中确定性验证导致的探索困难问题，提出仅使用正样本 rollout 的策略优化方法。通过隐式负梯度机制，无需显式负样本即可实现有效的策略更新，为 RL 训练提供了更稳定高效的新范式。",
+        tags: [["Reinforcement Learning","green"],["Policy Optimization","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.06650"],["PDF","https://arxiv.org/pdf/2605.06650"]],
+        highlight: true
+    },
+    {
+        date: "2026-05-10",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "BAMI: Training-Free Bias Mitigation in GUI Grounding",
+        venue: "arXiv 2026 · Neur-IO",
+        summary: "GUI grounding 是实现 GUI Agent 执行点击、拖拽等任务的关键能力。本文提出 BAMI，一种无需训练的偏差缓解方法，解决复杂 GUI 场景中 grounding 模型的系统性偏差问题，提升智能体在真实界面环境中的交互准确性。",
+        tags: [["Agent","green"],["GUI Grounding","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.06664"],["PDF","https://arxiv.org/pdf/2605.06664"],["Code","https://github.com/Neur-IO/BAMI"]]
+    },
+    {
+        date: "2026-05-10",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "AI Co-Mathematician: Accelerating Mathematicians with Agentic AI",
+        venue: "arXiv 2026 · AI Research",
+        summary: "介绍 AI 联合数学家（AI Co-Mathematician）——一个面向数学家的交互式工作台，通过利用 AI Agent 来开展开放性研究。系统支持数学家与多个 AI 智能体协作，加速数学发现过程，展示了 Agentic AI 在科研加速中的潜力。",
+        tags: [["Agent","green"],["Mathematical Reasoning","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.06651"],["PDF","https://arxiv.org/pdf/2605.06651"]]
+    },
+    {
+        date: "2026-05-10",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Superintelligent Retrieval Agent: The Next Frontier of Information Retrieval",
+        venue: "arXiv 2026 · Information Retrieval",
+        summary: "检索增强型 Agent 正成为大型组织知识库的主要接口，但多数仍将检索视为黑盒。本文提出超级智能检索 Agent 概念，定义信息检索的下一代前沿——让 Agent 深度理解和主动操控检索过程，实现更精准的知识获取。",
+        tags: [["Agent","green"],["Retrieval","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.06647"],["PDF","https://arxiv.org/pdf/2605.06647"]]
+    },
+    {
+        date: "2026-05-10",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Verifier-Backed Hard Problem Generation for Mathematical Reasoning",
+        venue: "arXiv 2026 · Mathematical AI",
+        summary: "大语言模型在解决数学问题方面展现出强大能力，但在生成有效且具有挑战性的新问题方面仍有不足。本文提出基于验证器的难题生成方法，利用形式化验证确保生成问题的有效性和难度，为数学推理能力的持续提升提供高质量训练数据。",
+        tags: [["LLM","green"],["Math Reasoning","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.06660"],["PDF","https://arxiv.org/pdf/2605.06660"]]
+    },
+    {
+        date: "2026-05-10",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Optimizer-Model Consistency: Full Finetuning with the Same Optimizer as Pretraining Forgets Less",
+        venue: "arXiv 2026 · LLM Training",
+        summary: "研究优化器在大语言模型预训练和微调阶段中的一致性问题。发现在微调时使用与预训练相同的优化器能显著减少灾难性遗忘，为 LLM 全参数微调提供了简单有效的实践指导。",
+        tags: [["LLM","green"],["Fine-tuning","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.06654"],["PDF","https://arxiv.org/pdf/2605.06654"]]
+    },
+    {
+        date: "2026-05-10",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "When No Benchmark Exists: Validating Comparative LLM Safety Scoring Without Ground-Truth Labels",
+        venue: "arXiv 2026 · AI Safety",
+        summary: "在特定语言、行业或监管环境中，安全基准测试往往不存在。本文提出在缺乏真实标签的情况下验证比较式 LLM 安全评分的方法，使部署团队能够在没有现成基准时仍然可靠地比较候选模型的安全性。",
+        tags: [["LLM","green"],["Safety","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.06652"],["PDF","https://arxiv.org/pdf/2605.06652"],["Code","https://github.com/kelkalot/simpleaudit"]]
+    },
     // === 2026-05-09 ===
     {
         date: "2026-05-09",
@@ -9910,6 +9993,13 @@ const PAPERS_DB = [
 ];
 
 const DAILY_OVERVIEW = {
+    "2026-05-10": {
+        bannerTitle: "🔥 今日看点",
+        bannerSubtitle: "多机器人 V2X 分布式协作框架：实现复杂城市环境中社交机器人的去中心化合作；仅正样本策略优化（隐式负梯度）：为带可验证奖励的强化学习提供全新训练范式；超级智能检索 Agent：重新定义信息检索的下一代前沿。",
+        picks: ["Multi-Robot Coordination in V2X Environments","Beyond Negative Rollouts: Positive-Only Policy Optimization with Implicit Negative Gradients"],
+        totalPapers: 8,
+        totalNews: 0
+    },
     "2026-05-09": {
         bannerTitle: "🔥 今日看点",
         bannerSubtitle: "Anthropic 发布关于 AI 对齐（Alignment）的新研究——探索如何教导 AI 理解\"为什么\"，深入研究 AI 对齐的核心方法论与训练策略。今日 arXiv 源持续不可用，HF 热门论文均已在近期日报中收录。",

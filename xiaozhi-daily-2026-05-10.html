@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>小小志科研情报 - 2026年5月10日</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans SC', sans-serif;
+  background: #0a0e1a;
+  color: #e0e6f0;
+  line-height: 1.7;
+  min-height: 100vh;
+}
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+header {
+  text-align: center;
+  margin-bottom: 48px;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, rgba(59,130,246,0.08) 0%, rgba(139,92,246,0.08) 100%);
+  border-radius: 20px;
+  border: 1px solid rgba(99,102,241,0.15);
+}
+header h1 {
+  font-size: 2rem;
+  background: linear-gradient(135deg, #60a5fa, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 8px;
+}
+header .date {
+  color: #94a3b8;
+  font-size: 1rem;
+}
+header .subtitle {
+  color: #64748b;
+  font-size: 0.9rem;
+  margin-top: 6px;
+}
+.section {
+  margin-bottom: 40px;
+}
+.section-title {
+  font-size: 1.4rem;
+  color: #f1f5f9;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(99,102,241,0.2);
+}
+.paper-card {
+  background: rgba(30,41,59,0.6);
+  border: 1px solid rgba(99,102,241,0.12);
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 16px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.paper-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(99,102,241,0.1);
+  border-color: rgba(99,102,241,0.3);
+}
+.paper-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #f8fafc;
+  margin-bottom: 8px;
+}
+.paper-meta {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-bottom: 10px;
+}
+.paper-summary {
+  font-size: 0.95rem;
+  color: #cbd5e1;
+  margin-bottom: 14px;
+  line-height: 1.8;
+}
+.paper-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.tag {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+.tag-vla { background: rgba(59,130,246,0.15); color: #60a5fa; }
+.tag-robot { background: rgba(16,185,129,0.15); color: #34d399; }
+.tag-rl { background: rgba(251,146,60,0.15); color: #fb923c; }
+.tag-llm { background: rgba(168,85,247,0.15); color: #c084fc; }
+.tag-vlm { background: rgba(236,72,153,0.15); color: #f472b6; }
+.tag-world-model { background: rgba(34,211,238,0.15); color: #22d3ee; }
+.tag-embodied { background: rgba(74,222,128,0.15); color: #4ade80; }
+.tag-agent { background: rgba(251,191,36,0.15); color: #fbbf24; }
+.tag-multimodal { background: rgba(236,72,153,0.15); color: #f472b6; }
+.tag-video { background: rgba(34,211,238,0.15); color: #22d3ee; }
+.tag-security { background: rgba(239,68,68,0.15); color: #f87171; }
+.tag-voice { background: rgba(56,189,248,0.15); color: #38bdf8; }
+.tag-product { background: rgba(163,230,53,0.15); color: #a3e635; }
+.tag-interpretability { background: rgba(192,132,252,0.15); color: #c084fc; }
+.paper-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.paper-links a {
+  display: inline-block;
+  padding: 5px 14px;
+  background: rgba(99,102,241,0.12);
+  color: #818cf8;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+.paper-links a:hover {
+  background: rgba(99,102,241,0.25);
+}
+.hot-badge {
+  margin-right: 6px;
+}
+.info-card {
+  background: rgba(30,41,59,0.4);
+  border: 1px solid rgba(251,191,36,0.15);
+  border-radius: 14px;
+  padding: 20px;
+  margin-bottom: 14px;
+}
+.info-card .paper-title {
+  color: #fbbf24;
+}
+.highlight-banner {
+  background: linear-gradient(135deg, rgba(251,146,60,0.1) 0%, rgba(236,72,153,0.1) 100%);
+  border: 1px solid rgba(251,146,60,0.2);
+  border-radius: 14px;
+  padding: 20px 24px;
+  margin-bottom: 36px;
+}
+.hl-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fb923c;
+  margin-bottom: 8px;
+}
+.hl-text {
+  font-size: 0.95rem;
+  color: #e2e8f0;
+  line-height: 1.7;
+}
+.stats {
+  text-align: center;
+  padding: 30px;
+  margin-top: 40px;
+  background: rgba(30,41,59,0.4);
+  border-radius: 14px;
+  border: 1px solid rgba(99,102,241,0.1);
+}
+.stats h3 {
+  color: #94a3b8;
+  font-size: 1rem;
+  margin-bottom: 12px;
+}
+.stats p {
+  color: #64748b;
+  font-size: 0.9rem;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+  <h1>🔬 小小志科研情报</h1>
+  <div class="date">2026年5月10日 · 星期日</div>
+  <div class="subtitle">Boss Team · Daily Research Intelligence</div>
+</header>
+
+<div class="highlight-banner">
+  <div class="hl-title">🔥 今日看点</div>
+  <div class="hl-text">多机器人 V2X 分布式协作框架：实现复杂城市环境中社交机器人的去中心化合作；仅正样本策略优化（隐式负梯度）：为带可验证奖励的强化学习提供全新训练范式；超级智能检索 Agent：重新定义信息检索的下一代前沿。</div>
+</div>
+
+<section class="section">
+<h2 class="section-title">🦾 Robotics · 机器人学</h2>
+
+<div class="paper-card">
+  <div class="paper-title"><span class="hot-badge">🔥</span> Multi-Robot Coordination in V2X Environments</div>
+  <div class="paper-meta">arXiv 2026 · Multi-Robot Systems</div>
+  <div class="paper-summary">提出一种车联网（V2X）通信框架，实现复杂城市环境中社交机器人的去中心化合作。该框架利用 V2X 技术使多机器人系统能够在没有中心控制的情况下进行有效协调，解决了真实城市场景中多机器人协作的通信和决策挑战。</div>
+  <div class="paper-tags">
+    <span class="tag tag-robot">Robotics</span>
+    <span class="tag tag-agent">Multi-Agent</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.06662">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.06662">PDF</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title"><span class="hot-badge">🔥</span> Beyond Negative Rollouts: Positive-Only Policy Optimization with Implicit Negative Gradients</div>
+  <div class="paper-meta">arXiv 2026 · Reinforcement Learning</div>
+  <div class="paper-summary">针对带可验证奖励的强化学习（RLVR）中确定性验证导致的探索困难问题，提出仅使用正样本 rollout 的策略优化方法。通过隐式负梯度机制，无需显式负样本即可实现有效的策略更新，为 RL 训练提供了更稳定高效的新范式。</div>
+  <div class="paper-tags">
+    <span class="tag tag-rl">Reinforcement Learning</span>
+    <span class="tag tag-llm">Policy Optimization</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.06650">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.06650">PDF</a>
+  </div>
+</div>
+
+</section>
+
+<section class="section">
+<h2 class="section-title">🧩 Agent · 智能体</h2>
+
+<div class="paper-card">
+  <div class="paper-title">BAMI: Training-Free Bias Mitigation in GUI Grounding</div>
+  <div class="paper-meta">arXiv 2026 · Neur-IO</div>
+  <div class="paper-summary">GUI grounding 是实现 GUI Agent 执行点击、拖拽等任务的关键能力。本文提出 BAMI，一种无需训练的偏差缓解方法，解决复杂 GUI 场景中 grounding 模型的系统性偏差问题，提升智能体在真实界面环境中的交互准确性。</div>
+  <div class="paper-tags">
+    <span class="tag tag-agent">Agent</span>
+    <span class="tag tag-vlm">GUI Grounding</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.06664">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.06664">PDF</a>
+    <a href="https://github.com/Neur-IO/BAMI">Code</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title">AI Co-Mathematician: Accelerating Mathematicians with Agentic AI</div>
+  <div class="paper-meta">arXiv 2026 · AI Research</div>
+  <div class="paper-summary">介绍 AI 联合数学家（AI Co-Mathematician）——一个面向数学家的交互式工作台，通过利用 AI Agent 来开展开放性研究。系统支持数学家与多个 AI 智能体协作，加速数学发现过程，展示了 Agentic AI 在科研加速中的潜力。</div>
+  <div class="paper-tags">
+    <span class="tag tag-agent">Agent</span>
+    <span class="tag tag-llm">Mathematical Reasoning</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.06651">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.06651">PDF</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title">Superintelligent Retrieval Agent: The Next Frontier of Information Retrieval</div>
+  <div class="paper-meta">arXiv 2026 · Information Retrieval</div>
+  <div class="paper-summary">检索增强型 Agent 正成为大型组织知识库的主要接口，但多数仍将检索视为黑盒。本文提出超级智能检索 Agent 概念，定义信息检索的下一代前沿——让 Agent 深度理解和主动操控检索过程，实现更精准的知识获取。</div>
+  <div class="paper-tags">
+    <span class="tag tag-agent">Agent</span>
+    <span class="tag tag-llm">Retrieval</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.06647">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.06647">PDF</a>
+  </div>
+</div>
+
+</section>
+
+<section class="section">
+<h2 class="section-title">🧠 LLM · 大语言模型</h2>
+
+<div class="paper-card">
+  <div class="paper-title">Verifier-Backed Hard Problem Generation for Mathematical Reasoning</div>
+  <div class="paper-meta">arXiv 2026 · Mathematical AI</div>
+  <div class="paper-summary">大语言模型在解决数学问题方面展现出强大能力，但在生成有效且具有挑战性的新问题方面仍有不足。本文提出基于验证器的难题生成方法，利用形式化验证确保生成问题的有效性和难度，为数学推理能力的持续提升提供高质量训练数据。</div>
+  <div class="paper-tags">
+    <span class="tag tag-llm">LLM</span>
+    <span class="tag tag-llm">Math Reasoning</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.06660">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.06660">PDF</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title">Optimizer-Model Consistency: Full Finetuning with the Same Optimizer as Pretraining Forgets Less</div>
+  <div class="paper-meta">arXiv 2026 · LLM Training</div>
+  <div class="paper-summary">研究优化器在大语言模型预训练和微调阶段中的一致性问题。发现在微调时使用与预训练相同的优化器能显著减少灾难性遗忘，为 LLM 全参数微调提供了简单有效的实践指导。</div>
+  <div class="paper-tags">
+    <span class="tag tag-llm">LLM</span>
+    <span class="tag tag-llm">Fine-tuning</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.06654">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.06654">PDF</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title">When No Benchmark Exists: Validating Comparative LLM Safety Scoring Without Ground-Truth Labels</div>
+  <div class="paper-meta">arXiv 2026 · AI Safety</div>
+  <div class="paper-summary">在特定语言、行业或监管环境中，安全基准测试往往不存在。本文提出在缺乏真实标签的情况下验证比较式 LLM 安全评分的方法，使部署团队能够在没有现成基准时仍然可靠地比较候选模型的安全性。</div>
+  <div class="paper-tags">
+    <span class="tag tag-llm">LLM</span>
+    <span class="tag tag-security">Safety</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.06652">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.06652">PDF</a>
+    <a href="https://github.com/kelkalot/simpleaudit">Code</a>
+  </div>
+</div>
+
+</section>
+
+<div class="stats">
+  <h3>📊 检索统计</h3>
+  <p>检索来源：arXiv（回溯补采 2026-05-07 ~ 2026-05-10） | 覆盖 VLA · Robotics · LLM · Multimodal · Agent 等方向</p>
+  <p>本期发现：8 篇 arXiv 论文 | HuggingFace API 超时不可用 | X/Twitter RSS 不可用</p>
+  <p>时间范围：2026年5月7日 - 5月10日</p>
+</div>
+
+</div>
+</body>
+</html>
