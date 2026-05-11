@@ -629,6 +629,80 @@
 <script>
 // ===== DATA =====
 const PAPERS_DB = [
+    // === 2026-05-11 ===
+    {
+        date: "2026-05-11",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "Flow-OPD: On-Policy Distillation for Flow Matching Models",
+        venue: "HuggingFace Papers 2026 · HuggingFace Community",
+        summary: "现有 Flow Matching (FM) 文生图模型在推理时需要大量步骤才能生成高质量图像。本文提出 Flow-OPD——一种在策略蒸馏方法，通过在学生模型自身的轨迹上进行蒸馏，避免了传统离策略蒸馏中分布漂移问题，显著减少推理步数的同时保持生成质量。",
+        tags: [["Robotics","green"],["Flow Matching","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.08063"],["PDF","https://arxiv.org/pdf/2605.08063"],["Project","https://costaliya.github.io/Flow-OPD/"],["Code","https://github.com/CostaliyA/Flow-OPD"]],
+        highlight: true
+    },
+    {
+        date: "2026-05-11",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "Listwise Policy Optimization: Group-based RLVR as Target-Projection on the LLM Response Simplex",
+        venue: "HuggingFace Papers 2026 · Tencent Hunyuan",
+        summary: "带可验证奖励的强化学习（RLVR）已成为提升 LLM 推理能力的重要训练范式。本文提出 Listwise Policy Optimization，将群组式 RLVR 重新形式化为 LLM 响应单纯形上的目标投影问题，建立更优雅的数学框架，实现更稳定高效的策略优化。",
+        tags: [["Reinforcement Learning","green"],["Policy Optimization","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.06139"],["PDF","https://arxiv.org/pdf/2605.06139"]],
+        highlight: true
+    },
+    {
+        date: "2026-05-11",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "HumanNet: Scaling Human-centric Video Learning to One Million Hours",
+        venue: "HuggingFace Papers 2026 · HuggingFace Community",
+        summary: "具身智能的进步越来越依赖对人类行为的理解。本文提出 HumanNet，构建了百万小时规模的人类中心视频数据集，通过大规模视频学习推动机器人对人体动作、意图和交互的深度理解，为具身智能领域提供关键数据基础设施。",
+        tags: [["Robotics","green"],["Embodied","green"],["Video Learning","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.06747"],["PDF","https://arxiv.org/pdf/2605.06747"],["Project","https://dagroup-pku.github.io/HumanNet/"],["Code","https://github.com/DAGroup-PKU/HumanNet"]],
+        highlight: true
+    },
+    {
+        date: "2026-05-11",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "LLMs Improving LLMs: Agentic Discovery for Test-Time Scaling",
+        venue: "HuggingFace Papers 2026 · Google",
+        summary: "探索利用 LLM Agent 在测试时自动发现和应用改进策略来提升 LLM 推理能力。通过 Agentic Discovery 机制，模型能在推理阶段自主搜索优化路径，实现测试时计算的有效扩展（Test-Time Scaling），为 LLM 能力的动态提升提供新思路。",
+        tags: [["Agent","green"],["Test-Time Scaling","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.08083"],["PDF","https://arxiv.org/pdf/2605.08083"],["Project","https://zhengkid.github.io/AutoTTS-web/"],["Code","https://github.com/zhengkid/AutoTTS"]]
+    },
+    {
+        date: "2026-05-11",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "HyperEyes: Dual-Grained Efficiency-Aware Reinforcement Learning for Parallel Multimodal Search Agents",
+        venue: "HuggingFace Papers 2026 · Xiaohongshu",
+        summary: "针对多模态搜索 Agent 的效率问题，提出 HyperEyes——一种双粒度效率感知强化学习方法。通过并行化搜索策略和分层效率优化，显著提升多模态搜索 Agent 在复杂信息检索任务中的响应速度和准确性。",
+        tags: [["Agent","green"],["Reinforcement Learning","green"],["Multimodal","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.07177"],["PDF","https://arxiv.org/pdf/2605.07177"],["Code","https://github.com/DeepExperience/HyperEyes"]]
+    },
+    {
+        date: "2026-05-11",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "Anisotropic Modality Align",
+        venue: "HuggingFace Papers 2026 · HuggingFace Community",
+        summary: "研究多模态模型中不同模态之间的对齐问题，提出各向异性模态对齐方法。通过分析模态间隙（Modality Gap）的理论基础，设计更精确的跨模态对齐策略，提升视觉-语言等多模态联合表征的质量和一致性。",
+        tags: [["Multimodal","green"],["VLM","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.07825"],["PDF","https://arxiv.org/pdf/2605.07825"],["Code","https://github.com/Yu-xm/Modality_Gap_Theory"]]
+    },
+    {
+        date: "2026-05-11",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "TextLDM: Language Modeling with Continuous Latent Diffusion",
+        venue: "HuggingFace Papers 2026 · Joy Future Academy",
+        summary: "将连续潜在扩散（Latent Diffusion）引入语言建模领域，提出 TextLDM。不同于传统离散 token 自回归方式，该方法在连续潜在空间中进行文本生成，探索扩散模型在自然语言处理中的新范式，为文本生成提供更灵活的建模框架。",
+        tags: [["Multimodal","green"],["Diffusion","green"],["Language Model","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.07748"],["PDF","https://arxiv.org/pdf/2605.07748"]]
+    },
     // === 2026-05-10 ===
     {
         date: "2026-05-10",
@@ -9993,6 +10067,13 @@ const PAPERS_DB = [
 ];
 
 const DAILY_OVERVIEW = {
+    "2026-05-11": {
+        bannerTitle: "🔥 今日看点",
+        bannerSubtitle: "Flow-OPD 提出 Flow Matching 模型的在策略蒸馏方法，大幅加速文生图推理；Listwise Policy Optimization 以群组 RLVR 重新定义 LLM 响应空间上的目标投影优化；HumanNet 构建百万小时人类中心视频数据集，推动具身智能发展。",
+        picks: ["Flow-OPD: On-Policy Distillation for Flow Matching Models","Listwise Policy Optimization: Group-based RLVR as Target-Projection on the LLM Response Simplex","HumanNet: Scaling Human-centric Video Learning to One Million Hours"],
+        totalPapers: 7,
+        totalNews: 0
+    },
     "2026-05-10": {
         bannerTitle: "🔥 今日看点",
         bannerSubtitle: "多机器人 V2X 分布式协作框架：实现复杂城市环境中社交机器人的去中心化合作；仅正样本策略优化（隐式负梯度）：为带可验证奖励的强化学习提供全新训练范式；超级智能检索 Agent：重新定义信息检索的下一代前沿。",

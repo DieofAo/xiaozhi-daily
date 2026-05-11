@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>小小志科研情报 - 2026年5月11日</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans SC', sans-serif;
+  background: #0a0e1a;
+  color: #e0e6f0;
+  line-height: 1.7;
+  min-height: 100vh;
+}
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+header {
+  text-align: center;
+  margin-bottom: 48px;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, rgba(59,130,246,0.08) 0%, rgba(139,92,246,0.08) 100%);
+  border-radius: 20px;
+  border: 1px solid rgba(99,102,241,0.15);
+}
+header h1 {
+  font-size: 2rem;
+  background: linear-gradient(135deg, #60a5fa, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 8px;
+}
+header .date {
+  color: #94a3b8;
+  font-size: 1rem;
+}
+header .subtitle {
+  color: #64748b;
+  font-size: 0.9rem;
+  margin-top: 6px;
+}
+.section {
+  margin-bottom: 40px;
+}
+.section-title {
+  font-size: 1.4rem;
+  color: #f1f5f9;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(99,102,241,0.2);
+}
+.paper-card {
+  background: rgba(30,41,59,0.6);
+  border: 1px solid rgba(99,102,241,0.12);
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 16px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.paper-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(99,102,241,0.1);
+  border-color: rgba(99,102,241,0.3);
+}
+.paper-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #f8fafc;
+  margin-bottom: 8px;
+}
+.paper-meta {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-bottom: 10px;
+}
+.paper-summary {
+  font-size: 0.95rem;
+  color: #cbd5e1;
+  margin-bottom: 14px;
+  line-height: 1.8;
+}
+.paper-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.tag {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+.tag-vla { background: rgba(59,130,246,0.15); color: #60a5fa; }
+.tag-robot { background: rgba(16,185,129,0.15); color: #34d399; }
+.tag-rl { background: rgba(251,146,60,0.15); color: #fb923c; }
+.tag-llm { background: rgba(168,85,247,0.15); color: #c084fc; }
+.tag-vlm { background: rgba(236,72,153,0.15); color: #f472b6; }
+.tag-world-model { background: rgba(34,211,238,0.15); color: #22d3ee; }
+.tag-embodied { background: rgba(74,222,128,0.15); color: #4ade80; }
+.tag-agent { background: rgba(251,191,36,0.15); color: #fbbf24; }
+.tag-multimodal { background: rgba(236,72,153,0.15); color: #f472b6; }
+.tag-video { background: rgba(34,211,238,0.15); color: #22d3ee; }
+.tag-security { background: rgba(239,68,68,0.15); color: #f87171; }
+.tag-voice { background: rgba(56,189,248,0.15); color: #38bdf8; }
+.tag-product { background: rgba(163,230,53,0.15); color: #a3e635; }
+.tag-diffusion { background: rgba(192,132,252,0.15); color: #c084fc; }
+.paper-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.paper-links a {
+  display: inline-block;
+  padding: 5px 14px;
+  background: rgba(99,102,241,0.12);
+  color: #818cf8;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+.paper-links a:hover {
+  background: rgba(99,102,241,0.25);
+}
+.hot-badge {
+  margin-right: 6px;
+}
+.info-card {
+  background: rgba(30,41,59,0.4);
+  border: 1px solid rgba(251,191,36,0.15);
+  border-radius: 14px;
+  padding: 20px;
+  margin-bottom: 14px;
+}
+.info-card .paper-title {
+  color: #fbbf24;
+}
+.highlight-banner {
+  background: linear-gradient(135deg, rgba(251,146,60,0.1) 0%, rgba(236,72,153,0.1) 100%);
+  border: 1px solid rgba(251,146,60,0.2);
+  border-radius: 14px;
+  padding: 20px 24px;
+  margin-bottom: 36px;
+}
+.hl-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fb923c;
+  margin-bottom: 8px;
+}
+.hl-text {
+  font-size: 0.95rem;
+  color: #e2e8f0;
+  line-height: 1.7;
+}
+.stats {
+  text-align: center;
+  padding: 30px;
+  margin-top: 40px;
+  background: rgba(30,41,59,0.4);
+  border-radius: 14px;
+  border: 1px solid rgba(99,102,241,0.1);
+}
+.stats h3 {
+  color: #94a3b8;
+  font-size: 1rem;
+  margin-bottom: 12px;
+}
+.stats p {
+  color: #64748b;
+  font-size: 0.9rem;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+  <h1>🔬 小小志科研情报</h1>
+  <div class="date">2026年5月11日 · 星期一</div>
+  <div class="subtitle">Boss Team · Daily Research Intelligence</div>
+</header>
+
+<div class="highlight-banner">
+  <div class="hl-title">🔥 今日看点</div>
+  <div class="hl-text">Flow-OPD 提出 Flow Matching 模型的在策略蒸馏方法，大幅加速文生图推理；Listwise Policy Optimization 以群组 RLVR 重新定义 LLM 响应空间上的目标投影优化；HumanNet 构建百万小时人类中心视频数据集，推动具身智能发展。</div>
+</div>
+
+<section class="section">
+<h2 class="section-title">🦾 Robotics · 机器人学</h2>
+
+<div class="paper-card">
+  <div class="paper-title"><span class="hot-badge">🔥</span> Flow-OPD: On-Policy Distillation for Flow Matching Models</div>
+  <div class="paper-meta">HuggingFace Papers 2026 · HuggingFace Community</div>
+  <div class="paper-summary">现有 Flow Matching (FM) 文生图模型在推理时需要大量步骤才能生成高质量图像。本文提出 Flow-OPD——一种在策略蒸馏方法，通过在学生模型自身的轨迹上进行蒸馏，避免了传统离策略蒸馏中分布漂移问题，显著减少推理步数的同时保持生成质量。</div>
+  <div class="paper-tags">
+    <span class="tag tag-robot">Robotics</span>
+    <span class="tag tag-diffusion">Flow Matching</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.08063">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.08063">PDF</a>
+    <a href="https://costaliya.github.io/Flow-OPD/">Project</a>
+    <a href="https://github.com/CostaliyA/Flow-OPD">Code</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title"><span class="hot-badge">🔥</span> Listwise Policy Optimization: Group-based RLVR as Target-Projection on the LLM Response Simplex</div>
+  <div class="paper-meta">HuggingFace Papers 2026 · Tencent Hunyuan</div>
+  <div class="paper-summary">带可验证奖励的强化学习（RLVR）已成为提升 LLM 推理能力的重要训练范式。本文提出 Listwise Policy Optimization，将群组式 RLVR 重新形式化为 LLM 响应单纯形上的目标投影问题，建立更优雅的数学框架，实现更稳定高效的策略优化。</div>
+  <div class="paper-tags">
+    <span class="tag tag-rl">Reinforcement Learning</span>
+    <span class="tag tag-llm">Policy Optimization</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.06139">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.06139">PDF</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title"><span class="hot-badge">🔥</span> HumanNet: Scaling Human-centric Video Learning to One Million Hours</div>
+  <div class="paper-meta">HuggingFace Papers 2026 · HuggingFace Community</div>
+  <div class="paper-summary">具身智能的进步越来越依赖对人类行为的理解。本文提出 HumanNet，构建了百万小时规模的人类中心视频数据集，通过大规模视频学习推动机器人对人体动作、意图和交互的深度理解，为具身智能领域提供关键数据基础设施。</div>
+  <div class="paper-tags">
+    <span class="tag tag-robot">Robotics</span>
+    <span class="tag tag-embodied">Embodied</span>
+    <span class="tag tag-video">Video Learning</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.06747">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.06747">PDF</a>
+    <a href="https://dagroup-pku.github.io/HumanNet/">Project</a>
+    <a href="https://github.com/DAGroup-PKU/HumanNet">Code</a>
+  </div>
+</div>
+
+</section>
+
+<section class="section">
+<h2 class="section-title">🧩 Agent · 智能体</h2>
+
+<div class="paper-card">
+  <div class="paper-title">LLMs Improving LLMs: Agentic Discovery for Test-Time Scaling</div>
+  <div class="paper-meta">HuggingFace Papers 2026 · Google</div>
+  <div class="paper-summary">探索利用 LLM Agent 在测试时自动发现和应用改进策略来提升 LLM 推理能力。通过 Agentic Discovery 机制，模型能在推理阶段自主搜索优化路径，实现测试时计算的有效扩展（Test-Time Scaling），为 LLM 能力的动态提升提供新思路。</div>
+  <div class="paper-tags">
+    <span class="tag tag-agent">Agent</span>
+    <span class="tag tag-llm">Test-Time Scaling</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.08083">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.08083">PDF</a>
+    <a href="https://zhengkid.github.io/AutoTTS-web/">Project</a>
+    <a href="https://github.com/zhengkid/AutoTTS">Code</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title">HyperEyes: Dual-Grained Efficiency-Aware Reinforcement Learning for Parallel Multimodal Search Agents</div>
+  <div class="paper-meta">HuggingFace Papers 2026 · Xiaohongshu</div>
+  <div class="paper-summary">针对多模态搜索 Agent 的效率问题，提出 HyperEyes——一种双粒度效率感知强化学习方法。通过并行化搜索策略和分层效率优化，显著提升多模态搜索 Agent 在复杂信息检索任务中的响应速度和准确性。</div>
+  <div class="paper-tags">
+    <span class="tag tag-agent">Agent</span>
+    <span class="tag tag-rl">Reinforcement Learning</span>
+    <span class="tag tag-multimodal">Multimodal</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.07177">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.07177">PDF</a>
+    <a href="https://github.com/DeepExperience/HyperEyes">Code</a>
+  </div>
+</div>
+
+</section>
+
+<section class="section">
+<h2 class="section-title">🎨 Multimodal · 多模态</h2>
+
+<div class="paper-card">
+  <div class="paper-title">Anisotropic Modality Align</div>
+  <div class="paper-meta">HuggingFace Papers 2026 · HuggingFace Community</div>
+  <div class="paper-summary">研究多模态模型中不同模态之间的对齐问题，提出各向异性模态对齐方法。通过分析模态间隙（Modality Gap）的理论基础，设计更精确的跨模态对齐策略，提升视觉-语言等多模态联合表征的质量和一致性。</div>
+  <div class="paper-tags">
+    <span class="tag tag-multimodal">Multimodal</span>
+    <span class="tag tag-vlm">VLM</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.07825">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.07825">PDF</a>
+    <a href="https://github.com/Yu-xm/Modality_Gap_Theory">Code</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title">TextLDM: Language Modeling with Continuous Latent Diffusion</div>
+  <div class="paper-meta">HuggingFace Papers 2026 · Joy Future Academy</div>
+  <div class="paper-summary">将连续潜在扩散（Latent Diffusion）引入语言建模领域，提出 TextLDM。不同于传统离散 token 自回归方式，该方法在连续潜在空间中进行文本生成，探索扩散模型在自然语言处理中的新范式，为文本生成提供更灵活的建模框架。</div>
+  <div class="paper-tags">
+    <span class="tag tag-multimodal">Multimodal</span>
+    <span class="tag tag-diffusion">Diffusion</span>
+    <span class="tag tag-llm">Language Model</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.07748">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.07748">PDF</a>
+  </div>
+</div>
+
+</section>
+
+<div class="stats">
+  <h3>📊 检索统计</h3>
+  <p>检索来源：HuggingFace Papers 热门论文 | arXiv 源 HTTP 错误（3 条查询全失败） | X/Twitter RSS 不可用</p>
+  <p>本期发现：7 篇 HF 热门论文 + 1 个 HF 模型 | 覆盖 Robotics · Agent · Multimodal 方向</p>
+  <p>时间范围：2026年5月11日</p>
+</div>
+
+</div>
+</body>
+</html>
