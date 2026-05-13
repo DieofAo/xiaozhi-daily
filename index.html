@@ -629,6 +629,192 @@
 <script>
 // ===== DATA =====
 const PAPERS_DB = [
+    // === 2026-05-13 ===
+    {
+        date: "2026-05-13",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "Qwen-Image-2.0 Technical Report",
+        venue: "HuggingFace Papers 2026 · Qwen (Alibaba)",
+        summary: "阿里通义千问发布 Qwen-Image-2.0 技术报告，全面介绍新一代图像生成模型的架构设计、训练策略和性能表现，在文本到图像生成质量和多语言理解方面取得显著提升。",
+        tags: [["Multimodal","green"],["Image Generation","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.10730"],["PDF","https://arxiv.org/pdf/2605.10730"]],
+        highlight: true
+    },
+    {
+        date: "2026-05-13",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "CollabVR: Collaborative Video Reasoning with Vision-Language and Video Generation Models",
+        venue: "HuggingFace Papers 2026 · KAIST AI",
+        summary: "提出协作式视频推理框架 CollabVR，联合视觉语言模型和视频生成模型，通过模型间协作实现更深层次的视频内容理解和推理，在时序因果推理任务上表现优异。",
+        tags: [["Multimodal","green"],["Video","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.08735"],["PDF","https://arxiv.org/pdf/2605.08735"],["Project","https://joow0n-kim.github.io/collabvr-project-page/"],["Code","https://github.com/Joow0n-Kim/CollabVR"]]
+    },
+    {
+        date: "2026-05-13",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "WorldReasonBench: Human-Aligned Stress Testing of Video Generators as Future World-State Predictors",
+        venue: "HuggingFace Papers 2026 · UniX Lab",
+        summary: "构建与人类对齐的视频生成器压力测试基准，将视频生成模型视为未来世界状态预测器进行系统性评估，揭示当前模型在物理规律理解和因果推理方面的不足。",
+        tags: [["Video Generation","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.10434"],["PDF","https://arxiv.org/pdf/2605.10434"],["Project","https://unix-ai-lab.github.io/WorldReasonBench/"],["Code","https://github.com/UniX-AI-Lab/WorldReasonBench"]]
+    },
+    {
+        date: "2026-05-13",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "TMAS: Scaling Test-Time Compute via Multi-Agent Synergy",
+        venue: "HuggingFace Papers 2026 · IQuest",
+        summary: "提出通过多智能体协同扩展测试时计算的方法 TMAS。多个专业化智能体在推理阶段协作，实现计算资源的高效利用和推理能力的显著提升，为 scaling law 在推理端的应用提供新路径。",
+        tags: [["Agent","green"],["Test-time Compute","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.10344"],["PDF","https://arxiv.org/pdf/2605.10344"],["Code","https://github.com/george-QF/TMAS-code"]],
+        highlight: true
+    },
+    {
+        date: "2026-05-13",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Soohak: A Mathematician-Curated Benchmark for Evaluating Research-level Math Capabilities of LLMs",
+        venue: "HuggingFace Papers 2026 · EleutherAI",
+        summary: "EleutherAI 发布由数学家策划的研究级数学能力评测基准 Soohak，用于评估大语言模型在前沿数学研究中的推理和证明能力，为衡量 LLM 科研级能力提供严格标准。",
+        tags: [["LLM","green"],["Math Reasoning","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.09063"],["PDF","https://arxiv.org/pdf/2605.09063"]]
+    },
+    {
+        date: "2026-05-13",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "SEIF: Self-Evolving Reinforcement Learning for Instruction Following",
+        venue: "HuggingFace Papers 2026 · Fudan University",
+        summary: "复旦大学提出自进化强化学习方法 SEIF，用于提升模型的指令遵循能力。通过自我进化机制，模型可以在无额外人类标注的情况下持续提升指令执行精度。",
+        tags: [["LLM","green"],["RL/Instruction","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.07465"],["PDF","https://arxiv.org/pdf/2605.07465"],["Code","https://github.com/Rainier-rq1/SEIF"]]
+    },
+    {
+        date: "2026-05-13",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Geometry Conflict: Explaining and Controlling Forgetting in LLM Continual Post-Training",
+        venue: "HuggingFace Papers 2026 · The Hong Kong Polytechnic University",
+        summary: "从几何冲突的角度解释和控制 LLM 持续后训练中的遗忘问题。提出梯度空间几何冲突检测与缓解方法，有效减少新知识学习对已有能力的干扰。",
+        tags: [["LLM","green"],["Continual Learning","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.09608"],["PDF","https://arxiv.org/pdf/2605.09608"],["Code","https://github.com/wyy-code/GCWM"]]
+    },
+    {
+        date: "2026-05-13",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "What Parameter Golf taught us",
+        venue: "",
+        summary: "OpenAI 发布博文分享 Parameter Golf 项目的经验教训，探讨参数优化和模型效率方面的新思考。",
+        tags: [],
+        links: [["来源","https://openai.com/index/what-parameter-golf-taught-us/"]]
+    },
+    {
+        date: "2026-05-13",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "PaperFit: Vision-in-the-Loop Typesetting Optimization for Scientific Documents",
+        venue: "",
+        summary: "OpenDataLab 提出视觉闭环排版优化工具 PaperFit，通过视觉反馈迭代优化科学文档的排版质量，让论文写作更高效美观。",
+        tags: [],
+        links: [["arXiv","https://arxiv.org/abs/2605.10341"],["Code","https://github.com/OpenRaiser/PaperFit"]]
+    },
+    // === 2026-05-12 ===
+    {
+        date: "2026-05-12",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "AlphaGRPO: Unlocking Self-Reflective Multimodal Generation in UMMs via Decompositional Verifiable Reward",
+        venue: "arXiv 2026 · Tsinghua University",
+        summary: "提出 AlphaGRPO 框架，将 Group Relative Policy Optimization (GRPO) 应用于统一多模态模型的视觉生成任务。通过可分解的可验证奖励机制，首次实现了无需人类标注的自我反思多模态内容生成，在图像生成质量和文本-图像对齐方面取得显著提升。",
+        tags: [["Multimodal","green"],["RL/GRPO","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.12495"],["PDF","https://arxiv.org/pdf/2605.12495"],["Project","https://huangrh99.github.io/AlphaGRPO/"]],
+        highlight: true
+    },
+    {
+        date: "2026-05-12",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "Rubric-based On-policy Distillation",
+        venue: "HuggingFace Papers 2026 · HuggingFace Community",
+        summary: "On-policy distillation (OPD) 是一种强大的模型压缩范式。本文提出基于评分标准的在策略蒸馏方法，通过结构化评分指导学生模型学习，在保持推理质量的同时大幅减小模型规模，为高效部署提供新思路。",
+        tags: [["Robotics","green"],["Distillation","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.07396"],["PDF","https://arxiv.org/pdf/2605.07396"],["Code","https://github.com/Peregrine123/ROPD_official"]],
+        highlight: true
+    },
+    {
+        date: "2026-05-12",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "SenseNova-U1: Unifying Multimodal Understanding and Generation with NEO-unify Architecture",
+        venue: "arXiv 2026 · SenseTime",
+        summary: "提出 NEO-unify 架构，统一多模态理解和生成任务。突破了当前大视觉语言模型在架构层面的根本限制，实现了理解与生成的真正融合，在多个基准测试上取得 SOTA 结果。",
+        tags: [["Multimodal","green"],["VLM","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.12500"],["PDF","https://arxiv.org/pdf/2605.12500"],["Code","https://github.com/OpenSenseNova/SenseNova-U1"]]
+    },
+    {
+        date: "2026-05-12",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "EgoForce: Forearm-Guided Camera-Space 3D Hand Pose from a Monocular Egocentric Camera",
+        venue: "arXiv 2026 · DFKI",
+        summary: "从单目第一人称摄像头重建绝对 3D 手部姿态和形状，利用前臂引导实现相机空间中的精确定位，为 AR/VR 交互和具身智能提供实用的手部感知方案。",
+        tags: [["Embodied","green"],["3D Vision","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.12498"],["PDF","https://arxiv.org/pdf/2605.12498"],["Project","https://dfki-av.github.io/EgoForce"]]
+    },
+    {
+        date: "2026-05-12",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Covering Human Action Space for Computer Use: Data Synthesis and Benchmark",
+        venue: "arXiv 2026 · Microsoft",
+        summary: "系统性覆盖人类在计算机上的动作空间，为计算机使用智能体（CUAs）构建数据合成流水线与评测基准。通过全面的动作空间建模，为 GPT-5.4 等模型提供可靠的 CUA 训练与评估框架。",
+        tags: [["Agent","green"],["Computer Use","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.12501"],["PDF","https://arxiv.org/pdf/2605.12501"],["Code","https://github.com/microsoft/Phi-Ground.git"]]
+    },
+    {
+        date: "2026-05-12",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "From Web to Pixels: Bringing Agentic Search into Visual Perception",
+        venue: "arXiv 2026",
+        summary: "将智能体搜索能力引入视觉感知领域，连接高层语义理解与像素级感知。通过从网络到像素的跨层推理，实现了更精准的视觉定位与理解。",
+        tags: [["Agent","green"],["Visual Perception","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.12497"],["PDF","https://arxiv.org/pdf/2605.12497"],["Project","https://pixel-searcher.github.io/"]]
+    },
+    {
+        date: "2026-05-12",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "LongMemEval-V2: Evaluating Long-Term Agent Memory Toward Experienced Colleagues",
+        venue: "arXiv 2026",
+        summary: "提出面向长期记忆能力的智能体评测基准 V2 版本。在专业网络环境中评估智能体的长期记忆能力，关注其能否像经验丰富的同事一样积累和运用知识。",
+        tags: [["Agent","green"],["Memory","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.12493"],["PDF","https://arxiv.org/pdf/2605.12493"]]
+    },
+    {
+        date: "2026-05-12",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Task-Adaptive Embedding Refinement via Test-time LLM Guidance",
+        venue: "arXiv 2026 · IBM",
+        summary: "探索 LLM 引导的查询优化范式在文本嵌入中的有效性，通过测试时自适应调整实现任务特定的嵌入增强，提升信息检索和语义匹配效果。",
+        tags: [["LLM","green"],["Retrieval","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.12487"],["PDF","https://arxiv.org/pdf/2605.12487"],["Code","https://github.com/IBM/task-aware-embedding-refinement"]]
+    },
+    {
+        date: "2026-05-12",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Learning, Fast and Slow: Towards LLMs That Adapt Continually",
+        venue: "arXiv 2026",
+        summary: "探索大语言模型的持续适应能力。借鉴人类快速与慢速学习的双系统理论，提出让 LLM 在部署后持续学习新知识而不遗忘已有能力的新范式。",
+        tags: [["LLM","green"],["Continual Learning","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.12484"],["PDF","https://arxiv.org/pdf/2605.12484"]]
+    },
     // === 2026-05-11 ===
     {
         date: "2026-05-11",
@@ -10067,6 +10253,20 @@ const PAPERS_DB = [
 ];
 
 const DAILY_OVERVIEW = {
+    "2026-05-13": {
+        bannerTitle: "🔥 今日看点",
+        bannerSubtitle: "Qwen-Image-2.0 技术报告发布，阿里通义千问图像生成能力全面升级；TMAS 提出基于多智能体协同的测试时计算扩展方案；CollabVR 联合视觉语言模型与视频生成模型实现协作式视频推理。",
+        picks: ["Qwen-Image-2.0 Technical Report","TMAS: Scaling Test-Time Compute via Multi-Agent Synergy"],
+        totalPapers: 7,
+        totalNews: 2
+    },
+    "2026-05-12": {
+        bannerTitle: "🔥 今日看点",
+        bannerSubtitle: "AlphaGRPO 提出基于可分解可验证奖励的自我反思多模态生成框架，首次将 GRPO 应用于统一多模态模型的视觉生成任务；SenseNova-U1 以 NEO-unify 架构统一多模态理解与生成；Rubric-based On-policy Distillation 提出新型策略蒸馏范式，大幅提升模型蒸馏效率。",
+        picks: ["AlphaGRPO: Unlocking Self-Reflective Multimodal Generation in UMMs via Decompositional Verifiable Reward","Rubric-based On-policy Distillation"],
+        totalPapers: 9,
+        totalNews: 0
+    },
     "2026-05-11": {
         bannerTitle: "🔥 今日看点",
         bannerSubtitle: "Flow-OPD 提出 Flow Matching 模型的在策略蒸馏方法，大幅加速文生图推理；Listwise Policy Optimization 以群组 RLVR 重新定义 LLM 响应空间上的目标投影优化；HumanNet 构建百万小时人类中心视频数据集，推动具身智能发展。",

@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>小小志科研情报 - 2026年5月13日</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans SC', sans-serif;
+  background: #0a0e1a;
+  color: #e0e6f0;
+  line-height: 1.7;
+  min-height: 100vh;
+}
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+header {
+  text-align: center;
+  margin-bottom: 48px;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, rgba(59,130,246,0.08) 0%, rgba(139,92,246,0.08) 100%);
+  border-radius: 20px;
+  border: 1px solid rgba(99,102,241,0.15);
+}
+header h1 {
+  font-size: 2rem;
+  background: linear-gradient(135deg, #60a5fa, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 8px;
+}
+header .date {
+  color: #94a3b8;
+  font-size: 1rem;
+}
+header .subtitle {
+  color: #64748b;
+  font-size: 0.9rem;
+  margin-top: 6px;
+}
+.section {
+  margin-bottom: 40px;
+}
+.section-title {
+  font-size: 1.4rem;
+  color: #f1f5f9;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(99,102,241,0.2);
+}
+.paper-card {
+  background: rgba(30,41,59,0.6);
+  border: 1px solid rgba(99,102,241,0.12);
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 16px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.paper-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(99,102,241,0.1);
+  border-color: rgba(99,102,241,0.3);
+}
+.paper-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #f8fafc;
+  margin-bottom: 8px;
+}
+.paper-meta {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-bottom: 10px;
+}
+.paper-summary {
+  font-size: 0.95rem;
+  color: #cbd5e1;
+  margin-bottom: 14px;
+  line-height: 1.8;
+}
+.paper-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.tag {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+.tag-vla { background: rgba(59,130,246,0.15); color: #60a5fa; }
+.tag-robot { background: rgba(16,185,129,0.15); color: #34d399; }
+.tag-rl { background: rgba(251,146,60,0.15); color: #fb923c; }
+.tag-llm { background: rgba(168,85,247,0.15); color: #c084fc; }
+.tag-vlm { background: rgba(236,72,153,0.15); color: #f472b6; }
+.tag-world-model { background: rgba(34,211,238,0.15); color: #22d3ee; }
+.tag-embodied { background: rgba(74,222,128,0.15); color: #4ade80; }
+.tag-agent { background: rgba(251,191,36,0.15); color: #fbbf24; }
+.tag-multimodal { background: rgba(236,72,153,0.15); color: #f472b6; }
+.tag-video { background: rgba(34,211,238,0.15); color: #22d3ee; }
+.tag-security { background: rgba(239,68,68,0.15); color: #f87171; }
+.tag-voice { background: rgba(56,189,248,0.15); color: #38bdf8; }
+.tag-product { background: rgba(163,230,53,0.15); color: #a3e635; }
+.tag-diffusion { background: rgba(192,132,252,0.15); color: #c084fc; }
+.paper-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.paper-links a {
+  display: inline-block;
+  padding: 5px 14px;
+  background: rgba(99,102,241,0.12);
+  color: #818cf8;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+.paper-links a:hover {
+  background: rgba(99,102,241,0.25);
+}
+.hot-badge {
+  margin-right: 6px;
+}
+.info-card {
+  background: rgba(30,41,59,0.4);
+  border: 1px solid rgba(251,191,36,0.15);
+  border-radius: 14px;
+  padding: 20px;
+  margin-bottom: 14px;
+}
+.info-card .paper-title {
+  color: #fbbf24;
+}
+.highlight-banner {
+  background: linear-gradient(135deg, rgba(251,146,60,0.1) 0%, rgba(236,72,153,0.1) 100%);
+  border: 1px solid rgba(251,146,60,0.2);
+  border-radius: 14px;
+  padding: 20px 24px;
+  margin-bottom: 36px;
+}
+.hl-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fb923c;
+  margin-bottom: 8px;
+}
+.hl-text {
+  font-size: 0.95rem;
+  color: #e2e8f0;
+  line-height: 1.7;
+}
+.stats {
+  text-align: center;
+  padding: 30px;
+  margin-top: 40px;
+  background: rgba(30,41,59,0.4);
+  border-radius: 14px;
+  border: 1px solid rgba(99,102,241,0.1);
+}
+.stats h3 {
+  color: #94a3b8;
+  font-size: 1rem;
+  margin-bottom: 12px;
+}
+.stats p {
+  color: #64748b;
+  font-size: 0.9rem;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+  <h1>🔬 小小志科研情报</h1>
+  <div class="date">2026年5月13日 · 星期三</div>
+  <div class="subtitle">Boss Team · Daily Research Intelligence</div>
+</header>
+
+<div class="highlight-banner">
+  <div class="hl-title">🔥 今日看点</div>
+  <div class="hl-text">Qwen-Image-2.0 技术报告发布，阿里通义千问图像生成能力全面升级；TMAS 提出基于多智能体协同的测试时计算扩展方案；CollabVR 联合视觉语言模型与视频生成模型实现协作式视频推理。</div>
+</div>
+
+<section class="section">
+<h2 class="section-title">🎨 Multimodal · 多模态</h2>
+
+<div class="paper-card">
+  <div class="paper-title"><span class="hot-badge">🔥</span> Qwen-Image-2.0 Technical Report</div>
+  <div class="paper-meta">HuggingFace Papers 2026 · Qwen (Alibaba)</div>
+  <div class="paper-summary">阿里通义千问发布 Qwen-Image-2.0 技术报告，全面介绍新一代图像生成模型的架构设计、训练策略和性能表现，在文本到图像生成质量和多语言理解方面取得显著提升。</div>
+  <div class="paper-tags">
+    <span class="tag tag-multimodal">Multimodal</span>
+    <span class="tag tag-diffusion">Image Generation</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.10730">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.10730">PDF</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title">CollabVR: Collaborative Video Reasoning with Vision-Language and Video Generation Models</div>
+  <div class="paper-meta">HuggingFace Papers 2026 · KAIST AI</div>
+  <div class="paper-summary">提出协作式视频推理框架 CollabVR，联合视觉语言模型和视频生成模型，通过模型间协作实现更深层次的视频内容理解和推理，在时序因果推理任务上表现优异。</div>
+  <div class="paper-tags">
+    <span class="tag tag-multimodal">Multimodal</span>
+    <span class="tag tag-video">Video</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.08735">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.08735">PDF</a>
+    <a href="https://joow0n-kim.github.io/collabvr-project-page/">Project</a>
+    <a href="https://github.com/Joow0n-Kim/CollabVR">Code</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title">WorldReasonBench: Human-Aligned Stress Testing of Video Generators as Future World-State Predictors</div>
+  <div class="paper-meta">HuggingFace Papers 2026 · UniX Lab</div>
+  <div class="paper-summary">构建与人类对齐的视频生成器压力测试基准，将视频生成模型视为未来世界状态预测器进行系统性评估，揭示当前模型在物理规律理解和因果推理方面的不足。</div>
+  <div class="paper-tags">
+    <span class="tag tag-world-model">World Model</span>
+    <span class="tag tag-video">Video Generation</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.10434">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.10434">PDF</a>
+    <a href="https://unix-ai-lab.github.io/WorldReasonBench/">Project</a>
+    <a href="https://github.com/UniX-AI-Lab/WorldReasonBench">Code</a>
+  </div>
+</div>
+
+</section>
+
+<section class="section">
+<h2 class="section-title">🧩 Agent · 智能体</h2>
+
+<div class="paper-card">
+  <div class="paper-title"><span class="hot-badge">🔥</span> TMAS: Scaling Test-Time Compute via Multi-Agent Synergy</div>
+  <div class="paper-meta">HuggingFace Papers 2026 · IQuest</div>
+  <div class="paper-summary">提出通过多智能体协同扩展测试时计算的方法 TMAS。多个专业化智能体在推理阶段协作，实现计算资源的高效利用和推理能力的显著提升，为 scaling law 在推理端的应用提供新路径。</div>
+  <div class="paper-tags">
+    <span class="tag tag-agent">Agent</span>
+    <span class="tag tag-llm">Test-time Compute</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.10344">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.10344">PDF</a>
+    <a href="https://github.com/george-QF/TMAS-code">Code</a>
+  </div>
+</div>
+
+</section>
+
+<section class="section">
+<h2 class="section-title">🧠 LLM · 大语言模型</h2>
+
+<div class="paper-card">
+  <div class="paper-title">Soohak: A Mathematician-Curated Benchmark for Evaluating Research-level Math Capabilities of LLMs</div>
+  <div class="paper-meta">HuggingFace Papers 2026 · EleutherAI</div>
+  <div class="paper-summary">EleutherAI 发布由数学家策划的研究级数学能力评测基准 Soohak，用于评估大语言模型在前沿数学研究中的推理和证明能力，为衡量 LLM 科研级能力提供严格标准。</div>
+  <div class="paper-tags">
+    <span class="tag tag-llm">LLM</span>
+    <span class="tag tag-rl">Math Reasoning</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.09063">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.09063">PDF</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title">SEIF: Self-Evolving Reinforcement Learning for Instruction Following</div>
+  <div class="paper-meta">HuggingFace Papers 2026 · Fudan University</div>
+  <div class="paper-summary">复旦大学提出自进化强化学习方法 SEIF，用于提升模型的指令遵循能力。通过自我进化机制，模型可以在无额外人类标注的情况下持续提升指令执行精度。</div>
+  <div class="paper-tags">
+    <span class="tag tag-llm">LLM</span>
+    <span class="tag tag-rl">RL/Instruction</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.07465">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.07465">PDF</a>
+    <a href="https://github.com/Rainier-rq1/SEIF">Code</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title">Geometry Conflict: Explaining and Controlling Forgetting in LLM Continual Post-Training</div>
+  <div class="paper-meta">HuggingFace Papers 2026 · The Hong Kong Polytechnic University</div>
+  <div class="paper-summary">从几何冲突的角度解释和控制 LLM 持续后训练中的遗忘问题。提出梯度空间几何冲突检测与缓解方法，有效减少新知识学习对已有能力的干扰。</div>
+  <div class="paper-tags">
+    <span class="tag tag-llm">LLM</span>
+    <span class="tag tag-rl">Continual Learning</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.09608">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.09608">PDF</a>
+    <a href="https://github.com/wyy-code/GCWM">Code</a>
+  </div>
+</div>
+
+</section>
+
+<section class="section">
+<h2 class="section-title">📄 Other · 行业动态</h2>
+
+<div class="info-card">
+  <div class="paper-title">What Parameter Golf taught us</div>
+  <div class="paper-summary">OpenAI 发布博文分享 Parameter Golf 项目的经验教训，探讨参数优化和模型效率方面的新思考。</div>
+  <div class="paper-links">
+    <a href="https://openai.com/index/what-parameter-golf-taught-us/">来源</a>
+  </div>
+</div>
+
+<div class="info-card">
+  <div class="paper-title">PaperFit: Vision-in-the-Loop Typesetting Optimization for Scientific Documents</div>
+  <div class="paper-summary">OpenDataLab 提出视觉闭环排版优化工具 PaperFit，通过视觉反馈迭代优化科学文档的排版质量，让论文写作更高效美观。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.10341">arXiv</a>
+    <a href="https://github.com/OpenRaiser/PaperFit">Code</a>
+  </div>
+</div>
+
+</section>
+
+<div class="stats">
+  <h3>📊 数据来源说明</h3>
+  <p>数据来源：HuggingFace 热门 8 篇 + 机构博客 1 篇 | arXiv HTTP 错误（3 查询均失败）| X/Twitter RSS 不可用</p>
+  <p>主题分布：Multimodal 3 · Agent 1 · LLM 3 · Other 2</p>
+  <p>更新时间：2026年5月13日</p>
+</div>
+
+</div>
+</body>
+</html>
