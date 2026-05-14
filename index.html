@@ -629,6 +629,151 @@
 <script>
 // ===== DATA =====
 const PAPERS_DB = [
+    // === 2026-05-14 ===
+    {
+        date: "2026-05-14",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "Realtime-VLA FLASH: Speculative Inference Framework for Diffusion-based VLAs",
+        venue: "arXiv 2026",
+        summary: "提出面向扩散式视觉-语言-动作模型（dVLA）的推测性推理框架 FLASH，通过预测性并行推理大幅降低延迟，使 dVLA 模型能够以实时速率执行机器人控制任务，为具身智能的实时部署开辟新路径。",
+        tags: [["VLA","green"],["Diffusion","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.13778"],["PDF","https://arxiv.org/pdf/2605.13778"]],
+        highlight: true
+    },
+    {
+        date: "2026-05-14",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "FrameSkip: Learning from Fewer but More Informative Frames in VLA Training",
+        venue: "arXiv 2026 · ZGC-EmbodyAI",
+        summary: "提出 FrameSkip 方法，通过在 VLA 训练中智能选择更少但信息量更大的关键帧，显著提升训练效率和策略质量。证明密集帧采样并非必要，少量精选帧即可学得更优策略。",
+        tags: [["VLA","green"],["Training Efficiency","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.13757"],["PDF","https://arxiv.org/pdf/2605.13757"],["Code","https://github.com/ZGC-EmbodyAI/FrameSkip"]],
+        highlight: true
+    },
+    {
+        date: "2026-05-14",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "World Action Models: The Next Frontier in Embodied AI",
+        venue: "HF Daily Papers · OpenMOSS",
+        summary: "系统性综述世界动作模型（WAM）作为具身 AI 的下一个前沿方向。提出将世界模型与动作决策紧密耦合的范式，梳理该领域关键挑战与研究路线图，为具身智能的统一建模指明方向。",
+        tags: [["VLA","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.12090"],["PDF","https://arxiv.org/pdf/2605.12090"],["Project","https://openmoss.github.io/Awesome-WAM/"],["Code","https://github.com/OpenMOSS/Awesome-WAM"]],
+        highlight: true
+    },
+    {
+        date: "2026-05-14",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "RoboEvolve: Co-Evolving Planner-Simulator for Robotic Manipulation with Limited Data",
+        venue: "arXiv 2026",
+        summary: "提出规划器-模拟器协同进化框架 RoboEvolve，解决机器人操作中数据稀缺的根本瓶颈。通过规划器与模拟器的互相驱动迭代进化，以有限真实数据实现高质量操作策略学习。",
+        tags: [["Manipulation","green"],["Data Efficiency","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.13775"],["PDF","https://arxiv.org/pdf/2605.13775"]],
+        highlight: true
+    },
+    {
+        date: "2026-05-14",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "Manipulation Planning for Construction Activities with Repetitive Tasks",
+        venue: "arXiv 2026",
+        summary: "研究建筑施工中重复性操作任务的操控规划问题。提出面向施工活动的操作技能获取方法，使机器人能够通过学习重复性动作模式高效完成建筑领域的复杂操作序列。",
+        tags: [["Manipulation","green"],["Construction","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.13754"],["PDF","https://arxiv.org/pdf/2605.13754"]]
+    },
+    {
+        date: "2026-05-14",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "TinySDP: Real Time Semidefinite Optimization for Certifiable and Agile Edge Robotics",
+        venue: "arXiv 2026 · A2R Lab",
+        summary: "提出 TinySDP 实时半正定规划优化器，为边缘端机器人提供可认证的敏捷控制。将 SDP 求解推向实时速率，使资源受限的边缘机器人也能获得数学可证明的安全与最优控制保证。",
+        tags: [["Edge Robotics","green"],["Optimization","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.13748"],["PDF","https://arxiv.org/pdf/2605.13748"],["Project","https://a2r-lab.org/TinySDP/"]]
+    },
+    {
+        date: "2026-05-14",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "LEXI-SG: Monocular 3D Scene Graph Mapping with Room-Guided Feed-Forward Reconstruction",
+        venue: "arXiv 2026 · Oxford Robotics Institute",
+        summary: "提出基于单目视觉的 3D 场景图建模方法 LEXI-SG，通过房间引导的前馈式重建实现高效场景图构建。为机器人导航提供结构化语义表示，支持高层次空间理解和推理。",
+        tags: [["Navigation","green"],["Scene Graph","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.13741"],["PDF","https://arxiv.org/pdf/2605.13741"],["Project","https://ori-drs.github.io/lexisg-web/"]]
+    },
+    {
+        date: "2026-05-14",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "RubricEM: Meta-RL with Rubric-guided Policy Decomposition beyond Verifiable Rewards",
+        venue: "HF Daily Papers · Google",
+        summary: "提出 RubricEM，通过评分准则引导的策略分解实现超越可验证奖励的元强化学习。将复杂任务按评分标准拆解为子策略模块，使机器人在缺少明确奖励信号时也能有效学习。",
+        tags: [["Robotics","green"],["Meta-RL","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.10899"],["PDF","https://arxiv.org/pdf/2605.10899"]]
+    },
+    {
+        date: "2026-05-14",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "Training Long-Context Vision-Language Models Effectively with Generalization Beyond 128K Context",
+        venue: "arXiv 2026",
+        summary: "研究如何有效训练长上下文视觉-语言模型，使其泛化能力突破 128K 上下文窗口限制。提出系统性的训练策略，使大型 VLM 能够处理超长视觉-文本序列，拓展多模态模型的应用边界。",
+        tags: [["Multimodal","green"],["Long-Context VLM","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.13831"],["PDF","https://arxiv.org/pdf/2605.13831"]]
+    },
+    {
+        date: "2026-05-14",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "Do Enterprise Systems Need Learned World Models? The Importance of Context to Infer Dynamics",
+        venue: "HF Daily Papers · ServiceNow AI",
+        summary: "探讨企业系统是否需要学习型世界模型，强调上下文信息对推断系统动态的关键作用。分析了在复杂企业环境中部署世界模型的必要性和挑战，为实际应用提供理论框架。",
+        tags: [["Enterprise AI","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.12178"],["PDF","https://arxiv.org/pdf/2605.12178"]]
+    },
+    {
+        date: "2026-05-14",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "MCP-Cosmos: World Model-Augmented Agents for Complex Task Execution in MCP Environments",
+        venue: "HF Daily Papers · IBM Research",
+        summary: "提出 MCP-Cosmos 框架，将世界模型增强引入 MCP 环境中的智能体，实现复杂任务执行。通过世界模型预测环境变化辅助决策，显著提升智能体在多步骤复杂任务中的成功率。",
+        tags: [["MCP Agent","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.09131"],["PDF","https://arxiv.org/pdf/2605.09131"]]
+    },
+    {
+        date: "2026-05-14",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "MemPrivacy: Privacy-Preserving Personalized Memory Management for Edge-Cloud Agents",
+        venue: "HF Daily Papers · MemTensor",
+        summary: "提出 MemPrivacy 框架，面向边缘-云协同智能体实现隐私保护的个性化记忆管理。在保障用户数据隐私的前提下，使智能体能够在边缘和云端之间安全地存储和调用个人化知识。",
+        tags: [["Agent","green"],["Privacy","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.09530"],["PDF","https://arxiv.org/pdf/2605.09530"],["Code","https://github.com/MemTensor/MemPrivacy"]]
+    },
+    {
+        date: "2026-05-14",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "δ-mem: Efficient Online Memory for Large Language Models",
+        venue: "HF Daily Papers · Mind Lab",
+        summary: "提出 δ-mem 高效在线记忆机制，使大语言模型能够在推理过程中动态维护和更新外部记忆。通过增量式记忆更新策略，显著降低长期交互中的计算开销，提升上下文连贯性。",
+        tags: [["Agent","green"],["Memory","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.12357"],["PDF","https://arxiv.org/pdf/2605.12357"],["Code","https://github.com/declare-lab/delta-Mem"]]
+    },
+    {
+        date: "2026-05-14",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "Learning Responsibility-Attributed Adversarial Scenarios for Testing Autonomous Vehicles",
+        venue: "",
+        summary: "提出责任归因的对抗性场景学习方法，用于自动驾驶系统（ADS）的安全测试。通过生成带有明确责任归属的对抗驾驶场景，系统性验证自动驾驶的安全保障能力。",
+        tags: [],
+        links: [["arXiv","https://arxiv.org/abs/2605.13751"],["PDF","https://arxiv.org/pdf/2605.13751"]]
+    },
     // === 2026-05-13 ===
     {
         date: "2026-05-13",
@@ -10253,6 +10398,13 @@ const PAPERS_DB = [
 ];
 
 const DAILY_OVERVIEW = {
+    "2026-05-14": {
+        bannerTitle: "🔥 今日看点",
+        bannerSubtitle: "Realtime-VLA FLASH 提出扩散式 VLA 模型的推测性推理框架，实现实时机器人控制；World Action Models 综述定义具身 AI 下一前沿方向；RoboEvolve 提出规划器-模拟器协同进化框架解决机器人操作数据稀缺问题；MCP-Cosmos 将世界模型引入 MCP 环境实现复杂任务执行。",
+        picks: ["Realtime-VLA FLASH: Speculative Inference Framework for Diffusion-based VLAs","FrameSkip: Learning from Fewer but More Informative Frames in VLA Training","World Action Models: The Next Frontier in Embodied AI","RoboEvolve: Co-Evolving Planner-Simulator for Robotic Manipulation with Limited Data"],
+        totalPapers: 13,
+        totalNews: 1
+    },
     "2026-05-13": {
         bannerTitle: "🔥 今日看点",
         bannerSubtitle: "Qwen-Image-2.0 技术报告发布，阿里通义千问图像生成能力全面升级；TMAS 提出基于多智能体协同的测试时计算扩展方案；CollabVR 联合视觉语言模型与视频生成模型实现协作式视频推理。",
