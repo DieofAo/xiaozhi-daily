@@ -629,6 +629,160 @@
 <script>
 // ===== DATA =====
 const PAPERS_DB = [
+    // === 2026-05-15 ===
+    {
+        date: "2026-05-15",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "ATLAS: Agentic or Latent Visual Reasoning? One Word is Enough for Both",
+        venue: "arXiv 2026",
+        summary: "提出 ATLAS 框架，仅凭一个触发词即可在视觉推理的代理模式（逐步显式推理）与潜在模式（隐式内部推理）之间自由切换。统一了两种视觉推理范式，为多模态推理模型提供灵活高效的推理策略选择。",
+        tags: [["Agent","green"],["Visual Reasoning","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.15198"],["PDF","https://arxiv.org/pdf/2605.15198"],["Project","https://atlas-oneword.github.io"],["Code","https://github.com/ZiyuGuo99/ATLAS"]],
+        highlight: true
+    },
+    {
+        date: "2026-05-15",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "FutureSim: Replaying World Events to Evaluate Adaptive Agents",
+        venue: "arXiv 2026",
+        summary: "提出 FutureSim 框架，通过重放真实世界事件来评估自适应智能体。在动态、开放式环境中系统性测试 AI Agent 的适应能力，为评估智能体面对现实世界变化时的响应质量提供标准化方法。",
+        tags: [["Agent","green"],["Evaluation","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.15188"],["PDF","https://arxiv.org/pdf/2605.15188"]]
+    },
+    {
+        date: "2026-05-15",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Articraft: An Agentic System for Scalable Articulated 3D Asset Generation",
+        venue: "arXiv 2026",
+        summary: "提出 Articraft 智能体系统，实现可扩展的铰接式 3D 资产自动生成。解决了铰接 3D 物体数据匮乏的瓶颈，通过 Agent 架构自动化生成大规模高质量铰接 3D 数据集，助力铰接物体理解研究。",
+        tags: [["Agent","green"],["3D Generation","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.15187"],["PDF","https://arxiv.org/pdf/2605.15187"],["Project","https://articraft3d.github.io/"]]
+    },
+    {
+        date: "2026-05-15",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Is Grep All You Need? How Agent Harnesses Reshape Agentic Search",
+        venue: "arXiv 2026",
+        summary: "深入研究 Agent 工具如何重塑代理搜索范式。分析了大语言模型智能体在利用 grep 等基础工具时展现的涌现搜索能力，揭示简单工具组合如何实现复杂的信息检索与代码搜索任务。",
+        tags: [["Agent","green"],["Tool Use","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.15184"],["PDF","https://arxiv.org/pdf/2605.15184"]]
+    },
+    {
+        date: "2026-05-15",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "EVA-Bench: A New End-to-end Framework for Evaluating Voice Agents",
+        venue: "HF Daily Papers · ServiceNow AI",
+        summary: "提出 EVA-Bench 端到端语音智能体评测框架，系统性评估语音 Agent 的全链路能力。覆盖语音理解、推理决策到行动执行的完整流程，为语音交互智能体的研发提供标准化基准。",
+        tags: [["Agent","green"],["Voice","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.13841"],["PDF","https://arxiv.org/pdf/2605.13841"],["Project","https://servicenow.github.io/eva/"],["Code","https://github.com/ServiceNow/eva"]]
+    },
+    {
+        date: "2026-05-15",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Predicting Decisions of AI Agents from Limited Interaction through Text-Tabular Modeling",
+        venue: "HF Daily Papers · Technion",
+        summary: "研究如何从有限交互数据中预测 AI 智能体的决策行为。通过融合文本与表格数据的建模方法，在少量观察样本下实现对智能体决策模式的准确预测，为智能体行为理解提供新思路。",
+        tags: [["Agent","green"],["Prediction","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.12411"],["PDF","https://arxiv.org/pdf/2605.12411"]]
+    },
+    {
+        date: "2026-05-15",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "SANA-WM: Efficient Minute-Scale World Modeling with Hybrid Linear Diffusion Transformer",
+        venue: "arXiv 2026 · NVIDIA",
+        summary: "推出 SANA-WM，一个高效的 2.6B 参数开源世界模型，原生支持分钟级视频生成。采用混合线性扩散 Transformer 架构，在计算效率和生成质量之间取得最优平衡，为世界模型的实用化部署奠定基础。",
+        tags: [["Diffusion","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.15178"],["PDF","https://arxiv.org/pdf/2605.15178"],["Project","https://nvlabs.github.io/Sana/WM/"]],
+        highlight: true
+    },
+    {
+        date: "2026-05-15",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "From Plans to Pixels: Learning to Plan and Orchestrate for Open-Ended Image Editing",
+        venue: "arXiv 2026",
+        summary: "提出从规划到像素的开放式图像编辑方法，学习如何为复杂抽象编辑指令制定执行计划并协调多步骤操作。使图像编辑模型能够理解并执行需要多步推理的高级编辑任务。",
+        tags: [["Multimodal","green"],["Planning","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.15181"],["PDF","https://arxiv.org/pdf/2605.15181"]]
+    },
+    {
+        date: "2026-05-15",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "VGGT-Ω: Feed-Forward 3D Reconstruction with Competitive Performance",
+        venue: "arXiv 2026",
+        summary: "在 VGGT 前馈式 3D 重建模型基础上推出增强版本 VGGT-Ω，实现与优化方法相当的竞争性能。证明前馈式架构在 3D 重建任务中已能匹敌传统迭代优化方法，大幅提升推理效率。",
+        tags: [["3D Vision","green"],["Reconstruction","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.15195"],["PDF","https://arxiv.org/pdf/2605.15195"],["Project","http://vggt-omega.github.io/"]]
+    },
+    {
+        date: "2026-05-15",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "MulTaBench: Benchmarking Multimodal Tabular Learning with Text and Image",
+        venue: "HF Daily Papers · Technion",
+        summary: "提出 MulTaBench 多模态表格学习基准，系统性评估融合文本与图像的表格数据建模能力。填补了多模态表格学习领域缺乏统一评测标准的空白，推动结构化与非结构化数据融合研究。",
+        tags: [["Multimodal","green"],["Benchmark","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.10616"],["PDF","https://arxiv.org/pdf/2605.10616"]]
+    },
+    {
+        date: "2026-05-15",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "Edit-Compass & EditReward-Compass: A Unified Benchmark for Image Editing and Reward Modeling",
+        venue: "HF Daily Papers",
+        summary: "提出 Edit-Compass 统一基准，同时评测图像编辑质量与奖励模型的判别能力。建立图像编辑与奖励建模的双向评测体系，为训练更好的图像编辑模型和评估器提供标准化框架。",
+        tags: [["Image Editing","green"],["Reward Model","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.13062"],["PDF","https://arxiv.org/pdf/2605.13062"],["Code","https://github.com/bxhsort/Edit-Compass-and-EditReward-Compass"]]
+    },
+    {
+        date: "2026-05-15",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "AnyFlow: Any-Step Video Diffusion Model with On-Policy Flow Map Distillation",
+        venue: "HF Daily Papers · NVIDIA",
+        summary: "提出 AnyFlow 任意步数视频扩散模型，通过在线策略流图蒸馏实现灵活推理步数控制。在保持生成质量的同时，允许用户自由选择推理步数，从单步到多步均可获得高质量视频输出，大幅提升视频生成的实用性。",
+        tags: [["Video Generation","green"],["Distillation","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.13724"],["PDF","https://arxiv.org/pdf/2605.13724"],["Project","https://nvlabs.github.io/AnyFlow/"],["Code","https://github.com/NVlabs/AnyFlow"]],
+        highlight: true
+    },
+    {
+        date: "2026-05-15",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "OpenDeepThink: Parallel Reasoning via Bradley-Terry Aggregation",
+        venue: "arXiv 2026",
+        summary: "提出 OpenDeepThink 并行推理框架，通过 Bradley-Terry 聚合机制提升 LLM 推理能力。利用测试时计算扩展，并行生成多个推理路径并通过统计聚合选择最优答案，为推理增强提供新范式。",
+        tags: [["LLM","green"],["Reasoning","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.15177"],["PDF","https://arxiv.org/pdf/2605.15177"]]
+    },
+    {
+        date: "2026-05-15",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "MinT: Managed Infrastructure for Training and Serving Millions of LLMs",
+        venue: "HF Daily Papers · Mind Lab",
+        summary: "提出 MinT 大规模 LLM 训练与服务管理基础设施，支持百万级模型的高效训练和部署。设计了完整的基础设施管理方案，解决超大规模语言模型集群的资源调度、容错和效率优化问题。",
+        tags: [["LLM","green"],["Infrastructure","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.13779"],["PDF","https://arxiv.org/pdf/2605.13779"],["Project","https://macaron.im/mindlab/mint"],["Code","https://github.com/MindLab-Research/mindlab-toolkit"]]
+    },
+    {
+        date: "2026-05-15",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Many-Shot CoT-ICL: Making In-Context Learning Truly Learn",
+        venue: "HF Daily Papers",
+        summary: "研究大量示例下的思维链上下文学习机制，揭示如何让 ICL 真正实现学习而非简单模式匹配。通过增加 CoT 示例数量并优化示例组织策略，显著提升上下文学习的泛化能力。",
+        tags: [["LLM","green"],["In-Context Learning","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.13511"],["PDF","https://arxiv.org/pdf/2605.13511"]]
+    },
     // === 2026-05-14 ===
     {
         date: "2026-05-14",
@@ -10398,6 +10552,13 @@ const PAPERS_DB = [
 ];
 
 const DAILY_OVERVIEW = {
+    "2026-05-15": {
+        bannerTitle: "🔥 今日看点",
+        bannerSubtitle: "SANA-WM 提出高效 2.6B 参数开源世界模型，原生支持分钟级视频生成；AnyFlow 实现任意步数视频扩散推理，结合策略流图蒸馏大幅提升生成效率；ATLAS 仅凭一个词触发视觉推理的潜在与代理双模式切换；Agent 方向集中爆发——从 3D 资产生成到搜索工具重塑。",
+        picks: ["ATLAS: Agentic or Latent Visual Reasoning? One Word is Enough for Both","SANA-WM: Efficient Minute-Scale World Modeling with Hybrid Linear Diffusion Transformer","AnyFlow: Any-Step Video Diffusion Model with On-Policy Flow Map Distillation"],
+        totalPapers: 15,
+        totalNews: 0
+    },
     "2026-05-14": {
         bannerTitle: "🔥 今日看点",
         bannerSubtitle: "Realtime-VLA FLASH 提出扩散式 VLA 模型的推测性推理框架，实现实时机器人控制；World Action Models 综述定义具身 AI 下一前沿方向；RoboEvolve 提出规划器-模拟器协同进化框架解决机器人操作数据稀缺问题；MCP-Cosmos 将世界模型引入 MCP 环境实现复杂任务执行。",

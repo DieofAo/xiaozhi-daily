@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>小小志科研情报 - 2026年5月15日</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans SC', sans-serif;
+  background: #0a0e1a;
+  color: #e0e6f0;
+  line-height: 1.7;
+  min-height: 100vh;
+}
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+header {
+  text-align: center;
+  margin-bottom: 48px;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, rgba(59,130,246,0.08) 0%, rgba(139,92,246,0.08) 100%);
+  border-radius: 20px;
+  border: 1px solid rgba(99,102,241,0.15);
+}
+header h1 {
+  font-size: 2rem;
+  background: linear-gradient(135deg, #60a5fa, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 8px;
+}
+header .date {
+  color: #94a3b8;
+  font-size: 1rem;
+}
+header .subtitle {
+  color: #64748b;
+  font-size: 0.9rem;
+  margin-top: 6px;
+}
+.section {
+  margin-bottom: 40px;
+}
+.section-title {
+  font-size: 1.4rem;
+  color: #f1f5f9;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(99,102,241,0.2);
+}
+.paper-card {
+  background: rgba(30,41,59,0.6);
+  border: 1px solid rgba(99,102,241,0.12);
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 16px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.paper-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(99,102,241,0.1);
+  border-color: rgba(99,102,241,0.3);
+}
+.paper-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #f8fafc;
+  margin-bottom: 8px;
+}
+.paper-meta {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-bottom: 10px;
+}
+.paper-summary {
+  font-size: 0.95rem;
+  color: #cbd5e1;
+  margin-bottom: 14px;
+  line-height: 1.8;
+}
+.paper-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.tag {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+.tag-vla { background: rgba(59,130,246,0.15); color: #60a5fa; }
+.tag-robot { background: rgba(16,185,129,0.15); color: #34d399; }
+.tag-rl { background: rgba(251,146,60,0.15); color: #fb923c; }
+.tag-llm { background: rgba(168,85,247,0.15); color: #c084fc; }
+.tag-vlm { background: rgba(236,72,153,0.15); color: #f472b6; }
+.tag-world-model { background: rgba(34,211,238,0.15); color: #22d3ee; }
+.tag-embodied { background: rgba(74,222,128,0.15); color: #4ade80; }
+.tag-agent { background: rgba(251,191,36,0.15); color: #fbbf24; }
+.tag-multimodal { background: rgba(236,72,153,0.15); color: #f472b6; }
+.tag-video { background: rgba(34,211,238,0.15); color: #22d3ee; }
+.tag-security { background: rgba(239,68,68,0.15); color: #f87171; }
+.tag-voice { background: rgba(56,189,248,0.15); color: #38bdf8; }
+.tag-product { background: rgba(163,230,53,0.15); color: #a3e635; }
+.tag-diffusion { background: rgba(192,132,252,0.15); color: #c084fc; }
+.tag-3d { background: rgba(45,212,191,0.15); color: #2dd4bf; }
+.paper-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.paper-links a {
+  display: inline-block;
+  padding: 5px 14px;
+  background: rgba(99,102,241,0.12);
+  color: #818cf8;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+.paper-links a:hover {
+  background: rgba(99,102,241,0.25);
+}
+.hot-badge {
+  margin-right: 6px;
+}
+.info-card {
+  background: rgba(30,41,59,0.4);
+  border: 1px solid rgba(251,191,36,0.15);
+  border-radius: 14px;
+  padding: 20px;
+  margin-bottom: 14px;
+}
+.info-card .paper-title {
+  color: #fbbf24;
+}
+.highlight-banner {
+  background: linear-gradient(135deg, rgba(251,146,60,0.1) 0%, rgba(236,72,153,0.1) 100%);
+  border: 1px solid rgba(251,146,60,0.2);
+  border-radius: 14px;
+  padding: 20px 24px;
+  margin-bottom: 36px;
+}
+.hl-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fb923c;
+  margin-bottom: 8px;
+}
+.hl-text {
+  font-size: 0.95rem;
+  color: #e2e8f0;
+  line-height: 1.7;
+}
+.stats {
+  text-align: center;
+  padding: 30px;
+  margin-top: 40px;
+  background: rgba(30,41,59,0.4);
+  border-radius: 14px;
+  border: 1px solid rgba(99,102,241,0.1);
+}
+.stats h3 {
+  color: #94a3b8;
+  font-size: 1rem;
+  margin-bottom: 12px;
+}
+.stats p {
+  color: #64748b;
+  font-size: 0.9rem;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+  <h1>🔬 小小志科研情报</h1>
+  <div class="date">2026年5月15日 · 星期五</div>
+  <div class="subtitle">Boss Team · Daily Research Intelligence</div>
+</header>
+
+<div class="highlight-banner">
+  <div class="hl-title">🔥 今日看点</div>
+  <div class="hl-text">SANA-WM 提出高效 2.6B 参数开源世界模型，原生支持分钟级视频生成；AnyFlow 实现任意步数视频扩散推理，结合策略流图蒸馏大幅提升生成效率；ATLAS 仅凭一个词触发视觉推理的潜在与代理双模式切换；Agent 方向集中爆发——从 3D 资产生成到搜索工具重塑。</div>
+</div>
+
+<section class="section">
+<h2 class="section-title">🧩 Agent · 智能体</h2>
+
+<div class="paper-card">
+  <div class="paper-title"><span class="hot-badge">🔥</span> ATLAS: Agentic or Latent Visual Reasoning? One Word is Enough for Both</div>
+  <div class="paper-meta">arXiv 2026</div>
+  <div class="paper-summary">提出 ATLAS 框架，仅凭一个触发词即可在视觉推理的代理模式（逐步显式推理）与潜在模式（隐式内部推理）之间自由切换。统一了两种视觉推理范式，为多模态推理模型提供灵活高效的推理策略选择。</div>
+  <div class="paper-tags">
+    <span class="tag tag-agent">Agent</span>
+    <span class="tag tag-multimodal">Visual Reasoning</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.15198">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.15198">PDF</a>
+    <a href="https://atlas-oneword.github.io">Project</a>
+    <a href="https://github.com/ZiyuGuo99/ATLAS">Code</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title">FutureSim: Replaying World Events to Evaluate Adaptive Agents</div>
+  <div class="paper-meta">arXiv 2026</div>
+  <div class="paper-summary">提出 FutureSim 框架，通过重放真实世界事件来评估自适应智能体。在动态、开放式环境中系统性测试 AI Agent 的适应能力，为评估智能体面对现实世界变化时的响应质量提供标准化方法。</div>
+  <div class="paper-tags">
+    <span class="tag tag-agent">Agent</span>
+    <span class="tag tag-embodied">Evaluation</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.15188">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.15188">PDF</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title">Articraft: An Agentic System for Scalable Articulated 3D Asset Generation</div>
+  <div class="paper-meta">arXiv 2026</div>
+  <div class="paper-summary">提出 Articraft 智能体系统，实现可扩展的铰接式 3D 资产自动生成。解决了铰接 3D 物体数据匮乏的瓶颈，通过 Agent 架构自动化生成大规模高质量铰接 3D 数据集，助力铰接物体理解研究。</div>
+  <div class="paper-tags">
+    <span class="tag tag-agent">Agent</span>
+    <span class="tag tag-3d">3D Generation</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.15187">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.15187">PDF</a>
+    <a href="https://articraft3d.github.io/">Project</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title">Is Grep All You Need? How Agent Harnesses Reshape Agentic Search</div>
+  <div class="paper-meta">arXiv 2026</div>
+  <div class="paper-summary">深入研究 Agent 工具如何重塑代理搜索范式。分析了大语言模型智能体在利用 grep 等基础工具时展现的涌现搜索能力，揭示简单工具组合如何实现复杂的信息检索与代码搜索任务。</div>
+  <div class="paper-tags">
+    <span class="tag tag-agent">Agent</span>
+    <span class="tag tag-llm">Tool Use</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.15184">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.15184">PDF</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title">EVA-Bench: A New End-to-end Framework for Evaluating Voice Agents</div>
+  <div class="paper-meta">HF Daily Papers · ServiceNow AI</div>
+  <div class="paper-summary">提出 EVA-Bench 端到端语音智能体评测框架，系统性评估语音 Agent 的全链路能力。覆盖语音理解、推理决策到行动执行的完整流程，为语音交互智能体的研发提供标准化基准。</div>
+  <div class="paper-tags">
+    <span class="tag tag-agent">Agent</span>
+    <span class="tag tag-voice">Voice</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.13841">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.13841">PDF</a>
+    <a href="https://servicenow.github.io/eva/">Project</a>
+    <a href="https://github.com/ServiceNow/eva">Code</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title">Predicting Decisions of AI Agents from Limited Interaction through Text-Tabular Modeling</div>
+  <div class="paper-meta">HF Daily Papers · Technion</div>
+  <div class="paper-summary">研究如何从有限交互数据中预测 AI 智能体的决策行为。通过融合文本与表格数据的建模方法，在少量观察样本下实现对智能体决策模式的准确预测，为智能体行为理解提供新思路。</div>
+  <div class="paper-tags">
+    <span class="tag tag-agent">Agent</span>
+    <span class="tag tag-llm">Prediction</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.12411">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.12411">PDF</a>
+  </div>
+</div>
+
+</section>
+
+<section class="section">
+<h2 class="section-title">🌍 World Model · 世界模型</h2>
+
+<div class="paper-card">
+  <div class="paper-title"><span class="hot-badge">🔥</span> SANA-WM: Efficient Minute-Scale World Modeling with Hybrid Linear Diffusion Transformer</div>
+  <div class="paper-meta">arXiv 2026 · NVIDIA</div>
+  <div class="paper-summary">推出 SANA-WM，一个高效的 2.6B 参数开源世界模型，原生支持分钟级视频生成。采用混合线性扩散 Transformer 架构，在计算效率和生成质量之间取得最优平衡，为世界模型的实用化部署奠定基础。</div>
+  <div class="paper-tags">
+    <span class="tag tag-world-model">World Model</span>
+    <span class="tag tag-diffusion">Diffusion</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.15178">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.15178">PDF</a>
+    <a href="https://nvlabs.github.io/Sana/WM/">Project</a>
+  </div>
+</div>
+
+</section>
+
+<section class="section">
+<h2 class="section-title">🎨 Multimodal · 多模态</h2>
+
+<div class="paper-card">
+  <div class="paper-title">From Plans to Pixels: Learning to Plan and Orchestrate for Open-Ended Image Editing</div>
+  <div class="paper-meta">arXiv 2026</div>
+  <div class="paper-summary">提出从规划到像素的开放式图像编辑方法，学习如何为复杂抽象编辑指令制定执行计划并协调多步骤操作。使图像编辑模型能够理解并执行需要多步推理的高级编辑任务。</div>
+  <div class="paper-tags">
+    <span class="tag tag-multimodal">Multimodal</span>
+    <span class="tag tag-agent">Planning</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.15181">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.15181">PDF</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title">VGGT-Ω: Feed-Forward 3D Reconstruction with Competitive Performance</div>
+  <div class="paper-meta">arXiv 2026</div>
+  <div class="paper-summary">在 VGGT 前馈式 3D 重建模型基础上推出增强版本 VGGT-Ω，实现与优化方法相当的竞争性能。证明前馈式架构在 3D 重建任务中已能匹敌传统迭代优化方法，大幅提升推理效率。</div>
+  <div class="paper-tags">
+    <span class="tag tag-multimodal">3D Vision</span>
+    <span class="tag tag-3d">Reconstruction</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.15195">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.15195">PDF</a>
+    <a href="http://vggt-omega.github.io/">Project</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title">MulTaBench: Benchmarking Multimodal Tabular Learning with Text and Image</div>
+  <div class="paper-meta">HF Daily Papers · Technion</div>
+  <div class="paper-summary">提出 MulTaBench 多模态表格学习基准，系统性评估融合文本与图像的表格数据建模能力。填补了多模态表格学习领域缺乏统一评测标准的空白，推动结构化与非结构化数据融合研究。</div>
+  <div class="paper-tags">
+    <span class="tag tag-multimodal">Multimodal</span>
+    <span class="tag tag-llm">Benchmark</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.10616">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.10616">PDF</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title">Edit-Compass &amp; EditReward-Compass: A Unified Benchmark for Image Editing and Reward Modeling</div>
+  <div class="paper-meta">HF Daily Papers</div>
+  <div class="paper-summary">提出 Edit-Compass 统一基准，同时评测图像编辑质量与奖励模型的判别能力。建立图像编辑与奖励建模的双向评测体系，为训练更好的图像编辑模型和评估器提供标准化框架。</div>
+  <div class="paper-tags">
+    <span class="tag tag-multimodal">Image Editing</span>
+    <span class="tag tag-rl">Reward Model</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.13062">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.13062">PDF</a>
+    <a href="https://github.com/bxhsort/Edit-Compass-and-EditReward-Compass">Code</a>
+  </div>
+</div>
+
+</section>
+
+<section class="section">
+<h2 class="section-title">🦾 Robotics · 机器人</h2>
+
+<div class="paper-card">
+  <div class="paper-title"><span class="hot-badge">🔥</span> AnyFlow: Any-Step Video Diffusion Model with On-Policy Flow Map Distillation</div>
+  <div class="paper-meta">HF Daily Papers · NVIDIA</div>
+  <div class="paper-summary">提出 AnyFlow 任意步数视频扩散模型，通过在线策略流图蒸馏实现灵活推理步数控制。在保持生成质量的同时，允许用户自由选择推理步数，从单步到多步均可获得高质量视频输出，大幅提升视频生成的实用性。</div>
+  <div class="paper-tags">
+    <span class="tag tag-robot">Video Generation</span>
+    <span class="tag tag-diffusion">Distillation</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.13724">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.13724">PDF</a>
+    <a href="https://nvlabs.github.io/AnyFlow/">Project</a>
+    <a href="https://github.com/NVlabs/AnyFlow">Code</a>
+  </div>
+</div>
+
+</section>
+
+<section class="section">
+<h2 class="section-title">🧠 LLM · 大语言模型</h2>
+
+<div class="paper-card">
+  <div class="paper-title">OpenDeepThink: Parallel Reasoning via Bradley-Terry Aggregation</div>
+  <div class="paper-meta">arXiv 2026</div>
+  <div class="paper-summary">提出 OpenDeepThink 并行推理框架，通过 Bradley-Terry 聚合机制提升 LLM 推理能力。利用测试时计算扩展，并行生成多个推理路径并通过统计聚合选择最优答案，为推理增强提供新范式。</div>
+  <div class="paper-tags">
+    <span class="tag tag-llm">LLM</span>
+    <span class="tag tag-rl">Reasoning</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.15177">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.15177">PDF</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title">MinT: Managed Infrastructure for Training and Serving Millions of LLMs</div>
+  <div class="paper-meta">HF Daily Papers · Mind Lab</div>
+  <div class="paper-summary">提出 MinT 大规模 LLM 训练与服务管理基础设施，支持百万级模型的高效训练和部署。设计了完整的基础设施管理方案，解决超大规模语言模型集群的资源调度、容错和效率优化问题。</div>
+  <div class="paper-tags">
+    <span class="tag tag-llm">LLM</span>
+    <span class="tag tag-product">Infrastructure</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.13779">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.13779">PDF</a>
+    <a href="https://macaron.im/mindlab/mint">Project</a>
+    <a href="https://github.com/MindLab-Research/mindlab-toolkit">Code</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title">Many-Shot CoT-ICL: Making In-Context Learning Truly Learn</div>
+  <div class="paper-meta">HF Daily Papers</div>
+  <div class="paper-summary">研究大量示例下的思维链上下文学习机制，揭示如何让 ICL 真正实现学习而非简单模式匹配。通过增加 CoT 示例数量并优化示例组织策略，显著提升上下文学习的泛化能力。</div>
+  <div class="paper-tags">
+    <span class="tag tag-llm">LLM</span>
+    <span class="tag tag-llm">In-Context Learning</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.13511">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.13511">PDF</a>
+  </div>
+</div>
+
+</section>
+
+<div class="stats">
+  <h3>📊 数据来源说明</h3>
+  <p>数据来源：arXiv 论文 8 篇 + HuggingFace 热门论文 7 篇 | X/Twitter RSS 不可用</p>
+  <p>主题分布：Agent 6 · World Model 1 · Multimodal 4 · Robotics 1 · LLM 3</p>
+  <p>更新时间：2026年5月15日</p>
+</div>
+
+</div>
+</body>
+</html>
