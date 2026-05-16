@@ -109,6 +109,7 @@ header .subtitle {
 .tag-voice { background: rgba(56,189,248,0.15); color: #38bdf8; }
 .tag-product { background: rgba(163,230,53,0.15); color: #a3e635; }
 .tag-diffusion { background: rgba(192,132,252,0.15); color: #c084fc; }
+.tag-3d { background: rgba(45,212,191,0.15); color: #2dd4bf; }
 .paper-links {
   display: flex;
   flex-wrap: wrap;
@@ -188,232 +189,138 @@ header .subtitle {
 
 <div class="highlight-banner">
   <div class="hl-title">🔥 今日看点</div>
-  <div class="hl-text">Realtime-VLA FLASH 提出扩散式 VLA 模型的推测性推理框架，实现实时机器人控制；World Action Models 综述定义具身 AI 下一前沿方向；RoboEvolve 提出规划器-模拟器协同进化框架解决机器人操作数据稀缺问题；MCP-Cosmos 将世界模型引入 MCP 环境实现复杂任务执行。</div>
+  <div class="hl-text">SANA-WM: Efficient Minute-Scale World Mo...</div>
 </div>
-
-<section class="section">
-<h2 class="section-title">🤖 VLA · Vision-Language-Action</h2>
-
-<div class="paper-card">
-  <div class="paper-title"><span class="hot-badge">🔥</span> Realtime-VLA FLASH: Speculative Inference Framework for Diffusion-based VLAs</div>
-  <div class="paper-meta">arXiv 2026</div>
-  <div class="paper-summary">提出面向扩散式视觉-语言-动作模型（dVLA）的推测性推理框架 FLASH，通过预测性并行推理大幅降低延迟，使 dVLA 模型能够以实时速率执行机器人控制任务，为具身智能的实时部署开辟新路径。</div>
-  <div class="paper-tags">
-    <span class="tag tag-vla">VLA</span>
-    <span class="tag tag-diffusion">Diffusion</span>
-  </div>
-  <div class="paper-links">
-    <a href="https://arxiv.org/abs/2605.13778">arXiv</a>
-    <a href="https://arxiv.org/pdf/2605.13778">PDF</a>
-  </div>
-</div>
-
-<div class="paper-card">
-  <div class="paper-title"><span class="hot-badge">🔥</span> FrameSkip: Learning from Fewer but More Informative Frames in VLA Training</div>
-  <div class="paper-meta">arXiv 2026 · ZGC-EmbodyAI</div>
-  <div class="paper-summary">提出 FrameSkip 方法，通过在 VLA 训练中智能选择更少但信息量更大的关键帧，显著提升训练效率和策略质量。证明密集帧采样并非必要，少量精选帧即可学得更优策略。</div>
-  <div class="paper-tags">
-    <span class="tag tag-vla">VLA</span>
-    <span class="tag tag-embodied">Training Efficiency</span>
-  </div>
-  <div class="paper-links">
-    <a href="https://arxiv.org/abs/2605.13757">arXiv</a>
-    <a href="https://arxiv.org/pdf/2605.13757">PDF</a>
-    <a href="https://github.com/ZGC-EmbodyAI/FrameSkip">Code</a>
-  </div>
-</div>
-
-<div class="paper-card">
-  <div class="paper-title"><span class="hot-badge">🔥</span> World Action Models: The Next Frontier in Embodied AI</div>
-  <div class="paper-meta">HF Daily Papers · OpenMOSS</div>
-  <div class="paper-summary">系统性综述世界动作模型（WAM）作为具身 AI 的下一个前沿方向。提出将世界模型与动作决策紧密耦合的范式，梳理该领域关键挑战与研究路线图，为具身智能的统一建模指明方向。</div>
-  <div class="paper-tags">
-    <span class="tag tag-vla">VLA</span>
-    <span class="tag tag-world-model">World Model</span>
-  </div>
-  <div class="paper-links">
-    <a href="https://arxiv.org/abs/2605.12090">arXiv</a>
-    <a href="https://arxiv.org/pdf/2605.12090">PDF</a>
-    <a href="https://openmoss.github.io/Awesome-WAM/">Project</a>
-    <a href="https://github.com/OpenMOSS/Awesome-WAM">Code</a>
-  </div>
-</div>
-
-</section>
-
-<section class="section">
-<h2 class="section-title">🦾 Robotics · 机器人</h2>
-
-<div class="paper-card">
-  <div class="paper-title"><span class="hot-badge">🔥</span> RoboEvolve: Co-Evolving Planner-Simulator for Robotic Manipulation with Limited Data</div>
-  <div class="paper-meta">arXiv 2026</div>
-  <div class="paper-summary">提出规划器-模拟器协同进化框架 RoboEvolve，解决机器人操作中数据稀缺的根本瓶颈。通过规划器与模拟器的互相驱动迭代进化，以有限真实数据实现高质量操作策略学习。</div>
-  <div class="paper-tags">
-    <span class="tag tag-robot">Manipulation</span>
-    <span class="tag tag-embodied">Data Efficiency</span>
-  </div>
-  <div class="paper-links">
-    <a href="https://arxiv.org/abs/2605.13775">arXiv</a>
-    <a href="https://arxiv.org/pdf/2605.13775">PDF</a>
-  </div>
-</div>
-
-<div class="paper-card">
-  <div class="paper-title">Manipulation Planning for Construction Activities with Repetitive Tasks</div>
-  <div class="paper-meta">arXiv 2026</div>
-  <div class="paper-summary">研究建筑施工中重复性操作任务的操控规划问题。提出面向施工活动的操作技能获取方法，使机器人能够通过学习重复性动作模式高效完成建筑领域的复杂操作序列。</div>
-  <div class="paper-tags">
-    <span class="tag tag-robot">Manipulation</span>
-    <span class="tag tag-embodied">Construction</span>
-  </div>
-  <div class="paper-links">
-    <a href="https://arxiv.org/abs/2605.13754">arXiv</a>
-    <a href="https://arxiv.org/pdf/2605.13754">PDF</a>
-  </div>
-</div>
-
-<div class="paper-card">
-  <div class="paper-title">TinySDP: Real Time Semidefinite Optimization for Certifiable and Agile Edge Robotics</div>
-  <div class="paper-meta">arXiv 2026 · A2R Lab</div>
-  <div class="paper-summary">提出 TinySDP 实时半正定规划优化器，为边缘端机器人提供可认证的敏捷控制。将 SDP 求解推向实时速率，使资源受限的边缘机器人也能获得数学可证明的安全与最优控制保证。</div>
-  <div class="paper-tags">
-    <span class="tag tag-robot">Edge Robotics</span>
-    <span class="tag tag-rl">Optimization</span>
-  </div>
-  <div class="paper-links">
-    <a href="https://arxiv.org/abs/2605.13748">arXiv</a>
-    <a href="https://arxiv.org/pdf/2605.13748">PDF</a>
-    <a href="https://a2r-lab.org/TinySDP/">Project</a>
-  </div>
-</div>
-
-<div class="paper-card">
-  <div class="paper-title">LEXI-SG: Monocular 3D Scene Graph Mapping with Room-Guided Feed-Forward Reconstruction</div>
-  <div class="paper-meta">arXiv 2026 · Oxford Robotics Institute</div>
-  <div class="paper-summary">提出基于单目视觉的 3D 场景图建模方法 LEXI-SG，通过房间引导的前馈式重建实现高效场景图构建。为机器人导航提供结构化语义表示，支持高层次空间理解和推理。</div>
-  <div class="paper-tags">
-    <span class="tag tag-robot">Navigation</span>
-    <span class="tag tag-embodied">Scene Graph</span>
-  </div>
-  <div class="paper-links">
-    <a href="https://arxiv.org/abs/2605.13741">arXiv</a>
-    <a href="https://arxiv.org/pdf/2605.13741">PDF</a>
-    <a href="https://ori-drs.github.io/lexisg-web/">Project</a>
-  </div>
-</div>
-
-<div class="paper-card">
-  <div class="paper-title">RubricEM: Meta-RL with Rubric-guided Policy Decomposition beyond Verifiable Rewards</div>
-  <div class="paper-meta">HF Daily Papers · Google</div>
-  <div class="paper-summary">提出 RubricEM，通过评分准则引导的策略分解实现超越可验证奖励的元强化学习。将复杂任务按评分标准拆解为子策略模块，使机器人在缺少明确奖励信号时也能有效学习。</div>
-  <div class="paper-tags">
-    <span class="tag tag-robot">Robotics</span>
-    <span class="tag tag-rl">Meta-RL</span>
-  </div>
-  <div class="paper-links">
-    <a href="https://arxiv.org/abs/2605.10899">arXiv</a>
-    <a href="https://arxiv.org/pdf/2605.10899">PDF</a>
-  </div>
-</div>
-
-</section>
-
-<section class="section">
-<h2 class="section-title">🎨 Multimodal · 多模态</h2>
-
-<div class="paper-card">
-  <div class="paper-title">Training Long-Context Vision-Language Models Effectively with Generalization Beyond 128K Context</div>
-  <div class="paper-meta">arXiv 2026</div>
-  <div class="paper-summary">研究如何有效训练长上下文视觉-语言模型，使其泛化能力突破 128K 上下文窗口限制。提出系统性的训练策略，使大型 VLM 能够处理超长视觉-文本序列，拓展多模态模型的应用边界。</div>
-  <div class="paper-tags">
-    <span class="tag tag-multimodal">Multimodal</span>
-    <span class="tag tag-vlm">Long-Context VLM</span>
-  </div>
-  <div class="paper-links">
-    <a href="https://arxiv.org/abs/2605.13831">arXiv</a>
-    <a href="https://arxiv.org/pdf/2605.13831">PDF</a>
-  </div>
-</div>
-
-</section>
 
 <section class="section">
 <h2 class="section-title">🌍 World Model · 世界模型</h2>
 
 <div class="paper-card">
-  <div class="paper-title">Do Enterprise Systems Need Learned World Models? The Importance of Context to Infer Dynamics</div>
-  <div class="paper-meta">HF Daily Papers · ServiceNow AI</div>
-  <div class="paper-summary">探讨企业系统是否需要学习型世界模型，强调上下文信息对推断系统动态的关键作用。分析了在复杂企业环境中部署世界模型的必要性和挑战，为实际应用提供理论框架。</div>
+  <div class="paper-title"><span class="hot-badge">🔥</span> SANA-WM: Efficient Minute-Scale World Modeling with Hybrid Linear Diffusion Transformer</div>
+  <div class="paper-meta">arXiv 2026</div>
+  <div class="paper-summary">We introduce SANA-WM, an efficient 2.6B-parameter open-source world model natively trained for one-minute generation, synthesizing high-fidelity, 720p, minute-scale videos with precise camera control.</div>
   <div class="paper-tags">
     <span class="tag tag-world-model">World Model</span>
-    <span class="tag tag-agent">Enterprise AI</span>
+    <span class="tag tag-embodied">蒸馏</span>
   </div>
   <div class="paper-links">
-    <a href="https://arxiv.org/abs/2605.12178">arXiv</a>
-    <a href="https://arxiv.org/pdf/2605.12178">PDF</a>
-  </div>
-</div>
-
-<div class="paper-card">
-  <div class="paper-title">MCP-Cosmos: World Model-Augmented Agents for Complex Task Execution in MCP Environments</div>
-  <div class="paper-meta">HF Daily Papers · IBM Research</div>
-  <div class="paper-summary">提出 MCP-Cosmos 框架，将世界模型增强引入 MCP 环境中的智能体，实现复杂任务执行。通过世界模型预测环境变化辅助决策，显著提升智能体在多步骤复杂任务中的成功率。</div>
-  <div class="paper-tags">
-    <span class="tag tag-world-model">World Model</span>
-    <span class="tag tag-agent">MCP Agent</span>
-  </div>
-  <div class="paper-links">
-    <a href="https://arxiv.org/abs/2605.09131">arXiv</a>
-    <a href="https://arxiv.org/pdf/2605.09131">PDF</a>
+    <a href="https://arxiv.org/abs/2605.15178">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.15178">PDF</a>
+    <a href="https://nvlabs.github.io/Sana/WM/">Project</a>
   </div>
 </div>
 
 </section>
-
 <section class="section">
 <h2 class="section-title">🧩 Agent · 智能体</h2>
 
 <div class="paper-card">
-  <div class="paper-title">MemPrivacy: Privacy-Preserving Personalized Memory Management for Edge-Cloud Agents</div>
-  <div class="paper-meta">HF Daily Papers · MemTensor</div>
-  <div class="paper-summary">提出 MemPrivacy 框架，面向边缘-云协同智能体实现隐私保护的个性化记忆管理。在保障用户数据隐私的前提下，使智能体能够在边缘和云端之间安全地存储和调用个人化知识。</div>
+  <div class="paper-title">ATLAS: Agentic or Latent Visual Reasoning? One Word is Enough for Both</div>
+  <div class="paper-meta">arXiv 2026</div>
+  <div class="paper-summary">To combine their strengths while mitigating their limitations, we propose ATLAS, a framework in which a single discrete &#x27;word&#x27;, termed as a functional token, serves both as an agentic operation and a latent visual reasoning unit. To further address the sparsity of functional tokens during RL, we in…</div>
   <div class="paper-tags">
     <span class="tag tag-agent">Agent</span>
-    <span class="tag tag-security">Privacy</span>
   </div>
   <div class="paper-links">
-    <a href="https://arxiv.org/abs/2605.09530">arXiv</a>
-    <a href="https://arxiv.org/pdf/2605.09530">PDF</a>
-    <a href="https://github.com/MemTensor/MemPrivacy">Code</a>
+    <a href="https://arxiv.org/abs/2605.15198">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.15198">PDF</a>
+    <a href="https://atlas-oneword.github.io">Project</a>
+    <a href="https://github.com/ZiyuGuo99/ATLAS">Code</a>
   </div>
 </div>
 
 <div class="paper-card">
-  <div class="paper-title">δ-mem: Efficient Online Memory for Large Language Models</div>
-  <div class="paper-meta">HF Daily Papers · Mind Lab</div>
-  <div class="paper-summary">提出 δ-mem 高效在线记忆机制，使大语言模型能够在推理过程中动态维护和更新外部记忆。通过增量式记忆更新策略，显著降低长期交互中的计算开销，提升上下文连贯性。</div>
+  <div class="paper-title">FutureSim: Replaying World Events to Evaluate Adaptive Agents</div>
+  <div class="paper-meta">arXiv 2026</div>
+  <div class="paper-summary">To efficiently measure this capability for realistic use-cases, we propose building grounded simulations that replay real-world events in the order they occurred.</div>
   <div class="paper-tags">
     <span class="tag tag-agent">Agent</span>
-    <span class="tag tag-llm">Memory</span>
   </div>
   <div class="paper-links">
-    <a href="https://arxiv.org/abs/2605.12357">arXiv</a>
-    <a href="https://arxiv.org/pdf/2605.12357">PDF</a>
-    <a href="https://github.com/declare-lab/delta-Mem">Code</a>
+    <a href="https://arxiv.org/abs/2605.15188">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.15188">PDF</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title">Articraft: An Agentic System for Scalable Articulated 3D Asset Generation</div>
+  <div class="paper-meta">arXiv 2026</div>
+  <div class="paper-summary">In this paper, we propose to leverage large language models (LLMs) to close this gap and generate articulated assets at scale. We show that this produces higher-quality assets than both state-of-the-art articulated-asset generators and general-purpose coding agents.</div>
+  <div class="paper-tags">
+    <span class="tag tag-agent">Agent</span>
+    <span class="tag tag-embodied">语言模型</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.15187">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.15187">PDF</a>
+    <a href="https://articraft3d.github.io/">Project</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title">Is Grep All You Need? How Agent Harnesses Reshape Agentic Search</div>
+  <div class="paper-meta">arXiv 2026</div>
+  <div class="paper-summary">Recent advances in Large Language Model (LLM) agents have enabled complex agentic workflows where models autonomously retrieve information, call tools, and reason over large corpora to complete tasks…</div>
+  <div class="paper-tags">
+    <span class="tag tag-agent">Agent</span>
+    <span class="tag tag-embodied">检索增强</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.15184">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.15184">PDF</a>
   </div>
 </div>
 
 </section>
-
 <section class="section">
-<h2 class="section-title">📰 行业动态 · Informations</h2>
+<h2 class="section-title">🎨 Multimodal · 多模态</h2>
 
-<div class="info-card">
-  <div class="paper-title">Learning Responsibility-Attributed Adversarial Scenarios for Testing Autonomous Vehicles</div>
-  <div class="paper-summary">提出责任归因的对抗性场景学习方法，用于自动驾驶系统（ADS）的安全测试。通过生成带有明确责任归属的对抗驾驶场景，系统性验证自动驾驶的安全保障能力。</div>
+<div class="paper-card">
+  <div class="paper-title">From Plans to Pixels: Learning to Plan and Orchestrate for Open-Ended Image Editing</div>
+  <div class="paper-meta">arXiv 2026</div>
+  <div class="paper-summary">We propose an experiential framework for long-horizon image editing, where a planner generates structured atomic decompositions and an orchestrator selects tools and regions to execute each step.</div>
+  <div class="paper-tags">
+    <span class="tag tag-multimodal">Multimodal</span>
+  </div>
   <div class="paper-links">
-    <a href="https://arxiv.org/abs/2605.13751">arXiv</a>
-    <a href="https://arxiv.org/pdf/2605.13751">PDF</a>
+    <a href="https://arxiv.org/abs/2605.15181">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.15181">PDF</a>
+  </div>
+</div>
+
+</section>
+<section class="section">
+<h2 class="section-title">🧠 LLM · 大语言模型</h2>
+
+<div class="paper-card">
+  <div class="paper-title">OpenDeepThink: Parallel Reasoning via Bradley--Terry Aggregation</div>
+  <div class="paper-meta">arXiv 2026</div>
+  <div class="paper-summary">To address this, we introduce OpenDeepThink, a population-based test-time compute framework that selects via pairwise Bradley-Terry comparison.</div>
+  <div class="paper-tags">
+    <span class="tag tag-llm">LLM</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.15177">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.15177">PDF</a>
+  </div>
+</div>
+
+</section>
+<section class="section">
+<h2 class="section-title">📄 Other · 其他</h2>
+
+<div class="paper-card">
+  <div class="paper-title">VGGT-$Ω$</div>
+  <div class="paper-meta">arXiv 2026</div>
+  <div class="paper-summary">To enable training this model at an unprecedented scale, we introduce architectural changes that improve training efficiency, a high-quality data annotation pipeline that supports dynamic scenes, and a self-supervised learning protocol.</div>
+  <div class="paper-tags">
+    <span class="tag tag-llm">Other</span>
+    <span class="tag tag-embodied">自监督学习</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.15195">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.15195">PDF</a>
+    <a href="http://vggt-omega.github.io/">Project</a>
   </div>
 </div>
 
@@ -421,8 +328,8 @@ header .subtitle {
 
 <div class="stats">
   <h3>📊 数据来源说明</h3>
-  <p>数据来源：arXiv 论文 8 篇 + HuggingFace 热门论文 6 篇 | X/Twitter RSS 不可用</p>
-  <p>主题分布：VLA 3 · Robotics 5 · Multimodal 1 · World Model 2 · Agent 2 · 行业动态 1</p>
+  <p>数据来源：arXiv 论文 8 篇 | 共 8 条动态</p>
+  <p>主题分布：World Model 1 · Agent 4 · Multimodal 1 · LLM 1 · Other 1</p>
   <p>更新时间：2026年5月14日</p>
 </div>
 

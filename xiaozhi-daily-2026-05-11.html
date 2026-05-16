@@ -109,6 +109,7 @@ header .subtitle {
 .tag-voice { background: rgba(56,189,248,0.15); color: #38bdf8; }
 .tag-product { background: rgba(163,230,53,0.15); color: #a3e635; }
 .tag-diffusion { background: rgba(192,132,252,0.15); color: #c084fc; }
+.tag-3d { background: rgba(45,212,191,0.15); color: #2dd4bf; }
 .paper-links {
   display: flex;
   flex-wrap: wrap;
@@ -188,138 +189,148 @@ header .subtitle {
 
 <div class="highlight-banner">
   <div class="hl-title">🔥 今日看点</div>
-  <div class="hl-text">Flow-OPD 提出 Flow Matching 模型的在策略蒸馏方法，大幅加速文生图推理；Listwise Policy Optimization 以群组 RLVR 重新定义 LLM 响应空间上的目标投影优化；HumanNet 构建百万小时人类中心视频数据集，推动具身智能发展。</div>
+  <div class="hl-text">HarmoWAM: Harmonizing Generalizable and ...；Is Your Driving World Model an All-Aroun...；PhyGround: Benchmarking Physical Reasoni...；DeepSight: Long-Horizon World Modeling v...；CoWorld-VLA: Thinking in a Multi-Expert ...</div>
 </div>
 
 <section class="section">
-<h2 class="section-title">🦾 Robotics · 机器人学</h2>
+<h2 class="section-title">🤖 VLA · Vision-Language-Action</h2>
 
 <div class="paper-card">
-  <div class="paper-title"><span class="hot-badge">🔥</span> Flow-OPD: On-Policy Distillation for Flow Matching Models</div>
-  <div class="paper-meta">HuggingFace Papers 2026 · HuggingFace Community</div>
-  <div class="paper-summary">现有 Flow Matching (FM) 文生图模型在推理时需要大量步骤才能生成高质量图像。本文提出 Flow-OPD——一种在策略蒸馏方法，通过在学生模型自身的轨迹上进行蒸馏，避免了传统离策略蒸馏中分布漂移问题，显著减少推理步数的同时保持生成质量。</div>
+  <div class="paper-title"><span class="hot-badge">🔥</span> CoWorld-VLA: Thinking in a Multi-Expert World Model for Autonomous Driving</div>
+  <div class="paper-meta">arXiv 2026</div>
+  <div class="paper-summary">In this paper, we propose CoWorld-VLA, a multi-expert world reasoning framework for autonomous driving, where world representations serve as explicit conditions to guide action planning.</div>
   <div class="paper-tags">
-    <span class="tag tag-robot">Robotics</span>
-    <span class="tag tag-diffusion">Flow Matching</span>
+    <span class="tag tag-vla">VLA</span>
+    <span class="tag tag-embodied">扩散模型</span>
   </div>
   <div class="paper-links">
-    <a href="https://arxiv.org/abs/2605.08063">arXiv</a>
-    <a href="https://arxiv.org/pdf/2605.08063">PDF</a>
-    <a href="https://costaliya.github.io/Flow-OPD/">Project</a>
-    <a href="https://github.com/CostaliyA/Flow-OPD">Code</a>
+    <a href="https://arxiv.org/abs/2605.10426">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.10426">PDF</a>
+    <a href="https://github.com/AFARI-Research/CoWorld-VLA">Code</a>
   </div>
 </div>
 
 <div class="paper-card">
-  <div class="paper-title"><span class="hot-badge">🔥</span> Listwise Policy Optimization: Group-based RLVR as Target-Projection on the LLM Response Simplex</div>
-  <div class="paper-meta">HuggingFace Papers 2026 · Tencent Hunyuan</div>
-  <div class="paper-summary">带可验证奖励的强化学习（RLVR）已成为提升 LLM 推理能力的重要训练范式。本文提出 Listwise Policy Optimization，将群组式 RLVR 重新形式化为 LLM 响应单纯形上的目标投影问题，建立更优雅的数学框架，实现更稳定高效的策略优化。</div>
+  <div class="paper-title">Retrieve-then-Steer: Online Success Memory for Test-Time Adaptation of Generative VLAs</div>
+  <div class="paper-meta">arXiv 2026</div>
+  <div class="paper-summary">We propose an online success-memory guided test-time adaptation framework for generative VLAs. To incorporate this prior into action generation, we introduce confidence-adaptive prior guidance, which injects the elite prior into an intermediate state of the flow-matching action sampler and adjusts…</div>
   <div class="paper-tags">
-    <span class="tag tag-rl">Reinforcement Learning</span>
-    <span class="tag tag-llm">Policy Optimization</span>
+    <span class="tag tag-vla">VLA</span>
+    <span class="tag tag-embodied">检索增强</span>
   </div>
   <div class="paper-links">
-    <a href="https://arxiv.org/abs/2605.06139">arXiv</a>
-    <a href="https://arxiv.org/pdf/2605.06139">PDF</a>
-  </div>
-</div>
-
-<div class="paper-card">
-  <div class="paper-title"><span class="hot-badge">🔥</span> HumanNet: Scaling Human-centric Video Learning to One Million Hours</div>
-  <div class="paper-meta">HuggingFace Papers 2026 · HuggingFace Community</div>
-  <div class="paper-summary">具身智能的进步越来越依赖对人类行为的理解。本文提出 HumanNet，构建了百万小时规模的人类中心视频数据集，通过大规模视频学习推动机器人对人体动作、意图和交互的深度理解，为具身智能领域提供关键数据基础设施。</div>
-  <div class="paper-tags">
-    <span class="tag tag-robot">Robotics</span>
-    <span class="tag tag-embodied">Embodied</span>
-    <span class="tag tag-video">Video Learning</span>
-  </div>
-  <div class="paper-links">
-    <a href="https://arxiv.org/abs/2605.06747">arXiv</a>
-    <a href="https://arxiv.org/pdf/2605.06747">PDF</a>
-    <a href="https://dagroup-pku.github.io/HumanNet/">Project</a>
-    <a href="https://github.com/DAGroup-PKU/HumanNet">Code</a>
+    <a href="https://arxiv.org/abs/2605.10094">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.10094">PDF</a>
   </div>
 </div>
 
 </section>
-
 <section class="section">
-<h2 class="section-title">🧩 Agent · 智能体</h2>
+<h2 class="section-title">🌍 World Model · 世界模型</h2>
 
 <div class="paper-card">
-  <div class="paper-title">LLMs Improving LLMs: Agentic Discovery for Test-Time Scaling</div>
-  <div class="paper-meta">HuggingFace Papers 2026 · Google</div>
-  <div class="paper-summary">探索利用 LLM Agent 在测试时自动发现和应用改进策略来提升 LLM 推理能力。通过 Agentic Discovery 机制，模型能在推理阶段自主搜索优化路径，实现测试时计算的有效扩展（Test-Time Scaling），为 LLM 能力的动态提升提供新思路。</div>
+  <div class="paper-title"><span class="hot-badge">🔥</span> Is Your Driving World Model an All-Around Player?</div>
+  <div class="paper-meta">arXiv 2026</div>
+  <div class="paper-summary">We introduce WorldLens, a unified benchmark that measures world-model fidelity across the full spectrum, from pixel quality and 4D geometry to closed-loop driving and human perceptual alignment, through five complementary aspects and 24 standardized dimensions.</div>
   <div class="paper-tags">
-    <span class="tag tag-agent">Agent</span>
-    <span class="tag tag-llm">Test-Time Scaling</span>
+    <span class="tag tag-world-model">World Model</span>
+    <span class="tag tag-embodied">蒸馏</span>
   </div>
   <div class="paper-links">
-    <a href="https://arxiv.org/abs/2605.08083">arXiv</a>
-    <a href="https://arxiv.org/pdf/2605.08083">PDF</a>
-    <a href="https://zhengkid.github.io/AutoTTS-web/">Project</a>
-    <a href="https://github.com/zhengkid/AutoTTS">Code</a>
+    <a href="https://arxiv.org/abs/2605.10858">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.10858">PDF</a>
+    <a href="https://worldbench.github.io/worldlens">Project</a>
+    <a href="https://github.com/worldbench/WorldLens">Code</a>
   </div>
 </div>
 
 <div class="paper-card">
-  <div class="paper-title">HyperEyes: Dual-Grained Efficiency-Aware Reinforcement Learning for Parallel Multimodal Search Agents</div>
-  <div class="paper-meta">HuggingFace Papers 2026 · Xiaohongshu</div>
-  <div class="paper-summary">针对多模态搜索 Agent 的效率问题，提出 HyperEyes——一种双粒度效率感知强化学习方法。通过并行化搜索策略和分层效率优化，显著提升多模态搜索 Agent 在复杂信息检索任务中的响应速度和准确性。</div>
+  <div class="paper-title"><span class="hot-badge">🔥</span> PhyGround: Benchmarking Physical Reasoning in Generative World Models</div>
+  <div class="paper-meta">arXiv 2026</div>
+  <div class="paper-summary">To address those challenges, we introduce PhyGround, a criteria-grounded benchmark for evaluating physical reasoning in video generation.</div>
   <div class="paper-tags">
-    <span class="tag tag-agent">Agent</span>
-    <span class="tag tag-rl">Reinforcement Learning</span>
-    <span class="tag tag-multimodal">Multimodal</span>
+    <span class="tag tag-world-model">World Model</span>
+    <span class="tag tag-embodied">世界模型</span>
   </div>
   <div class="paper-links">
-    <a href="https://arxiv.org/abs/2605.07177">arXiv</a>
-    <a href="https://arxiv.org/pdf/2605.07177">PDF</a>
-    <a href="https://github.com/DeepExperience/HyperEyes">Code</a>
+    <a href="https://arxiv.org/abs/2605.10806">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.10806">PDF</a>
+    <a href="https://phyground.github.io/">Project</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title"><span class="hot-badge">🔥</span> DeepSight: Long-Horizon World Modeling via Latent States Prediction for End-to-End Autonomous Driving</div>
+  <div class="paper-meta">arXiv 2026</div>
+  <div class="paper-summary">In this paper, we propose a driving world model that performs parallel prediction of latent semantic features for consecutive future frames in the bird&#x27;s-eye-view (BEV) space, thereby enabling long-horizon modeling of future world states. We present a novel, efficient, and effective approach that a…</div>
+  <div class="paper-tags">
+    <span class="tag tag-world-model">World Model</span>
+    <span class="tag tag-embodied">语言模型</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.10564">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.10564">PDF</a>
+    <a href="https://github.com/hotdogcheesewhite/DeepSight">Code</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title">Data-Asymmetric Latent Imagination and Reranking for 3D Robotic Imitation Learning</div>
+  <div class="paper-meta">arXiv 2026</div>
+  <div class="paper-summary">To address this, we propose DALI-R, a Data-Asymmetric Latent Imagination and Reranking framework for 3D robotic imitation learning from mixed-quality trajectories.</div>
+  <div class="paper-tags">
+    <span class="tag tag-world-model">World Model</span>
+    <span class="tag tag-embodied">扩散模型</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.10166">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.10166">PDF</a>
   </div>
 </div>
 
 </section>
-
 <section class="section">
-<h2 class="section-title">🎨 Multimodal · 多模态</h2>
+<h2 class="section-title">🦾 Robotics · 机器人</h2>
 
 <div class="paper-card">
-  <div class="paper-title">Anisotropic Modality Align</div>
-  <div class="paper-meta">HuggingFace Papers 2026 · HuggingFace Community</div>
-  <div class="paper-summary">研究多模态模型中不同模态之间的对齐问题，提出各向异性模态对齐方法。通过分析模态间隙（Modality Gap）的理论基础，设计更精确的跨模态对齐策略，提升视觉-语言等多模态联合表征的质量和一致性。</div>
+  <div class="paper-title"><span class="hot-badge">🔥</span> HarmoWAM: Harmonizing Generalizable and Precise Manipulation via Adaptive World Action Models</div>
+  <div class="paper-meta">arXiv 2026</div>
+  <div class="paper-summary">Motivated by these findings, we propose HarmoWAM, an end-to-end WAM that fully leverages a world model to unify predictive and reactive control, enabling both generalizable transit and precise manipulation. Notably, HarmoWAM achieves strong zero-shot generalization across these scenarios, significa…</div>
   <div class="paper-tags">
-    <span class="tag tag-multimodal">Multimodal</span>
-    <span class="tag tag-vlm">VLM</span>
+    <span class="tag tag-robot">Robotics</span>
+    <span class="tag tag-embodied">世界模型</span>
   </div>
   <div class="paper-links">
-    <a href="https://arxiv.org/abs/2605.07825">arXiv</a>
-    <a href="https://arxiv.org/pdf/2605.07825">PDF</a>
-    <a href="https://github.com/Yu-xm/Modality_Gap_Theory">Code</a>
+    <a href="https://arxiv.org/abs/2605.10942">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.10942">PDF</a>
   </div>
 </div>
 
+</section>
+<section class="section">
+<h2 class="section-title">📄 Other · 其他</h2>
+
 <div class="paper-card">
-  <div class="paper-title">TextLDM: Language Modeling with Continuous Latent Diffusion</div>
-  <div class="paper-meta">HuggingFace Papers 2026 · Joy Future Academy</div>
-  <div class="paper-summary">将连续潜在扩散（Latent Diffusion）引入语言建模领域，提出 TextLDM。不同于传统离散 token 自回归方式，该方法在连续潜在空间中进行文本生成，探索扩散模型在自然语言处理中的新范式，为文本生成提供更灵活的建模框架。</div>
+  <div class="paper-title">The Scaling Law of Evaluation Failure: Why Simple Averaging Collapses Under Data Sparsity and Item Difficulty Gaps, and How Item Response Theory Recovers Ground Truth Across Domains</div>
+  <div class="paper-meta">arXiv 2026</div>
+  <div class="paper-summary">Benchmark evaluation across AI and safety-critical domains overwhelmingly relies on simple averaging. We demonstrate that this practice produces substantially misleading rankings when two conditions…</div>
   <div class="paper-tags">
-    <span class="tag tag-multimodal">Multimodal</span>
-    <span class="tag tag-diffusion">Diffusion</span>
-    <span class="tag tag-llm">Language Model</span>
+    <span class="tag tag-llm">Other</span>
   </div>
   <div class="paper-links">
-    <a href="https://arxiv.org/abs/2605.07748">arXiv</a>
-    <a href="https://arxiv.org/pdf/2605.07748">PDF</a>
+    <a href="https://arxiv.org/abs/2605.11205">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.11205">PDF</a>
+    <a href="https://github.com/testofschool/evaluation-failure-scaling-law">Code</a>
   </div>
 </div>
 
 </section>
 
 <div class="stats">
-  <h3>📊 检索统计</h3>
-  <p>检索来源：HuggingFace Papers 热门论文 | arXiv 源 HTTP 错误（3 条查询全失败） | X/Twitter RSS 不可用</p>
-  <p>本期发现：7 篇 HF 热门论文 + 1 个 HF 模型 | 覆盖 Robotics · Agent · Multimodal 方向</p>
-  <p>时间范围：2026年5月11日</p>
+  <h3>📊 数据来源说明</h3>
+  <p>数据来源：arXiv 论文 8 篇 | 共 8 条动态</p>
+  <p>主题分布：VLA 2 · World Model 4 · Robotics 1 · Other 1</p>
+  <p>更新时间：2026年5月11日</p>
 </div>
 
 </div>

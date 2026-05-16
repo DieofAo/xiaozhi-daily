@@ -108,7 +108,8 @@ header .subtitle {
 .tag-security { background: rgba(239,68,68,0.15); color: #f87171; }
 .tag-voice { background: rgba(56,189,248,0.15); color: #38bdf8; }
 .tag-product { background: rgba(163,230,53,0.15); color: #a3e635; }
-.tag-interpretability { background: rgba(192,132,252,0.15); color: #c084fc; }
+.tag-diffusion { background: rgba(192,132,252,0.15); color: #c084fc; }
+.tag-3d { background: rgba(45,212,191,0.15); color: #2dd4bf; }
 .paper-links {
   display: flex;
   flex-wrap: wrap;
@@ -188,160 +189,140 @@ header .subtitle {
 
 <div class="highlight-banner">
   <div class="hl-title">🔥 今日看点</div>
-  <div class="hl-text">World Action Models 自适应动作执行策略（WAMs），通过判断何时信任模型想象来优化动作序列；基于 Prompt 空间扰动的强化学习新方法——用"无意义"提示扩展推理探索空间；Anthropic 发布 Alignment 研究，探索如何教导 AI 理解行为准则背后的"为什么"。</div>
+  <div class="hl-text">MCP-Cosmos: World Model-Augmented Agents...；Latent Geometry Beyond Search: Amortizin...；Geometry Guided Self-Consistency for Phy...；Probing the Impact of Scale on Data-Effi...；ACWM-Phys: Investigating Generalized Phy...</div>
 </div>
 
+<section class="section">
+<h2 class="section-title">🤖 VLA · Vision-Language-Action</h2>
+
+<div class="paper-card">
+  <div class="paper-title">Failing Forward: Adaptive Failure-Informed Learning for Vision-Language-Action Models</div>
+  <div class="paper-meta">arXiv 2026</div>
+  <div class="paper-summary">To address this limitation, we propose Adaptive Failure-Informed Learning (AFIL), an end-to-end framework that leverages failure trajectories as adaptive negative guidance for diffusion- and flow-based VLA policies.</div>
+  <div class="paper-tags">
+    <span class="tag tag-vla">VLA</span>
+    <span class="tag tag-embodied">扩散模型</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.08434">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.08434">PDF</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title">One Token Per Frame: Reconsidering Visual Bandwidth in World Models for VLA Policy</div>
+  <div class="paper-meta">arXiv 2026</div>
+  <div class="paper-summary">We introduce OneWM-VLA, which compresses each view into a single semantic token per frame through an Adaptive Attention Pooling, and produces the resulting latent stream and the action trajectory under a single flow-matching objective rather than connecting them through a separate decoder.</div>
+  <div class="paper-tags">
+    <span class="tag tag-vla">VLA</span>
+    <span class="tag tag-embodied">注意力机制</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.07931">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.07931">PDF</a>
+  </div>
+</div>
+
+</section>
 <section class="section">
 <h2 class="section-title">🌍 World Model · 世界模型</h2>
 
 <div class="paper-card">
-  <div class="paper-title"><span class="hot-badge">🔥</span> When to Trust Imagination: Adaptive Action Execution for World Action Models</div>
-  <div class="paper-meta">arXiv 2026 · HuggingFace Community</div>
-  <div class="paper-summary">World Action Models (WAMs) 近期作为机器人策略的统一框架而兴起。本文提出自适应动作执行策略，解决何时应信任模型"想象"（预测）进行开环执行、何时需切换至闭环反馈的关键问题，有效平衡推理效率与执行安全性。</div>
+  <div class="paper-title"><span class="hot-badge">🔥</span> MCP-Cosmos: World Model-Augmented Agents for Complex Task Execution in MCP Environments</div>
+  <div class="paper-meta">arXiv 2026</div>
+  <div class="paper-summary">We present MCP-Cosmos, a framework that infuses generative World Models (WM) into the MCP ecosystem to enable predictive task automation.</div>
   <div class="paper-tags">
     <span class="tag tag-world-model">World Model</span>
-    <span class="tag tag-robot">Robotics</span>
+    <span class="tag tag-embodied">语言模型</span>
   </div>
   <div class="paper-links">
-    <a href="https://arxiv.org/abs/2605.06222">arXiv</a>
-    <a href="https://arxiv.org/pdf/2605.06222">PDF</a>
+    <a href="https://arxiv.org/abs/2605.09131">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.09131">PDF</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title"><span class="hot-badge">🔥</span> Latent Geometry Beyond Search: Amortizing Planning in World Models</div>
+  <div class="paper-meta">arXiv 2026</div>
+  <div class="paper-summary">Modern vision-based world models can represent observations as compact yet expressive latent manifolds, but fast goal-oriented planning in these spaces remains challenging. This raises a central ques…</div>
+  <div class="paper-tags">
+    <span class="tag tag-world-model">World Model</span>
+    <span class="tag tag-embodied">世界模型</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.08732">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.08732">PDF</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title"><span class="hot-badge">🔥</span> Geometry Guided Self-Consistency for Physical AI</div>
+  <div class="paper-meta">arXiv 2026</div>
+  <div class="paper-summary">State-of-the-art physical AI models generate a chunk of actions per inference through diffusion or flow matching, iteratively refining an initial noise sample into an action trajectory. We introduce KeyStone, an inference-time self-consistency method for diffusion-based action generation that draws…</div>
+  <div class="paper-tags">
+    <span class="tag tag-world-model">World Model</span>
+    <span class="tag tag-embodied">扩散模型</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.08638">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.08638">PDF</a>
+    <a href="https://github.com/dywsjtu/keystone">Code</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title"><span class="hot-badge">🔥</span> Probing the Impact of Scale on Data-Efficient, Generalist Transformer World Models for Atari</div>
+  <div class="paper-meta">arXiv 2026</div>
+  <div class="paper-summary">Developing generalist systems that retain human-like data efficiency is a central challenge. While world models (WMs) offer a promising path, existing research often conflates architectural mechanism…</div>
+  <div class="paper-tags">
+    <span class="tag tag-world-model">World Model</span>
+    <span class="tag tag-embodied">Transformer</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.08578">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.08578">PDF</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title"><span class="hot-badge">🔥</span> ACWM-Phys: Investigating Generalized Physical Interaction in Action-Conditioned Video World Models</div>
+  <div class="paper-meta">arXiv 2026</div>
+  <div class="paper-summary">We introduce ACWM-Phys, a new benchmark for evaluating action-conditioned prediction under diverse physical dynamics in a clean, controllable simulation environment with a carefully designed action space. Ablations show that cross-attention improves high-dimensional action conditioning, causal VAEs…</div>
+  <div class="paper-tags">
+    <span class="tag tag-world-model">World Model</span>
+    <span class="tag tag-embodied">注意力机制</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.08567">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.08567">PDF</a>
   </div>
 </div>
 
 </section>
-
-<section class="section">
-<h2 class="section-title">🦾 Robotics · 机器人学</h2>
-
-<div class="paper-card">
-  <div class="paper-title"><span class="hot-badge">🔥</span> Nonsense Helps: Prompt Space Perturbation Broadens Reasoning Exploration</div>
-  <div class="paper-meta">arXiv 2026 · HuggingFace Community</div>
-  <div class="paper-summary">提出一种新颖的强化学习方法——在 Prompt 空间中引入"无意义"扰动来拓宽推理探索范围。该方法通过在输入端注入结构化噪声，帮助带有可验证奖励的 RL 系统跳出局部最优，发现更多样化的推理路径。对机器人学和具身智能中的策略学习具有启示意义。</div>
-  <div class="paper-tags">
-    <span class="tag tag-rl">Reinforcement Learning</span>
-    <span class="tag tag-robot">Robotics</span>
-  </div>
-  <div class="paper-links">
-    <a href="https://arxiv.org/abs/2605.05566">arXiv</a>
-    <a href="https://arxiv.org/pdf/2605.05566">PDF</a>
-  </div>
-</div>
-
-</section>
-
-<section class="section">
-<h2 class="section-title">🧩 Agent · 智能体</h2>
-
-<div class="paper-card">
-  <div class="paper-title">Skill1: Unified Evolution of Skill-Augmented Agents via Reinforcement Learning</div>
-  <div class="paper-meta">arXiv 2026 · HuggingFace Community</div>
-  <div class="paper-summary">提出统一的技能增强智能体演化框架 Skill1，通过强化学习实现技能的自动发现、组合与进化。该方法使智能体能够持续学习新技能并优化已有技能组合，为构建自适应、可扩展的 AI Agent 提供了系统性方案。</div>
-  <div class="paper-tags">
-    <span class="tag tag-agent">Agent</span>
-    <span class="tag tag-rl">RL</span>
-  </div>
-  <div class="paper-links">
-    <a href="https://arxiv.org/abs/2605.06130">arXiv</a>
-    <a href="https://arxiv.org/pdf/2605.06130">PDF</a>
-  </div>
-</div>
-
-<div class="paper-card">
-  <div class="paper-title">Beyond Semantic Similarity: Rethinking Retrieval for Agentic Search via Direct Corpus Interaction</div>
-  <div class="paper-meta">arXiv 2026 · TIGER-Lab</div>
-  <div class="paper-summary">重新思考 Agentic Search 中的检索范式——超越传统语义相似度，提出通过直接语料交互（DCI）实现更精准的信息检索。该方法让智能体能够与语料库进行多轮交互式检索，显著提升复杂查询场景下的检索质量。</div>
-  <div class="paper-tags">
-    <span class="tag tag-agent">Agent</span>
-    <span class="tag tag-llm">Retrieval</span>
-  </div>
-  <div class="paper-links">
-    <a href="https://arxiv.org/abs/2605.05242">arXiv</a>
-    <a href="https://arxiv.org/pdf/2605.05242">PDF</a>
-    <a href="https://github.com/DCI-Agent/DCI-Agent-Lite">Code</a>
-  </div>
-</div>
-
-<div class="paper-card">
-  <div class="paper-title">SkillOS: Learning Skill Curation for Self-Evolving Agents</div>
-  <div class="paper-meta">arXiv 2026 · HuggingFace Community</div>
-  <div class="paper-summary">提出 SkillOS 框架，实现自进化智能体的技能策展学习。系统能够自动评估、筛选和组织技能库，让智能体在持续交互中不断优化自身能力集合，实现高效的技能管理与自主进化。</div>
-  <div class="paper-tags">
-    <span class="tag tag-agent">Agent</span>
-    <span class="tag tag-rl">Self-Evolving</span>
-  </div>
-  <div class="paper-links">
-    <a href="https://arxiv.org/abs/2605.06614">arXiv</a>
-    <a href="https://arxiv.org/pdf/2605.06614">PDF</a>
-  </div>
-</div>
-
-</section>
-
 <section class="section">
 <h2 class="section-title">🎨 Multimodal · 多模态</h2>
 
 <div class="paper-card">
-  <div class="paper-title">MARBLE: Multi-Aspect Reward Balance for Diffusion RL</div>
-  <div class="paper-meta">arXiv 2026 · Zhejiang University</div>
-  <div class="paper-summary">提出 MARBLE 框架，解决扩散模型强化学习中的多维度奖励平衡问题。通过设计多方面奖励平衡机制，使扩散 RL 能够同时优化图像质量、文本对齐、美学等多个目标，避免单一维度过度优化导致的质量退化。</div>
+  <div class="paper-title">Generative Actor-Critic with Soft Bridge Policies</div>
+  <div class="paper-meta">arXiv 2026</div>
+  <div class="paper-summary">First, marginal action densities are often unavailable, so existing methods typically rely on entropy bounds, heuristic proxies or approximations. To this end, we propose soft generative actor-critic (SoftGAC), whose actor defines a stochastic bridge from a fixed base latent to a terminal action la…</div>
   <div class="paper-tags">
     <span class="tag tag-multimodal">Multimodal</span>
-    <span class="tag tag-rl">Diffusion RL</span>
+    <span class="tag tag-embodied">扩散模型</span>
   </div>
   <div class="paper-links">
-    <a href="https://arxiv.org/abs/2605.06507">arXiv</a>
-    <a href="https://arxiv.org/pdf/2605.06507">PDF</a>
-    <a href="https://aim-uofa.github.io/MARBLE/">Project</a>
-    <a href="https://github.com/aim-uofa/MARBLE">Code</a>
+    <a href="https://arxiv.org/abs/2605.08733">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.08733">PDF</a>
   </div>
 </div>
 
 </section>
-
 <section class="section">
-<h2 class="section-title">🧠 LLM · 大语言模型</h2>
-
-<div class="paper-card">
-  <div class="paper-title">MiA-Signature: Approximating Global Activation for Long-Context Understanding</div>
-  <div class="paper-meta">arXiv 2026 · Tencent</div>
-  <div class="paper-summary">来自腾讯的研究，提出 MiA-Signature 方法，通过近似全局激活模式来提升长上下文理解能力。该方法有效解决了长文本处理中的信息丢失问题，为 LLM 的长上下文推理提供了高效的激活近似方案。</div>
-  <div class="paper-tags">
-    <span class="tag tag-llm">LLM</span>
-    <span class="tag tag-llm">Long-Context</span>
-  </div>
-  <div class="paper-links">
-    <a href="https://arxiv.org/abs/2605.06416">arXiv</a>
-    <a href="https://arxiv.org/pdf/2605.06416">PDF</a>
-  </div>
-</div>
-
-<div class="paper-card">
-  <div class="paper-title">RaguTeam at SemEval-2026 Task 8: Judge-Orchestrated LLM Ensemble for Faithful Multi-Turn Response Generation</div>
-  <div class="paper-meta">arXiv 2026 · Novosibirsk State University</div>
-  <div class="paper-summary">提出基于裁判编排的 LLM 集成方法 (Meno and Friends)，用于忠实的多轮对话响应生成。通过多个 LLM 协作 + 裁判模型评估的架构，提升多轮对话中的事实准确性和响应一致性。</div>
-  <div class="paper-tags">
-    <span class="tag tag-llm">LLM</span>
-    <span class="tag tag-agent">Ensemble</span>
-  </div>
-  <div class="paper-links">
-    <a href="https://arxiv.org/abs/2605.04523">arXiv</a>
-    <a href="https://arxiv.org/pdf/2605.04523">PDF</a>
-    <a href="https://github.com/RaguTeam/ragu_mtrag_semeval">Code</a>
-  </div>
-</div>
-
-</section>
-
-<section class="section">
-<h2 class="section-title">📰 Informations · 行业动态</h2>
+<h2 class="section-title">🏢 Informations · 行业资讯</h2>
 
 <div class="info-card">
-  <div class="paper-title"><span class="hot-badge">🔥</span> Alignment: Teaching Claude Why</div>
-  <div class="paper-summary">Anthropic 发布关于 AI 对齐的最新研究成果。该研究探索了如何教导 AI 系统理解行为准则背后的"为什么"——不仅让模型知道应该做什么，更让其理解为什么应该这样做。这一方法论对提升 AI 系统的安全性和可控性具有重要意义，代表了对齐研究从规则遵循到深层理解的演进方向。</div>
-  <div class="paper-tags">
-    <span class="tag tag-interpretability">Alignment</span>
-    <span class="tag tag-llm">Safety</span>
-  </div>
+  <div class="paper-title">Alignment</div>
+  <div class="paper-summary">来自 Anthropic 官方博客</div>
   <div class="paper-links">
     <a href="https://www.anthropic.com/research/teaching-claude-why">来源</a>
   </div>
@@ -350,10 +331,10 @@ header .subtitle {
 </section>
 
 <div class="stats">
-  <h3>📊 检索统计</h3>
-  <p>检索来源：arXiv、HuggingFace Daily Papers、机构博客 | 覆盖 VLA · Robotics · LLM · Multimodal · Agent 等方向</p>
-  <p>本期发现：8 篇 HF 热门论文 + 1 条行业动态 | arXiv 直接检索不可用(HTTPError)</p>
-  <p>时间范围：2026年5月8日 - 5月9日</p>
+  <h3>📊 数据来源说明</h3>
+  <p>数据来源：arXiv 论文 8 篇 + 机构博客 1 条 | 共 9 条动态</p>
+  <p>主题分布：VLA 2 · World Model 5 · Multimodal 1 · 机构博客 1</p>
+  <p>更新时间：2026年5月9日</p>
 </div>
 
 </div>

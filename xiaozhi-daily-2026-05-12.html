@@ -109,6 +109,7 @@ header .subtitle {
 .tag-voice { background: rgba(56,189,248,0.15); color: #38bdf8; }
 .tag-product { background: rgba(163,230,53,0.15); color: #a3e635; }
 .tag-diffusion { background: rgba(192,132,252,0.15); color: #c084fc; }
+.tag-3d { background: rgba(45,212,191,0.15); color: #2dd4bf; }
 .paper-links {
   display: flex;
   flex-wrap: wrap;
@@ -188,157 +189,127 @@ header .subtitle {
 
 <div class="highlight-banner">
   <div class="hl-title">🔥 今日看点</div>
-  <div class="hl-text">AlphaGRPO 提出基于可分解可验证奖励的自我反思多模态生成框架，首次将 GRPO 应用于统一多模态模型的视觉生成任务；SenseNova-U1 以 NEO-unify 架构统一多模态理解与生成；Rubric-based On-policy Distillation 提出新型策略蒸馏范式，大幅提升模型蒸馏效率。</div>
+  <div class="hl-text">FRAME: Forensic Routing and Adaptive Mul...；BiPneu: Design and Control of a Bipolar-...；Few-Shot Physics-Informed Neural Network...；Emotional Expression in Low-Degrees-of-F...；Adaptive Smooth Tchebycheff Attention fo...</div>
 </div>
 
 <section class="section">
-<h2 class="section-title">🦾 Robotics · 机器人与具身智能</h2>
+<h2 class="section-title">🦾 Robotics · 机器人</h2>
 
 <div class="paper-card">
-  <div class="paper-title"><span class="hot-badge">🔥</span> AlphaGRPO: Unlocking Self-Reflective Multimodal Generation in UMMs via Decompositional Verifiable Reward</div>
-  <div class="paper-meta">arXiv 2026 · Tsinghua University</div>
-  <div class="paper-summary">提出 AlphaGRPO 框架，将 Group Relative Policy Optimization (GRPO) 应用于统一多模态模型的视觉生成任务。通过可分解的可验证奖励机制，首次实现了无需人类标注的自我反思多模态内容生成，在图像生成质量和文本-图像对齐方面取得显著提升。</div>
+  <div class="paper-title"><span class="hot-badge">🔥</span> FRAME: Forensic Routing and Adaptive Multi-path Evidence Fusion for Image Manipulation Detection</div>
+  <div class="paper-meta">arXiv 2026</div>
+  <div class="paper-summary">To address these limitations, we present \textbf{FRAME}, a method for \textbf{F}orensic \textbf{R}outing and \textbf{A}daptive \textbf{M}ulti-path \textbf{E}vidence fusion for image manipulation detection.</div>
   <div class="paper-tags">
-    <span class="tag tag-multimodal">Multimodal</span>
-    <span class="tag tag-rl">RL/GRPO</span>
+    <span class="tag tag-robot">Robotics</span>
   </div>
   <div class="paper-links">
-    <a href="https://arxiv.org/abs/2605.12495">arXiv</a>
-    <a href="https://arxiv.org/pdf/2605.12495">PDF</a>
-    <a href="https://huangrh99.github.io/AlphaGRPO/">Project</a>
+    <a href="https://arxiv.org/abs/2605.12826">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.12826">PDF</a>
+    <a href="https://github.com/kzhao5/FRAME">Code</a>
   </div>
 </div>
 
 <div class="paper-card">
-  <div class="paper-title"><span class="hot-badge">🔥</span> Rubric-based On-policy Distillation</div>
-  <div class="paper-meta">HuggingFace Papers 2026 · HuggingFace Community</div>
-  <div class="paper-summary">On-policy distillation (OPD) 是一种强大的模型压缩范式。本文提出基于评分标准的在策略蒸馏方法，通过结构化评分指导学生模型学习，在保持推理质量的同时大幅减小模型规模，为高效部署提供新思路。</div>
+  <div class="paper-title"><span class="hot-badge">🔥</span> BiPneu: Design and Control of a Bipolar-Pressure Pneumatic System for Soft Robots</div>
+  <div class="paper-meta">arXiv 2026</div>
+  <div class="paper-summary">Positive-negative pressure regulation is critical to soft robotic actuators, enabling large motion ranges and versatile actuation modes. However, achieving high-performance regulation across both pre…</div>
   <div class="paper-tags">
     <span class="tag tag-robot">Robotics</span>
-    <span class="tag tag-rl">Distillation</span>
   </div>
   <div class="paper-links">
-    <a href="https://arxiv.org/abs/2605.07396">arXiv</a>
-    <a href="https://arxiv.org/pdf/2605.07396">PDF</a>
-    <a href="https://github.com/Peregrine123/ROPD_official">Code</a>
+    <a href="https://arxiv.org/abs/2605.12804">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.12804">PDF</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title"><span class="hot-badge">🔥</span> Few-Shot Physics-Informed Neural Network for Shape Reconstruction of Concentric-Tube Robots</div>
+  <div class="paper-meta">arXiv 2026</div>
+  <div class="paper-summary">We present a physics-informed neural network (PINN) for kinematic modeling of a 6-DoF CTR with three pre-curved tubes that embeds the Cosserat rod differential equations and learns from few-shot observational data, balancing physics priors with data-driven fitting. Benchmark tests show a mean shape…</div>
+  <div class="paper-tags">
+    <span class="tag tag-robot">Robotics</span>
+    <span class="tag tag-embodied">少样本</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.12790">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.12790">PDF</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title"><span class="hot-badge">🔥</span> Emotional Expression in Low-Degrees-of-Freedom Robots: Assessing Perception with Reachy Mini</div>
+  <div class="paper-meta">arXiv 2026 · MIT</div>
+  <div class="paper-summary">Emotion expression is central to human--robot interaction, yet little is known about how people interpret affect on robots with sparse, non-anthropomorphic expressive capabilities. This study examine…</div>
+  <div class="paper-tags">
+    <span class="tag tag-robot">Robotics</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.12786">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.12786">PDF</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title"><span class="hot-badge">🔥</span> Adaptive Smooth Tchebycheff Attention for Multi-Objective Policy Optimization</div>
+  <div class="paper-meta">arXiv 2026</div>
+  <div class="paper-summary">In this work, we propose an Adaptive Smooth Tchebycheff framework that resolves this tension by dynamically modulating the curvature of the optimization landscape. We introduce a novel conflict-driven controller that regulates the optimization smoothness based on real-time gradient interference.</div>
+  <div class="paper-tags">
+    <span class="tag tag-robot">Robotics</span>
+    <span class="tag tag-embodied">强化学习</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.12771">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.12771">PDF</a>
+    <a href="https://alejandromllo.github.io/research/pasta/">Project</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title">Still Camouflage, Moving Illusion: View-Induced Trajectory Manipulation in Autonomous Driving</div>
+  <div class="paper-meta">arXiv 2026</div>
+  <div class="paper-summary">We demonstrate the novel attack on nuScenes dataset, showing the effectiveness with an end-to-end success rate of up to 87.5%, measured by hard-braking events, and robustness across different scene backgrounds, victim vehicle speeds, and perception models.</div>
+  <div class="paper-tags">
+    <span class="tag tag-robot">Robotics</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.12743">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.12743">PDF</a>
   </div>
 </div>
 
 </section>
-
 <section class="section">
 <h2 class="section-title">🎨 Multimodal · 多模态</h2>
 
 <div class="paper-card">
-  <div class="paper-title">SenseNova-U1: Unifying Multimodal Understanding and Generation with NEO-unify Architecture</div>
-  <div class="paper-meta">arXiv 2026 · SenseTime</div>
-  <div class="paper-summary">提出 NEO-unify 架构，统一多模态理解和生成任务。突破了当前大视觉语言模型在架构层面的根本限制，实现了理解与生成的真正融合，在多个基准测试上取得 SOTA 结果。</div>
+  <div class="paper-title">Lifelong Learning in Vision-Language Models: Enhanced EWC with Cross-Modal Knowledge Retention</div>
+  <div class="paper-meta">arXiv 2026</div>
+  <div class="paper-summary">Large language-vision models (LVLMs) such as CLIP, Flamingo, and BLIP have revolutionized AI by enabling understanding across textual and visual modalities. These models excel at tasks like image cap…</div>
   <div class="paper-tags">
     <span class="tag tag-multimodal">Multimodal</span>
-    <span class="tag tag-vlm">VLM</span>
+    <span class="tag tag-embodied">微调</span>
   </div>
   <div class="paper-links">
-    <a href="https://arxiv.org/abs/2605.12500">arXiv</a>
-    <a href="https://arxiv.org/pdf/2605.12500">PDF</a>
-    <a href="https://github.com/OpenSenseNova/SenseNova-U1">Code</a>
-  </div>
-</div>
-
-<div class="paper-card">
-  <div class="paper-title">EgoForce: Forearm-Guided Camera-Space 3D Hand Pose from a Monocular Egocentric Camera</div>
-  <div class="paper-meta">arXiv 2026 · DFKI</div>
-  <div class="paper-summary">从单目第一人称摄像头重建绝对 3D 手部姿态和形状，利用前臂引导实现相机空间中的精确定位，为 AR/VR 交互和具身智能提供实用的手部感知方案。</div>
-  <div class="paper-tags">
-    <span class="tag tag-embodied">Embodied</span>
-    <span class="tag tag-video">3D Vision</span>
-  </div>
-  <div class="paper-links">
-    <a href="https://arxiv.org/abs/2605.12498">arXiv</a>
-    <a href="https://arxiv.org/pdf/2605.12498">PDF</a>
-    <a href="https://dfki-av.github.io/EgoForce">Project</a>
+    <a href="https://arxiv.org/abs/2605.12789">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.12789">PDF</a>
   </div>
 </div>
 
 </section>
-
 <section class="section">
-<h2 class="section-title">🧩 Agent · 智能体</h2>
+<h2 class="section-title">📄 Other · 其他</h2>
 
 <div class="paper-card">
-  <div class="paper-title">Covering Human Action Space for Computer Use: Data Synthesis and Benchmark</div>
-  <div class="paper-meta">arXiv 2026 · Microsoft</div>
-  <div class="paper-summary">系统性覆盖人类在计算机上的动作空间，为计算机使用智能体（CUAs）构建数据合成流水线与评测基准。通过全面的动作空间建模，为 GPT-5.4 等模型提供可靠的 CUA 训练与评估框架。</div>
-  <div class="paper-tags">
-    <span class="tag tag-agent">Agent</span>
-    <span class="tag tag-llm">Computer Use</span>
-  </div>
-  <div class="paper-links">
-    <a href="https://arxiv.org/abs/2605.12501">arXiv</a>
-    <a href="https://arxiv.org/pdf/2605.12501">PDF</a>
-    <a href="https://github.com/microsoft/Phi-Ground.git">Code</a>
-  </div>
-</div>
-
-<div class="paper-card">
-  <div class="paper-title">From Web to Pixels: Bringing Agentic Search into Visual Perception</div>
+  <div class="paper-title">CoT-Guard: Small Models for Strong Monitoring</div>
   <div class="paper-meta">arXiv 2026</div>
-  <div class="paper-summary">将智能体搜索能力引入视觉感知领域，连接高层语义理解与像素级感知。通过从网络到像素的跨层推理，实现了更精准的视觉定位与理解。</div>
+  <div class="paper-summary">To address this, we propose a post-training pipeline combining supervised fine-tuning (SFT) and reinforcement learning (RL), where SFT narrows the gap for in-domain tasks by distilling detection behavior from stronger monitors, and RL on hard and subtly crafted hidden objectives helps the model gen…</div>
   <div class="paper-tags">
-    <span class="tag tag-agent">Agent</span>
-    <span class="tag tag-multimodal">Visual Perception</span>
+    <span class="tag tag-llm">Other</span>
+    <span class="tag tag-embodied">强化学习</span>
   </div>
   <div class="paper-links">
-    <a href="https://arxiv.org/abs/2605.12497">arXiv</a>
-    <a href="https://arxiv.org/pdf/2605.12497">PDF</a>
-    <a href="https://pixel-searcher.github.io/">Project</a>
-  </div>
-</div>
-
-<div class="paper-card">
-  <div class="paper-title">LongMemEval-V2: Evaluating Long-Term Agent Memory Toward Experienced Colleagues</div>
-  <div class="paper-meta">arXiv 2026</div>
-  <div class="paper-summary">提出面向长期记忆能力的智能体评测基准 V2 版本。在专业网络环境中评估智能体的长期记忆能力，关注其能否像经验丰富的同事一样积累和运用知识。</div>
-  <div class="paper-tags">
-    <span class="tag tag-agent">Agent</span>
-    <span class="tag tag-llm">Memory</span>
-  </div>
-  <div class="paper-links">
-    <a href="https://arxiv.org/abs/2605.12493">arXiv</a>
-    <a href="https://arxiv.org/pdf/2605.12493">PDF</a>
-  </div>
-</div>
-
-</section>
-
-<section class="section">
-<h2 class="section-title">🧠 LLM · 大语言模型</h2>
-
-<div class="paper-card">
-  <div class="paper-title">Task-Adaptive Embedding Refinement via Test-time LLM Guidance</div>
-  <div class="paper-meta">arXiv 2026 · IBM</div>
-  <div class="paper-summary">探索 LLM 引导的查询优化范式在文本嵌入中的有效性，通过测试时自适应调整实现任务特定的嵌入增强，提升信息检索和语义匹配效果。</div>
-  <div class="paper-tags">
-    <span class="tag tag-llm">LLM</span>
-    <span class="tag tag-agent">Retrieval</span>
-  </div>
-  <div class="paper-links">
-    <a href="https://arxiv.org/abs/2605.12487">arXiv</a>
-    <a href="https://arxiv.org/pdf/2605.12487">PDF</a>
-    <a href="https://github.com/IBM/task-aware-embedding-refinement">Code</a>
-  </div>
-</div>
-
-<div class="paper-card">
-  <div class="paper-title">Learning, Fast and Slow: Towards LLMs That Adapt Continually</div>
-  <div class="paper-meta">arXiv 2026</div>
-  <div class="paper-summary">探索大语言模型的持续适应能力。借鉴人类快速与慢速学习的双系统理论，提出让 LLM 在部署后持续学习新知识而不遗忘已有能力的新范式。</div>
-  <div class="paper-tags">
-    <span class="tag tag-llm">LLM</span>
-    <span class="tag tag-rl">Continual Learning</span>
-  </div>
-  <div class="paper-links">
-    <a href="https://arxiv.org/abs/2605.12484">arXiv</a>
-    <a href="https://arxiv.org/pdf/2605.12484">PDF</a>
+    <a href="https://arxiv.org/abs/2605.12746">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.12746">PDF</a>
   </div>
 </div>
 
@@ -346,8 +317,8 @@ header .subtitle {
 
 <div class="stats">
   <h3>📊 数据来源说明</h3>
-  <p>数据来源：arXiv 论文 8 篇 + HuggingFace 热门 1 篇 | X/Twitter RSS 不可用</p>
-  <p>主题分布：Robotics 2 · Multimodal 2 · Agent 3 · LLM 2</p>
+  <p>数据来源：arXiv 论文 8 篇 | 共 8 条动态</p>
+  <p>主题分布：Robotics 6 · Multimodal 1 · Other 1</p>
   <p>更新时间：2026年5月12日</p>
 </div>
 
