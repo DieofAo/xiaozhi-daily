@@ -82,6 +82,32 @@ header .subtitle {
   margin-bottom: 14px;
   line-height: 1.8;
 }
+.summary-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+@media (max-width: 640px) {
+  .summary-grid { grid-template-columns: 1fr; }
+}
+.summary-item {
+  background: rgba(15,23,42,0.5);
+  border-radius: 10px;
+  padding: 12px 14px;
+  border: 1px solid rgba(99,102,241,0.08);
+}
+.summary-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #818cf8;
+  margin-bottom: 4px;
+}
+.summary-text {
+  font-size: 0.88rem;
+  color: #cbd5e1;
+  line-height: 1.6;
+}
 .paper-tags {
   display: flex;
   flex-wrap: wrap;
@@ -198,7 +224,7 @@ header .subtitle {
 <div class="paper-card">
   <div class="paper-title"><span class="hot-badge">🔥</span> CoWorld-VLA: Thinking in a Multi-Expert World Model for Autonomous Driving</div>
   <div class="paper-meta">arXiv 2026</div>
-  <div class="paper-summary">In this paper, we propose CoWorld-VLA, a multi-expert world reasoning framework for autonomous driving, where world representations serve as explicit conditions to guide action planning.</div>
+  <div class="summary-grid"><div class="summary-item"><div class="summary-label">🛠 技术路线</div><div class="summary-text">扩散模型、视觉-语言模型、思维链</div></div><div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">In this paper, we propose CoWorld-VLA, a multi-expert world reasoning framework for autonomous driving, where world representations serve as explicit conditions to guide action planning.</div></div><div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">Experiments show that CoWorld-VLA achieves competitive results in both future scene generation and planning on the NAVSIM v1 benchmark, demonstrating strong performance in collision avoidance and trajectory accuracy.</div></div><div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于VLA/具身控制方向。建议关注其任务泛化能力、动作表达方式与真机验证结果。</div></div></div>
   <div class="paper-tags">
     <span class="tag tag-vla">VLA</span>
     <span class="tag tag-embodied">扩散模型</span>
@@ -213,7 +239,7 @@ header .subtitle {
 <div class="paper-card">
   <div class="paper-title">Retrieve-then-Steer: Online Success Memory for Test-Time Adaptation of Generative VLAs</div>
   <div class="paper-meta">arXiv 2026</div>
-  <div class="paper-summary">We propose an online success-memory guided test-time adaptation framework for generative VLAs. To incorporate this prior into action generation, we introduce confidence-adaptive prior guidance, which injects the elite prior into an intermediate state of the flow-matching action sampler and adjusts…</div>
+  <div class="summary-grid"><div class="summary-item"><div class="summary-label">🛠 技术路线</div><div class="summary-text">检索增强、视觉-语言模型、零样本</div></div><div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">We propose an online success-memory guided test-time adaptation framework for generative VLAs. To incorporate this prior into action generation, we introduce confidence-adaptive prior guidance, which injects the elite prior into an intermediate st...</div></div><div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">We study this persistent-deployment setting, asking whether a partially competent frozen VLA can improve its reliability by reusing its successful test-time experience. Simulation and real-world experiments show improved task success and closed-lo...</div></div><div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于VLA/具身控制方向。建议关注其任务泛化能力、动作表达方式与真机验证结果。</div></div></div>
   <div class="paper-tags">
     <span class="tag tag-vla">VLA</span>
     <span class="tag tag-embodied">检索增强</span>
@@ -231,7 +257,7 @@ header .subtitle {
 <div class="paper-card">
   <div class="paper-title"><span class="hot-badge">🔥</span> Is Your Driving World Model an All-Around Player?</div>
   <div class="paper-meta">arXiv 2026</div>
-  <div class="paper-summary">We introduce WorldLens, a unified benchmark that measures world-model fidelity across the full spectrum, from pixel quality and 4D geometry to closed-loop driving and human perceptual alignment, through five complementary aspects and 24 standardized dimensions.</div>
+  <div class="summary-grid"><div class="summary-item"><div class="summary-label">🛠 技术路线</div><div class="summary-text">蒸馏、视觉-语言模型、世界模型</div></div><div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">We introduce WorldLens, a unified benchmark that measures world-model fidelity across the full spectrum, from pixel quality and 4D geometry to closed-loop driving and human perceptual alignment, through five complementary aspects and 24 standardiz...</div></div><div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">Our evaluation of six representative models reveals that no existing approach dominates across all axes: texture-rich models violate geometry, geometry-aware models lack behavioral fidelity, and even the strongest performers achieve only 2-3 out o...</div></div><div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于世界模型/动作生成方向。建议关注其预测精度、动作可控性和 Sim-to-Real 迁移效果。</div></div></div>
   <div class="paper-tags">
     <span class="tag tag-world-model">World Model</span>
     <span class="tag tag-embodied">蒸馏</span>
@@ -247,7 +273,7 @@ header .subtitle {
 <div class="paper-card">
   <div class="paper-title"><span class="hot-badge">🔥</span> PhyGround: Benchmarking Physical Reasoning in Generative World Models</div>
   <div class="paper-meta">arXiv 2026</div>
-  <div class="paper-summary">To address those challenges, we introduce PhyGround, a criteria-grounded benchmark for evaluating physical reasoning in video generation.</div>
+  <div class="summary-grid"><div class="summary-item"><div class="summary-label">🛠 技术路线</div><div class="summary-text">世界模型</div></div><div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">To address those challenges, we introduce PhyGround, a criteria-grounded benchmark for evaluating physical reasoning in video generation.</div></div><div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">Existing physics-focused video benchmarks have made important progress, but they still face three key challenges, including the coarse evaluation frameworks that hide law-specific failures, response biases and fatigue that undermine the validity o...</div></div><div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于世界模型/动作生成方向。建议关注其预测精度、动作可控性和 Sim-to-Real 迁移效果。</div></div></div>
   <div class="paper-tags">
     <span class="tag tag-world-model">World Model</span>
     <span class="tag tag-embodied">世界模型</span>
@@ -262,7 +288,7 @@ header .subtitle {
 <div class="paper-card">
   <div class="paper-title"><span class="hot-badge">🔥</span> DeepSight: Long-Horizon World Modeling via Latent States Prediction for End-to-End Autonomous Driving</div>
   <div class="paper-meta">arXiv 2026</div>
-  <div class="paper-summary">In this paper, we propose a driving world model that performs parallel prediction of latent semantic features for consecutive future frames in the bird&#x27;s-eye-view (BEV) space, thereby enabling long-horizon modeling of future world states. We present a novel, efficient, and effective approach that a…</div>
+  <div class="summary-grid"><div class="summary-item"><div class="summary-label">🛠 技术路线</div><div class="summary-text">语言模型、视觉-语言模型、世界模型</div></div><div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">In this paper, we propose a driving world model that performs parallel prediction of latent semantic features for consecutive future frames in the bird&#x27;s-eye-view (BEV) space, thereby enabling long-horizon modeling of future world states. We prese...</div></div><div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">End-to-end autonomous driving systems are increasingly integrating Vision-Language Model (VLM) architectures, incorporating text reasoning or visual reasoning to enhance the robustness and accuracy of driving decisions. We also introduce an effici...</div></div><div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于世界模型/动作生成方向。建议关注其预测精度、动作可控性和 Sim-to-Real 迁移效果。</div></div></div>
   <div class="paper-tags">
     <span class="tag tag-world-model">World Model</span>
     <span class="tag tag-embodied">语言模型</span>
@@ -277,7 +303,7 @@ header .subtitle {
 <div class="paper-card">
   <div class="paper-title">Data-Asymmetric Latent Imagination and Reranking for 3D Robotic Imitation Learning</div>
   <div class="paper-meta">arXiv 2026</div>
-  <div class="paper-summary">To address this, we propose DALI-R, a Data-Asymmetric Latent Imagination and Reranking framework for 3D robotic imitation learning from mixed-quality trajectories.</div>
+  <div class="summary-grid"><div class="summary-item"><div class="summary-label">🛠 技术路线</div><div class="summary-text">扩散模型、模仿学习、世界模型、点云</div></div><div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">To address this, we propose DALI-R, a Data-Asymmetric Latent Imagination and Reranking framework for 3D robotic imitation learning from mixed-quality trajectories.</div></div><div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">Discarding such data wastes valuable information about environment dynamics and failure modes, which can instead be leveraged to improve decision-making. While 3D policies reduce reliance on high-quality demonstrations through strong spatial gener...</div></div><div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于世界模型/动作生成方向。建议关注其预测精度、动作可控性和 Sim-to-Real 迁移效果。</div></div></div>
   <div class="paper-tags">
     <span class="tag tag-world-model">World Model</span>
     <span class="tag tag-embodied">扩散模型</span>
@@ -295,7 +321,7 @@ header .subtitle {
 <div class="paper-card">
   <div class="paper-title"><span class="hot-badge">🔥</span> HarmoWAM: Harmonizing Generalizable and Precise Manipulation via Adaptive World Action Models</div>
   <div class="paper-meta">arXiv 2026</div>
-  <div class="paper-summary">Motivated by these findings, we propose HarmoWAM, an end-to-end WAM that fully leverages a world model to unify predictive and reactive control, enabling both generalizable transit and precise manipulation. Notably, HarmoWAM achieves strong zero-shot generalization across these scenarios, significa…</div>
+  <div class="summary-grid"><div class="summary-item"><div class="summary-label">🛠 技术路线</div><div class="summary-text">世界模型、零样本</div></div><div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">Motivated by these findings, we propose HarmoWAM, an end-to-end WAM that fully leverages a world model to unify predictive and reactive control, enabling both generalizable transit and precise manipulation. Notably, HarmoWAM achieves strong zero-s...</div></div><div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于VLA/具身控制方向。建议关注其任务泛化能力、动作表达方式与真机验证结果。</div></div></div>
   <div class="paper-tags">
     <span class="tag tag-robot">Robotics</span>
     <span class="tag tag-embodied">世界模型</span>
@@ -313,7 +339,7 @@ header .subtitle {
 <div class="paper-card">
   <div class="paper-title">The Scaling Law of Evaluation Failure: Why Simple Averaging Collapses Under Data Sparsity and Item Difficulty Gaps, and How Item Response Theory Recovers Ground Truth Across Domains</div>
   <div class="paper-meta">arXiv 2026</div>
-  <div class="paper-summary">Benchmark evaluation across AI and safety-critical domains overwhelmingly relies on simple averaging. We demonstrate that this practice produces substantially misleading rankings when two conditions…</div>
+  <div class="summary-grid"><div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">Benchmark evaluation across AI and safety-critical domains overwhelmingly relies on simple averaging. We demonstrate that this practice produces substantially misleading rankings when two conditions…</div></div><div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">Benchmark evaluation across AI and safety-critical domains overwhelmingly relies on simple averaging. Through controlled simulation experiments across four domains -- NLP (GLUE), clinical drug trials, autonomous vehicle safety, and cybersecurity -...</div></div><div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于世界模型/动作生成方向。建议关注其预测精度、动作可控性和 Sim-to-Real 迁移效果。</div></div></div>
   <div class="paper-tags">
     <span class="tag tag-llm">Other</span>
   </div>

@@ -82,6 +82,32 @@ header .subtitle {
   margin-bottom: 14px;
   line-height: 1.8;
 }
+.summary-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+@media (max-width: 640px) {
+  .summary-grid { grid-template-columns: 1fr; }
+}
+.summary-item {
+  background: rgba(15,23,42,0.5);
+  border-radius: 10px;
+  padding: 12px 14px;
+  border: 1px solid rgba(99,102,241,0.08);
+}
+.summary-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #818cf8;
+  margin-bottom: 4px;
+}
+.summary-text {
+  font-size: 0.88rem;
+  color: #cbd5e1;
+  line-height: 1.6;
+}
 .paper-tags {
   display: flex;
   flex-wrap: wrap;
@@ -198,7 +224,7 @@ header .subtitle {
 <div class="paper-card">
   <div class="paper-title"><span class="hot-badge">🔥</span> FRAME: Forensic Routing and Adaptive Multi-path Evidence Fusion for Image Manipulation Detection</div>
   <div class="paper-meta">arXiv 2026</div>
-  <div class="paper-summary">To address these limitations, we present \textbf{FRAME}, a method for \textbf{F}orensic \textbf{R}outing and \textbf{A}daptive \textbf{M}ulti-path \textbf{E}vidence fusion for image manipulation detection.</div>
+  <div class="summary-grid"><div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">To address these limitations, we present \textbf{FRAME}, a method for \textbf{F}orensic \textbf{R}outing and \textbf{A}daptive \textbf{M}ulti-path \textbf{E}vidence fusion for image manipulation detection.</div></div><div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">FRAME organizes diverse forensic algorithms into a multi-path analysis space, adaptively selects informative forensic paths for each input image, and fuses complementary evidence to improve detection and localization performance.</div></div><div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于机器人算法与控制方向。建议重点看实验设置、基线对比和真实部署条件。</div></div></div>
   <div class="paper-tags">
     <span class="tag tag-robot">Robotics</span>
   </div>
@@ -212,7 +238,7 @@ header .subtitle {
 <div class="paper-card">
   <div class="paper-title"><span class="hot-badge">🔥</span> BiPneu: Design and Control of a Bipolar-Pressure Pneumatic System for Soft Robots</div>
   <div class="paper-meta">arXiv 2026</div>
-  <div class="paper-summary">Positive-negative pressure regulation is critical to soft robotic actuators, enabling large motion ranges and versatile actuation modes. However, achieving high-performance regulation across both pre…</div>
+  <div class="summary-grid"><div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">Positive-negative pressure regulation is critical to soft robotic actuators, enabling large motion ranges and versatile actuation modes. However, achieving high-performance regulation across both pre…</div></div><div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">However, achieving high-performance regulation across both pressure polarities remains challenging due to asymmetric inflation-deflation dynamics, valve nonlinearities, and switching-induced flow disturbances. Extensive simulation and experiments ...</div></div><div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于机器人算法与控制方向。建议重点看实验设置、基线对比和真实部署条件。</div></div></div>
   <div class="paper-tags">
     <span class="tag tag-robot">Robotics</span>
   </div>
@@ -225,7 +251,7 @@ header .subtitle {
 <div class="paper-card">
   <div class="paper-title"><span class="hot-badge">🔥</span> Few-Shot Physics-Informed Neural Network for Shape Reconstruction of Concentric-Tube Robots</div>
   <div class="paper-meta">arXiv 2026</div>
-  <div class="paper-summary">We present a physics-informed neural network (PINN) for kinematic modeling of a 6-DoF CTR with three pre-curved tubes that embeds the Cosserat rod differential equations and learns from few-shot observational data, balancing physics priors with data-driven fitting. Benchmark tests show a mean shape…</div>
+  <div class="summary-grid"><div class="summary-item"><div class="summary-label">🛠 技术路线</div><div class="summary-text">少样本</div></div><div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">We present a physics-informed neural network (PINN) for kinematic modeling of a 6-DoF CTR with three pre-curved tubes that embeds the Cosserat rod differential equations and learns from few-shot observational data, balancing physics priors with da...</div></div><div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">To overcome these limitations, deep neural network-based models have been explored as alternatives with superior accuracy; however, they often overlook known mechanics, require large training datasets, and typically discard shape estimation of the...</div></div><div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于机器人算法与控制方向。建议重点看实验设置、基线对比和真实部署条件。</div></div></div>
   <div class="paper-tags">
     <span class="tag tag-robot">Robotics</span>
     <span class="tag tag-embodied">少样本</span>
@@ -239,7 +265,7 @@ header .subtitle {
 <div class="paper-card">
   <div class="paper-title"><span class="hot-badge">🔥</span> Emotional Expression in Low-Degrees-of-Freedom Robots: Assessing Perception with Reachy Mini</div>
   <div class="paper-meta">arXiv 2026 · MIT</div>
-  <div class="paper-summary">Emotion expression is central to human--robot interaction, yet little is known about how people interpret affect on robots with sparse, non-anthropomorphic expressive capabilities. This study examine…</div>
+  <div class="summary-grid"><div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">Emotion expression is central to human--robot interaction, yet little is known about how people interpret affect on robots with sparse, non-anthropomorphic expressive capabilities. This study examine…</div></div><div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">These findings suggest that even constrained robotic expressions can communicate affective meaning and influence social impressions, positioning Reachy Mini as a useful benchmark for studying affective communication in low-DoF robots.</div></div><div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于机器人算法与控制方向。建议重点看实验设置、基线对比和真实部署条件。</div></div></div>
   <div class="paper-tags">
     <span class="tag tag-robot">Robotics</span>
   </div>
@@ -252,7 +278,7 @@ header .subtitle {
 <div class="paper-card">
   <div class="paper-title"><span class="hot-badge">🔥</span> Adaptive Smooth Tchebycheff Attention for Multi-Objective Policy Optimization</div>
   <div class="paper-meta">arXiv 2026</div>
-  <div class="paper-summary">In this work, we propose an Adaptive Smooth Tchebycheff framework that resolves this tension by dynamically modulating the curvature of the optimization landscape. We introduce a novel conflict-driven controller that regulates the optimization smoothness based on real-time gradient interference.</div>
+  <div class="summary-grid"><div class="summary-item"><div class="summary-label">🛠 技术路线</div><div class="summary-text">强化学习</div></div><div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">In this work, we propose an Adaptive Smooth Tchebycheff framework that resolves this tension by dynamically modulating the curvature of the optimization landscape. We introduce a novel conflict-driven controller that regulates the optimization smo...</div></div><div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于机器人算法与控制方向。建议重点看实验设置、基线对比和真实部署条件。</div></div></div>
   <div class="paper-tags">
     <span class="tag tag-robot">Robotics</span>
     <span class="tag tag-embodied">强化学习</span>
@@ -267,7 +293,7 @@ header .subtitle {
 <div class="paper-card">
   <div class="paper-title">Still Camouflage, Moving Illusion: View-Induced Trajectory Manipulation in Autonomous Driving</div>
   <div class="paper-meta">arXiv 2026</div>
-  <div class="paper-summary">We demonstrate the novel attack on nuScenes dataset, showing the effectiveness with an end-to-end success rate of up to 87.5%, measured by hard-braking events, and robustness across different scene backgrounds, victim vehicle speeds, and perception models.</div>
+  <div class="summary-grid"><div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">We demonstrate the novel attack on nuScenes dataset, showing the effectiveness with an end-to-end success rate of up to 87.5%, measured by hard-braking events, and robustness across different scene backgrounds, victim vehicle speeds, and perceptio...</div></div><div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于相关方向方向。建议结合原文进一步判断创新点与复现价值。</div></div></div>
   <div class="paper-tags">
     <span class="tag tag-robot">Robotics</span>
   </div>
@@ -284,7 +310,7 @@ header .subtitle {
 <div class="paper-card">
   <div class="paper-title">Lifelong Learning in Vision-Language Models: Enhanced EWC with Cross-Modal Knowledge Retention</div>
   <div class="paper-meta">arXiv 2026</div>
-  <div class="paper-summary">Large language-vision models (LVLMs) such as CLIP, Flamingo, and BLIP have revolutionized AI by enabling understanding across textual and visual modalities. These models excel at tasks like image cap…</div>
+  <div class="summary-grid"><div class="summary-item"><div class="summary-label">🛠 技术路线</div><div class="summary-text">微调、检索增强</div></div><div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">Large language-vision models (LVLMs) such as CLIP, Flamingo, and BLIP have revolutionized AI by enabling understanding across textual and visual modalities. These models excel at tasks like image cap…</div></div><div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">The framework achieves a 78% reduction in forgetting rates relative to naive sequential training approaches through extensive evaluation testing. The framework also preserves alignment between modalities during sequential learning with only 15% ad...</div></div><div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于机器人算法与控制方向。建议重点看实验设置、基线对比和真实部署条件。</div></div></div>
   <div class="paper-tags">
     <span class="tag tag-multimodal">Multimodal</span>
     <span class="tag tag-embodied">微调</span>
@@ -302,7 +328,7 @@ header .subtitle {
 <div class="paper-card">
   <div class="paper-title">CoT-Guard: Small Models for Strong Monitoring</div>
   <div class="paper-meta">arXiv 2026</div>
-  <div class="paper-summary">To address this, we propose a post-training pipeline combining supervised fine-tuning (SFT) and reinforcement learning (RL), where SFT narrows the gap for in-domain tasks by distilling detection behavior from stronger monitors, and RL on hard and subtly crafted hidden objectives helps the model gen…</div>
+  <div class="summary-grid"><div class="summary-item"><div class="summary-label">🛠 技术路线</div><div class="summary-text">强化学习、微调、蒸馏、思维链</div></div><div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">To address this, we propose a post-training pipeline combining supervised fine-tuning (SFT) and reinforcement learning (RL), where SFT narrows the gap for in-domain tasks by distilling detection behavior from stronger monitors, and RL on hard and ...</div></div><div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于机器人算法与控制方向。建议重点看实验设置、基线对比和真实部署条件。</div></div></div>
   <div class="paper-tags">
     <span class="tag tag-llm">Other</span>
     <span class="tag tag-embodied">强化学习</span>

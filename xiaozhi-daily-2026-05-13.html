@@ -82,6 +82,32 @@ header .subtitle {
   margin-bottom: 14px;
   line-height: 1.8;
 }
+.summary-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+@media (max-width: 640px) {
+  .summary-grid { grid-template-columns: 1fr; }
+}
+.summary-item {
+  background: rgba(15,23,42,0.5);
+  border-radius: 10px;
+  padding: 12px 14px;
+  border: 1px solid rgba(99,102,241,0.08);
+}
+.summary-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #818cf8;
+  margin-bottom: 4px;
+}
+.summary-text {
+  font-size: 0.88rem;
+  color: #cbd5e1;
+  line-height: 1.6;
+}
 .paper-tags {
   display: flex;
   flex-wrap: wrap;
@@ -198,7 +224,7 @@ header .subtitle {
 <div class="paper-card">
   <div class="paper-title"><span class="hot-badge">🔥</span> MAPLE: Latent Multi-Agent Play for End-to-End Autonomous Driving</div>
   <div class="paper-meta">arXiv 2026</div>
-  <div class="paper-summary">We propose MAPLE, a novel framework for reactive, multi-agent rollout of a dynamic driving scenario in the latent space of the VLA model. MAPLE achieves state-of-the-art driving performance on Bench2Drive and demonstrates scalable, closed-loop multi-agent play for robust E2E autonomous driving syst…</div>
+  <div class="summary-grid"><div class="summary-item"><div class="summary-label">🛠 技术路线</div><div class="summary-text">强化学习、模仿学习、微调、视觉-语言模型</div></div><div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">We propose MAPLE, a novel framework for reactive, multi-agent rollout of a dynamic driving scenario in the latent space of the VLA model. MAPLE achieves state-of-the-art driving performance on Bench2Drive and demonstrates scalable, closed-loop mul...</div></div><div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">MAPLE consists of two training stages: (1) supervised fine-tuning on the latent rollouts based on ground-truth trajectories, followed by (2) reinforcement learning with global and agent -specific rewards that encourage safety, progress, and intera...</div></div><div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于VLA/具身控制方向。建议关注其任务泛化能力、动作表达方式与真机验证结果。</div></div></div>
   <div class="paper-tags">
     <span class="tag tag-vla">VLA</span>
     <span class="tag tag-embodied">强化学习</span>
@@ -216,7 +242,7 @@ header .subtitle {
 <div class="paper-card">
   <div class="paper-title"><span class="hot-badge">🔥</span> Safety-Constrained Reinforcement Learning with Post-Training Reachability Verification for Robot Navigation</div>
   <div class="paper-meta">arXiv 2026</div>
-  <div class="paper-summary">To address this, we propose a framework that trains risk-sensitive policies through Conditional Value-at-Risk (CVaR) constrained optimization on an off-policy TD3 backbone and evaluates their safety margins post-training through neural network reachability verification.</div>
+  <div class="summary-grid"><div class="summary-item"><div class="summary-label">🛠 技术路线</div><div class="summary-text">强化学习、Sim-to-Real</div></div><div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">To address this, we propose a framework that trains risk-sensitive policies through Conditional Value-at-Risk (CVaR) constrained optimization on an off-policy TD3 backbone and evaluates their safety margins post-training through neural network rea...</div></div><div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">Experiments across ten navigation scenarios and six baselines show that our method achieves a 98.3\% success rate, the highest safety verification rate among all compared methods, while revealing that average cost rankings and reachability-based s...</div></div><div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于机器人算法与控制方向。建议重点看实验设置、基线对比和真实部署条件。</div></div></div>
   <div class="paper-tags">
     <span class="tag tag-robot">Robotics</span>
     <span class="tag tag-embodied">强化学习</span>
@@ -234,7 +260,7 @@ header .subtitle {
 <div class="paper-card">
   <div class="paper-title">BOOKMARKS: Efficient Active Storyline Memory for Role-playing</div>
   <div class="paper-meta">arXiv 2026</div>
-  <div class="paper-summary">To address this issue, we propose a search-based memory framework called BOOKMARKS, which actively initializes, maintains, and updates task-relevant pieces of bookmarks for the current task (e.g., character acting). BOOKMARKS significantly outperforms RPA memory baselines on 85 characters from 16 a…</div>
+  <div class="summary-grid"><div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">To address this issue, we propose a search-based memory framework called BOOKMARKS, which actively initializes, maintains, and updates task-relevant pieces of bookmarks for the current task (e.g., character acting). BOOKMARKS significantly outperf...</div></div><div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于Agent/工具使用方向。建议关注 Agent 架构、工具调用策略和端到端成功率。</div></div></div>
   <div class="paper-tags">
     <span class="tag tag-agent">Agent</span>
   </div>
@@ -251,7 +277,7 @@ header .subtitle {
 <div class="paper-card">
   <div class="paper-title">LLM-Based Robustness Testing of Microservice Applications: An Empirical Study</div>
   <div class="paper-meta">arXiv 2026</div>
-  <div class="paper-summary">We find that prompt strategy explains more variation in diversity than model size: a Structured prompt collapses diversity entirely, while a single model varied across three prompt strategies achieves complete failure-mode coverage on one system, outperforming any multi-model ensemble under a fixed…</div>
+  <div class="summary-grid"><div class="summary-item"><div class="summary-label">🛠 技术路线</div><div class="summary-text">语言模型</div></div><div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">We find that prompt strategy explains more variation in diversity than model size: a Structured prompt collapses diversity entirely, while a single model varied across three prompt strategies achieves complete failure-mode coverage on one system, ...</div></div><div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">GuidedFewShot achieves the highest single-run coverage on both systems (5 of 9 and 8 of 14 failure modes) while maintaining low cross-model similarity.</div></div><div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于大语言模型/推理方向。建议关注训练范式、推理机制和 benchmark 表现。</div></div></div>
   <div class="paper-tags">
     <span class="tag tag-llm">LLM</span>
     <span class="tag tag-embodied">语言模型</span>
@@ -265,7 +291,7 @@ header .subtitle {
 <div class="paper-card">
   <div class="paper-title">GradShield: Alignment Preserving Finetuning</div>
   <div class="paper-meta">arXiv 2026</div>
-  <div class="paper-summary">To address this, we introduce GradShield, a principled filtering method that safeguards LLMs during finetuning by identifying and removing harmful data points before they corrupt the model&#x27;s alignment. The results show that GradShield outperforms all baseline methods, consistently maintaining an At…</div>
+  <div class="summary-grid"><div class="summary-item"><div class="summary-label">🛠 技术路线</div><div class="summary-text">微调、语言模型</div></div><div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">To address this, we introduce GradShield, a principled filtering method that safeguards LLMs during finetuning by identifying and removing harmful data points before they corrupt the model&#x27;s alignment. The results show that GradShield outperforms ...</div></div><div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">We apply GradShield to multiple utility fine-tuning tasks across varying levels of harmful data and evaluate the safety and utility performance of the resulting LLMs using various metrics.</div></div><div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于大语言模型/推理方向。建议关注训练范式、推理机制和 benchmark 表现。</div></div></div>
   <div class="paper-tags">
     <span class="tag tag-llm">LLM</span>
     <span class="tag tag-embodied">微调</span>
@@ -279,7 +305,7 @@ header .subtitle {
 <div class="paper-card">
   <div class="paper-title">Thinking Ahead: Prospection-Guided Retrieval of Memory with Language Models</div>
   <div class="paper-meta">arXiv 2026</div>
-  <div class="paper-summary">Inspired by prospection, the human ability to use imagined futures as cues for recall, we introduce Prospection-Guided Retrieval (PGR), which decouples retrieval from how memories are stored. Given a user query, PGR first expands the goal into a short Tree-of-Thought (ToT) or linear chain of plausi…</div>
+  <div class="summary-grid"><div class="summary-item"><div class="summary-label">🛠 技术路线</div><div class="summary-text">检索增强</div></div><div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">Inspired by prospection, the human ability to use imagined futures as cues for recall, we introduce Prospection-Guided Retrieval (PGR), which decouples retrieval from how memories are stored. Given a user query, PGR first expands the goal into a s...</div></div><div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">We also introduce MemoryQuest, a challenging multi-session benchmark in which each query is annotated with 3--5 dated reference facts subject to a low query-reference similarity constraint. Across 1,625 queries spanning 185 user profiles from 3 pu...</div></div><div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于大语言模型/推理方向。建议关注训练范式、推理机制和 benchmark 表现。</div></div></div>
   <div class="paper-tags">
     <span class="tag tag-llm">LLM</span>
     <span class="tag tag-embodied">检索增强</span>
@@ -293,7 +319,7 @@ header .subtitle {
 <div class="paper-card">
   <div class="paper-title">Grounded Continuation: A Linear-Time Runtime Verifier for LLM Conversations</div>
   <div class="paper-meta">arXiv 2026</div>
-  <div class="paper-summary">In long conversations, an LLM can produce a next utterance that sounds plausible but rests on premises the conversation has already abandoned. Context-manipulation attacks against deployed agents now…</div>
+  <div class="summary-grid"><div class="summary-item"><div class="summary-label">🛠 技术路线</div><div class="summary-text">检索增强</div></div><div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">In long conversations, an LLM can produce a next utterance that sounds plausible but rests on premises the conversation has already abandoned. Context-manipulation attacks against deployed agents now…</div></div><div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">On LongMemEval-KU oracle (n=78), the verifier reaches 89.7% accuracy vs. 88.5% for the LLM-only baseline (+1.3pp) and 87.2% for a transcript-RAG baseline matched on retrieval budget (+2.6pp); wins among disagreements are correct abstentions where ...</div></div><div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于机器人算法与控制方向。建议重点看实验设置、基线对比和真实部署条件。</div></div></div>
   <div class="paper-tags">
     <span class="tag tag-llm">LLM</span>
     <span class="tag tag-embodied">检索增强</span>
@@ -311,7 +337,7 @@ header .subtitle {
 <div class="paper-card">
   <div class="paper-title">QOuLiPo: What a quantum computer sees when it reads a book</div>
   <div class="paper-meta">arXiv 2026</div>
-  <div class="paper-summary">First, we introduce rigidity rho, a metric for how unique a book&#x27;s structural backbone is -- distinguishing Marguerite de Navarre&#x27;s Heptameron (rigid, twelve-nouvelle hard core) from Boethius (fully fungible, every chapter substitutable).</div>
+  <div class="summary-grid"><div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">First, we introduce rigidity rho, a metric for how unique a book&#x27;s structural backbone is -- distinguishing Marguerite de Navarre&#x27;s Heptameron (rigid, twelve-nouvelle hard core) from Boethius (fully fungible, every chapter substitutable).</div></div><div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">The twenty-nine texts written this way, collected under the name QOuLiPo, extend the OuLiPo tradition to graph-topological constraints and, together with the eight natural texts, form a benchmark distribution against which neutral-atom hardware ca...</div></div><div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于Agent/工具使用方向。建议关注 Agent 架构、工具调用策略和端到端成功率。</div></div></div>
   <div class="paper-tags">
     <span class="tag tag-llm">Other</span>
   </div>

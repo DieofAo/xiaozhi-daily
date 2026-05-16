@@ -82,6 +82,32 @@ header .subtitle {
   margin-bottom: 14px;
   line-height: 1.8;
 }
+.summary-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+@media (max-width: 640px) {
+  .summary-grid { grid-template-columns: 1fr; }
+}
+.summary-item {
+  background: rgba(15,23,42,0.5);
+  border-radius: 10px;
+  padding: 12px 14px;
+  border: 1px solid rgba(99,102,241,0.08);
+}
+.summary-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #818cf8;
+  margin-bottom: 4px;
+}
+.summary-text {
+  font-size: 0.88rem;
+  color: #cbd5e1;
+  line-height: 1.6;
+}
 .paper-tags {
   display: flex;
   flex-wrap: wrap;
@@ -198,7 +224,7 @@ header .subtitle {
 <div class="paper-card">
   <div class="paper-title"><span class="hot-badge">🔥</span> SANA-WM: Efficient Minute-Scale World Modeling with Hybrid Linear Diffusion Transformer</div>
   <div class="paper-meta">arXiv 2026</div>
-  <div class="paper-summary">We introduce SANA-WM, an efficient 2.6B-parameter open-source world model natively trained for one-minute generation, synthesizing high-fidelity, 720p, minute-scale videos with precise camera control.</div>
+  <div class="summary-grid"><div class="summary-item"><div class="summary-label">🛠 技术路线</div><div class="summary-text">蒸馏、注意力机制、世界模型</div></div><div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">We introduce SANA-WM, an efficient 2.6B-parameter open-source world model natively trained for one-minute generation, synthesizing high-fidelity, 720p, minute-scale videos with precise camera control.</div></div><div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">SANA-WM achieves visual quality comparable to large-scale industrial baselines such as LingBot-World and HY-WorldPlay, while significantly improving efficiency. On our one-minute world-model benchmark, SANA-WM demonstrates stronger action-followin...</div></div><div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于世界模型/动作生成方向。建议关注其预测精度、动作可控性和 Sim-to-Real 迁移效果。</div></div></div>
   <div class="paper-tags">
     <span class="tag tag-world-model">World Model</span>
     <span class="tag tag-embodied">蒸馏</span>
@@ -217,7 +243,7 @@ header .subtitle {
 <div class="paper-card">
   <div class="paper-title">ATLAS: Agentic or Latent Visual Reasoning? One Word is Enough for Both</div>
   <div class="paper-meta">arXiv 2026</div>
-  <div class="paper-summary">To combine their strengths while mitigating their limitations, we propose ATLAS, a framework in which a single discrete &#x27;word&#x27;, termed as a functional token, serves both as an agentic operation and a latent visual reasoning unit. To further address the sparsity of functional tokens during RL, we in…</div>
+  <div class="summary-grid"><div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">To combine their strengths while mitigating their limitations, we propose ATLAS, a framework in which a single discrete &#x27;word&#x27;, termed as a functional token, serves both as an agentic operation and a latent visual reasoning unit. To further addres...</div></div><div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">Extensive experiments and analyses demonstrate that ATLAS achieves superior performance on challenging benchmarks while maintaining clear interpretability.</div></div><div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于大语言模型/推理方向。建议关注训练范式、推理机制和 benchmark 表现。</div></div></div>
   <div class="paper-tags">
     <span class="tag tag-agent">Agent</span>
   </div>
@@ -232,7 +258,7 @@ header .subtitle {
 <div class="paper-card">
   <div class="paper-title">FutureSim: Replaying World Events to Evaluate Adaptive Agents</div>
   <div class="paper-meta">arXiv 2026</div>
-  <div class="paper-summary">To efficiently measure this capability for realistic use-cases, we propose building grounded simulations that replay real-world events in the order they occurred.</div>
+  <div class="summary-grid"><div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">To efficiently measure this capability for realistic use-cases, we propose building grounded simulations that replay real-world events in the order they occurred.</div></div><div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">FutureSim reveals a clear separation in their capabilities, with the best agent&#x27;s accuracy being 25%, and many having worse Brier skill score than making no prediction at all. Overall, we hope our benchmark design paves the way to measure AI progr...</div></div><div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于大语言模型/推理方向。建议关注训练范式、推理机制和 benchmark 表现。</div></div></div>
   <div class="paper-tags">
     <span class="tag tag-agent">Agent</span>
   </div>
@@ -245,7 +271,7 @@ header .subtitle {
 <div class="paper-card">
   <div class="paper-title">Articraft: An Agentic System for Scalable Articulated 3D Asset Generation</div>
   <div class="paper-meta">arXiv 2026</div>
-  <div class="paper-summary">In this paper, we propose to leverage large language models (LLMs) to close this gap and generate articulated assets at scale. We show that this produces higher-quality assets than both state-of-the-art articulated-asset generators and general-purpose coding agents.</div>
+  <div class="summary-grid"><div class="summary-item"><div class="summary-label">🛠 技术路线</div><div class="summary-text">语言模型</div></div><div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">In this paper, we propose to leverage large language models (LLMs) to close this gap and generate articulated assets at scale. We show that this produces higher-quality assets than both state-of-the-art articulated-asset generators and general-pur...</div></div><div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于机器人算法与控制方向。建议重点看实验设置、基线对比和真实部署条件。</div></div></div>
   <div class="paper-tags">
     <span class="tag tag-agent">Agent</span>
     <span class="tag tag-embodied">语言模型</span>
@@ -260,7 +286,7 @@ header .subtitle {
 <div class="paper-card">
   <div class="paper-title">Is Grep All You Need? How Agent Harnesses Reshape Agentic Search</div>
   <div class="paper-meta">arXiv 2026</div>
-  <div class="paper-summary">Recent advances in Large Language Model (LLM) agents have enabled complex agentic workflows where models autonomously retrieve information, call tools, and reason over large corpora to complete tasks…</div>
+  <div class="summary-grid"><div class="summary-item"><div class="summary-label">🛠 技术路线</div><div class="summary-text">检索增强、语言模型</div></div><div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">Recent advances in Large Language Model (LLM) agents have enabled complex agentic workflows where models autonomously retrieve information, call tools, and reason over large corpora to complete tasks…</div></div><div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">Important practical dimensions, including how tool outputs are presented to the model and how performance changes when searches must cope with more irrelevant surrounding text, remain under-explored in agent loops. Across Chronos and the provider ...</div></div><div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于大语言模型/推理方向。建议关注训练范式、推理机制和 benchmark 表现。</div></div></div>
   <div class="paper-tags">
     <span class="tag tag-agent">Agent</span>
     <span class="tag tag-embodied">检索增强</span>
@@ -278,7 +304,7 @@ header .subtitle {
 <div class="paper-card">
   <div class="paper-title">From Plans to Pixels: Learning to Plan and Orchestrate for Open-Ended Image Editing</div>
   <div class="paper-meta">arXiv 2026</div>
-  <div class="paper-summary">We propose an experiential framework for long-horizon image editing, where a planner generates structured atomic decompositions and an orchestrator selects tools and regions to execute each step.</div>
+  <div class="summary-grid"><div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">We propose an experiential framework for long-horizon image editing, where a planner generates structured atomic decompositions and an orchestrator selects tools and regions to execute each step.</div></div><div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于Agent/工具使用方向。建议关注 Agent 架构、工具调用策略和端到端成功率。</div></div></div>
   <div class="paper-tags">
     <span class="tag tag-multimodal">Multimodal</span>
   </div>
@@ -295,7 +321,7 @@ header .subtitle {
 <div class="paper-card">
   <div class="paper-title">OpenDeepThink: Parallel Reasoning via Bradley--Terry Aggregation</div>
   <div class="paper-meta">arXiv 2026</div>
-  <div class="paper-summary">To address this, we introduce OpenDeepThink, a population-based test-time compute framework that selects via pairwise Bradley-Terry comparison.</div>
+  <div class="summary-grid"><div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">To address this, we introduce OpenDeepThink, a population-based test-time compute framework that selects via pairwise Bradley-Terry comparison.</div></div><div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">The pipeline transfers across weaker and stronger models without retuning, and on the multi-domain HLE benchmark, gains appear concentrated in objectively verifiable domains and reverse in subjective ones. We release CF-73, a curated set of 73 exp...</div></div><div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于大语言模型/推理方向。建议关注训练范式、推理机制和 benchmark 表现。</div></div></div>
   <div class="paper-tags">
     <span class="tag tag-llm">LLM</span>
   </div>
@@ -312,7 +338,7 @@ header .subtitle {
 <div class="paper-card">
   <div class="paper-title">VGGT-$Ω$</div>
   <div class="paper-meta">arXiv 2026</div>
-  <div class="paper-summary">To enable training this model at an unprecedented scale, we introduce architectural changes that improve training efficiency, a high-quality data annotation pipeline that supports dynamic scenes, and a self-supervised learning protocol.</div>
+  <div class="summary-grid"><div class="summary-item"><div class="summary-label">🛠 技术路线</div><div class="summary-text">自监督学习、注意力机制、卷积网络、视觉-语言模型</div></div><div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">To enable training this model at an unprecedented scale, we introduce architectural changes that improve training efficiency, a high-quality data annotation pipeline that supports dynamic scenes, and a self-supervised learning protocol.</div></div><div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">We do so by introducing VGGT-$Ω$, which substantially improves reconstruction accuracy, efficiency, and capabilities for both static and dynamic scenes. In this way, during training, VGGT-$Ω$ uses only about 30% of the GPU memory of its predecesso...</div></div><div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于VLA/具身控制方向。建议关注其任务泛化能力、动作表达方式与真机验证结果。</div></div></div>
   <div class="paper-tags">
     <span class="tag tag-llm">Other</span>
     <span class="tag tag-embodied">自监督学习</span>
