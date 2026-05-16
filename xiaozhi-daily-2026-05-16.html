@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>小小志科研情报 - 2026年5月16日</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans SC', sans-serif;
+  background: #0a0e1a;
+  color: #e0e6f0;
+  line-height: 1.7;
+  min-height: 100vh;
+}
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+header {
+  text-align: center;
+  margin-bottom: 48px;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, rgba(59,130,246,0.08) 0%, rgba(139,92,246,0.08) 100%);
+  border-radius: 20px;
+  border: 1px solid rgba(99,102,241,0.15);
+}
+header h1 {
+  font-size: 2rem;
+  background: linear-gradient(135deg, #60a5fa, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 8px;
+}
+header .date {
+  color: #94a3b8;
+  font-size: 1rem;
+}
+header .subtitle {
+  color: #64748b;
+  font-size: 0.9rem;
+  margin-top: 6px;
+}
+.section {
+  margin-bottom: 40px;
+}
+.section-title {
+  font-size: 1.4rem;
+  color: #f1f5f9;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(99,102,241,0.2);
+}
+.paper-card {
+  background: rgba(30,41,59,0.6);
+  border: 1px solid rgba(99,102,241,0.12);
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 16px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.paper-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(99,102,241,0.1);
+  border-color: rgba(99,102,241,0.3);
+}
+.paper-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #f8fafc;
+  margin-bottom: 8px;
+}
+.paper-meta {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-bottom: 10px;
+}
+.paper-summary {
+  font-size: 0.95rem;
+  color: #cbd5e1;
+  margin-bottom: 14px;
+  line-height: 1.8;
+}
+.summary-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+@media (max-width: 640px) {
+  .summary-grid { grid-template-columns: 1fr; }
+}
+.summary-item {
+  background: rgba(15,23,42,0.5);
+  border-radius: 10px;
+  padding: 12px 14px;
+  border: 1px solid rgba(99,102,241,0.08);
+}
+.summary-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #818cf8;
+  margin-bottom: 4px;
+}
+.summary-text {
+  font-size: 0.88rem;
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+.paper-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.tag {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+.tag-vla { background: rgba(59,130,246,0.15); color: #60a5fa; }
+.tag-robot { background: rgba(16,185,129,0.15); color: #34d399; }
+.tag-rl { background: rgba(251,146,60,0.15); color: #fb923c; }
+.tag-llm { background: rgba(168,85,247,0.15); color: #c084fc; }
+.tag-vlm { background: rgba(236,72,153,0.15); color: #f472b6; }
+.tag-world-model { background: rgba(34,211,238,0.15); color: #22d3ee; }
+.tag-embodied { background: rgba(74,222,128,0.15); color: #4ade80; }
+.tag-agent { background: rgba(251,191,36,0.15); color: #fbbf24; }
+.tag-multimodal { background: rgba(236,72,153,0.15); color: #f472b6; }
+.tag-video { background: rgba(34,211,238,0.15); color: #22d3ee; }
+.tag-security { background: rgba(239,68,68,0.15); color: #f87171; }
+.tag-voice { background: rgba(56,189,248,0.15); color: #38bdf8; }
+.tag-product { background: rgba(163,230,53,0.15); color: #a3e635; }
+.tag-diffusion { background: rgba(192,132,252,0.15); color: #c084fc; }
+.tag-3d { background: rgba(45,212,191,0.15); color: #2dd4bf; }
+.paper-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.paper-links a {
+  display: inline-block;
+  padding: 5px 14px;
+  background: rgba(99,102,241,0.12);
+  color: #818cf8;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+.paper-links a:hover {
+  background: rgba(99,102,241,0.25);
+}
+.hot-badge {
+  margin-right: 6px;
+}
+.info-card {
+  background: rgba(30,41,59,0.4);
+  border: 1px solid rgba(251,191,36,0.15);
+  border-radius: 14px;
+  padding: 20px;
+  margin-bottom: 14px;
+}
+.info-card .paper-title {
+  color: #fbbf24;
+}
+.highlight-banner {
+  background: linear-gradient(135deg, rgba(251,146,60,0.1) 0%, rgba(236,72,153,0.1) 100%);
+  border: 1px solid rgba(251,146,60,0.2);
+  border-radius: 14px;
+  padding: 20px 24px;
+  margin-bottom: 36px;
+}
+.hl-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fb923c;
+  margin-bottom: 8px;
+}
+.hl-text {
+  font-size: 0.95rem;
+  color: #e2e8f0;
+  line-height: 1.7;
+}
+.stats {
+  text-align: center;
+  padding: 30px;
+  margin-top: 40px;
+  background: rgba(30,41,59,0.4);
+  border-radius: 14px;
+  border: 1px solid rgba(99,102,241,0.1);
+}
+.stats h3 {
+  color: #94a3b8;
+  font-size: 1rem;
+  margin-bottom: 12px;
+}
+.stats p {
+  color: #64748b;
+  font-size: 0.9rem;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+  <h1>🔬 小小志科研情报</h1>
+  <div class="date">2026年5月16日 · 星期六</div>
+  <div class="subtitle">Boss Team · Daily Research Intelligence</div>
+</header>
+
+<div class="highlight-banner">
+  <div class="hl-title">🔥 今日看点</div>
+  <div class="hl-text">MemLens: NVIDIA 提出多模态长期记忆基准测试，包含 789 道跨多轮对话的评估问题，系统评估大型视觉语言模型的长期记忆能力。今日 Agent 方向论文集中，涵盖多智能体协作、记忆有效性检测、长时序评估等热门话题。</div>
+</div>
+
+<section class="section">
+<h2 class="section-title">🎨 Multimodal · 多模态</h2>
+
+<div class="paper-card">
+  <div class="paper-title">Causal Forcing++: Scalable Few-Step Autoregressive Diffusion Distillation for Real-Time Interactive Video Generation</div>
+  <div class="paper-meta">arXiv 2026 · Tsinghua Machine Learning Group</div>
+  <div class="summary-grid"><div class="summary-item"><div class="summary-label">🛠 技术路线</div><div class="summary-text">扩散模型、蒸馏、世界模型</div></div><div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 Causal Forcing++，一种可扩展的少步自回归扩散蒸馏方法，用于实时交互式视频生成。</div></div><div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">AR 在蒸馏方法方面表现有效</div></div><div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于世界模型/动作生成方向。建议关注其预测精度、动作可控性和 Sim-to-Real 迁移效果。</div></div></div>
+  <div class="paper-tags">
+    <span class="tag tag-multimodal">Multimodal</span>
+    <span class="tag tag-diffusion">Diffusion</span>
+    <span class="tag tag-world-model">World Model</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.15141">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.15141">PDF</a>
+    <a href="https://github.com/thu-ml/Causal-Forcing">Code</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title"><span class="hot-badge">🔥</span> MemLens: Benchmarking Multimodal Long-Term Memory in Large Vision-Language Models</div>
+  <div class="paper-meta">arXiv 2026 · NVIDIA</div>
+  <div class="summary-grid"><div class="summary-item"><div class="summary-label">🛠 技术路线</div><div class="summary-text">检索增强、注意力机制、语言模型、视觉-语言模型</div></div><div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 MemLens，一个全面的多模态多轮对话长期记忆基准测试，包含 789 道评估问题。</div></div><div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">准确率为 2%~80.4%，揭示当前模型在长期记忆方面的显著差距</div></div><div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于大语言模型/推理方向。建议关注训练范式、推理机制和 benchmark 表现。</div></div></div>
+  <div class="paper-tags">
+    <span class="tag tag-multimodal">Multimodal</span>
+    <span class="tag tag-vlm">VLM</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.14906">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.14906">PDF</a>
+    <a href="https://github.com/xrenaf/MEMLENS">Code</a>
+  </div>
+</div>
+
+</section>
+<section class="section">
+<h2 class="section-title">🧩 Agent · 智能体</h2>
+
+<div class="paper-card">
+  <div class="paper-title">Self-Distilled Agentic Reinforcement Learning</div>
+  <div class="paper-meta">arXiv 2026 · ZJU-REAL</div>
+  <div class="summary-grid"><div class="summary-item"><div class="summary-label">🛠 技术路线</div><div class="summary-text">强化学习、蒸馏、检索增强</div></div><div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 SDAR，一种自蒸馏智能体强化学习方法。</div></div><div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">关键指标提升 9.4%、7.0%、10.2%，SDAR 在蒸馏方面有效</div></div><div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于机器人算法与控制方向。建议重点看实验设置、基线对比和真实部署条件。</div></div></div>
+  <div class="paper-tags">
+    <span class="tag tag-agent">Agent</span>
+    <span class="tag tag-rl">RL</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.15155">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.15155">PDF</a>
+    <a href="https://github.com/ZJU-REAL/SDAR">Code</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title">MemEye: A Visual-Centric Evaluation Framework for Multimodal Agent Memory</div>
+  <div class="paper-meta">arXiv 2026</div>
+  <div class="summary-grid"><div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 MemEye，一种面向视觉的多模态智能体记忆评估框架。</div></div><div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在框架和基准测试方面表现良好</div></div><div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于大语言模型/推理方向。建议关注训练范式、推理机制和 benchmark 表现。</div></div></div>
+  <div class="paper-tags">
+    <span class="tag tag-agent">Agent</span>
+    <span class="tag tag-multimodal">Multimodal</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.15128">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.15128">PDF</a>
+    <a href="https://minghokwok.github.io/MemEye/">Project</a>
+    <a href="https://github.com/MinghoKwok/MemEye">Code</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title">Beyond Individual Intelligence: Surveying Collaboration, Failure Attribution, and Self-Evolution in LLM-based Multi-Agent Systems</div>
+  <div class="paper-meta">arXiv 2026 · Xi'an Jiaotong University</div>
+  <div class="summary-grid"><div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">综述性工作，系统梳理 LLM 多智能体系统中的协作、失败归因与自我进化机制。</div></div><div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">LIFE 框架在提升和统一多智能体系统方面有效</div></div><div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于大语言模型/推理方向。建议关注训练范式、推理机制和 benchmark 表现。</div></div></div>
+  <div class="paper-tags">
+    <span class="tag tag-agent">Agent</span>
+    <span class="tag tag-llm">LLM</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.14892">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.14892">PDF</a>
+    <a href="https://github.com/mira-ai-lab/awesome-mas-life">Code</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title">STALE: Can LLM Agents Know When Their Memories Are No Longer Valid?</div>
+  <div class="paper-meta">arXiv 2026 · HKUST NLP Group</div>
+  <div class="summary-grid"><div class="summary-item"><div class="summary-label">🛠 技术路线</div><div class="summary-text">检索增强、语言模型</div></div><div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 STALE 基准测试，包含 400 个专家验证的冲突场景（1200 条评估查询），检测 LLM 智能体记忆过时问题。</div></div><div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">最佳准确率仅 55.2%，揭示当前模型在记忆有效性判断上的不足</div></div><div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于机器人算法与控制方向。建议重点看实验设置、基线对比和真实部署条件。</div></div></div>
+  <div class="paper-tags">
+    <span class="tag tag-agent">Agent</span>
+    <span class="tag tag-llm">LLM</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.06527">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.06527">PDF</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title">WildClawBench: A Benchmark for Real-World, Long-Horizon Agent Evaluation</div>
+  <div class="paper-meta">arXiv 2026 · Intern Large Models</div>
+  <div class="summary-grid"><div class="summary-item"><div class="summary-label">🛠 技术路线</div><div class="summary-text">语言模型、视觉-语言模型</div></div><div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 WildClawBench，面向真实世界长时序智能体评估的基准测试。</div></div><div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">WildClawBench 在基准测试、长时序、多模态方面有效</div></div><div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于大语言模型/推理方向。建议关注训练范式、推理机制和 benchmark 表现。</div></div></div>
+  <div class="paper-tags">
+    <span class="tag tag-agent">Agent</span>
+    <span class="tag tag-vlm">VLM</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.10912">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.10912">PDF</a>
+    <a href="https://internlm.github.io/WildClawBench/">Project</a>
+    <a href="https://github.com/internlm/WildClawBench">Code</a>
+  </div>
+</div>
+
+</section>
+
+<div class="stats">
+  <h3>📊 数据来源说明</h3>
+  <p>数据来源：HuggingFace 热门论文 7 篇 | 共 7 条动态</p>
+  <p>主题分布：Multimodal 2 · Agent 5</p>
+  <p>更新时间：2026年5月16日</p>
+</div>
+
+</div>
+</body>
+</html>

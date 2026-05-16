@@ -658,6 +658,85 @@
 <script>
 // ===== DATA =====
 const PAPERS_DB = [
+    // === 2026-05-16 ===
+    {
+        date: "2026-05-16",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "Causal Forcing++: Scalable Few-Step Autoregressive Diffusion Distillation for Real-Time Interactive Video Generation",
+        venue: "arXiv 2026 · Tsinghua Machine Learning Group",
+        summary: "🛠 技术路线: 扩散模型、蒸馏、世界模型 | 💡 创新点: 提出 Causal Forcing++，一种可扩展的少步自回归扩散蒸馏方法，用于实时交互式视频生成。 | 📊 实验效果: AR 在蒸馏方法方面表现有效 | ⭐ 整体评价: 属于世界模型/动作生成方向。建议关注其预测精度、动作可控性和 Sim-to-Real 迁移效果。",
+        tags: [["Multimodal","green"],["Diffusion","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.15141"],["PDF","https://arxiv.org/pdf/2605.15141"],["Code","https://github.com/thu-ml/Causal-Forcing"]],
+        summaryGrid: [{"label":"🛠 技术路线","text":"扩散模型、蒸馏、世界模型"},{"label":"💡 创新点","text":"提出 Causal Forcing++，一种可扩展的少步自回归扩散蒸馏方法，用于实时交互式视频生成。"},{"label":"📊 实验效果","text":"AR 在蒸馏方法方面表现有效"},{"label":"⭐ 整体评价","text":"属于世界模型/动作生成方向。建议关注其预测精度、动作可控性和 Sim-to-Real 迁移效果。"}]
+    },
+    {
+        date: "2026-05-16",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "MemLens: Benchmarking Multimodal Long-Term Memory in Large Vision-Language Models",
+        venue: "arXiv 2026 · NVIDIA",
+        summary: "🛠 技术路线: 检索增强、注意力机制、语言模型、视觉-语言模型 | 💡 创新点: 提出 MemLens，一个全面的多模态多轮对话长期记忆基准测试，包含 789 道评估问题。 | 📊 实验效果: 准确率为 2%~80.4%，揭示当前模型在长期记忆方面的显著差距 | ⭐ 整体评价: 属于大语言模型/推理方向。建议关注训练范式、推理机制和 benchmark 表现。",
+        tags: [["Multimodal","green"],["VLM","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.14906"],["PDF","https://arxiv.org/pdf/2605.14906"],["Code","https://github.com/xrenaf/MEMLENS"]],
+        highlight: true,
+        summaryGrid: [{"label":"🛠 技术路线","text":"检索增强、注意力机制、语言模型、视觉-语言模型"},{"label":"💡 创新点","text":"提出 MemLens，一个全面的多模态多轮对话长期记忆基准测试，包含 789 道评估问题。"},{"label":"📊 实验效果","text":"准确率为 2%~80.4%，揭示当前模型在长期记忆方面的显著差距"},{"label":"⭐ 整体评价","text":"属于大语言模型/推理方向。建议关注训练范式、推理机制和 benchmark 表现。"}]
+    },
+    {
+        date: "2026-05-16",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Self-Distilled Agentic Reinforcement Learning",
+        venue: "arXiv 2026 · ZJU-REAL",
+        summary: "🛠 技术路线: 强化学习、蒸馏、检索增强 | 💡 创新点: 提出 SDAR，一种自蒸馏智能体强化学习方法。 | 📊 实验效果: 关键指标提升 9.4%、7.0%、10.2%，SDAR 在蒸馏方面有效 | ⭐ 整体评价: 属于机器人算法与控制方向。建议重点看实验设置、基线对比和真实部署条件。",
+        tags: [["Agent","green"],["RL","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.15155"],["PDF","https://arxiv.org/pdf/2605.15155"],["Code","https://github.com/ZJU-REAL/SDAR"]],
+        summaryGrid: [{"label":"🛠 技术路线","text":"强化学习、蒸馏、检索增强"},{"label":"💡 创新点","text":"提出 SDAR，一种自蒸馏智能体强化学习方法。"},{"label":"📊 实验效果","text":"关键指标提升 9.4%、7.0%、10.2%，SDAR 在蒸馏方面有效"},{"label":"⭐ 整体评价","text":"属于机器人算法与控制方向。建议重点看实验设置、基线对比和真实部署条件。"}]
+    },
+    {
+        date: "2026-05-16",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "MemEye: A Visual-Centric Evaluation Framework for Multimodal Agent Memory",
+        venue: "arXiv 2026",
+        summary: "💡 创新点: 提出 MemEye，一种面向视觉的多模态智能体记忆评估框架。 | 📊 实验效果: 在框架和基准测试方面表现良好 | ⭐ 整体评价: 属于大语言模型/推理方向。建议关注训练范式、推理机制和 benchmark 表现。",
+        tags: [["Agent","green"],["Multimodal","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.15128"],["PDF","https://arxiv.org/pdf/2605.15128"],["Project","https://minghokwok.github.io/MemEye/"],["Code","https://github.com/MinghoKwok/MemEye"]],
+        summaryGrid: [{"label":"💡 创新点","text":"提出 MemEye，一种面向视觉的多模态智能体记忆评估框架。"},{"label":"📊 实验效果","text":"在框架和基准测试方面表现良好"},{"label":"⭐ 整体评价","text":"属于大语言模型/推理方向。建议关注训练范式、推理机制和 benchmark 表现。"}]
+    },
+    {
+        date: "2026-05-16",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Beyond Individual Intelligence: Surveying Collaboration, Failure Attribution, and Self-Evolution in LLM-based Multi-Agent Systems",
+        venue: "arXiv 2026 · Xi'an Jiaotong University",
+        summary: "💡 创新点: 综述性工作，系统梳理 LLM 多智能体系统中的协作、失败归因与自我进化机制。 | 📊 实验效果: LIFE 框架在提升和统一多智能体系统方面有效 | ⭐ 整体评价: 属于大语言模型/推理方向。建议关注训练范式、推理机制和 benchmark 表现。",
+        tags: [["Agent","green"],["LLM","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.14892"],["PDF","https://arxiv.org/pdf/2605.14892"],["Code","https://github.com/mira-ai-lab/awesome-mas-life"]],
+        summaryGrid: [{"label":"💡 创新点","text":"综述性工作，系统梳理 LLM 多智能体系统中的协作、失败归因与自我进化机制。"},{"label":"📊 实验效果","text":"LIFE 框架在提升和统一多智能体系统方面有效"},{"label":"⭐ 整体评价","text":"属于大语言模型/推理方向。建议关注训练范式、推理机制和 benchmark 表现。"}]
+    },
+    {
+        date: "2026-05-16",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "STALE: Can LLM Agents Know When Their Memories Are No Longer Valid?",
+        venue: "arXiv 2026 · HKUST NLP Group",
+        summary: "🛠 技术路线: 检索增强、语言模型 | 💡 创新点: 提出 STALE 基准测试，包含 400 个专家验证的冲突场景（1200 条评估查询），检测 LLM 智能体记忆过时问题。 | 📊 实验效果: 最佳准确率仅 55.2%，揭示当前模型在记忆有效性判断上的不足 | ⭐ 整体评价: 属于机器人算法与控制方向。建议重点看实验设置、基线对比和真实部署条件。",
+        tags: [["Agent","green"],["LLM","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.06527"],["PDF","https://arxiv.org/pdf/2605.06527"]],
+        summaryGrid: [{"label":"🛠 技术路线","text":"检索增强、语言模型"},{"label":"💡 创新点","text":"提出 STALE 基准测试，包含 400 个专家验证的冲突场景（1200 条评估查询），检测 LLM 智能体记忆过时问题。"},{"label":"📊 实验效果","text":"最佳准确率仅 55.2%，揭示当前模型在记忆有效性判断上的不足"},{"label":"⭐ 整体评价","text":"属于机器人算法与控制方向。建议重点看实验设置、基线对比和真实部署条件。"}]
+    },
+    {
+        date: "2026-05-16",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "WildClawBench: A Benchmark for Real-World, Long-Horizon Agent Evaluation",
+        venue: "arXiv 2026 · Intern Large Models",
+        summary: "🛠 技术路线: 语言模型、视觉-语言模型 | 💡 创新点: 提出 WildClawBench，面向真实世界长时序智能体评估的基准测试。 | 📊 实验效果: WildClawBench 在基准测试、长时序、多模态方面有效 | ⭐ 整体评价: 属于大语言模型/推理方向。建议关注训练范式、推理机制和 benchmark 表现。",
+        tags: [["Agent","green"],["VLM","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.10912"],["PDF","https://arxiv.org/pdf/2605.10912"],["Project","https://internlm.github.io/WildClawBench/"],["Code","https://github.com/internlm/WildClawBench"]],
+        summaryGrid: [{"label":"🛠 技术路线","text":"语言模型、视觉-语言模型"},{"label":"💡 创新点","text":"提出 WildClawBench，面向真实世界长时序智能体评估的基准测试。"},{"label":"📊 实验效果","text":"WildClawBench 在基准测试、长时序、多模态方面有效"},{"label":"⭐ 整体评价","text":"属于大语言模型/推理方向。建议关注训练范式、推理机制和 benchmark 表现。"}]
+    },
     // === 2026-05-15 ===
     {
         date: "2026-05-15",
@@ -10549,6 +10628,13 @@ const PAPERS_DB = [
 ];
 
 const DAILY_OVERVIEW = {
+    "2026-05-16": {
+        bannerTitle: "🔥 今日看点",
+        bannerSubtitle: "MemLens: NVIDIA 提出多模态长期记忆基准测试，包含 789 道跨多轮对话的评估问题，系统评估大型视觉语言模型的长期记忆能力。今日 Agent 方向论文集中，涵盖多智能体协作、记忆有效性检测、长时序评估等热门话题。",
+        picks: ["MemLens: Benchmarking Multimodal Long-Term Memory in Large Vision-Language Models"],
+        totalPapers: 7,
+        totalNews: 0
+    },
     "2026-05-15": {
         bannerTitle: "🔥 今日看点",
         bannerSubtitle: "SANA-WM: Efficient Minute-Scale World Mo...",
