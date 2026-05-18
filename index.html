@@ -658,6 +658,99 @@
 <script>
 // ===== DATA =====
 const PAPERS_DB = [
+    // === 2026-05-18 ===
+    {
+        date: "2026-05-18",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "PhysBrain 1.0 Technical Report",
+        venue: "arXiv 2026 · DeepCybo",
+        summary: "🛠 技术路线: 视觉-语言-动作模型、物理世界理解增强、多模态 QA 联合训练 | 💡 创新点: PhysBrain 1.0 通过联合多模态 QA 和机器人轨迹数据训练，增强 VLA 模型对广泛物理世界的理解能力，超越仅依赖轨迹数据的方法。 | 📊 实验效果: 在 ERQA、PhysBench、SimplerEnv-WidowX、LIBERO、RoboCasa 等基准上取得 SOTA，SimplerEnv 上表现尤为突出 | ⭐ 整体评价: 属于 VLA/具身控制方向。建议关注其任务泛化能力、动作表达方式与真机验证结果。",
+        tags: [["VLA","green"],["Embodied","green"],["Robotics","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.15298"],["PDF","https://arxiv.org/pdf/2605.15298"],["Project","https://phys-brain.github.io/"],["Code","https://github.com/Phys-Brain/PhysBrain-VLA"]],
+        highlight: true,
+        summaryGrid: [{"label":"🛠 技术路线","text":"视觉-语言-动作模型、物理世界理解增强、多模态 QA 联合训练"},{"label":"💡 创新点","text":"PhysBrain 1.0 通过联合多模态 QA 和机器人轨迹数据训练，增强 VLA 模型对广泛物理世界的理解能力，超越仅依赖轨迹数据的方法。"},{"label":"📊 实验效果","text":"在 ERQA、PhysBench、SimplerEnv-WidowX、LIBERO、RoboCasa 等基准上取得 SOTA，SimplerEnv 上表现尤为突出"},{"label":"⭐ 整体评价","text":"属于 VLA/具身控制方向。建议关注其任务泛化能力、动作表达方式与真机验证结果。"}]
+    },
+    {
+        date: "2026-05-18",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "DexJoCo: A Benchmark and Toolkit for Task-Oriented Dexterous Manipulation on MuJoCo",
+        venue: "arXiv 2026",
+        summary: "🛠 技术路线: 灵巧手操作基准、MuJoCo 仿真、任务导向评估 | 💡 创新点: 提出 DexJoCo，包含 11 个功能性任务的灵巧手操作基准与工具包，评估工具使用、双手协调、长时序执行与推理能力。开发低成本数据采集系统，收集 1.1K 条轨迹并支持域随机化。 | 📊 实验效果: 系统性评估灵巧手超越平行夹爪的独特操作能力，填补现有基准在任务复杂度和评估流程上的空白 | ⭐ 整体评价: 属于机器人算法与控制方向。建议重点看实验设置、基线对比和真实部署条件。",
+        tags: [["Robotics","green"],["Dexterous","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.16257"],["PDF","https://arxiv.org/pdf/2605.16257"],["Project","https://dexjoco.github.io/"],["Code","https://github.com/brave-eai/dexjoco"]],
+        highlight: true,
+        summaryGrid: [{"label":"🛠 技术路线","text":"灵巧手操作基准、MuJoCo 仿真、任务导向评估"},{"label":"💡 创新点","text":"提出 DexJoCo，包含 11 个功能性任务的灵巧手操作基准与工具包，评估工具使用、双手协调、长时序执行与推理能力。开发低成本数据采集系统，收集 1.1K 条轨迹并支持域随机化。"},{"label":"📊 实验效果","text":"系统性评估灵巧手超越平行夹爪的独特操作能力，填补现有基准在任务复杂度和评估流程上的空白"},{"label":"⭐ 整体评价","text":"属于机器人算法与控制方向。建议重点看实验设置、基线对比和真实部署条件。"}]
+    },
+    {
+        date: "2026-05-18",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "Flash-GRPO: Efficient Alignment for Video Diffusion via One-Step Policy Optimization",
+        venue: "arXiv 2026",
+        summary: "🛠 技术路线: GRPO 策略优化、单步训练、视频扩散模型对齐 | 💡 创新点: 提出 Flash-GRPO，一种单步训练框架，在低计算预算下超越全轨迹训练的对齐质量，大幅提升视频扩散模型对齐的训练效率。 | 📊 实验效果: 在 1.3B 至 14B 参数模型上验证有效性，展示显著训练加速同时保持一致稳定性和 SOTA 对齐质量 | ⭐ 整体评价: 属于视频生成/扩散模型方向。建议关注训练效率提升幅度和对齐质量的稳定性。",
+        tags: [["Diffusion","green"],["Video","green"],["RL","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.15980"],["PDF","https://arxiv.org/pdf/2605.15980"],["Project","https://shredded-pork.github.io/Flash-GRPO.github.io/"],["Code","https://github.com/Shredded-Pork/Flash-GRPO"]],
+        highlight: true,
+        summaryGrid: [{"label":"🛠 技术路线","text":"GRPO 策略优化、单步训练、视频扩散模型对齐"},{"label":"💡 创新点","text":"提出 Flash-GRPO，一种单步训练框架，在低计算预算下超越全轨迹训练的对齐质量，大幅提升视频扩散模型对齐的训练效率。"},{"label":"📊 实验效果","text":"在 1.3B 至 14B 参数模型上验证有效性，展示显著训练加速同时保持一致稳定性和 SOTA 对齐质量"},{"label":"⭐ 整体评价","text":"属于视频生成/扩散模型方向。建议关注训练效率提升幅度和对齐质量的稳定性。"}]
+    },
+    {
+        date: "2026-05-18",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "Learning to Foresee: Unveiling the Unlocking Efficiency of On-Policy Distillation",
+        venue: "arXiv 2026 · Tencent Hunyuan",
+        summary: "🛠 技术路线: On-policy 蒸馏、模块级分配、自适应外推加速 | 💡 创新点: 深入分析 OPD 效率机制，发现模块级低边际效用区域并集中更新关键推理模块。提出 EffOPD，通过自适应外推步长选择加速训练，无需额外可训练模块或复杂超参调优。 | 📊 实验效果: EffOPD 实现平均 3 倍训练加速，同时保持与完整 OPD 可比的最终性能 | ⭐ 整体评价: 属于 LLM 训练优化方向。建议关注加速方法的通用性和性能-效率权衡。",
+        tags: [["LLM","green"],["Distillation","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.11739"],["PDF","https://arxiv.org/pdf/2605.11739"],["Code","https://github.com/caiyuchen-ustc/EffOPD"]],
+        summaryGrid: [{"label":"🛠 技术路线","text":"On-policy 蒸馏、模块级分配、自适应外推加速"},{"label":"💡 创新点","text":"深入分析 OPD 效率机制，发现模块级低边际效用区域并集中更新关键推理模块。提出 EffOPD，通过自适应外推步长选择加速训练，无需额外可训练模块或复杂超参调优。"},{"label":"📊 实验效果","text":"EffOPD 实现平均 3 倍训练加速，同时保持与完整 OPD 可比的最终性能"},{"label":"⭐ 整体评价","text":"属于 LLM 训练优化方向。建议关注加速方法的通用性和性能-效率权衡。"}]
+    },
+    {
+        date: "2026-05-18",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "ReactiveGWM: Steering NPC in Reactive Game World Models",
+        venue: "arXiv 2026",
+        summary: "🛠 技术路线: 反应式游戏世界模型、NPC 行为合成、玩家-NPC 交互 | 💡 创新点: 提出 ReactiveGWM，首个反应式游戏世界模型，能够合成玩家与 NPC 之间的动态交互，超越现有仅模拟主观玩家视角的方法。 | 📊 实验效果: 实现可控 NPC 行为生成与玩家-NPC 实时交互仿真 | ⭐ 整体评价: 属于世界模型/动作生成方向。建议关注其预测精度、动作可控性和交互质量。",
+        tags: [["Agent","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.15256"],["PDF","https://arxiv.org/pdf/2605.15256"],["Project","https://inv-wzq.github.io/ReactiveGWM/"],["Code","https://github.com/INV-WZQ/ReactiveGWM"]],
+        highlight: true,
+        summaryGrid: [{"label":"🛠 技术路线","text":"反应式游戏世界模型、NPC 行为合成、玩家-NPC 交互"},{"label":"💡 创新点","text":"提出 ReactiveGWM，首个反应式游戏世界模型，能够合成玩家与 NPC 之间的动态交互，超越现有仅模拟主观玩家视角的方法。"},{"label":"📊 实验效果","text":"实现可控 NPC 行为生成与玩家-NPC 实时交互仿真"},{"label":"⭐ 整体评价","text":"属于世界模型/动作生成方向。建议关注其预测精度、动作可控性和交互质量。"}]
+    },
+    {
+        date: "2026-05-18",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Nudging Beyond the Comfort Zone: Efficient Strategy-Guided Exploration for RLVR",
+        venue: "arXiv 2026 · KAIST AI",
+        summary: "🛠 技术路线: RLVR、结构化探索、多样性驱动策略优化 | 💡 创新点: 提出 NudgeRL，一种结构化与多样性驱动的 RLVR 探索框架，解决策略仅在已采样轨迹上改进的根本限制。 | 📊 实验效果: NudgeRL 以 1/8 的 rollout 预算超越标准 GRPO，并在五个数学推理基准上平均优于 oracle 引导的 RL 基线 | ⭐ 整体评价: 属于 LLM 强化学习方向。建议关注探索策略设计与推理能力提升幅度。",
+        tags: [["LLM","green"],["RL","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.15726"],["PDF","https://arxiv.org/pdf/2605.15726"],["Code","https://github.com/tally0818/NudgeRL"]],
+        summaryGrid: [{"label":"🛠 技术路线","text":"RLVR、结构化探索、多样性驱动策略优化"},{"label":"💡 创新点","text":"提出 NudgeRL，一种结构化与多样性驱动的 RLVR 探索框架，解决策略仅在已采样轨迹上改进的根本限制。"},{"label":"📊 实验效果","text":"NudgeRL 以 1/8 的 rollout 预算超越标准 GRPO，并在五个数学推理基准上平均优于 oracle 引导的 RL 基线"},{"label":"⭐ 整体评价","text":"属于 LLM 强化学习方向。建议关注探索策略设计与推理能力提升幅度。"}]
+    },
+    {
+        date: "2026-05-18",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "CiteVQA: Benchmarking Evidence Attribution for Trustworthy Document Intelligence",
+        venue: "arXiv 2026 · OpenDataLab",
+        summary: "🛠 技术路线: 文档 VQA、证据归因、元素级边界框引用 | 💡 创新点: 提出 CiteVQA 基准测试，要求模型在回答文档问题时同时返回元素级边界框引用，联合评估答案正确性与证据定位能力。 | 📊 实验效果: 最强模型 Gemini-3.1-Pro-Preview 的严格归因准确率(SAA)仅 76.0，最强开源 MLLM 仅达 22.5，揭示巨大改进空间 | ⭐ 整体评价: 属于多模态/文档理解方向。建议关注评估指标设计与模型归因能力差距。",
+        tags: [["Multimodal","green"],["VLM","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.12882"],["PDF","https://arxiv.org/pdf/2605.12882"],["Project","https://huggingface.co/datasets/opendatalab/CiteVQA"],["Code","https://github.com/opendatalab/CiteVQA"]],
+        summaryGrid: [{"label":"🛠 技术路线","text":"文档 VQA、证据归因、元素级边界框引用"},{"label":"💡 创新点","text":"提出 CiteVQA 基准测试，要求模型在回答文档问题时同时返回元素级边界框引用，联合评估答案正确性与证据定位能力。"},{"label":"📊 实验效果","text":"最强模型 Gemini-3.1-Pro-Preview 的严格归因准确率(SAA)仅 76.0，最强开源 MLLM 仅达 22.5，揭示巨大改进空间"},{"label":"⭐ 整体评价","text":"属于多模态/文档理解方向。建议关注评估指标设计与模型归因能力差距。"}]
+    },
+    {
+        date: "2026-05-18",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "MMSkills: Towards Multimodal Skills for General Visual Agents",
+        venue: "arXiv 2026 · Shanghai Jiaotong University",
+        summary: "🛠 技术路线: 多模态技能框架、可复用视觉程序、运行时决策 | 💡 创新点: 提出 MMSkills 框架，用于表示、生成和使用可复用多模态程序进行运行时视觉决策。开发 agentic Generator 将公开评估轨迹转化为可复用多模态技能。 | 📊 实验效果: 在 GUI 和游戏智能体基准上，MMSkills 一致提升 frontier 和小型多模态智能体的性能，证明外部多模态程序知识可补充模型先验 | ⭐ 整体评价: 属于 Agent/多模态方向。建议关注技能泛化能力与跨任务复用效果。",
+        tags: [["Agent","green"],["Multimodal","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.13527"],["PDF","https://arxiv.org/pdf/2605.13527"],["Project","https://deepexperience.github.io/MMSkills/"],["Code","https://github.com/DeepExperience/MMSkills"]],
+        summaryGrid: [{"label":"🛠 技术路线","text":"多模态技能框架、可复用视觉程序、运行时决策"},{"label":"💡 创新点","text":"提出 MMSkills 框架，用于表示、生成和使用可复用多模态程序进行运行时视觉决策。开发 agentic Generator 将公开评估轨迹转化为可复用多模态技能。"},{"label":"📊 实验效果","text":"在 GUI 和游戏智能体基准上，MMSkills 一致提升 frontier 和小型多模态智能体的性能，证明外部多模态程序知识可补充模型先验"},{"label":"⭐ 整体评价","text":"属于 Agent/多模态方向。建议关注技能泛化能力与跨任务复用效果。"}]
+    },
     // === 2026-05-16 ===
     {
         date: "2026-05-16",
@@ -10373,6 +10466,13 @@ const PAPERS_DB = [
 ];
 
 const DAILY_OVERVIEW = {
+    "2026-05-18": {
+        bannerTitle: "🔥 今日看点",
+        bannerSubtitle: "PhysBrain 1.0: DeepCybo 提出物理世界理解增强的 VLA 模型，在 SimplerEnv、LIBERO、RoboCasa 等多个具身控制基准上取得 SOTA。DexJoCo: 灵巧手操作基准测试与工具包，包含 11 个功能性任务评估双手协调与工具使用。Flash-GRPO: 单步视频扩散对齐框架，大幅加速训练同时保持 SOTA 对齐质量。",
+        picks: ["PhysBrain 1.0 Technical Report","DexJoCo: A Benchmark and Toolkit for Task-Oriented Dexterous Manipulation on MuJoCo","Flash-GRPO: Efficient Alignment for Video Diffusion via One-Step Policy Optimization","ReactiveGWM: Steering NPC in Reactive Game World Models"],
+        totalPapers: 8,
+        totalNews: 0
+    },
     "2026-05-17": {
         bannerTitle: "📋 今日概览",
         bannerSubtitle: "周日休刊日 — arXiv 周末不更新索引，HuggingFace 热门论文与昨日相同（经去重验证，7 篇均已在昨日日报中收录）。新内容将在周一恢复。",

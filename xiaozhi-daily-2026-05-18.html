@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>小小志科研情报 - 2026年5月18日</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans SC', sans-serif;
+  background: #0a0e1a;
+  color: #e0e6f0;
+  line-height: 1.7;
+  min-height: 100vh;
+}
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+header {
+  text-align: center;
+  margin-bottom: 48px;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, rgba(59,130,246,0.08) 0%, rgba(139,92,246,0.08) 100%);
+  border-radius: 20px;
+  border: 1px solid rgba(99,102,241,0.15);
+}
+header h1 {
+  font-size: 2rem;
+  background: linear-gradient(135deg, #60a5fa, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 8px;
+}
+header .date {
+  color: #94a3b8;
+  font-size: 1rem;
+}
+header .subtitle {
+  color: #64748b;
+  font-size: 0.9rem;
+  margin-top: 6px;
+}
+.section {
+  margin-bottom: 40px;
+}
+.section-title {
+  font-size: 1.4rem;
+  color: #f1f5f9;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(99,102,241,0.2);
+}
+.paper-card {
+  background: rgba(30,41,59,0.6);
+  border: 1px solid rgba(99,102,241,0.12);
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 16px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.paper-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(99,102,241,0.1);
+  border-color: rgba(99,102,241,0.3);
+}
+.paper-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #f8fafc;
+  margin-bottom: 8px;
+}
+.paper-meta {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-bottom: 10px;
+}
+.paper-summary {
+  font-size: 0.95rem;
+  color: #cbd5e1;
+  margin-bottom: 14px;
+  line-height: 1.8;
+}
+.summary-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+@media (max-width: 640px) {
+  .summary-grid { grid-template-columns: 1fr; }
+}
+.summary-item {
+  background: rgba(15,23,42,0.5);
+  border-radius: 10px;
+  padding: 12px 14px;
+  border: 1px solid rgba(99,102,241,0.08);
+}
+.summary-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #818cf8;
+  margin-bottom: 4px;
+}
+.summary-text {
+  font-size: 0.88rem;
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+.paper-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.tag {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+.tag-vla { background: rgba(59,130,246,0.15); color: #60a5fa; }
+.tag-robot { background: rgba(16,185,129,0.15); color: #34d399; }
+.tag-rl { background: rgba(251,146,60,0.15); color: #fb923c; }
+.tag-llm { background: rgba(168,85,247,0.15); color: #c084fc; }
+.tag-vlm { background: rgba(236,72,153,0.15); color: #f472b6; }
+.tag-world-model { background: rgba(34,211,238,0.15); color: #22d3ee; }
+.tag-embodied { background: rgba(74,222,128,0.15); color: #4ade80; }
+.tag-agent { background: rgba(251,191,36,0.15); color: #fbbf24; }
+.tag-multimodal { background: rgba(236,72,153,0.15); color: #f472b6; }
+.tag-video { background: rgba(34,211,238,0.15); color: #22d3ee; }
+.tag-security { background: rgba(239,68,68,0.15); color: #f87171; }
+.tag-voice { background: rgba(56,189,248,0.15); color: #38bdf8; }
+.tag-product { background: rgba(163,230,53,0.15); color: #a3e635; }
+.tag-diffusion { background: rgba(192,132,252,0.15); color: #c084fc; }
+.tag-3d { background: rgba(45,212,191,0.15); color: #2dd4bf; }
+.paper-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.paper-links a {
+  display: inline-block;
+  padding: 5px 14px;
+  background: rgba(99,102,241,0.12);
+  color: #818cf8;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+.paper-links a:hover {
+  background: rgba(99,102,241,0.25);
+}
+.hot-badge {
+  margin-right: 6px;
+}
+.info-card {
+  background: rgba(30,41,59,0.4);
+  border: 1px solid rgba(251,191,36,0.15);
+  border-radius: 14px;
+  padding: 20px;
+  margin-bottom: 14px;
+}
+.info-card .paper-title {
+  color: #fbbf24;
+}
+.highlight-banner {
+  background: linear-gradient(135deg, rgba(251,146,60,0.1) 0%, rgba(236,72,153,0.1) 100%);
+  border: 1px solid rgba(251,146,60,0.2);
+  border-radius: 14px;
+  padding: 20px 24px;
+  margin-bottom: 36px;
+}
+.hl-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fb923c;
+  margin-bottom: 8px;
+}
+.hl-text {
+  font-size: 0.95rem;
+  color: #e2e8f0;
+  line-height: 1.7;
+}
+.stats {
+  text-align: center;
+  padding: 30px;
+  margin-top: 40px;
+  background: rgba(30,41,59,0.4);
+  border-radius: 14px;
+  border: 1px solid rgba(99,102,241,0.1);
+}
+.stats h3 {
+  color: #94a3b8;
+  font-size: 1rem;
+  margin-bottom: 12px;
+}
+.stats p {
+  color: #64748b;
+  font-size: 0.9rem;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+  <h1>🔬 小小志科研情报</h1>
+  <div class="date">2026年5月18日 · 星期一</div>
+  <div class="subtitle">Boss Team · Daily Research Intelligence</div>
+</header>
+
+<div class="highlight-banner">
+  <div class="hl-title">🔥 今日看点</div>
+  <div class="hl-text">PhysBrain 1.0: DeepCybo 提出物理世界理解增强的 VLA 模型，在 SimplerEnv、LIBERO、RoboCasa 等多个具身控制基准上取得 SOTA。DexJoCo: 灵巧手操作基准测试与工具包，包含 11 个功能性任务评估双手协调与工具使用。Flash-GRPO: 单步视频扩散对齐框架，大幅加速训练同时保持 SOTA 对齐质量。</div>
+</div>
+
+<section class="section">
+<h2 class="section-title">🤖 VLA · Vision-Language-Action</h2>
+
+<div class="paper-card">
+  <div class="paper-title"><span class="hot-badge">🔥</span> PhysBrain 1.0 Technical Report</div>
+  <div class="paper-meta">arXiv 2026 · DeepCybo</div>
+  <div class="summary-grid"><div class="summary-item"><div class="summary-label">🛠 技术路线</div><div class="summary-text">视觉-语言-动作模型、物理世界理解增强、多模态 QA 联合训练</div></div><div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">PhysBrain 1.0 通过联合多模态 QA 和机器人轨迹数据训练，增强 VLA 模型对广泛物理世界的理解能力，超越仅依赖轨迹数据的方法。</div></div><div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在 ERQA、PhysBench、SimplerEnv-WidowX、LIBERO、RoboCasa 等基准上取得 SOTA，SimplerEnv 上表现尤为突出</div></div><div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于 VLA/具身控制方向。建议关注其任务泛化能力、动作表达方式与真机验证结果。</div></div></div>
+  <div class="paper-tags">
+    <span class="tag tag-vla">VLA</span>
+    <span class="tag tag-embodied">Embodied</span>
+    <span class="tag tag-robot">Robotics</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.15298">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.15298">PDF</a>
+    <a href="https://phys-brain.github.io/">Project</a>
+    <a href="https://github.com/Phys-Brain/PhysBrain-VLA">Code</a>
+  </div>
+</div>
+
+</section>
+<section class="section">
+<h2 class="section-title">🦾 Robotics · 机器人</h2>
+
+<div class="paper-card">
+  <div class="paper-title"><span class="hot-badge">🔥</span> DexJoCo: A Benchmark and Toolkit for Task-Oriented Dexterous Manipulation on MuJoCo</div>
+  <div class="paper-meta">arXiv 2026</div>
+  <div class="summary-grid"><div class="summary-item"><div class="summary-label">🛠 技术路线</div><div class="summary-text">灵巧手操作基准、MuJoCo 仿真、任务导向评估</div></div><div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 DexJoCo，包含 11 个功能性任务的灵巧手操作基准与工具包，评估工具使用、双手协调、长时序执行与推理能力。开发低成本数据采集系统，收集 1.1K 条轨迹并支持域随机化。</div></div><div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">系统性评估灵巧手超越平行夹爪的独特操作能力，填补现有基准在任务复杂度和评估流程上的空白</div></div><div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于机器人算法与控制方向。建议重点看实验设置、基线对比和真实部署条件。</div></div></div>
+  <div class="paper-tags">
+    <span class="tag tag-robot">Robotics</span>
+    <span class="tag tag-embodied">Dexterous</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.16257">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.16257">PDF</a>
+    <a href="https://dexjoco.github.io/">Project</a>
+    <a href="https://github.com/brave-eai/dexjoco">Code</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title"><span class="hot-badge">🔥</span> Flash-GRPO: Efficient Alignment for Video Diffusion via One-Step Policy Optimization</div>
+  <div class="paper-meta">arXiv 2026</div>
+  <div class="summary-grid"><div class="summary-item"><div class="summary-label">🛠 技术路线</div><div class="summary-text">GRPO 策略优化、单步训练、视频扩散模型对齐</div></div><div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 Flash-GRPO，一种单步训练框架，在低计算预算下超越全轨迹训练的对齐质量，大幅提升视频扩散模型对齐的训练效率。</div></div><div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在 1.3B 至 14B 参数模型上验证有效性，展示显著训练加速同时保持一致稳定性和 SOTA 对齐质量</div></div><div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于视频生成/扩散模型方向。建议关注训练效率提升幅度和对齐质量的稳定性。</div></div></div>
+  <div class="paper-tags">
+    <span class="tag tag-diffusion">Diffusion</span>
+    <span class="tag tag-video">Video</span>
+    <span class="tag tag-rl">RL</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.15980">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.15980">PDF</a>
+    <a href="https://shredded-pork.github.io/Flash-GRPO.github.io/">Project</a>
+    <a href="https://github.com/Shredded-Pork/Flash-GRPO">Code</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title">Learning to Foresee: Unveiling the Unlocking Efficiency of On-Policy Distillation</div>
+  <div class="paper-meta">arXiv 2026 · Tencent Hunyuan</div>
+  <div class="summary-grid"><div class="summary-item"><div class="summary-label">🛠 技术路线</div><div class="summary-text">On-policy 蒸馏、模块级分配、自适应外推加速</div></div><div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">深入分析 OPD 效率机制，发现模块级低边际效用区域并集中更新关键推理模块。提出 EffOPD，通过自适应外推步长选择加速训练，无需额外可训练模块或复杂超参调优。</div></div><div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">EffOPD 实现平均 3 倍训练加速，同时保持与完整 OPD 可比的最终性能</div></div><div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于 LLM 训练优化方向。建议关注加速方法的通用性和性能-效率权衡。</div></div></div>
+  <div class="paper-tags">
+    <span class="tag tag-llm">LLM</span>
+    <span class="tag tag-rl">Distillation</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.11739">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.11739">PDF</a>
+    <a href="https://github.com/caiyuchen-ustc/EffOPD">Code</a>
+  </div>
+</div>
+
+</section>
+<section class="section">
+<h2 class="section-title">🌍 World Model · 世界模型</h2>
+
+<div class="paper-card">
+  <div class="paper-title"><span class="hot-badge">🔥</span> ReactiveGWM: Steering NPC in Reactive Game World Models</div>
+  <div class="paper-meta">arXiv 2026</div>
+  <div class="summary-grid"><div class="summary-item"><div class="summary-label">🛠 技术路线</div><div class="summary-text">反应式游戏世界模型、NPC 行为合成、玩家-NPC 交互</div></div><div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 ReactiveGWM，首个反应式游戏世界模型，能够合成玩家与 NPC 之间的动态交互，超越现有仅模拟主观玩家视角的方法。</div></div><div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">实现可控 NPC 行为生成与玩家-NPC 实时交互仿真</div></div><div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于世界模型/动作生成方向。建议关注其预测精度、动作可控性和交互质量。</div></div></div>
+  <div class="paper-tags">
+    <span class="tag tag-world-model">World Model</span>
+    <span class="tag tag-agent">Agent</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.15256">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.15256">PDF</a>
+    <a href="https://inv-wzq.github.io/ReactiveGWM/">Project</a>
+    <a href="https://github.com/INV-WZQ/ReactiveGWM">Code</a>
+  </div>
+</div>
+
+</section>
+<section class="section">
+<h2 class="section-title">🧠 LLM · 大语言模型</h2>
+
+<div class="paper-card">
+  <div class="paper-title">Nudging Beyond the Comfort Zone: Efficient Strategy-Guided Exploration for RLVR</div>
+  <div class="paper-meta">arXiv 2026 · KAIST AI</div>
+  <div class="summary-grid"><div class="summary-item"><div class="summary-label">🛠 技术路线</div><div class="summary-text">RLVR、结构化探索、多样性驱动策略优化</div></div><div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 NudgeRL，一种结构化与多样性驱动的 RLVR 探索框架，解决策略仅在已采样轨迹上改进的根本限制。</div></div><div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">NudgeRL 以 1/8 的 rollout 预算超越标准 GRPO，并在五个数学推理基准上平均优于 oracle 引导的 RL 基线</div></div><div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于 LLM 强化学习方向。建议关注探索策略设计与推理能力提升幅度。</div></div></div>
+  <div class="paper-tags">
+    <span class="tag tag-llm">LLM</span>
+    <span class="tag tag-rl">RL</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.15726">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.15726">PDF</a>
+    <a href="https://github.com/tally0818/NudgeRL">Code</a>
+  </div>
+</div>
+
+</section>
+<section class="section">
+<h2 class="section-title">🎨 Multimodal · 多模态</h2>
+
+<div class="paper-card">
+  <div class="paper-title">CiteVQA: Benchmarking Evidence Attribution for Trustworthy Document Intelligence</div>
+  <div class="paper-meta">arXiv 2026 · OpenDataLab</div>
+  <div class="summary-grid"><div class="summary-item"><div class="summary-label">🛠 技术路线</div><div class="summary-text">文档 VQA、证据归因、元素级边界框引用</div></div><div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 CiteVQA 基准测试，要求模型在回答文档问题时同时返回元素级边界框引用，联合评估答案正确性与证据定位能力。</div></div><div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">最强模型 Gemini-3.1-Pro-Preview 的严格归因准确率(SAA)仅 76.0，最强开源 MLLM 仅达 22.5，揭示巨大改进空间</div></div><div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于多模态/文档理解方向。建议关注评估指标设计与模型归因能力差距。</div></div></div>
+  <div class="paper-tags">
+    <span class="tag tag-multimodal">Multimodal</span>
+    <span class="tag tag-vlm">VLM</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.12882">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.12882">PDF</a>
+    <a href="https://huggingface.co/datasets/opendatalab/CiteVQA">Project</a>
+    <a href="https://github.com/opendatalab/CiteVQA">Code</a>
+  </div>
+</div>
+
+</section>
+<section class="section">
+<h2 class="section-title">🧩 Agent · 智能体</h2>
+
+<div class="paper-card">
+  <div class="paper-title">MMSkills: Towards Multimodal Skills for General Visual Agents</div>
+  <div class="paper-meta">arXiv 2026 · Shanghai Jiaotong University</div>
+  <div class="summary-grid"><div class="summary-item"><div class="summary-label">🛠 技术路线</div><div class="summary-text">多模态技能框架、可复用视觉程序、运行时决策</div></div><div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 MMSkills 框架，用于表示、生成和使用可复用多模态程序进行运行时视觉决策。开发 agentic Generator 将公开评估轨迹转化为可复用多模态技能。</div></div><div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在 GUI 和游戏智能体基准上，MMSkills 一致提升 frontier 和小型多模态智能体的性能，证明外部多模态程序知识可补充模型先验</div></div><div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于 Agent/多模态方向。建议关注技能泛化能力与跨任务复用效果。</div></div></div>
+  <div class="paper-tags">
+    <span class="tag tag-agent">Agent</span>
+    <span class="tag tag-multimodal">Multimodal</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.13527">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.13527">PDF</a>
+    <a href="https://deepexperience.github.io/MMSkills/">Project</a>
+    <a href="https://github.com/DeepExperience/MMSkills">Code</a>
+  </div>
+</div>
+
+</section>
+
+<div class="stats">
+  <h3>📊 数据来源说明</h3>
+  <p>数据来源：HuggingFace 热门论文 8 篇 | 共 8 条动态</p>
+  <p>主题分布：VLA 1 · Robotics 3 · World Model 1 · LLM 1 · Multimodal 1 · Agent 1</p>
+  <p>更新时间：2026年5月18日</p>
+</div>
+
+</div>
+</body>
+</html>
