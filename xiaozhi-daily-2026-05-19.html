@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>小小志科研情报 - 2026年5月19日</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans SC', sans-serif;
+  background: #0a0e1a;
+  color: #e0e6f0;
+  line-height: 1.7;
+  min-height: 100vh;
+}
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+header {
+  text-align: center;
+  margin-bottom: 48px;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, rgba(59,130,246,0.08) 0%, rgba(139,92,246,0.08) 100%);
+  border-radius: 20px;
+  border: 1px solid rgba(99,102,241,0.15);
+}
+header h1 {
+  font-size: 2rem;
+  background: linear-gradient(135deg, #60a5fa, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 8px;
+}
+header .date {
+  color: #94a3b8;
+  font-size: 1rem;
+}
+header .subtitle {
+  color: #64748b;
+  font-size: 0.9rem;
+  margin-top: 6px;
+}
+.section {
+  margin-bottom: 40px;
+}
+.section-title {
+  font-size: 1.4rem;
+  color: #f1f5f9;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(99,102,241,0.2);
+}
+.paper-card {
+  background: rgba(30,41,59,0.6);
+  border: 1px solid rgba(99,102,241,0.12);
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 16px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.paper-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(99,102,241,0.1);
+  border-color: rgba(99,102,241,0.3);
+}
+.paper-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #f8fafc;
+  margin-bottom: 8px;
+}
+.paper-meta {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-bottom: 10px;
+}
+.paper-summary {
+  font-size: 0.95rem;
+  color: #cbd5e1;
+  margin-bottom: 14px;
+  line-height: 1.8;
+}
+.summary-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+@media (max-width: 640px) {
+  .summary-grid { grid-template-columns: 1fr; }
+}
+.summary-item {
+  background: rgba(15,23,42,0.5);
+  border-radius: 10px;
+  padding: 12px 14px;
+  border: 1px solid rgba(99,102,241,0.08);
+}
+.summary-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #818cf8;
+  margin-bottom: 4px;
+}
+.summary-text {
+  font-size: 0.88rem;
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+.paper-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.tag {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+.tag-vla { background: rgba(59,130,246,0.15); color: #60a5fa; }
+.tag-robot { background: rgba(16,185,129,0.15); color: #34d399; }
+.tag-rl { background: rgba(251,146,60,0.15); color: #fb923c; }
+.tag-llm { background: rgba(168,85,247,0.15); color: #c084fc; }
+.tag-vlm { background: rgba(236,72,153,0.15); color: #f472b6; }
+.tag-world-model { background: rgba(34,211,238,0.15); color: #22d3ee; }
+.tag-embodied { background: rgba(74,222,128,0.15); color: #4ade80; }
+.tag-agent { background: rgba(251,191,36,0.15); color: #fbbf24; }
+.tag-multimodal { background: rgba(236,72,153,0.15); color: #f472b6; }
+.tag-video { background: rgba(34,211,238,0.15); color: #22d3ee; }
+.tag-security { background: rgba(239,68,68,0.15); color: #f87171; }
+.tag-voice { background: rgba(56,189,248,0.15); color: #38bdf8; }
+.tag-product { background: rgba(163,230,53,0.15); color: #a3e635; }
+.tag-diffusion { background: rgba(192,132,252,0.15); color: #c084fc; }
+.tag-3d { background: rgba(45,212,191,0.15); color: #2dd4bf; }
+.tag-audio { background: rgba(56,189,248,0.15); color: #38bdf8; }
+.paper-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.paper-links a {
+  display: inline-block;
+  padding: 5px 14px;
+  background: rgba(99,102,241,0.12);
+  color: #818cf8;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+.paper-links a:hover {
+  background: rgba(99,102,241,0.25);
+}
+.hot-badge {
+  margin-right: 6px;
+}
+.info-card {
+  background: rgba(30,41,59,0.4);
+  border: 1px solid rgba(251,191,36,0.15);
+  border-radius: 14px;
+  padding: 20px;
+  margin-bottom: 14px;
+}
+.info-card .paper-title {
+  color: #fbbf24;
+}
+.highlight-banner {
+  background: linear-gradient(135deg, rgba(251,146,60,0.1) 0%, rgba(236,72,153,0.1) 100%);
+  border: 1px solid rgba(251,146,60,0.2);
+  border-radius: 14px;
+  padding: 20px 24px;
+  margin-bottom: 36px;
+}
+.hl-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fb923c;
+  margin-bottom: 8px;
+}
+.hl-text {
+  font-size: 0.95rem;
+  color: #e2e8f0;
+  line-height: 1.7;
+}
+.stats {
+  text-align: center;
+  padding: 30px;
+  margin-top: 40px;
+  background: rgba(30,41,59,0.4);
+  border-radius: 14px;
+  border: 1px solid rgba(99,102,241,0.1);
+}
+.stats h3 {
+  color: #94a3b8;
+  font-size: 1rem;
+  margin-bottom: 12px;
+}
+.stats p {
+  color: #64748b;
+  font-size: 0.9rem;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+  <h1>🔬 小小志科研情报</h1>
+  <div class="date">2026年5月19日 · 星期二</div>
+  <div class="subtitle">Boss Team · Daily Research Intelligence</div>
+</header>
+
+<div class="highlight-banner">
+  <div class="hl-title">🔥 今日看点</div>
+  <div class="hl-text">ESI-Bench (MIT): 首个面向具身空间智能的综合基准，覆盖 10 个任务类别、29 个子类别，基于 Spelke 核心知识系统。Vision-OPD: 通过 On-Policy Self-Distillation 让多模态 LLM 学会感知细粒度视觉细节，超越更大的开/闭源模型。DashAttention: 可微自适应稀疏层次化 Attention，75% 稀疏度下匹配全注意力精度且超越 FlashAttention-3。</div>
+</div>
+
+<section class="section">
+<h2 class="section-title">🦾 Robotics · 机器人</h2>
+
+<div class="paper-card">
+  <div class="paper-title"><span class="hot-badge">🔥</span> ESI-Bench: Towards Embodied Spatial Intelligence that Closes the Perception-Action Loop</div>
+  <div class="paper-meta">arXiv 2026 · MIT</div>
+  <div class="summary-grid"><div class="summary-item"><div class="summary-label">🛠 技术路线</div><div class="summary-text">具身空间智能基准、感知-动作闭环、OmniGibson 仿真、Spelke 核心知识系统</div></div><div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 ESI-BENCH，首个面向具身空间智能的综合基准，覆盖 10 个任务类别和 29 个子类别，基于 Spelke 核心知识系统建模感知-动作循环。</div></div><div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">通过感知-动作闭环评估空间智能展现的全面能力覆盖</div></div><div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于机器人/具身智能方向。建议重点看任务类别设计与基线模型差距。</div></div></div>
+  <div class="paper-tags">
+    <span class="tag tag-robot">Robotics</span>
+    <span class="tag tag-embodied">Embodied</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.18746">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.18746">PDF</a>
+    <a href="https://esi-bench.github.io/">Project</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title"><span class="hot-badge">🔥</span> Vision-OPD: Learning to See Fine Details for Multimodal LLMs via On-Policy Self-Distillation</div>
+  <div class="paper-meta">arXiv 2026</div>
+  <div class="summary-grid"><div class="summary-item"><div class="summary-label">🛠 技术路线</div><div class="summary-text">On-Policy 蒸馏、细粒度视觉理解、区域感知特权迁移</div></div><div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 Vision-OPD (On-Policy Distillation)，将模型自身的特权区域感知能力蒸馏到全图策略，无需外部教师模型即可显著提升细粒度视觉理解。</div></div><div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在多个细粒度视觉理解基准上达到 competitive 或 superior 性能，超越更大开源、闭源和 "Thinking-with-Image" 智能体模型</div></div><div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于多模态/视觉理解方向。建议关注蒸馏效率与跨任务泛化能力。</div></div></div>
+  <div class="paper-tags">
+    <span class="tag tag-multimodal">Multimodal</span>
+    <span class="tag tag-vlm">VLM</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.18740">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.18740">PDF</a>
+    <a href="https://github.com/VisionOPD/Vision-OPD">Code</a>
+  </div>
+</div>
+
+</section>
+<section class="section">
+<h2 class="section-title">🌍 World Model · 世界模型</h2>
+
+<div class="paper-card">
+  <div class="paper-title">WorldString: Actionable World Representation</div>
+  <div class="paper-meta">arXiv 2026</div>
+  <div class="summary-grid"><div class="summary-item"><div class="summary-label">🛠 技术路线</div><div class="summary-text">世界模型、状态流形建模、点云/RGB-D 视频学习</div></div><div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 WorldString，一种神经网络架构，能够通过直接从点云或 RGB-D 视频流学习来建模真实世界物体的状态流形，实现可操作的世界表征。</div></div><div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">详见原文实验部分</div></div><div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于世界模型/动作生成方向。建议关注其预测精度、动作可控性和 Sim-to-Real 迁移效果。</div></div></div>
+  <div class="paper-tags">
+    <span class="tag tag-world-model">World Model</span>
+    <span class="tag tag-3d">3D</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.18743">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.18743">PDF</a>
+  </div>
+</div>
+
+</section>
+<section class="section">
+<h2 class="section-title">🧠 LLM · 大语言模型</h2>
+
+<div class="paper-card">
+  <div class="paper-title"><span class="hot-badge">🔥</span> DashAttention: Differentiable and Adaptive Sparse Hierarchical Attention</div>
+  <div class="paper-meta">arXiv 2026</div>
+  <div class="summary-grid"><div class="summary-item"><div class="summary-label">🛠 技术路线</div><div class="summary-text">稀疏层次化 Attention、α-entmax 变换、自适应 block 选择、Triton GPU 实现</div></div><div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 DashAttention，利用可微自适应 α-entmax 变换在第一阶段根据 query 自适应选择可变数量的 KV blocks，解决固定 top-k 选择的局限性。</div></div><div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">75% 稀疏度下匹配全注意力精度，Pareto 前沿优于 NSA 和 InfLLMv2（尤其高稀疏区间）；Triton 实现推理速度超越 FlashAttention-3</div></div><div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于 LLM 推理加速方向。建议关注稀疏度-精度权衡与不同模型规模的适用性。</div></div></div>
+  <div class="paper-tags">
+    <span class="tag tag-llm">LLM</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.18753">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.18753">PDF</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title">What Does the AI Doctor Value? Auditing Pluralism in the Clinical Ethics of Language Models</div>
+  <div class="paper-meta">arXiv 2026</div>
+  <div class="summary-grid"><div class="summary-item"><div class="summary-label">🛠 技术路线</div><div class="summary-text">医学 AI 伦理审计、价值多元性评估、临床困境基准</div></div><div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出审计医学 AI 价值多元性的框架，包含临床医生验证的困境基准和归因方法，可直接从决策中恢复价值优先级排序。</div></div><div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">基准测试表明一致性决策反映了系统化的价值偏好承诺</div></div><div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于 LLM 安全/伦理方向。建议关注评估框架设计与跨文化价值对比。</div></div></div>
+  <div class="paper-tags">
+    <span class="tag tag-llm">LLM</span>
+    <span class="tag tag-security">Safety</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.18738">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.18738">PDF</a>
+    <a href="https://hvp.global/">Project</a>
+  </div>
+</div>
+
+</section>
+<section class="section">
+<h2 class="section-title">🧩 Agent · 智能体</h2>
+
+<div class="paper-card">
+  <div class="paper-title">Aurora: Unified Video Editing with a Tool-Using Agent</div>
+  <div class="paper-meta">arXiv 2026</div>
+  <div class="summary-grid"><div class="summary-item"><div class="summary-label">🛠 技术路线</div><div class="summary-text">Agentic 视频编辑、工具增强 VLM 智能体、统一视频扩散 Transformer</div></div><div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 Aurora，工具增强 VLM 智能体与统一视频扩散 Transformer 结合的 agentic 视频编辑框架。引入 AgentEdit-Bench 评估文本和视觉模糊性下的智能体视频编辑能力。</div></div><div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在 AgentEdit-Bench 和两个现有视频编辑基准上优于仅模型基线和 VLM 智能体方案，且可迁移至兼容的冻结视频编辑模型</div></div><div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于 Agent/视频编辑方向。建议关注工具调用机制与编辑质量的平衡。</div></div></div>
+  <div class="paper-tags">
+    <span class="tag tag-agent">Agent</span>
+    <span class="tag tag-video">Video</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.18748">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.18748">PDF</a>
+    <a href="https://yeates.github.io/Aurora-Page">Project</a>
+    <a href="https://github.com/yeates/Aurora">Code</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title">Code as Agent Harness</div>
+  <div class="paper-meta">arXiv 2026</div>
+  <div class="summary-grid"><div class="summary-item"><div class="summary-label">🛠 技术路线</div><div class="summary-text">代码作为智能体界面、推理-动作-环境连接、harness 工程</div></div><div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">系统研究 harness 接口——代码如何连接智能体与推理、动作和环境建模，提出 harness 工程的开放挑战体系。</div></div><div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">综述型工作，梳理了评估、验证、回归安全、多智能体状态一致性、人类监督等开放挑战</div></div><div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于 Agent/代码智能方向。建议关注 harness 设计范式与安全性约束。</div></div></div>
+  <div class="paper-tags">
+    <span class="tag tag-agent">Agent</span>
+    <span class="tag tag-llm">LLM</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.18747">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.18747">PDF</a>
+    <a href="https://github.com/YennNing/Awesome-Code-as-Agent-Harness-Papers">Code</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title">HarnessAudit: Auditing Agent Harness Safety</div>
+  <div class="paper-meta">arXiv 2026 · UC Santa Barbara NLP Group</div>
+  <div class="summary-grid"><div class="summary-item"><div class="summary-label">🛠 技术路线</div><div class="summary-text">智能体 Harness 安全审计、全执行轨迹分析、边界合规/执行保真/系统稳定性</div></div><div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 HarnessAudit，审计智能体完整执行轨迹的框架，关注边界合规、执行保真度和系统稳定性。引入 HarnessAudit-Bench，包含 8 个真实领域的 210 个任务。</div></div><div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">现有安全基准仅评估最终输出，无法发现中途违规；HarnessAudit 揭示了轨迹级安全盲区</div></div><div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于 Agent 安全方向。建议关注轨迹级安全评估的新范式。</div></div></div>
+  <div class="paper-tags">
+    <span class="tag tag-agent">Agent</span>
+    <span class="tag tag-security">Safety</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.14271">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.14271">PDF</a>
+    <a href="https://harnessaudit.github.io/">Project</a>
+    <a href="https://github.com/eric-ai-lab/HarnessAudit">Code</a>
+  </div>
+</div>
+
+</section>
+<section class="section">
+<h2 class="section-title">🎨 Multimodal · 多模态</h2>
+
+<div class="paper-card">
+  <div class="paper-title">WavFlow: Audio Generation in Waveform Space</div>
+  <div class="paper-meta">arXiv 2026 · Meta / FAIR</div>
+  <div class="summary-grid"><div class="summary-item"><div class="summary-label">🛠 技术路线</div><div class="summary-text">原始波形空间生成、无中间表征、Flow Matching</div></div><div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 WavFlow，挑战 latent-based 范式，直接在原始波形空间生成高保真音频，无需中间表征（如 mel/codec tokens）。</div></div><div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">视频-音频基准 VGGSound (FD_PaSST: 59.98, IS_PANNs: 17.40)、文本-音频基准 AudioCaps (FD_PANNs: 10.63, IS_PANNs: 12.62)，匹配或超越 latent-based 方法</div></div><div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于多模态/音频生成方向。建议关注波形直接生成的效率与质量权衡。</div></div></div>
+  <div class="paper-tags">
+    <span class="tag tag-multimodal">Multimodal</span>
+    <span class="tag tag-audio">Audio</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.18749">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.18749">PDF</a>
+    <a href="https://github.com/facebookresearch/WavFlow">Code</a>
+  </div>
+</div>
+
+</section>
+
+<div class="stats">
+  <h3>📊 数据来源说明</h3>
+  <p>数据来源：arXiv 论文 8 篇 · HuggingFace 热门论文 1 篇 · HF 模型 1 个 (ByteDance-Seed/SimArt) | 共 10 条动态</p>
+  <p>主题分布：Robotics 2 · World Model 1 · LLM 2 · Agent 3 · Multimodal 1</p>
+  <p>更新时间：2026年5月19日</p>
+</div>
+
+</div>
+</body>
+</html>

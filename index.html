@@ -658,6 +658,109 @@
 <script>
 // ===== DATA =====
 const PAPERS_DB = [
+    // === 2026-05-19 ===
+    {
+        date: "2026-05-19",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "ESI-Bench: Towards Embodied Spatial Intelligence that Closes the Perception-Action Loop",
+        venue: "arXiv 2026 · MIT",
+        summary: "🛠 技术路线: 具身空间智能基准、感知-动作闭环、OmniGibson 仿真、Spelke 核心知识系统 | 💡 创新点: 提出 ESI-BENCH，首个面向具身空间智能的综合基准，覆盖 10 个任务类别和 29 个子类别，基于 Spelke 核心知识系统建模感知-动作循环。 | 📊 实验效果: 通过感知-动作闭环评估空间智能展现的全面能力覆盖 | ⭐ 整体评价: 属于机器人/具身智能方向。建议重点看任务类别设计与基线模型差距。",
+        tags: [["Robotics","green"],["Embodied","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.18746"],["PDF","https://arxiv.org/pdf/2605.18746"],["Project","https://esi-bench.github.io/"]],
+        highlight: true,
+        summaryGrid: [{"label":"🛠 技术路线","text":"具身空间智能基准、感知-动作闭环、OmniGibson 仿真、Spelke 核心知识系统"},{"label":"💡 创新点","text":"提出 ESI-BENCH，首个面向具身空间智能的综合基准，覆盖 10 个任务类别和 29 个子类别，基于 Spelke 核心知识系统建模感知-动作循环。"},{"label":"📊 实验效果","text":"通过感知-动作闭环评估空间智能展现的全面能力覆盖"},{"label":"⭐ 整体评价","text":"属于机器人/具身智能方向。建议重点看任务类别设计与基线模型差距。"}]
+    },
+    {
+        date: "2026-05-19",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "Vision-OPD: Learning to See Fine Details for Multimodal LLMs via On-Policy Self-Distillation",
+        venue: "arXiv 2026",
+        summary: "🛠 技术路线: On-Policy 蒸馏、细粒度视觉理解、区域感知特权迁移 | 💡 创新点: 提出 Vision-OPD (On-Policy Distillation)，将模型自身的特权区域感知能力蒸馏到全图策略，无需外部教师模型即可显著提升细粒度视觉理解。 | 📊 实验效果: 在多个细粒度视觉理解基准上达到 competitive 或 superior 性能，超越更大开源、闭源和 \"Thinking-with-Image\" 智能体模型 | ⭐ 整体评价: 属于多模态/视觉理解方向。建议关注蒸馏效率与跨任务泛化能力。",
+        tags: [["Multimodal","green"],["VLM","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.18740"],["PDF","https://arxiv.org/pdf/2605.18740"],["Code","https://github.com/VisionOPD/Vision-OPD"]],
+        highlight: true,
+        summaryGrid: [{"label":"🛠 技术路线","text":"On-Policy 蒸馏、细粒度视觉理解、区域感知特权迁移"},{"label":"💡 创新点","text":"提出 Vision-OPD (On-Policy Distillation)，将模型自身的特权区域感知能力蒸馏到全图策略，无需外部教师模型即可显著提升细粒度视觉理解。"},{"label":"📊 实验效果","text":"在多个细粒度视觉理解基准上达到 competitive 或 superior 性能，超越更大开源、闭源和 \"Thinking-with-Image\" 智能体模型"},{"label":"⭐ 整体评价","text":"属于多模态/视觉理解方向。建议关注蒸馏效率与跨任务泛化能力。"}]
+    },
+    {
+        date: "2026-05-19",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "WorldString: Actionable World Representation",
+        venue: "arXiv 2026",
+        summary: "🛠 技术路线: 世界模型、状态流形建模、点云/RGB-D 视频学习 | 💡 创新点: 提出 WorldString，一种神经网络架构，能够通过直接从点云或 RGB-D 视频流学习来建模真实世界物体的状态流形，实现可操作的世界表征。 | 📊 实验效果: 详见原文实验部分 | ⭐ 整体评价: 属于世界模型/动作生成方向。建议关注其预测精度、动作可控性和 Sim-to-Real 迁移效果。",
+        tags: [["3D","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.18743"],["PDF","https://arxiv.org/pdf/2605.18743"]],
+        summaryGrid: [{"label":"🛠 技术路线","text":"世界模型、状态流形建模、点云/RGB-D 视频学习"},{"label":"💡 创新点","text":"提出 WorldString，一种神经网络架构，能够通过直接从点云或 RGB-D 视频流学习来建模真实世界物体的状态流形，实现可操作的世界表征。"},{"label":"📊 实验效果","text":"详见原文实验部分"},{"label":"⭐ 整体评价","text":"属于世界模型/动作生成方向。建议关注其预测精度、动作可控性和 Sim-to-Real 迁移效果。"}]
+    },
+    {
+        date: "2026-05-19",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "DashAttention: Differentiable and Adaptive Sparse Hierarchical Attention",
+        venue: "arXiv 2026",
+        summary: "🛠 技术路线: 稀疏层次化 Attention、α-entmax 变换、自适应 block 选择、Triton GPU 实现 | 💡 创新点: 提出 DashAttention，利用可微自适应 α-entmax 变换在第一阶段根据 query 自适应选择可变数量的 KV blocks，解决固定 top-k 选择的局限性。 | 📊 实验效果: 75% 稀疏度下匹配全注意力精度，Pareto 前沿优于 NSA 和 InfLLMv2（尤其高稀疏区间）；Triton 实现推理速度超越 FlashAttention-3 | ⭐ 整体评价: 属于 LLM 推理加速方向。建议关注稀疏度-精度权衡与不同模型规模的适用性。",
+        tags: [["LLM","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.18753"],["PDF","https://arxiv.org/pdf/2605.18753"]],
+        highlight: true,
+        summaryGrid: [{"label":"🛠 技术路线","text":"稀疏层次化 Attention、α-entmax 变换、自适应 block 选择、Triton GPU 实现"},{"label":"💡 创新点","text":"提出 DashAttention，利用可微自适应 α-entmax 变换在第一阶段根据 query 自适应选择可变数量的 KV blocks，解决固定 top-k 选择的局限性。"},{"label":"📊 实验效果","text":"75% 稀疏度下匹配全注意力精度，Pareto 前沿优于 NSA 和 InfLLMv2（尤其高稀疏区间）；Triton 实现推理速度超越 FlashAttention-3"},{"label":"⭐ 整体评价","text":"属于 LLM 推理加速方向。建议关注稀疏度-精度权衡与不同模型规模的适用性。"}]
+    },
+    {
+        date: "2026-05-19",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "What Does the AI Doctor Value? Auditing Pluralism in the Clinical Ethics of Language Models",
+        venue: "arXiv 2026",
+        summary: "🛠 技术路线: 医学 AI 伦理审计、价值多元性评估、临床困境基准 | 💡 创新点: 提出审计医学 AI 价值多元性的框架，包含临床医生验证的困境基准和归因方法，可直接从决策中恢复价值优先级排序。 | 📊 实验效果: 基准测试表明一致性决策反映了系统化的价值偏好承诺 | ⭐ 整体评价: 属于 LLM 安全/伦理方向。建议关注评估框架设计与跨文化价值对比。",
+        tags: [["LLM","green"],["Safety","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.18738"],["PDF","https://arxiv.org/pdf/2605.18738"],["Project","https://hvp.global/"]],
+        summaryGrid: [{"label":"🛠 技术路线","text":"医学 AI 伦理审计、价值多元性评估、临床困境基准"},{"label":"💡 创新点","text":"提出审计医学 AI 价值多元性的框架，包含临床医生验证的困境基准和归因方法，可直接从决策中恢复价值优先级排序。"},{"label":"📊 实验效果","text":"基准测试表明一致性决策反映了系统化的价值偏好承诺"},{"label":"⭐ 整体评价","text":"属于 LLM 安全/伦理方向。建议关注评估框架设计与跨文化价值对比。"}]
+    },
+    {
+        date: "2026-05-19",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Aurora: Unified Video Editing with a Tool-Using Agent",
+        venue: "arXiv 2026",
+        summary: "🛠 技术路线: Agentic 视频编辑、工具增强 VLM 智能体、统一视频扩散 Transformer | 💡 创新点: 提出 Aurora，工具增强 VLM 智能体与统一视频扩散 Transformer 结合的 agentic 视频编辑框架。引入 AgentEdit-Bench 评估文本和视觉模糊性下的智能体视频编辑能力。 | 📊 实验效果: 在 AgentEdit-Bench 和两个现有视频编辑基准上优于仅模型基线和 VLM 智能体方案，且可迁移至兼容的冻结视频编辑模型 | ⭐ 整体评价: 属于 Agent/视频编辑方向。建议关注工具调用机制与编辑质量的平衡。",
+        tags: [["Agent","green"],["Video","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.18748"],["PDF","https://arxiv.org/pdf/2605.18748"],["Project","https://yeates.github.io/Aurora-Page"],["Code","https://github.com/yeates/Aurora"]],
+        summaryGrid: [{"label":"🛠 技术路线","text":"Agentic 视频编辑、工具增强 VLM 智能体、统一视频扩散 Transformer"},{"label":"💡 创新点","text":"提出 Aurora，工具增强 VLM 智能体与统一视频扩散 Transformer 结合的 agentic 视频编辑框架。引入 AgentEdit-Bench 评估文本和视觉模糊性下的智能体视频编辑能力。"},{"label":"📊 实验效果","text":"在 AgentEdit-Bench 和两个现有视频编辑基准上优于仅模型基线和 VLM 智能体方案，且可迁移至兼容的冻结视频编辑模型"},{"label":"⭐ 整体评价","text":"属于 Agent/视频编辑方向。建议关注工具调用机制与编辑质量的平衡。"}]
+    },
+    {
+        date: "2026-05-19",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Code as Agent Harness",
+        venue: "arXiv 2026",
+        summary: "🛠 技术路线: 代码作为智能体界面、推理-动作-环境连接、harness 工程 | 💡 创新点: 系统研究 harness 接口——代码如何连接智能体与推理、动作和环境建模，提出 harness 工程的开放挑战体系。 | 📊 实验效果: 综述型工作，梳理了评估、验证、回归安全、多智能体状态一致性、人类监督等开放挑战 | ⭐ 整体评价: 属于 Agent/代码智能方向。建议关注 harness 设计范式与安全性约束。",
+        tags: [["Agent","green"],["LLM","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.18747"],["PDF","https://arxiv.org/pdf/2605.18747"],["Code","https://github.com/YennNing/Awesome-Code-as-Agent-Harness-Papers"]],
+        summaryGrid: [{"label":"🛠 技术路线","text":"代码作为智能体界面、推理-动作-环境连接、harness 工程"},{"label":"💡 创新点","text":"系统研究 harness 接口——代码如何连接智能体与推理、动作和环境建模，提出 harness 工程的开放挑战体系。"},{"label":"📊 实验效果","text":"综述型工作，梳理了评估、验证、回归安全、多智能体状态一致性、人类监督等开放挑战"},{"label":"⭐ 整体评价","text":"属于 Agent/代码智能方向。建议关注 harness 设计范式与安全性约束。"}]
+    },
+    {
+        date: "2026-05-19",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "HarnessAudit: Auditing Agent Harness Safety",
+        venue: "arXiv 2026 · UC Santa Barbara NLP Group",
+        summary: "🛠 技术路线: 智能体 Harness 安全审计、全执行轨迹分析、边界合规/执行保真/系统稳定性 | 💡 创新点: 提出 HarnessAudit，审计智能体完整执行轨迹的框架，关注边界合规、执行保真度和系统稳定性。引入 HarnessAudit-Bench，包含 8 个真实领域的 210 个任务。 | 📊 实验效果: 现有安全基准仅评估最终输出，无法发现中途违规；HarnessAudit 揭示了轨迹级安全盲区 | ⭐ 整体评价: 属于 Agent 安全方向。建议关注轨迹级安全评估的新范式。",
+        tags: [["Agent","green"],["Safety","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.14271"],["PDF","https://arxiv.org/pdf/2605.14271"],["Project","https://harnessaudit.github.io/"],["Code","https://github.com/eric-ai-lab/HarnessAudit"]],
+        summaryGrid: [{"label":"🛠 技术路线","text":"智能体 Harness 安全审计、全执行轨迹分析、边界合规/执行保真/系统稳定性"},{"label":"💡 创新点","text":"提出 HarnessAudit，审计智能体完整执行轨迹的框架，关注边界合规、执行保真度和系统稳定性。引入 HarnessAudit-Bench，包含 8 个真实领域的 210 个任务。"},{"label":"📊 实验效果","text":"现有安全基准仅评估最终输出，无法发现中途违规；HarnessAudit 揭示了轨迹级安全盲区"},{"label":"⭐ 整体评价","text":"属于 Agent 安全方向。建议关注轨迹级安全评估的新范式。"}]
+    },
+    {
+        date: "2026-05-19",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "WavFlow: Audio Generation in Waveform Space",
+        venue: "arXiv 2026 · Meta / FAIR",
+        summary: "🛠 技术路线: 原始波形空间生成、无中间表征、Flow Matching | 💡 创新点: 提出 WavFlow，挑战 latent-based 范式，直接在原始波形空间生成高保真音频，无需中间表征（如 mel/codec tokens）。 | 📊 实验效果: 视频-音频基准 VGGSound (FD_PaSST: 59.98, IS_PANNs: 17.40)、文本-音频基准 AudioCaps (FD_PANNs: 10.63, IS_PANNs: 12.62)，匹配或超越 latent-based 方法 | ⭐ 整体评价: 属于多模态/音频生成方向。建议关注波形直接生成的效率与质量权衡。",
+        tags: [["Multimodal","green"],["Audio","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.18749"],["PDF","https://arxiv.org/pdf/2605.18749"],["Code","https://github.com/facebookresearch/WavFlow"]],
+        summaryGrid: [{"label":"🛠 技术路线","text":"原始波形空间生成、无中间表征、Flow Matching"},{"label":"💡 创新点","text":"提出 WavFlow，挑战 latent-based 范式，直接在原始波形空间生成高保真音频，无需中间表征（如 mel/codec tokens）。"},{"label":"📊 实验效果","text":"视频-音频基准 VGGSound (FD_PaSST: 59.98, IS_PANNs: 17.40)、文本-音频基准 AudioCaps (FD_PANNs: 10.63, IS_PANNs: 12.62)，匹配或超越 latent-based 方法"},{"label":"⭐ 整体评价","text":"属于多模态/音频生成方向。建议关注波形直接生成的效率与质量权衡。"}]
+    },
     // === 2026-05-18 ===
     {
         date: "2026-05-18",
@@ -10466,6 +10569,13 @@ const PAPERS_DB = [
 ];
 
 const DAILY_OVERVIEW = {
+    "2026-05-19": {
+        bannerTitle: "🔥 今日看点",
+        bannerSubtitle: "ESI-Bench (MIT): 首个面向具身空间智能的综合基准，覆盖 10 个任务类别、29 个子类别，基于 Spelke 核心知识系统。Vision-OPD: 通过 On-Policy Self-Distillation 让多模态 LLM 学会感知细粒度视觉细节，超越更大的开/闭源模型。DashAttention: 可微自适应稀疏层次化 Attention，75% 稀疏度下匹配全注意力精度且超越 FlashAttention-3。",
+        picks: ["ESI-Bench: Towards Embodied Spatial Intelligence that Closes the Perception-Action Loop","Vision-OPD: Learning to See Fine Details for Multimodal LLMs via On-Policy Self-Distillation","DashAttention: Differentiable and Adaptive Sparse Hierarchical Attention"],
+        totalPapers: 9,
+        totalNews: 0
+    },
     "2026-05-18": {
         bannerTitle: "🔥 今日看点",
         bannerSubtitle: "PhysBrain 1.0: DeepCybo 提出物理世界理解增强的 VLA 模型，在 SimplerEnv、LIBERO、RoboCasa 等多个具身控制基准上取得 SOTA。DexJoCo: 灵巧手操作基准测试与工具包，包含 11 个功能性任务评估双手协调与工具使用。Flash-GRPO: 单步视频扩散对齐框架，大幅加速训练同时保持 SOTA 对齐质量。",
