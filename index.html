@@ -658,6 +658,97 @@
 <script>
 // ===== DATA =====
 const PAPERS_DB = [
+    // === 2026-05-20 ===
+    {
+        date: "2026-05-20",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "SkillsVote: Lifecycle Governance of Agent Skills from Collection, Recommendation to Evolution",
+        venue: "arXiv 2026 · Memtensor Research Group",
+        summary: "🛠 技术路线: 智能体技能生命周期治理、技能收集/推荐/演进框架 | 💡 创新点: 提出 SkillsVote，一个生命周期治理框架，涵盖智能体技能从收集、推荐到演进的全流程管理。 | 📊 实验效果: Offline evolution 提升 GPT-5.2 在 Terminal-Bench 2.0 通过率 7.9pp，Online evolution 提升 SWE-Bench Pro 通过率 2.6pp。外部技能库无需模型更新即可提升冻结智能体性能。 | ⭐ 整体评价: 属于 Agent/技能管理方向。建议关注技能演进机制与安全性控制。",
+        tags: [["Agent","green"],["LLM","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.18401"],["PDF","https://arxiv.org/pdf/2605.18401"],["Project","https://skills.vote"],["Code","https://github.com/MemTensor/skills-vote"]],
+        highlight: true,
+        summaryGrid: [{"label":"🛠 技术路线","text":"智能体技能生命周期治理、技能收集/推荐/演进框架"},{"label":"💡 创新点","text":"提出 SkillsVote，一个生命周期治理框架，涵盖智能体技能从收集、推荐到演进的全流程管理。"},{"label":"📊 实验效果","text":"Offline evolution 提升 GPT-5.2 在 Terminal-Bench 2.0 通过率 7.9pp，Online evolution 提升 SWE-Bench Pro 通过率 2.6pp。外部技能库无需模型更新即可提升冻结智能体性能。"},{"label":"⭐ 整体评价","text":"属于 Agent/技能管理方向。建议关注技能演进机制与安全性控制。"}]
+    },
+    {
+        date: "2026-05-20",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "AI for Auto-Research: Roadmap & User Guide",
+        venue: "arXiv 2026",
+        summary: "🛠 技术路线: 端到端 AI 自动研究分析、四阶段认识论框架（创作/写作/验证/传播） | 💡 创新点: 提出端到端分析 AI 在完整研究生命周期的框架，组织为四个认识论阶段：创作（idea 生成、文献综述、编码与实验）、写作、验证（同行评审、反驳与修订）和传播。 | 📊 实验效果: 提供结构化分类体系、基准测试套件和工具清单，揭示前沿 LLM 仍存在结果捏造、错误遗漏和新颖性判断不可靠等问题。 | ⭐ 整体评价: 属于 Agent/自动化研究方向。建议关注研究完整性与生产力边界的权衡。",
+        tags: [["Agent","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.18661"],["PDF","https://arxiv.org/pdf/2605.18661"],["Project","https://worldbench.github.io/awesome-ai-auto-research"],["Code","https://github.com/worldbench/awesome-ai-auto-research"]],
+        summaryGrid: [{"label":"🛠 技术路线","text":"端到端 AI 自动研究分析、四阶段认识论框架（创作/写作/验证/传播）"},{"label":"💡 创新点","text":"提出端到端分析 AI 在完整研究生命周期的框架，组织为四个认识论阶段：创作（idea 生成、文献综述、编码与实验）、写作、验证（同行评审、反驳与修订）和传播。"},{"label":"📊 实验效果","text":"提供结构化分类体系、基准测试套件和工具清单，揭示前沿 LLM 仍存在结果捏造、错误遗漏和新颖性判断不可靠等问题。"},{"label":"⭐ 整体评价","text":"属于 Agent/自动化研究方向。建议关注研究完整性与生产力边界的权衡。"}]
+    },
+    {
+        date: "2026-05-20",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "CHI-Bench: Can AI Agents Automate End-to-End, Long-Horizon, Policy-Rich Healthcare Workflows?",
+        venue: "arXiv 2026 · actAVA AI",
+        summary: "🛠 技术路线: 长时序医疗工作流自动化基准、策略密度/多角色组合/多方交互 | 💡 创新点: 引入 CHI-Bench，覆盖提供者先验授权、付款方使用管理和护理管理三个领域的长时序医疗工作流基准，强调策略密度、多角色组合和多方交互能力。 | 📊 实验效果: 评估端到端自动化在真实医疗运营中的表现，关注当前基准欠缺的策略密度、多角色切换和多轮对话能力。 | ⭐ 整体评价: 属于 Agent/医疗 AI 方向。建议关注任务复杂度与真实场景覆盖。",
+        tags: [["Agent","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.16679"],["PDF","https://arxiv.org/pdf/2605.16679"],["Project","https://actava.ai/benchmarks"],["Code","https://github.com/actava-ai/chi-bench"]],
+        summaryGrid: [{"label":"🛠 技术路线","text":"长时序医疗工作流自动化基准、策略密度/多角色组合/多方交互"},{"label":"💡 创新点","text":"引入 CHI-Bench，覆盖提供者先验授权、付款方使用管理和护理管理三个领域的长时序医疗工作流基准，强调策略密度、多角色组合和多方交互能力。"},{"label":"📊 实验效果","text":"评估端到端自动化在真实医疗运营中的表现，关注当前基准欠缺的策略密度、多角色切换和多轮对话能力。"},{"label":"⭐ 整体评价","text":"属于 Agent/医疗 AI 方向。建议关注任务复杂度与真实场景覆盖。"}]
+    },
+    {
+        date: "2026-05-20",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Code-as-Room: Generating 3D Rooms from Top-Down View Images via Agentic Code Synthesis",
+        venue: "arXiv 2026 · Shanghai AI Lab",
+        summary: "🛠 技术路线: MLLM Agentic 框架、结构化执行 Harness、Blender 代码表征 3D 房间 | 💡 创新点: 提出 Code-as-Room，基于 MLLM 的 agentic 框架配备结构化执行 harness，将 3D 房间以 Blender 代码形式表征，从俯视图生成完整 3D 场景。 | 📊 实验效果: 引入专用基准覆盖多种评估协议，与现有智能体方法的综合对比验证了所提执行 harness 的有效性。 | ⭐ 整体评价: 属于 Agent/3D 生成方向。建议关注代码合成质量与场景多样性。",
+        tags: [["Agent","green"],["3D","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.18451"],["PDF","https://arxiv.org/pdf/2605.18451"],["Project","https://code-as-room.github.io/"],["Code","https://github.com/YxuanAr/Code-as-Room"]],
+        summaryGrid: [{"label":"🛠 技术路线","text":"MLLM Agentic 框架、结构化执行 Harness、Blender 代码表征 3D 房间"},{"label":"💡 创新点","text":"提出 Code-as-Room，基于 MLLM 的 agentic 框架配备结构化执行 harness，将 3D 房间以 Blender 代码形式表征，从俯视图生成完整 3D 场景。"},{"label":"📊 实验效果","text":"引入专用基准覆盖多种评估协议，与现有智能体方法的综合对比验证了所提执行 harness 的有效性。"},{"label":"⭐ 整体评价","text":"属于 Agent/3D 生成方向。建议关注代码合成质量与场景多样性。"}]
+    },
+    {
+        date: "2026-05-20",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "LongLive-2.0: An NVFP4 Parallel Infrastructure for Long Video Generation",
+        venue: "arXiv 2026 · NVIDIA",
+        summary: "🛠 技术路线: NVFP4 并行基础设施、长视频生成全流程训练-推理加速、内存瓶颈解决 | 💡 创新点: 提出 LongLive-2.0，覆盖训练和推理全流程的 NVFP4 并行基础设施，解决长视频生成中的速度和内存瓶颈。 | 📊 实验效果: 训练 2.15x 加速，推理 1.84x 加速。LongLive-2.0-5B 达到 45.7 FPS 推理速度，同时在基准测试上保持强劲性能。 | ⭐ 整体评价: 属于 LLM/推理加速方向。建议关注 FP4 量化对长视频质量的影响。",
+        tags: [["LLM","green"],["Video","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.18739"],["PDF","https://arxiv.org/pdf/2605.18739"],["Project","https://nvlabs.github.io/LongLive/LongLive2/"],["Code","https://github.com/NVlabs/LongLive"]],
+        highlight: true,
+        summaryGrid: [{"label":"🛠 技术路线","text":"NVFP4 并行基础设施、长视频生成全流程训练-推理加速、内存瓶颈解决"},{"label":"💡 创新点","text":"提出 LongLive-2.0，覆盖训练和推理全流程的 NVFP4 并行基础设施，解决长视频生成中的速度和内存瓶颈。"},{"label":"📊 实验效果","text":"训练 2.15x 加速，推理 1.84x 加速。LongLive-2.0-5B 达到 45.7 FPS 推理速度，同时在基准测试上保持强劲性能。"},{"label":"⭐ 整体评价","text":"属于 LLM/推理加速方向。建议关注 FP4 量化对长视频质量的影响。"}]
+    },
+    {
+        date: "2026-05-20",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "KVPO: ODE-Native GRPO for Autoregressive Video Alignment via KV Semantic Exploration",
+        venue: "arXiv 2026 · Tsinghua University",
+        summary: "🛠 技术路线: ODE-native 在线 GRPO、KV 语义探索、流式视频生成器对齐 | 💡 创新点: 提出 KVPO，ODE-native 的在线 Group Relative Policy Optimization 框架，用于对齐流式视频生成器，通过 KV 语义空间探索解决现有方法基于噪声探索和 SDE 代理策略与确定性 ODE 动力学不匹配的问题。 | 📊 实验效果: 详见原文实验部分 | ⭐ 整体评价: 属于 RL/视频生成对齐方向。建议关注 ODE-native 探索的语义多样性。",
+        tags: [["LLM","green"],["RL","green"],["Video","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.14278"],["PDF","https://arxiv.org/pdf/2605.14278"],["Project","https://richard-zhang-ai.github.io/KVPO-Project/"],["Code","https://github.com/Richard-Zhang-AI/KVPO"]],
+        summaryGrid: [{"label":"🛠 技术路线","text":"ODE-native 在线 GRPO、KV 语义探索、流式视频生成器对齐"},{"label":"💡 创新点","text":"提出 KVPO，ODE-native 的在线 Group Relative Policy Optimization 框架，用于对齐流式视频生成器，通过 KV 语义空间探索解决现有方法基于噪声探索和 SDE 代理策略与确定性 ODE 动力学不匹配的问题。"},{"label":"📊 实验效果","text":"详见原文实验部分"},{"label":"⭐ 整体评价","text":"属于 RL/视频生成对齐方向。建议关注 ODE-native 探索的语义多样性。"}]
+    },
+    {
+        date: "2026-05-20",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "Lance: Unified Multimodal Modeling by Multi-Task Synergy",
+        venue: "arXiv 2026 · ByteDance Research",
+        summary: "🛠 技术路线: 轻量化原生统一模型、多任务协同、分阶段任务训练范式、自适应数据调度 | 💡 创新点: 提出 Lance，轻量化的原生统一多模态模型，支持图像/视频的理解、生成与编辑。采用分阶段任务训练范式与能力导向目标及自适应数据调度。 | 📊 实验效果: 在图像和视频生成上大幅超越现有开源统一模型，同时保持强劲的多模态理解能力。 | ⭐ 整体评价: 属于多模态/统一模型方向。建议关注跨模态生成与理解的平衡。",
+        tags: [["Multimodal","green"],["Video","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.18678"],["PDF","https://arxiv.org/pdf/2605.18678"],["Project","https://lance-project.github.io/"],["Code","https://github.com/bytedance/Lance"]],
+        highlight: true,
+        summaryGrid: [{"label":"🛠 技术路线","text":"轻量化原生统一模型、多任务协同、分阶段任务训练范式、自适应数据调度"},{"label":"💡 创新点","text":"提出 Lance，轻量化的原生统一多模态模型，支持图像/视频的理解、生成与编辑。采用分阶段任务训练范式与能力导向目标及自适应数据调度。"},{"label":"📊 实验效果","text":"在图像和视频生成上大幅超越现有开源统一模型，同时保持强劲的多模态理解能力。"},{"label":"⭐ 整体评价","text":"属于多模态/统一模型方向。建议关注跨模态生成与理解的平衡。"}]
+    },
+    {
+        date: "2026-05-20",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "Advancing Content Provenance for a Safer, More Transparent AI Ecosystem",
+        venue: "",
+        summary: "OpenAI 发布关于内容溯源的新进展，致力于构建更安全、更透明的 AI 生态系统，推进 AI 生成内容的可追溯性与可信度。",
+        tags: [],
+        links: [["Source","https://openai.com/index/advancing-content-provenance/"]]
+    },
     // === 2026-05-19 ===
     {
         date: "2026-05-19",
@@ -10569,6 +10660,13 @@ const PAPERS_DB = [
 ];
 
 const DAILY_OVERVIEW = {
+    "2026-05-20": {
+        bannerTitle: "🔥 今日看点",
+        bannerSubtitle: "LongLive-2.0 (NVIDIA): NVFP4 并行基础设施，训练 2.15x 加速、推理 1.84x 加速，5B 模型达 45.7 FPS 推理性能。Lance (ByteDance): 轻量化原生统一多模态模型，支持图像/视频理解、生成与编辑，大幅超越现有开源统一模型。SkillsVote (MemTensor): 智能体技能生命周期治理框架，GPT-5.2 在 Terminal-Bench 2.0 提升 7.9pp。",
+        picks: ["SkillsVote: Lifecycle Governance of Agent Skills from Collection, Recommendation to Evolution","LongLive-2.0: An NVFP4 Parallel Infrastructure for Long Video Generation","Lance: Unified Multimodal Modeling by Multi-Task Synergy"],
+        totalPapers: 7,
+        totalNews: 1
+    },
     "2026-05-19": {
         bannerTitle: "🔥 今日看点",
         bannerSubtitle: "ESI-Bench (MIT): 首个面向具身空间智能的综合基准，覆盖 10 个任务类别、29 个子类别，基于 Spelke 核心知识系统。Vision-OPD: 通过 On-Policy Self-Distillation 让多模态 LLM 学会感知细粒度视觉细节，超越更大的开/闭源模型。DashAttention: 可微自适应稀疏层次化 Attention，75% 稀疏度下匹配全注意力精度且超越 FlashAttention-3。",

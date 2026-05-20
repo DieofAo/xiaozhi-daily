@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>小小志科研情报 - 2026年5月20日</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans SC', sans-serif;
+  background: #0a0e1a;
+  color: #e0e6f0;
+  line-height: 1.7;
+  min-height: 100vh;
+}
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+header {
+  text-align: center;
+  margin-bottom: 48px;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, rgba(59,130,246,0.08) 0%, rgba(139,92,246,0.08) 100%);
+  border-radius: 20px;
+  border: 1px solid rgba(99,102,241,0.15);
+}
+header h1 {
+  font-size: 2rem;
+  background: linear-gradient(135deg, #60a5fa, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 8px;
+}
+header .date {
+  color: #94a3b8;
+  font-size: 1rem;
+}
+header .subtitle {
+  color: #64748b;
+  font-size: 0.9rem;
+  margin-top: 6px;
+}
+.section {
+  margin-bottom: 40px;
+}
+.section-title {
+  font-size: 1.4rem;
+  color: #f1f5f9;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(99,102,241,0.2);
+}
+.paper-card {
+  background: rgba(30,41,59,0.6);
+  border: 1px solid rgba(99,102,241,0.12);
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 16px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.paper-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(99,102,241,0.1);
+  border-color: rgba(99,102,241,0.3);
+}
+.paper-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #f8fafc;
+  margin-bottom: 8px;
+}
+.paper-meta {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-bottom: 10px;
+}
+.paper-summary {
+  font-size: 0.95rem;
+  color: #cbd5e1;
+  margin-bottom: 14px;
+  line-height: 1.8;
+}
+.summary-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+@media (max-width: 640px) {
+  .summary-grid { grid-template-columns: 1fr; }
+}
+.summary-item {
+  background: rgba(15,23,42,0.5);
+  border-radius: 10px;
+  padding: 12px 14px;
+  border: 1px solid rgba(99,102,241,0.08);
+}
+.summary-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #818cf8;
+  margin-bottom: 4px;
+}
+.summary-text {
+  font-size: 0.88rem;
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+.paper-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.tag {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+.tag-vla { background: rgba(59,130,246,0.15); color: #60a5fa; }
+.tag-robot { background: rgba(16,185,129,0.15); color: #34d399; }
+.tag-rl { background: rgba(251,146,60,0.15); color: #fb923c; }
+.tag-llm { background: rgba(168,85,247,0.15); color: #c084fc; }
+.tag-vlm { background: rgba(236,72,153,0.15); color: #f472b6; }
+.tag-world-model { background: rgba(34,211,238,0.15); color: #22d3ee; }
+.tag-embodied { background: rgba(74,222,128,0.15); color: #4ade80; }
+.tag-agent { background: rgba(251,191,36,0.15); color: #fbbf24; }
+.tag-multimodal { background: rgba(236,72,153,0.15); color: #f472b6; }
+.tag-video { background: rgba(34,211,238,0.15); color: #22d3ee; }
+.tag-security { background: rgba(239,68,68,0.15); color: #f87171; }
+.tag-voice { background: rgba(56,189,248,0.15); color: #38bdf8; }
+.tag-product { background: rgba(163,230,53,0.15); color: #a3e635; }
+.tag-diffusion { background: rgba(192,132,252,0.15); color: #c084fc; }
+.tag-3d { background: rgba(45,212,191,0.15); color: #2dd4bf; }
+.tag-audio { background: rgba(56,189,248,0.15); color: #38bdf8; }
+.paper-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.paper-links a {
+  display: inline-block;
+  padding: 5px 14px;
+  background: rgba(99,102,241,0.12);
+  color: #818cf8;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+.paper-links a:hover {
+  background: rgba(99,102,241,0.25);
+}
+.hot-badge {
+  margin-right: 6px;
+}
+.info-card {
+  background: rgba(30,41,59,0.4);
+  border: 1px solid rgba(251,191,36,0.15);
+  border-radius: 14px;
+  padding: 20px;
+  margin-bottom: 14px;
+}
+.info-card .paper-title {
+  color: #fbbf24;
+}
+.highlight-banner {
+  background: linear-gradient(135deg, rgba(251,146,60,0.1) 0%, rgba(236,72,153,0.1) 100%);
+  border: 1px solid rgba(251,146,60,0.2);
+  border-radius: 14px;
+  padding: 20px 24px;
+  margin-bottom: 36px;
+}
+.hl-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fb923c;
+  margin-bottom: 8px;
+}
+.hl-text {
+  font-size: 0.95rem;
+  color: #e2e8f0;
+  line-height: 1.7;
+}
+.stats {
+  text-align: center;
+  padding: 30px;
+  margin-top: 40px;
+  background: rgba(30,41,59,0.4);
+  border-radius: 14px;
+  border: 1px solid rgba(99,102,241,0.1);
+}
+.stats h3 {
+  color: #94a3b8;
+  font-size: 1rem;
+  margin-bottom: 12px;
+}
+.stats p {
+  color: #64748b;
+  font-size: 0.9rem;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+  <h1>🔬 小小志科研情报</h1>
+  <div class="date">2026年5月20日 · 星期三</div>
+  <div class="subtitle">Boss Team · Daily Research Intelligence</div>
+</header>
+
+<div class="highlight-banner">
+  <div class="hl-title">🔥 今日看点</div>
+  <div class="hl-text">LongLive-2.0 (NVIDIA): NVFP4 并行基础设施，训练 2.15x 加速、推理 1.84x 加速，5B 模型达 45.7 FPS 推理性能。Lance (ByteDance): 轻量化原生统一多模态模型，支持图像/视频理解、生成与编辑，大幅超越现有开源统一模型。SkillsVote (MemTensor): 智能体技能生命周期治理框架，GPT-5.2 在 Terminal-Bench 2.0 提升 7.9pp。</div>
+</div>
+
+<section class="section">
+<h2 class="section-title">🧩 Agent · 智能体</h2>
+
+<div class="paper-card">
+  <div class="paper-title"><span class="hot-badge">🔥</span> SkillsVote: Lifecycle Governance of Agent Skills from Collection, Recommendation to Evolution</div>
+  <div class="paper-meta">arXiv 2026 · Memtensor Research Group</div>
+  <div class="summary-grid"><div class="summary-item"><div class="summary-label">🛠 技术路线</div><div class="summary-text">智能体技能生命周期治理、技能收集/推荐/演进框架</div></div><div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 SkillsVote，一个生命周期治理框架，涵盖智能体技能从收集、推荐到演进的全流程管理。</div></div><div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">Offline evolution 提升 GPT-5.2 在 Terminal-Bench 2.0 通过率 7.9pp，Online evolution 提升 SWE-Bench Pro 通过率 2.6pp。外部技能库无需模型更新即可提升冻结智能体性能。</div></div><div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于 Agent/技能管理方向。建议关注技能演进机制与安全性控制。</div></div></div>
+  <div class="paper-tags">
+    <span class="tag tag-agent">Agent</span>
+    <span class="tag tag-llm">LLM</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.18401">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.18401">PDF</a>
+    <a href="https://skills.vote">Project</a>
+    <a href="https://github.com/MemTensor/skills-vote">Code</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title">AI for Auto-Research: Roadmap & User Guide</div>
+  <div class="paper-meta">arXiv 2026</div>
+  <div class="summary-grid"><div class="summary-item"><div class="summary-label">🛠 技术路线</div><div class="summary-text">端到端 AI 自动研究分析、四阶段认识论框架（创作/写作/验证/传播）</div></div><div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出端到端分析 AI 在完整研究生命周期的框架，组织为四个认识论阶段：创作（idea 生成、文献综述、编码与实验）、写作、验证（同行评审、反驳与修订）和传播。</div></div><div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">提供结构化分类体系、基准测试套件和工具清单，揭示前沿 LLM 仍存在结果捏造、错误遗漏和新颖性判断不可靠等问题。</div></div><div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于 Agent/自动化研究方向。建议关注研究完整性与生产力边界的权衡。</div></div></div>
+  <div class="paper-tags">
+    <span class="tag tag-agent">Agent</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.18661">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.18661">PDF</a>
+    <a href="https://worldbench.github.io/awesome-ai-auto-research">Project</a>
+    <a href="https://github.com/worldbench/awesome-ai-auto-research">Code</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title">CHI-Bench: Can AI Agents Automate End-to-End, Long-Horizon, Policy-Rich Healthcare Workflows?</div>
+  <div class="paper-meta">arXiv 2026 · actAVA AI</div>
+  <div class="summary-grid"><div class="summary-item"><div class="summary-label">🛠 技术路线</div><div class="summary-text">长时序医疗工作流自动化基准、策略密度/多角色组合/多方交互</div></div><div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">引入 CHI-Bench，覆盖提供者先验授权、付款方使用管理和护理管理三个领域的长时序医疗工作流基准，强调策略密度、多角色组合和多方交互能力。</div></div><div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">评估端到端自动化在真实医疗运营中的表现，关注当前基准欠缺的策略密度、多角色切换和多轮对话能力。</div></div><div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于 Agent/医疗 AI 方向。建议关注任务复杂度与真实场景覆盖。</div></div></div>
+  <div class="paper-tags">
+    <span class="tag tag-agent">Agent</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.16679">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.16679">PDF</a>
+    <a href="https://actava.ai/benchmarks">Project</a>
+    <a href="https://github.com/actava-ai/chi-bench">Code</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title">Code-as-Room: Generating 3D Rooms from Top-Down View Images via Agentic Code Synthesis</div>
+  <div class="paper-meta">arXiv 2026 · Shanghai AI Lab</div>
+  <div class="summary-grid"><div class="summary-item"><div class="summary-label">🛠 技术路线</div><div class="summary-text">MLLM Agentic 框架、结构化执行 Harness、Blender 代码表征 3D 房间</div></div><div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 Code-as-Room，基于 MLLM 的 agentic 框架配备结构化执行 harness，将 3D 房间以 Blender 代码形式表征，从俯视图生成完整 3D 场景。</div></div><div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">引入专用基准覆盖多种评估协议，与现有智能体方法的综合对比验证了所提执行 harness 的有效性。</div></div><div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于 Agent/3D 生成方向。建议关注代码合成质量与场景多样性。</div></div></div>
+  <div class="paper-tags">
+    <span class="tag tag-agent">Agent</span>
+    <span class="tag tag-3d">3D</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.18451">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.18451">PDF</a>
+    <a href="https://code-as-room.github.io/">Project</a>
+    <a href="https://github.com/YxuanAr/Code-as-Room">Code</a>
+  </div>
+</div>
+
+</section>
+<section class="section">
+<h2 class="section-title">🧠 LLM · 大语言模型</h2>
+
+<div class="paper-card">
+  <div class="paper-title"><span class="hot-badge">🔥</span> LongLive-2.0: An NVFP4 Parallel Infrastructure for Long Video Generation</div>
+  <div class="paper-meta">arXiv 2026 · NVIDIA</div>
+  <div class="summary-grid"><div class="summary-item"><div class="summary-label">🛠 技术路线</div><div class="summary-text">NVFP4 并行基础设施、长视频生成全流程训练-推理加速、内存瓶颈解决</div></div><div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 LongLive-2.0，覆盖训练和推理全流程的 NVFP4 并行基础设施，解决长视频生成中的速度和内存瓶颈。</div></div><div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">训练 2.15x 加速，推理 1.84x 加速。LongLive-2.0-5B 达到 45.7 FPS 推理速度，同时在基准测试上保持强劲性能。</div></div><div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于 LLM/推理加速方向。建议关注 FP4 量化对长视频质量的影响。</div></div></div>
+  <div class="paper-tags">
+    <span class="tag tag-llm">LLM</span>
+    <span class="tag tag-video">Video</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.18739">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.18739">PDF</a>
+    <a href="https://nvlabs.github.io/LongLive/LongLive2/">Project</a>
+    <a href="https://github.com/NVlabs/LongLive">Code</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title">KVPO: ODE-Native GRPO for Autoregressive Video Alignment via KV Semantic Exploration</div>
+  <div class="paper-meta">arXiv 2026 · Tsinghua University</div>
+  <div class="summary-grid"><div class="summary-item"><div class="summary-label">🛠 技术路线</div><div class="summary-text">ODE-native 在线 GRPO、KV 语义探索、流式视频生成器对齐</div></div><div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 KVPO，ODE-native 的在线 Group Relative Policy Optimization 框架，用于对齐流式视频生成器，通过 KV 语义空间探索解决现有方法基于噪声探索和 SDE 代理策略与确定性 ODE 动力学不匹配的问题。</div></div><div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">详见原文实验部分</div></div><div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于 RL/视频生成对齐方向。建议关注 ODE-native 探索的语义多样性。</div></div></div>
+  <div class="paper-tags">
+    <span class="tag tag-llm">LLM</span>
+    <span class="tag tag-rl">RL</span>
+    <span class="tag tag-video">Video</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.14278">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.14278">PDF</a>
+    <a href="https://richard-zhang-ai.github.io/KVPO-Project/">Project</a>
+    <a href="https://github.com/Richard-Zhang-AI/KVPO">Code</a>
+  </div>
+</div>
+
+</section>
+<section class="section">
+<h2 class="section-title">🎨 Multimodal · 多模态</h2>
+
+<div class="paper-card">
+  <div class="paper-title"><span class="hot-badge">🔥</span> Lance: Unified Multimodal Modeling by Multi-Task Synergy</div>
+  <div class="paper-meta">arXiv 2026 · ByteDance Research</div>
+  <div class="summary-grid"><div class="summary-item"><div class="summary-label">🛠 技术路线</div><div class="summary-text">轻量化原生统一模型、多任务协同、分阶段任务训练范式、自适应数据调度</div></div><div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 Lance，轻量化的原生统一多模态模型，支持图像/视频的理解、生成与编辑。采用分阶段任务训练范式与能力导向目标及自适应数据调度。</div></div><div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在图像和视频生成上大幅超越现有开源统一模型，同时保持强劲的多模态理解能力。</div></div><div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于多模态/统一模型方向。建议关注跨模态生成与理解的平衡。</div></div></div>
+  <div class="paper-tags">
+    <span class="tag tag-multimodal">Multimodal</span>
+    <span class="tag tag-video">Video</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.18678">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.18678">PDF</a>
+    <a href="https://lance-project.github.io/">Project</a>
+    <a href="https://github.com/bytedance/Lance">Code</a>
+  </div>
+</div>
+
+</section>
+<section class="section">
+<h2 class="section-title">📰 Informations · 行业动态</h2>
+
+<div class="info-card">
+  <div class="paper-title">Advancing Content Provenance for a Safer, More Transparent AI Ecosystem</div>
+  <div class="paper-summary">OpenAI 发布关于内容溯源的新进展，致力于构建更安全、更透明的 AI 生态系统，推进 AI 生成内容的可追溯性与可信度。</div>
+  <div class="paper-links">
+    <a href="https://openai.com/index/advancing-content-provenance/">Source</a>
+  </div>
+</div>
+
+</section>
+
+<div class="stats">
+  <h3>📊 数据来源说明</h3>
+  <p>数据来源：HuggingFace 热门论文 7 篇 · 机构博客 1 条 | 共 8 条动态</p>
+  <p>主题分布：Agent 4 · LLM 2 · Multimodal 1 · 行业动态 1</p>
+  <p>更新时间：2026年5月20日</p>
+</div>
+
+</div>
+</body>
+</html>
