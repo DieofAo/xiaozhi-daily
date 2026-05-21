@@ -658,6 +658,108 @@
 <script>
 // ===== DATA =====
 const PAPERS_DB = [
+    // === 2026-05-21 ===
+    {
+        date: "2026-05-21",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "OpenComputer: Verifiable Software Worlds for Computer-Use Agents",
+        venue: "arXiv 2026 · Yale NLP Lab",
+        summary: "🛠 技术路线: Verifier-grounded 框架，为 computer-use 智能体构建可验证的软件世界 | 💡 创新点: 提出 OpenComputer，集成四组件：应用级状态验证器、自演进验证层（执行反馈驱动）、任务生成流程（合成可机器检查的桌面任务）和可扩展环境架构。 | 📊 实验效果: 通过暴露结构化检查端点实现真实应用的精确状态验证，self-evolving 层利用执行反馈提升验证器可靠性。 | ⭐ 整体评价: 属于 Agent/软件自动化方向。可验证环境构建对 Agent 评测和训练具有重要基础价值。",
+        tags: [["Agent","green"],["LLM","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.19769"],["PDF","https://arxiv.org/pdf/2605.19769"],["Project","https://echo0715.github.io/OpenComputer/"],["Code","https://github.com/echo0715/OpenComputer"]],
+        highlight: true,
+        summaryGrid: [{"label":"🛠 技术路线","text":"Verifier-grounded 框架，为 computer-use 智能体构建可验证的软件世界"},{"label":"💡 创新点","text":"提出 OpenComputer，集成四组件：应用级状态验证器、自演进验证层（执行反馈驱动）、任务生成流程（合成可机器检查的桌面任务）和可扩展环境架构。"},{"label":"📊 实验效果","text":"通过暴露结构化检查端点实现真实应用的精确状态验证，self-evolving 层利用执行反馈提升验证器可靠性。"},{"label":"⭐ 整体评价","text":"属于 Agent/软件自动化方向。可验证环境构建对 Agent 评测和训练具有重要基础价值。"}]
+    },
+    {
+        date: "2026-05-21",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "EnvFactory: Scaling Tool-Use Agents via Executable Environments Synthesis and Robust RL",
+        venue: "arXiv 2026 · LARK Lab @ HKUST (GZ)",
+        summary: "🛠 技术路线: 全自动环境合成 + Agentic RL 训练，解决可扩展执行环境缺乏和隐式人类推理数据稀缺两大挑战 | 💡 创新点: 引入 EnvFactory，全自动框架同时解决环境可扩展性和训练数据质量问题，自动合成鲁棒的可执行训练环境。 | 📊 实验效果: 使用显著更少（约 1/5）的环境，提升 Qwen3 系列模型：BFCLv3 +15%，MCP-Atlas +8.6%，τ²-Bench 和 VitaBench +6%。训练效率和下游性能均优于先前方法。 | ⭐ 整体评价: 属于 Agent/工具使用方向。数据效率和性能提升显著，建议关注环境合成质量与迁移性。",
+        tags: [["Agent","green"],["RL","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.18703"],["PDF","https://arxiv.org/pdf/2605.18703"],["Code","https://github.com/LARK-AI-Lab/EnvFactory"]],
+        highlight: true,
+        summaryGrid: [{"label":"🛠 技术路线","text":"全自动环境合成 + Agentic RL 训练，解决可扩展执行环境缺乏和隐式人类推理数据稀缺两大挑战"},{"label":"💡 创新点","text":"引入 EnvFactory，全自动框架同时解决环境可扩展性和训练数据质量问题，自动合成鲁棒的可执行训练环境。"},{"label":"📊 实验效果","text":"使用显著更少（约 1/5）的环境，提升 Qwen3 系列模型：BFCLv3 +15%，MCP-Atlas +8.6%，τ²-Bench 和 VitaBench +6%。训练效率和下游性能均优于先前方法。"},{"label":"⭐ 整体评价","text":"属于 Agent/工具使用方向。数据效率和性能提升显著，建议关注环境合成质量与迁移性。"}]
+    },
+    {
+        date: "2026-05-21",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Harnessing LLM Agents with Skill Programs (HASP)",
+        venue: "arXiv 2026 · New York University",
+        summary: "🛠 技术路线: 将智能体技能升级为可执行的 Program Functions (PFs)，支持推理时直接干预和训练时结构化监督 | 💡 创新点: 提出 HASP，将经验教训从文本指导升级为可执行的程序函数，弥合文本建议与实际执行之间的鸿沟。高度模块化：推理时直接干预、训练时结构化监督、演进时教师审核验证。 | 📊 实验效果: Web-search 推理任务中，推理 PFs 单独使用平均提升 25%（相比 multi-loop ReAct），训练 + 受控演进达 30.4% 增益。 | ⭐ 整体评价: 属于 Agent/技能执行方向。建议关注 PF 的可维护性和跨任务泛化能力。",
+        tags: [["Agent","green"],["LLM","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.17734"],["PDF","https://arxiv.org/pdf/2605.17734"]],
+        summaryGrid: [{"label":"🛠 技术路线","text":"将智能体技能升级为可执行的 Program Functions (PFs)，支持推理时直接干预和训练时结构化监督"},{"label":"💡 创新点","text":"提出 HASP，将经验教训从文本指导升级为可执行的程序函数，弥合文本建议与实际执行之间的鸿沟。高度模块化：推理时直接干预、训练时结构化监督、演进时教师审核验证。"},{"label":"📊 实验效果","text":"Web-search 推理任务中，推理 PFs 单独使用平均提升 25%（相比 multi-loop ReAct），训练 + 受控演进达 30.4% 增益。"},{"label":"⭐ 整体评价","text":"属于 Agent/技能执行方向。建议关注 PF 的可维护性和跨任务泛化能力。"}]
+    },
+    {
+        date: "2026-05-21",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "AutoResearchClaw: Self-Reinforcing Autonomous Research with Human-AI Collaboration",
+        venue: "arXiv 2026 · Aiming Lab",
+        summary: "🛠 技术路线: 五机制 agentic 自主研究流程：结构化智能体辩论、自愈执行器（Pivot/Refine 决策环）、可验证结果报告等 | 💡 创新点: 提出 AutoResearchClaw，具备五大核心机制：结构化智能体辩论用于假设生成和结果分析、自愈执行器将失败转化为信息、可验证结果报告防止数据捏造和幻觉引用、跨运行经验积累。 | 📊 实验效果: 解决现有系统线性流程、失败即停、无跨运行经验的三大痛点，实现自我强化的研究自动化闭环。 | ⭐ 整体评价: 属于 Agent/自动化研究方向。建议关注自愈机制的鲁棒性和结果可验证性保障。",
+        tags: [["Agent","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.20025"],["PDF","https://arxiv.org/pdf/2605.20025"],["Project","https://github.com/aiming-lab/AutoResearchClaw"]],
+        summaryGrid: [{"label":"🛠 技术路线","text":"五机制 agentic 自主研究流程：结构化智能体辩论、自愈执行器（Pivot/Refine 决策环）、可验证结果报告等"},{"label":"💡 创新点","text":"提出 AutoResearchClaw，具备五大核心机制：结构化智能体辩论用于假设生成和结果分析、自愈执行器将失败转化为信息、可验证结果报告防止数据捏造和幻觉引用、跨运行经验积累。"},{"label":"📊 实验效果","text":"解决现有系统线性流程、失败即停、无跨运行经验的三大痛点，实现自我强化的研究自动化闭环。"},{"label":"⭐ 整体评价","text":"属于 Agent/自动化研究方向。建议关注自愈机制的鲁棒性和结果可验证性保障。"}]
+    },
+    {
+        date: "2026-05-21",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "When Vision Speaks for Sound",
+        venue: "arXiv 2026",
+        summary: "🛠 技术路线: 引入 Thud 干预驱动探测框架，基于三种反事实音频编辑（Shift/Mute/Swap）系统研究多模态模型行为 | 💡 创新点: 发现 SOTA 开源 omni 模型和 Google/OpenAI 闭源模型均存在视觉主导音频理解的问题。引入 Thud 框架通过 Shift（时序同步）、Mute（声音存在性）、Swap（音视一致性）三种反事实编辑系统评估。 | 📊 实验效果: 最佳 10K 样本训练方案在三个干预维度平均提升 28 个百分点，同时略微提升通用视频和音视 QA 基准性能。 | ⭐ 整体评价: 属于多模态理解方向。揭示了当前模型音视融合的关键缺陷，建议关注训练数据配方和评估框架。",
+        tags: [["Multimodal","green"],["Audio","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.16403"],["PDF","https://arxiv.org/pdf/2605.16403"],["Project","https://rakanwen.github.io/when-vision-speaks-for-sound/"],["Code","https://github.com/rakanWen/wvs-code"]],
+        summaryGrid: [{"label":"🛠 技术路线","text":"引入 Thud 干预驱动探测框架，基于三种反事实音频编辑（Shift/Mute/Swap）系统研究多模态模型行为"},{"label":"💡 创新点","text":"发现 SOTA 开源 omni 模型和 Google/OpenAI 闭源模型均存在视觉主导音频理解的问题。引入 Thud 框架通过 Shift（时序同步）、Mute（声音存在性）、Swap（音视一致性）三种反事实编辑系统评估。"},{"label":"📊 实验效果","text":"最佳 10K 样本训练方案在三个干预维度平均提升 28 个百分点，同时略微提升通用视频和音视 QA 基准性能。"},{"label":"⭐ 整体评价","text":"属于多模态理解方向。揭示了当前模型音视融合的关键缺陷，建议关注训练数据配方和评估框架。"}]
+    },
+    {
+        date: "2026-05-21",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Active Learners as Efficient PRP Rerankers",
+        venue: "arXiv 2026 · Universidad de San Andres",
+        summary: "🛠 技术路线: 将 PRP 重排序重构为从噪声成对比较中的主动学习问题，引入随机方向 oracle（单次 LLM 调用/对） | 💡 创新点: 提出鲁棒框架，引入 randomized-direction oracle 仅需单次 LLM 调用即可完成每对比较，将 PRP 重排序转化为主动学习问题。 | 📊 实验效果: 在调用受限的条件下，主动排序器显著提升每次调用的 NDCG@10，实现更高效的重排序。 | ⭐ 整体评价: 属于 LLM/信息检索方向。建议关注调用效率与排序质量的平衡。",
+        tags: [["LLM","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.14236"],["PDF","https://arxiv.org/pdf/2605.14236"],["Code","https://github.com/jerecoder/IReranker"]],
+        summaryGrid: [{"label":"🛠 技术路线","text":"将 PRP 重排序重构为从噪声成对比较中的主动学习问题，引入随机方向 oracle（单次 LLM 调用/对）"},{"label":"💡 创新点","text":"提出鲁棒框架，引入 randomized-direction oracle 仅需单次 LLM 调用即可完成每对比较，将 PRP 重排序转化为主动学习问题。"},{"label":"📊 实验效果","text":"在调用受限的条件下，主动排序器显著提升每次调用的 NDCG@10，实现更高效的重排序。"},{"label":"⭐ 整体评价","text":"属于 LLM/信息检索方向。建议关注调用效率与排序质量的平衡。"}]
+    },
+    {
+        date: "2026-05-21",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "CogOmniControl: Reasoning-Driven Controllable Video Generation via Creative Intent Cognition",
+        venue: "arXiv 2026 · UM Lab",
+        summary: "🛠 技术路线: 将可控视频生成分解为创意意图认知 + 生成两阶段，CogOmniDiT 统一多条件控制 | 💡 创新点: 提出 CogOmniControl，reasoning-driven 框架将可控视频生成分解为创意意图认知和生成两步。解决扩散模型在抽象/稀疏/复杂条件（如故事板草图、粘土渲染）下的脆弱性问题。 | 📊 实验效果: 在两个基准测试上超越现有开源模型，CogOmniDiT 实现多条件的上下文内统一控制，对齐 CogVLM 推理输出。 | ⭐ 整体评价: 属于多模态/视频生成方向。建议关注创意意图理解的准确性和专业工作流适配性。",
+        tags: [["Multimodal","green"],["Video","green"],["Diffusion","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.19995"],["PDF","https://arxiv.org/pdf/2605.19995"],["Project","https://um-lab.github.io/CogOmniControl/"]],
+        summaryGrid: [{"label":"🛠 技术路线","text":"将可控视频生成分解为创意意图认知 + 生成两阶段，CogOmniDiT 统一多条件控制"},{"label":"💡 创新点","text":"提出 CogOmniControl，reasoning-driven 框架将可控视频生成分解为创意意图认知和生成两步。解决扩散模型在抽象/稀疏/复杂条件（如故事板草图、粘土渲染）下的脆弱性问题。"},{"label":"📊 实验效果","text":"在两个基准测试上超越现有开源模型，CogOmniDiT 实现多条件的上下文内统一控制，对齐 CogVLM 推理输出。"},{"label":"⭐ 整体评价","text":"属于多模态/视频生成方向。建议关注创意意图理解的准确性和专业工作流适配性。"}]
+    },
+    {
+        date: "2026-05-21",
+        category: "RL",
+        categoryIcon: "🧠",
+        title: "Anti-Self-Distillation for Reasoning RL via Pointwise Mutual Information",
+        venue: "arXiv 2026 · rednote-hilab",
+        summary: "🛠 技术路线: 反自蒸馏方法，反转 token 级梯度符号上升 student-teacher 散度，基于逐点互信息产生自然有界优势 | 💡 创新点: 提出 AntiSD（Anti-Self-Distillation），与传统蒸馏下降散度相反，上升 student 与 teacher 的散度。反转 per-token 符号产生自然有界的优势估计，无需外部 stronger teacher。 | 📊 实验效果: 在 5 个模型（4B-30B 参数）的数学推理基准上，AntiSD 仅用 GRPO 基线 2-10x 少的训练步即达同等准确率，最终准确率提升最高 11.5 个百分点。 | ⭐ 整体评价: 属于 RL/推理增强方向。训练效率提升显著，自举式推理训练信号为可扩展提升开辟新路径。",
+        tags: [["RL","green"],["LLM","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.11609"],["PDF","https://arxiv.org/pdf/2605.11609"],["Code","https://github.com/FloyedShen/AntiSD"]],
+        highlight: true,
+        summaryGrid: [{"label":"🛠 技术路线","text":"反自蒸馏方法，反转 token 级梯度符号上升 student-teacher 散度，基于逐点互信息产生自然有界优势"},{"label":"💡 创新点","text":"提出 AntiSD（Anti-Self-Distillation），与传统蒸馏下降散度相反，上升 student 与 teacher 的散度。反转 per-token 符号产生自然有界的优势估计，无需外部 stronger teacher。"},{"label":"📊 实验效果","text":"在 5 个模型（4B-30B 参数）的数学推理基准上，AntiSD 仅用 GRPO 基线 2-10x 少的训练步即达同等准确率，最终准确率提升最高 11.5 个百分点。"},{"label":"⭐ 整体评价","text":"属于 RL/推理增强方向。训练效率提升显著，自举式推理训练信号为可扩展提升开辟新路径。"}]
+    },
+    {
+        date: "2026-05-21",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "An OpenAI model has disproved a central conjecture in discrete geometry",
+        venue: "",
+        summary: "OpenAI 发布重磅成果：其 AI 模型首次独立反驳了离散几何学中的一个核心猜想（Keller 猜想变体）。这标志着 AI 在数学推理和定理证明领域的重大突破，模型不仅能辅助证明，还能主动发现反例推翻长期未解的数学假设。",
+        tags: [],
+        links: [["来源","https://openai.com/index/model-disproves-discrete-geometry-conjecture/"]]
+    },
     // === 2026-05-20 ===
     {
         date: "2026-05-20",
@@ -10660,6 +10762,13 @@ const PAPERS_DB = [
 ];
 
 const DAILY_OVERVIEW = {
+    "2026-05-21": {
+        bannerTitle: "🔥 今日看点",
+        bannerSubtitle: "AntiSD (rednote-hilab): 反自蒸馏强化学习方法，基于逐点互信息反转 token 级梯度符号，在 5 个模型(4B-30B)的数学推理任务上仅用 2-10x 少的训练步即达 GRPO 基线水平，最终准确率提升最高 11.5pp。OpenAI 模型推翻离散几何核心猜想：AI 首次独立反驳数学中的 Keller 猜想变体。EnvFactory (HKUST): 全自动工具使用环境合成框架，仅用 1/5 环境数即超越先前方法，Qwen3 系列在 BFCLv3 提升 +15%。",
+        picks: ["OpenComputer: Verifiable Software Worlds for Computer-Use Agents","EnvFactory: Scaling Tool-Use Agents via Executable Environments Synthesis and Robust RL","Anti-Self-Distillation for Reasoning RL via Pointwise Mutual Information"],
+        totalPapers: 8,
+        totalNews: 1
+    },
     "2026-05-20": {
         bannerTitle: "🔥 今日看点",
         bannerSubtitle: "LongLive-2.0 (NVIDIA): NVFP4 并行基础设施，训练 2.15x 加速、推理 1.84x 加速，5B 模型达 45.7 FPS 推理性能。Lance (ByteDance): 轻量化原生统一多模态模型，支持图像/视频理解、生成与编辑，大幅超越现有开源统一模型。SkillsVote (MemTensor): 智能体技能生命周期治理框架，GPT-5.2 在 Terminal-Bench 2.0 提升 7.9pp。",

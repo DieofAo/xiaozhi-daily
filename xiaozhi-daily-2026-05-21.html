@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>小小志科研情报 - 2026年5月21日</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans SC', sans-serif;
+  background: #0a0e1a;
+  color: #e0e6f0;
+  line-height: 1.7;
+  min-height: 100vh;
+}
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+header {
+  text-align: center;
+  margin-bottom: 48px;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, rgba(59,130,246,0.08) 0%, rgba(139,92,246,0.08) 100%);
+  border-radius: 20px;
+  border: 1px solid rgba(99,102,241,0.15);
+}
+header h1 {
+  font-size: 2rem;
+  background: linear-gradient(135deg, #60a5fa, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 8px;
+}
+header .date {
+  color: #94a3b8;
+  font-size: 1rem;
+}
+header .subtitle {
+  color: #64748b;
+  font-size: 0.9rem;
+  margin-top: 6px;
+}
+.section {
+  margin-bottom: 40px;
+}
+.section-title {
+  font-size: 1.4rem;
+  color: #f1f5f9;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(99,102,241,0.2);
+}
+.paper-card {
+  background: rgba(30,41,59,0.6);
+  border: 1px solid rgba(99,102,241,0.12);
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 16px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.paper-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(99,102,241,0.1);
+  border-color: rgba(99,102,241,0.3);
+}
+.paper-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #f8fafc;
+  margin-bottom: 8px;
+}
+.paper-meta {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-bottom: 10px;
+}
+.paper-summary {
+  font-size: 0.95rem;
+  color: #cbd5e1;
+  margin-bottom: 14px;
+  line-height: 1.8;
+}
+.summary-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+@media (max-width: 640px) {
+  .summary-grid { grid-template-columns: 1fr; }
+}
+.summary-item {
+  background: rgba(15,23,42,0.5);
+  border-radius: 10px;
+  padding: 12px 14px;
+  border: 1px solid rgba(99,102,241,0.08);
+}
+.summary-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #818cf8;
+  margin-bottom: 4px;
+}
+.summary-text {
+  font-size: 0.88rem;
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+.paper-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.tag {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+.tag-vla { background: rgba(59,130,246,0.15); color: #60a5fa; }
+.tag-robot { background: rgba(16,185,129,0.15); color: #34d399; }
+.tag-rl { background: rgba(251,146,60,0.15); color: #fb923c; }
+.tag-llm { background: rgba(168,85,247,0.15); color: #c084fc; }
+.tag-vlm { background: rgba(236,72,153,0.15); color: #f472b6; }
+.tag-world-model { background: rgba(34,211,238,0.15); color: #22d3ee; }
+.tag-embodied { background: rgba(74,222,128,0.15); color: #4ade80; }
+.tag-agent { background: rgba(251,191,36,0.15); color: #fbbf24; }
+.tag-multimodal { background: rgba(236,72,153,0.15); color: #f472b6; }
+.tag-video { background: rgba(34,211,238,0.15); color: #22d3ee; }
+.tag-security { background: rgba(239,68,68,0.15); color: #f87171; }
+.tag-voice { background: rgba(56,189,248,0.15); color: #38bdf8; }
+.tag-product { background: rgba(163,230,53,0.15); color: #a3e635; }
+.tag-diffusion { background: rgba(192,132,252,0.15); color: #c084fc; }
+.tag-3d { background: rgba(45,212,191,0.15); color: #2dd4bf; }
+.tag-audio { background: rgba(56,189,248,0.15); color: #38bdf8; }
+.paper-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.paper-links a {
+  display: inline-block;
+  padding: 5px 14px;
+  background: rgba(99,102,241,0.12);
+  color: #818cf8;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+.paper-links a:hover {
+  background: rgba(99,102,241,0.25);
+}
+.hot-badge {
+  margin-right: 6px;
+}
+.info-card {
+  background: rgba(30,41,59,0.4);
+  border: 1px solid rgba(251,191,36,0.15);
+  border-radius: 14px;
+  padding: 20px;
+  margin-bottom: 14px;
+}
+.info-card .paper-title {
+  color: #fbbf24;
+}
+.highlight-banner {
+  background: linear-gradient(135deg, rgba(251,146,60,0.1) 0%, rgba(236,72,153,0.1) 100%);
+  border: 1px solid rgba(251,146,60,0.2);
+  border-radius: 14px;
+  padding: 20px 24px;
+  margin-bottom: 36px;
+}
+.hl-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fb923c;
+  margin-bottom: 8px;
+}
+.hl-text {
+  font-size: 0.95rem;
+  color: #e2e8f0;
+  line-height: 1.7;
+}
+.stats {
+  text-align: center;
+  padding: 30px;
+  margin-top: 40px;
+  background: rgba(30,41,59,0.4);
+  border-radius: 14px;
+  border: 1px solid rgba(99,102,241,0.1);
+}
+.stats h3 {
+  color: #94a3b8;
+  font-size: 1rem;
+  margin-bottom: 12px;
+}
+.stats p {
+  color: #64748b;
+  font-size: 0.9rem;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+  <h1>🔬 小小志科研情报</h1>
+  <div class="date">2026年5月21日 · 星期四</div>
+  <div class="subtitle">Boss Team · Daily Research Intelligence</div>
+</header>
+
+<div class="highlight-banner">
+  <div class="hl-title">🔥 今日看点</div>
+  <div class="hl-text">AntiSD (rednote-hilab): 反自蒸馏强化学习方法，基于逐点互信息反转 token 级梯度符号，在 5 个模型(4B-30B)的数学推理任务上仅用 2-10x 少的训练步即达 GRPO 基线水平，最终准确率提升最高 11.5pp。OpenAI 模型推翻离散几何核心猜想：AI 首次独立反驳数学中的 Keller 猜想变体。EnvFactory (HKUST): 全自动工具使用环境合成框架，仅用 1/5 环境数即超越先前方法，Qwen3 系列在 BFCLv3 提升 +15%。</div>
+</div>
+
+<section class="section">
+<h2 class="section-title">🧩 Agent · 智能体</h2>
+
+<div class="paper-card">
+  <div class="paper-title"><span class="hot-badge">🔥</span> OpenComputer: Verifiable Software Worlds for Computer-Use Agents</div>
+  <div class="paper-meta">arXiv 2026 · Yale NLP Lab</div>
+  <div class="summary-grid"><div class="summary-item"><div class="summary-label">🛠 技术路线</div><div class="summary-text">Verifier-grounded 框架，为 computer-use 智能体构建可验证的软件世界</div></div><div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 OpenComputer，集成四组件：应用级状态验证器、自演进验证层（执行反馈驱动）、任务生成流程（合成可机器检查的桌面任务）和可扩展环境架构。</div></div><div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">通过暴露结构化检查端点实现真实应用的精确状态验证，self-evolving 层利用执行反馈提升验证器可靠性。</div></div><div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于 Agent/软件自动化方向。可验证环境构建对 Agent 评测和训练具有重要基础价值。</div></div></div>
+  <div class="paper-tags">
+    <span class="tag tag-agent">Agent</span>
+    <span class="tag tag-llm">LLM</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.19769">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.19769">PDF</a>
+    <a href="https://echo0715.github.io/OpenComputer/">Project</a>
+    <a href="https://github.com/echo0715/OpenComputer">Code</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title"><span class="hot-badge">🔥</span> EnvFactory: Scaling Tool-Use Agents via Executable Environments Synthesis and Robust RL</div>
+  <div class="paper-meta">arXiv 2026 · LARK Lab @ HKUST (GZ)</div>
+  <div class="summary-grid"><div class="summary-item"><div class="summary-label">🛠 技术路线</div><div class="summary-text">全自动环境合成 + Agentic RL 训练，解决可扩展执行环境缺乏和隐式人类推理数据稀缺两大挑战</div></div><div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">引入 EnvFactory，全自动框架同时解决环境可扩展性和训练数据质量问题，自动合成鲁棒的可执行训练环境。</div></div><div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">使用显著更少（约 1/5）的环境，提升 Qwen3 系列模型：BFCLv3 +15%，MCP-Atlas +8.6%，τ²-Bench 和 VitaBench +6%。训练效率和下游性能均优于先前方法。</div></div><div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于 Agent/工具使用方向。数据效率和性能提升显著，建议关注环境合成质量与迁移性。</div></div></div>
+  <div class="paper-tags">
+    <span class="tag tag-agent">Agent</span>
+    <span class="tag tag-rl">RL</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.18703">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.18703">PDF</a>
+    <a href="https://github.com/LARK-AI-Lab/EnvFactory">Code</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title">Harnessing LLM Agents with Skill Programs (HASP)</div>
+  <div class="paper-meta">arXiv 2026 · New York University</div>
+  <div class="summary-grid"><div class="summary-item"><div class="summary-label">🛠 技术路线</div><div class="summary-text">将智能体技能升级为可执行的 Program Functions (PFs)，支持推理时直接干预和训练时结构化监督</div></div><div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 HASP，将经验教训从文本指导升级为可执行的程序函数，弥合文本建议与实际执行之间的鸿沟。高度模块化：推理时直接干预、训练时结构化监督、演进时教师审核验证。</div></div><div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">Web-search 推理任务中，推理 PFs 单独使用平均提升 25%（相比 multi-loop ReAct），训练 + 受控演进达 30.4% 增益。</div></div><div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于 Agent/技能执行方向。建议关注 PF 的可维护性和跨任务泛化能力。</div></div></div>
+  <div class="paper-tags">
+    <span class="tag tag-agent">Agent</span>
+    <span class="tag tag-llm">LLM</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.17734">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.17734">PDF</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title">AutoResearchClaw: Self-Reinforcing Autonomous Research with Human-AI Collaboration</div>
+  <div class="paper-meta">arXiv 2026 · Aiming Lab</div>
+  <div class="summary-grid"><div class="summary-item"><div class="summary-label">🛠 技术路线</div><div class="summary-text">五机制 agentic 自主研究流程：结构化智能体辩论、自愈执行器（Pivot/Refine 决策环）、可验证结果报告等</div></div><div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 AutoResearchClaw，具备五大核心机制：结构化智能体辩论用于假设生成和结果分析、自愈执行器将失败转化为信息、可验证结果报告防止数据捏造和幻觉引用、跨运行经验积累。</div></div><div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">解决现有系统线性流程、失败即停、无跨运行经验的三大痛点，实现自我强化的研究自动化闭环。</div></div><div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于 Agent/自动化研究方向。建议关注自愈机制的鲁棒性和结果可验证性保障。</div></div></div>
+  <div class="paper-tags">
+    <span class="tag tag-agent">Agent</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.20025">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.20025">PDF</a>
+    <a href="https://github.com/aiming-lab/AutoResearchClaw">Project</a>
+    <a href="https://github.com/aiming-lab/AutoResearchClaw">Code</a>
+  </div>
+</div>
+
+</section>
+
+<section class="section">
+<h2 class="section-title">🧠 LLM · 大语言模型</h2>
+
+<div class="paper-card">
+  <div class="paper-title">When Vision Speaks for Sound</div>
+  <div class="paper-meta">arXiv 2026</div>
+  <div class="summary-grid"><div class="summary-item"><div class="summary-label">🛠 技术路线</div><div class="summary-text">引入 Thud 干预驱动探测框架，基于三种反事实音频编辑（Shift/Mute/Swap）系统研究多模态模型行为</div></div><div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">发现 SOTA 开源 omni 模型和 Google/OpenAI 闭源模型均存在视觉主导音频理解的问题。引入 Thud 框架通过 Shift（时序同步）、Mute（声音存在性）、Swap（音视一致性）三种反事实编辑系统评估。</div></div><div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">最佳 10K 样本训练方案在三个干预维度平均提升 28 个百分点，同时略微提升通用视频和音视 QA 基准性能。</div></div><div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于多模态理解方向。揭示了当前模型音视融合的关键缺陷，建议关注训练数据配方和评估框架。</div></div></div>
+  <div class="paper-tags">
+    <span class="tag tag-multimodal">Multimodal</span>
+    <span class="tag tag-audio">Audio</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.16403">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.16403">PDF</a>
+    <a href="https://rakanwen.github.io/when-vision-speaks-for-sound/">Project</a>
+    <a href="https://github.com/rakanWen/wvs-code">Code</a>
+  </div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-title">Active Learners as Efficient PRP Rerankers</div>
+  <div class="paper-meta">arXiv 2026 · Universidad de San Andres</div>
+  <div class="summary-grid"><div class="summary-item"><div class="summary-label">🛠 技术路线</div><div class="summary-text">将 PRP 重排序重构为从噪声成对比较中的主动学习问题，引入随机方向 oracle（单次 LLM 调用/对）</div></div><div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出鲁棒框架，引入 randomized-direction oracle 仅需单次 LLM 调用即可完成每对比较，将 PRP 重排序转化为主动学习问题。</div></div><div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在调用受限的条件下，主动排序器显著提升每次调用的 NDCG@10，实现更高效的重排序。</div></div><div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于 LLM/信息检索方向。建议关注调用效率与排序质量的平衡。</div></div></div>
+  <div class="paper-tags">
+    <span class="tag tag-llm">LLM</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.14236">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.14236">PDF</a>
+    <a href="https://github.com/jerecoder/IReranker">Code</a>
+  </div>
+</div>
+
+</section>
+
+<section class="section">
+<h2 class="section-title">🎨 Multimodal · 多模态</h2>
+
+<div class="paper-card">
+  <div class="paper-title">CogOmniControl: Reasoning-Driven Controllable Video Generation via Creative Intent Cognition</div>
+  <div class="paper-meta">arXiv 2026 · UM Lab</div>
+  <div class="summary-grid"><div class="summary-item"><div class="summary-label">🛠 技术路线</div><div class="summary-text">将可控视频生成分解为创意意图认知 + 生成两阶段，CogOmniDiT 统一多条件控制</div></div><div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 CogOmniControl，reasoning-driven 框架将可控视频生成分解为创意意图认知和生成两步。解决扩散模型在抽象/稀疏/复杂条件（如故事板草图、粘土渲染）下的脆弱性问题。</div></div><div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在两个基准测试上超越现有开源模型，CogOmniDiT 实现多条件的上下文内统一控制，对齐 CogVLM 推理输出。</div></div><div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于多模态/视频生成方向。建议关注创意意图理解的准确性和专业工作流适配性。</div></div></div>
+  <div class="paper-tags">
+    <span class="tag tag-multimodal">Multimodal</span>
+    <span class="tag tag-video">Video</span>
+    <span class="tag tag-diffusion">Diffusion</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.19995">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.19995">PDF</a>
+    <a href="https://um-lab.github.io/CogOmniControl/">Project</a>
+  </div>
+</div>
+
+</section>
+
+<section class="section">
+<h2 class="section-title">🎯 RL · 强化学习</h2>
+
+<div class="paper-card">
+  <div class="paper-title"><span class="hot-badge">🔥</span> Anti-Self-Distillation for Reasoning RL via Pointwise Mutual Information</div>
+  <div class="paper-meta">arXiv 2026 · rednote-hilab</div>
+  <div class="summary-grid"><div class="summary-item"><div class="summary-label">🛠 技术路线</div><div class="summary-text">反自蒸馏方法，反转 token 级梯度符号上升 student-teacher 散度，基于逐点互信息产生自然有界优势</div></div><div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 AntiSD（Anti-Self-Distillation），与传统蒸馏下降散度相反，上升 student 与 teacher 的散度。反转 per-token 符号产生自然有界的优势估计，无需外部 stronger teacher。</div></div><div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在 5 个模型（4B-30B 参数）的数学推理基准上，AntiSD 仅用 GRPO 基线 2-10x 少的训练步即达同等准确率，最终准确率提升最高 11.5 个百分点。</div></div><div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于 RL/推理增强方向。训练效率提升显著，自举式推理训练信号为可扩展提升开辟新路径。</div></div></div>
+  <div class="paper-tags">
+    <span class="tag tag-rl">RL</span>
+    <span class="tag tag-llm">LLM</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.11609">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.11609">PDF</a>
+    <a href="https://github.com/FloyedShen/AntiSD">Code</a>
+  </div>
+</div>
+
+</section>
+
+<section class="section">
+<h2 class="section-title">📰 Informations · 行业动态</h2>
+
+<div class="info-card">
+  <div class="paper-title">An OpenAI model has disproved a central conjecture in discrete geometry</div>
+  <div class="paper-summary">OpenAI 发布重磅成果：其 AI 模型首次独立反驳了离散几何学中的一个核心猜想（Keller 猜想变体）。这标志着 AI 在数学推理和定理证明领域的重大突破，模型不仅能辅助证明，还能主动发现反例推翻长期未解的数学假设。</div>
+  <div class="paper-links">
+    <a href="https://openai.com/index/model-disproves-discrete-geometry-conjecture/">来源</a>
+  </div>
+</div>
+
+</section>
+
+<div class="stats">
+  <h3>📊 今日统计</h3>
+  <p>共收录 8 篇论文 + 1 条行业动态 | HF 热门 8 篇 | arXiv API 超时已跳过</p>
+</div>
+
+</div>
+</body>
+</html>
