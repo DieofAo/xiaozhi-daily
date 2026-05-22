@@ -658,6 +658,29 @@
 <script>
 // ===== DATA =====
 const PAPERS_DB = [
+    // === 2026-05-22 ===
+    {
+        date: "2026-05-22",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "PLaW-VLA",
+        venue: "HuggingFace 2026-05-22 · RainyBot",
+        summary: "RainyBot 团队发布 PLaW-VLA 视觉-语言-动作模型，标签包含 safetensors，面向机器人操控任务的端到端 VLA 模型。",
+        tags: [["VLA","green"],["Manipulation","green"]],
+        links: [["HuggingFace","https://huggingface.co/RainyBot/PLaW-VLA"]],
+        highlight: true
+    },
+    {
+        date: "2026-05-22",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "pi05_so101_v5.1",
+        venue: "HuggingFace 2026-05-22 · L7-Robotics",
+        summary: "L7-Robotics 发布基于 π0.5 架构的机器人操控模型 v5.1 版本，面向 SO-101 机械臂平台，支持具身操控任务的端到端推理与动作生成。",
+        tags: [["Robotics","green"],["VLA","green"]],
+        links: [["HuggingFace","https://huggingface.co/L7-Robotics/pi05_so101_v5.1"]],
+        highlight: true
+    },
     // === 2026-05-21 ===
     {
         date: "2026-05-21",
@@ -10773,6 +10796,13 @@ const PAPERS_DB = [
 ];
 
 const DAILY_OVERVIEW = {
+    "2026-05-22": {
+        bannerTitle: "🔥 今日看点",
+        bannerSubtitle: "L7-Robotics 发布 pi05_so101_v5.1 机器人操控模型（基于 π0.5 架构），面向 SO-101 机械臂平台；RainyBot 发布 PLaW-VLA 视觉-语言-动作模型。今日 arXiv 新论文均为已收录内容，仅新增 HuggingFace 模型发布。",
+        picks: ["PLaW-VLA","pi05_so101_v5.1"],
+        totalPapers: 2,
+        totalNews: 0
+    },
     "2026-05-21": {
         bannerTitle: "🔥 今日看点",
         bannerSubtitle: "AntiSD (rednote-hilab): 反自蒸馏强化学习方法，基于逐点互信息反转 token 级梯度符号，在 5 个模型(4B-30B)的数学推理任务上仅用 2-10x 少的训练步即达 GRPO 基线水平，最终准确率提升最高 11.5pp。OpenAI 模型推翻离散几何核心猜想：AI 首次独立反驳数学中的 Keller 猜想变体。EnvFactory (HKUST): 全自动工具使用环境合成框架，仅用 1/5 环境数即超越先前方法，Qwen3 系列在 BFCLv3 提升 +15%。",

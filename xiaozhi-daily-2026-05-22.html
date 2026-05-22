@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>小小志科研情报 - 2026年5月22日</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans SC', sans-serif;
+  background: #0a0e1a;
+  color: #e0e6f0;
+  line-height: 1.7;
+  min-height: 100vh;
+}
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+header {
+  text-align: center;
+  margin-bottom: 48px;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, rgba(59,130,246,0.08) 0%, rgba(139,92,246,0.08) 100%);
+  border-radius: 20px;
+  border: 1px solid rgba(99,102,241,0.15);
+}
+header h1 {
+  font-size: 2rem;
+  background: linear-gradient(135deg, #60a5fa, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 8px;
+}
+header .date {
+  color: #94a3b8;
+  font-size: 1rem;
+}
+header .subtitle {
+  color: #64748b;
+  font-size: 0.9rem;
+  margin-top: 6px;
+}
+.section {
+  margin-bottom: 40px;
+}
+.section-title {
+  font-size: 1.4rem;
+  color: #f1f5f9;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(99,102,241,0.2);
+}
+.paper-card {
+  background: rgba(30,41,59,0.6);
+  border: 1px solid rgba(99,102,241,0.12);
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 16px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.paper-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(99,102,241,0.1);
+  border-color: rgba(99,102,241,0.3);
+}
+.paper-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #f8fafc;
+  margin-bottom: 8px;
+}
+.paper-meta {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-bottom: 10px;
+}
+.paper-summary {
+  font-size: 0.95rem;
+  color: #cbd5e1;
+  margin-bottom: 14px;
+  line-height: 1.8;
+}
+.summary-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+@media (max-width: 640px) {
+  .summary-grid { grid-template-columns: 1fr; }
+}
+.summary-item {
+  background: rgba(15,23,42,0.5);
+  border-radius: 10px;
+  padding: 12px 14px;
+  border: 1px solid rgba(99,102,241,0.08);
+}
+.summary-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #818cf8;
+  margin-bottom: 4px;
+}
+.summary-text {
+  font-size: 0.88rem;
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+.paper-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.tag {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+.tag-vla { background: rgba(59,130,246,0.15); color: #60a5fa; }
+.tag-robot { background: rgba(16,185,129,0.15); color: #34d399; }
+.tag-rl { background: rgba(251,146,60,0.15); color: #fb923c; }
+.tag-llm { background: rgba(168,85,247,0.15); color: #c084fc; }
+.tag-vlm { background: rgba(236,72,153,0.15); color: #f472b6; }
+.tag-world-model { background: rgba(34,211,238,0.15); color: #22d3ee; }
+.tag-embodied { background: rgba(74,222,128,0.15); color: #4ade80; }
+.tag-agent { background: rgba(251,191,36,0.15); color: #fbbf24; }
+.tag-multimodal { background: rgba(236,72,153,0.15); color: #f472b6; }
+.tag-video { background: rgba(34,211,238,0.15); color: #22d3ee; }
+.tag-security { background: rgba(239,68,68,0.15); color: #f87171; }
+.tag-voice { background: rgba(56,189,248,0.15); color: #38bdf8; }
+.tag-product { background: rgba(163,230,53,0.15); color: #a3e635; }
+.tag-diffusion { background: rgba(192,132,252,0.15); color: #c084fc; }
+.tag-3d { background: rgba(45,212,191,0.15); color: #2dd4bf; }
+.tag-audio { background: rgba(56,189,248,0.15); color: #38bdf8; }
+.paper-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.paper-links a {
+  display: inline-block;
+  padding: 5px 14px;
+  background: rgba(99,102,241,0.12);
+  color: #818cf8;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+.paper-links a:hover {
+  background: rgba(99,102,241,0.25);
+}
+.hot-badge {
+  margin-right: 6px;
+}
+.info-card {
+  background: rgba(30,41,59,0.4);
+  border: 1px solid rgba(251,191,36,0.15);
+  border-radius: 14px;
+  padding: 20px;
+  margin-bottom: 14px;
+}
+.info-card .paper-title {
+  color: #fbbf24;
+}
+.highlight-banner {
+  background: linear-gradient(135deg, rgba(251,146,60,0.1) 0%, rgba(236,72,153,0.1) 100%);
+  border: 1px solid rgba(251,146,60,0.2);
+  border-radius: 14px;
+  padding: 20px 24px;
+  margin-bottom: 36px;
+}
+.hl-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fb923c;
+  margin-bottom: 8px;
+}
+.hl-text {
+  font-size: 0.95rem;
+  color: #e2e8f0;
+  line-height: 1.7;
+}
+.stats {
+  text-align: center;
+  padding: 30px;
+  margin-top: 40px;
+  background: rgba(30,41,59,0.4);
+  border-radius: 14px;
+  border: 1px solid rgba(99,102,241,0.1);
+}
+.stats h3 {
+  color: #94a3b8;
+  font-size: 1rem;
+  margin-bottom: 12px;
+}
+.stats p {
+  color: #64748b;
+  font-size: 0.9rem;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+  <h1>🔬 小小志科研情报</h1>
+  <div class="date">2026年5月22日 · 星期五</div>
+  <div class="subtitle">Boss Team · Daily Research Intelligence</div>
+</header>
+
+<div class="highlight-banner">
+  <div class="hl-title">🔥 今日看点</div>
+  <div class="hl-text">L7-Robotics 发布 pi05_so101_v5.1 机器人操控模型（基于 π0.5 架构），面向 SO-101 机械臂平台；RainyBot 发布 PLaW-VLA 视觉-语言-动作模型。今日 arXiv 新论文均为已收录内容，仅新增 HuggingFace 模型发布。</div>
+</div>
+
+<section class="section">
+<h2 class="section-title">🤖 VLA · Vision-Language-Action</h2>
+
+<div class="paper-card">
+  <div class="paper-title"><span class="hot-badge">🔥</span> PLaW-VLA</div>
+  <div class="paper-meta">HuggingFace 2026-05-22 · RainyBot</div>
+  <div class="paper-summary">RainyBot 团队发布 PLaW-VLA 视觉-语言-动作模型，标签包含 safetensors，面向机器人操控任务的端到端 VLA 模型。</div>
+  <div class="paper-tags">
+    <span class="tag tag-vla">VLA</span>
+    <span class="tag tag-robot">Manipulation</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://huggingface.co/RainyBot/PLaW-VLA">HuggingFace</a>
+  </div>
+</div>
+
+</section>
+
+<section class="section">
+<h2 class="section-title">🦾 Robotics · 机器人</h2>
+
+<div class="paper-card">
+  <div class="paper-title"><span class="hot-badge">🔥</span> pi05_so101_v5.1</div>
+  <div class="paper-meta">HuggingFace 2026-05-22 · L7-Robotics</div>
+  <div class="paper-summary">L7-Robotics 发布基于 π0.5 架构的机器人操控模型 v5.1 版本，面向 SO-101 机械臂平台，支持具身操控任务的端到端推理与动作生成。</div>
+  <div class="paper-tags">
+    <span class="tag tag-robot">Robotics</span>
+    <span class="tag tag-vla">VLA</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://huggingface.co/L7-Robotics/pi05_so101_v5.1">HuggingFace</a>
+  </div>
+</div>
+
+</section>
+
+<div class="stats">
+  <h3>📊 今日数据统计</h3>
+  <p>去重后新增：2 条（HuggingFace 模型发布）· arXiv 论文和 HF 热门论文全部已收录</p>
+</div>
+
+</div>
+</body>
+</html>
