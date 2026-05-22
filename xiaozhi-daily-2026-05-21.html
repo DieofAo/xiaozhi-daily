@@ -341,6 +341,25 @@ header .subtitle {
 </section>
 
 <section class="section">
+<h2 class="section-title">🦾 Robotics · 机器人</h2>
+
+<div class="paper-card">
+  <div class="paper-title">Coordinated Diffusion: Generating Multi-Agent Behavior Without Multi-Agent Demonstrations</div>
+  <div class="paper-meta">arXiv 2026 · TU Delft · CMU</div>
+  <div class="summary-grid"><div class="summary-item"><div class="summary-label">🛠 技术路线</div><div class="summary-text">将独立预训练的单智能体扩散策略通过用户自定义的多智能体代价函数耦合，推导新的扩散采样方案：score 函数分解为单智能体预训练基础策略 + 代价驱动的引导项（guidance score），引导项通过蒙特卡洛无梯度方式估计。</div></div><div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 CoDi（Coordinated Diffusion），无需任何多智能体协调演示数据，仅用单智能体示教即可学习多智能体协调策略。引导分数采用无梯度采样估计，可适配黑盒不可微代价函数，无需额外训练。理论分析了单智能体数据覆盖与代价函数互补的条件。</div></div><div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">双臂协作抓取任务中，CoDi 仅用单智能体数据即优于需多智能体数据的基线（CG-Joint、DPMD-Joint 等）。仅用 20% 单智能体数据性能即接近 100% 多智能体数据训练的基线，数据效率显著优势。在真实硬件上成功部署。</div></div><div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于多智能体扩散策略/协作操控方向。解决了多智能体示教数据瓶颈问题，无梯度引导设计通用性强，建议关注代价函数设计对协调质量的影响及更多智能体场景的扩展性。</div></div></div>
+  <div class="paper-tags">
+    <span class="tag tag-robotics">Robotics</span>
+    <span class="tag tag-rl">RL</span>
+  </div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.11485">arXiv</a>
+    <a href="https://arxiv.org/pdf/2605.11485">PDF</a>
+  </div>
+</div>
+
+</section>
+
+<section class="section">
 <h2 class="section-title">🎯 RL · 强化学习</h2>
 
 <div class="paper-card">
@@ -375,7 +394,7 @@ header .subtitle {
 
 <div class="stats">
   <h3>📊 今日统计</h3>
-  <p>共收录 8 篇论文 + 1 条行业动态 | HF 热门 8 篇 | arXiv API 超时已跳过</p>
+  <p>共收录 9 篇论文 + 1 条行业动态 | HF 热门 8 篇 | 手动补充 1 篇</p>
 </div>
 
 </div>

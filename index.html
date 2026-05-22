@@ -740,6 +740,17 @@ const PAPERS_DB = [
     },
     {
         date: "2026-05-21",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "Coordinated Diffusion: Generating Multi-Agent Behavior Without Multi-Agent Demonstrations",
+        venue: "arXiv 2026 · TU Delft · CMU",
+        summary: "🛠 技术路线: 将独立预训练的单智能体扩散策略通过用户自定义的多智能体代价函数耦合，推导新的扩散采样方案：score 函数分解为单智能体预训练基础策略 + 代价驱动的引导项（guidance score），引导项通过蒙特卡洛无梯度方式估计。 | 💡 创新点: 提出 CoDi（Coordinated Diffusion），无需任何多智能体协调演示数据，仅用单智能体示教即可学习多智能体协调策略。引导分数采用无梯度采样估计，可适配黑盒不可微代价函数，无需额外训练。理论分析了单智能体数据覆盖与代价函数互补的条件。 | 📊 实验效果: 双臂协作抓取任务中，CoDi 仅用单智能体数据即优于需多智能体数据的基线（CG-Joint、DPMD-Joint 等）。仅用 20% 单智能体数据性能即接近 100% 多智能体数据训练的基线，数据效率显著优势。在真实硬件上成功部署。 | ⭐ 整体评价: 属于多智能体扩散策略/协作操控方向。解决了多智能体示教数据瓶颈问题，无梯度引导设计通用性强，建议关注代价函数设计对协调质量的影响及更多智能体场景的扩展性。",
+        tags: [["Robotics","green"],["RL","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.11485"],["PDF","https://arxiv.org/pdf/2605.11485"]],
+        summaryGrid: [{"label":"🛠 技术路线","text":"将独立预训练的单智能体扩散策略通过用户自定义的多智能体代价函数耦合，推导新的扩散采样方案：score 函数分解为单智能体预训练基础策略 + 代价驱动的引导项（guidance score），引导项通过蒙特卡洛无梯度方式估计。"},{"label":"💡 创新点","text":"提出 CoDi（Coordinated Diffusion），无需任何多智能体协调演示数据，仅用单智能体示教即可学习多智能体协调策略。引导分数采用无梯度采样估计，可适配黑盒不可微代价函数，无需额外训练。理论分析了单智能体数据覆盖与代价函数互补的条件。"},{"label":"📊 实验效果","text":"双臂协作抓取任务中，CoDi 仅用单智能体数据即优于需多智能体数据的基线（CG-Joint、DPMD-Joint 等）。仅用 20% 单智能体数据性能即接近 100% 多智能体数据训练的基线，数据效率显著优势。在真实硬件上成功部署。"},{"label":"⭐ 整体评价","text":"属于多智能体扩散策略/协作操控方向。解决了多智能体示教数据瓶颈问题，无梯度引导设计通用性强，建议关注代价函数设计对协调质量的影响及更多智能体场景的扩展性。"}]
+    },
+    {
+        date: "2026-05-21",
         category: "RL",
         categoryIcon: "🧠",
         title: "Anti-Self-Distillation for Reasoning RL via Pointwise Mutual Information",
@@ -10766,7 +10777,7 @@ const DAILY_OVERVIEW = {
         bannerTitle: "🔥 今日看点",
         bannerSubtitle: "AntiSD (rednote-hilab): 反自蒸馏强化学习方法，基于逐点互信息反转 token 级梯度符号，在 5 个模型(4B-30B)的数学推理任务上仅用 2-10x 少的训练步即达 GRPO 基线水平，最终准确率提升最高 11.5pp。OpenAI 模型推翻离散几何核心猜想：AI 首次独立反驳数学中的 Keller 猜想变体。EnvFactory (HKUST): 全自动工具使用环境合成框架，仅用 1/5 环境数即超越先前方法，Qwen3 系列在 BFCLv3 提升 +15%。",
         picks: ["OpenComputer: Verifiable Software Worlds for Computer-Use Agents","EnvFactory: Scaling Tool-Use Agents via Executable Environments Synthesis and Robust RL","Anti-Self-Distillation for Reasoning RL via Pointwise Mutual Information"],
-        totalPapers: 8,
+        totalPapers: 9,
         totalNews: 1
     },
     "2026-05-20": {
