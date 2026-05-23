@@ -663,12 +663,48 @@ const PAPERS_DB = [
         date: "2026-05-22",
         category: "VLA",
         categoryIcon: "🤖",
+        title: "GesVLA: Gesture-Aware Vision-Language-Action Model Embedded Representations",
+        venue: "arXiv 2026-05-22 · 未披露机构",
+        summary: "🛠 技术路线: 引入手势作为与语言并行的指令模态，提出 Gesture-aware VLA 模型（GesVLA）。将手势特征直接编码到潜空间中，使其同时参与高层推理和低层动作生成，并采用双 VLM 架构实现手势表征与动作策略的紧耦合。 | 💡 创新点: 首次将手势作为机器人操控的并行指令通道融入 VLA 模型；潜空间直接编码手势特征（非文本描述）；双 VLM 架构同时处理手势理解和动作生成，实现端到端训练。 | 📊 实验效果: 融入手势后一致性提升了目标定位准确率和人机交互效率，尤其在协作场景和模糊指令场景中优势明显。 | ⭐ 整体评价: 属于 VLA/具身控制方向。手势模态是自然交互的重要补充，适用于人机协作场景。建议关注手势编码的鲁棒性和跨任务泛化能力。",
+        tags: [["VLA","green"],["HRI","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.22812"],["PDF","https://arxiv.org/pdf/2605.22812"],["Project","https://gwxuan.github.io/GesVLA/"]],
+        highlight: true,
+        summaryGrid: [{"label":"🛠 技术路线","text":"引入手势作为与语言并行的指令模态，提出 Gesture-aware VLA 模型（GesVLA）。将手势特征直接编码到潜空间中，使其同时参与高层推理和低层动作生成，并采用双 VLM 架构实现手势表征与动作策略的紧耦合。"},{"label":"💡 创新点","text":"首次将手势作为机器人操控的并行指令通道融入 VLA 模型；潜空间直接编码手势特征（非文本描述）；双 VLM 架构同时处理手势理解和动作生成，实现端到端训练。"},{"label":"📊 实验效果","text":"融入手势后一致性提升了目标定位准确率和人机交互效率，尤其在协作场景和模糊指令场景中优势明显。"},{"label":"⭐ 整体评价","text":"属于 VLA/具身控制方向。手势模态是自然交互的重要补充，适用于人机协作场景。建议关注手势编码的鲁棒性和跨任务泛化能力。"}]
+    },
+    {
+        date: "2026-05-22",
+        category: "VLA",
+        categoryIcon: "🤖",
         title: "PLaW-VLA",
         venue: "HuggingFace 2026-05-22 · RainyBot",
-        summary: "RainyBot 团队发布 PLaW-VLA 视觉-语言-动作模型，标签包含 safetensors，面向机器人操控任务的端到端 VLA 模型。",
+        summary: "🛠 技术路线: RainyBot 团队发布的视觉-语言-动作模型，面向机器人操控任务的端到端 VLA 架构。 | 💡 创新点: 开源 VLA 模型权重发布，支持 safetensors 格式，面向社区开放使用。 | 📊 实验效果: 具体性能指标待论文发布后补充。 | ⭐ 整体评价: 属于 VLA 开源模型方向。建议关注后续论文发布和具体任务基准测试结果。",
         tags: [["VLA","green"],["Manipulation","green"]],
         links: [["HuggingFace","https://huggingface.co/RainyBot/PLaW-VLA"]],
-        highlight: true
+        summaryGrid: [{"label":"🛠 技术路线","text":"RainyBot 团队发布的视觉-语言-动作模型，面向机器人操控任务的端到端 VLA 架构。"},{"label":"💡 创新点","text":"开源 VLA 模型权重发布，支持 safetensors 格式，面向社区开放使用。"},{"label":"📊 实验效果","text":"具体性能指标待论文发布后补充。"},{"label":"⭐ 整体评价","text":"属于 VLA 开源模型方向。建议关注后续论文发布和具体任务基准测试结果。"}]
+    },
+    {
+        date: "2026-05-22",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "Vector Policy Optimization: Training for Diversity Improves Test-Time Search",
+        venue: "arXiv 2026-05-22 · 未披露机构",
+        summary: "🛠 技术路线: 提出 Vector Policy Optimization（VPO），一种 RL 算法，显式训练策略以预期多样化的下游奖励函数并产生多样化的解决方案。核心思想：训练时优化多样性，测试时通过搜索（如 AlphaEvolve 风格的 rollout 选择）找到最优解。 | 💡 创新点: 将策略训练目标从单一最优解转向\"多样性最优\"，使策略能生成覆盖不同奖励函数的解空间。测试时搜索效率因解的多样性而显著提升，无需针对每个新任务重新训练。 | 📊 实验效果: 在多个环境中验证了 VPO 训练出的策略在测试时搜索中显著优于标准 RL 基线，特别是在奖励函数多样或未知的场景下表现突出。 | ⭐ 整体评价: 属于 RL 算法/策略优化方向。VPO 连接了训练多样性与测试时搜索效率，对机器人规划和 LLM 推理搜索都有启发。建议关注其与 RLHF/RLAIF 结合的潜力。",
+        tags: [["RL","green"],["Policy Optimization","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.22817"],["PDF","https://arxiv.org/pdf/2605.22817"]],
+        highlight: true,
+        summaryGrid: [{"label":"🛠 技术路线","text":"提出 Vector Policy Optimization（VPO），一种 RL 算法，显式训练策略以预期多样化的下游奖励函数并产生多样化的解决方案。核心思想：训练时优化多样性，测试时通过搜索（如 AlphaEvolve 风格的 rollout 选择）找到最优解。"},{"label":"💡 创新点","text":"将策略训练目标从单一最优解转向\"多样性最优\"，使策略能生成覆盖不同奖励函数的解空间。测试时搜索效率因解的多样性而显著提升，无需针对每个新任务重新训练。"},{"label":"📊 实验效果","text":"在多个环境中验证了 VPO 训练出的策略在测试时搜索中显著优于标准 RL 基线，特别是在奖励函数多样或未知的场景下表现突出。"},{"label":"⭐ 整体评价","text":"属于 RL 算法/策略优化方向。VPO 连接了训练多样性与测试时搜索效率，对机器人规划和 LLM 推理搜索都有启发。建议关注其与 RLHF/RLAIF 结合的潜力。"}]
+    },
+    {
+        date: "2026-05-22",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "AwareVLN: Reasoning with Self-awareness for Vision-Language Navigation",
+        venue: "arXiv 2026-05-22 · 未披露机构",
+        summary: "🛠 技术路线: 提出 AwareVLN 框架，为视觉语言导航模型赋予自感知推理能力。使导航模型能够理解自身状态和任务进度，以完全端到端的方式实现显式且可解释的 Agent-指令-场景关系推理。 | 💡 创新点: 引入自感知推理机制，无需额外 3D 传感器或启发式场景图构建，即可让 VLN Agent 感知自身在环境中的相对位置、任务完成进度和历史轨迹。完全端到端可训练，兼容大型视觉语言预训练。 | 📊 实验效果: 在 Habitat 模拟器的多个数据集上，AwareVLN 显著优于此前 SOTA 视觉语言导航方法。 | ⭐ 整体评价: 属于具身导航/VLN 方向。自感知能力是 Agent 鲁棒性的关键，建议关注其在长程导航和动态环境中的泛化能力。",
+        tags: [["Navigation","green"],["Embodied AI","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.22816"],["PDF","https://arxiv.org/pdf/2605.22816"],["Project","https://gwxuan.github.io/AwareVLN/"]],
+        highlight: true,
+        summaryGrid: [{"label":"🛠 技术路线","text":"提出 AwareVLN 框架，为视觉语言导航模型赋予自感知推理能力。使导航模型能够理解自身状态和任务进度，以完全端到端的方式实现显式且可解释的 Agent-指令-场景关系推理。"},{"label":"💡 创新点","text":"引入自感知推理机制，无需额外 3D 传感器或启发式场景图构建，即可让 VLN Agent 感知自身在环境中的相对位置、任务完成进度和历史轨迹。完全端到端可训练，兼容大型视觉语言预训练。"},{"label":"📊 实验效果","text":"在 Habitat 模拟器的多个数据集上，AwareVLN 显著优于此前 SOTA 视觉语言导航方法。"},{"label":"⭐ 整体评价","text":"属于具身导航/VLN 方向。自感知能力是 Agent 鲁棒性的关键，建议关注其在长程导航和动态环境中的泛化能力。"}]
     },
     {
         date: "2026-05-22",
@@ -676,10 +712,155 @@ const PAPERS_DB = [
         categoryIcon: "🦾",
         title: "pi05_so101_v5.1",
         venue: "HuggingFace 2026-05-22 · L7-Robotics",
-        summary: "L7-Robotics 发布基于 π0.5 架构的机器人操控模型 v5.1 版本，面向 SO-101 机械臂平台，支持具身操控任务的端到端推理与动作生成。",
+        summary: "🛠 技术路线: 基于 π0.5 架构的机器人操控模型 v5.1 版本，面向 SO-101 机械臂平台，支持具身操控任务的端到端推理与动作生成。 | 💡 创新点: π0.5 架构迭代版本，针对 SO-101 平台优化，支持 safetensors 格式开源权重。 | 📊 实验效果: 具体性能指标待评测，v5.1 相对之前版本的改进待社区验证。 | ⭐ 整体评价: 属于 VLA/Robotics 开源模型方向。π0.5 架构在社区有较高关注度，SO-101 平台适合桌面级操控实验。",
         tags: [["Robotics","green"],["VLA","green"]],
         links: [["HuggingFace","https://huggingface.co/L7-Robotics/pi05_so101_v5.1"]],
-        highlight: true
+        summaryGrid: [{"label":"🛠 技术路线","text":"基于 π0.5 架构的机器人操控模型 v5.1 版本，面向 SO-101 机械臂平台，支持具身操控任务的端到端推理与动作生成。"},{"label":"💡 创新点","text":"π0.5 架构迭代版本，针对 SO-101 平台优化，支持 safetensors 格式开源权重。"},{"label":"📊 实验效果","text":"具体性能指标待评测，v5.1 相对之前版本的改进待社区验证。"},{"label":"⭐ 整体评价","text":"属于 VLA/Robotics 开源模型方向。π0.5 架构在社区有较高关注度，SO-101 平台适合桌面级操控实验。"}]
+    },
+    {
+        date: "2026-05-22",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Video2GUI: Synthesizing Large-Scale Interaction Trajectories for Generalized GUI Agent Pretraining",
+        venue: "arXiv 2026 · Peking University",
+        summary: "🛠 技术路线: 提出 Video2GUI，一个全自动框架，从无标注的互联网视频中直接提取带定位的 GUI 交互轨迹。构建 WildGUI 大规模训练数据集，用于 GUI Agent 的预训练。 | 💡 创新点: 无需人工标注即可从海量网络视频中挖掘 GUI 操作轨迹，彻底解决 GUI Agent 训练数据稀缺问题。全自动流水线覆盖多样化真实应用场景。 | 📊 实验效果: 在 Qwen2.5-VL 和 Mimo-VL 上预训练后，在多个 GUI Grounding 和动作基准测试上提升 5-20%，达到或超越 SOTA 性能。GitHub 23⭐。 | ⭐ 整体评价: 属于 GUI Agent/数据工程方向。数据质量是 Agent 泛化的关键，Video2GUI 的无监督数据挖掘思路值得关注。建议关注数据噪声控制和跨平台泛化。",
+        tags: [["GUI Agent","green"],["Multimodal","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.14747"],["PDF","https://arxiv.org/pdf/2605.14747"],["Project","https://weiminxiong.github.io/Video2GUI/"],["Code","https://github.com/WeiminXiong/Video2GUI"]],
+        highlight: true,
+        summaryGrid: [{"label":"🛠 技术路线","text":"提出 Video2GUI，一个全自动框架，从无标注的互联网视频中直接提取带定位的 GUI 交互轨迹。构建 WildGUI 大规模训练数据集，用于 GUI Agent 的预训练。"},{"label":"💡 创新点","text":"无需人工标注即可从海量网络视频中挖掘 GUI 操作轨迹，彻底解决 GUI Agent 训练数据稀缺问题。全自动流水线覆盖多样化真实应用场景。"},{"label":"📊 实验效果","text":"在 Qwen2.5-VL 和 Mimo-VL 上预训练后，在多个 GUI Grounding 和动作基准测试上提升 5-20%，达到或超越 SOTA 性能。GitHub 23⭐。"},{"label":"⭐ 整体评价","text":"属于 GUI Agent/数据工程方向。数据质量是 Agent 泛化的关键，Video2GUI 的无监督数据挖掘思路值得关注。建议关注数据噪声控制和跨平台泛化。"}]
+    },
+    {
+        date: "2026-05-22",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "MOSS: Self-Evolution through Source-Level Rewriting in Autonomous Agent Systems",
+        venue: "arXiv 2026-05-22 · 未披露机构",
+        summary: "🛠 技术路线: 提出 MOSS，一个在生产环境 Agent 系统中执行源代码级自我重写的系统。Agent 可以审查、修改、替换自身的源代码以适应新任务需求。 | 💡 创新点: 将 Agent 自我进化从参数/提示词层面提升到源代码层面，实现生产级 Agentic 系统的自主演进。源码级重写比 prompt 调整更彻底、更持久。 | 📊 实验效果: 详见原文实验部分。GitHub 开源。 | ⭐ 整体评价: 属于 Agent 自进化/元编程方向。源码级自我修改是 Agent 自主性的极端形态，安全性和可控性是核心挑战。",
+        tags: [["Agent","green"],["Self-Evolution","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.22794"],["PDF","https://arxiv.org/pdf/2605.22794"],["Code","https://github.com/dav-joy-thon/MOSS"]],
+        summaryGrid: [{"label":"🛠 技术路线","text":"提出 MOSS，一个在生产环境 Agent 系统中执行源代码级自我重写的系统。Agent 可以审查、修改、替换自身的源代码以适应新任务需求。"},{"label":"💡 创新点","text":"将 Agent 自我进化从参数/提示词层面提升到源代码层面，实现生产级 Agentic 系统的自主演进。源码级重写比 prompt 调整更彻底、更持久。"},{"label":"📊 实验效果","text":"详见原文实验部分。GitHub 开源。"},{"label":"⭐ 整体评价","text":"属于 Agent 自进化/元编程方向。源码级自我修改是 Agent 自主性的极端形态，安全性和可控性是核心挑战。"}]
+    },
+    {
+        date: "2026-05-22",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "LCGuard: Latent Communication Guard for Safe KV Sharing in Multi-Agent Systems",
+        venue: "arXiv 2026-05-22 · 未披露机构",
+        summary: "🛠 技术路线: 提出 LCGuard，一个用于多 Agent LLM 系统中安全 KV Cache 潜在通信的框架。在 Agent 之间共享 KV Cache 以提高效率的同时，防止信息泄露和攻击。 | 💡 创新点: 首次系统性地解决多 Agent 系统中 KV Cache 共享的安全问题。对比传统自然语言通信，潜在 KV 通信更高效但风险更大，LCGuard 实现效率与安全的平衡。 | 📊 实验效果: 在多个模型族和 Agent 基准测试上，LCGuard 一致降低了基于重建的信息泄露和攻击成功率，同时保持竞争性的任务性能。 | ⭐ 整体评价: 属于多 Agent 安全/通信方向。随着多 Agent 系统规模化部署，通信安全将成为核心问题。建议关注其在更复杂 Agent 拓扑中的可扩展性。",
+        tags: [["Multi-Agent","green"],["Security","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.22786"],["PDF","https://arxiv.org/pdf/2605.22786"]],
+        summaryGrid: [{"label":"🛠 技术路线","text":"提出 LCGuard，一个用于多 Agent LLM 系统中安全 KV Cache 潜在通信的框架。在 Agent 之间共享 KV Cache 以提高效率的同时，防止信息泄露和攻击。"},{"label":"💡 创新点","text":"首次系统性地解决多 Agent 系统中 KV Cache 共享的安全问题。对比传统自然语言通信，潜在 KV 通信更高效但风险更大，LCGuard 实现效率与安全的平衡。"},{"label":"📊 实验效果","text":"在多个模型族和 Agent 基准测试上，LCGuard 一致降低了基于重建的信息泄露和攻击成功率，同时保持竞争性的任务性能。"},{"label":"⭐ 整体评价","text":"属于多 Agent 安全/通信方向。随着多 Agent 系统规模化部署，通信安全将成为核心问题。建议关注其在更复杂 Agent 拓扑中的可扩展性。"}]
+    },
+    {
+        date: "2026-05-22",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "IndusAgent: Reinforcing Open-Vocabulary Industrial Anomaly Detection with Agentic Tools",
+        venue: "arXiv 2026 · Institute of Computing Technology, CAS",
+        summary: "🛠 技术路线: 提出 IndusAgent，一个工具增强的 Agentic 框架用于开放词汇工业异常检测。构建 Indus-CoT 结构化数据集，集成全局视觉观察、高分辨率局部 patch 和专家正常性先验，用于微调模型。 | 💡 创新点: 将工业缺陷检测建模为 Agent 推理问题而非纯视觉分类；引入门控 RL 目标联合优化异常分类、定位精度、类型推理和工具使用效率，仅在有益时才触发工具调用。 | 📊 实验效果: 在开放词汇工业异常检测上优于现有 MLLM 方法，同时通过门控机制有效控制工具调用开销。 | ⭐ 整体评价: 属于 Agent + 工业应用方向。将 Agentic 框架引入工业质检是有意义的探索，门控 RL 机制有通用性。",
+        tags: [["Agentic","green"],["RL","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.20682"],["PDF","https://arxiv.org/pdf/2605.20682"]],
+        summaryGrid: [{"label":"🛠 技术路线","text":"提出 IndusAgent，一个工具增强的 Agentic 框架用于开放词汇工业异常检测。构建 Indus-CoT 结构化数据集，集成全局视觉观察、高分辨率局部 patch 和专家正常性先验，用于微调模型。"},{"label":"💡 创新点","text":"将工业缺陷检测建模为 Agent 推理问题而非纯视觉分类；引入门控 RL 目标联合优化异常分类、定位精度、类型推理和工具使用效率，仅在有益时才触发工具调用。"},{"label":"📊 实验效果","text":"在开放词汇工业异常检测上优于现有 MLLM 方法，同时通过门控机制有效控制工具调用开销。"},{"label":"⭐ 整体评价","text":"属于 Agent + 工业应用方向。将 Agentic 框架引入工业质检是有意义的探索，门控 RL 机制有通用性。"}]
+    },
+    {
+        date: "2026-05-22",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Mix-Quant: Quantized Prefilling, Precise Decoding for Agentic LLMs",
+        venue: "arXiv 2026 · National University of Singapore",
+        summary: "🛠 技术路线: 提出 Mix-Quant，一种相位感知量化框架用于加速 Agentic 推理。基于观察：Prefilling 阶段有大量量化冗余可用 NVFP4 压缩，而 Decoding 阶段需保留 BF16 精度以维护 Agent 行为正确性。 | 💡 创新点: 首次研究 FP4 量化在 Agentic LLM 工作流中的影响；发现 Prefilling 和 Decoding 对量化敏感度差异巨大，提出混合精度策略（Prefill-FP4 + Decode-BF16）。 | 📊 实验效果: Prefilling 阶段量化后精度损失最小，同时作为主要计算瓶颈得到有效加速。GitHub 21⭐。 | ⭐ 整体评价: 属于 Agent 推理加速/量化方向。Agentic 场景对输出精度要求更高（工具调用需精确），混合精度是务实的工程方案。",
+        tags: [["Agentic","green"],["Quantization","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.20315"],["PDF","https://arxiv.org/pdf/2605.20315"],["Project","https://haiquanlu.github.io/Mix-Quant/"],["Code","https://github.com/haiquanlu/Mix-Quant"]],
+        summaryGrid: [{"label":"🛠 技术路线","text":"提出 Mix-Quant，一种相位感知量化框架用于加速 Agentic 推理。基于观察：Prefilling 阶段有大量量化冗余可用 NVFP4 压缩，而 Decoding 阶段需保留 BF16 精度以维护 Agent 行为正确性。"},{"label":"💡 创新点","text":"首次研究 FP4 量化在 Agentic LLM 工作流中的影响；发现 Prefilling 和 Decoding 对量化敏感度差异巨大，提出混合精度策略（Prefill-FP4 + Decode-BF16）。"},{"label":"📊 实验效果","text":"Prefilling 阶段量化后精度损失最小，同时作为主要计算瓶颈得到有效加速。GitHub 21⭐。"},{"label":"⭐ 整体评价","text":"属于 Agent 推理加速/量化方向。Agentic 场景对输出精度要求更高（工具调用需精确），混合精度是务实的工程方案。"}]
+    },
+    {
+        date: "2026-05-22",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "MotiMotion: Motion-Controlled Video Generation with Visual Reasoning",
+        venue: "arXiv 2026-05-22 · 未披露机构",
+        summary: "🛠 技术路线: 提出 MotiMotion 框架，将运动控制重新建模为推理-生成问题。引入置信度感知控制方案调节引导强度，高置信度规划严格遵循，低置信度输入用内部生成先验修正。 | 💡 创新点: 将运动控制从硬约束转变为推理引导的软约束；置信度感知机制自动判断何时信任输入、何时依赖模型先验，提升运动自然度。配套发布 MotiBench 交互场景基准测试。 | 📊 实验效果: 在 MotiBench（交互中心场景）上验证了框架的有效性，运动自然度和控制精度优于现有方法。 | ⭐ 整体评价: 属于视频生成/运动控制方向。推理式运动控制和置信度感知引导是有新意的设计，建议关注其在复杂多物体交互场景的表现。",
+        tags: [["Video Gen","green"],["Motion Control","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.22818"],["PDF","https://arxiv.org/pdf/2605.22818"],["Project","https://motimotion.github.io/"]],
+        summaryGrid: [{"label":"🛠 技术路线","text":"提出 MotiMotion 框架，将运动控制重新建模为推理-生成问题。引入置信度感知控制方案调节引导强度，高置信度规划严格遵循，低置信度输入用内部生成先验修正。"},{"label":"💡 创新点","text":"将运动控制从硬约束转变为推理引导的软约束；置信度感知机制自动判断何时信任输入、何时依赖模型先验，提升运动自然度。配套发布 MotiBench 交互场景基准测试。"},{"label":"📊 实验效果","text":"在 MotiBench（交互中心场景）上验证了框架的有效性，运动自然度和控制精度优于现有方法。"},{"label":"⭐ 整体评价","text":"属于视频生成/运动控制方向。推理式运动控制和置信度感知引导是有新意的设计，建议关注其在复杂多物体交互场景的表现。"}]
+    },
+    {
+        date: "2026-05-22",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "Cambrian-P: Pose-Grounded Video Understanding",
+        venue: "arXiv 2026-05-22 · Cambrian Team",
+        summary: "🛠 技术路线: 将相机位姿引入视频理解模型。每帧的位姿（位置+朝向）定义共享空间坐标系，将跨帧观察关联起来。通过精心设计的采样策略，让模型学习利用位姿信息进行空间推理。 | 💡 创新点: 首次将相机位姿作为视频多模态 LLM 的显式输入条件；作为副产品实现了 SOTA 级流式位姿估计。单一模型同时提升空间推理和通用视频 QA。 | 📊 实验效果: 在 VSI-Bench 等空间推理基准上取得 4.5-6.5% 显著提升，同时在 8 个额外空间和通用视频 QA 基准上泛化良好。在 ScanNet 上实现 SOTA 流式位姿估计。 | ⭐ 整体评价: 属于多模态/3D 理解方向。位姿条件化是视频空间理解的自然补充，对机器人场景理解也有启发。建议关注其在动态场景和无 GT 位姿时的表现。",
+        tags: [["Video Understanding","green"],["Spatial Reasoning","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.22819"],["PDF","https://arxiv.org/pdf/2605.22819"],["Project","https://cambrian-mllm.github.io/"]],
+        summaryGrid: [{"label":"🛠 技术路线","text":"将相机位姿引入视频理解模型。每帧的位姿（位置+朝向）定义共享空间坐标系，将跨帧观察关联起来。通过精心设计的采样策略，让模型学习利用位姿信息进行空间推理。"},{"label":"💡 创新点","text":"首次将相机位姿作为视频多模态 LLM 的显式输入条件；作为副产品实现了 SOTA 级流式位姿估计。单一模型同时提升空间推理和通用视频 QA。"},{"label":"📊 实验效果","text":"在 VSI-Bench 等空间推理基准上取得 4.5-6.5% 显著提升，同时在 8 个额外空间和通用视频 QA 基准上泛化良好。在 ScanNet 上实现 SOTA 流式位姿估计。"},{"label":"⭐ 整体评价","text":"属于多模态/3D 理解方向。位姿条件化是视频空间理解的自然补充，对机器人场景理解也有启发。建议关注其在动态场景和无 GT 位姿时的表现。"}]
+    },
+    {
+        date: "2026-05-22",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "A Survey of Large Audio Language Models: Generalization, Trustworthiness, and Outlook",
+        venue: "arXiv 2026 · Nanyang Technological University",
+        summary: "🛠 技术路线: 系统性综述大型音频语言模型（LALMs），从六个分析支柱审视：幻觉、鲁棒性、安全性、隐私、公平性和认证。 | 💡 创新点: 提出\"纵深防御\"架构、因果听觉世界建模和内在表征工程三条战略路线图，连接经验性能与内在可信赖的音频智能。GitHub 196⭐。 | 📊 实验效果: 综述类工作，系统性分析了现有 LALMs 在可信赖性方面的差距和挑战。 | ⭐ 整体评价: 属于音频多模态/综述方向。随着音频 LLM 的快速发展，可信赖性框架的建立具有前瞻意义。",
+        tags: [["Audio LLM","green"],["Survey","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.20266"],["PDF","https://arxiv.org/pdf/2605.20266"],["Code","https://github.com/Kwwwww74/Awesome-Trustworthy-AudioLLMs"]],
+        summaryGrid: [{"label":"🛠 技术路线","text":"系统性综述大型音频语言模型（LALMs），从六个分析支柱审视：幻觉、鲁棒性、安全性、隐私、公平性和认证。"},{"label":"💡 创新点","text":"提出\"纵深防御\"架构、因果听觉世界建模和内在表征工程三条战略路线图，连接经验性能与内在可信赖的音频智能。GitHub 196⭐。"},{"label":"📊 实验效果","text":"综述类工作，系统性分析了现有 LALMs 在可信赖性方面的差距和挑战。"},{"label":"⭐ 整体评价","text":"属于音频多模态/综述方向。随着音频 LLM 的快速发展，可信赖性框架的建立具有前瞻意义。"}]
+    },
+    {
+        date: "2026-05-22",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Which Way Did It Move? Diagnosing and Overcoming Directional Motion Blindness in Video-LLMs",
+        venue: "arXiv 2026-05-22 · 未披露机构",
+        summary: "🛠 技术路线: 引入 MoDirect 数据集族用于运动方向指令调优和评估，以及 DeltaDirect：一个诊断驱动的 Projector 级目标，从相邻帧特征差分中预测归一化 2D 运动向量。 | 💡 创新点: 发现并系统性诊断了 Video-LLMs 的\"方向运动盲\"现象（无法判断物体运动方向）；DeltaDirect 仅在 Projector 层加入轻量运动感知目标，无需修改 LLM 主干。 | 📊 实验效果: MoDirect-SynBench 上运动方向准确率从 25.9% 提升至 85.4%；MoDirect-RealBench 上无需真实世界调优数据即提升 21.9 个百分点，同时保持标准视频性能。 | ⭐ 整体评价: 属于视频理解/LLM 感知方向。方向运动感知是视频理解的基础能力，DeltaDirect 的低成本修复方案实用性强。",
+        tags: [["Video-LLM","green"],["Motion Perception","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.22823"],["PDF","https://arxiv.org/pdf/2605.22823"],["Code","https://github.com/KHU-VLL/DeltaDirect"]],
+        summaryGrid: [{"label":"🛠 技术路线","text":"引入 MoDirect 数据集族用于运动方向指令调优和评估，以及 DeltaDirect：一个诊断驱动的 Projector 级目标，从相邻帧特征差分中预测归一化 2D 运动向量。"},{"label":"💡 创新点","text":"发现并系统性诊断了 Video-LLMs 的\"方向运动盲\"现象（无法判断物体运动方向）；DeltaDirect 仅在 Projector 层加入轻量运动感知目标，无需修改 LLM 主干。"},{"label":"📊 实验效果","text":"MoDirect-SynBench 上运动方向准确率从 25.9% 提升至 85.4%；MoDirect-RealBench 上无需真实世界调优数据即提升 21.9 个百分点，同时保持标准视频性能。"},{"label":"⭐ 整体评价","text":"属于视频理解/LLM 感知方向。方向运动感知是视频理解的基础能力，DeltaDirect 的低成本修复方案实用性强。"}]
+    },
+    {
+        date: "2026-05-22",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Mega-ASR: Towards In-the-wild² Speech Recognition via Scaling up Real-world Acoustic Simulation",
+        venue: "arXiv 2026 · National University of Singapore",
+        summary: "🛠 技术路线: 提出 Mega-ASR 统一 ASR-in-the-wild 框架，结合可扩展复合数据构建和渐进式优化。构建 Voices-in-the-Wild-2M 数据集（7 种经典声学现象 + 54 种物理合理复合场景），采用声学→语义渐进式 SFT + 双粒度 WER 门控策略优化。 | 💡 创新点: 首次系统性地通过大规模声学模拟解决\"声学鲁棒性瓶颈\"；渐进式训练从声学理解逐步过渡到语义理解；双粒度 WER 门控 RL 确保输出质量。GitHub 184⭐。 | 📊 实验效果: 在恶劣条件 ASR 基准上显著优于先前 SOTA（VOiCES R4-B-F: 45.69% vs 54.01%）。 | ⭐ 整体评价: 属于语音识别/鲁棒性方向。数据模拟 + 渐进式训练的组合方案工程性强，对其他模态的鲁棒性提升有参考价值。",
+        tags: [["ASR","green"],["Robustness","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.19833"],["PDF","https://arxiv.org/pdf/2605.19833"],["Project","https://xzf-thu.github.io/Mega-ASR/"],["Code","https://github.com/xzf-thu/Mega-ASR"]],
+        highlight: true,
+        summaryGrid: [{"label":"🛠 技术路线","text":"提出 Mega-ASR 统一 ASR-in-the-wild 框架，结合可扩展复合数据构建和渐进式优化。构建 Voices-in-the-Wild-2M 数据集（7 种经典声学现象 + 54 种物理合理复合场景），采用声学→语义渐进式 SFT + 双粒度 WER 门控策略优化。"},{"label":"💡 创新点","text":"首次系统性地通过大规模声学模拟解决\"声学鲁棒性瓶颈\"；渐进式训练从声学理解逐步过渡到语义理解；双粒度 WER 门控 RL 确保输出质量。GitHub 184⭐。"},{"label":"📊 实验效果","text":"在恶劣条件 ASR 基准上显著优于先前 SOTA（VOiCES R4-B-F: 45.69% vs 54.01%）。"},{"label":"⭐ 整体评价","text":"属于语音识别/鲁棒性方向。数据模拟 + 渐进式训练的组合方案工程性强，对其他模态的鲁棒性提升有参考价值。"}]
+    },
+    {
+        date: "2026-05-22",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "You Only Need Minimal RLVR Training: Extrapolating LLMs via Rank-1 Trajectories (RELEX)",
+        venue: "arXiv 2026 · 未披露机构",
+        summary: "🛠 技术路线: 发现 RLVR 训练过程中参数 delta 的绝大部分下游性能增益可用秩-1 近似捕获，且投影幅度随训练步数近线性演化。据此提出 RELEX：从短观测窗口估计秩-1 子空间，通过线性回归外推未来 checkpoint。 | 💡 创新点: 揭示了 RLVR 训练的低秩几何结构；RELEX 仅需 15% 的完整 RLVR 训练步即可产生匹配或超越完整训练的 checkpoint，无需学习任何额外模型。 | 📊 实验效果: 在 Qwen2.5-Math-1.5B、Qwen3-4B-Base、Qwen3-8B-Base 三个模型上，RELEX 产生的 checkpoint 在域内和域外基准上匹配或超越完整 RLVR 性能。GitHub 7⭐。 | ⭐ 整体评价: 属于 LLM 训练效率/RLVR 方向。低秩外推是极具效率的训练加速思路，对大规模 RL 后训练有重要实践价值。建议关注其在更大模型和更复杂 RL 目标上的适用性。",
+        tags: [["RLVR","green"],["Training Efficiency","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.21468"],["PDF","https://arxiv.org/pdf/2605.21468"],["Project","https://weizhepei.notion.site/you-only-need-minimal-rlvr-training"],["Code","https://github.com/weizhepei/RELEX"]],
+        summaryGrid: [{"label":"🛠 技术路线","text":"发现 RLVR 训练过程中参数 delta 的绝大部分下游性能增益可用秩-1 近似捕获，且投影幅度随训练步数近线性演化。据此提出 RELEX：从短观测窗口估计秩-1 子空间，通过线性回归外推未来 checkpoint。"},{"label":"💡 创新点","text":"揭示了 RLVR 训练的低秩几何结构；RELEX 仅需 15% 的完整 RLVR 训练步即可产生匹配或超越完整训练的 checkpoint，无需学习任何额外模型。"},{"label":"📊 实验效果","text":"在 Qwen2.5-Math-1.5B、Qwen3-4B-Base、Qwen3-8B-Base 三个模型上，RELEX 产生的 checkpoint 在域内和域外基准上匹配或超越完整 RLVR 性能。GitHub 7⭐。"},{"label":"⭐ 整体评价","text":"属于 LLM 训练效率/RLVR 方向。低秩外推是极具效率的训练加速思路，对大规模 RL 后训练有重要实践价值。建议关注其在更大模型和更复杂 RL 目标上的适用性。"}]
+    },
+    {
+        date: "2026-05-22",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "OScaR: The Occam's Razor for Extreme KV Cache Quantization in LLMs and Beyond",
+        venue: "arXiv 2026 · The University of Hong Kong",
+        summary: "🛠 技术路线: 提出 OScaR（Omni-Scaled Canalized Rotation），一个准确且轻量的 KV Cache 压缩框架，适用于文本、多模态和全模态 LLM（X-LLMs）。用全尺度通道化旋转替代复杂的量化流程。 | 💡 创新点: 以极简设计（Occam's Razor 哲学）替代复杂量化管线（如 TurboQuant），实现 INT2 级别近无损压缩。统一适用于纯文本/多模态/全模态 LLM。 | 📊 实验效果: 相比 BF16 FlashDecoding-v2 基线：解码加速 3.0x，内存占用降低 5.3x，吞吐量提升 4.1x。在 X-LLMs 上一致优于现有方法。GitHub 23⭐。 | ⭐ 整体评价: 属于 LLM 推理优化/量化方向。INT2 KV Cache 压缩是实际部署的刚需，OScaR 的极简设计和跨模态通用性是突出优势。",
+        tags: [["KV Cache","green"],["Quantization","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.19660"],["PDF","https://arxiv.org/pdf/2605.19660"],["Project","https://iridescent-gcrace.github.io/OScaR/"],["Code","https://github.com/ZunhaiSu/OScaR-KV-Quant"]],
+        summaryGrid: [{"label":"🛠 技术路线","text":"提出 OScaR（Omni-Scaled Canalized Rotation），一个准确且轻量的 KV Cache 压缩框架，适用于文本、多模态和全模态 LLM（X-LLMs）。用全尺度通道化旋转替代复杂的量化流程。"},{"label":"💡 创新点","text":"以极简设计（Occam's Razor 哲学）替代复杂量化管线（如 TurboQuant），实现 INT2 级别近无损压缩。统一适用于纯文本/多模态/全模态 LLM。"},{"label":"📊 实验效果","text":"相比 BF16 FlashDecoding-v2 基线：解码加速 3.0x，内存占用降低 5.3x，吞吐量提升 4.1x。在 X-LLMs 上一致优于现有方法。GitHub 23⭐。"},{"label":"⭐ 整体评价","text":"属于 LLM 推理优化/量化方向。INT2 KV Cache 压缩是实际部署的刚需，OScaR 的极简设计和跨模态通用性是突出优势。"}]
+    },
+    {
+        date: "2026-05-22",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "It Takes Two: Complementary Self-Distillation for Contextual Integrity in LLMs",
+        venue: "arXiv 2026 · KAIST AI",
+        summary: "🛠 技术路线: 提出 SELFCI，一个互补蒸馏框架，将信息抑制与任务解决解耦。针对 LLM 作为个人 Agent 处理敏感工作流时的上下文完整性（Contextual Integrity）问题。 | 💡 创新点: 将隐私保护和任务执行解耦为两个互补的自蒸馏目标，无需昂贵的外部监督。一致优于在线 RL 算法（如 GRPO）等竞争基线。 | 📊 实验效果: 在隐私-效用权衡上一致优于包括 GRPO 在内的竞争基线，证明自蒸馏足以实现良好的信息披露决策。GitHub 5⭐。 | ⭐ 整体评价: 属于 LLM 安全/隐私方向。个人 Agent 的隐私合规是落地关键问题，SELFCI 的轻量化方案（无需外部监督）具有实际应用价值。",
+        tags: [["Privacy","green"],["Self-Distillation","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.20258"],["PDF","https://arxiv.org/pdf/2605.20258"],["Code","https://github.com/sw-programmer/SelfCI"]],
+        summaryGrid: [{"label":"🛠 技术路线","text":"提出 SELFCI，一个互补蒸馏框架，将信息抑制与任务解决解耦。针对 LLM 作为个人 Agent 处理敏感工作流时的上下文完整性（Contextual Integrity）问题。"},{"label":"💡 创新点","text":"将隐私保护和任务执行解耦为两个互补的自蒸馏目标，无需昂贵的外部监督。一致优于在线 RL 算法（如 GRPO）等竞争基线。"},{"label":"📊 实验效果","text":"在隐私-效用权衡上一致优于包括 GRPO 在内的竞争基线，证明自蒸馏足以实现良好的信息披露决策。GitHub 5⭐。"},{"label":"⭐ 整体评价","text":"属于 LLM 安全/隐私方向。个人 Agent 的隐私合规是落地关键问题，SELFCI 的轻量化方案（无需外部监督）具有实际应用价值。"}]
     },
     // === 2026-05-21 ===
     {
@@ -10798,9 +10979,9 @@ const PAPERS_DB = [
 const DAILY_OVERVIEW = {
     "2026-05-22": {
         bannerTitle: "🔥 今日看点",
-        bannerSubtitle: "L7-Robotics 发布 pi05_so101_v5.1 机器人操控模型（基于 π0.5 架构），面向 SO-101 机械臂平台；RainyBot 发布 PLaW-VLA 视觉-语言-动作模型。今日 arXiv 新论文均为已收录内容，仅新增 HuggingFace 模型发布。",
-        picks: ["PLaW-VLA","pi05_so101_v5.1"],
-        totalPapers: 2,
+        bannerSubtitle: "VPO 提出向量策略优化用于多样化测试时搜索 | GesVLA 引入手势作为机器人指令模态 | AwareVLN 实现自感知推理的视觉语言导航 | Video2GUI 从无标注视频提取 GUI 交互轨迹用于 Agent 预训练 | MOSS 实现 Agent 系统源码级自我进化 | OScaR 实现 INT2 KV Cache 近无损压缩达 3x 加速",
+        picks: ["GesVLA: Gesture-Aware Vision-Language-Action Model Embedded Representations","Vector Policy Optimization: Training for Diversity Improves Test-Time Search","AwareVLN: Reasoning with Self-awareness for Vision-Language Navigation","Video2GUI: Synthesizing Large-Scale Interaction Trajectories for Generalized GUI Agent Pretraining","Mega-ASR: Towards In-the-wild² Speech Recognition via Scaling up Real-world Acoustic Simulation"],
+        totalPapers: 18,
         totalNews: 0
     },
     "2026-05-21": {
