@@ -663,78 +663,78 @@ const PAPERS_DB = [
         date: "2026-05-23",
         category: "VLA",
         categoryIcon: "🤖",
-        title: "From Abstraction to Instantiation: Learning Behavioral Representation for Vision-Language-Action Model",
+        title: "BehaviorVLA: Learning Behavioral Representation for Vision-Language-Action Model",
         venue: "arXiv 2026",
-        summary: "🛠 技术路线: 以 address limitations，我们提出了 BehaviorVLA，一个 框架 facilitates 鲁棒 操作/抓取 learning 的 一个 temporally coherent behavioral 表征 | 💡 创新点: 以 address limitations，我们提出了 BehaviorVLA，一个 框架 facilitates 鲁棒 操作/抓取 learning 的 一个 temporally coherent behavioral 表征。Experiments 在 RoboTwin 2.0，LIBERO，和 CALVIN demonstrate SOTA 水平 成功率 的 58\\%，98\\%，和 4.36 (Avg.Len)，分别 | 📊 实验效果: Vision-Language-动作 (VLA) 模型 often suffer 从 性能 degradation distribution shifts，struggle 以 learn generalized behavior 表征 在…上 varying 环境。Notably，在 real-world 仿真到真实迁移，BehaviorVLA matches 性能 的 OpenVLA-OFT using 仅 50\\% 的 demonstration data，showcasing superior data efficiency 和 泛化能力 | ⭐ 整体评价: 属于VLA/具身控制方向。建议关注其任务泛化能力、动作表达方式与真机验证结果。",
+        summary: "🛠 技术路线: 提出 BehaviorVLA 框架，通过学习时序一致的行为表征来增强 VLA 模型的泛化能力，解决分布偏移下的性能退化问题 | 💡 创新点: 引入行为抽象到实例化的学习范式，使 VLA 模型能够在不同环境变化下保持鲁棒的行为输出 | 📊 实验效果: 在 RoboTwin 2.0、LIBERO 和 CALVIN 上达到 SOTA，成功率提升 58%-98%；真实机器人实验中仅用 50% 演示数据即可匹配 OpenVLA-OFT 表现 | ⭐ 整体评价: 从表征学习角度解决 VLA 泛化问题，数据效率显著，真实世界验证令人信服",
         tags: [["VLA","green"]],
         links: [["arXiv","https://arxiv.org/abs/2605.22671"],["PDF","https://arxiv.org/pdf/2605.22671"]],
-        summaryGrid: [{"label":"🛠 技术路线","text":"以 address limitations，我们提出了 BehaviorVLA，一个 框架 facilitates 鲁棒 操作/抓取 learning 的 一个 temporally coherent behavioral 表征"},{"label":"💡 创新点","text":"以 address limitations，我们提出了 BehaviorVLA，一个 框架 facilitates 鲁棒 操作/抓取 learning 的 一个 temporally coherent behavioral 表征。Experiments 在 RoboTwin 2.0，LIBERO，和 CALVIN demonstrate SOTA 水平 成功率 的 58\\%，98\\%，和 4.36 (Avg.Len)，分别"},{"label":"📊 实验效果","text":"Vision-Language-动作 (VLA) 模型 often suffer 从 性能 degradation distribution shifts，struggle 以 learn generalized behavior 表征 在…上 varying 环境。Notably，在 real-world 仿真到真实迁移，BehaviorVLA matches 性能 的 OpenVLA-OFT using 仅 50\\% 的 demonstration data，showcasing superior data efficiency 和 泛化能力"},{"label":"⭐ 整体评价","text":"属于VLA/具身控制方向。建议关注其任务泛化能力、动作表达方式与真机验证结果。"}]
+        summaryGrid: [{"label":"🛠 技术路线","text":"提出 BehaviorVLA 框架，通过学习时序一致的行为表征来增强 VLA 模型的泛化能力，解决分布偏移下的性能退化问题"},{"label":"💡 创新点","text":"引入行为抽象到实例化的学习范式，使 VLA 模型能够在不同环境变化下保持鲁棒的行为输出"},{"label":"📊 实验效果","text":"在 RoboTwin 2.0、LIBERO 和 CALVIN 上达到 SOTA，成功率提升 58%-98%；真实机器人实验中仅用 50% 演示数据即可匹配 OpenVLA-OFT 表现"},{"label":"⭐ 整体评价","text":"从表征学习角度解决 VLA 泛化问题，数据效率显著，真实世界验证令人信服"}]
     },
     {
         date: "2026-05-23",
         category: "VLA",
         categoryIcon: "🤖",
-        title: "Pre-VLA: Preemptive Runtime Verification for Reliable Vision-Language-Action and World-Model Rollouts",
+        title: "Pre-VLA: Preemptive Runtime Verification for Reliable VLA and World-Model Rollouts",
         venue: "arXiv 2026",
-        summary: "🛠 技术路线: 大型 vision-动作 (VLA) 模型 和 生成式 世界模型 (WM) advanced 长时序 embodied intelligence，practical 部署 remains challenged 通过 uncertainty 在 learning-based 动作生成 | 💡 创新点: 为解决这一问题 issue，我们提出了 Pre-VLA，一种统一的 runtime verification 架构 performs preemptive 动作 validity assessment physical execution 或 模型 imagination | 📊 实验效果: Experiments 在 LIBERO 基准测试 show Pre-VLA 提升了 average closed-loop 成功率 在…上 four suites 从 30.79\\% 以 37.62\\% 超过 RynnVLA-002，降低了 任务 execution 步，取得了 183.9 ms average forward verification time per 动作 chunk，和 mitigates error accumulation 在 模型 rollouts | ⭐ 整体评价: 属于VLA/具身控制方向。建议关注其任务泛化能力、动作表达方式与真机验证结果。",
+        summary: "🛠 技术路线: 提出运行时验证框架 Pre-VLA，在物理执行前通过想象空间预判动作有效性，提前拦截不可靠的 VLA 输出 | 💡 创新点: 将运行时验证引入 VLA 执行链路，利用世界模型进行预执行模拟评估，实现动作级安全保障 | 📊 实验效果: 在 LIBERO 四套基准上将平均闭环成功率从 30.79% 提升至 37.62%（基于 RynnVLA-002）；验证延迟仅 183.9ms/chunk | ⭐ 整体评价: 为 VLA 系统增加安全层，开销可控且收益显著，对真实部署有重要价值",
         tags: [["VLA","green"]],
         links: [["arXiv","https://arxiv.org/abs/2605.22446"],["PDF","https://arxiv.org/pdf/2605.22446"]],
-        summaryGrid: [{"label":"🛠 技术路线","text":"大型 vision-动作 (VLA) 模型 和 生成式 世界模型 (WM) advanced 长时序 embodied intelligence，practical 部署 remains challenged 通过 uncertainty 在 learning-based 动作生成"},{"label":"💡 创新点","text":"为解决这一问题 issue，我们提出了 Pre-VLA，一种统一的 runtime verification 架构 performs preemptive 动作 validity assessment physical execution 或 模型 imagination"},{"label":"📊 实验效果","text":"Experiments 在 LIBERO 基准测试 show Pre-VLA 提升了 average closed-loop 成功率 在…上 four suites 从 30.79\\% 以 37.62\\% 超过 RynnVLA-002，降低了 任务 execution 步，取得了 183.9 ms average forward verification time per 动作 chunk，和 mitigates error accumulation 在 模型 rollouts"},{"label":"⭐ 整体评价","text":"属于VLA/具身控制方向。建议关注其任务泛化能力、动作表达方式与真机验证结果。"}]
+        summaryGrid: [{"label":"🛠 技术路线","text":"提出运行时验证框架 Pre-VLA，在物理执行前通过想象空间预判动作有效性，提前拦截不可靠的 VLA 输出"},{"label":"💡 创新点","text":"将运行时验证引入 VLA 执行链路，利用世界模型进行预执行模拟评估，实现动作级安全保障"},{"label":"📊 实验效果","text":"在 LIBERO 四套基准上将平均闭环成功率从 30.79% 提升至 37.62%（基于 RynnVLA-002）；验证延迟仅 183.9ms/chunk"},{"label":"⭐ 整体评价","text":"为 VLA 系统增加安全层，开销可控且收益显著，对真实部署有重要价值"}]
     },
     {
         date: "2026-05-23",
         category: "VLA",
         categoryIcon: "🤖",
-        title: "Spatial Memory for Out-of-Vision Manipulation in Vision-Language-Action",
+        title: "SOMA: Spatial Memory for Out-of-Vision Manipulation in VLA",
         venue: "arXiv 2026",
-        summary: "🛠 技术路线: 我们引入了 SOMA，Spatial Memory 框架 用于 Out-的-Vision 操作/抓取 在 Vision-Language-动作 (VLA) 模型 | 💡 创新点: 我们引入了 SOMA，Spatial Memory 框架 用于 Out-的-Vision 操作/抓取 在 Vision-Language-动作 (VLA) 模型 | 📊 实验效果: 实验结果 show SOMA 不 仅 提升了 任务 成功率，也 induces qualitatively different 操作/抓取 behaviors，具有 faster target localization，降低了 viewpoint search，和 near 单样本 抓取 partial observability | ⭐ 整体评价: 属于VLA/具身控制方向。建议关注其任务泛化能力、动作表达方式与真机验证结果。",
+        summary: "🛠 技术路线: 提出 SOMA 空间记忆模块，使 VLA 模型能够处理视野外物体的操作任务 | 💡 创新点: 为 VLA 引入空间记忆机制，使机器人能记住视野外目标位置并规划操作路径 | 📊 实验效果: 实验表明 SOMA 在部分可观测场景下诱导出质量不同的搜索/操作行为，加速目标定位且减少无效视点搜索 | ⭐ 整体评价: 解决 VLA 仅依赖当前视觉的局限性，空间记忆机制对移动操作场景价值明显",
         tags: [["VLA","green"]],
         links: [["arXiv","https://arxiv.org/abs/2605.22283"],["PDF","https://arxiv.org/pdf/2605.22283"]],
-        summaryGrid: [{"label":"🛠 技术路线","text":"我们引入了 SOMA，Spatial Memory 框架 用于 Out-的-Vision 操作/抓取 在 Vision-Language-动作 (VLA) 模型"},{"label":"💡 创新点","text":"我们引入了 SOMA，Spatial Memory 框架 用于 Out-的-Vision 操作/抓取 在 Vision-Language-动作 (VLA) 模型"},{"label":"📊 实验效果","text":"实验结果 show SOMA 不 仅 提升了 任务 成功率，也 induces qualitatively different 操作/抓取 behaviors，具有 faster target localization，降低了 viewpoint search，和 near 单样本 抓取 partial observability"},{"label":"⭐ 整体评价","text":"属于VLA/具身控制方向。建议关注其任务泛化能力、动作表达方式与真机验证结果。"}]
+        summaryGrid: [{"label":"🛠 技术路线","text":"提出 SOMA 空间记忆模块，使 VLA 模型能够处理视野外物体的操作任务"},{"label":"💡 创新点","text":"为 VLA 引入空间记忆机制，使机器人能记住视野外目标位置并规划操作路径"},{"label":"📊 实验效果","text":"实验表明 SOMA 在部分可观测场景下诱导出质量不同的搜索/操作行为，加速目标定位且减少无效视点搜索"},{"label":"⭐ 整体评价","text":"解决 VLA 仅依赖当前视觉的局限性，空间记忆机制对移动操作场景价值明显"}]
     },
     {
         date: "2026-05-23",
         category: "VLA",
         categoryIcon: "🤖",
-        title: "Action with Visual Primitives",
+        title: "AVP: Action with Visual Primitives",
         venue: "arXiv 2026 · MIT",
-        summary: "🛠 技术路线: 一个 common design 在 当前的 架构 maps language instructions 和 visual observations 以 动作 在 一个 single forward pass | 💡 创新点: 我们引入了 AVP (动作 具有 Visual Primitives)，一个 端到端 架构 implements visual-primitive-centric interface: VLM infers 阶段 target 和 emits visual-primitive token condition 一个 flow-matching 动作 expert，具有 supervision derived 从 end-effector kinematics | 📊 实验效果: 一个 common design 在 当前的 架构 maps language instructions 和 visual observations 以 动作 在 一个 single forward pass | ⭐ 整体评价: 属于VLA/具身控制方向。建议关注其任务泛化能力、动作表达方式与真机验证结果。",
+        summary: "🛠 技术路线: 提出以视觉基元为中心的动作接口：VLM 推断目标并生成视觉基元 token，条件化 flow-matching 动作专家；监督信号来自末端执行器运动学 | 💡 创新点: 解耦语言理解与动作生成，VLM 只需输出视觉基元而非直接动作，降低端到端学习难度 | 📊 实验效果: 在多任务操作环境中验证有效性，模块化设计使各组件可独立优化 | ⭐ 整体评价: 来自 MIT 的工作，视觉基元接口设计优雅，为 VLA 架构提供了新的解耦思路",
         tags: [["VLA","green"]],
-        links: [["arXiv","https://arxiv.org/abs/2605.22183"],["PDF","https://arxiv.org/pdf/2605.22183"],["Code","https://kingdroper.github.io/AVP/"]],
-        summaryGrid: [{"label":"🛠 技术路线","text":"一个 common design 在 当前的 架构 maps language instructions 和 visual observations 以 动作 在 一个 single forward pass"},{"label":"💡 创新点","text":"我们引入了 AVP (动作 具有 Visual Primitives)，一个 端到端 架构 implements visual-primitive-centric interface: VLM infers 阶段 target 和 emits visual-primitive token condition 一个 flow-matching 动作 expert，具有 supervision derived 从 end-effector kinematics"},{"label":"📊 实验效果","text":"一个 common design 在 当前的 架构 maps language instructions 和 visual observations 以 动作 在 一个 single forward pass"},{"label":"⭐ 整体评价","text":"属于VLA/具身控制方向。建议关注其任务泛化能力、动作表达方式与真机验证结果。"}]
+        links: [["arXiv","https://arxiv.org/abs/2605.22183"],["PDF","https://arxiv.org/pdf/2605.22183"],["Project","https://kingdroper.github.io/AVP/"]],
+        summaryGrid: [{"label":"🛠 技术路线","text":"提出以视觉基元为中心的动作接口：VLM 推断目标并生成视觉基元 token，条件化 flow-matching 动作专家；监督信号来自末端执行器运动学"},{"label":"💡 创新点","text":"解耦语言理解与动作生成，VLM 只需输出视觉基元而非直接动作，降低端到端学习难度"},{"label":"📊 实验效果","text":"在多任务操作环境中验证有效性，模块化设计使各组件可独立优化"},{"label":"⭐ 整体评价","text":"来自 MIT 的工作，视觉基元接口设计优雅，为 VLA 架构提供了新的解耦思路"}]
     },
     {
         date: "2026-05-23",
         category: "VLA",
         categoryIcon: "🤖",
-        title: "LVDrive: Latent Visual Representation Enhanced Vision-Language-Action Autonomous Driving Model",
+        title: "LVDrive: Latent Visual Representation Enhanced VLA for Autonomous Driving",
         venue: "arXiv 2026",
-        summary: "🛠 技术路线: Vision-Language-动作 (VLA) 模型 emerged 一个 promising 框架 用于 端到端 autonomous driving | 💡 创新点: 本文我们提出了 LVDrive，一个 Latent Visual 表征 enhanced VLA 框架 用于 autonomous driving。大量实验 在 challenging Bench2Drive 基准测试 demonstrate LVDrive 取得了显著的 提升 在 closed-loop driving 性能，优于 两者 动作 监督式 方法 和 图像-based 世界模型 方法es | 📊 实验效果: 详见原文实验部分 | ⭐ 整体评价: 属于VLA/具身控制方向。建议关注其任务泛化能力、动作表达方式与真机验证结果。",
+        summary: "🛠 技术路线: 提出 LVDrive，通过增强潜在视觉表征来提升 VLA 在自动驾驶场景的闭环决策能力 | 💡 创新点: 将潜在视觉编码与 VLA 架构深度融合，针对驾驶场景的时空特性优化表征学习 | 📊 实验效果: 在 Bench2Drive 挑战性基准上超越现有基于规则的方法和 VLA 基线模型，闭环驾驶性能显著提升 | ⭐ 整体评价: VLA 在自动驾驶场景的应用探索，表征增强路径值得关注",
         tags: [["VLA","green"]],
         links: [["arXiv","https://arxiv.org/abs/2605.22089"],["PDF","https://arxiv.org/pdf/2605.22089"]],
-        summaryGrid: [{"label":"🛠 技术路线","text":"Vision-Language-动作 (VLA) 模型 emerged 一个 promising 框架 用于 端到端 autonomous driving"},{"label":"💡 创新点","text":"本文我们提出了 LVDrive，一个 Latent Visual 表征 enhanced VLA 框架 用于 autonomous driving。大量实验 在 challenging Bench2Drive 基准测试 demonstrate LVDrive 取得了显著的 提升 在 closed-loop driving 性能，优于 两者 动作 监督式 方法 和 图像-based 世界模型 方法es"},{"label":"📊 实验效果","text":"详见原文实验部分"},{"label":"⭐ 整体评价","text":"属于VLA/具身控制方向。建议关注其任务泛化能力、动作表达方式与真机验证结果。"}]
+        summaryGrid: [{"label":"🛠 技术路线","text":"提出 LVDrive，通过增强潜在视觉表征来提升 VLA 在自动驾驶场景的闭环决策能力"},{"label":"💡 创新点","text":"将潜在视觉编码与 VLA 架构深度融合，针对驾驶场景的时空特性优化表征学习"},{"label":"📊 实验效果","text":"在 Bench2Drive 挑战性基准上超越现有基于规则的方法和 VLA 基线模型，闭环驾驶性能显著提升"},{"label":"⭐ 整体评价","text":"VLA 在自动驾驶场景的应用探索，表征增强路径值得关注"}]
     },
     {
         date: "2026-05-23",
         category: "VLA",
         categoryIcon: "🤖",
-        title: "EvoScene-VLA: Evolving Scene Beliefs Inside the Action Decoder for Chunked Robot Control",
+        title: "EvoScene-VLA: Evolving Scene Beliefs Inside the Action Decoder",
         venue: "arXiv 2026",
-        summary: "🛠 技术路线: 每个 视觉-语言模型 (VLM) call，VLM combines 场景 information 从 当前的 observation 具有 动作 prior 从 previous chunk; 动作 decoder outputs 两者 next 动作 chunk 和 一个 compact 场景 update。discard 两者 模块 部署 | 💡 创新点: 在 Galaxea R1-Lite real robot，EvoScene-VLA 优于 所有 基线 | 📊 实验效果: Spatial VLAs improve 当前的 geometry。每个 视觉-语言模型 (VLM) call，VLM combines 场景 information 从 当前的 observation 具有 动作 prior 从 previous chunk; 动作 decoder outputs 两者 next 动作 chunk 和 一个 compact 场景 update | ⭐ 整体评价: 属于VLA/具身控制方向。建议关注其任务泛化能力、动作表达方式与真机验证结果。",
+        summary: "🛠 技术路线: 在动作解码器内部维护演进的场景信念：VLM 融合新观测与前一 chunk 的先验，解码器输出动作 chunk 同时更新紧凑的状态表示 | 💡 创新点: 提出在 chunk 级别持续更新场景表示的机制，避免每步都做完整 VLM 推理 | 📊 实验效果: 在 Galaxea R1-Lite 真实机器人上验证有效性，chunk 化控制下表现优异 | ⭐ 整体评价: 通过场景信念演进减少 VLM 调用频率，兼顾效率与感知质量",
         tags: [["VLA","green"]],
         links: [["arXiv","https://arxiv.org/abs/2605.21862"],["PDF","https://arxiv.org/pdf/2605.21862"]],
-        summaryGrid: [{"label":"🛠 技术路线","text":"每个 视觉-语言模型 (VLM) call，VLM combines 场景 information 从 当前的 observation 具有 动作 prior 从 previous chunk; 动作 decoder outputs 两者 next 动作 chunk 和 一个 compact 场景 update。discard 两者 模块 部署"},{"label":"💡 创新点","text":"在 Galaxea R1-Lite real robot，EvoScene-VLA 优于 所有 基线"},{"label":"📊 实验效果","text":"Spatial VLAs improve 当前的 geometry。每个 视觉-语言模型 (VLM) call，VLM combines 场景 information 从 当前的 observation 具有 动作 prior 从 previous chunk; 动作 decoder outputs 两者 next 动作 chunk 和 一个 compact 场景 update"},{"label":"⭐ 整体评价","text":"属于VLA/具身控制方向。建议关注其任务泛化能力、动作表达方式与真机验证结果。"}]
+        summaryGrid: [{"label":"🛠 技术路线","text":"在动作解码器内部维护演进的场景信念：VLM 融合新观测与前一 chunk 的先验，解码器输出动作 chunk 同时更新紧凑的状态表示"},{"label":"💡 创新点","text":"提出在 chunk 级别持续更新场景表示的机制，避免每步都做完整 VLM 推理"},{"label":"📊 实验效果","text":"在 Galaxea R1-Lite 真实机器人上验证有效性，chunk 化控制下表现优异"},{"label":"⭐ 整体评价","text":"通过场景信念演进减少 VLM 调用频率，兼顾效率与感知质量"}]
     },
     {
         date: "2026-05-23",
         category: "VLA",
         categoryIcon: "🤖",
-        title: "CrossVLA: Cross-Paradigm Post-Training and Inference Optimization for Vision-Language-Action Models",
+        title: "CrossVLA: Cross-Paradigm Post-Training for Vision-Language-Action Models",
         venue: "arXiv 2026",
-        summary: "🛠 技术路线: 但 preference 对齐 via Direct Preference Optimisation (DPO) -- de-facto 训练 步 在 语言模型 -- studied almost exclusively 在 自回归 VLAs。我们提出了 CrossVLA，一个 empirical study 的 cross-paradigm VLA 训练 | 💡 创新点: 我们提出了 CrossVLA，一个 empirical study 的 cross-paradigm VLA 训练 | 📊 实验效果: Three contributions: (i) 一个 surrogate flow-matching log-probability estimator lets DPO operate 在 动作 backbones without probability-flow ODE integration; (ii) 一个 以 comparison 的 LoRA 和 DoRA 参数-高效 层 用于 VLA DPO，finding DoRA 优于 OpenVLA SFT 通过 一个 mean +10.4 pp 在…上 LIBERO 4-suite (600 trials，3 seeds) -- pe… | ⭐ 整体评价: 属于VLA/具身控制方向。建议关注其任务泛化能力、动作表达方式与真机验证结果。",
+        summary: "🛠 技术路线: 提出跨范式后训练方法 CrossVLA，研究 DPO 偏好优化如何跨架构（自回归/扩散）应用于 VLA 模型 | 💡 创新点: 设计代理 flow-matching 对数概率估计器使 DPO 可作用于扩散骨干；首次系统比较 LoRA 与 DoRA 在 VLA DPO 中的效果 | 📊 实验效果: DoRA 微调后 OpenVLA SFT 在 LIBERO 四套基准（600 trials, 3 seeds）上平均提升 10.4pp | ⭐ 整体评价: 首个系统性研究 VLA 跨范式后训练的工作，DoRA 优于 LoRA 的发现有实践指导意义",
         tags: [["VLA","green"]],
         links: [["arXiv","https://arxiv.org/abs/2605.21854"],["PDF","https://arxiv.org/pdf/2605.21854"],["Code","https://github.com/lz-googlefycy/vla-lab"]],
-        summaryGrid: [{"label":"🛠 技术路线","text":"但 preference 对齐 via Direct Preference Optimisation (DPO) -- de-facto 训练 步 在 语言模型 -- studied almost exclusively 在 自回归 VLAs。我们提出了 CrossVLA，一个 empirical study 的 cross-paradigm VLA 训练"},{"label":"💡 创新点","text":"我们提出了 CrossVLA，一个 empirical study 的 cross-paradigm VLA 训练"},{"label":"📊 实验效果","text":"Three contributions: (i) 一个 surrogate flow-matching log-probability estimator lets DPO operate 在 动作 backbones without probability-flow ODE integration; (ii) 一个 以 comparison 的 LoRA 和 DoRA 参数-高效 层 用于 VLA DPO，finding DoRA 优于 OpenVLA SFT 通过 一个 mean +10.4 pp 在…上 LIBERO 4-suite (600 trials，3 seeds) -- pe…"},{"label":"⭐ 整体评价","text":"属于VLA/具身控制方向。建议关注其任务泛化能力、动作表达方式与真机验证结果。"}]
+        summaryGrid: [{"label":"🛠 技术路线","text":"提出跨范式后训练方法 CrossVLA，研究 DPO 偏好优化如何跨架构（自回归/扩散）应用于 VLA 模型"},{"label":"💡 创新点","text":"设计代理 flow-matching 对数概率估计器使 DPO 可作用于扩散骨干；首次系统比较 LoRA 与 DoRA 在 VLA DPO 中的效果"},{"label":"📊 实验效果","text":"DoRA 微调后 OpenVLA SFT 在 LIBERO 四套基准（600 trials, 3 seeds）上平均提升 10.4pp"},{"label":"⭐ 整体评价","text":"首个系统性研究 VLA 跨范式后训练的工作，DoRA 优于 LoRA 的发现有实践指导意义"}]
     },
     {
         date: "2026-05-23",
@@ -742,120 +742,109 @@ const PAPERS_DB = [
         categoryIcon: "🤖",
         title: "Lost in Fog: Sensor Perturbations Expose Reasoning Fragility in Driving VLAs",
         venue: "arXiv 2026",
-        summary: "🛠 技术路线: 本文我们提出了 一个 controlled perturbation study 的 Vision-Language-动作 (VLA) 鲁棒性 在 autonomous driving，evaluating Alpamayo R1 (10B 参数) 在…上 1，996 scenarios eight sensor perturbations (Gaussian noise four intensities，two lighting extremes，和 two fog levels;  推理 trials) | 💡 创新点: 本文我们提出了 一个 controlled perturbation study 的 Vision-Language-动作 (VLA) 鲁棒性 在 autonomous driving，evaluating Alpamayo R1 (10B 参数) 在…上 1，996 scenarios eight sensor perturbations (Gaussian noise four intensities，two lighting extremes，和 two fog levels;  推理 trials) | 📊 实验效果: 一个 controlled ablation provides evidence 实现 CoC 生成 associated 具有 提升了 trajectory 准确率 (11.8% 平均 在…上 conditions; ) matched 推理 settings | ⭐ 整体评价: 属于VLA/具身控制方向。建议关注其任务泛化能力、动作表达方式与真机验证结果。",
+        summary: "🛠 技术路线: 对自动驾驶 VLA 进行系统性传感器扰动研究：评估 Alpamayo R1（10B 参数）在 1996 个场景、8 种扰动条件下的鲁棒性 | 💡 创新点: 首个针对驾驶 VLA 的全面扰动鲁棒性评估框架，覆盖高斯噪声、光照极端、雾等条件 | 📊 实验效果: Chain-of-Thought 推理与轨迹质量改善显著相关（受控条件下提升 11.8%，p<0.0001） | ⭐ 整体评价: 揭示驾驶 VLA 在传感器退化条件下的推理脆弱性，对安全部署有警示意义",
         tags: [["VLA","green"]],
         links: [["arXiv","https://arxiv.org/abs/2605.21446"],["PDF","https://arxiv.org/pdf/2605.21446"]],
-        summaryGrid: [{"label":"🛠 技术路线","text":"本文我们提出了 一个 controlled perturbation study 的 Vision-Language-动作 (VLA) 鲁棒性 在 autonomous driving，evaluating Alpamayo R1 (10B 参数) 在…上 1，996 scenarios eight sensor perturbations (Gaussian noise four intensities，two lighting extremes，和 two fog levels;  推理 trials)"},{"label":"💡 创新点","text":"本文我们提出了 一个 controlled perturbation study 的 Vision-Language-动作 (VLA) 鲁棒性 在 autonomous driving，evaluating Alpamayo R1 (10B 参数) 在…上 1，996 scenarios eight sensor perturbations (Gaussian noise four intensities，two lighting extremes，和 two fog levels;  推理 trials)"},{"label":"📊 实验效果","text":"一个 controlled ablation provides evidence 实现 CoC 生成 associated 具有 提升了 trajectory 准确率 (11.8% 平均 在…上 conditions; ) matched 推理 settings"},{"label":"⭐ 整体评价","text":"属于VLA/具身控制方向。建议关注其任务泛化能力、动作表达方式与真机验证结果。"}]
+        summaryGrid: [{"label":"🛠 技术路线","text":"对自动驾驶 VLA 进行系统性传感器扰动研究：评估 Alpamayo R1（10B 参数）在 1996 个场景、8 种扰动条件下的鲁棒性"},{"label":"💡 创新点","text":"首个针对驾驶 VLA 的全面扰动鲁棒性评估框架，覆盖高斯噪声、光照极端、雾等条件"},{"label":"📊 实验效果","text":"Chain-of-Thought 推理与轨迹质量改善显著相关（受控条件下提升 11.8%，p<0.0001）"},{"label":"⭐ 整体评价","text":"揭示驾驶 VLA 在传感器退化条件下的推理脆弱性，对安全部署有警示意义"}]
     },
     {
         date: "2026-05-23",
         category: "World Model",
         categoryIcon: "🌍",
-        title: "Model Beyond Euclidean Proximity: Repairing Latent World Models with Horizon-Matched Trajectory Reachability Metrics",
+        title: "Beyond Euclidean Proximity: Repairing Latent World Models with Trajectory Reachability Metrics",
         venue: "arXiv 2026",
-        summary: "🛠 技术路线: Latent 世界模型 contain state needed 用于 control，但 成本 interface expose planner 以 wrong decision-relevant information | 💡 创新点: 我们提出了 trajectory reachability metrics (TRM)，一个 post-hoc terminal-ranking 方法 用于 fixed latent 世界模型 | 📊 实验效果: 在 一个 hard TwoRoom 基准测试，raw latent 规划 具有 LeWorldModel (LeWM) reaches 7.0% success，full-horizon TRM reaches 97.0%; shuffled temporal-label controls stay 0.0%。recipe 提升了 一个 PLDM 基线 从 32.7% 以 84.0% 在…上 three seeds，和 一个 short-horizon TRM variant reaches 仅 35.0% 具有 100，000 pair budget | ⭐ 整体评价: 属于世界模型/动作生成方向。建议关注其预测精度、动作可控性和 Sim-to-Real 迁移效果。",
+        summary: "🛠 技术路线: 提出轨迹可达性度量（TRM），作为后处理排序方法修复固定潜在世界模型中规划器与决策相关信息的错配问题 | 💡 创新点: 不修改世界模型本身，而是通过轨迹终端可达性排序修复潜在空间中的欧氏距离失效问题 | 📊 实验效果: 在困难 TwoRoom 环境中：原始潜在规划 7.0% 成功率 → 全视域 TRM 达到 97.0%；PLDM 从 32.7% 提升到 84.0% | ⭐ 整体评价: 以极低开销大幅提升世界模型规划质量，思路新颖且效果惊人",
         tags: [],
         links: [["arXiv","https://arxiv.org/abs/2605.22164"],["PDF","https://arxiv.org/pdf/2605.22164"]],
-        summaryGrid: [{"label":"🛠 技术路线","text":"Latent 世界模型 contain state needed 用于 control，但 成本 interface expose planner 以 wrong decision-relevant information"},{"label":"💡 创新点","text":"我们提出了 trajectory reachability metrics (TRM)，一个 post-hoc terminal-ranking 方法 用于 fixed latent 世界模型"},{"label":"📊 实验效果","text":"在 一个 hard TwoRoom 基准测试，raw latent 规划 具有 LeWorldModel (LeWM) reaches 7.0% success，full-horizon TRM reaches 97.0%; shuffled temporal-label controls stay 0.0%。recipe 提升了 一个 PLDM 基线 从 32.7% 以 84.0% 在…上 three seeds，和 一个 short-horizon TRM variant reaches 仅 35.0% 具有 100，000 pair budget"},{"label":"⭐ 整体评价","text":"属于世界模型/动作生成方向。建议关注其预测精度、动作可控性和 Sim-to-Real 迁移效果。"}]
+        summaryGrid: [{"label":"🛠 技术路线","text":"提出轨迹可达性度量（TRM），作为后处理排序方法修复固定潜在世界模型中规划器与决策相关信息的错配问题"},{"label":"💡 创新点","text":"不修改世界模型本身，而是通过轨迹终端可达性排序修复潜在空间中的欧氏距离失效问题"},{"label":"📊 实验效果","text":"在困难 TwoRoom 环境中：原始潜在规划 7.0% 成功率 → 全视域 TRM 达到 97.0%；PLDM 从 32.7% 提升到 84.0%"},{"label":"⭐ 整体评价","text":"以极低开销大幅提升世界模型规划质量，思路新颖且效果惊人"}]
     },
     {
         date: "2026-05-23",
         category: "World Model",
         categoryIcon: "🌍",
-        title: "Model stable-worldmodel: A Platform for Reproducible World Modeling Research and Evaluation",
+        title: "stable-worldmodel: A Platform for Reproducible World Modeling Research",
         venue: "arXiv 2026 · Meta FAIR",
-        summary: "🛠 技术路线: 世界模型 central 以 building 智能体 可以 reason，plan，和 generalize beyond 训练 data。然而，research 在 世界模型 当前的ly fragmented，具有 disparate codebases，data 流程，和 评估 protocols hindering reproducibility 和 fair comparison | 💡 创新点: 我们提出了 stable-worldmodel (swm)，一个 开源 platform 用于 standardized 和 reproducible 世界模型ing research 和 评估 | 📊 实验效果: 当前的 practice further limited 通过 three key bottlenecks: fragile one-off codebases，slow 视频 data loading，和 lack 的 standardized 泛化能力 基准测试 | ⭐ 整体评价: 属于世界模型/动作生成方向。建议关注其预测精度、动作可控性和 Sim-to-Real 迁移效果。",
+        summary: "🛠 技术路线: 提供标准化可复现的世界模型研究平台 stable-worldmodel (swm)，统一代码库、数据格式和评估协议 | 💡 创新点: 解决世界模型研究的三大瓶颈：脆弱的一次性代码库、缓慢的数据加载、缺少标准化评估指标 | 📊 实验效果: 集成多种世界模型基线的统一评测，支持公平对比和快速复现 | ⭐ 整体评价: Meta FAIR 出品的基础设施级贡献，有望成为世界模型研究的标准开发平台",
         tags: [],
         links: [["arXiv","https://arxiv.org/abs/2605.21800"],["PDF","https://arxiv.org/pdf/2605.21800"]],
-        summaryGrid: [{"label":"🛠 技术路线","text":"世界模型 central 以 building 智能体 可以 reason，plan，和 generalize beyond 训练 data。然而，research 在 世界模型 当前的ly fragmented，具有 disparate codebases，data 流程，和 评估 protocols hindering reproducibility 和 fair comparison"},{"label":"💡 创新点","text":"我们提出了 stable-worldmodel (swm)，一个 开源 platform 用于 standardized 和 reproducible 世界模型ing research 和 评估"},{"label":"📊 实验效果","text":"当前的 practice further limited 通过 three key bottlenecks: fragile one-off codebases，slow 视频 data loading，和 lack 的 standardized 泛化能力 基准测试"},{"label":"⭐ 整体评价","text":"属于世界模型/动作生成方向。建议关注其预测精度、动作可控性和 Sim-to-Real 迁移效果。"}]
+        summaryGrid: [{"label":"🛠 技术路线","text":"提供标准化可复现的世界模型研究平台 stable-worldmodel (swm)，统一代码库、数据格式和评估协议"},{"label":"💡 创新点","text":"解决世界模型研究的三大瓶颈：脆弱的一次性代码库、缓慢的数据加载、缺少标准化评估指标"},{"label":"📊 实验效果","text":"集成多种世界模型基线的统一评测，支持公平对比和快速复现"},{"label":"⭐ 整体评价","text":"Meta FAIR 出品的基础设施级贡献，有望成为世界模型研究的标准开发平台"}]
     },
     {
         date: "2026-05-23",
         category: "World Model",
         categoryIcon: "🌍",
-        title: "Model World-Ego Modeling for Long-Horizon Evolution in Hybrid Embodied Tasks",
+        title: "World-Ego Modeling for Long-Horizon Evolution in Hybrid Embodied Tasks",
         venue: "arXiv 2026",
-        summary: "🛠 技术路线: 世界模型 widely explored 在 embodied intelligence，但 typically predict distinct evolutions 的 world 和 ego within 一个 single stream，world captures persistent instruction-agnostic 场景 regularities 和 ego captures robot-centric instruction-conditioned dynamics | 💡 创新点: 本文我们引入了 World-Ego Modeling，一种新的 conceptual paradigm decomposes future evolution 为 world 和 ego components。以 enable rigorous 评估，further construct HTEWorld，首个 基准测试 用于 长时序 世界模型ing 具有 hybrid 导航-操作/抓取 任务，providing 125K 视频 clips (超过 4.5M frames) 具有 fine-grained 动作 annotations 和 300 multi-turn 评估 tr… | 📊 实验效果: 大量实验 show WEM 达到了最优水平 上的性能 HTEWorld remaining competitive 在 现有的 操作/抓取-仅 基准测试 | ⭐ 整体评价: 属于世界模型/动作生成方向。建议关注其预测精度、动作可控性和 Sim-to-Real 迁移效果。",
+        summary: "🛠 技术路线: 提出 World-Ego Modeling 范式，将未来演化分解为世界组件（持续性、指令无关的环境规律）和自我组件（机器人中心、指令条件化的动态） | 💡 创新点: 构建 HTEWorld 大规模混合任务世界模型数据集（125K 视频片段，约 450 万帧），包含细粒度动作标注和 300 条多轮任务轨迹 | 📊 实验效果: WEM 在 HTEWorld 上表现优异，在多个独立视觉/动作预测基准上保持竞争力 | ⭐ 整体评价: 世界-自我解耦是有意义的建模范式创新，大规模数据集贡献值得关注",
         tags: [],
         links: [["arXiv","https://arxiv.org/abs/2605.19957"],["PDF","https://arxiv.org/pdf/2605.19957"]],
-        summaryGrid: [{"label":"🛠 技术路线","text":"世界模型 widely explored 在 embodied intelligence，但 typically predict distinct evolutions 的 world 和 ego within 一个 single stream，world captures persistent instruction-agnostic 场景 regularities 和 ego captures robot-centric instruction-conditioned dynamics"},{"label":"💡 创新点","text":"本文我们引入了 World-Ego Modeling，一种新的 conceptual paradigm decomposes future evolution 为 world 和 ego components。以 enable rigorous 评估，further construct HTEWorld，首个 基准测试 用于 长时序 世界模型ing 具有 hybrid 导航-操作/抓取 任务，providing 125K 视频 clips (超过 4.5M frames) 具有 fine-grained 动作 annotations 和 300 multi-turn 评估 tr…"},{"label":"📊 实验效果","text":"大量实验 show WEM 达到了最优水平 上的性能 HTEWorld remaining competitive 在 现有的 操作/抓取-仅 基准测试"},{"label":"⭐ 整体评价","text":"属于世界模型/动作生成方向。建议关注其预测精度、动作可控性和 Sim-to-Real 迁移效果。"}]
+        summaryGrid: [{"label":"🛠 技术路线","text":"提出 World-Ego Modeling 范式，将未来演化分解为世界组件（持续性、指令无关的环境规律）和自我组件（机器人中心、指令条件化的动态）"},{"label":"💡 创新点","text":"构建 HTEWorld 大规模混合任务世界模型数据集（125K 视频片段，约 450 万帧），包含细粒度动作标注和 300 条多轮任务轨迹"},{"label":"📊 实验效果","text":"WEM 在 HTEWorld 上表现优异，在多个独立视觉/动作预测基准上保持竞争力"},{"label":"⭐ 整体评价","text":"世界-自我解耦是有意义的建模范式创新，大规模数据集贡献值得关注"}]
     },
     {
         date: "2026-05-23",
         category: "World Model",
         categoryIcon: "🌍",
-        title: "Model DAG-Based QoS-Aware Dynamic Task Placement for Networked Multi-Stage Control Pipelines",
+        title: "DAG-Based QoS-Aware Dynamic Task Placement for Networked Multi-Stage Control Pipelines",
         venue: "arXiv 2026",
-        summary: "🛠 技术路线: 当前的 Physical AI (PAI) relies heavily 在 closed-loop visual-servoing 流程，perception 和 规划 阶段 become computationally intensive onboard due 以 complex 模型 embedded 在 robots | 💡 创新点: 本文-在-Progress (WiP) paper，我们提出了 一个 directed acyclic graph (DAG) based 质量-的 (QoS)-aware dynamic 任务 placement (DTP) 框架 用于 sensing-规划 流程 在 networked 机器人技术 | 📊 实验效果: WiP paper presents theoretical 框架，一个 structured qualitative analysis，和 一个 two-phase 仿真 plus 在--loop validation roadmap | ⭐ 整体评价: 属于世界模型/动作生成方向。建议关注其预测精度、动作可控性和 Sim-to-Real 迁移效果。",
+        summary: "🛠 技术路线: 提出基于有向无环图（DAG）的 QoS 感知动态任务放置方法，为网络化多阶段机器人控制流水线优化计算部署 | 💡 创新点: 将机器人感知-规划-控制流水线建模为 DAG，在边缘和云端之间动态分配计算，确保满足实时性约束 | 📊 实验效果: WiP 论文，提供理论框架和结构化定性分析，规划两阶段验证路线图 | ⭐ 整体评价: 面向物理 AI 的网络化计算架构早期研究，方向有前瞻性但目前仅为理论框架",
         tags: [],
         links: [["arXiv","https://arxiv.org/abs/2605.19887"],["PDF","https://arxiv.org/pdf/2605.19887"]],
-        summaryGrid: [{"label":"🛠 技术路线","text":"当前的 Physical AI (PAI) relies heavily 在 closed-loop visual-servoing 流程，perception 和 规划 阶段 become computationally intensive onboard due 以 complex 模型 embedded 在 robots"},{"label":"💡 创新点","text":"本文-在-Progress (WiP) paper，我们提出了 一个 directed acyclic graph (DAG) based 质量-的 (QoS)-aware dynamic 任务 placement (DTP) 框架 用于 sensing-规划 流程 在 networked 机器人技术"},{"label":"📊 实验效果","text":"WiP paper presents theoretical 框架，一个 structured qualitative analysis，和 一个 two-phase 仿真 plus 在--loop validation roadmap"},{"label":"⭐ 整体评价","text":"属于世界模型/动作生成方向。建议关注其预测精度、动作可控性和 Sim-to-Real 迁移效果。"}]
+        summaryGrid: [{"label":"🛠 技术路线","text":"提出基于有向无环图（DAG）的 QoS 感知动态任务放置方法，为网络化多阶段机器人控制流水线优化计算部署"},{"label":"💡 创新点","text":"将机器人感知-规划-控制流水线建模为 DAG，在边缘和云端之间动态分配计算，确保满足实时性约束"},{"label":"📊 实验效果","text":"WiP 论文，提供理论框架和结构化定性分析，规划两阶段验证路线图"},{"label":"⭐ 整体评价","text":"面向物理 AI 的网络化计算架构早期研究，方向有前瞻性但目前仅为理论框架"}]
     },
     {
         date: "2026-05-23",
         category: "Robotics",
         categoryIcon: "🦾",
-        title: "Reducing Political Manipulation with Consistency Training",
+        title: "Scout-Assisted Planning for Heterogeneous Robot Teams",
         venue: "arXiv 2026",
-        summary: "🛠 技术路线: 大型 语言模型 (LLMs) exhibit systematic political bias 在…上 一个 variety 的 sensitive contexts | 💡 创新点: 我们提出了 two metrics 用于 covert bias: Sentiment Consistency measures symmetry 在 rhetoric 和 framing 在…上 paired political prompts; Helpfulness Consistency measures symmetric depth 和 engagement | 📊 实验效果: 我们表明 PCT 保留了 overall helpfulness，大幅 降低了 covert political bias，和 generalizes 以 held-out 基准测试 | ⭐ 整体评价: 属于机器人算法与控制方向。建议重点看实验设置、基线对比和真实部署条件。",
-        tags: [["Robotics","green"]],
-        links: [["arXiv","https://arxiv.org/abs/2605.22771"],["PDF","https://arxiv.org/pdf/2605.22771"],["Link","https://political-manipulation.ai"]],
-        summaryGrid: [{"label":"🛠 技术路线","text":"大型 语言模型 (LLMs) exhibit systematic political bias 在…上 一个 variety 的 sensitive contexts"},{"label":"💡 创新点","text":"我们提出了 two metrics 用于 covert bias: Sentiment Consistency measures symmetry 在 rhetoric 和 framing 在…上 paired political prompts; Helpfulness Consistency measures symmetric depth 和 engagement"},{"label":"📊 实验效果","text":"我们表明 PCT 保留了 overall helpfulness，大幅 降低了 covert political bias，和 generalizes 以 held-out 基准测试"},{"label":"⭐ 整体评价","text":"属于机器人算法与控制方向。建议重点看实验设置、基线对比和真实部署条件。"}]
-    },
-    {
-        date: "2026-05-23",
-        category: "Robotics",
-        categoryIcon: "🦾",
-        title: "Scout-Assisted Planning for Heterogeneous Robot Teams under Partially Known Environments",
-        venue: "arXiv 2026",
-        summary: "🛠 技术路线: 我们解决了 具有 Scout-Assisted 规划，一个 heterogeneous 规划 框架 在 scouting Unmanned Aerial Vehicles proactively gather environmental information 以 improve Unmanned Ground Vehicle 导航 | 💡 创新点: 以 focus scouting 在 consequential edges，我们提出了 Information Gain-based 动作 Pruning，scores candidate scouting 动作 通过 expected impact 在 ground robot behavior | 📊 实验效果: 我们解决了 具有 Scout-Assisted 规划，一个 heterogeneous 规划 框架 在 scouting Unmanned Aerial Vehicles proactively gather environmental information 以 improve Unmanned Ground Vehicle 导航 | ⭐ 整体评价: 属于机器人算法与控制方向。建议重点看实验设置、基线对比和真实部署条件。",
+        summary: "🛠 技术路线: 提出侦察辅助规划方法：无人机主动收集环境信息以改善地面机器人路径规划 | 💡 创新点: 设计基于信息增益的边缘剪枝策略，根据侦察对地面机器人行为的预期影响评分候选侦察路径 | 📊 实验效果: 在部分已知环境中验证异构机器人协同效率提升 | ⭐ 整体评价: 空地协同规划的实用方法，信息增益驱动的主动侦察策略设计合理",
         tags: [["Robotics","green"]],
         links: [["arXiv","https://arxiv.org/abs/2605.22693"],["PDF","https://arxiv.org/pdf/2605.22693"]],
-        summaryGrid: [{"label":"🛠 技术路线","text":"我们解决了 具有 Scout-Assisted 规划，一个 heterogeneous 规划 框架 在 scouting Unmanned Aerial Vehicles proactively gather environmental information 以 improve Unmanned Ground Vehicle 导航"},{"label":"💡 创新点","text":"以 focus scouting 在 consequential edges，我们提出了 Information Gain-based 动作 Pruning，scores candidate scouting 动作 通过 expected impact 在 ground robot behavior"},{"label":"📊 实验效果","text":"我们解决了 具有 Scout-Assisted 规划，一个 heterogeneous 规划 框架 在 scouting Unmanned Aerial Vehicles proactively gather environmental information 以 improve Unmanned Ground Vehicle 导航"},{"label":"⭐ 整体评价","text":"属于机器人算法与控制方向。建议重点看实验设置、基线对比和真实部署条件。"}]
+        summaryGrid: [{"label":"🛠 技术路线","text":"提出侦察辅助规划方法：无人机主动收集环境信息以改善地面机器人路径规划"},{"label":"💡 创新点","text":"设计基于信息增益的边缘剪枝策略，根据侦察对地面机器人行为的预期影响评分候选侦察路径"},{"label":"📊 实验效果","text":"在部分已知环境中验证异构机器人协同效率提升"},{"label":"⭐ 整体评价","text":"空地协同规划的实用方法，信息增益驱动的主动侦察策略设计合理"}]
     },
     {
         date: "2026-05-23",
         category: "Robotics",
         categoryIcon: "🦾",
-        title: "Symmetries Here and There, Combined Everywhere: Cross-space Symmetry Compositions in Robotics",
+        title: "Cross-space Symmetry Compositions in Robotics",
         venue: "arXiv 2026",
-        summary: "🛠 技术路线: 本文 introduces cross-space symmetry compositions，一个 框架 用于 learning robot 策略 jointly equivariant 以 多个 symmetries 在…上 configuration 和 任务 spaces | 💡 创新点: 基于本文 introduces cross-space symmetry compositions，一个 框架 用于 learning robot 策略 jointly equivariant 以 多个 symmetries 在…上 configuration 和 任务 spaces的改进方法，详见原文 | 📊 实验效果: 利用 differential-geometric structure 的 forward kinematics map，两者 descend symmetries 从 configuration 以 任务 space 和 lift symmetries 从 任务 以 configuration space，实现 composition within 一种统一的 表征 space。我们验证了 我们的框架 在 simulated 和 real-world experiments 在 一个 dual-arm robot，展示 jointly 利用 多个 symmetries yields 提升了… | ⭐ 整体评价: 属于机器人算法与控制方向。建议重点看实验设置、基线对比和真实部署条件。",
+        summary: "🛠 技术路线: 提出跨空间对称性组合方法，利用正运动学映射的微分几何结构在构型空间和任务空间之间传递对称性 | 💡 创新点: 理论揭示如何从构型空间下降对称性到任务空间、从任务空间提升对称性到构型空间，并在各空间内部进行组合 | 📊 实验效果: 在仿真和真实机器人实验中验证等变策略学习的样本效率和泛化能力提升 | ⭐ 整体评价: 理论严谨的对称性利用框架，为机器人策略学习的数据效率提供数学保证",
         tags: [["Robotics","green"]],
         links: [["arXiv","https://arxiv.org/abs/2605.22639"],["PDF","https://arxiv.org/pdf/2605.22639"]],
-        summaryGrid: [{"label":"🛠 技术路线","text":"本文 introduces cross-space symmetry compositions，一个 框架 用于 learning robot 策略 jointly equivariant 以 多个 symmetries 在…上 configuration 和 任务 spaces"},{"label":"💡 创新点","text":"基于本文 introduces cross-space symmetry compositions，一个 框架 用于 learning robot 策略 jointly equivariant 以 多个 symmetries 在…上 configuration 和 任务 spaces的改进方法，详见原文"},{"label":"📊 实验效果","text":"利用 differential-geometric structure 的 forward kinematics map，两者 descend symmetries 从 configuration 以 任务 space 和 lift symmetries 从 任务 以 configuration space，实现 composition within 一种统一的 表征 space。我们验证了 我们的框架 在 simulated 和 real-world experiments 在 一个 dual-arm robot，展示 jointly 利用 多个 symmetries yields 提升了…"},{"label":"⭐ 整体评价","text":"属于机器人算法与控制方向。建议重点看实验设置、基线对比和真实部署条件。"}]
+        summaryGrid: [{"label":"🛠 技术路线","text":"提出跨空间对称性组合方法，利用正运动学映射的微分几何结构在构型空间和任务空间之间传递对称性"},{"label":"💡 创新点","text":"理论揭示如何从构型空间下降对称性到任务空间、从任务空间提升对称性到构型空间，并在各空间内部进行组合"},{"label":"📊 实验效果","text":"在仿真和真实机器人实验中验证等变策略学习的样本效率和泛化能力提升"},{"label":"⭐ 整体评价","text":"理论严谨的对称性利用框架，为机器人策略学习的数据效率提供数学保证"}]
     },
     {
         date: "2026-05-23",
         category: "Robotics",
         categoryIcon: "🦾",
-        title: "SE3Kit: A Lightweight Python Library for Specialized Geometric Primitives in Robotics",
+        title: "SE3Kit: A Lightweight Python Library for SE(3) Geometric Primitives in Robotics",
         venue: "arXiv 2026",
-        summary: "🛠 技术路线: Unlike established 框架 require heavy dependencies (例如，SpatialMath，PyPose) 或 general tools lack 机器人技术 特征 (例如，SciPy)，SE3Kit targets gap extremes | 💡 创新点: 基于Unlike established 框架 require heavy dependencies (例如，SpatialMath，PyPose) 或 general tools lack 机器人技术 特征 (例如，SciPy)，SE3Kit targets gap extremes的改进方法，详见原文 | 📊 实验效果: 详见原文实验部分 | ⭐ 整体评价: 属于机器人算法与控制方向。建议重点看实验设置、基线对比和真实部署条件。",
+        summary: "🛠 技术路线: 轻量级 SE(3) 几何计算 Python 库，填补重量级框架（Pinocchio/SpatialMath/PyPose）和通用工具（SciPy）之间的空白 | 💡 创新点: 专注于机器人开发中高频使用的 SE(3) 操作，无需引入大型依赖即可完成旋转、变换、插值等操作 | 📊 实验效果: 提供基准性能对比，适用于快速原型开发和教学场景 | ⭐ 整体评价: 实用的开源工具贡献，降低机器人几何计算的使用门槛",
         tags: [["Robotics","green"]],
         links: [["arXiv","https://arxiv.org/abs/2605.22633"],["PDF","https://arxiv.org/pdf/2605.22633"]],
-        summaryGrid: [{"label":"🛠 技术路线","text":"Unlike established 框架 require heavy dependencies (例如，SpatialMath，PyPose) 或 general tools lack 机器人技术 特征 (例如，SciPy)，SE3Kit targets gap extremes"},{"label":"💡 创新点","text":"基于Unlike established 框架 require heavy dependencies (例如，SpatialMath，PyPose) 或 general tools lack 机器人技术 特征 (例如，SciPy)，SE3Kit targets gap extremes的改进方法，详见原文"},{"label":"📊 实验效果","text":"详见原文实验部分"},{"label":"⭐ 整体评价","text":"属于机器人算法与控制方向。建议重点看实验设置、基线对比和真实部署条件。"}]
+        summaryGrid: [{"label":"🛠 技术路线","text":"轻量级 SE(3) 几何计算 Python 库，填补重量级框架（Pinocchio/SpatialMath/PyPose）和通用工具（SciPy）之间的空白"},{"label":"💡 创新点","text":"专注于机器人开发中高频使用的 SE(3) 操作，无需引入大型依赖即可完成旋转、变换、插值等操作"},{"label":"📊 实验效果","text":"提供基准性能对比，适用于快速原型开发和教学场景"},{"label":"⭐ 整体评价","text":"实用的开源工具贡献，降低机器人几何计算的使用门槛"}]
     },
     {
         date: "2026-05-23",
         category: "Robotics",
         categoryIcon: "🦾",
-        title: "How can reasoning capability empower the AI copilot robot in endoscopic surgery",
+        title: "Reasoning-Empowered AI Copilot Robot in Endoscopic Surgery",
         venue: "arXiv 2026",
-        summary: "🛠 技术路线: 然而，potential 在 Artificial Intelligence (AI) copilot robot-particularly implemented 基于 Vision-Language-动作 (VLA) 模型 unexplored 在 endoscopic surgery | 💡 创新点: 基于然而，potential 在 Artificial Intelligence (AI) copilot robot-particularly implemented 基于 Vision-Language-动作 (VLA) 模型 unexplored 在 endoscopic surgery的改进方法，详见原文 | 📊 实验效果: 详见原文实验部分 | ⭐ 整体评价: 属于VLA/具身控制方向。建议关注其任务泛化能力、动作表达方式与真机验证结果。",
+        summary: "🛠 技术路线: 探索推理能力如何增强内窥镜手术中的 AI 辅助机器人，将 VLA 模型引入微创手术场景 | 💡 创新点: 首次系统研究 VLA 推理能力在内窥镜手术辅助中的应用潜力 | 📊 实验效果: 论文为探索性研究，提供初步验证框架 | ⭐ 整体评价: 医疗机器人与 VLA 的交叉应用探索，方向新颖但目前较为初步",
         tags: [["Robotics","green"]],
         links: [["arXiv","https://arxiv.org/abs/2605.22322"],["PDF","https://arxiv.org/pdf/2605.22322"]],
-        summaryGrid: [{"label":"🛠 技术路线","text":"然而，potential 在 Artificial Intelligence (AI) copilot robot-particularly implemented 基于 Vision-Language-动作 (VLA) 模型 unexplored 在 endoscopic surgery"},{"label":"💡 创新点","text":"基于然而，potential 在 Artificial Intelligence (AI) copilot robot-particularly implemented 基于 Vision-Language-动作 (VLA) 模型 unexplored 在 endoscopic surgery的改进方法，详见原文"},{"label":"📊 实验效果","text":"详见原文实验部分"},{"label":"⭐ 整体评价","text":"属于VLA/具身控制方向。建议关注其任务泛化能力、动作表达方式与真机验证结果。"}]
+        summaryGrid: [{"label":"🛠 技术路线","text":"探索推理能力如何增强内窥镜手术中的 AI 辅助机器人，将 VLA 模型引入微创手术场景"},{"label":"💡 创新点","text":"首次系统研究 VLA 推理能力在内窥镜手术辅助中的应用潜力"},{"label":"📊 实验效果","text":"论文为探索性研究，提供初步验证框架"},{"label":"⭐ 整体评价","text":"医疗机器人与 VLA 的交叉应用探索，方向新颖但目前较为初步"}]
     },
     {
         date: "2026-05-23",
         category: "Robotics",
         categoryIcon: "🦾",
-        title: "Beyond Pixels: Learning Invariant Rewards for Real-World Robotics From a Few Demonstrations",
+        title: "Beyond Pixels: Learning Invariant Rewards for Real-World Robotics",
         venue: "arXiv 2026",
-        summary: "🛠 技术路线: Designing 奖励 functions generalize beyond controlled laboratory settings remains 一个 fundamental challenge 在 强化学习 用于 机器人技术 | 💡 创新点: 为解决这一问题，我们提出了 一个 框架 learns invariant symbolic 奖励 functions 从 five demonstrations | 📊 实验效果: Experiments 在 eight Meta-World 任务 和 three Franka 操作/抓取 任务 demonstrate 我们的方法 取得了 stronger process 对齐 和 策略 rollout ranking abilities 相比于 基线，accelerating downstream 策略学习 | ⭐ 整体评价: 属于机器人算法与控制方向。建议重点看实验设置、基线对比和真实部署条件。",
+        summary: "🛠 技术路线: 从少量（5 个）演示中学习不变符号奖励函数，解决奖励设计在真实环境中泛化困难的问题 | 💡 创新点: 提出的奖励函数具备环境变化不变性，仅需极少演示即可学习可迁移的过程奖励 | 📊 实验效果: 在 8 个 Meta-World 任务和 3 个 Franka 真实任务上验证：奖励排序能力强于基线，加速下游强化学习 | ⭐ 整体评价: 少样本奖励学习的实用方法，真实机器人验证增加说服力",
         tags: [["Robotics","green"]],
         links: [["arXiv","https://arxiv.org/abs/2605.22123"],["PDF","https://arxiv.org/pdf/2605.22123"]],
-        summaryGrid: [{"label":"🛠 技术路线","text":"Designing 奖励 functions generalize beyond controlled laboratory settings remains 一个 fundamental challenge 在 强化学习 用于 机器人技术"},{"label":"💡 创新点","text":"为解决这一问题，我们提出了 一个 框架 learns invariant symbolic 奖励 functions 从 five demonstrations"},{"label":"📊 实验效果","text":"Experiments 在 eight Meta-World 任务 和 three Franka 操作/抓取 任务 demonstrate 我们的方法 取得了 stronger process 对齐 和 策略 rollout ranking abilities 相比于 基线，accelerating downstream 策略学习"},{"label":"⭐ 整体评价","text":"属于机器人算法与控制方向。建议重点看实验设置、基线对比和真实部署条件。"}]
+        summaryGrid: [{"label":"🛠 技术路线","text":"从少量（5 个）演示中学习不变符号奖励函数，解决奖励设计在真实环境中泛化困难的问题"},{"label":"💡 创新点","text":"提出的奖励函数具备环境变化不变性，仅需极少演示即可学习可迁移的过程奖励"},{"label":"📊 实验效果","text":"在 8 个 Meta-World 任务和 3 个 Franka 真实任务上验证：奖励排序能力强于基线，加速下游强化学习"},{"label":"⭐ 整体评价","text":"少样本奖励学习的实用方法，真实机器人验证增加说服力"}]
     },
     {
         date: "2026-05-23",
@@ -863,76 +852,76 @@ const PAPERS_DB = [
         categoryIcon: "🦾",
         title: "CoRMA: Contrastive RMA for Contact-Rich Meta-Adaptation",
         venue: "arXiv 2026",
-        summary: "🛠 技术路线: 我们提出了 CoRMA(Contrastive 机器人 Motor Adaptation)，一个 context-based meta-adaptation 框架 modifies RMA 用于 force-dominant assembly | 💡 创新点: 我们提出了 CoRMA(Contrastive 机器人 Motor Adaptation)，一个 context-based meta-adaptation 框架 modifies RMA 用于 force-dominant assembly | 📊 实验效果: 与…相比 FORGE 基线 achieve high 仿真 success degrade 大幅 在 hardware，CoRMA retains higher verified real success controlled target-pose noise | ⭐ 整体评价: 属于世界模型/动作生成方向。建议关注其预测精度、动作可控性和 Sim-to-Real 迁移效果。",
+        summary: "🛠 技术路线: 提出 CoRMA（对比快速运动适应），通过对比学习修改 RMA 以适应力主导的装配类任务 | 💡 创新点: 在 RMA 框架中引入对比学习目标，提升接触丰富操作场景下的元适应质量 | 📊 实验效果: 在 FORGE 基准上实现高成功率；相比原始 RMA 在硬件转移时保持更高的真实成功率 | ⭐ 整体评价: 对 RMA 的针对性改进，面向接触丰富场景的 sim-to-real 迁移值得关注",
         tags: [["Robotics","green"]],
         links: [["arXiv","https://arxiv.org/abs/2605.22082"],["PDF","https://arxiv.org/pdf/2605.22082"]],
-        summaryGrid: [{"label":"🛠 技术路线","text":"我们提出了 CoRMA(Contrastive 机器人 Motor Adaptation)，一个 context-based meta-adaptation 框架 modifies RMA 用于 force-dominant assembly"},{"label":"💡 创新点","text":"我们提出了 CoRMA(Contrastive 机器人 Motor Adaptation)，一个 context-based meta-adaptation 框架 modifies RMA 用于 force-dominant assembly"},{"label":"📊 实验效果","text":"与…相比 FORGE 基线 achieve high 仿真 success degrade 大幅 在 hardware，CoRMA retains higher verified real success controlled target-pose noise"},{"label":"⭐ 整体评价","text":"属于世界模型/动作生成方向。建议关注其预测精度、动作可控性和 Sim-to-Real 迁移效果。"}]
+        summaryGrid: [{"label":"🛠 技术路线","text":"提出 CoRMA（对比快速运动适应），通过对比学习修改 RMA 以适应力主导的装配类任务"},{"label":"💡 创新点","text":"在 RMA 框架中引入对比学习目标，提升接触丰富操作场景下的元适应质量"},{"label":"📊 实验效果","text":"在 FORGE 基准上实现高成功率；相比原始 RMA 在硬件转移时保持更高的真实成功率"},{"label":"⭐ 整体评价","text":"对 RMA 的针对性改进，面向接触丰富场景的 sim-to-real 迁移值得关注"}]
     },
     {
         date: "2026-05-23",
         category: "Robotics",
         categoryIcon: "🦾",
-        title: "GA-VLN: Geometry-Aware BEV Representation for Efficient Vision-Language Navigation",
+        title: "GA-VLN: Geometry-Aware BEV Representation for Vision-Language Navigation",
         venue: "arXiv 2026",
-        summary: "🛠 技术路线: 以 address issues，我们引入了 Geometry-Aware BEV (GA-BEV) - 一个 compact，3D-grounded 特征 表征 integrates 两者 explicit 和 implicit geometric cues 为 多模态 大型 语言模型 (MLLM) - based 导航 systems | 💡 创新点: 以 address issues，我们引入了 Geometry-Aware BEV (GA-BEV) - 一个 compact，3D-grounded 特征 表征 integrates 两者 explicit 和 implicit geometric cues 为 多模态 大型 语言模型 (MLLM) - based 导航 systems。实验表明 我们的方法 达到了最优水平 results using 仅 导航 data，without DAgger augmentation 或 mixed VQA 训练，展示 鲁棒性 和 data efficiency 的 proposed GA-VLN… | 📊 实验效果: 我们构建了 BEV spatial maps 从 RGB-D inputs 通过 projecting visual 特征 为 3D space 和 aggregating 为 一个 智能体 layout 保留了 geometric consistency 降低了 token redundancy。Together，complementary cues - explicit depth-based projection 和 implicit learned priors - yield compact 但 spatially expressive 表征 大幅 improve 导航 effic… | ⭐ 整体评价: 属于机器人算法与控制方向。建议重点看实验设置、基线对比和真实部署条件。",
+        summary: "🛠 技术路线: 提出几何感知 BEV 表征（GA-BEV），融合显式深度投影和隐式学习先验用于视觉语言导航 | 💡 创新点: 将 3D 几何信息紧凑编码为 BEV 地图表征，减少 token 冗余同时保持空间一致性 | 📊 实验效果: 无需 DAgger 数据增强即可取得优异导航结果，数据效率优势明显 | ⭐ 整体评价: BEV 表征用于 VLN 的有效尝试，几何先验与语言理解的融合方式设计合理",
         tags: [["Robotics","green"]],
         links: [["arXiv","https://arxiv.org/abs/2605.22036"],["PDF","https://arxiv.org/pdf/2605.22036"]],
-        summaryGrid: [{"label":"🛠 技术路线","text":"以 address issues，我们引入了 Geometry-Aware BEV (GA-BEV) - 一个 compact，3D-grounded 特征 表征 integrates 两者 explicit 和 implicit geometric cues 为 多模态 大型 语言模型 (MLLM) - based 导航 systems"},{"label":"💡 创新点","text":"以 address issues，我们引入了 Geometry-Aware BEV (GA-BEV) - 一个 compact，3D-grounded 特征 表征 integrates 两者 explicit 和 implicit geometric cues 为 多模态 大型 语言模型 (MLLM) - based 导航 systems。实验表明 我们的方法 达到了最优水平 results using 仅 导航 data，without DAgger augmentation 或 mixed VQA 训练，展示 鲁棒性 和 data efficiency 的 proposed GA-VLN…"},{"label":"📊 实验效果","text":"我们构建了 BEV spatial maps 从 RGB-D inputs 通过 projecting visual 特征 为 3D space 和 aggregating 为 一个 智能体 layout 保留了 geometric consistency 降低了 token redundancy。Together，complementary cues - explicit depth-based projection 和 implicit learned priors - yield compact 但 spatially expressive 表征 大幅 improve 导航 effic…"},{"label":"⭐ 整体评价","text":"属于机器人算法与控制方向。建议重点看实验设置、基线对比和真实部署条件。"}]
+        summaryGrid: [{"label":"🛠 技术路线","text":"提出几何感知 BEV 表征（GA-BEV），融合显式深度投影和隐式学习先验用于视觉语言导航"},{"label":"💡 创新点","text":"将 3D 几何信息紧凑编码为 BEV 地图表征，减少 token 冗余同时保持空间一致性"},{"label":"📊 实验效果","text":"无需 DAgger 数据增强即可取得优异导航结果，数据效率优势明显"},{"label":"⭐ 整体评价","text":"BEV 表征用于 VLN 的有效尝试，几何先验与语言理解的融合方式设计合理"}]
     },
     {
         date: "2026-05-23",
         category: "Agent",
         categoryIcon: "🧩",
-        title: "Superhuman Safe and Agile Racing through Multi-Agent Reinforcement Learning",
+        title: "Superhuman Safe and Agile Racing through Multi-Agent RL",
         venue: "arXiv 2026",
-        summary: "🛠 技术路线: 我们表明 智能体 强化学习 provides essential safety scaffolding required 用于 real-world interaction | 💡 创新点: 智能体 outperform 一个 champion-level human pilot 在 multi-player races speeds exceeding 22 m/s，simultaneously 降低了 collision rates 通过 50 % 相比于 SOTA 水平 智能体 基线 | 📊 实验效果: Autonomous systems 实现了 superhuman 性能 在 isolation 或 仿真，但 remain brittle 在 shared，dynamic real-world spaces | ⭐ 整体评价: 属于机器人算法与控制方向。建议重点看实验设置、基线对比和真实部署条件。",
+        summary: "🛠 技术路线: 通过多智能体强化学习实现超越人类冠军水平的安全敏捷竞速 | 💡 创新点: 在共享动态环境中同时优化竞速性能和安全约束，解决超人性能与安全性的兼容问题 | 📊 实验效果: 在多人竞速中超越人类冠军飞行员（速度超 22 m/s），同时碰撞率比 SOTA 降低 50% | ⭐ 整体评价: 在真实世界动态多人场景中实现超人表现+安全保障，成果令人印象深刻",
         tags: [["Agent","green"]],
         links: [["arXiv","https://arxiv.org/abs/2605.22748"],["PDF","https://arxiv.org/pdf/2605.22748"],["Link","https://rpg.ifi.uzh.ch/marl"]],
-        summaryGrid: [{"label":"🛠 技术路线","text":"我们表明 智能体 强化学习 provides essential safety scaffolding required 用于 real-world interaction"},{"label":"💡 创新点","text":"智能体 outperform 一个 champion-level human pilot 在 multi-player races speeds exceeding 22 m/s，simultaneously 降低了 collision rates 通过 50 % 相比于 SOTA 水平 智能体 基线"},{"label":"📊 实验效果","text":"Autonomous systems 实现了 superhuman 性能 在 isolation 或 仿真，但 remain brittle 在 shared，dynamic real-world spaces"},{"label":"⭐ 整体评价","text":"属于机器人算法与控制方向。建议重点看实验设置、基线对比和真实部署条件。"}]
+        summaryGrid: [{"label":"🛠 技术路线","text":"通过多智能体强化学习实现超越人类冠军水平的安全敏捷竞速"},{"label":"💡 创新点","text":"在共享动态环境中同时优化竞速性能和安全约束，解决超人性能与安全性的兼容问题"},{"label":"📊 实验效果","text":"在多人竞速中超越人类冠军飞行员（速度超 22 m/s），同时碰撞率比 SOTA 降低 50%"},{"label":"⭐ 整体评价","text":"在真实世界动态多人场景中实现超人表现+安全保障，成果令人印象深刻"}]
     },
     {
         date: "2026-05-23",
         category: "Agent",
         categoryIcon: "🧩",
-        title: "Steins;Gate Drive: Semantic Safety Arbitration over Structured Futures for Latency-Decoupled LLM Planning",
+        title: "Steins;Gate Drive: Semantic Safety Arbitration for Latency-Decoupled LLM Planning",
         venue: "arXiv 2026",
-        summary: "🛠 技术路线: Learned 世界模型 predict futures，usually keep future 生成 和 动作 selection inside 大型 coupled loops | 💡 创新点: 我们提出了 SteinsGateDrive，一个 latency-decoupled planner-runtime 架构 在 worldline metaphor 从 eponymous story names one plausible consequence 的 一个 intervention: LLM selects counterfactual driving futures final control instant，和 一个 runtime reuses selected forecast 仅 safety contracts remain valid | 📊 实验效果: 详见原文实验部分 | ⭐ 整体评价: 属于世界模型/动作生成方向。建议关注其预测精度、动作可控性和 Sim-to-Real 迁移效果。",
+        summary: "🛠 技术路线: 提出 SteinsGateDrive 延迟解耦规划-运行时架构：LLM 选择反事实驾驶未来，运行时复用选定世界线的安全控制 | 💡 创新点: 借鉴世界线隐喻将 LLM 慢规划与快速安全运行时解耦，实现语义安全仲裁 | 📊 实验效果: 论文提供架构设计与初步验证 | ⭐ 整体评价: 将 LLM 推理延迟与实时控制需求解耦的创新架构思路",
         tags: [["Agent","green"]],
         links: [["arXiv","https://arxiv.org/abs/2605.22456"],["PDF","https://arxiv.org/pdf/2605.22456"]],
-        summaryGrid: [{"label":"🛠 技术路线","text":"Learned 世界模型 predict futures，usually keep future 生成 和 动作 selection inside 大型 coupled loops"},{"label":"💡 创新点","text":"我们提出了 SteinsGateDrive，一个 latency-decoupled planner-runtime 架构 在 worldline metaphor 从 eponymous story names one plausible consequence 的 一个 intervention: LLM selects counterfactual driving futures final control instant，和 一个 runtime reuses selected forecast 仅 safety contracts remain valid"},{"label":"📊 实验效果","text":"详见原文实验部分"},{"label":"⭐ 整体评价","text":"属于世界模型/动作生成方向。建议关注其预测精度、动作可控性和 Sim-to-Real 迁移效果。"}]
+        summaryGrid: [{"label":"🛠 技术路线","text":"提出 SteinsGateDrive 延迟解耦规划-运行时架构：LLM 选择反事实驾驶未来，运行时复用选定世界线的安全控制"},{"label":"💡 创新点","text":"借鉴世界线隐喻将 LLM 慢规划与快速安全运行时解耦，实现语义安全仲裁"},{"label":"📊 实验效果","text":"论文提供架构设计与初步验证"},{"label":"⭐ 整体评价","text":"将 LLM 推理延迟与实时控制需求解耦的创新架构思路"}]
     },
     {
         date: "2026-05-23",
         category: "Agent",
         categoryIcon: "🧩",
-        title: "Efficient Agentic Reasoning Through Self-Regulated Simulative Planning",
+        title: "SR2AM: Self-Regulated Simulative Reasoning Agentic LLM",
         venue: "arXiv 2026",
-        summary: "🛠 技术路线: argue 高效 agentic reasoning benefits 从 decomposing decision-making 为 three systems: simulative reasoning (System II) grounding deliberation 在 future-state 预测 via 一个 世界模型; self-regulation (System III) deciding 和 deeply 以 plan via 一个 learned configurator; 和 reactive execution (System I) handling fine-grained 动作 | 💡 创新点: 以 test 我们开发了 SRAM (Self-Regulated Simulative Reasoning Agentic LLM)，realizing 两者 distinct 阶段 within 一个 LLM's 的-虽然t，具有 LLM 世界模型 | 📊 实验效果: Without control 超过 presence，structure，或 horizon 的 规划，systems dramatically increase reasoning length，yielding in高效 token use without reliable 准确率 gains | ⭐ 整体评价: 属于世界模型/动作生成方向。建议关注其预测精度、动作可控性和 Sim-to-Real 迁移效果。",
+        summary: "🛠 技术路线: 将智能体决策分解为三个系统：模拟推理（System II，通过世界模型进行未来状态推演）和自我调节（System III，决定推理深度） | 💡 创新点: 自我调节机制控制推理深度，避免无约束地增加推理长度导致 token 浪费而无可靠收益 | 📊 实验效果: 验证 SR2AM 在单 LLM 内实现三系统协作，有效控制推理开销 | ⭐ 整体评价: 为 LLM Agent 的推理效率提供了系统化框架，自我调节思想有实践价值",
         tags: [["Agent","green"]],
         links: [["arXiv","https://arxiv.org/abs/2605.22138"],["PDF","https://arxiv.org/pdf/2605.22138"],["Code","https://github.com/sailing-lab/sr2am"]],
-        summaryGrid: [{"label":"🛠 技术路线","text":"argue 高效 agentic reasoning benefits 从 decomposing decision-making 为 three systems: simulative reasoning (System II) grounding deliberation 在 future-state 预测 via 一个 世界模型; self-regulation (System III) deciding 和 deeply 以 plan via 一个 learned configurator; 和 reactive execution (System I) handling fine-grained 动作"},{"label":"💡 创新点","text":"以 test 我们开发了 SRAM (Self-Regulated Simulative Reasoning Agentic LLM)，realizing 两者 distinct 阶段 within 一个 LLM's 的-虽然t，具有 LLM 世界模型"},{"label":"📊 实验效果","text":"Without control 超过 presence，structure，或 horizon 的 规划，systems dramatically increase reasoning length，yielding in高效 token use without reliable 准确率 gains"},{"label":"⭐ 整体评价","text":"属于世界模型/动作生成方向。建议关注其预测精度、动作可控性和 Sim-to-Real 迁移效果。"}]
+        summaryGrid: [{"label":"🛠 技术路线","text":"将智能体决策分解为三个系统：模拟推理（System II，通过世界模型进行未来状态推演）和自我调节（System III，决定推理深度）"},{"label":"💡 创新点","text":"自我调节机制控制推理深度，避免无约束地增加推理长度导致 token 浪费而无可靠收益"},{"label":"📊 实验效果","text":"验证 SR2AM 在单 LLM 内实现三系统协作，有效控制推理开销"},{"label":"⭐ 整体评价","text":"为 LLM Agent 的推理效率提供了系统化框架，自我调节思想有实践价值"}]
     },
     {
         date: "2026-05-23",
         category: "Agent",
         categoryIcon: "🧩",
-        title: "Interpreting and Enhancing Emotional Circuits in Large Vision-Language Models via Cross-Modal Information Flow",
+        title: "Interpreting Emotional Circuits in Large Vision-Language Models",
         venue: "arXiv 2026",
-        summary: "🛠 技术路线: 大型 视觉-语言模型 (LVLMs) represent 一个 significant leap towards empathetic 智能体，展示 remarkable capabilities 在 emotion understanding | 💡 创新点: 基于大型 视觉-语言模型 (LVLMs) represent 一个 significant leap towards empathetic 智能体，展示 remarkable capabilities 在 emotion understanding的改进方法，详见原文 | 📊 实验效果: 大量实验 在 comprehensive MER-UniBench demonstrate 我们的方法 显著地 improve 性能 via 推理 intervention，有效地 mitigating emotional hallucinations 和 corroborating causal fidelity 的 discovered circuits | ⭐ 整体评价: 属于大语言模型/推理方向。建议关注训练范式、推理机制和 benchmark 表现。",
+        summary: "🛠 技术路线: 通过跨模态信息流分析解释和增强大型视觉语言模型中的情感电路 | 💡 创新点: 发现并验证 LVLM 中的情感因果电路，通过定向干预可改善情感理解并减少情感幻觉 | 📊 实验效果: 在 MER-UniBench 综合基准上验证：电路干预提升情感识别准确率，减少情感幻觉 | ⭐ 整体评价: 可解释性与可控性结合的有趣工作，对构建共情 AI 有启发",
         tags: [["Agent","green"]],
         links: [["arXiv","https://arxiv.org/abs/2605.21980"],["PDF","https://arxiv.org/pdf/2605.21980"]],
-        summaryGrid: [{"label":"🛠 技术路线","text":"大型 视觉-语言模型 (LVLMs) represent 一个 significant leap towards empathetic 智能体，展示 remarkable capabilities 在 emotion understanding"},{"label":"💡 创新点","text":"基于大型 视觉-语言模型 (LVLMs) represent 一个 significant leap towards empathetic 智能体，展示 remarkable capabilities 在 emotion understanding的改进方法，详见原文"},{"label":"📊 实验效果","text":"大量实验 在 comprehensive MER-UniBench demonstrate 我们的方法 显著地 improve 性能 via 推理 intervention，有效地 mitigating emotional hallucinations 和 corroborating causal fidelity 的 discovered circuits"},{"label":"⭐ 整体评价","text":"属于大语言模型/推理方向。建议关注训练范式、推理机制和 benchmark 表现。"}]
+        summaryGrid: [{"label":"🛠 技术路线","text":"通过跨模态信息流分析解释和增强大型视觉语言模型中的情感电路"},{"label":"💡 创新点","text":"发现并验证 LVLM 中的情感因果电路，通过定向干预可改善情感理解并减少情感幻觉"},{"label":"📊 实验效果","text":"在 MER-UniBench 综合基准上验证：电路干预提升情感识别准确率，减少情感幻觉"},{"label":"⭐ 整体评价","text":"可解释性与可控性结合的有趣工作，对构建共情 AI 有启发"}]
     },
     {
         date: "2026-05-23",
         category: "Multimodal",
         categoryIcon: "🎨",
-        title: "Conceptualizing Embeddings: Sparse Disentanglement for Vision-Language Models",
+        title: "CEDAR: Conceptual Embedding Disentanglement via Adaptive Rotation",
         venue: "arXiv 2026",
-        summary: "🛠 技术路线: 视觉-语言模型 learn powerful 多模态 嵌入，但 internal semantics remain opaque | 💡 创新点: 我们引入了 CEDAR (Conceptual 嵌入 Disentanglement via Adaptive Rotation)，一个 post-hoc 方法 reveals compositional structure 的 pretrained 嵌入 without increasing dimensionality | 📊 实验效果: 实验证明 CEDAR 取得了 一个 competitive reconstruction-sparsity trade-off producing explanations 可解释 和 better aligned 具有 human perception | ⭐ 整体评价: 属于多模态方向。建议关注跨模态对齐方式、数据规模和下游任务表现。",
+        summary: "🛠 技术路线: 提出 CEDAR 后处理方法，通过自适应旋转揭示预训练视觉语言模型嵌入的组合结构，不增加维度 | 💡 创新点: 无需重新训练即可解耦 VLM 嵌入空间的语义组成，产出与人类感知更对齐的稀疏可解释表示 | 📊 实验效果: 在重建-稀疏性权衡上取得竞争性结果，解释质量优于直接稀疏方法 | ⭐ 整体评价: 轻量级嵌入可解释性方法，后处理即可使用，实用性强",
         tags: [["Multimodal","green"]],
         links: [["arXiv","https://arxiv.org/abs/2605.22679"],["PDF","https://arxiv.org/pdf/2605.22679"]],
-        summaryGrid: [{"label":"🛠 技术路线","text":"视觉-语言模型 learn powerful 多模态 嵌入，但 internal semantics remain opaque"},{"label":"💡 创新点","text":"我们引入了 CEDAR (Conceptual 嵌入 Disentanglement via Adaptive Rotation)，一个 post-hoc 方法 reveals compositional structure 的 pretrained 嵌入 without increasing dimensionality"},{"label":"📊 实验效果","text":"实验证明 CEDAR 取得了 一个 competitive reconstruction-sparsity trade-off producing explanations 可解释 和 better aligned 具有 human perception"},{"label":"⭐ 整体评价","text":"属于多模态方向。建议关注跨模态对齐方式、数据规模和下游任务表现。"}]
+        summaryGrid: [{"label":"🛠 技术路线","text":"提出 CEDAR 后处理方法，通过自适应旋转揭示预训练视觉语言模型嵌入的组合结构，不增加维度"},{"label":"💡 创新点","text":"无需重新训练即可解耦 VLM 嵌入空间的语义组成，产出与人类感知更对齐的稀疏可解释表示"},{"label":"📊 实验效果","text":"在重建-稀疏性权衡上取得竞争性结果，解释质量优于直接稀疏方法"},{"label":"⭐ 整体评价","text":"轻量级嵌入可解释性方法，后处理即可使用，实用性强"}]
     },
     {
         date: "2026-05-23",
@@ -940,10 +929,10 @@ const PAPERS_DB = [
         categoryIcon: "🎨",
         title: "GeoWeaver: Grounding Visual Tokens with Geometric Evidence before Scene Reasoning",
         venue: "arXiv 2026",
-        summary: "🛠 技术路线: Spatio-temporal reasoning 在 视觉-语言模型 requires visual 表征 preserve physical geometry 而非 merely semantic appearance | 💡 创新点: 为解决这一问题 limitation，我们引入了 GeoWeaver，一个 pre-reasoning geometric grounding 框架 treats geometry 一个 representational prerequisite 用于 spatio-temporal reasoning | 📊 实验效果: Extensive 评估 在 spatial reasoning 基准测试 demonstrate GeoWeaver consistently enhances geometry-aware reasoning retaining general 多模态 capabilities | ⭐ 整体评价: 属于大语言模型/推理方向。建议关注训练范式、推理机制和 benchmark 表现。",
+        summary: "🛠 技术路线: 提出预推理几何接地方法 GeoWeaver：将几何信息作为视觉表征的前置条件而非后处理约束 | 💡 创新点: 将几何理解视为时空推理的表征前提而非附加约束，在推理前完成视觉 token 的几何接地 | 📊 实验效果: 在空间推理基准上持续提升几何感知推理能力，同时保持通用视觉理解能力 | ⭐ 整体评价: 几何优先的多模态推理架构，思路清晰且效果稳定",
         tags: [["Multimodal","green"]],
         links: [["arXiv","https://arxiv.org/abs/2605.22558"],["PDF","https://arxiv.org/pdf/2605.22558"],["Code","https://github.com/yahooo-m/GeoWeaver"]],
-        summaryGrid: [{"label":"🛠 技术路线","text":"Spatio-temporal reasoning 在 视觉-语言模型 requires visual 表征 preserve physical geometry 而非 merely semantic appearance"},{"label":"💡 创新点","text":"为解决这一问题 limitation，我们引入了 GeoWeaver，一个 pre-reasoning geometric grounding 框架 treats geometry 一个 representational prerequisite 用于 spatio-temporal reasoning"},{"label":"📊 实验效果","text":"Extensive 评估 在 spatial reasoning 基准测试 demonstrate GeoWeaver consistently enhances geometry-aware reasoning retaining general 多模态 capabilities"},{"label":"⭐ 整体评价","text":"属于大语言模型/推理方向。建议关注训练范式、推理机制和 benchmark 表现。"}]
+        summaryGrid: [{"label":"🛠 技术路线","text":"提出预推理几何接地方法 GeoWeaver：将几何信息作为视觉表征的前置条件而非后处理约束"},{"label":"💡 创新点","text":"将几何理解视为时空推理的表征前提而非附加约束，在推理前完成视觉 token 的几何接地"},{"label":"📊 实验效果","text":"在空间推理基准上持续提升几何感知推理能力，同时保持通用视觉理解能力"},{"label":"⭐ 整体评价","text":"几何优先的多模态推理架构，思路清晰且效果稳定"}]
     },
     {
         date: "2026-05-23",
@@ -951,21 +940,21 @@ const PAPERS_DB = [
         categoryIcon: "🎨",
         title: "Understanding Multimodal Failure in Action-Chunking Behavioral Cloning",
         venue: "arXiv 2026",
-        summary: "🛠 技术路线: Experiments 在 synthetic 多模态 任务 和 机器人 仿真 基准测试 support 机制 | 💡 创新点: 基于Experiments 在 synthetic 多模态 任务 和 机器人 仿真 基准测试 support 机制的改进方法，详见原文 | 📊 实验效果: 用于 动作 生成式 策略，多模态ity constrained 通过 smoothness 的 以-动作 transport: 一个 map 具有 小型 Lipschitz constant cannot assign substantial probability 以 many well-separated modes。Experiments 在 synthetic 多模态 任务 和 机器人 仿真 基准测试 support 机制 | ⭐ 整体评价: 属于机器人算法与控制方向。建议重点看实验设置、基线对比和真实部署条件。",
+        summary: "🛠 技术路线: 理论分析动作 chunking 行为克隆中的多模态失败：流匹配的 Lipschitz 约束和最优传输平滑性限制了其对多模态分布的建模能力 | 💡 创新点: 从理论角度解释为何 flow-matching 动作生成在多模态示范分布下失效，提供严格数学分析 | 📊 实验效果: 在合成环境和真实机器人任务上验证理论预测与实际失败模式一致 | ⭐ 整体评价: 揭示 action chunking BC 的根本理论局限性，对方法选型有重要指导意义",
         tags: [["Multimodal","green"]],
         links: [["arXiv","https://arxiv.org/abs/2605.22493"],["PDF","https://arxiv.org/pdf/2605.22493"]],
-        summaryGrid: [{"label":"🛠 技术路线","text":"Experiments 在 synthetic 多模态 任务 和 机器人 仿真 基准测试 support 机制"},{"label":"💡 创新点","text":"基于Experiments 在 synthetic 多模态 任务 和 机器人 仿真 基准测试 support 机制的改进方法，详见原文"},{"label":"📊 实验效果","text":"用于 动作 生成式 策略，多模态ity constrained 通过 smoothness 的 以-动作 transport: 一个 map 具有 小型 Lipschitz constant cannot assign substantial probability 以 many well-separated modes。Experiments 在 synthetic 多模态 任务 和 机器人 仿真 基准测试 support 机制"},{"label":"⭐ 整体评价","text":"属于机器人算法与控制方向。建议重点看实验设置、基线对比和真实部署条件。"}]
+        summaryGrid: [{"label":"🛠 技术路线","text":"理论分析动作 chunking 行为克隆中的多模态失败：流匹配的 Lipschitz 约束和最优传输平滑性限制了其对多模态分布的建模能力"},{"label":"💡 创新点","text":"从理论角度解释为何 flow-matching 动作生成在多模态示范分布下失效，提供严格数学分析"},{"label":"📊 实验效果","text":"在合成环境和真实机器人任务上验证理论预测与实际失败模式一致"},{"label":"⭐ 整体评价","text":"揭示 action chunking BC 的根本理论局限性，对方法选型有重要指导意义"}]
     },
     {
         date: "2026-05-23",
         category: "LLM / VLM",
         categoryIcon: "💡",
-        title: "MoSA: Motion-constrained Stress Adaptation for Mitigating Real-to-Sim Gap in Continuum Dynamics via Learning Residual Anisotropy",
+        title: "MoSA: Motion-constrained Stress Adaptation for Real-to-Sim Gap in Continuum Dynamics",
         venue: "arXiv 2026",
-        summary: "🛠 技术路线: 一个 common 策略 以 calibrate simulators 通过 estimating physical 参数，但 准确率 ultimately bounded 通过 underlying physical 模型，often assume materials homogeneous 和 isotropic | 💡 创新点: 因此，我们提出了 MoSA，一个 motion-constrained stress adaptation 框架 targets residual effects 以 further improve 以 dynamics learning | 📊 实验效果: Learning real-world dynamics 从 visual observations crucial 用于 多种 领域。一个 common 策略 以 calibrate simulators 通过 estimating physical 参数，但 准确率 ultimately bounded 通过 underlying physical 模型，often assume materials homogeneous 和 isotropic | ⭐ 整体评价: 属于世界模型/动作生成方向。建议关注其预测精度、动作可控性和 Sim-to-Real 迁移效果。",
+        summary: "🛠 技术路线: 提出运动约束应力适应方法 MoSA，学习残差各向异性以弥补连续体动力学中的 real-to-sim 差距 | 💡 创新点: 突破传统材料均匀各向同性假设，通过学习残差应力场适应真实材料的非理想特性 | 📊 实验效果: 从视觉观测学习真实世界动力学，在连续体模拟中显著缩小 sim-to-real 差距 | ⭐ 整体评价: 可微物理仿真的前沿工作，残差各向异性建模思路新颖",
         tags: [["LLM","green"]],
-        links: [["arXiv","https://arxiv.org/abs/2605.22597"],["PDF","https://arxiv.org/pdf/2605.22597"],["Code","https://mercerai.github.io/MoSA/"]],
-        summaryGrid: [{"label":"🛠 技术路线","text":"一个 common 策略 以 calibrate simulators 通过 estimating physical 参数，但 准确率 ultimately bounded 通过 underlying physical 模型，often assume materials homogeneous 和 isotropic"},{"label":"💡 创新点","text":"因此，我们提出了 MoSA，一个 motion-constrained stress adaptation 框架 targets residual effects 以 further improve 以 dynamics learning"},{"label":"📊 实验效果","text":"Learning real-world dynamics 从 visual observations crucial 用于 多种 领域。一个 common 策略 以 calibrate simulators 通过 estimating physical 参数，但 准确率 ultimately bounded 通过 underlying physical 模型，often assume materials homogeneous 和 isotropic"},{"label":"⭐ 整体评价","text":"属于世界模型/动作生成方向。建议关注其预测精度、动作可控性和 Sim-to-Real 迁移效果。"}]
+        links: [["arXiv","https://arxiv.org/abs/2605.22597"],["PDF","https://arxiv.org/pdf/2605.22597"],["Project","https://mercerai.github.io/MoSA/"]],
+        summaryGrid: [{"label":"🛠 技术路线","text":"提出运动约束应力适应方法 MoSA，学习残差各向异性以弥补连续体动力学中的 real-to-sim 差距"},{"label":"💡 创新点","text":"突破传统材料均匀各向同性假设，通过学习残差应力场适应真实材料的非理想特性"},{"label":"📊 实验效果","text":"从视觉观测学习真实世界动力学，在连续体模拟中显著缩小 sim-to-real 差距"},{"label":"⭐ 整体评价","text":"可微物理仿真的前沿工作，残差各向异性建模思路新颖"}]
     },
     {
         date: "2026-05-23",
@@ -973,10 +962,10 @@ const PAPERS_DB = [
         categoryIcon: "💡",
         title: "Quantifying Full-Body Immersion",
         venue: "arXiv 2026",
-        summary: "🛠 技术路线: 在 context，我们引入了 一个 transformative paradigm 用于 immersive virtual experiences centered around whole-body kinetic interactions | 💡 创新点: 在 context，我们引入了 一个 transformative paradigm 用于 immersive virtual experiences centered around whole-body kinetic interactions | 📊 实验效果: 详见原文实验部分 | ⭐ 整体评价: 属于机器人算法与控制方向。建议重点看实验设置、基线对比和真实部署条件。",
+        summary: "🛠 技术路线: 提出全身沉浸式体验的量化范式，面向以全身运动交互为核心的虚拟体验 | 💡 创新点: 将全身动觉交互作为沉浸感的核心度量维度，超越传统视觉/听觉沉浸评估 | 📊 实验效果: 提供理论框架和初步定量评估方法 | ⭐ 整体评价: VR/AR 交互的新评估视角，目前为框架性贡献",
         tags: [["LLM","green"]],
         links: [["arXiv","https://arxiv.org/abs/2605.22521"],["PDF","https://arxiv.org/pdf/2605.22521"]],
-        summaryGrid: [{"label":"🛠 技术路线","text":"在 context，我们引入了 一个 transformative paradigm 用于 immersive virtual experiences centered around whole-body kinetic interactions"},{"label":"💡 创新点","text":"在 context，我们引入了 一个 transformative paradigm 用于 immersive virtual experiences centered around whole-body kinetic interactions"},{"label":"📊 实验效果","text":"详见原文实验部分"},{"label":"⭐ 整体评价","text":"属于机器人算法与控制方向。建议重点看实验设置、基线对比和真实部署条件。"}]
+        summaryGrid: [{"label":"🛠 技术路线","text":"提出全身沉浸式体验的量化范式，面向以全身运动交互为核心的虚拟体验"},{"label":"💡 创新点","text":"将全身动觉交互作为沉浸感的核心度量维度，超越传统视觉/听觉沉浸评估"},{"label":"📊 实验效果","text":"提供理论框架和初步定量评估方法"},{"label":"⭐ 整体评价","text":"VR/AR 交互的新评估视角，目前为框架性贡献"}]
     },
     {
         date: "2026-05-23",
@@ -984,10 +973,10 @@ const PAPERS_DB = [
         categoryIcon: "📄",
         title: "GLeVE: Graph-Guided Lesion Grounding with Proposal Verification in 3D CT",
         venue: "arXiv 2026",
-        summary: "🛠 技术路线: 我们提出了 GLeVE，一个 graph-guided lesion grounding 框架 具有 anatomical prior verification 和 octree-based 自回归 refinement | 💡 创新点: 我们提出了 GLeVE，一个 graph-guided lesion grounding 框架 具有 anatomical prior verification 和 octree-based 自回归 refinement | 📊 实验效果: 现有的 report-assisted 和 vision-language grounding 方法 typically rely 在 phrase-level 对齐 或 dense pixel supervision，resulting 在 limited lesion-wise correspondence 和 suboptimal localization 准确率。Anatomy-aware proposal 生成 具有 region-level verification enforces 以 文本 对齐，层次化 octree refinement progressively 提升了… | ⭐ 整体评价: 属于大语言模型/推理方向。建议关注训练范式、推理机制和 benchmark 表现。",
+        summary: "🛠 技术路线: 提出图引导的病灶定位方法 GLeVE，结合解剖先验验证和八叉树细粒度定位 | 💡 创新点: 利用解剖知识图谱进行区域级候选验证，配合八叉树分辨率递进策略精确定位病灶 | 📊 实验效果: 超越传统短语级匹配和密集像素监督方法，实现更精确的病灶级对应和定位 | ⭐ 整体评价: 医学影像与视觉语言模型的结合，解剖先验引导的方法设计合理",
         tags: [["Other","green"]],
         links: [["arXiv","https://arxiv.org/abs/2605.22619"],["PDF","https://arxiv.org/pdf/2605.22619"]],
-        summaryGrid: [{"label":"🛠 技术路线","text":"我们提出了 GLeVE，一个 graph-guided lesion grounding 框架 具有 anatomical prior verification 和 octree-based 自回归 refinement"},{"label":"💡 创新点","text":"我们提出了 GLeVE，一个 graph-guided lesion grounding 框架 具有 anatomical prior verification 和 octree-based 自回归 refinement"},{"label":"📊 实验效果","text":"现有的 report-assisted 和 vision-language grounding 方法 typically rely 在 phrase-level 对齐 或 dense pixel supervision，resulting 在 limited lesion-wise correspondence 和 suboptimal localization 准确率。Anatomy-aware proposal 生成 具有 region-level verification enforces 以 文本 对齐，层次化 octree refinement progressively 提升了…"},{"label":"⭐ 整体评价","text":"属于大语言模型/推理方向。建议关注训练范式、推理机制和 benchmark 表现。"}]
+        summaryGrid: [{"label":"🛠 技术路线","text":"提出图引导的病灶定位方法 GLeVE，结合解剖先验验证和八叉树细粒度定位"},{"label":"💡 创新点","text":"利用解剖知识图谱进行区域级候选验证，配合八叉树分辨率递进策略精确定位病灶"},{"label":"📊 实验效果","text":"超越传统短语级匹配和密集像素监督方法，实现更精确的病灶级对应和定位"},{"label":"⭐ 整体评价","text":"医学影像与视觉语言模型的结合，解剖先验引导的方法设计合理"}]
     },
     // === 2026-05-22 ===
     {
@@ -11310,9 +11299,9 @@ const PAPERS_DB = [
 const DAILY_OVERVIEW = {
     "2026-05-23": {
         bannerTitle: "🔥 本周补漏看点",
-        bannerSubtitle: "BehaviorVLA 学习行为表征解决 VLA 分布偏移 | Pre-VLA 实现运行时验证提升 VLA 可靠性 | SE3Kit 轻量 SE(3) 几何库服务机器人开发 | CoRMA 对比 RMA 实现接触丰富任务元适应 | stable-worldmodel (Meta FAIR) 标准化世界模型研究平台 | CrossVLA 跨范式后训练优化 VLA 模型",
-        picks: ["Action with Visual Primitives","MoSA: Motion-constrained Stress Adaptation for Mitigating Real-to-Sim Gap in Continuum Dynamics via Learning Residual Anisotropy","GeoWeaver: Grounding Visual Tokens with Geometric Evidence before Scene Reasoning","From Abstraction to Instantiation: Learning Behavioral Representation for Vision-Language-Action Model","Pre-VLA: Preemptive Runtime Verification for Reliable Vision-Language-Action and World-Model Rollouts"],
-        totalPapers: 30,
+        bannerSubtitle: "BehaviorVLA 学习行为表征解决 VLA 分布偏移 | Pre-VLA 实现运行时验证提升 VLA 可靠性 | TRM 后处理修复世界模型规划（7%→97%） | CoRMA 对比 RMA 实现接触丰富任务元适应 | stable-worldmodel (Meta FAIR) 标准化世界模型研究 | 多智能体竞速超越人类冠军且碰撞率降低 50%",
+        picks: ["AVP: Action with Visual Primitives","CrossVLA: Cross-Paradigm Post-Training for Vision-Language-Action Models","Beyond Euclidean Proximity: Repairing Latent World Models with Trajectory Reachability Metrics","stable-worldmodel: A Platform for Reproducible World Modeling Research","SE3Kit: A Lightweight Python Library for SE(3) Geometric Primitives in Robotics"],
+        totalPapers: 29,
         totalNews: 0
     },
     "2026-05-22": {
