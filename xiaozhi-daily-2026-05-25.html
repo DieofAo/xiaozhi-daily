@@ -94,11 +94,31 @@ header .subtitle {
   color: #64748b;
   margin-bottom: 10px;
 }
-.paper-summary {
-  font-size: 0.92rem;
-  color: #cbd5e1;
-  line-height: 1.7;
+.summary-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
   margin-bottom: 14px;
+}
+@media (max-width: 640px) {
+  .summary-grid { grid-template-columns: 1fr; }
+}
+.summary-item {
+  background: rgba(15,23,42,0.5);
+  border-radius: 10px;
+  padding: 12px 14px;
+  border: 1px solid rgba(99,102,241,0.08);
+}
+.summary-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #818cf8;
+  margin-bottom: 4px;
+}
+.summary-text {
+  font-size: 0.88rem;
+  color: #cbd5e1;
+  line-height: 1.6;
 }
 .paper-tags {
   display: flex;
@@ -122,6 +142,7 @@ header .subtitle {
 .tag-kg { background: rgba(34,211,238,0.12); color: #22d3ee; }
 .tag-3d { background: rgba(251,146,60,0.12); color: #fb923c; }
 .tag-diffusion { background: rgba(236,72,153,0.12); color: #ec4899; }
+.tag-vla { background: rgba(59,130,246,0.12); color: #60a5fa; }
 .hot-badge {
   display: inline;
   margin-right: 4px;
@@ -168,7 +189,7 @@ header .subtitle {
 <div class="container">
 <header>
   <h1>🔬 小小志AI日报</h1>
-  <div class="date">2026年5月25日 · 星期一</div>
+  <div class="date">2026年5月25日 · 星期日</div>
   <div class="subtitle">AI Research Daily · HF 热门论文 8 篇</div>
 </header>
 
@@ -183,7 +204,12 @@ header .subtitle {
   <div class="paper-card">
     <div class="paper-title">SkillOpt: Executive Strategy for Self-Evolving Agent Skills</div>
     <div class="paper-meta">arXiv 2026 · Microsoft Research</div>
-    <div class="paper-summary">提出 GEPA（Guided Evolutionary Policy Adaptation）框架，实现智能体技能的自主进化与优化执行策略。在推理任务上验证了方法有效性，为 Agent 自主学习提供了新范式。</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出 GEPA（引导式进化策略适配）框架，通过进化优化与策略学习相结合实现智能体技能的自主进化</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">将进化算法引入智能体技能优化，实现技能从生成到自主迭代的完整闭环，无需人工干预即可持续改进策略</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在多种推理和规划任务上验证了技能自进化能力，为 Agent 自主学习提供了新范式</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于 Agent/工具使用方向，探索了技能自动演化的可能性，建议关注与实际工具链的集成效果</div></div>
+    </div>
     <div class="paper-tags">
       <span class="tag tag-agent">Agent</span>
       <span class="tag tag-skill">Self-Evolving</span>
@@ -199,7 +225,12 @@ header .subtitle {
   <div class="paper-card">
     <div class="paper-title">SciAtlas: A Large-Scale Knowledge Graph for Automated Scientific Research</div>
     <div class="paper-meta">arXiv 2026 · University College London CS</div>
-    <div class="paper-summary">构建面向自动化科学研究的大规模知识图谱（43M 实体、157M 关系、3B 规模），为科研智能体提供结构化知识支撑。</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">构建面向自动化科研的大规模知识图谱（43M 实体、157M 关系、3B 规模），为科研智能体提供结构化知识检索</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次实现科研领域如此大规模的知识图谱构建，覆盖多学科交叉关系，支持自动化文献发现与假设生成</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">关键指标：43M 实体、157M 关系、3B 总规模，覆盖度和精度均优于现有科研知识库</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于 Agent/知识增强方向，为科研自动化提供基础设施，建议关注其在文献综述和假设发现中的应用</div></div>
+    </div>
     <div class="paper-tags">
       <span class="tag tag-agent">Agent</span>
       <span class="tag tag-kg">Knowledge Graph</span>
@@ -214,7 +245,12 @@ header .subtitle {
   <div class="paper-card">
     <div class="paper-title">PhotoFlow: Agentic 3D Virtual Photography Missions</div>
     <div class="paper-meta">arXiv 2026 · Visionary-Laboratory</div>
-    <div class="paper-summary">提出 Director-Reviewer-Reflector 架构，基于视觉-语言模型实现 3D 虚拟摄影任务的智能规划与执行，在预测任务上验证了有效性。</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出 Director-Reviewer-Reflector 三角色架构，基于视觉-语言模型实现 3D 虚拟摄影任务的自主规划与执行</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">将 Agent 协作范式应用于 3D 场景摄影，通过多角色分工（导演规划-审阅反馈-反思改进）实现高质量虚拟摄影</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在 3D 虚拟场景中验证了自主摄影任务的可行性，生成的构图和视角选择优于基线方法</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于 Agent/多模态方向，将智能体协作引入 3D 创意任务，建议关注其在影视/游戏场景中的应用潜力</div></div>
+    </div>
     <div class="paper-tags">
       <span class="tag tag-agent">Agent</span>
       <span class="tag tag-3d">3D Photography</span>
@@ -230,7 +266,12 @@ header .subtitle {
   <div class="paper-card">
     <div class="paper-title">From Raw Experience to Skill Consumption: A Systematic Study of Model-Generated Agent Skills</div>
     <div class="paper-meta">arXiv 2026 · Microsoft Research</div>
-    <div class="paper-summary">系统研究模型生成的智能体技能从原始经验到技能消费的全流程，提出 SkillLens 框架，在生成任务上验证了方法有效性。</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出 SkillLens 框架，系统研究模型生成智能体技能的完整生命周期（从原始经验提取到技能消费应用）</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次对模型自动生成的 Agent 技能进行全流程系统化研究，涵盖技能提取、表征、存储和复用四个阶段</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在多种 Agent 任务上验证了技能复用的有效性，展示了自动化技能管理对任务成功率的提升</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于 Agent/工具使用方向，为 Agent 技能的可持续积累与复用提供了理论框架和实践指导</div></div>
+    </div>
     <div class="paper-tags">
       <span class="tag tag-agent">Agent</span>
       <span class="tag tag-skill">Skill Framework</span>
@@ -249,7 +290,12 @@ header .subtitle {
   <div class="paper-card">
     <div class="paper-title">StepAudio 2.5 Technical Report</div>
     <div class="paper-meta">arXiv 2026</div>
-    <div class="paper-summary">提出统一多模态语音大模型 StepAudio 2.5，集成 ASR（语音识别）能力，基于语言模型架构实现语音识别与生成任务的高效处理。</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出统一多模态语音大模型 StepAudio 2.5，基于大语言模型架构集成 ASR（语音识别）与语音生成能力</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">在统一模型中实现语音识别与语音生成的双向融合，无需独立的 ASR 和 TTS 模块即可完成全栈语音交互</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在语音识别和语音生成基准上均展现了有竞争力的性能，验证了统一架构的可行性</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于大语言模型/多模态方向，探索了语音大模型的统一架构路线，建议关注其在实时语音交互场景的延迟表现</div></div>
+    </div>
     <div class="paper-tags">
       <span class="tag tag-llm">LLM</span>
       <span class="tag tag-audio">Speech</span>
@@ -263,7 +309,12 @@ header .subtitle {
   <div class="paper-card">
     <div class="paper-title">See What I Mean: Aligning Vision and Language Representations for Video Fine-grained Object Understanding</div>
     <div class="paper-meta">arXiv 2026 · TongyiLab (通义实验室)</div>
-    <div class="paper-summary">提出 SWIM 框架，通过交叉注意力机制对齐视觉和语言表征，实现视频细粒度物体理解。基于跨模态训练策略，在推理任务上验证了有效性。</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出 SWIM 框架，通过交叉注意力机制对齐视觉和语言表征，实现视频中细粒度物体的精确理解和定位</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">设计跨模态对齐训练策略，利用交叉注意力在视频帧级别实现视觉-语言精细匹配，支持开放词汇物体理解</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在视频物体理解基准上取得领先性能，验证了跨模态对齐策略对细粒度理解的有效提升</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于多模态/视频理解方向，建议关注其在长视频和复杂场景中的泛化能力</div></div>
+    </div>
     <div class="paper-tags">
       <span class="tag tag-llm">VLM</span>
       <span class="tag tag-multimodal">Cross-Modal</span>
@@ -283,7 +334,12 @@ header .subtitle {
   <div class="paper-card">
     <div class="paper-title">VGenST-Bench: A Benchmark for Spatio-Temporal Reasoning via Active Video Synthesis</div>
     <div class="paper-meta">arXiv 2026</div>
-    <div class="paper-summary">提出 VGenST-Bench 评测基准，通过主动视频合成评估多模态大语言模型（MLLMs）的时空推理能力，为视频理解提供系统性评测方案。</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出 VGenST-Bench 评测基准，通过主动视频合成的方式评估多模态大语言模型的时空推理能力</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">不同于被动视频理解评测，采用主动视频合成策略，要求模型不仅理解还能生成符合时空约束的视频内容</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">系统评估了主流多模态模型的时空推理能力，揭示了当前模型在时空一致性生成方面的不足</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于多模态/视频生成方向，为评估模型时空推理提供了新视角，建议关注其评测协议的通用性</div></div>
+    </div>
     <div class="paper-tags">
       <span class="tag tag-multimodal">Multimodal</span>
       <span class="tag tag-video">Video</span>
@@ -299,7 +355,12 @@ header .subtitle {
   <div class="paper-card">
     <div class="paper-title"><span class="hot-badge">🔥</span> PiD: Fast and High-Resolution Latent Decoding with Pixel Diffusion</div>
     <div class="paper-meta">arXiv 2026 · NVIDIA</div>
-    <div class="paper-summary">提出 PiD（Pixel Diffusion Decoder），将潜空间解码重构为条件像素扩散过程，统一解码与上采样为单一生成模块。结合 DMD2 蒸馏将推理降至 4 步，实现快速高分辨率文本生成图像，适配潜在扩散和自回归模型。</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出 PiD（像素扩散解码器），将潜空间解码重构为条件像素扩散过程，统一解码与上采样为单一生成模块</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">受近期可扩展空间扩散进展启发，将潜在表示的解码过程建模为条件像素级扩散，同时兼容潜扩散和自回归模型</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">结合 DMD2 蒸馏将推理降至 4 步，实现快速高分辨率文本生成图像，在速度和质量上均优于传统 VAE 解码器</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于多模态/图像生成方向，NVIDIA 出品，统一了解码与超分两个阶段，对高分辨率生成有实际价值</div></div>
+    </div>
     <div class="paper-tags">
       <span class="tag tag-multimodal">Image Generation</span>
       <span class="tag tag-diffusion">Diffusion</span>
