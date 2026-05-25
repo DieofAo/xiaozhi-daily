@@ -658,6 +658,88 @@
 <script>
 // ===== DATA =====
 const PAPERS_DB = [
+    // === 2026-05-25 ===
+    {
+        date: "2026-05-25",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "SkillOpt: Executive Strategy for Self-Evolving Agent Skills",
+        venue: "arXiv 2026 · Microsoft Research",
+        summary: "提出 GEPA（Guided Evolutionary Policy Adaptation）框架，实现智能体技能的自主进化与优化执行策略。在推理任务上验证了方法有效性，为 Agent 自主学习提供了新范式。",
+        tags: [["Agent","green"],["Self-Evolving","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.23904"],["PDF","https://arxiv.org/pdf/2605.23904"],["Project","https://microsoft.github.io/SkillOpt/"],["Code","https://github.com/microsoft/SkillOpt"]]
+    },
+    {
+        date: "2026-05-25",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "SciAtlas: A Large-Scale Knowledge Graph for Automated Scientific Research",
+        venue: "arXiv 2026 · University College London CS",
+        summary: "构建面向自动化科学研究的大规模知识图谱（43M 实体、157M 关系、3B 规模），为科研智能体提供结构化知识支撑。",
+        tags: [["Agent","green"],["Knowledge Graph","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.22878"],["PDF","https://arxiv.org/pdf/2605.22878"],["Code","https://github.com/zjunlp/SciAtlas"]]
+    },
+    {
+        date: "2026-05-25",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "PhotoFlow: Agentic 3D Virtual Photography Missions",
+        venue: "arXiv 2026 · Visionary-Laboratory",
+        summary: "提出 Director-Reviewer-Reflector 架构，基于视觉-语言模型实现 3D 虚拟摄影任务的智能规划与执行，在预测任务上验证了有效性。",
+        tags: [["Agent","green"],["3D Photography","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.23771"],["PDF","https://arxiv.org/pdf/2605.23771"],["Project","https://visionary-laboratory.github.io/PhotoFlow/"],["Code","https://github.com/Visionary-Laboratory/PhotoFlow"]]
+    },
+    {
+        date: "2026-05-25",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "From Raw Experience to Skill Consumption: A Systematic Study of Model-Generated Agent Skills",
+        venue: "arXiv 2026 · Microsoft Research",
+        summary: "系统研究模型生成的智能体技能从原始经验到技能消费的全流程，提出 SkillLens 框架，在生成任务上验证了方法有效性。",
+        tags: [["Agent","green"],["Skill Framework","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.23899"],["PDF","https://arxiv.org/pdf/2605.23899"],["Project","https://microsoft.github.io/SkillLens/"]]
+    },
+    {
+        date: "2026-05-25",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "StepAudio 2.5 Technical Report",
+        venue: "arXiv 2026",
+        summary: "提出统一多模态语音大模型 StepAudio 2.5，集成 ASR（语音识别）能力，基于语言模型架构实现语音识别与生成任务的高效处理。",
+        tags: [["LLM","green"],["Speech","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.23463"],["PDF","https://arxiv.org/pdf/2605.23463"]]
+    },
+    {
+        date: "2026-05-25",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "See What I Mean: Aligning Vision and Language Representations for Video Fine-grained Object Understanding",
+        venue: "arXiv 2026 · TongyiLab (通义实验室)",
+        summary: "提出 SWIM 框架，通过交叉注意力机制对齐视觉和语言表征，实现视频细粒度物体理解。基于跨模态训练策略，在推理任务上验证了有效性。",
+        tags: [["VLM","green"],["Cross-Modal","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.18018"],["PDF","https://arxiv.org/pdf/2605.18018"],["Project","https://github.com/HumanMLLM/SWIM"]]
+    },
+    {
+        date: "2026-05-25",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "VGenST-Bench: A Benchmark for Spatio-Temporal Reasoning via Active Video Synthesis",
+        venue: "arXiv 2026",
+        summary: "提出 VGenST-Bench 评测基准，通过主动视频合成评估多模态大语言模型（MLLMs）的时空推理能力，为视频理解提供系统性评测方案。",
+        tags: [["Multimodal","green"],["Video","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.22570"],["PDF","https://arxiv.org/pdf/2605.22570"],["Project","https://zinosii.github.io/VGenST-Bench/"],["Code","https://github.com/zinosii/VGenST-Bench"]]
+    },
+    {
+        date: "2026-05-25",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "PiD: Fast and High-Resolution Latent Decoding with Pixel Diffusion",
+        venue: "arXiv 2026 · NVIDIA",
+        summary: "提出 PiD（Pixel Diffusion Decoder），将潜空间解码重构为条件像素扩散过程，统一解码与上采样为单一生成模块。结合 DMD2 蒸馏将推理降至 4 步，实现快速高分辨率文本生成图像，适配潜在扩散和自回归模型。",
+        tags: [["Image Generation","green"],["Diffusion","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.23902"],["PDF","https://arxiv.org/pdf/2605.23902"],["Project","https://research.nvidia.com/labs/sil/projects/pid/"]],
+        highlight: true
+    },
     // === 2026-05-23 ===
     {
         date: "2026-05-23",
@@ -11297,6 +11379,13 @@ const PAPERS_DB = [
 ];
 
 const DAILY_OVERVIEW = {
+    "2026-05-25": {
+        bannerTitle: "🔥 今日看点",
+        bannerSubtitle: "NVIDIA 提出 PiD（Pixel Diffusion Decoder），将潜空间解码重构为条件像素扩散过程，统一解码与上采样为单一生成模块，结合 DMD2 蒸馏将推理降至 4 步，实现快速高分辨率图像生成。",
+        picks: ["PiD: Fast and High-Resolution Latent Decoding with Pixel Diffusion"],
+        totalPapers: 8,
+        totalNews: 0
+    },
     "2026-05-23": {
         bannerTitle: "🔥 本周补漏看点",
         bannerSubtitle: "BehaviorVLA 学习行为表征解决 VLA 分布偏移 | Pre-VLA 实现运行时验证提升 VLA 可靠性 | TRM 后处理修复世界模型规划（7%→97%） | CoRMA 对比 RMA 实现接触丰富任务元适应 | stable-worldmodel (Meta FAIR) 标准化世界模型研究 | 多智能体竞速超越人类冠军且碰撞率降低 50%",

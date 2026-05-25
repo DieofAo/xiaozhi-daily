@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>小小志AI日报 - 2026年5月25日</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans SC', sans-serif;
+  background: #0a0e1a;
+  color: #e0e6f0;
+  line-height: 1.7;
+  min-height: 100vh;
+}
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+header {
+  text-align: center;
+  margin-bottom: 48px;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, rgba(59,130,246,0.08) 0%, rgba(139,92,246,0.08) 100%);
+  border-radius: 20px;
+  border: 1px solid rgba(99,102,241,0.15);
+}
+header h1 {
+  font-size: 2rem;
+  background: linear-gradient(135deg, #60a5fa, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 8px;
+}
+header .date {
+  color: #94a3b8;
+  font-size: 1rem;
+}
+header .subtitle {
+  color: #64748b;
+  font-size: 0.9rem;
+  margin-top: 6px;
+}
+.highlight-banner {
+  background: linear-gradient(135deg, rgba(249,115,22,0.1) 0%, rgba(234,179,8,0.08) 100%);
+  border: 1px solid rgba(249,115,22,0.2);
+  border-radius: 14px;
+  padding: 20px 24px;
+  margin-bottom: 36px;
+}
+.hl-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fb923c;
+  margin-bottom: 8px;
+}
+.hl-text {
+  font-size: 0.92rem;
+  color: #cbd5e1;
+  line-height: 1.7;
+}
+.section {
+  margin-bottom: 40px;
+}
+.section-title {
+  font-size: 1.4rem;
+  color: #f1f5f9;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(99,102,241,0.2);
+}
+.paper-card {
+  background: rgba(30,41,59,0.6);
+  border: 1px solid rgba(99,102,241,0.12);
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 16px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.paper-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(99,102,241,0.1);
+  border-color: rgba(99,102,241,0.3);
+}
+.paper-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #f8fafc;
+  margin-bottom: 8px;
+}
+.paper-meta {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-bottom: 10px;
+}
+.paper-summary {
+  font-size: 0.92rem;
+  color: #cbd5e1;
+  line-height: 1.7;
+  margin-bottom: 14px;
+}
+.paper-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.tag {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+.tag-agent { background: rgba(16,185,129,0.12); color: #34d399; }
+.tag-llm { background: rgba(99,102,241,0.12); color: #818cf8; }
+.tag-multimodal { background: rgba(244,114,182,0.12); color: #f472b6; }
+.tag-skill { background: rgba(251,191,36,0.12); color: #fbbf24; }
+.tag-audio { background: rgba(45,212,191,0.12); color: #2dd4bf; }
+.tag-video { background: rgba(168,85,247,0.12); color: #a855f7; }
+.tag-kg { background: rgba(34,211,238,0.12); color: #22d3ee; }
+.tag-3d { background: rgba(251,146,60,0.12); color: #fb923c; }
+.tag-diffusion { background: rgba(236,72,153,0.12); color: #ec4899; }
+.hot-badge {
+  display: inline;
+  margin-right: 4px;
+}
+.paper-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.paper-links a {
+  display: inline-block;
+  padding: 5px 14px;
+  background: rgba(99,102,241,0.12);
+  color: #818cf8;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+.paper-links a:hover {
+  background: rgba(99,102,241,0.25);
+}
+.stats {
+  text-align: center;
+  padding: 30px;
+  margin-top: 40px;
+  background: rgba(30,41,59,0.4);
+  border-radius: 14px;
+  border: 1px solid rgba(99,102,241,0.1);
+}
+.stats h3 {
+  color: #94a3b8;
+  font-size: 1rem;
+  margin-bottom: 12px;
+}
+.stats p {
+  color: #64748b;
+  font-size: 0.9rem;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+  <h1>🔬 小小志AI日报</h1>
+  <div class="date">2026年5月25日 · 星期一</div>
+  <div class="subtitle">AI Research Daily · HF 热门论文 8 篇</div>
+</header>
+
+<div class="highlight-banner">
+  <div class="hl-title">🔥 今日看点</div>
+  <div class="hl-text">NVIDIA 提出 PiD（Pixel Diffusion Decoder），将潜空间解码重构为条件像素扩散过程，统一解码与上采样为单一生成模块，结合 DMD2 蒸馏将推理降至 4 步，实现快速高分辨率图像生成。</div>
+</div>
+
+<section class="section">
+  <h2 class="section-title">🧩 Agent · 智能体</h2>
+
+  <div class="paper-card">
+    <div class="paper-title">SkillOpt: Executive Strategy for Self-Evolving Agent Skills</div>
+    <div class="paper-meta">arXiv 2026 · Microsoft Research</div>
+    <div class="paper-summary">提出 GEPA（Guided Evolutionary Policy Adaptation）框架，实现智能体技能的自主进化与优化执行策略。在推理任务上验证了方法有效性，为 Agent 自主学习提供了新范式。</div>
+    <div class="paper-tags">
+      <span class="tag tag-agent">Agent</span>
+      <span class="tag tag-skill">Self-Evolving</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2605.23904">arXiv</a>
+      <a href="https://arxiv.org/pdf/2605.23904">PDF</a>
+      <a href="https://microsoft.github.io/SkillOpt/">Project</a>
+      <a href="https://github.com/microsoft/SkillOpt">Code</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">SciAtlas: A Large-Scale Knowledge Graph for Automated Scientific Research</div>
+    <div class="paper-meta">arXiv 2026 · University College London CS</div>
+    <div class="paper-summary">构建面向自动化科学研究的大规模知识图谱（43M 实体、157M 关系、3B 规模），为科研智能体提供结构化知识支撑。</div>
+    <div class="paper-tags">
+      <span class="tag tag-agent">Agent</span>
+      <span class="tag tag-kg">Knowledge Graph</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2605.22878">arXiv</a>
+      <a href="https://arxiv.org/pdf/2605.22878">PDF</a>
+      <a href="https://github.com/zjunlp/SciAtlas">Code</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">PhotoFlow: Agentic 3D Virtual Photography Missions</div>
+    <div class="paper-meta">arXiv 2026 · Visionary-Laboratory</div>
+    <div class="paper-summary">提出 Director-Reviewer-Reflector 架构，基于视觉-语言模型实现 3D 虚拟摄影任务的智能规划与执行，在预测任务上验证了有效性。</div>
+    <div class="paper-tags">
+      <span class="tag tag-agent">Agent</span>
+      <span class="tag tag-3d">3D Photography</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2605.23771">arXiv</a>
+      <a href="https://arxiv.org/pdf/2605.23771">PDF</a>
+      <a href="https://visionary-laboratory.github.io/PhotoFlow/">Project</a>
+      <a href="https://github.com/Visionary-Laboratory/PhotoFlow">Code</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">From Raw Experience to Skill Consumption: A Systematic Study of Model-Generated Agent Skills</div>
+    <div class="paper-meta">arXiv 2026 · Microsoft Research</div>
+    <div class="paper-summary">系统研究模型生成的智能体技能从原始经验到技能消费的全流程，提出 SkillLens 框架，在生成任务上验证了方法有效性。</div>
+    <div class="paper-tags">
+      <span class="tag tag-agent">Agent</span>
+      <span class="tag tag-skill">Skill Framework</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2605.23899">arXiv</a>
+      <a href="https://arxiv.org/pdf/2605.23899">PDF</a>
+      <a href="https://microsoft.github.io/SkillLens/">Project</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2 class="section-title">🧠 LLM · 大语言模型</h2>
+
+  <div class="paper-card">
+    <div class="paper-title">StepAudio 2.5 Technical Report</div>
+    <div class="paper-meta">arXiv 2026</div>
+    <div class="paper-summary">提出统一多模态语音大模型 StepAudio 2.5，集成 ASR（语音识别）能力，基于语言模型架构实现语音识别与生成任务的高效处理。</div>
+    <div class="paper-tags">
+      <span class="tag tag-llm">LLM</span>
+      <span class="tag tag-audio">Speech</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2605.23463">arXiv</a>
+      <a href="https://arxiv.org/pdf/2605.23463">PDF</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">See What I Mean: Aligning Vision and Language Representations for Video Fine-grained Object Understanding</div>
+    <div class="paper-meta">arXiv 2026 · TongyiLab (通义实验室)</div>
+    <div class="paper-summary">提出 SWIM 框架，通过交叉注意力机制对齐视觉和语言表征，实现视频细粒度物体理解。基于跨模态训练策略，在推理任务上验证了有效性。</div>
+    <div class="paper-tags">
+      <span class="tag tag-llm">VLM</span>
+      <span class="tag tag-multimodal">Cross-Modal</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2605.18018">arXiv</a>
+      <a href="https://arxiv.org/pdf/2605.18018">PDF</a>
+      <a href="https://github.com/HumanMLLM/SWIM">Project</a>
+      <a href="https://github.com/HumanMLLM/SWIM">Code</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2 class="section-title">🎨 Multimodal · 多模态</h2>
+
+  <div class="paper-card">
+    <div class="paper-title">VGenST-Bench: A Benchmark for Spatio-Temporal Reasoning via Active Video Synthesis</div>
+    <div class="paper-meta">arXiv 2026</div>
+    <div class="paper-summary">提出 VGenST-Bench 评测基准，通过主动视频合成评估多模态大语言模型（MLLMs）的时空推理能力，为视频理解提供系统性评测方案。</div>
+    <div class="paper-tags">
+      <span class="tag tag-multimodal">Multimodal</span>
+      <span class="tag tag-video">Video</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2605.22570">arXiv</a>
+      <a href="https://arxiv.org/pdf/2605.22570">PDF</a>
+      <a href="https://zinosii.github.io/VGenST-Bench/">Project</a>
+      <a href="https://github.com/zinosii/VGenST-Bench">Code</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title"><span class="hot-badge">🔥</span> PiD: Fast and High-Resolution Latent Decoding with Pixel Diffusion</div>
+    <div class="paper-meta">arXiv 2026 · NVIDIA</div>
+    <div class="paper-summary">提出 PiD（Pixel Diffusion Decoder），将潜空间解码重构为条件像素扩散过程，统一解码与上采样为单一生成模块。结合 DMD2 蒸馏将推理降至 4 步，实现快速高分辨率文本生成图像，适配潜在扩散和自回归模型。</div>
+    <div class="paper-tags">
+      <span class="tag tag-multimodal">Image Generation</span>
+      <span class="tag tag-diffusion">Diffusion</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2605.23902">arXiv</a>
+      <a href="https://arxiv.org/pdf/2605.23902">PDF</a>
+      <a href="https://research.nvidia.com/labs/sil/projects/pid/">Project</a>
+    </div>
+  </div>
+</section>
+
+<div class="stats">
+  <h3>📊 本期统计</h3>
+  <p>arXiv 超时跳过 · HF Papers 8 篇 · HF Models 0 个 · X/Twitter 不可用</p>
+  <p>新增论文：8 篇 │ Agent 4 · LLM 2 · Multimodal 2</p>
+</div>
+
+</div>
+</body>
+</html>
