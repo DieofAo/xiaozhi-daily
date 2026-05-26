@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>小小志AI日报 - 2026年5月26日</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans SC', sans-serif;
+  background: #0a0e1a;
+  color: #e0e6f0;
+  line-height: 1.7;
+  min-height: 100vh;
+}
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+header {
+  text-align: center;
+  margin-bottom: 48px;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, rgba(59,130,246,0.08) 0%, rgba(139,92,246,0.08) 100%);
+  border-radius: 20px;
+  border: 1px solid rgba(99,102,241,0.15);
+}
+header h1 {
+  font-size: 2rem;
+  background: linear-gradient(135deg, #60a5fa, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 8px;
+}
+header .date {
+  color: #94a3b8;
+  font-size: 1rem;
+}
+header .subtitle {
+  color: #64748b;
+  font-size: 0.9rem;
+  margin-top: 6px;
+}
+.highlight-banner {
+  background: linear-gradient(135deg, rgba(249,115,22,0.1) 0%, rgba(234,179,8,0.08) 100%);
+  border: 1px solid rgba(249,115,22,0.2);
+  border-radius: 14px;
+  padding: 20px 24px;
+  margin-bottom: 36px;
+}
+.hl-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fb923c;
+  margin-bottom: 8px;
+}
+.hl-text {
+  font-size: 0.92rem;
+  color: #cbd5e1;
+  line-height: 1.7;
+}
+.section {
+  margin-bottom: 40px;
+}
+.section-title {
+  font-size: 1.4rem;
+  color: #f1f5f9;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(99,102,241,0.2);
+}
+.paper-card {
+  background: rgba(30,41,59,0.6);
+  border: 1px solid rgba(99,102,241,0.12);
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 16px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.paper-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(99,102,241,0.1);
+  border-color: rgba(99,102,241,0.3);
+}
+.paper-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #f8fafc;
+  margin-bottom: 8px;
+}
+.paper-meta {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-bottom: 10px;
+}
+.summary-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+@media (max-width: 640px) {
+  .summary-grid { grid-template-columns: 1fr; }
+}
+.summary-item {
+  background: rgba(15,23,42,0.5);
+  border-radius: 10px;
+  padding: 12px 14px;
+  border: 1px solid rgba(99,102,241,0.08);
+}
+.summary-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #818cf8;
+  margin-bottom: 4px;
+}
+.summary-text {
+  font-size: 0.88rem;
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+.paper-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.tag {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+.tag-agent { background: rgba(16,185,129,0.12); color: #34d399; }
+.tag-llm { background: rgba(99,102,241,0.12); color: #818cf8; }
+.tag-multimodal { background: rgba(244,114,182,0.12); color: #f472b6; }
+.tag-skill { background: rgba(251,191,36,0.12); color: #fbbf24; }
+.tag-audio { background: rgba(45,212,191,0.12); color: #2dd4bf; }
+.tag-video { background: rgba(168,85,247,0.12); color: #a855f7; }
+.tag-kg { background: rgba(34,211,238,0.12); color: #22d3ee; }
+.tag-3d { background: rgba(251,146,60,0.12); color: #fb923c; }
+.tag-diffusion { background: rgba(236,72,153,0.12); color: #ec4899; }
+.tag-vla { background: rgba(59,130,246,0.12); color: #60a5fa; }
+.tag-gui { background: rgba(132,204,22,0.12); color: #a3e635; }
+.tag-quant { background: rgba(217,119,6,0.12); color: #fbbf24; }
+.tag-code { background: rgba(20,184,166,0.12); color: #2dd4bf; }
+.tag-seg { background: rgba(192,132,252,0.12); color: #c084fc; }
+.hot-badge {
+  display: inline;
+  margin-right: 4px;
+}
+.paper-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.paper-links a {
+  display: inline-block;
+  padding: 5px 14px;
+  background: rgba(99,102,241,0.12);
+  color: #818cf8;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+.paper-links a:hover {
+  background: rgba(99,102,241,0.25);
+}
+.stats {
+  text-align: center;
+  padding: 30px;
+  margin-top: 40px;
+  background: rgba(30,41,59,0.4);
+  border-radius: 14px;
+  border: 1px solid rgba(99,102,241,0.1);
+}
+.stats h3 {
+  color: #94a3b8;
+  font-size: 1rem;
+  margin-bottom: 12px;
+}
+.stats p {
+  color: #64748b;
+  font-size: 0.9rem;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+  <h1>🔬 小小志AI日报</h1>
+  <div class="date">2026年5月26日 · 星期二</div>
+  <div class="subtitle">AI Research Daily · arXiv 论文 8 篇</div>
+</header>
+
+<div class="highlight-banner">
+  <div class="hl-title">🔥 今日看点</div>
+  <div class="hl-text">MobileGym 提出高度并行且可验证的移动端 GUI 智能体仿真平台，基于 JSON 序列化实现轻量化模拟，4B 参数模型即可达到 95.1% 准确率，相比基线提升 12.8 个百分点，为移动端 Agent 研究提供了高效可扩展的基础设施。</div>
+</div>
+
+<section class="section">
+  <h2 class="section-title">🧩 Agent · 智能体</h2>
+
+  <div class="paper-card">
+    <div class="paper-title"><span class="hot-badge">🔥</span> MobileGym: A Verifiable and Highly Parallel Simulation Platform for Mobile GUI Agent Research</div>
+    <div class="paper-meta">arXiv 2026</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">构建高度并行且可验证的移动端 GUI 智能体仿真平台，基于 JSON 序列化实现轻量化状态表示与模拟</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">采用 JSON 格式实现状态可验证的大规模并行仿真，4B 参数级模型即可高效运行，大幅降低 GUI Agent 研究门槛</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在 GUI Agent 评测中达到 95.1% 准确率，相比基线提升 12.8 个百分点，验证了平台的有效性</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于 Agent/GUI 方向，为移动端智能体研究提供了高效可扩展的仿真基础设施，建议关注其跨应用泛化能力</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-agent">Agent</span>
+      <span class="tag tag-gui">GUI</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2605.26114">arXiv</a>
+      <a href="https://arxiv.org/pdf/2605.26114">PDF</a>
+      <a href="https://mobilegym.github.io">Project</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">From Model Scaling to System Scaling: Scaling the Harness in Agentic AI</div>
+    <div class="paper-meta">arXiv 2026 · SafeRL-Lab</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">探索从模型规模扩展到系统规模扩展的范式转变，提出面向 Agent 系统的架构设计框架 CheetahClaws</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">系统性地研究如何通过系统级设计而非单纯增大模型来提升智能体能力，提出可组合的系统扩展策略</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">验证了系统级扩展对 Agent 能力提升的有效性，为多智能体系统架构设计提供了实验支撑</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于 Agent/系统架构方向，提出了从模型规模到系统规模的新思路，建议关注其与现有框架的兼容性</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-agent">Agent</span>
+      <span class="tag tag-llm">System Scaling</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2605.26112">arXiv</a>
+      <a href="https://arxiv.org/pdf/2605.26112">PDF</a>
+      <a href="https://github.com/SafeRL-Lab/cheetahclaws">Code</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2 class="section-title">🎨 Multimodal · 多模态</h2>
+
+  <div class="paper-card">
+    <div class="paper-title">TriSplat: Simulation-Ready Feed-Forward 3D Scene Reconstruction</div>
+    <div class="paper-meta">arXiv 2026 · ZipLab</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">基于高斯散射的前馈式三维场景重建方法，实现仿真就绪的场景几何与外观恢复</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 TriSplat 框架，实现端到端前馈式三维场景重建，同时输出可直接用于物理仿真的场景表示</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在 DL3DV 等大规模数据集（10K 级场景）上验证了重建质量与仿真可用性</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于多模态/三维重建方向，兼顾重建精度与仿真可用性，建议关注其在机器人仿真中的应用</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-multimodal">3D Reconstruction</span>
+      <span class="tag tag-3d">Simulation</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2605.26115">arXiv</a>
+      <a href="https://arxiv.org/pdf/2605.26115">PDF</a>
+      <a href="https://lhmd.top/trisplat">Project</a>
+      <a href="https://github.com/ziplab/TriSplat">Code</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">Squeezing Capacity from Multimodal Large Language Models for Subject-driven Generation</div>
+    <div class="paper-meta">arXiv 2026</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">利用多模态大语言模型的知识容量驱动主题条件图像生成，结合扩散模型实现可控创作</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出从多模态大模型中榨取跨模态知识用于主题驱动生成，无需额外微调即可支持多样化主题一致性</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在图像生成和推理任务上验证了方法的有效性，实现跨模态主题一致性生成</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于多模态/图像生成方向，探索了 MLLM 容量的新用途，建议关注主题保真度和生成多样性的平衡</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-multimodal">Multimodal</span>
+      <span class="tag tag-diffusion">Generation</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2605.26111">arXiv</a>
+      <a href="https://arxiv.org/pdf/2605.26111">PDF</a>
+      <a href="https://zsh2000.github.io/squeeze-mllm-subject-gen/">Project</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">Prism: A Plug-in Reproducible Infrastructure for Scalable Multimodal Continual Instruction Tuning</div>
+    <div class="paper-meta">arXiv 2026 · Meta FAIR · MIT</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">面向多模态大模型的持续指令微调，提供可插拔、可复现的基础设施框架</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 Prism 框架，首次为多模态持续指令微调提供可扩展的标准化研究平台，支持即插即用的实验配置</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">支持多种多模态模型的持续学习实验，为该方向的可复现研究建立了系统化基准</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于多模态/持续学习方向，Meta FAIR 与 MIT 联合出品，建议关注其作为研究基础设施的通用性与社区采纳度</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-multimodal">Multimodal</span>
+      <span class="tag tag-llm">Continual Learning</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2605.26110">arXiv</a>
+      <a href="https://arxiv.org/pdf/2605.26110">PDF</a>
+      <a href="https://github.com/LAMDA-CL/Prism">Code</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">InstructSAM: Segment Any Instance with Any Instructions</div>
+    <div class="paper-meta">arXiv 2026</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">基于视觉-语言模型与注意力机制，构建统一的端到端指令驱动分割架构 SAM3</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 2B 参数统一分割模型，支持文本、点、框、掩码等任意指令形式的实例分割，实现高效多模态交互</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在 2B 参数规模下实现多指令模态的统一处理，保持了高精度分割性能</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于多模态/分割方向，统一了不同指令类型的分割接口，建议关注其在开放世界场景中的泛化能力</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-multimodal">VLM</span>
+      <span class="tag tag-seg">Segmentation</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2605.26102">arXiv</a>
+      <a href="https://arxiv.org/pdf/2605.26102">PDF</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2 class="section-title">🧠 LLM · 大语言模型</h2>
+
+  <div class="paper-card">
+    <div class="paper-title">Beyond Summaries: Structure-Aware Labeling of Code Changes with Large Language Models</div>
+    <div class="paper-meta">arXiv 2026</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">基于大语言模型对代码变更进行结构感知的语义标注，利用代码 AST 结构信息辅助理解</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出结构感知标注方法，超越简单摘要，利用代码结构层次信息实现更精细的变更语义分类</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在代码变更理解任务上验证了结构感知方法的有效性，标注质量优于纯文本摘要方法</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于大语言模型/代码理解方向，为代码审查和变更管理提供了更精细的自动化工具</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-llm">LLM</span>
+      <span class="tag tag-code">Code</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2605.26100">arXiv</a>
+      <a href="https://arxiv.org/pdf/2605.26100">PDF</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">OrpQuant: Geometric Orthogonal Residual Projection for Multiplier-Free Power-of-Two Transformer Quantization</div>
+    <div class="paper-meta">arXiv 2026</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">基于几何正交残差投影的二次幂量化方法，实现无乘法器的 Transformer 高效压缩</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 OrpQuant 方法，通过正交残差投影将权重映射到二次幂表示，完全消除矩阵乘法中的乘法操作</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在 7B 参数大模型上验证了无乘法器量化的可行性，保持了接近全精度的推理性能</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于大语言模型/高效推理方向，为边缘设备部署提供了硬件友好的量化方案，建议关注实际加速比</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-llm">LLM</span>
+      <span class="tag tag-quant">Quantization</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2605.26092">arXiv</a>
+      <a href="https://arxiv.org/pdf/2605.26092">PDF</a>
+    </div>
+  </div>
+</section>
+
+<div class="stats">
+  <h3>📊 本期统计</h3>
+  <p>arXiv 8 篇 · HF Models 0 个 · X/Twitter 不可用</p>
+  <p>新增论文：8 篇 │ Agent 2 · Multimodal 4 · LLM 2</p>
+</div>
+
+</div>
+</body>
+</html>
