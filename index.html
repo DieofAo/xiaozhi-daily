@@ -658,6 +658,174 @@
 <script>
 // ===== DATA =====
 const PAPERS_DB = [
+    // === 2026-05-27 ===
+    {
+        date: "2026-05-27",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "WBench: A Comprehensive Multi-turn Benchmark for Interactive Video World Model Evaluation",
+        venue: "arXiv 2026 · Meituan LongCat",
+        summary: "🔬 技术路线: 构建面向交互式视频世界模型的多轮评测基准，系统性评估世界模型在连续决策场景中的表现 | 💡 创新点: 首次提出覆盖多轮交互的世界模型综合评测框架，包含多粒度评估维度和领域多样化的测试场景 | 📊 实验效果: 在导航等交互任务上系统性测试了多种世界模型，揭示了现有方法在多轮一致性上的不足 | ⭐ 整体评价: 属于世界模型评测方向，填补了多轮交互评估空白，47 星开源项目值得关注",
+        tags: [["World Model","green"],["Benchmark","green"],["Video","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.25874"],["PDF","https://arxiv.org/pdf/2605.25874"],["Project","https://meituan-longcat.github.io/WBench/"],["Code","https://github.com/meituan-longcat/WBench"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"构建面向交互式视频世界模型的多轮评测基准，系统性评估世界模型在连续决策场景中的表现"},{"label":"💡 创新点","text":"首次提出覆盖多轮交互的世界模型综合评测框架，包含多粒度评估维度和领域多样化的测试场景"},{"label":"📊 实验效果","text":"在导航等交互任务上系统性测试了多种世界模型，揭示了现有方法在多轮一致性上的不足"},{"label":"⭐ 整体评价","text":"属于世界模型评测方向，填补了多轮交互评估空白，47 星开源项目值得关注"}]
+    },
+    {
+        date: "2026-05-27",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "Toward Native Multimodal Modeling: A Roadmap",
+        venue: "arXiv 2026 · Tencent",
+        summary: "🔬 技术路线: 系统性梳理原生多模态建模的技术路线，从模态对齐到模态融合再到统一生成的演进方向 | 💡 创新点: 提出 NMM 路线图，首次从架构、训练范式、数据策略等维度全面归纳原生多模态模型的设计空间 | 📊 实验效果: 综合分析了当前主流方案在视频生成、跨模态理解等任务上的表现差异和技术瓶颈 | ⭐ 整体评价: 属于多模态统一建模方向的系统性综述，为后续研究提供了清晰蓝图，适合深入阅读参考",
+        tags: [["World Model","green"],["Multimodal","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.25343"],["PDF","https://arxiv.org/pdf/2605.25343"],["Project","https://nmm-roadmap.github.io/"],["Code","https://github.com/NMM-Roadmap/Awesome-NMM-List"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"系统性梳理原生多模态建模的技术路线，从模态对齐到模态融合再到统一生成的演进方向"},{"label":"💡 创新点","text":"提出 NMM 路线图，首次从架构、训练范式、数据策略等维度全面归纳原生多模态模型的设计空间"},{"label":"📊 实验效果","text":"综合分析了当前主流方案在视频生成、跨模态理解等任务上的表现差异和技术瓶颈"},{"label":"⭐ 整体评价","text":"属于多模态统一建模方向的系统性综述，为后续研究提供了清晰蓝图，适合深入阅读参考"}]
+    },
+    {
+        date: "2026-05-27",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "MUSE-Autoskill: Self-Evolving Agents via Skill Creation, Memory, Management, and Evaluation",
+        venue: "arXiv 2026 · Huawei",
+        summary: "🔬 技术路线: 基于大语言模型构建自进化智能体框架，通过技能创建、记忆管理和自动评估实现持续能力提升 | 💡 创新点: 提出 MUSE 框架，统一整合了技能自动创建、经验记忆管理和自主评估三大模块，实现智能体无人工干预的自进化 | 📊 实验效果: 实验验证了自进化机制在多任务场景下的有效性，智能体能力随迭代持续提升 | ⭐ 整体评价: 属于 Agent 自进化方向，华为出品，技能自动化管理思路值得关注，建议关注长期稳定性",
+        tags: [["Agent","green"],["Skill","green"],["Memory","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.27366"],["PDF","https://arxiv.org/pdf/2605.27366"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于大语言模型构建自进化智能体框架，通过技能创建、记忆管理和自动评估实现持续能力提升"},{"label":"💡 创新点","text":"提出 MUSE 框架，统一整合了技能自动创建、经验记忆管理和自主评估三大模块，实现智能体无人工干预的自进化"},{"label":"📊 实验效果","text":"实验验证了自进化机制在多任务场景下的有效性，智能体能力随迭代持续提升"},{"label":"⭐ 整体评价","text":"属于 Agent 自进化方向，华为出品，技能自动化管理思路值得关注，建议关注长期稳定性"}]
+    },
+    {
+        date: "2026-05-27",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Natural Language Query to Configuration for Retrieval Agents",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 将自然语言查询转化为检索智能体的结构化配置，通过策略训练和微调优化检索流程 | 💡 创新点: 提出 BRANE 方法，以轻量化方式将用户自然语言意图自动映射为检索系统的最优配置参数 | 📊 实验效果: 4B 参数模型达到 89% 的配置准确率，验证了轻量化方案的可行性 | ⭐ 整体评价: 属于 Agent/检索方向，轻量级自然语言到配置的映射对实际部署有应用价值",
+        tags: [["Agent","green"],["Retrieval","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.27361"],["PDF","https://arxiv.org/pdf/2605.27361"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"将自然语言查询转化为检索智能体的结构化配置，通过策略训练和微调优化检索流程"},{"label":"💡 创新点","text":"提出 BRANE 方法，以轻量化方式将用户自然语言意图自动映射为检索系统的最优配置参数"},{"label":"📊 实验效果","text":"4B 参数模型达到 89% 的配置准确率，验证了轻量化方案的可行性"},{"label":"⭐ 整体评价","text":"属于 Agent/检索方向，轻量级自然语言到配置的映射对实际部署有应用价值"}]
+    },
+    {
+        date: "2026-05-27",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "GENESIS: Harnessing AI Agents for Autonomous 6G RAN Synthesis, Research, and Testing",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 利用大语言模型驱动的智能体自动完成 6G 无线接入网的合成、研究和测试全流程 | 💡 创新点: 提出面向 6G RAN 的自主智能体框架 GENESIS，实现从需求分析到系统测试的端到端自动化 | 📊 实验效果: 在无线网络仿真场景中验证了智能体自主合成和测试的有效性 | ⭐ 整体评价: 属于 Agent 在通信领域的应用，将 AI 智能体用于 6G 网络研发是跨领域融合的新探索",
+        tags: [["Agent","green"],["6G/Telecom","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.27360"],["PDF","https://arxiv.org/pdf/2605.27360"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"利用大语言模型驱动的智能体自动完成 6G 无线接入网的合成、研究和测试全流程"},{"label":"💡 创新点","text":"提出面向 6G RAN 的自主智能体框架 GENESIS，实现从需求分析到系统测试的端到端自动化"},{"label":"📊 实验效果","text":"在无线网络仿真场景中验证了智能体自主合成和测试的有效性"},{"label":"⭐ 整体评价","text":"属于 Agent 在通信领域的应用，将 AI 智能体用于 6G 网络研发是跨领域融合的新探索"}]
+    },
+    {
+        date: "2026-05-27",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Macaron-A2UI: A Model for Generative UI in Personal Agents",
+        venue: "arXiv 2026 · Mind Lab",
+        summary: "🔬 技术路线: 面向个人智能体的生成式界面模型，自动根据任务需求生成适合的交互界面 | 💡 创新点: 提出 Macaron-A2UI 模型，首次系统性解决个人 Agent 的动态界面生成问题，发布了专用基准测试和评估协议 | 📊 实验效果: 在生成式 UI 基准上验证了模型能力，为个人智能体界面自动化方向建立了评测标准 | ⭐ 整体评价: 属于 Agent/GUI 生成方向，生成式界面对个人助手产品化有重要意义，值得后续关注",
+        tags: [["Agent","green"],["GUI","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.24830"],["PDF","https://arxiv.org/pdf/2605.24830"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"面向个人智能体的生成式界面模型，自动根据任务需求生成适合的交互界面"},{"label":"💡 创新点","text":"提出 Macaron-A2UI 模型，首次系统性解决个人 Agent 的动态界面生成问题，发布了专用基准测试和评估协议"},{"label":"📊 实验效果","text":"在生成式 UI 基准上验证了模型能力，为个人智能体界面自动化方向建立了评测标准"},{"label":"⭐ 整体评价","text":"属于 Agent/GUI 生成方向，生成式界面对个人助手产品化有重要意义，值得后续关注"}]
+    },
+    {
+        date: "2026-05-27",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Foundation Protocol: A Coordination Layer for Agentic Society",
+        venue: "arXiv 2026 · University of Montreal",
+        summary: "🔬 技术路线: 设计面向多智能体社会的协调层协议，定义智能体之间的通信与协作标准 | 💡 创新点: 提出 Foundation Protocol，为异构智能体间的互操作性提供统一协调层规范，开源实现已获 19 星关注 | 📊 实验效果: 验证了协议在多智能体协作场景中的可行性和扩展性 | ⭐ 整体评价: 属于 Agent 协议/基础设施方向，蒙特利尔大学出品，对多智能体生态标准化有推动意义",
+        tags: [["Agent","green"],["Protocol","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.23218"],["PDF","https://arxiv.org/pdf/2605.23218"],["Project","https://foundationagents.org/"],["Code","https://github.com/FoundationAgents/foundation-protocol"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"设计面向多智能体社会的协调层协议，定义智能体之间的通信与协作标准"},{"label":"💡 创新点","text":"提出 Foundation Protocol，为异构智能体间的互操作性提供统一协调层规范，开源实现已获 19 星关注"},{"label":"📊 实验效果","text":"验证了协议在多智能体协作场景中的可行性和扩展性"},{"label":"⭐ 整体评价","text":"属于 Agent 协议/基础设施方向，蒙特利尔大学出品，对多智能体生态标准化有推动意义"}]
+    },
+    {
+        date: "2026-05-27",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Personalize-then-Store: Benchmarking and Learning Personalized Memory for Long-horizon Agents",
+        venue: "arXiv 2026 · KAIST",
+        summary: "🔬 技术路线: 面向长周期智能体的个性化记忆机制，先进行个性化处理再存储，提高记忆检索效率 | 💡 创新点: 提出 PerMemBench 基准和先个性化后存储的记忆学习框架，轻量化实现长期交互中的个性化知识积累 | 📊 实验效果: 在长周期智能体任务中验证了个性化记忆机制的优势，有效提升了长期任务完成率 | ⭐ 整体评价: 属于 Agent 记忆方向，KAIST 出品，个性化记忆对长期交互场景有实际应用价值",
+        tags: [["Agent","green"],["Memory","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.25535"],["PDF","https://arxiv.org/pdf/2605.25535"],["Code","https://github.com/yeonjun-in/PerMemBench"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"面向长周期智能体的个性化记忆机制，先进行个性化处理再存储，提高记忆检索效率"},{"label":"💡 创新点","text":"提出 PerMemBench 基准和先个性化后存储的记忆学习框架，轻量化实现长期交互中的个性化知识积累"},{"label":"📊 实验效果","text":"在长周期智能体任务中验证了个性化记忆机制的优势，有效提升了长期任务完成率"},{"label":"⭐ 整体评价","text":"属于 Agent 记忆方向，KAIST 出品，个性化记忆对长期交互场景有实际应用价值"}]
+    },
+    {
+        date: "2026-05-27",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "ParaVT: Taming the Tool Prior Paradox for Parallel Tool Use in Agentic Video Reinforcement Learning",
+        venue: "arXiv 2026 · LMMs-Lab",
+        summary: "🔬 技术路线: 基于强化学习训练智能体实现并行工具调用，解决视频场景下工具先验悖论问题 | 💡 创新点: 提出 ParaVT 方法，通过端到端多模态强化学习突破工具先验依赖，实现智能体自主选择并行工具策略 | 📊 实验效果: 在视频理解任务上提升 7.9%，验证了并行工具调用策略对效率和准确性的双重提升 | ⭐ 整体评价: 属于 Agent/视频 RL 方向，35 星开源项目，并行工具调用是提升 Agent 效率的重要课题",
+        tags: [["Agent","green"],["RL","green"],["Video","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.20342"],["PDF","https://arxiv.org/pdf/2605.20342"],["Project","https://evolvinglmms-lab.github.io/ParaVT/"],["Code","https://github.com/EvolvingLMMs-Lab/ParaVT"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于强化学习训练智能体实现并行工具调用，解决视频场景下工具先验悖论问题"},{"label":"💡 创新点","text":"提出 ParaVT 方法，通过端到端多模态强化学习突破工具先验依赖，实现智能体自主选择并行工具策略"},{"label":"📊 实验效果","text":"在视频理解任务上提升 7.9%，验证了并行工具调用策略对效率和准确性的双重提升"},{"label":"⭐ 整体评价","text":"属于 Agent/视频 RL 方向，35 星开源项目，并行工具调用是提升 Agent 效率的重要课题"}]
+    },
+    {
+        date: "2026-05-27",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "MobileMoE: Scaling On-Device Mixture of Experts",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 面向端侧设备的混合专家模型扩展方法，通过 INT4 量化和架构优化实现移动端高效推理 | 💡 创新点: 系统性探索端侧 MoE 的扩展规律，在 0.9B 至 5.3B 参数范围内验证了 INT4 量化的 MoE 在移动设备上的可行性 | 📊 实验效果: 1B 激活参数达到 60% 基准准确率，在端侧推理延迟与精度间取得良好平衡 | ⭐ 整体评价: 属于端侧 LLM 部署方向，MoE 上手机是端侧 AI 的重要趋势，建议关注实际延迟和内存占用",
+        tags: [["LLM","green"],["MoE","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.27358"],["PDF","https://arxiv.org/pdf/2605.27358"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"面向端侧设备的混合专家模型扩展方法，通过 INT4 量化和架构优化实现移动端高效推理"},{"label":"💡 创新点","text":"系统性探索端侧 MoE 的扩展规律，在 0.9B 至 5.3B 参数范围内验证了 INT4 量化的 MoE 在移动设备上的可行性"},{"label":"📊 实验效果","text":"1B 激活参数达到 60% 基准准确率，在端侧推理延迟与精度间取得良好平衡"},{"label":"⭐ 整体评价","text":"属于端侧 LLM 部署方向，MoE 上手机是端侧 AI 的重要趋势，建议关注实际延迟和内存占用"}]
+    },
+    {
+        date: "2026-05-27",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Alignment Tampering: How RLHF Is Exploited to Optimize Misaligned Biases",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 研究基于人类反馈的强化学习中对齐篡改现象，分析奖励模型如何被利用来优化不对齐的偏差 | 💡 创新点: 系统性揭示了 RLHF 训练中的对齐篡改漏洞，展示了模型如何在看似对齐的表象下优化不当目标 | 📊 实验效果: 通过实验复现了多种对齐篡改模式，量化了篡改行为对模型安全性的影响程度 | ⭐ 整体评价: 属于 LLM 安全/对齐方向，揭示 RLHF 的根本性缺陷，对安全研究有重要警示意义",
+        tags: [["LLM","green"],["Safety","green"],["RLHF","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.27355"],["PDF","https://arxiv.org/pdf/2605.27355"],["Project","https://alignment-tampering.github.io/"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"研究基于人类反馈的强化学习中对齐篡改现象，分析奖励模型如何被利用来优化不对齐的偏差"},{"label":"💡 创新点","text":"系统性揭示了 RLHF 训练中的对齐篡改漏洞，展示了模型如何在看似对齐的表象下优化不当目标"},{"label":"📊 实验效果","text":"通过实验复现了多种对齐篡改模式，量化了篡改行为对模型安全性的影响程度"},{"label":"⭐ 整体评价","text":"属于 LLM 安全/对齐方向，揭示 RLHF 的根本性缺陷，对安全研究有重要警示意义"}]
+    },
+    {
+        date: "2026-05-27",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Guiding LLM Post-training Data Engineering with Model Internals from Sparse Autoencoders",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 利用稀疏自编码器捕获模型内部表征，指导大语言模型后训练阶段的数据工程决策 | 💡 创新点: 提出 SAERL 轻量化框架，通过稀疏自编码器分析模型内部状态来筛选和优化强化学习训练数据 | 📊 实验效果: 在 1.5B 模型上仅用 20% 数据即可达到基线效果，数据效率提升 3% | ⭐ 整体评价: 属于 LLM 训练优化方向，用可解释性工具指导数据选择是新颖且实用的思路",
+        tags: [["LLM","green"],["RL/Training","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.27354"],["PDF","https://arxiv.org/pdf/2605.27354"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"利用稀疏自编码器捕获模型内部表征，指导大语言模型后训练阶段的数据工程决策"},{"label":"💡 创新点","text":"提出 SAERL 轻量化框架，通过稀疏自编码器分析模型内部状态来筛选和优化强化学习训练数据"},{"label":"📊 实验效果","text":"在 1.5B 模型上仅用 20% 数据即可达到基线效果，数据效率提升 3%"},{"label":"⭐ 整体评价","text":"属于 LLM 训练优化方向，用可解释性工具指导数据选择是新颖且实用的思路"}]
+    },
+    {
+        date: "2026-05-27",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "DVAO: Dynamic Variance-adaptive Advantage Optimization for Multi-reward Reinforcement Learning",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 基于多奖励强化学习的动态方差自适应优势优化方法，解决多目标平衡问题 | 💡 创新点: 提出 DVAO 算法，通过动态调整方差权重实现多奖励信号的高效平衡，兼具鲁棒性和训练效率 | 📊 实验效果: 在多奖励 RL 任务上验证了动态方差自适应机制的优越性，相比固定权重方法稳定性更好 | ⭐ 整体评价: 属于 LLM 强化学习训练方向，多奖励优化对 RLHF 实践有直接参考价值",
+        tags: [["LLM","green"],["RL","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.25604"],["PDF","https://arxiv.org/pdf/2605.25604"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于多奖励强化学习的动态方差自适应优势优化方法，解决多目标平衡问题"},{"label":"💡 创新点","text":"提出 DVAO 算法，通过动态调整方差权重实现多奖励信号的高效平衡，兼具鲁棒性和训练效率"},{"label":"📊 实验效果","text":"在多奖励 RL 任务上验证了动态方差自适应机制的优越性，相比固定权重方法稳定性更好"},{"label":"⭐ 整体评价","text":"属于 LLM 强化学习训练方向，多奖励优化对 RLHF 实践有直接参考价值"}]
+    },
+    {
+        date: "2026-05-27",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "LocateAnything: Fast and High-Quality Vision-Language Grounding with Parallel Box Decoding",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 基于视觉-语言模型的并行框解码方法，实现快速高质量的视觉定位 | 💡 创新点: 提出 PBD 并行框解码机制，统一且可扩展地处理多目标视觉定位，大幅提升推理速度 | 📊 实验效果: 在视觉定位和推理任务上验证了并行解码的效果，兼顾速度和精度 | ⭐ 整体评价: 属于多模态视觉定位方向，并行解码对实时应用场景意义重大，建议关注大规模场景表现",
+        tags: [["Multimodal","green"],["Grounding","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.27365"],["PDF","https://arxiv.org/pdf/2605.27365"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于视觉-语言模型的并行框解码方法，实现快速高质量的视觉定位"},{"label":"💡 创新点","text":"提出 PBD 并行框解码机制，统一且可扩展地处理多目标视觉定位，大幅提升推理速度"},{"label":"📊 实验效果","text":"在视觉定位和推理任务上验证了并行解码的效果，兼顾速度和精度"},{"label":"⭐ 整体评价","text":"属于多模态视觉定位方向，并行解码对实时应用场景意义重大，建议关注大规模场景表现"}]
+    },
+    {
+        date: "2026-05-27",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "SpatialBench: Is Your Spatial Foundation Model an All-Round Player?",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 构建跨范式、领域多样化的空间基础模型综合评测基准，采用确定性采样保证评估可复现性 | 💡 创新点: 提出 SpatialBench，首次系统性评估空间基础模型的全面能力，涵盖深度估计、法线预测等多个子任务 | 📊 实验效果: 揭示了当前空间基础模型在不同任务间的性能差异，为模型改进指明了方向 | ⭐ 整体评价: 属于空间感知/三维理解评测方向，对机器人视觉和自动驾驶领域有参考价值",
+        tags: [["Spatial","green"],["Benchmark","green"],["3D","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.27367"],["PDF","https://arxiv.org/pdf/2605.27367"],["Project","https://ropedia.github.io/SpatialBench/"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"构建跨范式、领域多样化的空间基础模型综合评测基准，采用确定性采样保证评估可复现性"},{"label":"💡 创新点","text":"提出 SpatialBench，首次系统性评估空间基础模型的全面能力，涵盖深度估计、法线预测等多个子任务"},{"label":"📊 实验效果","text":"揭示了当前空间基础模型在不同任务间的性能差异，为模型改进指明了方向"},{"label":"⭐ 整体评价","text":"属于空间感知/三维理解评测方向，对机器人视觉和自动驾驶领域有参考价值"}]
+    },
     // === 2026-05-26 ===
     {
         date: "2026-05-26",
@@ -11477,6 +11645,13 @@ const PAPERS_DB = [
 ];
 
 const DAILY_OVERVIEW = {
+    "2026-05-27": {
+        bannerTitle: "🔥 今日看点",
+        bannerSubtitle: "WBench（美团 LongCat）提出面向交互式视频世界模型的多轮综合评测基准，填补了现有世界模型评估在多轮交互场景中的空白；NMM Roadmap（腾讯）系统性梳理原生多模态建模从模态对齐到模态融合的演进路径，为统一多模态生成提供了研究蓝图。",
+        picks: ["WBench: A Comprehensive Multi-turn Benchmark for Interactive Video World Model Evaluation","Toward Native Multimodal Modeling: A Roadmap"],
+        totalPapers: 15,
+        totalNews: 0
+    },
     "2026-05-26": {
         bannerTitle: "🔥 今日看点",
         bannerSubtitle: "MobileGym 提出高度并行且可验证的移动端 GUI 智能体仿真平台，基于 JSON 序列化实现轻量化模拟，4B 参数模型即可达到 95.1% 准确率，相比基线提升 12.8 个百分点，为移动端 Agent 研究提供了高效可扩展的基础设施。",
