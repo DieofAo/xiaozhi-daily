@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>小小志AI日报 - 2026年5月29日</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans SC', sans-serif;
+  background: #0a0e1a;
+  color: #e0e6f0;
+  line-height: 1.7;
+  min-height: 100vh;
+}
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+header {
+  text-align: center;
+  margin-bottom: 48px;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, rgba(59,130,246,0.08) 0%, rgba(139,92,246,0.08) 100%);
+  border-radius: 20px;
+  border: 1px solid rgba(99,102,241,0.15);
+}
+header h1 {
+  font-size: 2rem;
+  background: linear-gradient(135deg, #60a5fa, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 8px;
+}
+header .date {
+  color: #94a3b8;
+  font-size: 1rem;
+}
+header .subtitle {
+  color: #64748b;
+  font-size: 0.9rem;
+  margin-top: 6px;
+}
+.highlight-banner {
+  background: linear-gradient(135deg, rgba(249,115,22,0.1) 0%, rgba(234,179,8,0.08) 100%);
+  border: 1px solid rgba(249,115,22,0.2);
+  border-radius: 14px;
+  padding: 20px 24px;
+  margin-bottom: 36px;
+}
+.hl-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fb923c;
+  margin-bottom: 8px;
+}
+.hl-text {
+  font-size: 0.92rem;
+  color: #cbd5e1;
+  line-height: 1.7;
+}
+.section {
+  margin-bottom: 40px;
+}
+.section-title {
+  font-size: 1.4rem;
+  color: #f1f5f9;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(99,102,241,0.2);
+}
+.paper-card {
+  background: rgba(30,41,59,0.6);
+  border: 1px solid rgba(99,102,241,0.12);
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 16px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.paper-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(99,102,241,0.1);
+  border-color: rgba(99,102,241,0.3);
+}
+.paper-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #f8fafc;
+  margin-bottom: 8px;
+}
+.paper-meta {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-bottom: 10px;
+}
+.summary-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+@media (max-width: 640px) {
+  .summary-grid { grid-template-columns: 1fr; }
+}
+.summary-item {
+  background: rgba(15,23,42,0.5);
+  border-radius: 10px;
+  padding: 12px 14px;
+  border: 1px solid rgba(99,102,241,0.08);
+}
+.summary-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #818cf8;
+  margin-bottom: 4px;
+}
+.summary-text {
+  font-size: 0.88rem;
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+.paper-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.tag {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+.tag-agent { background: rgba(16,185,129,0.12); color: #34d399; }
+.tag-llm { background: rgba(99,102,241,0.12); color: #818cf8; }
+.tag-multimodal { background: rgba(244,114,182,0.12); color: #f472b6; }
+.tag-world { background: rgba(251,191,36,0.12); color: #fbbf24; }
+.tag-robot { background: rgba(251,146,60,0.12); color: #fb923c; }
+.tag-rl { background: rgba(45,212,191,0.12); color: #2dd4bf; }
+.tag-video { background: rgba(168,85,247,0.12); color: #a855f7; }
+.tag-benchmark { background: rgba(34,211,238,0.12); color: #22d3ee; }
+.tag-vla { background: rgba(59,130,246,0.12); color: #60a5fa; }
+.tag-safety { background: rgba(239,68,68,0.12); color: #f87171; }
+.tag-memory { background: rgba(192,132,252,0.12); color: #c084fc; }
+.tag-moe { background: rgba(236,72,153,0.12); color: #ec4899; }
+.tag-reasoning { background: rgba(132,204,22,0.12); color: #a3e635; }
+.hot-badge {
+  display: inline;
+  margin-right: 4px;
+}
+.paper-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.paper-links a {
+  display: inline-block;
+  padding: 5px 14px;
+  background: rgba(99,102,241,0.12);
+  color: #818cf8;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+.paper-links a:hover {
+  background: rgba(99,102,241,0.25);
+}
+.stats {
+  text-align: center;
+  padding: 30px;
+  margin-top: 40px;
+  background: rgba(30,41,59,0.4);
+  border-radius: 14px;
+  border: 1px solid rgba(99,102,241,0.1);
+}
+.stats h3 {
+  color: #94a3b8;
+  font-size: 1rem;
+  margin-bottom: 12px;
+}
+.stats p {
+  color: #64748b;
+  font-size: 0.9rem;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+  <h1>🤖 小小志AI日报</h1>
+  <div class="date">2026年5月29日 · 星期五</div>
+  <div class="subtitle">AI Research Daily · HF 热门 5 篇</div>
+</header>
+
+<div class="highlight-banner">
+  <div class="hl-title">🔥 今日看点</div>
+  <div class="hl-text">AXPO（NVIDIA）提出面向多模态智能体的探索性策略优化方法，在推理任务上超越现有方法；GEM（腾讯混元）利用生成式监督提升具身智能，400万数据规模预训练展现强泛化能力；ProRL（复旦）将强化学习引入主动推荐系统，通过修正策略梯度估计解决稀疏反馈难题。</div>
+</div>
+
+<section class="section">
+  <h2 class="section-title">🧩 Agent · 智能体</h2>
+
+  <div class="paper-card">
+    <div class="paper-title"><span class="hot-badge">🔥</span> Agent Explorative Policy Optimization for Multimodal Agentic Reasoning</div>
+    <div class="paper-meta">arXiv 2026 · NVIDIA</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">基于视觉-语言模型的强化学习训练框架，通过探索性策略优化提升多模态智能体的推理能力</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 AXPO 方法，将探索性策略优化引入多模态推理场景，使智能体能够在复杂视觉问题中进行更有效的搜索与推理</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在多个基准上超越现有方法，8B 参数模型相对提升 30-40%，比基线高出 1.8 个百分点</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于多模态智能体推理方向的重要突破，NVIDIA 出品质量有保障，建议关注其在复杂视觉推理任务上的泛化表现</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-agent">Agent</span>
+      <span class="tag tag-multimodal">Multimodal</span>
+      <span class="tag tag-rl">RL</span>
+      <span class="tag tag-reasoning">Reasoning</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2605.28774">arXiv</a>
+      <a href="https://arxiv.org/pdf/2605.28774">PDF</a>
+      <a href="https://byungkwanlee.github.io/AXPO-page/">Project</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">ResearchMath-14K: Scaling Research-Level Mathematics via Agents</div>
+    <div class="paper-meta">arXiv 2026 · Seoul National University</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">基于大语言模型智能体自动生成研究级数学问题和解答，构建高质量数学推理训练数据集</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 ResearchMath 框架，利用智能体协作从 220K 候选中筛选出 14K 高质量研究级数学题目，填补现有数学数据集在难度层次上的空白</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在 4B 和 30B 参数模型上均验证有效性，使用该数据微调后模型在研究级数学推理能力上显著提升</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于大语言模型数学推理方向，数据构造方法新颖且可扩展，建议关注其在高难度数学问题上的泛化表现</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-agent">Agent</span>
+      <span class="tag tag-llm">LLM</span>
+      <span class="tag tag-reasoning">Reasoning</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2605.28003">arXiv</a>
+      <a href="https://arxiv.org/pdf/2605.28003">PDF</a>
+    </div>
+  </div>
+
+</section>
+
+<section class="section">
+  <h2 class="section-title">🦾 Robotics · 机器人与具身智能</h2>
+
+  <div class="paper-card">
+    <div class="paper-title"><span class="hot-badge">🔥</span> ProRL: Effective Reinforcement Learning for Proactive Recommendation via Rectified Policy Gradient Estimation</div>
+    <div class="paper-meta">arXiv 2026 · Fudan University</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">采用强化学习方法解决主动推荐系统中的序列决策问题，通过修正策略梯度估计改善训练稳定性</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出修正策略梯度估计方法，有效解决主动推荐场景下奖励稀疏和梯度估计偏差的双重难题</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在多个推荐系统基准数据集上验证有效性，相比现有方法在推荐准确率和用户满意度方面均有显著提升</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">将强化学习技术落地于主动推荐场景，开源代码已获 36 星，方法具有良好的工程实用价值</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-rl">RL</span>
+      <span class="tag tag-robot">Recommendation</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2605.28293">arXiv</a>
+      <a href="https://arxiv.org/pdf/2605.28293">PDF</a>
+      <a href="https://github.com/hongruhou89/ProRL">Code</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title"><span class="hot-badge">🔥</span> GEM: Generative Supervision Helps Embodied Intelligence</div>
+    <div class="paper-meta">arXiv 2026 · Tencent Hunyuan</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">基于视觉-语言模型框架，利用生成式监督信号对具身视觉模型进行大规模预训练</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 GEM 框架，通过生成式监督任务（如视觉预测和描述生成）增强具身智能模型对环境的理解和交互能力</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">使用 400 万规模数据进行预训练，在多个具身任务基准上展现出优异的泛化性能</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">腾讯混元团队出品，属于具身智能与视觉语言模型的交叉方向，数据规模和开源代码均有说服力</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-vla">VLA</span>
+      <span class="tag tag-robot">Embodied</span>
+      <span class="tag tag-multimodal">Multimodal</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2605.28548">arXiv</a>
+      <a href="https://arxiv.org/pdf/2605.28548">PDF</a>
+      <a href="https://zhaorw02.github.io/GEM/">Project</a>
+      <a href="https://github.com/zhaorw02/GEM">Code</a>
+    </div>
+  </div>
+
+</section>
+
+<section class="section">
+  <h2 class="section-title">🧠 LLM · 大语言模型</h2>
+
+  <div class="paper-card">
+    <div class="paper-title">DenoiseRL: Bootstrapping Reasoning Models to Recover from Noisy Prefixes</div>
+    <div class="paper-meta">arXiv 2026 · Fudan University</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">结合强化学习与推理模型训练，针对含噪声前缀的推理场景设计自举式恢复机制</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 DenoiseRL 框架，使推理模型能够在受到噪声干扰的上下文中自主识别并纠正错误推理路径，提升鲁棒性</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在多个推理基准上验证模型在噪声环境下的恢复能力，开源代码已获 33 星</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">解决推理模型面对含噪输入时性能退化的实际问题，方向具有应用价值，建议关注其在长链推理任务中的表现</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-llm">LLM</span>
+      <span class="tag tag-rl">RL</span>
+      <span class="tag tag-reasoning">Reasoning</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2605.28421">arXiv</a>
+      <a href="https://arxiv.org/pdf/2605.28421">PDF</a>
+      <a href="https://github.com/ALEX-nlp/DenoiseRL">Code</a>
+    </div>
+  </div>
+
+</section>
+
+<div class="stats">
+  <h3>📊 今日统计</h3>
+  <p>HF 热门论文 5 篇 · arXiv 采集超时已跳过</p>
+</div>
+
+</div>
+</body>
+</html>

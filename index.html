@@ -658,6 +658,65 @@
 <script>
 // ===== DATA =====
 const PAPERS_DB = [
+    // === 2026-05-29 ===
+    {
+        date: "2026-05-29",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Agent Explorative Policy Optimization for Multimodal Agentic Reasoning",
+        venue: "arXiv 2026 · NVIDIA",
+        summary: "🔬 技术路线: 基于视觉-语言模型的强化学习训练框架，通过探索性策略优化提升多模态智能体的推理能力 | 💡 创新点: 提出 AXPO 方法，将探索性策略优化引入多模态推理场景，使智能体能够在复杂视觉问题中进行更有效的搜索与推理 | 📊 实验效果: 在多个基准上超越现有方法，8B 参数模型相对提升 30-40%，比基线高出 1.8 个百分点 | ⭐ 整体评价: 属于多模态智能体推理方向的重要突破，NVIDIA 出品质量有保障，建议关注其在复杂视觉推理任务上的泛化表现",
+        tags: [["Agent","green"],["Multimodal","green"],["RL","green"],["Reasoning","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.28774"],["PDF","https://arxiv.org/pdf/2605.28774"],["Project","https://byungkwanlee.github.io/AXPO-page/"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于视觉-语言模型的强化学习训练框架，通过探索性策略优化提升多模态智能体的推理能力"},{"label":"💡 创新点","text":"提出 AXPO 方法，将探索性策略优化引入多模态推理场景，使智能体能够在复杂视觉问题中进行更有效的搜索与推理"},{"label":"📊 实验效果","text":"在多个基准上超越现有方法，8B 参数模型相对提升 30-40%，比基线高出 1.8 个百分点"},{"label":"⭐ 整体评价","text":"属于多模态智能体推理方向的重要突破，NVIDIA 出品质量有保障，建议关注其在复杂视觉推理任务上的泛化表现"}]
+    },
+    {
+        date: "2026-05-29",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "ResearchMath-14K: Scaling Research-Level Mathematics via Agents",
+        venue: "arXiv 2026 · Seoul National University",
+        summary: "🔬 技术路线: 基于大语言模型智能体自动生成研究级数学问题和解答，构建高质量数学推理训练数据集 | 💡 创新点: 提出 ResearchMath 框架，利用智能体协作从 220K 候选中筛选出 14K 高质量研究级数学题目，填补现有数学数据集在难度层次上的空白 | 📊 实验效果: 在 4B 和 30B 参数模型上均验证有效性，使用该数据微调后模型在研究级数学推理能力上显著提升 | ⭐ 整体评价: 属于大语言模型数学推理方向，数据构造方法新颖且可扩展，建议关注其在高难度数学问题上的泛化表现",
+        tags: [["Agent","green"],["LLM","green"],["Reasoning","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.28003"],["PDF","https://arxiv.org/pdf/2605.28003"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于大语言模型智能体自动生成研究级数学问题和解答，构建高质量数学推理训练数据集"},{"label":"💡 创新点","text":"提出 ResearchMath 框架，利用智能体协作从 220K 候选中筛选出 14K 高质量研究级数学题目，填补现有数学数据集在难度层次上的空白"},{"label":"📊 实验效果","text":"在 4B 和 30B 参数模型上均验证有效性，使用该数据微调后模型在研究级数学推理能力上显著提升"},{"label":"⭐ 整体评价","text":"属于大语言模型数学推理方向，数据构造方法新颖且可扩展，建议关注其在高难度数学问题上的泛化表现"}]
+    },
+    {
+        date: "2026-05-29",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "ProRL: Effective Reinforcement Learning for Proactive Recommendation via Rectified Policy Gradient Estimation",
+        venue: "arXiv 2026 · Fudan University",
+        summary: "🔬 技术路线: 采用强化学习方法解决主动推荐系统中的序列决策问题，通过修正策略梯度估计改善训练稳定性 | 💡 创新点: 提出修正策略梯度估计方法，有效解决主动推荐场景下奖励稀疏和梯度估计偏差的双重难题 | 📊 实验效果: 在多个推荐系统基准数据集上验证有效性，相比现有方法在推荐准确率和用户满意度方面均有显著提升 | ⭐ 整体评价: 将强化学习技术落地于主动推荐场景，开源代码已获 36 星，方法具有良好的工程实用价值",
+        tags: [["RL","green"],["Recommendation","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.28293"],["PDF","https://arxiv.org/pdf/2605.28293"],["Code","https://github.com/hongruhou89/ProRL"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"采用强化学习方法解决主动推荐系统中的序列决策问题，通过修正策略梯度估计改善训练稳定性"},{"label":"💡 创新点","text":"提出修正策略梯度估计方法，有效解决主动推荐场景下奖励稀疏和梯度估计偏差的双重难题"},{"label":"📊 实验效果","text":"在多个推荐系统基准数据集上验证有效性，相比现有方法在推荐准确率和用户满意度方面均有显著提升"},{"label":"⭐ 整体评价","text":"将强化学习技术落地于主动推荐场景，开源代码已获 36 星，方法具有良好的工程实用价值"}]
+    },
+    {
+        date: "2026-05-29",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "GEM: Generative Supervision Helps Embodied Intelligence",
+        venue: "arXiv 2026 · Tencent Hunyuan",
+        summary: "🔬 技术路线: 基于视觉-语言模型框架，利用生成式监督信号对具身视觉模型进行大规模预训练 | 💡 创新点: 提出 GEM 框架，通过生成式监督任务（如视觉预测和描述生成）增强具身智能模型对环境的理解和交互能力 | 📊 实验效果: 使用 400 万规模数据进行预训练，在多个具身任务基准上展现出优异的泛化性能 | ⭐ 整体评价: 腾讯混元团队出品，属于具身智能与视觉语言模型的交叉方向，数据规模和开源代码均有说服力",
+        tags: [["VLA","green"],["Embodied","green"],["Multimodal","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.28548"],["PDF","https://arxiv.org/pdf/2605.28548"],["Project","https://zhaorw02.github.io/GEM/"],["Code","https://github.com/zhaorw02/GEM"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于视觉-语言模型框架，利用生成式监督信号对具身视觉模型进行大规模预训练"},{"label":"💡 创新点","text":"提出 GEM 框架，通过生成式监督任务（如视觉预测和描述生成）增强具身智能模型对环境的理解和交互能力"},{"label":"📊 实验效果","text":"使用 400 万规模数据进行预训练，在多个具身任务基准上展现出优异的泛化性能"},{"label":"⭐ 整体评价","text":"腾讯混元团队出品，属于具身智能与视觉语言模型的交叉方向，数据规模和开源代码均有说服力"}]
+    },
+    {
+        date: "2026-05-29",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "DenoiseRL: Bootstrapping Reasoning Models to Recover from Noisy Prefixes",
+        venue: "arXiv 2026 · Fudan University",
+        summary: "🔬 技术路线: 结合强化学习与推理模型训练，针对含噪声前缀的推理场景设计自举式恢复机制 | 💡 创新点: 提出 DenoiseRL 框架，使推理模型能够在受到噪声干扰的上下文中自主识别并纠正错误推理路径，提升鲁棒性 | 📊 实验效果: 在多个推理基准上验证模型在噪声环境下的恢复能力，开源代码已获 33 星 | ⭐ 整体评价: 解决推理模型面对含噪输入时性能退化的实际问题，方向具有应用价值，建议关注其在长链推理任务中的表现",
+        tags: [["LLM","green"],["RL","green"],["Reasoning","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.28421"],["PDF","https://arxiv.org/pdf/2605.28421"],["Code","https://github.com/ALEX-nlp/DenoiseRL"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"结合强化学习与推理模型训练，针对含噪声前缀的推理场景设计自举式恢复机制"},{"label":"💡 创新点","text":"提出 DenoiseRL 框架，使推理模型能够在受到噪声干扰的上下文中自主识别并纠正错误推理路径，提升鲁棒性"},{"label":"📊 实验效果","text":"在多个推理基准上验证模型在噪声环境下的恢复能力，开源代码已获 33 星"},{"label":"⭐ 整体评价","text":"解决推理模型面对含噪输入时性能退化的实际问题，方向具有应用价值，建议关注其在长链推理任务中的表现"}]
+    },
     // === 2026-05-28 ===
     {
         date: "2026-05-28",
@@ -11803,6 +11862,13 @@ const PAPERS_DB = [
 ];
 
 const DAILY_OVERVIEW = {
+    "2026-05-29": {
+        bannerTitle: "🔥 今日看点",
+        bannerSubtitle: "AXPO（NVIDIA）提出面向多模态智能体的探索性策略优化方法，在推理任务上超越现有方法；GEM（腾讯混元）利用生成式监督提升具身智能，400万数据规模预训练展现强泛化能力；ProRL（复旦）将强化学习引入主动推荐系统，通过修正策略梯度估计解决稀疏反馈难题。",
+        picks: ["Agent Explorative Policy Optimization for Multimodal Agentic Reasoning","ProRL: Effective Reinforcement Learning for Proactive Recommendation via Rectified Policy Gradient Estimation","GEM: Generative Supervision Helps Embodied Intelligence"],
+        totalPapers: 5,
+        totalNews: 0
+    },
     "2026-05-28": {
         bannerTitle: "🔥 今日看点",
         bannerSubtitle: "Gamma-World（NVIDIA）提出多智能体世界模型，突破交互式视频生成中单一控制信号限制，支持多于两个玩家的生成式仿真；Beyond Binary 提出基于物理的触觉接触表征，实现灵巧操作从仿真到真实的零样本迁移；lerobot 发布 VLA-JEPA 系列模型，将联合嵌入预测架构引入视觉语言动作模型。",
