@@ -658,6 +658,84 @@
 <script>
 // ===== DATA =====
 const PAPERS_DB = [
+    // === 2026-05-31 ===
+    {
+        date: "2026-05-31",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "AgentDoG 1.5: A Lightweight and Scalable Alignment Framework for AI Agent Safety and Security",
+        venue: "arXiv 2026 · Shanghai AI Lab",
+        summary: "🔬 技术路线: 提出轻量级可扩展的智能体安全对齐框架，支持 0.8B 到 8B 参数规模的模型训练 | 💡 创新点: 首次系统性地将安全对齐与智能体能力结合，设计了针对智能体场景的安全训练流程 | 📊 实验效果: 在多个安全基准上验证了从 0.8B 到 8B 不同规模模型的有效性，展现良好的可扩展性 | ⭐ 整体评价: 智能体安全方向的重要工作，轻量化设计使其具备实际部署价值，值得关注其在真实智能体系统中的表现",
+        tags: [["Agent","green"],["Safety","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.29801"],["PDF","https://arxiv.org/pdf/2605.29801"],["Project","https://ai45lab.github.io/AgentDoG/v1_5/"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出轻量级可扩展的智能体安全对齐框架，支持 0.8B 到 8B 参数规模的模型训练"},{"label":"💡 创新点","text":"首次系统性地将安全对齐与智能体能力结合，设计了针对智能体场景的安全训练流程"},{"label":"📊 实验效果","text":"在多个安全基准上验证了从 0.8B 到 8B 不同规模模型的有效性，展现良好的可扩展性"},{"label":"⭐ 整体评价","text":"智能体安全方向的重要工作，轻量化设计使其具备实际部署价值，值得关注其在真实智能体系统中的表现"}]
+    },
+    {
+        date: "2026-05-31",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "GenClaw: Code-Driven Agentic Image Generation",
+        venue: "arXiv 2026 · Tencent Hunyuan",
+        summary: "🔬 技术路线: 提出代码驱动的智能体图像生成机制，将图像生成过程分解为可编程的代码逻辑 | 💡 创新点: 首次将代码执行与多模态生成模型结合，实现可控且可组合的图像创作流程 | 📊 实验效果: 在图像生成质量和可控性上均有显著提升，已开源代码获得 78 个星标 | ⭐ 整体评价: 腾讯混元团队的创新工作，代码驱动范式为智能体生成内容提供了新思路，适合关注图像生成可控性研究者",
+        tags: [["Agent","green"],["Generation","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.30248"],["PDF","https://arxiv.org/pdf/2605.30248"],["Code","https://github.com/yejy53/GenClaw"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出代码驱动的智能体图像生成机制，将图像生成过程分解为可编程的代码逻辑"},{"label":"💡 创新点","text":"首次将代码执行与多模态生成模型结合，实现可控且可组合的图像创作流程"},{"label":"📊 实验效果","text":"在图像生成质量和可控性上均有显著提升，已开源代码获得 78 个星标"},{"label":"⭐ 整体评价","text":"腾讯混元团队的创新工作，代码驱动范式为智能体生成内容提供了新思路，适合关注图像生成可控性研究者"}]
+    },
+    {
+        date: "2026-05-31",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "Why Far Looks Up: Probing Spatial Representation in Vision-Language Models",
+        venue: "arXiv 2026 · NVIDIA",
+        summary: "🔬 技术路线: 通过对比探测方法系统分析视觉语言模型中的空间表征机制，揭示距离感知的编码方式 | 💡 创新点: 发现视觉语言模型将\"远\"映射为\"上\"的空间偏置现象，设计了针对性的探测框架来验证 | 📊 实验效果: 在多个视觉语言模型上验证了空间表征偏置的普遍性，揭示了模型鲁棒性的潜在短板 | ⭐ 整体评价: NVIDIA 团队的分析性工作，对理解视觉语言模型的空间推理局限性有重要参考价值",
+        tags: [["Multimodal","green"],["Probing","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.30161"],["PDF","https://arxiv.org/pdf/2605.30161"],["Project","https://cheolhong0916.github.io/whyfarlooksup.github.io/"],["Code","https://github.com/cheolhong0916/contrastive-probing"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"通过对比探测方法系统分析视觉语言模型中的空间表征机制，揭示距离感知的编码方式"},{"label":"💡 创新点","text":"发现视觉语言模型将\"远\"映射为\"上\"的空间偏置现象，设计了针对性的探测框架来验证"},{"label":"📊 实验效果","text":"在多个视觉语言模型上验证了空间表征偏置的普遍性，揭示了模型鲁棒性的潜在短板"},{"label":"⭐ 整体评价","text":"NVIDIA 团队的分析性工作，对理解视觉语言模型的空间推理局限性有重要参考价值"}]
+    },
+    {
+        date: "2026-05-31",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "CollectionLoRA: Collecting 50 Effects in 1 LoRA via Multi-Teacher On-Policy Distillation",
+        venue: "arXiv 2026 · Qwen Applications",
+        summary: "🔬 技术路线: 基于多教师在线策略蒸馏方法，将 50 种视觉效果压缩到单个 LoRA 适配器中 | 💡 创新点: 提出多教师蒸馏策略，解决了传统方法中不同效果相互干扰的问题，实现一个适配器覆盖多种风格 | 📊 实验效果: 单个 LoRA 成功融合 50 种效果，在图像生成质量上与独立训练的模型相当 | ⭐ 整体评价: 参数高效微调方向的实用工作，对降低多风格部署成本有直接帮助，已开源代码",
+        tags: [["LoRA","green"],["Generation","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.25378"],["PDF","https://arxiv.org/pdf/2605.25378"],["Project","https://collectionlora.github.io/"],["Code","https://github.com/Qwen-Applications/CollectionLoRA"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于多教师在线策略蒸馏方法，将 50 种视觉效果压缩到单个 LoRA 适配器中"},{"label":"💡 创新点","text":"提出多教师蒸馏策略，解决了传统方法中不同效果相互干扰的问题，实现一个适配器覆盖多种风格"},{"label":"📊 实验效果","text":"单个 LoRA 成功融合 50 种效果，在图像生成质量上与独立训练的模型相当"},{"label":"⭐ 整体评价","text":"参数高效微调方向的实用工作，对降低多风格部署成本有直接帮助，已开源代码"}]
+    },
+    {
+        date: "2026-05-31",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "How LoRA Remembers? A Parametric Memory Law for LLM Finetuning",
+        venue: "arXiv 2026 · Alibaba · 浙江大学",
+        summary: "🔬 技术路线: 从参数化记忆的角度研究 LoRA 微调机制，提出描述知识记忆规律的理论模型 | 💡 创新点: 首次揭示 LoRA 低秩适配中的参数化记忆规律，为理解微调过程中的知识存储提供理论基础 | 📊 实验效果: 在多个预测任务上验证了记忆规律的有效性，理论预测与实验结果高度吻合 | ⭐ 整体评价: 理论性较强的工作，对理解 LoRA 微调的内在机制有重要价值，已开源代码",
+        tags: [["LLM","green"],["LoRA","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.30260"],["PDF","https://arxiv.org/pdf/2605.30260"],["Code","https://github.com/zjunlp/ParametricMemoryLaw"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"从参数化记忆的角度研究 LoRA 微调机制，提出描述知识记忆规律的理论模型"},{"label":"💡 创新点","text":"首次揭示 LoRA 低秩适配中的参数化记忆规律，为理解微调过程中的知识存储提供理论基础"},{"label":"📊 实验效果","text":"在多个预测任务上验证了记忆规律的有效性，理论预测与实验结果高度吻合"},{"label":"⭐ 整体评价","text":"理论性较强的工作，对理解 LoRA 微调的内在机制有重要价值，已开源代码"}]
+    },
+    {
+        date: "2026-05-31",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "Strengthening Societal Resilience with Rosalind Biodefense",
+        venue: "",
+        summary: "OpenAI 发布 Rosalind 生物防御项目相关内容，探索如何利用人工智能技术加强社会层面的生物安全防护能力。",
+        tags: [],
+        links: [["来源","https://openai.com/index/strengthening-societal-resilience-with-rosalind-biodefense/"]]
+    },
+    {
+        date: "2026-05-31",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "A Shared Playbook for Trustworthy Third Party Evaluations",
+        venue: "",
+        summary: "OpenAI 发布关于可信第三方评估的共享操作手册，为建立统一、透明的 AI 模型评估标准提出框架建议。",
+        tags: [],
+        links: [["来源","https://openai.com/index/trustworthy-third-party-evaluations-foundations/"]]
+    },
     // === 2026-05-30 ===
     {
         date: "2026-05-30",
@@ -12281,6 +12359,13 @@ const PAPERS_DB = [
 ];
 
 const DAILY_OVERVIEW = {
+    "2026-05-31": {
+        bannerTitle: "🔥 今日看点",
+        bannerSubtitle: "腾讯混元 GenClaw 提出代码驱动的智能体图像生成框架；上海 AI Lab 发布 AgentDoG 1.5 轻量级智能体安全对齐框架；NVIDIA 团队探索视觉语言模型的空间表征机制",
+        picks: ["AgentDoG 1.5: A Lightweight and Scalable Alignment Framework for AI Agent Safety and Security","GenClaw: Code-Driven Agentic Image Generation"],
+        totalPapers: 5,
+        totalNews: 2
+    },
     "2026-05-30": {
         bannerTitle: "🔄 周末补漏说明",
         bannerSubtitle: "本期为周六补漏专刊。通过扩大检索窗口（2026-05-23 ~ 2026-05-30），从本周遗漏的数百篇论文中按价值评分（机构权重 / 开源代码 / 实验指标 / 方向优先级 / 信号词）精选出 Top 30 篇，逐篇生成结构化中文摘要。",
