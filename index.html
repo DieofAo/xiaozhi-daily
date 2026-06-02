@@ -658,6 +658,156 @@
 <script>
 // ===== DATA =====
 const PAPERS_DB = [
+    // === 2026-06-02 ===
+    {
+        date: "2026-06-02",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "RoboDream: Compositional World Models for Scalable Robot Data Synthesis",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 基于扩散模型构建组合式世界模型，通过模块化场景生成实现大规模机器人训练数据的合成 | 💡 创新点: 将场景分解为可组合的独立模块，支持灵活拼接生成多样化训练场景，无需大量真实数据采集 | 📊 实验效果: 在数据生成和机器人策略训练任务上验证了可扩展性，合成数据训练的策略接近真实数据效果 | ⭐ 整体评价: 世界模型驱动数据合成的实用方向，对解决机器人学习中数据瓶颈有重要意义，已开源项目页面",
+        tags: [["World Model","green"],["Robotics","green"],["Generation","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.02577"],["PDF","https://arxiv.org/pdf/2606.02577"],["Project","https://junjieye.com/RoboDream/"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于扩散模型构建组合式世界模型，通过模块化场景生成实现大规模机器人训练数据的合成"},{"label":"💡 创新点","text":"将场景分解为可组合的独立模块，支持灵活拼接生成多样化训练场景，无需大量真实数据采集"},{"label":"📊 实验效果","text":"在数据生成和机器人策略训练任务上验证了可扩展性，合成数据训练的策略接近真实数据效果"},{"label":"⭐ 整体评价","text":"世界模型驱动数据合成的实用方向，对解决机器人学习中数据瓶颈有重要意义，已开源项目页面"}]
+    },
+    {
+        date: "2026-06-02",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "From Zero to Hero: Training-Free Custom Concept Spawning in World Models",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 在自回归世界模型中实现无需训练的自定义概念生成，通过注意力机制注入新概念 | 💡 创新点: 提出 SPAWN 方法，无需任何微调即可在世界模型中生成用户指定的新概念和实体 | 📊 实验效果: 在视频生成任务上验证了零样本概念注入的有效性，生成质量与一致性均达到较高水平 | ⭐ 整体评价: 免训练的概念注入方案极具实用价值，大幅降低了世界模型定制化的门槛，值得关注",
+        tags: [["World Model","green"],["Video","green"],["Generation","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.02575"],["PDF","https://arxiv.org/pdf/2606.02575"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"在自回归世界模型中实现无需训练的自定义概念生成，通过注意力机制注入新概念"},{"label":"💡 创新点","text":"提出 SPAWN 方法，无需任何微调即可在世界模型中生成用户指定的新概念和实体"},{"label":"📊 实验效果","text":"在视频生成任务上验证了零样本概念注入的有效性，生成质量与一致性均达到较高水平"},{"label":"⭐ 整体评价","text":"免训练的概念注入方案极具实用价值，大幅降低了世界模型定制化的门槛，值得关注"}]
+    },
+    {
+        date: "2026-06-02",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "Thinking in Blender: Staged Executable Inverse Graphics with Vision-Language Models",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 结合视觉语言模型与 Blender 三维引擎，通过分阶段可执行程序实现逆向图形学推理 | 💡 创新点: 将三维场景理解分解为分阶段的可执行程序，让大模型在 Blender 环境中逐步构建场景 | 📊 实验效果: 在复杂场景重建任务上实现了高精度的三维还原，分阶段策略显著提升了成功率 | ⭐ 整体评价: 将大模型推理能力与三维建模工具深度结合的创新性工作，在智能体工具使用方向有启发意义",
+        tags: [["Multimodal","green"],["Agent","green"],["3D","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.02580"],["PDF","https://arxiv.org/pdf/2606.02580"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"结合视觉语言模型与 Blender 三维引擎，通过分阶段可执行程序实现逆向图形学推理"},{"label":"💡 创新点","text":"将三维场景理解分解为分阶段的可执行程序，让大模型在 Blender 环境中逐步构建场景"},{"label":"📊 实验效果","text":"在复杂场景重建任务上实现了高精度的三维还原，分阶段策略显著提升了成功率"},{"label":"⭐ 整体评价","text":"将大模型推理能力与三维建模工具深度结合的创新性工作，在智能体工具使用方向有启发意义"}]
+    },
+    {
+        date: "2026-06-02",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "Mitigating Perceptual Judgment Bias in Multimodal LLM-as-a-Judge via Perceptual Perturbation and Reward Modeling",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 针对多模态大模型作为评判器时的感知偏差问题，提出感知扰动与奖励建模的联合修正方法 | 💡 创新点: 基于 GRPO 强化学习框架训练评判模型，通过感知扰动数据增强消除视觉偏差 | 📊 实验效果: 在多模态评判基准上显著降低了感知偏差率，评判准确性和一致性均有明显提升 | ⭐ 整体评价: 解决多模态评判器中系统性偏差的实用工作，对提升自动化评估的可靠性有直接帮助",
+        tags: [["Multimodal","green"],["RL","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.02578"],["PDF","https://arxiv.org/pdf/2606.02578"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"针对多模态大模型作为评判器时的感知偏差问题，提出感知扰动与奖励建模的联合修正方法"},{"label":"💡 创新点","text":"基于 GRPO 强化学习框架训练评判模型，通过感知扰动数据增强消除视觉偏差"},{"label":"📊 实验效果","text":"在多模态评判基准上显著降低了感知偏差率，评判准确性和一致性均有明显提升"},{"label":"⭐ 整体评价","text":"解决多模态评判器中系统性偏差的实用工作，对提升自动化评估的可靠性有直接帮助"}]
+    },
+    {
+        date: "2026-06-02",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "ProtoAda: Prototype-Guided Adaptive Adapter Expansion and Geometric Consolidation for Multimodal Continual Instruction Tuning",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 提出原型引导的自适应适配器扩展方法，结合几何整合策略实现多模态持续指令微调 | 💡 创新点: 基于原型表示动态扩展 LoRA 适配器，并通过几何空间整合防止灾难性遗忘 | 📊 实验效果: 在多模态持续学习场景中有效缓解遗忘问题，新旧任务性能均保持在较高水平 | ⭐ 整体评价: 多模态持续学习方向的扎实工作，原型引导加几何整合的设计思路对相关研究有参考价值",
+        tags: [["Multimodal","green"],["LoRA","green"],["Continual Learning","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.02576"],["PDF","https://arxiv.org/pdf/2606.02576"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出原型引导的自适应适配器扩展方法，结合几何整合策略实现多模态持续指令微调"},{"label":"💡 创新点","text":"基于原型表示动态扩展 LoRA 适配器，并通过几何空间整合防止灾难性遗忘"},{"label":"📊 实验效果","text":"在多模态持续学习场景中有效缓解遗忘问题，新旧任务性能均保持在较高水平"},{"label":"⭐ 整体评价","text":"多模态持续学习方向的扎实工作，原型引导加几何整合的设计思路对相关研究有参考价值"}]
+    },
+    {
+        date: "2026-06-02",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "AdaCodec: A Predictive Visual Code for Video MLLMs",
+        venue: "arXiv 2026 · MIT",
+        summary: "🔬 技术路线: 提出预测性视觉编码方案，通过自适应标记压缩大幅减少视频多模态大模型的输入长度 | 💡 创新点: 设计预测性标记机制，利用帧间冗余性自适应分配视觉标记数量，8B 模型支持 224K 标记上下文 | 📊 实验效果: 在 8B 参数规模下支持 32K 帧输入和 224K 标记上下文，视频理解精度保持在高水平 | ⭐ 整体评价: MIT 提出的视频标记压缩方案极具实用性，使超长视频理解在有限算力下成为可能",
+        tags: [["Multimodal","green"],["Video","green"],["LLM","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.02569"],["PDF","https://arxiv.org/pdf/2606.02569"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出预测性视觉编码方案，通过自适应标记压缩大幅减少视频多模态大模型的输入长度"},{"label":"💡 创新点","text":"设计预测性标记机制，利用帧间冗余性自适应分配视觉标记数量，8B 模型支持 224K 标记上下文"},{"label":"📊 实验效果","text":"在 8B 参数规模下支持 32K 帧输入和 224K 标记上下文，视频理解精度保持在高水平"},{"label":"⭐ 整体评价","text":"MIT 提出的视频标记压缩方案极具实用性，使超长视频理解在有限算力下成为可能"}]
+    },
+    {
+        date: "2026-06-02",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "ClinEnv: An Interactive Multi-Stage Long Horizon EHR Environment for Agents",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 构建基于电子健康记录的多阶段交互式仿真环境，用于评测智能体的长程决策能力 | 💡 创新点: 提出覆盖多阶段临床决策的基准环境，支持智能体在长时间跨度内进行诊疗推理和交互 | 📊 实验效果: 在多种大语言模型上进行了基准测试，揭示了当前模型在长程临床推理上的不足 | ⭐ 整体评价: 为医疗智能体研究提供了高质量评估平台，对推动智能体在专业领域的落地有重要价值",
+        tags: [["Agent","green"],["Benchmark","green"],["Medical","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.02568"],["PDF","https://arxiv.org/pdf/2606.02568"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"构建基于电子健康记录的多阶段交互式仿真环境，用于评测智能体的长程决策能力"},{"label":"💡 创新点","text":"提出覆盖多阶段临床决策的基准环境，支持智能体在长时间跨度内进行诊疗推理和交互"},{"label":"📊 实验效果","text":"在多种大语言模型上进行了基准测试，揭示了当前模型在长程临床推理上的不足"},{"label":"⭐ 整体评价","text":"为医疗智能体研究提供了高质量评估平台，对推动智能体在专业领域的落地有重要价值"}]
+    },
+    {
+        date: "2026-06-02",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "VLMs are Good Teachers for Video Reasoning via Adaptive Test-Time Optimization",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 利用视觉语言模型作为教师，在测试时自适应优化视频推理模型的输出质量 | 💡 创新点: 提出自适应测试时优化策略，让强大的视觉语言模型在推理阶段动态指导小模型提升表现 | 📊 实验效果: 在视频推理基准上取得显著性能提升，轻量化模型借助教师指导接近大模型效果 | ⭐ 整体评价: 测试时优化是一个实用且低成本的性能提升方案，对部署场景下的模型增强有参考意义",
+        tags: [["LLM","green"],["Multimodal","green"],["Video","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.02564"],["PDF","https://arxiv.org/pdf/2606.02564"],["Project","https://VLM-as-Teacher.github.io/"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"利用视觉语言模型作为教师，在测试时自适应优化视频推理模型的输出质量"},{"label":"💡 创新点","text":"提出自适应测试时优化策略，让强大的视觉语言模型在推理阶段动态指导小模型提升表现"},{"label":"📊 实验效果","text":"在视频推理基准上取得显著性能提升，轻量化模型借助教师指导接近大模型效果"},{"label":"⭐ 整体评价","text":"测试时优化是一个实用且低成本的性能提升方案，对部署场景下的模型增强有参考意义"}]
+    },
+    {
+        date: "2026-06-02",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "GrepSeek: Training Search Agents for Direct Corpus Interaction",
+        venue: "arXiv 2026 · University of Massachusetts Amherst",
+        summary: "🔬 技术路线: 基于强化学习训练搜索智能体，使其能够直接与大规模文本语料库进行交互式检索 | 💡 创新点: 让语言模型学会使用 grep 等工具主动搜索语料库，而非依赖传统索引检索方式 | 📊 实验效果: 在代码搜索和文档检索任务上显著优于传统检索方法，已开源获得 26 星标 | ⭐ 整体评价: 交互式搜索智能体的新范式，对代码助手和知识库问答场景有直接的应用价值",
+        tags: [["LLM","green"],["Agent","green"],["RL","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.29307"],["PDF","https://arxiv.org/pdf/2605.29307"],["Code","https://github.com/alirezasalemi7/grepseek"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于强化学习训练搜索智能体，使其能够直接与大规模文本语料库进行交互式检索"},{"label":"💡 创新点","text":"让语言模型学会使用 grep 等工具主动搜索语料库，而非依赖传统索引检索方式"},{"label":"📊 实验效果","text":"在代码搜索和文档检索任务上显著优于传统检索方法，已开源获得 26 星标"},{"label":"⭐ 整体评价","text":"交互式搜索智能体的新范式，对代码助手和知识库问答场景有直接的应用价值"}]
+    },
+    {
+        date: "2026-06-02",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Trust-Region Behavior Blending for On-Policy Distillation",
+        venue: "arXiv 2026 · T-Tech",
+        summary: "🔬 技术路线: 提出基于信赖域的行为混合方法，在在线策略蒸馏中平衡教师知识传递与学生自身探索 | 💡 创新点: 引入信赖域约束控制蒸馏过程中的策略偏移，避免学生模型过度依赖教师行为 | 📊 实验效果: 在多个蒸馏基准上超越传统在线蒸馏方法，同时保持了良好的训练稳定性 | ⭐ 整体评价: 蒸馏方法论层面的创新，信赖域约束的思路对大模型知识迁移和压缩有参考价值",
+        tags: [["LLM","green"],["Distillation","green"],["RL","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.31159"],["PDF","https://arxiv.org/pdf/2605.31159"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出基于信赖域的行为混合方法，在在线策略蒸馏中平衡教师知识传递与学生自身探索"},{"label":"💡 创新点","text":"引入信赖域约束控制蒸馏过程中的策略偏移，避免学生模型过度依赖教师行为"},{"label":"📊 实验效果","text":"在多个蒸馏基准上超越传统在线蒸馏方法，同时保持了良好的训练稳定性"},{"label":"⭐ 整体评价","text":"蒸馏方法论层面的创新，信赖域约束的思路对大模型知识迁移和压缩有参考价值"}]
+    },
+    {
+        date: "2026-06-02",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Mellum2 Technical Report",
+        venue: "arXiv 2026 · JetBrains",
+        summary: "🔬 技术路线: 基于混合专家架构构建代码大语言模型，支持 128K 上下文窗口，覆盖代码补全和智能体场景 | 💡 创新点: 采用 MoE 架构实现高效扩展，提供 2.5B、4B、12B 多种规模满足不同部署需求 | 📊 实验效果: 12B 参数量下在代码补全和工具调用任务上达到竞争力水平，128K 上下文支持长代码理解 | ⭐ 整体评价: JetBrains 发布的代码专用模型，MoE 架构加长上下文的组合对开发工具集成场景极具吸引力",
+        tags: [["LLM","green"],["MoE","green"],["Code","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.31268"],["PDF","https://arxiv.org/pdf/2605.31268"],["Project","https://www.jetbrains.com/mellum/"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于混合专家架构构建代码大语言模型，支持 128K 上下文窗口，覆盖代码补全和智能体场景"},{"label":"💡 创新点","text":"采用 MoE 架构实现高效扩展，提供 2.5B、4B、12B 多种规模满足不同部署需求"},{"label":"📊 实验效果","text":"12B 参数量下在代码补全和工具调用任务上达到竞争力水平，128K 上下文支持长代码理解"},{"label":"⭐ 整体评价","text":"JetBrains 发布的代码专用模型，MoE 架构加长上下文的组合对开发工具集成场景极具吸引力"}]
+    },
+    {
+        date: "2026-06-02",
+        category: "🤗 HuggingFace 模型",
+        categoryIcon: "📄",
+        title: "nvidia/4D-RGPT-8B",
+        venue: "HuggingFace · NVIDIA · 2026-06-02",
+        summary: "🔬 技术路线: 基于 Transformer 架构构建四维时空推理模型，支持对三维空间加时间维度的联合理解 | 💡 创新点: 将区域级别的四维推理能力整合到 8B 参数的语言模型中，实现时空一体化感知 | 📊 实验效果: 8B 参数规模下实现高效的四维空间推理，支持区域定位和时序理解 | ⭐ 整体评价: NVIDIA 发布的四维推理模型，对机器人场景感知和自动驾驶时空建模有直接参考价值",
+        tags: [["Multimodal","green"],["4D","green"],["Reasoning","green"]],
+        links: [["Model","https://huggingface.co/nvidia/4D-RGPT-8B"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于 Transformer 架构构建四维时空推理模型，支持对三维空间加时间维度的联合理解"},{"label":"💡 创新点","text":"将区域级别的四维推理能力整合到 8B 参数的语言模型中，实现时空一体化感知"},{"label":"📊 实验效果","text":"8B 参数规模下实现高效的四维空间推理，支持区域定位和时序理解"},{"label":"⭐ 整体评价","text":"NVIDIA 发布的四维推理模型，对机器人场景感知和自动驾驶时空建模有直接参考价值"}]
+    },
+    {
+        date: "2026-06-02",
+        category: "🤗 HuggingFace 模型",
+        categoryIcon: "📄",
+        title: "ByteDance-Seed/TaskMem",
+        venue: "HuggingFace · ByteDance Seed · 2026-06-02",
+        summary: "🔬 技术路线: 面向任务的智能体记忆模型，支持多模态智能体在长期交互中积累和检索任务相关知识 | 💡 创新点: 设计以任务为中心的记忆结构，有选择地存储和召回对当前任务最相关的历史经验 | 📊 实验效果: 在多模态智能体任务中有效提升了跨任务的知识复用率和长程任务完成效率 | ⭐ 整体评价: 字节跳动 Seed 团队的记忆模型开源，对构建具有长期记忆的智能体系统有参考意义",
+        tags: [["Agent","green"],["Memory","green"]],
+        links: [["Model","https://huggingface.co/ByteDance-Seed/TaskMem"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"面向任务的智能体记忆模型，支持多模态智能体在长期交互中积累和检索任务相关知识"},{"label":"💡 创新点","text":"设计以任务为中心的记忆结构，有选择地存储和召回对当前任务最相关的历史经验"},{"label":"📊 实验效果","text":"在多模态智能体任务中有效提升了跨任务的知识复用率和长程任务完成效率"},{"label":"⭐ 整体评价","text":"字节跳动 Seed 团队的记忆模型开源，对构建具有长期记忆的智能体系统有参考意义"}]
+    },
     // === 2026-06-01 ===
     {
         date: "2026-06-01",
@@ -12452,6 +12602,13 @@ const PAPERS_DB = [
 ];
 
 const DAILY_OVERVIEW = {
+    "2026-06-02": {
+        bannerTitle: "🔥 今日看点",
+        bannerSubtitle: "RoboDream 提出组合式世界模型实现可扩展机器人数据合成；MIT 提出 AdaCodec 预测性视觉编码用于视频多模态大模型；NVIDIA 发布 4D-RGPT-8B 四维空间推理模型；JetBrains 发布 Mellum2 代码大模型（MoE 架构，128K 上下文）；UMass 提出 GrepSeek 训练搜索智能体直接交互语料库",
+        picks: ["RoboDream: Compositional World Models for Scalable Robot Data Synthesis","From Zero to Hero: Training-Free Custom Concept Spawning in World Models","AdaCodec: A Predictive Visual Code for Video MLLMs","GrepSeek: Training Search Agents for Direct Corpus Interaction","Mellum2 Technical Report"],
+        totalPapers: 13,
+        totalNews: 0
+    },
     "2026-06-01": {
         bannerTitle: "🔥 今日看点",
         bannerSubtitle: "NVIDIA 发布 SANA-Streaming 实现 58 FPS 实时流式视频编辑；字节跳动 Seed 团队提出无瓶颈统一多模态模型 Representation Forcing；清华 KEG 组 LongTraceRL 借助搜索智能体轨迹学习长上下文推理；上海 AI Lab 发布 COLLEAGUE.SKILL 自动技能蒸馏框架",

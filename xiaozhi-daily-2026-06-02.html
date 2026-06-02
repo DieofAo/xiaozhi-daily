@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>小小志AI日报 - 2026年6月2日 周二</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans SC', sans-serif;
+  background: #0a0e1a;
+  color: #e0e6f0;
+  line-height: 1.7;
+  min-height: 100vh;
+}
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+header {
+  text-align: center;
+  margin-bottom: 48px;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, rgba(59,130,246,0.08) 0%, rgba(139,92,246,0.08) 100%);
+  border-radius: 20px;
+  border: 1px solid rgba(99,102,241,0.15);
+}
+header h1 {
+  font-size: 2rem;
+  background: linear-gradient(135deg, #60a5fa, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 8px;
+}
+header .date {
+  color: #94a3b8;
+  font-size: 1rem;
+}
+header .subtitle {
+  color: #64748b;
+  font-size: 0.9rem;
+  margin-top: 6px;
+}
+.highlight-banner {
+  background: linear-gradient(135deg, rgba(249,115,22,0.1) 0%, rgba(234,179,8,0.08) 100%);
+  border: 1px solid rgba(249,115,22,0.2);
+  border-radius: 14px;
+  padding: 20px 24px;
+  margin-bottom: 36px;
+}
+.hl-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fb923c;
+  margin-bottom: 8px;
+}
+.hl-text {
+  font-size: 0.92rem;
+  color: #cbd5e1;
+  line-height: 1.7;
+}
+.section {
+  margin-bottom: 40px;
+}
+.section-title {
+  font-size: 1.4rem;
+  color: #f1f5f9;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(99,102,241,0.2);
+}
+.paper-card {
+  background: rgba(30,41,59,0.6);
+  border: 1px solid rgba(99,102,241,0.12);
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 16px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.paper-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(99,102,241,0.1);
+  border-color: rgba(99,102,241,0.3);
+}
+.paper-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #f8fafc;
+  margin-bottom: 8px;
+}
+.paper-meta {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-bottom: 10px;
+}
+.summary-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+@media (max-width: 640px) {
+  .summary-grid { grid-template-columns: 1fr; }
+}
+.summary-item {
+  background: rgba(15,23,42,0.5);
+  border-radius: 10px;
+  padding: 12px 14px;
+  border: 1px solid rgba(99,102,241,0.08);
+}
+.summary-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #818cf8;
+  margin-bottom: 4px;
+}
+.summary-text {
+  font-size: 0.88rem;
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+.paper-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.tag {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+.tag-agent { background: rgba(16,185,129,0.12); color: #34d399; }
+.tag-llm { background: rgba(99,102,241,0.12); color: #818cf8; }
+.tag-multimodal { background: rgba(244,114,182,0.12); color: #f472b6; }
+.tag-world { background: rgba(251,191,36,0.12); color: #fbbf24; }
+.tag-robot { background: rgba(251,146,60,0.12); color: #fb923c; }
+.tag-rl { background: rgba(45,212,191,0.12); color: #2dd4bf; }
+.tag-video { background: rgba(168,85,247,0.12); color: #a855f7; }
+.tag-benchmark { background: rgba(34,211,238,0.12); color: #22d3ee; }
+.tag-vla { background: rgba(59,130,246,0.12); color: #60a5fa; }
+.tag-safety { background: rgba(239,68,68,0.12); color: #f87171; }
+.tag-memory { background: rgba(192,132,252,0.12); color: #c084fc; }
+.tag-moe { background: rgba(236,72,153,0.12); color: #ec4899; }
+.tag-reasoning { background: rgba(132,204,22,0.12); color: #a3e635; }
+.tag-lora { background: rgba(217,119,6,0.12); color: #f59e0b; }
+.tag-generation { background: rgba(168,85,247,0.12); color: #a855f7; }
+.tag-distillation { background: rgba(6,182,212,0.12); color: #22d3ee; }
+.tag-tts { background: rgba(236,72,153,0.12); color: #ec4899; }
+.tag-restoration { background: rgba(34,211,238,0.12); color: #22d3ee; }
+.tag-3d { background: rgba(251,191,36,0.12); color: #fbbf24; }
+.tag-code { background: rgba(132,204,22,0.12); color: #a3e635; }
+.tag-medical { background: rgba(239,68,68,0.12); color: #f87171; }
+.tag-continual { background: rgba(217,119,6,0.12); color: #f59e0b; }
+.hot-badge {
+  display: inline;
+  margin-right: 4px;
+}
+.paper-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.paper-links a {
+  display: inline-block;
+  padding: 5px 14px;
+  background: rgba(99,102,241,0.12);
+  color: #818cf8;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+.paper-links a:hover {
+  background: rgba(99,102,241,0.25);
+}
+.info-card {
+  background: rgba(30,41,59,0.4);
+  border: 1px solid rgba(99,102,241,0.08);
+  border-radius: 14px;
+  padding: 20px 24px;
+  margin-bottom: 12px;
+}
+.paper-summary {
+  font-size: 0.9rem;
+  color: #94a3b8;
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+.stats {
+  text-align: center;
+  padding: 30px;
+  margin-top: 40px;
+  background: rgba(30,41,59,0.4);
+  border-radius: 14px;
+  border: 1px solid rgba(99,102,241,0.1);
+}
+.stats h3 {
+  color: #94a3b8;
+  font-size: 1rem;
+  margin-bottom: 12px;
+}
+.stats p {
+  color: #64748b;
+  font-size: 0.9rem;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+  <h1>📡 小小志AI日报</h1>
+  <div class="date">2026年6月2日 · 周二</div>
+  <div class="subtitle">arXiv 8 篇 · HF 热门 3 篇 · HF 模型 2 个</div>
+</header>
+
+<div class="highlight-banner">
+  <div class="hl-title">🔥 今日看点</div>
+  <div class="hl-text">RoboDream 提出组合式世界模型实现可扩展机器人数据合成；MIT 提出 AdaCodec 预测性视觉编码用于视频多模态大模型；NVIDIA 发布 4D-RGPT-8B 四维空间推理模型；JetBrains 发布 Mellum2 代码大模型（MoE 架构，128K 上下文）；UMass 提出 GrepSeek 训练搜索智能体直接交互语料库</div>
+</div>
+
+<section class="section">
+  <h2 class="section-title">🌍 World Model · 世界模型</h2>
+
+  <div class="paper-card">
+    <div class="paper-title"><span class="hot-badge">🔥</span> RoboDream: Compositional World Models for Scalable Robot Data Synthesis</div>
+    <div class="paper-meta">arXiv 2026</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">基于扩散模型构建组合式世界模型，通过模块化场景生成实现大规模机器人训练数据的合成</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">将场景分解为可组合的独立模块，支持灵活拼接生成多样化训练场景，无需大量真实数据采集</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在数据生成和机器人策略训练任务上验证了可扩展性，合成数据训练的策略接近真实数据效果</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">世界模型驱动数据合成的实用方向，对解决机器人学习中数据瓶颈有重要意义，已开源项目页面</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-world">World Model</span>
+      <span class="tag tag-robot">Robotics</span>
+      <span class="tag tag-generation">Generation</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.02577" target="_blank">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.02577" target="_blank">PDF</a>
+      <a href="https://junjieye.com/RoboDream/" target="_blank">Project</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title"><span class="hot-badge">🔥</span> From Zero to Hero: Training-Free Custom Concept Spawning in World Models</div>
+    <div class="paper-meta">arXiv 2026</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">在自回归世界模型中实现无需训练的自定义概念生成，通过注意力机制注入新概念</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 SPAWN 方法，无需任何微调即可在世界模型中生成用户指定的新概念和实体</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在视频生成任务上验证了零样本概念注入的有效性，生成质量与一致性均达到较高水平</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">免训练的概念注入方案极具实用价值，大幅降低了世界模型定制化的门槛，值得关注</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-world">World Model</span>
+      <span class="tag tag-video">Video</span>
+      <span class="tag tag-generation">Generation</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.02575" target="_blank">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.02575" target="_blank">PDF</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2 class="section-title">🎨 Multimodal · 多模态</h2>
+
+  <div class="paper-card">
+    <div class="paper-title">Thinking in Blender: Staged Executable Inverse Graphics with Vision-Language Models</div>
+    <div class="paper-meta">arXiv 2026</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">结合视觉语言模型与 Blender 三维引擎，通过分阶段可执行程序实现逆向图形学推理</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">将三维场景理解分解为分阶段的可执行程序，让大模型在 Blender 环境中逐步构建场景</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在复杂场景重建任务上实现了高精度的三维还原，分阶段策略显著提升了成功率</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">将大模型推理能力与三维建模工具深度结合的创新性工作，在智能体工具使用方向有启发意义</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-multimodal">Multimodal</span>
+      <span class="tag tag-agent">Agent</span>
+      <span class="tag tag-3d">3D</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.02580" target="_blank">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.02580" target="_blank">PDF</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">Mitigating Perceptual Judgment Bias in Multimodal LLM-as-a-Judge via Perceptual Perturbation and Reward Modeling</div>
+    <div class="paper-meta">arXiv 2026</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">针对多模态大模型作为评判器时的感知偏差问题，提出感知扰动与奖励建模的联合修正方法</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">基于 GRPO 强化学习框架训练评判模型，通过感知扰动数据增强消除视觉偏差</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在多模态评判基准上显著降低了感知偏差率，评判准确性和一致性均有明显提升</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">解决多模态评判器中系统性偏差的实用工作，对提升自动化评估的可靠性有直接帮助</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-multimodal">Multimodal</span>
+      <span class="tag tag-rl">RL</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.02578" target="_blank">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.02578" target="_blank">PDF</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">ProtoAda: Prototype-Guided Adaptive Adapter Expansion and Geometric Consolidation for Multimodal Continual Instruction Tuning</div>
+    <div class="paper-meta">arXiv 2026</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出原型引导的自适应适配器扩展方法，结合几何整合策略实现多模态持续指令微调</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">基于原型表示动态扩展 LoRA 适配器，并通过几何空间整合防止灾难性遗忘</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在多模态持续学习场景中有效缓解遗忘问题，新旧任务性能均保持在较高水平</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">多模态持续学习方向的扎实工作，原型引导加几何整合的设计思路对相关研究有参考价值</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-multimodal">Multimodal</span>
+      <span class="tag tag-lora">LoRA</span>
+      <span class="tag tag-continual">Continual Learning</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.02576" target="_blank">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.02576" target="_blank">PDF</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title"><span class="hot-badge">🔥</span> AdaCodec: A Predictive Visual Code for Video MLLMs</div>
+    <div class="paper-meta">arXiv 2026 · MIT</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出预测性视觉编码方案，通过自适应标记压缩大幅减少视频多模态大模型的输入长度</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">设计预测性标记机制，利用帧间冗余性自适应分配视觉标记数量，8B 模型支持 224K 标记上下文</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在 8B 参数规模下支持 32K 帧输入和 224K 标记上下文，视频理解精度保持在高水平</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">MIT 提出的视频标记压缩方案极具实用性，使超长视频理解在有限算力下成为可能</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-multimodal">Multimodal</span>
+      <span class="tag tag-video">Video</span>
+      <span class="tag tag-llm">LLM</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.02569" target="_blank">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.02569" target="_blank">PDF</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2 class="section-title">🧩 Agent · 智能体</h2>
+
+  <div class="paper-card">
+    <div class="paper-title">ClinEnv: An Interactive Multi-Stage Long Horizon EHR Environment for Agents</div>
+    <div class="paper-meta">arXiv 2026</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">构建基于电子健康记录的多阶段交互式仿真环境，用于评测智能体的长程决策能力</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出覆盖多阶段临床决策的基准环境，支持智能体在长时间跨度内进行诊疗推理和交互</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在多种大语言模型上进行了基准测试，揭示了当前模型在长程临床推理上的不足</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">为医疗智能体研究提供了高质量评估平台，对推动智能体在专业领域的落地有重要价值</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-agent">Agent</span>
+      <span class="tag tag-benchmark">Benchmark</span>
+      <span class="tag tag-medical">Medical</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.02568" target="_blank">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.02568" target="_blank">PDF</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2 class="section-title">🧠 LLM · 大语言模型</h2>
+
+  <div class="paper-card">
+    <div class="paper-title">VLMs are Good Teachers for Video Reasoning via Adaptive Test-Time Optimization</div>
+    <div class="paper-meta">arXiv 2026</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">利用视觉语言模型作为教师，在测试时自适应优化视频推理模型的输出质量</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出自适应测试时优化策略，让强大的视觉语言模型在推理阶段动态指导小模型提升表现</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在视频推理基准上取得显著性能提升，轻量化模型借助教师指导接近大模型效果</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">测试时优化是一个实用且低成本的性能提升方案，对部署场景下的模型增强有参考意义</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-llm">LLM</span>
+      <span class="tag tag-multimodal">Multimodal</span>
+      <span class="tag tag-video">Video</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.02564" target="_blank">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.02564" target="_blank">PDF</a>
+      <a href="https://VLM-as-Teacher.github.io/" target="_blank">Project</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title"><span class="hot-badge">🔥</span> GrepSeek: Training Search Agents for Direct Corpus Interaction</div>
+    <div class="paper-meta">arXiv 2026 · University of Massachusetts Amherst</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">基于强化学习训练搜索智能体，使其能够直接与大规模文本语料库进行交互式检索</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">让语言模型学会使用 grep 等工具主动搜索语料库，而非依赖传统索引检索方式</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在代码搜索和文档检索任务上显著优于传统检索方法，已开源获得 26 星标</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">交互式搜索智能体的新范式，对代码助手和知识库问答场景有直接的应用价值</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-llm">LLM</span>
+      <span class="tag tag-agent">Agent</span>
+      <span class="tag tag-rl">RL</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2605.29307" target="_blank">arXiv</a>
+      <a href="https://arxiv.org/pdf/2605.29307" target="_blank">PDF</a>
+      <a href="https://github.com/alirezasalemi7/grepseek" target="_blank">Code</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">Trust-Region Behavior Blending for On-Policy Distillation</div>
+    <div class="paper-meta">arXiv 2026 · T-Tech</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出基于信赖域的行为混合方法，在在线策略蒸馏中平衡教师知识传递与学生自身探索</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">引入信赖域约束控制蒸馏过程中的策略偏移，避免学生模型过度依赖教师行为</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在多个蒸馏基准上超越传统在线蒸馏方法，同时保持了良好的训练稳定性</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">蒸馏方法论层面的创新，信赖域约束的思路对大模型知识迁移和压缩有参考价值</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-llm">LLM</span>
+      <span class="tag tag-distillation">Distillation</span>
+      <span class="tag tag-rl">RL</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2605.31159" target="_blank">arXiv</a>
+      <a href="https://arxiv.org/pdf/2605.31159" target="_blank">PDF</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title"><span class="hot-badge">🔥</span> Mellum2 Technical Report</div>
+    <div class="paper-meta">arXiv 2026 · JetBrains</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">基于混合专家架构构建代码大语言模型，支持 128K 上下文窗口，覆盖代码补全和智能体场景</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">采用 MoE 架构实现高效扩展，提供 2.5B、4B、12B 多种规模满足不同部署需求</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">12B 参数量下在代码补全和工具调用任务上达到竞争力水平，128K 上下文支持长代码理解</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">JetBrains 发布的代码专用模型，MoE 架构加长上下文的组合对开发工具集成场景极具吸引力</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-llm">LLM</span>
+      <span class="tag tag-moe">MoE</span>
+      <span class="tag tag-code">Code</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2605.31268" target="_blank">arXiv</a>
+      <a href="https://arxiv.org/pdf/2605.31268" target="_blank">PDF</a>
+      <a href="https://www.jetbrains.com/mellum/" target="_blank">Project</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2 class="section-title">🤗 HuggingFace 模型</h2>
+
+  <div class="paper-card">
+    <div class="paper-title"><span class="hot-badge">🔥</span> nvidia/4D-RGPT-8B</div>
+    <div class="paper-meta">HuggingFace · NVIDIA · 2026-06-02</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">基于 Transformer 架构构建四维时空推理模型，支持对三维空间加时间维度的联合理解</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">将区域级别的四维推理能力整合到 8B 参数的语言模型中，实现时空一体化感知</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">8B 参数规模下实现高效的四维空间推理，支持区域定位和时序理解</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">NVIDIA 发布的四维推理模型，对机器人场景感知和自动驾驶时空建模有直接参考价值</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-multimodal">Multimodal</span>
+      <span class="tag tag-3d">4D</span>
+      <span class="tag tag-reasoning">Reasoning</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://huggingface.co/nvidia/4D-RGPT-8B" target="_blank">Model</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">ByteDance-Seed/TaskMem</div>
+    <div class="paper-meta">HuggingFace · ByteDance Seed · 2026-06-02</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">面向任务的智能体记忆模型，支持多模态智能体在长期交互中积累和检索任务相关知识</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">设计以任务为中心的记忆结构，有选择地存储和召回对当前任务最相关的历史经验</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在多模态智能体任务中有效提升了跨任务的知识复用率和长程任务完成效率</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">字节跳动 Seed 团队的记忆模型开源，对构建具有长期记忆的智能体系统有参考意义</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-agent">Agent</span>
+      <span class="tag tag-memory">Memory</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://huggingface.co/ByteDance-Seed/TaskMem" target="_blank">Model</a>
+    </div>
+  </div>
+</section>
+
+<div class="stats">
+  <h3>📊 本期统计</h3>
+  <p>arXiv 论文 8 篇 · HF 热门 3 篇 · HF 模型 2 个 · 共 13 条内容</p>
+  <p>小小志科研日报系统 · 自动生成</p>
+</div>
+</div>
+</body>
+</html>
