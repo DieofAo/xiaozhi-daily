@@ -1047,6 +1047,16 @@ const IDEAS_DB = [
             { title: "COMPAS FAB", url: "https://github.com/compas-dev/compas_fab", type: "project" }
         ],
         tags: [["IRM","blue"],["Base Placement","teal"],["Mobile Manipulation","green"],["Reachability","purple"],["Optimization","red"]],
+    },
+    {
+        id: "embodied-language-representation",
+        date: "2026-06-03",
+        status: "new",
+        statusLabel: "💡 New",
+        title: "具身操作的基本表达形式是什么——寻找 Embodiment 的「语言」",
+        content: "核心问题：LLM 使用自然语言作为逻辑推理的载体——语言既是输入输出的接口，也是思维链展开的基本表达形式。那么在具身智能（Embodied AI）中，对应的「语言」是什么？即：具身操作的基本表达形式（representation medium）应当是什么？\n\n类比关系：\n• LLM → 自然语言（token 序列）作为推理载体\n• Embodied Agent → ??? 作为操作/决策的载体\n\n初步思考方向（待展开）：\n• 动作序列（action tokens）？——离散化的关节角/末端速度序列，类似 token 化\n• 轨迹空间（trajectory manifold）？——连续的时空曲线作为基本单元\n• 接触状态序列（contact mode sequence）？——离散的接触拓扑变化作为操作的骨架\n• 技能原语（skill primitives）？——类比词汇，可组合的基本操作单元\n• 物理状态转移图（state transition graph）？——类比语法树，描述状态如何合法转换\n\n为什么这个问题重要：\n如果能找到具身操作的「正确表达形式」，就像 NLP 找到 token 序列一样，可能从根本上统一不同的具身任务（抓取、组装、导航、协作），正如语言统一了不同的推理任务（QA、翻译、摘要、代码生成）。\n\n（还在思考中，暂记到这里）",
+        sources: [],
+        tags: [["Embodied AI","purple"],["Representation","blue"],["Foundation","teal"],["Philosophy","indigo"]],
     }
 ];
 
