@@ -658,6 +658,98 @@
 <script>
 // ===== DATA =====
 const PAPERS_DB = [
+    // === 2026-06-03 ===
+    {
+        date: "2026-06-03",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Harness-1: Reinforcement Learning for Search Agents with State-Externalizing Harnesses",
+        venue: "arXiv 2026 · Chroma",
+        summary: "🔬 技术路线: 提出 Harness-1 框架，通过状态外部化机制将搜索过程的中间状态显式管理，结合强化学习训练搜索智能体 | 💡 创新点: 首次将状态外部化概念引入搜索智能体训练，使模型能够有效管理长程搜索过程中的上下文状态 | 📊 实验效果: 在 20B 参数规模上验证了方法有效性，搜索准确率和效率均优于传统方法 | ⭐ 整体评价: 将强化学习与搜索智能体结合的新颖方向，状态外部化设计对复杂信息检索场景有重要参考价值",
+        tags: [["Agent","green"],["RL","green"],["Search","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.02373"],["PDF","https://arxiv.org/pdf/2606.02373"],["Code","https://github.com/pat-jj/harness-1"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出 Harness-1 框架，通过状态外部化机制将搜索过程的中间状态显式管理，结合强化学习训练搜索智能体"},{"label":"💡 创新点","text":"首次将状态外部化概念引入搜索智能体训练，使模型能够有效管理长程搜索过程中的上下文状态"},{"label":"📊 实验效果","text":"在 20B 参数规模上验证了方法有效性，搜索准确率和效率均优于传统方法"},{"label":"⭐ 整体评价","text":"将强化学习与搜索智能体结合的新颖方向，状态外部化设计对复杂信息检索场景有重要参考价值"}]
+    },
+    {
+        date: "2026-06-03",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Agent Crafter: A Multi-Agent Harness for Editable Scientific Figure Generation from Diverse Inputs",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 构建多智能体协作框架，通过流水线方式将不同输入源转换为可编辑的科学图表 | 💡 创新点: 支持多种输入格式的统一处理，并通过智能体协作实现图表的结构化生成与编辑 | 📊 实验效果: 在科学图表生成任务上验证了框架的有效性，生成质量和编辑灵活性表现良好 | ⭐ 整体评价: 面向学术论文写作场景的实用工具，多智能体架构设计体现了任务分解与协调能力",
+        tags: [["Agent","green"],["Code","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.30611"],["PDF","https://arxiv.org/pdf/2605.30611"],["Code","https://github.com/HaozheZhao/Crafter"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"构建多智能体协作框架，通过流水线方式将不同输入源转换为可编辑的科学图表"},{"label":"💡 创新点","text":"支持多种输入格式的统一处理，并通过智能体协作实现图表的结构化生成与编辑"},{"label":"📊 实验效果","text":"在科学图表生成任务上验证了框架的有效性，生成质量和编辑灵活性表现良好"},{"label":"⭐ 整体评价","text":"面向学术论文写作场景的实用工具，多智能体架构设计体现了任务分解与协调能力"}]
+    },
+    {
+        date: "2026-06-03",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "TASTE: Improving Coverage and Difficulty of Agent Benchmarks",
+        venue: "arXiv 2026 · Technion",
+        summary: "🔬 技术路线: 提出基于工具调用序列演化的任务合成方法，自动生成覆盖更广、难度更高的智能体评测样本 | 💡 创新点: 利用工具序列演化策略系统性扩展基准集的覆盖度和难度梯度，配合大模型评判打分 | 📊 实验效果: 合成的评测集能够有效区分不同能力水平的智能体模型，评测区分度显著优于人工构建基准 | ⭐ 整体评价: 智能体评测方法学的重要贡献，自动化基准合成思路对评测体系建设具有参考意义",
+        tags: [["Agent","green"],["Benchmark","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.28556"],["PDF","https://arxiv.org/pdf/2605.28556"],["Code","https://github.com/tomerkeren42/TASTE-task-synthesis-from-tool-sequence-evolution"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出基于工具调用序列演化的任务合成方法，自动生成覆盖更广、难度更高的智能体评测样本"},{"label":"💡 创新点","text":"利用工具序列演化策略系统性扩展基准集的覆盖度和难度梯度，配合大模型评判打分"},{"label":"📊 实验效果","text":"合成的评测集能够有效区分不同能力水平的智能体模型，评测区分度显著优于人工构建基准"},{"label":"⭐ 整体评价","text":"智能体评测方法学的重要贡献，自动化基准合成思路对评测体系建设具有参考意义"}]
+    },
+    {
+        date: "2026-06-03",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Masking Stale Observations Helps Search Agents -- Until It Doesn't: A Regime Map and Its Mechanism",
+        venue: "arXiv 2026 · McAuley-Lab",
+        summary: "🔬 技术路线: 系统研究搜索智能体中过时观察信息的遮蔽策略，绘制不同搜索场景下的策略有效性区域图 | 💡 创新点: 发现观察遮蔽存在明确的适用边界，提出机制分析解释何时遮蔽有效、何时反而有害 | 📊 实验效果: 在 4B 和 284B 参数模型上验证了区域图的准确性，为策略选择提供了明确指导 | ⭐ 整体评价: 对搜索智能体设计中的关键决策提供了理论与实验支撑，帮助开发者避免盲目应用遮蔽技术",
+        tags: [["Agent","green"],["Search","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.00408"],["PDF","https://arxiv.org/pdf/2606.00408"],["Code","https://github.com/i-DeepSearch/observation-masking"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"系统研究搜索智能体中过时观察信息的遮蔽策略，绘制不同搜索场景下的策略有效性区域图"},{"label":"💡 创新点","text":"发现观察遮蔽存在明确的适用边界，提出机制分析解释何时遮蔽有效、何时反而有害"},{"label":"📊 实验效果","text":"在 4B 和 284B 参数模型上验证了区域图的准确性，为策略选择提供了明确指导"},{"label":"⭐ 整体评价","text":"对搜索智能体设计中的关键决策提供了理论与实验支撑，帮助开发者避免盲目应用遮蔽技术"}]
+    },
+    {
+        date: "2026-06-03",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "K-BrowseComp: A Web Browsing Agent Benchmark Grounded in Korean Contexts",
+        venue: "arXiv 2026 · Carnegie Mellon University",
+        summary: "🔬 技术路线: 构建基于韩语语境的网页浏览智能体评测基准，评估模型在非英语环境下的网页交互能力 | 💡 创新点: 填补了非英语语境下浏览智能体评测的空白，提出针对韩语网页结构特点的评测任务设计 | 📊 实验效果: 主流智能体在韩语场景下性能显著下降，揭示了当前模型多语言网页理解的不足 | ⭐ 整体评价: 多语言智能体评测的重要补充，对关注国际化应用场景的研究者有参考价值",
+        tags: [["Agent","green"],["Benchmark","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.02404"],["PDF","https://arxiv.org/pdf/2606.02404"],["Code","https://github.com/prometheus-eval/K-BrowseComp"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"构建基于韩语语境的网页浏览智能体评测基准，评估模型在非英语环境下的网页交互能力"},{"label":"💡 创新点","text":"填补了非英语语境下浏览智能体评测的空白，提出针对韩语网页结构特点的评测任务设计"},{"label":"📊 实验效果","text":"主流智能体在韩语场景下性能显著下降，揭示了当前模型多语言网页理解的不足"},{"label":"⭐ 整体评价","text":"多语言智能体评测的重要补充，对关注国际化应用场景的研究者有参考价值"}]
+    },
+    {
+        date: "2026-06-03",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "LLM Domino: Decoupling Causal Modeling from Autoregressive Drafting in Speculative Decoding",
+        venue: "arXiv 2026 · Shanghai Jiao Tong University",
+        summary: "🔬 技术路线: 将因果建模与自回归草稿生成进行解耦，提出新的推测解码框架提升大模型推理速度 | 💡 创新点: 发现推测解码中因果约束并非必需，通过解耦设计允许草稿模型以更灵活的方式生成候选 | 📊 实验效果: 在推理加速任务上显著提升了接受率和生成速度，端到端推理时间明显缩短 | ⭐ 整体评价: 推测解码领域的理论突破性工作，解耦思路为后续加速方法提供了新的设计空间",
+        tags: [["LLM","green"],["Speculative Decoding","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.29707"],["PDF","https://arxiv.org/pdf/2605.29707"],["Code","https://github.com/jianuo-huang/Domino"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"将因果建模与自回归草稿生成进行解耦，提出新的推测解码框架提升大模型推理速度"},{"label":"💡 创新点","text":"发现推测解码中因果约束并非必需，通过解耦设计允许草稿模型以更灵活的方式生成候选"},{"label":"📊 实验效果","text":"在推理加速任务上显著提升了接受率和生成速度，端到端推理时间明显缩短"},{"label":"⭐ 整体评价","text":"推测解码领域的理论突破性工作，解耦思路为后续加速方法提供了新的设计空间"}]
+    },
+    {
+        date: "2026-06-03",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Draft-OPD: On-Policy Distillation for Speculative Draft Models",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 提出在策略蒸馏方法训练推测解码的草稿模型，让草稿模型学习目标模型的实际解码分布 | 💡 创新点: 区别于离线蒸馏，Draft-OPD 在训练时使用草稿模型自身生成的序列进行在策略学习，更好匹配目标分布 | 📊 实验效果: 在推理和生成任务上均验证了在策略蒸馏的优势，草稿接受率和推理吞吐量显著提升 | ⭐ 整体评价: 推测解码训练方法的改进工作，在策略学习思路简洁有效，已开源代码和项目主页",
+        tags: [["LLM","green"],["Distillation","green"],["Speculative Decoding","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.29343"],["PDF","https://arxiv.org/pdf/2605.29343"],["Project","https://www.haodilei.top/draft-opd/"],["Code","https://github.com/bingyang-lei/Draft-OPD"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出在策略蒸馏方法训练推测解码的草稿模型，让草稿模型学习目标模型的实际解码分布"},{"label":"💡 创新点","text":"区别于离线蒸馏，Draft-OPD 在训练时使用草稿模型自身生成的序列进行在策略学习，更好匹配目标分布"},{"label":"📊 实验效果","text":"在推理和生成任务上均验证了在策略蒸馏的优势，草稿接受率和推理吞吐量显著提升"},{"label":"⭐ 整体评价","text":"推测解码训练方法的改进工作，在策略学习思路简洁有效，已开源代码和项目主页"}]
+    },
+    {
+        date: "2026-06-03",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "X-Stream: Exploring MLLMs as Multiplexers for Multi-Stream Understanding",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 将多模态大模型作为多路复用器，探索其同时处理多路视频流并进行联合理解的能力 | 💡 创新点: 提出 X-Stream 框架，首次系统研究多模态大模型在多路并行视频输入下的理解与推理能力 | 📊 实验效果: 当前最强模型在多流理解任务上准确率仅约 50%，揭示了该方向的巨大改进空间 | ⭐ 整体评价: 开辟了多模态大模型的新评测维度，对自动驾驶、视频监控等多摄像头场景有直接应用前景",
+        tags: [["Multimodal","green"],["Video","green"],["Benchmark","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.02482"],["PDF","https://arxiv.org/pdf/2606.02482"],["Project","https://peiwensun2000.github.io/xstream/"],["Code","https://github.com/PeiwenSun2000/X-Stream"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"将多模态大模型作为多路复用器，探索其同时处理多路视频流并进行联合理解的能力"},{"label":"💡 创新点","text":"提出 X-Stream 框架，首次系统研究多模态大模型在多路并行视频输入下的理解与推理能力"},{"label":"📊 实验效果","text":"当前最强模型在多流理解任务上准确率仅约 50%，揭示了该方向的巨大改进空间"},{"label":"⭐ 整体评价","text":"开辟了多模态大模型的新评测维度，对自动驾驶、视频监控等多摄像头场景有直接应用前景"}]
+    },
     // === 2026-06-02 ===
     {
         date: "2026-06-02",
@@ -12602,6 +12694,13 @@ const PAPERS_DB = [
 ];
 
 const DAILY_OVERVIEW = {
+    "2026-06-03": {
+        bannerTitle: "🔥 今日看点",
+        bannerSubtitle: "Harness-1 提出基于强化学习的搜索智能体框架，将状态外部化以支持长程决策；Agent Crafter 构建多智能体协作流水线用于科学图表自动生成；LLM Domino 和 Draft-OPD 两篇工作聚焦推测解码加速方向；X-Stream 探索多模态大模型处理多路并行视频流的能力",
+        picks: ["Harness-1: Reinforcement Learning for Search Agents with State-Externalizing Harnesses","LLM Domino: Decoupling Causal Modeling from Autoregressive Drafting in Speculative Decoding","X-Stream: Exploring MLLMs as Multiplexers for Multi-Stream Understanding"],
+        totalPapers: 8,
+        totalNews: 0
+    },
     "2026-06-02": {
         bannerTitle: "🔥 今日看点",
         bannerSubtitle: "RoboDream 提出组合式世界模型实现可扩展机器人数据合成；MIT 提出 AdaCodec 预测性视觉编码用于视频多模态大模型；NVIDIA 发布 4D-RGPT-8B 四维空间推理模型；JetBrains 发布 Mellum2 代码大模型（MoE 架构，128K 上下文）；UMass 提出 GrepSeek 训练搜索智能体直接交互语料库",

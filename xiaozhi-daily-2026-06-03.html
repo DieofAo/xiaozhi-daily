@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>小小志AI日报 - 2026年6月3日 周三</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans SC', sans-serif;
+  background: #0a0e1a;
+  color: #e0e6f0;
+  line-height: 1.7;
+  min-height: 100vh;
+}
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+header {
+  text-align: center;
+  margin-bottom: 48px;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, rgba(59,130,246,0.08) 0%, rgba(139,92,246,0.08) 100%);
+  border-radius: 20px;
+  border: 1px solid rgba(99,102,241,0.15);
+}
+header h1 {
+  font-size: 2rem;
+  background: linear-gradient(135deg, #60a5fa, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 8px;
+}
+header .date {
+  color: #94a3b8;
+  font-size: 1rem;
+}
+header .subtitle {
+  color: #64748b;
+  font-size: 0.9rem;
+  margin-top: 6px;
+}
+.highlight-banner {
+  background: linear-gradient(135deg, rgba(249,115,22,0.1) 0%, rgba(234,179,8,0.08) 100%);
+  border: 1px solid rgba(249,115,22,0.2);
+  border-radius: 14px;
+  padding: 20px 24px;
+  margin-bottom: 36px;
+}
+.hl-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fb923c;
+  margin-bottom: 8px;
+}
+.hl-text {
+  font-size: 0.92rem;
+  color: #cbd5e1;
+  line-height: 1.7;
+}
+.section {
+  margin-bottom: 40px;
+}
+.section-title {
+  font-size: 1.4rem;
+  color: #f1f5f9;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(99,102,241,0.2);
+}
+.paper-card {
+  background: rgba(30,41,59,0.6);
+  border: 1px solid rgba(99,102,241,0.12);
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 16px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.paper-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(99,102,241,0.1);
+  border-color: rgba(99,102,241,0.3);
+}
+.paper-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #f8fafc;
+  margin-bottom: 8px;
+}
+.paper-meta {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-bottom: 10px;
+}
+.summary-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+@media (max-width: 640px) {
+  .summary-grid { grid-template-columns: 1fr; }
+}
+.summary-item {
+  background: rgba(15,23,42,0.5);
+  border-radius: 10px;
+  padding: 12px 14px;
+  border: 1px solid rgba(99,102,241,0.08);
+}
+.summary-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #818cf8;
+  margin-bottom: 4px;
+}
+.summary-text {
+  font-size: 0.88rem;
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+.paper-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.tag {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+.tag-agent { background: rgba(16,185,129,0.12); color: #34d399; }
+.tag-llm { background: rgba(99,102,241,0.12); color: #818cf8; }
+.tag-multimodal { background: rgba(244,114,182,0.12); color: #f472b6; }
+.tag-world { background: rgba(251,191,36,0.12); color: #fbbf24; }
+.tag-robot { background: rgba(251,146,60,0.12); color: #fb923c; }
+.tag-rl { background: rgba(45,212,191,0.12); color: #2dd4bf; }
+.tag-video { background: rgba(168,85,247,0.12); color: #a855f7; }
+.tag-benchmark { background: rgba(34,211,238,0.12); color: #22d3ee; }
+.tag-vla { background: rgba(59,130,246,0.12); color: #60a5fa; }
+.tag-safety { background: rgba(239,68,68,0.12); color: #f87171; }
+.tag-memory { background: rgba(192,132,252,0.12); color: #c084fc; }
+.tag-reasoning { background: rgba(132,204,22,0.12); color: #a3e635; }
+.tag-distillation { background: rgba(6,182,212,0.12); color: #22d3ee; }
+.tag-code { background: rgba(132,204,22,0.12); color: #a3e635; }
+.tag-speculative { background: rgba(217,119,6,0.12); color: #f59e0b; }
+.tag-search { background: rgba(34,211,238,0.12); color: #22d3ee; }
+.hot-badge {
+  display: inline;
+  margin-right: 4px;
+}
+.paper-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.paper-links a {
+  display: inline-block;
+  padding: 5px 14px;
+  background: rgba(99,102,241,0.12);
+  color: #818cf8;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+.paper-links a:hover {
+  background: rgba(99,102,241,0.25);
+}
+.info-card {
+  background: rgba(30,41,59,0.4);
+  border: 1px solid rgba(99,102,241,0.08);
+  border-radius: 14px;
+  padding: 20px 24px;
+  margin-bottom: 12px;
+}
+.paper-summary {
+  font-size: 0.9rem;
+  color: #94a3b8;
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+.stats {
+  text-align: center;
+  padding: 30px;
+  margin-top: 40px;
+  background: rgba(30,41,59,0.4);
+  border-radius: 14px;
+  border: 1px solid rgba(99,102,241,0.1);
+}
+.stats h3 {
+  color: #94a3b8;
+  font-size: 1rem;
+  margin-bottom: 12px;
+}
+.stats p {
+  color: #64748b;
+  font-size: 0.9rem;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+  <h1>📡 小小志AI日报</h1>
+  <div class="date">2026年6月3日 · 周三</div>
+  <div class="subtitle">HF 热门 8 篇</div>
+</header>
+
+<div class="highlight-banner">
+  <div class="hl-title">🔥 今日看点</div>
+  <div class="hl-text">Harness-1 提出基于强化学习的搜索智能体框架，将状态外部化以支持长程决策；Agent Crafter 构建多智能体协作流水线用于科学图表自动生成；LLM Domino 和 Draft-OPD 两篇工作聚焦推测解码加速方向；X-Stream 探索多模态大模型处理多路并行视频流的能力</div>
+</div>
+
+<section class="section">
+  <h2 class="section-title">🤖 Agent · 智能体</h2>
+
+  <div class="paper-card">
+    <div class="paper-title"><span class="hot-badge">🔥</span> Harness-1: Reinforcement Learning for Search Agents with State-Externalizing Harnesses</div>
+    <div class="paper-meta">arXiv 2026 · Chroma</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出 Harness-1 框架，通过状态外部化机制将搜索过程的中间状态显式管理，结合强化学习训练搜索智能体</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次将状态外部化概念引入搜索智能体训练，使模型能够有效管理长程搜索过程中的上下文状态</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在 20B 参数规模上验证了方法有效性，搜索准确率和效率均优于传统方法</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">将强化学习与搜索智能体结合的新颖方向，状态外部化设计对复杂信息检索场景有重要参考价值</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-agent">Agent</span>
+      <span class="tag tag-rl">RL</span>
+      <span class="tag tag-search">Search</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.02373" target="_blank">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.02373" target="_blank">PDF</a>
+      <a href="https://github.com/pat-jj/harness-1" target="_blank">Code</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">Agent Crafter: A Multi-Agent Harness for Editable Scientific Figure Generation from Diverse Inputs</div>
+    <div class="paper-meta">arXiv 2026</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">构建多智能体协作框架，通过流水线方式将不同输入源转换为可编辑的科学图表</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">支持多种输入格式的统一处理，并通过智能体协作实现图表的结构化生成与编辑</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在科学图表生成任务上验证了框架的有效性，生成质量和编辑灵活性表现良好</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">面向学术论文写作场景的实用工具，多智能体架构设计体现了任务分解与协调能力</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-agent">Agent</span>
+      <span class="tag tag-code">Code</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2605.30611" target="_blank">arXiv</a>
+      <a href="https://arxiv.org/pdf/2605.30611" target="_blank">PDF</a>
+      <a href="https://github.com/HaozheZhao/Crafter" target="_blank">Code</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">TASTE: Improving Coverage and Difficulty of Agent Benchmarks</div>
+    <div class="paper-meta">arXiv 2026 · Technion</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出基于工具调用序列演化的任务合成方法，自动生成覆盖更广、难度更高的智能体评测样本</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">利用工具序列演化策略系统性扩展基准集的覆盖度和难度梯度，配合大模型评判打分</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">合成的评测集能够有效区分不同能力水平的智能体模型，评测区分度显著优于人工构建基准</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">智能体评测方法学的重要贡献，自动化基准合成思路对评测体系建设具有参考意义</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-agent">Agent</span>
+      <span class="tag tag-benchmark">Benchmark</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2605.28556" target="_blank">arXiv</a>
+      <a href="https://arxiv.org/pdf/2605.28556" target="_blank">PDF</a>
+      <a href="https://github.com/tomerkeren42/TASTE-task-synthesis-from-tool-sequence-evolution" target="_blank">Code</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">Masking Stale Observations Helps Search Agents -- Until It Doesn't: A Regime Map and Its Mechanism</div>
+    <div class="paper-meta">arXiv 2026 · McAuley-Lab</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">系统研究搜索智能体中过时观察信息的遮蔽策略，绘制不同搜索场景下的策略有效性区域图</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">发现观察遮蔽存在明确的适用边界，提出机制分析解释何时遮蔽有效、何时反而有害</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在 4B 和 284B 参数模型上验证了区域图的准确性，为策略选择提供了明确指导</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">对搜索智能体设计中的关键决策提供了理论与实验支撑，帮助开发者避免盲目应用遮蔽技术</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-agent">Agent</span>
+      <span class="tag tag-search">Search</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.00408" target="_blank">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.00408" target="_blank">PDF</a>
+      <a href="https://github.com/i-DeepSearch/observation-masking" target="_blank">Code</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">K-BrowseComp: A Web Browsing Agent Benchmark Grounded in Korean Contexts</div>
+    <div class="paper-meta">arXiv 2026 · Carnegie Mellon University</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">构建基于韩语语境的网页浏览智能体评测基准，评估模型在非英语环境下的网页交互能力</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">填补了非英语语境下浏览智能体评测的空白，提出针对韩语网页结构特点的评测任务设计</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">主流智能体在韩语场景下性能显著下降，揭示了当前模型多语言网页理解的不足</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">多语言智能体评测的重要补充，对关注国际化应用场景的研究者有参考价值</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-agent">Agent</span>
+      <span class="tag tag-benchmark">Benchmark</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.02404" target="_blank">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.02404" target="_blank">PDF</a>
+      <a href="https://github.com/prometheus-eval/K-BrowseComp" target="_blank">Code</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2 class="section-title">🧠 LLM · 大语言模型</h2>
+
+  <div class="paper-card">
+    <div class="paper-title"><span class="hot-badge">🔥</span> LLM Domino: Decoupling Causal Modeling from Autoregressive Drafting in Speculative Decoding</div>
+    <div class="paper-meta">arXiv 2026 · Shanghai Jiao Tong University</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">将因果建模与自回归草稿生成进行解耦，提出新的推测解码框架提升大模型推理速度</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">发现推测解码中因果约束并非必需，通过解耦设计允许草稿模型以更灵活的方式生成候选</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在推理加速任务上显著提升了接受率和生成速度，端到端推理时间明显缩短</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">推测解码领域的理论突破性工作，解耦思路为后续加速方法提供了新的设计空间</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-llm">LLM</span>
+      <span class="tag tag-speculative">Speculative Decoding</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2605.29707" target="_blank">arXiv</a>
+      <a href="https://arxiv.org/pdf/2605.29707" target="_blank">PDF</a>
+      <a href="https://github.com/jianuo-huang/Domino" target="_blank">Code</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">Draft-OPD: On-Policy Distillation for Speculative Draft Models</div>
+    <div class="paper-meta">arXiv 2026</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出在策略蒸馏方法训练推测解码的草稿模型，让草稿模型学习目标模型的实际解码分布</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">区别于离线蒸馏，Draft-OPD 在训练时使用草稿模型自身生成的序列进行在策略学习，更好匹配目标分布</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在推理和生成任务上均验证了在策略蒸馏的优势，草稿接受率和推理吞吐量显著提升</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">推测解码训练方法的改进工作，在策略学习思路简洁有效，已开源代码和项目主页</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-llm">LLM</span>
+      <span class="tag tag-distillation">Distillation</span>
+      <span class="tag tag-speculative">Speculative Decoding</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2605.29343" target="_blank">arXiv</a>
+      <a href="https://arxiv.org/pdf/2605.29343" target="_blank">PDF</a>
+      <a href="https://www.haodilei.top/draft-opd/" target="_blank">Project</a>
+      <a href="https://github.com/bingyang-lei/Draft-OPD" target="_blank">Code</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2 class="section-title">🎨 Multimodal · 多模态</h2>
+
+  <div class="paper-card">
+    <div class="paper-title"><span class="hot-badge">🔥</span> X-Stream: Exploring MLLMs as Multiplexers for Multi-Stream Understanding</div>
+    <div class="paper-meta">arXiv 2026</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">将多模态大模型作为多路复用器，探索其同时处理多路视频流并进行联合理解的能力</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 X-Stream 框架，首次系统研究多模态大模型在多路并行视频输入下的理解与推理能力</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">当前最强模型在多流理解任务上准确率仅约 50%，揭示了该方向的巨大改进空间</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">开辟了多模态大模型的新评测维度，对自动驾驶、视频监控等多摄像头场景有直接应用前景</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-multimodal">Multimodal</span>
+      <span class="tag tag-video">Video</span>
+      <span class="tag tag-benchmark">Benchmark</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.02482" target="_blank">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.02482" target="_blank">PDF</a>
+      <a href="https://peiwensun2000.github.io/xstream/" target="_blank">Project</a>
+      <a href="https://github.com/PeiwenSun2000/X-Stream" target="_blank">Code</a>
+    </div>
+  </div>
+</section>
+
+<div class="stats">
+  <h3>📊 今日数据概览</h3>
+  <p>HF 热门论文 8 篇 · arXiv 超时跳过 · Agent 方向 5 篇 · LLM 方向 2 篇 · 多模态 1 篇</p>
+</div>
+
+</div>
+</body>
+</html>
