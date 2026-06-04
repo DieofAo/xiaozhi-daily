@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>小小志AI日报 - 2026年6月4日 周四</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans SC', sans-serif;
+  background: #0a0e1a;
+  color: #e0e6f0;
+  line-height: 1.7;
+  min-height: 100vh;
+}
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+header {
+  text-align: center;
+  margin-bottom: 48px;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, rgba(59,130,246,0.08) 0%, rgba(139,92,246,0.08) 100%);
+  border-radius: 20px;
+  border: 1px solid rgba(99,102,241,0.15);
+}
+header h1 {
+  font-size: 2rem;
+  background: linear-gradient(135deg, #60a5fa, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 8px;
+}
+header .date {
+  color: #94a3b8;
+  font-size: 1rem;
+}
+header .subtitle {
+  color: #64748b;
+  font-size: 0.9rem;
+  margin-top: 6px;
+}
+.highlight-banner {
+  background: linear-gradient(135deg, rgba(249,115,22,0.1) 0%, rgba(234,179,8,0.08) 100%);
+  border: 1px solid rgba(249,115,22,0.2);
+  border-radius: 14px;
+  padding: 20px 24px;
+  margin-bottom: 36px;
+}
+.hl-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fb923c;
+  margin-bottom: 8px;
+}
+.hl-text {
+  font-size: 0.92rem;
+  color: #cbd5e1;
+  line-height: 1.7;
+}
+.section {
+  margin-bottom: 40px;
+}
+.section-title {
+  font-size: 1.4rem;
+  color: #f1f5f9;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(99,102,241,0.2);
+}
+.paper-card {
+  background: rgba(30,41,59,0.6);
+  border: 1px solid rgba(99,102,241,0.12);
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 16px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.paper-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(99,102,241,0.1);
+  border-color: rgba(99,102,241,0.3);
+}
+.paper-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #f8fafc;
+  margin-bottom: 8px;
+}
+.paper-meta {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-bottom: 10px;
+}
+.summary-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+@media (max-width: 640px) {
+  .summary-grid { grid-template-columns: 1fr; }
+}
+.summary-item {
+  background: rgba(15,23,42,0.5);
+  border-radius: 10px;
+  padding: 12px 14px;
+  border: 1px solid rgba(99,102,241,0.08);
+}
+.summary-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #818cf8;
+  margin-bottom: 4px;
+}
+.summary-text {
+  font-size: 0.88rem;
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+.paper-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.tag {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+.tag-agent { background: rgba(16,185,129,0.12); color: #34d399; }
+.tag-llm { background: rgba(99,102,241,0.12); color: #818cf8; }
+.tag-multimodal { background: rgba(244,114,182,0.12); color: #f472b6; }
+.tag-world { background: rgba(251,191,36,0.12); color: #fbbf24; }
+.tag-robot { background: rgba(251,146,60,0.12); color: #fb923c; }
+.tag-rl { background: rgba(45,212,191,0.12); color: #2dd4bf; }
+.tag-video { background: rgba(168,85,247,0.12); color: #a855f7; }
+.tag-benchmark { background: rgba(34,211,238,0.12); color: #22d3ee; }
+.tag-vla { background: rgba(59,130,246,0.12); color: #60a5fa; }
+.tag-safety { background: rgba(239,68,68,0.12); color: #f87171; }
+.tag-memory { background: rgba(192,132,252,0.12); color: #c084fc; }
+.tag-reasoning { background: rgba(132,204,22,0.12); color: #a3e635; }
+.tag-distillation { background: rgba(6,182,212,0.12); color: #22d3ee; }
+.tag-code { background: rgba(132,204,22,0.12); color: #a3e635; }
+.tag-speculative { background: rgba(217,119,6,0.12); color: #f59e0b; }
+.tag-search { background: rgba(34,211,238,0.12); color: #22d3ee; }
+.tag-quantization { background: rgba(217,119,6,0.12); color: #f59e0b; }
+.tag-training { background: rgba(6,182,212,0.12); color: #22d3ee; }
+.tag-medical { background: rgba(239,68,68,0.12); color: #f87171; }
+.hot-badge {
+  display: inline;
+  margin-right: 4px;
+}
+.paper-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.paper-links a {
+  display: inline-block;
+  padding: 5px 14px;
+  background: rgba(99,102,241,0.12);
+  color: #818cf8;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+.paper-links a:hover {
+  background: rgba(99,102,241,0.25);
+}
+.info-card {
+  background: rgba(30,41,59,0.4);
+  border: 1px solid rgba(99,102,241,0.08);
+  border-radius: 14px;
+  padding: 20px 24px;
+  margin-bottom: 12px;
+}
+.paper-summary {
+  font-size: 0.9rem;
+  color: #94a3b8;
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+.stats {
+  text-align: center;
+  padding: 30px;
+  margin-top: 40px;
+  background: rgba(30,41,59,0.4);
+  border-radius: 14px;
+  border: 1px solid rgba(99,102,241,0.1);
+}
+.stats h3 {
+  color: #94a3b8;
+  font-size: 1rem;
+  margin-bottom: 12px;
+}
+.stats p {
+  color: #64748b;
+  font-size: 0.9rem;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+  <h1>📡 小小志AI日报</h1>
+  <div class="date">2026年6月4日 · 周四</div>
+  <div class="subtitle">HF 热门 8 篇 · 行业动态 1 条</div>
+</header>
+
+<div class="highlight-banner">
+  <div class="hl-title">🔥 今日看点</div>
+  <div class="hl-text">Google 提出语言模型"睡眠学习"机制，通过自修改实现记忆巩固；腾讯世界模型研究探索具象推理与抽象推理的互补性；华为 KVarN 解决推理阶段 KV 缓存量化误差累积问题；三星提出基于信任域的策略蒸馏新范式</div>
+</div>
+
+<section class="section">
+  <h2 class="section-title">🧠 LLM · 大语言模型</h2>
+
+  <div class="paper-card">
+    <div class="paper-title"><span class="hot-badge">🔥</span> Language Models Need Sleep: Learning to Self-Modify and Consolidate Memories</div>
+    <div class="paper-meta">arXiv 2026 · Google</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">借鉴生物神经系统的睡眠记忆巩固机制，提出让语言模型在"离线阶段"进行自我权重修改以实现长期记忆存储</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次将睡眠巩固的概念引入大语言模型，让模型通过上下文学习与知识蒸馏相结合的方式自主更新自身参数</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在持续学习和记忆保持任务上验证了方法有效性，模型能够在不遗忘旧知识的前提下整合新信息</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">极具启发性的跨学科研究，将认知科学的睡眠理论与大模型训练结合，为解决灾难性遗忘提供了全新视角</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-llm">LLM</span>
+      <span class="tag tag-memory">Memory</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.03979" target="_blank">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.03979" target="_blank">PDF</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">Trust Region On-Policy Distillation</div>
+    <div class="paper-meta">arXiv 2026 · Samsung Research</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出基于信任域约束的在策略知识蒸馏方法，在保持学生模型稳定性的同时提升蒸馏效率</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">将信任域优化的思想引入蒸馏过程，通过限制策略更新幅度避免学生模型在训练中出现性能崩溃</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在代码生成和文本生成任务上均优于传统蒸馏方法，训练过程更加稳定</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">为大模型蒸馏提供了更可靠的训练范式，信任域约束的设计思路对实际部署场景具有实用价值</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-llm">LLM</span>
+      <span class="tag tag-distillation">Distillation</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.01249" target="_blank">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.01249" target="_blank">PDF</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">KVarN: Variance-Normalized KV-Cache Quantization Mitigates Error Accumulation in Reasoning Tasks</div>
+    <div class="paper-meta">arXiv 2026 · HUAWEI Computing Systems Lab</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">针对 KV 缓存量化在长序列推理中产生的误差累积问题，提出基于方差归一化的量化校准方法</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">发现 KV 缓存量化误差在推理链中会逐步放大，通过方差归一化有效抑制误差传播</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在多个推理基准上显著减少了量化导致的性能退化，接近全精度推理的效果</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">解决了大模型高效部署中的实际痛点，对推理阶段的内存优化具有直接工程价值</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-llm">LLM</span>
+      <span class="tag tag-quantization">Quantization</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.03458" target="_blank">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.03458" target="_blank">PDF</a>
+      <a href="https://github.com/huawei-csl/KVarN" target="_blank">Code</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">A Local Perturbation Theory for Cross-Domain Interference and Recovery in Multi-Domain RL</div>
+    <div class="paper-meta">arXiv 2026</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出局部扰动理论框架，分析多领域强化学习中不同任务之间的干扰与恢复机制</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">从理论层面刻画了多领域训练中跨域干扰的数学结构，并给出恢复条件的严格分析</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在代码生成与数学推理等多领域联合训练场景中验证了理论预测的准确性</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">为多任务强化学习训练提供了理论指导，有助于理解和缓解多目标优化中的冲突问题</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-llm">LLM</span>
+      <span class="tag tag-rl">RL</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.02398" target="_blank">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.02398" target="_blank">PDF</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">MIRA: Mid-training Rubric Anchoring for Source-Aware Data Selection</div>
+    <div class="paper-meta">arXiv 2026</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出基于评估锚点的中期训练数据选择框架，根据数据源特征动态调整训练数据配比</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">在训练中期阶段引入数据质量评估锚点，使模型能够感知数据来源并做出更优的选择决策</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在多个下游任务上验证了数据选择策略的有效性，训练效率和最终性能均有提升</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">数据工程方向的扎实工作，源感知的数据选择思路对大规模预训练的数据管理有实践意义</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-llm">LLM</span>
+      <span class="tag tag-training">Training</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2605.30288" target="_blank">arXiv</a>
+      <a href="https://arxiv.org/pdf/2605.30288" target="_blank">PDF</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2 class="section-title">🌍 World Model · 世界模型</h2>
+
+  <div class="paper-card">
+    <div class="paper-title"><span class="hot-badge">🔥</span> World Models Meet Language Models: On the Complementarity of Concrete and Abstract Reasoning</div>
+    <div class="paper-meta">arXiv 2026 · Tencent</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">研究世界模型的具象推理能力与多模态大语言模型的抽象推理能力之间的互补关系，提出融合框架</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 Privileged-Future 方法，利用世界模型的未来状态预测作为特权信息辅助语言模型决策</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在自动驾驶决策场景中规划性能提升 10.6%，在机器人操作场景中成功率提升 10.9%</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">腾讯的高质量研究，系统性论证了两类推理能力的互补性，对具身智能方向具有重要指导意义</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-world">World Model</span>
+      <span class="tag tag-llm">LLM</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.03603" target="_blank">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.03603" target="_blank">PDF</a>
+      <a href="https://github.com/yczhou001/PF-OPSD" target="_blank">Code</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2 class="section-title">🤖 Agent · 智能体</h2>
+
+  <div class="paper-card">
+    <div class="paper-title">AutoMedBench: Towards Medical AutoResearch with Agentic AI Models</div>
+    <div class="paper-meta">arXiv 2026 · University of California, Santa Cruz</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">构建面向医学自动化研究的智能体评测基准，设计包含 S1 至 S5 五个递进阶段的端到端评测体系</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次提出覆盖医学研究全流程的分阶段自动化评测框架，从文献检索到实验设计再到结论生成</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">当前最优智能体在完整流程上仅达到 37.7% 至 48% 的通过率，揭示了医学自动化研究的挑战性</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">为医学AI智能体的能力评估提供了系统化基准，低通过率表明该领域仍有巨大提升空间</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-agent">Agent</span>
+      <span class="tag tag-medical">Medical</span>
+      <span class="tag tag-benchmark">Benchmark</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.01961" target="_blank">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.01961" target="_blank">PDF</a>
+      <a href="https://automedbench.github.io/" target="_blank">Project</a>
+      <a href="https://github.com/AutoMedBench/AutoMedBench" target="_blank">Code</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2 class="section-title">🎨 Multimodal · 多模态</h2>
+
+  <div class="paper-card">
+    <div class="paper-title">Decentralized Instruction Tuning: Conflict-Aware Splitting and Weight Merging</div>
+    <div class="paper-meta">arXiv 2026 · NAVER AI</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出去中心化的指令微调方法，通过冲突感知的任务切分与权重合并实现多节点协作训练</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">设计基于主成分分析对齐的冲突检测机制，自动识别并分离存在梯度冲突的训练子任务</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在 3B 和 7B 参数规模的模型上验证了方法有效性，使用 160 万条数据即可达到集中式训练的效果</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">为隐私敏感场景下的多方协作微调提供了可行方案，冲突感知的设计具有工程实用性</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-multimodal">Multimodal</span>
+      <span class="tag tag-training">Training</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.01717" target="_blank">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.01717" target="_blank">PDF</a>
+      <a href="https://naver-ai.github.io/merit/" target="_blank">Project</a>
+      <a href="https://github.com/naver-ai/merit" target="_blank">Code</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2 class="section-title">📰 Informations · 行业动态</h2>
+
+  <div class="info-card">
+    <div class="paper-title">Introducing new capabilities to GPT-Rosalind</div>
+    <div class="paper-summary">OpenAI 为 GPT-Rosalind 引入新功能，进一步拓展其在生物医学领域的能力边界。GPT-Rosalind 是 OpenAI 面向生物防御与生命科学研究的专用模型。</div>
+    <div class="paper-links">
+      <a href="https://openai.com/index/introducing-new-capabilities-to-gpt-rosalind/" target="_blank">来源</a>
+    </div>
+  </div>
+</section>
+
+<div class="stats">
+  <h3>📊 今日统计</h3>
+  <p>HF 热门论文 8 篇 · 行业动态 1 条 · HF 模型 1 个</p>
+</div>
+
+</div>
+</body>
+</html>
