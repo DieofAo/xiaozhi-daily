@@ -658,6 +658,97 @@
 <script>
 // ===== DATA =====
 const PAPERS_DB = [
+    // === 2026-06-05 ===
+    {
+        date: "2026-06-05",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "Cosmos 3: Omnimodal World Models for Physical AI",
+        venue: "arXiv 2026 · NVIDIA",
+        summary: "🔬 技术路线: 构建全模态世界模型家族，支持文本、图像、视频等多种模态的统一生成与理解，面向物理世界智能体应用 | 💡 创新点: 首次实现涵盖文本到图像、文本到视频、图像到视频等全模态生成能力的统一世界模型架构，代码开源已获近九千星标 | 📊 实验效果: 在多项生成质量基准上达到领先水平，模型可扩展性强，支持物理仿真和自动驾驶等下游应用 | ⭐ 整体评价: NVIDIA 在世界模型方向的旗舰级工作，开源代码近9000星标体现社区认可度，是物理AI基础设施的重要里程碑",
+        tags: [["World Model","green"],["Multimodal","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.02800"],["PDF","https://arxiv.org/pdf/2606.02800"],["Project","https://research.nvidia.com/labs/cosmos-lab/cosmos3/"],["Code","https://github.com/NVIDIA/cosmos"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"构建全模态世界模型家族，支持文本、图像、视频等多种模态的统一生成与理解，面向物理世界智能体应用"},{"label":"💡 创新点","text":"首次实现涵盖文本到图像、文本到视频、图像到视频等全模态生成能力的统一世界模型架构，代码开源已获近九千星标"},{"label":"📊 实验效果","text":"在多项生成质量基准上达到领先水平，模型可扩展性强，支持物理仿真和自动驾驶等下游应用"},{"label":"⭐ 整体评价","text":"NVIDIA 在世界模型方向的旗舰级工作，开源代码近9000星标体现社区认可度，是物理AI基础设施的重要里程碑"}]
+    },
+    {
+        date: "2026-06-05",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Where Do Deep-Research Agents Go Wrong? Span-Level Error Localization in Agent Trajectories",
+        venue: "arXiv 2026 · NJU-LINK Lab",
+        summary: "🔬 技术路线: 提出 DRIFT 框架，对深度研究智能体的执行轨迹进行片段级别的错误定位与诊断分析 | 💡 创新点: 首次将智能体错误分析的粒度从整体成功率下沉到具体执行片段，能够精确定位出错的步骤和原因 | 📊 实验效果: 通过精确的错误定位与修复，智能体任务完成率可提升约 30 个百分点 | ⭐ 整体评价: 为智能体系统的可观测性和调试提供了系统化方法，对提升复杂研究型智能体的可靠性有重要实践价值",
+        tags: [["Agent","green"],["Benchmark","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.02060"],["PDF","https://arxiv.org/pdf/2606.02060"],["Project","https://nju-link.github.io/DRIFT/"],["Code","https://github.com/NJU-LINK/DRIFT"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出 DRIFT 框架，对深度研究智能体的执行轨迹进行片段级别的错误定位与诊断分析"},{"label":"💡 创新点","text":"首次将智能体错误分析的粒度从整体成功率下沉到具体执行片段，能够精确定位出错的步骤和原因"},{"label":"📊 实验效果","text":"通过精确的错误定位与修复，智能体任务完成率可提升约 30 个百分点"},{"label":"⭐ 整体评价","text":"为智能体系统的可观测性和调试提供了系统化方法，对提升复杂研究型智能体的可靠性有重要实践价值"}]
+    },
+    {
+        date: "2026-06-05",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Streaming Communication in Multi-Agent Reasoning",
+        venue: "arXiv 2026 · EnVision Research",
+        summary: "🔬 技术路线: 提出 StreamMA 多智能体流式通信框架，允许智能体在推理过程中进行实时信息交换而非等待完整输出 | 💡 创新点: 打破传统多智能体通信的同步瓶颈，实现端到端的流式推理通信，大幅提升多智能体协作效率 | 📊 实验效果: 在多个推理基准上提升 7.3 至 22.4 个百分点，同时实现显著的推理加速 | ⭐ 整体评价: 通信机制的创新对多智能体系统效率提升显著，流式交互范式值得在更多场景中推广验证",
+        tags: [["Agent","green"],["Reasoning","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.05158"],["PDF","https://arxiv.org/pdf/2606.05158"],["Project","https://zhenyangcs.github.io/StreamMA-website/"],["Code","https://github.com/EnVision-Research/StreamMA"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出 StreamMA 多智能体流式通信框架，允许智能体在推理过程中进行实时信息交换而非等待完整输出"},{"label":"💡 创新点","text":"打破传统多智能体通信的同步瓶颈，实现端到端的流式推理通信，大幅提升多智能体协作效率"},{"label":"📊 实验效果","text":"在多个推理基准上提升 7.3 至 22.4 个百分点，同时实现显著的推理加速"},{"label":"⭐ 整体评价","text":"通信机制的创新对多智能体系统效率提升显著，流式交互范式值得在更多场景中推广验证"}]
+    },
+    {
+        date: "2026-06-05",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Benchmarks are Not Enough: RAMP for Runtime Assessing of Agentic Models in Production Systems",
+        venue: "arXiv 2026 · Sun Yat-Sen University",
+        summary: "🔬 技术路线: 提出 RAMP 运行时评估框架，针对智能体模型在生产环境中的实际表现进行动态监控与评估 | 💡 创新点: 区别于静态基准测试，设计面向真实生产系统的运行时评估机制，覆盖稳定性、一致性和鲁棒性等维度 | 📊 实验效果: 发现部分模型在静态基准上达到 100% 通过率但在运行时评估中性能下降 20%，揭示了基准与实际部署的差距 | ⭐ 整体评价: 指出了当前智能体评估体系的盲区，运行时评估思路对智能体落地部署的质量保障具有重要参考价值",
+        tags: [["Agent","green"],["Benchmark","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2605.27492"],["PDF","https://arxiv.org/pdf/2605.27492"],["Project","http://ramp.yatcc-ai.com/"],["Code","https://github.com/Nexa-Language/RAMP"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出 RAMP 运行时评估框架，针对智能体模型在生产环境中的实际表现进行动态监控与评估"},{"label":"💡 创新点","text":"区别于静态基准测试，设计面向真实生产系统的运行时评估机制，覆盖稳定性、一致性和鲁棒性等维度"},{"label":"📊 实验效果","text":"发现部分模型在静态基准上达到 100% 通过率但在运行时评估中性能下降 20%，揭示了基准与实际部署的差距"},{"label":"⭐ 整体评价","text":"指出了当前智能体评估体系的盲区，运行时评估思路对智能体落地部署的质量保障具有重要参考价值"}]
+    },
+    {
+        date: "2026-06-05",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Reproducing, Analyzing, and Detecting Reward Hacking in Rubric-Based Reinforcement Learning",
+        venue: "arXiv 2026 · THUAIS Lab",
+        summary: "🔬 技术路线: 系统研究基于评分规则的强化学习中的奖励黑客现象，提出复现、分析和检测的完整方法论 | 💡 创新点: 首次对评分规则驱动的强化学习训练中模型钻空子行为进行系统性刻画，并提出 CHERRL 检测框架 | 📊 实验效果: 成功复现了多种奖励黑客模式，检测方法能够有效识别模型利用评分规则漏洞获取高分的行为 | ⭐ 整体评价: 对大模型强化学习训练的安全性和可靠性具有重要警示意义，检测方法可直接应用于训练流程质控",
+        tags: [["LLM","green"],["RL","green"],["Safety","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.04923"],["PDF","https://arxiv.org/pdf/2606.04923"],["Code","https://github.com/THUAIS-Lab/CHERRL"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"系统研究基于评分规则的强化学习中的奖励黑客现象，提出复现、分析和检测的完整方法论"},{"label":"💡 创新点","text":"首次对评分规则驱动的强化学习训练中模型钻空子行为进行系统性刻画，并提出 CHERRL 检测框架"},{"label":"📊 实验效果","text":"成功复现了多种奖励黑客模式，检测方法能够有效识别模型利用评分规则漏洞获取高分的行为"},{"label":"⭐ 整体评价","text":"对大模型强化学习训练的安全性和可靠性具有重要警示意义，检测方法可直接应用于训练流程质控"}]
+    },
+    {
+        date: "2026-06-05",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Self-Distilled Policy Gradient",
+        venue: "arXiv 2026 · University of California, Los Angeles",
+        summary: "🔬 技术路线: 提出自蒸馏策略梯度方法，将知识蒸馏与在策略强化学习相结合，利用模型自身历史版本作为教师信号 | 💡 创新点: 无需外部教师模型，通过自蒸馏机制在策略优化过程中同时实现知识压缩与策略改进 | 📊 实验效果: 在语言模型对齐和推理任务上验证了有效性，训练效率优于传统策略梯度方法 | ⭐ 整体评价: 将自蒸馏与策略梯度优雅结合的新范式，减少了对外部奖励模型的依赖，简化了训练流程",
+        tags: [["LLM","green"],["RL","green"],["Distillation","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.04036"],["PDF","https://arxiv.org/pdf/2606.04036"],["Project","https://lauyikfung.github.io/SDPG/"],["Code","https://github.com/lauyikfung/SDPG"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出自蒸馏策略梯度方法，将知识蒸馏与在策略强化学习相结合，利用模型自身历史版本作为教师信号"},{"label":"💡 创新点","text":"无需外部教师模型，通过自蒸馏机制在策略优化过程中同时实现知识压缩与策略改进"},{"label":"📊 实验效果","text":"在语言模型对齐和推理任务上验证了有效性，训练效率优于传统策略梯度方法"},{"label":"⭐ 整体评价","text":"将自蒸馏与策略梯度优雅结合的新范式，减少了对外部奖励模型的依赖，简化了训练流程"}]
+    },
+    {
+        date: "2026-06-05",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "OVO-S-Bench: A Hierarchical Benchmark for Streaming Spatial Intelligence in Multimodal LLMs",
+        venue: "arXiv 2026 · InternLM",
+        summary: "🔬 技术路线: 构建多层次流式空间智能评测基准，评估多模态大语言模型在机器人、增强现实和自动驾驶中的实时空间理解能力 | 💡 创新点: 首次提出面向流式输入的空间智能分层评测体系，覆盖从基础空间感知到复杂场景推理的多个难度层级 | 📊 实验效果: 评测了主流多模态模型的流式空间理解能力，揭示了当前模型在实时场景中的性能瓶颈 | ⭐ 整体评价: 填补了流式空间智能评测的空白，对推动具身智能系统实时感知能力的发展具有基准参考价值",
+        tags: [["Robotics","green"],["Benchmark","green"],["Multimodal","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.03890"],["PDF","https://arxiv.org/pdf/2606.03890"],["Project","https://internlm.github.io/OVO-S-Bench/"],["Code","https://github.com/InternLM/OVO-S-Bench"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"构建多层次流式空间智能评测基准，评估多模态大语言模型在机器人、增强现实和自动驾驶中的实时空间理解能力"},{"label":"💡 创新点","text":"首次提出面向流式输入的空间智能分层评测体系，覆盖从基础空间感知到复杂场景推理的多个难度层级"},{"label":"📊 实验效果","text":"评测了主流多模态模型的流式空间理解能力，揭示了当前模型在实时场景中的性能瓶颈"},{"label":"⭐ 整体评价","text":"填补了流式空间智能评测的空白，对推动具身智能系统实时感知能力的发展具有基准参考价值"}]
+    },
+    {
+        date: "2026-06-05",
+        category: "Other",
+        categoryIcon: "📄",
+        title: "AutoLab: Can Frontier Models Solve Long-Horizon Auto Research and Engineering Tasks?",
+        venue: "arXiv 2026 · AutoLab",
+        summary: "🔬 技术路线: 构建超长时序闭环优化评测基准，评估前沿模型在自动化研究与工程任务中的端到端执行能力 | 💡 创新点: 提出涵盖完整研究流程的长时序任务设定，从问题定义到代码实现再到实验验证的闭环评测 | 📊 实验效果: 当前前沿模型在长时序闭环任务上表现有限，揭示了自动化研究的核心挑战所在 | ⭐ 整体评价: 开源项目已获百余星标，为评估 AI 自主研究能力提供了标准化测试场景，有助于推动自动化科研发展",
+        tags: [["Agent","green"],["Benchmark","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.05080"],["PDF","https://arxiv.org/pdf/2606.05080"],["Project","https://autolab.moe/"],["Code","https://github.com/autolabhq/autolab"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"构建超长时序闭环优化评测基准，评估前沿模型在自动化研究与工程任务中的端到端执行能力"},{"label":"💡 创新点","text":"提出涵盖完整研究流程的长时序任务设定，从问题定义到代码实现再到实验验证的闭环评测"},{"label":"📊 实验效果","text":"当前前沿模型在长时序闭环任务上表现有限，揭示了自动化研究的核心挑战所在"},{"label":"⭐ 整体评价","text":"开源项目已获百余星标，为评估 AI 自主研究能力提供了标准化测试场景，有助于推动自动化科研发展"}]
+    },
     // === 2026-06-04 ===
     {
         date: "2026-06-04",
@@ -12795,6 +12886,13 @@ const PAPERS_DB = [
 ];
 
 const DAILY_OVERVIEW = {
+    "2026-06-05": {
+        bannerTitle: "🔥 今日看点",
+        bannerSubtitle: "NVIDIA 发布 Cosmos 3 全模态世界模型，支持物理AI的多模态生成与理解；InternLM 推出 OVO-S-Bench 流式空间智能评测基准；多智能体流式通信框架 StreamMA 在推理任务上提升 7.3 至 22.4 个百分点",
+        picks: ["Cosmos 3: Omnimodal World Models for Physical AI","OVO-S-Bench: A Hierarchical Benchmark for Streaming Spatial Intelligence in Multimodal LLMs"],
+        totalPapers: 8,
+        totalNews: 0
+    },
     "2026-06-04": {
         bannerTitle: "🔥 今日看点",
         bannerSubtitle: "Google 提出语言模型\"睡眠学习\"机制，通过自修改实现记忆巩固；腾讯世界模型研究探索具象推理与抽象推理的互补性；华为 KVarN 解决推理阶段 KV 缓存量化误差累积问题；三星提出基于信任域的策略蒸馏新范式",

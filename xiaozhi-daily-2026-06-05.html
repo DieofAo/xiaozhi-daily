@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>小小志AI日报 - 2026年6月5日 周五</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans SC', sans-serif;
+  background: #0a0e1a;
+  color: #e0e6f0;
+  line-height: 1.7;
+  min-height: 100vh;
+}
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+header {
+  text-align: center;
+  margin-bottom: 48px;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, rgba(59,130,246,0.08) 0%, rgba(139,92,246,0.08) 100%);
+  border-radius: 20px;
+  border: 1px solid rgba(99,102,241,0.15);
+}
+header h1 {
+  font-size: 2rem;
+  background: linear-gradient(135deg, #60a5fa, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 8px;
+}
+header .date {
+  color: #94a3b8;
+  font-size: 1rem;
+}
+header .subtitle {
+  color: #64748b;
+  font-size: 0.9rem;
+  margin-top: 6px;
+}
+.highlight-banner {
+  background: linear-gradient(135deg, rgba(249,115,22,0.1) 0%, rgba(234,179,8,0.08) 100%);
+  border: 1px solid rgba(249,115,22,0.2);
+  border-radius: 14px;
+  padding: 20px 24px;
+  margin-bottom: 36px;
+}
+.hl-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fb923c;
+  margin-bottom: 8px;
+}
+.hl-text {
+  font-size: 0.92rem;
+  color: #cbd5e1;
+  line-height: 1.7;
+}
+.section {
+  margin-bottom: 40px;
+}
+.section-title {
+  font-size: 1.4rem;
+  color: #f1f5f9;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(99,102,241,0.2);
+}
+.paper-card {
+  background: rgba(30,41,59,0.6);
+  border: 1px solid rgba(99,102,241,0.12);
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 16px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.paper-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(99,102,241,0.1);
+  border-color: rgba(99,102,241,0.3);
+}
+.paper-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #f8fafc;
+  margin-bottom: 8px;
+}
+.paper-meta {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-bottom: 10px;
+}
+.summary-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+@media (max-width: 640px) {
+  .summary-grid { grid-template-columns: 1fr; }
+}
+.summary-item {
+  background: rgba(15,23,42,0.5);
+  border-radius: 10px;
+  padding: 12px 14px;
+  border: 1px solid rgba(99,102,241,0.08);
+}
+.summary-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #818cf8;
+  margin-bottom: 4px;
+}
+.summary-text {
+  font-size: 0.88rem;
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+.paper-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.tag {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+.tag-agent { background: rgba(16,185,129,0.12); color: #34d399; }
+.tag-llm { background: rgba(99,102,241,0.12); color: #818cf8; }
+.tag-multimodal { background: rgba(244,114,182,0.12); color: #f472b6; }
+.tag-world { background: rgba(251,191,36,0.12); color: #fbbf24; }
+.tag-robot { background: rgba(251,146,60,0.12); color: #fb923c; }
+.tag-rl { background: rgba(45,212,191,0.12); color: #2dd4bf; }
+.tag-video { background: rgba(168,85,247,0.12); color: #a855f7; }
+.tag-benchmark { background: rgba(34,211,238,0.12); color: #22d3ee; }
+.tag-vla { background: rgba(59,130,246,0.12); color: #60a5fa; }
+.tag-safety { background: rgba(239,68,68,0.12); color: #f87171; }
+.tag-memory { background: rgba(192,132,252,0.12); color: #c084fc; }
+.tag-reasoning { background: rgba(132,204,22,0.12); color: #a3e635; }
+.tag-distillation { background: rgba(6,182,212,0.12); color: #22d3ee; }
+.tag-code { background: rgba(132,204,22,0.12); color: #a3e635; }
+.tag-speculative { background: rgba(217,119,6,0.12); color: #f59e0b; }
+.tag-search { background: rgba(34,211,238,0.12); color: #22d3ee; }
+.tag-quantization { background: rgba(217,119,6,0.12); color: #f59e0b; }
+.tag-training { background: rgba(6,182,212,0.12); color: #22d3ee; }
+.tag-medical { background: rgba(239,68,68,0.12); color: #f87171; }
+.hot-badge {
+  display: inline;
+  margin-right: 4px;
+}
+.paper-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.paper-links a {
+  display: inline-block;
+  padding: 5px 14px;
+  background: rgba(99,102,241,0.12);
+  color: #818cf8;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+.paper-links a:hover {
+  background: rgba(99,102,241,0.25);
+}
+.info-card {
+  background: rgba(30,41,59,0.4);
+  border: 1px solid rgba(99,102,241,0.08);
+  border-radius: 14px;
+  padding: 20px 24px;
+  margin-bottom: 12px;
+}
+.paper-summary {
+  font-size: 0.9rem;
+  color: #94a3b8;
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+.stats {
+  text-align: center;
+  padding: 30px;
+  margin-top: 40px;
+  background: rgba(30,41,59,0.4);
+  border-radius: 14px;
+  border: 1px solid rgba(99,102,241,0.1);
+}
+.stats h3 {
+  color: #94a3b8;
+  font-size: 1rem;
+  margin-bottom: 12px;
+}
+.stats p {
+  color: #64748b;
+  font-size: 0.9rem;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+  <h1>📡 小小志AI日报</h1>
+  <div class="date">2026年6月5日 · 周五</div>
+  <div class="subtitle">HF 热门 8 篇</div>
+</header>
+
+<div class="highlight-banner">
+  <div class="hl-title">🔥 今日看点</div>
+  <div class="hl-text">NVIDIA 发布 Cosmos 3 全模态世界模型，支持物理AI的多模态生成与理解；InternLM 推出 OVO-S-Bench 流式空间智能评测基准；多智能体流式通信框架 StreamMA 在推理任务上提升 7.3 至 22.4 个百分点</div>
+</div>
+
+<section class="section">
+  <h2 class="section-title">🌍 World Model · 世界模型</h2>
+
+  <div class="paper-card">
+    <div class="paper-title"><span class="hot-badge">🔥</span> Cosmos 3: Omnimodal World Models for Physical AI</div>
+    <div class="paper-meta">arXiv 2026 · NVIDIA</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">构建全模态世界模型家族，支持文本、图像、视频等多种模态的统一生成与理解，面向物理世界智能体应用</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次实现涵盖文本到图像、文本到视频、图像到视频等全模态生成能力的统一世界模型架构，代码开源已获近九千星标</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在多项生成质量基准上达到领先水平，模型可扩展性强，支持物理仿真和自动驾驶等下游应用</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">NVIDIA 在世界模型方向的旗舰级工作，开源代码近9000星标体现社区认可度，是物理AI基础设施的重要里程碑</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-world">World Model</span>
+      <span class="tag tag-multimodal">Multimodal</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.02800" target="_blank">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.02800" target="_blank">PDF</a>
+      <a href="https://research.nvidia.com/labs/cosmos-lab/cosmos3/" target="_blank">Project</a>
+      <a href="https://github.com/NVIDIA/cosmos" target="_blank">Code</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2 class="section-title">🤖 Agent · 智能体</h2>
+
+  <div class="paper-card">
+    <div class="paper-title">Where Do Deep-Research Agents Go Wrong? Span-Level Error Localization in Agent Trajectories</div>
+    <div class="paper-meta">arXiv 2026 · NJU-LINK Lab</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出 DRIFT 框架，对深度研究智能体的执行轨迹进行片段级别的错误定位与诊断分析</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次将智能体错误分析的粒度从整体成功率下沉到具体执行片段，能够精确定位出错的步骤和原因</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">通过精确的错误定位与修复，智能体任务完成率可提升约 30 个百分点</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">为智能体系统的可观测性和调试提供了系统化方法，对提升复杂研究型智能体的可靠性有重要实践价值</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-agent">Agent</span>
+      <span class="tag tag-benchmark">Benchmark</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.02060" target="_blank">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.02060" target="_blank">PDF</a>
+      <a href="https://nju-link.github.io/DRIFT/" target="_blank">Project</a>
+      <a href="https://github.com/NJU-LINK/DRIFT" target="_blank">Code</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">Streaming Communication in Multi-Agent Reasoning</div>
+    <div class="paper-meta">arXiv 2026 · EnVision Research</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出 StreamMA 多智能体流式通信框架，允许智能体在推理过程中进行实时信息交换而非等待完整输出</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">打破传统多智能体通信的同步瓶颈，实现端到端的流式推理通信，大幅提升多智能体协作效率</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在多个推理基准上提升 7.3 至 22.4 个百分点，同时实现显著的推理加速</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">通信机制的创新对多智能体系统效率提升显著，流式交互范式值得在更多场景中推广验证</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-agent">Agent</span>
+      <span class="tag tag-reasoning">Reasoning</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.05158" target="_blank">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.05158" target="_blank">PDF</a>
+      <a href="https://zhenyangcs.github.io/StreamMA-website/" target="_blank">Project</a>
+      <a href="https://github.com/EnVision-Research/StreamMA" target="_blank">Code</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">Benchmarks are Not Enough: RAMP for Runtime Assessing of Agentic Models in Production Systems</div>
+    <div class="paper-meta">arXiv 2026 · Sun Yat-Sen University</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出 RAMP 运行时评估框架，针对智能体模型在生产环境中的实际表现进行动态监控与评估</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">区别于静态基准测试，设计面向真实生产系统的运行时评估机制，覆盖稳定性、一致性和鲁棒性等维度</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">发现部分模型在静态基准上达到 100% 通过率但在运行时评估中性能下降 20%，揭示了基准与实际部署的差距</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">指出了当前智能体评估体系的盲区，运行时评估思路对智能体落地部署的质量保障具有重要参考价值</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-agent">Agent</span>
+      <span class="tag tag-benchmark">Benchmark</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2605.27492" target="_blank">arXiv</a>
+      <a href="https://arxiv.org/pdf/2605.27492" target="_blank">PDF</a>
+      <a href="http://ramp.yatcc-ai.com/" target="_blank">Project</a>
+      <a href="https://github.com/Nexa-Language/RAMP" target="_blank">Code</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2 class="section-title">🧠 LLM · 大语言模型</h2>
+
+  <div class="paper-card">
+    <div class="paper-title">Reproducing, Analyzing, and Detecting Reward Hacking in Rubric-Based Reinforcement Learning</div>
+    <div class="paper-meta">arXiv 2026 · THUAIS Lab</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">系统研究基于评分规则的强化学习中的奖励黑客现象，提出复现、分析和检测的完整方法论</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次对评分规则驱动的强化学习训练中模型钻空子行为进行系统性刻画，并提出 CHERRL 检测框架</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">成功复现了多种奖励黑客模式，检测方法能够有效识别模型利用评分规则漏洞获取高分的行为</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">对大模型强化学习训练的安全性和可靠性具有重要警示意义，检测方法可直接应用于训练流程质控</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-llm">LLM</span>
+      <span class="tag tag-rl">RL</span>
+      <span class="tag tag-safety">Safety</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.04923" target="_blank">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.04923" target="_blank">PDF</a>
+      <a href="https://github.com/THUAIS-Lab/CHERRL" target="_blank">Code</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">Self-Distilled Policy Gradient</div>
+    <div class="paper-meta">arXiv 2026 · University of California, Los Angeles</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出自蒸馏策略梯度方法，将知识蒸馏与在策略强化学习相结合，利用模型自身历史版本作为教师信号</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">无需外部教师模型，通过自蒸馏机制在策略优化过程中同时实现知识压缩与策略改进</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在语言模型对齐和推理任务上验证了有效性，训练效率优于传统策略梯度方法</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">将自蒸馏与策略梯度优雅结合的新范式，减少了对外部奖励模型的依赖，简化了训练流程</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-llm">LLM</span>
+      <span class="tag tag-rl">RL</span>
+      <span class="tag tag-distillation">Distillation</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.04036" target="_blank">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.04036" target="_blank">PDF</a>
+      <a href="https://lauyikfung.github.io/SDPG/" target="_blank">Project</a>
+      <a href="https://github.com/lauyikfung/SDPG" target="_blank">Code</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2 class="section-title">🦾 Robotics · 机器人</h2>
+
+  <div class="paper-card">
+    <div class="paper-title"><span class="hot-badge">🔥</span> OVO-S-Bench: A Hierarchical Benchmark for Streaming Spatial Intelligence in Multimodal LLMs</div>
+    <div class="paper-meta">arXiv 2026 · InternLM</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">构建多层次流式空间智能评测基准，评估多模态大语言模型在机器人、增强现实和自动驾驶中的实时空间理解能力</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次提出面向流式输入的空间智能分层评测体系，覆盖从基础空间感知到复杂场景推理的多个难度层级</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">评测了主流多模态模型的流式空间理解能力，揭示了当前模型在实时场景中的性能瓶颈</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">填补了流式空间智能评测的空白，对推动具身智能系统实时感知能力的发展具有基准参考价值</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-robot">Robotics</span>
+      <span class="tag tag-benchmark">Benchmark</span>
+      <span class="tag tag-multimodal">Multimodal</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.03890" target="_blank">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.03890" target="_blank">PDF</a>
+      <a href="https://internlm.github.io/OVO-S-Bench/" target="_blank">Project</a>
+      <a href="https://github.com/InternLM/OVO-S-Bench" target="_blank">Code</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2 class="section-title">📄 Other · 其他方向</h2>
+
+  <div class="paper-card">
+    <div class="paper-title">AutoLab: Can Frontier Models Solve Long-Horizon Auto Research and Engineering Tasks?</div>
+    <div class="paper-meta">arXiv 2026 · AutoLab</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">构建超长时序闭环优化评测基准，评估前沿模型在自动化研究与工程任务中的端到端执行能力</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出涵盖完整研究流程的长时序任务设定，从问题定义到代码实现再到实验验证的闭环评测</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">当前前沿模型在长时序闭环任务上表现有限，揭示了自动化研究的核心挑战所在</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">开源项目已获百余星标，为评估 AI 自主研究能力提供了标准化测试场景，有助于推动自动化科研发展</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-agent">Agent</span>
+      <span class="tag tag-benchmark">Benchmark</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.05080" target="_blank">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.05080" target="_blank">PDF</a>
+      <a href="https://autolab.moe/" target="_blank">Project</a>
+      <a href="https://github.com/autolabhq/autolab" target="_blank">Code</a>
+    </div>
+  </div>
+</section>
+
+<div class="stats">
+  <h3>📊 今日数据概览</h3>
+  <p>HF 热门论文 8 篇 · arXiv 采集超时已跳过 · 共覆盖 World Model / Agent / LLM / Robotics 四大方向</p>
+</div>
+
+</div>
+</body>
+</html>
