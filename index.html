@@ -658,6 +658,429 @@
 <script>
 // ===== DATA =====
 const PAPERS_DB = [
+    // === 2026-06-06 ===
+    {
+        date: "2026-06-06",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "TempoVLA: Learning Speed-Controllable Vision-Language-Action Policies",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 基于视觉-语言-动作模型，结合强化学习训练机制，实现对机器人执行速度的可控调节 | 💡 创新点: 首次在 VLA 策略中引入速度可控能力，使机器人能够根据任务风险程度自适应调整运动速度 | 📊 实验效果: 在多种操作和抓取任务上验证了速度可控策略的有效性，兼顾安全性与任务效率 | ⭐ 整体评价: 为 VLA 策略增加了速度维度的控制能力，对实际部署中安全与效率的平衡具有实用价值",
+        tags: [["VLA","green"],["Robotics","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.06491"],["PDF","https://arxiv.org/pdf/2606.06491"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于视觉-语言-动作模型，结合强化学习训练机制，实现对机器人执行速度的可控调节"},{"label":"💡 创新点","text":"首次在 VLA 策略中引入速度可控能力，使机器人能够根据任务风险程度自适应调整运动速度"},{"label":"📊 实验效果","text":"在多种操作和抓取任务上验证了速度可控策略的有效性，兼顾安全性与任务效率"},{"label":"⭐ 整体评价","text":"为 VLA 策略增加了速度维度的控制能力，对实际部署中安全与效率的平衡具有实用价值"}]
+    },
+    {
+        date: "2026-06-06",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "AffordanceVLA: A Vision-Language-Action Model Empowering Action Generation through Affordance-Aware Understanding",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 基于视觉-语言-动作模型架构，融合可供性感知能力来指导机器人动作生成 | 💡 创新点: 将物体可供性理解嵌入 VLA 模型，使动作生成过程能感知物体的功能属性和交互方式 | 📊 实验效果: 在操作和抓取任务上验证了可供性感知对动作生成质量的提升效果 | ⭐ 整体评价: 将可供性推理与 VLA 结合是有价值的方向，增强了模型对物体交互方式的理解能力",
+        tags: [["VLA","green"],["Robotics","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.06155"],["PDF","https://arxiv.org/pdf/2606.06155"],["Code","https://github.com/Skywalker-yqz/AffordanceVLA"],["Project","https://skywalker-yqz.github.io/AffordanceVLA/"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于视觉-语言-动作模型架构，融合可供性感知能力来指导机器人动作生成"},{"label":"💡 创新点","text":"将物体可供性理解嵌入 VLA 模型，使动作生成过程能感知物体的功能属性和交互方式"},{"label":"📊 实验效果","text":"在操作和抓取任务上验证了可供性感知对动作生成质量的提升效果"},{"label":"⭐ 整体评价","text":"将可供性推理与 VLA 结合是有价值的方向，增强了模型对物体交互方式的理解能力"}]
+    },
+    {
+        date: "2026-06-06",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "HANDOFF: Humanoid Agentic Task-Space Whole-Body Control via Distilled Complementary Teachers",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 通过互补教师蒸馏方法实现人形机器人任务空间全身控制，结合 VLM 驱动的任务规划 | 💡 创新点: 提出互补教师蒸馏架构，将多个专家控制器的能力统一蒸馏到单一策略网络中，兼具鲁棒性 | 📊 实验效果: 在人形机器人任务规划和操作抓取任务上验证了方法的有效性 | ⭐ 整体评价: 人形机器人全身控制的重要进展，互补教师蒸馏思路可有效整合多种运动技能",
+        tags: [["Robotics","green"],["Distillation","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.06493"],["PDF","https://arxiv.org/pdf/2606.06493"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"通过互补教师蒸馏方法实现人形机器人任务空间全身控制，结合 VLM 驱动的任务规划"},{"label":"💡 创新点","text":"提出互补教师蒸馏架构，将多个专家控制器的能力统一蒸馏到单一策略网络中，兼具鲁棒性"},{"label":"📊 实验效果","text":"在人形机器人任务规划和操作抓取任务上验证了方法的有效性"},{"label":"⭐ 整体评价","text":"人形机器人全身控制的重要进展，互补教师蒸馏思路可有效整合多种运动技能"}]
+    },
+    {
+        date: "2026-06-06",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "MoDex: A Diffusion Policy for Sequential Multi-Object Dexterous Grasping",
+        venue: "arXiv 2026 · MIT",
+        summary: "🔬 技术路线: 基于模仿学习和强化学习结合扩散策略，在 MuJoCo 仿真环境中实现灵巧手序列化多物体抓取 | 💡 创新点: 将扩散策略应用于灵巧手的连续多物体抓取场景，解决序列化操作中的策略切换和目标调度问题 | 📊 实验效果: 在多物体灵巧抓取基准上成功率提升 17.92% 和 17.78%，显著优于现有方法 | ⭐ 整体评价: MIT 在灵巧操作方向的扎实工作，扩散策略在多物体序列化抓取中展现了良好的泛化性",
+        tags: [["Robotics","green"],["Diffusion","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.05407"],["PDF","https://arxiv.org/pdf/2606.05407"],["Project","https://modex2026.github.io/"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于模仿学习和强化学习结合扩散策略，在 MuJoCo 仿真环境中实现灵巧手序列化多物体抓取"},{"label":"💡 创新点","text":"将扩散策略应用于灵巧手的连续多物体抓取场景，解决序列化操作中的策略切换和目标调度问题"},{"label":"📊 实验效果","text":"在多物体灵巧抓取基准上成功率提升 17.92% 和 17.78%，显著优于现有方法"},{"label":"⭐ 整体评价","text":"MIT 在灵巧操作方向的扎实工作，扩散策略在多物体序列化抓取中展现了良好的泛化性"}]
+    },
+    {
+        date: "2026-06-06",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "Token Predictors Are Not Planners: Building Physically Grounded Causal Reasoners",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 构建物理接地的因果推理器，区别于纯 token 预测的规划方式，在 8B 参数规模模型上训练验证 | 💡 创新点: 提出 Causal-Plan-Bench 基准，揭示 token 预测器缺乏物理因果推理能力的本质局限 | 📊 实验效果: 在因果规划基准上准确率达到 36.3%，使用 1M 级训练数据在 8B 模型上验证 | ⭐ 整体评价: 对当前语言模型用于物理规划的能力边界提出了重要质疑，因果推理基准具有参考价值",
+        tags: [["Robotics","green"],["Reasoning","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.01810"],["PDF","https://arxiv.org/pdf/2606.01810"],["Code","https://github.com/THUSI-Lab/Causal-Reasoner"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"构建物理接地的因果推理器，区别于纯 token 预测的规划方式，在 8B 参数规模模型上训练验证"},{"label":"💡 创新点","text":"提出 Causal-Plan-Bench 基准，揭示 token 预测器缺乏物理因果推理能力的本质局限"},{"label":"📊 实验效果","text":"在因果规划基准上准确率达到 36.3%，使用 1M 级训练数据在 8B 模型上验证"},{"label":"⭐ 整体评价","text":"对当前语言模型用于物理规划的能力边界提出了重要质疑，因果推理基准具有参考价值"}]
+    },
+    {
+        date: "2026-06-06",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "What Objects Enable, Not What They Are: Functional Latent Spaces for Affordance Reasoning",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 构建功能性潜空间用于可供性推理，关注物体能做什么而非物体是什么 | 💡 创新点: 提出基于功能属性的物体表征方法，通过潜空间编码物体的交互可能性 | 📊 实验效果: 在可供性推理任务上达到 94% 准确率，相较基线提升 15%，泛化能力达 70% 至 90% | ⭐ 整体评价: 从功能视角理解物体的思路具有启发性，为机器人在开放环境中灵活使用物体提供了新范式",
+        tags: [["Robotics","green"],["Reasoning","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.05533"],["PDF","https://arxiv.org/pdf/2606.05533"],["Project","https://A4Dance-reasoning.github.io"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"构建功能性潜空间用于可供性推理，关注物体能做什么而非物体是什么"},{"label":"💡 创新点","text":"提出基于功能属性的物体表征方法，通过潜空间编码物体的交互可能性"},{"label":"📊 实验效果","text":"在可供性推理任务上达到 94% 准确率，相较基线提升 15%，泛化能力达 70% 至 90%"},{"label":"⭐ 整体评价","text":"从功能视角理解物体的思路具有启发性，为机器人在开放环境中灵活使用物体提供了新范式"}]
+    },
+    {
+        date: "2026-06-06",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "WAM-Nav: Asymmetric Latent World-Action Modeling for Unified Visual Navigation",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 基于非对称潜空间的世界-动作建模方法，结合扩散 Transformer 实现统一视觉导航 | 💡 创新点: 提出非对称潜空间设计将世界理解与动作生成解耦，实现高效且鲁棒的统一导航策略 | 📊 实验效果: 导航成功率提升 15.7%，路径效率提升 3.3%，总体达到 85% 的任务完成率 | ⭐ 整体评价: 世界模型与动作策略的非对称建模是有价值的设计选择，在视觉导航中展现了良好效果",
+        tags: [["Robotics","green"],["Navigation","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.04907"],["PDF","https://arxiv.org/pdf/2606.04907"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于非对称潜空间的世界-动作建模方法，结合扩散 Transformer 实现统一视觉导航"},{"label":"💡 创新点","text":"提出非对称潜空间设计将世界理解与动作生成解耦，实现高效且鲁棒的统一导航策略"},{"label":"📊 实验效果","text":"导航成功率提升 15.7%，路径效率提升 3.3%，总体达到 85% 的任务完成率"},{"label":"⭐ 整体评价","text":"世界模型与动作策略的非对称建模是有价值的设计选择，在视觉导航中展现了良好效果"}]
+    },
+    {
+        date: "2026-06-06",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "IMAC-AgriVLN: Can Agricultural Vision-and-Language Navigation Agents be Aware of Instruction Mistakes?",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 基于视觉-语言导航框架，研究农业场景中导航智能体对指令错误的感知与纠正能力 | 💡 创新点: 首次在农业视觉-语言导航中引入指令错误感知机制，使智能体能识别并应对有误的导航指令 | 📊 实验效果: 指令错误检测率达到 57%，在错误指令下导航成功率提升 9% | ⭐ 整体评价: 将指令鲁棒性引入农业导航场景具有实际应用价值，提升了真实部署中的容错能力",
+        tags: [["Robotics","green"],["Navigation","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.02519"],["PDF","https://arxiv.org/pdf/2606.02519"],["Code","https://github.com/AlexTraveling/IMAC-AgriVLN"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于视觉-语言导航框架，研究农业场景中导航智能体对指令错误的感知与纠正能力"},{"label":"💡 创新点","text":"首次在农业视觉-语言导航中引入指令错误感知机制，使智能体能识别并应对有误的导航指令"},{"label":"📊 实验效果","text":"指令错误检测率达到 57%，在错误指令下导航成功率提升 9%"},{"label":"⭐ 整体评价","text":"将指令鲁棒性引入农业导航场景具有实际应用价值，提升了真实部署中的容错能力"}]
+    },
+    {
+        date: "2026-06-06",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "World-Language-Action Model for Unified World Modeling, Language Reasoning, and Action Synthesis",
+        venue: "arXiv 2026 · NVIDIA",
+        summary: "🔬 技术路线: 基于 2B 参数扩散 Transformer 构建世界-语言-动作统一模型 WLA-0，实现世界建模、语言推理和动作生成的三合一 | 💡 创新点: 首次将世界模型、语言推理和动作合成统一在单一基础模型中，跨越感知-认知-行动的完整链路 | 📊 实验效果: 在 2B 参数规模下展示了跨模态统一建模的可行性，验证了一体化架构的有效性 | ⭐ 整体评价: NVIDIA 在具身智能基础模型方向的重要布局，统一三大能力的思路代表了下一代具身智能架构的发展方向",
+        tags: [["World Model","green"],["VLA","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.05979"],["PDF","https://arxiv.org/pdf/2606.05979"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于 2B 参数扩散 Transformer 构建世界-语言-动作统一模型 WLA-0，实现世界建模、语言推理和动作生成的三合一"},{"label":"💡 创新点","text":"首次将世界模型、语言推理和动作合成统一在单一基础模型中，跨越感知-认知-行动的完整链路"},{"label":"📊 实验效果","text":"在 2B 参数规模下展示了跨模态统一建模的可行性，验证了一体化架构的有效性"},{"label":"⭐ 整体评价","text":"NVIDIA 在具身智能基础模型方向的重要布局，统一三大能力的思路代表了下一代具身智能架构的发展方向"}]
+    },
+    {
+        date: "2026-06-06",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "Thinking with Imagination: Agentic Visual Spatial Reasoning with World Simulators",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 基于视觉-语言模型结合世界模拟器，通过想象力驱动的方式实现智能体视觉空间推理 | 💡 创新点: 将世界模拟器作为智能体的想象工具，使其能在虚拟空间中预演和验证推理结果 | 📊 实验效果: 在视觉空间推理任务上验证了想象力驱动推理方法的有效性 | ⭐ 整体评价: 用世界模拟器增强空间推理的思路新颖，为视觉智能体提供了内在模拟推演能力",
+        tags: [["World Model","green"],["Reasoning","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.06476"],["PDF","https://arxiv.org/pdf/2606.06476"],["Project","https://zcmax.github.io/projects/Thinking-With-Imagination"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于视觉-语言模型结合世界模拟器，通过想象力驱动的方式实现智能体视觉空间推理"},{"label":"💡 创新点","text":"将世界模拟器作为智能体的想象工具，使其能在虚拟空间中预演和验证推理结果"},{"label":"📊 实验效果","text":"在视觉空间推理任务上验证了想象力驱动推理方法的有效性"},{"label":"⭐ 整体评价","text":"用世界模拟器增强空间推理的思路新颖，为视觉智能体提供了内在模拟推演能力"}]
+    },
+    {
+        date: "2026-06-06",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "NVIDIA OmniDreams: Real-Time Generative World Model for Closed-Loop Autonomous Vehicle Simulation",
+        venue: "arXiv 2026 · NVIDIA",
+        summary: "🔬 技术路线: 基于扩散模型构建实时生成式世界模型，用于自动驾驶闭环仿真，训练数据达 21K 场景 | 💡 创新点: 实现了实时级别的生成式世界模型，支持闭环自动驾驶仿真中的可扩展场景生成 | 📊 实验效果: 在 21K 级别的驾驶场景数据上训练，实现了实时闭环仿真的生成质量和速度要求 | ⭐ 整体评价: NVIDIA 在自动驾驶仿真方向的重要产品化进展，实时性与闭环能力是产业落地的关键指标",
+        tags: [["World Model","green"],["Diffusion","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.03159"],["PDF","https://arxiv.org/pdf/2606.03159"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于扩散模型构建实时生成式世界模型，用于自动驾驶闭环仿真，训练数据达 21K 场景"},{"label":"💡 创新点","text":"实现了实时级别的生成式世界模型，支持闭环自动驾驶仿真中的可扩展场景生成"},{"label":"📊 实验效果","text":"在 21K 级别的驾驶场景数据上训练，实现了实时闭环仿真的生成质量和速度要求"},{"label":"⭐ 整体评价","text":"NVIDIA 在自动驾驶仿真方向的重要产品化进展，实时性与闭环能力是产业落地的关键指标"}]
+    },
+    {
+        date: "2026-06-06",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "COMAP: Co-Evolving World Models and Agent Policies for LLM Agents",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 基于 Qwen3-4B 模型，通过世界模型与智能体策略的协同进化训练实现相互提升 | 💡 创新点: 提出世界模型和智能体策略的共进化框架，两者在训练过程中互相促进而非独立优化 | 📊 实验效果: 在 4B 参数模型上实现了 16.75% 的性能提升，验证了协同进化方法的有效性 | ⭐ 整体评价: 世界模型与策略共进化是值得探索的训练范式，在小规模模型上已展现了积极效果",
+        tags: [["World Model","green"],["Agent","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.02372"],["PDF","https://arxiv.org/pdf/2606.02372"],["Code","https://github.com/loyiv/CoMAP"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于 Qwen3-4B 模型，通过世界模型与智能体策略的协同进化训练实现相互提升"},{"label":"💡 创新点","text":"提出世界模型和智能体策略的共进化框架，两者在训练过程中互相促进而非独立优化"},{"label":"📊 实验效果","text":"在 4B 参数模型上实现了 16.75% 的性能提升，验证了协同进化方法的有效性"},{"label":"⭐ 整体评价","text":"世界模型与策略共进化是值得探索的训练范式，在小规模模型上已展现了积极效果"}]
+    },
+    {
+        date: "2026-06-06",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "MLEvolve: A Self-Evolving Framework for Automated Machine Learning Algorithm Discovery",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 基于大语言模型构建自进化框架，实现机器学习算法的自动化发现与端到端优化 | 💡 创新点: 让大语言模型在自进化循环中自主发现和改进机器学习算法，实现算法设计的自动化 | 📊 实验效果: 在算法规划和代码生成任务上验证了自进化框架的有效性 | ⭐ 整体评价: LLM 驱动的自动化算法发现是前沿方向，自进化机制使系统能持续改进产出质量",
+        tags: [["LLM","green"],["Code","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.06473"],["PDF","https://arxiv.org/pdf/2606.06473"],["Code","https://github.com/InternScience/MLEvolve"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于大语言模型构建自进化框架，实现机器学习算法的自动化发现与端到端优化"},{"label":"💡 创新点","text":"让大语言模型在自进化循环中自主发现和改进机器学习算法，实现算法设计的自动化"},{"label":"📊 实验效果","text":"在算法规划和代码生成任务上验证了自进化框架的有效性"},{"label":"⭐ 整体评价","text":"LLM 驱动的自动化算法发现是前沿方向，自进化机制使系统能持续改进产出质量"}]
+    },
+    {
+        date: "2026-06-06",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "PC Layer: Polynomial Weight Preconditioning for Improving LLM Pre-Training",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 提出多项式权重预条件化层，在 LLM 预训练过程中优化权重矩阵的训练动态 | 💡 创新点: 设计多项式预条件化机制改善大语言模型预训练的收敛速度和最终性能 | 📊 实验效果: 在 Llama-1B 规模模型上验证了预条件化对预训练效率和质量的提升效果 | ⭐ 整体评价: 预训练优化技术对降低大模型训练成本有实际意义，多项式预条件化是新颖的技术路径",
+        tags: [["LLM","green"],["Training","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.06470"],["PDF","https://arxiv.org/pdf/2606.06470"],["Code","https://github.com/Empath-aln/PC-layer"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出多项式权重预条件化层，在 LLM 预训练过程中优化权重矩阵的训练动态"},{"label":"💡 创新点","text":"设计多项式预条件化机制改善大语言模型预训练的收敛速度和最终性能"},{"label":"📊 实验效果","text":"在 Llama-1B 规模模型上验证了预条件化对预训练效率和质量的提升效果"},{"label":"⭐ 整体评价","text":"预训练优化技术对降低大模型训练成本有实际意义，多项式预条件化是新颖的技术路径"}]
+    },
+    {
+        date: "2026-06-06",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "You Only Index Once: Cross-Layer Sparse Attention with Shared Routing",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 提出跨层共享路由的稀疏注意力机制，通过单次索引实现高效的长上下文处理 | 💡 创新点: 设计跨层共享路由策略，避免每层重复计算稀疏注意力索引，大幅降低长序列处理开销 | 📊 实验效果: 在 128K 上下文长度下实现 7.6 倍至 17.1 倍的推理加速 | ⭐ 整体评价: 长上下文推理效率的重大突破，共享路由策略简洁有效，对部署超长上下文模型有直接帮助",
+        tags: [["LLM","green"],["Efficiency","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.06467"],["PDF","https://arxiv.org/pdf/2606.06467"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出跨层共享路由的稀疏注意力机制，通过单次索引实现高效的长上下文处理"},{"label":"💡 创新点","text":"设计跨层共享路由策略，避免每层重复计算稀疏注意力索引，大幅降低长序列处理开销"},{"label":"📊 实验效果","text":"在 128K 上下文长度下实现 7.6 倍至 17.1 倍的推理加速"},{"label":"⭐ 整体评价","text":"长上下文推理效率的重大突破，共享路由策略简洁有效，对部署超长上下文模型有直接帮助"}]
+    },
+    {
+        date: "2026-06-06",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Minimizing the Hidden Cost of Scales: Graph-Guided Ultra-Low-Bit Quantization for Large Language Models",
+        venue: "arXiv 2026 · NVIDIA",
+        summary: "🔬 技术路线: 基于图引导的超低比特量化方法，针对后训练量化场景优化大语言模型的压缩效率 | 💡 创新点: 引入图结构指导量化过程，有效减少超低比特量化中缩放因子带来的隐性开销 | 📊 实验效果: 在 8B 和 70B 模型上实现 50% 压缩率，推理速度提升 1.5 倍 | ⭐ 整体评价: NVIDIA 在模型压缩方向的实用工作，图引导量化思路对降低部署成本有直接价值",
+        tags: [["LLM","green"],["Quantization","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.05429"],["PDF","https://arxiv.org/pdf/2606.05429"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于图引导的超低比特量化方法，针对后训练量化场景优化大语言模型的压缩效率"},{"label":"💡 创新点","text":"引入图结构指导量化过程，有效减少超低比特量化中缩放因子带来的隐性开销"},{"label":"📊 实验效果","text":"在 8B 和 70B 模型上实现 50% 压缩率，推理速度提升 1.5 倍"},{"label":"⭐ 整体评价","text":"NVIDIA 在模型压缩方向的实用工作，图引导量化思路对降低部署成本有直接价值"}]
+    },
+    {
+        date: "2026-06-06",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Improving Answer Extraction in Context-based Question Answering Systems Using LLMs",
+        venue: "arXiv 2026 · Stanford",
+        summary: "🔬 技术路线: 基于大语言模型微调和预训练方法，改进上下文问答系统中的答案抽取精度 | 💡 创新点: 在 RoBERTa-base 基础上设计改进的答案抽取策略，提升上下文问答的精确匹配率 | 📊 实验效果: 精确匹配率达到 86.84%，F1 分数 95.38%，相较基线提升 28.24 个百分点 | ⭐ 整体评价: Stanford 在问答系统上的优化工作，大幅度的性能提升体现了方法的有效性",
+        tags: [["LLM","green"],["Benchmark","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.06197"],["PDF","https://arxiv.org/pdf/2606.06197"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于大语言模型微调和预训练方法，改进上下文问答系统中的答案抽取精度"},{"label":"💡 创新点","text":"在 RoBERTa-base 基础上设计改进的答案抽取策略，提升上下文问答的精确匹配率"},{"label":"📊 实验效果","text":"精确匹配率达到 86.84%，F1 分数 95.38%，相较基线提升 28.24 个百分点"},{"label":"⭐ 整体评价","text":"Stanford 在问答系统上的优化工作，大幅度的性能提升体现了方法的有效性"}]
+    },
+    {
+        date: "2026-06-06",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Can LLMs Write Correct TLA+ Specifications? Evaluating Natural-Language-to-TLA+ Generation",
+        venue: "arXiv 2026 · Microsoft · Amazon",
+        summary: "🔬 技术路线: 评估大语言模型将自然语言转换为 TLA+ 形式化规约的能力，覆盖 8B 至 70B 参数规模 | 💡 创新点: 首次系统评估 LLM 在形式化验证语言生成方面的能力，建立自然语言到 TLA+ 的标准化测试 | 📊 实验效果: 最佳模型正确率仅为 26.6%，最低为 8.6%，揭示了 LLM 在形式化规约生成上的不足 | ⭐ 整体评价: Microsoft 和 Amazon 联合发现 LLM 在形式化验证方面仍有很大提升空间，对软件工程研究有启示",
+        tags: [["LLM","green"],["Code","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.05792"],["PDF","https://arxiv.org/pdf/2606.05792"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"评估大语言模型将自然语言转换为 TLA+ 形式化规约的能力，覆盖 8B 至 70B 参数规模"},{"label":"💡 创新点","text":"首次系统评估 LLM 在形式化验证语言生成方面的能力，建立自然语言到 TLA+ 的标准化测试"},{"label":"📊 实验效果","text":"最佳模型正确率仅为 26.6%，最低为 8.6%，揭示了 LLM 在形式化规约生成上的不足"},{"label":"⭐ 整体评价","text":"Microsoft 和 Amazon 联合发现 LLM 在形式化验证方面仍有很大提升空间，对软件工程研究有启示"}]
+    },
+    {
+        date: "2026-06-06",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "GenTI: Benchmarking LLMs for Autonomous IDPS Rule Generation for Unseen Attacks",
+        venue: "arXiv 2026 · MIT",
+        summary: "🔬 技术路线: 构建 LLM 自动生成入侵检测/防御系统规则的评测基准，包含 150K 训练和 50K 测试样本 | 💡 创新点: 首次评测大语言模型针对未知攻击自主生成 IDPS 规则的能力，建立标准化基准 | 📊 实验效果: 在 150K 训练和 50K 测试规模的数据集上系统评测了多种 LLM 的规则生成能力 | ⭐ 整体评价: MIT 在 AI 安全领域的重要基准工作，自动化安全规则生成对网络防御有直接应用前景",
+        tags: [["LLM","green"],["Safety","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.05844"],["PDF","https://arxiv.org/pdf/2606.05844"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"构建 LLM 自动生成入侵检测/防御系统规则的评测基准，包含 150K 训练和 50K 测试样本"},{"label":"💡 创新点","text":"首次评测大语言模型针对未知攻击自主生成 IDPS 规则的能力，建立标准化基准"},{"label":"📊 实验效果","text":"在 150K 训练和 50K 测试规模的数据集上系统评测了多种 LLM 的规则生成能力"},{"label":"⭐ 整体评价","text":"MIT 在 AI 安全领域的重要基准工作，自动化安全规则生成对网络防御有直接应用前景"}]
+    },
+    {
+        date: "2026-06-06",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Search-Time Contamination in Deep Research Agents: Measuring Performance Inflation in Public Benchmark Evaluation",
+        venue: "arXiv 2026 · Meta FAIR",
+        summary: "🔬 技术路线: 研究深度研究智能体在搜索时引入的基准污染问题，测量公开基准评估中的性能膨胀 | 💡 创新点: 首次定义和测量搜索时污染现象，区别于传统训练时污染，揭示智能体评估的新盲区 | 📊 实验效果: 发现搜索时污染导致约 4% 的性能虚高，证实了该问题的真实存在 | ⭐ 整体评价: Meta FAIR 揭示的评估盲区对智能体基准测试的可信度有重要警示意义",
+        tags: [["LLM","green"],["Benchmark","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.05241"],["PDF","https://arxiv.org/pdf/2606.05241"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"研究深度研究智能体在搜索时引入的基准污染问题，测量公开基准评估中的性能膨胀"},{"label":"💡 创新点","text":"首次定义和测量搜索时污染现象，区别于传统训练时污染，揭示智能体评估的新盲区"},{"label":"📊 实验效果","text":"发现搜索时污染导致约 4% 的性能虚高，证实了该问题的真实存在"},{"label":"⭐ 整体评价","text":"Meta FAIR 揭示的评估盲区对智能体基准测试的可信度有重要警示意义"}]
+    },
+    {
+        date: "2026-06-06",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Vortex: Efficient and Programmable Sparse Attention Serving for AI Agents",
+        venue: "arXiv 2026 · NVIDIA",
+        summary: "🔬 技术路线: 基于大语言模型架构设计高效可编程的稀疏注意力推理服务框架，支持 229B 参数规模 | 💡 创新点: 提出 Python 嵌入式的可编程稀疏注意力接口，让用户灵活定义注意力模式而无需底层优化 | 📊 实验效果: 在 229B 参数规模模型上验证了高效稀疏注意力服务的可行性 | ⭐ 整体评价: NVIDIA 在推理基础设施方向的重要工具，可编程接口降低了稀疏注意力的使用门槛",
+        tags: [["LLM","green"],["Efficiency","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.06453"],["PDF","https://arxiv.org/pdf/2606.06453"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于大语言模型架构设计高效可编程的稀疏注意力推理服务框架，支持 229B 参数规模"},{"label":"💡 创新点","text":"提出 Python 嵌入式的可编程稀疏注意力接口，让用户灵活定义注意力模式而无需底层优化"},{"label":"📊 实验效果","text":"在 229B 参数规模模型上验证了高效稀疏注意力服务的可行性"},{"label":"⭐ 整体评价","text":"NVIDIA 在推理基础设施方向的重要工具，可编程接口降低了稀疏注意力的使用门槛"}]
+    },
+    {
+        date: "2026-06-06",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "LAP: An Agent-to-Instrument Protocol for Autonomous Science",
+        venue: "arXiv 2026 · Anthropic · MIT",
+        summary: "🔬 技术路线: 基于大语言模型和 JSON-RPC 架构设计智能体到实验仪器的通信协议，实现自主科学实验 | 💡 创新点: 提出标准化的智能体-仪器通信协议 LAP，使 LLM 智能体能端到端控制科学实验设备 | 📊 实验效果: 在实际科学仪器上验证了协议的可行性和端到端自主实验能力 | ⭐ 整体评价: Anthropic 与 MIT 联合推动的自主科学实验基础设施，协议标准化对加速科学自动化有重要价值",
+        tags: [["LLM","green"],["Agent","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.03755"],["PDF","https://arxiv.org/pdf/2606.03755"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于大语言模型和 JSON-RPC 架构设计智能体到实验仪器的通信协议，实现自主科学实验"},{"label":"💡 创新点","text":"提出标准化的智能体-仪器通信协议 LAP，使 LLM 智能体能端到端控制科学实验设备"},{"label":"📊 实验效果","text":"在实际科学仪器上验证了协议的可行性和端到端自主实验能力"},{"label":"⭐ 整体评价","text":"Anthropic 与 MIT 联合推动的自主科学实验基础设施，协议标准化对加速科学自动化有重要价值"}]
+    },
+    {
+        date: "2026-06-06",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Goedel-Architect: Streamlining Formal Theorem Proving with Blueprint Generation and Refinement",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 基于蓝图生成和精炼策略，简化形式化定理证明的流程 | 💡 创新点: 提出 Goedel-Architect 框架，通过先生成证明蓝图再逐步精炼的方式降低形式化证明难度 | 📊 实验效果: 在多个形式化证明基准上达到 99.2%、75.6%、100% 和 88.8% 的成功率 | ⭐ 整体评价: 形式化验证领域的高效智能体方案，蓝图式分步证明策略显著提升了定理证明自动化率",
+        tags: [["Agent","green"],["Reasoning","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.06468"],["PDF","https://arxiv.org/pdf/2606.06468"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于蓝图生成和精炼策略，简化形式化定理证明的流程"},{"label":"💡 创新点","text":"提出 Goedel-Architect 框架，通过先生成证明蓝图再逐步精炼的方式降低形式化证明难度"},{"label":"📊 实验效果","text":"在多个形式化证明基准上达到 99.2%、75.6%、100% 和 88.8% 的成功率"},{"label":"⭐ 整体评价","text":"形式化验证领域的高效智能体方案，蓝图式分步证明策略显著提升了定理证明自动化率"}]
+    },
+    {
+        date: "2026-06-06",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Will the Agent Recuse Itself? Measuring LLM-Agent Compliance with In-Band Access-Deny Signals",
+        venue: "arXiv 2026 · OpenAI",
+        summary: "🔬 技术路线: 基于 GPT-4o 模型设计轻量化测试框架，测量 LLM 智能体遇到权限拒绝信号时的合规行为 | 💡 创新点: 首次系统评估智能体对带内访问拒绝信号的遵从度，衡量智能体能否在被拒绝时正确停止 | 📊 实验效果: 在理想条件下合规率达到 100%，但在复杂场景下揭示了合规性下降的问题 | ⭐ 整体评价: OpenAI 在智能体安全合规方面的重要评测工作，对智能体部署中的权限控制具有实践指导意义",
+        tags: [["Agent","green"],["Safety","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.06460"],["PDF","https://arxiv.org/pdf/2606.06460"],["Code","https://github.com/mthamil107/Recuse"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于 GPT-4o 模型设计轻量化测试框架，测量 LLM 智能体遇到权限拒绝信号时的合规行为"},{"label":"💡 创新点","text":"首次系统评估智能体对带内访问拒绝信号的遵从度，衡量智能体能否在被拒绝时正确停止"},{"label":"📊 实验效果","text":"在理想条件下合规率达到 100%，但在复杂场景下揭示了合规性下降的问题"},{"label":"⭐ 整体评价","text":"OpenAI 在智能体安全合规方面的重要评测工作，对智能体部署中的权限控制具有实践指导意义"}]
+    },
+    {
+        date: "2026-06-06",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "MMG2Skill: Can Agents Distill In-the-Wild Guides into Self-Evolving Skills?",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 基于视觉-语言模型框架，研究智能体能否从网络上的多模态指南中蒸馏出可自进化的技能 | 💡 创新点: 提出 MMG2Skill-Bench 基准，评估智能体从开放环境中获取指导信息并转化为可复用技能的能力 | 📊 实验效果: 技能蒸馏率达到 25% 至 53%，自进化后性能提升 25.3 个百分点 | ⭐ 整体评价: 从开放世界中学习技能是智能体自主成长的重要能力，基准测试为该方向提供了评估标准",
+        tags: [["Agent","green"],["Multimodal","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.01993"],["PDF","https://arxiv.org/pdf/2606.01993"],["Code","https://github.com/NJU-LINK/MMG2Skill"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于视觉-语言模型框架，研究智能体能否从网络上的多模态指南中蒸馏出可自进化的技能"},{"label":"💡 创新点","text":"提出 MMG2Skill-Bench 基准，评估智能体从开放环境中获取指导信息并转化为可复用技能的能力"},{"label":"📊 实验效果","text":"技能蒸馏率达到 25% 至 53%，自进化后性能提升 25.3 个百分点"},{"label":"⭐ 整体评价","text":"从开放世界中学习技能是智能体自主成长的重要能力，基准测试为该方向提供了评估标准"}]
+    },
+    {
+        date: "2026-06-06",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Self-Reflective APIs: Structure Beats Verbosity for AI Agent Recovery",
+        venue: "arXiv 2026 · Anthropic",
+        summary: "🔬 技术路线: 基于结构化 API 设计研究智能体错误恢复机制，对比结构化与冗长描述的效果差异 | 💡 创新点: 提出自反射 API 设计理念，证明结构化的错误信息比冗长的文字描述更有助于智能体恢复执行 | 📊 实验效果: 结构化 API 在智能体错误恢复任务上显著优于传统冗长错误消息方式 | ⭐ 整体评价: Anthropic 对智能体工具调用设计的深入研究，对 API 设计最佳实践有直接指导价值",
+        tags: [["Agent","green"],["LLM","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.05037"],["PDF","https://arxiv.org/pdf/2606.05037"],["Code","https://github.com/arquicanedo/self-reflective-apis"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于结构化 API 设计研究智能体错误恢复机制，对比结构化与冗长描述的效果差异"},{"label":"💡 创新点","text":"提出自反射 API 设计理念，证明结构化的错误信息比冗长的文字描述更有助于智能体恢复执行"},{"label":"📊 实验效果","text":"结构化 API 在智能体错误恢复任务上显著优于传统冗长错误消息方式"},{"label":"⭐ 整体评价","text":"Anthropic 对智能体工具调用设计的深入研究，对 API 设计最佳实践有直接指导价值"}]
+    },
+    {
+        date: "2026-06-06",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Impostor: An Agent-Curated Benchmark for Realistic AIGC Manipulation Localization",
+        venue: "arXiv 2026 · Southeast University · Xiaohongshu · Tsinghua University",
+        summary: "🔬 技术路线: 基于智能体驱动的数据策展框架，结合视觉-语言模型构建 AI 生成内容操纵定位基准 | 💡 创新点: 利用智能体自动策展真实场景下的 AI 编辑图像数据集，覆盖 100K 级样本规模 | 📊 实验效果: 构建了 100K 规模的真实 AI 操纵图像基准数据集 | ⭐ 整体评价: 小红书与高校联合推出的内容安全基准，对 AIGC 内容检测和平台治理有直接应用价值",
+        tags: [["Agent","green"],["Benchmark","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.04545"],["PDF","https://arxiv.org/pdf/2606.04545"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于智能体驱动的数据策展框架，结合视觉-语言模型构建 AI 生成内容操纵定位基准"},{"label":"💡 创新点","text":"利用智能体自动策展真实场景下的 AI 编辑图像数据集，覆盖 100K 级样本规模"},{"label":"📊 实验效果","text":"构建了 100K 规模的真实 AI 操纵图像基准数据集"},{"label":"⭐ 整体评价","text":"小红书与高校联合推出的内容安全基准，对 AIGC 内容检测和平台治理有直接应用价值"}]
+    },
+    {
+        date: "2026-06-06",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "PAR3D: A Unified 3D-MLLM with Part-Aware Representation for Scene Understanding",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 基于大语言模型构建统一的三维多模态模型，引入部件感知表征实现细粒度场景理解 | 💡 创新点: 提出部件级别的三维表征方法，使多模态模型能理解物体的组成部件及其空间关系 | 📊 实验效果: 在三维场景理解和生成任务上验证了部件感知表征的有效性 | ⭐ 整体评价: 部件级三维理解对机器人操作和场景建模有重要意义，统一架构设计简洁有效",
+        tags: [["Multimodal","green"],["Robotics","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.06485"],["PDF","https://arxiv.org/pdf/2606.06485"],["Project","https://atrovast.github.io/PAR3D/"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于大语言模型构建统一的三维多模态模型，引入部件感知表征实现细粒度场景理解"},{"label":"💡 创新点","text":"提出部件级别的三维表征方法，使多模态模型能理解物体的组成部件及其空间关系"},{"label":"📊 实验效果","text":"在三维场景理解和生成任务上验证了部件感知表征的有效性"},{"label":"⭐ 整体评价","text":"部件级三维理解对机器人操作和场景建模有重要意义，统一架构设计简洁有效"}]
+    },
+    {
+        date: "2026-06-06",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "TurtleAI: Benchmarking Multimodal Models for Visual Programming in Turtle Graphics",
+        venue: "arXiv 2026 · MIT",
+        summary: "🔬 技术路线: 基于视觉-语言模型和微调方法，构建海龟绘图视觉编程能力的多模态评测基准 | 💡 创新点: 以海龟绘图为载体评测多模态模型的视觉编程能力，建立从视觉到代码的标准化测试 | 📊 实验效果: 在 72B 模型上正确率仅为 30%，较小模型降至 20%，揭示了视觉编程的挑战性 | ⭐ 整体评价: MIT 设计的视觉编程评测基准直观有效，揭示了当前多模态模型在空间推理和代码生成交叉领域的不足",
+        tags: [["Multimodal","green"],["Code","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.03626"],["PDF","https://arxiv.org/pdf/2606.03626"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于视觉-语言模型和微调方法，构建海龟绘图视觉编程能力的多模态评测基准"},{"label":"💡 创新点","text":"以海龟绘图为载体评测多模态模型的视觉编程能力，建立从视觉到代码的标准化测试"},{"label":"📊 实验效果","text":"在 72B 模型上正确率仅为 30%，较小模型降至 20%，揭示了视觉编程的挑战性"},{"label":"⭐ 整体评价","text":"MIT 设计的视觉编程评测基准直观有效，揭示了当前多模态模型在空间推理和代码生成交叉领域的不足"}]
+    },
+    {
+        date: "2026-06-06",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "FindIt: A Format-Informed Visual Detection Benchmark for Generalist Multimodal LLMs",
+        venue: "arXiv 2026 · Meta FAIR",
+        summary: "🔬 技术路线: 基于大语言模型框架构建格式感知的视觉检测基准，评估通用多模态模型的目标检测能力 | 💡 创新点: 设计格式感知的视觉检测评测方法，统一评估多模态大模型在不同输出格式下的检测精度 | 📊 实验效果: 在目标检测任务上系统评估了主流多模态模型的表现差异 | ⭐ 整体评价: Meta FAIR 对多模态模型检测能力的系统性评估，格式感知的设计思路可更公平对比不同模型",
+        tags: [["Multimodal","green"],["Benchmark","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.04282"],["PDF","https://arxiv.org/pdf/2606.04282"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于大语言模型框架构建格式感知的视觉检测基准，评估通用多模态模型的目标检测能力"},{"label":"💡 创新点","text":"设计格式感知的视觉检测评测方法，统一评估多模态大模型在不同输出格式下的检测精度"},{"label":"📊 实验效果","text":"在目标检测任务上系统评估了主流多模态模型的表现差异"},{"label":"⭐ 整体评价","text":"Meta FAIR 对多模态模型检测能力的系统性评估，格式感知的设计思路可更公平对比不同模型"}]
+    },
+    {
+        date: "2026-06-06",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "ExpSpeech-Net: Multimodal Fusion of Expression and Speech for Deepfake Detection",
+        venue: "arXiv 2026 · MIT",
+        summary: "🔬 技术路线: 基于多模态融合框架，结合面部表情和语音特征实现深度伪造检测 | 💡 创新点: 提出 ExpSpeech-Net 轻量化模型，融合表情和语音双模态信号实现实时深度伪造检测 | 📊 实验效果: 在多个深伪检测基准上达到 94.5%、99.3% 和 96.8% 的检测准确率 | ⭐ 整体评价: 表情与语音联合检测的思路新颖，轻量化设计使其适合实时部署场景",
+        tags: [["Multimodal","green"],["Safety","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.05760"],["PDF","https://arxiv.org/pdf/2606.05760"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于多模态融合框架，结合面部表情和语音特征实现深度伪造检测"},{"label":"💡 创新点","text":"提出 ExpSpeech-Net 轻量化模型，融合表情和语音双模态信号实现实时深度伪造检测"},{"label":"📊 实验效果","text":"在多个深伪检测基准上达到 94.5%、99.3% 和 96.8% 的检测准确率"},{"label":"⭐ 整体评价","text":"表情与语音联合检测的思路新颖，轻量化设计使其适合实时部署场景"}]
+    },
+    {
+        date: "2026-06-06",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "The Image Reconstruction Game: Drawing Common Ground Through Iterative Multimodal Dialogue",
+        venue: "arXiv 2026 · Meta FAIR",
+        summary: "🔬 技术路线: 基于视觉-语言模型设计迭代多模态对话的图像重建博弈任务 | 💡 创新点: 通过图像重建博弈评估多模态模型在迭代对话中建立共同认知基础的能力 | 📊 实验效果: 在图像重建博弈中验证了迭代对话对多模态理解质量的提升效果 | ⭐ 整体评价: Meta FAIR 提出的评测范式新颖，博弈机制能有效衡量多模态模型的交互式理解能力",
+        tags: [["Multimodal","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.01901"],["PDF","https://arxiv.org/pdf/2606.01901"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于视觉-语言模型设计迭代多模态对话的图像重建博弈任务"},{"label":"💡 创新点","text":"通过图像重建博弈评估多模态模型在迭代对话中建立共同认知基础的能力"},{"label":"📊 实验效果","text":"在图像重建博弈中验证了迭代对话对多模态理解质量的提升效果"},{"label":"⭐ 整体评价","text":"Meta FAIR 提出的评测范式新颖，博弈机制能有效衡量多模态模型的交互式理解能力"}]
+    },
+    {
+        date: "2026-06-06",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "TRACE: A Temporal Conditional Estimation for Multimodal Time Series Foundation Models",
+        venue: "arXiv 2026 · CMU",
+        summary: "🔬 技术路线: 基于基础模型架构构建多模态时间序列基础模型，采用时间条件估计方法 | 💡 创新点: 提出时间序列基础模型 TRACE，具备跨模态和鲁棒的时序建模能力 | 📊 实验效果: 在多模态时间序列预测任务上验证了方法的有效性 | ⭐ 整体评价: CMU 在时间序列基础模型方向的探索，多模态时序建模对金融、医疗等领域有广泛应用前景",
+        tags: [["Multimodal","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.06285"],["PDF","https://arxiv.org/pdf/2606.06285"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于基础模型架构构建多模态时间序列基础模型，采用时间条件估计方法"},{"label":"💡 创新点","text":"提出时间序列基础模型 TRACE，具备跨模态和鲁棒的时序建模能力"},{"label":"📊 实验效果","text":"在多模态时间序列预测任务上验证了方法的有效性"},{"label":"⭐ 整体评价","text":"CMU 在时间序列基础模型方向的探索，多模态时序建模对金融、医疗等领域有广泛应用前景"}]
+    },
+    {
+        date: "2026-06-06",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "Learning Visual Spatial Planning from Symbolic State via Modality-Gap-Aware Self-Distillation",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 提出 MGSD 模态差距感知自蒸馏框架，从符号状态学习视觉空间规划能力 | 💡 创新点: 设计模态差距感知的分阶段蒸馏方法，弥合符号表征与视觉表征之间的语义鸿沟 | 📊 实验效果: 在视觉空间规划任务上验证了模态差距感知蒸馏的有效性 | ⭐ 整体评价: 模态差距感知的蒸馏思路对跨模态知识迁移有参考价值",
+        tags: [["Multimodal","green"],["Distillation","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.06076"],["PDF","https://arxiv.org/pdf/2606.06076"],["Code","https://github.com/Oranger-l/MGSD"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出 MGSD 模态差距感知自蒸馏框架，从符号状态学习视觉空间规划能力"},{"label":"💡 创新点","text":"设计模态差距感知的分阶段蒸馏方法，弥合符号表征与视觉表征之间的语义鸿沟"},{"label":"📊 实验效果","text":"在视觉空间规划任务上验证了模态差距感知蒸馏的有效性"},{"label":"⭐ 整体评价","text":"模态差距感知的蒸馏思路对跨模态知识迁移有参考价值"}]
+    },
+    {
+        date: "2026-06-06",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "STaR-KV: Spatio-Temporal Adaptive Re-weighting for KV Cache Compression in GUI Vision-Language Models",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 提出时空自适应重加权方法压缩 GUI 场景视觉-语言模型的 KV 缓存 | 💡 创新点: 设计时空维度自适应重加权策略，在压缩 KV 缓存的同时保留对 GUI 理解的关键信息 | 📊 实验效果: 在 7B 模型上实现 40% 的 KV 缓存压缩，性能损失仅 0.07%，相较基线提升 20% | ⭐ 整体评价: 针对 GUI 场景的 KV 缓存压缩方案实用性强，极低的性能损失使其适合生产部署",
+        tags: [["Multimodal","green"],["Efficiency","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.01790"],["PDF","https://arxiv.org/pdf/2606.01790"],["Code","https://github.com/kawhiiiileo/STaR-KV"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出时空自适应重加权方法压缩 GUI 场景视觉-语言模型的 KV 缓存"},{"label":"💡 创新点","text":"设计时空维度自适应重加权策略，在压缩 KV 缓存的同时保留对 GUI 理解的关键信息"},{"label":"📊 实验效果","text":"在 7B 模型上实现 40% 的 KV 缓存压缩，性能损失仅 0.07%，相较基线提升 20%"},{"label":"⭐ 整体评价","text":"针对 GUI 场景的 KV 缓存压缩方案实用性强，极低的性能损失使其适合生产部署"}]
+    },
+    {
+        date: "2026-06-06",
+        category: "Other",
+        categoryIcon: "📄",
+        title: "Pinpoint: Grounded Worldwide Image Geolocation via Cross-Source Retrieval and Reranking",
+        venue: "arXiv 2026 · MIT",
+        summary: "🔬 技术路线: 基于跨源检索和重排序方法实现全球范围图像地理定位，结合多模态特征匹配 | 💡 创新点: 提出跨数据源检索与重排序架构，利用 OSV-5M 级别数据实现高精度全球地理定位 | 📊 实验效果: 在 3K 和 4K 级别测试集上达到了领先的地理定位精度，数据规模覆盖 5M 级图像 | ⭐ 整体评价: MIT 在图像地理定位方向的扎实工作，跨源检索思路对大规模视觉搜索有参考价值",
+        tags: [["Multimodal","green"],["Search","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.04133"],["PDF","https://arxiv.org/pdf/2606.04133"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于跨源检索和重排序方法实现全球范围图像地理定位，结合多模态特征匹配"},{"label":"💡 创新点","text":"提出跨数据源检索与重排序架构，利用 OSV-5M 级别数据实现高精度全球地理定位"},{"label":"📊 实验效果","text":"在 3K 和 4K 级别测试集上达到了领先的地理定位精度，数据规模覆盖 5M 级图像"},{"label":"⭐ 整体评价","text":"MIT 在图像地理定位方向的扎实工作，跨源检索思路对大规模视觉搜索有参考价值"}]
+    },
+    {
+        date: "2026-06-06",
+        category: "Other",
+        categoryIcon: "📄",
+        title: "Where to Look: Can Foundation Models Reach a Target Viewpoint Through Active Exploration?",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 基于基础模型构建目标视角主动探索框架，评估模型通过主动探索到达目标视角的能力 | 💡 创新点: 提出 TVRBench 基准，首次系统评估基础模型在细粒度主动视觉探索中的能力 | 📊 实验效果: 基础模型在目标视角到达任务上准确率为 7.8% 至 12.0%，随机基线为 50.8% 至 51.4% | ⭐ 整体评价: 揭示了基础模型在主动视觉探索方面的严重不足，为该领域提供了清晰的改进方向",
+        tags: [["Benchmark","green"],["Robotics","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.01247"],["PDF","https://arxiv.org/pdf/2606.01247"],["Code","https://github.com/aim-uofa/TVRBench"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于基础模型构建目标视角主动探索框架，评估模型通过主动探索到达目标视角的能力"},{"label":"💡 创新点","text":"提出 TVRBench 基准，首次系统评估基础模型在细粒度主动视觉探索中的能力"},{"label":"📊 实验效果","text":"基础模型在目标视角到达任务上准确率为 7.8% 至 12.0%，随机基线为 50.8% 至 51.4%"},{"label":"⭐ 整体评价","text":"揭示了基础模型在主动视觉探索方面的严重不足，为该领域提供了清晰的改进方向"}]
+    },
+    {
+        date: "2026-06-06",
+        category: "Other",
+        categoryIcon: "📄",
+        title: "Uncertainty-Aware Adaptive Sensor Fusion for Autonomous Navigation",
+        venue: "arXiv 2026 · NVIDIA",
+        summary: "🔬 技术路线: 基于不确定性感知的自适应传感器融合方法，结合视觉-惯性信息实现鲁棒自主导航 | 💡 创新点: 提出轻量化的视觉-惯性融合方案，根据不确定性自适应调整各传感器权重以增强鲁棒性 | 📊 实验效果: 在自主导航任务中实现 155 FPS 的实时处理速度，同时保持高精度定位 | ⭐ 整体评价: NVIDIA 在传感器融合方向的实用工作，不确定性自适应机制和高帧率适合嵌入式部署",
+        tags: [["Robotics","green"],["Navigation","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.05437"],["PDF","https://arxiv.org/pdf/2606.05437"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于不确定性感知的自适应传感器融合方法，结合视觉-惯性信息实现鲁棒自主导航"},{"label":"💡 创新点","text":"提出轻量化的视觉-惯性融合方案，根据不确定性自适应调整各传感器权重以增强鲁棒性"},{"label":"📊 实验效果","text":"在自主导航任务中实现 155 FPS 的实时处理速度，同时保持高精度定位"},{"label":"⭐ 整体评价","text":"NVIDIA 在传感器融合方向的实用工作，不确定性自适应机制和高帧率适合嵌入式部署"}]
+    },
     // === 2026-06-05 ===
     {
         date: "2026-06-05",
@@ -12886,6 +13309,13 @@ const PAPERS_DB = [
 ];
 
 const DAILY_OVERVIEW = {
+    "2026-06-06": {
+        bannerTitle: "🔥 今日看点",
+        bannerSubtitle: "NVIDIA 发布 WLA-0 世界-语言-动作统一模型，基于 2B 参数扩散 Transformer 实现世界建模、语言推理与动作生成的三合一；MIT 提出 MoDex 灵巧手扩散策略，在序列化多物体抓取任务中成功率提升超 17 个百分点；OpenAI 发布 Agent 合规性测试基准 Recuse，衡量 LLM 智能体在遇到权限拒绝信号时能否正确停止执行",
+        picks: ["HANDOFF: Humanoid Agentic Task-Space Whole-Body Control via Distilled Complementary Teachers","MoDex: A Diffusion Policy for Sequential Multi-Object Dexterous Grasping","World-Language-Action Model for Unified World Modeling, Language Reasoning, and Action Synthesis","Will the Agent Recuse Itself? Measuring LLM-Agent Compliance with In-Band Access-Deny Signals"],
+        totalPapers: 38,
+        totalNews: 0
+    },
     "2026-06-05": {
         bannerTitle: "🔥 今日看点",
         bannerSubtitle: "NVIDIA 发布 Cosmos 3 全模态世界模型，支持物理AI的多模态生成与理解；InternLM 推出 OVO-S-Bench 流式空间智能评测基准；多智能体流式通信框架 StreamMA 在推理任务上提升 7.3 至 22.4 个百分点",
