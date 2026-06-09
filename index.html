@@ -658,6 +658,205 @@
 <script>
 // ===== DATA =====
 const PAPERS_DB = [
+    // === 2026-06-09 ===
+    {
+        date: "2026-06-09",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "MemoryVLA++: Temporal Modeling via Memory and Imagination in Vision-Language-Action Models",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 在视觉-语言-动作模型中引入感知-认知双重记忆机制与世界模型想象模块，增强时序建模能力 | 💡 创新点: 提出记忆与想象结合的时序建模方案，通过感知记忆保留历史观测、认知想象预测未来状态 | 📊 实验效果: 在多任务操作基准上分别取得 9%、26%、28% 的性能提升，验证了时序建模的显著增益 | ⭐ 整体评价: VLA 时序建模方向的重要进展，记忆与想象机制为解决长时域操作任务提供了有效框架",
+        tags: [["VLA","green"],["Memory","green"],["World Model","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.09827"],["PDF","https://arxiv.org/pdf/2606.09827"],["Project","https://shihao1895.github.io/MemoryVLA-PP-Web"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"在视觉-语言-动作模型中引入感知-认知双重记忆机制与世界模型想象模块，增强时序建模能力"},{"label":"💡 创新点","text":"提出记忆与想象结合的时序建模方案，通过感知记忆保留历史观测、认知想象预测未来状态"},{"label":"📊 实验效果","text":"在多任务操作基准上分别取得 9%、26%、28% 的性能提升，验证了时序建模的显著增益"},{"label":"⭐ 整体评价","text":"VLA 时序建模方向的重要进展，记忆与想象机制为解决长时域操作任务提供了有效框架"}]
+    },
+    {
+        date: "2026-06-09",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "Robots Need More than VLA and World Models",
+        venue: "arXiv 2026 · HF 热门",
+        summary: "🔬 技术路线: 从策略学习与基础模型结合的角度，系统分析当前 VLA 和世界模型在机器人应用中的不足 | 💡 创新点: 提出机器人系统需超越单纯 VLA 和世界模型的观点，强调感知、规划、控制的系统性整合 | 📊 实验效果: 通过对比分析多种范式在实际任务中的表现，揭示了端到端方案在复杂场景下的局限性 | ⭐ 整体评价: 具有启发性的观点论文，对当前 VLA 热潮提出冷思考，建议关注系统级集成而非单模块堆叠",
+        tags: [["VLA","green"],["Robotics","green"],["World Model","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.06556"],["PDF","https://arxiv.org/pdf/2606.06556"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"从策略学习与基础模型结合的角度，系统分析当前 VLA 和世界模型在机器人应用中的不足"},{"label":"💡 创新点","text":"提出机器人系统需超越单纯 VLA 和世界模型的观点，强调感知、规划、控制的系统性整合"},{"label":"📊 实验效果","text":"通过对比分析多种范式在实际任务中的表现，揭示了端到端方案在复杂场景下的局限性"},{"label":"⭐ 整体评价","text":"具有启发性的观点论文，对当前 VLA 热潮提出冷思考，建议关注系统级集成而非单模块堆叠"}]
+    },
+    {
+        date: "2026-06-09",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "iMaC: Translating Actions into Motion and Contact Images for Embodied World Models",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 提出将动作指令翻译为运动图像和接触图像的统一框架，构建可解释的具身世界模型 | 💡 创新点: 创新性地用运动和接触两种视觉中间表征桥接动作与状态预测，实现物理交互的可视化建模 | 📊 实验效果: 在操作和抓取任务上验证了方法的有效性，动作翻译的准确性和预测质量优于端到端基线 | ⭐ 整体评价: 具身世界模型的新思路，通过运动与接触图像解耦物理交互，对机器人动作规划有重要启发",
+        tags: [["World Model","green"],["Robotics","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.09813"],["PDF","https://arxiv.org/pdf/2606.09813"],["Project","https://imac-wm.github.io/"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出将动作指令翻译为运动图像和接触图像的统一框架，构建可解释的具身世界模型"},{"label":"💡 创新点","text":"创新性地用运动和接触两种视觉中间表征桥接动作与状态预测，实现物理交互的可视化建模"},{"label":"📊 实验效果","text":"在操作和抓取任务上验证了方法的有效性，动作翻译的准确性和预测质量优于端到端基线"},{"label":"⭐ 整体评价","text":"具身世界模型的新思路，通过运动与接触图像解耦物理交互，对机器人动作规划有重要启发"}]
+    },
+    {
+        date: "2026-06-09",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "Echo-Memory: A Controlled Study of Memory in Action World Models",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 设计控制实验框架，系统研究不同记忆机制在动作世界模型中的作用与影响因素 | 💡 创新点: 提出 Echo-Memory 受控研究范式，通过消融实验隔离记忆容量、结构与更新策略的独立贡献 | 📊 实验效果: 实验揭示了记忆长度与结构对动作预测的非线性影响规律，为世界模型设计提供定量指导 | ⭐ 整体评价: 世界模型中记忆机制的基础性研究，实验设计严谨，结论对记忆增强型模型设计有实用参考价值",
+        tags: [["World Model","green"],["Memory","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.09803"],["PDF","https://arxiv.org/pdf/2606.09803"],["Code","https://github.com/Echo-Team-Joy-Future-Academy-JD/Echo-Memory"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"设计控制实验框架，系统研究不同记忆机制在动作世界模型中的作用与影响因素"},{"label":"💡 创新点","text":"提出 Echo-Memory 受控研究范式，通过消融实验隔离记忆容量、结构与更新策略的独立贡献"},{"label":"📊 实验效果","text":"实验揭示了记忆长度与结构对动作预测的非线性影响规律，为世界模型设计提供定量指导"},{"label":"⭐ 整体评价","text":"世界模型中记忆机制的基础性研究，实验设计严谨，结论对记忆增强型模型设计有实用参考价值"}]
+    },
+    {
+        date: "2026-06-09",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "AnchorWorld: Embodied Egocentric World Simulation with View-based Evolution Customization",
+        venue: "arXiv 2026 · HF 热门 · Kling Team",
+        summary: "🔬 技术路线: 基于锚点视角的具身第一人称世界仿真框架，通过视角演化定制实现沉浸式环境生成 | 💡 创新点: 提出基于视角演化的世界仿真定制方法，以锚点机制保证生成环境的物理一致性与连续性 | 📊 实验效果: 在具身仿真基准上验证了环境生成的鲁棒性和一致性，视觉质量和物理合理性优于对比方法 | ⭐ 整体评价: Kling 团队的具身世界仿真新工作，锚点视角方案为第一人称环境生成提供了可控且一致的方案",
+        tags: [["World Model","green"],["Video Generation","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.07326"],["PDF","https://arxiv.org/pdf/2606.07326"],["Project","https://yuli0103.github.io/AnchorWorld/"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于锚点视角的具身第一人称世界仿真框架，通过视角演化定制实现沉浸式环境生成"},{"label":"💡 创新点","text":"提出基于视角演化的世界仿真定制方法，以锚点机制保证生成环境的物理一致性与连续性"},{"label":"📊 实验效果","text":"在具身仿真基准上验证了环境生成的鲁棒性和一致性，视觉质量和物理合理性优于对比方法"},{"label":"⭐ 整体评价","text":"Kling 团队的具身世界仿真新工作，锚点视角方案为第一人称环境生成提供了可控且一致的方案"}]
+    },
+    {
+        date: "2026-06-09",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "AHA-WAM: Asynchronous Horizon-Adaptive World-Action Modeling with Observation-Guided Context Routing",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 基于扩散 Transformer 架构提出异步自适应时域的世界-动作联合建模，通过观测引导的上下文路由实现高效推理 | 💡 创新点: 提出自适应时域与异步推理机制，根据观测复杂度动态调整预测窗口，大幅提升计算效率 | 📊 实验效果: 操作成功率达 92.8%，动作预测准确率 78.3%，推理速度实现 4.59 倍加速 | ⭐ 整体评价: 世界-动作模型的效率突破，自适应时域机制兼顾精度与速度，适合实时机器人部署场景",
+        tags: [["Robotics","green"],["World Model","green"],["VLA","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.09811"],["PDF","https://arxiv.org/pdf/2606.09811"],["Project","https://serene-sivy.github.io/aha-wam/"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于扩散 Transformer 架构提出异步自适应时域的世界-动作联合建模，通过观测引导的上下文路由实现高效推理"},{"label":"💡 创新点","text":"提出自适应时域与异步推理机制，根据观测复杂度动态调整预测窗口，大幅提升计算效率"},{"label":"📊 实验效果","text":"操作成功率达 92.8%，动作预测准确率 78.3%，推理速度实现 4.59 倍加速"},{"label":"⭐ 整体评价","text":"世界-动作模型的效率突破，自适应时域机制兼顾精度与速度，适合实时机器人部署场景"}]
+    },
+    {
+        date: "2026-06-09",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "SynManDex: Synthesizing Human-like Dexterous Grasps from Synthetic Human Pre-Grasps",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 从合成的人类预抓取姿态出发，通过优化流程生成类人灵巧手抓取姿态 | 💡 创新点: 利用合成人类预抓取作为初始化，结合物理优化生成高质量灵巧抓取，无需真实人手数据采集 | 📊 实验效果: 在多种物体类别上生成了稳定的灵巧抓取姿态，抓取成功率和自然度优于纯优化基线 | ⭐ 整体评价: 灵巧手抓取生成的新方案，合成预抓取策略降低了对真实数据的依赖，方向实用且前景广阔",
+        tags: [["Robotics","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.09798"],["PDF","https://arxiv.org/pdf/2606.09798"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"从合成的人类预抓取姿态出发，通过优化流程生成类人灵巧手抓取姿态"},{"label":"💡 创新点","text":"利用合成人类预抓取作为初始化，结合物理优化生成高质量灵巧抓取，无需真实人手数据采集"},{"label":"📊 实验效果","text":"在多种物体类别上生成了稳定的灵巧抓取姿态，抓取成功率和自然度优于纯优化基线"},{"label":"⭐ 整体评价","text":"灵巧手抓取生成的新方案，合成预抓取策略降低了对真实数据的依赖，方向实用且前景广阔"}]
+    },
+    {
+        date: "2026-06-09",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "FASE: Fast Adaptive Semantic Entropy for Code Quality",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 基于多智能体协作与快速自适应语义熵估计，提出代码质量评估的新方法 | 💡 创新点: 将语义熵概念引入代码质量检测，通过自适应采样策略大幅降低计算开销 | 📊 实验效果: 代码质量检测准确率提升 25%，误报率降低 19%，仅需 8B 参数模型即可实现有效评估 | ⭐ 整体评价: 代码质量自动评估的实用方案，语义熵方法具有良好的可解释性，对代码生成质量控制有价值",
+        tags: [["Agent","green"],["Code","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.09800"],["PDF","https://arxiv.org/pdf/2606.09800"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于多智能体协作与快速自适应语义熵估计，提出代码质量评估的新方法"},{"label":"💡 创新点","text":"将语义熵概念引入代码质量检测，通过自适应采样策略大幅降低计算开销"},{"label":"📊 实验效果","text":"代码质量检测准确率提升 25%，误报率降低 19%，仅需 8B 参数模型即可实现有效评估"},{"label":"⭐ 整体评价","text":"代码质量自动评估的实用方案，语义熵方法具有良好的可解释性，对代码生成质量控制有价值"}]
+    },
+    {
+        date: "2026-06-09",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "ResearchClawBench: A Benchmark for End-to-End Autonomous Scientific Research",
+        venue: "arXiv 2026 · HF 热门 · InternScience",
+        summary: "🔬 技术路线: 构建端到端自主科研基准测试，涵盖文献检索、实验设计、数据分析到论文撰写的全流程评估 | 💡 创新点: 首个覆盖科研全流程的专家级基准，由领域专家精心设计评测标准，实现多模态端到端评估 | 📊 实验效果: 当前最强智能体在该基准上仍有显著差距，揭示了自主科研系统的主要瓶颈环节 | ⭐ 整体评价: 科研智能体方向的重要基准工作，设计覆盖全面、评估严谨，对推动自主科研系统发展有指导意义",
+        tags: [["Agent","green"],["Benchmark","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.07591"],["PDF","https://arxiv.org/pdf/2606.07591"],["Project","https://internscience.github.io/ResearchClawBench-Home/"],["Code","https://github.com/InternScience/ResearchClawBench"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"构建端到端自主科研基准测试，涵盖文献检索、实验设计、数据分析到论文撰写的全流程评估"},{"label":"💡 创新点","text":"首个覆盖科研全流程的专家级基准，由领域专家精心设计评测标准，实现多模态端到端评估"},{"label":"📊 实验效果","text":"当前最强智能体在该基准上仍有显著差距，揭示了自主科研系统的主要瓶颈环节"},{"label":"⭐ 整体评价","text":"科研智能体方向的重要基准工作，设计覆盖全面、评估严谨，对推动自主科研系统发展有指导意义"}]
+    },
+    {
+        date: "2026-06-09",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "OmniGameArena: A Unified UE5 Benchmark for VLM Game Agents with Improvement Dynamics",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 基于虚幻引擎 5 构建统一的视觉语言模型游戏智能体基准，评估多种游戏场景下的进步动态 | 💡 创新点: 首个基于 UE5 的统一游戏智能体基准，支持实时交互评估与进步曲线追踪 | 📊 实验效果: 对多个视觉语言模型进行了全面评测，揭示了不同模型在游戏理解与决策上的能力差异 | ⭐ 整体评价: 游戏智能体评估方向的基础设施工作，统一框架有助于公平对比不同视觉语言模型的交互能力",
+        tags: [["Multimodal","green"],["Agent","green"],["Benchmark","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.09826"],["PDF","https://arxiv.org/pdf/2606.09826"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于虚幻引擎 5 构建统一的视觉语言模型游戏智能体基准，评估多种游戏场景下的进步动态"},{"label":"💡 创新点","text":"首个基于 UE5 的统一游戏智能体基准，支持实时交互评估与进步曲线追踪"},{"label":"📊 实验效果","text":"对多个视觉语言模型进行了全面评测，揭示了不同模型在游戏理解与决策上的能力差异"},{"label":"⭐ 整体评价","text":"游戏智能体评估方向的基础设施工作，统一框架有助于公平对比不同视觉语言模型的交互能力"}]
+    },
+    {
+        date: "2026-06-09",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "Imaginative Perception Tokens Enhance Spatial Reasoning in Multimodal Language Models",
+        venue: "arXiv 2026 · HF 热门 · University of Washington",
+        summary: "🔬 技术路线: 在多模态语言模型中引入想象感知标记，通过生成中间视觉表征增强空间推理能力 | 💡 创新点: 提出想象感知标记机制，让模型在推理过程中主动生成辅助视觉表征以增强空间理解 | 📊 实验效果: 在空间推理基准上取得 3.4% 的性能提升，仅需 20K 训练样本即可实现有效增强 | ⭐ 整体评价: 多模态空间推理的新机制，想象标记思路新颖且训练高效，对提升视觉推理具有参考价值",
+        tags: [["Multimodal","green"],["Reasoning","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.03988"],["PDF","https://arxiv.org/pdf/2606.03988"],["Project","https://mahtabbigverdi.github.io/Imaginative-tokens.github.io/"],["Code","https://github.com/weikaih04/Imaginative-Perception-Token"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"在多模态语言模型中引入想象感知标记，通过生成中间视觉表征增强空间推理能力"},{"label":"💡 创新点","text":"提出想象感知标记机制，让模型在推理过程中主动生成辅助视觉表征以增强空间理解"},{"label":"📊 实验效果","text":"在空间推理基准上取得 3.4% 的性能提升，仅需 20K 训练样本即可实现有效增强"},{"label":"⭐ 整体评价","text":"多模态空间推理的新机制，想象标记思路新颖且训练高效，对提升视觉推理具有参考价值"}]
+    },
+    {
+        date: "2026-06-09",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "Direct 3D-Aware Object Insertion via Decomposed Visual Proxies",
+        venue: "arXiv 2026 · HF 热门",
+        summary: "🔬 技术路线: 通过分解视觉代理实现三维感知的物体插入，将几何、光照和语义信息分别建模后融合 | 💡 创新点: 提出目标-集成的分解视觉代理方案，无需显式三维重建即可实现物理合理的物体插入 | 📊 实验效果: 在三维感知物体插入任务上生成质量和物理合理性优于现有方法，视觉效果自然逼真 | ⭐ 整体评价: 三维感知图像编辑的实用方案，分解代理策略简洁有效，对三维内容创作工具链有应用价值",
+        tags: [["Multimodal","green"],["3D","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.06601"],["PDF","https://arxiv.org/pdf/2606.06601"],["Project","https://gong1130.github.io/DIRECT/"],["Code","https://github.com/Gong1130/DIRECT"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"通过分解视觉代理实现三维感知的物体插入，将几何、光照和语义信息分别建模后融合"},{"label":"💡 创新点","text":"提出目标-集成的分解视觉代理方案，无需显式三维重建即可实现物理合理的物体插入"},{"label":"📊 实验效果","text":"在三维感知物体插入任务上生成质量和物理合理性优于现有方法，视觉效果自然逼真"},{"label":"⭐ 整体评价","text":"三维感知图像编辑的实用方案，分解代理策略简洁有效，对三维内容创作工具链有应用价值"}]
+    },
+    {
+        date: "2026-06-09",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "SoCRATES: Towards Reliable Automated Evaluation of Proactive LLM Mediation across Domains and Socio-cognitive Variations",
+        venue: "arXiv 2026 · HF 热门 · Data Intelligence System Lab",
+        summary: "🔬 技术路线: 构建跨领域的主动式大语言模型调解自动评估基准，覆盖多种社会认知变异场景 | 💡 创新点: 提出 SoCRATES 评估框架，首次将社会认知差异纳入大语言模型主动调解能力的评估体系 | 📊 实验效果: 在多领域对话调解任务上验证了评估框架的可靠性和区分度，揭示了模型间的显著差异 | ⭐ 整体评价: 大语言模型社会能力评估的重要工作，对理解模型在实际社交场景中的调解表现有参考价值",
+        tags: [["LLM","green"],["Benchmark","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.05563"],["PDF","https://arxiv.org/pdf/2606.05563"],["Project","https://disl-lab.github.io/SoCRATES/"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"构建跨领域的主动式大语言模型调解自动评估基准，覆盖多种社会认知变异场景"},{"label":"💡 创新点","text":"提出 SoCRATES 评估框架，首次将社会认知差异纳入大语言模型主动调解能力的评估体系"},{"label":"📊 实验效果","text":"在多领域对话调解任务上验证了评估框架的可靠性和区分度，揭示了模型间的显著差异"},{"label":"⭐ 整体评价","text":"大语言模型社会能力评估的重要工作，对理解模型在实际社交场景中的调解表现有参考价值"}]
+    },
+    {
+        date: "2026-06-09",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "An Agency-Transferring Model-Free Policy Enhancement Technique",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 提出无模型的智能体策略增强技术，通过代理性转移机制提升已有策略的决策质量 | 💡 创新点: 设计代理性转移框架，无需环境模型即可将高质量策略能力迁移增强到目标策略中 | 📊 实验效果: 在多个强化学习基准上验证了策略增强的有效性，训练效率和最终性能均有提升 | ⭐ 整体评价: 强化学习策略提升的新思路，无模型特性降低了应用门槛，对策略复用和迁移场景有参考意义",
+        tags: [["RL","green"],["LLM","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.09825"],["PDF","https://arxiv.org/pdf/2606.09825"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出无模型的智能体策略增强技术，通过代理性转移机制提升已有策略的决策质量"},{"label":"💡 创新点","text":"设计代理性转移框架，无需环境模型即可将高质量策略能力迁移增强到目标策略中"},{"label":"📊 实验效果","text":"在多个强化学习基准上验证了策略增强的有效性，训练效率和最终性能均有提升"},{"label":"⭐ 整体评价","text":"强化学习策略提升的新思路，无模型特性降低了应用门槛，对策略复用和迁移场景有参考意义"}]
+    },
+    {
+        date: "2026-06-09",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "MMAE: A Massive Multitask Audio Editing Benchmark",
+        venue: "arXiv 2026 · HF 热门",
+        summary: "🔬 技术路线: 构建大规模多任务音频编辑基准，覆盖语音增强、音效合成、音乐编辑等多种子任务 | 💡 创新点: 首个覆盖音频编辑全任务谱系的大规模基准，提供统一评估框架和多维度指标体系 | 📊 实验效果: 对多个音频模型进行了全面评测，揭示了当前模型在复杂音频编辑任务上的能力边界 | ⭐ 整体评价: 音频编辑领域的重要基准设施，全面的任务覆盖和统一评估框架将推动该方向的快速发展",
+        tags: [["Multimodal","green"],["Audio","green"],["Benchmark","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.07229"],["PDF","https://arxiv.org/pdf/2606.07229"],["Code","https://github.com/ddlBoJack/MMAE"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"构建大规模多任务音频编辑基准，覆盖语音增强、音效合成、音乐编辑等多种子任务"},{"label":"💡 创新点","text":"首个覆盖音频编辑全任务谱系的大规模基准，提供统一评估框架和多维度指标体系"},{"label":"📊 实验效果","text":"对多个音频模型进行了全面评测，揭示了当前模型在复杂音频编辑任务上的能力边界"},{"label":"⭐ 整体评价","text":"音频编辑领域的重要基准设施，全面的任务覆盖和统一评估框架将推动该方向的快速发展"}]
+    },
+    {
+        date: "2026-06-09",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "OpenAI 向 SEC 提交保密 S-1 招股书",
+        venue: "",
+        summary: "OpenAI 正式向美国证券交易委员会提交了保密版 S-1 招股书，标志着其 IPO 进程的重要一步。这是人工智能领域最受关注的上市事件之一。",
+        tags: [],
+        links: [["来源","https://openai.com/index/openai-submits-confidential-s-1/"]]
+    },
+    {
+        date: "2026-06-09",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "OpenAI 发布\"惠及所有人\"战略规划",
+        venue: "",
+        summary: "OpenAI 公布了新的公司战略规划，强调构建惠及全人类的人工智能系统，详细阐述了其在安全性、可及性和公平性方面的承诺与路线图。",
+        tags: [],
+        links: [["来源","https://openai.com/index/built-to-benefit-everyone-our-plan/"]]
+    },
+    {
+        date: "2026-06-09",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "OpenAI 推出经济研究交流平台",
+        venue: "",
+        summary: "OpenAI 正式推出经济研究交流平台，旨在促进人工智能对经济影响的学术研究和政策讨论，搭建研究者与决策者之间的桥梁。",
+        tags: [],
+        links: [["来源","https://openai.com/index/economic-research-exchange/"]]
+    },
     // === 2026-06-08 ===
     {
         date: "2026-06-08",
@@ -13400,6 +13599,13 @@ const PAPERS_DB = [
 ];
 
 const DAILY_OVERVIEW = {
+    "2026-06-09": {
+        bannerTitle: "🔥 今日看点",
+        bannerSubtitle: "MemoryVLA++ 通过记忆与想象增强时序建模实现具身操作显著提升；iMaC 将动作翻译为运动与接触图像构建新型具身世界模型；AHA-WAM 异步自适应世界-动作模型实现 4.59 倍推理加速与 92.8% 成功率；OpenAI 提交 S-1 招股书，正式启动 IPO 进程",
+        picks: ["MemoryVLA++: Temporal Modeling via Memory and Imagination in Vision-Language-Action Models","iMaC: Translating Actions into Motion and Contact Images for Embodied World Models","AHA-WAM: Asynchronous Horizon-Adaptive World-Action Modeling with Observation-Guided Context Routing"],
+        totalPapers: 15,
+        totalNews: 3
+    },
     "2026-06-08": {
         bannerTitle: "🔥 今日看点",
         bannerSubtitle: "MemDreamer 提出层次化图记忆与智能体检索机制，解耦感知与推理实现小时级长视频理解；四足机器人基于可供性的分层强化学习框架实现灵巧足部操作；Agentopia 构建大规模智能体社会长期生活模拟与学习系统",
