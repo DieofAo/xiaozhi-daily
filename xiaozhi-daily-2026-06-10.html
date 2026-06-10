@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>小小志AI日报 - 2026年6月10日 周三</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans SC', sans-serif;
+  background: #0a0e1a;
+  color: #e0e6f0;
+  line-height: 1.7;
+  min-height: 100vh;
+}
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+header {
+  text-align: center;
+  margin-bottom: 48px;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, rgba(59,130,246,0.08) 0%, rgba(139,92,246,0.08) 100%);
+  border-radius: 20px;
+  border: 1px solid rgba(99,102,241,0.15);
+}
+header h1 {
+  font-size: 2rem;
+  background: linear-gradient(135deg, #60a5fa, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 8px;
+}
+header .date {
+  color: #94a3b8;
+  font-size: 1rem;
+}
+header .subtitle {
+  color: #64748b;
+  font-size: 0.9rem;
+  margin-top: 6px;
+}
+.highlight-banner {
+  background: linear-gradient(135deg, rgba(249,115,22,0.1) 0%, rgba(234,179,8,0.08) 100%);
+  border: 1px solid rgba(249,115,22,0.2);
+  border-radius: 14px;
+  padding: 20px 24px;
+  margin-bottom: 36px;
+}
+.hl-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fb923c;
+  margin-bottom: 8px;
+}
+.hl-text {
+  font-size: 0.92rem;
+  color: #cbd5e1;
+  line-height: 1.7;
+}
+.section {
+  margin-bottom: 40px;
+}
+.section-title {
+  font-size: 1.4rem;
+  color: #f1f5f9;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(99,102,241,0.2);
+}
+.paper-card {
+  background: rgba(30,41,59,0.6);
+  border: 1px solid rgba(99,102,241,0.12);
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 16px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.paper-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(99,102,241,0.1);
+  border-color: rgba(99,102,241,0.3);
+}
+.paper-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #f8fafc;
+  margin-bottom: 8px;
+}
+.paper-meta {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-bottom: 10px;
+}
+.summary-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+@media (max-width: 640px) {
+  .summary-grid { grid-template-columns: 1fr; }
+}
+.summary-item {
+  background: rgba(15,23,42,0.5);
+  border-radius: 10px;
+  padding: 12px 14px;
+  border: 1px solid rgba(99,102,241,0.08);
+}
+.summary-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #818cf8;
+  margin-bottom: 4px;
+}
+.summary-text {
+  font-size: 0.88rem;
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+.paper-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.tag {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+.tag-agent { background: rgba(16,185,129,0.12); color: #34d399; }
+.tag-llm { background: rgba(99,102,241,0.12); color: #818cf8; }
+.tag-multimodal { background: rgba(244,114,182,0.12); color: #f472b6; }
+.tag-world { background: rgba(251,191,36,0.12); color: #fbbf24; }
+.tag-robot { background: rgba(251,146,60,0.12); color: #fb923c; }
+.tag-rl { background: rgba(45,212,191,0.12); color: #2dd4bf; }
+.tag-video { background: rgba(168,85,247,0.12); color: #a855f7; }
+.tag-benchmark { background: rgba(34,211,238,0.12); color: #22d3ee; }
+.tag-vla { background: rgba(59,130,246,0.12); color: #60a5fa; }
+.tag-safety { background: rgba(239,68,68,0.12); color: #f87171; }
+.tag-memory { background: rgba(192,132,252,0.12); color: #c084fc; }
+.tag-reasoning { background: rgba(132,204,22,0.12); color: #a3e635; }
+.tag-continual { background: rgba(6,182,212,0.12); color: #22d3ee; }
+.tag-embedding { background: rgba(217,119,6,0.12); color: #f59e0b; }
+.tag-nlp { background: rgba(34,211,238,0.12); color: #22d3ee; }
+.tag-code { background: rgba(52,211,153,0.12); color: #34d399; }
+.tag-audio { background: rgba(251,146,60,0.12); color: #fb923c; }
+.tag-3d { background: rgba(168,85,247,0.12); color: #a855f7; }
+.tag-distill { background: rgba(234,179,8,0.12); color: #eab308; }
+.tag-attention { background: rgba(139,92,246,0.12); color: #a78bfa; }
+.hot-badge {
+  display: inline;
+  margin-right: 4px;
+}
+.info-card {
+  background: rgba(30,41,59,0.6);
+  border: 1px solid rgba(99,102,241,0.12);
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 16px;
+}
+.paper-summary {
+  font-size: 0.9rem;
+  color: #cbd5e1;
+  line-height: 1.7;
+  margin-bottom: 14px;
+}
+.paper-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.paper-links a {
+  display: inline-block;
+  padding: 5px 14px;
+  background: rgba(99,102,241,0.12);
+  color: #818cf8;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+.paper-links a:hover {
+  background: rgba(99,102,241,0.25);
+}
+.stats {
+  text-align: center;
+  padding: 30px;
+  margin-top: 40px;
+  background: rgba(30,41,59,0.4);
+  border-radius: 14px;
+  border: 1px solid rgba(99,102,241,0.1);
+}
+.stats h3 {
+  color: #94a3b8;
+  font-size: 1rem;
+  margin-bottom: 12px;
+}
+.stats p {
+  color: #64748b;
+  font-size: 0.9rem;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+  <h1>📡 小小志AI日报</h1>
+  <div class="date">2026年6月10日 · 周三</div>
+  <div class="subtitle">arXiv 8 篇 · HF 热门 8 篇</div>
+</header>
+
+<div class="highlight-banner">
+  <div class="hl-title">🔥 今日看点</div>
+  <div class="hl-text">Next Forcing 提出多块因果预测框架实现自回归视频生成 2.3 倍加速与 93% 以上准确率；TacForeSight 力引导触觉世界模型为接触式操作提供新范式；微软 Latent Spatial Memory 通过潜空间记忆实现视频世界模型 10.57 倍加速并保持三维空间一致性；FlashMemory-DeepSeek-V4 实现 50 万 token 超长上下文闪电索引</div>
+</div>
+
+<section class="section">
+  <h2 class="section-title">🌍 World Model · 世界模型</h2>
+
+  <div class="paper-card">
+    <div class="paper-title"><span class="hot-badge">🔥</span> Next Forcing: Causal World Modeling with Multi-Chunk Prediction</div>
+    <div class="paper-meta">arXiv 2026</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">基于多块因果预测的自回归视频生成框架，将传统逐帧预测升级为多块并行生成</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出因果世界建模的多块预测机制，在保持因果性的同时实现并行加速，兼顾质量与效率</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">准确率达 93.1% 和 93.5%，推理速度提升 2.3 倍，训练数据效率提升 50%</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">自回归视频生成的重要加速方案，多块预测思路对世界模型实时应用有重要参考价值</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-world">World Model</span>
+      <span class="tag tag-video">Video Generation</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.11187" target="_blank">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.11187" target="_blank">PDF</a>
+      <a href="https://gangweix.github.io/next-forcing/" target="_blank">Project</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title"><span class="hot-badge">🔥</span> TacForeSight: Force-Guided Tactile World Model for Contact-Rich Manipulation</div>
+    <div class="paper-meta">arXiv 2026</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">基于模仿学习和交叉注意力的触觉世界模型，通过力引导实现接触密集型操作的预测与规划</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次将力信号作为引导条件融入触觉世界模型，建立触觉-力-动作之间的因果预测链</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在多种接触密集操作任务（抓取、推动、装配）上验证了实时性和有效性，优于纯视觉基线</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">触觉世界模型的重要突破，力引导机制为机器人精细操作提供了更可靠的物理交互预测能力</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-world">World Model</span>
+      <span class="tag tag-robot">Robotics</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.11184" target="_blank">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.11184" target="_blank">PDF</a>
+      <a href="https://tacforesight.github.io/ProjectPage" target="_blank">Project</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title"><span class="hot-badge">🔥</span> Latent Spatial Memory for Video World Models</div>
+    <div class="paper-meta">arXiv 2026 · HF 热门 · Microsoft Research</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">基于扩散模型的视频世界模型，引入潜空间记忆机制维持跨帧三维空间一致性</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出潜在空间记忆结构，端到端学习空间表征缓存，使视频世界模型在长序列中保持几何一致</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">推理速度提升 10.57 倍，在 WorldScore 基准上取得优异表现，支持 10K 帧以上的长视频生成</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">微软在视频世界模型领域的重磅工作，兼顾了空间一致性与效率，开源代码已获 88 星</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-world">World Model</span>
+      <span class="tag tag-memory">Memory</span>
+      <span class="tag tag-video">Video</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.09828" target="_blank">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.09828" target="_blank">PDF</a>
+      <a href="https://microsoft.github.io/LatentSpatialMemory/" target="_blank">Project</a>
+      <a href="https://github.com/microsoft/LatentSpatialMemory" target="_blank">Code</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2 class="section-title">🧩 Agent · 智能体</h2>
+
+  <div class="paper-card">
+    <div class="paper-title">EEVEE: Towards Test-time Prompt Learning in the Real World for Self-Improving Agents</div>
+    <div class="paper-meta">arXiv 2026</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出测试时提示学习框架，使智能体在部署后通过自我反馈持续优化其提示策略</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">将测试时学习引入智能体领域，无需重新训练即可在真实环境中自适应改进任务执行能力</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">基于 Qwen3-4B 模型在基准测试上取得 37.2% 到 48.2% 的性能提升，验证了自改进的有效性</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">智能体自我进化方向的有价值探索，测试时学习思路对部署后持续优化有实际应用前景</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-agent">Agent</span>
+      <span class="tag tag-llm">LLM</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.11182" target="_blank">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.11182" target="_blank">PDF</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">Data Journalist Agent: Transforming Data into Verifiable Multimodal Stories</div>
+    <div class="paper-meta">arXiv 2026</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">构建数据新闻写作智能体，自动将结构化数据转化为可验证的多模态叙事内容</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">将数据驱动新闻写作全流程自动化，生成的内容同时包含文本、图表且支持溯源验证</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在数据新闻生成任务上验证了方法的可行性，生成内容的准确性和可读性均获积极评估</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">智能体在内容生产领域的创新应用，可验证性设计是亮点，对自动报告生成有参考价值</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-agent">Agent</span>
+      <span class="tag tag-multimodal">Multimodal</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.11176" target="_blank">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.11176" target="_blank">PDF</a>
+      <a href="https://data2story.github.io" target="_blank">Project</a>
+      <a href="https://github.com/QinghongLin/data2story-skill" target="_blank">Code</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">Agents' Last Exam</div>
+    <div class="paper-meta">arXiv 2026 · HF 热门 · UC Berkeley</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">构建面向智能体的综合能力终极基准测试，覆盖复杂推理、工具使用、规划等多维度评估</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">设计贴近真实世界复杂任务的评估体系，首次系统性地衡量智能体在高难度场景中的综合表现</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">当前最强模型仅达 2.6% 通过率，包含约 1000 道测试题，充分暴露了现有智能体的能力瓶颈</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">来自伯克利的高质量基准，极低通过率表明智能体距离通用任务解决仍有很大差距，开源 275 星</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-agent">Agent</span>
+      <span class="tag tag-benchmark">Benchmark</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.05405" target="_blank">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.05405" target="_blank">PDF</a>
+      <a href="https://agents-last-exam.org/" target="_blank">Project</a>
+      <a href="https://github.com/rdi-berkeley/agents-last-exam" target="_blank">Code</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">SWE-Explore: Benchmarking How Coding Agents Explore Repositories</div>
+    <div class="paper-meta">arXiv 2026 · HF 热门 · 上海交通大学</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">构建针对代码智能体仓库探索能力的专项基准，评估其在大规模代码库中的导航与定位能力</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次专注于智能体的代码探索行为而非最终修复结果，提出仓库级理解能力的系统评测方案</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在代码定位与预测任务上对多种智能体进行了对比评估，揭示了探索策略的关键差异</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">上交大的代码智能体评测新维度，对理解和改进编程智能体的代码理解策略有实际指导意义</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-agent">Agent</span>
+      <span class="tag tag-code">Code</span>
+      <span class="tag tag-benchmark">Benchmark</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.07297" target="_blank">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.07297" target="_blank">PDF</a>
+      <a href="https://huggingface.co/datasets/SWE-Explore-Bench/SWE-Explore-Bench" target="_blank">Project</a>
+      <a href="https://github.com/Qiushao-E/SWE-Explore-Bench" target="_blank">Code</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">LatentSkill: From In-Context Textual Skills to In-Weight Latent Skills for LLM Agents</div>
+    <div class="paper-meta">arXiv 2026 · HF 热门</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">将文本形式的上下文技能转化为模型权重中的潜在技能表征，减少上下文长度依赖</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出从显式文本技能到隐式权重技能的蒸馏方案，使智能体无需冗长提示即可调用复杂能力</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在搜索问答任务上达到 64.1% 至 72.2% 的准确率，显著优于纯上下文学习基线</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">智能体技能内化的有趣方向，将技能从上下文迁移到权重，对长期记忆和技能复用有启发</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-agent">Agent</span>
+      <span class="tag tag-llm">LLM</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.06087" target="_blank">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.06087" target="_blank">PDF</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2 class="section-title">🎨 Multimodal · 多模态</h2>
+
+  <div class="paper-card">
+    <div class="paper-title">ARM: An AutoRegressive Large Multimodal Model with Unified Discrete Representations</div>
+    <div class="paper-meta">arXiv 2026</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">基于统一离散表征的自回归大型多模态模型，将图像、文本、音频统一为离散 token 序列</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出跨模态统一离散编码方案，使单一自回归模型同时处理多种模态的生成与理解任务</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">7B 参数规模下在 GEdit-Bench 等基准上取得有竞争力的表现，验证了统一表征的可扩展性</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">多模态统一建模方向的扎实工作，离散表征路线对构建通用多模态模型有重要参考价值</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-multimodal">Multimodal</span>
+      <span class="tag tag-llm">LLM</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.11188" target="_blank">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.11188" target="_blank">PDF</a>
+      <a href="https://github.com/wdrink/ARM" target="_blank">Code</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">SpatialWorld: Benchmarking Interactive Spatial Reasoning of Multimodal Agents in Real-World Tasks</div>
+    <div class="paper-meta">arXiv 2026 · HF 热门 · 清华大学</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">构建面向多模态智能体的交互式空间推理基准，在真实场景中评估空间理解与操作能力</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次系统性评估多模态智能体在真实世界任务中的空间推理能力，涵盖导航、布局、物体关系等</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">当前最强模型 GPT-5 仅达 17.4% 和 14.1% 的任务完成率，揭示空间推理仍为核心难题</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">清华大学的高质量基准测试，极低通过率说明空间推理是多模态智能体亟需突破的能力瓶颈</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-multimodal">Multimodal</span>
+      <span class="tag tag-benchmark">Benchmark</span>
+      <span class="tag tag-reasoning">Reasoning</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.09669" target="_blank">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.09669" target="_blank">PDF</a>
+      <a href="https://spatial-world.github.io" target="_blank">Project</a>
+      <a href="https://github.com/Hongcheng-Gao/SpatialWorld" target="_blank">Code</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2 class="section-title">🧠 LLM · 大语言模型</h2>
+
+  <div class="paper-card">
+    <div class="paper-title"><span class="hot-badge">🔥</span> FlashMemory-DeepSeek-V4: Lightning Index Ultra-Long Context via Lookahead Sparse Attention</div>
+    <div class="paper-meta">arXiv 2026 · HF 热门 · Tencent</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">基于前瞻稀疏注意力机制，为 DeepSeek-V4 实现超长上下文的闪电索引与高效推理</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出前瞻式稀疏注意力策略，在保持 90% 以上精度的同时大幅降低长上下文的计算开销</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">支持 50 万 token 上下文，精度损失仅 0.6%，注意力计算节省 13.5%，保持 90% 以上准确率</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">腾讯在超长上下文推理加速方向的重要贡献，对大模型工程化部署有实际价值，已开源 12 星</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-llm">LLM</span>
+      <span class="tag tag-attention">Attention</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.09079" target="_blank">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.09079" target="_blank">PDF</a>
+      <a href="https://github.com/libertywing/FlashMemory-Deepseek-V4" target="_blank">Code</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">On the Geometry of On-Policy Distillation</div>
+    <div class="paper-meta">arXiv 2026 · HF 热门 · 香港科技大学</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">从几何视角分析在线策略蒸馏过程中的损失景观，揭示蒸馏效率的理论基础</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次从几何角度解释在线蒸馏为何优于离线蒸馏，为蒸馏策略选择提供理论依据</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在语言模型生成任务上验证了几何分析的预测与实际蒸馏效果的一致性</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">模型蒸馏的理论性工作，几何分析视角新颖，对理解和改进知识蒸馏策略有启发意义</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-llm">LLM</span>
+      <span class="tag tag-distill">Distillation</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.07082" target="_blank">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.07082" target="_blank">PDF</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">Flaws in the LLM Automation Narrative</div>
+    <div class="paper-meta">arXiv 2026</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">通过系统性分析当前大语言模型自动化叙事中的逻辑漏洞，提出批判性审视框架</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">系统梳理了大模型自动化宣传中被忽视的假设与局限性，提出务实的能力边界划定方法</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">通过案例分析与文献综述验证了多个自动化叙事中的逻辑缺陷和过度承诺</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">对大模型泡沫的冷静反思，在行业过热期具有纠偏价值，建议关注对实际落地预期的影响</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-llm">LLM</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.11166" target="_blank">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.11166" target="_blank">PDF</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2 class="section-title">📄 Informations · 其他研究</h2>
+
+  <div class="paper-card">
+    <div class="paper-title">AnyMod-LLVE: Low-Light Video Enhancement with Modality-Agnostic Inference</div>
+    <div class="paper-meta">arXiv 2026</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出模态无关推理框架，在低光照视频增强中实现跨模态统一处理</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">设计模态无关的推理机制，训练时融合多模态信息，推理时仅需单一模态输入即可增强视频</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在多种低光照条件下均取得优异增强效果，方法具有良好鲁棒性和通用性</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">视频增强领域的实用研究，模态无关设计使部署更灵活，对视觉感知系统有应用价值</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-multimodal">Multimodal</span>
+      <span class="tag tag-video">Video</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.11186" target="_blank">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.11186" target="_blank">PDF</a>
+      <a href="https://lhfgghc.github.io/LLVE-AMNet" target="_blank">Project</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">Multi-Faceted Interactivity Alignment in Full-Duplex Speech Models</div>
+    <div class="paper-meta">arXiv 2026</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">基于强化学习的全双工语音模型交互性对齐框架，实现多维度的实时对话交互优化</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出多维度交互性对齐方案，从轮次切换、情感响应、打断处理等方面全面提升全双工体验</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在全双工对话场景中的自然度和响应及时性指标上取得显著提升</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">语音交互领域的前沿探索，全双工对齐对下一代语音助手体验至关重要，实用价值高</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-llm">LLM</span>
+      <span class="tag tag-audio">Audio</span>
+      <span class="tag tag-rl">RL</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.11167" target="_blank">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.11167" target="_blank">PDF</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">CoVEBench: Can Video Editing Models Handle Complex Instructions?</div>
+    <div class="paper-meta">arXiv 2026 · HF 热门 · NJU-LINK Lab</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">构建面向视频编辑模型的复杂指令理解能力基准测试，采用多模态大模型作为评判</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次针对视频编辑的复杂组合指令设计系统评测，填补了该领域基准测试的空白</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">对多种视频编辑模型进行了全面评测，揭示了现有模型在复杂指令上的显著不足</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">南京大学的视频编辑评测工具，对推动视频编辑模型的指令理解能力提升有重要参考价值</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-video">Video</span>
+      <span class="tag tag-benchmark">Benchmark</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.08415" target="_blank">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.08415" target="_blank">PDF</a>
+      <a href="https://nju-link.github.io/CoVEBench/" target="_blank">Project</a>
+      <a href="https://github.com/NJU-LINK/CoVEBench" target="_blank">Code</a>
+    </div>
+  </div>
+</section>
+
+<div class="stats">
+  <h3>📊 今日统计</h3>
+  <p>共收录 16 篇论文 · arXiv 8 篇 · HuggingFace 热门 8 篇</p>
+  <p>World Model 3 · Agent 5 · Multimodal 2 · LLM 3 · Other 3</p>
+</div>
+</div>
+</body>
+</html>

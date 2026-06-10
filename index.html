@@ -658,6 +658,187 @@
 <script>
 // ===== DATA =====
 const PAPERS_DB = [
+    // === 2026-06-10 ===
+    {
+        date: "2026-06-10",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "Next Forcing: Causal World Modeling with Multi-Chunk Prediction",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 基于多块因果预测的自回归视频生成框架，将传统逐帧预测升级为多块并行生成 | 💡 创新点: 提出因果世界建模的多块预测机制，在保持因果性的同时实现并行加速，兼顾质量与效率 | 📊 实验效果: 准确率达 93.1% 和 93.5%，推理速度提升 2.3 倍，训练数据效率提升 50% | ⭐ 整体评价: 自回归视频生成的重要加速方案，多块预测思路对世界模型实时应用有重要参考价值",
+        tags: [["World Model","green"],["Video Generation","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.11187"],["PDF","https://arxiv.org/pdf/2606.11187"],["Project","https://gangweix.github.io/next-forcing/"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于多块因果预测的自回归视频生成框架，将传统逐帧预测升级为多块并行生成"},{"label":"💡 创新点","text":"提出因果世界建模的多块预测机制，在保持因果性的同时实现并行加速，兼顾质量与效率"},{"label":"📊 实验效果","text":"准确率达 93.1% 和 93.5%，推理速度提升 2.3 倍，训练数据效率提升 50%"},{"label":"⭐ 整体评价","text":"自回归视频生成的重要加速方案，多块预测思路对世界模型实时应用有重要参考价值"}]
+    },
+    {
+        date: "2026-06-10",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "TacForeSight: Force-Guided Tactile World Model for Contact-Rich Manipulation",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 基于模仿学习和交叉注意力的触觉世界模型，通过力引导实现接触密集型操作的预测与规划 | 💡 创新点: 首次将力信号作为引导条件融入触觉世界模型，建立触觉-力-动作之间的因果预测链 | 📊 实验效果: 在多种接触密集操作任务（抓取、推动、装配）上验证了实时性和有效性，优于纯视觉基线 | ⭐ 整体评价: 触觉世界模型的重要突破，力引导机制为机器人精细操作提供了更可靠的物理交互预测能力",
+        tags: [["World Model","green"],["Robotics","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.11184"],["PDF","https://arxiv.org/pdf/2606.11184"],["Project","https://tacforesight.github.io/ProjectPage"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于模仿学习和交叉注意力的触觉世界模型，通过力引导实现接触密集型操作的预测与规划"},{"label":"💡 创新点","text":"首次将力信号作为引导条件融入触觉世界模型，建立触觉-力-动作之间的因果预测链"},{"label":"📊 实验效果","text":"在多种接触密集操作任务（抓取、推动、装配）上验证了实时性和有效性，优于纯视觉基线"},{"label":"⭐ 整体评价","text":"触觉世界模型的重要突破，力引导机制为机器人精细操作提供了更可靠的物理交互预测能力"}]
+    },
+    {
+        date: "2026-06-10",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "Latent Spatial Memory for Video World Models",
+        venue: "arXiv 2026 · HF 热门 · Microsoft Research",
+        summary: "🔬 技术路线: 基于扩散模型的视频世界模型，引入潜空间记忆机制维持跨帧三维空间一致性 | 💡 创新点: 提出潜在空间记忆结构，端到端学习空间表征缓存，使视频世界模型在长序列中保持几何一致 | 📊 实验效果: 推理速度提升 10.57 倍，在 WorldScore 基准上取得优异表现，支持 10K 帧以上的长视频生成 | ⭐ 整体评价: 微软在视频世界模型领域的重磅工作，兼顾了空间一致性与效率，开源代码已获 88 星",
+        tags: [["World Model","green"],["Memory","green"],["Video","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.09828"],["PDF","https://arxiv.org/pdf/2606.09828"],["Project","https://microsoft.github.io/LatentSpatialMemory/"],["Code","https://github.com/microsoft/LatentSpatialMemory"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于扩散模型的视频世界模型，引入潜空间记忆机制维持跨帧三维空间一致性"},{"label":"💡 创新点","text":"提出潜在空间记忆结构，端到端学习空间表征缓存，使视频世界模型在长序列中保持几何一致"},{"label":"📊 实验效果","text":"推理速度提升 10.57 倍，在 WorldScore 基准上取得优异表现，支持 10K 帧以上的长视频生成"},{"label":"⭐ 整体评价","text":"微软在视频世界模型领域的重磅工作，兼顾了空间一致性与效率，开源代码已获 88 星"}]
+    },
+    {
+        date: "2026-06-10",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "EEVEE: Towards Test-time Prompt Learning in the Real World for Self-Improving Agents",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 提出测试时提示学习框架，使智能体在部署后通过自我反馈持续优化其提示策略 | 💡 创新点: 将测试时学习引入智能体领域，无需重新训练即可在真实环境中自适应改进任务执行能力 | 📊 实验效果: 基于 Qwen3-4B 模型在基准测试上取得 37.2% 到 48.2% 的性能提升，验证了自改进的有效性 | ⭐ 整体评价: 智能体自我进化方向的有价值探索，测试时学习思路对部署后持续优化有实际应用前景",
+        tags: [["Agent","green"],["LLM","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.11182"],["PDF","https://arxiv.org/pdf/2606.11182"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出测试时提示学习框架，使智能体在部署后通过自我反馈持续优化其提示策略"},{"label":"💡 创新点","text":"将测试时学习引入智能体领域，无需重新训练即可在真实环境中自适应改进任务执行能力"},{"label":"📊 实验效果","text":"基于 Qwen3-4B 模型在基准测试上取得 37.2% 到 48.2% 的性能提升，验证了自改进的有效性"},{"label":"⭐ 整体评价","text":"智能体自我进化方向的有价值探索，测试时学习思路对部署后持续优化有实际应用前景"}]
+    },
+    {
+        date: "2026-06-10",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Data Journalist Agent: Transforming Data into Verifiable Multimodal Stories",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 构建数据新闻写作智能体，自动将结构化数据转化为可验证的多模态叙事内容 | 💡 创新点: 将数据驱动新闻写作全流程自动化，生成的内容同时包含文本、图表且支持溯源验证 | 📊 实验效果: 在数据新闻生成任务上验证了方法的可行性，生成内容的准确性和可读性均获积极评估 | ⭐ 整体评价: 智能体在内容生产领域的创新应用，可验证性设计是亮点，对自动报告生成有参考价值",
+        tags: [["Agent","green"],["Multimodal","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.11176"],["PDF","https://arxiv.org/pdf/2606.11176"],["Project","https://data2story.github.io"],["Code","https://github.com/QinghongLin/data2story-skill"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"构建数据新闻写作智能体，自动将结构化数据转化为可验证的多模态叙事内容"},{"label":"💡 创新点","text":"将数据驱动新闻写作全流程自动化，生成的内容同时包含文本、图表且支持溯源验证"},{"label":"📊 实验效果","text":"在数据新闻生成任务上验证了方法的可行性，生成内容的准确性和可读性均获积极评估"},{"label":"⭐ 整体评价","text":"智能体在内容生产领域的创新应用，可验证性设计是亮点，对自动报告生成有参考价值"}]
+    },
+    {
+        date: "2026-06-10",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Agents' Last Exam",
+        venue: "arXiv 2026 · HF 热门 · UC Berkeley",
+        summary: "🔬 技术路线: 构建面向智能体的综合能力终极基准测试，覆盖复杂推理、工具使用、规划等多维度评估 | 💡 创新点: 设计贴近真实世界复杂任务的评估体系，首次系统性地衡量智能体在高难度场景中的综合表现 | 📊 实验效果: 当前最强模型仅达 2.6% 通过率，包含约 1000 道测试题，充分暴露了现有智能体的能力瓶颈 | ⭐ 整体评价: 来自伯克利的高质量基准，极低通过率表明智能体距离通用任务解决仍有很大差距，开源 275 星",
+        tags: [["Agent","green"],["Benchmark","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.05405"],["PDF","https://arxiv.org/pdf/2606.05405"],["Project","https://agents-last-exam.org/"],["Code","https://github.com/rdi-berkeley/agents-last-exam"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"构建面向智能体的综合能力终极基准测试，覆盖复杂推理、工具使用、规划等多维度评估"},{"label":"💡 创新点","text":"设计贴近真实世界复杂任务的评估体系，首次系统性地衡量智能体在高难度场景中的综合表现"},{"label":"📊 实验效果","text":"当前最强模型仅达 2.6% 通过率，包含约 1000 道测试题，充分暴露了现有智能体的能力瓶颈"},{"label":"⭐ 整体评价","text":"来自伯克利的高质量基准，极低通过率表明智能体距离通用任务解决仍有很大差距，开源 275 星"}]
+    },
+    {
+        date: "2026-06-10",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "SWE-Explore: Benchmarking How Coding Agents Explore Repositories",
+        venue: "arXiv 2026 · HF 热门 · 上海交通大学",
+        summary: "🔬 技术路线: 构建针对代码智能体仓库探索能力的专项基准，评估其在大规模代码库中的导航与定位能力 | 💡 创新点: 首次专注于智能体的代码探索行为而非最终修复结果，提出仓库级理解能力的系统评测方案 | 📊 实验效果: 在代码定位与预测任务上对多种智能体进行了对比评估，揭示了探索策略的关键差异 | ⭐ 整体评价: 上交大的代码智能体评测新维度，对理解和改进编程智能体的代码理解策略有实际指导意义",
+        tags: [["Agent","green"],["Code","green"],["Benchmark","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.07297"],["PDF","https://arxiv.org/pdf/2606.07297"],["Project","https://huggingface.co/datasets/SWE-Explore-Bench/SWE-Explore-Bench"],["Code","https://github.com/Qiushao-E/SWE-Explore-Bench"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"构建针对代码智能体仓库探索能力的专项基准，评估其在大规模代码库中的导航与定位能力"},{"label":"💡 创新点","text":"首次专注于智能体的代码探索行为而非最终修复结果，提出仓库级理解能力的系统评测方案"},{"label":"📊 实验效果","text":"在代码定位与预测任务上对多种智能体进行了对比评估，揭示了探索策略的关键差异"},{"label":"⭐ 整体评价","text":"上交大的代码智能体评测新维度，对理解和改进编程智能体的代码理解策略有实际指导意义"}]
+    },
+    {
+        date: "2026-06-10",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "LatentSkill: From In-Context Textual Skills to In-Weight Latent Skills for LLM Agents",
+        venue: "arXiv 2026 · HF 热门",
+        summary: "🔬 技术路线: 将文本形式的上下文技能转化为模型权重中的潜在技能表征，减少上下文长度依赖 | 💡 创新点: 提出从显式文本技能到隐式权重技能的蒸馏方案，使智能体无需冗长提示即可调用复杂能力 | 📊 实验效果: 在搜索问答任务上达到 64.1% 至 72.2% 的准确率，显著优于纯上下文学习基线 | ⭐ 整体评价: 智能体技能内化的有趣方向，将技能从上下文迁移到权重，对长期记忆和技能复用有启发",
+        tags: [["Agent","green"],["LLM","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.06087"],["PDF","https://arxiv.org/pdf/2606.06087"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"将文本形式的上下文技能转化为模型权重中的潜在技能表征，减少上下文长度依赖"},{"label":"💡 创新点","text":"提出从显式文本技能到隐式权重技能的蒸馏方案，使智能体无需冗长提示即可调用复杂能力"},{"label":"📊 实验效果","text":"在搜索问答任务上达到 64.1% 至 72.2% 的准确率，显著优于纯上下文学习基线"},{"label":"⭐ 整体评价","text":"智能体技能内化的有趣方向，将技能从上下文迁移到权重，对长期记忆和技能复用有启发"}]
+    },
+    {
+        date: "2026-06-10",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "ARM: An AutoRegressive Large Multimodal Model with Unified Discrete Representations",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 基于统一离散表征的自回归大型多模态模型，将图像、文本、音频统一为离散 token 序列 | 💡 创新点: 提出跨模态统一离散编码方案，使单一自回归模型同时处理多种模态的生成与理解任务 | 📊 实验效果: 7B 参数规模下在 GEdit-Bench 等基准上取得有竞争力的表现，验证了统一表征的可扩展性 | ⭐ 整体评价: 多模态统一建模方向的扎实工作，离散表征路线对构建通用多模态模型有重要参考价值",
+        tags: [["Multimodal","green"],["LLM","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.11188"],["PDF","https://arxiv.org/pdf/2606.11188"],["Code","https://github.com/wdrink/ARM"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于统一离散表征的自回归大型多模态模型，将图像、文本、音频统一为离散 token 序列"},{"label":"💡 创新点","text":"提出跨模态统一离散编码方案，使单一自回归模型同时处理多种模态的生成与理解任务"},{"label":"📊 实验效果","text":"7B 参数规模下在 GEdit-Bench 等基准上取得有竞争力的表现，验证了统一表征的可扩展性"},{"label":"⭐ 整体评价","text":"多模态统一建模方向的扎实工作，离散表征路线对构建通用多模态模型有重要参考价值"}]
+    },
+    {
+        date: "2026-06-10",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "SpatialWorld: Benchmarking Interactive Spatial Reasoning of Multimodal Agents in Real-World Tasks",
+        venue: "arXiv 2026 · HF 热门 · 清华大学",
+        summary: "🔬 技术路线: 构建面向多模态智能体的交互式空间推理基准，在真实场景中评估空间理解与操作能力 | 💡 创新点: 首次系统性评估多模态智能体在真实世界任务中的空间推理能力，涵盖导航、布局、物体关系等 | 📊 实验效果: 当前最强模型 GPT-5 仅达 17.4% 和 14.1% 的任务完成率，揭示空间推理仍为核心难题 | ⭐ 整体评价: 清华大学的高质量基准测试，极低通过率说明空间推理是多模态智能体亟需突破的能力瓶颈",
+        tags: [["Multimodal","green"],["Benchmark","green"],["Reasoning","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.09669"],["PDF","https://arxiv.org/pdf/2606.09669"],["Project","https://spatial-world.github.io"],["Code","https://github.com/Hongcheng-Gao/SpatialWorld"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"构建面向多模态智能体的交互式空间推理基准，在真实场景中评估空间理解与操作能力"},{"label":"💡 创新点","text":"首次系统性评估多模态智能体在真实世界任务中的空间推理能力，涵盖导航、布局、物体关系等"},{"label":"📊 实验效果","text":"当前最强模型 GPT-5 仅达 17.4% 和 14.1% 的任务完成率，揭示空间推理仍为核心难题"},{"label":"⭐ 整体评价","text":"清华大学的高质量基准测试，极低通过率说明空间推理是多模态智能体亟需突破的能力瓶颈"}]
+    },
+    {
+        date: "2026-06-10",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "FlashMemory-DeepSeek-V4: Lightning Index Ultra-Long Context via Lookahead Sparse Attention",
+        venue: "arXiv 2026 · HF 热门 · Tencent",
+        summary: "🔬 技术路线: 基于前瞻稀疏注意力机制，为 DeepSeek-V4 实现超长上下文的闪电索引与高效推理 | 💡 创新点: 提出前瞻式稀疏注意力策略，在保持 90% 以上精度的同时大幅降低长上下文的计算开销 | 📊 实验效果: 支持 50 万 token 上下文，精度损失仅 0.6%，注意力计算节省 13.5%，保持 90% 以上准确率 | ⭐ 整体评价: 腾讯在超长上下文推理加速方向的重要贡献，对大模型工程化部署有实际价值，已开源 12 星",
+        tags: [["LLM","green"],["Attention","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.09079"],["PDF","https://arxiv.org/pdf/2606.09079"],["Code","https://github.com/libertywing/FlashMemory-Deepseek-V4"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于前瞻稀疏注意力机制，为 DeepSeek-V4 实现超长上下文的闪电索引与高效推理"},{"label":"💡 创新点","text":"提出前瞻式稀疏注意力策略，在保持 90% 以上精度的同时大幅降低长上下文的计算开销"},{"label":"📊 实验效果","text":"支持 50 万 token 上下文，精度损失仅 0.6%，注意力计算节省 13.5%，保持 90% 以上准确率"},{"label":"⭐ 整体评价","text":"腾讯在超长上下文推理加速方向的重要贡献，对大模型工程化部署有实际价值，已开源 12 星"}]
+    },
+    {
+        date: "2026-06-10",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "On the Geometry of On-Policy Distillation",
+        venue: "arXiv 2026 · HF 热门 · 香港科技大学",
+        summary: "🔬 技术路线: 从几何视角分析在线策略蒸馏过程中的损失景观，揭示蒸馏效率的理论基础 | 💡 创新点: 首次从几何角度解释在线蒸馏为何优于离线蒸馏，为蒸馏策略选择提供理论依据 | 📊 实验效果: 在语言模型生成任务上验证了几何分析的预测与实际蒸馏效果的一致性 | ⭐ 整体评价: 模型蒸馏的理论性工作，几何分析视角新颖，对理解和改进知识蒸馏策略有启发意义",
+        tags: [["LLM","green"],["Distillation","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.07082"],["PDF","https://arxiv.org/pdf/2606.07082"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"从几何视角分析在线策略蒸馏过程中的损失景观，揭示蒸馏效率的理论基础"},{"label":"💡 创新点","text":"首次从几何角度解释在线蒸馏为何优于离线蒸馏，为蒸馏策略选择提供理论依据"},{"label":"📊 实验效果","text":"在语言模型生成任务上验证了几何分析的预测与实际蒸馏效果的一致性"},{"label":"⭐ 整体评价","text":"模型蒸馏的理论性工作，几何分析视角新颖，对理解和改进知识蒸馏策略有启发意义"}]
+    },
+    {
+        date: "2026-06-10",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Flaws in the LLM Automation Narrative",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 通过系统性分析当前大语言模型自动化叙事中的逻辑漏洞，提出批判性审视框架 | 💡 创新点: 系统梳理了大模型自动化宣传中被忽视的假设与局限性，提出务实的能力边界划定方法 | 📊 实验效果: 通过案例分析与文献综述验证了多个自动化叙事中的逻辑缺陷和过度承诺 | ⭐ 整体评价: 对大模型泡沫的冷静反思，在行业过热期具有纠偏价值，建议关注对实际落地预期的影响",
+        tags: [["LLM","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.11166"],["PDF","https://arxiv.org/pdf/2606.11166"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"通过系统性分析当前大语言模型自动化叙事中的逻辑漏洞，提出批判性审视框架"},{"label":"💡 创新点","text":"系统梳理了大模型自动化宣传中被忽视的假设与局限性，提出务实的能力边界划定方法"},{"label":"📊 实验效果","text":"通过案例分析与文献综述验证了多个自动化叙事中的逻辑缺陷和过度承诺"},{"label":"⭐ 整体评价","text":"对大模型泡沫的冷静反思，在行业过热期具有纠偏价值，建议关注对实际落地预期的影响"}]
+    },
+    {
+        date: "2026-06-10",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "AnyMod-LLVE: Low-Light Video Enhancement with Modality-Agnostic Inference",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 提出模态无关推理框架，在低光照视频增强中实现跨模态统一处理 | 💡 创新点: 设计模态无关的推理机制，训练时融合多模态信息，推理时仅需单一模态输入即可增强视频 | 📊 实验效果: 在多种低光照条件下均取得优异增强效果，方法具有良好鲁棒性和通用性 | ⭐ 整体评价: 视频增强领域的实用研究，模态无关设计使部署更灵活，对视觉感知系统有应用价值",
+        tags: [["Multimodal","green"],["Video","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.11186"],["PDF","https://arxiv.org/pdf/2606.11186"],["Project","https://lhfgghc.github.io/LLVE-AMNet"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出模态无关推理框架，在低光照视频增强中实现跨模态统一处理"},{"label":"💡 创新点","text":"设计模态无关的推理机制，训练时融合多模态信息，推理时仅需单一模态输入即可增强视频"},{"label":"📊 实验效果","text":"在多种低光照条件下均取得优异增强效果，方法具有良好鲁棒性和通用性"},{"label":"⭐ 整体评价","text":"视频增强领域的实用研究，模态无关设计使部署更灵活，对视觉感知系统有应用价值"}]
+    },
+    {
+        date: "2026-06-10",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "Multi-Faceted Interactivity Alignment in Full-Duplex Speech Models",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 基于强化学习的全双工语音模型交互性对齐框架，实现多维度的实时对话交互优化 | 💡 创新点: 提出多维度交互性对齐方案，从轮次切换、情感响应、打断处理等方面全面提升全双工体验 | 📊 实验效果: 在全双工对话场景中的自然度和响应及时性指标上取得显著提升 | ⭐ 整体评价: 语音交互领域的前沿探索，全双工对齐对下一代语音助手体验至关重要，实用价值高",
+        tags: [["LLM","green"],["Audio","green"],["RL","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.11167"],["PDF","https://arxiv.org/pdf/2606.11167"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于强化学习的全双工语音模型交互性对齐框架，实现多维度的实时对话交互优化"},{"label":"💡 创新点","text":"提出多维度交互性对齐方案，从轮次切换、情感响应、打断处理等方面全面提升全双工体验"},{"label":"📊 实验效果","text":"在全双工对话场景中的自然度和响应及时性指标上取得显著提升"},{"label":"⭐ 整体评价","text":"语音交互领域的前沿探索，全双工对齐对下一代语音助手体验至关重要，实用价值高"}]
+    },
+    {
+        date: "2026-06-10",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "CoVEBench: Can Video Editing Models Handle Complex Instructions?",
+        venue: "arXiv 2026 · HF 热门 · NJU-LINK Lab",
+        summary: "🔬 技术路线: 构建面向视频编辑模型的复杂指令理解能力基准测试，采用多模态大模型作为评判 | 💡 创新点: 首次针对视频编辑的复杂组合指令设计系统评测，填补了该领域基准测试的空白 | 📊 实验效果: 对多种视频编辑模型进行了全面评测，揭示了现有模型在复杂指令上的显著不足 | ⭐ 整体评价: 南京大学的视频编辑评测工具，对推动视频编辑模型的指令理解能力提升有重要参考价值",
+        tags: [["Video","green"],["Benchmark","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.08415"],["PDF","https://arxiv.org/pdf/2606.08415"],["Project","https://nju-link.github.io/CoVEBench/"],["Code","https://github.com/NJU-LINK/CoVEBench"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"构建面向视频编辑模型的复杂指令理解能力基准测试，采用多模态大模型作为评判"},{"label":"💡 创新点","text":"首次针对视频编辑的复杂组合指令设计系统评测，填补了该领域基准测试的空白"},{"label":"📊 实验效果","text":"对多种视频编辑模型进行了全面评测，揭示了现有模型在复杂指令上的显著不足"},{"label":"⭐ 整体评价","text":"南京大学的视频编辑评测工具，对推动视频编辑模型的指令理解能力提升有重要参考价值"}]
+    },
     // === 2026-06-09 ===
     {
         date: "2026-06-09",
@@ -13599,6 +13780,13 @@ const PAPERS_DB = [
 ];
 
 const DAILY_OVERVIEW = {
+    "2026-06-10": {
+        bannerTitle: "🔥 今日看点",
+        bannerSubtitle: "Next Forcing 提出多块因果预测框架实现自回归视频生成 2.3 倍加速与 93% 以上准确率；TacForeSight 力引导触觉世界模型为接触式操作提供新范式；微软 Latent Spatial Memory 通过潜空间记忆实现视频世界模型 10.57 倍加速并保持三维空间一致性；FlashMemory-DeepSeek-V4 实现 50 万 token 超长上下文闪电索引",
+        picks: ["Next Forcing: Causal World Modeling with Multi-Chunk Prediction","TacForeSight: Force-Guided Tactile World Model for Contact-Rich Manipulation","Latent Spatial Memory for Video World Models","FlashMemory-DeepSeek-V4: Lightning Index Ultra-Long Context via Lookahead Sparse Attention"],
+        totalPapers: 13,
+        totalNews: 3
+    },
     "2026-06-09": {
         bannerTitle: "🔥 今日看点",
         bannerSubtitle: "MemoryVLA++ 通过记忆与想象增强时序建模实现具身操作显著提升；iMaC 将动作翻译为运动与接触图像构建新型具身世界模型；AHA-WAM 异步自适应世界-动作模型实现 4.59 倍推理加速与 92.8% 成功率；OpenAI 提交 S-1 招股书，正式启动 IPO 进程",
