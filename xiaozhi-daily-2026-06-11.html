@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>小小志AI日报 - 2026年6月11日 周四</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans SC', sans-serif;
+  background: #0a0e1a;
+  color: #e0e6f0;
+  line-height: 1.7;
+  min-height: 100vh;
+}
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+header {
+  text-align: center;
+  margin-bottom: 48px;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, rgba(59,130,246,0.08) 0%, rgba(139,92,246,0.08) 100%);
+  border-radius: 20px;
+  border: 1px solid rgba(99,102,241,0.15);
+}
+header h1 {
+  font-size: 2rem;
+  background: linear-gradient(135deg, #60a5fa, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 8px;
+}
+header .date {
+  color: #94a3b8;
+  font-size: 1rem;
+}
+header .subtitle {
+  color: #64748b;
+  font-size: 0.9rem;
+  margin-top: 6px;
+}
+.highlight-banner {
+  background: linear-gradient(135deg, rgba(249,115,22,0.1) 0%, rgba(234,179,8,0.08) 100%);
+  border: 1px solid rgba(249,115,22,0.2);
+  border-radius: 14px;
+  padding: 20px 24px;
+  margin-bottom: 36px;
+}
+.hl-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fb923c;
+  margin-bottom: 8px;
+}
+.hl-text {
+  font-size: 0.92rem;
+  color: #cbd5e1;
+  line-height: 1.7;
+}
+.section {
+  margin-bottom: 40px;
+}
+.section-title {
+  font-size: 1.4rem;
+  color: #f1f5f9;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(99,102,241,0.2);
+}
+.paper-card {
+  background: rgba(30,41,59,0.6);
+  border: 1px solid rgba(99,102,241,0.12);
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 16px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.paper-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(99,102,241,0.1);
+  border-color: rgba(99,102,241,0.3);
+}
+.paper-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #f8fafc;
+  margin-bottom: 8px;
+}
+.paper-meta {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-bottom: 10px;
+}
+.summary-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+@media (max-width: 640px) {
+  .summary-grid { grid-template-columns: 1fr; }
+}
+.summary-item {
+  background: rgba(15,23,42,0.5);
+  border-radius: 10px;
+  padding: 12px 14px;
+  border: 1px solid rgba(99,102,241,0.08);
+}
+.summary-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #818cf8;
+  margin-bottom: 4px;
+}
+.summary-text {
+  font-size: 0.88rem;
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+.paper-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.tag {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+.tag-agent { background: rgba(16,185,129,0.12); color: #34d399; }
+.tag-llm { background: rgba(99,102,241,0.12); color: #818cf8; }
+.tag-multimodal { background: rgba(244,114,182,0.12); color: #f472b6; }
+.tag-world { background: rgba(251,191,36,0.12); color: #fbbf24; }
+.tag-robot { background: rgba(251,146,60,0.12); color: #fb923c; }
+.tag-rl { background: rgba(45,212,191,0.12); color: #2dd4bf; }
+.tag-video { background: rgba(168,85,247,0.12); color: #a855f7; }
+.tag-benchmark { background: rgba(34,211,238,0.12); color: #22d3ee; }
+.tag-vla { background: rgba(59,130,246,0.12); color: #60a5fa; }
+.tag-safety { background: rgba(239,68,68,0.12); color: #f87171; }
+.tag-memory { background: rgba(192,132,252,0.12); color: #c084fc; }
+.tag-reasoning { background: rgba(132,204,22,0.12); color: #a3e635; }
+.tag-continual { background: rgba(6,182,212,0.12); color: #22d3ee; }
+.tag-embedding { background: rgba(217,119,6,0.12); color: #f59e0b; }
+.tag-nlp { background: rgba(34,211,238,0.12); color: #22d3ee; }
+.tag-code { background: rgba(52,211,153,0.12); color: #34d399; }
+.tag-audio { background: rgba(251,146,60,0.12); color: #fb923c; }
+.tag-3d { background: rgba(168,85,247,0.12); color: #a855f7; }
+.tag-distill { background: rgba(234,179,8,0.12); color: #eab308; }
+.tag-attention { background: rgba(139,92,246,0.12); color: #a78bfa; }
+.hot-badge {
+  display: inline;
+  margin-right: 4px;
+}
+.info-card {
+  background: rgba(30,41,59,0.6);
+  border: 1px solid rgba(99,102,241,0.12);
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 16px;
+}
+.paper-summary {
+  font-size: 0.9rem;
+  color: #cbd5e1;
+  line-height: 1.7;
+  margin-bottom: 14px;
+}
+.paper-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.paper-links a {
+  display: inline-block;
+  padding: 5px 14px;
+  background: rgba(99,102,241,0.12);
+  color: #818cf8;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+.paper-links a:hover {
+  background: rgba(99,102,241,0.25);
+}
+.stats {
+  text-align: center;
+  padding: 30px;
+  margin-top: 40px;
+  background: rgba(30,41,59,0.4);
+  border-radius: 14px;
+  border: 1px solid rgba(99,102,241,0.1);
+}
+.stats h3 {
+  color: #94a3b8;
+  font-size: 1rem;
+  margin-bottom: 12px;
+}
+.stats p {
+  color: #64748b;
+  font-size: 0.9rem;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+  <h1>📡 小小志AI日报</h1>
+  <div class="date">2026年6月11日 · 周四</div>
+  <div class="subtitle">arXiv 8 篇 · HF 热门 7 篇</div>
+</header>
+
+<div class="highlight-banner">
+  <div class="hl-title">🔥 今日看点</div>
+  <div class="hl-text">World Pilot 首次将世界模型与VLA紧密结合，利用世界-动作先验引导决策，零样本成功率高达 84.7%；FACTR 2 让商用机械臂无需昂贵传感器即可学习力感知，接触密集型操作成功率提升 17%；VLGA 在VLA架构中引入几何推理能力，为自动驾驶带来精细三维空间理解；DIRECT 系统性研究具身规划中的测试时计算分配策略，开辟资源受限场景下的优化新方向</div>
+</div>
+
+<section class="section">
+  <h2 class="section-title">🤖 VLA & Robotics · 具身智能</h2>
+
+  <div class="paper-card">
+    <div class="paper-title"><span class="hot-badge">🔥</span> World Pilot: Steering Vision-Language-Action Models with World-Action Priors</div>
+    <div class="paper-meta">arXiv 2026</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">基于世界-动作先验的视觉-语言-动作模型引导框架，通过世界模型提供动作先验知识来增强VLA模型的决策质量</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次将世界模型与VLA模型紧密结合，利用世界-动作先验引导VLA的动作生成过程，提升零样本泛化能力</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在多个具身操作任务上取得 84.7% 的成功率，验证了世界模型先验对VLA决策的强化作用</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">VLA方向的重要工作，世界模型与动作模型的协同设计为具身智能的鲁棒决策提供了新思路</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-vla">VLA</span>
+      <span class="tag tag-world">World Model</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.12403" target="_blank">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.12403" target="_blank">PDF</a>
+      <a href="https://world-pilot.github.io/" target="_blank">Project</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title"><span class="hot-badge">🔥</span> DIRECT: When and Where Should You Allocate Test-Time Compute in Embodied Planners?</div>
+    <div class="paper-meta">arXiv 2026</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">研究具身规划场景中测试时计算的分配策略，基于视觉-语言模型确定何时、何地投入更多推理算力</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次系统性研究具身规划器中的测试时计算最优分配问题，提出自适应策略在关键时刻动态调配推理资源</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在具身规划任务上取得 65% 的性能表现，验证了计算资源灵活分配对规划质量的提升效果</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">将测试时计算优化引入具身智能领域的前沿探索，对资源受限场景下的机器人部署有实际价值</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-robot">Robotics</span>
+      <span class="tag tag-vla">VLA</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.12402" target="_blank">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.12402" target="_blank">PDF</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title"><span class="hot-badge">🔥</span> VLGA: Vision-Language-Geometry-Action Models for Autonomous Driving</div>
+    <div class="paper-meta">arXiv 2026</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出视觉-语言-几何-动作四维模型，将几何空间理解作为VLA的额外模态，专为自动驾驶场景设计</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">在传统VLA架构中引入几何推理能力，使模型不仅能理解场景语义还能进行精确的三维空间推理</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在自动驾驶相关任务上验证了融合几何信息对决策性能的改善效果</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">VLA模型向几何空间推理的自然延伸，对自动驾驶和需要精细空间理解的应用方向有启发意义</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-vla">VLA</span>
+      <span class="tag tag-multimodal">Multimodal</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.12396" target="_blank">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.12396" target="_blank">PDF</a>
+      <a href="https://yaojin17.github.io/VLGA/" target="_blank">Project</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title"><span class="hot-badge">🔥</span> FACTR 2: Learning External Force Sensing for Commodity Robot Arms Improves Policy Learning</div>
+    <div class="paper-meta">arXiv 2026</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">基于外部力感知学习的机器人操作策略训练框架，使普通商用机械臂具备力反馈敏感度</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出在商用机械臂上学习外部力感知的方法，无需昂贵的力传感器硬件即可让策略模型感知接触力信息</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在接触密集型操作任务上验证了有效性，力感知增强使成功率提升 17%</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">降低灵巧操作门槛的实用工作，为低成本机械臂实现精细力控操作提供了可行的轻量级方案</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-robot">Robotics</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.12406" target="_blank">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.12406" target="_blank">PDF</a>
+      <a href="https://jasonjzliu.com/factr2" target="_blank">Project</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2 class="section-title">🧩 Agent · 智能体</h2>
+
+  <div class="paper-card">
+    <div class="paper-title">Retrospective Harness Optimization: Improving LLM Agents via Self-Preference over Trajectory Rollouts</div>
+    <div class="paper-meta">arXiv 2026 · HF 热门 · Microsoft Research</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">来自微软研究院，通过回溯轨迹偏好优化改进LLM智能体在SWE-Bench等代码修复任务上的表现</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出基于自我偏好学习的智能体优化框架，利用完整的轨迹回放自动建立偏好信号进行策略改进</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在 SWE-Bench 上取得 59% 到 78% 的性能提升，验证了轨迹自偏好学习的有效性</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">微软在智能体优化方向的高质量工作，自监督偏好学习思路为智能体的自动化改进提供了新路径</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-agent">Agent</span>
+      <span class="tag tag-code">Code</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.05922" target="_blank">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.05922" target="_blank">PDF</a>
+      <a href="https://paper-rho.wenbo.io" target="_blank">Project</a>
+      <a href="https://github.com/wbopan/retro-harness" target="_blank">Code</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">SearchSwarm: Towards Delegation Intelligence in Agentic LLMs for Long-Horizon Deep Research</div>
+    <div class="paper-meta">arXiv 2026 · HF 热门</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">面向长时深度研究的智能体委托搜索框架，提出 30B-A3B 混合专家架构，子智能体并行搜索与综合</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出委托智能概念，将复杂研究任务委派给多个子智能体并行搜索与综合，实现长时深度研究</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在深度研究任务上验证了多智能体委托搜索策略的有效性，代码开源获 60 星</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">面向研究型智能体的重要工作，多智能体分工协作的模式对自动化深度研究有示范意义</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-agent">Agent</span>
+      <span class="tag tag-llm">LLM</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.09730" target="_blank">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.09730" target="_blank">PDF</a>
+      <a href="https://search-swarm.github.io/" target="_blank">Project</a>
+      <a href="https://github.com/Search-Swarm/SearchSwarm" target="_blank">Code</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">Role-Agent: Bootstrapping LLM Agents via Dual-Role Evolution</div>
+    <div class="paper-meta">arXiv 2026 · HF 热门</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">基于双角色进化机制的LLM智能体自举训练框架，通过生成者与评估者角色间相互博弈实现能力提升</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出双角色交替进化的自举训练策略，无需外部标注即可通过角色博弈持续提升智能体表现</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在多项智能体任务上验证了双角色进化机制的有效性，代码已开源获 75 星</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">自举训练方向的有趣探索，双角色博弈进化的思路对降低智能体训练标注成本有借鉴意义</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-agent">Agent</span>
+      <span class="tag tag-llm">LLM</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.10917" target="_blank">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.10917" target="_blank">PDF</a>
+      <a href="https://github.com/AMAP-ML/roleagent" target="_blank">Code</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">Context-Driven Incremental Compression for Multi-Turn Dialogue Generation</div>
+    <div class="paper-meta">arXiv 2026</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">基于上下文驱动的增量压缩方法，针对多轮对话场景进行历史信息的动态压缩与关键信息保留</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出上下文感知的增量压缩策略，针对对话轮次增长导致的上下文膨胀问题，在保持语义连贯性的同时高效管理上下文窗口</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在多轮对话生成任务上验证了有效性，在保持回复质量的同时显著减少上下文的存储开销</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">面向长对话场景的实用技术方案，增量压缩思路对智能体长期交互时的记忆管理有参考价值</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-agent">Agent</span>
+      <span class="tag tag-llm">LLM</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.12411" target="_blank">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.12411" target="_blank">PDF</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2 class="section-title">🎨 Multimodal · 多模态</h2>
+
+  <div class="paper-card">
+    <div class="paper-title">Kwai Keye-VL-2.0 Technical Report</div>
+    <div class="paper-meta">arXiv 2026 · HF 热门 · Kwai Keye</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">快手的全模态视觉-语言模型，支持 256K 超长上下文多模态理解，提供 30B 和 3B 双规模版本</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">将超长上下文能力与全模态融合能力结合到统一架构中，双规模策略覆盖了云端到边缘的部署场景</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在多模态基准测试上展现出竞争力，开源代码获 789 星，社区关注度较高</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">快手在视觉语言模型方向的重要进展，30B与3B双规模策略兼顾性能与效率，适合关注多模态开源生态</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-multimodal">Multimodal</span>
+      <span class="tag tag-llm">LLM</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.10651" target="_blank">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.10651" target="_blank">PDF</a>
+      <a href="https://kwai-keye.github.io/" target="_blank">Project</a>
+      <a href="https://github.com/Kwai-Keye/Keye" target="_blank">Code</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">ABot-Earth 0.5: Generative 3D Earth Model</div>
+    <div class="paper-meta">arXiv 2026 · HF 热门 · Alibaba AMAP CV Lab</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">基于生成模型的全球尺度三维地球构建框架，由阿里高德CV Lab开发，支持实时大规模场景生成</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出可扩展的生成式3D地球模型，首次实现全球尺度的三维地理场景自动生成与编辑</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在三维地球生成和推理任务上验证了有效性，开源代码已获 109 星，社区反馈积极</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">阿里在地理空间AI领域的重要发布，对数字孪生、自动驾驶仿真和智慧城市等场景有较大的应用潜力</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-multimodal">Multimodal</span>
+      <span class="tag tag-3d">3D</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.09967" target="_blank">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.09967" target="_blank">PDF</a>
+      <a href="https://abot-earth.amap.com/" target="_blank">Project</a>
+      <a href="https://github.com/amap-cvlab/ABot-Earth-0.5" target="_blank">Code</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">Reroute, Don't Remove: Recoverable Visual Token Routing for Vision-Language Models</div>
+    <div class="paper-meta">arXiv 2026</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出可恢复的视觉标记路由策略，在推理过程中动态选择关键视觉标记，允许被丢弃的标记按需恢复</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次将可恢复路由机制引入多模态模型，不同于传统不可逆的标记剪枝，被丢弃的视觉信息可以按需恢复</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在多个视觉-语言基准上验证了有效性，在保持推理精度的同时减少了视觉标记的计算开销</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">视觉标记压缩方向的有价值工作，可恢复机制的设计思路对多模态模型的高效推理有参考意义</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-multimodal">Multimodal</span>
+      <span class="tag tag-attention">Token Routing</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.12412" target="_blank">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.12412" target="_blank">PDF</a>
+      <a href="https://github.com/elmma/mllm-reroute/" target="_blank">Code</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2 class="section-title">🧠 LLM & RL · 大语言模型与强化学习</h2>
+
+  <div class="paper-card">
+    <div class="paper-title">Beyond Uniform Token-Level Trust Region in LLM Reinforcement Learning</div>
+    <div class="paper-meta">arXiv 2026 · HF 热门 · Tencent Hunyuan</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">来自腾讯混元团队，研究LLM强化学习中超越统一标记级信任域约束的优化方法</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">挑战传统PPO中统一信任域假设，提出标记敏感的自适应信任域策略，对不同重要性的标记施加差异化约束</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在生成任务上验证了差异化信任域约束对RL训练稳定性和最终性能的改善效果</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">RL训练优化方向的前沿探索，标记级信任域细粒度控制对提升RLHF训练质量有潜在价值</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-llm">LLM</span>
+      <span class="tag tag-rl">RL</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.10968" target="_blank">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.10968" target="_blank">PDF</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">Flow-DPPO: Divergence Proximal Policy Optimization for Flow Matching Models</div>
+    <div class="paper-meta">arXiv 2026 · HF 热门 · Tencent Hunyuan</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">来自腾讯混元团队，针对流匹配模型提出基于散度约束的近端策略优化框架</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">将PPO优化思想迁移到流匹配生成模型中，通过散度约束保证策略更新稳定性，适用于视频生成等连续生成任务</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在视频生成任务上验证了该框架的有效性，提升了流匹配模型的对齐效果</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">RL优化方法向流匹配模型的成功迁移，为扩散类生成模型的偏好对齐提供了新的技术路径</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-rl">RL</span>
+      <span class="tag tag-video">Video</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.11025" target="_blank">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.11025" target="_blank">PDF</a>
+      <a href="https://jayce-ping.github.io/Flow-DPPO-Project-Page/" target="_blank">Project</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">How Seemingly Inconsequential Design Choices Dictate Performance of LLMs in Pathology</div>
+    <div class="paper-meta">arXiv 2026</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">系统研究大语言模型在病理学领域应用中看似无关紧要的设计选择如何显著影响最终模型表现</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次全面揭示病理学LLM应用中细微设计决策对结果的量化影响，填补了工程实践与领域部署之间的空白</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">不同设计选择导致性能波动达 15.1% 至 62.9%，充分暴露了部署配置对模型表现的巨大影响</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">医疗AI部署方向的重要工程发现，提醒研究者关注超参数和设计决策对实际落地效果的关键作用</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-llm">LLM</span>
+      <span class="tag tag-benchmark">Benchmark</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.12407" target="_blank">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.12407" target="_blank">PDF</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">System Report for CCL25-Eval Task 5: New Dataset and LoRA-Fine-Tuned Qwen2.5</div>
+    <div class="paper-meta">arXiv 2026</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">针对CCL25评测任务，采用LoRA微调Qwen2.5模型，构建了CCPoetry-49K中文诗歌数据集</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">构建了包含 49K 条数据的中文诗歌专用数据集，通过轻量级LoRA微调使通用大模型获得特定文体能力</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在CCL25-Eval任务5上较基线提升 9.7%，验证了小规模领域数据配合参数高效微调的有效性</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">中文NLP评测的实践工作，展示了LoRA微调在中文诗歌等特定文体任务上的应用方法</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-llm">LLM</span>
+      <span class="tag tag-nlp">NLP</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.12392" target="_blank">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.12392" target="_blank">PDF</a>
+    </div>
+  </div>
+</section>
+
+<div class="stats">
+  <h3>📊 数据统计</h3>
+  <p>arXiv 论文 8 篇 · HF 热门论文 7 篇 · 共 15 条动态</p>
+  <p>覆盖方向：VLA · Robotics · Agent · Multimodal · LLM · RL</p>
+  <p style="margin-top:10px; font-size:0.82rem;">自动生成于 2026-06-11 · 小小志AI日报</p>
+</div>
+</div>
+</body>
+</html>
