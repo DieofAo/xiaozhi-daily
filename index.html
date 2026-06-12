@@ -658,6 +658,175 @@
 <script>
 // ===== DATA =====
 const PAPERS_DB = [
+    // === 2026-06-12 ===
+    {
+        date: "2026-06-12",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "Mana: Dexterous Manipulation of Articulated Tools",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 基于强化学习的灵巧操作框架，实现机器人对铰接工具（如剪刀、钳子）的精确操控，结合运动规划与抓取策略 | 💡 创新点: 提出零样本铰接工具操作方法，无需为每种工具单独训练模型即可泛化至新的铰接物体，大幅降低部署成本 | 📊 实验效果: 在多种铰接工具操作任务上验证了框架的有效性和可扩展性，覆盖抓取、操作和运动规划场景 | ⭐ 整体评价: 铰接工具操作是机器人领域的核心难题，零样本泛化能力使其具备实际部署价值，建议关注真机验证结果",
+        tags: [["Robotics","green"],["Reinforcement Learning","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.13677"],["PDF","https://arxiv.org/pdf/2606.13677"],["Project","https://zhaohengyin.github.io/mana"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于强化学习的灵巧操作框架，实现机器人对铰接工具（如剪刀、钳子）的精确操控，结合运动规划与抓取策略"},{"label":"💡 创新点","text":"提出零样本铰接工具操作方法，无需为每种工具单独训练模型即可泛化至新的铰接物体，大幅降低部署成本"},{"label":"📊 实验效果","text":"在多种铰接工具操作任务上验证了框架的有效性和可扩展性，覆盖抓取、操作和运动规划场景"},{"label":"⭐ 整体评价","text":"铰接工具操作是机器人领域的核心难题，零样本泛化能力使其具备实际部署价值，建议关注真机验证结果"}]
+    },
+    {
+        date: "2026-06-12",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "Improving Robotic Generalist Policies via Flow Reversal Steering",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 基于视觉-语言模型与流反转引导机制，在不增加额外训练的前提下提升通用机器人策略的操作能力 | 💡 创新点: 提出流反转引导方法，通过逆向推理校正策略偏差，实现轻量级的通用策略能力增强 | 📊 实验效果: 在机器人通用操作任务上实现 95% 的成功率，无需重新训练或增加模型参数 | ⭐ 整体评价: 流反转引导为通用策略优化提供了优雅的轻量方案，95% 成功率展现出色实用性",
+        tags: [["Robotics","green"],["VLA","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.13675"],["PDF","https://arxiv.org/pdf/2606.13675"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于视觉-语言模型与流反转引导机制，在不增加额外训练的前提下提升通用机器人策略的操作能力"},{"label":"💡 创新点","text":"提出流反转引导方法，通过逆向推理校正策略偏差，实现轻量级的通用策略能力增强"},{"label":"📊 实验效果","text":"在机器人通用操作任务上实现 95% 的成功率，无需重新训练或增加模型参数"},{"label":"⭐ 整体评价","text":"流反转引导为通用策略优化提供了优雅的轻量方案，95% 成功率展现出色实用性"}]
+    },
+    {
+        date: "2026-06-12",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "WEAVER: Better, Faster, Longer — An Effective World Model for Robotic Manipulation",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 提出高效世界模型 WEAVER，结合架构优化与基础模型能力，从精度、速度和长度三个维度改进机器人操作世界模型 | 💡 创新点: 首次系统性优化世界模型的三维能力——更优的预测精度、更快的推理速度和更长的规划视野 | 📊 实验效果: 在机器人操作规划和执行任务上同时验证了精度提升、推理加速和长程规划能力增强 | ⭐ 整体评价: 世界模型的三维优化方向具有重要实用价值，建议关注其在 Sim-to-Real 迁移中的表现",
+        tags: [["World Model","green"],["Robotics","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.13672"],["PDF","https://arxiv.org/pdf/2606.13672"],["Project","https://arnavkj1995.github.io/WEAVER/"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出高效世界模型 WEAVER，结合架构优化与基础模型能力，从精度、速度和长度三个维度改进机器人操作世界模型"},{"label":"💡 创新点","text":"首次系统性优化世界模型的三维能力——更优的预测精度、更快的推理速度和更长的规划视野"},{"label":"📊 实验效果","text":"在机器人操作规划和执行任务上同时验证了精度提升、推理加速和长程规划能力增强"},{"label":"⭐ 整体评价","text":"世界模型的三维优化方向具有重要实用价值，建议关注其在 Sim-to-Real 迁移中的表现"}]
+    },
+    {
+        date: "2026-06-12",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "RepWAM: World Action Modeling with Representation Visual-Action Tokenizers",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 提出 RepWAM 框架，设计表征级视觉-动作分词器，将视频生成与机器人操作统一到世界动作建模中 | 💡 创新点: 设计表征视觉-动作分词器，连接视频生成预测与机器人实际操作，实现端到端的世界动作建模 | 📊 实验效果: 在视频生成和操作预测任务上验证了视觉-动作统一分词的有效性 | ⭐ 整体评价: 视觉-动作统一分词为世界模型与机器人操作的融合提供了新路径，建议关注真机验证",
+        tags: [["World Model","green"],["LLM","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.13674"],["PDF","https://arxiv.org/pdf/2606.13674"],["Project","https://wdrink.github.io/RepWAM"],["Code","https://github.com/wdrink/RepWAM"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出 RepWAM 框架，设计表征级视觉-动作分词器，将视频生成与机器人操作统一到世界动作建模中"},{"label":"💡 创新点","text":"设计表征视觉-动作分词器，连接视频生成预测与机器人实际操作，实现端到端的世界动作建模"},{"label":"📊 实验效果","text":"在视频生成和操作预测任务上验证了视觉-动作统一分词的有效性"},{"label":"⭐ 整体评价","text":"视觉-动作统一分词为世界模型与机器人操作的融合提供了新路径，建议关注真机验证"}]
+    },
+    {
+        date: "2026-06-12",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "EvoArena: Tracking Memory Evolution for Robust LLM Agents in Dynamic Environments",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 在动态环境中构建记忆演化追踪框架，系统评估 LLM 智能体在环境变化下的长期记忆适应能力 | 💡 创新点: 首次系统研究 Agent 记忆在环境动态变化中的演化规律，提出 EvoArena 标准化评估框架 | 📊 实验效果: 在多组动态环境基准上验证了智能体记忆演化的鲁棒性差异，揭示现有架构的退化模式 | ⭐ 整体评价: Agent 记忆演化研究填补了该方向的空白，评估方法论有较大参考价值",
+        tags: [["Agent","green"],["Memory","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.13681"],["PDF","https://arxiv.org/pdf/2606.13681"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"在动态环境中构建记忆演化追踪框架，系统评估 LLM 智能体在环境变化下的长期记忆适应能力"},{"label":"💡 创新点","text":"首次系统研究 Agent 记忆在环境动态变化中的演化规律，提出 EvoArena 标准化评估框架"},{"label":"📊 实验效果","text":"在多组动态环境基准上验证了智能体记忆演化的鲁棒性差异，揭示现有架构的退化模式"},{"label":"⭐ 整体评价","text":"Agent 记忆演化研究填补了该方向的空白，评估方法论有较大参考价值"}]
+    },
+    {
+        date: "2026-06-12",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "InterleaveThinker: Reinforcing Agentic Interleaved Generation",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 提出交错式思维规划器，通过 80K 条监督微调数据构建统一的多模态 Agent 推理与生成框架 | 💡 创新点: 首次将交错生成范式引入 Agent 规划，实现思考过程与最终动作的统一建模 | 📊 实验效果: Interleave-Planner-SFT-80k 数据集显著提升了 Agent 的推理和规划能力 | ⭐ 整体评价: 交错式规划是 Agent 方向的新趋势，建议关注其与实际工具调用系统的集成效果",
+        tags: [["Agent","green"],["Reasoning","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.13679"],["PDF","https://arxiv.org/pdf/2606.13679"],["Project","https://zhengdian1.github.io/InterleaveThinker-proj/"],["Code","https://github.com/zhengdian1/InterleaveThinker"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出交错式思维规划器，通过 80K 条监督微调数据构建统一的多模态 Agent 推理与生成框架"},{"label":"💡 创新点","text":"首次将交错生成范式引入 Agent 规划，实现思考过程与最终动作的统一建模"},{"label":"📊 实验效果","text":"Interleave-Planner-SFT-80k 数据集显著提升了 Agent 的推理和规划能力"},{"label":"⭐ 整体评价","text":"交错式规划是 Agent 方向的新趋势，建议关注其与实际工具调用系统的集成效果"}]
+    },
+    {
+        date: "2026-06-12",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "SpatialClaw: Rethinking Action Interface for Agentic Spatial Reasoning",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 基于视觉-语言模型重新设计 Agent 的空间推理动作接口，结合策略框架与工具增强机制 | 💡 创新点: 提出工具增强型空间推理接口，让 Agent 更好地理解三维空间关系并做出精准操作决策 | 📊 实验效果: 在空间推理任务上达到 59.9% 的准确率，验证了接口设计对 Agent 空间理解的关键作用 | ⭐ 整体评价: 空间推理是当前 Agent 的明显短板，接口设计改进为突破方向提供了新思路",
+        tags: [["Agent","green"],["Multimodal","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.13673"],["PDF","https://arxiv.org/pdf/2606.13673"],["Project","https://spatialclaw.github.io/"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于视觉-语言模型重新设计 Agent 的空间推理动作接口，结合策略框架与工具增强机制"},{"label":"💡 创新点","text":"提出工具增强型空间推理接口，让 Agent 更好地理解三维空间关系并做出精准操作决策"},{"label":"📊 实验效果","text":"在空间推理任务上达到 59.9% 的准确率，验证了接口设计对 Agent 空间理解的关键作用"},{"label":"⭐ 整体评价","text":"空间推理是当前 Agent 的明显短板，接口设计改进为突破方向提供了新思路"}]
+    },
+    {
+        date: "2026-06-12",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Arbor: Toward Generalist Autonomous Research via Hypothesis-Tree Refinement",
+        venue: "arXiv 2026 · RUC NLPIR Lab",
+        summary: "🔬 技术路线: 提出假设树精炼框架 Arbor，让 AI 系统自主完成科学研究全流程——从假设生成到实验验证的闭环 | 💡 创新点: 通过假设树的迭代精炼实现通用自主研究能力，超越简单的问答模式进入真正的科学探索 | 📊 实验效果: 在 MLE-Bench 上达到 86.36% 准确率，推理速度实现 2.5 倍提升 | ⭐ 整体评价: 自主科学研究是 AI 的前沿方向，89 星开源项目展现了假设驱动范式的重要潜力",
+        tags: [["Agent","green"],["Science","green"],["Benchmark","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.11926"],["PDF","https://arxiv.org/pdf/2606.11926"],["Project","https://ruc-nlpir.github.io/Arbor/"],["Code","https://github.com/RUC-NLPIR/Arbor"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出假设树精炼框架 Arbor，让 AI 系统自主完成科学研究全流程——从假设生成到实验验证的闭环"},{"label":"💡 创新点","text":"通过假设树的迭代精炼实现通用自主研究能力，超越简单的问答模式进入真正的科学探索"},{"label":"📊 实验效果","text":"在 MLE-Bench 上达到 86.36% 准确率，推理速度实现 2.5 倍提升"},{"label":"⭐ 整体评价","text":"自主科学研究是 AI 的前沿方向，89 星开源项目展现了假设驱动范式的重要潜力"}]
+    },
+    {
+        date: "2026-06-12",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Agentic Environment Engineering for Large Language Models: A Survey",
+        venue: "arXiv 2026 · Chinese Academy of Sciences",
+        summary: "🔬 技术路线: 系统综述 LLM 智能体环境工程的四个维度——环境建模、环境合成、环境评估和环境应用 | 💡 创新点: 首次梳理 Agent 环境工程全栈技术体系，提出 Environment-as-a-Service 统一框架 | 📊 实验效果: 覆盖主流环境工程方法，提供结构化分类体系和系统性对比分析 | ⭐ 整体评价: 环境工程是 Agent 落地的关键基础设施，该综述为研究者提供了全面的技术全景地图",
+        tags: [["Agent","green"],["Survey","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.12191"],["PDF","https://arxiv.org/pdf/2606.12191"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"系统综述 LLM 智能体环境工程的四个维度——环境建模、环境合成、环境评估和环境应用"},{"label":"💡 创新点","text":"首次梳理 Agent 环境工程全栈技术体系，提出 Environment-as-a-Service 统一框架"},{"label":"📊 实验效果","text":"覆盖主流环境工程方法，提供结构化分类体系和系统性对比分析"},{"label":"⭐ 整体评价","text":"环境工程是 Agent 落地的关键基础设施，该综述为研究者提供了全面的技术全景地图"}]
+    },
+    {
+        date: "2026-06-12",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Claw-SWE-Bench: A Benchmark for Evaluating OpenClaw-style Agent Harnesses on Coding Tasks",
+        venue: "arXiv 2026 · TokenRhythm",
+        summary: "🔬 技术路线: 构建专门评估 OpenClaw 风格 Agent 工具链在编码任务上性能的标准化基准测试 | 💡 创新点: 首次系统评测不同 Agent 工具链对编程任务表现的影响，提供标准化评测框架和数据集 | 📊 实验效果: 揭示了工具链选择对编码性能有显著影响，不同框架间最大差距达 29.4 个百分点 | ⭐ 整体评价: Agent 工具链的消融实验非常有价值，29.4pp 差距说明框架选择至关重要",
+        tags: [["Agent","green"],["Code","green"],["Benchmark","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.12344"],["PDF","https://arxiv.org/pdf/2606.12344"],["Project","https://huggingface.co/datasets/TokenRhythm/Claw-SWE-Bench"],["Code","https://github.com/opensquilla/claw-swe-bench"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"构建专门评估 OpenClaw 风格 Agent 工具链在编码任务上性能的标准化基准测试"},{"label":"💡 创新点","text":"首次系统评测不同 Agent 工具链对编程任务表现的影响，提供标准化评测框架和数据集"},{"label":"📊 实验效果","text":"揭示了工具链选择对编码性能有显著影响，不同框架间最大差距达 29.4 个百分点"},{"label":"⭐ 整体评价","text":"Agent 工具链的消融实验非常有价值，29.4pp 差距说明框架选择至关重要"}]
+    },
+    {
+        date: "2026-06-12",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "DeNovoSWE: Scaling Long-Horizon Environments for Generating Entire Repositories from Scratch",
+        venue: "arXiv 2026 · AweAI Team",
+        summary: "🔬 技术路线: 构建 DeNovoSWE 大规模数据集，实现从零生成完整代码仓库的长程软件工程任务 | 💡 创新点: 首次将软件工程 Agent 任务扩展到整个仓库级别生成，远超传统单文件补丁模式 | 📊 实验效果: 建立大规模仓库生成基准，验证了长程编码任务中 Agent 从头构建完整仓库的可行性 | ⭐ 整体评价: 仓库级代码生成是 SWE-bench 方向的自然延伸，规模化任务设计是其核心贡献",
+        tags: [["Agent","green"],["Code","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.10728"],["PDF","https://arxiv.org/pdf/2606.10728"],["Code","https://github.com/AweAI-Team/DeNovoSWE"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"构建 DeNovoSWE 大规模数据集，实现从零生成完整代码仓库的长程软件工程任务"},{"label":"💡 创新点","text":"首次将软件工程 Agent 任务扩展到整个仓库级别生成，远超传统单文件补丁模式"},{"label":"📊 实验效果","text":"建立大规模仓库生成基准，验证了长程编码任务中 Agent 从头构建完整仓库的可行性"},{"label":"⭐ 整体评价","text":"仓库级代码生成是 SWE-bench 方向的自然延伸，规模化任务设计是其核心贡献"}]
+    },
+    {
+        date: "2026-06-12",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "InternVideo3: Agentify Foundation Models with Multimodal Contextual Reasoning",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 将基础视觉模型 Agent 化，通过多模态上下文推理框架赋予视频模型主动推理和理解能力 | 💡 创新点: 提出多模态上下文推理机制，让视频模型具备类 Agent 的主动信息整合与推理能力 | 📊 实验效果: 在 Video-MME、MLVU、EgoSchema 等多个视频理解基准上取得领先性能 | ⭐ 整体评价: 将视频模型 Agent 化是一个有远见的方向，多模态上下文推理是核心突破点",
+        tags: [["Agent","green"],["Video","green"],["Multimodal","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.12195"],["PDF","https://arxiv.org/pdf/2606.12195"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"将基础视觉模型 Agent 化，通过多模态上下文推理框架赋予视频模型主动推理和理解能力"},{"label":"💡 创新点","text":"提出多模态上下文推理机制，让视频模型具备类 Agent 的主动信息整合与推理能力"},{"label":"📊 实验效果","text":"在 Video-MME、MLVU、EgoSchema 等多个视频理解基准上取得领先性能"},{"label":"⭐ 整体评价","text":"将视频模型 Agent 化是一个有远见的方向，多模态上下文推理是核心突破点"}]
+    },
+    {
+        date: "2026-06-12",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Beyond Scalar Rewards by Internalizing Reasoning into Score Distributions",
+        venue: "arXiv 2026 · Tongyi-MAI",
+        summary: "🔬 技术路线: 提出 Z-Reward 奖励模型，将推理过程内化到评分的概率分布中，结合蒸馏和训练框架超越传统标量奖励 | 💡 创新点: 用评分分布取代标量奖励信号，使模型能自主学习细粒度的推理偏好差异，大幅提升奖励建模精度 | 📊 实验效果: 在 89.6% 的评估任务上超越基线方法，支持 27B 参数规模，验证了分布奖励的优越性 | ⭐ 整体评价: 评分分布奖励是 RLHF 方向的重要创新，Tongyi-MAI 团队的贡献值得重点关注",
+        tags: [["LLM","green"],["RL","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.09076"],["PDF","https://arxiv.org/pdf/2606.09076"],["Project","https://github.com/Tongyi-MAI/Z-Image"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出 Z-Reward 奖励模型，将推理过程内化到评分的概率分布中，结合蒸馏和训练框架超越传统标量奖励"},{"label":"💡 创新点","text":"用评分分布取代标量奖励信号，使模型能自主学习细粒度的推理偏好差异，大幅提升奖励建模精度"},{"label":"📊 实验效果","text":"在 89.6% 的评估任务上超越基线方法，支持 27B 参数规模，验证了分布奖励的优越性"},{"label":"⭐ 整体评价","text":"评分分布奖励是 RLHF 方向的重要创新，Tongyi-MAI 团队的贡献值得重点关注"}]
+    },
+    {
+        date: "2026-06-12",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Reason, Then Re-reason: Cross-view Revisiting Improves Spatial Reasoning",
+        venue: "arXiv 2026 · Shanghai Jiao Tong University",
+        summary: "🔬 技术路线: 提出 ReRe 框架，通过多视角交叉回访机制增强模型的空间推理能力，结合两阶段训练策略 | 💡 创新点: 设计「先推理再重推理」的双阶段机制，从不同视角反复审视同一空间问题以纠正错误 | 📊 实验效果: 在多项空间推理任务上验证了多视角回访机制的有效性，推理准确率显著提升 | ⭐ 整体评价: 多视角重推理是提升空间推理的优雅思路，交大团队的方法简洁而有效",
+        tags: [["LLM","green"],["Reasoning","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.11683"],["PDF","https://arxiv.org/pdf/2606.11683"],["Project","https://zhenjiemao.github.io/ReRe/"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出 ReRe 框架，通过多视角交叉回访机制增强模型的空间推理能力，结合两阶段训练策略"},{"label":"💡 创新点","text":"设计「先推理再重推理」的双阶段机制，从不同视角反复审视同一空间问题以纠正错误"},{"label":"📊 实验效果","text":"在多项空间推理任务上验证了多视角回访机制的有效性，推理准确率显著提升"},{"label":"⭐ 整体评价","text":"多视角重推理是提升空间推理的优雅思路，交大团队的方法简洁而有效"}]
+    },
+    {
+        date: "2026-06-12",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Automated Reproducibility Assessments in the Social and Behavioral Sciences Using Large Language Models",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 利用大语言模型自动化评估社会科学和行为科学研究中的可复现性，构建可扩展的评估框架 | 💡 创新点: 首次将 LLM 应用于学术论文的可复现性自动评估，用 AI 辅助解决科学可复现性危机 | 📊 实验效果: 在多维度评估上取得有竞争力的准确率，验证了 LLM 辅助科研质量评估的可行性 | ⭐ 整体评价: LLM 辅助科研质量评估是一个有创新性的交叉方向，可复现性问题具有广泛社会价值",
+        tags: [["LLM","green"],["Science","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.13670"],["PDF","https://arxiv.org/pdf/2606.13670"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"利用大语言模型自动化评估社会科学和行为科学研究中的可复现性，构建可扩展的评估框架"},{"label":"💡 创新点","text":"首次将 LLM 应用于学术论文的可复现性自动评估，用 AI 辅助解决科学可复现性危机"},{"label":"📊 实验效果","text":"在多维度评估上取得有竞争力的准确率，验证了 LLM 辅助科研质量评估的可行性"},{"label":"⭐ 整体评价","text":"LLM 辅助科研质量评估是一个有创新性的交叉方向，可复现性问题具有广泛社会价值"}]
+    },
     // === 2026-06-11 ===
     {
         date: "2026-06-11",
@@ -13950,6 +14119,13 @@ const PAPERS_DB = [
 ];
 
 const DAILY_OVERVIEW = {
+    "2026-06-12": {
+        bannerTitle: "🔥 今日看点",
+        bannerSubtitle: "🦾 Mana — 零样本铰接工具灵巧操作，无需逐工具训练即可泛化至多种铰接物体；     🦾 Flow Reversal Steering — 流反转引导提升通用机器人策略至 95% 成功率；     🌍 WEAVER — 更快、更好、更长的世界模型，三维优化驱动机器人操作规划突破。     📌 今日 Agent 方向集中爆发 8 篇（占比 53%），涵盖自主科研、环境工程、编码基准和视频理解等领域。",
+        picks: ["Mana: Dexterous Manipulation of Articulated Tools","Improving Robotic Generalist Policies via Flow Reversal Steering","WEAVER: Better, Faster, Longer — An Effective World Model for Robotic Manipulation"],
+        totalPapers: 15,
+        totalNews: 0
+    },
     "2026-06-11": {
         bannerTitle: "🔥 今日看点",
         bannerSubtitle: "World Pilot 首次将世界模型与VLA紧密结合，利用世界-动作先验引导决策，零样本成功率高达 84.7%；FACTR 2 让商用机械臂无需昂贵传感器即可学习力感知，接触密集型操作成功率提升 17%；VLGA 在VLA架构中引入几何推理能力，为自动驾驶带来精细三维空间理解；DIRECT 系统性研究具身规划中的测试时计算分配策略，开辟资源受限场景下的优化新方向",
