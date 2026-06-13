@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>小小志AI日报 - 2026年6月13日 周六</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans SC', sans-serif;
+  background: #0a0e1a;
+  color: #e0e6f0;
+  line-height: 1.7;
+  min-height: 100vh;
+}
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+header {
+  text-align: center;
+  margin-bottom: 48px;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, rgba(59,130,246,0.08) 0%, rgba(139,92,246,0.08) 100%);
+  border-radius: 20px;
+  border: 1px solid rgba(99,102,241,0.15);
+}
+header h1 {
+  font-size: 2rem;
+  background: linear-gradient(135deg, #60a5fa, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 8px;
+}
+header .date {
+  color: #94a3b8;
+  font-size: 1rem;
+}
+header .subtitle {
+  color: #64748b;
+  font-size: 0.9rem;
+  margin-top: 6px;
+}
+.highlight-banner {
+  background: linear-gradient(135deg, rgba(249,115,22,0.1) 0%, rgba(234,179,8,0.08) 100%);
+  border: 1px solid rgba(249,115,22,0.2);
+  border-radius: 14px;
+  padding: 20px 24px;
+  margin-bottom: 36px;
+}
+.hl-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fb923c;
+  margin-bottom: 8px;
+}
+.hl-text {
+  font-size: 0.92rem;
+  color: #cbd5e1;
+  line-height: 1.7;
+}
+.section {
+  margin-bottom: 40px;
+}
+.section-title {
+  font-size: 1.4rem;
+  color: #f1f5f9;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(99,102,241,0.2);
+}
+.paper-card {
+  background: rgba(30,41,59,0.6);
+  border: 1px solid rgba(99,102,241,0.12);
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 16px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.paper-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(99,102,241,0.1);
+  border-color: rgba(99,102,241,0.3);
+}
+.paper-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #f8fafc;
+  margin-bottom: 8px;
+}
+.paper-meta {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-bottom: 10px;
+}
+.summary-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+@media (max-width: 640px) {
+  .summary-grid { grid-template-columns: 1fr; }
+}
+.summary-item {
+  background: rgba(15,23,42,0.5);
+  border-radius: 10px;
+  padding: 12px 14px;
+  border: 1px solid rgba(99,102,241,0.08);
+}
+.summary-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #818cf8;
+  margin-bottom: 4px;
+}
+.summary-text {
+  font-size: 0.88rem;
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+.paper-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.tag {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+.tag-agent { background: rgba(16,185,129,0.12); color: #34d399; }
+.tag-llm { background: rgba(99,102,241,0.12); color: #818cf8; }
+.tag-multimodal { background: rgba(244,114,182,0.12); color: #f472b6; }
+.tag-world { background: rgba(251,191,36,0.12); color: #fbbf24; }
+.tag-robot { background: rgba(251,146,60,0.12); color: #fb923c; }
+.tag-rl { background: rgba(45,212,191,0.12); color: #2dd4bf; }
+.tag-video { background: rgba(168,85,247,0.12); color: #a855f7; }
+.tag-benchmark { background: rgba(34,211,238,0.12); color: #22d3ee; }
+.tag-vla { background: rgba(59,130,246,0.12); color: #60a5fa; }
+.tag-safety { background: rgba(239,68,68,0.12); color: #f87171; }
+.tag-memory { background: rgba(192,132,252,0.12); color: #c084fc; }
+.tag-reasoning { background: rgba(132,204,22,0.12); color: #a3e635; }
+.tag-code { background: rgba(52,211,153,0.12); color: #34d399; }
+.tag-survey { background: rgba(6,182,212,0.12); color: #22d3ee; }
+.tag-science { background: rgba(217,119,6,0.12); color: #f59e0b; }
+.hot-badge {
+  display: inline;
+  margin-right: 4px;
+}
+.info-card {
+  background: rgba(30,41,59,0.6);
+  border: 1px solid rgba(99,102,241,0.12);
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 16px;
+}
+.paper-summary {
+  font-size: 0.9rem;
+  color: #cbd5e1;
+  line-height: 1.7;
+  margin-bottom: 14px;
+}
+.paper-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.paper-links a {
+  display: inline-block;
+  padding: 5px 14px;
+  background: rgba(99,102,241,0.12);
+  color: #818cf8;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+.paper-links a:hover {
+  background: rgba(99,102,241,0.25);
+}
+.stats {
+  text-align: center;
+  padding: 30px;
+  margin-top: 40px;
+  background: rgba(30,41,59,0.4);
+  border-radius: 14px;
+  border: 1px solid rgba(99,102,241,0.1);
+}
+.stats p { color: #94a3b8; font-size: 0.88rem; }
+footer {
+  text-align: center;
+  padding: 40px 0 20px;
+  color: #475569;
+  font-size: 0.8rem;
+}
+footer a { color: #6366f1; text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <h1>小小志AI日报</h1>
+  <div class="date">2026年6月13日 周六</div>
+  <div class="subtitle">📊 共 5 条动态 · HF 热门 5 篇</div>
+</header>
+
+<div class="highlight-banner">
+  <div class="hl-title">🔥 今日看点</div>
+  <div class="hl-text">
+    🤖 <b>LabVLA</b> — 将视觉语言动作模型落地科学实验室，首次实现自然语言指令到实验设备操作的端到端控制；<br>
+    🧩 <b>WeaveBench</b> — 微软提出混合界面长时序计算机使用基准，当前最优模型仅 41.2% 成功率揭示明显瓶颈；<br>
+    🧩 <b>MiniMax 稀疏注意力</b> — 109B 参数下最高 28.4 倍推理加速，超长上下文工程实践的重要突破。<br>
+    📌 今日 Agent 方向集中 3 篇，涵盖计算机使用、搜索智能体和高效推理，VLA 方向 1 篇拓展至科学实验场景。
+  </div>
+</div>
+
+<!-- VLA -->
+<section class="section">
+  <h2 class="section-title">🤖 VLA · Vision-Language-Action</h2>
+
+  <div class="paper-card">
+    <div class="paper-title"><span class="hot-badge">🔥</span> LabVLA: Grounding Vision-Language-Action Models in Scientific Laboratories</div>
+    <div class="paper-meta">arXiv 2026 · Zhejiang University NLP</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">构建视觉语言动作统一框架，将 VLA 模型部署到科学实验室环境中，实现自然语言指令对实验设备的端到端控制</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次将 VLA 范式应用于科学实验自动化场景，打通从语言指令到实验操作的完整闭环，拓展 VLA 的应用边界</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">基于 4B 参数模型完成科学实验操作验证，在多个实验室任务上展示了端到端控制的可行性</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">科学实验室自动化是 VLA 的全新应用场景，具有巨大的科研效率提升潜力，建议关注其实验室真机部署效果</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-vla">VLA</span>
+      <span class="tag tag-science">Science</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.13578">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.13578">PDF</a>
+      <a href="https://zjunlp.github.io/LabVLA/">Project</a>
+      <a href="https://github.com/zjunlp/LabVLA">Code</a>
+    </div>
+  </div>
+</section>
+
+<!-- Agent -->
+<section class="section">
+  <h2 class="section-title">🧩 Agent · 智能体</h2>
+
+  <div class="paper-card">
+    <div class="paper-title"><span class="hot-badge">🔥</span> WeaveBench: A Long-Horizon, Real-World Benchmark for Computer-Use Agents with Hybrid Interfaces</div>
+    <div class="paper-meta">arXiv 2026 · Microsoft</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">构建长时序混合界面计算机使用基准，覆盖真实办公场景中 GUI、CLI 和 API 三种界面的复杂交互任务</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次提出混合界面（GUI 加命令行加 API）的长时序计算机使用评估基准，突破传统单一界面评测的局限性</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">当前最优模型在 WeaveBench 上仅达到 41.2% 的成功率，揭示了现有智能体在长时序混合界面任务上的明显瓶颈</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">混合界面基准设计高度贴近真实办公场景，微软的贡献为该方向提供了重要的评估工具和前进方向指引</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-agent">Agent</span>
+      <span class="tag tag-benchmark">Benchmark</span>
+      <span class="tag tag-code">Code</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.09426">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.09426">PDF</a>
+      <a href="https://weavebench.github.io/">Project</a>
+      <a href="https://github.com/weavebench/WeaveBench">Code</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title"><span class="hot-badge">🔥</span> MiniMax Sparse Attention</div>
+    <div class="paper-meta">arXiv 2026 · MiniMax</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">基于训练驱动的稀疏注意力机制，在保持模型质量的前提下实现超长上下文的高效推理与训练</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出可训练的稀疏注意力模式，突破传统稀疏方法的精度损失瓶颈，实现质量与效率的最优平衡</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在 109B 参数规模下实现最高 28.4 倍推理加速，另两种配置分别达到 14.2 倍和 7.6 倍的效率提升</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">超长上下文是 LLM 的核心竞争维度，MiniMax 的稀疏注意力方案展现了出色的工程实践价值，开源 215 星已获关注</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-agent">Agent</span>
+      <span class="tag tag-llm">LLM</span>
+      <span class="tag tag-reasoning">Reasoning</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.13392">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.13392">PDF</a>
+      <a href="https://github.com/MiniMax-AI/MSA">Code</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">FORT-Searcher: Synthesizing Shortcut-Resistant Search Tasks for Training Deep Search Agents</div>
+    <div class="paper-meta">arXiv 2026 · RUC AIBox</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">通过引导式框架合成抗捷径搜索任务，用于训练具备深度信息检索能力的搜索智能体</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出抗捷径任务合成方法，防止搜索智能体依赖表层信号走捷径，迫使模型进行真正的深度信息检索</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">合成的训练数据显著提升了搜索智能体在复杂信息检索任务上的搜索深度和答案准确性</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">抗捷径设计直击当前搜索智能体的核心痛点，训练数据合成方法论具备跨任务推广价值</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-agent">Agent</span>
+      <span class="tag tag-reasoning">Reasoning</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.12087">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.12087">PDF</a>
+      <a href="https://github.com/RUCAIBox/FORT-Searcher">Code</a>
+    </div>
+  </div>
+</section>
+
+<!-- Multimodal -->
+<section class="section">
+  <h2 class="section-title">🎨 Multimodal · 多模态</h2>
+
+  <div class="paper-card">
+    <div class="paper-title">Robust-U1: Can MLLMs Self-Recover Corrupted Visual Content for Robust Understanding?</div>
+    <div class="paper-meta">arXiv 2026 · HKUST</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">基于多模态大语言模型构建视觉内容自恢复框架，结合微调与强化学习提升对损坏图像的鲁棒理解能力</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次系统研究 MLLM 对损坏视觉内容的自我修复能力，让模型无需外部校正即可自主恢复并理解受损图像</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在多种视觉损坏场景下验证了自恢复机制的有效性，鲁棒理解能力显著优于传统图像修复方法</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">视觉自恢复是 MLLM 鲁棒性的重要研究方向，对自动驾驶、监控等实际部署场景具有直接应用价值</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-multimodal">Multimodal</span>
+      <span class="tag tag-rl">RL</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.08063">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.08063">PDF</a>
+      <a href="https://huggingface.co/spaces/Jiaqi-hkust/Robust-U1">Project</a>
+      <a href="https://github.com/jqtangust/Robust-U1">Code</a>
+    </div>
+  </div>
+</section>
+
+<div class="stats">
+  <p>📊 数据来源：arXiv · HuggingFace Daily Papers</p>
+  <p>📅 统计周期：2026-06-13</p>
+</div>
+
+<footer>
+  <p>🤖 小小志AI日报 · 自动生成于 2026-06-13 · 关注 VLA · Robotics · World Model · LLM · Agent</p>
+</footer>
+
+</div>
+</body>
+</html>

@@ -658,6 +658,65 @@
 <script>
 // ===== DATA =====
 const PAPERS_DB = [
+    // === 2026-06-13 ===
+    {
+        date: "2026-06-13",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "LabVLA: Grounding Vision-Language-Action Models in Scientific Laboratories",
+        venue: "arXiv 2026 · Zhejiang University NLP",
+        summary: "🔬 技术路线: 构建视觉语言动作统一框架，将 VLA 模型部署到科学实验室环境中，实现自然语言指令对实验设备的端到端控制 | 💡 创新点: 首次将 VLA 范式应用于科学实验自动化场景，打通从语言指令到实验操作的完整闭环，拓展 VLA 的应用边界 | 📊 实验效果: 基于 4B 参数模型完成科学实验操作验证，在多个实验室任务上展示了端到端控制的可行性 | ⭐ 整体评价: 科学实验室自动化是 VLA 的全新应用场景，具有巨大的科研效率提升潜力，建议关注其实验室真机部署效果",
+        tags: [["VLA","green"],["Science","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.13578"],["PDF","https://arxiv.org/pdf/2606.13578"],["Project","https://zjunlp.github.io/LabVLA/"],["Code","https://github.com/zjunlp/LabVLA"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"构建视觉语言动作统一框架，将 VLA 模型部署到科学实验室环境中，实现自然语言指令对实验设备的端到端控制"},{"label":"💡 创新点","text":"首次将 VLA 范式应用于科学实验自动化场景，打通从语言指令到实验操作的完整闭环，拓展 VLA 的应用边界"},{"label":"📊 实验效果","text":"基于 4B 参数模型完成科学实验操作验证，在多个实验室任务上展示了端到端控制的可行性"},{"label":"⭐ 整体评价","text":"科学实验室自动化是 VLA 的全新应用场景，具有巨大的科研效率提升潜力，建议关注其实验室真机部署效果"}]
+    },
+    {
+        date: "2026-06-13",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "WeaveBench: A Long-Horizon, Real-World Benchmark for Computer-Use Agents with Hybrid Interfaces",
+        venue: "arXiv 2026 · Microsoft",
+        summary: "🔬 技术路线: 构建长时序混合界面计算机使用基准，覆盖真实办公场景中 GUI、CLI 和 API 三种界面的复杂交互任务 | 💡 创新点: 首次提出混合界面（GUI 加命令行加 API）的长时序计算机使用评估基准，突破传统单一界面评测的局限性 | 📊 实验效果: 当前最优模型在 WeaveBench 上仅达到 41.2% 的成功率，揭示了现有智能体在长时序混合界面任务上的明显瓶颈 | ⭐ 整体评价: 混合界面基准设计高度贴近真实办公场景，微软的贡献为该方向提供了重要的评估工具和前进方向指引",
+        tags: [["Agent","green"],["Benchmark","green"],["Code","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.09426"],["PDF","https://arxiv.org/pdf/2606.09426"],["Project","https://weavebench.github.io/"],["Code","https://github.com/weavebench/WeaveBench"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"构建长时序混合界面计算机使用基准，覆盖真实办公场景中 GUI、CLI 和 API 三种界面的复杂交互任务"},{"label":"💡 创新点","text":"首次提出混合界面（GUI 加命令行加 API）的长时序计算机使用评估基准，突破传统单一界面评测的局限性"},{"label":"📊 实验效果","text":"当前最优模型在 WeaveBench 上仅达到 41.2% 的成功率，揭示了现有智能体在长时序混合界面任务上的明显瓶颈"},{"label":"⭐ 整体评价","text":"混合界面基准设计高度贴近真实办公场景，微软的贡献为该方向提供了重要的评估工具和前进方向指引"}]
+    },
+    {
+        date: "2026-06-13",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "MiniMax Sparse Attention",
+        venue: "arXiv 2026 · MiniMax",
+        summary: "🔬 技术路线: 基于训练驱动的稀疏注意力机制，在保持模型质量的前提下实现超长上下文的高效推理与训练 | 💡 创新点: 提出可训练的稀疏注意力模式，突破传统稀疏方法的精度损失瓶颈，实现质量与效率的最优平衡 | 📊 实验效果: 在 109B 参数规模下实现最高 28.4 倍推理加速，另两种配置分别达到 14.2 倍和 7.6 倍的效率提升 | ⭐ 整体评价: 超长上下文是 LLM 的核心竞争维度，MiniMax 的稀疏注意力方案展现了出色的工程实践价值，开源 215 星已获关注",
+        tags: [["Agent","green"],["LLM","green"],["Reasoning","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.13392"],["PDF","https://arxiv.org/pdf/2606.13392"],["Code","https://github.com/MiniMax-AI/MSA"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于训练驱动的稀疏注意力机制，在保持模型质量的前提下实现超长上下文的高效推理与训练"},{"label":"💡 创新点","text":"提出可训练的稀疏注意力模式，突破传统稀疏方法的精度损失瓶颈，实现质量与效率的最优平衡"},{"label":"📊 实验效果","text":"在 109B 参数规模下实现最高 28.4 倍推理加速，另两种配置分别达到 14.2 倍和 7.6 倍的效率提升"},{"label":"⭐ 整体评价","text":"超长上下文是 LLM 的核心竞争维度，MiniMax 的稀疏注意力方案展现了出色的工程实践价值，开源 215 星已获关注"}]
+    },
+    {
+        date: "2026-06-13",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "FORT-Searcher: Synthesizing Shortcut-Resistant Search Tasks for Training Deep Search Agents",
+        venue: "arXiv 2026 · RUC AIBox",
+        summary: "🔬 技术路线: 通过引导式框架合成抗捷径搜索任务，用于训练具备深度信息检索能力的搜索智能体 | 💡 创新点: 提出抗捷径任务合成方法，防止搜索智能体依赖表层信号走捷径，迫使模型进行真正的深度信息检索 | 📊 实验效果: 合成的训练数据显著提升了搜索智能体在复杂信息检索任务上的搜索深度和答案准确性 | ⭐ 整体评价: 抗捷径设计直击当前搜索智能体的核心痛点，训练数据合成方法论具备跨任务推广价值",
+        tags: [["Agent","green"],["Reasoning","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.12087"],["PDF","https://arxiv.org/pdf/2606.12087"],["Code","https://github.com/RUCAIBox/FORT-Searcher"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"通过引导式框架合成抗捷径搜索任务，用于训练具备深度信息检索能力的搜索智能体"},{"label":"💡 创新点","text":"提出抗捷径任务合成方法，防止搜索智能体依赖表层信号走捷径，迫使模型进行真正的深度信息检索"},{"label":"📊 实验效果","text":"合成的训练数据显著提升了搜索智能体在复杂信息检索任务上的搜索深度和答案准确性"},{"label":"⭐ 整体评价","text":"抗捷径设计直击当前搜索智能体的核心痛点，训练数据合成方法论具备跨任务推广价值"}]
+    },
+    {
+        date: "2026-06-13",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "Robust-U1: Can MLLMs Self-Recover Corrupted Visual Content for Robust Understanding?",
+        venue: "arXiv 2026 · HKUST",
+        summary: "🔬 技术路线: 基于多模态大语言模型构建视觉内容自恢复框架，结合微调与强化学习提升对损坏图像的鲁棒理解能力 | 💡 创新点: 首次系统研究 MLLM 对损坏视觉内容的自我修复能力，让模型无需外部校正即可自主恢复并理解受损图像 | 📊 实验效果: 在多种视觉损坏场景下验证了自恢复机制的有效性，鲁棒理解能力显著优于传统图像修复方法 | ⭐ 整体评价: 视觉自恢复是 MLLM 鲁棒性的重要研究方向，对自动驾驶、监控等实际部署场景具有直接应用价值",
+        tags: [["Multimodal","green"],["RL","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.08063"],["PDF","https://arxiv.org/pdf/2606.08063"],["Project","https://huggingface.co/spaces/Jiaqi-hkust/Robust-U1"],["Code","https://github.com/jqtangust/Robust-U1"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于多模态大语言模型构建视觉内容自恢复框架，结合微调与强化学习提升对损坏图像的鲁棒理解能力"},{"label":"💡 创新点","text":"首次系统研究 MLLM 对损坏视觉内容的自我修复能力，让模型无需外部校正即可自主恢复并理解受损图像"},{"label":"📊 实验效果","text":"在多种视觉损坏场景下验证了自恢复机制的有效性，鲁棒理解能力显著优于传统图像修复方法"},{"label":"⭐ 整体评价","text":"视觉自恢复是 MLLM 鲁棒性的重要研究方向，对自动驾驶、监控等实际部署场景具有直接应用价值"}]
+    },
     // === 2026-06-12 ===
     {
         date: "2026-06-12",
@@ -14119,6 +14178,13 @@ const PAPERS_DB = [
 ];
 
 const DAILY_OVERVIEW = {
+    "2026-06-13": {
+        bannerTitle: "🔥 今日看点",
+        bannerSubtitle: "🤖 LabVLA — 将视觉语言动作模型落地科学实验室，首次实现自然语言指令到实验设备操作的端到端控制；     🧩 WeaveBench — 微软提出混合界面长时序计算机使用基准，当前最优模型仅 41.2% 成功率揭示明显瓶颈；     🧩 MiniMax 稀疏注意力 — 109B 参数下最高 28.4 倍推理加速，超长上下文工程实践的重要突破。     📌 今日 Agent 方向集中 3 篇，涵盖计算机使用、搜索智能体和高效推理，VLA 方向 1 篇拓展至科学实验场景。",
+        picks: ["LabVLA: Grounding Vision-Language-Action Models in Scientific Laboratories","WeaveBench: A Long-Horizon, Real-World Benchmark for Computer-Use Agents with Hybrid Interfaces","MiniMax Sparse Attention"],
+        totalPapers: 5,
+        totalNews: 0
+    },
     "2026-06-12": {
         bannerTitle: "🔥 今日看点",
         bannerSubtitle: "🦾 Mana — 零样本铰接工具灵巧操作，无需逐工具训练即可泛化至多种铰接物体；     🦾 Flow Reversal Steering — 流反转引导提升通用机器人策略至 95% 成功率；     🌍 WEAVER — 更快、更好、更长的世界模型，三维优化驱动机器人操作规划突破。     📌 今日 Agent 方向集中爆发 8 篇（占比 53%），涵盖自主科研、环境工程、编码基准和视频理解等领域。",
