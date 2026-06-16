@@ -658,6 +658,110 @@
 <script>
 // ===== DATA =====
 const PAPERS_DB = [
+    // === 2026-06-16 ===
+    {
+        date: "2026-06-16",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "T-Rex: Tactile-Reactive Dexterous Manipulation",
+        venue: "arXiv 2026 · Linxi",
+        summary: "🔬 技术路线: 基于触觉传感器的实时反应式灵巧操作框架，将触觉信号直接映射为手指级控制指令 | 💡 创新点: 提出触觉驱动的反应式操作范式，实现动态触觉信号到多指灵巧操作的端到端控制 | 📊 实验效果: 在动态触觉反应操作任务上取得 30% 性能提升，验证了触觉反馈闭环的有效性 | ⭐ 整体评价: 触觉驱动的灵巧操作方向值得关注，触觉传感器的通用性和真机部署效果是后续关键",
+        tags: [["Robotics","green"],["Tactile","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.17055"],["PDF","https://arxiv.org/pdf/2606.17055"],["Project","https://tactile-rex.github.io/"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于触觉传感器的实时反应式灵巧操作框架，将触觉信号直接映射为手指级控制指令"},{"label":"💡 创新点","text":"提出触觉驱动的反应式操作范式，实现动态触觉信号到多指灵巧操作的端到端控制"},{"label":"📊 实验效果","text":"在动态触觉反应操作任务上取得 30% 性能提升，验证了触觉反馈闭环的有效性"},{"label":"⭐ 整体评价","text":"触觉驱动的灵巧操作方向值得关注，触觉传感器的通用性和真机部署效果是后续关键"}]
+    },
+    {
+        date: "2026-06-16",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "Human Universal Grasping",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 基于 RGB-D 感知的通用多指抓取框架，模拟人类的跨物体类别抓取策略 | 💡 创新点: 实现零样本跨类别通用抓取，覆盖百万级物体，无需针对每类物体单独训练 | 📊 实验效果: 抓取成功率 23%-34%，覆盖超过 100 万物体类别，展现强泛化能力 | ⭐ 整体评价: 通用抓取方向的重要尝试，建议关注零样本泛化边界和真实多指手的部署验证",
+        tags: [["Robotics","green"],["Grasping","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.17054"],["PDF","https://arxiv.org/pdf/2606.17054"],["Link","https://grasping.io/"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于 RGB-D 感知的通用多指抓取框架，模拟人类的跨物体类别抓取策略"},{"label":"💡 创新点","text":"实现零样本跨类别通用抓取，覆盖百万级物体，无需针对每类物体单独训练"},{"label":"📊 实验效果","text":"抓取成功率 23%-34%，覆盖超过 100 万物体类别，展现强泛化能力"},{"label":"⭐ 整体评价","text":"通用抓取方向的重要尝试，建议关注零样本泛化边界和真实多指手的部署验证"}]
+    },
+    {
+        date: "2026-06-16",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "Geometric Action Model for Robot Policy Learning",
+        venue: "arXiv 2026 · KAIST CVLab",
+        summary: "🔬 技术路线: 将几何约束编码到动作空间建模中，提升机器人策略学习的鲁棒性和样本效率 | 💡 创新点: 提出基于几何先验的动作表示，将空间结构信息融入视觉-语言-动作模型训练 | 📊 实验效果: 在多种操作和抓取任务上验证了几何约束对策略鲁棒性的提升效果 | ⭐ 整体评价: 几何约束驱动的策略学习思路值得跟进，泛化性和真机验证是后续关注点",
+        tags: [["Robotics","green"],["VLA","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.17046"],["PDF","https://arxiv.org/pdf/2606.17046"],["Project","https://cvlab-kaist.github.io/Geometric-Action-Model/"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"将几何约束编码到动作空间建模中，提升机器人策略学习的鲁棒性和样本效率"},{"label":"💡 创新点","text":"提出基于几何先验的动作表示，将空间结构信息融入视觉-语言-动作模型训练"},{"label":"📊 实验效果","text":"在多种操作和抓取任务上验证了几何约束对策略鲁棒性的提升效果"},{"label":"⭐ 整体评价","text":"几何约束驱动的策略学习思路值得跟进，泛化性和真机验证是后续关注点"}]
+    },
+    {
+        date: "2026-06-16",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "Hierarchical Advantage Weighting for Online RL Fine-Tuning of VLAs from Sparse Episode Outcomes",
+        venue: "arXiv 2026 · ACE Robotics",
+        summary: "🔬 技术路线: 针对预训练 VLA 策略的在线强化学习微调，提出分层优势加权策略解决稀疏奖励问题 | 💡 创新点: 提出 HABC 算法，利用分层优势加权从稀疏轨迹结局中高效提取学习信号 | 📊 实验效果: 成功率最高提升至 92%，在不同任务难度上均展现 12%-44% 的显著增益 | ⭐ 整体评价: VLA 在线微调方向的关键突破，分层策略的可扩展性和真实机器人验证值得关注",
+        tags: [["VLA","green"],["RL","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.17043"],["PDF","https://arxiv.org/pdf/2606.17043"],["Project","https://acerobotics-vla.github.io/HABC-Website"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"针对预训练 VLA 策略的在线强化学习微调，提出分层优势加权策略解决稀疏奖励问题"},{"label":"💡 创新点","text":"提出 HABC 算法，利用分层优势加权从稀疏轨迹结局中高效提取学习信号"},{"label":"📊 实验效果","text":"成功率最高提升至 92%，在不同任务难度上均展现 12%-44% 的显著增益"},{"label":"⭐ 整体评价","text":"VLA 在线微调方向的关键突破，分层策略的可扩展性和真实机器人验证值得关注"}]
+    },
+    {
+        date: "2026-06-16",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "R2RDreamer: 3D-aware Data Augmentation for Spatially-generalized 2D Manipulation Policies",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 利用 3D 感知的仿真数据增强框架，提升二维操作策略在空间维度上的泛化能力 | 💡 创新点: 提出仿真到现实的数据增强方法，将三维空间理解注入二维操作策略训练 | 📊 实验效果: 在空间泛化操作任务上验证了 3D 增强策略对跨场景迁移的有效性 | ⭐ 整体评价: 操作策略空间泛化方向，建议关注三维到二维的迁移效率和多场景鲁棒性验证",
+        tags: [["World Model","green"],["Manipulation","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.17040"],["PDF","https://arxiv.org/pdf/2606.17040"],["Project","https://r2rdreamer.github.io/"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"利用 3D 感知的仿真数据增强框架，提升二维操作策略在空间维度上的泛化能力"},{"label":"💡 创新点","text":"提出仿真到现实的数据增强方法，将三维空间理解注入二维操作策略训练"},{"label":"📊 实验效果","text":"在空间泛化操作任务上验证了 3D 增强策略对跨场景迁移的有效性"},{"label":"⭐ 整体评价","text":"操作策略空间泛化方向，建议关注三维到二维的迁移效率和多场景鲁棒性验证"}]
+    },
+    {
+        date: "2026-06-16",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Context-Aware RL for Agentic and Multimodal LLMs",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 基于上下文感知强化学习训练多模态 LLM Agent，使奖励建模与任务上下文自适应对齐 | 💡 创新点: 提出 ContextRL 框架，将上下文信息融入强化学习的奖励函数设计，增强 Agent 决策质量 | 📊 实验效果: 在多模态 Agent 任务上提升 1.8%-2.2%，覆盖 7K 训练样本验证稳定性 | ⭐ 整体评价: Agent 强化学习方向，上下文感知奖励机制的设计和复杂任务链的端到端效果值得跟进",
+        tags: [["Agent","green"],["RL","green"],["Multimodal","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.17053"],["PDF","https://arxiv.org/pdf/2606.17053"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于上下文感知强化学习训练多模态 LLM Agent，使奖励建模与任务上下文自适应对齐"},{"label":"💡 创新点","text":"提出 ContextRL 框架，将上下文信息融入强化学习的奖励函数设计，增强 Agent 决策质量"},{"label":"📊 实验效果","text":"在多模态 Agent 任务上提升 1.8%-2.2%，覆盖 7K 训练样本验证稳定性"},{"label":"⭐ 整体评价","text":"Agent 强化学习方向，上下文感知奖励机制的设计和复杂任务链的端到端效果值得跟进"}]
+    },
+    {
+        date: "2026-06-16",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Benchmarking LLM Agents on Meta-Analysis Articles from Nature Portfolio",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 基于 Nature Portfolio 真实元分析文献构建 MetaSyn 基准，端到端评估 LLM Agent 科研能力 | 💡 创新点: 首次将科学元分析全流程作为 Agent 评估任务，覆盖文献检索到综合分析的完整链条 | 📊 实验效果: 最佳模型元分析准确率达 90.9%，但整体任务成功率仅 52.7%，存在巨大改进空间 | ⭐ 整体评价: 科学 Agent 评估的新范式，建议关注任务分解策略和多模态证据综合能力",
+        tags: [["Agent","green"],["Benchmark","green"],["Science","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.17041"],["PDF","https://arxiv.org/pdf/2606.17041"],["Code","https://github.com/BFTree/MetaSyn"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于 Nature Portfolio 真实元分析文献构建 MetaSyn 基准，端到端评估 LLM Agent 科研能力"},{"label":"💡 创新点","text":"首次将科学元分析全流程作为 Agent 评估任务，覆盖文献检索到综合分析的完整链条"},{"label":"📊 实验效果","text":"最佳模型元分析准确率达 90.9%，但整体任务成功率仅 52.7%，存在巨大改进空间"},{"label":"⭐ 整体评价","text":"科学 Agent 评估的新范式，建议关注任务分解策略和多模态证据综合能力"}]
+    },
+    {
+        date: "2026-06-16",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "KVEraser: Learning to Steer KV Cache for Efficient Localized Context Erasing",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 通过后验方式操控 KV Cache 实现局部上下文的精准擦除，无需重新训练模型 | 💡 创新点: 提出基于 KV Cache 编辑的局部记忆擦除机制，在不影响模型整体性能的前提下精准删除特定上下文 | 📊 实验效果: 擦除效率提升 17.6 倍，推理加速 4 倍，在保持模型整体性能的同时实现 24% 的精确擦除率 | ⭐ 整体评价: KV Cache 安全编辑方向的重要工作，擦除精准性和对推理质量的影响是后续关注点",
+        tags: [["LLM","green"],["Safety","green"],["KV Cache","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.17034"],["PDF","https://arxiv.org/pdf/2606.17034"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"通过后验方式操控 KV Cache 实现局部上下文的精准擦除，无需重新训练模型"},{"label":"💡 创新点","text":"提出基于 KV Cache 编辑的局部记忆擦除机制，在不影响模型整体性能的前提下精准删除特定上下文"},{"label":"📊 实验效果","text":"擦除效率提升 17.6 倍，推理加速 4 倍，在保持模型整体性能的同时实现 24% 的精确擦除率"},{"label":"⭐ 整体评价","text":"KV Cache 安全编辑方向的重要工作，擦除精准性和对推理质量的影响是后续关注点"}]
+    },
+    {
+        date: "2026-06-16",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Measuring Epistemic Resilience of LLMs Under Misleading Medical Context",
+        venue: "arXiv 2026 · University of Oxford · HuggingFace 热门",
+        summary: "🔬 技术路线: 构建对抗性医学上下文的 MedMisBench 基准，量化评估 LLM 在误导信息下的认知保持能力 | 💡 创新点: 首次系统评估 LLM 在误导性医学上下文中的认知弹性，区分知识保持与语境屈从两种行为模式 | 📊 实验效果: 最佳模型认知弹性得分 71.1%，但在强误导场景下仍有 51.5% 的错误响应率 | ⭐ 整体评价: LLM 医学安全性的重要基准，认知弹性机制的改进和临床部署风险评估是未来方向",
+        tags: [["LLM","green"],["Safety","green"],["Medical","green"],["Benchmark","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.12291"],["PDF","https://arxiv.org/pdf/2606.12291"],["Dataset","https://huggingface.co/datasets/HongjianZhou/MedMisBench"],["Code","https://github.com/AI-in-Health/MedMisBench"],["GitHub","https://github.com/shuai-zhixiao/claw"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"构建对抗性医学上下文的 MedMisBench 基准，量化评估 LLM 在误导信息下的认知保持能力"},{"label":"💡 创新点","text":"首次系统评估 LLM 在误导性医学上下文中的认知弹性，区分知识保持与语境屈从两种行为模式"},{"label":"📊 实验效果","text":"最佳模型认知弹性得分 71.1%，但在强误导场景下仍有 51.5% 的错误响应率"},{"label":"⭐ 整体评价","text":"LLM 医学安全性的重要基准，认知弹性机制的改进和临床部署风险评估是未来方向"}]
+    },
     // === 2026-06-15 ===
     {
         date: "2026-06-15",
@@ -14610,6 +14714,13 @@ const PAPERS_DB = [
 ];
 
 const DAILY_OVERVIEW = {
+    "2026-06-16": {
+        bannerTitle: "🔥 今日看点",
+        bannerSubtitle: "今日 Robotics 方向集中爆发（3篇），T-Rex 触觉反应灵巧操作为 Linxi 团队最新成果。VLA 方向 Hierarchical Advantage Weighting 在稀疏奖励微调中取得显著提升（成功率最高 92%）。Agent 方向 MetaSyn 将 LLM Agent 应用于 Nature 级科学元分析任务。LLM 方向 KVEraser 通过 KV Cache 操控实现 17.6 倍上下文擦除加速，牛津 MedMisBench 系统评估 LLM 在误导性医学信息下的认知弹性。",
+        picks: ["T-Rex: Tactile-Reactive Dexterous Manipulation","Hierarchical Advantage Weighting for Online RL Fine-Tuning of VLAs from Sparse Episode Outcomes","Benchmarking LLM Agents on Meta-Analysis Articles from Nature Portfolio","KVEraser: Learning to Steer KV Cache for Efficient Localized Context Erasing"],
+        totalPapers: 9,
+        totalNews: 0
+    },
     "2026-06-15": {
         bannerTitle: "🔥 今日看点",
         bannerSubtitle: "🧩 Agent 方向集中爆发 — 今日 6/8 篇论文属于 Agent 方向，涵盖记忆重构、全模态编排、评估框架和持久化自主智能体；     🎬 OmniDirector — Kling 团队提出通用多镜头相机克隆技术，无需配对数据实现跨视频的相机风格迁移；     🏛️ OpenAI 发布合作伙伴网络 — 正式推出 OpenAI Partner Network，拓展企业级 AI 部署生态。",

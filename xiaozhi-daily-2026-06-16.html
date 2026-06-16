@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>小小志AI日报 - 2026年6月16日 周二</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans SC', sans-serif;
+  background: #0a0e1a;
+  color: #e0e6f0;
+  line-height: 1.7;
+  min-height: 100vh;
+}
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+header {
+  text-align: center;
+  margin-bottom: 48px;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, rgba(59,130,246,0.08) 0%, rgba(139,92,246,0.08) 100%);
+  border-radius: 20px;
+  border: 1px solid rgba(99,102,241,0.15);
+}
+header h1 {
+  font-size: 2rem;
+  background: linear-gradient(135deg, #60a5fa, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 8px;
+}
+header .date {
+  color: #94a3b8;
+  font-size: 1rem;
+}
+header .subtitle {
+  color: #64748b;
+  font-size: 0.9rem;
+  margin-top: 6px;
+}
+.highlight-banner {
+  background: linear-gradient(135deg, rgba(249,115,22,0.1) 0%, rgba(234,179,8,0.08) 100%);
+  border: 1px solid rgba(249,115,22,0.2);
+  border-radius: 14px;
+  padding: 20px 24px;
+  margin-bottom: 36px;
+}
+.hl-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fb923c;
+  margin-bottom: 8px;
+}
+.hl-text {
+  font-size: 0.92rem;
+  color: #cbd5e1;
+  line-height: 1.7;
+}
+.section {
+  margin-bottom: 40px;
+}
+.section-title {
+  font-size: 1.4rem;
+  color: #f1f5f9;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(99,102,241,0.2);
+}
+.paper-card {
+  background: rgba(30,41,59,0.6);
+  border: 1px solid rgba(99,102,241,0.12);
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 16px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.paper-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(99,102,241,0.1);
+  border-color: rgba(99,102,241,0.3);
+}
+.paper-card.hot {
+  border-color: rgba(249,115,22,0.25);
+  background: rgba(30,41,59,0.7);
+}
+.paper-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #f8fafc;
+  margin-bottom: 8px;
+}
+.paper-meta {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-bottom: 10px;
+}
+.summary-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+@media (max-width: 640px) {
+  .summary-grid { grid-template-columns: 1fr; }
+}
+.summary-item {
+  background: rgba(15,23,42,0.5);
+  border-radius: 10px;
+  padding: 12px 14px;
+  border: 1px solid rgba(99,102,241,0.08);
+}
+.summary-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #818cf8;
+  margin-bottom: 4px;
+}
+.summary-text {
+  font-size: 0.88rem;
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+.paper-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.tag {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+.tag-agent { background: rgba(16,185,129,0.12); color: #34d399; }
+.tag-llm { background: rgba(99,102,241,0.12); color: #818cf8; }
+.tag-multimodal { background: rgba(244,114,182,0.12); color: #f472b6; }
+.tag-world { background: rgba(251,191,36,0.12); color: #fbbf24; }
+.tag-robot { background: rgba(251,146,60,0.12); color: #fb923c; }
+.tag-rl { background: rgba(45,212,191,0.12); color: #2dd4bf; }
+.tag-video { background: rgba(168,85,247,0.12); color: #a855f7; }
+.tag-benchmark { background: rgba(34,211,238,0.12); color: #22d3ee; }
+.tag-vla { background: rgba(59,130,246,0.12); color: #60a5fa; }
+.tag-safety { background: rgba(239,68,68,0.12); color: #f87171; }
+.tag-memory { background: rgba(192,132,252,0.12); color: #c084fc; }
+.tag-reasoning { background: rgba(132,204,22,0.12); color: #a3e635; }
+.tag-code { background: rgba(52,211,153,0.12); color: #34d399; }
+.tag-survey { background: rgba(6,182,212,0.12); color: #22d3ee; }
+.tag-science { background: rgba(217,119,6,0.12); color: #f59e0b; }
+.tag-medical { background: rgba(239,68,68,0.12); color: #f87171; }
+.hot-badge {
+  display: inline;
+  margin-right: 4px;
+}
+.info-card {
+  background: rgba(30,41,59,0.6);
+  border: 1px solid rgba(99,102,241,0.12);
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 16px;
+}
+.paper-summary {
+  font-size: 0.9rem;
+  color: #cbd5e1;
+  line-height: 1.7;
+  margin-bottom: 14px;
+}
+.paper-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.paper-links a {
+  display: inline-block;
+  padding: 5px 14px;
+  background: rgba(99,102,241,0.12);
+  color: #818cf8;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+.paper-links a:hover {
+  background: rgba(99,102,241,0.25);
+}
+.stats {
+  text-align: center;
+  padding: 30px;
+  margin-top: 40px;
+  background: rgba(30,41,59,0.4);
+  border-radius: 14px;
+  border: 1px solid rgba(99,102,241,0.1);
+}
+.stats p { color: #94a3b8; font-size: 0.88rem; }
+footer {
+  text-align: center;
+  padding: 40px 0 20px;
+  color: #475569;
+  font-size: 0.82rem;
+}
+footer a { color: #6366f1; text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <h1>小小志 AI 日报</h1>
+  <div class="date">2026年6月16日 周二</div>
+  <div class="subtitle">arXiv 8 篇 · HuggingFace 热门 1 篇 · 共 9 篇</div>
+</header>
+
+<div class="highlight-banner">
+  <div class="hl-title">🔥 今日看点</div>
+  <div class="hl-text">
+    今日 Robotics 方向集中爆发（3篇），T-Rex 触觉反应灵巧操作为 Linxi 团队最新成果。VLA 方向 Hierarchical Advantage Weighting 在稀疏奖励微调中取得显著提升（成功率最高 92%）。Agent 方向 MetaSyn 将 LLM Agent 应用于 Nature 级科学元分析任务。LLM 方向 KVEraser 通过 KV Cache 操控实现 17.6 倍上下文擦除加速，牛津 MedMisBench 系统评估 LLM 在误导性医学信息下的认知弹性。
+  </div>
+</div>
+
+<section class="section">
+  <h2 class="section-title">🦾 Robotics · 机器人算法与控制</h2>
+
+  <div class="paper-card hot">
+    <div class="paper-title"><span class="hot-badge">🔥</span> T-Rex: Tactile-Reactive Dexterous Manipulation</div>
+    <div class="paper-meta">arXiv 2026 · Linxi</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">基于触觉传感器的实时反应式灵巧操作框架，将触觉信号直接映射为手指级控制指令</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出触觉驱动的反应式操作范式，实现动态触觉信号到多指灵巧操作的端到端控制</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在动态触觉反应操作任务上取得 30% 性能提升，验证了触觉反馈闭环的有效性</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">触觉驱动的灵巧操作方向值得关注，触觉传感器的通用性和真机部署效果是后续关键</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-robot">Robotics</span>
+      <span class="tag tag-rl">Tactile</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.17055">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.17055">PDF</a>
+      <a href="https://tactile-rex.github.io/">Project</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">Human Universal Grasping</div>
+    <div class="paper-meta">arXiv 2026</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">基于 RGB-D 感知的通用多指抓取框架，模拟人类的跨物体类别抓取策略</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">实现零样本跨类别通用抓取，覆盖百万级物体，无需针对每类物体单独训练</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">抓取成功率 23%-34%，覆盖超过 100 万物体类别，展现强泛化能力</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">通用抓取方向的重要尝试，建议关注零样本泛化边界和真实多指手的部署验证</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-robot">Robotics</span>
+      <span class="tag tag-benchmark">Grasping</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.17054">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.17054">PDF</a>
+      <a href="https://grasping.io/">Link</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">Geometric Action Model for Robot Policy Learning</div>
+    <div class="paper-meta">arXiv 2026 · KAIST CVLab</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">将几何约束编码到动作空间建模中，提升机器人策略学习的鲁棒性和样本效率</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出基于几何先验的动作表示，将空间结构信息融入视觉-语言-动作模型训练</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在多种操作和抓取任务上验证了几何约束对策略鲁棒性的提升效果</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">几何约束驱动的策略学习思路值得跟进，泛化性和真机验证是后续关注点</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-robot">Robotics</span>
+      <span class="tag tag-vla">VLA</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.17046">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.17046">PDF</a>
+      <a href="https://cvlab-kaist.github.io/Geometric-Action-Model/">Project</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2 class="section-title">🤖 VLA · Vision-Language-Action</h2>
+
+  <div class="paper-card hot">
+    <div class="paper-title"><span class="hot-badge">🔥</span> Hierarchical Advantage Weighting for Online RL Fine-Tuning of VLAs from Sparse Episode Outcomes</div>
+    <div class="paper-meta">arXiv 2026 · ACE Robotics</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">针对预训练 VLA 策略的在线强化学习微调，提出分层优势加权策略解决稀疏奖励问题</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 HABC 算法，利用分层优势加权从稀疏轨迹结局中高效提取学习信号</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">成功率最高提升至 92%，在不同任务难度上均展现 12%-44% 的显著增益</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">VLA 在线微调方向的关键突破，分层策略的可扩展性和真实机器人验证值得关注</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-vla">VLA</span>
+      <span class="tag tag-rl">RL</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.17043">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.17043">PDF</a>
+      <a href="https://acerobotics-vla.github.io/HABC-Website">Project</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2 class="section-title">🌍 World Model · 世界模型</h2>
+
+  <div class="paper-card">
+    <div class="paper-title">R2RDreamer: 3D-aware Data Augmentation for Spatially-generalized 2D Manipulation Policies</div>
+    <div class="paper-meta">arXiv 2026</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">利用 3D 感知的仿真数据增强框架，提升二维操作策略在空间维度上的泛化能力</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出仿真到现实的数据增强方法，将三维空间理解注入二维操作策略训练</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在空间泛化操作任务上验证了 3D 增强策略对跨场景迁移的有效性</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">操作策略空间泛化方向，建议关注三维到二维的迁移效率和多场景鲁棒性验证</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-world">World Model</span>
+      <span class="tag tag-robot">Manipulation</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.17040">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.17040">PDF</a>
+      <a href="https://r2rdreamer.github.io/">Project</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2 class="section-title">🧩 Agent · 智能体</h2>
+
+  <div class="paper-card">
+    <div class="paper-title">Context-Aware RL for Agentic and Multimodal LLMs</div>
+    <div class="paper-meta">arXiv 2026</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">基于上下文感知强化学习训练多模态 LLM Agent，使奖励建模与任务上下文自适应对齐</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 ContextRL 框架，将上下文信息融入强化学习的奖励函数设计，增强 Agent 决策质量</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在多模态 Agent 任务上提升 1.8%-2.2%，覆盖 7K 训练样本验证稳定性</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">Agent 强化学习方向，上下文感知奖励机制的设计和复杂任务链的端到端效果值得跟进</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-agent">Agent</span>
+      <span class="tag tag-rl">RL</span>
+      <span class="tag tag-multimodal">Multimodal</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.17053">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.17053">PDF</a>
+    </div>
+  </div>
+
+  <div class="paper-card hot">
+    <div class="paper-title"><span class="hot-badge">🔥</span> Benchmarking LLM Agents on Meta-Analysis Articles from Nature Portfolio</div>
+    <div class="paper-meta">arXiv 2026</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">基于 Nature Portfolio 真实元分析文献构建 MetaSyn 基准，端到端评估 LLM Agent 科研能力</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次将科学元分析全流程作为 Agent 评估任务，覆盖文献检索到综合分析的完整链条</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">最佳模型元分析准确率达 90.9%，但整体任务成功率仅 52.7%，存在巨大改进空间</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">科学 Agent 评估的新范式，建议关注任务分解策略和多模态证据综合能力</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-agent">Agent</span>
+      <span class="tag tag-benchmark">Benchmark</span>
+      <span class="tag tag-science">Science</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.17041">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.17041">PDF</a>
+      <a href="https://github.com/BFTree/MetaSyn">Code</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2 class="section-title">🧠 LLM · 大语言模型</h2>
+
+  <div class="paper-card hot">
+    <div class="paper-title"><span class="hot-badge">🔥</span> KVEraser: Learning to Steer KV Cache for Efficient Localized Context Erasing</div>
+    <div class="paper-meta">arXiv 2026</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">通过后验方式操控 KV Cache 实现局部上下文的精准擦除，无需重新训练模型</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出基于 KV Cache 编辑的局部记忆擦除机制，在不影响模型整体性能的前提下精准删除特定上下文</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">擦除效率提升 17.6 倍，推理加速 4 倍，在保持模型整体性能的同时实现 24% 的精确擦除率</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">KV Cache 安全编辑方向的重要工作，擦除精准性和对推理质量的影响是后续关注点</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-llm">LLM</span>
+      <span class="tag tag-safety">Safety</span>
+      <span class="tag tag-memory">KV Cache</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.17034">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.17034">PDF</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">Measuring Epistemic Resilience of LLMs Under Misleading Medical Context</div>
+    <div class="paper-meta">arXiv 2026 · University of Oxford · HuggingFace 热门</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">构建对抗性医学上下文的 MedMisBench 基准，量化评估 LLM 在误导信息下的认知保持能力</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次系统评估 LLM 在误导性医学上下文中的认知弹性，区分知识保持与语境屈从两种行为模式</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">最佳模型认知弹性得分 71.1%，但在强误导场景下仍有 51.5% 的错误响应率</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">LLM 医学安全性的重要基准，认知弹性机制的改进和临床部署风险评估是未来方向</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-llm">LLM</span>
+      <span class="tag tag-safety">Safety</span>
+      <span class="tag tag-medical">Medical</span>
+      <span class="tag tag-benchmark">Benchmark</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.12291">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.12291">PDF</a>
+      <a href="https://huggingface.co/datasets/HongjianZhou/MedMisBench">Dataset</a>
+      <a href="https://github.com/AI-in-Health/MedMisBench">Code</a>
+    </div>
+  </div>
+</section>
+
+<div class="stats">
+  <p>📊 共 9 条动态 · 📝 arXiv 8 篇 · 🤗 HF 热门 1 篇 · 🤖 Agent 2 篇 · 🦾 Robotics 3 篇 · 🤖 VLA 1 篇 · 🌍 World Model 1 篇 · 🧠 LLM 2 篇</p>
+</div>
+
+<footer>
+  <p>自动生成于 2026-06-16 · 小小志 AI 日报</p>
+  <p>关注：VLA · Robotics · World Model · LLM · Agent</p>
+  <p><a href="https://github.com/shuai-zhixiao/claw">GitHub</a></p>
+</footer>
+
+</div>
+</body>
+</html>
