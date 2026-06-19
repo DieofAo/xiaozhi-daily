@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>小小志AI日报 - 2026年6月19日 周五</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans SC', sans-serif;
+  background: #0a0e1a;
+  color: #e0e6f0;
+  line-height: 1.7;
+  min-height: 100vh;
+}
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+header {
+  text-align: center;
+  margin-bottom: 48px;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, rgba(59,130,246,0.08) 0%, rgba(139,92,246,0.08) 100%);
+  border-radius: 20px;
+  border: 1px solid rgba(99,102,241,0.15);
+}
+header h1 {
+  font-size: 2rem;
+  background: linear-gradient(135deg, #60a5fa, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 8px;
+}
+header .date {
+  color: #94a3b8;
+  font-size: 1rem;
+}
+header .subtitle {
+  color: #64748b;
+  font-size: 0.9rem;
+  margin-top: 6px;
+}
+.highlight-banner {
+  background: linear-gradient(135deg, rgba(249,115,22,0.1) 0%, rgba(234,179,8,0.08) 100%);
+  border: 1px solid rgba(249,115,22,0.2);
+  border-radius: 14px;
+  padding: 20px 24px;
+  margin-bottom: 36px;
+}
+.hl-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fb923c;
+  margin-bottom: 8px;
+}
+.hl-text {
+  font-size: 0.92rem;
+  color: #cbd5e1;
+  line-height: 1.7;
+}
+.section {
+  margin-bottom: 40px;
+}
+.section-title {
+  font-size: 1.4rem;
+  color: #f1f5f9;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(99,102,241,0.2);
+}
+.paper-card {
+  background: rgba(30,41,59,0.6);
+  border: 1px solid rgba(99,102,241,0.12);
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 16px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.paper-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(99,102,241,0.1);
+  border-color: rgba(99,102,241,0.3);
+}
+.paper-card.hot {
+  border-color: rgba(249,115,22,0.25);
+  background: rgba(30,41,59,0.7);
+}
+.paper-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #f8fafc;
+  margin-bottom: 8px;
+}
+.paper-meta {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-bottom: 10px;
+}
+.summary-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+@media (max-width: 640px) {
+  .summary-grid { grid-template-columns: 1fr; }
+}
+.summary-item {
+  background: rgba(15,23,42,0.5);
+  border-radius: 10px;
+  padding: 12px 14px;
+  border: 1px solid rgba(99,102,241,0.08);
+}
+.summary-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #818cf8;
+  margin-bottom: 4px;
+}
+.summary-text {
+  font-size: 0.88rem;
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+.paper-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.tag {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+.tag-agent { background: rgba(16,185,129,0.12); color: #34d399; }
+.tag-llm { background: rgba(99,102,241,0.12); color: #818cf8; }
+.tag-multimodal { background: rgba(244,114,182,0.12); color: #f472b6; }
+.tag-world { background: rgba(251,191,36,0.12); color: #fbbf24; }
+.tag-robot { background: rgba(251,146,60,0.12); color: #fb923c; }
+.tag-rl { background: rgba(45,212,191,0.12); color: #2dd4bf; }
+.tag-video { background: rgba(168,85,247,0.12); color: #a855f7; }
+.tag-benchmark { background: rgba(34,211,238,0.12); color: #22d3ee; }
+.tag-vla { background: rgba(59,130,246,0.12); color: #60a5fa; }
+.tag-safety { background: rgba(239,68,68,0.12); color: #f87171; }
+.tag-memory { background: rgba(192,132,252,0.12); color: #c084fc; }
+.tag-reasoning { background: rgba(132,204,22,0.12); color: #a3e635; }
+.tag-code { background: rgba(52,211,153,0.12); color: #34d399; }
+.tag-survey { background: rgba(6,182,212,0.12); color: #22d3ee; }
+.tag-science { background: rgba(217,119,6,0.12); color: #f59e0b; }
+.tag-medical { background: rgba(239,68,68,0.12); color: #f87171; }
+.tag-systems { background: rgba(56,189,248,0.12); color: #38bdf8; }
+.hot-badge {
+  display: inline;
+  margin-right: 4px;
+}
+.info-card {
+  background: rgba(30,41,59,0.6);
+  border: 1px solid rgba(99,102,241,0.12);
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 16px;
+}
+.paper-summary {
+  font-size: 0.9rem;
+  color: #cbd5e1;
+  line-height: 1.7;
+  margin-bottom: 14px;
+}
+.paper-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.paper-links a {
+  display: inline-block;
+  padding: 5px 14px;
+  background: rgba(99,102,241,0.12);
+  color: #818cf8;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+.paper-links a:hover {
+  background: rgba(99,102,241,0.25);
+}
+.stats {
+  text-align: center;
+  padding: 30px;
+  margin-top: 40px;
+  background: rgba(30,41,59,0.4);
+  border-radius: 14px;
+  border: 1px solid rgba(99,102,241,0.1);
+}
+.stats p { color: #94a3b8; font-size: 0.88rem; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <h1>📡 小小志AI日报</h1>
+  <div class="date">2026年6月19日 周五</div>
+  <div class="subtitle">📝 arXiv 8 篇 · 专注 AI 前沿研究每日速递</div>
+</header>
+
+<div class="highlight-banner">
+  <div class="hl-title">🔥 今日看点</div>
+  <div class="hl-text">
+    NVIDIA 发布 Execution-State Capsules，通过 KV-only 状态压缩实现边缘设备推理延迟降低 3.9 倍，吞吐量提升 27 倍，瞄准物理 AI 在端侧设备的高效部署。MemoryWAM 首次在机器人世界动作模型中引入显式持久记忆机制，解决长序列操作中的状态遗忘问题。Current World Models Lack a Persistent State Core 以批判性视角指出当前世界模型的根本缺陷，为领域发展提供了有价值的反思框架。
+  </div>
+</div>
+
+<section class="section">
+  <h2 class="section-title">🦾 Robotics · 机器人控制</h2>
+
+  <div class="paper-card hot">
+    <div class="paper-title"><span class="hot-badge">🔥</span> MemoryWAM: Efficient World Action Modeling with Persistent Memory</div>
+    <div class="paper-meta">arXiv 2026 · Robotics</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出基于持久记忆的高效世界动作模型，将时序状态编码为可索引的上下文表示，实现长程操作信息的可靠存储与检索</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次在机器人世界动作模型中引入显式持久记忆机制，将状态维护从隐式编码转变为结构化索引，解决长序列操作中的状态遗忘问题</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在操作、抓取和推理三类任务上均验证了有效性，长程任务中记忆保持能力显著优于无记忆机制的基线方法</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于机器人世界动作建模方向，持久记忆机制是解决长程操作任务的关键突破，建议关注记忆容量与计算效率的实际权衡</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-robot">Robotics</span>
+      <span class="tag tag-memory">Memory</span>
+      <span class="tag tag-vla">World-Action</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.20562">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.20562">PDF</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">Generating Robot Hands from Human Demonstrations</div>
+    <div class="paper-meta">arXiv 2026 · Robotics</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">采用动作映射框架从人类操作演示视频中自动生成适配的机器人灵巧手动作序列，无需人工标注</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出自由度的动作转换方法，实现了从人类手部复杂轨迹到机器人灵巧手动作的端到端自动映射</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在操作和抓取任务上验证了从人到机器人的动作迁移有效性，生成的机器人手动作具有自然灵巧的特性</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于机器人模仿学习方向，人机动作迁移是灵巧操作的核心瓶颈，建议关注泛化到不同机械手的能力</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-robot">Robotics</span>
+      <span class="tag tag-vla">Imitation</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.20549">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.20549">PDF</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2 class="section-title">🌍 World Model · 世界模型</h2>
+
+  <div class="paper-card hot">
+    <div class="paper-title"><span class="hot-badge">🔥</span> Current World Models Lack a Persistent State Core</div>
+    <div class="paper-meta">arXiv 2026 · World Model</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">通过系统性理论和实证分析，揭示当前主流世界模型架构普遍缺乏持久状态核心这一根本性设计缺陷</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次明确定义世界模型的持久状态核心概念，提出评估框架并系统论证其对长期一致性预测的必要性</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在相机控制等需要长期一致性任务上，揭示了持久状态缺失导致预测漂移和状态不连续等具体问题</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于世界模型方向的批判性分析工作，对领域有重要的自省价值，建议关注其提出的持久状态评估方法论和改进方向</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-world">World Model</span>
+      <span class="tag tag-survey">Analysis</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.20545">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.20545">PDF</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2 class="section-title">🧠 LLM · 大语言模型</h2>
+
+  <div class="paper-card">
+    <div class="paper-title">TimeProVe: Propose, then Verify for Efficient Long Video Temporal Reasoning in Activities of Daily Living</div>
+    <div class="paper-meta">arXiv 2026 · LLM / Video Reasoning</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出「先提案后验证」的两阶段推理框架，先快速定位候选时序片段再进行精细验证，大幅降低长视频推理计算开销</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">将长视频时序推理拆解为提案和验证两个独立子任务，通过分治策略在计算效率和推理精度之间取得平衡</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在日常生活活动视频上取得显著加速，推理准确率达 75% 至 93%，关键时序定位指标提升 7.3%</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于视频时序理解方向，两阶段框架工程实用性高，建议关注在更长视频和实时场景下的扩展表现</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-llm">LLM</span>
+      <span class="tag tag-video">Video</span>
+      <span class="tag tag-reasoning">Reasoning</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.20561">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.20561">PDF</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">How Transparent is DiffusionGemma?</div>
+    <div class="paper-meta">arXiv 2026 · LLM / Interpretability</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">系统性分析 DiffusionGemma 扩散语言模型的内部机制，评估其生成过程的可解释性和可控性</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次对扩散语言模型进行全面的透明度审计，揭示扩散范式在文本生成中的内部表征和控制特性</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">推理速度实现 28.6 倍加速，参数效率优化 1.1 倍，为扩散语言模型的设计提供了可解释性新见解</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于大语言模型可解释性方向，28.6 倍加速令人关注，建议关注扩散模型在文本生成中的实际质量控制表现</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-llm">LLM</span>
+      <span class="tag tag-reasoning">Interpretability</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.20560">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.20560">PDF</a>
+    </div>
+  </div>
+
+  <div class="paper-card hot">
+    <div class="paper-title"><span class="hot-badge">🔥</span> Execution-State Capsules: Graph-Bound Execution-State Checkpoint and Restore for Low-Latency, Small-Batch, On-Device Physical-AI Serving</div>
+    <div class="paper-meta">arXiv 2026 · NVIDIA</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出基于图的执行状态胶囊检查点和恢复机制，通过 KV-only 状态压缩实现低延迟小批量的边缘设备 AI 推理服务</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次将图绑定状态管理与 KV-only 压缩结合，面向物理 AI 在端侧设备的小批量低延迟场景设计精巧的系统优化方案</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">推理延迟降低 3.9 倍，吞吐量提升 27 倍，支持 2K 至 16K 规模的稳定小批量高效服务</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">NVIDIA 出品的系统工程工作，3.9 倍延迟优化和 27 倍吞吐量提升对物理 AI 边缘部署具有重要的工程参考价值</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-llm">LLM</span>
+      <span class="tag tag-systems">Systems</span>
+      <span class="tag tag-robot">Physical-AI</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.20537">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.20537">PDF</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2 class="section-title">🧩 Agent · 智能体</h2>
+
+  <div class="paper-card">
+    <div class="paper-title">LedgerAgent: Structured State for Policy-Adherent Tool-Calling Agents</div>
+    <div class="paper-meta">arXiv 2026 · Agent</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出基于结构化状态账本的智能体框架，将策略合规性融入工具调用的核心执行路径</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次为智能体工具调用引入事务化状态管理机制，将策略遵循从软约束升级为可审计的硬约束，确保每一步操作可追溯</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在推理任务上策略遵循度显著优于无状态管理的基线方法，且不会显著增加推理开销</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于智能体工具调用方向，策略合规的硬约束设计在企业级 AI 部署场景中具有实际应用价值</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-agent">Agent</span>
+      <span class="tag tag-code">Tool-Calling</span>
+      <span class="tag tag-safety">Policy</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.20529">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.20529">PDF</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2 class="section-title">🎨 Multimodal · 多模态</h2>
+
+  <div class="paper-card">
+    <div class="paper-title">StylisticBias: A Few Human Visual Cues Drive Most Social Biases in MLLMs</div>
+    <div class="paper-meta">arXiv 2026 · Multimodal</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">通过构建 25K 规模的大规模数据集，系统量化多模态大模型中视觉风格线索对社会偏见的影响程度和来源</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次系统量化视觉风格线索对社会偏见的贡献，揭示少数视觉风格特征即可驱动多模态大模型中的主要社会偏见</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">基于 25K 数据规模发现，仅少量视觉风格线索就贡献了多模态大模型中的大部分社会偏见输出</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于多模态公平性方向的重要实证研究，对理解偏见根源和设计缓解策略都有指导意义，提供了开源数据集和代码</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-multimodal">Multimodal</span>
+      <span class="tag tag-benchmark">Dataset</span>
+      <span class="tag tag-safety">Fairness</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.20527">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.20527">PDF</a>
+      <a href="https://github.com/timo-cavelius/StylisticBias">Code</a>
+      <a href="https://hf.co/datasets/shaghayegh/stylistic-bias-dataset">Dataset</a>
+    </div>
+  </div>
+</section>
+
+<div class="stats">
+  <p>📊 共 8 条动态 · arXiv 8 篇 · HF 模型 0 · X/Twitter 0</p>
+  <p style="margin-top:6px;font-size:0.8rem;color:#475569">自动生成 · 关注 VLA · Robotics · World Model · LLM · Multimodal · Agent</p>
+</div>
+
+</div>
+</body>
+</html>

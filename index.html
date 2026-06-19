@@ -658,6 +658,98 @@
 <script>
 // ===== DATA =====
 const PAPERS_DB = [
+    // === 2026-06-19 ===
+    {
+        date: "2026-06-19",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "MemoryWAM: Efficient World Action Modeling with Persistent Memory",
+        venue: "arXiv 2026 · Robotics",
+        summary: "🔬 技术路线: 提出基于持久记忆的高效世界动作模型，将时序状态编码为可索引的上下文表示，实现长程操作信息的可靠存储与检索 | 💡 创新点: 首次在机器人世界动作模型中引入显式持久记忆机制，将状态维护从隐式编码转变为结构化索引，解决长序列操作中的状态遗忘问题 | 📊 实验效果: 在操作、抓取和推理三类任务上均验证了有效性，长程任务中记忆保持能力显著优于无记忆机制的基线方法 | ⭐ 整体评价: 属于机器人世界动作建模方向，持久记忆机制是解决长程操作任务的关键突破，建议关注记忆容量与计算效率的实际权衡",
+        tags: [["Robotics","green"],["Memory","green"],["World-Action","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.20562"],["PDF","https://arxiv.org/pdf/2606.20562"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出基于持久记忆的高效世界动作模型，将时序状态编码为可索引的上下文表示，实现长程操作信息的可靠存储与检索"},{"label":"💡 创新点","text":"首次在机器人世界动作模型中引入显式持久记忆机制，将状态维护从隐式编码转变为结构化索引，解决长序列操作中的状态遗忘问题"},{"label":"📊 实验效果","text":"在操作、抓取和推理三类任务上均验证了有效性，长程任务中记忆保持能力显著优于无记忆机制的基线方法"},{"label":"⭐ 整体评价","text":"属于机器人世界动作建模方向，持久记忆机制是解决长程操作任务的关键突破，建议关注记忆容量与计算效率的实际权衡"}]
+    },
+    {
+        date: "2026-06-19",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "Generating Robot Hands from Human Demonstrations",
+        venue: "arXiv 2026 · Robotics",
+        summary: "🔬 技术路线: 采用动作映射框架从人类操作演示视频中自动生成适配的机器人灵巧手动作序列，无需人工标注 | 💡 创新点: 提出自由度的动作转换方法，实现了从人类手部复杂轨迹到机器人灵巧手动作的端到端自动映射 | 📊 实验效果: 在操作和抓取任务上验证了从人到机器人的动作迁移有效性，生成的机器人手动作具有自然灵巧的特性 | ⭐ 整体评价: 属于机器人模仿学习方向，人机动作迁移是灵巧操作的核心瓶颈，建议关注泛化到不同机械手的能力",
+        tags: [["Robotics","green"],["Imitation","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.20549"],["PDF","https://arxiv.org/pdf/2606.20549"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"采用动作映射框架从人类操作演示视频中自动生成适配的机器人灵巧手动作序列，无需人工标注"},{"label":"💡 创新点","text":"提出自由度的动作转换方法，实现了从人类手部复杂轨迹到机器人灵巧手动作的端到端自动映射"},{"label":"📊 实验效果","text":"在操作和抓取任务上验证了从人到机器人的动作迁移有效性，生成的机器人手动作具有自然灵巧的特性"},{"label":"⭐ 整体评价","text":"属于机器人模仿学习方向，人机动作迁移是灵巧操作的核心瓶颈，建议关注泛化到不同机械手的能力"}]
+    },
+    {
+        date: "2026-06-19",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "Current World Models Lack a Persistent State Core",
+        venue: "arXiv 2026 · World Model",
+        summary: "🔬 技术路线: 通过系统性理论和实证分析，揭示当前主流世界模型架构普遍缺乏持久状态核心这一根本性设计缺陷 | 💡 创新点: 首次明确定义世界模型的持久状态核心概念，提出评估框架并系统论证其对长期一致性预测的必要性 | 📊 实验效果: 在相机控制等需要长期一致性任务上，揭示了持久状态缺失导致预测漂移和状态不连续等具体问题 | ⭐ 整体评价: 属于世界模型方向的批判性分析工作，对领域有重要的自省价值，建议关注其提出的持久状态评估方法论和改进方向",
+        tags: [["World Model","green"],["Analysis","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.20545"],["PDF","https://arxiv.org/pdf/2606.20545"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"通过系统性理论和实证分析，揭示当前主流世界模型架构普遍缺乏持久状态核心这一根本性设计缺陷"},{"label":"💡 创新点","text":"首次明确定义世界模型的持久状态核心概念，提出评估框架并系统论证其对长期一致性预测的必要性"},{"label":"📊 实验效果","text":"在相机控制等需要长期一致性任务上，揭示了持久状态缺失导致预测漂移和状态不连续等具体问题"},{"label":"⭐ 整体评价","text":"属于世界模型方向的批判性分析工作，对领域有重要的自省价值，建议关注其提出的持久状态评估方法论和改进方向"}]
+    },
+    {
+        date: "2026-06-19",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "TimeProVe: Propose, then Verify for Efficient Long Video Temporal Reasoning in Activities of Daily Living",
+        venue: "arXiv 2026 · LLM / Video Reasoning",
+        summary: "🔬 技术路线: 提出「先提案后验证」的两阶段推理框架，先快速定位候选时序片段再进行精细验证，大幅降低长视频推理计算开销 | 💡 创新点: 将长视频时序推理拆解为提案和验证两个独立子任务，通过分治策略在计算效率和推理精度之间取得平衡 | 📊 实验效果: 在日常生活活动视频上取得显著加速，推理准确率达 75% 至 93%，关键时序定位指标提升 7.3% | ⭐ 整体评价: 属于视频时序理解方向，两阶段框架工程实用性高，建议关注在更长视频和实时场景下的扩展表现",
+        tags: [["LLM","green"],["Video","green"],["Reasoning","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.20561"],["PDF","https://arxiv.org/pdf/2606.20561"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出「先提案后验证」的两阶段推理框架，先快速定位候选时序片段再进行精细验证，大幅降低长视频推理计算开销"},{"label":"💡 创新点","text":"将长视频时序推理拆解为提案和验证两个独立子任务，通过分治策略在计算效率和推理精度之间取得平衡"},{"label":"📊 实验效果","text":"在日常生活活动视频上取得显著加速，推理准确率达 75% 至 93%，关键时序定位指标提升 7.3%"},{"label":"⭐ 整体评价","text":"属于视频时序理解方向，两阶段框架工程实用性高，建议关注在更长视频和实时场景下的扩展表现"}]
+    },
+    {
+        date: "2026-06-19",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "How Transparent is DiffusionGemma?",
+        venue: "arXiv 2026 · LLM / Interpretability",
+        summary: "🔬 技术路线: 系统性分析 DiffusionGemma 扩散语言模型的内部机制，评估其生成过程的可解释性和可控性 | 💡 创新点: 首次对扩散语言模型进行全面的透明度审计，揭示扩散范式在文本生成中的内部表征和控制特性 | 📊 实验效果: 推理速度实现 28.6 倍加速，参数效率优化 1.1 倍，为扩散语言模型的设计提供了可解释性新见解 | ⭐ 整体评价: 属于大语言模型可解释性方向，28.6 倍加速令人关注，建议关注扩散模型在文本生成中的实际质量控制表现",
+        tags: [["LLM","green"],["Interpretability","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.20560"],["PDF","https://arxiv.org/pdf/2606.20560"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"系统性分析 DiffusionGemma 扩散语言模型的内部机制，评估其生成过程的可解释性和可控性"},{"label":"💡 创新点","text":"首次对扩散语言模型进行全面的透明度审计，揭示扩散范式在文本生成中的内部表征和控制特性"},{"label":"📊 实验效果","text":"推理速度实现 28.6 倍加速，参数效率优化 1.1 倍，为扩散语言模型的设计提供了可解释性新见解"},{"label":"⭐ 整体评价","text":"属于大语言模型可解释性方向，28.6 倍加速令人关注，建议关注扩散模型在文本生成中的实际质量控制表现"}]
+    },
+    {
+        date: "2026-06-19",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Execution-State Capsules: Graph-Bound Execution-State Checkpoint and Restore for Low-Latency, Small-Batch, On-Device Physical-AI Serving",
+        venue: "arXiv 2026 · NVIDIA",
+        summary: "🔬 技术路线: 提出基于图的执行状态胶囊检查点和恢复机制，通过 KV-only 状态压缩实现低延迟小批量的边缘设备 AI 推理服务 | 💡 创新点: 首次将图绑定状态管理与 KV-only 压缩结合，面向物理 AI 在端侧设备的小批量低延迟场景设计精巧的系统优化方案 | 📊 实验效果: 推理延迟降低 3.9 倍，吞吐量提升 27 倍，支持 2K 至 16K 规模的稳定小批量高效服务 | ⭐ 整体评价: NVIDIA 出品的系统工程工作，3.9 倍延迟优化和 27 倍吞吐量提升对物理 AI 边缘部署具有重要的工程参考价值",
+        tags: [["LLM","green"],["Systems","green"],["Physical-AI","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.20537"],["PDF","https://arxiv.org/pdf/2606.20537"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出基于图的执行状态胶囊检查点和恢复机制，通过 KV-only 状态压缩实现低延迟小批量的边缘设备 AI 推理服务"},{"label":"💡 创新点","text":"首次将图绑定状态管理与 KV-only 压缩结合，面向物理 AI 在端侧设备的小批量低延迟场景设计精巧的系统优化方案"},{"label":"📊 实验效果","text":"推理延迟降低 3.9 倍，吞吐量提升 27 倍，支持 2K 至 16K 规模的稳定小批量高效服务"},{"label":"⭐ 整体评价","text":"NVIDIA 出品的系统工程工作，3.9 倍延迟优化和 27 倍吞吐量提升对物理 AI 边缘部署具有重要的工程参考价值"}]
+    },
+    {
+        date: "2026-06-19",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "LedgerAgent: Structured State for Policy-Adherent Tool-Calling Agents",
+        venue: "arXiv 2026 · Agent",
+        summary: "🔬 技术路线: 提出基于结构化状态账本的智能体框架，将策略合规性融入工具调用的核心执行路径 | 💡 创新点: 首次为智能体工具调用引入事务化状态管理机制，将策略遵循从软约束升级为可审计的硬约束，确保每一步操作可追溯 | 📊 实验效果: 在推理任务上策略遵循度显著优于无状态管理的基线方法，且不会显著增加推理开销 | ⭐ 整体评价: 属于智能体工具调用方向，策略合规的硬约束设计在企业级 AI 部署场景中具有实际应用价值",
+        tags: [["Agent","green"],["Tool-Calling","green"],["Policy","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.20529"],["PDF","https://arxiv.org/pdf/2606.20529"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出基于结构化状态账本的智能体框架，将策略合规性融入工具调用的核心执行路径"},{"label":"💡 创新点","text":"首次为智能体工具调用引入事务化状态管理机制，将策略遵循从软约束升级为可审计的硬约束，确保每一步操作可追溯"},{"label":"📊 实验效果","text":"在推理任务上策略遵循度显著优于无状态管理的基线方法，且不会显著增加推理开销"},{"label":"⭐ 整体评价","text":"属于智能体工具调用方向，策略合规的硬约束设计在企业级 AI 部署场景中具有实际应用价值"}]
+    },
+    {
+        date: "2026-06-19",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "StylisticBias: A Few Human Visual Cues Drive Most Social Biases in MLLMs",
+        venue: "arXiv 2026 · Multimodal",
+        summary: "🔬 技术路线: 通过构建 25K 规模的大规模数据集，系统量化多模态大模型中视觉风格线索对社会偏见的影响程度和来源 | 💡 创新点: 首次系统量化视觉风格线索对社会偏见的贡献，揭示少数视觉风格特征即可驱动多模态大模型中的主要社会偏见 | 📊 实验效果: 基于 25K 数据规模发现，仅少量视觉风格线索就贡献了多模态大模型中的大部分社会偏见输出 | ⭐ 整体评价: 属于多模态公平性方向的重要实证研究，对理解偏见根源和设计缓解策略都有指导意义，提供了开源数据集和代码",
+        tags: [["Multimodal","green"],["Dataset","green"],["Fairness","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.20527"],["PDF","https://arxiv.org/pdf/2606.20527"],["Code","https://github.com/timo-cavelius/StylisticBias"],["Dataset","https://hf.co/datasets/shaghayegh/stylistic-bias-dataset"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"通过构建 25K 规模的大规模数据集，系统量化多模态大模型中视觉风格线索对社会偏见的影响程度和来源"},{"label":"💡 创新点","text":"首次系统量化视觉风格线索对社会偏见的贡献，揭示少数视觉风格特征即可驱动多模态大模型中的主要社会偏见"},{"label":"📊 实验效果","text":"基于 25K 数据规模发现，仅少量视觉风格线索就贡献了多模态大模型中的大部分社会偏见输出"},{"label":"⭐ 整体评价","text":"属于多模态公平性方向的重要实证研究，对理解偏见根源和设计缓解策略都有指导意义，提供了开源数据集和代码"}]
+    },
     // === 2026-06-16 ===
     {
         date: "2026-06-16",
@@ -14714,6 +14806,13 @@ const PAPERS_DB = [
 ];
 
 const DAILY_OVERVIEW = {
+    "2026-06-19": {
+        bannerTitle: "🔥 今日看点",
+        bannerSubtitle: "NVIDIA 发布 Execution-State Capsules，通过 KV-only 状态压缩实现边缘设备推理延迟降低 3.9 倍，吞吐量提升 27 倍，瞄准物理 AI 在端侧设备的高效部署。MemoryWAM 首次在机器人世界动作模型中引入显式持久记忆机制，解决长序列操作中的状态遗忘问题。Current World Models Lack a Persistent State Core 以批判性视角指出当前世界模型的根本缺陷，为领域发展提供了有价值的反思框架。",
+        picks: ["MemoryWAM: Efficient World Action Modeling with Persistent Memory","Current World Models Lack a Persistent State Core","Execution-State Capsules: Graph-Bound Execution-State Checkpoint and Restore for Low-Latency, Small-Batch, On-Device Physical-AI Serving"],
+        totalPapers: 8,
+        totalNews: 0
+    },
     "2026-06-16": {
         bannerTitle: "🔥 今日看点",
         bannerSubtitle: "今日 Robotics 方向集中爆发（3篇），T-Rex 触觉反应灵巧操作为 Linxi 团队最新成果。VLA 方向 Hierarchical Advantage Weighting 在稀疏奖励微调中取得显著提升（成功率最高 92%）。Agent 方向 MetaSyn 将 LLM Agent 应用于 Nature 级科学元分析任务。LLM 方向 KVEraser 通过 KV Cache 操控实现 17.6 倍上下文擦除加速，牛津 MedMisBench 系统评估 LLM 在误导性医学信息下的认知弹性。",
