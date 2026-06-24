@@ -658,6 +658,196 @@
 <script>
 // ===== DATA =====
 const PAPERS_DB = [
+    // === 2026-06-24 ===
+    {
+        date: "2026-06-24",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "InSight: Self-Guided Skill Acquisition via Steerable VLAs",
+        venue: "arXiv 2026 · VLA / Skill Acquisition",
+        summary: "🔬 技术路线: 基于可操控的视觉-语言-动作模型，通过自引导方式实现机器人操作技能的自主发现和获取，无需人工示范数据即可习得新技能 | 💡 创新点: 首次提出可操控 VLA 自引导技能获取框架，让机器人通过自我探索和环境交互自主发现操作策略，将技能获取从被动模仿升级为主动探索 | 📊 实验效果: 在操作和抓取任务上验证了自引导技能获取的有效性，无需人工标注即可在多种操作场景中习得有用技能 | ⭐ 整体评价: 属于 VLA 自主技能学习方向，自引导机制大幅降低了机器人数据采集成本，建议关注技能泛化范围和真机部署表现",
+        tags: [["VLA","green"],["Manipulation","green"],["Self-Guided","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.24884"],["PDF","https://arxiv.org/pdf/2606.24884"],["Project","https://insight-vla.github.io"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于可操控的视觉-语言-动作模型，通过自引导方式实现机器人操作技能的自主发现和获取，无需人工示范数据即可习得新技能"},{"label":"💡 创新点","text":"首次提出可操控 VLA 自引导技能获取框架，让机器人通过自我探索和环境交互自主发现操作策略，将技能获取从被动模仿升级为主动探索"},{"label":"📊 实验效果","text":"在操作和抓取任务上验证了自引导技能获取的有效性，无需人工标注即可在多种操作场景中习得有用技能"},{"label":"⭐ 整体评价","text":"属于 VLA 自主技能学习方向，自引导机制大幅降低了机器人数据采集成本，建议关注技能泛化范围和真机部署表现"}]
+    },
+    {
+        date: "2026-06-24",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "World Models in Pieces: Structural Certification for General Agents",
+        venue: "arXiv 2026 · World Model / Theory",
+        summary: "🔬 技术路线: 提出世界模型的片段化结构认证框架，通过形式化方法分析大世界条件下通用智能体的能力边界和认证条件 | 💡 创新点: 首次从理论上论证大世界场景中智能体无法实现普适能力，提出基于结构片段的世界模型认证方法论，为智能体安全部署提供理论保证 | 📊 实验效果: 在规划任务上验证了结构化认证方法的有效性，为世界模型的可靠部署提供了可操作的评估框架 | ⭐ 整体评价: 属于世界模型理论方向的重要工作，对理解智能体能力边界和设计安全认证机制具有基础性价值，建议关注形式化证明的完备性",
+        tags: [["World Model","green"],["Certification","green"],["Theory","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.24842"],["PDF","https://arxiv.org/pdf/2606.24842"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出世界模型的片段化结构认证框架，通过形式化方法分析大世界条件下通用智能体的能力边界和认证条件"},{"label":"💡 创新点","text":"首次从理论上论证大世界场景中智能体无法实现普适能力，提出基于结构片段的世界模型认证方法论，为智能体安全部署提供理论保证"},{"label":"📊 实验效果","text":"在规划任务上验证了结构化认证方法的有效性，为世界模型的可靠部署提供了可操作的评估框架"},{"label":"⭐ 整体评价","text":"属于世界模型理论方向的重要工作，对理解智能体能力边界和设计安全认证机制具有基础性价值，建议关注形式化证明的完备性"}]
+    },
+    {
+        date: "2026-06-24",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "World Action Models: A Survey",
+        venue: "arXiv 2026 · National University of Singapore",
+        summary: "🔬 技术路线: 系统综述世界动作模型领域，覆盖从视频预测生成到具身机器人动作控制的完整技术谱系，提供统一的概念框架和分类体系 | 💡 创新点: 首次对世界动作模型进行全景式综述，将视频生成、世界模型和动作规划三大子领域统一到具身预判-动作框架下 | 📊 实验效果: 整理了大量研究成果，提供项目主页和 241 星代码仓库（awesome-world-action-models），覆盖多类代表方法 | ⭐ 整体评价: NUS 出品的领域入门必读综述，全景式视角对初学者和研究者都有参考价值，241 星反映社区对系统化梳理的认可",
+        tags: [["Robotics","green"],["World-Action","green"],["Survey","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.20781"],["PDF","https://arxiv.org/pdf/2606.20781"],["Project","https://world-action-models.github.io/"],["Code (241⭐)","https://github.com/world-action-models/awesome-world-action-models"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"系统综述世界动作模型领域，覆盖从视频预测生成到具身机器人动作控制的完整技术谱系，提供统一的概念框架和分类体系"},{"label":"💡 创新点","text":"首次对世界动作模型进行全景式综述，将视频生成、世界模型和动作规划三大子领域统一到具身预判-动作框架下"},{"label":"📊 实验效果","text":"整理了大量研究成果，提供项目主页和 241 星代码仓库（awesome-world-action-models），覆盖多类代表方法"},{"label":"⭐ 整体评价","text":"NUS 出品的领域入门必读综述，全景式视角对初学者和研究者都有参考价值，241 星反映社区对系统化梳理的认可"}]
+    },
+    {
+        date: "2026-06-24",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "OpenThoughts-Agent: Data Recipes for Agentic Models",
+        venue: "arXiv 2026 · Agent / Data Engineering",
+        summary: "🔬 技术路线: 提出面向智能体模型的数据配方方法，通过精心设计训练数据的组合策略来系统性提升 Agent 模型的工具使用和代码能力 | 💡 创新点: 首次系统性提出 Agent 训练数据配方概念，揭示了数据来源、比例和顺序对智能体能力的决定性影响，提供可复现的数据工程方案 | 📊 实验效果: 在 SWE-bench 上达到 44.8%，另一基准达 40.9%，仅需 100K 训练数据和 32B 参数即可取得竞争力结果 | ⭐ 整体评价: 属于 Agent 训练数据工程方向，数据配方概念有方法论推广价值，44.8% 在 SWE-bench 上是实质性进展，建议关注配方泛化性",
+        tags: [["Agent","green"],["Data-Recipe","green"],["SWE-Bench","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.24855"],["PDF","https://arxiv.org/pdf/2606.24855"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出面向智能体模型的数据配方方法，通过精心设计训练数据的组合策略来系统性提升 Agent 模型的工具使用和代码能力"},{"label":"💡 创新点","text":"首次系统性提出 Agent 训练数据配方概念，揭示了数据来源、比例和顺序对智能体能力的决定性影响，提供可复现的数据工程方案"},{"label":"📊 实验效果","text":"在 SWE-bench 上达到 44.8%，另一基准达 40.9%，仅需 100K 训练数据和 32B 参数即可取得竞争力结果"},{"label":"⭐ 整体评价","text":"属于 Agent 训练数据工程方向，数据配方概念有方法论推广价值，44.8% 在 SWE-bench 上是实质性进展，建议关注配方泛化性"}]
+    },
+    {
+        date: "2026-06-24",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Grading the Grader: Lessons from Evaluating an Agentic Data Analysis System",
+        venue: "arXiv 2026 · Agent / Evaluation",
+        summary: "🔬 技术路线: 通过多层元评估框架系统分析 LLM 智能体作为数据分析系统评估者的可靠性，揭示自动化评估器自身的偏差和局限 | 💡 创新点: 首次提出「评估评估器」的元评估方法论，系统性量化 LLM 评估者的一致性和准确性，填补了 Agent 评估基础设施的关键空白 | 📊 实验效果: 整体正确率达 100%，但在特定难度场景下误判率高达 36%，与人工评分偏差达 16%，揭示了自动化评估的隐蔽风险 | ⭐ 整体评价: 属于 Agent 评估基础设施方向，元评估方法论有重要的领域建设意义，36% 误判率值得所有使用 LLM 评估 Agent 的研究者关注",
+        tags: [["Agent","green"],["Evaluation","green"],["Meta-Eval","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.24839"],["PDF","https://arxiv.org/pdf/2606.24839"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"通过多层元评估框架系统分析 LLM 智能体作为数据分析系统评估者的可靠性，揭示自动化评估器自身的偏差和局限"},{"label":"💡 创新点","text":"首次提出「评估评估器」的元评估方法论，系统性量化 LLM 评估者的一致性和准确性，填补了 Agent 评估基础设施的关键空白"},{"label":"📊 实验效果","text":"整体正确率达 100%，但在特定难度场景下误判率高达 36%，与人工评分偏差达 16%，揭示了自动化评估的隐蔽风险"},{"label":"⭐ 整体评价","text":"属于 Agent 评估基础设施方向，元评估方法论有重要的领域建设意义，36% 误判率值得所有使用 LLM 评估 Agent 的研究者关注"}]
+    },
+    {
+        date: "2026-06-24",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "PlanBench-XL: Evaluating Long-Horizon Planning of LLM Tool-Use Agents in Large-Scale Tool Ecosystems",
+        venue: "arXiv 2026 · University of Illinois at Urbana-Champaign",
+        summary: "🔬 技术路线: 构建大规模工具生态基准，评估 LLM 智能体在包含多样化工具的真实场景中执行长程规划和多步骤任务的能力 | 💡 创新点: 首次将规划评估扩展至大规模工具生态场景，引入真实世界的工具多样性和组合复杂性，突破传统小工具集基准的局限性 | 📊 实验效果: 最优方法整体仅达 51.90%，长程任务规划成功率骤降至 11.36%，揭示当前 LLM 智能体在大规模工具生态中的巨大性能差距 | ⭐ 整体评价: 属于 Agent 规划评估方向，11.36% 的长程成功率深刻揭示了工具选择和规划分解的核心瓶颈，建议关注分层规划策略",
+        tags: [["Agent","green"],["Benchmark","green"],["Planning","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.22388"],["PDF","https://arxiv.org/pdf/2606.22388"],["Project","https://planbench-xl.github.io/"],["Code (27⭐)","https://github.com/JiayuJeff/PlanBench-XL"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"构建大规模工具生态基准，评估 LLM 智能体在包含多样化工具的真实场景中执行长程规划和多步骤任务的能力"},{"label":"💡 创新点","text":"首次将规划评估扩展至大规模工具生态场景，引入真实世界的工具多样性和组合复杂性，突破传统小工具集基准的局限性"},{"label":"📊 实验效果","text":"最优方法整体仅达 51.90%，长程任务规划成功率骤降至 11.36%，揭示当前 LLM 智能体在大规模工具生态中的巨大性能差距"},{"label":"⭐ 整体评价","text":"属于 Agent 规划评估方向，11.36% 的长程成功率深刻揭示了工具选择和规划分解的核心瓶颈，建议关注分层规划策略"}]
+    },
+    {
+        date: "2026-06-24",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "OpenRath: Session-Centered Runtime State for Agent Systems",
+        venue: "arXiv 2026 · Agent / Infrastructure",
+        summary: "🔬 技术路线: 提出以会话为中心的运行时状态管理架构，为 Agent 系统提供声明式状态持久化和恢复机制，简化复杂工作流的状态管理 | 💡 创新点: 首次将 PyTorch 风格的声明式状态管理范式引入 Agent 运行时，将状态从隐式编码升级为可管理、可恢复的结构化资源 | 📊 实验效果: GitHub 690 星表明社区对 Agent 状态管理基础设施的强烈需求，提供完善的文档和 API 设计 | ⭐ 整体评价: 属于 Agent 基础设施方向，690 星印证了社区对运行时状态管理的迫切需求，声明式设计值得工程实践参考",
+        tags: [["Agent","green"],["Infrastructure","green"],["State","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.19409"],["PDF","https://arxiv.org/pdf/2606.19409"],["Project","https://docs.openrath.com"],["Code (690⭐)","https://github.com/Rath-Team/OpenRath"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出以会话为中心的运行时状态管理架构，为 Agent 系统提供声明式状态持久化和恢复机制，简化复杂工作流的状态管理"},{"label":"💡 创新点","text":"首次将 PyTorch 风格的声明式状态管理范式引入 Agent 运行时，将状态从隐式编码升级为可管理、可恢复的结构化资源"},{"label":"📊 实验效果","text":"GitHub 690 星表明社区对 Agent 状态管理基础设施的强烈需求，提供完善的文档和 API 设计"},{"label":"⭐ 整体评价","text":"属于 Agent 基础设施方向，690 星印证了社区对运行时状态管理的迫切需求，声明式设计值得工程实践参考"}]
+    },
+    {
+        date: "2026-06-24",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "DataClaw0: Agentic Tailoring Multimodal Data from Raw Streams",
+        venue: "arXiv 2026 · Agent / Data Engineering",
+        summary: "🔬 技术路线: 通过智能体驱动的自动化流程从原始数据流中裁剪和精炼多模态数据，将数据工程从人工标注转向 Agent 主导的智能化流水线 | 💡 创新点: 首次将 Agent 用于多模态数据的自动精炼，实现从原始流数据到高质量训练集的端到端智能化裁剪，显著降低数据准备成本 | 📊 实验效果: 基于 9B 参数模型实现多模态数据自动裁剪，验证了 Agent 驱动数据工程的可行性和效率 | ⭐ 整体评价: 属于 AI 数据工程方向，Agent 驱动的数据自动化精炼对降低大规模数据采集成本有实际意义，建议关注数据质量控制",
+        tags: [["Agent","green"],["Multimodal","green"],["Data-Engineering","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.21337"],["PDF","https://arxiv.org/pdf/2606.21337"],["Project","https://czjdsg.github.io/MakeAnyData/#cases"],["Code (47⭐)","https://github.com/vancyland/DataClaw0"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"通过智能体驱动的自动化流程从原始数据流中裁剪和精炼多模态数据，将数据工程从人工标注转向 Agent 主导的智能化流水线"},{"label":"💡 创新点","text":"首次将 Agent 用于多模态数据的自动精炼，实现从原始流数据到高质量训练集的端到端智能化裁剪，显著降低数据准备成本"},{"label":"📊 实验效果","text":"基于 9B 参数模型实现多模态数据自动裁剪，验证了 Agent 驱动数据工程的可行性和效率"},{"label":"⭐ 整体评价","text":"属于 AI 数据工程方向，Agent 驱动的数据自动化精炼对降低大规模数据采集成本有实际意义，建议关注数据质量控制"}]
+    },
+    {
+        date: "2026-06-24",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "EnterpriseClawBench: Benchmarking Agents from Real Workplace Sessions",
+        venue: "arXiv 2026 · Frontis AI",
+        summary: "🔬 技术路线: 基于真实职场工作流程构建智能体评测基准，评估 AI Agent 在企业办公场景中处理多步骤复杂任务的实际表现 | 💡 创新点: 首次使用真实职场会话数据构建 Agent 基准，摆脱合成数据的局限性，反映企业环境中工具调用、权限管理和流程遵循的真实挑战 | 📊 实验效果: 实验揭示了当前智能体在企业真实工作场景中的系统性不足，特别是在权限管理和多步骤协调方面存在明显短板 | ⭐ 整体评价: 属于 Agent 企业应用评估方向，真实场景数据有独特的生态位价值，建议关注安全合规和权限管理维度的评估",
+        tags: [["Agent","green"],["Benchmark","green"],["Enterprise","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.23654"],["PDF","https://arxiv.org/pdf/2606.23654"],["Project","https://frontisai.github.io/EnterpriseClawBench/"],["Code (29⭐)","https://github.com/FrontisAI/EnterpriseClawBench"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于真实职场工作流程构建智能体评测基准，评估 AI Agent 在企业办公场景中处理多步骤复杂任务的实际表现"},{"label":"💡 创新点","text":"首次使用真实职场会话数据构建 Agent 基准，摆脱合成数据的局限性，反映企业环境中工具调用、权限管理和流程遵循的真实挑战"},{"label":"📊 实验效果","text":"实验揭示了当前智能体在企业真实工作场景中的系统性不足，特别是在权限管理和多步骤协调方面存在明显短板"},{"label":"⭐ 整体评价","text":"属于 Agent 企业应用评估方向，真实场景数据有独特的生态位价值，建议关注安全合规和权限管理维度的评估"}]
+    },
+    {
+        date: "2026-06-24",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "EvoEmbedding: Evolvable Representations for Long-Context Retrieval and Agentic Memory",
+        venue: "arXiv 2026 · Nanjing University",
+        summary: "🔬 技术路线: 提出可进化的嵌入表示方法，支持长上下文检索和智能体记忆的动态增量更新，无需重新训练即可持续融入新知识 | 💡 创新点: 首次将进化学习引入嵌入表示空间，让记忆表征随新知识持续更新而无需全量重训练，解决了传统静态嵌入难以适应增量学习的痛点 | 📊 实验效果: 基于 EvoTrain-180K 数据集训练 8B 至 12B 模型，验证了可进化表征在长上下文检索任务上的持续改进能力 | ⭐ 整体评价: 属于 Agent 记忆方向，可进化嵌入解决了传统静态表征的核心痛点，对构建持久化智能体记忆系统有实际价值",
+        tags: [["Agent","green"],["Memory","green"],["Embedding","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.21649"],["PDF","https://arxiv.org/pdf/2606.21649"],["Project","https://clare-nie.github.io/EvoEmbedding/"],["Code (24⭐)","https://github.com/MiG-NJU/EvoEmbedding"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出可进化的嵌入表示方法，支持长上下文检索和智能体记忆的动态增量更新，无需重新训练即可持续融入新知识"},{"label":"💡 创新点","text":"首次将进化学习引入嵌入表示空间，让记忆表征随新知识持续更新而无需全量重训练，解决了传统静态嵌入难以适应增量学习的痛点"},{"label":"📊 实验效果","text":"基于 EvoTrain-180K 数据集训练 8B 至 12B 模型，验证了可进化表征在长上下文检索任务上的持续改进能力"},{"label":"⭐ 整体评价","text":"属于 Agent 记忆方向，可进化嵌入解决了传统静态表征的核心痛点，对构建持久化智能体记忆系统有实际价值"}]
+    },
+    {
+        date: "2026-06-24",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "IV-CoT: Implicit Visual Chain-of-Thought for Structure-Aware Text-to-Image Generation",
+        venue: "arXiv 2026 · Multimodal / Image Generation",
+        summary: "🔬 技术路线: 提出隐式视觉思维链方法，在潜在空间中执行结构推理，将空间和语义结构信息融入文本到图像的生成流程 | 💡 创新点: 首次将思维链推理范式从语言拓展到视觉生成，通过在潜在空间中隐式推理空间关系和语义结构来引导图像生成过程 | 📊 实验效果: 在图像生成和规划任务上验证了结构感知生成的有效性，生成图像的空间布局和语义一致性显著优于传统方法 | ⭐ 整体评价: 属于可控图像生成方向，视觉思维链概念创新性强，将推理能力注入生成过程开辟了新范式，建议关注复杂场景结构准确性",
+        tags: [["Multimodal","green"],["Chain-of-Thought","green"],["T2I","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.24849"],["PDF","https://arxiv.org/pdf/2606.24849"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出隐式视觉思维链方法，在潜在空间中执行结构推理，将空间和语义结构信息融入文本到图像的生成流程"},{"label":"💡 创新点","text":"首次将思维链推理范式从语言拓展到视觉生成，通过在潜在空间中隐式推理空间关系和语义结构来引导图像生成过程"},{"label":"📊 实验效果","text":"在图像生成和规划任务上验证了结构感知生成的有效性，生成图像的空间布局和语义一致性显著优于传统方法"},{"label":"⭐ 整体评价","text":"属于可控图像生成方向，视觉思维链概念创新性强，将推理能力注入生成过程开辟了新范式，建议关注复杂场景结构准确性"}]
+    },
+    {
+        date: "2026-06-24",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "FLUX3D: High-Fidelity 3D Gaussian Generation with Diffusion-Aligned Sparse Representation",
+        venue: "arXiv 2026 · Multimodal / 3D Generation",
+        summary: "🔬 技术路线: 基于扩散对齐的稀疏表示方法，将三维高斯生成从密集优化转变为高效的稀疏扩散过程，实现高保真三维内容生成 | 💡 创新点: 提出扩散对齐稀疏表征新范式，将跨模态对齐技术与三维高斯表示结合，在保持高保真度的同时大幅降低计算开销 | 📊 实验效果: 在三维生成任务上实现高保真结果，稀疏表征方法在生成质量和推理效率之间取得了良好平衡 | ⭐ 整体评价: 属于三维生成方向，扩散对齐稀疏表征思路兼顾了质量和效率，建议关注生成分辨率和对复杂几何结构的建模能力",
+        tags: [["Multimodal","green"],["3D","green"],["Diffusion","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.24874"],["PDF","https://arxiv.org/pdf/2606.24874"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于扩散对齐的稀疏表示方法，将三维高斯生成从密集优化转变为高效的稀疏扩散过程，实现高保真三维内容生成"},{"label":"💡 创新点","text":"提出扩散对齐稀疏表征新范式，将跨模态对齐技术与三维高斯表示结合，在保持高保真度的同时大幅降低计算开销"},{"label":"📊 实验效果","text":"在三维生成任务上实现高保真结果，稀疏表征方法在生成质量和推理效率之间取得了良好平衡"},{"label":"⭐ 整体评价","text":"属于三维生成方向，扩散对齐稀疏表征思路兼顾了质量和效率，建议关注生成分辨率和对复杂几何结构的建模能力"}]
+    },
+    {
+        date: "2026-06-24",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "BenchX: Benchmarking AI Models for Cancer Detection and Localization with Demographic and Protocol Biases",
+        venue: "arXiv 2026 · Medical AI / Fairness",
+        summary: "🔬 技术路线: 构建面向癌症检测的医学影像基准，系统评估 AI 模型在不同人口统计群体和成像协议下的表现差异和偏差来源 | 💡 创新点: 首次量化分析人口统计学差异和成像协议多样性对癌症检测 AI 模型性能的综合影响，揭示医疗 AI 公平性的关键盲区 | 📊 实验效果: 揭示了不同人口群体和成像协议下模型性能存在显著差异，为医疗 AI 的公平性评估提供了实证依据 | ⭐ 整体评价: 属于医学 AI 公平性方向的重要基准，对推动可靠和公平的医疗 AI 落地有实际指导意义，建议关注其评估框架的临床采纳",
+        tags: [["Multimodal","green"],["Medical","green"],["Benchmark","green"],["Fairness","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.24883"],["PDF","https://arxiv.org/pdf/2606.24883"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"构建面向癌症检测的医学影像基准，系统评估 AI 模型在不同人口统计群体和成像协议下的表现差异和偏差来源"},{"label":"💡 创新点","text":"首次量化分析人口统计学差异和成像协议多样性对癌症检测 AI 模型性能的综合影响，揭示医疗 AI 公平性的关键盲区"},{"label":"📊 实验效果","text":"揭示了不同人口群体和成像协议下模型性能存在显著差异，为医疗 AI 的公平性评估提供了实证依据"},{"label":"⭐ 整体评价","text":"属于医学 AI 公平性方向的重要基准，对推动可靠和公平的医疗 AI 落地有实际指导意义，建议关注其评估框架的临床采纳"}]
+    },
+    {
+        date: "2026-06-24",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "BioMatrix: Towards a Comprehensive Biological Foundation Model Spanning the Modality Matrix of Sequences, Structures, and Language",
+        venue: "arXiv 2026 · Shanghai AI Lab",
+        summary: "🔬 技术路线: 构建覆盖蛋白质序列、三维结构和自然语言三模态的统一生物基础模型，实现跨生命科学层级的全模态推理 | 💡 创新点: 首次将序列、结构和语言三模态统一到一个生物基础模型中，覆盖从分子到文献的全谱信息，突破传统单一模态建模的局限 | 📊 实验效果: 在 1.7B 至 4B 参数规模上实现跨模态生物任务，验证了多模态统一建模在蛋白质功能预测等任务上的有效性 | ⭐ 整体评价: 上海 AI Lab 出品的 AI for Science 工作，三模态统一建模对药物发现和蛋白质工程等多场景具有应用潜力",
+        tags: [["Multimodal","green"],["AI4Science","green"],["Foundation-Model","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.22138"],["PDF","https://arxiv.org/pdf/2606.22138"],["Code (23⭐)","https://github.com/QizhiPei/BioMatrix"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"构建覆盖蛋白质序列、三维结构和自然语言三模态的统一生物基础模型，实现跨生命科学层级的全模态推理"},{"label":"💡 创新点","text":"首次将序列、结构和语言三模态统一到一个生物基础模型中，覆盖从分子到文献的全谱信息，突破传统单一模态建模的局限"},{"label":"📊 实验效果","text":"在 1.7B 至 4B 参数规模上实现跨模态生物任务，验证了多模态统一建模在蛋白质功能预测等任务上的有效性"},{"label":"⭐ 整体评价","text":"上海 AI Lab 出品的 AI for Science 工作，三模态统一建模对药物发现和蛋白质工程等多场景具有应用潜力"}]
+    },
+    {
+        date: "2026-06-24",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Accuracy and Satisfaction in Multi-Turn LLM Dialogues for NFR Assessment",
+        venue: "arXiv 2026 · LLM / Evaluation",
+        summary: "🔬 技术路线: 研究多轮对话场景中大语言模型进行非功能性需求评估时的准确率和用户满意度之间的复杂关系 | 💡 创新点: 首次在多轮对话场景中同时考察准确率和用户满意度两个维度，揭示两者之间的关联模式与潜在张力 | 📊 实验效果: 多轮对话场景下的评估结果揭示了准确率和满意度之间存在非简单的线性关系，对对话系统设计有重要启示 | ⭐ 整体评价: 属于 LLM 应用评估方向，同时考量准确率和满意度两个维度为对话系统设计提供了更全面的评价视角",
+        tags: [["LLM","green"],["Evaluation","green"],["UX","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.24834"],["PDF","https://arxiv.org/pdf/2606.24834"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"研究多轮对话场景中大语言模型进行非功能性需求评估时的准确率和用户满意度之间的复杂关系"},{"label":"💡 创新点","text":"首次在多轮对话场景中同时考察准确率和用户满意度两个维度，揭示两者之间的关联模式与潜在张力"},{"label":"📊 实验效果","text":"多轮对话场景下的评估结果揭示了准确率和满意度之间存在非简单的线性关系，对对话系统设计有重要启示"},{"label":"⭐ 整体评价","text":"属于 LLM 应用评估方向，同时考量准确率和满意度两个维度为对话系统设计提供了更全面的评价视角"}]
+    },
+    {
+        date: "2026-06-24",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "CLI-Universe: Towards Verifiable Task Synthesis Engine for Terminal Agents",
+        venue: "arXiv 2026 · NJU-LINK Lab",
+        summary: "🔬 技术路线: 提出可验证的终端任务合成引擎，通过自动化方式生成多样化的命令行任务用于评测终端 Agent 的实际操作能力 | 💡 创新点: 首次实现终端任务的可验证自动化合成，解决了终端 Agent 评测数据稀缺的核心瓶颈，每条任务都经过可执行性验证 | 📊 实验效果: 在 32B 模型上达到 33.4% 成功率，成功合成 6K 高质量可验证的终端操作任务，覆盖丰富的命令类型 | ⭐ 整体评价: 属于 Agent 评测基础设施方向，自动化评测数据合成对推动终端 Agent 领域发展有方法论意义，建议关注更复杂任务的覆盖",
+        tags: [["LLM","green"],["Agent","green"],["Benchmark","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.22883"],["PDF","https://arxiv.org/pdf/2606.22883"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出可验证的终端任务合成引擎，通过自动化方式生成多样化的命令行任务用于评测终端 Agent 的实际操作能力"},{"label":"💡 创新点","text":"首次实现终端任务的可验证自动化合成，解决了终端 Agent 评测数据稀缺的核心瓶颈，每条任务都经过可执行性验证"},{"label":"📊 实验效果","text":"在 32B 模型上达到 33.4% 成功率，成功合成 6K 高质量可验证的终端操作任务，覆盖丰富的命令类型"},{"label":"⭐ 整体评价","text":"属于 Agent 评测基础设施方向，自动化评测数据合成对推动终端 Agent 领域发展有方法论意义，建议关注更复杂任务的覆盖"}]
+    },
+    {
+        date: "2026-06-24",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "GPT-5 帮助免疫学家解开困扰三年的医学难题",
+        venue: "",
+        summary: "OpenAI 披露了免疫学家 Derya Unutmaz 使用 GPT-5 在三天内解决了一个困扰其研究团队三年的免疫学难题的案例，展示了 AI 在科学发现中的加速能力。",
+        tags: [],
+        links: [["OpenAI","https://openai.com/index/gpt-5-immunology-mystery/"]]
+    },
     // === 2026-06-20 ===
     {
         date: "2026-06-20",
@@ -15148,6 +15338,13 @@ const PAPERS_DB = [
 ];
 
 const DAILY_OVERVIEW = {
+    "2026-06-24": {
+        bannerTitle: "🔥 今日看点",
+        bannerSubtitle: "InSight 提出自引导技能获取的 VLA 框架，让机器人通过自主探索习得操作技能，无需人工示范。World Models in Pieces 从理论上论证大世界场景中智能体的能力边界，提出基于结构片段的世界模型认证方法论。World Action Models 综述（NUS 出品，241 星）首次全景式梳理从视频生成到机器人控制的完整技术谱系。OpenAI 披露 GPT-5 帮助免疫学家解开困扰三年的医学难题。",
+        picks: ["InSight: Self-Guided Skill Acquisition via Steerable VLAs","World Models in Pieces: Structural Certification for General Agents","World Action Models: A Survey"],
+        totalPapers: 16,
+        totalNews: 1
+    },
     "2026-06-20": {
         bannerTitle: "📋 本周补漏概览",
         bannerSubtitle: "本周（6月13日—20日）工作日报告共遗漏 30 篇论文，现集中补录。亮点包括：OpenAI 发布智能体评审系统基准测试，系统性评估 AI 辅助论文评审的可靠性；DeepMind 推出世界模型对抗鲁棒性基准 ARB4WM，检验 Dreamer 类世界模型在连续控制任务中面对攻击的稳定性；Physical Intelligence 提出 Kairos 原生世界模型栈，面向物理 AI 构建统一的预训练架构；Meta FAIR 贡献人形机器人主动脚趾设计与 ENPIRE 策略自改进等多篇工作；NVIDIA 发布基于图状态胶囊的边缘推理优化方案；MIT 持续在机器人导航、元强化学习和长文档 RAG 方向输出高质量研究。",

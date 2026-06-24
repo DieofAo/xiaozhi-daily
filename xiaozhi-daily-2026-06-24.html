@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>小小志AI日报 - 2026年6月24日 周三</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans SC', sans-serif;
+  background: #0a0e1a;
+  color: #e0e6f0;
+  line-height: 1.7;
+  min-height: 100vh;
+}
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+header {
+  text-align: center;
+  margin-bottom: 48px;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, rgba(59,130,246,0.08) 0%, rgba(139,92,246,0.08) 100%);
+  border-radius: 20px;
+  border: 1px solid rgba(99,102,241,0.15);
+}
+header h1 {
+  font-size: 2rem;
+  background: linear-gradient(135deg, #60a5fa, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 8px;
+}
+header .date {
+  color: #94a3b8;
+  font-size: 1rem;
+}
+header .subtitle {
+  color: #64748b;
+  font-size: 0.9rem;
+  margin-top: 6px;
+}
+.highlight-banner {
+  background: linear-gradient(135deg, rgba(249,115,22,0.1) 0%, rgba(234,179,8,0.08) 100%);
+  border: 1px solid rgba(249,115,22,0.2);
+  border-radius: 14px;
+  padding: 20px 24px;
+  margin-bottom: 36px;
+}
+.hl-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fb923c;
+  margin-bottom: 8px;
+}
+.hl-text {
+  font-size: 0.92rem;
+  color: #cbd5e1;
+  line-height: 1.7;
+}
+.section {
+  margin-bottom: 40px;
+}
+.section-title {
+  font-size: 1.4rem;
+  color: #f1f5f9;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(99,102,241,0.2);
+}
+.paper-card {
+  background: rgba(30,41,59,0.6);
+  border: 1px solid rgba(99,102,241,0.12);
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 16px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.paper-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(99,102,241,0.1);
+  border-color: rgba(99,102,241,0.3);
+}
+.paper-card.hot {
+  border-color: rgba(249,115,22,0.25);
+  background: rgba(30,41,59,0.7);
+}
+.paper-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #f8fafc;
+  margin-bottom: 8px;
+}
+.paper-meta {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-bottom: 10px;
+}
+.summary-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+@media (max-width: 640px) {
+  .summary-grid { grid-template-columns: 1fr; }
+}
+.summary-item {
+  background: rgba(15,23,42,0.5);
+  border-radius: 10px;
+  padding: 12px 14px;
+  border: 1px solid rgba(99,102,241,0.08);
+}
+.summary-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #818cf8;
+  margin-bottom: 4px;
+}
+.summary-text {
+  font-size: 0.88rem;
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+.paper-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.tag {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+.tag-agent { background: rgba(16,185,129,0.12); color: #34d399; }
+.tag-llm { background: rgba(99,102,241,0.12); color: #818cf8; }
+.tag-multimodal { background: rgba(244,114,182,0.12); color: #f472b6; }
+.tag-world { background: rgba(251,191,36,0.12); color: #fbbf24; }
+.tag-robot { background: rgba(251,146,60,0.12); color: #fb923c; }
+.tag-rl { background: rgba(45,212,191,0.12); color: #2dd4bf; }
+.tag-video { background: rgba(168,85,247,0.12); color: #a855f7; }
+.tag-benchmark { background: rgba(34,211,238,0.12); color: #22d3ee; }
+.tag-vla { background: rgba(59,130,246,0.12); color: #60a5fa; }
+.tag-safety { background: rgba(239,68,68,0.12); color: #f87171; }
+.tag-memory { background: rgba(192,132,252,0.12); color: #c084fc; }
+.tag-reasoning { background: rgba(132,204,22,0.12); color: #a3e635; }
+.tag-code { background: rgba(52,211,153,0.12); color: #34d399; }
+.tag-survey { background: rgba(6,182,212,0.12); color: #22d3ee; }
+.tag-science { background: rgba(217,119,6,0.12); color: #f59e0b; }
+.tag-medical { background: rgba(239,68,68,0.12); color: #f87171; }
+.tag-systems { background: rgba(56,189,248,0.12); color: #38bdf8; }
+.tag-3d { background: rgba(148,163,184,0.12); color: #94a3b8; }
+.tag-data { background: rgba(250,204,21,0.12); color: #facc15; }
+.tag-infra { background: rgba(167,139,250,0.12); color: #a78bfa; }
+.hot-badge {
+  display: inline;
+  margin-right: 4px;
+}
+.info-card {
+  background: rgba(30,41,59,0.6);
+  border: 1px solid rgba(99,102,241,0.12);
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 16px;
+}
+.paper-summary {
+  font-size: 0.9rem;
+  color: #cbd5e1;
+  line-height: 1.7;
+  margin-bottom: 14px;
+}
+.paper-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.paper-links a {
+  display: inline-block;
+  padding: 5px 14px;
+  background: rgba(99,102,241,0.12);
+  color: #818cf8;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+.paper-links a:hover {
+  background: rgba(99,102,241,0.25);
+}
+.stats {
+  text-align: center;
+  padding: 30px;
+  margin-top: 40px;
+  background: rgba(30,41,59,0.4);
+  border-radius: 14px;
+  border: 1px solid rgba(99,102,241,0.1);
+}
+.stats p { color: #94a3b8; font-size: 0.88rem; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <h1>📡 小小志AI日报</h1>
+  <div class="date">2026年6月24日 周三</div>
+  <div class="subtitle">📝 arXiv 8 篇 · HF 热门 8 篇 · 机构博客 1 条</div>
+</header>
+
+<div class="highlight-banner">
+  <div class="hl-title">🔥 今日看点</div>
+  <div class="hl-text">
+    InSight 提出自引导技能获取的 VLA 框架，让机器人通过自主探索习得操作技能，无需人工示范。World Models in Pieces 从理论上论证大世界场景中智能体的能力边界，提出基于结构片段的世界模型认证方法论。World Action Models 综述（NUS 出品，241 星）首次全景式梳理从视频生成到机器人控制的完整技术谱系。OpenAI 披露 GPT-5 帮助免疫学家解开困扰三年的医学难题。
+  </div>
+</div>
+
+<section class="section">
+  <h2 class="section-title">🤖 VLA · Vision-Language-Action</h2>
+
+  <div class="paper-card hot">
+    <div class="paper-title"><span class="hot-badge">🔥</span> InSight: Self-Guided Skill Acquisition via Steerable VLAs</div>
+    <div class="paper-meta">arXiv 2026 · VLA / Skill Acquisition</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">基于可操控的视觉-语言-动作模型，通过自引导方式实现机器人操作技能的自主发现和获取，无需人工示范数据即可习得新技能</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次提出可操控 VLA 自引导技能获取框架，让机器人通过自我探索和环境交互自主发现操作策略，将技能获取从被动模仿升级为主动探索</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在操作和抓取任务上验证了自引导技能获取的有效性，无需人工标注即可在多种操作场景中习得有用技能</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于 VLA 自主技能学习方向，自引导机制大幅降低了机器人数据采集成本，建议关注技能泛化范围和真机部署表现</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-vla">VLA</span>
+      <span class="tag tag-robot">Manipulation</span>
+      <span class="tag tag-rl">Self-Guided</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.24884">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.24884">PDF</a>
+      <a href="https://insight-vla.github.io">Project</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2 class="section-title">🌍 World Model · 世界模型</h2>
+
+  <div class="paper-card hot">
+    <div class="paper-title"><span class="hot-badge">🔥</span> World Models in Pieces: Structural Certification for General Agents</div>
+    <div class="paper-meta">arXiv 2026 · World Model / Theory</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出世界模型的片段化结构认证框架，通过形式化方法分析大世界条件下通用智能体的能力边界和认证条件</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次从理论上论证大世界场景中智能体无法实现普适能力，提出基于结构片段的世界模型认证方法论，为智能体安全部署提供理论保证</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在规划任务上验证了结构化认证方法的有效性，为世界模型的可靠部署提供了可操作的评估框架</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于世界模型理论方向的重要工作，对理解智能体能力边界和设计安全认证机制具有基础性价值，建议关注形式化证明的完备性</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-world">World Model</span>
+      <span class="tag tag-safety">Certification</span>
+      <span class="tag tag-survey">Theory</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.24842">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.24842">PDF</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2 class="section-title">🦾 Robotics · 机器人控制</h2>
+
+  <div class="paper-card hot">
+    <div class="paper-title"><span class="hot-badge">🔥</span> World Action Models: A Survey</div>
+    <div class="paper-meta">arXiv 2026 · National University of Singapore</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">系统综述世界动作模型领域，覆盖从视频预测生成到具身机器人动作控制的完整技术谱系，提供统一的概念框架和分类体系</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次对世界动作模型进行全景式综述，将视频生成、世界模型和动作规划三大子领域统一到具身预判-动作框架下</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">整理了大量研究成果，提供项目主页和 241 星代码仓库（awesome-world-action-models），覆盖多类代表方法</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">NUS 出品的领域入门必读综述，全景式视角对初学者和研究者都有参考价值，241 星反映社区对系统化梳理的认可</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-robot">Robotics</span>
+      <span class="tag tag-world">World-Action</span>
+      <span class="tag tag-survey">Survey</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.20781">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.20781">PDF</a>
+      <a href="https://world-action-models.github.io/">Project</a>
+      <a href="https://github.com/world-action-models/awesome-world-action-models">Code (241⭐)</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2 class="section-title">🧩 Agent · 智能体</h2>
+
+  <div class="paper-card">
+    <div class="paper-title">OpenThoughts-Agent: Data Recipes for Agentic Models</div>
+    <div class="paper-meta">arXiv 2026 · Agent / Data Engineering</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出面向智能体模型的数据配方方法，通过精心设计训练数据的组合策略来系统性提升 Agent 模型的工具使用和代码能力</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次系统性提出 Agent 训练数据配方概念，揭示了数据来源、比例和顺序对智能体能力的决定性影响，提供可复现的数据工程方案</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在 SWE-bench 上达到 44.8%，另一基准达 40.9%，仅需 100K 训练数据和 32B 参数即可取得竞争力结果</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于 Agent 训练数据工程方向，数据配方概念有方法论推广价值，44.8% 在 SWE-bench 上是实质性进展，建议关注配方泛化性</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-agent">Agent</span>
+      <span class="tag tag-data">Data-Recipe</span>
+      <span class="tag tag-code">SWE-Bench</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.24855">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.24855">PDF</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">Grading the Grader: Lessons from Evaluating an Agentic Data Analysis System</div>
+    <div class="paper-meta">arXiv 2026 · Agent / Evaluation</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">通过多层元评估框架系统分析 LLM 智能体作为数据分析系统评估者的可靠性，揭示自动化评估器自身的偏差和局限</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次提出「评估评估器」的元评估方法论，系统性量化 LLM 评估者的一致性和准确性，填补了 Agent 评估基础设施的关键空白</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">整体正确率达 100%，但在特定难度场景下误判率高达 36%，与人工评分偏差达 16%，揭示了自动化评估的隐蔽风险</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于 Agent 评估基础设施方向，元评估方法论有重要的领域建设意义，36% 误判率值得所有使用 LLM 评估 Agent 的研究者关注</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-agent">Agent</span>
+      <span class="tag tag-benchmark">Evaluation</span>
+      <span class="tag tag-safety">Meta-Eval</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.24839">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.24839">PDF</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">PlanBench-XL: Evaluating Long-Horizon Planning of LLM Tool-Use Agents in Large-Scale Tool Ecosystems</div>
+    <div class="paper-meta">arXiv 2026 · University of Illinois at Urbana-Champaign</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">构建大规模工具生态基准，评估 LLM 智能体在包含多样化工具的真实场景中执行长程规划和多步骤任务的能力</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次将规划评估扩展至大规模工具生态场景，引入真实世界的工具多样性和组合复杂性，突破传统小工具集基准的局限性</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">最优方法整体仅达 51.90%，长程任务规划成功率骤降至 11.36%，揭示当前 LLM 智能体在大规模工具生态中的巨大性能差距</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于 Agent 规划评估方向，11.36% 的长程成功率深刻揭示了工具选择和规划分解的核心瓶颈，建议关注分层规划策略</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-agent">Agent</span>
+      <span class="tag tag-benchmark">Benchmark</span>
+      <span class="tag tag-reasoning">Planning</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.22388">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.22388">PDF</a>
+      <a href="https://planbench-xl.github.io/">Project</a>
+      <a href="https://github.com/JiayuJeff/PlanBench-XL">Code (27⭐)</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">OpenRath: Session-Centered Runtime State for Agent Systems</div>
+    <div class="paper-meta">arXiv 2026 · Agent / Infrastructure</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出以会话为中心的运行时状态管理架构，为 Agent 系统提供声明式状态持久化和恢复机制，简化复杂工作流的状态管理</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次将 PyTorch 风格的声明式状态管理范式引入 Agent 运行时，将状态从隐式编码升级为可管理、可恢复的结构化资源</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">GitHub 690 星表明社区对 Agent 状态管理基础设施的强烈需求，提供完善的文档和 API 设计</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于 Agent 基础设施方向，690 星印证了社区对运行时状态管理的迫切需求，声明式设计值得工程实践参考</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-agent">Agent</span>
+      <span class="tag tag-systems">Infrastructure</span>
+      <span class="tag tag-memory">State</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.19409">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.19409">PDF</a>
+      <a href="https://docs.openrath.com">Project</a>
+      <a href="https://github.com/Rath-Team/OpenRath">Code (690⭐)</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">DataClaw0: Agentic Tailoring Multimodal Data from Raw Streams</div>
+    <div class="paper-meta">arXiv 2026 · Agent / Data Engineering</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">通过智能体驱动的自动化流程从原始数据流中裁剪和精炼多模态数据，将数据工程从人工标注转向 Agent 主导的智能化流水线</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次将 Agent 用于多模态数据的自动精炼，实现从原始流数据到高质量训练集的端到端智能化裁剪，显著降低数据准备成本</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">基于 9B 参数模型实现多模态数据自动裁剪，验证了 Agent 驱动数据工程的可行性和效率</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于 AI 数据工程方向，Agent 驱动的数据自动化精炼对降低大规模数据采集成本有实际意义，建议关注数据质量控制</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-agent">Agent</span>
+      <span class="tag tag-multimodal">Multimodal</span>
+      <span class="tag tag-data">Data-Engineering</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.21337">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.21337">PDF</a>
+      <a href="https://czjdsg.github.io/MakeAnyData/#cases">Project</a>
+      <a href="https://github.com/vancyland/DataClaw0">Code (47⭐)</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">EnterpriseClawBench: Benchmarking Agents from Real Workplace Sessions</div>
+    <div class="paper-meta">arXiv 2026 · Frontis AI</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">基于真实职场工作流程构建智能体评测基准，评估 AI Agent 在企业办公场景中处理多步骤复杂任务的实际表现</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次使用真实职场会话数据构建 Agent 基准，摆脱合成数据的局限性，反映企业环境中工具调用、权限管理和流程遵循的真实挑战</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">实验揭示了当前智能体在企业真实工作场景中的系统性不足，特别是在权限管理和多步骤协调方面存在明显短板</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于 Agent 企业应用评估方向，真实场景数据有独特的生态位价值，建议关注安全合规和权限管理维度的评估</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-agent">Agent</span>
+      <span class="tag tag-benchmark">Benchmark</span>
+      <span class="tag tag-systems">Enterprise</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.23654">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.23654">PDF</a>
+      <a href="https://frontisai.github.io/EnterpriseClawBench/">Project</a>
+      <a href="https://github.com/FrontisAI/EnterpriseClawBench">Code (29⭐)</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">EvoEmbedding: Evolvable Representations for Long-Context Retrieval and Agentic Memory</div>
+    <div class="paper-meta">arXiv 2026 · Nanjing University</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出可进化的嵌入表示方法，支持长上下文检索和智能体记忆的动态增量更新，无需重新训练即可持续融入新知识</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次将进化学习引入嵌入表示空间，让记忆表征随新知识持续更新而无需全量重训练，解决了传统静态嵌入难以适应增量学习的痛点</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">基于 EvoTrain-180K 数据集训练 8B 至 12B 模型，验证了可进化表征在长上下文检索任务上的持续改进能力</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于 Agent 记忆方向，可进化嵌入解决了传统静态表征的核心痛点，对构建持久化智能体记忆系统有实际价值</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-agent">Agent</span>
+      <span class="tag tag-memory">Memory</span>
+      <span class="tag tag-llm">Embedding</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.21649">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.21649">PDF</a>
+      <a href="https://clare-nie.github.io/EvoEmbedding/">Project</a>
+      <a href="https://github.com/MiG-NJU/EvoEmbedding">Code (24⭐)</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2 class="section-title">🎨 Multimodal · 多模态</h2>
+
+  <div class="paper-card">
+    <div class="paper-title">IV-CoT: Implicit Visual Chain-of-Thought for Structure-Aware Text-to-Image Generation</div>
+    <div class="paper-meta">arXiv 2026 · Multimodal / Image Generation</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出隐式视觉思维链方法，在潜在空间中执行结构推理，将空间和语义结构信息融入文本到图像的生成流程</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次将思维链推理范式从语言拓展到视觉生成，通过在潜在空间中隐式推理空间关系和语义结构来引导图像生成过程</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在图像生成和规划任务上验证了结构感知生成的有效性，生成图像的空间布局和语义一致性显著优于传统方法</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于可控图像生成方向，视觉思维链概念创新性强，将推理能力注入生成过程开辟了新范式，建议关注复杂场景结构准确性</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-multimodal">Multimodal</span>
+      <span class="tag tag-reasoning">Chain-of-Thought</span>
+      <span class="tag tag-video">T2I</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.24849">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.24849">PDF</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">FLUX3D: High-Fidelity 3D Gaussian Generation with Diffusion-Aligned Sparse Representation</div>
+    <div class="paper-meta">arXiv 2026 · Multimodal / 3D Generation</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">基于扩散对齐的稀疏表示方法，将三维高斯生成从密集优化转变为高效的稀疏扩散过程，实现高保真三维内容生成</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出扩散对齐稀疏表征新范式，将跨模态对齐技术与三维高斯表示结合，在保持高保真度的同时大幅降低计算开销</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在三维生成任务上实现高保真结果，稀疏表征方法在生成质量和推理效率之间取得了良好平衡</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于三维生成方向，扩散对齐稀疏表征思路兼顾了质量和效率，建议关注生成分辨率和对复杂几何结构的建模能力</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-multimodal">Multimodal</span>
+      <span class="tag tag-3d">3D</span>
+      <span class="tag tag-reasoning">Diffusion</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.24874">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.24874">PDF</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">BenchX: Benchmarking AI Models for Cancer Detection and Localization with Demographic and Protocol Biases</div>
+    <div class="paper-meta">arXiv 2026 · Medical AI / Fairness</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">构建面向癌症检测的医学影像基准，系统评估 AI 模型在不同人口统计群体和成像协议下的表现差异和偏差来源</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次量化分析人口统计学差异和成像协议多样性对癌症检测 AI 模型性能的综合影响，揭示医疗 AI 公平性的关键盲区</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">揭示了不同人口群体和成像协议下模型性能存在显著差异，为医疗 AI 的公平性评估提供了实证依据</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于医学 AI 公平性方向的重要基准，对推动可靠和公平的医疗 AI 落地有实际指导意义，建议关注其评估框架的临床采纳</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-multimodal">Multimodal</span>
+      <span class="tag tag-medical">Medical</span>
+      <span class="tag tag-benchmark">Benchmark</span>
+      <span class="tag tag-safety">Fairness</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.24883">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.24883">PDF</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">BioMatrix: Towards a Comprehensive Biological Foundation Model Spanning the Modality Matrix of Sequences, Structures, and Language</div>
+    <div class="paper-meta">arXiv 2026 · Shanghai AI Lab</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">构建覆盖蛋白质序列、三维结构和自然语言三模态的统一生物基础模型，实现跨生命科学层级的全模态推理</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次将序列、结构和语言三模态统一到一个生物基础模型中，覆盖从分子到文献的全谱信息，突破传统单一模态建模的局限</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在 1.7B 至 4B 参数规模上实现跨模态生物任务，验证了多模态统一建模在蛋白质功能预测等任务上的有效性</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">上海 AI Lab 出品的 AI for Science 工作，三模态统一建模对药物发现和蛋白质工程等多场景具有应用潜力</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-multimodal">Multimodal</span>
+      <span class="tag tag-science">AI4Science</span>
+      <span class="tag tag-llm">Foundation-Model</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.22138">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.22138">PDF</a>
+      <a href="https://github.com/QizhiPei/BioMatrix">Code (23⭐)</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2 class="section-title">🧠 LLM · 大语言模型</h2>
+
+  <div class="paper-card">
+    <div class="paper-title">Accuracy and Satisfaction in Multi-Turn LLM Dialogues for NFR Assessment</div>
+    <div class="paper-meta">arXiv 2026 · LLM / Evaluation</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">研究多轮对话场景中大语言模型进行非功能性需求评估时的准确率和用户满意度之间的复杂关系</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次在多轮对话场景中同时考察准确率和用户满意度两个维度，揭示两者之间的关联模式与潜在张力</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">多轮对话场景下的评估结果揭示了准确率和满意度之间存在非简单的线性关系，对对话系统设计有重要启示</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于 LLM 应用评估方向，同时考量准确率和满意度两个维度为对话系统设计提供了更全面的评价视角</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-llm">LLM</span>
+      <span class="tag tag-benchmark">Evaluation</span>
+      <span class="tag tag-safety">UX</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.24834">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.24834">PDF</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">CLI-Universe: Towards Verifiable Task Synthesis Engine for Terminal Agents</div>
+    <div class="paper-meta">arXiv 2026 · NJU-LINK Lab</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出可验证的终端任务合成引擎，通过自动化方式生成多样化的命令行任务用于评测终端 Agent 的实际操作能力</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次实现终端任务的可验证自动化合成，解决了终端 Agent 评测数据稀缺的核心瓶颈，每条任务都经过可执行性验证</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在 32B 模型上达到 33.4% 成功率，成功合成 6K 高质量可验证的终端操作任务，覆盖丰富的命令类型</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于 Agent 评测基础设施方向，自动化评测数据合成对推动终端 Agent 领域发展有方法论意义，建议关注更复杂任务的覆盖</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-llm">LLM</span>
+      <span class="tag tag-agent">Agent</span>
+      <span class="tag tag-benchmark">Benchmark</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.22883">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.22883">PDF</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2 class="section-title">📰 行业动态</h2>
+
+  <div class="info-card">
+    <div class="paper-title">GPT-5 帮助免疫学家解开困扰三年的医学难题</div>
+    <div class="paper-summary">OpenAI 披露了免疫学家 Derya Unutmaz 使用 GPT-5 在三天内解决了一个困扰其研究团队三年的免疫学难题的案例，展示了 AI 在科学发现中的加速能力。</div>
+    <div class="paper-links">
+      <a href="https://openai.com/index/gpt-5-immunology-mystery/">OpenAI</a>
+    </div>
+  </div>
+</section>
+
+<div class="stats">
+  <p>📊 共 17 条动态 · arXiv 8 篇 · HF 热门 8 篇 · 机构博客 1 条</p>
+  <p style="margin-top:6px;font-size:0.8rem;color:#475569">自动生成于 2026-06-24 · 关注 VLA · Robotics · World Model · LLM · Multimodal · Agent</p>
+</div>
+
+</div>
+</body>
+</html>
