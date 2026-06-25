@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>小小志AI日报 - 2026年6月25日 周四</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans SC', sans-serif;
+  background: #0a0e1a;
+  color: #e0e6f0;
+  line-height: 1.7;
+  min-height: 100vh;
+}
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+header {
+  text-align: center;
+  margin-bottom: 48px;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, rgba(59,130,246,0.08) 0%, rgba(139,92,246,0.08) 100%);
+  border-radius: 20px;
+  border: 1px solid rgba(99,102,241,0.15);
+}
+header h1 {
+  font-size: 2rem;
+  background: linear-gradient(135deg, #60a5fa, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 8px;
+}
+header .date {
+  color: #94a3b8;
+  font-size: 1rem;
+}
+header .subtitle {
+  color: #64748b;
+  font-size: 0.9rem;
+  margin-top: 6px;
+}
+.highlight-banner {
+  background: linear-gradient(135deg, rgba(249,115,22,0.1) 0%, rgba(234,179,8,0.08) 100%);
+  border: 1px solid rgba(249,115,22,0.2);
+  border-radius: 14px;
+  padding: 20px 24px;
+  margin-bottom: 36px;
+}
+.hl-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fb923c;
+  margin-bottom: 8px;
+}
+.hl-text {
+  font-size: 0.92rem;
+  color: #cbd5e1;
+  line-height: 1.7;
+}
+.section {
+  margin-bottom: 40px;
+}
+.section-title {
+  font-size: 1.4rem;
+  color: #f1f5f9;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(99,102,241,0.2);
+}
+.paper-card {
+  background: rgba(30,41,59,0.6);
+  border: 1px solid rgba(99,102,241,0.12);
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 16px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.paper-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(99,102,241,0.1);
+  border-color: rgba(99,102,241,0.3);
+}
+.paper-card.hot {
+  border-color: rgba(249,115,22,0.25);
+  background: rgba(30,41,59,0.7);
+}
+.paper-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #f8fafc;
+  margin-bottom: 8px;
+}
+.paper-meta {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-bottom: 10px;
+}
+.summary-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+@media (max-width: 640px) {
+  .summary-grid { grid-template-columns: 1fr; }
+}
+.summary-item {
+  background: rgba(15,23,42,0.5);
+  border-radius: 10px;
+  padding: 12px 14px;
+  border: 1px solid rgba(99,102,241,0.08);
+}
+.summary-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #818cf8;
+  margin-bottom: 4px;
+}
+.summary-text {
+  font-size: 0.88rem;
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+.paper-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.tag {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+.tag-agent { background: rgba(16,185,129,0.12); color: #34d399; }
+.tag-llm { background: rgba(99,102,241,0.12); color: #818cf8; }
+.tag-multimodal { background: rgba(244,114,182,0.12); color: #f472b6; }
+.tag-world { background: rgba(251,191,36,0.12); color: #fbbf24; }
+.tag-robot { background: rgba(251,146,60,0.12); color: #fb923c; }
+.tag-rl { background: rgba(45,212,191,0.12); color: #2dd4bf; }
+.tag-video { background: rgba(168,85,247,0.12); color: #a855f7; }
+.tag-benchmark { background: rgba(34,211,238,0.12); color: #22d3ee; }
+.tag-vla { background: rgba(59,130,246,0.12); color: #60a5fa; }
+.tag-safety { background: rgba(239,68,68,0.12); color: #f87171; }
+.tag-memory { background: rgba(192,132,252,0.12); color: #c084fc; }
+.tag-reasoning { background: rgba(132,204,22,0.12); color: #a3e635; }
+.tag-code { background: rgba(52,211,153,0.12); color: #34d399; }
+.tag-survey { background: rgba(6,182,212,0.12); color: #22d3ee; }
+.tag-science { background: rgba(217,119,6,0.12); color: #f59e0b; }
+.tag-medical { background: rgba(239,68,68,0.12); color: #f87171; }
+.tag-systems { background: rgba(56,189,248,0.12); color: #38bdf8; }
+.tag-3d { background: rgba(148,163,184,0.12); color: #94a3b8; }
+.tag-data { background: rgba(250,204,21,0.12); color: #facc15; }
+.tag-infra { background: rgba(167,139,250,0.12); color: #a78bfa; }
+.hot-badge {
+  display: inline;
+  margin-right: 4px;
+}
+.info-card {
+  background: rgba(30,41,59,0.6);
+  border: 1px solid rgba(99,102,241,0.12);
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 16px;
+}
+.paper-summary {
+  font-size: 0.9rem;
+  color: #cbd5e1;
+  line-height: 1.7;
+  margin-bottom: 14px;
+}
+.paper-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.paper-links a {
+  display: inline-block;
+  padding: 5px 14px;
+  background: rgba(99,102,241,0.12);
+  color: #818cf8;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+.paper-links a:hover {
+  background: rgba(99,102,241,0.25);
+}
+.stats {
+  text-align: center;
+  padding: 30px;
+  margin-top: 40px;
+  background: rgba(30,41,59,0.4);
+  border-radius: 14px;
+  border: 1px solid rgba(99,102,241,0.1);
+}
+.stats p { color: #94a3b8; font-size: 0.88rem; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <h1>📡 小小志AI日报</h1>
+  <div class="date">2026年6月25日 周四</div>
+  <div class="subtitle">📝 arXiv 8 篇 · HF 热门 7 篇 · 机构博客 2 条</div>
+</header>
+
+<div class="highlight-banner">
+  <div class="hl-title">🔥 今日看点</div>
+  <div class="hl-text">
+     Agent 方向爆发（9/15 篇，60%）。NatureBench 首次评估编码 Agent 复现 Nature 论文的能力，仅 17.8% 成功率暴露当前 AI 的科研短板。Qwen-AgentWorld 将语言世界模型与通用 Agent 深度融合，为环境模拟提供新范式。清华 AIR 团队 AOHP 提出 OS 级 Agent 安全框架。ForceBand 利用肌电信号实现力操控机器人，开辟人机交互新路径。OpenAI 与 Broadcom 联合发布 Jalapeno 推理芯片，专为大模型推理优化设计。
+  </div>
+</div>
+
+<!-- 🤖 VLA Section -->
+<section class="section">
+  <h2 class="section-title">🤖 VLA · Vision-Language-Action</h2>
+
+  <div class="paper-card">
+    <div class="paper-title">Learning Action Priors for Cross-embodiment Robot Manipulation</div>
+    <div class="paper-meta">arXiv 2026 · VLA · Cross-embodiment</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">基于 VLA 框架，从大规模跨形态机器人数据中蒸馏学习通用动作先验，实现多平台知识共享</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">将动作先验从单一形态推广到跨形态场景，使不同机器人平台间可直接迁移操作技能</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在多种机器人形态上验证了动作先验的跨形态迁移有效性</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">跨形态泛化是 VLA 走向通用的关键瓶颈，建议重点关注其动作空间统一方式与真机验证结果</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-vla">VLA</span>
+      <span class="tag tag-robot">Manipulation</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.26095">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.26095">PDF</a>
+    </div>
+  </div>
+</section>
+
+<!-- 🦾 Robotics Section -->
+<section class="section">
+  <h2 class="section-title">🦾 Robotics</h2>
+
+  <div class="paper-card">
+    <div class="paper-title">ForceBand: Learning Forceful Manipulation with sEMG</div>
+    <div class="paper-meta">arXiv 2026 · Robotics · sEMG · Force Control</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">利用表面肌电信号作为人机接口，通过策略学习将肌电信号直接映射为机器人力操控动作</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">ForceBand 首次将 sEMG 肌电信号与机器人力觉操控深度融合，实现自然力反馈交互</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在多种力操控任务上达成 50% 以上成功率，特定场景达 87%</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">sEMG 加机器人为人机交互开辟新范式，建议关注肌电信号的鲁棒性、实时性与穿戴便利性</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-robot">Robotics</span>
+      <span class="tag tag-multimodal">sEMG</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.26093">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.26093">PDF</a>
+      <a href="https://forceband-emg.github.io">Project</a>
+    </div>
+  </div>
+</section>
+
+<!-- 🌍 World Model Section -->
+<section class="section">
+  <h2 class="section-title">🌍 World Model</h2>
+
+  <div class="paper-card hot">
+    <div class="paper-title"><span class="hot-badge">🔥</span> Qwen-AgentWorld: Language World Models for General Agents</div>
+    <div class="paper-meta">HuggingFace 热门 · 2026 · Qwen · MoE 35B-A3B</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">基于 Qwen 系列构建语言世界模型，采用 35B-A3B 混合专家架构，以语言方式预测环境动态变化</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">将世界模型与大规模语言模型深度融合，为通用 Agent 提供统一的语言化环境模拟引擎</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">35B 参数 MoE 架构（3B 激活参数），在多种 Agent 任务上验证了环境预测与规划能力</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">Qwen 团队出品，语言世界模型加 Agent 的结合方向大有可为，期待开源发布与更多下游验证</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-world">World Model</span>
+      <span class="tag tag-agent">Agent</span>
+      <span class="tag tag-llm">MoE</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.24597">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.24597">PDF</a>
+    </div>
+  </div>
+</section>
+
+<!-- 🧩 Agent Section -->
+<section class="section">
+  <h2 class="section-title">🧩 Agent</h2>
+
+  <div class="paper-card">
+    <div class="paper-title">Neglected Free Lunch from Post-training: Progress Advantage for LLM Agents</div>
+    <div class="paper-meta">arXiv 2026 · Agent · RL · Post-training</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">在后训练阶段引入进度优势信号，结合奖励模型与强化学习优化大模型 Agent 的任务执行能力</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">发现后训练中一直被忽视的免费午餐——进度优势信号可作为高效训练目标，无需额外人工标注</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在多种 Agent 任务上验证了进度优势信号对策略优化的显著提升</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">Agent 后训练方法论贡献，免费午餐思路值得关注其在不同 Agent 场景和模型规模上的泛化性</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-agent">Agent</span>
+      <span class="tag tag-rl">RL</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.26080">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.26080">PDF</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">The Unfireable Safety Kernel: Execution-Time AI Alignment for AI Agents and Other Escapable AI Systems</div>
+    <div class="paper-meta">arXiv 2026 · Agent Safety · Alignment · Python-to-Rust</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">设计不可解雇的安全内核，在 Agent 执行时实施实时对齐检查，以 Python-to-Rust 实现高可靠性</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次提出执行时不可解雇的安全内核概念，确保对齐机制无法被自主 Agent 绕过或终止</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在推理 Agent 任务上验证了安全内核的执行时生效能力与不可绕过性</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">Agent 安全方向的关键基础设施研究，不可解雇机制为高自主性 Agent 部署提供了重要安全保障</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-agent">Agent</span>
+      <span class="tag tag-safety">Safety</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.26057">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.26057">PDF</a>
+    </div>
+  </div>
+
+  <div class="paper-card hot">
+    <div class="paper-title"><span class="hot-badge">🔥</span> NatureBench: Can Coding Agents Match the Published SOTA of Nature-Family Papers?</div>
+    <div class="paper-meta">HuggingFace 热门 · 2026 · Frontis AI · Code 33⭐</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">构建 Nature 级论文复现基准，系统评估编码 Agent 是否能通过自主编程复现已发表的最优实验结果</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首个以 Nature 家族论文为目标的硬核编码 Agent 评测，从实验设计到代码实现全链路评估</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">编码 Agent 仅达成 17.8% 的 SOTA 复现率，暴露当前 AI 在科研任务上的巨大能力短板</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">硬核 Agent 评测标杆，17.8% 的低复现率值得警醒，编码 Agent 距真正科研助手仍有显著差距</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-agent">Agent</span>
+      <span class="tag tag-benchmark">Benchmark</span>
+      <span class="tag tag-code">Code</span>
+      <span class="tag tag-science">Science</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.24530">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.24530">PDF</a>
+      <a href="https://frontisai.github.io/NatureBench/">Project</a>
+      <a href="https://github.com/FrontisAI/NatureBench">Code (33⭐)</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">MobileForge: Annotation-Free Adaptation for Mobile GUI Agents with Hierarchical Feedback-Guided Policy Optimization</div>
+    <div class="paper-meta">HuggingFace 热门 · 2026 · Kwai · Code 51⭐</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">基于 MLLM 构建移动 GUI Agent，采用层次反馈引导策略优化，实现无需人工标注的自适应训练</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">通过层次化反馈机制自动生成训练信号，Agent 无需人工标注即可适应新的移动应用界面和任务</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在多个移动 GUI 任务上达成 67.2% 至 77.6% 成功率，其中高级任务达 41.0%</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">快手出品的免标注移动 Agent 实用方案，建议关注其跨应用泛化能力和复杂任务处理上限</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-agent">Agent</span>
+      <span class="tag tag-multimodal">GUI</span>
+      <span class="tag tag-code">Code</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.19930">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.19930">PDF</a>
+      <a href="https://mobile-forge.github.io">Project</a>
+      <a href="https://github.com/kwai/MobileForge">Code (51⭐)</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">MemGUI-Agent: An End-to-End Long-Horizon Mobile GUI Agent with Proactive Context Management</div>
+    <div class="paper-meta">HuggingFace 热门 · 2026 · Kwai · Code 55⭐</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">基于 MLLM 构建端到端长时程移动 GUI Agent，引入主动上下文管理机制应对操作链中的记忆退化</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">端到端设计消除模块间信息损失，主动上下文管理使 Agent 在多步操作中保持状态一致性</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">基于 3K 条移动操作轨迹训练，8B 参数模型实现长时程 GUI 操作，效率显著提升</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">快手另一移动 Agent 力作，长时程端到端方案与 MobileForge 形成互补，主动记忆管理是关键</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-agent">Agent</span>
+      <span class="tag tag-memory">Memory</span>
+      <span class="tag tag-multimodal">GUI</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.19926">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.19926">PDF</a>
+      <a href="https://memgui-agent.github.io/">Project</a>
+      <a href="https://github.com/kwai/MemGUI-Agent">Code (55⭐)</a>
+    </div>
+  </div>
+
+  <div class="paper-card hot">
+    <div class="paper-title"><span class="hot-badge">🔥</span> AOHP: An Open-Source OS-Level Agent Harness for Personalized, Efficient and Secure Interaction</div>
+    <div class="paper-meta">HuggingFace 热门 · 2026 · AIR, Tsinghua University · Code 70⭐</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">构建操作系统级别的开源 Agent 框架，在 OS 层面实现个性化配置、高效交互与安全沙箱控制</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次提出 OS 级 Agent Harness 概念，将 Agent 的交互权限管理下沉至操作系统层而非应用层</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">端到端自动化任务成功率 21.12%，安全约束下提升至 51.55%</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">清华 AIR 团队出品，OS 级 Agent 框架为安全可控的自主操作提供了新架构思路，70 星关注较高</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-agent">Agent</span>
+      <span class="tag tag-systems">Systems</span>
+      <span class="tag tag-safety">Safety</span>
+      <span class="tag tag-infra">Infra</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.23449">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.23449">PDF</a>
+      <a href="https://github.com/aohp-os/aohp">Project/Code (70⭐)</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">LingxiDiagBench: A Multi-Agent Framework for Benchmarking LLMs in Chinese Psychiatric Consultation and Diagnosis</div>
+    <div class="paper-meta">HuggingFace 热门 · 2026 · Lyncia · Code 9⭐</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">构建多 Agent 框架评估大模型在中文精神科咨询与诊断中的表现，含 16K 专业诊疗样本</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首个中文精神科诊疗 Agent 评测基准，覆盖多 Agent 协同问诊与诊断的完整流程</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">诊断准确率 92.3%，但诊断完整性仅 43.0%，诊断一致性仅 28.5%</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">AI 加医疗垂直应用，精神科场景敏感度高，高准确率与低完整性的矛盾值得深入研究</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-agent">Agent</span>
+      <span class="tag tag-medical">Medical</span>
+      <span class="tag tag-benchmark">Benchmark</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2602.09379">arXiv</a>
+      <a href="https://arxiv.org/pdf/2602.09379">PDF</a>
+      <a href="https://huggingface.co/datasets/XuShihao6715/LingxiDiag-16K">Project</a>
+      <a href="https://github.com/Lingxi-mental-health/LingxiDiagBench">Code (9⭐)</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">Critique of Agent Model</div>
+    <div class="paper-meta">HuggingFace 热门 · 2026 · SAILING Lab (CMU & MBZUAI)</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出 Goal-Identity-Configurator 框架，从目标一致性、身份表征和配置灵活性三维度批判分析 Agent 模型</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">建立系统化的 Agent 模型批判框架，超越性能评估，直指 Agent 架构设计的理论缺陷</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">通过理论分析揭示了当前 Agent 模型在目标泛化与身份一致性上的结构性不足</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">CMU 出品的 Agent 方法论自省，批判性框架有助于推动 Agent 理论从工程驱动走向理论驱动</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-agent">Agent</span>
+      <span class="tag tag-reasoning">Theory</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.23991">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.23991">PDF</a>
+    </div>
+  </div>
+</section>
+
+<!-- 🎨 Multimodal Section -->
+<section class="section">
+  <h2 class="section-title">🎨 Multimodal</h2>
+
+  <div class="paper-card">
+    <div class="paper-title">TryOnCrafter: Unleashing Camera Trajectories for Realistic Video Virtual Try-on via a Renderable 4D Try-on Proxy</div>
+    <div class="paper-meta">arXiv 2026 · Multimodal · 4D · Video Generation</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">构建可渲染的 4D 试穿代理，利用自由相机轨迹生成多视角逼真视频虚拟试穿效果</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次将 4D 可渲染表示引入虚拟试穿，实现任意相机轨迹的高质量试穿视频生成</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在视频虚拟试穿任务上实现了多相机轨迹下的逼真渲染效果</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">虚拟试穿从 2D 图像迈向 4D 视频生成，技术升级方向明确，电商应用场景商业潜力大</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-multimodal">Multimodal</span>
+      <span class="tag tag-3d">4D</span>
+      <span class="tag tag-video">Video</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.26092">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.26092">PDF</a>
+      <a href="https://sunhao242.github.io/TryOnCrafter_web.github.io/">Project</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">Same Evidence, Different Answer: Auditing Order Sensitivity in Multimodal Large Language Models</div>
+    <div class="paper-meta">arXiv 2026 · Multimodal · Robustness · Auditing</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">通过 Facet-Probe 方法系统审计多模态大模型对输入证据顺序的敏感性，揭示模型鲁棒性缺陷</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次系统性揭示多模态 LLM 在相同证据不同顺序下给出矛盾答案的普遍现象</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">发现 50% 的案例受输入顺序影响，其中 13.4% 存在显著答案翻转</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">多模态模型鲁棒性的重要审计工作，对评测可靠性和模型可信度有深刻警示意义</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-multimodal">Multimodal</span>
+      <span class="tag tag-benchmark">Auditing</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.26079">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.26079">PDF</a>
+    </div>
+  </div>
+</section>
+
+<!-- 🧠 LLM Section -->
+<section class="section">
+  <h2 class="section-title">🧠 LLM</h2>
+
+  <div class="paper-card">
+    <div class="paper-title">Model Forensics: Investigating Whether Concerning Behavior Reflects Misalignment</div>
+    <div class="paper-meta">arXiv 2026 · LLM Safety · Alignment · Forensics</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出模型法医学分析框架，系统调查模型异常行为与深层对齐偏差之间的因果关系</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">将法医学方法论引入 AI 安全，区分表面的行为异常与真正的价值对齐失配</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">以 DeepSeek 模型为案例进行了系统性的对齐法医分析</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">AI 安全与对齐领域的方法论创新，区分行为症状与价值根源的分析框架有重要实践价值</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-llm">LLM</span>
+      <span class="tag tag-safety">Safety</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.26071">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.26071">PDF</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">When Certainty Is an Artifact: Keyword Lexicon Blindness and the (Mis)Measurement of Rhetorical Stance</div>
+    <div class="paper-meta">arXiv 2026 · LLM · NLP · Methodology</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">利用大模型分析方法揭示关键词词典盲区如何导致修辞立场测量的系统性偏差</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次系统论证基于关键词词典的文本分析方法存在盲区，确定性测量结果可能是方法论假象</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">揭示了关键词方法在修辞立场测量中的系统性误判模式</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">NLP 方法论自省，对广泛使用的词典方法提出了重要质疑，推动文本分析方法的演进</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-llm">LLM</span>
+      <span class="tag tag-reasoning">Methodology</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.26062">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.26062">PDF</a>
+    </div>
+  </div>
+</section>
+
+<!-- 📰 行业动态 Section -->
+<section class="section">
+  <h2 class="section-title">📰 行业动态</h2>
+
+  <div class="info-card">
+    <div class="paper-title">How Agents Are Transforming Work</div>
+    <div class="paper-summary">OpenAI 发布关于 AI Agent 如何变革工作方式的专题文章，探讨 Agent 在企业自动化、知识工作和人机协作中的最新应用趋势与案例。</div>
+    <div class="paper-links">
+      <a href="https://openai.com/index/how-agents-are-transforming-work/">OpenAI</a>
+    </div>
+  </div>
+
+  <div class="info-card">
+    <div class="paper-title">OpenAI and Broadcom Unveil LLM-Optimized Inference Chip</div>
+    <div class="paper-summary">OpenAI 与 Broadcom 联合发布 Jalapeno 推理芯片，专为大语言模型推理优化设计，有望显著降低大规模 AI 推理的硬件成本并提升能效比。</div>
+    <div class="paper-links">
+      <a href="https://openai.com/index/openai-broadcom-jalapeno-inference-chip/">OpenAI</a>
+    </div>
+  </div>
+</section>
+
+<div class="stats">
+  <p>📡 自动生成于 2026年6月25日 · 关注 VLA · Robotics · World Model · LLM · Multimodal · Agent</p>
+  <p>数据来源：arXiv · HuggingFace · OpenAI Blog</p>
+</div>
+
+</div>
+</body>
+</html>

@@ -658,6 +658,195 @@
 <script>
 // ===== DATA =====
 const PAPERS_DB = [
+    // === 2026-06-25 ===
+    {
+        date: "2026-06-25",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "Learning Action Priors for Cross-embodiment Robot Manipulation",
+        venue: "arXiv 2026 · VLA · Cross-embodiment",
+        summary: "🔬 技术路线: 基于 VLA 框架，从大规模跨形态机器人数据中蒸馏学习通用动作先验，实现多平台知识共享 | 💡 创新点: 将动作先验从单一形态推广到跨形态场景，使不同机器人平台间可直接迁移操作技能 | 📊 实验效果: 在多种机器人形态上验证了动作先验的跨形态迁移有效性 | ⭐ 整体评价: 跨形态泛化是 VLA 走向通用的关键瓶颈，建议重点关注其动作空间统一方式与真机验证结果",
+        tags: [["VLA","green"],["Manipulation","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.26095"],["PDF","https://arxiv.org/pdf/2606.26095"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于 VLA 框架，从大规模跨形态机器人数据中蒸馏学习通用动作先验，实现多平台知识共享"},{"label":"💡 创新点","text":"将动作先验从单一形态推广到跨形态场景，使不同机器人平台间可直接迁移操作技能"},{"label":"📊 实验效果","text":"在多种机器人形态上验证了动作先验的跨形态迁移有效性"},{"label":"⭐ 整体评价","text":"跨形态泛化是 VLA 走向通用的关键瓶颈，建议重点关注其动作空间统一方式与真机验证结果"}]
+    },
+    {
+        date: "2026-06-25",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "ForceBand: Learning Forceful Manipulation with sEMG",
+        venue: "arXiv 2026 · Robotics · sEMG · Force Control",
+        summary: "🔬 技术路线: 利用表面肌电信号作为人机接口，通过策略学习将肌电信号直接映射为机器人力操控动作 | 💡 创新点: ForceBand 首次将 sEMG 肌电信号与机器人力觉操控深度融合，实现自然力反馈交互 | 📊 实验效果: 在多种力操控任务上达成 50% 以上成功率，特定场景达 87% | ⭐ 整体评价: sEMG 加机器人为人机交互开辟新范式，建议关注肌电信号的鲁棒性、实时性与穿戴便利性",
+        tags: [["Robotics","green"],["sEMG","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.26093"],["PDF","https://arxiv.org/pdf/2606.26093"],["Project","https://forceband-emg.github.io"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"利用表面肌电信号作为人机接口，通过策略学习将肌电信号直接映射为机器人力操控动作"},{"label":"💡 创新点","text":"ForceBand 首次将 sEMG 肌电信号与机器人力觉操控深度融合，实现自然力反馈交互"},{"label":"📊 实验效果","text":"在多种力操控任务上达成 50% 以上成功率，特定场景达 87%"},{"label":"⭐ 整体评价","text":"sEMG 加机器人为人机交互开辟新范式，建议关注肌电信号的鲁棒性、实时性与穿戴便利性"}]
+    },
+    {
+        date: "2026-06-25",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "Qwen-AgentWorld: Language World Models for General Agents",
+        venue: "HuggingFace 热门 · 2026 · Qwen · MoE 35B-A3B",
+        summary: "🔬 技术路线: 基于 Qwen 系列构建语言世界模型，采用 35B-A3B 混合专家架构，以语言方式预测环境动态变化 | 💡 创新点: 将世界模型与大规模语言模型深度融合，为通用 Agent 提供统一的语言化环境模拟引擎 | 📊 实验效果: 35B 参数 MoE 架构（3B 激活参数），在多种 Agent 任务上验证了环境预测与规划能力 | ⭐ 整体评价: Qwen 团队出品，语言世界模型加 Agent 的结合方向大有可为，期待开源发布与更多下游验证",
+        tags: [["World Model","green"],["Agent","green"],["MoE","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.24597"],["PDF","https://arxiv.org/pdf/2606.24597"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于 Qwen 系列构建语言世界模型，采用 35B-A3B 混合专家架构，以语言方式预测环境动态变化"},{"label":"💡 创新点","text":"将世界模型与大规模语言模型深度融合，为通用 Agent 提供统一的语言化环境模拟引擎"},{"label":"📊 实验效果","text":"35B 参数 MoE 架构（3B 激活参数），在多种 Agent 任务上验证了环境预测与规划能力"},{"label":"⭐ 整体评价","text":"Qwen 团队出品，语言世界模型加 Agent 的结合方向大有可为，期待开源发布与更多下游验证"}]
+    },
+    {
+        date: "2026-06-25",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Neglected Free Lunch from Post-training: Progress Advantage for LLM Agents",
+        venue: "arXiv 2026 · Agent · RL · Post-training",
+        summary: "🔬 技术路线: 在后训练阶段引入进度优势信号，结合奖励模型与强化学习优化大模型 Agent 的任务执行能力 | 💡 创新点: 发现后训练中一直被忽视的免费午餐——进度优势信号可作为高效训练目标，无需额外人工标注 | 📊 实验效果: 在多种 Agent 任务上验证了进度优势信号对策略优化的显著提升 | ⭐ 整体评价: Agent 后训练方法论贡献，免费午餐思路值得关注其在不同 Agent 场景和模型规模上的泛化性",
+        tags: [["Agent","green"],["RL","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.26080"],["PDF","https://arxiv.org/pdf/2606.26080"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"在后训练阶段引入进度优势信号，结合奖励模型与强化学习优化大模型 Agent 的任务执行能力"},{"label":"💡 创新点","text":"发现后训练中一直被忽视的免费午餐——进度优势信号可作为高效训练目标，无需额外人工标注"},{"label":"📊 实验效果","text":"在多种 Agent 任务上验证了进度优势信号对策略优化的显著提升"},{"label":"⭐ 整体评价","text":"Agent 后训练方法论贡献，免费午餐思路值得关注其在不同 Agent 场景和模型规模上的泛化性"}]
+    },
+    {
+        date: "2026-06-25",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "The Unfireable Safety Kernel: Execution-Time AI Alignment for AI Agents and Other Escapable AI Systems",
+        venue: "arXiv 2026 · Agent Safety · Alignment · Python-to-Rust",
+        summary: "🔬 技术路线: 设计不可解雇的安全内核，在 Agent 执行时实施实时对齐检查，以 Python-to-Rust 实现高可靠性 | 💡 创新点: 首次提出执行时不可解雇的安全内核概念，确保对齐机制无法被自主 Agent 绕过或终止 | 📊 实验效果: 在推理 Agent 任务上验证了安全内核的执行时生效能力与不可绕过性 | ⭐ 整体评价: Agent 安全方向的关键基础设施研究，不可解雇机制为高自主性 Agent 部署提供了重要安全保障",
+        tags: [["Agent","green"],["Safety","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.26057"],["PDF","https://arxiv.org/pdf/2606.26057"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"设计不可解雇的安全内核，在 Agent 执行时实施实时对齐检查，以 Python-to-Rust 实现高可靠性"},{"label":"💡 创新点","text":"首次提出执行时不可解雇的安全内核概念，确保对齐机制无法被自主 Agent 绕过或终止"},{"label":"📊 实验效果","text":"在推理 Agent 任务上验证了安全内核的执行时生效能力与不可绕过性"},{"label":"⭐ 整体评价","text":"Agent 安全方向的关键基础设施研究，不可解雇机制为高自主性 Agent 部署提供了重要安全保障"}]
+    },
+    {
+        date: "2026-06-25",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "NatureBench: Can Coding Agents Match the Published SOTA of Nature-Family Papers?",
+        venue: "HuggingFace 热门 · 2026 · Frontis AI · Code 33⭐",
+        summary: "🔬 技术路线: 构建 Nature 级论文复现基准，系统评估编码 Agent 是否能通过自主编程复现已发表的最优实验结果 | 💡 创新点: 首个以 Nature 家族论文为目标的硬核编码 Agent 评测，从实验设计到代码实现全链路评估 | 📊 实验效果: 编码 Agent 仅达成 17.8% 的 SOTA 复现率，暴露当前 AI 在科研任务上的巨大能力短板 | ⭐ 整体评价: 硬核 Agent 评测标杆，17.8% 的低复现率值得警醒，编码 Agent 距真正科研助手仍有显著差距",
+        tags: [["Agent","green"],["Benchmark","green"],["Code","green"],["Science","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.24530"],["PDF","https://arxiv.org/pdf/2606.24530"],["Project","https://frontisai.github.io/NatureBench/"],["Code (33⭐)","https://github.com/FrontisAI/NatureBench"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"构建 Nature 级论文复现基准，系统评估编码 Agent 是否能通过自主编程复现已发表的最优实验结果"},{"label":"💡 创新点","text":"首个以 Nature 家族论文为目标的硬核编码 Agent 评测，从实验设计到代码实现全链路评估"},{"label":"📊 实验效果","text":"编码 Agent 仅达成 17.8% 的 SOTA 复现率，暴露当前 AI 在科研任务上的巨大能力短板"},{"label":"⭐ 整体评价","text":"硬核 Agent 评测标杆，17.8% 的低复现率值得警醒，编码 Agent 距真正科研助手仍有显著差距"}]
+    },
+    {
+        date: "2026-06-25",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "MobileForge: Annotation-Free Adaptation for Mobile GUI Agents with Hierarchical Feedback-Guided Policy Optimization",
+        venue: "HuggingFace 热门 · 2026 · Kwai · Code 51⭐",
+        summary: "🔬 技术路线: 基于 MLLM 构建移动 GUI Agent，采用层次反馈引导策略优化，实现无需人工标注的自适应训练 | 💡 创新点: 通过层次化反馈机制自动生成训练信号，Agent 无需人工标注即可适应新的移动应用界面和任务 | 📊 实验效果: 在多个移动 GUI 任务上达成 67.2% 至 77.6% 成功率，其中高级任务达 41.0% | ⭐ 整体评价: 快手出品的免标注移动 Agent 实用方案，建议关注其跨应用泛化能力和复杂任务处理上限",
+        tags: [["Agent","green"],["GUI","green"],["Code","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.19930"],["PDF","https://arxiv.org/pdf/2606.19930"],["Project","https://mobile-forge.github.io"],["Code (51⭐)","https://github.com/kwai/MobileForge"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于 MLLM 构建移动 GUI Agent，采用层次反馈引导策略优化，实现无需人工标注的自适应训练"},{"label":"💡 创新点","text":"通过层次化反馈机制自动生成训练信号，Agent 无需人工标注即可适应新的移动应用界面和任务"},{"label":"📊 实验效果","text":"在多个移动 GUI 任务上达成 67.2% 至 77.6% 成功率，其中高级任务达 41.0%"},{"label":"⭐ 整体评价","text":"快手出品的免标注移动 Agent 实用方案，建议关注其跨应用泛化能力和复杂任务处理上限"}]
+    },
+    {
+        date: "2026-06-25",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "MemGUI-Agent: An End-to-End Long-Horizon Mobile GUI Agent with Proactive Context Management",
+        venue: "HuggingFace 热门 · 2026 · Kwai · Code 55⭐",
+        summary: "🔬 技术路线: 基于 MLLM 构建端到端长时程移动 GUI Agent，引入主动上下文管理机制应对操作链中的记忆退化 | 💡 创新点: 端到端设计消除模块间信息损失，主动上下文管理使 Agent 在多步操作中保持状态一致性 | 📊 实验效果: 基于 3K 条移动操作轨迹训练，8B 参数模型实现长时程 GUI 操作，效率显著提升 | ⭐ 整体评价: 快手另一移动 Agent 力作，长时程端到端方案与 MobileForge 形成互补，主动记忆管理是关键",
+        tags: [["Agent","green"],["Memory","green"],["GUI","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.19926"],["PDF","https://arxiv.org/pdf/2606.19926"],["Project","https://memgui-agent.github.io/"],["Code (55⭐)","https://github.com/kwai/MemGUI-Agent"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于 MLLM 构建端到端长时程移动 GUI Agent，引入主动上下文管理机制应对操作链中的记忆退化"},{"label":"💡 创新点","text":"端到端设计消除模块间信息损失，主动上下文管理使 Agent 在多步操作中保持状态一致性"},{"label":"📊 实验效果","text":"基于 3K 条移动操作轨迹训练，8B 参数模型实现长时程 GUI 操作，效率显著提升"},{"label":"⭐ 整体评价","text":"快手另一移动 Agent 力作，长时程端到端方案与 MobileForge 形成互补，主动记忆管理是关键"}]
+    },
+    {
+        date: "2026-06-25",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "AOHP: An Open-Source OS-Level Agent Harness for Personalized, Efficient and Secure Interaction",
+        venue: "HuggingFace 热门 · 2026 · AIR, Tsinghua University · Code 70⭐",
+        summary: "🔬 技术路线: 构建操作系统级别的开源 Agent 框架，在 OS 层面实现个性化配置、高效交互与安全沙箱控制 | 💡 创新点: 首次提出 OS 级 Agent Harness 概念，将 Agent 的交互权限管理下沉至操作系统层而非应用层 | 📊 实验效果: 端到端自动化任务成功率 21.12%，安全约束下提升至 51.55% | ⭐ 整体评价: 清华 AIR 团队出品，OS 级 Agent 框架为安全可控的自主操作提供了新架构思路，70 星关注较高",
+        tags: [["Agent","green"],["Systems","green"],["Safety","green"],["Infra","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.23449"],["PDF","https://arxiv.org/pdf/2606.23449"],["Project/Code (70⭐)","https://github.com/aohp-os/aohp"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"构建操作系统级别的开源 Agent 框架，在 OS 层面实现个性化配置、高效交互与安全沙箱控制"},{"label":"💡 创新点","text":"首次提出 OS 级 Agent Harness 概念，将 Agent 的交互权限管理下沉至操作系统层而非应用层"},{"label":"📊 实验效果","text":"端到端自动化任务成功率 21.12%，安全约束下提升至 51.55%"},{"label":"⭐ 整体评价","text":"清华 AIR 团队出品，OS 级 Agent 框架为安全可控的自主操作提供了新架构思路，70 星关注较高"}]
+    },
+    {
+        date: "2026-06-25",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "LingxiDiagBench: A Multi-Agent Framework for Benchmarking LLMs in Chinese Psychiatric Consultation and Diagnosis",
+        venue: "HuggingFace 热门 · 2026 · Lyncia · Code 9⭐",
+        summary: "🔬 技术路线: 构建多 Agent 框架评估大模型在中文精神科咨询与诊断中的表现，含 16K 专业诊疗样本 | 💡 创新点: 首个中文精神科诊疗 Agent 评测基准，覆盖多 Agent 协同问诊与诊断的完整流程 | 📊 实验效果: 诊断准确率 92.3%，但诊断完整性仅 43.0%，诊断一致性仅 28.5% | ⭐ 整体评价: AI 加医疗垂直应用，精神科场景敏感度高，高准确率与低完整性的矛盾值得深入研究",
+        tags: [["Agent","green"],["Medical","green"],["Benchmark","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2602.09379"],["PDF","https://arxiv.org/pdf/2602.09379"],["Project","https://huggingface.co/datasets/XuShihao6715/LingxiDiag-16K"],["Code (9⭐)","https://github.com/Lingxi-mental-health/LingxiDiagBench"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"构建多 Agent 框架评估大模型在中文精神科咨询与诊断中的表现，含 16K 专业诊疗样本"},{"label":"💡 创新点","text":"首个中文精神科诊疗 Agent 评测基准，覆盖多 Agent 协同问诊与诊断的完整流程"},{"label":"📊 实验效果","text":"诊断准确率 92.3%，但诊断完整性仅 43.0%，诊断一致性仅 28.5%"},{"label":"⭐ 整体评价","text":"AI 加医疗垂直应用，精神科场景敏感度高，高准确率与低完整性的矛盾值得深入研究"}]
+    },
+    {
+        date: "2026-06-25",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Critique of Agent Model",
+        venue: "HuggingFace 热门 · 2026 · SAILING Lab (CMU & MBZUAI)",
+        summary: "🔬 技术路线: 提出 Goal-Identity-Configurator 框架，从目标一致性、身份表征和配置灵活性三维度批判分析 Agent 模型 | 💡 创新点: 建立系统化的 Agent 模型批判框架，超越性能评估，直指 Agent 架构设计的理论缺陷 | 📊 实验效果: 通过理论分析揭示了当前 Agent 模型在目标泛化与身份一致性上的结构性不足 | ⭐ 整体评价: CMU 出品的 Agent 方法论自省，批判性框架有助于推动 Agent 理论从工程驱动走向理论驱动",
+        tags: [["Agent","green"],["Theory","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.23991"],["PDF","https://arxiv.org/pdf/2606.23991"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出 Goal-Identity-Configurator 框架，从目标一致性、身份表征和配置灵活性三维度批判分析 Agent 模型"},{"label":"💡 创新点","text":"建立系统化的 Agent 模型批判框架，超越性能评估，直指 Agent 架构设计的理论缺陷"},{"label":"📊 实验效果","text":"通过理论分析揭示了当前 Agent 模型在目标泛化与身份一致性上的结构性不足"},{"label":"⭐ 整体评价","text":"CMU 出品的 Agent 方法论自省，批判性框架有助于推动 Agent 理论从工程驱动走向理论驱动"}]
+    },
+    {
+        date: "2026-06-25",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "TryOnCrafter: Unleashing Camera Trajectories for Realistic Video Virtual Try-on via a Renderable 4D Try-on Proxy",
+        venue: "arXiv 2026 · Multimodal · 4D · Video Generation",
+        summary: "🔬 技术路线: 构建可渲染的 4D 试穿代理，利用自由相机轨迹生成多视角逼真视频虚拟试穿效果 | 💡 创新点: 首次将 4D 可渲染表示引入虚拟试穿，实现任意相机轨迹的高质量试穿视频生成 | 📊 实验效果: 在视频虚拟试穿任务上实现了多相机轨迹下的逼真渲染效果 | ⭐ 整体评价: 虚拟试穿从 2D 图像迈向 4D 视频生成，技术升级方向明确，电商应用场景商业潜力大",
+        tags: [["Multimodal","green"],["4D","green"],["Video","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.26092"],["PDF","https://arxiv.org/pdf/2606.26092"],["Project","https://sunhao242.github.io/TryOnCrafter_web.github.io/"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"构建可渲染的 4D 试穿代理，利用自由相机轨迹生成多视角逼真视频虚拟试穿效果"},{"label":"💡 创新点","text":"首次将 4D 可渲染表示引入虚拟试穿，实现任意相机轨迹的高质量试穿视频生成"},{"label":"📊 实验效果","text":"在视频虚拟试穿任务上实现了多相机轨迹下的逼真渲染效果"},{"label":"⭐ 整体评价","text":"虚拟试穿从 2D 图像迈向 4D 视频生成，技术升级方向明确，电商应用场景商业潜力大"}]
+    },
+    {
+        date: "2026-06-25",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "Same Evidence, Different Answer: Auditing Order Sensitivity in Multimodal Large Language Models",
+        venue: "arXiv 2026 · Multimodal · Robustness · Auditing",
+        summary: "🔬 技术路线: 通过 Facet-Probe 方法系统审计多模态大模型对输入证据顺序的敏感性，揭示模型鲁棒性缺陷 | 💡 创新点: 首次系统性揭示多模态 LLM 在相同证据不同顺序下给出矛盾答案的普遍现象 | 📊 实验效果: 发现 50% 的案例受输入顺序影响，其中 13.4% 存在显著答案翻转 | ⭐ 整体评价: 多模态模型鲁棒性的重要审计工作，对评测可靠性和模型可信度有深刻警示意义",
+        tags: [["Multimodal","green"],["Auditing","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.26079"],["PDF","https://arxiv.org/pdf/2606.26079"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"通过 Facet-Probe 方法系统审计多模态大模型对输入证据顺序的敏感性，揭示模型鲁棒性缺陷"},{"label":"💡 创新点","text":"首次系统性揭示多模态 LLM 在相同证据不同顺序下给出矛盾答案的普遍现象"},{"label":"📊 实验效果","text":"发现 50% 的案例受输入顺序影响，其中 13.4% 存在显著答案翻转"},{"label":"⭐ 整体评价","text":"多模态模型鲁棒性的重要审计工作，对评测可靠性和模型可信度有深刻警示意义"}]
+    },
+    {
+        date: "2026-06-25",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Model Forensics: Investigating Whether Concerning Behavior Reflects Misalignment",
+        venue: "arXiv 2026 · LLM Safety · Alignment · Forensics",
+        summary: "🔬 技术路线: 提出模型法医学分析框架，系统调查模型异常行为与深层对齐偏差之间的因果关系 | 💡 创新点: 将法医学方法论引入 AI 安全，区分表面的行为异常与真正的价值对齐失配 | 📊 实验效果: 以 DeepSeek 模型为案例进行了系统性的对齐法医分析 | ⭐ 整体评价: AI 安全与对齐领域的方法论创新，区分行为症状与价值根源的分析框架有重要实践价值",
+        tags: [["LLM","green"],["Safety","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.26071"],["PDF","https://arxiv.org/pdf/2606.26071"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出模型法医学分析框架，系统调查模型异常行为与深层对齐偏差之间的因果关系"},{"label":"💡 创新点","text":"将法医学方法论引入 AI 安全，区分表面的行为异常与真正的价值对齐失配"},{"label":"📊 实验效果","text":"以 DeepSeek 模型为案例进行了系统性的对齐法医分析"},{"label":"⭐ 整体评价","text":"AI 安全与对齐领域的方法论创新，区分行为症状与价值根源的分析框架有重要实践价值"}]
+    },
+    {
+        date: "2026-06-25",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "When Certainty Is an Artifact: Keyword Lexicon Blindness and the (Mis)Measurement of Rhetorical Stance",
+        venue: "arXiv 2026 · LLM · NLP · Methodology",
+        summary: "🔬 技术路线: 利用大模型分析方法揭示关键词词典盲区如何导致修辞立场测量的系统性偏差 | 💡 创新点: 首次系统论证基于关键词词典的文本分析方法存在盲区，确定性测量结果可能是方法论假象 | 📊 实验效果: 揭示了关键词方法在修辞立场测量中的系统性误判模式 | ⭐ 整体评价: NLP 方法论自省，对广泛使用的词典方法提出了重要质疑，推动文本分析方法的演进",
+        tags: [["LLM","green"],["Methodology","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.26062"],["PDF","https://arxiv.org/pdf/2606.26062"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"利用大模型分析方法揭示关键词词典盲区如何导致修辞立场测量的系统性偏差"},{"label":"💡 创新点","text":"首次系统论证基于关键词词典的文本分析方法存在盲区，确定性测量结果可能是方法论假象"},{"label":"📊 实验效果","text":"揭示了关键词方法在修辞立场测量中的系统性误判模式"},{"label":"⭐ 整体评价","text":"NLP 方法论自省，对广泛使用的词典方法提出了重要质疑，推动文本分析方法的演进"}]
+    },
+    {
+        date: "2026-06-25",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "How Agents Are Transforming Work",
+        venue: "",
+        summary: "OpenAI 发布关于 AI Agent 如何变革工作方式的专题文章，探讨 Agent 在企业自动化、知识工作和人机协作中的最新应用趋势与案例。",
+        tags: [],
+        links: [["OpenAI","https://openai.com/index/how-agents-are-transforming-work/"]]
+    },
+    {
+        date: "2026-06-25",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "OpenAI and Broadcom Unveil LLM-Optimized Inference Chip",
+        venue: "",
+        summary: "OpenAI 与 Broadcom 联合发布 Jalapeno 推理芯片，专为大语言模型推理优化设计，有望显著降低大规模 AI 推理的硬件成本并提升能效比。",
+        tags: [],
+        links: [["OpenAI","https://openai.com/index/openai-broadcom-jalapeno-inference-chip/"]]
+    },
     // === 2026-06-24 ===
     {
         date: "2026-06-24",
@@ -15338,6 +15527,13 @@ const PAPERS_DB = [
 ];
 
 const DAILY_OVERVIEW = {
+    "2026-06-25": {
+        bannerTitle: "🔥 今日看点",
+        bannerSubtitle: "Agent 方向爆发（9/15 篇，60%）。NatureBench 首次评估编码 Agent 复现 Nature 论文的能力，仅 17.8% 成功率暴露当前 AI 的科研短板。Qwen-AgentWorld 将语言世界模型与通用 Agent 深度融合，为环境模拟提供新范式。清华 AIR 团队 AOHP 提出 OS 级 Agent 安全框架。ForceBand 利用肌电信号实现力操控机器人，开辟人机交互新路径。OpenAI 与 Broadcom 联合发布 Jalapeno 推理芯片，专为大模型推理优化设计。",
+        picks: ["Qwen-AgentWorld: Language World Models for General Agents","NatureBench: Can Coding Agents Match the Published SOTA of Nature-Family Papers?","AOHP: An Open-Source OS-Level Agent Harness for Personalized, Efficient and Secure Interaction"],
+        totalPapers: 15,
+        totalNews: 2
+    },
     "2026-06-24": {
         bannerTitle: "🔥 今日看点",
         bannerSubtitle: "InSight 提出自引导技能获取的 VLA 框架，让机器人通过自主探索习得操作技能，无需人工示范。World Models in Pieces 从理论上论证大世界场景中智能体的能力边界，提出基于结构片段的世界模型认证方法论。World Action Models 综述（NUS 出品，241 星）首次全景式梳理从视频生成到机器人控制的完整技术谱系。OpenAI 披露 GPT-5 帮助免疫学家解开困扰三年的医学难题。",
