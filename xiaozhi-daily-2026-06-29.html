@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>小小志AI日报 - 2026年6月29日 周一</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans SC', sans-serif;
+  background: #0a0e1a;
+  color: #e0e6f0;
+  line-height: 1.7;
+  min-height: 100vh;
+}
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+header {
+  text-align: center;
+  margin-bottom: 48px;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, rgba(59,130,246,0.08) 0%, rgba(139,92,246,0.08) 100%);
+  border-radius: 20px;
+  border: 1px solid rgba(99,102,241,0.15);
+}
+header h1 {
+  font-size: 2rem;
+  background: linear-gradient(135deg, #60a5fa, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 8px;
+}
+header .date {
+  color: #94a3b8;
+  font-size: 1rem;
+}
+header .subtitle {
+  color: #64748b;
+  font-size: 0.9rem;
+  margin-top: 6px;
+}
+.highlight-banner {
+  background: linear-gradient(135deg, rgba(249,115,22,0.1) 0%, rgba(234,179,8,0.08) 100%);
+  border: 1px solid rgba(249,115,22,0.2);
+  border-radius: 14px;
+  padding: 20px 24px;
+  margin-bottom: 36px;
+}
+.hl-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fb923c;
+  margin-bottom: 8px;
+}
+.hl-text {
+  font-size: 0.92rem;
+  color: #cbd5e1;
+  line-height: 1.7;
+}
+.section {
+  margin-bottom: 40px;
+}
+.section-title {
+  font-size: 1.4rem;
+  color: #f1f5f9;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(99,102,241,0.2);
+}
+.paper-card {
+  background: rgba(30,41,59,0.6);
+  border: 1px solid rgba(99,102,241,0.12);
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 16px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.paper-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(99,102,241,0.1);
+  border-color: rgba(99,102,241,0.3);
+}
+.paper-card.hot {
+  border-color: rgba(249,115,22,0.25);
+  background: rgba(30,41,59,0.7);
+}
+.paper-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #f8fafc;
+  margin-bottom: 8px;
+}
+.paper-meta {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-bottom: 10px;
+}
+.summary-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+@media (max-width: 640px) {
+  .summary-grid { grid-template-columns: 1fr; }
+}
+.summary-item {
+  background: rgba(15,23,42,0.5);
+  border-radius: 10px;
+  padding: 12px 14px;
+  border: 1px solid rgba(99,102,241,0.08);
+}
+.summary-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #818cf8;
+  margin-bottom: 4px;
+}
+.summary-text {
+  font-size: 0.88rem;
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+.paper-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.tag {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+.tag-agent { background: rgba(16,185,129,0.12); color: #34d399; }
+.tag-llm { background: rgba(99,102,241,0.12); color: #818cf8; }
+.tag-multimodal { background: rgba(244,114,182,0.12); color: #f472b6; }
+.tag-world { background: rgba(251,191,36,0.12); color: #fbbf24; }
+.tag-robot { background: rgba(251,146,60,0.12); color: #fb923c; }
+.tag-rl { background: rgba(45,212,191,0.12); color: #2dd4bf; }
+.tag-video { background: rgba(168,85,247,0.12); color: #a855f7; }
+.tag-benchmark { background: rgba(34,211,238,0.12); color: #22d3ee; }
+.tag-vla { background: rgba(59,130,246,0.12); color: #60a5fa; }
+.tag-safety { background: rgba(239,68,68,0.12); color: #f87171; }
+.tag-memory { background: rgba(192,132,252,0.12); color: #c084fc; }
+.tag-reasoning { background: rgba(132,204,22,0.12); color: #a3e635; }
+.tag-code { background: rgba(52,211,153,0.12); color: #34d399; }
+.tag-survey { background: rgba(6,182,212,0.12); color: #22d3ee; }
+.tag-science { background: rgba(217,119,6,0.12); color: #f59e0b; }
+.tag-medical { background: rgba(239,68,68,0.12); color: #f87171; }
+.tag-systems { background: rgba(56,189,248,0.12); color: #38bdf8; }
+.tag-3d { background: rgba(148,163,184,0.12); color: #94a3b8; }
+.tag-data { background: rgba(250,204,21,0.12); color: #facc15; }
+.tag-infra { background: rgba(167,139,250,0.12); color: #a78bfa; }
+.tag-generation { background: rgba(249,115,22,0.12); color: #f97316; }
+.hot-badge {
+  display: inline;
+  margin-right: 4px;
+}
+.info-card {
+  background: rgba(30,41,59,0.6);
+  border: 1px solid rgba(99,102,241,0.12);
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 16px;
+}
+.paper-summary {
+  font-size: 0.9rem;
+  color: #cbd5e1;
+  line-height: 1.7;
+  margin-bottom: 14px;
+}
+.paper-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.paper-links a {
+  display: inline-block;
+  padding: 5px 14px;
+  background: rgba(99,102,241,0.12);
+  color: #818cf8;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+.paper-links a:hover {
+  background: rgba(99,102,241,0.25);
+}
+.stats {
+  text-align: center;
+  padding: 30px;
+  margin-top: 40px;
+  background: rgba(30,41,59,0.4);
+  border-radius: 14px;
+  border: 1px solid rgba(99,102,241,0.1);
+}
+.stats p { color: #94a3b8; font-size: 0.88rem; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <h1>📡 小小志AI日报</h1>
+  <div class="date">2026年6月29日 周一</div>
+  <div class="subtitle">📝 arXiv 8 篇 · HF 热门 7 篇 · 机构博客 1 条</div>
+</header>
+
+<div class="highlight-banner">
+  <div class="hl-title">🔥 今日看点</div>
+  <div class="hl-text">
+    今日 Robotics 方向集中爆发（7/15 篇），MIT 的 WARP-RM 实现 18 倍数据筛选效率，NVIDIA 贡献 3 篇：SimFoundry 自动化场景生成提升 17-40%、CacheMPC 可认证缓存模型预测控制、PhysisForcing 物理增强世界模拟器 14B。字节跳动 Seed 团队提出翻译桥接动作实现人机技能迁移。Qwen 发布 Image-2.0 强化学习版技术报告。DexCompose 以 77.4% 成功率实现单灵巧手多任务策略组合。Google 的 AI 辅助审稿工具实现 34% 效率提升。LeHome 2026 竞赛冠军方案结合模仿学习与机器人折叠操作。
+  </div>
+</div>
+
+<!-- 🦾 Robotics Section -->
+<section class="section">
+  <h2 class="section-title">🦾 Robotics · 机器人</h2>
+
+  <div class="paper-card hot">
+    <div class="paper-title"><span class="hot-badge">🔥</span> DexCompose: Reusing Dexterous Policies for Multi-Task Manipulation with a Single Hand</div>
+    <div class="paper-meta">arXiv 2026 · Robotics · Dexterous Manipulation</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出策略组合框架，将已完成训练的单一灵巧手操作策略作为可复用模块，通过组合编排实现从单任务到多任务的零样本扩展</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次将灵巧手策略的模块化复用与自动组合编排相结合，避免为每个新任务组合从头训练，显著降低多任务部署的训练成本</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">达到 77.4% 的多任务操作成功率，验证了策略组合框架在复杂灵巧操作场景中的实用性和稳定性</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">灵巧手多任务操作的重要框架性工作，77.4% 成功率表明策略复用是可行的实用路线，建议关注其组合泛化边界和真机部署效果</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-robot">Manipulation</span>
+      <span class="tag tag-3d">Dexterous</span>
+      <span class="tag tag-systems">Composition</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.28323">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.28323">PDF</a>
+      <a href="https://devon018.github.io/DexCompose-Webpage/">Project</a>
+    </div>
+  </div>
+
+  <div class="paper-card hot">
+    <div class="paper-title"><span class="hot-badge">🔥</span> WARP-RM: A Warp-Augmented Relative Progress Reward Model for Data Curation</div>
+    <div class="paper-meta">arXiv 2026 · MIT · Robotics · Data Curation · Reward Model</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出基于扭曲增强相对进度的奖励模型，通过自监督方式学习区分高质量与低质量示范数据，用于大规模模仿学习的数据筛选</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">以相对进度替代绝对分数作为数据质量信号，采用扭曲增强机制扩大数据间质量差异，实现无需人工标注的自动数据筛选</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">实现 18 倍数据筛选效率提升，大幅降低了大规模模仿学习中人工筛选和标注的成本瓶颈</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">MIT 在模仿学习数据工程方向的重要贡献，18 倍效率提升对大规模机器人策略训练具有直接实用价值</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-robot">Imitation Learning</span>
+      <span class="tag tag-data">Data Curation</span>
+      <span class="tag tag-rl">Reward Model</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.28320">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.28320">PDF</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">CacheMPC: Certified Cached Model Predictive Control for Quadruped Locomotion</div>
+    <div class="paper-meta">arXiv 2026 · NVIDIA · MIT · Robotics · Model Predictive Control</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出可认证缓存模型预测控制方法，通过局部敏感哈希将已求解的控制方案缓存复用，避免每次控制周期都重新求解复杂的优化问题</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">将认证机制引入缓存 MPC，确保缓存方案的安全替代性，在保证控制安全性的前提下大幅降低四足运动控制的在线计算开销</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在四足机器人运动控制任务中验证了缓存加速策略的有效性和安全性保证</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">NVIDIA 和 MIT 联手解决四足运动控制的计算效率问题，安全认证加速的思路对实时机器人控制有推广价值</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-robot">Quadruped</span>
+      <span class="tag tag-systems">MPC</span>
+      <span class="tag tag-safety">Certified</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.28300">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.28300">PDF</a>
+    </div>
+  </div>
+
+  <div class="paper-card hot">
+    <div class="paper-title"><span class="hot-badge">🔥</span> SimFoundry: Modular and Automated Scene Generation for Policy Learning and Evaluation</div>
+    <div class="paper-meta">arXiv 2026 · NVIDIA · Robotics · Scene Generation · Simulation</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出模块化自动化场景生成框架，通过组合场景元素模块零样本生成大规模多样化仿真环境，服务于机器人策略训练和评估</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">以模块化设计实现仿真场景的自动化生成，摆脱对手工设计场景的依赖，显著扩大训练和评估的场景覆盖范围</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">策略学习效果分别提升 17%、21% 和 40%，验证了多样化场景生成对策略鲁棒性的关键贡献</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">NVIDIA 在机器人仿真基础设施方向的重要贡献，40% 的提升说明场景多样性是当前策略训练的瓶颈之一</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-robot">Simulation</span>
+      <span class="tag tag-generation">Scene Generation</span>
+      <span class="tag tag-infra">Infrastructure</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.28276">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.28276">PDF</a>
+      <a href="https://research.nvidia.com/labs/gear/simfoundry/">Project</a>
+    </div>
+  </div>
+
+  <div class="paper-card hot">
+    <div class="paper-title"><span class="hot-badge">🔥</span> PhysisForcing: Physics Reinforced World Simulator for Robotic Manipulation</div>
+    <div class="paper-meta">arXiv 2026 · NVIDIA · Robotics · World Model · Physics Simulation</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">将物理先验知识注入视频生成模型，构建物理增强世界模拟器，通过显式物理约束确保生成视频的物理一致性</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次将物理定律作为生成约束直接强化视频世界模型的输出，解决了纯数据驱动方法容易产生物理不可行动作的问题</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">14B 参数规模，通过 R-Bench 基准验证了物理一致性在机器人操作场景中的显著提升</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">物理增强世界模型的方向具有很强的实际价值，14B 规模表明这条路线已具备规模化潜力，建议关注 Sim-to-Real 迁移效果</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-world">World Model</span>
+      <span class="tag tag-robot">Manipulation</span>
+      <span class="tag tag-video">Video</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.28128">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.28128">PDF</a>
+      <a href="https://dagroup-pku.github.io/PhysisForcing.github.io/">Project</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">Translation as a Bridging Action: Transferring Manipulation Skills from Humans to Robots</div>
+    <div class="paper-meta">arXiv 2026 · ByteDance Seed · Robotics · VLA · Skill Transfer</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出翻译桥接动作范式，将人类操作视频转化为机器人可执行的中间动作表示，通过视觉语言动作模型实现跨形态技能的自动映射</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">创新性地将人类到机器人的技能迁移建模为翻译问题，以桥接动作空间填补人机运动学差异，实现操作技能的无监督跨形态传递</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在多种操作和抓取任务上验证了从人类视频到机器人执行的有效技能迁移</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">字节跳动 Seed 提出的人机技能迁移新范式具有创新性，翻译桥接的建模视角为技能泛化提供了新的技术路径</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-vla">VLA</span>
+      <span class="tag tag-robot">Skill Transfer</span>
+      <span class="tag tag-multimodal">Cross-Embodiment</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.28133">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.28133">PDF</a>
+      <a href="https://translation-as-a-bridging-action.github.io/">Project</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">Learning to Fold: prizewinning solution at LeHome Challenge 2026 (1st place online, 2nd offline)</div>
+    <div class="paper-meta">arXiv 2026 · Robotics · Manipulation · Competition · Code (22⭐)</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">基于类 DAgger 模仿学习框架，结合专家示范与策略迭代优化，实现机器人对衣物等柔性物体的折叠操作</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">将模仿学习成功应用于柔性物体操作的竞赛场景，在真实机器人上实现端到端折叠能力，获线上第一线下第二</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">LeHome 2026 挑战赛线上第一名、线下第二名，在真实家庭环境中验证了算法的鲁棒性和泛化能力</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">竞赛驱动的实用机器人工作，柔性物体操作仍然具有挑战性，建议关注其 DAgger 实现细节和竞赛中的关键技巧</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-robot">Manipulation</span>
+      <span class="tag tag-code">Code (22⭐)</span>
+      <span class="tag tag-rl">Imitation Learning</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.27163">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.27163">PDF</a>
+      <a href="https://ilialarchenko.com/projects/lehome2026/">Project</a>
+      <a href="https://github.com/IliaLarchenko/lehome_solution">Code</a>
+    </div>
+  </div>
+</section>
+
+<!-- 🎨 Multimodal Section -->
+<section class="section">
+  <h2 class="section-title">🎨 Multimodal · 多模态</h2>
+
+  <div class="paper-card">
+    <div class="paper-title">PerceptionRubrics: Calibrating Multimodal Evaluation to Human Perception</div>
+    <div class="paper-meta">arXiv 2026 · Multimodal · Evaluation · Calibration</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出 Peer-Review 评估框架，通过建立多模态模型评估分数与人类感知之间的校准映射，揭示并修正现有多模态评测中的系统性偏差</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次以人类感知为校准标准来审视多模态评估体系，通过同行评审机制系统诊断自动评测与人类判断的差异</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">将多模态评测偏差降低了 8%，揭示了当前评测基准与人类感知之间存在的端到端鸿沟</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">多模态评测领域的自省性工作，8% 的偏差纠正虽不算巨大但方向正确，建议关注其校准方法对其他评测基准的适用性</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-multimodal">Multimodal</span>
+      <span class="tag tag-benchmark">Evaluation</span>
+      <span class="tag tag-reasoning">Calibration</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.28322">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.28322">PDF</a>
+      <a href="https://weiyana.github.io/PerceptionRubrics">Project</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">SingGuard: A Policy-Adaptive Multimodal LLM Guardrail with Dynamic Reasoning</div>
+    <div class="paper-meta">arXiv 2026 · inclusionAI · Multimodal · Safety · Code (30⭐)</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">构建策略自适应多模态安全护栏，结合视觉语言模型和动态推理机制，根据安全策略灵活调整审核力度和判定逻辑</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">将策略自适应机制引入多模态安全护栏，使审核系统能够根据不同的安全要求动态调整判定标准，而非使用一刀切的固定规则</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在多模态安全审核任务上验证了动态推理和策略自适应机制的有效性</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">多模态安全方向的实际落地工作，30 星关注表明社区对灵活安全策略有真实需求，建议关注其误判率和策略变化的响应速度</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-multimodal">Multimodal</span>
+      <span class="tag tag-safety">Safety</span>
+      <span class="tag tag-code">Code (30⭐)</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.22873">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.22873">PDF</a>
+      <a href="https://github.com/inclusionAI/Sing-Guard">Code</a>
+    </div>
+  </div>
+
+  <div class="paper-card hot">
+    <div class="paper-title"><span class="hot-badge">🔥</span> Qwen-Image-2.0-RL Technical Report</div>
+    <div class="paper-meta">arXiv 2026 · Qwen · Image Generation · Reinforcement Learning</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">在 Qwen-Image-2.0 基础上引入强化学习训练，通过奖励信号进一步优化图像生成的质量、可控性和与文本描述的对齐度</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">将 RL 训练范式成功应用于大规模图像生成模型的迭代优化，展示了从监督学习到强化学习的训练路线切换能带来额外的性能收益</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在图像生成质量和可控性上相比基座模型取得进一步提升，技术报告详细披露了 RL 训练的设计选择和实验结果</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">Qwen 团队在图像生成 RL 方向的重要发布，作为大厂的技术报告具有较高的参考价值和复现指导意义</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-multimodal">Image Generation</span>
+      <span class="tag tag-rl">RL</span>
+      <span class="tag tag-generation">Generation</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.27608">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.27608">PDF</a>
+    </div>
+  </div>
+</section>
+
+<!-- 🧩 Agent Section -->
+<section class="section">
+  <h2 class="section-title">🧩 Agent · 智能体</h2>
+
+  <div class="paper-card">
+    <div class="paper-title">Agentic Hardware Design as Repository-Level Code Evolution</div>
+    <div class="paper-meta">arXiv 2026 · Agent · Hardware Design · Verilog · Code Generation</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">将 LLM Agent 应用于硬件描述语言的仓库级代码演化任务，通过 Verilog-Eval 基准评估 Agent 在 Verilog 代码生成与迭代优化中的表现</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次将 Agent 范式引入硬件设计领域，探索 LLM 在 Verilog 等硬件描述语言中端到端代码生成和跨文件演化的能力</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在 Verilog-Eval 基准上验证了 Agent 化方法在硬件代码生成任务中的有效性</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">Agent 应用向硬件设计领域的有益拓展，Verilog 代码生成的准确性和正确性是关键，建议关注其与 EDA 工具的集成效果</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-agent">Agent</span>
+      <span class="tag tag-code">Code Generation</span>
+      <span class="tag tag-infra">Hardware</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.28279">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.28279">PDF</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">Towards Automating Scientific Review with Google's Paper Assistant Tool</div>
+    <div class="paper-meta">arXiv 2026 · Google · Agent · Scientific Review · Automation</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">Google 提出 AI 辅助论文审稿工具，通过零样本方式分析论文内容并生成结构化审稿意见，辅助人工审稿流程</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">将 AI 辅助工具引入学术同行评审流程，探索在保证评审质量的前提下由 AI 分担重复性和辅助性审稿工作的可行性</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">实现 34% 的审稿效率提升，验证了 AI 辅助在学术评审流程中对提升效率的积极贡献</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">学术评审自动化方向的探索性工作，34% 效率提升可观但替代性有限，建议关注其审稿质量一致性和误判风险</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-agent">Agent</span>
+      <span class="tag tag-science">Scientific Review</span>
+      <span class="tag tag-benchmark">Automation</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.28277">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.28277">PDF</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">ProMSA: Progressive Multimodal Search Agents for Knowledge-Based Visual Question Answering</div>
+    <div class="paper-meta">arXiv 2026 · Agent · Multimodal · VQA · Code (3⭐)</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出渐进式多模态搜索智能体，通过端到端训练实现多步搜索与推理的自动编排，逐步从知识库中检索相关信息来回答视觉问题</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">以渐进式搜索策略将复杂视觉问答分解为多步搜索子任务，使 Agent 能够逐步缩小答案范围并累积跨模态证据</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在基于知识的视觉问答任务上验证了渐进式搜索策略相比单步检索的优势</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">基于知识的视觉问答中 Agent 化搜索的探索，渐进式策略设计合理，建议关注其搜索效率和多步错误累积问题</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-agent">Agent</span>
+      <span class="tag tag-multimodal">VQA</span>
+      <span class="tag tag-code">Code (3⭐)</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.27974">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.27974">PDF</a>
+      <a href="https://dingwu1021.github.io/ProMSA/">Project</a>
+      <a href="https://github.com/DingWu1021/Promsa">Code</a>
+    </div>
+  </div>
+</section>
+
+<!-- 🧠 LLM Section -->
+<section class="section">
+  <h2 class="section-title">🧠 LLM · 大语言模型</h2>
+
+  <div class="paper-card">
+    <div class="paper-title">Parameter Efficient Hybrid Transformer (PEHT) for Network Traffic Prediction via Dynamic Urban Congestion Integration</div>
+    <div class="paper-meta">arXiv 2026 · LLM · Traffic Prediction · Efficient Architecture</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出参数高效混合 Transformer 架构，通过动态集成城市交通拥堵信息实现精确的网络流量预测</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">以参数高效设计解决交通预测中的多模态数据融合问题，用少量可训练参数实现对城市拥堵动态的高效建模</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在网络流量预测任务上验证了参数高效设计在保持预测精度的同时显著降低计算开销</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">LLM 架构在城市交通预测领域的应用性工作，参数高效设计思路具有落地价值，但领域相对小众</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-llm">LLM</span>
+      <span class="tag tag-systems">Traffic</span>
+      <span class="tag tag-infra">Efficient</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.28274">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.28274">PDF</a>
+    </div>
+  </div>
+
+  <div class="paper-card hot">
+    <div class="paper-title"><span class="hot-badge">🔥</span> Formalizing Latent Thoughts: Four Axioms of Thought Representation in LLMs</div>
+    <div class="paper-meta">arXiv 2026 · LLM · Interpretability · Theory · Code</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出 LLM 中思维表征的四条公理化体系，通过 RL 训练的模型实证验证公理框架的合理性，为理解 LLM 内部推理提供形式化基础</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次以公理化方法对 LLM 的潜在思维过程进行数学建模，将可解释性研究从经验观察提升到理论框架层面</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">通过 RL 训练模型验证了四条公理的实验一致性，为 LLM 推理机制提供了形式化解释</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">LLM 可解释性领域的基础理论工作，公理化方法体现了对深层机制的理论追求，建议关注其对后续可解释性研究的启发价值</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-llm">LLM</span>
+      <span class="tag tag-reasoning">Interpretability</span>
+      <span class="tag tag-science">Theory</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.27378">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.27378">PDF</a>
+      <a href="https://fard-lab.github.io/formalize-thoughts/">Project</a>
+      <a href="https://github.com/fard-lab/formalize-thoughts">Code</a>
+    </div>
+  </div>
+</section>
+
+<!-- 行业动态 Section -->
+<section class="section">
+  <h2 class="section-title">📰 行业动态</h2>
+
+  <div class="info-card">
+    <div class="paper-title">How HP is scaling early AI wins across the enterprise</div>
+    <div class="paper-summary">OpenAI 发布与 HP 的企业合作案例，展示 HP 如何将早期 AI 成果规模化推广至整个企业，推动 AI 驱动的业务转型和运营效率提升。</div>
+    <div class="paper-links">
+      <a href="https://openai.com/index/hp-frontier-partnership/">OpenAI</a>
+    </div>
+  </div>
+</section>
+
+<div class="stats">
+  <p>自动生成于 2026-06-29 09:26 UTC 　│　关注：VLA · Robotics · World Model · LLM · Multimodal · Agent</p>
+</div>
+
+</div>
+</body>
+</html>

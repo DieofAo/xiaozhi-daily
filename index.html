@@ -658,6 +658,188 @@
 <script>
 // ===== DATA =====
 const PAPERS_DB = [
+    // === 2026-06-29 ===
+    {
+        date: "2026-06-29",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "DexCompose: Reusing Dexterous Policies for Multi-Task Manipulation with a Single Hand",
+        venue: "arXiv 2026 · Robotics · Dexterous Manipulation",
+        summary: "🔬 技术路线: 提出策略组合框架，将已完成训练的单一灵巧手操作策略作为可复用模块，通过组合编排实现从单任务到多任务的零样本扩展 | 💡 创新点: 首次将灵巧手策略的模块化复用与自动组合编排相结合，避免为每个新任务组合从头训练，显著降低多任务部署的训练成本 | 📊 实验效果: 达到 77.4% 的多任务操作成功率，验证了策略组合框架在复杂灵巧操作场景中的实用性和稳定性 | ⭐ 整体评价: 灵巧手多任务操作的重要框架性工作，77.4% 成功率表明策略复用是可行的实用路线，建议关注其组合泛化边界和真机部署效果",
+        tags: [["Manipulation","green"],["Dexterous","green"],["Composition","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.28323"],["PDF","https://arxiv.org/pdf/2606.28323"],["Project","https://devon018.github.io/DexCompose-Webpage/"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出策略组合框架，将已完成训练的单一灵巧手操作策略作为可复用模块，通过组合编排实现从单任务到多任务的零样本扩展"},{"label":"💡 创新点","text":"首次将灵巧手策略的模块化复用与自动组合编排相结合，避免为每个新任务组合从头训练，显著降低多任务部署的训练成本"},{"label":"📊 实验效果","text":"达到 77.4% 的多任务操作成功率，验证了策略组合框架在复杂灵巧操作场景中的实用性和稳定性"},{"label":"⭐ 整体评价","text":"灵巧手多任务操作的重要框架性工作，77.4% 成功率表明策略复用是可行的实用路线，建议关注其组合泛化边界和真机部署效果"}]
+    },
+    {
+        date: "2026-06-29",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "WARP-RM: A Warp-Augmented Relative Progress Reward Model for Data Curation",
+        venue: "arXiv 2026 · MIT · Robotics · Data Curation · Reward Model",
+        summary: "🔬 技术路线: 提出基于扭曲增强相对进度的奖励模型，通过自监督方式学习区分高质量与低质量示范数据，用于大规模模仿学习的数据筛选 | 💡 创新点: 以相对进度替代绝对分数作为数据质量信号，采用扭曲增强机制扩大数据间质量差异，实现无需人工标注的自动数据筛选 | 📊 实验效果: 实现 18 倍数据筛选效率提升，大幅降低了大规模模仿学习中人工筛选和标注的成本瓶颈 | ⭐ 整体评价: MIT 在模仿学习数据工程方向的重要贡献，18 倍效率提升对大规模机器人策略训练具有直接实用价值",
+        tags: [["Imitation Learning","green"],["Data Curation","green"],["Reward Model","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.28320"],["PDF","https://arxiv.org/pdf/2606.28320"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出基于扭曲增强相对进度的奖励模型，通过自监督方式学习区分高质量与低质量示范数据，用于大规模模仿学习的数据筛选"},{"label":"💡 创新点","text":"以相对进度替代绝对分数作为数据质量信号，采用扭曲增强机制扩大数据间质量差异，实现无需人工标注的自动数据筛选"},{"label":"📊 实验效果","text":"实现 18 倍数据筛选效率提升，大幅降低了大规模模仿学习中人工筛选和标注的成本瓶颈"},{"label":"⭐ 整体评价","text":"MIT 在模仿学习数据工程方向的重要贡献，18 倍效率提升对大规模机器人策略训练具有直接实用价值"}]
+    },
+    {
+        date: "2026-06-29",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "CacheMPC: Certified Cached Model Predictive Control for Quadruped Locomotion",
+        venue: "arXiv 2026 · NVIDIA · MIT · Robotics · Model Predictive Control",
+        summary: "🔬 技术路线: 提出可认证缓存模型预测控制方法，通过局部敏感哈希将已求解的控制方案缓存复用，避免每次控制周期都重新求解复杂的优化问题 | 💡 创新点: 将认证机制引入缓存 MPC，确保缓存方案的安全替代性，在保证控制安全性的前提下大幅降低四足运动控制的在线计算开销 | 📊 实验效果: 在四足机器人运动控制任务中验证了缓存加速策略的有效性和安全性保证 | ⭐ 整体评价: NVIDIA 和 MIT 联手解决四足运动控制的计算效率问题，安全认证加速的思路对实时机器人控制有推广价值",
+        tags: [["Quadruped","green"],["MPC","green"],["Certified","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.28300"],["PDF","https://arxiv.org/pdf/2606.28300"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出可认证缓存模型预测控制方法，通过局部敏感哈希将已求解的控制方案缓存复用，避免每次控制周期都重新求解复杂的优化问题"},{"label":"💡 创新点","text":"将认证机制引入缓存 MPC，确保缓存方案的安全替代性，在保证控制安全性的前提下大幅降低四足运动控制的在线计算开销"},{"label":"📊 实验效果","text":"在四足机器人运动控制任务中验证了缓存加速策略的有效性和安全性保证"},{"label":"⭐ 整体评价","text":"NVIDIA 和 MIT 联手解决四足运动控制的计算效率问题，安全认证加速的思路对实时机器人控制有推广价值"}]
+    },
+    {
+        date: "2026-06-29",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "SimFoundry: Modular and Automated Scene Generation for Policy Learning and Evaluation",
+        venue: "arXiv 2026 · NVIDIA · Robotics · Scene Generation · Simulation",
+        summary: "🔬 技术路线: 提出模块化自动化场景生成框架，通过组合场景元素模块零样本生成大规模多样化仿真环境，服务于机器人策略训练和评估 | 💡 创新点: 以模块化设计实现仿真场景的自动化生成，摆脱对手工设计场景的依赖，显著扩大训练和评估的场景覆盖范围 | 📊 实验效果: 策略学习效果分别提升 17%、21% 和 40%，验证了多样化场景生成对策略鲁棒性的关键贡献 | ⭐ 整体评价: NVIDIA 在机器人仿真基础设施方向的重要贡献，40% 的提升说明场景多样性是当前策略训练的瓶颈之一",
+        tags: [["Simulation","green"],["Scene Generation","green"],["Infrastructure","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.28276"],["PDF","https://arxiv.org/pdf/2606.28276"],["Project","https://research.nvidia.com/labs/gear/simfoundry/"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出模块化自动化场景生成框架，通过组合场景元素模块零样本生成大规模多样化仿真环境，服务于机器人策略训练和评估"},{"label":"💡 创新点","text":"以模块化设计实现仿真场景的自动化生成，摆脱对手工设计场景的依赖，显著扩大训练和评估的场景覆盖范围"},{"label":"📊 实验效果","text":"策略学习效果分别提升 17%、21% 和 40%，验证了多样化场景生成对策略鲁棒性的关键贡献"},{"label":"⭐ 整体评价","text":"NVIDIA 在机器人仿真基础设施方向的重要贡献，40% 的提升说明场景多样性是当前策略训练的瓶颈之一"}]
+    },
+    {
+        date: "2026-06-29",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "PhysisForcing: Physics Reinforced World Simulator for Robotic Manipulation",
+        venue: "arXiv 2026 · NVIDIA · Robotics · World Model · Physics Simulation",
+        summary: "🔬 技术路线: 将物理先验知识注入视频生成模型，构建物理增强世界模拟器，通过显式物理约束确保生成视频的物理一致性 | 💡 创新点: 首次将物理定律作为生成约束直接强化视频世界模型的输出，解决了纯数据驱动方法容易产生物理不可行动作的问题 | 📊 实验效果: 14B 参数规模，通过 R-Bench 基准验证了物理一致性在机器人操作场景中的显著提升 | ⭐ 整体评价: 物理增强世界模型的方向具有很强的实际价值，14B 规模表明这条路线已具备规模化潜力，建议关注 Sim-to-Real 迁移效果",
+        tags: [["World Model","green"],["Manipulation","green"],["Video","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.28128"],["PDF","https://arxiv.org/pdf/2606.28128"],["Project","https://dagroup-pku.github.io/PhysisForcing.github.io/"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"将物理先验知识注入视频生成模型，构建物理增强世界模拟器，通过显式物理约束确保生成视频的物理一致性"},{"label":"💡 创新点","text":"首次将物理定律作为生成约束直接强化视频世界模型的输出，解决了纯数据驱动方法容易产生物理不可行动作的问题"},{"label":"📊 实验效果","text":"14B 参数规模，通过 R-Bench 基准验证了物理一致性在机器人操作场景中的显著提升"},{"label":"⭐ 整体评价","text":"物理增强世界模型的方向具有很强的实际价值，14B 规模表明这条路线已具备规模化潜力，建议关注 Sim-to-Real 迁移效果"}]
+    },
+    {
+        date: "2026-06-29",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "Translation as a Bridging Action: Transferring Manipulation Skills from Humans to Robots",
+        venue: "arXiv 2026 · ByteDance Seed · Robotics · VLA · Skill Transfer",
+        summary: "🔬 技术路线: 提出翻译桥接动作范式，将人类操作视频转化为机器人可执行的中间动作表示，通过视觉语言动作模型实现跨形态技能的自动映射 | 💡 创新点: 创新性地将人类到机器人的技能迁移建模为翻译问题，以桥接动作空间填补人机运动学差异，实现操作技能的无监督跨形态传递 | 📊 实验效果: 在多种操作和抓取任务上验证了从人类视频到机器人执行的有效技能迁移 | ⭐ 整体评价: 字节跳动 Seed 提出的人机技能迁移新范式具有创新性，翻译桥接的建模视角为技能泛化提供了新的技术路径",
+        tags: [["VLA","green"],["Skill Transfer","green"],["Cross-Embodiment","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.28133"],["PDF","https://arxiv.org/pdf/2606.28133"],["Project","https://translation-as-a-bridging-action.github.io/"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出翻译桥接动作范式，将人类操作视频转化为机器人可执行的中间动作表示，通过视觉语言动作模型实现跨形态技能的自动映射"},{"label":"💡 创新点","text":"创新性地将人类到机器人的技能迁移建模为翻译问题，以桥接动作空间填补人机运动学差异，实现操作技能的无监督跨形态传递"},{"label":"📊 实验效果","text":"在多种操作和抓取任务上验证了从人类视频到机器人执行的有效技能迁移"},{"label":"⭐ 整体评价","text":"字节跳动 Seed 提出的人机技能迁移新范式具有创新性，翻译桥接的建模视角为技能泛化提供了新的技术路径"}]
+    },
+    {
+        date: "2026-06-29",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "Learning to Fold: prizewinning solution at LeHome Challenge 2026 (1st place online, 2nd offline)",
+        venue: "arXiv 2026 · Robotics · Manipulation · Competition · Code (22⭐)",
+        summary: "🔬 技术路线: 基于类 DAgger 模仿学习框架，结合专家示范与策略迭代优化，实现机器人对衣物等柔性物体的折叠操作 | 💡 创新点: 将模仿学习成功应用于柔性物体操作的竞赛场景，在真实机器人上实现端到端折叠能力，获线上第一线下第二 | 📊 实验效果: LeHome 2026 挑战赛线上第一名、线下第二名，在真实家庭环境中验证了算法的鲁棒性和泛化能力 | ⭐ 整体评价: 竞赛驱动的实用机器人工作，柔性物体操作仍然具有挑战性，建议关注其 DAgger 实现细节和竞赛中的关键技巧",
+        tags: [["Manipulation","green"],["Code (22⭐)","green"],["Imitation Learning","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.27163"],["PDF","https://arxiv.org/pdf/2606.27163"],["Project","https://ilialarchenko.com/projects/lehome2026/"],["Code","https://github.com/IliaLarchenko/lehome_solution"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于类 DAgger 模仿学习框架，结合专家示范与策略迭代优化，实现机器人对衣物等柔性物体的折叠操作"},{"label":"💡 创新点","text":"将模仿学习成功应用于柔性物体操作的竞赛场景，在真实机器人上实现端到端折叠能力，获线上第一线下第二"},{"label":"📊 实验效果","text":"LeHome 2026 挑战赛线上第一名、线下第二名，在真实家庭环境中验证了算法的鲁棒性和泛化能力"},{"label":"⭐ 整体评价","text":"竞赛驱动的实用机器人工作，柔性物体操作仍然具有挑战性，建议关注其 DAgger 实现细节和竞赛中的关键技巧"}]
+    },
+    {
+        date: "2026-06-29",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "PerceptionRubrics: Calibrating Multimodal Evaluation to Human Perception",
+        venue: "arXiv 2026 · Multimodal · Evaluation · Calibration",
+        summary: "🔬 技术路线: 提出 Peer-Review 评估框架，通过建立多模态模型评估分数与人类感知之间的校准映射，揭示并修正现有多模态评测中的系统性偏差 | 💡 创新点: 首次以人类感知为校准标准来审视多模态评估体系，通过同行评审机制系统诊断自动评测与人类判断的差异 | 📊 实验效果: 将多模态评测偏差降低了 8%，揭示了当前评测基准与人类感知之间存在的端到端鸿沟 | ⭐ 整体评价: 多模态评测领域的自省性工作，8% 的偏差纠正虽不算巨大但方向正确，建议关注其校准方法对其他评测基准的适用性",
+        tags: [["Multimodal","green"],["Evaluation","green"],["Calibration","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.28322"],["PDF","https://arxiv.org/pdf/2606.28322"],["Project","https://weiyana.github.io/PerceptionRubrics"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出 Peer-Review 评估框架，通过建立多模态模型评估分数与人类感知之间的校准映射，揭示并修正现有多模态评测中的系统性偏差"},{"label":"💡 创新点","text":"首次以人类感知为校准标准来审视多模态评估体系，通过同行评审机制系统诊断自动评测与人类判断的差异"},{"label":"📊 实验效果","text":"将多模态评测偏差降低了 8%，揭示了当前评测基准与人类感知之间存在的端到端鸿沟"},{"label":"⭐ 整体评价","text":"多模态评测领域的自省性工作，8% 的偏差纠正虽不算巨大但方向正确，建议关注其校准方法对其他评测基准的适用性"}]
+    },
+    {
+        date: "2026-06-29",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "SingGuard: A Policy-Adaptive Multimodal LLM Guardrail with Dynamic Reasoning",
+        venue: "arXiv 2026 · inclusionAI · Multimodal · Safety · Code (30⭐)",
+        summary: "🔬 技术路线: 构建策略自适应多模态安全护栏，结合视觉语言模型和动态推理机制，根据安全策略灵活调整审核力度和判定逻辑 | 💡 创新点: 将策略自适应机制引入多模态安全护栏，使审核系统能够根据不同的安全要求动态调整判定标准，而非使用一刀切的固定规则 | 📊 实验效果: 在多模态安全审核任务上验证了动态推理和策略自适应机制的有效性 | ⭐ 整体评价: 多模态安全方向的实际落地工作，30 星关注表明社区对灵活安全策略有真实需求，建议关注其误判率和策略变化的响应速度",
+        tags: [["Multimodal","green"],["Safety","green"],["Code (30⭐)","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.22873"],["PDF","https://arxiv.org/pdf/2606.22873"],["Code","https://github.com/inclusionAI/Sing-Guard"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"构建策略自适应多模态安全护栏，结合视觉语言模型和动态推理机制，根据安全策略灵活调整审核力度和判定逻辑"},{"label":"💡 创新点","text":"将策略自适应机制引入多模态安全护栏，使审核系统能够根据不同的安全要求动态调整判定标准，而非使用一刀切的固定规则"},{"label":"📊 实验效果","text":"在多模态安全审核任务上验证了动态推理和策略自适应机制的有效性"},{"label":"⭐ 整体评价","text":"多模态安全方向的实际落地工作，30 星关注表明社区对灵活安全策略有真实需求，建议关注其误判率和策略变化的响应速度"}]
+    },
+    {
+        date: "2026-06-29",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "Qwen-Image-2.0-RL Technical Report",
+        venue: "arXiv 2026 · Qwen · Image Generation · Reinforcement Learning",
+        summary: "🔬 技术路线: 在 Qwen-Image-2.0 基础上引入强化学习训练，通过奖励信号进一步优化图像生成的质量、可控性和与文本描述的对齐度 | 💡 创新点: 将 RL 训练范式成功应用于大规模图像生成模型的迭代优化，展示了从监督学习到强化学习的训练路线切换能带来额外的性能收益 | 📊 实验效果: 在图像生成质量和可控性上相比基座模型取得进一步提升，技术报告详细披露了 RL 训练的设计选择和实验结果 | ⭐ 整体评价: Qwen 团队在图像生成 RL 方向的重要发布，作为大厂的技术报告具有较高的参考价值和复现指导意义",
+        tags: [["Image Generation","green"],["RL","green"],["Generation","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.27608"],["PDF","https://arxiv.org/pdf/2606.27608"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"在 Qwen-Image-2.0 基础上引入强化学习训练，通过奖励信号进一步优化图像生成的质量、可控性和与文本描述的对齐度"},{"label":"💡 创新点","text":"将 RL 训练范式成功应用于大规模图像生成模型的迭代优化，展示了从监督学习到强化学习的训练路线切换能带来额外的性能收益"},{"label":"📊 实验效果","text":"在图像生成质量和可控性上相比基座模型取得进一步提升，技术报告详细披露了 RL 训练的设计选择和实验结果"},{"label":"⭐ 整体评价","text":"Qwen 团队在图像生成 RL 方向的重要发布，作为大厂的技术报告具有较高的参考价值和复现指导意义"}]
+    },
+    {
+        date: "2026-06-29",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Agentic Hardware Design as Repository-Level Code Evolution",
+        venue: "arXiv 2026 · Agent · Hardware Design · Verilog · Code Generation",
+        summary: "🔬 技术路线: 将 LLM Agent 应用于硬件描述语言的仓库级代码演化任务，通过 Verilog-Eval 基准评估 Agent 在 Verilog 代码生成与迭代优化中的表现 | 💡 创新点: 首次将 Agent 范式引入硬件设计领域，探索 LLM 在 Verilog 等硬件描述语言中端到端代码生成和跨文件演化的能力 | 📊 实验效果: 在 Verilog-Eval 基准上验证了 Agent 化方法在硬件代码生成任务中的有效性 | ⭐ 整体评价: Agent 应用向硬件设计领域的有益拓展，Verilog 代码生成的准确性和正确性是关键，建议关注其与 EDA 工具的集成效果",
+        tags: [["Agent","green"],["Code Generation","green"],["Hardware","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.28279"],["PDF","https://arxiv.org/pdf/2606.28279"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"将 LLM Agent 应用于硬件描述语言的仓库级代码演化任务，通过 Verilog-Eval 基准评估 Agent 在 Verilog 代码生成与迭代优化中的表现"},{"label":"💡 创新点","text":"首次将 Agent 范式引入硬件设计领域，探索 LLM 在 Verilog 等硬件描述语言中端到端代码生成和跨文件演化的能力"},{"label":"📊 实验效果","text":"在 Verilog-Eval 基准上验证了 Agent 化方法在硬件代码生成任务中的有效性"},{"label":"⭐ 整体评价","text":"Agent 应用向硬件设计领域的有益拓展，Verilog 代码生成的准确性和正确性是关键，建议关注其与 EDA 工具的集成效果"}]
+    },
+    {
+        date: "2026-06-29",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Towards Automating Scientific Review with Google's Paper Assistant Tool",
+        venue: "arXiv 2026 · Google · Agent · Scientific Review · Automation",
+        summary: "🔬 技术路线: Google 提出 AI 辅助论文审稿工具，通过零样本方式分析论文内容并生成结构化审稿意见，辅助人工审稿流程 | 💡 创新点: 将 AI 辅助工具引入学术同行评审流程，探索在保证评审质量的前提下由 AI 分担重复性和辅助性审稿工作的可行性 | 📊 实验效果: 实现 34% 的审稿效率提升，验证了 AI 辅助在学术评审流程中对提升效率的积极贡献 | ⭐ 整体评价: 学术评审自动化方向的探索性工作，34% 效率提升可观但替代性有限，建议关注其审稿质量一致性和误判风险",
+        tags: [["Agent","green"],["Scientific Review","green"],["Automation","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.28277"],["PDF","https://arxiv.org/pdf/2606.28277"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"Google 提出 AI 辅助论文审稿工具，通过零样本方式分析论文内容并生成结构化审稿意见，辅助人工审稿流程"},{"label":"💡 创新点","text":"将 AI 辅助工具引入学术同行评审流程，探索在保证评审质量的前提下由 AI 分担重复性和辅助性审稿工作的可行性"},{"label":"📊 实验效果","text":"实现 34% 的审稿效率提升，验证了 AI 辅助在学术评审流程中对提升效率的积极贡献"},{"label":"⭐ 整体评价","text":"学术评审自动化方向的探索性工作，34% 效率提升可观但替代性有限，建议关注其审稿质量一致性和误判风险"}]
+    },
+    {
+        date: "2026-06-29",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "ProMSA: Progressive Multimodal Search Agents for Knowledge-Based Visual Question Answering",
+        venue: "arXiv 2026 · Agent · Multimodal · VQA · Code (3⭐)",
+        summary: "🔬 技术路线: 提出渐进式多模态搜索智能体，通过端到端训练实现多步搜索与推理的自动编排，逐步从知识库中检索相关信息来回答视觉问题 | 💡 创新点: 以渐进式搜索策略将复杂视觉问答分解为多步搜索子任务，使 Agent 能够逐步缩小答案范围并累积跨模态证据 | 📊 实验效果: 在基于知识的视觉问答任务上验证了渐进式搜索策略相比单步检索的优势 | ⭐ 整体评价: 基于知识的视觉问答中 Agent 化搜索的探索，渐进式策略设计合理，建议关注其搜索效率和多步错误累积问题",
+        tags: [["Agent","green"],["VQA","green"],["Code (3⭐)","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.27974"],["PDF","https://arxiv.org/pdf/2606.27974"],["Project","https://dingwu1021.github.io/ProMSA/"],["Code","https://github.com/DingWu1021/Promsa"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出渐进式多模态搜索智能体，通过端到端训练实现多步搜索与推理的自动编排，逐步从知识库中检索相关信息来回答视觉问题"},{"label":"💡 创新点","text":"以渐进式搜索策略将复杂视觉问答分解为多步搜索子任务，使 Agent 能够逐步缩小答案范围并累积跨模态证据"},{"label":"📊 实验效果","text":"在基于知识的视觉问答任务上验证了渐进式搜索策略相比单步检索的优势"},{"label":"⭐ 整体评价","text":"基于知识的视觉问答中 Agent 化搜索的探索，渐进式策略设计合理，建议关注其搜索效率和多步错误累积问题"}]
+    },
+    {
+        date: "2026-06-29",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Parameter Efficient Hybrid Transformer (PEHT) for Network Traffic Prediction via Dynamic Urban Congestion Integration",
+        venue: "arXiv 2026 · LLM · Traffic Prediction · Efficient Architecture",
+        summary: "🔬 技术路线: 提出参数高效混合 Transformer 架构，通过动态集成城市交通拥堵信息实现精确的网络流量预测 | 💡 创新点: 以参数高效设计解决交通预测中的多模态数据融合问题，用少量可训练参数实现对城市拥堵动态的高效建模 | 📊 实验效果: 在网络流量预测任务上验证了参数高效设计在保持预测精度的同时显著降低计算开销 | ⭐ 整体评价: LLM 架构在城市交通预测领域的应用性工作，参数高效设计思路具有落地价值，但领域相对小众",
+        tags: [["LLM","green"],["Traffic","green"],["Efficient","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.28274"],["PDF","https://arxiv.org/pdf/2606.28274"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出参数高效混合 Transformer 架构，通过动态集成城市交通拥堵信息实现精确的网络流量预测"},{"label":"💡 创新点","text":"以参数高效设计解决交通预测中的多模态数据融合问题，用少量可训练参数实现对城市拥堵动态的高效建模"},{"label":"📊 实验效果","text":"在网络流量预测任务上验证了参数高效设计在保持预测精度的同时显著降低计算开销"},{"label":"⭐ 整体评价","text":"LLM 架构在城市交通预测领域的应用性工作，参数高效设计思路具有落地价值，但领域相对小众"}]
+    },
+    {
+        date: "2026-06-29",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Formalizing Latent Thoughts: Four Axioms of Thought Representation in LLMs",
+        venue: "arXiv 2026 · LLM · Interpretability · Theory · Code",
+        summary: "🔬 技术路线: 提出 LLM 中思维表征的四条公理化体系，通过 RL 训练的模型实证验证公理框架的合理性，为理解 LLM 内部推理提供形式化基础 | 💡 创新点: 首次以公理化方法对 LLM 的潜在思维过程进行数学建模，将可解释性研究从经验观察提升到理论框架层面 | 📊 实验效果: 通过 RL 训练模型验证了四条公理的实验一致性，为 LLM 推理机制提供了形式化解释 | ⭐ 整体评价: LLM 可解释性领域的基础理论工作，公理化方法体现了对深层机制的理论追求，建议关注其对后续可解释性研究的启发价值",
+        tags: [["LLM","green"],["Interpretability","green"],["Theory","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.27378"],["PDF","https://arxiv.org/pdf/2606.27378"],["Project","https://fard-lab.github.io/formalize-thoughts/"],["Code","https://github.com/fard-lab/formalize-thoughts"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出 LLM 中思维表征的四条公理化体系，通过 RL 训练的模型实证验证公理框架的合理性，为理解 LLM 内部推理提供形式化基础"},{"label":"💡 创新点","text":"首次以公理化方法对 LLM 的潜在思维过程进行数学建模，将可解释性研究从经验观察提升到理论框架层面"},{"label":"📊 实验效果","text":"通过 RL 训练模型验证了四条公理的实验一致性，为 LLM 推理机制提供了形式化解释"},{"label":"⭐ 整体评价","text":"LLM 可解释性领域的基础理论工作，公理化方法体现了对深层机制的理论追求，建议关注其对后续可解释性研究的启发价值"}]
+    },
+    {
+        date: "2026-06-29",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "How HP is scaling early AI wins across the enterprise",
+        venue: "",
+        summary: "OpenAI 发布与 HP 的企业合作案例，展示 HP 如何将早期 AI 成果规模化推广至整个企业，推动 AI 驱动的业务转型和运营效率提升。",
+        tags: [],
+        links: [["OpenAI","https://openai.com/index/hp-frontier-partnership/"]]
+    },
     // === 2026-06-27 ===
     {
         date: "2026-06-27",
@@ -15946,6 +16128,13 @@ const PAPERS_DB = [
 ];
 
 const DAILY_OVERVIEW = {
+    "2026-06-29": {
+        bannerTitle: "🔥 今日看点",
+        bannerSubtitle: "今日 Robotics 方向集中爆发（7/15 篇），MIT 的 WARP-RM 实现 18 倍数据筛选效率，NVIDIA 贡献 3 篇：SimFoundry 自动化场景生成提升 17-40%、CacheMPC 可认证缓存模型预测控制、PhysisForcing 物理增强世界模拟器 14B。字节跳动 Seed 团队提出翻译桥接动作实现人机技能迁移。Qwen 发布 Image-2.0 强化学习版技术报告。DexCompose 以 77.4% 成功率实现单灵巧手多任务策略组合。Google 的 AI 辅助审稿工具实现 34% 效率提升。LeHome 2026 竞赛冠军方案结合模仿学习与机器人折叠操作。",
+        picks: ["DexCompose: Reusing Dexterous Policies for Multi-Task Manipulation with a Single Hand","WARP-RM: A Warp-Augmented Relative Progress Reward Model for Data Curation","SimFoundry: Modular and Automated Scene Generation for Policy Learning and Evaluation","PhysisForcing: Physics Reinforced World Simulator for Robotic Manipulation","Qwen-Image-2.0-RL Technical Report"],
+        totalPapers: 15,
+        totalNews: 1
+    },
     "2026-06-27": {
         bannerTitle: "🔥 今日看点（周末补漏）",
         bannerSubtitle: "World Model方向《World Model PhysiFormer: Learning to Simulate Mechanics in World Space》值得关注。LLM方向《LLM Autoregressive Boltzmann Generators》值得关注。VLA方向《VLA RouterVLA: Turning Smoke Tests into Supervision for Heterogeneous VLA Select》值得关注。Robotics方向《Robotics REALM: A Unified Red-Teaming Benchmark for Physical-World VLMs》值得关注。本周补漏覆盖 7 天检索窗口，精选 30 篇工作日遗漏的重要论文。",
