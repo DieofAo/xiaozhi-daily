@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>小小志AI日报 - 2026年6月30日 周二</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans SC', sans-serif;
+  background: #0a0e1a;
+  color: #e0e6f0;
+  line-height: 1.7;
+  min-height: 100vh;
+}
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+header {
+  text-align: center;
+  margin-bottom: 48px;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, rgba(59,130,246,0.08) 0%, rgba(139,92,246,0.08) 100%);
+  border-radius: 20px;
+  border: 1px solid rgba(99,102,241,0.15);
+}
+header h1 {
+  font-size: 2rem;
+  background: linear-gradient(135deg, #60a5fa, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 8px;
+}
+header .date {
+  color: #94a3b8;
+  font-size: 1rem;
+}
+header .subtitle {
+  color: #64748b;
+  font-size: 0.9rem;
+  margin-top: 6px;
+}
+.highlight-banner {
+  background: linear-gradient(135deg, rgba(249,115,22,0.1) 0%, rgba(234,179,8,0.08) 100%);
+  border: 1px solid rgba(249,115,22,0.2);
+  border-radius: 14px;
+  padding: 20px 24px;
+  margin-bottom: 36px;
+}
+.hl-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fb923c;
+  margin-bottom: 8px;
+}
+.hl-text {
+  font-size: 0.92rem;
+  color: #cbd5e1;
+  line-height: 1.7;
+}
+.section {
+  margin-bottom: 40px;
+}
+.section-title {
+  font-size: 1.4rem;
+  color: #f1f5f9;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(99,102,241,0.2);
+}
+.paper-card {
+  background: rgba(30,41,59,0.6);
+  border: 1px solid rgba(99,102,241,0.12);
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 16px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.paper-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(99,102,241,0.1);
+  border-color: rgba(99,102,241,0.3);
+}
+.paper-card.hot {
+  border-color: rgba(249,115,22,0.25);
+  background: rgba(30,41,59,0.7);
+}
+.paper-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #f8fafc;
+  margin-bottom: 8px;
+}
+.paper-meta {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-bottom: 10px;
+}
+.summary-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+@media (max-width: 640px) {
+  .summary-grid { grid-template-columns: 1fr; }
+}
+.summary-item {
+  background: rgba(15,23,42,0.5);
+  border-radius: 10px;
+  padding: 12px 14px;
+  border: 1px solid rgba(99,102,241,0.08);
+}
+.summary-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #818cf8;
+  margin-bottom: 4px;
+}
+.summary-text {
+  font-size: 0.88rem;
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+.paper-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.tag {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+.tag-agent { background: rgba(16,185,129,0.12); color: #34d399; }
+.tag-llm { background: rgba(99,102,241,0.12); color: #818cf8; }
+.tag-multimodal { background: rgba(244,114,182,0.12); color: #f472b6; }
+.tag-world { background: rgba(251,191,36,0.12); color: #fbbf24; }
+.tag-robot { background: rgba(251,146,60,0.12); color: #fb923c; }
+.tag-rl { background: rgba(45,212,191,0.12); color: #2dd4bf; }
+.tag-video { background: rgba(168,85,247,0.12); color: #a855f7; }
+.tag-benchmark { background: rgba(34,211,238,0.12); color: #22d3ee; }
+.tag-vla { background: rgba(59,130,246,0.12); color: #60a5fa; }
+.tag-safety { background: rgba(239,68,68,0.12); color: #f87171; }
+.tag-memory { background: rgba(192,132,252,0.12); color: #c084fc; }
+.tag-reasoning { background: rgba(132,204,22,0.12); color: #a3e635; }
+.tag-code { background: rgba(52,211,153,0.12); color: #34d399; }
+.tag-survey { background: rgba(6,182,212,0.12); color: #22d3ee; }
+.tag-science { background: rgba(217,119,6,0.12); color: #f59e0b; }
+.tag-medical { background: rgba(239,68,68,0.12); color: #f87171; }
+.tag-systems { background: rgba(56,189,248,0.12); color: #38bdf8; }
+.tag-3d { background: rgba(148,163,184,0.12); color: #94a3b8; }
+.tag-data { background: rgba(250,204,21,0.12); color: #facc15; }
+.tag-infra { background: rgba(167,139,250,0.12); color: #a78bfa; }
+.tag-generation { background: rgba(249,115,22,0.12); color: #f97316; }
+.tag-navigation { background: rgba(59,130,246,0.12); color: #60a5fa; }
+.tag-distillation { background: rgba(34,211,238,0.12); color: #22d3ee; }
+.tag-humanoid { background: rgba(251,146,60,0.12); color: #fb923c; }
+.hot-badge {
+  display: inline;
+  margin-right: 4px;
+}
+.info-card {
+  background: rgba(30,41,59,0.6);
+  border: 1px solid rgba(99,102,241,0.12);
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 16px;
+}
+.paper-summary {
+  font-size: 0.9rem;
+  color: #cbd5e1;
+  line-height: 1.7;
+  margin-bottom: 14px;
+}
+.paper-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.paper-links a {
+  display: inline-block;
+  padding: 5px 14px;
+  background: rgba(99,102,241,0.12);
+  color: #818cf8;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+.paper-links a:hover {
+  background: rgba(99,102,241,0.25);
+}
+.model-card {
+  background: rgba(30,41,59,0.6);
+  border: 1px solid rgba(99,102,241,0.12);
+  border-radius: 14px;
+  padding: 20px 24px;
+  margin-bottom: 16px;
+}
+.model-name {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #f8fafc;
+  margin-bottom: 6px;
+}
+.model-meta {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-bottom: 8px;
+}
+.stats {
+  text-align: center;
+  padding: 30px;
+  margin-top: 40px;
+  background: rgba(30,41,59,0.4);
+  border-radius: 14px;
+  border: 1px solid rgba(99,102,241,0.1);
+}
+.stats p { color: #94a3b8; font-size: 0.88rem; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <h1>📡 小小志AI日报</h1>
+  <div class="date">2026年6月30日 周二</div>
+  <div class="subtitle">📝 arXiv 8 篇 · HF 热门 3 篇 · HF 模型 1 个</div>
+</header>
+
+<div class="highlight-banner">
+  <div class="hl-title">🔥 今日看点</div>
+  <div class="hl-text">
+    Qwen 同日发布两篇机器人重磅论文：RobotManip（操作）和 RobotNav（导航），均开源代码和博客，标志着阿里 Qwen 正式进军具身智能领域。Agents-A1 仅 35B 参数即实现万亿参数级性能，以"扩展视野而非参数"的理念颠覆认知。VLK 在场景重建中实现人形机器人运动-操作协同。GROW² 让机器人学会创造性工具使用（如用盘子切蛋糕）。自进化世界模型 WorldEvolver 为 LLM Agent 长程规划提供新范式。
+  </div>
+</div>
+
+<!-- 🦾 Robotics Section -->
+<section class="section">
+  <h2 class="section-title">🦾 Robotics · 机器人</h2>
+
+  <div class="paper-card hot">
+    <div class="paper-title"><span class="hot-badge">🔥</span> VLK: Learning Humanoid Loco-Manipulation from Synthetic Interactions in Reconstructed Scenes</div>
+    <div class="paper-meta">arXiv 2026 · Perception-based Humanoid Research</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">在三维重建场景中生成合成交互数据，训练人形机器人同时完成运动（行走/转向）和操作（抓取/推拉）任务，通过视觉-语言-运动学联合建模实现端到端控制</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次在人形机器人上实现基于场景重建的合成交互训练范式，将运动控制与操作深度融合，无需真实机器人数据进行预训练</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在操作/抓取和导航任务上验证了有效性，展示了从合成数据到真实场景的迁移能力</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">人形机器人运动-操作协同是领域核心难题，合成数据训练路线具有规模化潜力，建议关注 Sim-to-Real 迁移效果和真机部署表现</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-humanoid">Humanoid</span>
+      <span class="tag tag-robot">Manipulation</span>
+      <span class="tag tag-3d">3D Gaussians</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.30645">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.30645">PDF</a>
+      <a href="https://vision-language-kinematics.github.io/">Project</a>
+    </div>
+  </div>
+
+  <div class="paper-card hot">
+    <div class="paper-title"><span class="hot-badge">🔥</span> GROW²: Grounding Which and Where for Robot Tool Use</div>
+    <div class="paper-meta">arXiv 2026</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">基于视觉-语言模型构建工具使用框架，让机器人同时理解"该用什么工具"和"在哪个位置操作"，实现从物体识别到操作定位的端到端推理</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次将工具选择（Which）与操作定位（Where）统一为联合推理问题，使机器人能在缺少专用工具时创造性使用替代物品（如用盘子切蛋糕）</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在工具替代使用场景中验证了方法的有效性，展示了零样本泛化到新任务的能力</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">创造性工具使用是机器人走向通用智能的关键能力，通过视觉-语言模型实现工具选择和定位的统一推理，思路新颖且有实际应用价值</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-robot">Tool Use</span>
+      <span class="tag tag-multimodal">Vision-Language</span>
+      <span class="tag tag-vla">VLA</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.30632">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.30632">PDF</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">SPARK: Sequential Planning via Anchored Robotic Keypoints</div>
+    <div class="paper-meta">arXiv 2026 · Case Western Reserve University</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">通过关键点锚定方法将长程操作任务分解为有序子任务序列，在 LIBERO-PRO 基准上实现步骤级规划与执行</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出锚定机器人关键点（Anchored Robotic Keypoints）概念，将长期规划编码为空间锚点序列，实现从端到端策略到分解式规划的转变</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在 LIBERO-PRO 基准上达到 43.7% 和 68% 的成功率，相较基线提升 18.2%</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">关键点锚定是解决长程机器人操作的有效思路，LIBERO-PRO 基准上的显著提升表明该方法在复杂多步骤任务中具有优势</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-robot">Planning</span>
+      <span class="tag tag-benchmark">LIBERO-PRO</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.30613">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.30613">PDF</a>
+      <a href="https://cwru-aism.github.io/spark-page/">Project</a>
+    </div>
+  </div>
+
+  <div class="paper-card hot">
+    <div class="paper-title"><span class="hot-badge">🔥</span> Qwen-RobotManip Technical Report: Alignment Unlocks Scale for Robotic Manipulation Foundation Models</div>
+    <div class="paper-meta">arXiv 2026 · Qwen / Alibaba</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">基于大规模预训练多模态基础模型构建机器人操作模型，通过对齐训练（Alignment）解锁规模效应，实现统一框架下的多任务机器人操作</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次在机器人操作领域系统验证"对齐释放规模效应"的假设，将语言模型的对齐方法论迁移至具身智能，使基础模型能力大规模转化为操作技能</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">关键指标提升 20%，展示了零样本泛化到新操作任务的能力</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">Qwen 正式进军具身智能的标志性工作，对齐驱动规模化的思路与 NLP 领域经验一致，开源代码和博客降低了复现门槛，建议持续关注后续迭代</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-robot">Manipulation</span>
+      <span class="tag tag-multimodal">Multimodal</span>
+      <span class="tag tag-rl">Alignment</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.17846">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.17846">PDF</a>
+      <a href="https://qwen.ai/blog?id=qwen-robotmanip">Project</a>
+      <a href="https://github.com/QwenLM/Qwen-RobotManip">Code (4⭐)</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">Qwen-RobotNav Technical Report: A Scalable Navigation Model Designed for an Agentic Navigation System</div>
+    <div class="paper-meta">arXiv 2026 · Qwen / Alibaba</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出可扩展的机器人导航模型，覆盖 15.6M 到 8B 参数的多种规模变体，设计为 Agentic 导航系统的核心组件</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">将机器人导航设计为与 Agent 架构深度集成的可扩展模型，通过多规模变体实现从边缘设备到云端部署的灵活适配</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">提供 15.6M、2B、8B 三种规模的模型，展示了在不同算力条件下的一致导航性能</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">Qwen 机器人系列的另一重要组成部分，与 RobotManip 形成"操作+导航"的完整具身能力矩阵，多规模设计兼顾了实用性与前沿研究</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-navigation">Navigation</span>
+      <span class="tag tag-robot">Robotics</span>
+      <span class="tag tag-agent">Agentic</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.18112">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.18112">PDF</a>
+      <a href="https://qwen.ai/blog?id=qwen-robotnav">Project</a>
+      <a href="https://github.com/QwenLM/Qwen-RobotNav">Code (14⭐)</a>
+    </div>
+  </div>
+</section>
+
+<!-- 🌍 World Model Section -->
+<section class="section">
+  <h2 class="section-title">🌍 World Model · 世界模型</h2>
+
+  <div class="paper-card hot">
+    <div class="paper-title"><span class="hot-badge">🔥</span> Self-Evolving World Models for LLM Agent Planning</div>
+    <div class="paper-meta">arXiv 2026</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出 WorldEvolver 框架，让世界模型在 LLM Agent 执行规划的过程中自我进化，通过交互反馈持续提升预测精度和规划质量</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次实现世界模型的自进化机制，无需人工标注或环境重置即可从 Agent 交互中持续学习，为长程规划提供动态更新的环境认知</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在预测和规划任务上验证了自进化机制的有效性，展示了随时间推移的持续性能提升</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">世界模型与 LLM Agent 的结合是重要趋势，自进化机制解决了静态世界模型的局限性，为 Agent 在动态环境中持续适应提供了可行路径</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-world">World Model</span>
+      <span class="tag tag-agent">Agent Planning</span>
+      <span class="tag tag-rl">Self-Evolving</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.30639">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.30639">PDF</a>
+    </div>
+  </div>
+</section>
+
+<!-- 🧠 LLM Section -->
+<section class="section">
+  <h2 class="section-title">🧠 LLM · 语言模型</h2>
+
+  <div class="paper-card">
+    <div class="paper-title">LeVo 2: Stable and Melodious Song Generation via Hierarchical Representation Modeling and Progressive Post-Training</div>
+    <div class="paper-meta">arXiv 2026</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">采用层次化表示建模将歌曲分解为多层级结构（旋律、和声、节奏），结合渐进式后训练策略分阶段优化生成质量</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出全曲长度（Full-length）的稳定旋律生成方案，通过层次化表示和渐进训练解决长序列音乐生成中的一致性问题</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在歌曲生成和旋律预测任务上验证了有效性，实现了稳定的全曲长度音乐创作</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">音乐生成领域稳定性和旋律性是两个核心难点，层次化建模和渐进训练的路线在理论和工程上均有参考价值</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-generation">Music Generation</span>
+      <span class="tag tag-llm">LLM</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.30642">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.30642">PDF</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">DOPD: Dual On-policy Distillation</div>
+    <div class="paper-meta">arXiv 2026</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出双重在线策略蒸馏方法，同时从大语言模型和视觉-语言模型中蒸馏知识到小模型，保持在线策略与教师模型行为一致的特性</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次将在线策略蒸馏扩展到双模态教师场景，在保持蒸馏鲁棒性的同时实现跨模态知识迁移</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">实验验证了双重蒸馏方法的有效性，在保持在线策略优势的同时实现了多模态知识压缩</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">双教师在策略蒸馏是模型压缩方向的有益探索，结合语言和视觉两种模态的教师信号，为多模态小模型训练提供了新思路</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-distillation">Distillation</span>
+      <span class="tag tag-llm">LLM</span>
+      <span class="tag tag-multimodal">VLM</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.30626">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.30626">PDF</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">Open-Vocabulary and Referring Segmentation for 3D Gaussians Using 2D Detectors</div>
+    <div class="paper-meta">arXiv 2026</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">利用二维检测器（2D Detectors）实现对三维高斯表示的开放词汇和指代分割，将二维视觉理解能力桥接到三维场景</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出语言-图像驱动的方法，无需三维标注即可实现 3D 高斯场景的开放词汇分割，具有鲁棒性和零样本泛化能力</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在开放词汇分割任务上达到 16.7% 的指标，验证了 2D 检测器桥接 3D 分割的可行性</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">利用成熟 2D 检测器赋能 3D 场景理解是一条实用的技术路线，避免了代价高昂的三维标注，对 AR/VR 和机器人感知有潜在应用价值</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-3d">3D Gaussians</span>
+      <span class="tag tag-multimodal">Segmentation</span>
+      <span class="tag tag-vla">Open-Vocabulary</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.30638">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.30638">PDF</a>
+    </div>
+  </div>
+</section>
+
+<!-- 🧩 Agent Section -->
+<section class="section">
+  <h2 class="section-title">🧩 Agent · 智能体</h2>
+
+  <div class="paper-card hot">
+    <div class="paper-title"><span class="hot-badge">🔥</span> Scaling the Horizon, Not the Parameters: Reaching Trillion-Parameter Performance with a 35B Agent</div>
+    <div class="paper-meta">arXiv 2026 · InternScience</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">训练 Agents-A1 仅使用 35B 参数，通过分阶段训练食谱和智能体架构设计，实现远超参数规模限制的性能表现</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出"扩展视野而非参数"的新范式，证明通过优化 Agent 的规划视野和工具使用能力，小模型可以达到甚至超越万亿参数模型的性能水平</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">35B 参数模型达到万亿参数级模型的性能水平，开源模型和代码可在 HuggingFace 和 GitHub 获取</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">对"参数越多越好"的主流叙事提出了有力挑战，35B 模型达到万亿参数级性能是工程效率的重大突破，开源发布具有很强的社区影响力</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-agent">Agent</span>
+      <span class="tag tag-llm">Scaling Law</span>
+      <span class="tag tag-code">Open Source</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.30616">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.30616">PDF</a>
+      <a href="https://huggingface.co/collections/InternScience/agents-a1">Model</a>
+      <a href="https://github.com/InternScience/Agents-A1">Code</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">GBC: Gradient-Based Connections for Optimizing Multi-Agent Systems</div>
+    <div class="paper-meta">arXiv 2026 · University of Illinois at Urbana-Champaign</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">基于梯度信号优化多智能体系统中各 Agent 之间的连接关系，通过 AgentChord 框架实现 Agent 拓扑结构的端到端学习</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次将多智能体协作问题形式化为可微分的连接优化问题，用梯度信息自动发现最优 Agent 通信拓扑，替代人工设计的固定协作模式</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">实验验证了梯度优化连接在多 Agent 系统中的有效性，显著提升协作效率</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">多 Agent 系统的连接拓扑优化是通常被忽视但关键的问题，梯度驱动的自动优化思路新颖，开源实现 AgentChord 提供了可复现的参考</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-agent">Multi-Agent</span>
+      <span class="tag tag-systems">Optimization</span>
+      <span class="tag tag-code">AgentChord</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.28187">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.28187">PDF</a>
+      <a href="https://github.com/yxc-cyber/AgentChord">Code (2⭐)</a>
+    </div>
+  </div>
+</section>
+
+<!-- 🤗 Model Section -->
+<section class="section">
+  <h2 class="section-title">📦 热门模型</h2>
+
+  <div class="model-card">
+    <div class="model-name">supergemma4-26b-abliterated-multimodal-6bit</div>
+    <div class="model-meta">DreamFoundries · 🎨 Multimodal</div>
+    <div class="paper-summary">Gemma 4 系列的 ablited（去抑制）多模态版本，使用 6-bit 量化，支持视觉理解和文本生成的多模态能力。Gemma 原版的 ablited 版本通常在安全对齐与实用性之间取得不同的平衡。</div>
+    <div class="paper-links">
+      <a href="https://huggingface.co/DreamFoundries/supergemma4-26b-abliterated-multimodal-6bit">HuggingFace</a>
+    </div>
+  </div>
+</section>
+
+<div class="stats">
+  <p>📡 自动生成于 2026年6月30日 · 数据截至 09:26 UTC · 关注 VLA · Robotics · World Model · LLM · Multimodal · Agent</p>
+</div>
+
+</div>
+</body>
+</html>
