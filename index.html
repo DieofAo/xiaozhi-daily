@@ -658,6 +658,196 @@
 <script>
 // ===== DATA =====
 const PAPERS_DB = [
+    // === 2026-07-01 ===
+    {
+        date: "2026-07-01",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Agent QVal: Cheaply Evaluating Dense Supervision Signals for Long-Horizon LLM Agents",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 提出 QVal 方法，通过低成本评估密度监督信号来优化长程 LLM Agent 的性能，无需昂贵的人工标注或环境交互即可获得密集反馈 | 💡 创新点: 首次在长程 Agent 场景中实现低成本、高密度的监督信号评估，解决了长程任务中反馈稀疏导致训练低效的核心痛点 | 📊 实验效果: 覆盖 1.2K 个评估样本，验证了密集监督信号在长程 Agent 任务中的有效性 | ⭐ 整体评价: 长程 Agent 的评估和反馈是领域瓶颈，QVal 以低成本实现密集监督的思路具有实际工程价值，建议关注其在真实环境中的扩展性",
+        tags: [["Agent","green"],["Long-Horizon","green"],["Evaluation","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.32034"],["PDF","https://arxiv.org/pdf/2606.32034"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出 QVal 方法，通过低成本评估密度监督信号来优化长程 LLM Agent 的性能，无需昂贵的人工标注或环境交互即可获得密集反馈"},{"label":"💡 创新点","text":"首次在长程 Agent 场景中实现低成本、高密度的监督信号评估，解决了长程任务中反馈稀疏导致训练低效的核心痛点"},{"label":"📊 实验效果","text":"覆盖 1.2K 个评估样本，验证了密集监督信号在长程 Agent 任务中的有效性"},{"label":"⭐ 整体评价","text":"长程 Agent 的评估和反馈是领域瓶颈，QVal 以低成本实现密集监督的思路具有实际工程价值，建议关注其在真实环境中的扩展性"}]
+    },
+    {
+        date: "2026-07-01",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Generative Skill Composition for LLM Agents",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 将技能组合问题转化为生成式任务，LLM Agent 自动将已有技能组合为新的复合技能，无需依赖预定义的固定技能库 | 💡 创新点: 首次以生成式方法解决 Agent 技能组合问题，突破了以往只能从固定技能库中选择的限制，使 Agent 具备开放式的技能创造能力 | 📊 实验效果: 技能组合的 top-3 准确率提升 18.2 个百分点 | ⭐ 整体评价: 技能组合是 Agent 通用化的关键瓶颈，生成式方法打开了从\"技能库检索\"到\"技能创造\"的新范式，对 Agent 的开放式能力扩展有重要意义",
+        tags: [["Agent","green"],["Skill Composition","green"],["LLM","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.32025"],["PDF","https://arxiv.org/pdf/2606.32025"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"将技能组合问题转化为生成式任务，LLM Agent 自动将已有技能组合为新的复合技能，无需依赖预定义的固定技能库"},{"label":"💡 创新点","text":"首次以生成式方法解决 Agent 技能组合问题，突破了以往只能从固定技能库中选择的限制，使 Agent 具备开放式的技能创造能力"},{"label":"📊 实验效果","text":"技能组合的 top-3 准确率提升 18.2 个百分点"},{"label":"⭐ 整体评价","text":"技能组合是 Agent 通用化的关键瓶颈，生成式方法打开了从\"技能库检索\"到\"技能创造\"的新范式，对 Agent 的开放式能力扩展有重要意义"}]
+    },
+    {
+        date: "2026-07-01",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "TRIAGE: Role-Typed Credit Assignment for Agentic Reinforcement Learning",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 提出基于角色类型的信用分配方法 TRIAGE，在多步智能体强化学习中精确识别每个动作对最终结果的贡献，按角色类型分配奖励信号 | 💡 创新点: 首次在多智能体 RL 中引入角色类型感知的信用分配机制，解决了不同角色动作贡献度不均导致的训练信号偏差问题 | 📊 实验效果: 在 Search-QA 和导航任务上验证了角色类型信用分配的有效性 | ⭐ 整体评价: 信用分配是 Agent 强化学习的经典难题，角色类型的细粒度划分有望显著提升多步任务中的训练效率和策略质量",
+        tags: [["Multi-Agent","green"],["Credit Assignment","green"],["Navigation","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.32017"],["PDF","https://arxiv.org/pdf/2606.32017"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出基于角色类型的信用分配方法 TRIAGE，在多步智能体强化学习中精确识别每个动作对最终结果的贡献，按角色类型分配奖励信号"},{"label":"💡 创新点","text":"首次在多智能体 RL 中引入角色类型感知的信用分配机制，解决了不同角色动作贡献度不均导致的训练信号偏差问题"},{"label":"📊 实验效果","text":"在 Search-QA 和导航任务上验证了角色类型信用分配的有效性"},{"label":"⭐ 整体评价","text":"信用分配是 Agent 强化学习的经典难题，角色类型的细粒度划分有望显著提升多步任务中的训练效率和策略质量"}]
+    },
+    {
+        date: "2026-07-01",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Agentic Abstention: Do Agents Know When to Stop Instead of Act?",
+        venue: "arXiv 2026 · University of Washington",
+        summary: "🔬 技术路线: 系统研究 LLM Agent 何时应选择\"弃权\"而非盲目行动，提出智能体弃权的评估框架和决策机制，使 Agent 学会在不确定时主动停止 | 💡 创新点: 首次将 Agent 的\"弃权\"行为系统化为独立研究方向，揭示当前 Agent 普遍存在过度行动问题，而适当的弃权能同时提升安全性和效率 | 📊 实验效果: 在 70B 参数规模模型上验证，量化了不同场景下弃权策略对任务成功率和安全性的影响 | ⭐ 整体评价: Agent 何时\"不做\"与何时\"做\"同样重要，弃权研究从全新角度审视 Agent 安全性和可靠性，为实际部署提供了重要的决策理论基础",
+        tags: [["Agent","green"],["Safety","green"],["Decision","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.28733"],["PDF","https://arxiv.org/pdf/2606.28733"],["Project","https://lhannnn.github.io/agentic-abstention"],["Code (15⭐)","https://github.com/lhannnn/agentic-abstention"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"系统研究 LLM Agent 何时应选择\"弃权\"而非盲目行动，提出智能体弃权的评估框架和决策机制，使 Agent 学会在不确定时主动停止"},{"label":"💡 创新点","text":"首次将 Agent 的\"弃权\"行为系统化为独立研究方向，揭示当前 Agent 普遍存在过度行动问题，而适当的弃权能同时提升安全性和效率"},{"label":"📊 实验效果","text":"在 70B 参数规模模型上验证，量化了不同场景下弃权策略对任务成功率和安全性的影响"},{"label":"⭐ 整体评价","text":"Agent 何时\"不做\"与何时\"做\"同样重要，弃权研究从全新角度审视 Agent 安全性和可靠性，为实际部署提供了重要的决策理论基础"}]
+    },
+    {
+        date: "2026-07-01",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Bridging VideoQA and Video-Guided Agentic Tasks via Generalized Keyframe Extraction",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 通过广义关键帧提取方法，将视频问答和视频引导的 GUI Agent 任务统一在同一框架下，使 Agent 能够基于关键帧理解长视频并执行操作 | 💡 创新点: 提出 VG-GUIBench 基准，首次将视频理解和 Agent 任务统一到关键帧驱动的下游框架中，打通了视频感知到动作执行的链路 | 📊 实验效果: 在多模态视频理解到 Agent 操作的关键指标上分别提升 2.0% 和 1.8% | ⭐ 整体评价: 视频到 Agent 任务的桥接是视频理解走向实际应用的重要一步，关键帧作为中间表示具有通用性，VG-GUIBench 填补了跨模态评估的空白",
+        tags: [["Agent","green"],["VideoQA","green"],["GUI","green"],["Keyframe","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.29445"],["PDF","https://arxiv.org/pdf/2606.29445"],["Project","https://vg-gui-tasker.github.io/"],["Code (16⭐)","https://github.com/VG-GUI-TASKER/VG-GUI-TASKER"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"通过广义关键帧提取方法，将视频问答和视频引导的 GUI Agent 任务统一在同一框架下，使 Agent 能够基于关键帧理解长视频并执行操作"},{"label":"💡 创新点","text":"提出 VG-GUIBench 基准，首次将视频理解和 Agent 任务统一到关键帧驱动的下游框架中，打通了视频感知到动作执行的链路"},{"label":"📊 实验效果","text":"在多模态视频理解到 Agent 操作的关键指标上分别提升 2.0% 和 1.8%"},{"label":"⭐ 整体评价","text":"视频到 Agent 任务的桥接是视频理解走向实际应用的重要一步，关键帧作为中间表示具有通用性，VG-GUIBench 填补了跨模态评估的空白"}]
+    },
+    {
+        date: "2026-07-01",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "DVG-WM: Disentangled Video Generation Enables Efficient Embodied World Model for Robotic Manipulation",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 通过解耦视频生成（将场景背景和物体运动分离建模）构建高效的具身世界模型，用于机器人操作任务的视觉预测和动作规划 | 💡 创新点: 首次在具身世界模型中引入解耦视频生成机制，将传统整体式视频生成升级为组件化建模，显著降低计算冗余并提升预测精度 | 📊 实验效果: 在操作和抓取任务上验证了有效性，推理速度相比整体式生成方法有显著提升 | ⭐ 整体评价: 解耦生成是提升世界模型效率的关键思路，对机器人操作场景的实时规划和仿真具有直接工程价值，建议关注其在真机部署中的表现",
+        tags: [["World Model","green"],["Manipulation","green"],["Video Generation","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.32028"],["PDF","https://arxiv.org/pdf/2606.32028"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"通过解耦视频生成（将场景背景和物体运动分离建模）构建高效的具身世界模型，用于机器人操作任务的视觉预测和动作规划"},{"label":"💡 创新点","text":"首次在具身世界模型中引入解耦视频生成机制，将传统整体式视频生成升级为组件化建模，显著降低计算冗余并提升预测精度"},{"label":"📊 实验效果","text":"在操作和抓取任务上验证了有效性，推理速度相比整体式生成方法有显著提升"},{"label":"⭐ 整体评价","text":"解耦生成是提升世界模型效率的关键思路，对机器人操作场景的实时规划和仿真具有直接工程价值，建议关注其在真机部署中的表现"}]
+    },
+    {
+        date: "2026-07-01",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "AdaJEPA: An Adaptive Latent World Model",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 基于 JEPA（联合嵌入预测架构）构建自适应潜世界模型，能够根据任务和环境动态调整潜空间复杂度和表示能力 | 💡 创新点: 首次在潜世界模型中引入自适应机制，使单一模型自动调节建模粒度以适应不同复杂度场景，避免固定潜空间的过拟合或欠拟合 | 📊 实验效果: 在规划和预测任务上验证了自适应机制对世界模型泛化能力的提升效果 | ⭐ 整体评价: 自适应潜空间是提升世界模型泛化能力的重要方向，JEPA 自监督架构与自适应机制的结合具有理论互补性，值得持续关注",
+        tags: [["World Model","green"],["JEPA","green"],["Latent Space","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.32026"],["PDF","https://arxiv.org/pdf/2606.32026"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于 JEPA（联合嵌入预测架构）构建自适应潜世界模型，能够根据任务和环境动态调整潜空间复杂度和表示能力"},{"label":"💡 创新点","text":"首次在潜世界模型中引入自适应机制，使单一模型自动调节建模粒度以适应不同复杂度场景，避免固定潜空间的过拟合或欠拟合"},{"label":"📊 实验效果","text":"在规划和预测任务上验证了自适应机制对世界模型泛化能力的提升效果"},{"label":"⭐ 整体评价","text":"自适应潜空间是提升世界模型泛化能力的重要方向，JEPA 自监督架构与自适应机制的结合具有理论互补性，值得持续关注"}]
+    },
+    {
+        date: "2026-07-01",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "Trimming the Long-Tail of Visual World Modeling Evaluation",
+        venue: "arXiv 2026 · University of Illinois at Urbana-Champaign",
+        summary: "🔬 技术路线: 提出 Tailor-Bench 基准，专门评估视觉世界模型在长尾物理交互场景上的表现，揭示模型在常见场景和罕见场景之间的性能鸿沟 | 💡 创新点: 首次系统性评估视觉世界模型的长尾性能，量化了\"常见交互表现好、罕见交互显著退化\"的普遍问题，为领域提供了诊断工具 | 📊 实验效果: 在视频生成和生成任务上揭示了当前世界模型在长尾物理交互上的系统性缺陷 | ⭐ 整体评价: 长尾性能是衡量世界模型真实泛化能力的关键指标，Tailor-Bench 填补了评估空白，开源基准和代码对推动领域发展有重要价值",
+        tags: [["World Model","green"],["Tailor-Bench","green"],["Evaluation","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.24256"],["PDF","https://arxiv.org/pdf/2606.24256"],["Project","https://tailor-bench.github.io"],["Code","https://github.com/tailor-bench/code"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出 Tailor-Bench 基准，专门评估视觉世界模型在长尾物理交互场景上的表现，揭示模型在常见场景和罕见场景之间的性能鸿沟"},{"label":"💡 创新点","text":"首次系统性评估视觉世界模型的长尾性能，量化了\"常见交互表现好、罕见交互显著退化\"的普遍问题，为领域提供了诊断工具"},{"label":"📊 实验效果","text":"在视频生成和生成任务上揭示了当前世界模型在长尾物理交互上的系统性缺陷"},{"label":"⭐ 整体评价","text":"长尾性能是衡量世界模型真实泛化能力的关键指标，Tailor-Bench 填补了评估空白，开源基准和代码对推动领域发展有重要价值"}]
+    },
+    {
+        date: "2026-07-01",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "Freeform Preference Learning for Robotic Manipulation",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 提出自由形式的偏好学习方法，允许人类通过非结构化反馈（如自然语言评价）来训练机器人操作策略，替代传统手工奖励函数设计 | 💡 创新点: 将偏好学习从二选一比较升级为自由形式反馈，人类可以用任意方式表达偏好（文字描述、隐式信号等），大幅降低标注约束和成本 | 📊 实验效果: 相较传统手工奖励设计方法提升 38 个百分点 | ⭐ 整体评价: 奖励设计是机器人学习长期未解的核心瓶颈，自由形式偏好学习以更自然的方式接入人类反馈，38pp 的大幅提升表明该路线具有突破性潜力",
+        tags: [["Manipulation","green"],["Preference Learning","green"],["Reward Design","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.32027"],["PDF","https://arxiv.org/pdf/2606.32027"],["Project","https://freeform-pl.github.io/fpl.website/"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出自由形式的偏好学习方法，允许人类通过非结构化反馈（如自然语言评价）来训练机器人操作策略，替代传统手工奖励函数设计"},{"label":"💡 创新点","text":"将偏好学习从二选一比较升级为自由形式反馈，人类可以用任意方式表达偏好（文字描述、隐式信号等），大幅降低标注约束和成本"},{"label":"📊 实验效果","text":"相较传统手工奖励设计方法提升 38 个百分点"},{"label":"⭐ 整体评价","text":"奖励设计是机器人学习长期未解的核心瓶颈，自由形式偏好学习以更自然的方式接入人类反馈，38pp 的大幅提升表明该路线具有突破性潜力"}]
+    },
+    {
+        date: "2026-07-01",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "TUA-Bench: A Benchmark for General-Purpose Terminal-Use Agents",
+        venue: "arXiv 2026 · AI at Meta",
+        summary: "🔬 技术路线: 构建覆盖终端使用场景的通用基准测试 TUA-Bench，评估 Agent 在命令行环境中的文件操作、系统管理和任务自动化能力 | 💡 创新点: 首个面向终端使用场景的通用 Agent 基准，填补了 GUI Agent 基准和代码 Agent 基准之间的空白，覆盖真实命令行工作流 | 📊 实验效果: 提供标准化评估协议和基线结果，开源代码获得 15 星 | ⭐ 整体评价: 终端使用是 Agent 部署的核心场景之一，Meta 的 TUA-Bench 为 CLI Agent 能力评估建立了标准化框架，对工业级 Agent 应用有直接参考价值",
+        tags: [["Terminal Agent","green"],["Benchmark","green"],["CLI","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.28480"],["PDF","https://arxiv.org/pdf/2606.28480"],["Code (15⭐)","https://github.com/facebookresearch/TUA-Bench"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"构建覆盖终端使用场景的通用基准测试 TUA-Bench，评估 Agent 在命令行环境中的文件操作、系统管理和任务自动化能力"},{"label":"💡 创新点","text":"首个面向终端使用场景的通用 Agent 基准，填补了 GUI Agent 基准和代码 Agent 基准之间的空白，覆盖真实命令行工作流"},{"label":"📊 实验效果","text":"提供标准化评估协议和基线结果，开源代码获得 15 星"},{"label":"⭐ 整体评价","text":"终端使用是 Agent 部署的核心场景之一，Meta 的 TUA-Bench 为 CLI Agent 能力评估建立了标准化框架，对工业级 Agent 应用有直接参考价值"}]
+    },
+    {
+        date: "2026-07-01",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Reinforcement Learning with Metacognitive Feedback Elicits Faithful Uncertainty Expression in LLMs",
+        venue: "arXiv 2026 · Yale NLP",
+        summary: "🔬 技术路线: 通过强化学习结合元认知反馈训练大语言模型，使模型在回答问题时能够忠实地表达不确定性，而非给出过度自信的错误答案 | 💡 创新点: 首次将元认知信号引入 RL 训练循环，使模型学会\"承认不知道\"，从根本上解决大模型编造答案的幻觉问题 | 📊 实验效果: 不确定性表达准确率提升至 63% | ⭐ 整体评价: 模型可靠地表达不确定性是大模型安全部署的核心需求，元认知 RL 从训练层面解决幻觉根源，具有重要的基础性研究价值和实用意义",
+        tags: [["LLM","green"],["RL","green"],["Uncertainty","green"],["Metacognition","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.32032"],["PDF","https://arxiv.org/pdf/2606.32032"],["Code","https://github.com/yale-nlp/RLMF"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"通过强化学习结合元认知反馈训练大语言模型，使模型在回答问题时能够忠实地表达不确定性，而非给出过度自信的错误答案"},{"label":"💡 创新点","text":"首次将元认知信号引入 RL 训练循环，使模型学会\"承认不知道\"，从根本上解决大模型编造答案的幻觉问题"},{"label":"📊 实验效果","text":"不确定性表达准确率提升至 63%"},{"label":"⭐ 整体评价","text":"模型可靠地表达不确定性是大模型安全部署的核心需求，元认知 RL 从训练层面解决幻觉根源，具有重要的基础性研究价值和实用意义"}]
+    },
+    {
+        date: "2026-07-01",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "When LLMs Read Tables Carelessly: Measuring and Reducing Data Referencing Errors",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 系统分析大语言模型在读取表格数据时的引用错误模式，提出测量和减少数据引用错误的评估框架与纠正方法 | 💡 创新点: 首次系统量化 LLM\"粗心读表\"现象的规模和模式，揭示了一个被忽视但影响广泛的 LLM 可靠性问题 | 📊 实验效果: 数据引用错误率降低 12.0%，恢复准确率达 78.2%，方法在 1.7B 到 20B 全参数规模范围验证有效 | ⭐ 整体评价: 表格引用错误在金融、医疗等数据密集型场景中可能导致严重后果，该工作填补了 LLM 数据引用可靠性的评估空白，实用性强",
+        tags: [["LLM","green"],["Data Referencing","green"],["Reliability","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.32029"],["PDF","https://arxiv.org/pdf/2606.32029"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"系统分析大语言模型在读取表格数据时的引用错误模式，提出测量和减少数据引用错误的评估框架与纠正方法"},{"label":"💡 创新点","text":"首次系统量化 LLM\"粗心读表\"现象的规模和模式，揭示了一个被忽视但影响广泛的 LLM 可靠性问题"},{"label":"📊 实验效果","text":"数据引用错误率降低 12.0%，恢复准确率达 78.2%，方法在 1.7B 到 20B 全参数规模范围验证有效"},{"label":"⭐ 整体评价","text":"表格引用错误在金融、医疗等数据密集型场景中可能导致严重后果，该工作填补了 LLM 数据引用可靠性的评估空白，实用性强"}]
+    },
+    {
+        date: "2026-07-01",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "ReFreeKV: Towards Threshold-Free KV Cache Compression",
+        venue: "arXiv 2025 · Tencent",
+        summary: "🔬 技术路线: 提出无需阈值设定的 KV Cache 压缩方法，通过自适应机制自动识别和保留对推理关键的信息，消除手动调参需求 | 💡 创新点: 首次实现完全无需阈值的 KV Cache 压缩，用自适应选择机制替代了所有手动设定的压缩参数 | 📊 实验效果: 在推理任务上验证了无阈值压缩的有效性和鲁棒性，开源代码已发布 | ⭐ 整体评价: KV Cache 压缩是 LLM 推理优化的核心方向，无阈值设计消除了部署中的超参数调优负担，降低了工程落地成本",
+        tags: [["LLM Inference","green"],["KV Cache","green"],["Compression","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2502.16886"],["PDF","https://arxiv.org/pdf/2502.16886"],["Code (3⭐)","https://github.com/Patrick-Ni/ReFreeKV"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出无需阈值设定的 KV Cache 压缩方法，通过自适应机制自动识别和保留对推理关键的信息，消除手动调参需求"},{"label":"💡 创新点","text":"首次实现完全无需阈值的 KV Cache 压缩，用自适应选择机制替代了所有手动设定的压缩参数"},{"label":"📊 实验效果","text":"在推理任务上验证了无阈值压缩的有效性和鲁棒性，开源代码已发布"},{"label":"⭐ 整体评价","text":"KV Cache 压缩是 LLM 推理优化的核心方向，无阈值设计消除了部署中的超参数调优负担，降低了工程落地成本"}]
+    },
+    {
+        date: "2026-07-01",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "Video-MME-Logical: A Controlled Diagnostic Benchmark for Video Temporal-Logical Reasoning",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 构建可控诊断基准测试，系统评估多模态模型在视频时序-逻辑推理上的能力，覆盖因果、顺序、条件关系等多维度推理任务 | 💡 创新点: 首次专门评估视频的时序-逻辑推理能力，通过控制变量设计实现对模型推理能力的精确诊断，区别于传统的视频内容理解评估 | 📊 实验效果: 构建了 500K 级别的评估数据集，为视频推理能力分析提供了大规模诊断工具 | ⭐ 整体评价: 时序逻辑推理是视频理解的高级能力，可控诊断基准为多模态模型的精细能力分析提供了必要的工具，建议关注其在长视频场景上的扩展",
+        tags: [["Video Reasoning","green"],["Diagnostic","green"],["Temporal Logic","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.27828"],["PDF","https://arxiv.org/pdf/2606.27828"],["Project","https://mrakas.github.io/video-mme-logical"],["Code (2⭐)","https://github.com/Mrakas/video-mme-logical"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"构建可控诊断基准测试，系统评估多模态模型在视频时序-逻辑推理上的能力，覆盖因果、顺序、条件关系等多维度推理任务"},{"label":"💡 创新点","text":"首次专门评估视频的时序-逻辑推理能力，通过控制变量设计实现对模型推理能力的精确诊断，区别于传统的视频内容理解评估"},{"label":"📊 实验效果","text":"构建了 500K 级别的评估数据集，为视频推理能力分析提供了大规模诊断工具"},{"label":"⭐ 整体评价","text":"时序逻辑推理是视频理解的高级能力，可控诊断基准为多模态模型的精细能力分析提供了必要的工具，建议关注其在长视频场景上的扩展"}]
+    },
+    {
+        date: "2026-07-01",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "AsyncOPD: How Stale Can On-Policy Distillation Be?",
+        venue: "arXiv 2026 · FuriosaAI",
+        summary: "🔬 技术路线: 研究在线策略蒸馏中教师策略的\"陈旧度\"对蒸馏效果的影响，探讨异步更新的可行性边界 | 💡 创新点: 首次量化分析在线策略蒸馏中异步更新的容忍度，对\"异步到多陈旧还能保持效果\"给出了实证回答 | 📊 实验效果: 验证了异步在线策略蒸馏在生成任务上的有效性，提供了陈旧度与性能的量化关系曲线 | ⭐ 整体评价: 异步化是提升分布式训练中蒸馏效率的关键手段，该工作为实际部署中的效率-精度权衡提供了有价值的实证指导",
+        tags: [["Distillation","green"],["Async Training","green"],["On-Policy","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.24143"],["PDF","https://arxiv.org/pdf/2606.24143"],["Code (15⭐)","https://github.com/furiosa-ai/async-opd"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"研究在线策略蒸馏中教师策略的\"陈旧度\"对蒸馏效果的影响，探讨异步更新的可行性边界"},{"label":"💡 创新点","text":"首次量化分析在线策略蒸馏中异步更新的容忍度，对\"异步到多陈旧还能保持效果\"给出了实证回答"},{"label":"📊 实验效果","text":"验证了异步在线策略蒸馏在生成任务上的有效性，提供了陈旧度与性能的量化关系曲线"},{"label":"⭐ 整体评价","text":"异步化是提升分布式训练中蒸馏效率的关键手段，该工作为实际部署中的效率-精度权衡提供了有价值的实证指导"}]
+    },
+    {
+        date: "2026-07-01",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "Introducing GeneBench-Pro",
+        venue: "OpenAI",
+        summary: "OpenAI 发布 GeneBench-Pro，一个面向基因组学和生物信息学领域的专业基准测试，旨在评估 AI 模型在基因序列分析、变异检测和功能预测等任务上的能力，推动 AI 在生命科学领域的应用。",
+        tags: [],
+        links: [["OpenAI Blog","https://openai.com/index/introducing-genebench-pro/"]]
+    },
+    {
+        date: "2026-07-01",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "Core dump epidemiology: fixing an 18-year-old bug",
+        venue: "OpenAI",
+        summary: "OpenAI 基础设施团队分享了一次长达 18 年的系统 bug 的排查和修复过程，展示了大规模数据基础设施运维中的调试方法论和经验教训，涉及核心转储分析和系统可靠性保障。",
+        tags: [],
+        links: [["OpenAI Blog","https://openai.com/index/core-dump-epidemiology-data-infrastructure-bug/"]]
+    },
     // === 2026-06-30 ===
     {
         date: "2026-06-30",
@@ -16255,6 +16445,13 @@ const PAPERS_DB = [
 ];
 
 const DAILY_OVERVIEW = {
+    "2026-07-01": {
+        bannerTitle: "🔥 今日看点",
+        bannerSubtitle: "Agent 方向集中爆发（5篇），覆盖长程评估（QVal）、技能组合（Skill Composition）、信用分配（TRIAGE）、智能体弃权（Agentic Abstention）和视频Agent桥接等多个维度。世界模型方向3篇各具特色：DVG-WM 以解耦视频生成赋能机器人操作、AdaJEPA 实现自适应潜空间、Tailor-Bench 揭示长尾评估缺陷。LLM 方向亮点：Yale 提出元认知 RL 训练不确定性表达（63%）、Meta 发布 TUA-Bench 终端使用Agent基准、腾讯 ReFreeKV 实现无需阈值的 KV Cache 压缩。机器人方向 Freeform Preference Learning 以自由形式人类反馈替代手工奖励设计，提升38个百分点。FuriosaAI 的 AsyncOPD 首次量化在线策略蒸馏的异步容忍度边界。",
+        picks: ["Agentic Abstention: Do Agents Know When to Stop Instead of Act?","DVG-WM: Disentangled Video Generation Enables Efficient Embodied World Model for Robotic Manipulation","Freeform Preference Learning for Robotic Manipulation","TUA-Bench: A Benchmark for General-Purpose Terminal-Use Agents"],
+        totalPapers: 15,
+        totalNews: 2
+    },
     "2026-06-30": {
         bannerTitle: "🔥 今日看点",
         bannerSubtitle: "Qwen 同日发布两篇机器人重磅论文：RobotManip（操作）和 RobotNav（导航），均开源代码和博客，标志着阿里 Qwen 正式进军具身智能领域。Agents-A1 仅 35B 参数即实现万亿参数级性能，以\"扩展视野而非参数\"的理念颠覆认知。VLK 在场景重建中实现人形机器人运动-操作协同。GROW² 让机器人学会创造性工具使用（如用盘子切蛋糕）。自进化世界模型 WorldEvolver 为 LLM Agent 长程规划提供新范式。",

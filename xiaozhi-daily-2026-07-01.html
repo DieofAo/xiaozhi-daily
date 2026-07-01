@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>小小志AI日报 - 2026年7月1日 周三</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans SC', sans-serif;
+  background: #0a0e1a;
+  color: #e0e6f0;
+  line-height: 1.7;
+  min-height: 100vh;
+}
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+header {
+  text-align: center;
+  margin-bottom: 48px;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, rgba(59,130,246,0.08) 0%, rgba(139,92,246,0.08) 100%);
+  border-radius: 20px;
+  border: 1px solid rgba(99,102,241,0.15);
+}
+header h1 {
+  font-size: 2rem;
+  background: linear-gradient(135deg, #60a5fa, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 8px;
+}
+header .date {
+  color: #94a3b8;
+  font-size: 1rem;
+}
+header .subtitle {
+  color: #64748b;
+  font-size: 0.9rem;
+  margin-top: 6px;
+}
+.highlight-banner {
+  background: linear-gradient(135deg, rgba(249,115,22,0.1) 0%, rgba(234,179,8,0.08) 100%);
+  border: 1px solid rgba(249,115,22,0.2);
+  border-radius: 14px;
+  padding: 20px 24px;
+  margin-bottom: 36px;
+}
+.hl-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fb923c;
+  margin-bottom: 8px;
+}
+.hl-text {
+  font-size: 0.92rem;
+  color: #cbd5e1;
+  line-height: 1.7;
+}
+.section {
+  margin-bottom: 40px;
+}
+.section-title {
+  font-size: 1.4rem;
+  color: #f1f5f9;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(99,102,241,0.2);
+}
+.paper-card {
+  background: rgba(30,41,59,0.6);
+  border: 1px solid rgba(99,102,241,0.12);
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 16px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.paper-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(99,102,241,0.1);
+  border-color: rgba(99,102,241,0.3);
+}
+.paper-card.hot {
+  border-color: rgba(249,115,22,0.25);
+  background: rgba(30,41,59,0.7);
+}
+.paper-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #f8fafc;
+  margin-bottom: 8px;
+}
+.paper-meta {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-bottom: 10px;
+}
+.summary-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+@media (max-width: 640px) {
+  .summary-grid { grid-template-columns: 1fr; }
+}
+.summary-item {
+  background: rgba(15,23,42,0.5);
+  border-radius: 10px;
+  padding: 12px 14px;
+  border: 1px solid rgba(99,102,241,0.08);
+}
+.summary-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #818cf8;
+  margin-bottom: 4px;
+}
+.summary-text {
+  font-size: 0.88rem;
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+.paper-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.tag {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+.tag-agent { background: rgba(16,185,129,0.12); color: #34d399; }
+.tag-llm { background: rgba(99,102,241,0.12); color: #818cf8; }
+.tag-multimodal { background: rgba(244,114,182,0.12); color: #f472b6; }
+.tag-world { background: rgba(251,191,36,0.12); color: #fbbf24; }
+.tag-robot { background: rgba(251,146,60,0.12); color: #fb923c; }
+.tag-rl { background: rgba(45,212,191,0.12); color: #2dd4bf; }
+.tag-video { background: rgba(168,85,247,0.12); color: #a855f7; }
+.tag-benchmark { background: rgba(34,211,238,0.12); color: #22d3ee; }
+.tag-vla { background: rgba(59,130,246,0.12); color: #60a5fa; }
+.tag-safety { background: rgba(239,68,68,0.12); color: #f87171; }
+.tag-memory { background: rgba(192,132,252,0.12); color: #c084fc; }
+.tag-reasoning { background: rgba(132,204,22,0.12); color: #a3e635; }
+.tag-code { background: rgba(52,211,153,0.12); color: #34d399; }
+.tag-survey { background: rgba(6,182,212,0.12); color: #22d3ee; }
+.tag-science { background: rgba(217,119,6,0.12); color: #f59e0b; }
+.tag-medical { background: rgba(239,68,68,0.12); color: #f87171; }
+.tag-systems { background: rgba(56,189,248,0.12); color: #38bdf8; }
+.tag-3d { background: rgba(148,163,184,0.12); color: #94a3b8; }
+.tag-data { background: rgba(250,204,21,0.12); color: #facc15; }
+.tag-infra { background: rgba(167,139,250,0.12); color: #a78bfa; }
+.tag-generation { background: rgba(249,115,22,0.12); color: #f97316; }
+.tag-navigation { background: rgba(59,130,246,0.12); color: #60a5fa; }
+.tag-distillation { background: rgba(34,211,238,0.12); color: #22d3ee; }
+.tag-humanoid { background: rgba(251,146,60,0.12); color: #fb923c; }
+.tag-tool { background: rgba(52,211,153,0.12); color: #34d399; }
+.tag-gui { background: rgba(244,114,182,0.12); color: #f472b6; }
+.hot-badge {
+  display: inline;
+  margin-right: 4px;
+}
+.info-card {
+  background: rgba(30,41,59,0.6);
+  border: 1px solid rgba(99,102,241,0.12);
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 16px;
+}
+.paper-summary {
+  font-size: 0.9rem;
+  color: #cbd5e1;
+  line-height: 1.7;
+  margin-bottom: 14px;
+}
+.paper-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.paper-links a {
+  display: inline-block;
+  padding: 5px 14px;
+  background: rgba(99,102,241,0.12);
+  color: #818cf8;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+.paper-links a:hover {
+  background: rgba(99,102,241,0.25);
+}
+.model-card {
+  background: rgba(30,41,59,0.6);
+  border: 1px solid rgba(99,102,241,0.12);
+  border-radius: 14px;
+  padding: 20px 24px;
+  margin-bottom: 16px;
+}
+.model-name {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #f8fafc;
+  margin-bottom: 6px;
+}
+.model-meta {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-bottom: 8px;
+}
+.stats {
+  text-align: center;
+  padding: 30px;
+  margin-top: 40px;
+  background: rgba(30,41,59,0.4);
+  border-radius: 14px;
+  border: 1px solid rgba(99,102,241,0.1);
+}
+.stats p { color: #94a3b8; font-size: 0.88rem; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <h1>📡 小小志AI日报</h1>
+  <div class="date">2026年7月1日 周三</div>
+  <div class="subtitle">📝 arXiv 8 篇 · HF 热门 7 篇 · 机构博客 2 条</div>
+</header>
+
+<div class="highlight-banner">
+  <div class="hl-title">🔥 今日看点</div>
+  <div class="hl-text">
+    Agent 方向集中爆发（5篇），覆盖长程评估（QVal）、技能组合（Skill Composition）、信用分配（TRIAGE）、智能体弃权（Agentic Abstention）和视频Agent桥接等多个维度。世界模型方向3篇各具特色：DVG-WM 以解耦视频生成赋能机器人操作、AdaJEPA 实现自适应潜空间、Tailor-Bench 揭示长尾评估缺陷。LLM 方向亮点：Yale 提出元认知 RL 训练不确定性表达（63%）、Meta 发布 TUA-Bench 终端使用Agent基准、腾讯 ReFreeKV 实现无需阈值的 KV Cache 压缩。机器人方向 Freeform Preference Learning 以自由形式人类反馈替代手工奖励设计，提升38个百分点。FuriosaAI 的 AsyncOPD 首次量化在线策略蒸馏的异步容忍度边界。
+  </div>
+</div>
+
+<!-- 🧩 Agent Section -->
+<section class="section">
+  <h2 class="section-title">🧩 Agent · 智能体</h2>
+
+  <div class="paper-card">
+    <div class="paper-title">Agent QVal: Cheaply Evaluating Dense Supervision Signals for Long-Horizon LLM Agents</div>
+    <div class="paper-meta">arXiv 2026</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出 QVal 方法，通过低成本评估密度监督信号来优化长程 LLM Agent 的性能，无需昂贵的人工标注或环境交互即可获得密集反馈</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次在长程 Agent 场景中实现低成本、高密度的监督信号评估，解决了长程任务中反馈稀疏导致训练低效的核心痛点</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">覆盖 1.2K 个评估样本，验证了密集监督信号在长程 Agent 任务中的有效性</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">长程 Agent 的评估和反馈是领域瓶颈，QVal 以低成本实现密集监督的思路具有实际工程价值，建议关注其在真实环境中的扩展性</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-agent">Agent</span>
+      <span class="tag tag-rl">Long-Horizon</span>
+      <span class="tag tag-benchmark">Evaluation</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.32034">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.32034">PDF</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">Generative Skill Composition for LLM Agents</div>
+    <div class="paper-meta">arXiv 2026</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">将技能组合问题转化为生成式任务，LLM Agent 自动将已有技能组合为新的复合技能，无需依赖预定义的固定技能库</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次以生成式方法解决 Agent 技能组合问题，突破了以往只能从固定技能库中选择的限制，使 Agent 具备开放式的技能创造能力</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">技能组合的 top-3 准确率提升 18.2 个百分点</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">技能组合是 Agent 通用化的关键瓶颈，生成式方法打开了从"技能库检索"到"技能创造"的新范式，对 Agent 的开放式能力扩展有重要意义</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-agent">Agent</span>
+      <span class="tag tag-generation">Skill Composition</span>
+      <span class="tag tag-llm">LLM</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.32025">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.32025">PDF</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">TRIAGE: Role-Typed Credit Assignment for Agentic Reinforcement Learning</div>
+    <div class="paper-meta">arXiv 2026</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出基于角色类型的信用分配方法 TRIAGE，在多步智能体强化学习中精确识别每个动作对最终结果的贡献，按角色类型分配奖励信号</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次在多智能体 RL 中引入角色类型感知的信用分配机制，解决了不同角色动作贡献度不均导致的训练信号偏差问题</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在 Search-QA 和导航任务上验证了角色类型信用分配的有效性</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">信用分配是 Agent 强化学习的经典难题，角色类型的细粒度划分有望显著提升多步任务中的训练效率和策略质量</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-agent">Multi-Agent</span>
+      <span class="tag tag-rl">Credit Assignment</span>
+      <span class="tag tag-navigation">Navigation</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.32017">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.32017">PDF</a>
+    </div>
+  </div>
+
+  <div class="paper-card hot">
+    <div class="paper-title"><span class="hot-badge">🔥</span> Agentic Abstention: Do Agents Know When to Stop Instead of Act?</div>
+    <div class="paper-meta">arXiv 2026 · University of Washington</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">系统研究 LLM Agent 何时应选择"弃权"而非盲目行动，提出智能体弃权的评估框架和决策机制，使 Agent 学会在不确定时主动停止</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次将 Agent 的"弃权"行为系统化为独立研究方向，揭示当前 Agent 普遍存在过度行动问题，而适当的弃权能同时提升安全性和效率</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在 70B 参数规模模型上验证，量化了不同场景下弃权策略对任务成功率和安全性的影响</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">Agent 何时"不做"与何时"做"同样重要，弃权研究从全新角度审视 Agent 安全性和可靠性，为实际部署提供了重要的决策理论基础</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-agent">Agent</span>
+      <span class="tag tag-safety">Safety</span>
+      <span class="tag tag-reasoning">Decision</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.28733">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.28733">PDF</a>
+      <a href="https://lhannnn.github.io/agentic-abstention">Project</a>
+      <a href="https://github.com/lhannnn/agentic-abstention">Code (15⭐)</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">Bridging VideoQA and Video-Guided Agentic Tasks via Generalized Keyframe Extraction</div>
+    <div class="paper-meta">arXiv 2026</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">通过广义关键帧提取方法，将视频问答和视频引导的 GUI Agent 任务统一在同一框架下，使 Agent 能够基于关键帧理解长视频并执行操作</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 VG-GUIBench 基准，首次将视频理解和 Agent 任务统一到关键帧驱动的下游框架中，打通了视频感知到动作执行的链路</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在多模态视频理解到 Agent 操作的关键指标上分别提升 2.0% 和 1.8%</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">视频到 Agent 任务的桥接是视频理解走向实际应用的重要一步，关键帧作为中间表示具有通用性，VG-GUIBench 填补了跨模态评估的空白</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-agent">Agent</span>
+      <span class="tag tag-video">VideoQA</span>
+      <span class="tag tag-gui">GUI</span>
+      <span class="tag tag-multimodal">Keyframe</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.29445">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.29445">PDF</a>
+      <a href="https://vg-gui-tasker.github.io/">Project</a>
+      <a href="https://github.com/VG-GUI-TASKER/VG-GUI-TASKER">Code (16⭐)</a>
+    </div>
+  </div>
+</section>
+
+<!-- 🌍 World Model + Robotics Section -->
+<section class="section">
+  <h2 class="section-title">🌍 World Model &amp; Robotics · 世界模型与机器人</h2>
+
+  <div class="paper-card hot">
+    <div class="paper-title"><span class="hot-badge">🔥</span> DVG-WM: Disentangled Video Generation Enables Efficient Embodied World Model for Robotic Manipulation</div>
+    <div class="paper-meta">arXiv 2026</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">通过解耦视频生成（将场景背景和物体运动分离建模）构建高效的具身世界模型，用于机器人操作任务的视觉预测和动作规划</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次在具身世界模型中引入解耦视频生成机制，将传统整体式视频生成升级为组件化建模，显著降低计算冗余并提升预测精度</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在操作和抓取任务上验证了有效性，推理速度相比整体式生成方法有显著提升</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">解耦生成是提升世界模型效率的关键思路，对机器人操作场景的实时规划和仿真具有直接工程价值，建议关注其在真机部署中的表现</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-world">World Model</span>
+      <span class="tag tag-robot">Manipulation</span>
+      <span class="tag tag-video">Video Generation</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.32028">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.32028">PDF</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">AdaJEPA: An Adaptive Latent World Model</div>
+    <div class="paper-meta">arXiv 2026</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">基于 JEPA（联合嵌入预测架构）构建自适应潜世界模型，能够根据任务和环境动态调整潜空间复杂度和表示能力</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次在潜世界模型中引入自适应机制，使单一模型自动调节建模粒度以适应不同复杂度场景，避免固定潜空间的过拟合或欠拟合</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在规划和预测任务上验证了自适应机制对世界模型泛化能力的提升效果</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">自适应潜空间是提升世界模型泛化能力的重要方向，JEPA 自监督架构与自适应机制的结合具有理论互补性，值得持续关注</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-world">World Model</span>
+      <span class="tag tag-rl">JEPA</span>
+      <span class="tag tag-llm">Latent Space</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.32026">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.32026">PDF</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">Trimming the Long-Tail of Visual World Modeling Evaluation</div>
+    <div class="paper-meta">arXiv 2026 · University of Illinois at Urbana-Champaign</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出 Tailor-Bench 基准，专门评估视觉世界模型在长尾物理交互场景上的表现，揭示模型在常见场景和罕见场景之间的性能鸿沟</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次系统性评估视觉世界模型的长尾性能，量化了"常见交互表现好、罕见交互显著退化"的普遍问题，为领域提供了诊断工具</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在视频生成和生成任务上揭示了当前世界模型在长尾物理交互上的系统性缺陷</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">长尾性能是衡量世界模型真实泛化能力的关键指标，Tailor-Bench 填补了评估空白，开源基准和代码对推动领域发展有重要价值</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-world">World Model</span>
+      <span class="tag tag-benchmark">Tailor-Bench</span>
+      <span class="tag tag-video">Evaluation</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.24256">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.24256">PDF</a>
+      <a href="https://tailor-bench.github.io">Project</a>
+      <a href="https://github.com/tailor-bench/code">Code</a>
+    </div>
+  </div>
+
+  <div class="paper-card hot">
+    <div class="paper-title"><span class="hot-badge">🔥</span> Freeform Preference Learning for Robotic Manipulation</div>
+    <div class="paper-meta">arXiv 2026</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出自由形式的偏好学习方法，允许人类通过非结构化反馈（如自然语言评价）来训练机器人操作策略，替代传统手工奖励函数设计</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">将偏好学习从二选一比较升级为自由形式反馈，人类可以用任意方式表达偏好（文字描述、隐式信号等），大幅降低标注约束和成本</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">相较传统手工奖励设计方法提升 38 个百分点</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">奖励设计是机器人学习长期未解的核心瓶颈，自由形式偏好学习以更自然的方式接入人类反馈，38pp 的大幅提升表明该路线具有突破性潜力</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-robot">Manipulation</span>
+      <span class="tag tag-rl">Preference Learning</span>
+      <span class="tag tag-llm">Reward Design</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.32027">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.32027">PDF</a>
+      <a href="https://freeform-pl.github.io/fpl.website/">Project</a>
+    </div>
+  </div>
+</section>
+
+<!-- 🧠 LLM Section -->
+<section class="section">
+  <h2 class="section-title">🧠 LLM · 语言模型</h2>
+
+  <div class="paper-card hot">
+    <div class="paper-title"><span class="hot-badge">🔥</span> TUA-Bench: A Benchmark for General-Purpose Terminal-Use Agents</div>
+    <div class="paper-meta">arXiv 2026 · AI at Meta</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">构建覆盖终端使用场景的通用基准测试 TUA-Bench，评估 Agent 在命令行环境中的文件操作、系统管理和任务自动化能力</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首个面向终端使用场景的通用 Agent 基准，填补了 GUI Agent 基准和代码 Agent 基准之间的空白，覆盖真实命令行工作流</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">提供标准化评估协议和基线结果，开源代码获得 15 星</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">终端使用是 Agent 部署的核心场景之一，Meta 的 TUA-Bench 为 CLI Agent 能力评估建立了标准化框架，对工业级 Agent 应用有直接参考价值</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-agent">Terminal Agent</span>
+      <span class="tag tag-benchmark">Benchmark</span>
+      <span class="tag tag-code">CLI</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.28480">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.28480">PDF</a>
+      <a href="https://github.com/facebookresearch/TUA-Bench">Code (15⭐)</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">Reinforcement Learning with Metacognitive Feedback Elicits Faithful Uncertainty Expression in LLMs</div>
+    <div class="paper-meta">arXiv 2026 · Yale NLP</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">通过强化学习结合元认知反馈训练大语言模型，使模型在回答问题时能够忠实地表达不确定性，而非给出过度自信的错误答案</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次将元认知信号引入 RL 训练循环，使模型学会"承认不知道"，从根本上解决大模型编造答案的幻觉问题</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">不确定性表达准确率提升至 63%</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">模型可靠地表达不确定性是大模型安全部署的核心需求，元认知 RL 从训练层面解决幻觉根源，具有重要的基础性研究价值和实用意义</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-llm">LLM</span>
+      <span class="tag tag-rl">RL</span>
+      <span class="tag tag-safety">Uncertainty</span>
+      <span class="tag tag-science">Metacognition</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.32032">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.32032">PDF</a>
+      <a href="https://github.com/yale-nlp/RLMF">Code</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">When LLMs Read Tables Carelessly: Measuring and Reducing Data Referencing Errors</div>
+    <div class="paper-meta">arXiv 2026</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">系统分析大语言模型在读取表格数据时的引用错误模式，提出测量和减少数据引用错误的评估框架与纠正方法</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次系统量化 LLM"粗心读表"现象的规模和模式，揭示了一个被忽视但影响广泛的 LLM 可靠性问题</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">数据引用错误率降低 12.0%，恢复准确率达 78.2%，方法在 1.7B 到 20B 全参数规模范围验证有效</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">表格引用错误在金融、医疗等数据密集型场景中可能导致严重后果，该工作填补了 LLM 数据引用可靠性的评估空白，实用性强</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-llm">LLM</span>
+      <span class="tag tag-data">Data Referencing</span>
+      <span class="tag tag-benchmark">Reliability</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.32029">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.32029">PDF</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">ReFreeKV: Towards Threshold-Free KV Cache Compression</div>
+    <div class="paper-meta">arXiv 2025 · Tencent</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出无需阈值设定的 KV Cache 压缩方法，通过自适应机制自动识别和保留对推理关键的信息，消除手动调参需求</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次实现完全无需阈值的 KV Cache 压缩，用自适应选择机制替代了所有手动设定的压缩参数</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在推理任务上验证了无阈值压缩的有效性和鲁棒性，开源代码已发布</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">KV Cache 压缩是 LLM 推理优化的核心方向，无阈值设计消除了部署中的超参数调优负担，降低了工程落地成本</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-llm">LLM Inference</span>
+      <span class="tag tag-memory">KV Cache</span>
+      <span class="tag tag-systems">Compression</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2502.16886">arXiv</a>
+      <a href="https://arxiv.org/pdf/2502.16886">PDF</a>
+      <a href="https://github.com/Patrick-Ni/ReFreeKV">Code (3⭐)</a>
+    </div>
+  </div>
+</section>
+
+<!-- 🎨 Multimodal + Other Section -->
+<section class="section">
+  <h2 class="section-title">🎨 Multimodal &amp; Systems · 多模态与系统</h2>
+
+  <div class="paper-card">
+    <div class="paper-title">Video-MME-Logical: A Controlled Diagnostic Benchmark for Video Temporal-Logical Reasoning</div>
+    <div class="paper-meta">arXiv 2026</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">构建可控诊断基准测试，系统评估多模态模型在视频时序-逻辑推理上的能力，覆盖因果、顺序、条件关系等多维度推理任务</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次专门评估视频的时序-逻辑推理能力，通过控制变量设计实现对模型推理能力的精确诊断，区别于传统的视频内容理解评估</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">构建了 500K 级别的评估数据集，为视频推理能力分析提供了大规模诊断工具</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">时序逻辑推理是视频理解的高级能力，可控诊断基准为多模态模型的精细能力分析提供了必要的工具，建议关注其在长视频场景上的扩展</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-multimodal">Video Reasoning</span>
+      <span class="tag tag-benchmark">Diagnostic</span>
+      <span class="tag tag-reasoning">Temporal Logic</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.27828">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.27828">PDF</a>
+      <a href="https://mrakas.github.io/video-mme-logical">Project</a>
+      <a href="https://github.com/Mrakas/video-mme-logical">Code (2⭐)</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">AsyncOPD: How Stale Can On-Policy Distillation Be?</div>
+    <div class="paper-meta">arXiv 2026 · FuriosaAI</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">研究在线策略蒸馏中教师策略的"陈旧度"对蒸馏效果的影响，探讨异步更新的可行性边界</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次量化分析在线策略蒸馏中异步更新的容忍度，对"异步到多陈旧还能保持效果"给出了实证回答</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">验证了异步在线策略蒸馏在生成任务上的有效性，提供了陈旧度与性能的量化关系曲线</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">异步化是提升分布式训练中蒸馏效率的关键手段，该工作为实际部署中的效率-精度权衡提供了有价值的实证指导</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-distillation">Distillation</span>
+      <span class="tag tag-systems">Async Training</span>
+      <span class="tag tag-rl">On-Policy</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.24143">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.24143">PDF</a>
+      <a href="https://github.com/furiosa-ai/async-opd">Code (15⭐)</a>
+    </div>
+  </div>
+</section>
+
+<!-- 🏢 Industry News Section -->
+<section class="section">
+  <h2 class="section-title">🏢 行业动态</h2>
+
+  <div class="info-card">
+    <div class="paper-title">Introducing GeneBench-Pro</div>
+    <div class="paper-meta">OpenAI</div>
+    <div class="paper-summary">OpenAI 发布 GeneBench-Pro，一个面向基因组学和生物信息学领域的专业基准测试，旨在评估 AI 模型在基因序列分析、变异检测和功能预测等任务上的能力，推动 AI 在生命科学领域的应用。</div>
+    <div class="paper-links">
+      <a href="https://openai.com/index/introducing-genebench-pro/">OpenAI Blog</a>
+    </div>
+  </div>
+
+  <div class="info-card">
+    <div class="paper-title">Core dump epidemiology: fixing an 18-year-old bug</div>
+    <div class="paper-meta">OpenAI</div>
+    <div class="paper-summary">OpenAI 基础设施团队分享了一次长达 18 年的系统 bug 的排查和修复过程，展示了大规模数据基础设施运维中的调试方法论和经验教训，涉及核心转储分析和系统可靠性保障。</div>
+    <div class="paper-links">
+      <a href="https://openai.com/index/core-dump-epidemiology-data-infrastructure-bug/">OpenAI Blog</a>
+    </div>
+  </div>
+</section>
+
+<div class="stats">
+  <p>📡 自动生成于 2026年7月1日 · 数据截至 09:26 UTC · 关注 VLA · Robotics · World Model · LLM · Multimodal · Agent</p>
+</div>
+
+</div>
+</body>
+</html>
