@@ -658,6 +658,87 @@
 <script>
 // ===== DATA =====
 const PAPERS_DB = [
+    // === 2026-07-02 ===
+    {
+        date: "2026-07-02",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "Does VLA Even Know the Basics? Measuring Commonsense and World Knowledge Retention in Vision-Language-Action Models",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 构建 Act2Answer 基准测试，将常识问答作为 VLA 模型的辅助评估维度，系统测量 VLA 模型在微调后对基础常识和世界知识的保留程度 | 💡 创新点: 首次直接追问 VLA 模型是否真正理解基本常识而非仅学习动作映射，触及 VLA 领域中被忽视的核心认知问题——微调是否以牺牲常识为代价 | 📊 实验效果: 在多个主流 VLA 模型上评估了常识保留率，揭示了微调后常识显著下降的现象，提供项目主页和代码复现 | ⭐ 整体评价: 对整个 VLA 领域的反思性工作，核心问题是微调后的 VLA 模型是否变成了\"只会动手不会动脑\"的操作器，建议所有 VLA 开发者关注",
+        tags: [["VLA","green"],["Commonsense","green"],["World Knowledge","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.19297"],["PDF","https://arxiv.org/pdf/2606.19297"],["Project","https://tttonyalpha.github.io/act2answer/"],["Code (6⭐)","https://github.com/CognitiveAISystems/Act2Answer"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"构建 Act2Answer 基准测试，将常识问答作为 VLA 模型的辅助评估维度，系统测量 VLA 模型在微调后对基础常识和世界知识的保留程度"},{"label":"💡 创新点","text":"首次直接追问 VLA 模型是否真正理解基本常识而非仅学习动作映射，触及 VLA 领域中被忽视的核心认知问题——微调是否以牺牲常识为代价"},{"label":"📊 实验效果","text":"在多个主流 VLA 模型上评估了常识保留率，揭示了微调后常识显著下降的现象，提供项目主页和代码复现"},{"label":"⭐ 整体评价","text":"对整个 VLA 领域的反思性工作，核心问题是微调后的 VLA 模型是否变成了\"只会动手不会动脑\"的操作器，建议所有 VLA 开发者关注"}]
+    },
+    {
+        date: "2026-07-02",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "Orca: The World is in Your Mind",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 提出 Orca 世界模型，以下一状态预测为核心任务，在轻量级架构上将多模态输入统一映射到未来状态表示，无需复杂的显式建模管道 | 💡 创新点: 首次提出 Next-State-Prediction 统一范式，将视觉、动作等多模态输入压缩为单一预测目标，兼顾统一性和轻量化 | 📊 实验效果: 以 125K 基础规模验证范式有效性，可扩展至 160M 参数，在多模态输入场景下提供一致的世界状态预测 | ⭐ 整体评价: 将世界建模简化为单一预测任务是优雅的设计思路，轻量化路线对资源受限的具身场景有实际价值，建议关注长程预测精度和真机验证",
+        tags: [["World Model","green"],["Multimodal","green"],["Next-State Prediction","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.30534"],["PDF","https://arxiv.org/pdf/2606.30534"],["Project","https://orca-wm.github.io/"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出 Orca 世界模型，以下一状态预测为核心任务，在轻量级架构上将多模态输入统一映射到未来状态表示，无需复杂的显式建模管道"},{"label":"💡 创新点","text":"首次提出 Next-State-Prediction 统一范式，将视觉、动作等多模态输入压缩为单一预测目标，兼顾统一性和轻量化"},{"label":"📊 实验效果","text":"以 125K 基础规模验证范式有效性，可扩展至 160M 参数，在多模态输入场景下提供一致的世界状态预测"},{"label":"⭐ 整体评价","text":"将世界建模简化为单一预测任务是优雅的设计思路，轻量化路线对资源受限的具身场景有实际价值，建议关注长程预测精度和真机验证"}]
+    },
+    {
+        date: "2026-07-02",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Dockerless: Environment-Free Program Verifier for Coding Agents",
+        venue: "arXiv 2026 · ByteDance",
+        summary: "🔬 技术路线: 提出无需 Docker 容器的代码验证器，直接在模型层面评估代码智能体的输出正确性，以无环境依赖的方式替代传统的沙箱执行验证 | 💡 创新点: 彻底摆脱代码智能体对 Docker 沙箱环境的依赖，通过环境无关的静态验证机制大幅降低部署复杂度和资源开销，解决了实际落地的核心工程痛点 | 📊 实验效果: 在 SWE-bench 上以 9B 参数模型达到 62.0% 成功率，无环境依赖保持 50.0% 和 35.2% 的核心指标 | ⭐ 整体评价: 字节跳动的实用化探索，直指代码 Agent 部署中环境依赖这一长期痛点，无环境验证如果成熟将大幅降低企业级 Agent 落地的工程成本",
+        tags: [["Agent","green"],["Code Verification","green"],["Infrastructure","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.28436"],["PDF","https://arxiv.org/pdf/2606.28436"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出无需 Docker 容器的代码验证器，直接在模型层面评估代码智能体的输出正确性，以无环境依赖的方式替代传统的沙箱执行验证"},{"label":"💡 创新点","text":"彻底摆脱代码智能体对 Docker 沙箱环境的依赖，通过环境无关的静态验证机制大幅降低部署复杂度和资源开销，解决了实际落地的核心工程痛点"},{"label":"📊 实验效果","text":"在 SWE-bench 上以 9B 参数模型达到 62.0% 成功率，无环境依赖保持 50.0% 和 35.2% 的核心指标"},{"label":"⭐ 整体评价","text":"字节跳动的实用化探索，直指代码 Agent 部署中环境依赖这一长期痛点，无环境验证如果成熟将大幅降低企业级 Agent 落地的工程成本"}]
+    },
+    {
+        date: "2026-07-02",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "SkillHone: A Harness for Continual Agent Skill Evolution Through Persistent Decision History",
+        venue: "arXiv 2026 · Tencent",
+        summary: "🔬 技术路线: 提出角色分离的持续技能进化框架，通过持久化存储智能体的历史决策数据形成经验库，驱动技能在任务迭代中自我精进 | 💡 创新点: 首次将持久化决策历史作为 Agent 技能进化的核心驱动力，结合角色分离架构将经验积累与技能执行解耦，实现持续的自我改进 | 📊 实验效果: 在多个基准测试上验证了技能持续提升的有效性，开源代码获得 11 星 | ⭐ 整体评价: 腾讯在 Agent 长期进化方向的探索具有战略价值，持久化决策历史作为经验库的设计与人类学习模式相似，建议关注技能退化与知识遗忘的边界",
+        tags: [["Agent","green"],["Skill Evolution","green"],["Decision History","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.08671"],["PDF","https://arxiv.org/pdf/2606.08671"],["Project","https://zwlijay.github.io/SkillHone-Project/"],["Code (11⭐)","https://github.com/Tencent/SkillHone"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出角色分离的持续技能进化框架，通过持久化存储智能体的历史决策数据形成经验库，驱动技能在任务迭代中自我精进"},{"label":"💡 创新点","text":"首次将持久化决策历史作为 Agent 技能进化的核心驱动力，结合角色分离架构将经验积累与技能执行解耦，实现持续的自我改进"},{"label":"📊 实验效果","text":"在多个基准测试上验证了技能持续提升的有效性，开源代码获得 11 星"},{"label":"⭐ 整体评价","text":"腾讯在 Agent 长期进化方向的探索具有战略价值，持久化决策历史作为经验库的设计与人类学习模式相似，建议关注技能退化与知识遗忘的边界"}]
+    },
+    {
+        date: "2026-07-02",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "BlockPilot: Instance-Adaptive Policy Learning for Diffusion-based Speculative Decoding",
+        venue: "arXiv 2026 · AMAP-ML",
+        summary: "🔬 技术路线: 基于扩散模型的推测解码框架，通过学习实例自适应策略为每个输入动态选择最优的草稿生成方案，替代传统的固定策略推测解码 | 💡 创新点: 提出实例级别的自适应策略学习机制，使推测解码首次摆脱一刀切的草稿模型选择模式，根据输入难度动态调整生成策略 | 📊 实验效果: 基于 Qwen3-4B 验证扩散推测解码加速效果，开源代码获得 58 星 | ⭐ 整体评价: 推测解码方向的工程优化，自适应策略比固定策略更贴合实际部署场景，代码社区活跃度（58 星）表明较高关注度",
+        tags: [["LLM","green"],["Speculative Decoding","green"],["Diffusion","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.31315"],["PDF","https://arxiv.org/pdf/2606.31315"],["Code (58⭐)","https://github.com/AMAP-ML/BlockPilot"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于扩散模型的推测解码框架，通过学习实例自适应策略为每个输入动态选择最优的草稿生成方案，替代传统的固定策略推测解码"},{"label":"💡 创新点","text":"提出实例级别的自适应策略学习机制，使推测解码首次摆脱一刀切的草稿模型选择模式，根据输入难度动态调整生成策略"},{"label":"📊 实验效果","text":"基于 Qwen3-4B 验证扩散推测解码加速效果，开源代码获得 58 星"},{"label":"⭐ 整体评价","text":"推测解码方向的工程优化，自适应策略比固定策略更贴合实际部署场景，代码社区活跃度（58 星）表明较高关注度"}]
+    },
+    {
+        date: "2026-07-02",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Scenes as Objects, Not Primitives: Instance-Structured 3D Tokenization from Unposed Views",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 提出 InstOk3D 实例结构化 3D 标记化框架，将场景分解为独立的物体实例而非传统几何基元，从非固定视角图像中自动完成标记化 | 💡 创新点: 首次将 3D 场景理解从几何层级提升到语义层级，以物体实例而非点云或网格作为基本建模单元，更贴近人类的场景理解方式 | 📊 实验效果: 在操作和抓取任务上验证了实例级 3D 标记化的有效性，提供项目主页 | ⭐ 整体评价: 将 3D 场景标记化从几何基元升级为语义实例是正确方向，对机器人操作中的物体识别和操作规划有直接价值，建议关注其在复杂多物体场景的表现",
+        tags: [["3D Tokenization","green"],["Scene Understanding","green"],["Robotics","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.29513"],["PDF","https://arxiv.org/pdf/2606.29513"],["Project","https://yoomimi.github.io/instok3d"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出 InstOk3D 实例结构化 3D 标记化框架，将场景分解为独立的物体实例而非传统几何基元，从非固定视角图像中自动完成标记化"},{"label":"💡 创新点","text":"首次将 3D 场景理解从几何层级提升到语义层级，以物体实例而非点云或网格作为基本建模单元，更贴近人类的场景理解方式"},{"label":"📊 实验效果","text":"在操作和抓取任务上验证了实例级 3D 标记化的有效性，提供项目主页"},{"label":"⭐ 整体评价","text":"将 3D 场景标记化从几何基元升级为语义实例是正确方向，对机器人操作中的物体识别和操作规划有直接价值，建议关注其在复杂多物体场景的表现"}]
+    },
+    {
+        date: "2026-07-02",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Evolution Fine-Tuning: Learning to Discover Across 371 Optimization Tasks",
+        venue: "arXiv 2026 · Minnesota NLP",
+        summary: "🔬 技术路线: 提出进化微调方法，将进化搜索与大语言模型微调相结合，让模型在 371 个优化任务上自动发现跨任务的通用优化策略 | 💡 创新点: 首次将进化搜索作为微调的训练信号，使模型从优化问题本身中学习可迁移的优化能力，而非为每个任务单独设计优化器 | 📊 实验效果: 在 371 个优化任务上平均提升 10.22%，使用 156K 训练样本在 2B 到 9B 参数规模间验证，开源代码获得 10 星 | ⭐ 整体评价: 以优化任务本身为训练目标的元学习思路令人印象深刻，371 个任务的覆盖面展示了方法的泛化潜力，建议关注其在未见任务类型上的迁移边界",
+        tags: [["LLM","green"],["Evolutionary Search","green"],["Meta-Learning","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.29082"],["PDF","https://arxiv.org/pdf/2606.29082"],["Project","https://open-galapagos.github.io/evolution_finetuning/"],["Code (10⭐)","https://github.com/Open-Galapagos/evolution-fine-tuning"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出进化微调方法，将进化搜索与大语言模型微调相结合，让模型在 371 个优化任务上自动发现跨任务的通用优化策略"},{"label":"💡 创新点","text":"首次将进化搜索作为微调的训练信号，使模型从优化问题本身中学习可迁移的优化能力，而非为每个任务单独设计优化器"},{"label":"📊 实验效果","text":"在 371 个优化任务上平均提升 10.22%，使用 156K 训练样本在 2B 到 9B 参数规模间验证，开源代码获得 10 星"},{"label":"⭐ 整体评价","text":"以优化任务本身为训练目标的元学习思路令人印象深刻，371 个任务的覆盖面展示了方法的泛化潜力，建议关注其在未见任务类型上的迁移边界"}]
+    },
     // === 2026-07-01 ===
     {
         date: "2026-07-01",
@@ -16445,6 +16526,13 @@ const PAPERS_DB = [
 ];
 
 const DAILY_OVERVIEW = {
+    "2026-07-02": {
+        bannerTitle: "🔥 今日看点",
+        bannerSubtitle: "VLA 方向迎来反思之作：Act2Answer 首次追问 VLA 模型是否保留了基本常识，揭示微调导致的常识遗忘现象。Agent 方向两篇各具特色：字节跳动 Dockerless 无需容器环境即可验证代码智能体输出，腾讯 SkillHone 通过持久化决策历史驱动技能持续进化。LLM 方向三篇覆盖推理加速（BlockPilot 自适应推测解码）、元优化（Evolution Fine-Tuning 371 任务进化搜索）和 3D 标记化（InstOk3D 实例级场景建模）。世界模型方向 Orca 以轻量级下一状态预测统一多模态世界建模。",
+        picks: ["Does VLA Even Know the Basics? Measuring Commonsense and World Knowledge Retention in Vision-Language-Action Models","SkillHone: A Harness for Continual Agent Skill Evolution Through Persistent Decision History","Evolution Fine-Tuning: Learning to Discover Across 371 Optimization Tasks"],
+        totalPapers: 7,
+        totalNews: 0
+    },
     "2026-07-01": {
         bannerTitle: "🔥 今日看点",
         bannerSubtitle: "Agent 方向集中爆发（5篇），覆盖长程评估（QVal）、技能组合（Skill Composition）、信用分配（TRIAGE）、智能体弃权（Agentic Abstention）和视频Agent桥接等多个维度。世界模型方向3篇各具特色：DVG-WM 以解耦视频生成赋能机器人操作、AdaJEPA 实现自适应潜空间、Tailor-Bench 揭示长尾评估缺陷。LLM 方向亮点：Yale 提出元认知 RL 训练不确定性表达（63%）、Meta 发布 TUA-Bench 终端使用Agent基准、腾讯 ReFreeKV 实现无需阈值的 KV Cache 压缩。机器人方向 Freeform Preference Learning 以自由形式人类反馈替代手工奖励设计，提升38个百分点。FuriosaAI 的 AsyncOPD 首次量化在线策略蒸馏的异步容忍度边界。",

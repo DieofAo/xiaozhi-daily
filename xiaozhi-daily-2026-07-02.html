@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>小小志AI日报 - 2026年7月2日 周四</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans SC', sans-serif;
+  background: #0a0e1a;
+  color: #e0e6f0;
+  line-height: 1.7;
+  min-height: 100vh;
+}
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+header {
+  text-align: center;
+  margin-bottom: 48px;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, rgba(59,130,246,0.08) 0%, rgba(139,92,246,0.08) 100%);
+  border-radius: 20px;
+  border: 1px solid rgba(99,102,241,0.15);
+}
+header h1 {
+  font-size: 2rem;
+  background: linear-gradient(135deg, #60a5fa, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 8px;
+}
+header .date {
+  color: #94a3b8;
+  font-size: 1rem;
+}
+header .subtitle {
+  color: #64748b;
+  font-size: 0.9rem;
+  margin-top: 6px;
+}
+.highlight-banner {
+  background: linear-gradient(135deg, rgba(249,115,22,0.1) 0%, rgba(234,179,8,0.08) 100%);
+  border: 1px solid rgba(249,115,22,0.2);
+  border-radius: 14px;
+  padding: 20px 24px;
+  margin-bottom: 36px;
+}
+.hl-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fb923c;
+  margin-bottom: 8px;
+}
+.hl-text {
+  font-size: 0.92rem;
+  color: #cbd5e1;
+  line-height: 1.7;
+}
+.section {
+  margin-bottom: 40px;
+}
+.section-title {
+  font-size: 1.4rem;
+  color: #f1f5f9;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(99,102,241,0.2);
+}
+.paper-card {
+  background: rgba(30,41,59,0.6);
+  border: 1px solid rgba(99,102,241,0.12);
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 16px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.paper-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(99,102,241,0.1);
+  border-color: rgba(99,102,241,0.3);
+}
+.paper-card.hot {
+  border-color: rgba(249,115,22,0.25);
+  background: rgba(30,41,59,0.7);
+}
+.paper-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #f8fafc;
+  margin-bottom: 8px;
+}
+.paper-meta {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-bottom: 10px;
+}
+.summary-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+@media (max-width: 640px) {
+  .summary-grid { grid-template-columns: 1fr; }
+}
+.summary-item {
+  background: rgba(15,23,42,0.5);
+  border-radius: 10px;
+  padding: 12px 14px;
+  border: 1px solid rgba(99,102,241,0.08);
+}
+.summary-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #818cf8;
+  margin-bottom: 4px;
+}
+.summary-text {
+  font-size: 0.88rem;
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+.paper-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.tag {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+.tag-agent { background: rgba(16,185,129,0.12); color: #34d399; }
+.tag-llm { background: rgba(99,102,241,0.12); color: #818cf8; }
+.tag-multimodal { background: rgba(244,114,182,0.12); color: #f472b6; }
+.tag-world { background: rgba(251,191,36,0.12); color: #fbbf24; }
+.tag-robot { background: rgba(251,146,60,0.12); color: #fb923c; }
+.tag-rl { background: rgba(45,212,191,0.12); color: #2dd4bf; }
+.tag-video { background: rgba(168,85,247,0.12); color: #a855f7; }
+.tag-benchmark { background: rgba(34,211,238,0.12); color: #22d3ee; }
+.tag-vla { background: rgba(59,130,246,0.12); color: #60a5fa; }
+.tag-safety { background: rgba(239,68,68,0.12); color: #f87171; }
+.tag-memory { background: rgba(192,132,252,0.12); color: #c084fc; }
+.tag-reasoning { background: rgba(132,204,22,0.12); color: #a3e635; }
+.tag-code { background: rgba(52,211,153,0.12); color: #34d399; }
+.tag-survey { background: rgba(6,182,212,0.12); color: #22d3ee; }
+.tag-science { background: rgba(217,119,6,0.12); color: #f59e0b; }
+.tag-medical { background: rgba(239,68,68,0.12); color: #f87171; }
+.tag-systems { background: rgba(56,189,248,0.12); color: #38bdf8; }
+.tag-3d { background: rgba(148,163,184,0.12); color: #94a3b8; }
+.tag-data { background: rgba(250,204,21,0.12); color: #facc15; }
+.tag-infra { background: rgba(167,139,250,0.12); color: #a78bfa; }
+.tag-generation { background: rgba(249,115,22,0.12); color: #f97316; }
+.tag-navigation { background: rgba(59,130,246,0.12); color: #60a5fa; }
+.tag-distillation { background: rgba(34,211,238,0.12); color: #22d3ee; }
+.tag-humanoid { background: rgba(251,146,60,0.12); color: #fb923c; }
+.tag-tool { background: rgba(52,211,153,0.12); color: #34d399; }
+.tag-gui { background: rgba(244,114,182,0.12); color: #f472b6; }
+.hot-badge {
+  display: inline;
+  margin-right: 4px;
+}
+.info-card {
+  background: rgba(30,41,59,0.6);
+  border: 1px solid rgba(99,102,241,0.12);
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 16px;
+}
+.paper-summary {
+  font-size: 0.9rem;
+  color: #cbd5e1;
+  line-height: 1.7;
+  margin-bottom: 14px;
+}
+.paper-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.paper-links a {
+  display: inline-block;
+  padding: 5px 14px;
+  background: rgba(99,102,241,0.12);
+  color: #818cf8;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+.paper-links a:hover {
+  background: rgba(99,102,241,0.25);
+}
+.model-card {
+  background: rgba(30,41,59,0.6);
+  border: 1px solid rgba(99,102,241,0.12);
+  border-radius: 14px;
+  padding: 20px 24px;
+  margin-bottom: 16px;
+}
+.model-name {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #f8fafc;
+  margin-bottom: 6px;
+}
+.model-meta {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-bottom: 8px;
+}
+.stats {
+  text-align: center;
+  padding: 30px;
+  margin-top: 40px;
+  background: rgba(30,41,59,0.4);
+  border-radius: 14px;
+  border: 1px solid rgba(99,102,241,0.1);
+}
+.stats p { color: #94a3b8; font-size: 0.88rem; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <h1>📡 小小志AI日报</h1>
+  <div class="date">2026年7月2日 周四</div>
+  <div class="subtitle">📝 arXiv 0 篇（超时） · HF 热门 7 篇</div>
+</header>
+
+<div class="highlight-banner">
+  <div class="hl-title">🔥 今日看点</div>
+  <div class="hl-text">
+    VLA 方向迎来反思之作：Act2Answer 首次追问 VLA 模型是否保留了基本常识，揭示微调导致的常识遗忘现象。Agent 方向两篇各具特色：字节跳动 Dockerless 无需容器环境即可验证代码智能体输出，腾讯 SkillHone 通过持久化决策历史驱动技能持续进化。LLM 方向三篇覆盖推理加速（BlockPilot 自适应推测解码）、元优化（Evolution Fine-Tuning 371 任务进化搜索）和 3D 标记化（InstOk3D 实例级场景建模）。世界模型方向 Orca 以轻量级下一状态预测统一多模态世界建模。
+  </div>
+</div>
+
+<!-- 🤖 VLA Section -->
+<section class="section">
+  <h2 class="section-title">🤖 VLA · Vision-Language-Action</h2>
+
+  <div class="paper-card hot">
+    <div class="paper-title"><span class="hot-badge">🔥</span> Does VLA Even Know the Basics? Measuring Commonsense and World Knowledge Retention in Vision-Language-Action Models</div>
+    <div class="paper-meta">arXiv 2026</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">构建 Act2Answer 基准测试，将常识问答作为 VLA 模型的辅助评估维度，系统测量 VLA 模型在微调后对基础常识和世界知识的保留程度</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次直接追问 VLA 模型是否真正理解基本常识而非仅学习动作映射，触及 VLA 领域中被忽视的核心认知问题——微调是否以牺牲常识为代价</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在多个主流 VLA 模型上评估了常识保留率，揭示了微调后常识显著下降的现象，提供项目主页和代码复现</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">对整个 VLA 领域的反思性工作，核心问题是微调后的 VLA 模型是否变成了"只会动手不会动脑"的操作器，建议所有 VLA 开发者关注</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-vla">VLA</span>
+      <span class="tag tag-benchmark">Commonsense</span>
+      <span class="tag tag-safety">World Knowledge</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.19297">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.19297">PDF</a>
+      <a href="https://tttonyalpha.github.io/act2answer/">Project</a>
+      <a href="https://github.com/CognitiveAISystems/Act2Answer">Code (6⭐)</a>
+    </div>
+  </div>
+</section>
+
+<!-- 🌍 World Model Section -->
+<section class="section">
+  <h2 class="section-title">🌍 World Model · 世界模型</h2>
+
+  <div class="paper-card">
+    <div class="paper-title">Orca: The World is in Your Mind</div>
+    <div class="paper-meta">arXiv 2026</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出 Orca 世界模型，以下一状态预测为核心任务，在轻量级架构上将多模态输入统一映射到未来状态表示，无需复杂的显式建模管道</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次提出 Next-State-Prediction 统一范式，将视觉、动作等多模态输入压缩为单一预测目标，兼顾统一性和轻量化</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">以 125K 基础规模验证范式有效性，可扩展至 160M 参数，在多模态输入场景下提供一致的世界状态预测</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">将世界建模简化为单一预测任务是优雅的设计思路，轻量化路线对资源受限的具身场景有实际价值，建议关注长程预测精度和真机验证</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-world">World Model</span>
+      <span class="tag tag-multimodal">Multimodal</span>
+      <span class="tag tag-generation">Next-State Prediction</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.30534">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.30534">PDF</a>
+      <a href="https://orca-wm.github.io/">Project</a>
+    </div>
+  </div>
+</section>
+
+<!-- 🧩 Agent Section -->
+<section class="section">
+  <h2 class="section-title">🧩 Agent · 智能体</h2>
+
+  <div class="paper-card">
+    <div class="paper-title">Dockerless: Environment-Free Program Verifier for Coding Agents</div>
+    <div class="paper-meta">arXiv 2026 · ByteDance</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出无需 Docker 容器的代码验证器，直接在模型层面评估代码智能体的输出正确性，以无环境依赖的方式替代传统的沙箱执行验证</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">彻底摆脱代码智能体对 Docker 沙箱环境的依赖，通过环境无关的静态验证机制大幅降低部署复杂度和资源开销，解决了实际落地的核心工程痛点</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在 SWE-bench 上以 9B 参数模型达到 62.0% 成功率，无环境依赖保持 50.0% 和 35.2% 的核心指标</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">字节跳动的实用化探索，直指代码 Agent 部署中环境依赖这一长期痛点，无环境验证如果成熟将大幅降低企业级 Agent 落地的工程成本</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-agent">Agent</span>
+      <span class="tag tag-code">Code Verification</span>
+      <span class="tag tag-systems">Infrastructure</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.28436">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.28436">PDF</a>
+    </div>
+  </div>
+
+  <div class="paper-card hot">
+    <div class="paper-title"><span class="hot-badge">🔥</span> SkillHone: A Harness for Continual Agent Skill Evolution Through Persistent Decision History</div>
+    <div class="paper-meta">arXiv 2026 · Tencent</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出角色分离的持续技能进化框架，通过持久化存储智能体的历史决策数据形成经验库，驱动技能在任务迭代中自我精进</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次将持久化决策历史作为 Agent 技能进化的核心驱动力，结合角色分离架构将经验积累与技能执行解耦，实现持续的自我改进</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在多个基准测试上验证了技能持续提升的有效性，开源代码获得 11 星</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">腾讯在 Agent 长期进化方向的探索具有战略价值，持久化决策历史作为经验库的设计与人类学习模式相似，建议关注技能退化与知识遗忘的边界</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-agent">Agent</span>
+      <span class="tag tag-memory">Skill Evolution</span>
+      <span class="tag tag-rl">Decision History</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.08671">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.08671">PDF</a>
+      <a href="https://zwlijay.github.io/SkillHone-Project/">Project</a>
+      <a href="https://github.com/Tencent/SkillHone">Code (11⭐)</a>
+    </div>
+  </div>
+</section>
+
+<!-- 🧠 LLM Section -->
+<section class="section">
+  <h2 class="section-title">🧠 LLM · 语言模型</h2>
+
+  <div class="paper-card">
+    <div class="paper-title">BlockPilot: Instance-Adaptive Policy Learning for Diffusion-based Speculative Decoding</div>
+    <div class="paper-meta">arXiv 2026 · AMAP-ML</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">基于扩散模型的推测解码框架，通过学习实例自适应策略为每个输入动态选择最优的草稿生成方案，替代传统的固定策略推测解码</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出实例级别的自适应策略学习机制，使推测解码首次摆脱一刀切的草稿模型选择模式，根据输入难度动态调整生成策略</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">基于 Qwen3-4B 验证扩散推测解码加速效果，开源代码获得 58 星</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">推测解码方向的工程优化，自适应策略比固定策略更贴合实际部署场景，代码社区活跃度（58 星）表明较高关注度</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-llm">LLM</span>
+      <span class="tag tag-systems">Speculative Decoding</span>
+      <span class="tag tag-distillation">Diffusion</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.31315">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.31315">PDF</a>
+      <a href="https://github.com/AMAP-ML/BlockPilot">Code (58⭐)</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">Scenes as Objects, Not Primitives: Instance-Structured 3D Tokenization from Unposed Views</div>
+    <div class="paper-meta">arXiv 2026</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出 InstOk3D 实例结构化 3D 标记化框架，将场景分解为独立的物体实例而非传统几何基元，从非固定视角图像中自动完成标记化</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次将 3D 场景理解从几何层级提升到语义层级，以物体实例而非点云或网格作为基本建模单元，更贴近人类的场景理解方式</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在操作和抓取任务上验证了实例级 3D 标记化的有效性，提供项目主页</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">将 3D 场景标记化从几何基元升级为语义实例是正确方向，对机器人操作中的物体识别和操作规划有直接价值，建议关注其在复杂多物体场景的表现</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-3d">3D Tokenization</span>
+      <span class="tag tag-multimodal">Scene Understanding</span>
+      <span class="tag tag-robot">Robotics</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.29513">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.29513">PDF</a>
+      <a href="https://yoomimi.github.io/instok3d">Project</a>
+    </div>
+  </div>
+
+  <div class="paper-card hot">
+    <div class="paper-title"><span class="hot-badge">🔥</span> Evolution Fine-Tuning: Learning to Discover Across 371 Optimization Tasks</div>
+    <div class="paper-meta">arXiv 2026 · Minnesota NLP</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出进化微调方法，将进化搜索与大语言模型微调相结合，让模型在 371 个优化任务上自动发现跨任务的通用优化策略</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次将进化搜索作为微调的训练信号，使模型从优化问题本身中学习可迁移的优化能力，而非为每个任务单独设计优化器</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在 371 个优化任务上平均提升 10.22%，使用 156K 训练样本在 2B 到 9B 参数规模间验证，开源代码获得 10 星</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">以优化任务本身为训练目标的元学习思路令人印象深刻，371 个任务的覆盖面展示了方法的泛化潜力，建议关注其在未见任务类型上的迁移边界</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-llm">LLM</span>
+      <span class="tag tag-rl">Evolutionary Search</span>
+      <span class="tag tag-science">Meta-Learning</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.29082">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.29082">PDF</a>
+      <a href="https://open-galapagos.github.io/evolution_finetuning/">Project</a>
+      <a href="https://github.com/Open-Galapagos/evolution-fine-tuning">Code (10⭐)</a>
+    </div>
+  </div>
+</section>
+
+<div class="stats">
+  <p>📡 自动生成于 2026年7月2日 · 数据截至 09:36 UTC · 关注 VLA · Robotics · World Model · LLM · Multimodal · Agent</p>
+</div>
+
+</div>
+</body>
+</html>
