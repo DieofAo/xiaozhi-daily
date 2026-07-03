@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>小小志AI日报 - 2026年7月3日 周五</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans SC', sans-serif;
+  background: #0a0e1a;
+  color: #e0e6f0;
+  line-height: 1.7;
+  min-height: 100vh;
+}
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+header {
+  text-align: center;
+  margin-bottom: 48px;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, rgba(59,130,246,0.08) 0%, rgba(139,92,246,0.08) 100%);
+  border-radius: 20px;
+  border: 1px solid rgba(99,102,241,0.15);
+}
+header h1 {
+  font-size: 2rem;
+  background: linear-gradient(135deg, #60a5fa, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 8px;
+}
+header .date {
+  color: #94a3b8;
+  font-size: 1rem;
+}
+header .subtitle {
+  color: #64748b;
+  font-size: 0.9rem;
+  margin-top: 6px;
+}
+.highlight-banner {
+  background: linear-gradient(135deg, rgba(249,115,22,0.1) 0%, rgba(234,179,8,0.08) 100%);
+  border: 1px solid rgba(249,115,22,0.2);
+  border-radius: 14px;
+  padding: 20px 24px;
+  margin-bottom: 36px;
+}
+.hl-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fb923c;
+  margin-bottom: 8px;
+}
+.hl-text {
+  font-size: 0.92rem;
+  color: #cbd5e1;
+  line-height: 1.7;
+}
+.section {
+  margin-bottom: 40px;
+}
+.section-title {
+  font-size: 1.4rem;
+  color: #f1f5f9;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(99,102,241,0.2);
+}
+.paper-card {
+  background: rgba(30,41,59,0.6);
+  border: 1px solid rgba(99,102,241,0.12);
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 16px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.paper-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(99,102,241,0.1);
+  border-color: rgba(99,102,241,0.3);
+}
+.paper-card.hot {
+  border-color: rgba(249,115,22,0.25);
+  background: rgba(30,41,59,0.7);
+}
+.paper-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #f8fafc;
+  margin-bottom: 8px;
+}
+.paper-meta {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-bottom: 10px;
+}
+.summary-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+@media (max-width: 640px) {
+  .summary-grid { grid-template-columns: 1fr; }
+}
+.summary-item {
+  background: rgba(15,23,42,0.5);
+  border-radius: 10px;
+  padding: 12px 14px;
+  border: 1px solid rgba(99,102,241,0.08);
+}
+.summary-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #818cf8;
+  margin-bottom: 4px;
+}
+.summary-text {
+  font-size: 0.88rem;
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+.paper-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.tag {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+.tag-agent { background: rgba(16,185,129,0.12); color: #34d399; }
+.tag-llm { background: rgba(99,102,241,0.12); color: #818cf8; }
+.tag-multimodal { background: rgba(244,114,182,0.12); color: #f472b6; }
+.tag-world { background: rgba(251,191,36,0.12); color: #fbbf24; }
+.tag-robot { background: rgba(251,146,60,0.12); color: #fb923c; }
+.tag-rl { background: rgba(45,212,191,0.12); color: #2dd4bf; }
+.tag-video { background: rgba(168,85,247,0.12); color: #a855f7; }
+.tag-benchmark { background: rgba(34,211,238,0.12); color: #22d3ee; }
+.tag-vla { background: rgba(59,130,246,0.12); color: #60a5fa; }
+.tag-safety { background: rgba(239,68,68,0.12); color: #f87171; }
+.tag-memory { background: rgba(192,132,252,0.12); color: #c084fc; }
+.tag-reasoning { background: rgba(132,204,22,0.12); color: #a3e635; }
+.tag-code { background: rgba(52,211,153,0.12); color: #34d399; }
+.tag-survey { background: rgba(6,182,212,0.12); color: #22d3ee; }
+.tag-science { background: rgba(217,119,6,0.12); color: #f59e0b; }
+.tag-medical { background: rgba(239,68,68,0.12); color: #f87171; }
+.tag-systems { background: rgba(56,189,248,0.12); color: #38bdf8; }
+.tag-3d { background: rgba(148,163,184,0.12); color: #94a3b8; }
+.tag-data { background: rgba(250,204,21,0.12); color: #facc15; }
+.tag-infra { background: rgba(167,139,250,0.12); color: #a78bfa; }
+.tag-generation { background: rgba(249,115,22,0.12); color: #f97316; }
+.tag-navigation { background: rgba(59,130,246,0.12); color: #60a5fa; }
+.tag-distillation { background: rgba(34,211,238,0.12); color: #22d3ee; }
+.tag-humanoid { background: rgba(251,146,60,0.12); color: #fb923c; }
+.tag-tool { background: rgba(52,211,153,0.12); color: #34d399; }
+.tag-gui { background: rgba(244,114,182,0.12); color: #f472b6; }
+.hot-badge {
+  display: inline;
+  margin-right: 4px;
+}
+.info-card {
+  background: rgba(30,41,59,0.6);
+  border: 1px solid rgba(99,102,241,0.12);
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 16px;
+}
+.paper-summary {
+  font-size: 0.9rem;
+  color: #cbd5e1;
+  line-height: 1.7;
+  margin-bottom: 14px;
+}
+.paper-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.paper-links a {
+  display: inline-block;
+  padding: 5px 14px;
+  background: rgba(99,102,241,0.12);
+  color: #818cf8;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+.paper-links a:hover {
+  background: rgba(99,102,241,0.25);
+}
+.model-card {
+  background: rgba(30,41,59,0.6);
+  border: 1px solid rgba(99,102,241,0.12);
+  border-radius: 14px;
+  padding: 20px 24px;
+  margin-bottom: 16px;
+}
+.model-name {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #f8fafc;
+  margin-bottom: 6px;
+}
+.model-meta {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-bottom: 8px;
+}
+.stats {
+  text-align: center;
+  padding: 30px;
+  margin-top: 40px;
+  background: rgba(30,41,59,0.4);
+  border-radius: 14px;
+  border: 1px solid rgba(99,102,241,0.1);
+}
+.stats p { color: #94a3b8; font-size: 0.88rem; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <h1>📡 小小志AI日报</h1>
+  <div class="date">2026年7月3日 周五</div>
+  <div class="subtitle">📝 arXiv 0 篇（超时） · 🤗 HF 热门 7 篇 · 🤖 HF 模型 2 个</div>
+</header>
+
+<div class="highlight-banner">
+  <div class="hl-title">🔥 今日看点</div>
+  <div class="hl-text">
+    今日 HF 热门论文 7 篇，覆盖 VLA、LLM、Agent 和 Multimodal 方向。字节跳动发布 Seed2.0 技术报告，面向真实世界复杂场景全面升级基础模型能力，为今日重磅发布。VLA 方向 DART 提出域算术方法实现单次环境适应，通过向量运算简化 VLA 部署。Agent 方向 MemSyco-Bench 首次系统评估智能体记忆谄媚偏见，揭示记忆机制本身的可靠性隐忧。LLM 方向两篇均为务实的系统优化：微软 ELDR 利用专家局部性优化 MoE 推理，清华 CausalMix 以因果推断框架重新定义数据混合策略。Multimodal 方向探索非对称变分学习，承认模态间贡献天然不对等。
+  </div>
+</div>
+
+<!-- 🤖 VLA Section -->
+<section class="section">
+  <h2 class="section-title">🤖 VLA · Vision-Language-Action</h2>
+
+  <div class="paper-card hot">
+    <div class="paper-title"><span class="hot-badge">🔥</span> Domain Arithmetic: One-Shot VLA Adaptation under Environmental Shifts</div>
+    <div class="paper-meta">arXiv 2026 · Seoul National University</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出域算术方法 DART，将 VLA 模型在不同环境间的域差异编码为向量空间中的方向向量，通过简单的向量加减法实现一次性环境适应</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次将域适应问题转化为可组合的算术运算，使 VLA 模型无需重新训练或微调即可在单次前向传播中适应新的环境变化，大幅降低了部署成本</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在多种环境变化场景中验证了一次性适应的有效性，开源代码获得 11 星并附带项目主页和完整复现环境</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">VLA 模型从实验室到真实场景的核心瓶颈就是环境泛化，域算术为这一问题提供了简洁优雅的解决方案，向量运算式的适应机制具有可解释性优势</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-vla">VLA</span>
+      <span class="tag tag-robot">Domain Adaptation</span>
+      <span class="tag tag-tool">One-Shot</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2607.00666">arXiv</a>
+      <a href="https://arxiv.org/pdf/2607.00666">PDF</a>
+      <a href="https://twkang43.github.io/projects/dart/">Project</a>
+      <a href="https://github.com/snumprlab/dart">Code (11⭐)</a>
+    </div>
+  </div>
+</section>
+
+<!-- 🧠 LLM Section -->
+<section class="section">
+  <h2 class="section-title">🧠 LLM · 语言模型</h2>
+
+  <div class="paper-card">
+    <div class="paper-title">ELDR: Expert-Locality-Aware Decode Routing for PD-Disaggregated MoE Serving</div>
+    <div class="paper-meta">arXiv 2026 · Microsoft Research</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出基于专家局部性感知的解码路由策略，在预填充与解码分离的 MoE 推理服务架构中，利用专家激活的位置局部性特征优化路由决策</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次利用 MoE 模型中专家激活的局部性规律来指导解码路由，在 PD 分离架构下实现了计算资源的高效调度，减少跨节点通信开销</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在 MoE 推理服务场景中实现了 13.9% 的吞吐量提升，验证了专家局部性感知路由的实际收益</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">微软在大规模 MoE 推理系统工程方向的实践，专家局部性是一个被低估的优化维度，PD 分离架构与之结合有系统级洞察力</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-llm">LLM</span>
+      <span class="tag tag-systems">MoE Serving</span>
+      <span class="tag tag-infra">Inference</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2607.00466">arXiv</a>
+      <a href="https://arxiv.org/pdf/2607.00466">PDF</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">CausalMix: Data Mixture as Causal Inference for Language Model Training</div>
+    <div class="paper-meta">arXiv 2026 · Tsinghua University</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出因果推断框架下的数据混合方法，将训练数据的配比问题建模为因果干预效应估计，通过因果结构发现优化各数据源的混合比例</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次将因果推断引入数据混合问题，使数据配比从依赖经验的试错过程升级为有严格因果理论支撑的系统性方法论</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在 0.5B 到 7B 参数规模上验证了因果混合策略的有效性，基于 Qwen3-4B-Base 和 800K 训练样本进行了系统实验</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">数据混合是预训练中决定模型能力的关键因素，因果推断视角为其提供了理论可解释性，建议关注该方法在大规模千亿参数模型上的验证</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-llm">LLM</span>
+      <span class="tag tag-data">Data Mixture</span>
+      <span class="tag tag-reasoning">Causal Inference</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2607.01104">arXiv</a>
+      <a href="https://arxiv.org/pdf/2607.01104">PDF</a>
+    </div>
+  </div>
+</section>
+
+<!-- 🧩 Agent Section -->
+<section class="section">
+  <h2 class="section-title">🧩 Agent · 智能体</h2>
+
+  <div class="paper-card hot">
+    <div class="paper-title"><span class="hot-badge">🔥</span> MemSyco-Bench: Benchmarking Sycophancy in Agent Memory</div>
+    <div class="paper-meta">arXiv 2026</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">构建首个专门评估 Agent 记忆系统谄媚偏见的基准测试，通过基于大语言模型的自动化评估方法测量 Agent 在记忆存储和检索中迎合用户倾向的程度</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次将谄媚偏见的研究从对话层面延伸到 Agent 记忆系统，发现 Agent 不仅在对话中可能迎合用户，其记忆机制本身也存在事实扭曲风险</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在多个主流 Agent 框架上系统评估了记忆谄媚的程度，揭示了当前记忆系统在事实保持和用户迎合之间的不平衡，开源代码获得 12 星</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">Agent 安全领域的创新视角，如果智能体的记忆都倾向于迎合用户，那长期依赖 Agent 记忆的知识工作将面临系统性偏差风险，值得高度关注</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-agent">Agent</span>
+      <span class="tag tag-memory">Memory</span>
+      <span class="tag tag-safety">Sycophancy</span>
+      <span class="tag tag-benchmark">Benchmark</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2607.01071">arXiv</a>
+      <a href="https://arxiv.org/pdf/2607.01071">PDF</a>
+      <a href="https://github.com/XMUDeepLIT/MemSyco-Bench">Code (12⭐)</a>
+    </div>
+  </div>
+</section>
+
+<!-- 🎨 Multimodal Section -->
+<section class="section">
+  <h2 class="section-title">🎨 Multimodal · 多模态</h2>
+
+  <div class="paper-card">
+    <div class="paper-title">Multimodal Continuous Reasoning via Asymmetric Mutual Variational Learning</div>
+    <div class="paper-meta">arXiv 2026</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出非对称互变分学习框架，将多模态连续推理建模为各模态间的非对称变分推断问题，利用模态信息丰富度的差异建立互补学习机制</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次设计非对称的模态交互机制，承认不同模态在推理任务中贡献不对等的前提，让信息更丰富的模态指导信息较少模态的推理过程</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在视觉推理和多步推理任务上验证了非对称变分框架的有效性，优于传统对称多模态融合方法</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">非对称设计的直觉符合实际认知——不同模态在推理中本就不应被平等对待，这一思路对多模态推理架构设计有启发性</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-multimodal">Multimodal</span>
+      <span class="tag tag-reasoning">Variational Learning</span>
+      <span class="tag tag-llm">Reasoning</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2607.00461">arXiv</a>
+      <a href="https://arxiv.org/pdf/2607.00461">PDF</a>
+    </div>
+  </div>
+</section>
+
+<!-- 📄 Other Section -->
+<section class="section">
+  <h2 class="section-title">📄 其他值得关注</h2>
+
+  <div class="paper-card hot">
+    <div class="paper-title"><span class="hot-badge">🔥</span> Seed2.0 Model Card: Towards Intelligence Frontier for Real-World Complexity</div>
+    <div class="paper-meta">arXiv 2026 · ByteDance Seed</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">发布 Seed2.0 系列模型技术报告，面向真实世界复杂场景进行全面升级，覆盖基础架构、训练方法和多维度评估体系的系统描述</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">Seed 系列的重磅版本迭代，围绕真实世界复杂性问题进行系统性优化，代表了字节跳动基础模型的最新能力边界</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">技术报告详细阐述了方法选择、评估策略和基准测试结果，为业界提供了完整的技术参考</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">字节跳动基础模型的最新旗舰版本，Seed2.0 定位为面向真实世界复杂性的前沿智能探索，建议重点关注其在多模态和 Agent 方向的实际表现</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-llm">Foundation Model</span>
+      <span class="tag tag-multimodal">Model Card</span>
+      <span class="tag tag-generation">Seed2.0</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2607.00248">arXiv</a>
+      <a href="https://arxiv.org/pdf/2607.00248">PDF</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">TurboServe: Serving Streaming Video Generation Efficiently and Economically</div>
+    <div class="paper-meta">arXiv 2026 · Tsinghua University</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出 GPU-CPU 混合架构的流式视频生成服务框架，将视频生成的部分计算任务卸载到 CPU 端，在保证生成质量的前提下优化服务部署成本</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">打破视频生成服务必须全 GPU 部署的假设，通过计算任务的智能调度实现 GPU 与 CPU 的协同工作，显著降低流式视频生成的部署经济门槛</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">实现 GPU 成本降低 37.5% 和端到端延迟优化 37.2%，开源代码获得 14 星</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">视频生成从研究走向产业化的关键基础设施研究，37.5% 的成本节省对商业部署有直接经济价值，清华在系统优化方向的又一务实贡献</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-video">Video Generation</span>
+      <span class="tag tag-systems">Serving</span>
+      <span class="tag tag-infra">GPU-CPU</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.19271">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.19271">PDF</a>
+      <a href="https://github.com/shengshu-ai/TurboServe">Code (14⭐)</a>
+    </div>
+  </div>
+</section>
+
+<!-- 🤗 Models Section -->
+<section class="section">
+  <h2 class="section-title">🤗 HuggingFace 热门模型</h2>
+
+  <div class="model-card">
+    <div class="model-name">PAR</div>
+    <div class="model-meta">发布方：ByteDance Seed · 方向：多模态生成</div>
+    <div class="paper-links">
+      <a href="https://huggingface.co/ByteDance-Seed/PAR">HuggingFace</a>
+    </div>
+  </div>
+
+  <div class="model-card">
+    <div class="model-name">Krea-2-Turbo-sdnq-hadamard-uint4</div>
+    <div class="model-meta">发布方：vladmandic · 方向：图像生成（量化版）</div>
+    <div class="paper-links">
+      <a href="https://huggingface.co/vladmandic/Krea-2-Turbo-sdnq-hadamard-uint4">HuggingFace</a>
+    </div>
+  </div>
+</section>
+
+<div class="stats">
+  <p>📡 自动生成于 2026年7月3日 · 数据截至 09:27 UTC · 关注 VLA · Robotics · World Model · LLM · Multimodal · Agent</p>
+</div>
+
+</div>
+</body>
+</html>
