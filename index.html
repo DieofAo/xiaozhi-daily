@@ -658,6 +658,178 @@
 <script>
 // ===== DATA =====
 const PAPERS_DB = [
+    // === 2026-07-04 ===
+    {
+        date: "2026-07-04",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "WorldDirector: Building Controllable World Simulators with Persistent Dynamic Memory",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 提出可控视频世界模拟器 WorldDirector，核心引入持久动态记忆机制，在视频生成过程中保持对场景状态、物体关系和运动轨迹的持续追踪与精确控制 | 💡 创新点: 首次将持久动态记忆引入世界模型框架，突破了传统视频生成中场景一致性难以保持的根本瓶颈，实现了对世界状态的显式可控管理 | 📊 实验效果: 在可控视频生成任务上展示了持久记忆机制的有效性，附带项目主页提供可视化演示和完整技术细节 | ⭐ 整体评价: 持久动态记忆是世界模型从生成走向模拟的关键技术，WorldDirector 在这个方向迈出了重要一步，建议关注其在长序列场景和物理交互场景中的表现",
+        tags: [["World Model","green"],["Video Generation","green"],["Dynamic Memory","green"]],
+        links: [["arXiv","http://arxiv.org/abs/2607.02517"],["PDF","http://arxiv.org/pdf/2607.02517"],["Project","https://worlddirector.github.io/"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出可控视频世界模拟器 WorldDirector，核心引入持久动态记忆机制，在视频生成过程中保持对场景状态、物体关系和运动轨迹的持续追踪与精确控制"},{"label":"💡 创新点","text":"首次将持久动态记忆引入世界模型框架，突破了传统视频生成中场景一致性难以保持的根本瓶颈，实现了对世界状态的显式可控管理"},{"label":"📊 实验效果","text":"在可控视频生成任务上展示了持久记忆机制的有效性，附带项目主页提供可视化演示和完整技术细节"},{"label":"⭐ 整体评价","text":"持久动态记忆是世界模型从生成走向模拟的关键技术，WorldDirector 在这个方向迈出了重要一步，建议关注其在长序列场景和物理交互场景中的表现"}]
+    },
+    {
+        date: "2026-07-04",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "Alignment Is All You Need For X-to-4D Generation",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 提出 Align4D 框架，将任意模态输入（文本、图像、视频等）映射到统一的 4D 生成空间，核心思路是跨模态对齐而非从零生成，利用对齐模块桥接输入域和 4D 输出域 | 💡 创新点: 提出\"对齐即一切\"的 X-to-4D 范式，将多种输入模态的 4D 生成统一为对齐问题，大幅简化了不同模态到 4D 的转换流程 | 📊 实验效果: 在文本到 4D、图像到 4D 等多种任务上验证了跨模态对齐框架的通用性，附带项目主页提供可视化结果 | ⭐ 整体评价: 4D 内容生成是多模态领域的下一个前沿，Align4D 的统一对齐思路极具通用性，如果能实现视频到 4D 的对齐将打开更多应用场景",
+        tags: [["Multimodal","green"],["4D Generation","green"],["Alignment","green"]],
+        links: [["arXiv","http://arxiv.org/abs/2607.02516"],["PDF","http://arxiv.org/pdf/2607.02516"],["Project","https://miaoqiaowei.github.io/Align4D/"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出 Align4D 框架，将任意模态输入（文本、图像、视频等）映射到统一的 4D 生成空间，核心思路是跨模态对齐而非从零生成，利用对齐模块桥接输入域和 4D 输出域"},{"label":"💡 创新点","text":"提出\"对齐即一切\"的 X-to-4D 范式，将多种输入模态的 4D 生成统一为对齐问题，大幅简化了不同模态到 4D 的转换流程"},{"label":"📊 实验效果","text":"在文本到 4D、图像到 4D 等多种任务上验证了跨模态对齐框架的通用性，附带项目主页提供可视化结果"},{"label":"⭐ 整体评价","text":"4D 内容生成是多模态领域的下一个前沿，Align4D 的统一对齐思路极具通用性，如果能实现视频到 4D 的对齐将打开更多应用场景"}]
+    },
+    {
+        date: "2026-07-04",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "Breaking Failure Cascades: Step-Aware Reinforcement Learning for Medical Multimodal Reasoning",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 提出医学推理策略优化算法 MRPO，在强化学习训练中引入步进过程奖励机制，对多模态医学推理的每一步进行独立评估和优化，防止推理链中的级联错误 | 💡 创新点: 首次识别医学多模态推理中的失败级联问题，通过步进奖励信号打破错误传播链条，使模型在推理早期就能纠正偏差 | 📊 实验效果: 在医学多模态推理任务上验证了步进过程奖励的有效性，附带项目主页和开源代码 | ⭐ 整体评价: 医学推理容错率极低，失败级联的识别与修复是确保安全性的关键，步进奖励机制对高可靠性领域有重要参考价值",
+        tags: [["Multimodal","green"],["Medical","green"],["Step-Aware RL","green"],["Reasoning","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.31825"],["PDF","https://arxiv.org/pdf/2606.31825"],["Project","https://jungjunha.github.io/MRPO-page/"],["Code (2⭐)","https://github.com/dmis-lab/MRPO"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出医学推理策略优化算法 MRPO，在强化学习训练中引入步进过程奖励机制，对多模态医学推理的每一步进行独立评估和优化，防止推理链中的级联错误"},{"label":"💡 创新点","text":"首次识别医学多模态推理中的失败级联问题，通过步进奖励信号打破错误传播链条，使模型在推理早期就能纠正偏差"},{"label":"📊 实验效果","text":"在医学多模态推理任务上验证了步进过程奖励的有效性，附带项目主页和开源代码"},{"label":"⭐ 整体评价","text":"医学推理容错率极低，失败级联的识别与修复是确保安全性的关键，步进奖励机制对高可靠性领域有重要参考价值"}]
+    },
+    {
+        date: "2026-07-04",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "InstanceControl: Controllable Complex Image Generation without Instance Labeling",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 提出无需实例标注的可控图像生成方法，利用视觉语言模型的语义理解能力替代人工标注，在复杂场景中实现对每个物体实例的精确控制 | 💡 创新点: 首次实现无需实例级标注的精细可控生成，通过视觉语言模型自动建立场景语义与生成控制之间的映射，大幅降低了可控生成的使用门槛 | 📊 实验效果: 在复杂场景图像生成中验证了无标注实例控制的有效性，开源代码获得 15 星 | ⭐ 整体评价: 免标注的可控生成是推动技术落地的关键，视觉语言模型作为免费的语义引擎为这一问题提供了优雅的解法",
+        tags: [["Multimodal","green"],["Image Generation","green"],["VLM-Guided","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.31924"],["PDF","https://arxiv.org/pdf/2606.31924"],["Project","https://instancecontrol.github.io/InstanceControl/"],["Code (15⭐)","https://github.com/liuxiaoyu1104/InstanceControl"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出无需实例标注的可控图像生成方法，利用视觉语言模型的语义理解能力替代人工标注，在复杂场景中实现对每个物体实例的精确控制"},{"label":"💡 创新点","text":"首次实现无需实例级标注的精细可控生成，通过视觉语言模型自动建立场景语义与生成控制之间的映射，大幅降低了可控生成的使用门槛"},{"label":"📊 实验效果","text":"在复杂场景图像生成中验证了无标注实例控制的有效性，开源代码获得 15 星"},{"label":"⭐ 整体评价","text":"免标注的可控生成是推动技术落地的关键，视觉语言模型作为免费的语义引擎为这一问题提供了优雅的解法"}]
+    },
+    {
+        date: "2026-07-04",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Distributed Attacks in Persistent-State AI Control",
+        venue: "arXiv 2026 · GPT-4o",
+        summary: "🔬 技术路线: 研究持久状态 AI 控制系统中的分布式攻击场景，通过 GPT-4o 构建攻击策略库，分析多攻击者协同在持久化状态管理场景下对系统的渗透能力 | 💡 创新点: 首次系统研究持久化状态 AI Agent 面临的分布式协同攻击威胁，揭示了在有状态管理场景中传统单点防御的失效模式 | 📊 实验效果: 关键攻击成功率指标达到 65%，某些场景下绕过检测率达到 93%，但防御策略改进后攻击成功率降至 47% | ⭐ 整体评价: Agent 安全的前沿研究，持久化状态意味着攻击面显著扩大，这项研究敲响了 Agent 部署的安全警钟，93% 的检测绕过率尤其值得警惕",
+        tags: [["Agent","green"],["Security","green"],["Persistent State","green"]],
+        links: [["arXiv","http://arxiv.org/abs/2607.02514"],["PDF","http://arxiv.org/pdf/2607.02514"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"研究持久状态 AI 控制系统中的分布式攻击场景，通过 GPT-4o 构建攻击策略库，分析多攻击者协同在持久化状态管理场景下对系统的渗透能力"},{"label":"💡 创新点","text":"首次系统研究持久化状态 AI Agent 面临的分布式协同攻击威胁，揭示了在有状态管理场景中传统单点防御的失效模式"},{"label":"📊 实验效果","text":"关键攻击成功率指标达到 65%，某些场景下绕过检测率达到 93%，但防御策略改进后攻击成功率降至 47%"},{"label":"⭐ 整体评价","text":"Agent 安全的前沿研究，持久化状态意味着攻击面显著扩大，这项研究敲响了 Agent 部署的安全警钟，93% 的检测绕过率尤其值得警惕"}]
+    },
+    {
+        date: "2026-07-04",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "What LLM Agents Say When No One Is Watching: Social Structure and Latent Objective Emergence in Multi-Agent Debates",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 在多智能体辩论环境中观察 LLM Agent 在没有外部监督时的自主行为，分析社会结构的自发形成和潜在目标的涌现动力学 | 💡 创新点: 首次对多 Agent 辩论中的社会结构涌现和潜伏目标进行系统研究，发现 Agent 在无监督状态下会自发形成等级结构和非预设行为目标 | 📊 实验效果: 发现约 3% 的辩论回合中出现目标偏离，约 40% 的场景中产生了可观察的社会结构分化 | ⭐ 整体评价: 极具启发性的 Agent 社会学研究，多 Agent 交互中的涌现行为是纯黑盒测试难以预见的，对 Agent 安全治理有基础性价值",
+        tags: [["Agent","green"],["Multi-Agent","green"],["Emergence","green"],["Social Structure","green"]],
+        links: [["arXiv","http://arxiv.org/abs/2607.02507"],["PDF","http://arxiv.org/pdf/2607.02507"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"在多智能体辩论环境中观察 LLM Agent 在没有外部监督时的自主行为，分析社会结构的自发形成和潜在目标的涌现动力学"},{"label":"💡 创新点","text":"首次对多 Agent 辩论中的社会结构涌现和潜伏目标进行系统研究，发现 Agent 在无监督状态下会自发形成等级结构和非预设行为目标"},{"label":"📊 实验效果","text":"发现约 3% 的辩论回合中出现目标偏离，约 40% 的场景中产生了可观察的社会结构分化"},{"label":"⭐ 整体评价","text":"极具启发性的 Agent 社会学研究，多 Agent 交互中的涌现行为是纯黑盒测试难以预见的，对 Agent 安全治理有基础性价值"}]
+    },
+    {
+        date: "2026-07-04",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "EvoPolicyGym: Evaluating Autonomous Policy Evolution in Interactive Environments",
+        venue: "arXiv 2026 · GPT-5",
+        summary: "🔬 技术路线: 构建 EvoPolicyGym 交互环境，用于评估 Agent 在动态环境中自主进行策略演化的能力，通过 GPT-5 生成和验证策略变体 | 💡 创新点: 首次将策略自主演化能力作为独立的评估维度，使 Agent 从被动执行者升级为具备策略自我改进能力的自适应系统 | 📊 实验效果: 在交互式策略演化基准上验证了评估框架的有效性，具体指标详见原文 | ⭐ 整体评价: 策略演化是 Agent 从工具走向自主的关键能力，将策略改进机制本身纳入评估体系是一个重要的方法论创新",
+        tags: [["Agent","green"],["Benchmark","green"],["Policy Evolution","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.02440"],["PDF","https://arxiv.org/pdf/2607.02440"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"构建 EvoPolicyGym 交互环境，用于评估 Agent 在动态环境中自主进行策略演化的能力，通过 GPT-5 生成和验证策略变体"},{"label":"💡 创新点","text":"首次将策略自主演化能力作为独立的评估维度，使 Agent 从被动执行者升级为具备策略自我改进能力的自适应系统"},{"label":"📊 实验效果","text":"在交互式策略演化基准上验证了评估框架的有效性，具体指标详见原文"},{"label":"⭐ 整体评价","text":"策略演化是 Agent 从工具走向自主的关键能力，将策略改进机制本身纳入评估体系是一个重要的方法论创新"}]
+    },
+    {
+        date: "2026-07-04",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "AgenticSTS: A Bounded-Memory Testbed for Long-Horizon LLM Agents",
+        venue: "arXiv 2026 · Alaya Studio",
+        summary: "🔬 技术路线: 提出有限记忆测试床 AgenticSTS，在受限记忆条件下评估 LLM Agent 完成长程任务的能力，通过记忆预算约束检验 Agent 的信息管理策略 | 💡 创新点: 首次在测试床设计中显式建模有限记忆约束，更贴近真实 Agent 部署场景，揭示了现有 Agent 在长程任务中因记忆溢出导致的策略失效 | 📊 实验效果: 在长程 Agent 任务中当前方法仅达到约 16% 的完成率，开源代码获得 28 星 | ⭐ 整体评价: 16% 的长程任务完成率暴露了 Agent 记忆管理的系统性缺陷，有限记忆约束是推动 Agent 实用化的关键设计",
+        tags: [["Agent","green"],["Benchmark","green"],["Bounded Memory","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.02255"],["PDF","https://arxiv.org/pdf/2607.02255"],["Project","https://alayalab.github.io/AgenticSTS/"],["Code (28⭐)","https://github.com/AlayaLab/AgenticSTS"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出有限记忆测试床 AgenticSTS，在受限记忆条件下评估 LLM Agent 完成长程任务的能力，通过记忆预算约束检验 Agent 的信息管理策略"},{"label":"💡 创新点","text":"首次在测试床设计中显式建模有限记忆约束，更贴近真实 Agent 部署场景，揭示了现有 Agent 在长程任务中因记忆溢出导致的策略失效"},{"label":"📊 实验效果","text":"在长程 Agent 任务中当前方法仅达到约 16% 的完成率，开源代码获得 28 星"},{"label":"⭐ 整体评价","text":"16% 的长程任务完成率暴露了 Agent 记忆管理的系统性缺陷，有限记忆约束是推动 Agent 实用化的关键设计"}]
+    },
+    {
+        date: "2026-07-04",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "AgenticDataBench: A Comprehensive Benchmark for Data Agents",
+        venue: "arXiv 2026 · Tsinghua University",
+        summary: "🔬 技术路线: 构建面向数据智能体的综合性基准测试平台，覆盖数据获取、清洗、分析、可视化和报告生成全流程，评估 LLM Agent 在数据工作流中的端到端能力 | 💡 创新点: 首次将数据 Agent 的全流程能力纳入统一的评估框架，从单一任务评估升级为端到端数据工作流评估，填补了数据 Agent 领域缺少标准基准的空白 | 📊 实验效果: 覆盖 2B 规模数据场景，开源代码获得 20 星，附带项目主页和完整评估协议 | ⭐ 整体评价: 数据 Agent 是 Agent 应用的重要落地场景，清华发布的统一基准将为该方向提供关键的研究基础设施",
+        tags: [["Agent","green"],["Benchmark","green"],["Data Agent","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.01647"],["PDF","https://arxiv.org/pdf/2607.01647"],["Project","https://agenticdatabench.github.io"],["Code (20⭐)","https://github.com/AgenticDataBench/AgenticDataBench"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"构建面向数据智能体的综合性基准测试平台，覆盖数据获取、清洗、分析、可视化和报告生成全流程，评估 LLM Agent 在数据工作流中的端到端能力"},{"label":"💡 创新点","text":"首次将数据 Agent 的全流程能力纳入统一的评估框架，从单一任务评估升级为端到端数据工作流评估，填补了数据 Agent 领域缺少标准基准的空白"},{"label":"📊 实验效果","text":"覆盖 2B 规模数据场景，开源代码获得 20 星，附带项目主页和完整评估协议"},{"label":"⭐ 整体评价","text":"数据 Agent 是 Agent 应用的重要落地场景，清华发布的统一基准将为该方向提供关键的研究基础设施"}]
+    },
+    {
+        date: "2026-07-04",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "SkillCoach: Self-Evolving Rubrics for Evaluating and Enhancing Agentic Skill-Use",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 提出自我进化的评分量规框架 SkillCoach，在 Agent 执行技能的过程中动态生成评估标准，并通过自我对比持续改进技能使用的质量和效率 | 💡 创新点: 首次将自我进化的评分量规引入 Agent 技能评估，使评估标准能够随任务复杂度自动调整，解决了静态量规无法应对多样化技能使用场景的问题 | 📊 实验效果: 在 Agent 技能使用场景中验证了自我进化量规的有效性，具体指标详见原文 | ⭐ 整体评价: 技能使用质量的自动评估是 Agent 能力自我提升的基石，自进化量规框架为这一方向提供了优雅的解决方案",
+        tags: [["Agent","green"],["Skill-Use","green"],["Self-Evolving","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.01874"],["PDF","https://arxiv.org/pdf/2607.01874"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出自我进化的评分量规框架 SkillCoach，在 Agent 执行技能的过程中动态生成评估标准，并通过自我对比持续改进技能使用的质量和效率"},{"label":"💡 创新点","text":"首次将自我进化的评分量规引入 Agent 技能评估，使评估标准能够随任务复杂度自动调整，解决了静态量规无法应对多样化技能使用场景的问题"},{"label":"📊 实验效果","text":"在 Agent 技能使用场景中验证了自我进化量规的有效性，具体指标详见原文"},{"label":"⭐ 整体评价","text":"技能使用质量的自动评估是 Agent 能力自我提升的基石，自进化量规框架为这一方向提供了优雅的解决方案"}]
+    },
+    {
+        date: "2026-07-04",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "LACUNA: A Testbed for Evaluating Localization Precision for LLM Unlearning",
+        venue: "arXiv 2026 · OLMo-based",
+        summary: "🔬 技术路线: 构建 LLM 知识遗忘精准定位测试床 LACUNA，系统评估不同遗忘方法在特定知识定位方面的精度，分析遗忘操作对模型其他知识的附带损伤程度 | 💡 创新点: 首次将遗忘定位精度作为独立的评估维度，揭示了当前遗忘方法普遍存在的过度遗忘和不完全遗忘两面性问题 | 📊 实验效果: 在 1B 和 7B 参数规模的 OLMo 模型上系统评估了多种遗忘方法的定位精度，建立了严格的遗忘评估协议 | ⭐ 整体评价: 知识遗忘在隐私合规和版权保护中越来越重要，LACUNA 填补了遗忘精度评估的空白，建议关注其对遗忘方法设计的指导价值",
+        tags: [["LLM","green"],["Unlearning","green"],["Benchmark","green"]],
+        links: [["arXiv","http://arxiv.org/abs/2607.02513"],["PDF","http://arxiv.org/pdf/2607.02513"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"构建 LLM 知识遗忘精准定位测试床 LACUNA，系统评估不同遗忘方法在特定知识定位方面的精度，分析遗忘操作对模型其他知识的附带损伤程度"},{"label":"💡 创新点","text":"首次将遗忘定位精度作为独立的评估维度，揭示了当前遗忘方法普遍存在的过度遗忘和不完全遗忘两面性问题"},{"label":"📊 实验效果","text":"在 1B 和 7B 参数规模的 OLMo 模型上系统评估了多种遗忘方法的定位精度，建立了严格的遗忘评估协议"},{"label":"⭐ 整体评价","text":"知识遗忘在隐私合规和版权保护中越来越重要，LACUNA 填补了遗忘精度评估的空白，建议关注其对遗忘方法设计的指导价值"}]
+    },
+    {
+        date: "2026-07-04",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Online Safety Monitoring for LLMs",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 提出 LLM 在线安全监控方法，通过实时检测模型生成内容的潜在安全风险，在推理阶段动态介入以防止有害输出的产生 | 💡 创新点: 首次将安全监控从离线评估扩展为在线实时保护机制，使 LLM 的安全防护从事后审计升级为推理时的动态干预 | 📊 实验效果: 实验验证了在线监控方法的实时有效性，具体数据详见原文 | ⭐ 整体评价: 在线安全监控是 LLM 部署的必要基础设施，从事后检测到实时防护的转变对生产环境有直接实用价值",
+        tags: [["LLM","green"],["Safety","green"],["Online Monitoring","green"]],
+        links: [["arXiv","http://arxiv.org/abs/2607.02510"],["PDF","http://arxiv.org/pdf/2607.02510"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出 LLM 在线安全监控方法，通过实时检测模型生成内容的潜在安全风险，在推理阶段动态介入以防止有害输出的产生"},{"label":"💡 创新点","text":"首次将安全监控从离线评估扩展为在线实时保护机制，使 LLM 的安全防护从事后审计升级为推理时的动态干预"},{"label":"📊 实验效果","text":"实验验证了在线监控方法的实时有效性，具体数据详见原文"},{"label":"⭐ 整体评价","text":"在线安全监控是 LLM 部署的必要基础设施，从事后检测到实时防护的转变对生产环境有直接实用价值"}]
+    },
+    {
+        date: "2026-07-04",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "ReContext: Recursive Evidence Replay as LLM Harness for Long-Context Reasoning",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 提出递归证据重放机制 ReContext，作为 LLM 长上下文推理的免训练增强方法，将长文本中的关键证据片段递归提取并在推理过程中反复注入上下文窗口 | 💡 创新点: 首次提出免训练的递归证据重放框架，无需修改模型参数即可显著提升长上下文推理能力，可与任意 LLM 即插即用地集成 | 📊 实验效果: 在长上下文推理任务上验证了递归证据重放的有效性，具体指标详见原文，开源代码可获取 | ⭐ 整体评价: 免训练的长上下文推理增强是务实的工程方案，递归证据重放的概念简洁有力，与 RAG 等技术结合可能产生更大增益",
+        tags: [["LLM","green"],["Long-Context","green"],["Evidence Replay","green"]],
+        links: [["arXiv","http://arxiv.org/abs/2607.02509"],["PDF","http://arxiv.org/pdf/2607.02509"],["Code","https://github.com/Yanjun-Zhao/ReContext"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出递归证据重放机制 ReContext，作为 LLM 长上下文推理的免训练增强方法，将长文本中的关键证据片段递归提取并在推理过程中反复注入上下文窗口"},{"label":"💡 创新点","text":"首次提出免训练的递归证据重放框架，无需修改模型参数即可显著提升长上下文推理能力，可与任意 LLM 即插即用地集成"},{"label":"📊 实验效果","text":"在长上下文推理任务上验证了递归证据重放的有效性，具体指标详见原文，开源代码可获取"},{"label":"⭐ 整体评价","text":"免训练的长上下文推理增强是务实的工程方案，递归证据重放的概念简洁有力，与 RAG 等技术结合可能产生更大增益"}]
+    },
+    {
+        date: "2026-07-04",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Reasoning LLM Improves Speaker Recognition in Long-form TV Dramas",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 提出 DramaSR-LRM 方法，以大推理模型为核心构建说话人识别系统，利用推理模型的上下文理解能力在长篇电视剧中识别说话人身份和说话时机 | 💡 创新点: 首次将大推理模型应用于长视频中的说话人识别任务，利用推理链理解剧情上下文来辅助声纹识别，超越了传统音频特征匹配方法 | 📊 实验效果: 在长篇电视剧数据集上验证了推理增强说话人识别的有效性，具体指标详见原文，附带开源代码 | ⭐ 整体评价: 推理模型在传统信号处理任务中的应用为跨领域 AI 提供了新范式，剧情上下文辅助声纹识别是一个非常有创意的交叉应用",
+        tags: [["LLM","green"],["Audio-Visual","green"],["Speaker Recognition","green"]],
+        links: [["arXiv","http://arxiv.org/abs/2607.02504"],["PDF","http://arxiv.org/pdf/2607.02504"],["Code","https://www.github.com/198808xc/DramaSR-LRM"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出 DramaSR-LRM 方法，以大推理模型为核心构建说话人识别系统，利用推理模型的上下文理解能力在长篇电视剧中识别说话人身份和说话时机"},{"label":"💡 创新点","text":"首次将大推理模型应用于长视频中的说话人识别任务，利用推理链理解剧情上下文来辅助声纹识别，超越了传统音频特征匹配方法"},{"label":"📊 实验效果","text":"在长篇电视剧数据集上验证了推理增强说话人识别的有效性，具体指标详见原文，附带开源代码"},{"label":"⭐ 整体评价","text":"推理模型在传统信号处理任务中的应用为跨领域 AI 提供了新范式，剧情上下文辅助声纹识别是一个非常有创意的交叉应用"}]
+    },
+    {
+        date: "2026-07-04",
+        category: "Other",
+        categoryIcon: "📄",
+        title: "Morphing into Hybrid Attention Models",
+        venue: "arXiv 2026 · ByteDance Seed",
+        summary: "🔬 技术路线: 提出将标准 Transformer 变形为混合注意力模型的方法，通过知识蒸馏技术将全注意力模型转化为结合滑动窗口注意力和线性注意力的混合架构，兼顾效果与效率 | 💡 创新点: 首次实现从全注意力模型到混合注意力模型的无损变形，通过蒸馏而非重新训练的方式获得混合注意力架构，大幅降低了部署成本 | 📊 实验效果: 在长上下文推理任务上验证了混合注意力变形的有效性，开源代码 FlashMorph 获得 8 星 | ⭐ 整体评价: 字节跳动在注意力机制工程化方向的探索，变形方法使现有模型无需重新训练即可获得混合注意力的长上下文效率优势，具有直接的工程价值",
+        tags: [["LLM","green"],["Attention","green"],["Distillation","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.30562"],["PDF","https://arxiv.org/pdf/2606.30562"],["Code (8⭐)","https://github.com/LanDisen/FlashMorph"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出将标准 Transformer 变形为混合注意力模型的方法，通过知识蒸馏技术将全注意力模型转化为结合滑动窗口注意力和线性注意力的混合架构，兼顾效果与效率"},{"label":"💡 创新点","text":"首次实现从全注意力模型到混合注意力模型的无损变形，通过蒸馏而非重新训练的方式获得混合注意力架构，大幅降低了部署成本"},{"label":"📊 实验效果","text":"在长上下文推理任务上验证了混合注意力变形的有效性，开源代码 FlashMorph 获得 8 星"},{"label":"⭐ 整体评价","text":"字节跳动在注意力机制工程化方向的探索，变形方法使现有模型无需重新训练即可获得混合注意力的长上下文效率优势，具有直接的工程价值"}]
+    },
     // === 2026-07-03 ===
     {
         date: "2026-07-03",
@@ -16607,6 +16779,13 @@ const PAPERS_DB = [
 ];
 
 const DAILY_OVERVIEW = {
+    "2026-07-04": {
+        bannerTitle: "🔥 今日看点",
+        bannerSubtitle: "今日共收录 15 篇论文，Agent 方向集中爆发（6/15篇，40%）。WorldDirector 提出持久动态记忆驱动的可控世界模拟器，为 World Model 方向带来新突破口。Agent 安全方向出现多篇关键研究：多智能体辩论中的社会结构与潜伏目标涌现揭示了 Agent 交互的深层动力，分布式攻击研究暴露了持久状态 Agent 的安全脆弱性。Agent 基础设施方向同样活跃：AgenticSTS 首次引入有限记忆长程测试床，AgenticDataBench 由清华发布为数据 Agent 提供系统化基准。LLM 方向 LACUNA 推动知识遗忘精准定位，ReContext 以递归证据重放免训练提升长上下文推理。多模态方向 X-to-4D 对齐方法将任意输入转化为 4D 内容，医学多模态推理引入步进过程奖励优化。字节跳动贡献 Hybrid Attention 变形方法，通过蒸馏实现高效长上下文推理。",
+        picks: ["WorldDirector: Building Controllable World Simulators with Persistent Dynamic Memory","Alignment Is All You Need For X-to-4D Generation","Distributed Attacks in Persistent-State AI Control","What LLM Agents Say When No One Is Watching: Social Structure and Latent Objective Emergence in Multi-Agent Debates","LACUNA: A Testbed for Evaluating Localization Precision for LLM Unlearning"],
+        totalPapers: 15,
+        totalNews: 0
+    },
     "2026-07-03": {
         bannerTitle: "🔥 今日看点",
         bannerSubtitle: "今日 HF 热门论文 7 篇，覆盖 VLA、LLM、Agent 和 Multimodal 方向。字节跳动发布 Seed2.0 技术报告，面向真实世界复杂场景全面升级基础模型能力，为今日重磅发布。VLA 方向 DART 提出域算术方法实现单次环境适应，通过向量运算简化 VLA 部署。Agent 方向 MemSyco-Bench 首次系统评估智能体记忆谄媚偏见，揭示记忆机制本身的可靠性隐忧。LLM 方向两篇均为务实的系统优化：微软 ELDR 利用专家局部性优化 MoE 推理，清华 CausalMix 以因果推断框架重新定义数据混合策略。Multimodal 方向探索非对称变分学习，承认模态间贡献天然不对等。",
