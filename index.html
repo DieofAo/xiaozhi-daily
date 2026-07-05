@@ -661,6 +661,18 @@ const PAPERS_DB = [
     // === 2026-07-04 ===
     {
         date: "2026-07-04",
+        category: "Robotics",
+        categoryIcon: "🤖",
+        title: "CHORD: Learning Dexterous Manipulation Using Contact Wrench Guidance From Human Demonstration",
+        venue: "arXiv 2026 · NVIDIA Research 等",
+        summary: "🔬 技术路线: 基于强化学习 + 人类示范的灵巧操作框架，核心是\"以物体为中心的接触力矩空间引导\"——将人与机器人运动统一表示为它们能对物体施加的力与力矩，通过诱导的瞬时运动度量相似性，作为 RL 引导信号，绕开直接的关节空间模仿 | 💡 创新点: 首次将人类示范转化为物体接触力矩空间引导信号，把\"模仿动作\"转化为\"匹配对物体的作用效果\"，对异构手型迁移尤其友好；构建 4,739 个双臂灵巧操作任务的大规模仿真基准（动捕数据集 + 自录视频重建） | 📊 实验效果: 1,831 个基准任务平均成功率 82.12%，全身操作从仅手部 / 第三人称示范泛化成功率 90.77%，策略成功 Sim-to-Real 迁移，开环与闭环设置均验证有效 | ⭐ 整体评价: 与机械臂抓取、轨迹规划、Sim-to-Real 直接相关，接触力矩引导是连接人类示范与 RL 的优雅桥梁，4,739 任务基准是该方向重要基础设施，建议重点关注力矩空间度量方式与闭环迁移实现细节",
+        tags: [["Robotics","green"],["Reinforcement Learning","green"],["Dexterous Manipulation","green"],["Benchmark","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.00033"],["PDF","https://arxiv.org/pdf/2607.00033"],["HTML","https://arxiv.org/html/2607.00033v1"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于强化学习 + 人类示范的灵巧操作框架，核心是\"以物体为中心的接触力矩空间引导\"——将人与机器人运动统一表示为它们能对物体施加的力与力矩，通过诱导的瞬时运动度量相似性，作为 RL 引导信号，绕开直接的关节空间模仿"},{"label":"💡 创新点","text":"首次将人类示范转化为物体接触力矩空间引导信号，把\"模仿动作\"转化为\"匹配对物体的作用效果\"，对异构手型迁移尤其友好；构建 4,739 个双臂灵巧操作任务的大规模仿真基准（动捕数据集 + 自录视频重建）"},{"label":"📊 实验效果","text":"1,831 个基准任务平均成功率 82.12%，全身操作从仅手部 / 第三人称示范泛化成功率 90.77%，策略成功 Sim-to-Real 迁移，开环与闭环设置均验证有效"},{"label":"⭐ 整体评价","text":"与机械臂抓取、轨迹规划、Sim-to-Real 直接相关，接触力矩引导是连接人类示范与 RL 的优雅桥梁，4,739 任务基准是该方向重要基础设施，建议重点关注力矩空间度量方式与闭环迁移实现细节"}]
+    },
+    {
+        date: "2026-07-04",
         category: "World Model",
         categoryIcon: "🌍",
         title: "WorldDirector: Building Controllable World Simulators with Persistent Dynamic Memory",
@@ -16781,9 +16793,9 @@ const PAPERS_DB = [
 const DAILY_OVERVIEW = {
     "2026-07-04": {
         bannerTitle: "🔥 今日看点",
-        bannerSubtitle: "今日共收录 15 篇论文，Agent 方向集中爆发（6/15篇，40%）。WorldDirector 提出持久动态记忆驱动的可控世界模拟器，为 World Model 方向带来新突破口。Agent 安全方向出现多篇关键研究：多智能体辩论中的社会结构与潜伏目标涌现揭示了 Agent 交互的深层动力，分布式攻击研究暴露了持久状态 Agent 的安全脆弱性。Agent 基础设施方向同样活跃：AgenticSTS 首次引入有限记忆长程测试床，AgenticDataBench 由清华发布为数据 Agent 提供系统化基准。LLM 方向 LACUNA 推动知识遗忘精准定位，ReContext 以递归证据重放免训练提升长上下文推理。多模态方向 X-to-4D 对齐方法将任意输入转化为 4D 内容，医学多模态推理引入步进过程奖励优化。字节跳动贡献 Hybrid Attention 变形方法，通过蒸馏实现高效长上下文推理。",
-        picks: ["WorldDirector: Building Controllable World Simulators with Persistent Dynamic Memory","Alignment Is All You Need For X-to-4D Generation","Distributed Attacks in Persistent-State AI Control","What LLM Agents Say When No One Is Watching: Social Structure and Latent Objective Emergence in Multi-Agent Debates","LACUNA: A Testbed for Evaluating Localization Precision for LLM Unlearning"],
-        totalPapers: 15,
+        bannerSubtitle: "今日共收录 16 篇论文。🤖 Robotics 方向迎来重磅突破：CHORD 框架以物体为中心的接触力矩空间引导强化学习，将人类示范转化为对物体的\"作用效果\"匹配而非关节模仿，在 4,739 个双臂灵巧操作任务基准上、1,831 个任务平均成功率达 82.12%，全身操作泛化成功率 90.77%，并完成 Sim-to-Real 开环与闭环迁移——对机械臂抓取与异构手型迁移具有直接参考价值。Agent 方向集中爆发（6/16篇），WorldDirector 提出持久动态记忆驱动的可控世界模拟器，为 World Model 方向带来新突破口。Agent 安全方向出现多篇关键研究：多智能体辩论中的社会结构与潜伏目标涌现揭示了 Agent 交互的深层动力，分布式攻击研究暴露了持久状态 Agent 的安全脆弱性。LLM 方向 LACUNA 推动知识遗忘精准定位，ReContext 以递归证据重放免训练提升长上下文推理。字节跳动贡献 Hybrid Attention 变形方法，通过蒸馏实现高效长上下文推理。",
+        picks: ["CHORD: Learning Dexterous Manipulation Using Contact Wrench Guidance From Human Demonstration","WorldDirector: Building Controllable World Simulators with Persistent Dynamic Memory","Alignment Is All You Need For X-to-4D Generation","Distributed Attacks in Persistent-State AI Control","What LLM Agents Say When No One Is Watching: Social Structure and Latent Objective Emergence in Multi-Agent Debates","LACUNA: A Testbed for Evaluating Localization Precision for LLM Unlearning"],
+        totalPapers: 16,
         totalNews: 0
     },
     "2026-07-03": {
