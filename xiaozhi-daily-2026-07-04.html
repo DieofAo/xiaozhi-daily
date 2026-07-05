@@ -234,13 +234,13 @@ header .subtitle {
 <header>
   <h1>📡 小小志AI日报</h1>
   <div class="date">2026年7月4日 周六</div>
-  <div class="subtitle">📝 arXiv 8 篇 · 🤗 HF 热门 7 篇 · 共 15 篇论文</div>
+  <div class="subtitle">📝 arXiv 9 篇 · 🤗 HF 热门 7 篇 · 共 16 篇论文</div>
 </header>
 
 <div class="highlight-banner">
   <div class="hl-title">🔥 今日看点</div>
   <div class="hl-text">
-    今日共收录 15 篇论文，Agent 方向集中爆发（6/15篇，40%）。WorldDirector 提出持久动态记忆驱动的可控世界模拟器，为 World Model 方向带来新突破口。Agent 安全方向出现多篇关键研究：多智能体辩论中的社会结构与潜伏目标涌现揭示了 Agent 交互的深层动力，分布式攻击研究暴露了持久状态 Agent 的安全脆弱性。Agent 基础设施方向同样活跃：AgenticSTS 首次引入有限记忆长程测试床，AgenticDataBench 由清华发布为数据 Agent 提供系统化基准。LLM 方向 LACUNA 推动知识遗忘精准定位，ReContext 以递归证据重放免训练提升长上下文推理。多模态方向 X-to-4D 对齐方法将任意输入转化为 4D 内容，医学多模态推理引入步进过程奖励优化。字节跳动贡献 Hybrid Attention 变形方法，通过蒸馏实现高效长上下文推理。
+    今日共收录 16 篇论文。🤖 Robotics 方向迎来重磅突破：CHORD 框架以物体为中心的接触力矩空间引导强化学习，将人类示范转化为对物体的"作用效果"匹配而非关节模仿，在 4,739 个双臂灵巧操作任务基准上、1,831 个任务平均成功率达 82.12%，全身操作泛化成功率 90.77%，并完成 Sim-to-Real 开环与闭环迁移——对机械臂抓取与异构手型迁移具有直接参考价值。Agent 方向集中爆发（6/16篇），WorldDirector 提出持久动态记忆驱动的可控世界模拟器，为 World Model 方向带来新突破口。Agent 安全方向出现多篇关键研究：多智能体辩论中的社会结构与潜伏目标涌现揭示了 Agent 交互的深层动力，分布式攻击研究暴露了持久状态 Agent 的安全脆弱性。LLM 方向 LACUNA 推动知识遗忘精准定位，ReContext 以递归证据重放免训练提升长上下文推理。字节跳动贡献 Hybrid Attention 变形方法，通过蒸馏实现高效长上下文推理。
   </div>
 </div>
 
@@ -266,6 +266,33 @@ header .subtitle {
       <a href="http://arxiv.org/abs/2607.02517">arXiv</a>
       <a href="http://arxiv.org/pdf/2607.02517">PDF</a>
       <a href="https://worlddirector.github.io/">Project</a>
+    </div>
+  </div>
+</section>
+
+<!-- 🤖 Robotics Section -->
+<section class="section">
+  <h2 class="section-title">🤖 Robotics · 机器人灵巧操作</h2>
+
+  <div class="paper-card hot">
+    <div class="paper-title"><span class="hot-badge">🔥</span> CHORD: Learning Dexterous Manipulation Using Contact Wrench Guidance From Human Demonstration</div>
+    <div class="paper-meta">arXiv 2026 · NVIDIA Research 等 · cs.RO / cs.AI / cs.CV</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">基于强化学习 + 人类示范的灵巧操作框架。核心是"以物体为中心的接触力矩空间引导"——将人与机器人运动统一表示为它们能对物体施加的力与力矩，通过诱导的瞬时运动度量相似性，作为 RL 引导信号，绕开直接的关节空间模仿</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次将人类示范转化为物体接触力矩空间引导信号，把"模仿动作"转化为"匹配对物体的作用效果"，对异构手型迁移尤其友好；构建 4,739 个双臂灵巧操作任务的大规模仿真基准（动作捕捉数据集 + 自录视频重建）</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">1,831 个基准任务平均成功率 82.12%；全身操作从仅手部 / 第三人称示范泛化成功率 90.77%；策略成功 Sim-to-Real 迁移，开环与闭环设置均验证有效</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">与机械臂抓取、轨迹规划、Sim-to-Real 直接相关。接触力矩引导是连接人类示范与 RL 的优雅桥梁，4,739 任务基准是该方向重要基础设施，建议重点关注力矩空间度量方式与闭环迁移实现细节</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-robot">Robotics</span>
+      <span class="tag tag-rl">Reinforcement Learning</span>
+      <span class="tag tag-vla">Dexterous Manipulation</span>
+      <span class="tag tag-benchmark">Benchmark</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2607.00033">arXiv</a>
+      <a href="https://arxiv.org/pdf/2607.00033">PDF</a>
+      <a href="https://arxiv.org/html/2607.00033v1">HTML</a>
     </div>
   </div>
 </section>
@@ -585,7 +612,7 @@ header .subtitle {
 </section>
 
 <div class="stats">
-  <p>📡 自动生成于 2026年7月4日 · 数据截至 09:27 UTC · 关注 VLA · Robotics · World Model · LLM · Multimodal · Agent</p>
+  <p>📡 自动生成于 2026年7月4日 · 数据截至 09:27 UTC · 手动补充 CHORD (arXiv:2607.00033) 于 2026-07-05 · 关注 VLA · Robotics · World Model · LLM · Multimodal · Agent</p>
 </div>
 
 </div>
