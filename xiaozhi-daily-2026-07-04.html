@@ -234,13 +234,13 @@ header .subtitle {
 <header>
   <h1>📡 小小志AI日报</h1>
   <div class="date">2026年7月4日 周六</div>
-  <div class="subtitle">📝 arXiv 9 篇 · 🤗 HF 热门 7 篇 · 共 16 篇论文</div>
+  <div class="subtitle">📝 arXiv 10 篇 · 🤗 HF 热门 7 篇 · 共 17 篇论文</div>
 </header>
 
 <div class="highlight-banner">
   <div class="hl-title">🔥 今日看点</div>
   <div class="hl-text">
-    今日共收录 16 篇论文。🤖 Robotics 方向迎来重磅突破：CHORD 框架以物体为中心的接触力矩空间引导强化学习，将人类示范转化为对物体的"作用效果"匹配而非关节模仿，在 4,739 个双臂灵巧操作任务基准上、1,831 个任务平均成功率达 82.12%，全身操作泛化成功率 90.77%，并完成 Sim-to-Real 开环与闭环迁移——对机械臂抓取与异构手型迁移具有直接参考价值。Agent 方向集中爆发（6/16篇），WorldDirector 提出持久动态记忆驱动的可控世界模拟器，为 World Model 方向带来新突破口。Agent 安全方向出现多篇关键研究：多智能体辩论中的社会结构与潜伏目标涌现揭示了 Agent 交互的深层动力，分布式攻击研究暴露了持久状态 Agent 的安全脆弱性。LLM 方向 LACUNA 推动知识遗忘精准定位，ReContext 以递归证据重放免训练提升长上下文推理。字节跳动贡献 Hybrid Attention 变形方法，通过蒸馏实现高效长上下文推理。
+    今日共收录 17 篇论文，Robotics 方向双星闪耀。🤖 CHORD 以物体为中心的接触力矩空间引导强化学习，将人类示范转化为对物体的"作用效果"匹配而非关节模仿，4,739 任务基准上 1,831 任务平均成功率 82.12%，完成 Sim-to-Real 开环闭环迁移。🤖 CoorDex 打破人形 loco-manipulation"停-走-再动"范式，以"特权教师→潜在先验→残差 RL"三级流水线实现运动中连续灵巧操作，Unitree G1 + 20-DoF WUJI 手完成不停顿抓取搬运、运动中开门、抓取翻转；消融证明关节空间 PPO/关节空间手控制/单体潜在预测在同等奖励预算下全部失败。二者构成"接触力矩引导 vs 潜在残差协调"互补技术路线。Agent 方向 6 篇集中爆发：WorldDirector 持久动态记忆世界模拟器、分布式攻击与多智能体社会涌现揭示 Agent 安全隐忧。LLM 方向 LACUNA 推动知识遗忘精准定位，ReContext 递归证据重放免训练提升长上下文推理。字节跳动 Hybrid Attention 蒸馏实现高效长上下文。
   </div>
 </div>
 
@@ -293,6 +293,29 @@ header .subtitle {
       <a href="https://arxiv.org/abs/2607.00033">arXiv</a>
       <a href="https://arxiv.org/pdf/2607.00033">PDF</a>
       <a href="https://arxiv.org/html/2607.00033v1">HTML</a>
+    </div>
+  </div>
+
+  <div class="paper-card hot">
+    <div class="paper-title"><span class="hot-badge">🔥</span> CoorDex: Coordinating Body and Hand Priors for Continuous Dexterous Humanoid Loco-Manipulation</div>
+    <div class="paper-meta">arXiv 2026 · UC Berkeley 等 · cs.RO / cs.AI / cs.LG</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">面向"运动中灵巧操作"的三级流水线：①仿真中训练身体/手的特权运动追踪教师 → ②蒸馏为本体感知条件下的潜在先验并冻结 → ③以冻结先验为动作空间做下游残差 RL，由共享任务上下文 + 独立 body/hand 残差头组合，保留自然全身运动同时提升指尖接触可靠性</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">打破人形 loco-manipulation"停-走-再动"范式实现真正运动中连续操作；将高维身体+灵巧手控制统一到潜在残差动作空间；消融证明关节空间 PPO、关节空间手控制、单体潜在预测在同等奖励预算下均失败，唯有"潜在先验接口+协调残差结构"使高维接触密集任务可训练</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">Unitree G1 人形 + 20-DoF WUJI 灵巧手完成三项连续任务：不停顿抓取并搬运瓶子、运动中开冰箱门、抓取并翻转立方体；walk-grasp-carry 消融对比清晰</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">"教师→潜在先验→残差 RL"三级流水线的优秀范例，对高自由度接触密集任务极具工程参考价值；Unitree G1 + WUJI 手是国内人形硬件落地的重要参考配置；与 CHORD 形成"接触力矩引导 vs 潜在残差协调"两条互补技术路线，值得对照阅读</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-robot">Robotics</span>
+      <span class="tag tag-rl">Reinforcement Learning</span>
+      <span class="tag tag-vla">Humanoid Loco-Manipulation</span>
+      <span class="tag tag-benchmark">Latent Prior</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.23680">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.23680">PDF</a>
+      <a href="https://arxiv.org/html/2606.23680v1">HTML</a>
+      <a href="https://skevinci.github.io/coordex/">Project</a>
     </div>
   </div>
 </section>
@@ -612,7 +635,7 @@ header .subtitle {
 </section>
 
 <div class="stats">
-  <p>📡 自动生成于 2026年7月4日 · 数据截至 09:27 UTC · 手动补充 CHORD (arXiv:2607.00033) 于 2026-07-05 · 关注 VLA · Robotics · World Model · LLM · Multimodal · Agent</p>
+  <p>📡 自动生成于 2026年7月4日 · 数据截至 09:27 UTC · 手动补充 CHORD (arXiv:2607.00033) 与 CoorDex (arXiv:2606.23680) 于 2026-07-05 · 关注 VLA · Robotics · World Model · LLM · Multimodal · Agent</p>
 </div>
 
 </div>
