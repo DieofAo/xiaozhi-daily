@@ -658,6 +658,75 @@
 <script>
 // ===== DATA =====
 const PAPERS_DB = [
+    // === 2026-07-06 ===
+    {
+        date: "2026-07-06",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "VLA-Corrector: Lightweight Detect-and-Correct Inference for Adaptive Action Horizon",
+        venue: "arXiv 2026 · ZJU-OmniAI · 18⭐",
+        summary: "🔬 技术路线: 提出轻量化的纠错推理框架 VLA-Corrector，在视觉语言动作模型执行过程中实时检测动作偏差，动态调整动作预测步长并即时纠正，无需重新训练即可提升策略执行精度 | 💡 创新点: 首次将\"检测-纠正\"范式引入 VLA 推理阶段，通过自适应动作步长机制在推理时动态修正策略输出，突破了固定步长带来的精度与效率矛盾 | 📊 实验效果: 在多个 VLA 基准任务上验证了纠错推理的有效性，开源代码获得 18 星关注 | ⭐ 整体评价: 推理时纠错是 VLA 从实验室走向部署的关键能力，轻量化设计使其可与现有 VLA 模型即插即用集成，建议关注真机验证结果和纠错延迟开销",
+        tags: [["VLA","green"],["Inference","green"],["Detect-and-Correct","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.01804"],["PDF","https://arxiv.org/pdf/2607.01804"],["Project","https://zju-omniai.github.io/vla-corrector/"],["Code (18⭐)","https://github.com/ZJU-OmniAI/vla-corrector"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出轻量化的纠错推理框架 VLA-Corrector，在视觉语言动作模型执行过程中实时检测动作偏差，动态调整动作预测步长并即时纠正，无需重新训练即可提升策略执行精度"},{"label":"💡 创新点","text":"首次将\"检测-纠正\"范式引入 VLA 推理阶段，通过自适应动作步长机制在推理时动态修正策略输出，突破了固定步长带来的精度与效率矛盾"},{"label":"📊 实验效果","text":"在多个 VLA 基准任务上验证了纠错推理的有效性，开源代码获得 18 星关注"},{"label":"⭐ 整体评价","text":"推理时纠错是 VLA 从实验室走向部署的关键能力，轻量化设计使其可与现有 VLA 模型即插即用集成，建议关注真机验证结果和纠错延迟开销"}]
+    },
+    {
+        date: "2026-07-06",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "Embodied.cpp: A Portable Inference Runtime of Embodied AI Models on Heterogeneous Robots",
+        venue: "arXiv 2026 · PhysicalAI System Group @ SAIL Lab, Southeast University · 17⭐",
+        summary: "🔬 技术路线: 构建面向异构机器人的便携式推理运行时 Embodied.cpp，以 C++ 为核心实现跨平台部署，将视觉语言动作模型从云端推理迁移到边缘设备本地执行 | 💡 创新点: 提出混合 VLA 架构（HY-VLA），通过运行时优化实现异构硬件上的高效推理，解决了具身智能模型在不同机器人平台上部署困难的核心痛点 | 📊 实验效果: 关键任务成功率分别达到 100.0% 和 91.0%，验证了便携运行时在异构机器人上的部署有效性 | ⭐ 整体评价: 具身智能落地的工程基础设施，C++ 便携运行时填补了 VLA 模型从论文到实际机器人部署的鸿沟，建议关注其跨平台兼容性和推理延迟表现",
+        tags: [["VLA","green"],["Runtime","green"],["Heterogeneous Robots","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.02501"],["PDF","https://arxiv.org/pdf/2607.02501"],["Code (17⭐)","https://github.com/SEU-PAISys/Embodied.cpp"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"构建面向异构机器人的便携式推理运行时 Embodied.cpp，以 C++ 为核心实现跨平台部署，将视觉语言动作模型从云端推理迁移到边缘设备本地执行"},{"label":"💡 创新点","text":"提出混合 VLA 架构（HY-VLA），通过运行时优化实现异构硬件上的高效推理，解决了具身智能模型在不同机器人平台上部署困难的核心痛点"},{"label":"📊 实验效果","text":"关键任务成功率分别达到 100.0% 和 91.0%，验证了便携运行时在异构机器人上的部署有效性"},{"label":"⭐ 整体评价","text":"具身智能落地的工程基础设施，C++ 便携运行时填补了 VLA 模型从论文到实际机器人部署的鸿沟，建议关注其跨平台兼容性和推理延迟表现"}]
+    },
+    {
+        date: "2026-07-06",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Securing the AI Agent: A Unified Framework for Multi-Layer Agent Red Teaming",
+        venue: "arXiv 2026 · Tencent",
+        summary: "🔬 技术路线: 提出面向 AI Agent 的多层红队测试统一框架，从工具调用、记忆访问、权限控制等多个层面系统评估 Agent 系统的安全漏洞和攻击面 | 💡 创新点: 构建 AI-Infra-Guard 统一评估框架，首次将 Agent 安全测试从单点漏洞检测升级为多层协同红队评估，覆盖 Agent 全栈安全维度 | 📊 实验效果: 在多个 Agent 框架上验证了多层红队测试的有效性，系统暴露了现有 Agent 系统在工具调用和权限管理中的安全盲区 | ⭐ 整体评价: 腾讯在 Agent 安全方向的系统性贡献，多层红队框架为 Agent 安全评估提供了标准化工具，建议关注其评估维度的完整性和可复现性",
+        tags: [["Agent","green"],["Red Teaming","green"],["Security","green"],["Framework","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.31227"],["PDF","https://arxiv.org/pdf/2606.31227"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出面向 AI Agent 的多层红队测试统一框架，从工具调用、记忆访问、权限控制等多个层面系统评估 Agent 系统的安全漏洞和攻击面"},{"label":"💡 创新点","text":"构建 AI-Infra-Guard 统一评估框架，首次将 Agent 安全测试从单点漏洞检测升级为多层协同红队评估，覆盖 Agent 全栈安全维度"},{"label":"📊 实验效果","text":"在多个 Agent 框架上验证了多层红队测试的有效性，系统暴露了现有 Agent 系统在工具调用和权限管理中的安全盲区"},{"label":"⭐ 整体评价","text":"腾讯在 Agent 安全方向的系统性贡献，多层红队框架为 Agent 安全评估提供了标准化工具，建议关注其评估维度的完整性和可复现性"}]
+    },
+    {
+        date: "2026-07-06",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "The Mirage of Optimizing Training Policies: Monotonic Inference Policies as the Real Objective for LLM Reinforcement Learning",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 揭示大语言模型强化学习中训练策略优化的\"海市蜃楼\"现象，指出训练时优化的策略目标与推理时实际使用的单调推理策略之间存在系统性偏差 | 💡 创新点: 提出以单调推理策略作为 RL 真实优化目标，纠正了训练目标与推理目标不一致的根本性问题，为 LLM 强化学习提供了更可靠的理论基础 | 📊 实验效果: 在推理和生成任务上验证了单调推理策略优化的有效性，证明对齐训练与推理目标后模型性能获得提升 | ⭐ 整体评价: 对 LLM 强化学习训练范式的深层反思，训练目标与推理目标的对齐是提升 RL 效果的关键，建议关注其对主流 RLHF 流程的改进建议",
+        tags: [["LLM","green"],["Reinforcement Learning","green"],["Inference Policy","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.29526"],["PDF","https://arxiv.org/pdf/2606.29526"],["Project","https://anitaleungxx.github.io/MIPU/"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"揭示大语言模型强化学习中训练策略优化的\"海市蜃楼\"现象，指出训练时优化的策略目标与推理时实际使用的单调推理策略之间存在系统性偏差"},{"label":"💡 创新点","text":"提出以单调推理策略作为 RL 真实优化目标，纠正了训练目标与推理目标不一致的根本性问题，为 LLM 强化学习提供了更可靠的理论基础"},{"label":"📊 实验效果","text":"在推理和生成任务上验证了单调推理策略优化的有效性，证明对齐训练与推理目标后模型性能获得提升"},{"label":"⭐ 整体评价","text":"对 LLM 强化学习训练范式的深层反思，训练目标与推理目标的对齐是提升 RL 效果的关键，建议关注其对主流 RLHF 流程的改进建议"}]
+    },
+    {
+        date: "2026-07-06",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "AGE: Adaptive-masking for Graph Embedding in Graph Retrieval-Augmented Generation",
+        venue: "arXiv 2026 · OMRON SINIC X Corp.",
+        summary: "🔬 技术路线: 提出自适应掩码图嵌入方法 AGE，用于图检索增强生成场景，通过自适应掩码机制在图结构数据中动态选择信息丰富的子图进行检索和嵌入 | 💡 创新点: 将自适应掩码引入图嵌入领域，使图检索增强生成能够根据查询动态调整图结构的信息聚合范围，避免了固定掩码导致的信息丢失 | 📊 实验效果: 在图检索增强生成任务上验证了自适应掩码的有效性，相比固定掩码策略在生成质量上获得提升 | ⭐ 整体评价: 图检索增强生成是 RAG 在结构化数据方向的重要拓展，自适应掩码为图嵌入的动态信息选择提供了优雅方案，建议关注其在复杂图结构上的泛化能力",
+        tags: [["LLM","green"],["Graph Embedding","green"],["Retrieval-Augmented","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.00052"],["PDF","https://arxiv.org/pdf/2607.00052"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出自适应掩码图嵌入方法 AGE，用于图检索增强生成场景，通过自适应掩码机制在图结构数据中动态选择信息丰富的子图进行检索和嵌入"},{"label":"💡 创新点","text":"将自适应掩码引入图嵌入领域，使图检索增强生成能够根据查询动态调整图结构的信息聚合范围，避免了固定掩码导致的信息丢失"},{"label":"📊 实验效果","text":"在图检索增强生成任务上验证了自适应掩码的有效性，相比固定掩码策略在生成质量上获得提升"},{"label":"⭐ 整体评价","text":"图检索增强生成是 RAG 在结构化数据方向的重要拓展，自适应掩码为图嵌入的动态信息选择提供了优雅方案，建议关注其在复杂图结构上的泛化能力"}]
+    },
+    {
+        date: "2026-07-06",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "MultAttnAttrib: Training-Free Multimodal Attribution in Long Document Question Answering",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 提出免训练的多模态归因方法 MultAttnAttrib，在长文档问答任务中通过注意力权重分析定位多模态输入（文本、图像、表格等）对最终答案的贡献 | 💡 创新点: 首次实现无需额外训练的多模态归因，直接利用模型内部注意力机制进行跨模态贡献度分析，为长文档问答的可解释性提供了零成本解决方案 | 📊 实验效果: 在长文档问答的生成和推理任务上验证了归因方法的准确性和效率，免训练设计保证了即插即用的部署便利性 | ⭐ 整体评价: 多模态归因是提升 AI 系统可信度的关键技术，免训练设计使其可轻松集成到现有问答系统中，建议关注其在复杂多模态文档上的归因稳定性",
+        tags: [["Multimodal","green"],["Attribution","green"],["Long Document QA","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.01420"],["PDF","https://arxiv.org/pdf/2607.01420"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出免训练的多模态归因方法 MultAttnAttrib，在长文档问答任务中通过注意力权重分析定位多模态输入（文本、图像、表格等）对最终答案的贡献"},{"label":"💡 创新点","text":"首次实现无需额外训练的多模态归因，直接利用模型内部注意力机制进行跨模态贡献度分析，为长文档问答的可解释性提供了零成本解决方案"},{"label":"📊 实验效果","text":"在长文档问答的生成和推理任务上验证了归因方法的准确性和效率，免训练设计保证了即插即用的部署便利性"},{"label":"⭐ 整体评价","text":"多模态归因是提升 AI 系统可信度的关键技术，免训练设计使其可轻松集成到现有问答系统中，建议关注其在复杂多模态文档上的归因稳定性"}]
+    },
     // === 2026-07-04 ===
     {
         date: "2026-07-04",
@@ -16803,6 +16872,13 @@ const PAPERS_DB = [
 ];
 
 const DAILY_OVERVIEW = {
+    "2026-07-06": {
+        bannerTitle: "🔥 今日看点",
+        bannerSubtitle: "今日共收录 6 篇论文，arXiv 周一无新索引，内容全部来自 HuggingFace 社区热门。VLA 方向双星：🤖 VLA-Corrector 提出轻量化纠错推理框架，在 VLA 策略执行过程中动态检测动作偏差并实时纠正，自适应调整动作预测步长，浙大团队开源 18 星；🤖 Embodied.cpp 为异构机器人打造便携式推理运行时，将 VLA 模型部署从云端搬到边缘设备，东南大学团队开源 17 星。Agent 方向腾讯发布多层红队测试统一框架 AI-Infra-Guard，覆盖 Agent 全栈安全评估。LLM 方向 MIPU 揭示训练策略优化中的\"海市蜃楼\"问题——推理时的单调策略才是 RL 的真实目标。",
+        picks: ["VLA-Corrector: Lightweight Detect-and-Correct Inference for Adaptive Action Horizon","Embodied.cpp: A Portable Inference Runtime of Embodied AI Models on Heterogeneous Robots"],
+        totalPapers: 6,
+        totalNews: 0
+    },
     "2026-07-04": {
         bannerTitle: "🔥 今日看点",
         bannerSubtitle: "今日共收录 17 篇论文，Robotics 方向双星闪耀。🤖 CHORD 以物体为中心的接触力矩空间引导强化学习，将人类示范转化为对物体的\"作用效果\"匹配而非关节模仿，4,739 任务基准上 1,831 任务平均成功率 82.12%，完成 Sim-to-Real 开环闭环迁移。🤖 CoorDex 打破人形 loco-manipulation\"停-走-再动\"范式，以\"特权教师→潜在先验→残差 RL\"三级流水线实现运动中连续灵巧操作，Unitree G1 + 20-DoF WUJI 手完成不停顿抓取搬运、运动中开门、抓取翻转；消融证明关节空间 PPO/关节空间手控制/单体潜在预测在同等奖励预算下全部失败。二者构成\"接触力矩引导 vs 潜在残差协调\"互补技术路线。Agent 方向 6 篇集中爆发：WorldDirector 持久动态记忆世界模拟器、分布式攻击与多智能体社会涌现揭示 Agent 安全隐忧。LLM 方向 LACUNA 推动知识遗忘精准定位，ReContext 递归证据重放免训练提升长上下文推理。字节跳动 Hybrid Attention 蒸馏实现高效长上下文。",
