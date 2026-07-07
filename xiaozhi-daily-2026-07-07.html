@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>小小志AI日报 - 2026年7月7日 周二</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans SC', sans-serif;
+  background: #0a0e1a;
+  color: #e0e6f0;
+  line-height: 1.7;
+  min-height: 100vh;
+}
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+header {
+  text-align: center;
+  margin-bottom: 48px;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, rgba(59,130,246,0.08) 0%, rgba(139,92,246,0.08) 100%);
+  border-radius: 20px;
+  border: 1px solid rgba(99,102,241,0.15);
+}
+header h1 {
+  font-size: 2rem;
+  background: linear-gradient(135deg, #60a5fa, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 8px;
+}
+header .date {
+  color: #94a3b8;
+  font-size: 1rem;
+}
+header .subtitle {
+  color: #64748b;
+  font-size: 0.9rem;
+  margin-top: 6px;
+}
+.highlight-banner {
+  background: linear-gradient(135deg, rgba(249,115,22,0.1) 0%, rgba(234,179,8,0.08) 100%);
+  border: 1px solid rgba(249,115,22,0.2);
+  border-radius: 14px;
+  padding: 20px 24px;
+  margin-bottom: 36px;
+}
+.hl-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fb923c;
+  margin-bottom: 8px;
+}
+.hl-text {
+  font-size: 0.92rem;
+  color: #cbd5e1;
+  line-height: 1.7;
+}
+.section {
+  margin-bottom: 40px;
+}
+.section-title {
+  font-size: 1.4rem;
+  color: #f1f5f9;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(99,102,241,0.2);
+}
+.paper-card {
+  background: rgba(30,41,59,0.6);
+  border: 1px solid rgba(99,102,241,0.12);
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 16px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.paper-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(99,102,241,0.1);
+  border-color: rgba(99,102,241,0.3);
+}
+.paper-card.hot {
+  border-color: rgba(249,115,22,0.25);
+  background: rgba(30,41,59,0.7);
+}
+.paper-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #f8fafc;
+  margin-bottom: 8px;
+}
+.paper-meta {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-bottom: 10px;
+}
+.summary-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+@media (max-width: 640px) {
+  .summary-grid { grid-template-columns: 1fr; }
+}
+.summary-item {
+  background: rgba(15,23,42,0.5);
+  border-radius: 10px;
+  padding: 12px 14px;
+  border: 1px solid rgba(99,102,241,0.08);
+}
+.summary-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #818cf8;
+  margin-bottom: 4px;
+}
+.summary-text {
+  font-size: 0.88rem;
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+.paper-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.tag {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+.tag-agent { background: rgba(16,185,129,0.12); color: #34d399; }
+.tag-llm { background: rgba(99,102,241,0.12); color: #818cf8; }
+.tag-multimodal { background: rgba(244,114,182,0.12); color: #f472b6; }
+.tag-world { background: rgba(251,191,36,0.12); color: #fbbf24; }
+.tag-robot { background: rgba(251,146,60,0.12); color: #fb923c; }
+.tag-rl { background: rgba(45,212,191,0.12); color: #2dd4bf; }
+.tag-video { background: rgba(168,85,247,0.12); color: #a855f7; }
+.tag-benchmark { background: rgba(34,211,238,0.12); color: #22d3ee; }
+.tag-vla { background: rgba(59,130,246,0.12); color: #60a5fa; }
+.tag-safety { background: rgba(239,68,68,0.12); color: #f87171; }
+.tag-memory { background: rgba(192,132,252,0.12); color: #c084fc; }
+.tag-reasoning { background: rgba(132,204,22,0.12); color: #a3e635; }
+.tag-code { background: rgba(52,211,153,0.12); color: #34d399; }
+.tag-survey { background: rgba(6,182,212,0.12); color: #22d3ee; }
+.tag-science { background: rgba(217,119,6,0.12); color: #f59e0b; }
+.tag-medical { background: rgba(239,68,68,0.12); color: #f87171; }
+.tag-systems { background: rgba(56,189,248,0.12); color: #38bdf8; }
+.tag-3d { background: rgba(148,163,184,0.12); color: #94a3b8; }
+.tag-data { background: rgba(250,204,21,0.12); color: #facc15; }
+.tag-infra { background: rgba(167,139,250,0.12); color: #a78bfa; }
+.tag-generation { background: rgba(249,115,22,0.12); color: #f97316; }
+.tag-navigation { background: rgba(59,130,246,0.12); color: #60a5fa; }
+.tag-distillation { background: rgba(34,211,238,0.12); color: #22d3ee; }
+.tag-humanoid { background: rgba(251,146,60,0.12); color: #fb923c; }
+.tag-tool { background: rgba(52,211,153,0.12); color: #34d399; }
+.tag-gui { background: rgba(244,114,182,0.12); color: #f472b6; }
+.tag-embedding { background: rgba(167,139,250,0.12); color: #a78bfa; }
+.hot-badge {
+  display: inline;
+  margin-right: 4px;
+}
+.info-card {
+  background: rgba(30,41,59,0.6);
+  border: 1px solid rgba(99,102,241,0.12);
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 16px;
+}
+.paper-summary {
+  font-size: 0.9rem;
+  color: #cbd5e1;
+  line-height: 1.7;
+  margin-bottom: 14px;
+}
+.paper-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.paper-links a {
+  display: inline-block;
+  padding: 5px 14px;
+  background: rgba(99,102,241,0.12);
+  color: #818cf8;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+.paper-links a:hover {
+  background: rgba(99,102,241,0.25);
+}
+.stats {
+  text-align: center;
+  padding: 30px;
+  margin-top: 40px;
+  background: rgba(30,41,59,0.4);
+  border-radius: 14px;
+  border: 1px solid rgba(99,102,241,0.1);
+}
+.stats p { color: #94a3b8; font-size: 0.88rem; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <h1>📡 小小志AI日报</h1>
+  <div class="date">2026年7月7日 周二</div>
+  <div class="subtitle">📝 arXiv 8 篇 · 🤗 HF 热门 2 篇 · 🏢 机构博客 1 条 · 共 10 篇论文 + 1 条动态</div>
+</header>
+
+<div class="highlight-banner">
+  <div class="hl-title">🔥 今日看点</div>
+  <div class="hl-text">
+    今日共收录 10 篇论文和 1 条机构动态，arXiv 回溯窗口 07-05~07-07 获取 8 篇。VLA 方向双星：🤖 CamVLA（阿里巴巴达摩院）提出免标定的视角鲁棒 VLA 模型，解决真实部署中相机视角不一致的核心痛点，无需重新标定即可适应自由视角；🤖 Cortex 提出双向对齐的具身 Agent 框架，在视觉理解与动作执行之间建立闭环反馈，支撑长时序操作任务的零样本迁移。世界模型方向 Deform360 构建大规模多视角视觉触觉数据集，首次将 360 度视觉与触觉感知统一用于可变形物体世界建模。Agent 方向 SovereignPA-Bench 首次提出"用户主权"概念的 Agent 评估框架，覆盖意图演化、平台中介和授权约束三层维度。Anthropic 发布可解释性研究，探索语言模型中是否存在类似大脑"全局工作空间"的信息整合机制。
+  </div>
+</div>
+
+<!-- 🤖 VLA Section -->
+<section class="section">
+  <h2 class="section-title">🤖 VLA · Vision-Language-Action</h2>
+
+  <div class="paper-card hot">
+    <div class="paper-title"><span class="hot-badge">🔥</span> CamVLA: From Fixed to Free Cameras - Calibration-Free View-Robust Vision-Language-Action Model</div>
+    <div class="paper-meta">arXiv 2026 · Alibaba DAMO Academy</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">针对真实场景中相机视角与训练时不一致导致性能下降的问题，提出免标定的视角鲁棒 VLA 模型 CamVLA，通过视角不变特征提取解耦相机参数对动作策略的干扰</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次实现无需相机标定即可适应不同视角的 VLA 框架，使机器人从固定相机训练走向自由相机部署，大幅降低实际场景的部署门槛</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在多个操作和抓取任务上验证了有效性，相比固定视角方法在视角变化场景下性能显著提升</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">解决 VLA 从实验室走向真实部署的核心痛点，免标定设计具有极高工程价值，建议关注其泛化到未见视角的能力和真机验证结果</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-vla">VLA</span>
+      <span class="tag tag-robot">Calibration-Free</span>
+      <span class="tag tag-systems">View-Robust</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2607.05396">arXiv</a>
+      <a href="https://arxiv.org/pdf/2607.05396">PDF</a>
+      <a href="https://alibaba-damo-academy.github.io/CamVLA/">Project</a>
+    </div>
+  </div>
+
+  <div class="paper-card hot">
+    <div class="paper-title"><span class="hot-badge">🔥</span> Cortex: A Bidirectionally Aligned Embodied Agent Framework for Long-horizon Manipulation</div>
+    <div class="paper-meta">arXiv 2026</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出双向对齐的具身 Agent 框架 Cortex，将视觉语言理解与动作执行在两个方向上进行对齐，形成理解到执行和执行到理解的闭环反馈，支撑长时序机器人操作任务</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次提出双向对齐机制，使 VLA 模型在理解和执行之间形成闭环，实现长时序操作中的零样本任务迁移，突破了单向对齐在复杂任务链中的信息损失瓶颈</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在长时序操作基准上成功率提升 3.1% 和 4.1%，在 4K 步长时序任务中验证了框架的稳定性</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">双向对齐为长时序 VLA 任务提供了新思路，零样本能力是从实验走向部署的关键，建议关注真机验证和时序扩展性</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-vla">VLA</span>
+      <span class="tag tag-robot">Long-horizon</span>
+      <span class="tag tag-reasoning">Bidirectional Alignment</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2607.05377">arXiv</a>
+      <a href="https://arxiv.org/pdf/2607.05377">PDF</a>
+      <a href="https://steinate.github.io/cortex.github.io/">Project</a>
+    </div>
+  </div>
+</section>
+
+<!-- 🌍 World Model Section -->
+<section class="section">
+  <h2 class="section-title">🌍 World Model · 世界模型</h2>
+
+  <div class="paper-card hot">
+    <div class="paper-title"><span class="hot-badge">🔥</span> Deform360: A Massive Multi-view Visuotactile Dataset for Deformable World Models</div>
+    <div class="paper-meta">arXiv 2026</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">构建大规模多视角视觉触觉数据集 Deform360，用于可变形物体的世界模型训练，融合 360 度多视角视觉与触觉感知信息预测物体动力学行为</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次将多视角视觉与触觉感知统一用于可变形世界建模，360 度覆盖物体形变的完整观测空间，填补了可变形物体世界模型的数据空白</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在操作抓取和规划任务上验证了数据集对世界模型训练的有效性，触觉模态的引入显著提升了形变预测精度</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">可变形物体世界模型是机器人精细操作的基础，多视角视觉触觉数据集为该方向提供了关键数据资源，建议关注其 Sim-to-Real 迁移效果</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-world">World Model</span>
+      <span class="tag tag-data">Visuotactile</span>
+      <span class="tag tag-3d">Multi-view</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2607.05390">arXiv</a>
+      <a href="https://arxiv.org/pdf/2607.05390">PDF</a>
+      <a href="https://deform360.lhy.xyz">Project</a>
+    </div>
+  </div>
+</section>
+
+<!-- 🦾 Robotics Section -->
+<section class="section">
+  <h2 class="section-title">🦾 Robotics · 机器人</h2>
+
+  <div class="paper-card">
+    <div class="paper-title">GaP: A Graph-as-Policy Multi-Agent Self-Learning Harness For Variational Automation Tasks</div>
+    <div class="paper-meta">arXiv 2026</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出将图结构直接作为策略的多 Agent 自学习框架 GaP，通过图神经网络建模多机器人之间的协作关系，实现无模型的可解释运动规划</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次将图结构作为策略表示本身，使多 Agent 系统在变分自动化任务中实现可解释的自学习协作，无需人工设计协作规则即可适应任务变化</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在运动规划和商业工业自动化任务上验证了有效性，图策略的可解释性显著优于传统黑盒策略</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">图策略为多机器人协作提供了可解释的新范式，建议关注其在复杂工业场景中的扩展性和策略迁移能力</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-robot">Robotics</span>
+      <span class="tag tag-agent">Multi-Agent</span>
+      <span class="tag tag-reasoning">Graph-as-Policy</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2607.05369">arXiv</a>
+      <a href="https://arxiv.org/pdf/2607.05369">PDF</a>
+      <a href="https://graph-robots.github.io/gap">Project</a>
+    </div>
+  </div>
+</section>
+
+<!-- 🧩 Agent Section -->
+<section class="section">
+  <h2 class="section-title">🧩 Agent · 智能体</h2>
+
+  <div class="paper-card">
+    <div class="paper-title">Search Beyond What Can Be Taught: Evolving the Knowledge Boundary in Agentic Visual Generation</div>
+    <div class="paper-meta">arXiv 2026</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出在智能体视觉生成中超越训练知识边界的搜索方法，构建 SearchGen-20K 数据集驱动 Agent 主动搜索并整合外部知识进行视觉内容生成</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出知识边界演化机制，使 Agent 在视觉生成中不再局限于训练数据，而是通过主动搜索扩展知识范围，突破了生成模型的知识固化瓶颈</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">基于 2 万条搜索增强数据和百万级知识库验证了方法有效性，生成质量在知识密集场景下显著提升</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">将搜索增强引入视觉生成 Agent 是检索增强生成在创意方向的新应用，建议关注 Agent 的搜索策略效率和知识整合质量</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-agent">Agent</span>
+      <span class="tag tag-generation">Visual Generation</span>
+      <span class="tag tag-tool">Knowledge Search</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2607.05382">arXiv</a>
+      <a href="https://arxiv.org/pdf/2607.05382">PDF</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">SovereignPA-Bench: Evaluating User-Owned Personal Agents under Evolving Intent, Platform Mediation, and Consent Constraints</div>
+    <div class="paper-meta">arXiv 2026</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">构建用户主权个人 Agent 评估基准 SovereignPA-Bench，在意图演化、平台中介和用户授权约束三个维度上系统评估个人 Agent 的行为合规性</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次提出"用户主权"概念的 Agent 评估框架，覆盖意图动态变化、平台介入和权限同意三层约束，填补了个人 Agent 合规评估的空白</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在导航和操作任务上验证了基准的评估有效性，暴露了现有 Agent 在用户授权和隐私保护方面的显著不足</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">个人 Agent 走向实用化的合规基础设施，用户主权视角的评估框架为 Agent 安全和隐私提供了标准化度量，建议关注其评估维度的完整性</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-agent">Agent</span>
+      <span class="tag tag-benchmark">Benchmark</span>
+      <span class="tag tag-safety">User Sovereignty</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2607.05363">arXiv</a>
+      <a href="https://arxiv.org/pdf/2607.05363">PDF</a>
+    </div>
+  </div>
+</section>
+
+<!-- 🧠 LLM Section -->
+<section class="section">
+  <h2 class="section-title">🧠 LLM · 语言模型</h2>
+
+  <div class="paper-card">
+    <div class="paper-title">LLM-as-a-Verifier: A General-Purpose Verification Framework</div>
+    <div class="paper-meta">arXiv 2026</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出将大语言模型作为通用验证器的框架 LLM-as-a-Verifier，利用 LLM 的推理能力对各类任务输出进行质量评估和正确性验证</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次构建通用验证框架，使单个 LLM 即可充当多任务验证器，无需为每个任务单独训练判别模型，大幅降低验证系统的开发和部署成本</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在多个验证任务上达到 86.5%、78.2%、87.4%、73.3% 等关键指标，验证了通用验证器的跨任务有效性</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">通用验证框架为 LLM 作为评估工具提供了新范式，建议关注其在不同领域任务上的验证一致性和可扩展性</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-llm">LLM</span>
+      <span class="tag tag-reasoning">Verification</span>
+      <span class="tag tag-benchmark">General-Purpose</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2607.05391">arXiv</a>
+      <a href="https://arxiv.org/pdf/2607.05391">PDF</a>
+      <a href="https://github.com/llm-as-a-verifier/llm-as-a-verifier">Code</a>
+      <a href="https://llm-as-a-verifier.com">Project</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">Faithfulness to Refusal: A Causal Audit of Neuron Selectors</div>
+    <div class="paper-meta">arXiv 2026</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">对大语言模型中神经元选择器进行因果审计，研究模型拒绝行为与神经元选择之间的因果关联，评估拒绝机制的可信度</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次从因果推断视角审计神经元选择器对拒绝行为的影响，揭示模型拒绝机制中"表面拒绝"与"真实拒绝"的差异</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">实验验证了因果审计方法在识别不可靠拒绝行为上的有效性，发现部分神经元选择器存在选择性偏差</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">拒绝机制的可信度是 LLM 安全的核心问题，因果审计为评估拒绝质量提供了新工具，建议关注其在不同对齐策略下的适用性</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-llm">LLM</span>
+      <span class="tag tag-safety">Refusal</span>
+      <span class="tag tag-reasoning">Causal Audit</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2607.05355">arXiv</a>
+      <a href="https://arxiv.org/pdf/2607.05355">PDF</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">Measuring the Gap Between Human and LLM Research Ideas</div>
+    <div class="paper-meta">HF Daily Papers · Yale NLP Lab · 5⭐</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出衡量人类与 LLM 生成研究想法之间差距的评估框架 TasteGap，从创新性、可行性和学术价值等维度对比人类研究者与 LLM 的研究构思能力</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次构建量化人类与 LLM 研究想法差异的评估体系，揭示 LLM 在学术创新中的能力边界和潜力空间</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">实验验证了评估框架的有效性，为理解 LLM 在科研创意生成中的真实水平提供了量化依据</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">衡量 LLM 科研创造力是 AI 辅助研究的基础问题，Yale 团队的评估框架为该方向提供了标准化工具，建议关注其评估维度的主观性控制</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-llm">LLM</span>
+      <span class="tag tag-science">Research Ideas</span>
+      <span class="tag tag-benchmark">Evaluation</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2607.01233">arXiv</a>
+      <a href="https://arxiv.org/pdf/2607.01233">PDF</a>
+      <a href="https://github.com/ziyuuc/TasteGap">Code (5⭐)</a>
+    </div>
+  </div>
+</section>
+
+<!-- 🎨 Multimodal Section -->
+<section class="section">
+  <h2 class="section-title">🎨 Multimodal · 多模态</h2>
+
+  <div class="paper-card">
+    <div class="paper-title">DataComp-VLM: Improved Open Datasets for Vision-Language Models</div>
+    <div class="paper-meta">HF Daily Papers · 27⭐</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">构建改进的开放数据集 DataComp-VLM，用于视觉语言模型训练，通过系统化数据筛选和规模扩展提升多模态模型性能</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出数据驱动的多模态训练范式，在 1B 到 8B 参数规模上验证了数据质量对视觉语言模型的关键影响，实现 5.4 个百分点的性能提升</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在多个视觉语言基准上达到 63.6% 等关键指标，开源代码获得 27 星关注</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">数据规模与质量是视觉语言模型发展的基础，开放数据集为社区提供了可复现的训练资源，建议关注数据筛选策略的泛化能力</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-multimodal">Multimodal</span>
+      <span class="tag tag-data">Dataset</span>
+      <span class="tag tag-llm">Vision-Language</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.28551">arXiv</a>
+      <a href="https://arxiv.org/pdf/2606.28551">PDF</a>
+      <a href="https://www.datacomp.ai/dcvlm/">Project</a>
+      <a href="https://github.com/mlfoundations/dcvlm">Code (27⭐)</a>
+    </div>
+  </div>
+</section>
+
+<!-- 🏢 行业动态 Section -->
+<section class="section">
+  <h2 class="section-title">🏢 行业动态</h2>
+
+  <div class="info-card">
+    <div class="paper-title">A Global Workspace in Language Models</div>
+    <div class="paper-meta">Anthropic · 可解释性研究</div>
+    <div class="paper-summary">Anthropic 发布可解释性研究，探索大型语言模型中是否存在类似大脑"全局工作空间"的信息整合机制。研究通过机制可解释性方法定位了模型内部跨模块信息汇聚和广播的关键区域，将认知科学的"全局工作空间理论"引入 LLM 可解释性研究，为理解模型内部信息流和决策过程提供了新的神经科学视角。</div>
+    <div class="paper-links">
+      <a href="https://www.anthropic.com/research/global-workspace">来源</a>
+    </div>
+  </div>
+</section>
+
+<div class="stats">
+  <p>📡 自动生成于 2026年7月7日 · 数据截至 09:26 UTC · 关注 VLA · Robotics · World Model · LLM · Multimodal · Agent</p>
+</div>
+
+</div>
+</body>
+</html>
