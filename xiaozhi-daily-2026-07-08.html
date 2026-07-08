@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>小小志AI日报 - 2026年7月8日 周三</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans SC', sans-serif;
+  background: #0a0e1a;
+  color: #e0e6f0;
+  line-height: 1.7;
+  min-height: 100vh;
+}
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+header {
+  text-align: center;
+  margin-bottom: 48px;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, rgba(59,130,246,0.08) 0%, rgba(139,92,246,0.08) 100%);
+  border-radius: 20px;
+  border: 1px solid rgba(99,102,241,0.15);
+}
+header h1 {
+  font-size: 2rem;
+  background: linear-gradient(135deg, #60a5fa, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 8px;
+}
+header .date {
+  color: #94a3b8;
+  font-size: 1rem;
+}
+header .subtitle {
+  color: #64748b;
+  font-size: 0.9rem;
+  margin-top: 6px;
+}
+.highlight-banner {
+  background: linear-gradient(135deg, rgba(249,115,22,0.1) 0%, rgba(234,179,8,0.08) 100%);
+  border: 1px solid rgba(249,115,22,0.2);
+  border-radius: 14px;
+  padding: 20px 24px;
+  margin-bottom: 36px;
+}
+.hl-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fb923c;
+  margin-bottom: 8px;
+}
+.hl-text {
+  font-size: 0.92rem;
+  color: #cbd5e1;
+  line-height: 1.7;
+}
+.section {
+  margin-bottom: 40px;
+}
+.section-title {
+  font-size: 1.4rem;
+  color: #f1f5f9;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(99,102,241,0.2);
+}
+.paper-card {
+  background: rgba(30,41,59,0.6);
+  border: 1px solid rgba(99,102,241,0.12);
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 16px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.paper-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(99,102,241,0.1);
+  border-color: rgba(99,102,241,0.3);
+}
+.paper-card.hot {
+  border-color: rgba(249,115,22,0.25);
+  background: rgba(30,41,59,0.7);
+}
+.paper-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #f8fafc;
+  margin-bottom: 8px;
+}
+.paper-meta {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-bottom: 10px;
+}
+.summary-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+@media (max-width: 640px) {
+  .summary-grid { grid-template-columns: 1fr; }
+}
+.summary-item {
+  background: rgba(15,23,42,0.5);
+  border-radius: 10px;
+  padding: 12px 14px;
+  border: 1px solid rgba(99,102,241,0.08);
+}
+.summary-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #818cf8;
+  margin-bottom: 4px;
+}
+.summary-text {
+  font-size: 0.88rem;
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+.paper-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.tag {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+.tag-agent { background: rgba(16,185,129,0.12); color: #34d399; }
+.tag-llm { background: rgba(99,102,241,0.12); color: #818cf8; }
+.tag-multimodal { background: rgba(244,114,182,0.12); color: #f472b6; }
+.tag-world { background: rgba(251,191,36,0.12); color: #fbbf24; }
+.tag-robot { background: rgba(251,146,60,0.12); color: #fb923c; }
+.tag-rl { background: rgba(45,212,191,0.12); color: #2dd4bf; }
+.tag-video { background: rgba(168,85,247,0.12); color: #a855f7; }
+.tag-benchmark { background: rgba(34,211,238,0.12); color: #22d3ee; }
+.tag-vla { background: rgba(59,130,246,0.12); color: #60a5fa; }
+.tag-safety { background: rgba(239,68,68,0.12); color: #f87171; }
+.tag-memory { background: rgba(192,132,252,0.12); color: #c084fc; }
+.tag-reasoning { background: rgba(132,204,22,0.12); color: #a3e635; }
+.tag-code { background: rgba(52,211,153,0.12); color: #34d399; }
+.tag-survey { background: rgba(6,182,212,0.12); color: #22d3ee; }
+.tag-science { background: rgba(217,119,6,0.12); color: #f59e0b; }
+.tag-medical { background: rgba(239,68,68,0.12); color: #f87171; }
+.tag-systems { background: rgba(56,189,248,0.12); color: #38bdf8; }
+.tag-3d { background: rgba(148,163,184,0.12); color: #94a3b8; }
+.tag-data { background: rgba(250,204,21,0.12); color: #facc15; }
+.tag-infra { background: rgba(167,139,250,0.12); color: #a78bfa; }
+.tag-generation { background: rgba(249,115,22,0.12); color: #f97316; }
+.tag-navigation { background: rgba(59,130,246,0.12); color: #60a5fa; }
+.tag-distillation { background: rgba(34,211,238,0.12); color: #22d3ee; }
+.tag-humanoid { background: rgba(251,146,60,0.12); color: #fb923c; }
+.tag-tool { background: rgba(52,211,153,0.12); color: #34d399; }
+.tag-gui { background: rgba(244,114,182,0.12); color: #f472b6; }
+.tag-embedding { background: rgba(167,139,250,0.12); color: #a78bfa; }
+.hot-badge {
+  display: inline;
+  margin-right: 4px;
+}
+.info-card {
+  background: rgba(30,41,59,0.6);
+  border: 1px solid rgba(99,102,241,0.12);
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 16px;
+}
+.paper-summary {
+  font-size: 0.9rem;
+  color: #cbd5e1;
+  line-height: 1.7;
+  margin-bottom: 14px;
+}
+.paper-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.paper-links a {
+  display: inline-block;
+  padding: 5px 14px;
+  background: rgba(99,102,241,0.12);
+  color: #818cf8;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+.paper-links a:hover {
+  background: rgba(99,102,241,0.25);
+}
+.stats {
+  text-align: center;
+  padding: 30px;
+  margin-top: 40px;
+  background: rgba(30,41,59,0.4);
+  border-radius: 14px;
+  border: 1px solid rgba(99,102,241,0.1);
+}
+.stats p { color: #94a3b8; font-size: 0.88rem; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <h1>📡 小小志AI日报</h1>
+  <div class="date">2026年7月8日 周三</div>
+  <div class="subtitle">🤗 HF 热门 8 篇 · 共 8 篇论文</div>
+</header>
+
+<div class="highlight-banner">
+  <div class="hl-title">🔥 今日看点</div>
+  <div class="hl-text">
+    今日共收录 8 篇 HF 热门论文，arXiv 采集超时跳过。VLA 方向重磅：🤖 InternVLA-A1.5（Intern Robotics，463 星）提出统一理解、潜在前瞻与动作的 VLA 框架，通过组合泛化实现复杂操作任务的零样本迁移，开源代码和项目页面已发布。世界模型方向 GigaWorld-1（GigaAI，153 星）发布机器人策略评估世界模型构建路线图，为具身智能策略评估提供系统化基础设施。机器人方向 EVA-Client 提供统一的数据采集、推理和部署框架，覆盖真实机器人全生命周期。微软 ResearchStudio-Reel 实现从论文到海报、视频和博客的科研最后一公里自动化。Wan-Streamer v0.2 在相同延迟下实现 192 倍至 640 倍分辨率提升。
+  </div>
+</div>
+
+<!-- 🤖 VLA Section -->
+<section class="section">
+  <h2 class="section-title">🤖 VLA · Vision-Language-Action</h2>
+
+  <div class="paper-card hot">
+    <div class="paper-title"><span class="hot-badge">🔥</span> InternVLA-A1.5: Unifying Understanding, Latent Foresight, and Action for Compositional Generalization</div>
+    <div class="paper-meta">HF Daily Papers · Intern Robotics · 463⭐</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出统一视觉理解、潜在前瞻预测和动作执行的 VLA 框架 InternVLA-A1.5，通过将三类能力融合到单一策略模型中实现组合泛化能力</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次将潜在前瞻机制与动作生成统一到同一模型中，使机器人能够在执行前进行隐式推理预测，从而在未见过的任务组合上实现零样本泛化</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">基于 120 万至 300 万规模数据训练，在组合泛化基准上验证了统一框架相比分离式架构的显著优势</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">统一架构是 VLA 从单任务走向多任务泛化的关键方向，463 星说明社区认可度高，建议关注其真机部署效果和前瞻预测的可解释性</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-vla">VLA</span>
+      <span class="tag tag-reasoning">Compositional Generalization</span>
+      <span class="tag tag-robot">Latent Foresight</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2607.04988">arXiv</a>
+      <a href="https://arxiv.org/pdf/2607.04988">PDF</a>
+      <a href="https://internrobotics.github.io/internvla-a15.github.io/">Project</a>
+      <a href="https://github.com/InternRobotics/InternVLA-A-series">Code (463⭐)</a>
+    </div>
+  </div>
+</section>
+
+<!-- 🌍 World Model Section -->
+<section class="section">
+  <h2 class="section-title">🌍 World Model · 世界模型</h2>
+
+  <div class="paper-card hot">
+    <div class="paper-title"><span class="hot-badge">🔥</span> GigaWorld-1: A Roadmap to Build World Models for Robot Policy Evaluation</div>
+    <div class="paper-meta">HF Daily Papers · GigaAI · 153⭐</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">发布构建机器人策略评估世界模型的系统性路线图 GigaWorld-1，从数据采集、模型训练到评估流程提供完整的技术方案和工具链</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次提出将世界模型作为机器人策略评估基础设施的完整框架，解决了真实世界评估成本高、仿真评估可信度低的核心矛盾</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在操作和抓取任务上验证了世界模型评估与真实环境评估的一致性，开源代码获得 153 星关注</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">世界模型作为评估工具是具身智能走向规模化的关键基础设施，路线图为社区提供了可复现的参考方案，建议关注其评估与真机结果的相关性</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-world">World Model</span>
+      <span class="tag tag-benchmark">Policy Evaluation</span>
+      <span class="tag tag-robot">Robotics</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2607.02642">arXiv</a>
+      <a href="https://arxiv.org/pdf/2607.02642">PDF</a>
+      <a href="https://open-gigaai.github.io/giga-world-1/">Project</a>
+      <a href="https://github.com/open-gigaai/giga-world-1">Code (153⭐)</a>
+    </div>
+  </div>
+</section>
+
+<!-- 🦾 Robotics Section -->
+<section class="section">
+  <h2 class="section-title">🦾 Robotics · 机器人</h2>
+
+  <div class="paper-card hot">
+    <div class="paper-title"><span class="hot-badge">🔥</span> EVA-Client: A Unified Data Collection, Inference, and Deployment Framework for Embodied Policies on Real Robots</div>
+    <div class="paper-meta">HF Daily Papers · 43⭐</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出开源的具身策略全生命周期框架 EVA-Client，统一数据采集、模型推理和真机部署三个环节，提供端到端的机器人策略开发工具链</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">将数据采集、推理和部署整合到统一框架中，解决了现有工具各自为政、接口不兼容的问题，降低真实机器人策略迭代的工程门槛</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在操作抓取和推理任务上验证了框架的实时性和稳定性，开源代码获得 43 星关注</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">统一部署框架是具身智能从研究走向工程落地的关键基础设施，建议关注其支持的硬件类型范围和跨平台兼容性</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-robot">Robotics</span>
+      <span class="tag tag-infra">Deployment</span>
+      <span class="tag tag-data">Data Collection</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2607.02646">arXiv</a>
+      <a href="https://arxiv.org/pdf/2607.02646">PDF</a>
+      <a href="https://colalab.net/projects/eva-client/">Project</a>
+      <a href="https://github.com/Noietch/EVA-CLIENT">Code (43⭐)</a>
+    </div>
+  </div>
+</section>
+
+<!-- 🧩 Agent Section -->
+<section class="section">
+  <h2 class="section-title">🧩 Agent · 智能体</h2>
+
+  <div class="paper-card">
+    <div class="paper-title">UI-MOPD: Multi-Platform On-Policy Distillation for Continual GUI Agent Learning</div>
+    <div class="paper-meta">HF Daily Papers</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出多平台在线策略蒸馏框架 UI-MOPD，通过持续学习机制使 GUI 智能体在多个平台间进行策略迁移和知识积累</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 Uni-GUI 统一多平台表征方案，使智能体在跨平台场景下通过在线蒸馏持续优化策略，突破了单平台训练的泛化瓶颈</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在多平台 GUI 基准上达到 38.2% 和 12.0% 等关键指标，验证了持续学习对跨平台迁移的有效性</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">跨平台持续学习是 GUI Agent 走向通用化的关键方向，建议关注其平台迁移效率和灾难性遗忘的缓解效果</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-agent">Agent</span>
+      <span class="tag tag-gui">GUI</span>
+      <span class="tag tag-distillation">On-Policy Distillation</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2607.04425">arXiv</a>
+      <a href="https://arxiv.org/pdf/2607.04425">PDF</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">PaperPilot: Multi-Turn Agentic Scientific Literature Search via Workflow Induction</div>
+    <div class="paper-meta">HF Daily Papers · University of Illinois at Urbana-Champaign · 1⭐</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出基于工作流归纳的多轮智能体文献检索框架 PaperPilot，通过 90 亿参数模型驱动多轮搜索策略，实现科学文献的精准检索和筛选</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次将工作流归纳引入文献检索 Agent，使模型能够从搜索过程中学习并优化检索策略，而非依赖固定的搜索流程</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在文献检索基准上达到 9.5% 等关键指标，基于 90 亿参数模型验证了方法的有效性</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">工作流归纳为科研 Agent 提供了自适应检索的新思路，建议关注其在不同学科领域的检索精度和策略迁移能力</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-agent">Agent</span>
+      <span class="tag tag-science">Literature Search</span>
+      <span class="tag tag-reasoning">Workflow Induction</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2607.00597">arXiv</a>
+      <a href="https://arxiv.org/pdf/2607.00597">PDF</a>
+      <a href="https://paperpilot.papersearch.org/">Project</a>
+      <a href="https://github.com/mtilyxuegao/PaperPilot">Code (1⭐)</a>
+    </div>
+  </div>
+</section>
+
+<!-- 🧠 LLM Section -->
+<section class="section">
+  <h2 class="section-title">🧠 LLM · 语言模型</h2>
+
+  <div class="paper-card">
+    <div class="paper-title">Vision Pretraining for Dense Spatial Perception</div>
+    <div class="paper-meta">HF Daily Papers · Robbyant · 339⭐</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出自监督视觉预训练方案 LingBot-Vision，针对密集空间感知任务优化预训练策略，提升模型对场景中物体位置和空间关系的理解能力</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">设计面向密集空间感知的自监督预训练目标，使模型无需标注数据即可学习深度、遮挡和空间布局等几何信息，具有可扩展特性</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在密集空间感知基准上验证了预训练方案的有效性，开源代码获得 339 星关注</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">密集空间感知是机器人导航和操作的基础能力，自监督预训练降低了对标注数据的依赖，建议关注其在真实场景中的泛化表现</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-llm">LLM</span>
+      <span class="tag tag-multimodal">Vision Pretraining</span>
+      <span class="tag tag-3d">Spatial Perception</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2607.05247">arXiv</a>
+      <a href="https://arxiv.org/pdf/2607.05247">PDF</a>
+      <a href="https://technology.robbyant.com/lingbot-vision">Project</a>
+      <a href="https://github.com/Robbyant/lingbot-vision">Code (339⭐)</a>
+    </div>
+  </div>
+</section>
+
+<!-- 🎨 Multimodal / Generation Section -->
+<section class="section">
+  <h2 class="section-title">🎨 Multimodal · 多模态与生成</h2>
+
+  <div class="paper-card">
+    <div class="paper-title">ResearchStudio-Reel: Automate the Last Mile of Research from Paper to Poster, Video, and Blog</div>
+    <div class="paper-meta">HF Daily Papers · Microsoft</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">微软提出科研最后一公里自动化框架 ResearchStudio-Reel，利用视觉语言模型偏好优化实现从论文到海报、视频和博客的端到端内容生成</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 VLM 偏好机制驱动多格式科研内容生成，将学术成果传播的格式转换环节完全自动化，大幅降低科研人员的传播成本</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在内容生成质量评估上达到 84% 和 93% 等关键指标，验证了多格式生成的准确性和一致性</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">科研传播自动化是提升学术影响力的实用工具，微软出品质量有保障，建议关注其对复杂论文结构和公式的处理能力</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-multimodal">Multimodal</span>
+      <span class="tag tag-generation">Content Generation</span>
+      <span class="tag tag-science">Research</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2607.04438">arXiv</a>
+      <a href="https://arxiv.org/pdf/2607.04438">PDF</a>
+      <a href="https://aka.ms/ResearchStudio">Project</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">Wan-Streamer v0.2: Higher Resolution, Same Latency</div>
+    <div class="paper-meta">HF Daily Papers · Wan-AI</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出端到端实时视频生成流式框架 Wan-Streamer v0.2，在保持相同推理延迟的前提下大幅提升生成分辨率</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">通过流式架构优化实现分辨率与延迟的解耦，在不增加推理时间的情况下将生成分辨率提升至 192 倍至 640 倍</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">实现 25 帧每秒实时生成，分辨率提升 192 倍至 640 倍的同时保持延迟不变</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">实时高分辨率视频生成是视频内容创作的基础设施，延迟不变的分辨率提升具有极高工程价值，建议关注其显存占用和画质细节</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-video">Video Generation</span>
+      <span class="tag tag-systems">Streaming</span>
+      <span class="tag tag-generation">Real-time</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2607.04443">arXiv</a>
+      <a href="https://arxiv.org/pdf/2607.04443">PDF</a>
+      <a href="https://wan-streamer.com/">Project</a>
+    </div>
+  </div>
+</section>
+
+<div class="stats">
+  <p>📡 自动生成于 2026年7月8日 · 数据截至 09:28 UTC · 关注 VLA · Robotics · World Model · LLM · Multimodal · Agent</p>
+</div>
+
+</div>
+</body>
+</html>

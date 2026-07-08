@@ -658,6 +658,98 @@
 <script>
 // ===== DATA =====
 const PAPERS_DB = [
+    // === 2026-07-08 ===
+    {
+        date: "2026-07-08",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "InternVLA-A1.5: Unifying Understanding, Latent Foresight, and Action for Compositional Generalization",
+        venue: "HF Daily Papers · Intern Robotics · 463⭐",
+        summary: "🔬 技术路线: 提出统一视觉理解、潜在前瞻预测和动作执行的 VLA 框架 InternVLA-A1.5，通过将三类能力融合到单一策略模型中实现组合泛化能力 | 💡 创新点: 首次将潜在前瞻机制与动作生成统一到同一模型中，使机器人能够在执行前进行隐式推理预测，从而在未见过的任务组合上实现零样本泛化 | 📊 实验效果: 基于 120 万至 300 万规模数据训练，在组合泛化基准上验证了统一框架相比分离式架构的显著优势 | ⭐ 整体评价: 统一架构是 VLA 从单任务走向多任务泛化的关键方向，463 星说明社区认可度高，建议关注其真机部署效果和前瞻预测的可解释性",
+        tags: [["VLA","green"],["Compositional Generalization","green"],["Latent Foresight","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.04988"],["PDF","https://arxiv.org/pdf/2607.04988"],["Project","https://internrobotics.github.io/internvla-a15.github.io/"],["Code (463⭐)","https://github.com/InternRobotics/InternVLA-A-series"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出统一视觉理解、潜在前瞻预测和动作执行的 VLA 框架 InternVLA-A1.5，通过将三类能力融合到单一策略模型中实现组合泛化能力"},{"label":"💡 创新点","text":"首次将潜在前瞻机制与动作生成统一到同一模型中，使机器人能够在执行前进行隐式推理预测，从而在未见过的任务组合上实现零样本泛化"},{"label":"📊 实验效果","text":"基于 120 万至 300 万规模数据训练，在组合泛化基准上验证了统一框架相比分离式架构的显著优势"},{"label":"⭐ 整体评价","text":"统一架构是 VLA 从单任务走向多任务泛化的关键方向，463 星说明社区认可度高，建议关注其真机部署效果和前瞻预测的可解释性"}]
+    },
+    {
+        date: "2026-07-08",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "GigaWorld-1: A Roadmap to Build World Models for Robot Policy Evaluation",
+        venue: "HF Daily Papers · GigaAI · 153⭐",
+        summary: "🔬 技术路线: 发布构建机器人策略评估世界模型的系统性路线图 GigaWorld-1，从数据采集、模型训练到评估流程提供完整的技术方案和工具链 | 💡 创新点: 首次提出将世界模型作为机器人策略评估基础设施的完整框架，解决了真实世界评估成本高、仿真评估可信度低的核心矛盾 | 📊 实验效果: 在操作和抓取任务上验证了世界模型评估与真实环境评估的一致性，开源代码获得 153 星关注 | ⭐ 整体评价: 世界模型作为评估工具是具身智能走向规模化的关键基础设施，路线图为社区提供了可复现的参考方案，建议关注其评估与真机结果的相关性",
+        tags: [["World Model","green"],["Policy Evaluation","green"],["Robotics","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.02642"],["PDF","https://arxiv.org/pdf/2607.02642"],["Project","https://open-gigaai.github.io/giga-world-1/"],["Code (153⭐)","https://github.com/open-gigaai/giga-world-1"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"发布构建机器人策略评估世界模型的系统性路线图 GigaWorld-1，从数据采集、模型训练到评估流程提供完整的技术方案和工具链"},{"label":"💡 创新点","text":"首次提出将世界模型作为机器人策略评估基础设施的完整框架，解决了真实世界评估成本高、仿真评估可信度低的核心矛盾"},{"label":"📊 实验效果","text":"在操作和抓取任务上验证了世界模型评估与真实环境评估的一致性，开源代码获得 153 星关注"},{"label":"⭐ 整体评价","text":"世界模型作为评估工具是具身智能走向规模化的关键基础设施，路线图为社区提供了可复现的参考方案，建议关注其评估与真机结果的相关性"}]
+    },
+    {
+        date: "2026-07-08",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "EVA-Client: A Unified Data Collection, Inference, and Deployment Framework for Embodied Policies on Real Robots",
+        venue: "HF Daily Papers · 43⭐",
+        summary: "🔬 技术路线: 提出开源的具身策略全生命周期框架 EVA-Client，统一数据采集、模型推理和真机部署三个环节，提供端到端的机器人策略开发工具链 | 💡 创新点: 将数据采集、推理和部署整合到统一框架中，解决了现有工具各自为政、接口不兼容的问题，降低真实机器人策略迭代的工程门槛 | 📊 实验效果: 在操作抓取和推理任务上验证了框架的实时性和稳定性，开源代码获得 43 星关注 | ⭐ 整体评价: 统一部署框架是具身智能从研究走向工程落地的关键基础设施，建议关注其支持的硬件类型范围和跨平台兼容性",
+        tags: [["Robotics","green"],["Deployment","green"],["Data Collection","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.02646"],["PDF","https://arxiv.org/pdf/2607.02646"],["Project","https://colalab.net/projects/eva-client/"],["Code (43⭐)","https://github.com/Noietch/EVA-CLIENT"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出开源的具身策略全生命周期框架 EVA-Client，统一数据采集、模型推理和真机部署三个环节，提供端到端的机器人策略开发工具链"},{"label":"💡 创新点","text":"将数据采集、推理和部署整合到统一框架中，解决了现有工具各自为政、接口不兼容的问题，降低真实机器人策略迭代的工程门槛"},{"label":"📊 实验效果","text":"在操作抓取和推理任务上验证了框架的实时性和稳定性，开源代码获得 43 星关注"},{"label":"⭐ 整体评价","text":"统一部署框架是具身智能从研究走向工程落地的关键基础设施，建议关注其支持的硬件类型范围和跨平台兼容性"}]
+    },
+    {
+        date: "2026-07-08",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "UI-MOPD: Multi-Platform On-Policy Distillation for Continual GUI Agent Learning",
+        venue: "HF Daily Papers",
+        summary: "🔬 技术路线: 提出多平台在线策略蒸馏框架 UI-MOPD，通过持续学习机制使 GUI 智能体在多个平台间进行策略迁移和知识积累 | 💡 创新点: 提出 Uni-GUI 统一多平台表征方案，使智能体在跨平台场景下通过在线蒸馏持续优化策略，突破了单平台训练的泛化瓶颈 | 📊 实验效果: 在多平台 GUI 基准上达到 38.2% 和 12.0% 等关键指标，验证了持续学习对跨平台迁移的有效性 | ⭐ 整体评价: 跨平台持续学习是 GUI Agent 走向通用化的关键方向，建议关注其平台迁移效率和灾难性遗忘的缓解效果",
+        tags: [["Agent","green"],["GUI","green"],["On-Policy Distillation","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.04425"],["PDF","https://arxiv.org/pdf/2607.04425"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出多平台在线策略蒸馏框架 UI-MOPD，通过持续学习机制使 GUI 智能体在多个平台间进行策略迁移和知识积累"},{"label":"💡 创新点","text":"提出 Uni-GUI 统一多平台表征方案，使智能体在跨平台场景下通过在线蒸馏持续优化策略，突破了单平台训练的泛化瓶颈"},{"label":"📊 实验效果","text":"在多平台 GUI 基准上达到 38.2% 和 12.0% 等关键指标，验证了持续学习对跨平台迁移的有效性"},{"label":"⭐ 整体评价","text":"跨平台持续学习是 GUI Agent 走向通用化的关键方向，建议关注其平台迁移效率和灾难性遗忘的缓解效果"}]
+    },
+    {
+        date: "2026-07-08",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "PaperPilot: Multi-Turn Agentic Scientific Literature Search via Workflow Induction",
+        venue: "HF Daily Papers · University of Illinois at Urbana-Champaign · 1⭐",
+        summary: "🔬 技术路线: 提出基于工作流归纳的多轮智能体文献检索框架 PaperPilot，通过 90 亿参数模型驱动多轮搜索策略，实现科学文献的精准检索和筛选 | 💡 创新点: 首次将工作流归纳引入文献检索 Agent，使模型能够从搜索过程中学习并优化检索策略，而非依赖固定的搜索流程 | 📊 实验效果: 在文献检索基准上达到 9.5% 等关键指标，基于 90 亿参数模型验证了方法的有效性 | ⭐ 整体评价: 工作流归纳为科研 Agent 提供了自适应检索的新思路，建议关注其在不同学科领域的检索精度和策略迁移能力",
+        tags: [["Agent","green"],["Literature Search","green"],["Workflow Induction","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.00597"],["PDF","https://arxiv.org/pdf/2607.00597"],["Project","https://paperpilot.papersearch.org/"],["Code (1⭐)","https://github.com/mtilyxuegao/PaperPilot"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出基于工作流归纳的多轮智能体文献检索框架 PaperPilot，通过 90 亿参数模型驱动多轮搜索策略，实现科学文献的精准检索和筛选"},{"label":"💡 创新点","text":"首次将工作流归纳引入文献检索 Agent，使模型能够从搜索过程中学习并优化检索策略，而非依赖固定的搜索流程"},{"label":"📊 实验效果","text":"在文献检索基准上达到 9.5% 等关键指标，基于 90 亿参数模型验证了方法的有效性"},{"label":"⭐ 整体评价","text":"工作流归纳为科研 Agent 提供了自适应检索的新思路，建议关注其在不同学科领域的检索精度和策略迁移能力"}]
+    },
+    {
+        date: "2026-07-08",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Vision Pretraining for Dense Spatial Perception",
+        venue: "HF Daily Papers · Robbyant · 339⭐",
+        summary: "🔬 技术路线: 提出自监督视觉预训练方案 LingBot-Vision，针对密集空间感知任务优化预训练策略，提升模型对场景中物体位置和空间关系的理解能力 | 💡 创新点: 设计面向密集空间感知的自监督预训练目标，使模型无需标注数据即可学习深度、遮挡和空间布局等几何信息，具有可扩展特性 | 📊 实验效果: 在密集空间感知基准上验证了预训练方案的有效性，开源代码获得 339 星关注 | ⭐ 整体评价: 密集空间感知是机器人导航和操作的基础能力，自监督预训练降低了对标注数据的依赖，建议关注其在真实场景中的泛化表现",
+        tags: [["LLM","green"],["Vision Pretraining","green"],["Spatial Perception","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.05247"],["PDF","https://arxiv.org/pdf/2607.05247"],["Project","https://technology.robbyant.com/lingbot-vision"],["Code (339⭐)","https://github.com/Robbyant/lingbot-vision"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出自监督视觉预训练方案 LingBot-Vision，针对密集空间感知任务优化预训练策略，提升模型对场景中物体位置和空间关系的理解能力"},{"label":"💡 创新点","text":"设计面向密集空间感知的自监督预训练目标，使模型无需标注数据即可学习深度、遮挡和空间布局等几何信息，具有可扩展特性"},{"label":"📊 实验效果","text":"在密集空间感知基准上验证了预训练方案的有效性，开源代码获得 339 星关注"},{"label":"⭐ 整体评价","text":"密集空间感知是机器人导航和操作的基础能力，自监督预训练降低了对标注数据的依赖，建议关注其在真实场景中的泛化表现"}]
+    },
+    {
+        date: "2026-07-08",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "ResearchStudio-Reel: Automate the Last Mile of Research from Paper to Poster, Video, and Blog",
+        venue: "HF Daily Papers · Microsoft",
+        summary: "🔬 技术路线: 微软提出科研最后一公里自动化框架 ResearchStudio-Reel，利用视觉语言模型偏好优化实现从论文到海报、视频和博客的端到端内容生成 | 💡 创新点: 提出 VLM 偏好机制驱动多格式科研内容生成，将学术成果传播的格式转换环节完全自动化，大幅降低科研人员的传播成本 | 📊 实验效果: 在内容生成质量评估上达到 84% 和 93% 等关键指标，验证了多格式生成的准确性和一致性 | ⭐ 整体评价: 科研传播自动化是提升学术影响力的实用工具，微软出品质量有保障，建议关注其对复杂论文结构和公式的处理能力",
+        tags: [["Multimodal","green"],["Content Generation","green"],["Research","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.04438"],["PDF","https://arxiv.org/pdf/2607.04438"],["Project","https://aka.ms/ResearchStudio"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"微软提出科研最后一公里自动化框架 ResearchStudio-Reel，利用视觉语言模型偏好优化实现从论文到海报、视频和博客的端到端内容生成"},{"label":"💡 创新点","text":"提出 VLM 偏好机制驱动多格式科研内容生成，将学术成果传播的格式转换环节完全自动化，大幅降低科研人员的传播成本"},{"label":"📊 实验效果","text":"在内容生成质量评估上达到 84% 和 93% 等关键指标，验证了多格式生成的准确性和一致性"},{"label":"⭐ 整体评价","text":"科研传播自动化是提升学术影响力的实用工具，微软出品质量有保障，建议关注其对复杂论文结构和公式的处理能力"}]
+    },
+    {
+        date: "2026-07-08",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "Wan-Streamer v0.2: Higher Resolution, Same Latency",
+        venue: "HF Daily Papers · Wan-AI",
+        summary: "🔬 技术路线: 提出端到端实时视频生成流式框架 Wan-Streamer v0.2，在保持相同推理延迟的前提下大幅提升生成分辨率 | 💡 创新点: 通过流式架构优化实现分辨率与延迟的解耦，在不增加推理时间的情况下将生成分辨率提升至 192 倍至 640 倍 | 📊 实验效果: 实现 25 帧每秒实时生成，分辨率提升 192 倍至 640 倍的同时保持延迟不变 | ⭐ 整体评价: 实时高分辨率视频生成是视频内容创作的基础设施，延迟不变的分辨率提升具有极高工程价值，建议关注其显存占用和画质细节",
+        tags: [["Video Generation","green"],["Streaming","green"],["Real-time","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.04443"],["PDF","https://arxiv.org/pdf/2607.04443"],["Project","https://wan-streamer.com/"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出端到端实时视频生成流式框架 Wan-Streamer v0.2，在保持相同推理延迟的前提下大幅提升生成分辨率"},{"label":"💡 创新点","text":"通过流式架构优化实现分辨率与延迟的解耦，在不增加推理时间的情况下将生成分辨率提升至 192 倍至 640 倍"},{"label":"📊 实验效果","text":"实现 25 帧每秒实时生成，分辨率提升 192 倍至 640 倍的同时保持延迟不变"},{"label":"⭐ 整体评价","text":"实时高分辨率视频生成是视频内容创作的基础设施，延迟不变的分辨率提升具有极高工程价值，建议关注其显存占用和画质细节"}]
+    },
     // === 2026-07-07 ===
     {
         date: "2026-07-07",
@@ -16996,6 +17088,13 @@ const PAPERS_DB = [
 ];
 
 const DAILY_OVERVIEW = {
+    "2026-07-08": {
+        bannerTitle: "🔥 今日看点",
+        bannerSubtitle: "今日共收录 8 篇 HF 热门论文，arXiv 采集超时跳过。VLA 方向重磅：🤖 InternVLA-A1.5（Intern Robotics，463 星）提出统一理解、潜在前瞻与动作的 VLA 框架，通过组合泛化实现复杂操作任务的零样本迁移，开源代码和项目页面已发布。世界模型方向 GigaWorld-1（GigaAI，153 星）发布机器人策略评估世界模型构建路线图，为具身智能策略评估提供系统化基础设施。机器人方向 EVA-Client 提供统一的数据采集、推理和部署框架，覆盖真实机器人全生命周期。微软 ResearchStudio-Reel 实现从论文到海报、视频和博客的科研最后一公里自动化。Wan-Streamer v0.2 在相同延迟下实现 192 倍至 640 倍分辨率提升。",
+        picks: ["InternVLA-A1.5: Unifying Understanding, Latent Foresight, and Action for Compositional Generalization","GigaWorld-1: A Roadmap to Build World Models for Robot Policy Evaluation","EVA-Client: A Unified Data Collection, Inference, and Deployment Framework for Embodied Policies on Real Robots"],
+        totalPapers: 8,
+        totalNews: 0
+    },
     "2026-07-07": {
         bannerTitle: "🔥 今日看点",
         bannerSubtitle: "今日共收录 10 篇论文和 1 条机构动态，arXiv 回溯窗口 07-05~07-07 获取 8 篇。VLA 方向双星：🤖 CamVLA（阿里巴巴达摩院）提出免标定的视角鲁棒 VLA 模型，解决真实部署中相机视角不一致的核心痛点，无需重新标定即可适应自由视角；🤖 Cortex 提出双向对齐的具身 Agent 框架，在视觉理解与动作执行之间建立闭环反馈，支撑长时序操作任务的零样本迁移。世界模型方向 Deform360 构建大规模多视角视觉触觉数据集，首次将 360 度视觉与触觉感知统一用于可变形物体世界建模。Agent 方向 SovereignPA-Bench 首次提出\"用户主权\"概念的 Agent 评估框架，覆盖意图演化、平台中介和授权约束三层维度。Anthropic 发布可解释性研究，探索语言模型中是否存在类似大脑\"全局工作空间\"的信息整合机制。",
