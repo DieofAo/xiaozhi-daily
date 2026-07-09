@@ -658,6 +658,229 @@
 <script>
 // ===== DATA =====
 const PAPERS_DB = [
+    // === 2026-07-09 ===
+    {
+        date: "2026-07-09",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "AlayaWorld: Long-Horizon and Playable Video World Generation",
+        venue: "HF Daily Papers · AlayaLab · 100⭐",
+        summary: "🔬 技术路线: 提出长时序可交互视频世界生成框架 AlayaWorld，支持实时生成可操作的虚拟世界场景，突破被动观看的限制 | 💡 创新点: 首次实现长时序和可玩性两个维度的统一，生成内容支持实时交互操控而非仅限被动观看 | 📊 实验效果: 在推理和生成任务上验证了可交互世界生成的有效性，开源代码获得 100 星社区关注 | ⭐ 整体评价: 可交互视频世界生成是游戏和仿真训练的前沿方向，建议关注其生成时长上限和交互一致性表现",
+        tags: [["World Model","green"],["Video Generation","green"],["Playable","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.06291"],["PDF","https://arxiv.org/pdf/2607.06291"],["Project","https://alaya-lab.github.io/AlayaWorld/"],["Code (100⭐)","https://github.com/AlayaLab/AlayaWorld"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出长时序可交互视频世界生成框架 AlayaWorld，支持实时生成可操作的虚拟世界场景，突破被动观看的限制"},{"label":"💡 创新点","text":"首次实现长时序和可玩性两个维度的统一，生成内容支持实时交互操控而非仅限被动观看"},{"label":"📊 实验效果","text":"在推理和生成任务上验证了可交互世界生成的有效性，开源代码获得 100 星社区关注"},{"label":"⭐ 整体评价","text":"可交互视频世界生成是游戏和仿真训练的前沿方向，建议关注其生成时长上限和交互一致性表现"}]
+    },
+    {
+        date: "2026-07-09",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "RynnWorld-4D: 4D Embodied World Models for Robotic Manipulation",
+        venue: "HF Daily Papers · Alibaba DAMO Academy · 24⭐",
+        summary: "🔬 技术路线: 阿里巴巴达摩院提出四维具身世界模型 RynnWorld-4D，融合 RGB 深度和力觉信息为机器人操作提供四维场景预测 | 💡 创新点: 提出 RGB-DF 统一表征方案，将视觉、深度和力觉多模态信号融合到单一世界模型中实现跨模态对齐 | 📊 实验效果: 在操作和抓取任务上验证了四维世界模型的预测精度，开源代码获得 24 星关注 | ⭐ 整体评价: 四维世界模型为机器人操作提供更丰富的场景理解，建议关注其力觉预测精度和仿真到真机迁移效果",
+        tags: [["World Model","green"],["Robotic Manipulation","green"],["4D","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.06559"],["PDF","https://arxiv.org/pdf/2607.06559"],["Project","https://alibaba-damo-academy.github.io/RynnWorld-4D.github.io/"],["Code (24⭐)","https://github.com/alibaba-damo-academy/RynnWorld-4D"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"阿里巴巴达摩院提出四维具身世界模型 RynnWorld-4D，融合 RGB 深度和力觉信息为机器人操作提供四维场景预测"},{"label":"💡 创新点","text":"提出 RGB-DF 统一表征方案，将视觉、深度和力觉多模态信号融合到单一世界模型中实现跨模态对齐"},{"label":"📊 实验效果","text":"在操作和抓取任务上验证了四维世界模型的预测精度，开源代码获得 24 星关注"},{"label":"⭐ 整体评价","text":"四维世界模型为机器人操作提供更丰富的场景理解，建议关注其力觉预测精度和仿真到真机迁移效果"}]
+    },
+    {
+        date: "2026-07-09",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "RynnWorld-Teleop: An Action-Conditioned World Model for Digital Teleoperation",
+        venue: "HF Daily Papers · Alibaba DAMO Academy",
+        summary: "🔬 技术路线: 阿里巴巴提出动作条件世界模型 RynnWorld-Teleop，根据动作指令实时预测场景变化以支持数字遥操作训练 | 💡 创新点: 实现实时、零样本和可扩展的动作条件世界预测，为远程遥操作提供即时视觉反馈而无需真实环境部署 | 📊 实验效果: 在推理和生成任务上验证了动作条件预测的实时性和准确性 | ⭐ 整体评价: 动作条件世界模型为数字遥操作提供低成本训练方案，建议关注其预测延迟和动作可控性范围",
+        tags: [["World Model","green"],["Teleoperation","green"],["Action-Conditioned","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.06558"],["PDF","https://arxiv.org/pdf/2607.06558"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"阿里巴巴提出动作条件世界模型 RynnWorld-Teleop，根据动作指令实时预测场景变化以支持数字遥操作训练"},{"label":"💡 创新点","text":"实现实时、零样本和可扩展的动作条件世界预测，为远程遥操作提供即时视觉反馈而无需真实环境部署"},{"label":"📊 实验效果","text":"在推理和生成任务上验证了动作条件预测的实时性和准确性"},{"label":"⭐ 整体评价","text":"动作条件世界模型为数字遥操作提供低成本训练方案，建议关注其预测延迟和动作可控性范围"}]
+    },
+    {
+        date: "2026-07-09",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "Scaling Mixture-of-Experts Video Pretraining for Embodied Intelligence",
+        venue: "arXiv 2026 · Robbyant · LingBot-Video",
+        summary: "🔬 技术路线: 提出混合专家视频预训练框架 LingBot-Video，通过扩展 MoE 架构为具身智能提供大规模视频预训练支持 | 💡 创新点: 将混合专家架构引入视频预训练，实现专家路由的自适应分配，在保持计算效率的同时提升视频理解质量 | 📊 实验效果: 在生成和推理任务上验证了视频预训练对具身智能的增益效果 | ⭐ 整体评价: 视频预训练是具身智能从仿真走向真实的关键能力，建议关注其预训练数据规模和下游迁移效果",
+        tags: [["Robotics","green"],["Video Pretraining","green"],["MoE","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.07675"],["PDF","https://arxiv.org/pdf/2607.07675"],["Link","https://technology.robbyant.com/lingbot-video"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出混合专家视频预训练框架 LingBot-Video，通过扩展 MoE 架构为具身智能提供大规模视频预训练支持"},{"label":"💡 创新点","text":"将混合专家架构引入视频预训练，实现专家路由的自适应分配，在保持计算效率的同时提升视频理解质量"},{"label":"📊 实验效果","text":"在生成和推理任务上验证了视频预训练对具身智能的增益效果"},{"label":"⭐ 整体评价","text":"视频预训练是具身智能从仿真走向真实的关键能力，建议关注其预训练数据规模和下游迁移效果"}]
+    },
+    {
+        date: "2026-07-09",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "DW05-Robotwin",
+        venue: "🤗 HF 模型 · Dexmal · Robotics",
+        summary: "🔬 技术路线: Dexmal 发布 DW05-Robotwin 机器人模型，面向双臂协同操作场景提供预训练策略 | 💡 创新点: 提供开源的机器人双臂操作模型，支持开发者快速部署和微调用于自定义操作任务 | 📊 实验效果: 模型已上架 HuggingFace 平台，适用于机器人仿真和真机操作场景 | ⭐ 整体评价: 开源机器人模型为社区提供可直接使用的双臂操作基线，建议关注其支持的硬件平台范围",
+        tags: [["Robotics","green"],["HF Model","green"],["Deployment","green"]],
+        links: [["HuggingFace","https://huggingface.co/Dexmal/DW05-Robotwin"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"Dexmal 发布 DW05-Robotwin 机器人模型，面向双臂协同操作场景提供预训练策略"},{"label":"💡 创新点","text":"提供开源的机器人双臂操作模型，支持开发者快速部署和微调用于自定义操作任务"},{"label":"📊 实验效果","text":"模型已上架 HuggingFace 平台，适用于机器人仿真和真机操作场景"},{"label":"⭐ 整体评价","text":"开源机器人模型为社区提供可直接使用的双臂操作基线，建议关注其支持的硬件平台范围"}]
+    },
+    {
+        date: "2026-07-09",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Institutional Red-Teaming: Deployment Rules, Not Just Models, Causally Shape Multi-Agent AI Safety",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 通过制度化红队测试研究多智能体系统的安全性，分析部署规则而非仅模型本身对 AI 安全的因果影响 | 💡 创新点: 提出 IABench-CA 基准，首次系统性地证明部署规则对多智能体安全具有因果层面的决定性影响 | 📊 实验效果: 红队攻击成功率从 87% 降至 22%，安全合规率提升至 81%，部署规则改进带来 58 个百分点的安全提升 | ⭐ 整体评价: 多智能体安全治理是 Agent 大规模部署的前置条件，建议关注其规则设计对安全性的量化影响",
+        tags: [["Agent","green"],["Red-Teaming","green"],["Multi-Agent Safety","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.07695"],["PDF","https://arxiv.org/pdf/2607.07695"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"通过制度化红队测试研究多智能体系统的安全性，分析部署规则而非仅模型本身对 AI 安全的因果影响"},{"label":"💡 创新点","text":"提出 IABench-CA 基准，首次系统性地证明部署规则对多智能体安全具有因果层面的决定性影响"},{"label":"📊 实验效果","text":"红队攻击成功率从 87% 降至 22%，安全合规率提升至 81%，部署规则改进带来 58 个百分点的安全提升"},{"label":"⭐ 整体评价","text":"多智能体安全治理是 Agent 大规模部署的前置条件，建议关注其规则设计对安全性的量化影响"}]
+    },
+    {
+        date: "2026-07-09",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "SkillCenter: A Large-Scale Source-Grounded Skill Library for Autonomous AI Agents",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 构建大规模源代码锚定的技能库 SkillCenter，为自主 AI 智能体提供可检索可复用的技能集合 | 💡 创新点: 提出 SkillGate 过滤机制，从开源代码中自动提取高质量技能并建立端到端技能库 | 📊 实验效果: 在生成任务上验证了技能库对 Agent 能力的提升效果，配套发布数据集 | ⭐ 整体评价: 技能库是 Agent 走向自主复用的关键基础设施，建议关注其技能质量过滤准确率和覆盖范围",
+        tags: [["Agent","green"],["Skill Library","green"],["Source-Grounded","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.07676"],["PDF","https://arxiv.org/pdf/2607.07676"],["Code","https://github.com/LabRAI/SkillCenter"],["Model","https://huggingface.co/datasets/Tommysha/skillcenter-bundles"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"构建大规模源代码锚定的技能库 SkillCenter，为自主 AI 智能体提供可检索可复用的技能集合"},{"label":"💡 创新点","text":"提出 SkillGate 过滤机制，从开源代码中自动提取高质量技能并建立端到端技能库"},{"label":"📊 实验效果","text":"在生成任务上验证了技能库对 Agent 能力的提升效果，配套发布数据集"},{"label":"⭐ 整体评价","text":"技能库是 Agent 走向自主复用的关键基础设施，建议关注其技能质量过滤准确率和覆盖范围"}]
+    },
+    {
+        date: "2026-07-09",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "From Noisy Traces to Root Causes: Structural Trajectory Analysis and Causal Extraction for Agent Optimization",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 通过对智能体执行轨迹进行结构化分析和因果提取，定位性能瓶颈的根本原因以优化 Agent | 💡 创新点: 提出 VeruSAGE-Bench 基准和 STRACE 因果分析工具，从噪声轨迹中提取因果链路指导优化 | 📊 实验效果: 在轨迹分析和因果提取任务上达到 42.5% 和 58.5% 的关键指标 | ⭐ 整体评价: 因果轨迹分析为 Agent 调试提供了系统化方法，建议关注其实际调试效率和跨场景可迁移性",
+        tags: [["Agent","green"],["Causal Extraction","green"],["Trajectory Analysis","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.07702"],["PDF","https://arxiv.org/pdf/2607.07702"],["Code","https://github.com/moomight/STRACE"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"通过对智能体执行轨迹进行结构化分析和因果提取，定位性能瓶颈的根本原因以优化 Agent"},{"label":"💡 创新点","text":"提出 VeruSAGE-Bench 基准和 STRACE 因果分析工具，从噪声轨迹中提取因果链路指导优化"},{"label":"📊 实验效果","text":"在轨迹分析和因果提取任务上达到 42.5% 和 58.5% 的关键指标"},{"label":"⭐ 整体评价","text":"因果轨迹分析为 Agent 调试提供了系统化方法，建议关注其实际调试效率和跨场景可迁移性"}]
+    },
+    {
+        date: "2026-07-09",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Breaking Database Lock-in: Agentic Regeneration of High Performance Storage Readers for Database Bypass",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 利用大语言模型驱动的 Agent 自动生成高性能存储读取器，突破数据库厂商锁定实现数据迁移绕过 | 💡 创新点: 提出 LLM 辅助端到端数据库读取器自动生成方案，无需人工编写适配代码即可实现跨数据库读取 | 📊 实验效果: 相比人工实现达到 27 倍加速，端到端完成数据库读取器生成 | ⭐ 整体评价: 数据库迁移自动化是基础设施领域的高价值应用，建议关注其对复杂数据类型和存储格式的支持范围",
+        tags: [["Agent","green"],["Database","green"],["Automation","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.07696"],["PDF","https://arxiv.org/pdf/2607.07696"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"利用大语言模型驱动的 Agent 自动生成高性能存储读取器，突破数据库厂商锁定实现数据迁移绕过"},{"label":"💡 创新点","text":"提出 LLM 辅助端到端数据库读取器自动生成方案，无需人工编写适配代码即可实现跨数据库读取"},{"label":"📊 实验效果","text":"相比人工实现达到 27 倍加速，端到端完成数据库读取器生成"},{"label":"⭐ 整体评价","text":"数据库迁移自动化是基础设施领域的高价值应用，建议关注其对复杂数据类型和存储格式的支持范围"}]
+    },
+    {
+        date: "2026-07-09",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Light-Omni: Reflex over Reasoning in Agentic Video Understanding with Long-Term Memory",
+        venue: "HF Daily Papers · Nanjing University · 27⭐",
+        summary: "🔬 技术路线: 南京大学提出轻量化多模态视频理解 Agent 框架 Light-Omni，通过长期记忆机制实现视频内容的智能理解 | 💡 创新点: 提出反射优先于推理的设计理念，在保持多模态轻量化的同时通过长期记忆增强视频理解深度 | 📊 实验效果: 在视频理解基准上达到 2.4% 关键指标，开源代码获得 27 星关注 | ⭐ 整体评价: 反射式视频理解为 Agent 提供低成本理解方案，建议关注其记忆更新策略和多轮推理能力",
+        tags: [["Agent","green"],["Video Understanding","green"],["Long-Term Memory","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.05511"],["PDF","https://arxiv.org/pdf/2607.05511"],["Project","https://clare-nie.github.io/Light-Omni"],["Code (27⭐)","https://github.com/Clare-Nie/Light-Omni"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"南京大学提出轻量化多模态视频理解 Agent 框架 Light-Omni，通过长期记忆机制实现视频内容的智能理解"},{"label":"💡 创新点","text":"提出反射优先于推理的设计理念，在保持多模态轻量化的同时通过长期记忆增强视频理解深度"},{"label":"📊 实验效果","text":"在视频理解基准上达到 2.4% 关键指标，开源代码获得 27 星关注"},{"label":"⭐ 整体评价","text":"反射式视频理解为 Agent 提供低成本理解方案，建议关注其记忆更新策略和多轮推理能力"}]
+    },
+    {
+        date: "2026-07-09",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Co-LMLM: Continuous-Query Limited Memory Language Models",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 提出连续查询受限记忆语言模型 Co-LMLM，通过限制记忆容量并支持连续查询机制来优化长上下文处理 | 💡 创新点: 设计连续查询的受限记忆机制，在 3.6 亿参数规模下实现 40 倍记忆效率提升 | 📊 实验效果: 3.6 亿参数模型实现 40 倍推理效率提升 | ⭐ 整体评价: 受限记忆是解决长上下文计算瓶颈的实用方向，建议关注其在真实推理场景中的记忆选择精度",
+        tags: [["LLM","green"],["Limited Memory","green"],["Long Context","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.07707"],["PDF","https://arxiv.org/pdf/2607.07707"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出连续查询受限记忆语言模型 Co-LMLM，通过限制记忆容量并支持连续查询机制来优化长上下文处理"},{"label":"💡 创新点","text":"设计连续查询的受限记忆机制，在 3.6 亿参数规模下实现 40 倍记忆效率提升"},{"label":"📊 实验效果","text":"3.6 亿参数模型实现 40 倍推理效率提升"},{"label":"⭐ 整体评价","text":"受限记忆是解决长上下文计算瓶颈的实用方向，建议关注其在真实推理场景中的记忆选择精度"}]
+    },
+    {
+        date: "2026-07-09",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Agon: Competitive Cross-Model RL with Implicit Rival Grading of Reasoning",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 提出跨模型竞争式强化学习框架 Agon，通过隐式对手评分机制驱动不同模型间的推理能力竞争提升 | 💡 创新点: 设计隐式对手评分策略，无需显式标注即可利用模型间竞争信号优化推理质量 | 📊 实验效果: 在推理任务上验证了竞争式训练框架的有效性 | ⭐ 整体评价: 跨模型竞争训练为推理能力提升提供了新范式，建议关注其训练稳定性和收敛速度",
+        tags: [["LLM","green"],["Reinforcement Learning","green"],["Reasoning","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.07690"],["PDF","https://arxiv.org/pdf/2607.07690"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出跨模型竞争式强化学习框架 Agon，通过隐式对手评分机制驱动不同模型间的推理能力竞争提升"},{"label":"💡 创新点","text":"设计隐式对手评分策略，无需显式标注即可利用模型间竞争信号优化推理质量"},{"label":"📊 实验效果","text":"在推理任务上验证了竞争式训练框架的有效性"},{"label":"⭐ 整体评价","text":"跨模型竞争训练为推理能力提升提供了新范式，建议关注其训练稳定性和收敛速度"}]
+    },
+    {
+        date: "2026-07-09",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Accurate, Interdisciplinary and Transparent Structure-property Understanding with Deep Native Structural Reasoning",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 基于深度原生结构推理方法，对材料的结构-性能关系进行跨学科理解和预测，实现透明可解释的推理过程 | 💡 创新点: 提出原生结构推理范式，无需外部知识库即可实现跨学科的结构-性能关联建模，具有多模态统一特性 | 📊 实验效果: 在结构性能预测任务上达到 98% 准确率 | ⭐ 整体评价: 跨学科材料理解方向具有科学发现价值，建议关注其推理链条的可解释性和跨领域迁移能力",
+        tags: [["LLM","green"],["Interdisciplinary","green"],["Structural Reasoning","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.07708"],["PDF","https://arxiv.org/pdf/2607.07708"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于深度原生结构推理方法，对材料的结构-性能关系进行跨学科理解和预测，实现透明可解释的推理过程"},{"label":"💡 创新点","text":"提出原生结构推理范式，无需外部知识库即可实现跨学科的结构-性能关联建模，具有多模态统一特性"},{"label":"📊 实验效果","text":"在结构性能预测任务上达到 98% 准确率"},{"label":"⭐ 整体评价","text":"跨学科材料理解方向具有科学发现价值，建议关注其推理链条的可解释性和跨领域迁移能力"}]
+    },
+    {
+        date: "2026-07-09",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Hierarchical Sparse Attention Done Right: Toward Infinite Context Modeling",
+        venue: "HF Daily Papers · Tencent Hunyuan · 28⭐",
+        summary: "🔬 技术路线: 腾讯混元提出层次化稀疏注意力机制 HiLS-Attention，通过分块策略实现接近无限长度的上下文建模 | 💡 创新点: 设计端到端轻量化的分块注意力方案，在保持 90% 性能的前提下大幅降低长序列计算开销 | 📊 实验效果: 在长上下文建模任务上保持 90% 性能，开源代码获得 28 星关注 | ⭐ 整体评价: 层次化稀疏注意力是扩展上下文窗口的实用方向，建议关注其在百万级 token 上的实际推理速度",
+        tags: [["LLM","green"],["Sparse Attention","green"],["Infinite Context","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.02980"],["PDF","https://arxiv.org/pdf/2607.02980"],["Code (28⭐)","https://github.com/Tencent-Hunyuan/HiLS-Attention"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"腾讯混元提出层次化稀疏注意力机制 HiLS-Attention，通过分块策略实现接近无限长度的上下文建模"},{"label":"💡 创新点","text":"设计端到端轻量化的分块注意力方案，在保持 90% 性能的前提下大幅降低长序列计算开销"},{"label":"📊 实验效果","text":"在长上下文建模任务上保持 90% 性能，开源代码获得 28 星关注"},{"label":"⭐ 整体评价","text":"层次化稀疏注意力是扩展上下文窗口的实用方向，建议关注其在百万级 token 上的实际推理速度"}]
+    },
+    {
+        date: "2026-07-09",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "DSpark: Confidence-Scheduled Speculative Decoding with Semi-Autoregressive Generation",
+        venue: "HF Daily Papers · DeepSeek",
+        summary: "🔬 技术路线: DeepSeek 提出基于置信度调度的推测解码框架 DSpark，结合半自回归生成实现高效推理加速 | 💡 创新点: 设计置信度调度策略和半自回归生成机制，在保证生成质量的前提下实现轻量化的推理加速 | 📊 实验效果: 在推理和生成任务上验证了推测解码加速的有效性，面向 DeepSeek-V4 架构优化 | ⭐ 整体评价: 推测解码是大模型推理优化的核心方向，DeepSeek 出品质量有保障，建议关注其加速比和生成质量保持率",
+        tags: [["LLM","green"],["Speculative Decoding","green"],["Efficient Inference","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.05147"],["PDF","https://arxiv.org/pdf/2607.05147"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"DeepSeek 提出基于置信度调度的推测解码框架 DSpark，结合半自回归生成实现高效推理加速"},{"label":"💡 创新点","text":"设计置信度调度策略和半自回归生成机制，在保证生成质量的前提下实现轻量化的推理加速"},{"label":"📊 实验效果","text":"在推理和生成任务上验证了推测解码加速的有效性，面向 DeepSeek-V4 架构优化"},{"label":"⭐ 整体评价","text":"推测解码是大模型推理优化的核心方向，DeepSeek 出品质量有保障，建议关注其加速比和生成质量保持率"}]
+    },
+    {
+        date: "2026-07-09",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "Gemma 4 Technical Report",
+        venue: "HF Daily Papers · Google",
+        summary: "🔬 技术路线: 谷歌发布 Gemma 4 系列多模态模型技术报告，采用混合专家架构提供 2.3B、12B 和 31B 三种参数规模 | 💡 创新点: 统一多模态架构设计，通过混合专家路由实现不同模态间的高效参数共享和任务自适应 | 📊 实验效果: 提供 2.3B、12B、31B 三种规模，在多模态基准上验证了统一架构的有效性 | ⭐ 整体评价: Gemma 4 是谷歌开源生态的重要更新，建议关注其多模态对齐方式和与闭源模型的性能差距",
+        tags: [["Multimodal","green"],["MoE","green"],["Foundation Model","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.02770"],["PDF","https://arxiv.org/pdf/2607.02770"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"谷歌发布 Gemma 4 系列多模态模型技术报告，采用混合专家架构提供 2.3B、12B 和 31B 三种参数规模"},{"label":"💡 创新点","text":"统一多模态架构设计，通过混合专家路由实现不同模态间的高效参数共享和任务自适应"},{"label":"📊 实验效果","text":"提供 2.3B、12B、31B 三种规模，在多模态基准上验证了统一架构的有效性"},{"label":"⭐ 整体评价","text":"Gemma 4 是谷歌开源生态的重要更新，建议关注其多模态对齐方式和与闭源模型的性能差距"}]
+    },
+    {
+        date: "2026-07-09",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "Vision as Unified Multimodal Generation",
+        venue: "HF Daily Papers · SenseNova · 37⭐",
+        summary: "🔬 技术路线: 商汤 SenseNova 提出统一多模态生成框架，将视觉理解与生成统一到单一可扩展架构中 | 💡 创新点: 设计 SenseNova-Vision 统一架构，实现理解和生成的端到端一体化，无需分离模型分别处理 | 📊 实验效果: 在图像生成和多模态任务上验证了统一架构的有效性，开源获得 37 星关注 | ⭐ 整体评价: 统一多模态生成是视觉大模型的演进方向，建议关注其生成质量和理解能力的平衡表现",
+        tags: [["Multimodal","green"],["Unified Generation","green"],["Architecture","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.06560"],["PDF","https://arxiv.org/pdf/2607.06560"],["Code (37⭐)","https://github.com/OpenSenseNova/SenseNova-Vision"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"商汤 SenseNova 提出统一多模态生成框架，将视觉理解与生成统一到单一可扩展架构中"},{"label":"💡 创新点","text":"设计 SenseNova-Vision 统一架构，实现理解和生成的端到端一体化，无需分离模型分别处理"},{"label":"📊 实验效果","text":"在图像生成和多模态任务上验证了统一架构的有效性，开源获得 37 星关注"},{"label":"⭐ 整体评价","text":"统一多模态生成是视觉大模型的演进方向，建议关注其生成质量和理解能力的平衡表现"}]
+    },
+    {
+        date: "2026-07-09",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "Introducing GPT-Live",
+        venue: "",
+        summary: "OpenAI 发布 GPT-Live，新模型产品正式上线。GPT-Live 旨在提供实时交互能力，标志着 OpenAI 产品线进一步扩展。系统卡同步公开，披露模型能力边界和安全评估结果。",
+        tags: [],
+        links: [["来源","https://openai.com/index/introducing-gpt-live/"]]
+    },
+    {
+        date: "2026-07-09",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "GPT-Live System Card",
+        venue: "",
+        summary: "OpenAI 同步发布 GPT-Live 系统卡，详细披露模型的安全评估、能力边界和潜在风险分析，为开发者和研究者提供透明的模型行为参考。",
+        tags: [],
+        links: [["来源","https://deploymentsafety.openai.com/gpt-live"]]
+    },
+    {
+        date: "2026-07-09",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "Separating signal from noise in coding evaluations",
+        venue: "",
+        summary: "OpenAI 发布编码评估新方法，提出从噪声中分离信号的技术方案，旨在提升代码生成模型评估的准确性和可靠性，减少评估偏差对模型选择的误导。",
+        tags: [],
+        links: [["来源","https://openai.com/index/separating-signal-from-noise-coding-evaluations/"]]
+    },
     // === 2026-07-08 ===
     {
         date: "2026-07-08",
@@ -17088,6 +17311,13 @@ const PAPERS_DB = [
 ];
 
 const DAILY_OVERVIEW = {
+    "2026-07-09": {
+        bannerTitle: "🔥 今日看点",
+        bannerSubtitle: "今日共收录 16 篇论文和 3 条行业动态。重磅发布：OpenAI 发布 GPT-Live 并公开系统卡，同时发布编码评估噪声分离新方法。阿里巴巴达摩院 RynnWorld 系列双发——四维具身世界模型 RynnWorld-4D 融合 RGB 深度和力觉信号，动作条件世界模型 RynnWorld-Teleop 支持数字遥操作零样本迁移。Google 发布 Gemma 4 技术报告，采用混合专家架构提供 2.3B、12B、31B 三种规模。DeepSeek 提出 DSpark 推测解码框架结合半自回归生成实现高效推理加速。腾讯混元 HiLS-Attention 层次化稀疏注意力在保持 90% 性能下实现接近无限上下文建模。AlayaWorld（100 星）实现长时序可交互视频世界生成。Agent 安全方向重磅：制度化红队测试证明部署规则对多智能体安全具有因果决定性影响，安全提升达 58 个百分点。",
+        picks: ["AlayaWorld: Long-Horizon and Playable Video World Generation","RynnWorld-4D: 4D Embodied World Models for Robotic Manipulation","Scaling Mixture-of-Experts Video Pretraining for Embodied Intelligence","Institutional Red-Teaming: Deployment Rules, Not Just Models, Causally Shape Multi-Agent AI Safety","Gemma 4 Technical Report"],
+        totalPapers: 17,
+        totalNews: 3
+    },
     "2026-07-08": {
         bannerTitle: "🔥 今日看点",
         bannerSubtitle: "今日共收录 8 篇 HF 热门论文，arXiv 采集超时跳过。VLA 方向重磅：🤖 InternVLA-A1.5（Intern Robotics，463 星）提出统一理解、潜在前瞻与动作的 VLA 框架，通过组合泛化实现复杂操作任务的零样本迁移，开源代码和项目页面已发布。世界模型方向 GigaWorld-1（GigaAI，153 星）发布机器人策略评估世界模型构建路线图，为具身智能策略评估提供系统化基础设施。机器人方向 EVA-Client 提供统一的数据采集、推理和部署框架，覆盖真实机器人全生命周期。微软 ResearchStudio-Reel 实现从论文到海报、视频和博客的科研最后一公里自动化。Wan-Streamer v0.2 在相同延迟下实现 192 倍至 640 倍分辨率提升。",
