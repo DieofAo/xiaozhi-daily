@@ -658,6 +658,215 @@
 <script>
 // ===== DATA =====
 const PAPERS_DB = [
+    // === 2026-07-10 ===
+    {
+        date: "2026-07-10",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "Infinite Worlds with Versatile Interactions",
+        venue: "HF Daily Papers · Robbyant · 564⭐",
+        summary: "🔬 技术路线: Robbyant 提出可交互无限世界生成框架 LingBot-World，支持实时生成可探索的虚拟世界场景，突破被动观看的限制 | 💡 创新点: 在 14B 参数模型上实现 60fps 720p 分辨率实时世界生成，同时提供 1.3B 轻量化版本适配不同硬件场景 | 📊 实验效果: 关键指标达 14B/1.3B/60fps/720p，开源代码获得 564 星社区高关注度 | ⭐ 整体评价: 世界生成方向重磅工作，社区高度认可，建议关注其生成质量、交互一致性和轻量化版本部署效果",
+        tags: [["World Model","green"],["Interactive Generation","green"],["Real-time","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.07534"],["PDF","https://arxiv.org/pdf/2607.07534"],["Project","https://technology.robbyant.com/lingbot-world-v2"],["Code (564⭐)","https://github.com/robbyant/lingbot-world-v2"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"Robbyant 提出可交互无限世界生成框架 LingBot-World，支持实时生成可探索的虚拟世界场景，突破被动观看的限制"},{"label":"💡 创新点","text":"在 14B 参数模型上实现 60fps 720p 分辨率实时世界生成，同时提供 1.3B 轻量化版本适配不同硬件场景"},{"label":"📊 实验效果","text":"关键指标达 14B/1.3B/60fps/720p，开源代码获得 564 星社区高关注度"},{"label":"⭐ 整体评价","text":"世界生成方向重磅工作，社区高度认可，建议关注其生成质量、交互一致性和轻量化版本部署效果"}]
+    },
+    {
+        date: "2026-07-10",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "Dual Latent Memory in Vision-Language-Action Models for Robotic Manipulation",
+        venue: "HF Daily Papers · 3⭐",
+        summary: "🔬 技术路线: 提出双潜在记忆机制增强视觉语言动作模型，在机器人操作任务中实现长时序记忆和动作预测的统一 | 💡 创新点: 首次在 VLA 模型中引入双路潜在记忆架构，分别处理短期动作执行和长期场景理解两类信息 | 📊 实验效果: 在动作生成和操作任务上验证了双记忆机制的有效性，开源代码获得 3 星关注 | ⭐ 整体评价: VLA 记忆机制方向有价值探索，建议关注其记忆容量扩展和真机操作泛化能力",
+        tags: [["VLA","green"],["Dual Memory","green"],["Manipulation","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.07608"],["PDF","https://arxiv.org/pdf/2607.07608"],["Code (3⭐)","https://github.com/quhongyu/LaMem-VLA"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出双潜在记忆机制增强视觉语言动作模型，在机器人操作任务中实现长时序记忆和动作预测的统一"},{"label":"💡 创新点","text":"首次在 VLA 模型中引入双路潜在记忆架构，分别处理短期动作执行和长期场景理解两类信息"},{"label":"📊 实验效果","text":"在动作生成和操作任务上验证了双记忆机制的有效性，开源代码获得 3 星关注"},{"label":"⭐ 整体评价","text":"VLA 记忆机制方向有价值探索，建议关注其记忆容量扩展和真机操作泛化能力"}]
+    },
+    {
+        date: "2026-07-10",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "DexVerse: A Modular Benchmark for Multi-Task, Multi-Embodiment Dexterous Manipulation",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 构建大规模模块化灵巧操作基准 DexVerse，支持多任务和多本体形态的统一评估，覆盖抓取和操作全流程 | 💡 创新点: 提出模块化任务组合机制，允许灵活配置不同本体、物体和任务难度，实现可扩展的评估方案 | 📊 实验效果: 在多种灵巧操作场景中验证了基准的覆盖度和区分度，提供项目页面展示 | ⭐ 整体评价: 灵巧操作方向重要基准工作，建议关注其任务泛化能力评估和 Sim-to-Real 迁移验证",
+        tags: [["Robotics","green"],["Benchmark","green"],["Dexterous","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.08751"],["PDF","https://arxiv.org/pdf/2607.08751"],["Project","https://ycyao216.github.io/DexVerse.site"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"构建大规模模块化灵巧操作基准 DexVerse，支持多任务和多本体形态的统一评估，覆盖抓取和操作全流程"},{"label":"💡 创新点","text":"提出模块化任务组合机制，允许灵活配置不同本体、物体和任务难度，实现可扩展的评估方案"},{"label":"📊 实验效果","text":"在多种灵巧操作场景中验证了基准的覆盖度和区分度，提供项目页面展示"},{"label":"⭐ 整体评价","text":"灵巧操作方向重要基准工作，建议关注其任务泛化能力评估和 Sim-to-Real 迁移验证"}]
+    },
+    {
+        date: "2026-07-10",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "RoboDojo: A Unified Sim-and-Real Benchmark for Comprehensive Evaluation of Generalist Robot Manipulation Policies",
+        venue: "HF Daily Papers · RoboDojo-Benchmark · 141⭐",
+        summary: "🔬 技术路线: 构建统一仿真与真实世界基准 RoboDojo，为通用机器人操作策略提供跨域评估平台 | 💡 创新点: 整合多种策略实验室和仿真环境，在最小适配条件下实现仿真到真实的全面评估对比 | 📊 实验效果: 提供项目页面和开源代码获 141 星关注，覆盖多种操作策略的对比评估 | ⭐ 整体评价: 机器人策略评估方向重要基准，建议关注其 Sim-to-Real 评估方法和策略对比结果",
+        tags: [["Robotics","green"],["Sim-to-Real","green"],["Generalist Policy","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.04434"],["PDF","https://arxiv.org/pdf/2607.04434"],["Project","https://robodojo-benchmark.com/"],["Code (141⭐)","https://github.com/RoboDojo-Benchmark/RoboDojo"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"构建统一仿真与真实世界基准 RoboDojo，为通用机器人操作策略提供跨域评估平台"},{"label":"💡 创新点","text":"整合多种策略实验室和仿真环境，在最小适配条件下实现仿真到真实的全面评估对比"},{"label":"📊 实验效果","text":"提供项目页面和开源代码获 141 星关注，覆盖多种操作策略的对比评估"},{"label":"⭐ 整体评价","text":"机器人策略评估方向重要基准，建议关注其 Sim-to-Real 评估方法和策略对比结果"}]
+    },
+    {
+        date: "2026-07-10",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "ARDY: Autoregressive Diffusion with Hybrid Representation for Interactive Human Motion Generation",
+        venue: "arXiv 2026 · NVIDIA",
+        summary: "🔬 技术路线: NVIDIA 提出自回归扩散模型 ARDY，采用混合表征方式实现交互式三维人体运动的实时生成 | 💡 创新点: 将自回归建模与扩散过程融合，在实时性约束下生成高质量交互式人体运动序列 | 📊 实验效果: 在运动生成和推理速度任务上验证了实时性能，基于 HumanML3D 数据集进行评估 | ⭐ 整体评价: NVIDIA 在运动生成方向的工程化成果，建议关注其生成质量和实时推理延迟表现",
+        tags: [["Robotics","green"],["Motion Generation","green"],["3D Human","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.08741"],["PDF","https://arxiv.org/pdf/2607.08741"],["Project","https://research.nvidia.com/labs/sil/projects/ardy/"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"NVIDIA 提出自回归扩散模型 ARDY，采用混合表征方式实现交互式三维人体运动的实时生成"},{"label":"💡 创新点","text":"将自回归建模与扩散过程融合，在实时性约束下生成高质量交互式人体运动序列"},{"label":"📊 实验效果","text":"在运动生成和推理速度任务上验证了实时性能，基于 HumanML3D 数据集进行评估"},{"label":"⭐ 整体评价","text":"NVIDIA 在运动生成方向的工程化成果，建议关注其生成质量和实时推理延迟表现"}]
+    },
+    {
+        date: "2026-07-10",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "ContactMimic: Humanoid Object Interaction via Contact Control",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 提出基于接触控制的人形机器人物体交互方法 ContactMimic，通过关键点追踪和接触力建模实现精细操作 | 💡 创新点: 证明仅靠关键点追踪不足以实现物体交互，提出接触感知控制方案补全长程操作能力 | 📊 实验效果: 在操作和抓取任务上验证了接触控制策略的有效性，提供项目页面展示 | ⭐ 整体评价: 人形机器人操作方向前沿工作，建议关注其接触力建模精度和真实部署条件",
+        tags: [["Robotics","green"],["Humanoid","green"],["Contact Control","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.08742"],["PDF","https://arxiv.org/pdf/2607.08742"],["Project","https://lixinyao11.github.io/contactmimic-page"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出基于接触控制的人形机器人物体交互方法 ContactMimic，通过关键点追踪和接触力建模实现精细操作"},{"label":"💡 创新点","text":"证明仅靠关键点追踪不足以实现物体交互，提出接触感知控制方案补全长程操作能力"},{"label":"📊 实验效果","text":"在操作和抓取任务上验证了接触控制策略的有效性，提供项目页面展示"},{"label":"⭐ 整体评价","text":"人形机器人操作方向前沿工作，建议关注其接触力建模精度和真实部署条件"}]
+    },
+    {
+        date: "2026-07-10",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "Automating the Design of Embodied Agent Architectures",
+        venue: "HF Daily Papers · Australian Institute for Machine Learning · 33⭐",
+        summary: "🔬 技术路线: 澳大利亚机器学习研究所提出 AgentCanvas，自动化设计具身智能体的网络架构 | 💡 创新点: 通过架构蒸馏方法自动搜索和优化具身 Agent 的网络结构，减少人工设计成本 | 📊 实验效果: 关键指标达 3 倍效率提升，开源代码获得 33 星关注 | ⭐ 整体评价: 具身智能架构自动化方向创新工作，建议关注其搜索空间设计和架构生成质量",
+        tags: [["Robotics","green"],["Architecture Search","green"],["Embodied Agent","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.30111"],["PDF","https://arxiv.org/pdf/2606.30111"],["Project","https://jianzhou0420.github.io/src/works/AgentCanvas/paper.html"],["Code (33⭐)","https://github.com/jianzhou0420/AgentCanvas"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"澳大利亚机器学习研究所提出 AgentCanvas，自动化设计具身智能体的网络架构"},{"label":"💡 创新点","text":"通过架构蒸馏方法自动搜索和优化具身 Agent 的网络结构，减少人工设计成本"},{"label":"📊 实验效果","text":"关键指标达 3 倍效率提升，开源代码获得 33 星关注"},{"label":"⭐ 整体评价","text":"具身智能架构自动化方向创新工作，建议关注其搜索空间设计和架构生成质量"}]
+    },
+    {
+        date: "2026-07-10",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Ideas Have Genomes: Benchmarking Scientific Lineage Reasoning and Lineage-Grounded Idea Generation",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 提出科学谱系推理基准 IdeaGene-Bench，评估大语言模型对研究思路演化脉络的理解和生成能力 | 💡 创新点: 将科研创意类比基因组进行谱系建模，首次系统化评估模型追踪学术思想传承链路的能力 | 📊 实验效果: 关键指标达 27.3%，揭示了当前模型在科学谱系推理方面的显著不足 | ⭐ 整体评价: 科研辅助方向创新基准，建议关注其谱系构建方法和模型推理能力提升路径",
+        tags: [["LLM","green"],["Scientific Reasoning","green"],["Benchmark","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.08758"],["PDF","https://arxiv.org/pdf/2607.08758"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出科学谱系推理基准 IdeaGene-Bench，评估大语言模型对研究思路演化脉络的理解和生成能力"},{"label":"💡 创新点","text":"将科研创意类比基因组进行谱系建模，首次系统化评估模型追踪学术思想传承链路的能力"},{"label":"📊 实验效果","text":"关键指标达 27.3%，揭示了当前模型在科学谱系推理方面的显著不足"},{"label":"⭐ 整体评价","text":"科研辅助方向创新基准，建议关注其谱系构建方法和模型推理能力提升路径"}]
+    },
+    {
+        date: "2026-07-10",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "SLORR: Simple and Efficient In-Training Low-Rank Regularization",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 提出训练内低秩正则化方法 SLORR，在模型训练过程中动态施加低秩约束以提升泛化能力 | 💡 创新点: 以极简方式将低秩正则嵌入训练流程，无需额外推理开销即可改善模型参数结构 | 📊 实验效果: 在 135M 参数规模模型上验证有效性，仅需 1K 样本即可观察到 8% 性能提升 | ⭐ 整体评价: 训练效率优化方向实用工作，建议关注其正则化强度调参和大规模模型扩展性",
+        tags: [["LLM","green"],["Low-Rank","green"],["Regularization","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.08754"],["PDF","https://arxiv.org/pdf/2607.08754"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出训练内低秩正则化方法 SLORR，在模型训练过程中动态施加低秩约束以提升泛化能力"},{"label":"💡 创新点","text":"以极简方式将低秩正则嵌入训练流程，无需额外推理开销即可改善模型参数结构"},{"label":"📊 实验效果","text":"在 135M 参数规模模型上验证有效性，仅需 1K 样本即可观察到 8% 性能提升"},{"label":"⭐ 整体评价","text":"训练效率优化方向实用工作，建议关注其正则化强度调参和大规模模型扩展性"}]
+    },
+    {
+        date: "2026-07-10",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Sparse Delta Memory: Scaling the State of Linear RNNs through Sparsity",
+        venue: "HF Daily Papers · AI at Meta",
+        summary: "🔬 技术路线: Meta AI 提出稀疏增量记忆方法，通过稀疏机制扩展线性 RNN 的状态容量以处理更长序列 | 💡 创新点: 将 DeltaNet 架构与稀疏机制结合，在不增加计算开销的情况下提升线性 RNN 的记忆容量 | 📊 实验效果: 在上下文学习和推理任务上验证了稀疏记忆扩展的有效性 | ⭐ 整体评价: 线性 RNN 架构优化方向有价值工作，建议关注其稀疏策略设计和长序列建模能力",
+        tags: [["LLM","green"],["Sparse Memory","green"],["Linear RNN","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.07386"],["PDF","https://arxiv.org/pdf/2607.07386"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"Meta AI 提出稀疏增量记忆方法，通过稀疏机制扩展线性 RNN 的状态容量以处理更长序列"},{"label":"💡 创新点","text":"将 DeltaNet 架构与稀疏机制结合，在不增加计算开销的情况下提升线性 RNN 的记忆容量"},{"label":"📊 实验效果","text":"在上下文学习和推理任务上验证了稀疏记忆扩展的有效性"},{"label":"⭐ 整体评价","text":"线性 RNN 架构优化方向有价值工作，建议关注其稀疏策略设计和长序列建模能力"}]
+    },
+    {
+        date: "2026-07-10",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "UniClawBench: A Universal Benchmark for Proactive Agents on Real-World Tasks",
+        venue: "arXiv 2026 · HKU-MMLab",
+        summary: "🔬 技术路线: 构建面向真实世界任务的通用基准测试平台，评估主动式 Agent 在多步骤复杂场景中的端到端执行能力 | 💡 创新点: 首次提出统一评估框架，覆盖多模态感知、工具调用和长程规划的综合能力测试 | 📊 实验效果: 在多种真实任务场景中验证了基准的区分度，提供了标准化评估流程 | ⭐ 整体评价: Agent 评估基准方向重要工作，建议关注其任务覆盖范围和评估指标设计",
+        tags: [["Multimodal","green"],["Agent","green"],["Benchmark","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.08768"],["PDF","https://arxiv.org/pdf/2607.08768"],["Project","https://uniclawbench.github.io"],["Code","https://github.com/HKU-MMLab/UniClawBench"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"构建面向真实世界任务的通用基准测试平台，评估主动式 Agent 在多步骤复杂场景中的端到端执行能力"},{"label":"💡 创新点","text":"首次提出统一评估框架，覆盖多模态感知、工具调用和长程规划的综合能力测试"},{"label":"📊 实验效果","text":"在多种真实任务场景中验证了基准的区分度，提供了标准化评估流程"},{"label":"⭐ 整体评价","text":"Agent 评估基准方向重要工作，建议关注其任务覆盖范围和评估指标设计"}]
+    },
+    {
+        date: "2026-07-10",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "AUTOPILOT VQA: Benchmarking Vision-Language Models for Incident-Centric Dashcam Understanding",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 构建以事件为中心的行车记录仪理解基准 AUTOPILOT VQA，评估视觉语言模型对驾驶场景的推理能力 | 💡 创新点: 聚焦突发事件场景设计问答任务，填补了驾驶安全场景下多模态推理评估的空白 | 📊 实验效果: 在目标识别和事件预测任务上验证了基准的有效性和挑战性 | ⭐ 整体评价: 自动驾驶与多模态交叉方向有价值工作，建议关注其事件分类体系和模型推理表现",
+        tags: [["Multimodal","green"],["VQA","green"],["Dashcam","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.08745"],["PDF","https://arxiv.org/pdf/2607.08745"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"构建以事件为中心的行车记录仪理解基准 AUTOPILOT VQA，评估视觉语言模型对驾驶场景的推理能力"},{"label":"💡 创新点","text":"聚焦突发事件场景设计问答任务，填补了驾驶安全场景下多模态推理评估的空白"},{"label":"📊 实验效果","text":"在目标识别和事件预测任务上验证了基准的有效性和挑战性"},{"label":"⭐ 整体评价","text":"自动驾驶与多模态交叉方向有价值工作，建议关注其事件分类体系和模型推理表现"}]
+    },
+    {
+        date: "2026-07-10",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Workflow as Knowledge: Semantic Persistence for LLM-Mediated Workflows",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 提出基于语义持久化的 LLM 工作流知识管理方法，将工作流程转化为可复用的语义知识表示 | 💡 创新点: 受 Lisp 启发设计语义持久化机制，使 Agent 工作流具备跨会话的知识积累和复用能力 | 📊 实验效果: 在推理任务上验证了语义持久化对工作流效率的提升效果 | ⭐ 整体评价: Agent 知识管理方向创新工作，建议关注其语义表示设计和跨任务迁移效果",
+        tags: [["Agent","green"],["Semantic Persistence","green"],["Workflow","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.08740"],["PDF","https://arxiv.org/pdf/2607.08740"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出基于语义持久化的 LLM 工作流知识管理方法，将工作流程转化为可复用的语义知识表示"},{"label":"💡 创新点","text":"受 Lisp 启发设计语义持久化机制，使 Agent 工作流具备跨会话的知识积累和复用能力"},{"label":"📊 实验效果","text":"在推理任务上验证了语义持久化对工作流效率的提升效果"},{"label":"⭐ 整体评价","text":"Agent 知识管理方向创新工作，建议关注其语义表示设计和跨任务迁移效果"}]
+    },
+    {
+        date: "2026-07-10",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Single-Rollout Asynchronous Optimization for Agentic Reinforcement Learning",
+        venue: "HF Daily Papers · Z.ai",
+        summary: "🔬 技术路线: Z.ai 提出单次采样异步优化方法，用于 Agent 强化学习训练的高效并行化 | 💡 创新点: 将多轮采样压缩为单次采样异步优化，在 750B 和 40B 规模上实现训练效率大幅提升 | 📊 实验效果: 关键指标达 750B 和 40B 规模，验证了大规模 Agent 强化学习训练的可行性 | ⭐ 整体评价: Agent 强化学习训练效率方向重要工作，建议关注其采样策略和大规模训练稳定性",
+        tags: [["Agent","green"],["Reinforcement Learning","green"],["Large Scale","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.07508"],["PDF","https://arxiv.org/pdf/2607.07508"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"Z.ai 提出单次采样异步优化方法，用于 Agent 强化学习训练的高效并行化"},{"label":"💡 创新点","text":"将多轮采样压缩为单次采样异步优化，在 750B 和 40B 规模上实现训练效率大幅提升"},{"label":"📊 实验效果","text":"关键指标达 750B 和 40B 规模，验证了大规模 Agent 强化学习训练的可行性"},{"label":"⭐ 整体评价","text":"Agent 强化学习训练效率方向重要工作，建议关注其采样策略和大规模训练稳定性"}]
+    },
+    {
+        date: "2026-07-10",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "GPT-5.6: Frontier intelligence that scales with your ambition",
+        venue: "OpenAI",
+        summary: "OpenAI 正式发布 GPT-5.6，宣称其为前沿智能模型，能力随用户野心扩展。GPT-5.6 已成为 Microsoft 365 Copilot 的首选模型，标志着 OpenAI 最新旗舰模型进入企业级应用场景。",
+        tags: [],
+        links: [["阅读原文","https://openai.com/index/gpt-5-6/"]]
+    },
+    {
+        date: "2026-07-10",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "GPT-5.6 System Card",
+        venue: "OpenAI",
+        summary: "OpenAI 同步发布 GPT-5.6 系统卡，详细披露模型的能力边界、安全评估结果和对齐措施，为研究者和开发者提供透明的能力参考文档。",
+        tags: [],
+        links: [["阅读原文","https://deploymentsafety.openai.com/gpt-5-6"]]
+    },
+    {
+        date: "2026-07-10",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "GPT-5.6 is now the preferred model in Microsoft 365 Copilot",
+        venue: "OpenAI",
+        summary: "GPT-5.6 正式成为 Microsoft 365 Copilot 首选模型，将为企业用户带来更强的推理、编码和协作能力，标志着 OpenAI 与微软合作进入新阶段。",
+        tags: [],
+        links: [["阅读原文","https://openai.com/index/gpt-5-6-preferred-model-microsoft-365-copilot/"]]
+    },
+    {
+        date: "2026-07-10",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "ChatGPT is now a partner for your most ambitious work",
+        venue: "OpenAI",
+        summary: "OpenAI 宣布 ChatGPT 升级为面向最具野心项目的协作伙伴，增强长程任务规划、深度推理和多步骤执行能力，支持用户完成复杂科研和工程任务。",
+        tags: [],
+        links: [["阅读原文","https://openai.com/index/chatgpt-for-your-most-ambitious-work/"]]
+    },
+    {
+        date: "2026-07-10",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "OpenAI Bio Bug Bounty",
+        venue: "OpenAI",
+        summary: "OpenAI 推出生物安全漏洞赏金计划，邀请安全研究社区参与发现和修复生物相关 AI 安全风险，体现了 OpenAI 在前沿模型安全治理方面的持续投入。",
+        tags: [],
+        links: [["阅读原文","https://openai.com/index/bio-bug-bounty/"]]
+    },
     // === 2026-07-09 ===
     {
         date: "2026-07-09",
@@ -17311,6 +17520,13 @@ const PAPERS_DB = [
 ];
 
 const DAILY_OVERVIEW = {
+    "2026-07-10": {
+        bannerTitle: "🔥 今日看点",
+        bannerSubtitle: "今日共收录 14 篇论文和 5 条行业动态。重磅发布：OpenAI 正式发布 GPT-5.6 并公开系统卡，GPT-5.6 成为 Microsoft 365 Copilot 首选模型，同时推出生物安全漏洞赏金计划和 ChatGPT 野心级协作功能。Robbyant 推出可交互无限世界生成框架 LingBot-World（564 星），在 14B 参数模型上实现 60fps 720p 实时世界生成，并提供 1.3B 轻量化版本。NVIDIA 发布 ARDY 自回归扩散模型实现交互式人体运动实时生成。Z.ai 提出单次采样异步优化方法，在 750B 和 40B 规模上实现 Agent 强化学习训练效率突破。RoboDojo（141 星）构建统一仿真与真实世界基准为通用机器人操作策略提供跨域评估平台。Meta AI 提出 Sparse Delta Memory 通过稀疏机制扩展线性 RNN 状态容量。DexVerse 构建大规模模块化灵巧操作基准支持多任务多本体形态评估。",
+        picks: ["Infinite Worlds with Versatile Interactions","DexVerse: A Modular Benchmark for Multi-Task, Multi-Embodiment Dexterous Manipulation","RoboDojo: A Unified Sim-and-Real Benchmark for Comprehensive Evaluation of Generalist Robot Manipulation Policies","ARDY: Autoregressive Diffusion with Hybrid Representation for Interactive Human Motion Generation"],
+        totalPapers: 14,
+        totalNews: 5
+    },
     "2026-07-09": {
         bannerTitle: "🔥 今日看点",
         bannerSubtitle: "今日共收录 16 篇论文和 3 条行业动态。重磅发布：OpenAI 发布 GPT-Live 并公开系统卡，同时发布编码评估噪声分离新方法。阿里巴巴达摩院 RynnWorld 系列双发——四维具身世界模型 RynnWorld-4D 融合 RGB 深度和力觉信号，动作条件世界模型 RynnWorld-Teleop 支持数字遥操作零样本迁移。Google 发布 Gemma 4 技术报告，采用混合专家架构提供 2.3B、12B、31B 三种规模。DeepSeek 提出 DSpark 推测解码框架结合半自回归生成实现高效推理加速。腾讯混元 HiLS-Attention 层次化稀疏注意力在保持 90% 性能下实现接近无限上下文建模。AlayaWorld（100 星）实现长时序可交互视频世界生成。Agent 安全方向重磅：制度化红队测试证明部署规则对多智能体安全具有因果决定性影响，安全提升达 58 个百分点。",
