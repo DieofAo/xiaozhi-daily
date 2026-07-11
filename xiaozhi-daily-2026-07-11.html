@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>小小志AI日报 - 2026年7月11日 周六 周末补漏</title>
+<title>小小志AI日报 - 2026年7月11日 周六</title>
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body {
@@ -215,15 +215,15 @@ header .subtitle {
 <div class="container">
 
 <header>
-  <h1>📡 小小志AI日报 · 周末补漏</h1>
+  <h1>📡 小小志AI日报</h1>
   <div class="date">2026年7月11日 周六</div>
-  <div class="subtitle">🔄 本周补漏专栏 · HF 热门 6 · 补漏论文 30 · 共 36 篇</div>
+  <div class="subtitle">📝 arXiv 0 · 🤗 HF 热门 6 · 🔄 本周补漏 30 · 共 36 篇论文</div>
 </header>
 
 <div class="highlight-banner">
-  <div class="hl-title">🔄 周末补漏 · 本周遗漏论文汇总</div>
+  <div class="hl-title">🔥 今日看点</div>
   <div class="hl-text">
-    本期为周六补漏专栏，检索窗口覆盖 2026-07-04 至 2026-07-11 共 8 天，从 587 篇候选论文中精选 Top-30 篇遗漏论文，分数区间 46 至 82。同时收录 HuggingFace 热门论文 6 篇。补漏论文覆盖 VLA（9篇）、多模态（8篇）、LLM（6篇）、Agent（6篇）、机器人（5篇）等方向，亮点包括 OpenAI 认知结构化多模态代理、Meta FAIR 双系统世界动作基础模型 DSWAM、NVIDIA 抓取数据集 GraspIT、ByteDance 视频生成推理框架 OpenCoF、NVIDIA 长上下文扩展 Jet-Long 等。
+    周六补漏专刊，本周共补充收录 30 篇论文，加上 6 篇 HF 热门论文合计 36 篇。今日重磅：ByteDance Seed 发布 OpenCoF 框架将视频生成引入推理链路，基于 14B 模型构建 17K 推理视频数据集。NVIDIA 发布 Jet-Long 通过动态双焦 RoPE 实现长上下文高效扩展，在 1.7B/4B/8B 模型上实现零样本长文本理解。Meta Research 提出 Proactive Memory Agent 为长时序 Agent 提供主动记忆管理，在 Terminal-Bench 上提升 8.3 个百分点。ByteDance Seed 提出 UP 非对称优化方法打破强化学习探索与稳定性困境。Meta FAIR 发布 DSWAM 双系统世界动作基础模型面向精细机器人操作。OpenAI 贡献认知结构化多模态 Agent 统一理解、生成与编辑。NVIDIA 发布 GraspIT 数据集桥接仿真到真实的抓取位姿生成。MIT 发布 TouchWorld 触觉预测基础模型实现灵巧操作。
   </div>
 </div>
 
@@ -231,14 +231,14 @@ header .subtitle {
 <section class="section">
   <h2 class="section-title">🤖 VLA · Vision-Language-Action</h2>
 
-  <div class="paper-card">
-    <div class="paper-title">DSWAM: A Dual-System World Action Foundation Model for Fine-Grained Robot Manipulation</div>
-    <div class="paper-meta">arXiv 2026 · Meta FAIR · 补漏</div>
+  <div class="paper-card hot">
+    <div class="paper-title"><span class="hot-badge">🔥</span> DSWAM: A Dual-System World Action Foundation Model for Fine-Grained Robot Manipulation</div>
+    <div class="paper-meta">本周补漏 · Meta FAIR</div>
     <div class="summary-grid">
-      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">基于世界模型和基础模型构建双系统架构，通过联合训练实现视觉语言动作的实时控制</div></div>
-      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出双系统世界动作基础模型，将世界模型与动作策略统一在单一框架中，实现细粒度机器人操作</div></div>
-      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在规划和操作抓取任务上验证了方法的有效性，具备实时控制能力</div></div>
-      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于 VLA 具身控制方向，建议关注其任务泛化能力、动作表达方式与真机验证结果</div></div>
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">Meta FAIR 提出双系统世界动作基础模型 DSWAM，将世界模型与动作策略统一在单一框架中，面向精细机器人操作任务</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">采用双系统架构分离世界理解与动作执行，实现实时精细操作控制，同时保持对物理世界的预测能力</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在规划和操作抓取任务上验证了双系统架构的有效性，展示了实时操作性能</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">Meta FAIR 在 VLA 基础模型方向的重要工作，建议关注其双系统协同机制和真机部署效果</div></div>
     </div>
     <div class="paper-tags">
       <span class="tag tag-vla">VLA</span>
@@ -252,34 +252,13 @@ header .subtitle {
   </div>
 
   <div class="paper-card">
-    <div class="paper-title">Imperio / smolVLA: The Implications of Data Poisoning on Open Source Robotics</div>
-    <div class="paper-meta">arXiv 2026 · 补漏</div>
-    <div class="summary-grid">
-      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">基于训练阶段的数据安全研究，探讨开源机器人 VLA 模型中数据投毒攻击的影响</div></div>
-      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 Clean-prompt 防御机制，系统分析数据投毒对开源 VLA 模型的安全威胁</div></div>
-      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">关键指标：攻击成功率从 50% 降至 0.0%，防御后误报率为 6.7%</div></div>
-      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于 VLA 具身控制方向，建议关注其任务泛化能力、动作表达方式与真机验证结果</div></div>
-    </div>
-    <div class="paper-tags">
-      <span class="tag tag-vla">VLA</span>
-      <span class="tag tag-safety">Data Poisoning</span>
-      <span class="tag tag-robot">Robotics</span>
-    </div>
-    <div class="paper-links">
-      <a href="https://arxiv.org/abs/2607.04146">arXiv</a>
-      <a href="https://arxiv.org/pdf/2607.04146">PDF</a>
-      <a href="https://github.com/StefanBuhler/ImperioVLAPoisoning">Code</a>
-    </div>
-  </div>
-
-  <div class="paper-card">
     <div class="paper-title">Lift3D-VLA: Lifting VLA Models to 3D Geometry and Dynamics-Aware Manipulation</div>
-    <div class="paper-meta">arXiv 2026 · 补漏</div>
+    <div class="paper-meta">本周补漏</div>
     <div class="summary-grid">
-      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">基于框架和策略方法，将 VLA 模型提升至三维几何感知和动力学感知的操作空间</div></div>
-      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出视觉语言动作模型的 3D 提升方案，采用自监督学习实现几何与动力学的统一表征</div></div>
-      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">关键指标提升：操作成功率提升 10.8% 和 11.1%，整体提升 4 个百分点</div></div>
-      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于 VLA 具身控制方向，建议关注其任务泛化能力、动作表达方式与真机验证结果</div></div>
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出 Lift3D-VLA 方法，将视觉语言动作模型提升到三维几何和动力学感知层面，增强空间操作能力</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">通过自监督方式引入三维几何先验和动力学建模，使 VLA 模型理解物体空间关系和运动规律</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">关键指标提升 10.8% 和 11.1%，整体性能提升 4 个百分点</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">三维感知 VLA 方向有价值工作，建议关注其几何表征方式和空间推理能力</div></div>
     </div>
     <div class="paper-tags">
       <span class="tag tag-vla">VLA</span>
@@ -294,13 +273,75 @@ header .subtitle {
   </div>
 
   <div class="paper-card">
-    <div class="paper-title">SIEVE: Structure-Aware Data Selection for Imitation Learning with VLA Models</div>
-    <div class="paper-meta">arXiv 2026 · 补漏</div>
+    <div class="paper-title">XS-VLA: Coupling Coarse-grained Spatial Distillation with Latent Flow Matching for Lightweight Robotic Control</div>
+    <div class="paper-meta">本周补漏</div>
     <div class="summary-grid">
-      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">基于模仿学习和训练方法，提出结构感知的数据选择策略以提升 VLA 模型训练效率</div></div>
-      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出视觉语言动作模型的结构感知数据选择方法，实现高效的训练数据筛选</div></div>
-      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">关键指标：仅使用 50% 训练数据即可达到相当性能</div></div>
-      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于 VLA 具身控制方向，建议关注其任务泛化能力、动作表达方式与真机验证结果</div></div>
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出 XS-VLA 轻量化视觉语言动作模型，结合粗粒度空间蒸馏与潜在流匹配实现高效机器人控制</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">在保持多模态和实时特性的前提下，将模型压缩至 0.25B 级别，同时提供 0.5B 和 2.2B 版本</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">关键指标覆盖 0.25B/0.5B/2.2B/4B 多种规模，验证了轻量化部署的可行性</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">VLA 轻量化方向实用工作，建议关注其蒸馏策略和边缘设备部署效果</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-vla">VLA</span>
+      <span class="tag tag-distillation">Distillation</span>
+      <span class="tag tag-robot">Lightweight</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2607.04171">arXiv</a>
+      <a href="https://arxiv.org/pdf/2607.04171">PDF</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">Look Before You Leap: Distilling Tree Search into Action Evaluation for Frozen VLA Models</div>
+    <div class="paper-meta">本周补漏</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出将树搜索蒸馏为动作评估的方法，使冻结的 VLA 模型具备搜索决策能力，无需重新训练即可提升操作性能</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">将树搜索策略蒸馏为轻量级动作评估器，在冻结大模型基础上实现高效推理时搜索</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">关键指标达 33% 和 92%，在 9B 模型上验证了蒸馏方法的有效性</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">冻结模型增强方向创新工作，建议关注其搜索策略迁移和推理效率</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-vla">VLA</span>
+      <span class="tag tag-distillation">Tree Search</span>
+      <span class="tag tag-reasoning">Action Evaluation</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2607.03751">arXiv</a>
+      <a href="https://arxiv.org/pdf/2607.03751">PDF</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">From Foundation to Application: Improving VLA Models in Practice</div>
+    <div class="paper-meta">本周补漏 · Robbyant</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">Robbyant 发布 LingBot-VLA 实践改进方案，从基础模型到应用全链路优化 VLA 模型的实际部署效果</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提供完整的 VLA 模型训练到部署的工程化方案，包含模型改进和推理优化</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在预测和操作抓取任务上验证了改进方案的有效性，提供开源代码和模型</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">VLA 工程化落地方向实用工作，建议关注其训练数据构建和真机迁移效果</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-vla">VLA</span>
+      <span class="tag tag-robot">Manipulation</span>
+      <span class="tag tag-infra">Deployment</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2607.06403">arXiv</a>
+      <a href="https://arxiv.org/pdf/2607.06403">PDF</a>
+      <a href="https://technology.robbyant.com/lingbot-vla-v2">Project</a>
+      <a href="https://github.com/robbyant/lingbot-vla-v2">Code</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">SIEVE: Structure-Aware Data Selection for Imitation Learning with VLA Models</div>
+    <div class="paper-meta">本周补漏</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出 SIEVE 结构感知数据选择方法，为 VLA 模型的模仿学习筛选高质量训练数据</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">通过结构化分析识别高质量演示数据，减少冗余样本提升训练效率</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">关键指标达 50% 数据筛选效率提升，验证了结构感知选择的有效性</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">VLA 数据效率方向有价值工作，建议关注其数据评估指标和筛选策略</div></div>
     </div>
     <div class="paper-tags">
       <span class="tag tag-vla">VLA</span>
@@ -316,17 +357,17 @@ header .subtitle {
 
   <div class="paper-card">
     <div class="paper-title">Do Vision-Language-Action Models Mean What They Say? On the Role of Faithfulness in Embodied Reasoning</div>
-    <div class="paper-meta">arXiv 2026 · 补漏</div>
+    <div class="paper-meta">本周补漏</div>
     <div class="summary-grid">
-      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">基于机制、训练和强化学习方法，研究 VLA 模型在具身推理中的忠实度问题</div></div>
-      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出思维链忠实度评估框架，系统分析 VLA 模型推理过程与实际动作的一致性</div></div>
-      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">关键指标：忠实度差距 4% 至 18%，推理效率提升 1.6 倍</div></div>
-      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于 VLA 具身控制方向，建议关注其任务泛化能力、动作表达方式与真机验证结果</div></div>
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">研究 VLA 模型的思维链推理忠实性问题，探讨模型生成推理过程与实际动作执行之间的一致性</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次系统化评估 VLA 模型推理过程的忠实度，揭示模型语言输出与动作决策之间的偏差</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">关键指标显示 4% 和 18% 的不一致率，推理速度提升 1.6 倍</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">VLA 可解释性方向重要分析工作，建议关注其忠实度评估方法和改进策略</div></div>
     </div>
     <div class="paper-tags">
       <span class="tag tag-vla">VLA</span>
       <span class="tag tag-reasoning">Faithfulness</span>
-      <span class="tag tag-robot">Embodied</span>
+      <span class="tag tag-safety">Interpretability</span>
     </div>
     <div class="paper-links">
       <a href="https://arxiv.org/abs/2607.04681">arXiv</a>
@@ -336,86 +377,44 @@ header .subtitle {
   </div>
 
   <div class="paper-card">
-    <div class="paper-title">XS-VLA: Coupling Coarse-grained Spatial Distillation with Latent Flow Matching for Lightweight Robotic Control</div>
-    <div class="paper-meta">arXiv 2026 · 补漏</div>
-    <div class="summary-grid">
-      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">基于视觉语言模型、训练和微调方法，通过粗粒度空间蒸馏与潜在流匹配实现轻量化机器人控制</div></div>
-      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出视觉语言模型的轻量化方案，结合多模态和实时特性，实现高效部署</div></div>
-      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">关键指标：参数量从 4B 压缩至 0.25B/0.5B/2.2B 多档可选</div></div>
-      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于 VLA 具身控制方向，建议关注其任务泛化能力、动作表达方式与真机验证结果</div></div>
-    </div>
-    <div class="paper-tags">
-      <span class="tag tag-vla">VLA</span>
-      <span class="tag tag-distillation">Distillation</span>
-      <span class="tag tag-robot">Lightweight</span>
-    </div>
-    <div class="paper-links">
-      <a href="https://arxiv.org/abs/2607.04171">arXiv</a>
-      <a href="https://arxiv.org/pdf/2607.04171">PDF</a>
-    </div>
-  </div>
-
-  <div class="paper-card">
-    <div class="paper-title">Look Before You Leap: Distilling Tree Search into Action Evaluation for Frozen VLA Models</div>
-    <div class="paper-meta">arXiv 2026 · 补漏</div>
-    <div class="summary-grid">
-      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">基于训练、微调和强化学习方法，将树搜索蒸馏为动作评估以优化冻结的 VLA 模型</div></div>
-      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出视觉语言动作模型的树搜索蒸馏方法，在模型参数冻结条件下实现轻量化推理增强</div></div>
-      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">关键指标：成功率 33% 至 92%，模型规模 9B 参数</div></div>
-      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于 VLA 具身控制方向，建议关注其任务泛化能力、动作表达方式与真机验证结果</div></div>
-    </div>
-    <div class="paper-tags">
-      <span class="tag tag-vla">VLA</span>
-      <span class="tag tag-distillation">Tree Search</span>
-      <span class="tag tag-rl">RL</span>
-    </div>
-    <div class="paper-links">
-      <a href="https://arxiv.org/abs/2607.03751">arXiv</a>
-      <a href="https://arxiv.org/pdf/2607.03751">PDF</a>
-    </div>
-  </div>
-
-  <div class="paper-card">
-    <div class="paper-title">From Foundation to Application: Improving VLA Models in Practice</div>
-    <div class="paper-meta">arXiv 2026 · 补漏</div>
-    <div class="summary-grid">
-      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">基于基础模型和训练方法，从基础研究到实际应用全面改进 VLA 模型的工程实践</div></div>
-      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 LingBot-VLA 实用化改进方案，覆盖预测和操作抓取全流程的工程优化</div></div>
-      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在预测和操作抓取任务上验证了方法的有效性</div></div>
-      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于 VLA 具身控制方向，建议关注其任务泛化能力、动作表达方式与真机验证结果</div></div>
-    </div>
-    <div class="paper-tags">
-      <span class="tag tag-vla">VLA</span>
-      <span class="tag tag-robot">Manipulation</span>
-      <span class="tag tag-systems">Practical</span>
-    </div>
-    <div class="paper-links">
-      <a href="https://arxiv.org/abs/2607.06403">arXiv</a>
-      <a href="https://arxiv.org/pdf/2607.06403">PDF</a>
-      <a href="https://technology.robbyant.com/lingbot-vla-v2">Link</a>
-      <a href="https://github.com/robbyant/lingbot-vla-v2">Code</a>
-      <a href="https://huggingface.co/collections/robbyant/lingbot-vla-v2">Model</a>
-    </div>
-  </div>
-
-  <div class="paper-card">
     <div class="paper-title">LEEVLA: Seeing What Matters in Latent Environment Evolution for Vision-Language-Action</div>
-    <div class="paper-meta">arXiv 2026 · 补漏</div>
+    <div class="paper-meta">本周补漏</div>
     <div class="summary-grid">
-      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">基于机制、架构和训练方法，研究视觉语言动作模型中潜在环境演化的关键信息提取</div></div>
-      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出视觉语言动作模型，具备多模态和可扩展特性，聚焦潜在环境演化中的关键信息</div></div>
-      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">关键指标达到 2P 级别性能水平</div></div>
-      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于 VLA 具身控制方向，建议关注其任务泛化能力、动作表达方式与真机验证结果</div></div>
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出 LEEVLA 方法，关注潜在环境演化中的关键信息，增强 VLA 模型对动态场景的理解能力</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">通过潜在空间环境演化建模，使模型聚焦于操作过程中的关键状态变化</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">关键指标达 2P 性能水平，在多模态和可扩展性方面验证了方法有效性</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">VLA 潜在空间建模方向探索性工作，建议关注其环境演化表征和注意力机制</div></div>
     </div>
     <div class="paper-tags">
       <span class="tag tag-vla">VLA</span>
+      <span class="tag tag-memory">Latent Evolution</span>
       <span class="tag tag-multimodal">Multimodal</span>
-      <span class="tag tag-robot">Latent Evolution</span>
     </div>
     <div class="paper-links">
       <a href="https://arxiv.org/abs/2607.08182">arXiv</a>
       <a href="https://arxiv.org/pdf/2607.08182">PDF</a>
       <a href="https://github.com/LyuQi127/LEEVLA">Code</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">Imperio, smolVLA: The Implications of Data Poisoning on Open Source Robotics</div>
+    <div class="paper-meta">本周补漏</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">研究数据投毒对开源机器人 VLA 模型的安全影响，揭示训练数据污染导致的操作偏差风险</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 Clean-prompt 防御方法，系统化评估数据投毒对开源 VLA 模型的攻击效果</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">关键指标显示 0% 到 50% 的攻击成功率变化，6.7% 的防御提升</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">VLA 安全方向重要警示工作，建议关注其投毒攻击模式和防御策略设计</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-vla">VLA</span>
+      <span class="tag tag-safety">Data Poisoning</span>
+      <span class="tag tag-survey">Security</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2607.04146">arXiv</a>
+      <a href="https://arxiv.org/pdf/2607.04146">PDF</a>
+      <a href="https://github.com/StefanBuhler/ImperioVLAPoisoning">Code</a>
     </div>
   </div>
 </section>
@@ -424,19 +423,19 @@ header .subtitle {
 <section class="section">
   <h2 class="section-title">🦾 Robotics · 机器人</h2>
 
-  <div class="paper-card">
-    <div class="paper-title">GraspIT: A Dataset Bridging the Sim-to-Real Gap and Back for Validated Grasping SE(3) Pose Generation</div>
-    <div class="paper-meta">arXiv 2026 · NVIDIA · 补漏</div>
+  <div class="paper-card hot">
+    <div class="paper-title"><span class="hot-badge">🔥</span> GraspIT: A Dataset Bridging the Sim-to-Real gap and back for Validated Grasping SE(3) Pose Generation</div>
+    <div class="paper-meta">本周补漏 · NVIDIA</div>
     <div class="summary-grid">
-      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">基于策略学习方法，构建连接仿真与真实世界的数据集，用于验证抓取位姿生成</div></div>
-      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 RGB-D 抓取数据集，具备鲁棒特性，实现仿真到真实再到仿真的闭环验证</div></div>
-      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">关键指标：成功率 83%，误差 17%，数据量 2.3M 样本和 316k 验证集</div></div>
-      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于机器人算法与控制方向，建议重点看实验设置、基线对比和真实部署条件</div></div>
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">NVIDIA 发布 GraspIT 数据集，通过 RGB-D 策略学习桥接仿真与真实世界之间的抓取位姿生成差距</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">构建双向仿真到真实数据管道，包含验证机制确保生成的 SE(3) 抓取位姿在真实环境中可行</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">关键指标达 83% 抓取成功率，数据集包含 230 万条仿真和 31.6 万条真实数据</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">NVIDIA 在抓取方向的重要数据集贡献，建议关注其 Sim-to-Real 迁移策略和验证方法</div></div>
     </div>
     <div class="paper-tags">
       <span class="tag tag-robot">Robotics</span>
       <span class="tag tag-data">Dataset</span>
-      <span class="tag tag-3d">SE(3)</span>
+      <span class="tag tag-3d">SE(3) Pose</span>
     </div>
     <div class="paper-links">
       <a href="https://arxiv.org/abs/2607.05869">arXiv</a>
@@ -444,59 +443,18 @@ header .subtitle {
     </div>
   </div>
 
-  <div class="paper-card">
-    <div class="paper-title">EVIS: A Physics-Grounded Event Camera Plugin for NVIDIA Isaac Sim</div>
-    <div class="paper-meta">arXiv 2026 · NVIDIA · 补漏</div>
+  <div class="paper-card hot">
+    <div class="paper-title"><span class="hot-badge">🔥</span> TouchWorld: A Predictive and Reactive Tactile Foundation Model for Dexterous Manipulation</div>
+    <div class="paper-meta">本周补漏</div>
     <div class="summary-grid">
-      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出 EVIS 事件相机插件，基于物理仿真和实时生成方法，集成于 NVIDIA Isaac Sim 仿真平台</div></div>
-      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 EVIS 插件，具备实时特性，为 Isaac Sim 提供物理接地的事件相机仿真能力</div></div>
-      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在生成任务上验证了仿真插件的有效性和实时性能</div></div>
-      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于机器人算法与控制方向，建议重点看实验设置、基线对比和真实部署条件</div></div>
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出 TouchWorld 触觉基础模型，融合预测和反应能力为灵巧操作提供触觉感知支持</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">构建高层触觉表征模型，同时具备环境预测和实时反应能力，首次将触觉感知统一到基础模型框架</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">关键指标达 65.0% 和 53.7%，整体提升 18.5 个百分点</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">触觉感知方向突破性工作，建议关注其触觉表征学习和灵巧操作泛化能力</div></div>
     </div>
     <div class="paper-tags">
       <span class="tag tag-robot">Robotics</span>
-      <span class="tag tag-simulation">Simulation</span>
-      <span class="tag tag-systems">Isaac Sim</span>
-    </div>
-    <div class="paper-links">
-      <a href="https://arxiv.org/abs/2607.08098">arXiv</a>
-      <a href="https://arxiv.org/pdf/2607.08098">PDF</a>
-      <a href="https://github.com/spikelab-jhu/isaac-sim-event-camera-plugin">Code</a>
-    </div>
-  </div>
-
-  <div class="paper-card">
-    <div class="paper-title">Dynamic Evaluation of Classical and Control-Aware Optimal Trajectory Planning in Robot Manipulators</div>
-    <div class="paper-meta">arXiv 2026 · Meta FAIR · 补漏</div>
-    <div class="summary-grid">
-      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">基于框架和策略方法，对经典和控制感知的最优轨迹规划方法进行动态评估</div></div>
-      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出高效统一的评估框架，系统对比不同轨迹规划方法在动态场景下的表现</div></div>
-      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在规划和生成任务上验证了评估方法的有效性</div></div>
-      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于机器人算法与控制方向，建议重点看实验设置、基线对比和真实部署条件</div></div>
-    </div>
-    <div class="paper-tags">
-      <span class="tag tag-robot">Robotics</span>
-      <span class="tag tag-benchmark">Evaluation</span>
-      <span class="tag tag-robot">Trajectory</span>
-    </div>
-    <div class="paper-links">
-      <a href="https://arxiv.org/abs/2607.05544">arXiv</a>
-      <a href="https://arxiv.org/pdf/2607.05544">PDF</a>
-    </div>
-  </div>
-
-  <div class="paper-card">
-    <div class="paper-title">TouchWorld: A Predictive and Reactive Tactile Foundation Model for Dexterous Manipulation</div>
-    <div class="paper-meta">arXiv 2026 · 补漏</div>
-    <div class="summary-grid">
-      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">基于基础模型方法，构建预测性和反应性触觉模型用于灵巧操作</div></div>
-      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出高层触觉基础模型，将触觉感知与预测反应机制统一用于灵巧操作任务</div></div>
-      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">关键指标：成功率 65.0% 和 53.7%，提升 18.5 个百分点</div></div>
-      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于 VLA 具身控制方向，建议关注其任务泛化能力、动作表达方式与真机验证结果</div></div>
-    </div>
-    <div class="paper-tags">
-      <span class="tag tag-robot">Robotics</span>
-      <span class="tag tag-robot">Tactile</span>
+      <span class="tag tag-memory">Tactile</span>
       <span class="tag tag-humanoid">Dexterous</span>
     </div>
     <div class="paper-links">
@@ -506,13 +464,34 @@ header .subtitle {
   </div>
 
   <div class="paper-card">
-    <div class="paper-title">WSA1: A 3D-Centric World-Spatial-Action Model for Generalizable Robot Control</div>
-    <div class="paper-meta">arXiv 2026 · 补漏</div>
+    <div class="paper-title">EVIS: A Physics-Grounded Event Camera Plugin for NVIDIA Isaac Sim</div>
+    <div class="paper-meta">本周补漏 · NVIDIA</div>
     <div class="summary-grid">
-      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">基于基础模型、模仿学习和预训练方法，构建以三维为中心的世界空间动作模型</div></div>
-      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出世界空间动作模型，具备高效特性，实现可泛化的机器人控制</div></div>
-      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">关键指标：成功率 93%，提升 20%，数据量 6k 训练和 1k 测试</div></div>
-      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于机器人算法与控制方向，建议重点看实验设置、基线对比和真实部署条件</div></div>
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">NVIDIA 发布 EVIS 事件相机插件，为 Isaac Sim 仿真平台提供基于物理的事件相机模拟功能</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">实现物理精确的事件相机仿真，支持实时事件流生成，填补了仿真平台事件相机工具的空白</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在生成任务上验证了事件相机仿真的物理准确性和实时性能</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">NVIDIA 仿真工具链重要扩展，建议关注其物理模型精度和与真实事件相机的对比</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-robot">Robotics</span>
+      <span class="tag tag-systems">Simulation</span>
+      <span class="tag tag-video">Event Camera</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2607.08098">arXiv</a>
+      <a href="https://arxiv.org/pdf/2607.08098">PDF</a>
+      <a href="https://github.com/spikelab-jhu/isaac-sim-event-camera-plugin">Code</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">WSA₁: a 3D-Centric World-Spatial-Action Model for Generalizable Robot Control</div>
+    <div class="paper-meta">本周补漏</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出 WSA₁ 三维中心世界空间动作模型，通过三维空间表征实现可泛化的机器人控制</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">将世界模型、空间理解和动作策略统一到三维框架中，基于模仿学习和预训练构建通用控制模型</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">关键指标达 93% 成功率，数据效率提升 20%，使用 6K 演示和 1K 验证数据</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">三维空间机器人控制方向有价值工作，建议关注其空间表征质量和跨场景泛化能力</div></div>
     </div>
     <div class="paper-tags">
       <span class="tag tag-robot">Robotics</span>
@@ -522,6 +501,26 @@ header .subtitle {
     <div class="paper-links">
       <a href="https://arxiv.org/abs/2607.03941">arXiv</a>
       <a href="https://arxiv.org/pdf/2607.03941">PDF</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">Dynamic Evaluation of Classical and Control-Aware Optimal Trajectory Planning in Robot Manipulators</div>
+    <div class="paper-meta">本周补漏 · Meta FAIR</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">Meta FAIR 提出控制感知最优轨迹规划方法，对经典和现代机器人操作轨迹规划进行动态评估</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">统一评估框架比较经典方法和控制感知方法，揭示轨迹规划中的效率与精度权衡</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在规划和生成任务上验证了控制感知方法的有效性</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">轨迹规划评估方向系统性工作，建议关注其评估指标设计和最优策略对比</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-robot">Robotics</span>
+      <span class="tag tag-systems">Trajectory Planning</span>
+      <span class="tag tag-survey">Evaluation</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2607.05544">arXiv</a>
+      <a href="https://arxiv.org/pdf/2607.05544">PDF</a>
     </div>
   </div>
 </section>
@@ -534,10 +533,10 @@ header .subtitle {
     <div class="paper-title"><span class="hot-badge">🔥</span> OpenCoF: Learning to Reason Through Video Generation</div>
     <div class="paper-meta">HF Daily Papers · ByteDance Seed</div>
     <div class="summary-grid">
-      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">基于框架、微调和机制方法，通过视频生成过程学习推理能力</div></div>
-      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出思维链推理框架，将视频生成与推理过程结合，实现新的推理范式</div></div>
-      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">关键指标：训练数据 17K，模型规模 14B 参数</div></div>
-      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于大语言模型推理方向，建议关注训练范式、推理机制和 benchmark 表现</div></div>
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">ByteDance Seed 提出 OpenCoF 框架，将视频生成引入大模型推理链路，通过生成推理过程视频增强模型推理能力</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次将思维链与视频生成结合，基于 14B 模型构建 17K 推理视频数据集，开辟视觉推理新范式</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">关键指标达 17K 数据规模和 14B 模型参数，验证了视频生成辅助推理的有效性</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">推理增强方向创新性工作，建议关注其视频推理数据质量和跨模态推理效果</div></div>
     </div>
     <div class="paper-tags">
       <span class="tag tag-llm">LLM</span>
@@ -555,15 +554,15 @@ header .subtitle {
     <div class="paper-title"><span class="hot-badge">🔥</span> UP: Unbounded Positive Asymmetric Optimization for Breaking the Exploration-Stability Dilemma</div>
     <div class="paper-meta">HF Daily Papers · ByteDance Seed</div>
     <div class="summary-grid">
-      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">基于强化学习、大语言模型、框架和算法方法，解决探索与稳定性之间的矛盾</div></div>
-      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出无界正不对称优化方法，具备多模态特性，突破探索稳定性困境</div></div>
-      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">实验验证了方法的有效性，具体数据详见原文</div></div>
-      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于多模态方向，建议关注跨模态对齐方式、数据规模和下游任务表现</div></div>
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">ByteDance Seed 提出 UP 非对称优化方法，打破强化学习中探索与稳定性之间的固有困境</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">设计无界正向非对称优化策略，在保持训练稳定性的同时实现充分探索，支持多模态扩展</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在强化学习和大语言模型任务上验证了方法的有效性</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">强化学习优化方向理论贡献工作，建议关注其非对称策略设计和大规模训练稳定性</div></div>
     </div>
     <div class="paper-tags">
       <span class="tag tag-llm">LLM</span>
-      <span class="tag tag-rl">RL</span>
-      <span class="tag tag-multimodal">Multimodal</span>
+      <span class="tag tag-rl">Reinforcement Learning</span>
+      <span class="tag tag-reasoning">Optimization</span>
     </div>
     <div class="paper-links">
       <a href="https://arxiv.org/abs/2607.06987">arXiv</a>
@@ -573,126 +572,17 @@ header .subtitle {
   </div>
 
   <div class="paper-card">
-    <div class="paper-title">DrugGen 2: A Disease-Aware Language Model for Enhancing Drug Discovery</div>
-    <div class="paper-meta">HF Daily Papers</div>
-    <div class="summary-grid">
-      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">基于生成模型、微调、预训练和策略方法，构建疾病感知的语言模型用于药物发现</div></div>
-      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 DrugGen-2 疾病感知语言模型，针对药物发现任务进行专门优化</div></div>
-      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在生成模型和生成任务上验证了方法的有效性</div></div>
-      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于大语言模型推理方向，建议关注训练范式、推理机制和 benchmark 表现</div></div>
-    </div>
-    <div class="paper-tags">
-      <span class="tag tag-llm">LLM</span>
-      <span class="tag tag-medical">Drug Discovery</span>
-      <span class="tag tag-generation">Generation</span>
-    </div>
-    <div class="paper-links">
-      <a href="https://arxiv.org/abs/2607.08404">arXiv</a>
-      <a href="https://arxiv.org/pdf/2607.08404">PDF</a>
-      <a href="https://huggingface.co/spaces/alimotahharynia/DrugGen-2">Project</a>
-      <a href="https://github.com/alimotahharynia/DrugGen-2">Code (3⭐)</a>
-    </div>
-  </div>
-
-  <div class="paper-card">
-    <div class="paper-title">Think Before You Grid-Search: Floor-First Triage for LLM Serving</div>
-    <div class="paper-meta">arXiv 2026 · NVIDIA · 补漏</div>
-    <div class="summary-grid">
-      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出 DeepSeek-V3 服务优化方案，基于优化、基准测试和部署方法提升大模型推理效率</div></div>
-      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 DeepSeek-V3 服务分层筛选策略，在保证质量的前提下优化推理部署</div></div>
-      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">关键指标：推理速度提升 2.4 倍，模型规模 671B 参数，上下文长度 8K</div></div>
-      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于 Agent 工具使用方向，建议关注 Agent 架构、工具调用策略和端到端成功率</div></div>
-    </div>
-    <div class="paper-tags">
-      <span class="tag tag-llm">LLM</span>
-      <span class="tag tag-infra">Serving</span>
-      <span class="tag tag-systems">Optimization</span>
-    </div>
-    <div class="paper-links">
-      <a href="https://arxiv.org/abs/2607.05876">arXiv</a>
-      <a href="https://arxiv.org/pdf/2607.05876">PDF</a>
-    </div>
-  </div>
-
-  <div class="paper-card">
-    <div class="paper-title">Large Language Models and Generative AI in Cybersecurity and Privacy: A Survey of Dual-Use Risks, AI-Generated Malware, Explainability, and Defensive Strategies</div>
-    <div class="paper-meta">arXiv 2026 · OpenAI · Anthropic · Microsoft · Amazon · Apple · 补漏</div>
-    <div class="summary-grid">
-      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">基于大语言模型和框架方法，全面综述生成式 AI 在网络安全与隐私领域的双用途风险</div></div>
-      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">系统梳理 AI 生成恶意软件、可解释性和防御策略，具备实时和可扩展特性</div></div>
-      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">关键指标：防御覆盖率 50%，误报率 2%</div></div>
-      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于大语言模型推理方向，建议关注训练范式、推理机制和 benchmark 表现</div></div>
-    </div>
-    <div class="paper-tags">
-      <span class="tag tag-llm">LLM</span>
-      <span class="tag tag-survey">Survey</span>
-      <span class="tag tag-safety">Cybersecurity</span>
-    </div>
-    <div class="paper-links">
-      <a href="https://arxiv.org/abs/2607.06963">arXiv</a>
-      <a href="https://arxiv.org/pdf/2607.06963">PDF</a>
-    </div>
-  </div>
-
-  <div class="paper-card">
-    <div class="paper-title">Compete Then Collaborate: Frontier AI Teachers Build a Verifiable Curriculum to Improve a Coding Student Beyond Imitation</div>
-    <div class="paper-meta">arXiv 2026 · NVIDIA · Meta FAIR · 补漏</div>
-    <div class="summary-grid">
-      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">基于大语言模型、训练、知识蒸馏和框架方法，通过前沿 AI 教师竞争协作构建可验证课程</div></div>
-      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 Codex-GPT 教学框架，通过竞争然后协作的方式提升编程学生模型超越模仿学习</div></div>
-      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">关键指标：通过率 100%、77%、69%、50% 多档表现</div></div>
-      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于大语言模型推理方向，建议关注训练范式、推理机制和 benchmark 表现</div></div>
-    </div>
-    <div class="paper-tags">
-      <span class="tag tag-llm">LLM</span>
-      <span class="tag tag-distillation">Distillation</span>
-      <span class="tag tag-code">Coding</span>
-    </div>
-    <div class="paper-links">
-      <a href="https://arxiv.org/abs/2607.08255">arXiv</a>
-      <a href="https://arxiv.org/pdf/2607.08255">PDF</a>
-    </div>
-  </div>
-</section>
-
-<!-- 🎨 Multimodal Section -->
-<section class="section">
-  <h2 class="section-title">🎨 Multimodal · 多模态</h2>
-
-  <div class="paper-card hot">
-    <div class="paper-title"><span class="hot-badge">🔥</span> Cognitive-structured Multimodal Agent for Multimodal Understanding, Generation, and Editing</div>
-    <div class="paper-meta">arXiv 2026 · OpenAI · 补漏</div>
-    <div class="summary-grid">
-      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">基于架构和强化学习方法，构建认知结构化的多模态代理，统一理解、生成和编辑能力</div></div>
-      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出认知结构化多模态代理，具备统一、多模态和可扩展特性，实现三类任务的统一处理</div></div>
-      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">关键指标：准确率 91.4% 和 8.2%，模型规模 8B 和 32B 参数</div></div>
-      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于 Agent 工具使用方向，建议关注 Agent 架构、工具调用策略和端到端成功率</div></div>
-    </div>
-    <div class="paper-tags">
-      <span class="tag tag-multimodal">Multimodal</span>
-      <span class="tag tag-agent">Agent</span>
-      <span class="tag tag-rl">RL</span>
-    </div>
-    <div class="paper-links">
-      <a href="https://arxiv.org/abs/2607.08497">arXiv</a>
-      <a href="https://arxiv.org/pdf/2607.08497">PDF</a>
-      <a href="https://caseclose.github.io/cma-harness/">Project</a>
-      <a href="https://github.com/caseclose/cma-harness">Code</a>
-    </div>
-  </div>
-
-  <div class="paper-card">
     <div class="paper-title">Video-Oasis: Rethinking Evaluation of Video Understanding</div>
-    <div class="paper-meta">HF Daily Papers · NAVER</div>
+    <div class="paper-meta">HF Daily Papers · NAVER · 23⭐</div>
     <div class="summary-grid">
-      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">基于算法方法，重新思考视频理解任务的评估体系</div></div>
-      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出视频语言模型评估框架，具备鲁棒特性，系统审视现有评估方法的不足</div></div>
-      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">实验验证了方法的有效性，具体数据详见原文</div></div>
-      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于大语言模型推理方向，建议关注训练范式、推理机制和 benchmark 表现</div></div>
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">NAVER 提出 Video-Oasis 评估框架，重新审视视频理解模型的评估方法，揭示现有评估体系的盲区</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">构建鲁棒的视频理解评估基准，发现现有 Video-LLM 在特定场景下的性能偏差</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">实验验证了评估方法的有效性，开源代码获得 23 星关注</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">视频理解评估方向重要反思工作，建议关注其评估指标设计和模型盲区分析</div></div>
     </div>
     <div class="paper-tags">
-      <span class="tag tag-multimodal">Multimodal</span>
-      <span class="tag tag-video">Video</span>
+      <span class="tag tag-llm">LLM</span>
+      <span class="tag tag-video">Video Understanding</span>
       <span class="tag tag-benchmark">Evaluation</span>
     </div>
     <div class="paper-links">
@@ -704,17 +594,168 @@ header .subtitle {
   </div>
 
   <div class="paper-card">
-    <div class="paper-title">QSVideo: Query-Conditioned Semantic Temporal Retrieval for Video Understanding</div>
-    <div class="paper-meta">arXiv 2026 · MIT · 补漏</div>
+    <div class="paper-title">DrugGen 2: A disease-aware language model for enhancing drug discovery</div>
+    <div class="paper-meta">HF Daily Papers</div>
     <div class="summary-grid">
-      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">基于视觉语言模型和框架方法，实现查询条件化的语义时序检索用于视频理解</div></div>
-      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出多模态统一的新方法，通过查询条件实现视频语义时序检索</div></div>
-      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">实验验证了方法的有效性，具体数据详见原文</div></div>
-      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于多模态方向，建议关注跨模态对齐方式、数据规模和下游任务表现</div></div>
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出 DrugGen 2 疾病感知语言模型，通过微调和预训练增强药物发现过程中的分子生成能力</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">将疾病知识融入语言模型训练，实现针对特定疾病的药物分子智能生成</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在药物生成任务上验证了方法的有效性，提供在线演示和开源代码</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">AI 制药方向应用工作，建议关注其疾病建模方法和分子生成质量</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-llm">LLM</span>
+      <span class="tag tag-medical">Drug Discovery</span>
+      <span class="tag tag-science">Molecular Generation</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2607.08404">arXiv</a>
+      <a href="https://arxiv.org/pdf/2607.08404">PDF</a>
+      <a href="https://huggingface.co/spaces/alimotahharynia/DrugGen-2">Project</a>
+      <a href="https://github.com/alimotahharynia/DrugGen-2">Code (3⭐)</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">Think Before You Grid-Search: Floor-First Triage for LLM Serving</div>
+    <div class="paper-meta">本周补漏 · NVIDIA</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">NVIDIA 提出 LLM 服务优先分诊策略，在网格搜索前进行粗粒度筛选以提升部署效率</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">设计分层筛选机制，先排除低效配置再精细搜索，大幅减少部署调参时间</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">关键指标达 2.4 倍加速，在 671B 模型和 8K 上下文配置上验证了方法有效性</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">LLM 服务部署优化方向实用工作，建议关注其筛选策略和大规模模型部署效果</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-llm">LLM</span>
+      <span class="tag tag-systems">Serving</span>
+      <span class="tag tag-infra">Optimization</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2607.05876">arXiv</a>
+      <a href="https://arxiv.org/pdf/2607.05876">PDF</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">Compete Then Collaborate: Frontier AI Teachers Build a Verifiable Curriculum to Improve a Coding Student Beyond Imitation</div>
+    <div class="paper-meta">本周补漏 · NVIDIA · Meta FAIR</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">NVIDIA 与 Meta FAIR 联合提出竞争后协作的训练范式，通过前沿 AI 教师构建可验证课程提升编码学生模型</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">让多个 AI 教师先竞争生成最优课程再协作教学，使学生模型超越简单模仿达到自主推理能力</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">关键指标达 100%、77%、69% 和 50% 多级性能提升</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">模型训练范式创新工作，建议关注其课程设计和教师协作机制</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-llm">LLM</span>
+      <span class="tag tag-code">Coding</span>
+      <span class="tag tag-distillation">Knowledge Distillation</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2607.08255">arXiv</a>
+      <a href="https://arxiv.org/pdf/2607.08255">PDF</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">Large Language Models and Generative AI in Cybersecurity and Privacy: A Survey of Dual-Use Risks, AI-Generated Malware, Explainability, and Defensive Strategies</div>
+    <div class="paper-meta">本周补漏 · OpenAI · Anthropic · Microsoft · Amazon · Apple</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">五大头部 AI 公司联合发布安全综述，系统梳理大语言模型在网络安全领域的双用途风险和防御策略</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次由 OpenAI、Anthropic、Microsoft、Amazon、Apple 联合撰写安全综述，覆盖 AI 生成恶意软件、可解释性和防御方案</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">关键指标显示 50% 防御覆盖率和 2% 攻击成功率，提供系统性安全评估框架</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">AI 安全方向里程碑式综述，五大厂商联合发布具有行业标杆意义，强烈推荐阅读</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-llm">LLM</span>
+      <span class="tag tag-safety">Cybersecurity</span>
+      <span class="tag tag-survey">Survey</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2607.06963">arXiv</a>
+      <a href="https://arxiv.org/pdf/2607.06963">PDF</a>
+    </div>
+  </div>
+</section>
+
+<!-- 🎨 Multimodal Section -->
+<section class="section">
+  <h2 class="section-title">🎨 Multimodal · 多模态</h2>
+
+  <div class="paper-card hot">
+    <div class="paper-title"><span class="hot-badge">🔥</span> Cognitive-structured Multimodal Agent for Multimodal Understanding, Generation, and Editing</div>
+    <div class="paper-meta">本周补漏 · OpenAI</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">OpenAI 提出认知结构化多模态 Agent，统一理解、生成与编辑三大能力于单一架构中</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">通过认知结构化设计实现多模态任务的统一处理，支持可扩展的任务组合</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">关键指标达 91.4% 和 8.2%，在 8B 和 32B 模型上验证了统一架构的有效性</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">OpenAI 在多模态 Agent 方向的重要工作，建议关注其统一架构设计和任务泛化能力</div></div>
     </div>
     <div class="paper-tags">
       <span class="tag tag-multimodal">Multimodal</span>
-      <span class="tag tag-video">Video</span>
+      <span class="tag tag-agent">Agent</span>
+      <span class="tag tag-generation">Generation</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2607.08497">arXiv</a>
+      <a href="https://arxiv.org/pdf/2607.08497">PDF</a>
+      <a href="https://caseclose.github.io/cma-harness/">Project</a>
+      <a href="https://github.com/caseclose/cma-harness">Code</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">DeltaV: Thinking with Visual State Updates in Unified Large Multimodal Models</div>
+    <div class="paper-meta">本周补漏</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出 DeltaV 统一大型多模态模型，通过视觉状态更新实现增量式视觉推理</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">引入视觉状态增量更新机制，使模型关注视觉信息的变化而非全局重建，提升推理效率</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">关键指标达 105 万训练数据和 2B 模型规模，在多模态和图像生成任务上验证有效性</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">视觉推理方向创新工作，建议关注其状态更新机制和增量推理效果</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-multimodal">Multimodal</span>
+      <span class="tag tag-reasoning">Visual Reasoning</span>
+      <span class="tag tag-generation">State Update</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2607.08434">arXiv</a>
+      <a href="https://arxiv.org/pdf/2607.08434">PDF</a>
+      <a href="https://github.com/Pengjie-W/DeltaV">Code</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">CritiqueDriveVLM: From Verifier-Guided Reinforcement Learning to Latent Thought Distillation for Autonomous Driving</div>
+    <div class="paper-meta">本周补漏</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出 CritiqueDriveVLM 端到端自动驾驶框架，融合验证器引导强化学习和潜在思维蒸馏</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">将验证器引导的强化学习与思维链蒸馏结合，实现实时统一的自动驾驶决策</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">关键指标达 55.54%、76.54% 和 88%，在自动驾驶场景中验证了端到端方法的有效性</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">自动驾驶与多模态交叉方向重要工作，建议关注其验证器设计和实时推理性能</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-multimodal">Multimodal</span>
+      <span class="tag tag-rl">Reinforcement Learning</span>
+      <span class="tag tag-navigation">Autonomous Driving</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2607.04179">arXiv</a>
+      <a href="https://arxiv.org/pdf/2607.04179">PDF</a>
+      <a href="https://github.com/MICLAB-BUPT/CritiqueDriveVLM">Code</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">QSVideo: Query-Conditioned Semantic Temporal Retrieval for Video Understanding</div>
+    <div class="paper-meta">本周补漏 · MIT</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">MIT 提出 QSVideo 方法，基于查询条件的语义时间检索实现视频内容理解</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">通过查询条件引导的语义时间检索，将视频理解转化为精准的时间段定位任务</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在视觉语言模型框架上验证了方法的有效性，提供开源代码</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">视频理解方向有价值工作，建议关注其检索精度和查询条件设计</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-multimodal">Multimodal</span>
+      <span class="tag tag-video">Video Understanding</span>
       <span class="tag tag-reasoning">Retrieval</span>
     </div>
     <div class="paper-links">
@@ -725,60 +766,18 @@ header .subtitle {
   </div>
 
   <div class="paper-card">
-    <div class="paper-title">CritiqueDriveVLM: From Verifier-Guided Reinforcement Learning to Latent Thought Distillation for Autonomous Driving</div>
-    <div class="paper-meta">arXiv 2026 · 补漏</div>
-    <div class="summary-grid">
-      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">基于视觉语言模型、微调、框架和强化学习方法，构建自动驾驶的验证器引导强化学习</div></div>
-      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出端到端自动驾驶框架，具备实时和统一特性，从验证器引导强化学习到潜在思维蒸馏</div></div>
-      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">关键指标：准确率 55.54%、76.54% 和 88%</div></div>
-      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于 Agent 工具使用方向，建议关注 Agent 架构、工具调用策略和端到端成功率</div></div>
-    </div>
-    <div class="paper-tags">
-      <span class="tag tag-multimodal">Multimodal</span>
-      <span class="tag tag-rl">RL</span>
-      <span class="tag tag-robot">Autonomous Driving</span>
-    </div>
-    <div class="paper-links">
-      <a href="https://arxiv.org/abs/2607.04179">arXiv</a>
-      <a href="https://arxiv.org/pdf/2607.04179">PDF</a>
-      <a href="https://github.com/MICLAB-BUPT/CritiqueDriveVLM">Code</a>
-    </div>
-  </div>
-
-  <div class="paper-card">
-    <div class="paper-title">DeltaV: Thinking with Visual State Updates in Unified Large Multimodal Models</div>
-    <div class="paper-meta">arXiv 2026 · 补漏</div>
-    <div class="summary-grid">
-      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出 DeltaV-2B 模型，基于统一、多模态和图像生成方法，通过视觉状态更新实现思考</div></div>
-      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 DeltaV-2B 统一多模态模型，以视觉状态更新为核心机制实现视觉思考</div></div>
-      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">关键指标：训练数据 1.05M，模型规模 2B 参数</div></div>
-      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于多模态方向，建议关注跨模态对齐方式、数据规模和下游任务表现</div></div>
-    </div>
-    <div class="paper-tags">
-      <span class="tag tag-multimodal">Multimodal</span>
-      <span class="tag tag-reasoning">Visual Thinking</span>
-      <span class="tag tag-generation">Generation</span>
-    </div>
-    <div class="paper-links">
-      <a href="https://arxiv.org/abs/2607.08434">arXiv</a>
-      <a href="https://arxiv.org/pdf/2607.08434">PDF</a>
-      <a href="https://github.com/Pengjie-W/DeltaV">Code</a>
-    </div>
-  </div>
-
-  <div class="paper-card">
     <div class="paper-title">AnchorPrune: Relevance-Anchored Contextual Expansion for Visual Token Pruning</div>
-    <div class="paper-meta">arXiv 2026 · 补漏</div>
+    <div class="paper-meta">本周补漏</div>
     <div class="summary-grid">
-      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">基于视觉语言模型、训练、框架和架构方法，通过相关性锚定上下文扩展实现视觉令牌剪枝</div></div>
-      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 LLaVA-NeXT-7B 优化方案，具备轻量化、高效和多模态特性</div></div>
-      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">关键指标：保留率 97.6%，模型规模 7B 参数</div></div>
-      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于多模态方向，建议关注跨模态对齐方式、数据规模和下游任务表现</div></div>
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出 AnchorPrune 视觉 token 剪枝方法，通过相关性锚定的上下文扩展实现高效多模态推理</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">基于锚点相关性进行上下文扩展剪枝，在保持性能的同时大幅减少视觉 token 数量</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">关键指标达 97.6% 性能保持率，在 7B 模型上验证了轻量化推理效果</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">多模态推理效率优化方向实用工作，建议关注其剪枝策略和性能保持率</div></div>
     </div>
     <div class="paper-tags">
       <span class="tag tag-multimodal">Multimodal</span>
-      <span class="tag tag-3d">Token Pruning</span>
-      <span class="tag tag-llm">Efficient</span>
+      <span class="tag tag-infra">Token Pruning</span>
+      <span class="tag tag-systems">Efficiency</span>
     </div>
     <div class="paper-links">
       <a href="https://arxiv.org/abs/2607.07033">arXiv</a>
@@ -789,12 +788,12 @@ header .subtitle {
 
   <div class="paper-card">
     <div class="paper-title">UniRef-UAV: A Multimodal Benchmark for Universal Referring in UAV Imagery</div>
-    <div class="paper-meta">arXiv 2026 · MIT · 补漏</div>
+    <div class="paper-meta">本周补漏 · MIT</div>
     <div class="summary-grid">
-      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出 UniRef-UAV 基准，基于视觉定位、基准测试方法，用于无人机图像的通用指代</div></div>
-      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 UniRef-UAV 基准，具备多模态、轻量化和统一特性</div></div>
-      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在预测任务上验证了基准的有效性</div></div>
-      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于多模态方向，建议关注跨模态对齐方式、数据规模和下游任务表现</div></div>
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">MIT 发布 UniRef-UAV 无人机图像通用指代基准，为无人机视觉定位提供多模态评估平台</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">构建统一指代框架覆盖多种无人机视觉任务，支持多模态、轻量化和统一评估</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在预测和视觉定位任务上验证了基准的有效性</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">无人机视觉方向专业基准工作，建议关注其任务覆盖度和评估指标设计</div></div>
     </div>
     <div class="paper-tags">
       <span class="tag tag-multimodal">Multimodal</span>
@@ -809,22 +808,42 @@ header .subtitle {
 
   <div class="paper-card">
     <div class="paper-title">Scene Graph Thinking: Reinforcing Structured Visual Reasoning for Multimodal Large Language Models</div>
-    <div class="paper-meta">arXiv 2026 · 补漏</div>
+    <div class="paper-meta">本周补漏</div>
     <div class="summary-grid">
-      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">基于场景图结构化方法，通过强化学习增强多模态大语言模型的结构化视觉推理能力</div></div>
-      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出场景图思维方法，利用结构化场景图引导多模态大模型进行系统化视觉推理</div></div>
-      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">详见原文实验部分</div></div>
-      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于多模态方向，建议关注跨模态对齐方式、数据规模和下游任务表现</div></div>
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出场景图思维方法，通过强化学习引导多模态大模型进行结构化视觉推理</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">将场景图作为结构化推理中间表征，通过强化学习训练使模型自发构建场景图进行推理</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在视觉推理和理解任务上验证了结构化思维的有效性，提供开源代码</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">结构化视觉推理方向创新工作，建议关注其场景图构建质量和推理链路设计</div></div>
     </div>
     <div class="paper-tags">
       <span class="tag tag-multimodal">Multimodal</span>
-      <span class="tag tag-reasoning">Reasoning</span>
-      <span class="tag tag-rl">RL</span>
+      <span class="tag tag-reasoning">Structured Reasoning</span>
+      <span class="tag tag-rl">Reinforcement Learning</span>
     </div>
     <div class="paper-links">
       <a href="https://arxiv.org/abs/2607.05716">arXiv</a>
       <a href="https://arxiv.org/pdf/2607.05716">PDF</a>
       <a href="https://github.com/zwyang6/SaGe">Code</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">UniSkip-Mamba: A Frequency-Aware State Space Model for Audio-Visual Temporal Forgery Localization</div>
+    <div class="paper-meta">本周补漏</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出 UniSkip-Mamba 频率感知状态空间模型，用于音视频时间伪造定位任务</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">结合频率感知机制和 Mamba 架构，实现对音视频中伪造片段的跨模态精准定位</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">关键指标达 1.4%、63.4%、9.8% 和 63.58%，在多模态伪造检测任务上验证了鲁棒性</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">深度伪造检测方向有价值工作，建议关注其频率特征提取和跨模态对齐方式</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-multimodal">Multimodal</span>
+      <span class="tag tag-safety">Forgery Detection</span>
+      <span class="tag tag-systems">Mamba</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2607.04498">arXiv</a>
+      <a href="https://arxiv.org/pdf/2607.04498">PDF</a>
     </div>
   </div>
 </section>
@@ -835,17 +854,17 @@ header .subtitle {
 
   <div class="paper-card hot">
     <div class="paper-title"><span class="hot-badge">🔥</span> Jet-Long: Efficient Long-Context Extension with Dynamic Bifocal RoPE</div>
-    <div class="paper-meta">HF Daily Papers · NVIDIA</div>
+    <div class="paper-meta">HF Daily Papers · NVIDIA · 1⭐</div>
     <div class="summary-grid">
-      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">基于训练和架构方法，通过动态双焦旋转位置编码实现长上下文高效扩展</div></div>
-      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 Jet-Long 长上下文扩展方法，具备零样本和高效特性，采用动态双焦机制</div></div>
-      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">关键指标：性能差距 4%，模型规模覆盖 1.7B、4B、8B 多档</div></div>
-      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于 Agent 工具使用方向，建议关注 Agent 架构、工具调用策略和端到端成功率</div></div>
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">NVIDIA 提出 Jet-Long 方法，通过动态双焦旋转位置编码实现长上下文高效扩展</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">设计动态双焦 RoPE 机制，在不同位置自适应调整注意力范围，实现零样本长文本理解</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">关键指标达 4%，在 1.7B、4B 和 8B 模型上验证了长上下文扩展的有效性</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">长上下文扩展方向工程实用工作，建议关注其双焦 RoPE 设计和推理效率</div></div>
     </div>
     <div class="paper-tags">
       <span class="tag tag-agent">Agent</span>
-      <span class="tag tag-llm">Long-Context</span>
-      <span class="tag tag-infra">Efficient</span>
+      <span class="tag tag-llm">Long Context</span>
+      <span class="tag tag-infra">RoPE</span>
     </div>
     <div class="paper-links">
       <a href="https://arxiv.org/abs/2607.07740">arXiv</a>
@@ -858,15 +877,15 @@ header .subtitle {
     <div class="paper-title"><span class="hot-badge">🔥</span> Remember When It Matters: Proactive Memory Agent for Long-Horizon Agents</div>
     <div class="paper-meta">HF Daily Papers · Meta Research</div>
     <div class="summary-grid">
-      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">基于机制方法，构建主动记忆代理用于长时程任务中的决策状态管理</div></div>
-      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 Terminal-Bench 评估框架，在长时程任务中主动管理决策相关状态</div></div>
-      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">关键指标：提升 8.3 和 6.8 个百分点，模型规模 27B 参数</div></div>
-      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于 Agent 工具使用方向，建议关注 Agent 架构、工具调用策略和端到端成功率</div></div>
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">Meta Research 提出主动记忆 Agent 方法，在长时序任务中主动管理决策相关状态信息</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">设计主动记忆机制，在信息分散的长程任务中预判决策关键点并提前检索相关记忆</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">关键指标提升 8.3 和 6.8 个百分点，在 27B 模型上验证了主动记忆的有效性</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">Agent 记忆管理方向重要工作，建议关注其主动检索策略和长程任务表现</div></div>
     </div>
     <div class="paper-tags">
       <span class="tag tag-agent">Agent</span>
-      <span class="tag tag-memory">Memory</span>
-      <span class="tag tag-llm">Long-Horizon</span>
+      <span class="tag tag-memory">Proactive Memory</span>
+      <span class="tag tag-reasoning">Long-Horizon</span>
     </div>
     <div class="paper-links">
       <a href="https://arxiv.org/abs/2607.08716">arXiv</a>
@@ -877,17 +896,17 @@ header .subtitle {
 
   <div class="paper-card">
     <div class="paper-title">Doomed from the Start: Early Abort of LLM Agent Episodes via a Recall-Controlled Probe Cascade</div>
-    <div class="paper-meta">arXiv 2026 · MIT · 补漏</div>
+    <div class="paper-meta">本周补漏 · MIT</div>
     <div class="summary-grid">
-      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">基于大语言模型方法，通过召回率控制的探针级联实现 LLM 代理的早期终止</div></div>
-      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 Qwen-2 早期终止机制，具备轻量化特性，在代理任务开始时即可预测失败</div></div>
-      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">关键指标：召回率 90% 和 97%，准确率 47.1% 和 10.3%</div></div>
-      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于大语言模型推理方向，建议关注训练范式、推理机制和 benchmark 表现</div></div>
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">MIT 提出基于召回率控制的探针级联方法，在 Agent 任务早期预判失败并中止执行</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">设计多级探针级联机制，在 Agent 执行初期通过轻量化检测提前终止注定失败的任务</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">关键指标达 90% 和 97% 的预判准确率，分别实现 47.1% 和 10.3% 的效率提升</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">Agent 效率优化方向创新工作，建议关注其早期终止策略和误判率控制</div></div>
     </div>
     <div class="paper-tags">
       <span class="tag tag-agent">Agent</span>
-      <span class="tag tag-llm">LLM</span>
-      <span class="tag tag-infra">Early Abort</span>
+      <span class="tag tag-llm">Early Abort</span>
+      <span class="tag tag-systems">Efficiency</span>
     </div>
     <div class="paper-links">
       <a href="https://arxiv.org/abs/2607.06503">arXiv</a>
@@ -897,17 +916,17 @@ header .subtitle {
 
   <div class="paper-card">
     <div class="paper-title">Spider 2.0-AIFunc: Extending Real-World Text-to-SQL to AI-Native SQL Workflows</div>
-    <div class="paper-meta">arXiv 2026 · 补漏</div>
+    <div class="paper-meta">本周补漏</div>
     <div class="summary-grid">
-      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">基于大语言模型、语言模型和框架方法，将真实世界文本转 SQL 扩展到 AI 原生 SQL 工作流</div></div>
-      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 AI 原生 SQL 工作流框架，覆盖从自然语言到 SQL 执行的全流程</div></div>
-      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">关键指标：执行准确率 70% 和 58.1%</div></div>
-      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于 Agent 工具使用方向，建议关注 Agent 架构、工具调用策略和端到端成功率</div></div>
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">将 Spider 文本转 SQL 基准扩展到 AI 原生 SQL 工作流，评估 Agent 在真实数据库场景的执行能力</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">构建 AI 原生 SQL 工作流评估框架，覆盖从自然语言到 SQL 执行的完整链路</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">关键指标达 70% 和 58.1% 的执行成功率，提供开源代码</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">数据库 Agent 评估方向重要基准工作，建议关注其工作流设计和评估指标</div></div>
     </div>
     <div class="paper-tags">
       <span class="tag tag-agent">Agent</span>
-      <span class="tag tag-llm">Text-to-SQL</span>
-      <span class="tag tag-code">SQL</span>
+      <span class="tag tag-code">Text-to-SQL</span>
+      <span class="tag tag-benchmark">Benchmark</span>
     </div>
     <div class="paper-links">
       <a href="https://arxiv.org/abs/2607.06229">arXiv</a>
@@ -917,18 +936,39 @@ header .subtitle {
   </div>
 
   <div class="paper-card">
-    <div class="paper-title">A Gold-Standard Study of What Makes a Lightweight Game-Playing Agent Strong</div>
-    <div class="paper-meta">arXiv 2026 · MIT · 补漏</div>
+    <div class="paper-title">Think Big, Search Small: Where Capacity Matters in Hierarchical Search Agents?</div>
+    <div class="paper-meta">本周补漏</div>
     <div class="summary-grid">
-      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">基于强化学习、训练和大语言模型方法，研究轻量级游戏代理的关键能力要素</div></div>
-      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出短期决策框架，具备轻量化和鲁棒特性，系统分析游戏代理强弱的关键因素</div></div>
-      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">实验验证了方法的有效性，具体数据详见原文</div></div>
-      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于大语言模型推理方向，建议关注训练范式、推理机制和 benchmark 表现</div></div>
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">研究层次化搜索 Agent 中模型容量的分配问题，探讨在搜索过程中不同层级所需的能力配置</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出角色分解搜索方法，将大模型用于高层规划小模型用于底层执行，优化计算资源分配</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">关键指标达 37% 效率提升，在 1.7B 模型上验证了层次化搜索的有效性</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">Agent 架构优化方向有价值工作，建议关注其容量分配策略和蒸馏方法</div></div>
     </div>
     <div class="paper-tags">
       <span class="tag tag-agent">Agent</span>
-      <span class="tag tag-rl">RL</span>
-      <span class="tag tag-llm">Lightweight</span>
+      <span class="tag tag-reasoning">Hierarchical Search</span>
+      <span class="tag tag-distillation">Capacity</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2607.07548">arXiv</a>
+      <a href="https://arxiv.org/pdf/2607.07548">PDF</a>
+      <a href="https://github.com/QinnanCai0115/role-factorized-search">Code</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">A Gold-Standard Study of What Makes a Lightweight Game-Playing Agent Strong</div>
+    <div class="paper-meta">本周补漏 · MIT</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">MIT 对轻量化游戏 Agent 进行金标准研究，系统分析影响游戏 Agent 性能的关键因素</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">通过对抗性协同进化训练方法，揭示轻量化 Agent 在短期策略和鲁棒性方面的优势来源</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">实验验证了强化学习和大语言模型结合在游戏 Agent 中的有效性</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">Agent 能力分析方向实证研究，建议关注其评估方法和关键能力因素</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-agent">Agent</span>
+      <span class="tag tag-rl">Game Playing</span>
+      <span class="tag tag-survey">Analysis</span>
     </div>
     <div class="paper-links">
       <a href="https://arxiv.org/abs/2607.06854">arXiv</a>
@@ -938,44 +978,18 @@ header .subtitle {
   </div>
 
   <div class="paper-card">
-    <div class="paper-title">Think Big, Search Small: Where Capacity Matters in Hierarchical Search Agents</div>
-    <div class="paper-meta">arXiv 2026 · 补漏</div>
+    <div class="paper-title">Video2Reaction: Mapping Video to Audience Reaction Distribution in the Wild</div>
+    <div class="paper-meta">本周补漏</div>
     <div class="summary-grid">
-      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">基于大语言模型、架构和蒸馏方法，研究分层搜索代理中能力分配的关键问题</div></div>
-      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出分层搜索能力分析方法，揭示大模型和小模型在搜索中的最佳分工</div></div>
-      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">关键指标：性能提升 37%，模型规模 1.7B 参数</div></div>
-      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于 Agent 工具使用方向，建议关注 Agent 架构、工具调用策略和端到端成功率</div></div>
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出 Video2Reaction 方法，将视频内容映射到观众反应分布，实现真实场景下的受众反应预测</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">构建多模态零样本反应预测框架，支持 Top-3 反应分布生成</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">关键指标达 86% 和 77% 的预测准确率，Top-3 覆盖率表现优异</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">视频理解与社交分析交叉方向创新工作，建议关注其反应分布建模和零样本泛化能力</div></div>
     </div>
     <div class="paper-tags">
       <span class="tag tag-agent">Agent</span>
-      <span class="tag tag-llm">Hierarchical</span>
-      <span class="tag tag-distillation">Search</span>
-    </div>
-    <div class="paper-links">
-      <a href="https://arxiv.org/abs/2607.07548">arXiv</a>
-      <a href="https://arxiv.org/pdf/2607.07548">PDF</a>
-      <a href="https://github.com/QinnanCai0115/role-factorized-search">Code</a>
-    </div>
-  </div>
-</section>
-
-<!-- 📄 Other Section -->
-<section class="section">
-  <h2 class="section-title">📄 Other · 其他</h2>
-
-  <div class="paper-card">
-    <div class="paper-title">Video2Reaction: Mapping Video to Audience Reaction Distribution in the Wild</div>
-    <div class="paper-meta">arXiv 2026 · 补漏</div>
-    <div class="summary-grid">
-      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">基于训练方法，将视频映射到观众反应分布，实现自然场景下的反应预测</div></div>
-      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 Top-3 反应预测方法，具备多模态和零样本特性</div></div>
-      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">关键指标：准确率 86% 和 77%，Top-3 评估</div></div>
-      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于 Agent 工具使用方向，建议关注 Agent 架构、工具调用策略和端到端成功率</div></div>
-    </div>
-    <div class="paper-tags">
-      <span class="tag tag-video">Video</span>
-      <span class="tag tag-multimodal">Multimodal</span>
-      <span class="tag tag-reasoning">Reaction</span>
+      <span class="tag tag-video">Video Understanding</span>
+      <span class="tag tag-multimodal">Reaction Prediction</span>
     </div>
     <div class="paper-links">
       <a href="https://arxiv.org/abs/2607.06875">arXiv</a>
@@ -983,31 +997,11 @@ header .subtitle {
       <a href="https://information-fusion-lab-umass.github.io/video2reaction-bench.github.io">Project</a>
     </div>
   </div>
-
-  <div class="paper-card">
-    <div class="paper-title">UniSkip-Mamba: A Frequency-Aware State Space Model for Audio-Visual Temporal Forgery Localization</div>
-    <div class="paper-meta">arXiv 2026 · 补漏</div>
-    <div class="summary-grid">
-      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">基于框架和机制方法，构建频率感知的状态空间模型用于音视频时序伪造定位</div></div>
-      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出频率感知方法，具备多模态、跨模态和鲁棒性特性，用于检测伪造内容</div></div>
-      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">关键指标：误差率 1.4%，准确率 63.4%、9.8% 和 63.58%</div></div>
-      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于多模态方向，建议关注跨模态对齐方式、数据规模和下游任务表现</div></div>
-    </div>
-    <div class="paper-tags">
-      <span class="tag tag-multimodal">Multimodal</span>
-      <span class="tag tag-safety">Forgery</span>
-      <span class="tag tag-video">Audio-Visual</span>
-    </div>
-    <div class="paper-links">
-      <a href="https://arxiv.org/abs/2607.04498">arXiv</a>
-      <a href="https://arxiv.org/pdf/2607.04498">PDF</a>
-    </div>
-  </div>
 </section>
 
 <div class="stats">
-  <p>自动生成于 2026-07-11 · 周末补漏专栏 · 检索窗口 2026-07-04 ~ 2026-07-11</p>
-  <p>关注：VLA · Robotics · World Model · LLM · Multimodal · Agent</p>
+  <p>📊 共 36 篇论文 │ 📝 arXiv 0 · 🤗 HF 热门 6 · 🔄 本周补漏 30</p>
+  <p>自动生成于 2026-07-11 │ 关注：VLA · Robotics · World Model · LLM · Multimodal · Agent</p>
 </div>
 
 </div>
