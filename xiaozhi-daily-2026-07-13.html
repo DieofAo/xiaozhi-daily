@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>小小志AI日报 - 2026年7月13日 周一</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans SC', sans-serif;
+  background: #0a0e1a;
+  color: #e0e6f0;
+  line-height: 1.7;
+  min-height: 100vh;
+}
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+header {
+  text-align: center;
+  margin-bottom: 48px;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, rgba(59,130,246,0.08) 0%, rgba(139,92,246,0.08) 100%);
+  border-radius: 20px;
+  border: 1px solid rgba(99,102,241,0.15);
+}
+header h1 {
+  font-size: 2rem;
+  background: linear-gradient(135deg, #60a5fa, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 8px;
+}
+header .date {
+  color: #94a3b8;
+  font-size: 1rem;
+}
+header .subtitle {
+  color: #64748b;
+  font-size: 0.9rem;
+  margin-top: 6px;
+}
+.highlight-banner {
+  background: linear-gradient(135deg, rgba(249,115,22,0.1) 0%, rgba(234,179,8,0.08) 100%);
+  border: 1px solid rgba(249,115,22,0.2);
+  border-radius: 14px;
+  padding: 20px 24px;
+  margin-bottom: 36px;
+}
+.hl-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fb923c;
+  margin-bottom: 8px;
+}
+.hl-text {
+  font-size: 0.92rem;
+  color: #cbd5e1;
+  line-height: 1.7;
+}
+.section {
+  margin-bottom: 40px;
+}
+.section-title {
+  font-size: 1.4rem;
+  color: #f1f5f9;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(99,102,241,0.2);
+}
+.paper-card {
+  background: rgba(30,41,59,0.6);
+  border: 1px solid rgba(99,102,241,0.12);
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 16px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.paper-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(99,102,241,0.1);
+  border-color: rgba(99,102,241,0.3);
+}
+.paper-card.hot {
+  border-color: rgba(249,115,22,0.25);
+  background: rgba(30,41,59,0.7);
+}
+.paper-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #f8fafc;
+  margin-bottom: 8px;
+}
+.paper-meta {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-bottom: 10px;
+}
+.summary-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+@media (max-width: 640px) {
+  .summary-grid { grid-template-columns: 1fr; }
+}
+.summary-item {
+  background: rgba(15,23,42,0.5);
+  border-radius: 10px;
+  padding: 12px 14px;
+  border: 1px solid rgba(99,102,241,0.08);
+}
+.summary-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #818cf8;
+  margin-bottom: 4px;
+}
+.summary-text {
+  font-size: 0.88rem;
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+.paper-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.tag {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+.tag-agent { background: rgba(16,185,129,0.12); color: #34d399; }
+.tag-llm { background: rgba(99,102,241,0.12); color: #818cf8; }
+.tag-multimodal { background: rgba(244,114,182,0.12); color: #f472b6; }
+.tag-world { background: rgba(251,191,36,0.12); color: #fbbf24; }
+.tag-robot { background: rgba(251,146,60,0.12); color: #fb923c; }
+.tag-rl { background: rgba(45,212,191,0.12); color: #2dd4bf; }
+.tag-video { background: rgba(168,85,247,0.12); color: #a855f7; }
+.tag-benchmark { background: rgba(34,211,238,0.12); color: #22d3ee; }
+.tag-vla { background: rgba(59,130,246,0.12); color: #60a5fa; }
+.tag-safety { background: rgba(239,68,68,0.12); color: #f87171; }
+.tag-memory { background: rgba(192,132,252,0.12); color: #c084fc; }
+.tag-reasoning { background: rgba(132,204,22,0.12); color: #a3e635; }
+.tag-code { background: rgba(52,211,153,0.12); color: #34d399; }
+.tag-survey { background: rgba(6,182,212,0.12); color: #22d3ee; }
+.tag-science { background: rgba(217,119,6,0.12); color: #f59e0b; }
+.tag-medical { background: rgba(239,68,68,0.12); color: #f87171; }
+.tag-systems { background: rgba(56,189,248,0.12); color: #38bdf8; }
+.tag-3d { background: rgba(148,163,184,0.12); color: #94a3b8; }
+.tag-data { background: rgba(250,204,21,0.12); color: #facc15; }
+.tag-infra { background: rgba(167,139,250,0.12); color: #a78bfa; }
+.tag-generation { background: rgba(249,115,22,0.12); color: #f97316; }
+.tag-navigation { background: rgba(59,130,246,0.12); color: #60a5fa; }
+.tag-distillation { background: rgba(34,211,238,0.12); color: #22d3ee; }
+.tag-humanoid { background: rgba(251,146,60,0.12); color: #fb923c; }
+.tag-tool { background: rgba(52,211,153,0.12); color: #34d399; }
+.tag-gui { background: rgba(244,114,182,0.12); color: #f472b6; }
+.tag-embedding { background: rgba(167,139,250,0.12); color: #a78bfa; }
+.tag-quantization { background: rgba(99,102,241,0.12); color: #818cf8; }
+.tag-traffic { background: rgba(56,189,248,0.12); color: #38bdf8; }
+.tag-panoramic { background: rgba(251,191,36,0.12); color: #fbbf24; }
+.hot-badge {
+  display: inline;
+  margin-right: 4px;
+}
+.info-card {
+  background: rgba(30,41,59,0.6);
+  border: 1px solid rgba(99,102,241,0.12);
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 16px;
+}
+.paper-summary {
+  font-size: 0.9rem;
+  color: #cbd5e1;
+  line-height: 1.7;
+  margin-bottom: 14px;
+}
+.paper-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.paper-links a {
+  display: inline-block;
+  padding: 5px 14px;
+  background: rgba(99,102,241,0.12);
+  color: #818cf8;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+.paper-links a:hover {
+  background: rgba(99,102,241,0.25);
+}
+.stats {
+  text-align: center;
+  padding: 30px;
+  margin-top: 40px;
+  background: rgba(30,41,59,0.4);
+  border-radius: 14px;
+  border: 1px solid rgba(99,102,241,0.1);
+}
+.stats p { color: #94a3b8; font-size: 0.88rem; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <h1>📡 小小志AI日报</h1>
+  <div class="date">2026年7月13日 周一</div>
+  <div class="subtitle">📝 arXiv 0 · 🤗 HF 热门 8 · 共 8 篇论文</div>
+</header>
+
+<div class="highlight-banner">
+  <div class="hl-title">🔥 今日看点</div>
+  <div class="hl-text">
+    周一 arXiv 无新索引，HuggingFace 热门论文 8 篇。今日看点：Insta360 发布 PanoWorld 全景世界生成模型，通过光线条件机制实现真实世界长距离全景生成。腾讯混元发布 Long-Horizon-Terminal-Bench 长时序终端任务基准（25 星开源），最佳成绩仅 15.2% 揭示当前 Agent 长程规划能力瓶颈。Google DeepMind 提出 VGGT-Omega 将视频生成模型作为通用视觉学习器，验证从生成到感知的范式迁移。南加州大学提出 KronQ 基于克罗内克分解海森矩阵的大模型训练后量化方法，在 70B 参数模型上验证有效。香港科技大学从机制层面分析微调中记忆知识无法泛化的根本原因。
+  </div>
+</div>
+
+<!-- 🤖 Agent Section -->
+<section class="section">
+  <h2 class="section-title">🤖 Agent · 智能体</h2>
+
+  <div class="paper-card hot">
+    <div class="paper-title"><span class="hot-badge">🔥</span> Long-Horizon-Terminal-Bench: Testing the Limits of Agents on Long-Horizon Terminal Tasks with Dense Reward-Based Grading</div>
+    <div class="paper-meta">HF 热门 · Tencent Hunyuan · 25⭐</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">腾讯混元提出长时序终端任务基准 LHTB，设计密集奖励评分机制，对 Agent 在复杂终端环境中的长程任务执行能力进行系统评估</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首个面向长时序终端任务的评测基准，提供细粒度奖励信号替代传统二元成功率评估，能够精确定位 Agent 失败环节</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在多个主流模型上测试，最佳成绩 15.2%，随任务复杂度递减至 10.9%、4.3%、1.7%，揭示当前 Agent 长程规划能力严重不足</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于 Agent 评估方向，25 星开源，对衡量 Agent 长时序任务执行能力有重要参考价值，低成功率说明该方向仍有大量提升空间</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-agent">Agent</span>
+      <span class="tag tag-benchmark">Benchmark</span>
+      <span class="tag tag-reasoning">Long-Horizon</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2607.08964">arXiv</a>
+      <a href="https://arxiv.org/pdf/2607.08964">PDF</a>
+      <a href="https://zli12321.github.io/LHTB/index.html">Project</a>
+      <a href="https://github.com/zli12321/LHTB">Code</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">Flow-ERD: Agent-type Aware Flow Matching with Entropy-Regularized Distillation for Diverse Traffic Simulation</div>
+    <div class="paper-meta">HF 热门 · Navercorp</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">Naver 提出流量匹配方法 Flow-ERD，结合熵正则化蒸馏技术，针对不同交通参与者类型建模，实现多样化的交通仿真</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">引入 Agent 类型感知机制，通过熵正则化蒸馏生成更真实多样的交通行为，解决传统方法行为单一化问题</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在交通仿真任务上验证有效性，能够生成更贴近真实场景的多样化交通流，具体指标详见原文</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于 Agent 仿真方向，Naver 出品，对自动驾驶测试和交通模拟有实际应用价值，方法可迁移到其他多 Agent 仿真场景</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-agent">Agent</span>
+      <span class="tag tag-traffic">Traffic</span>
+      <span class="tag tag-distillation">Distillation</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2607.06957">arXiv</a>
+      <a href="https://arxiv.org/pdf/2607.06957">PDF</a>
+      <a href="https://seulbinhwang.github.io/flow-erd-project-page/">Project</a>
+    </div>
+  </div>
+</section>
+
+<!-- 🧠 LLM Section -->
+<section class="section">
+  <h2 class="section-title">🧠 LLM · 大语言模型</h2>
+
+  <div class="paper-card hot">
+    <div class="paper-title"><span class="hot-badge">🔥</span> Video Generation Models are General-Purpose Vision Learners</div>
+    <div class="paper-meta">HF 热门 · Google DeepMind</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">Google DeepMind 提出将视频生成模型作为通用视觉学习器的思路，构建 VGGT-Omega 架构，探索生成模型在视觉理解任务上的迁移潜力</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次系统验证视频生成模型的通用视觉能力，将生成式预训练范式迁移到感知理解任务，打通生成与理解的壁垒</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在预测和视频生成任务上验证有效性，证明生成模型学到的视觉表征可泛化到多种视觉理解场景</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">来自 Google DeepMind，视角新颖，对统一生成与理解范式有重要启发意义，值得关注后续在大规模视觉任务上的扩展</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-llm">LLM</span>
+      <span class="tag tag-video">Video Generation</span>
+      <span class="tag tag-multimodal">Vision</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2607.09024">arXiv</a>
+      <a href="https://arxiv.org/pdf/2607.09024">PDF</a>
+      <a href="https://genception.github.io/">Project</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">KronQ: LLM Quantization via Kronecker-Factored Hessian</div>
+    <div class="paper-meta">HF 热门 · University of Southern California · 2⭐</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">南加州大学提出基于克罗内克分解海森矩阵的大语言模型量化方法 KronQ，用于训练后量化场景</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">利用克罗内克分解近似海森矩阵，更精确地捕获各层权重对输出的敏感度，从而在量化时保留关键信息减少精度损失</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在 70B 参数级别的大模型上验证有效，量化后模型保持良好推理性能，具体精度指标详见原文</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于大模型量化方向，对大语言模型高效部署有实际工程价值，克罗内克分解思路可扩展到其他模型压缩场景</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-llm">LLM</span>
+      <span class="tag tag-quantization">Quantization</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2607.07964">arXiv</a>
+      <a href="https://arxiv.org/pdf/2607.07964">PDF</a>
+      <a href="https://github.com/Intelligent-Computing-Lab-Panda/KronQ">Code</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">Self-Guided Test-Time Training for Long-Context LLMs</div>
+    <div class="paper-meta">HF 热门</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出自引导测试时训练方法，面向长上下文大语言模型的推理优化，在测试阶段动态调整模型参数</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">通过自引导机制在推理时动态适配模型，无需额外训练数据或微调即可扩展上下文处理能力，降低长上下文部署门槛</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在 4B 和 8B 参数模型上验证，长上下文任务性能提升约 15%，无需重训练即可显著增强长文本处理能力</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于大语言模型推理优化方向，无需重训练即可提升长上下文能力，实用性强，适合资源受限场景的长文本应用</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-llm">LLM</span>
+      <span class="tag tag-reasoning">Long-Context</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2607.09415">arXiv</a>
+      <a href="https://arxiv.org/pdf/2607.09415">PDF</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">Trust Region Policy Distillation</div>
+    <div class="paper-meta">HF 热门 · HKUSTGZ</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">香港科技大学广州提出信任域策略蒸馏方法 TOP-D，在策略蒸馏过程中引入信任域约束保证训练稳定性</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">将信任域优化思想引入策略蒸馏框架，限制每次更新的策略偏移幅度，解决传统蒸馏中训练不稳定和性能退化问题</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在多个任务上验证方法有效性，蒸馏后模型在稳定性和泛化性上均有提升，具体数据详见原文</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于大语言模型推理与蒸馏方向，对提升策略蒸馏稳定性和泛化能力有实用价值，信任域约束思路可迁移到其他蒸馏场景</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-llm">LLM</span>
+      <span class="tag tag-distillation">Distillation</span>
+      <span class="tag tag-rl">RL</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2607.04751">arXiv</a>
+      <a href="https://arxiv.org/pdf/2607.04751">PDF</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">Towards Mechanistically Understanding Why Memorized Knowledge Fails to Generalize in Large Language Model Finetuning</div>
+    <div class="paper-meta">HF 热门 · HKUST</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">香港科技大学从机制可解释性角度分析大语言模型微调中记忆知识无法泛化的原因，研究微调对模型内部知识表征的影响</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次从机械解释性层面揭示记忆与泛化的冲突机制，通过分析模型内部电路和注意力模式定位泛化失败的根源</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在多个微调场景下验证分析结论，揭示记忆化程度与泛化能力的负相关关系，具体数据详见原文</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于大语言模型可解释性方向，HKUST 出品，对理解微调本质和设计更好的微调策略有重要理论指导价值</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-llm">LLM</span>
+      <span class="tag tag-reasoning">Finetuning</span>
+      <span class="tag tag-safety">Interpretability</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2607.08393">arXiv</a>
+      <a href="https://arxiv.org/pdf/2607.08393">PDF</a>
+    </div>
+  </div>
+</section>
+
+<!-- 🌍 World Model Section -->
+<section class="section">
+  <h2 class="section-title">🌍 World Model · 世界模型</h2>
+
+  <div class="paper-card hot">
+    <div class="paper-title"><span class="hot-badge">🔥</span> PanoWorld: Real-World Panoramic Generation</div>
+    <div class="paper-meta">HF 热门 · Insta360 · 2⭐</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">Insta360 研究团队提出全景世界生成模型 PanoWorld，通过光线条件机制实现真实世界长距离全景图像生成</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">引入光线条件控制，解决长距离全景生成中的空间一致性和连续性问题，实现大范围场景的连贯全景构建</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在全景生成任务上验证有效性，能够生成高质量连贯的全景场景，具体指标详见原文</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于世界模型方向，Insta360 出品，对全景视觉和空间理解有实际应用价值，光线条件思路可启发其他空间生成任务</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-world">World Model</span>
+      <span class="tag tag-panoramic">Panoramic</span>
+      <span class="tag tag-generation">Generation</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2607.09661">arXiv</a>
+      <a href="https://arxiv.org/pdf/2607.09661">PDF</a>
+      <a href="https://lihaoy-ux.github.io/panoworld-page/">Project</a>
+      <a href="https://github.com/Insta360-Research-Team/PanoWorld">Code</a>
+    </div>
+  </div>
+</section>
+
+<div class="stats">
+  <p>📊 arXiv 0 篇（周一无新索引） · 🤗 HF 热门 8 篇 · HF 模型 0 个</p>
+  <p>新增论文：8 篇 · 去重验证：全部通过</p>
+</div>
+
+</div>
+</body>
+</html>

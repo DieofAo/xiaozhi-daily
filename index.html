@@ -658,6 +658,98 @@
 <script>
 // ===== DATA =====
 const PAPERS_DB = [
+    // === 2026-07-13 ===
+    {
+        date: "2026-07-13",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Long-Horizon-Terminal-Bench: Testing the Limits of Agents on Long-Horizon Terminal Tasks with Dense Reward-Based Grading",
+        venue: "HF 热门 · Tencent Hunyuan · 25⭐",
+        summary: "🔬 技术路线: 腾讯混元提出长时序终端任务基准 LHTB，设计密集奖励评分机制，对 Agent 在复杂终端环境中的长程任务执行能力进行系统评估 | 💡 创新点: 首个面向长时序终端任务的评测基准，提供细粒度奖励信号替代传统二元成功率评估，能够精确定位 Agent 失败环节 | 📊 实验效果: 在多个主流模型上测试，最佳成绩 15.2%，随任务复杂度递减至 10.9%、4.3%、1.7%，揭示当前 Agent 长程规划能力严重不足 | ⭐ 整体评价: 属于 Agent 评估方向，25 星开源，对衡量 Agent 长时序任务执行能力有重要参考价值，低成功率说明该方向仍有大量提升空间",
+        tags: [["Agent","green"],["Benchmark","green"],["Long-Horizon","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.08964"],["PDF","https://arxiv.org/pdf/2607.08964"],["Project","https://zli12321.github.io/LHTB/index.html"],["Code","https://github.com/zli12321/LHTB"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"腾讯混元提出长时序终端任务基准 LHTB，设计密集奖励评分机制，对 Agent 在复杂终端环境中的长程任务执行能力进行系统评估"},{"label":"💡 创新点","text":"首个面向长时序终端任务的评测基准，提供细粒度奖励信号替代传统二元成功率评估，能够精确定位 Agent 失败环节"},{"label":"📊 实验效果","text":"在多个主流模型上测试，最佳成绩 15.2%，随任务复杂度递减至 10.9%、4.3%、1.7%，揭示当前 Agent 长程规划能力严重不足"},{"label":"⭐ 整体评价","text":"属于 Agent 评估方向，25 星开源，对衡量 Agent 长时序任务执行能力有重要参考价值，低成功率说明该方向仍有大量提升空间"}]
+    },
+    {
+        date: "2026-07-13",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Flow-ERD: Agent-type Aware Flow Matching with Entropy-Regularized Distillation for Diverse Traffic Simulation",
+        venue: "HF 热门 · Navercorp",
+        summary: "🔬 技术路线: Naver 提出流量匹配方法 Flow-ERD，结合熵正则化蒸馏技术，针对不同交通参与者类型建模，实现多样化的交通仿真 | 💡 创新点: 引入 Agent 类型感知机制，通过熵正则化蒸馏生成更真实多样的交通行为，解决传统方法行为单一化问题 | 📊 实验效果: 在交通仿真任务上验证有效性，能够生成更贴近真实场景的多样化交通流，具体指标详见原文 | ⭐ 整体评价: 属于 Agent 仿真方向，Naver 出品，对自动驾驶测试和交通模拟有实际应用价值，方法可迁移到其他多 Agent 仿真场景",
+        tags: [["Agent","green"],["Traffic","green"],["Distillation","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.06957"],["PDF","https://arxiv.org/pdf/2607.06957"],["Project","https://seulbinhwang.github.io/flow-erd-project-page/"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"Naver 提出流量匹配方法 Flow-ERD，结合熵正则化蒸馏技术，针对不同交通参与者类型建模，实现多样化的交通仿真"},{"label":"💡 创新点","text":"引入 Agent 类型感知机制，通过熵正则化蒸馏生成更真实多样的交通行为，解决传统方法行为单一化问题"},{"label":"📊 实验效果","text":"在交通仿真任务上验证有效性，能够生成更贴近真实场景的多样化交通流，具体指标详见原文"},{"label":"⭐ 整体评价","text":"属于 Agent 仿真方向，Naver 出品，对自动驾驶测试和交通模拟有实际应用价值，方法可迁移到其他多 Agent 仿真场景"}]
+    },
+    {
+        date: "2026-07-13",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Video Generation Models are General-Purpose Vision Learners",
+        venue: "HF 热门 · Google DeepMind",
+        summary: "🔬 技术路线: Google DeepMind 提出将视频生成模型作为通用视觉学习器的思路，构建 VGGT-Omega 架构，探索生成模型在视觉理解任务上的迁移潜力 | 💡 创新点: 首次系统验证视频生成模型的通用视觉能力，将生成式预训练范式迁移到感知理解任务，打通生成与理解的壁垒 | 📊 实验效果: 在预测和视频生成任务上验证有效性，证明生成模型学到的视觉表征可泛化到多种视觉理解场景 | ⭐ 整体评价: 来自 Google DeepMind，视角新颖，对统一生成与理解范式有重要启发意义，值得关注后续在大规模视觉任务上的扩展",
+        tags: [["LLM","green"],["Video Generation","green"],["Vision","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.09024"],["PDF","https://arxiv.org/pdf/2607.09024"],["Project","https://genception.github.io/"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"Google DeepMind 提出将视频生成模型作为通用视觉学习器的思路，构建 VGGT-Omega 架构，探索生成模型在视觉理解任务上的迁移潜力"},{"label":"💡 创新点","text":"首次系统验证视频生成模型的通用视觉能力，将生成式预训练范式迁移到感知理解任务，打通生成与理解的壁垒"},{"label":"📊 实验效果","text":"在预测和视频生成任务上验证有效性，证明生成模型学到的视觉表征可泛化到多种视觉理解场景"},{"label":"⭐ 整体评价","text":"来自 Google DeepMind，视角新颖，对统一生成与理解范式有重要启发意义，值得关注后续在大规模视觉任务上的扩展"}]
+    },
+    {
+        date: "2026-07-13",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "KronQ: LLM Quantization via Kronecker-Factored Hessian",
+        venue: "HF 热门 · University of Southern California · 2⭐",
+        summary: "🔬 技术路线: 南加州大学提出基于克罗内克分解海森矩阵的大语言模型量化方法 KronQ，用于训练后量化场景 | 💡 创新点: 利用克罗内克分解近似海森矩阵，更精确地捕获各层权重对输出的敏感度，从而在量化时保留关键信息减少精度损失 | 📊 实验效果: 在 70B 参数级别的大模型上验证有效，量化后模型保持良好推理性能，具体精度指标详见原文 | ⭐ 整体评价: 属于大模型量化方向，对大语言模型高效部署有实际工程价值，克罗内克分解思路可扩展到其他模型压缩场景",
+        tags: [["LLM","green"],["Quantization","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.07964"],["PDF","https://arxiv.org/pdf/2607.07964"],["Code","https://github.com/Intelligent-Computing-Lab-Panda/KronQ"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"南加州大学提出基于克罗内克分解海森矩阵的大语言模型量化方法 KronQ，用于训练后量化场景"},{"label":"💡 创新点","text":"利用克罗内克分解近似海森矩阵，更精确地捕获各层权重对输出的敏感度，从而在量化时保留关键信息减少精度损失"},{"label":"📊 实验效果","text":"在 70B 参数级别的大模型上验证有效，量化后模型保持良好推理性能，具体精度指标详见原文"},{"label":"⭐ 整体评价","text":"属于大模型量化方向，对大语言模型高效部署有实际工程价值，克罗内克分解思路可扩展到其他模型压缩场景"}]
+    },
+    {
+        date: "2026-07-13",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Self-Guided Test-Time Training for Long-Context LLMs",
+        venue: "HF 热门",
+        summary: "🔬 技术路线: 提出自引导测试时训练方法，面向长上下文大语言模型的推理优化，在测试阶段动态调整模型参数 | 💡 创新点: 通过自引导机制在推理时动态适配模型，无需额外训练数据或微调即可扩展上下文处理能力，降低长上下文部署门槛 | 📊 实验效果: 在 4B 和 8B 参数模型上验证，长上下文任务性能提升约 15%，无需重训练即可显著增强长文本处理能力 | ⭐ 整体评价: 属于大语言模型推理优化方向，无需重训练即可提升长上下文能力，实用性强，适合资源受限场景的长文本应用",
+        tags: [["LLM","green"],["Long-Context","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.09415"],["PDF","https://arxiv.org/pdf/2607.09415"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出自引导测试时训练方法，面向长上下文大语言模型的推理优化，在测试阶段动态调整模型参数"},{"label":"💡 创新点","text":"通过自引导机制在推理时动态适配模型，无需额外训练数据或微调即可扩展上下文处理能力，降低长上下文部署门槛"},{"label":"📊 实验效果","text":"在 4B 和 8B 参数模型上验证，长上下文任务性能提升约 15%，无需重训练即可显著增强长文本处理能力"},{"label":"⭐ 整体评价","text":"属于大语言模型推理优化方向，无需重训练即可提升长上下文能力，实用性强，适合资源受限场景的长文本应用"}]
+    },
+    {
+        date: "2026-07-13",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Trust Region Policy Distillation",
+        venue: "HF 热门 · HKUSTGZ",
+        summary: "🔬 技术路线: 香港科技大学广州提出信任域策略蒸馏方法 TOP-D，在策略蒸馏过程中引入信任域约束保证训练稳定性 | 💡 创新点: 将信任域优化思想引入策略蒸馏框架，限制每次更新的策略偏移幅度，解决传统蒸馏中训练不稳定和性能退化问题 | 📊 实验效果: 在多个任务上验证方法有效性，蒸馏后模型在稳定性和泛化性上均有提升，具体数据详见原文 | ⭐ 整体评价: 属于大语言模型推理与蒸馏方向，对提升策略蒸馏稳定性和泛化能力有实用价值，信任域约束思路可迁移到其他蒸馏场景",
+        tags: [["LLM","green"],["Distillation","green"],["RL","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.04751"],["PDF","https://arxiv.org/pdf/2607.04751"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"香港科技大学广州提出信任域策略蒸馏方法 TOP-D，在策略蒸馏过程中引入信任域约束保证训练稳定性"},{"label":"💡 创新点","text":"将信任域优化思想引入策略蒸馏框架，限制每次更新的策略偏移幅度，解决传统蒸馏中训练不稳定和性能退化问题"},{"label":"📊 实验效果","text":"在多个任务上验证方法有效性，蒸馏后模型在稳定性和泛化性上均有提升，具体数据详见原文"},{"label":"⭐ 整体评价","text":"属于大语言模型推理与蒸馏方向，对提升策略蒸馏稳定性和泛化能力有实用价值，信任域约束思路可迁移到其他蒸馏场景"}]
+    },
+    {
+        date: "2026-07-13",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Towards Mechanistically Understanding Why Memorized Knowledge Fails to Generalize in Large Language Model Finetuning",
+        venue: "HF 热门 · HKUST",
+        summary: "🔬 技术路线: 香港科技大学从机制可解释性角度分析大语言模型微调中记忆知识无法泛化的原因，研究微调对模型内部知识表征的影响 | 💡 创新点: 首次从机械解释性层面揭示记忆与泛化的冲突机制，通过分析模型内部电路和注意力模式定位泛化失败的根源 | 📊 实验效果: 在多个微调场景下验证分析结论，揭示记忆化程度与泛化能力的负相关关系，具体数据详见原文 | ⭐ 整体评价: 属于大语言模型可解释性方向，HKUST 出品，对理解微调本质和设计更好的微调策略有重要理论指导价值",
+        tags: [["LLM","green"],["Finetuning","green"],["Interpretability","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.08393"],["PDF","https://arxiv.org/pdf/2607.08393"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"香港科技大学从机制可解释性角度分析大语言模型微调中记忆知识无法泛化的原因，研究微调对模型内部知识表征的影响"},{"label":"💡 创新点","text":"首次从机械解释性层面揭示记忆与泛化的冲突机制，通过分析模型内部电路和注意力模式定位泛化失败的根源"},{"label":"📊 实验效果","text":"在多个微调场景下验证分析结论，揭示记忆化程度与泛化能力的负相关关系，具体数据详见原文"},{"label":"⭐ 整体评价","text":"属于大语言模型可解释性方向，HKUST 出品，对理解微调本质和设计更好的微调策略有重要理论指导价值"}]
+    },
+    {
+        date: "2026-07-13",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "PanoWorld: Real-World Panoramic Generation",
+        venue: "HF 热门 · Insta360 · 2⭐",
+        summary: "🔬 技术路线: Insta360 研究团队提出全景世界生成模型 PanoWorld，通过光线条件机制实现真实世界长距离全景图像生成 | 💡 创新点: 引入光线条件控制，解决长距离全景生成中的空间一致性和连续性问题，实现大范围场景的连贯全景构建 | 📊 实验效果: 在全景生成任务上验证有效性，能够生成高质量连贯的全景场景，具体指标详见原文 | ⭐ 整体评价: 属于世界模型方向，Insta360 出品，对全景视觉和空间理解有实际应用价值，光线条件思路可启发其他空间生成任务",
+        tags: [["World Model","green"],["Panoramic","green"],["Generation","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.09661"],["PDF","https://arxiv.org/pdf/2607.09661"],["Project","https://lihaoy-ux.github.io/panoworld-page/"],["Code","https://github.com/Insta360-Research-Team/PanoWorld"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"Insta360 研究团队提出全景世界生成模型 PanoWorld，通过光线条件机制实现真实世界长距离全景图像生成"},{"label":"💡 创新点","text":"引入光线条件控制，解决长距离全景生成中的空间一致性和连续性问题，实现大范围场景的连贯全景构建"},{"label":"📊 实验效果","text":"在全景生成任务上验证有效性，能够生成高质量连贯的全景场景，具体指标详见原文"},{"label":"⭐ 整体评价","text":"属于世界模型方向，Insta360 出品，对全景视觉和空间理解有实际应用价值，光线条件思路可启发其他空间生成任务"}]
+    },
     // === 2026-07-11 ===
     {
         date: "2026-07-11",
@@ -17922,6 +18014,13 @@ const PAPERS_DB = [
 ];
 
 const DAILY_OVERVIEW = {
+    "2026-07-13": {
+        bannerTitle: "🔥 今日看点",
+        bannerSubtitle: "周一 arXiv 无新索引，HuggingFace 热门论文 8 篇。今日看点：Insta360 发布 PanoWorld 全景世界生成模型，通过光线条件机制实现真实世界长距离全景生成。腾讯混元发布 Long-Horizon-Terminal-Bench 长时序终端任务基准（25 星开源），最佳成绩仅 15.2% 揭示当前 Agent 长程规划能力瓶颈。Google DeepMind 提出 VGGT-Omega 将视频生成模型作为通用视觉学习器，验证从生成到感知的范式迁移。南加州大学提出 KronQ 基于克罗内克分解海森矩阵的大模型训练后量化方法，在 70B 参数模型上验证有效。香港科技大学从机制层面分析微调中记忆知识无法泛化的根本原因。",
+        picks: ["Long-Horizon-Terminal-Bench: Testing the Limits of Agents on Long-Horizon Terminal Tasks with Dense Reward-Based Grading","Video Generation Models are General-Purpose Vision Learners","PanoWorld: Real-World Panoramic Generation"],
+        totalPapers: 8,
+        totalNews: 0
+    },
     "2026-07-11": {
         bannerTitle: "🔄 周末补漏 · 本周遗漏论文汇总",
         bannerSubtitle: "本期为周六补漏专栏，检索窗口覆盖 2026-07-04 至 2026-07-11 共 8 天，从 587 篇候选论文中精选 Top-30 篇遗漏论文，分数区间 46 至 82。同时收录 HuggingFace 热门论文 6 篇。补漏论文覆盖 VLA（9篇）、多模态（8篇）、LLM（6篇）、Agent（6篇）、机器人（5篇）等方向，亮点包括 OpenAI 认知结构化多模态代理、Meta FAIR 双系统世界动作基础模型 DSWAM、NVIDIA 抓取数据集 GraspIT、ByteDance 视频生成推理框架 OpenCoF、NVIDIA 长上下文扩展 Jet-Long 等。",
