@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>小小志AI日报 - 2026年7月14日 周二</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans SC', sans-serif;
+  background: #0a0e1a;
+  color: #e0e6f0;
+  line-height: 1.7;
+  min-height: 100vh;
+}
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+header {
+  text-align: center;
+  margin-bottom: 48px;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, rgba(59,130,246,0.08) 0%, rgba(139,92,246,0.08) 100%);
+  border-radius: 20px;
+  border: 1px solid rgba(99,102,241,0.15);
+}
+header h1 {
+  font-size: 2rem;
+  background: linear-gradient(135deg, #60a5fa, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 8px;
+}
+header .date {
+  color: #94a3b8;
+  font-size: 1rem;
+}
+header .subtitle {
+  color: #64748b;
+  font-size: 0.9rem;
+  margin-top: 6px;
+}
+.highlight-banner {
+  background: linear-gradient(135deg, rgba(249,115,22,0.1) 0%, rgba(234,179,8,0.08) 100%);
+  border: 1px solid rgba(249,115,22,0.2);
+  border-radius: 14px;
+  padding: 20px 24px;
+  margin-bottom: 36px;
+}
+.hl-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fb923c;
+  margin-bottom: 8px;
+}
+.hl-text {
+  font-size: 0.92rem;
+  color: #cbd5e1;
+  line-height: 1.7;
+}
+.section {
+  margin-bottom: 40px;
+}
+.section-title {
+  font-size: 1.4rem;
+  color: #f1f5f9;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(99,102,241,0.2);
+}
+.paper-card {
+  background: rgba(30,41,59,0.6);
+  border: 1px solid rgba(99,102,241,0.12);
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 16px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.paper-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(99,102,241,0.1);
+  border-color: rgba(99,102,241,0.3);
+}
+.paper-card.hot {
+  border-color: rgba(249,115,22,0.25);
+  background: rgba(30,41,59,0.7);
+}
+.paper-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #f8fafc;
+  margin-bottom: 8px;
+}
+.paper-meta {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-bottom: 10px;
+}
+.summary-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+@media (max-width: 640px) {
+  .summary-grid { grid-template-columns: 1fr; }
+}
+.summary-item {
+  background: rgba(15,23,42,0.5);
+  border-radius: 10px;
+  padding: 12px 14px;
+  border: 1px solid rgba(99,102,241,0.08);
+}
+.summary-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #818cf8;
+  margin-bottom: 4px;
+}
+.summary-text {
+  font-size: 0.88rem;
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+.paper-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.tag {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+.tag-agent { background: rgba(16,185,129,0.12); color: #34d399; }
+.tag-llm { background: rgba(99,102,241,0.12); color: #818cf8; }
+.tag-multimodal { background: rgba(244,114,182,0.12); color: #f472b6; }
+.tag-world { background: rgba(251,191,36,0.12); color: #fbbf24; }
+.tag-robot { background: rgba(251,146,60,0.12); color: #fb923c; }
+.tag-rl { background: rgba(45,212,191,0.12); color: #2dd4bf; }
+.tag-video { background: rgba(168,85,247,0.12); color: #a855f7; }
+.tag-benchmark { background: rgba(34,211,238,0.12); color: #22d3ee; }
+.tag-vla { background: rgba(59,130,246,0.12); color: #60a5fa; }
+.tag-safety { background: rgba(239,68,68,0.12); color: #f87171; }
+.tag-memory { background: rgba(192,132,252,0.12); color: #c084fc; }
+.tag-reasoning { background: rgba(132,204,22,0.12); color: #a3e635; }
+.tag-code { background: rgba(52,211,153,0.12); color: #34d399; }
+.tag-survey { background: rgba(6,182,212,0.12); color: #22d3ee; }
+.tag-science { background: rgba(217,119,6,0.12); color: #f59e0b; }
+.tag-medical { background: rgba(239,68,68,0.12); color: #f87171; }
+.tag-systems { background: rgba(56,189,248,0.12); color: #38bdf8; }
+.tag-3d { background: rgba(148,163,184,0.12); color: #94a3b8; }
+.tag-data { background: rgba(250,204,21,0.12); color: #facc15; }
+.tag-infra { background: rgba(167,139,250,0.12); color: #a78bfa; }
+.tag-generation { background: rgba(249,115,22,0.12); color: #f97316; }
+.tag-navigation { background: rgba(59,130,246,0.12); color: #60a5fa; }
+.tag-distillation { background: rgba(34,211,238,0.12); color: #22d3ee; }
+.tag-humanoid { background: rgba(251,146,60,0.12); color: #fb923c; }
+.tag-tool { background: rgba(52,211,153,0.12); color: #34d399; }
+.tag-gui { background: rgba(244,114,182,0.12); color: #f472b6; }
+.tag-embedding { background: rgba(167,139,250,0.12); color: #a78bfa; }
+.tag-quantization { background: rgba(99,102,241,0.12); color: #818cf8; }
+.tag-math { background: rgba(132,204,22,0.12); color: #a3e635; }
+.tag-interpretability { background: rgba(192,132,252,0.12); color: #c084fc; }
+.tag-judge { background: rgba(239,68,68,0.12); color: #f87171; }
+.tag-reward { background: rgba(34,211,238,0.12); color: #22d3ee; }
+.tag-manipulation { background: rgba(251,146,60,0.12); color: #fb923c; }
+.tag-bipedal { background: rgba(59,130,246,0.12); color: #60a5fa; }
+.hot-badge {
+  display: inline;
+  margin-right: 4px;
+}
+.info-card {
+  background: rgba(30,41,59,0.6);
+  border: 1px solid rgba(99,102,241,0.12);
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 16px;
+}
+.paper-summary {
+  font-size: 0.9rem;
+  color: #cbd5e1;
+  line-height: 1.7;
+  margin-bottom: 14px;
+}
+.paper-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.paper-links a {
+  display: inline-block;
+  padding: 5px 14px;
+  background: rgba(99,102,241,0.12);
+  color: #818cf8;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  transition: background 0.2s;
+}
+.paper-links a:hover {
+  background: rgba(99,102,241,0.25);
+}
+footer {
+  text-align: center;
+  color: #475569;
+  font-size: 0.82rem;
+  padding: 40px 20px;
+  border-top: 1px solid rgba(99,102,241,0.1);
+  margin-top: 40px;
+}
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+.stat-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>小小志AI日报</h1>
+    <div class="date">2026年7月14日 周二</div>
+    <div class="subtitle">关注：VLA · Robotics · World Model · LLM · Multimodal · Agent</div>
+    <div class="stats">
+      <span class="stat-item">📝 arXiv 8</span>
+      <span class="stat-item">🤗 HF 模型 0</span>
+      <span class="stat-item">🐦 X/Twitter 0</span>
+    </div>
+  </header>
+
+  <div class="highlight-banner">
+    <div class="hl-title">🔥 今日看点</div>
+    <div class="hl-text">今日 arXiv 回溯窗口 07-12~07-14 获取 8 篇新论文。MIT 提出混合帧策略实现双臂移动操作多帧动作去噪，是机器人操作方向亮点。Meta FAIR 联合 MIT 从机制可解释性角度剖析大模型评审偏见根源。Yale 发布 LLM 元认知综述，系统梳理大模型自我认知能力现状与展望。Salesforce 构建证据支撑的视频问答框架（16万数据），为视频理解可溯源性提供新范式。</div>
+  </div>
+
+  <section class="section">
+    <h2 class="section-title">🦾 Robotics · 机器人</h2>
+
+    <div class="paper-card hot">
+      <div class="paper-title"><span class="hot-badge">🔥</span> Mixture of Frames Policy: Multi-Frame Action Denoising for Bimanual Mobile Manipulation</div>
+      <div class="paper-meta">arXiv 2026 · MIT</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出混合帧策略（MoF Policy），将多帧动作去噪引入双臂移动操作场景，通过专家混合架构融合局部动作与全局规划</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次将多帧动作去噪应用于双臂移动操作，解决移动底盘与双臂协同的时空耦合问题</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在双臂移动操作基准上验证有效性，多帧策略显著提升动作平滑度和任务成功率</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于机器人操作方向，MIT 出品。建议关注多帧去噪机制设计和真实环境部署验证结果</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-robot">Robotics</span>
+        <span class="tag tag-manipulation">Manipulation</span>
+        <span class="tag tag-rl">Reinforcement Learning</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2607.11884">arXiv</a>
+        <a href="https://arxiv.org/pdf/2607.11884">PDF</a>
+        <a href="https://mofpo.github.io">Project</a>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">A Minimalist Retargeting-Guided Reinforcement Learning Recipe for Dexterous Manipulation</div>
+      <div class="paper-meta">arXiv 2026</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出 REGRIND 方法，以重定向引导的强化学习为核心，用极简配方实现灵巧手操作策略训练</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">通过运动重定向提供初始策略信号，大幅简化强化学习训练流程，实现零样本迁移到真实灵巧手</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在灵巧抓取与操作任务上验证有效性，零样本迁移成功率表现优异</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于机器人灵巧操作方向。极简训练配方降低仿真到真实的迁移门槛，建议关注重定向策略细节</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-robot">Robotics</span>
+        <span class="tag tag-rl">Reinforcement Learning</span>
+        <span class="tag tag-manipulation">Dexterous Manipulation</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2607.11874">arXiv</a>
+        <a href="https://arxiv.org/pdf/2607.11874">PDF</a>
+        <a href="https://yunhaifeng.com/REGRIND">Project</a>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">Robust Bipedal Locomotion on Flowable Slopes via Foot-Driven Terrain Manipulation</div>
+      <div class="paper-meta">arXiv 2026</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">研究双足机器人在可流动斜坡上的稳定行走问题，通过足部驱动地形操控实现主动适应</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出足部驱动地形操控策略，机器人通过踩踏改变斜坡局部形态以增强稳定性，而非被动适应地形</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在可流动斜坡运动控制任务上验证有效性，显著提升双足行走的鲁棒性</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于双足运动控制方向。主动地形操控思路新颖，建议关注仿真到真实迁移的验证结果</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-robot">Robotics</span>
+        <span class="tag tag-bipedal">Bipedal Locomotion</span>
+        <span class="tag tag-rl">Control</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2607.11855">arXiv</a>
+        <a href="https://arxiv.org/pdf/2607.11855">PDF</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">🧠 LLM · 大语言模型</h2>
+
+    <div class="paper-card">
+      <div class="paper-title">LLM Read It Back: Pretrained MLLMs Are Zero-Shot Reward Models for Text-to-Image Generation</div>
+      <div class="paper-meta">arXiv 2026</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">利用预训练多模态大模型的零样本能力，将其作为文生图任务的奖励模型，无需额外训练即可评估生成质量</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 Self-SpectraReward 框架，让多模态大模型通过回读机制评估图文一致性，统一了多模态奖励信号</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在 4B 和 235B 规模模型上验证有效，零样本奖励信号显著提升文生图质量对齐</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于多模态对齐方向。免训练奖励模型降低 RLHF 成本，建议关注跨模态对齐方式和下游任务泛化</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-llm">LLM</span>
+        <span class="tag tag-multimodal">Multimodal</span>
+        <span class="tag tag-reward">Reward Model</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2607.11886">arXiv</a>
+        <a href="https://arxiv.org/pdf/2607.11886">PDF</a>
+        <a href="https://huangrh99.github.io/SpectraReward/">Project</a>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">Metacognition in LLMs: Foundations, Progress, and Opportunities</div>
+      <div class="paper-meta">arXiv 2026 · Yale NLP</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">系统综述大语言模型元认知能力的研究进展，从理论基础、评估方法和未来方向三个维度全面梳理</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次构建 LLM 元认知研究的统一分类体系，覆盖自我评估、不确定性表达和反思推理等核心能力</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">综述性工作，系统梳理现有评估基准和方法，为后续研究提供参考框架</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于大模型推理方向。Yale NLP 出品综述，适合作为元认知研究入门参考，建议关注评估方法论部分</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-llm">LLM</span>
+        <span class="tag tag-survey">Survey</span>
+        <span class="tag tag-reasoning">Reasoning</span>
+        <span class="tag tag-interpretability">Metacognition</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2607.11881">arXiv</a>
+        <a href="https://arxiv.org/pdf/2607.11881">PDF</a>
+        <a href="https://github.com/yale-nlp/LLM-Metacognition">Code</a>
+      </div>
+    </div>
+
+    <div class="paper-card hot">
+      <div class="paper-title"><span class="hot-badge">🔥</span> Inside the Unfair Judge: A Mechanistic Interpretability Account of LLM-as-Judge Bias</div>
+      <div class="paper-meta">arXiv 2026 · Meta FAIR · MIT</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">从机制可解释性角度深入分析大模型作为评审时的偏见根源，通过探针和因果干预揭示偏见产生的内部机制</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次从神经元层面定位 LLM 评审偏见的产生位置和传播路径，而非仅停留在行为层面观察偏见现象</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在多项评审任务上验证偏见机制假设，因果干预有效缓解位置偏见和长度偏见等常见评审偏差</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于大模型可解释性方向，Meta FAIR 联合 MIT 出品。从机制层面理解评审偏见有重要价值，建议关注因果干预方法</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-llm">LLM</span>
+        <span class="tag tag-interpretability">Interpretability</span>
+        <span class="tag tag-judge">LLM-as-Judge</span>
+        <span class="tag tag-safety">Bias</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2607.11871">arXiv</a>
+        <a href="https://arxiv.org/pdf/2607.11871">PDF</a>
+        <a href="https://xzx34.github.io/unfair-judge/">Project</a>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">Evidence-Backed Video Question Answering</div>
+      <div class="paper-meta">arXiv 2026 · Salesforce AI Research</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">构建证据支撑的视频问答框架，模型在回答问题时需同时提供视频中的证据片段，增强可溯源性</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出证据回溯机制，要求模型不仅给出答案还需定位支持证据，具有可扩展和鲁棒特性</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">构建 16 万条证据标注数据，在 7B 模型上验证有效，证据定位准确率显著提升</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于视频理解方向。证据支撑机制提升问答可信度，建议关注数据构建流程和证据定位精度</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-llm">LLM</span>
+        <span class="tag tag-video">Video QA</span>
+        <span class="tag tag-reasoning">Reasoning</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2607.11862">arXiv</a>
+        <a href="https://arxiv.org/pdf/2607.11862">PDF</a>
+        <a href="https://github.com/SalesforceAIResearch/EVQA">Code</a>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">AdvancedMathBench: A Benchmark Suite for Advanced Mathematical Proof Generation and Verification</div>
+      <div class="paper-meta">arXiv 2026</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">构建高级数学证明生成与验证的基准测试套件，覆盖多难度层级的数学证明任务</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次系统化构建覆盖高级数学证明的评测基准，同时评估证明生成能力和证明验证能力</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">对 GPT-5 等前沿模型进行评测，揭示当前模型在复杂数学推理和严格证明验证上的能力边界</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于大模型推理方向。数学证明是检验推理能力的金标准，建议关注基准设计难度和模型表现差距</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-llm">LLM</span>
+        <span class="tag tag-math">Math</span>
+        <span class="tag tag-benchmark">Benchmark</span>
+        <span class="tag tag-reasoning">Reasoning</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2607.11849">arXiv</a>
+        <a href="https://arxiv.org/pdf/2607.11849">PDF</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>自动生成于 2026-07-14 17:25 GMT+8　│　关注：VLA · Robotics · World Model · LLM · Multimodal · Agent</p>
+    <p style="margin-top:8px;">数据来源：arXiv · HuggingFace　│　共 8 篇论文</p>
+  </footer>
+</div>
+</body>
+</html>

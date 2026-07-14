@@ -658,6 +658,97 @@
 <script>
 // ===== DATA =====
 const PAPERS_DB = [
+    // === 2026-07-14 ===
+    {
+        date: "2026-07-14",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "Mixture of Frames Policy: Multi-Frame Action Denoising for Bimanual Mobile Manipulation",
+        venue: "arXiv 2026 · MIT",
+        summary: "🔬 技术路线: 提出混合帧策略（MoF Policy），将多帧动作去噪引入双臂移动操作场景，通过专家混合架构融合局部动作与全局规划 | 💡 创新点: 首次将多帧动作去噪应用于双臂移动操作，解决移动底盘与双臂协同的时空耦合问题 | 📊 实验效果: 在双臂移动操作基准上验证有效性，多帧策略显著提升动作平滑度和任务成功率 | ⭐ 整体评价: 属于机器人操作方向，MIT 出品。建议关注多帧去噪机制设计和真实环境部署验证结果",
+        tags: [["Robotics","green"],["Manipulation","green"],["Reinforcement Learning","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.11884"],["PDF","https://arxiv.org/pdf/2607.11884"],["Project","https://mofpo.github.io"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出混合帧策略（MoF Policy），将多帧动作去噪引入双臂移动操作场景，通过专家混合架构融合局部动作与全局规划"},{"label":"💡 创新点","text":"首次将多帧动作去噪应用于双臂移动操作，解决移动底盘与双臂协同的时空耦合问题"},{"label":"📊 实验效果","text":"在双臂移动操作基准上验证有效性，多帧策略显著提升动作平滑度和任务成功率"},{"label":"⭐ 整体评价","text":"属于机器人操作方向，MIT 出品。建议关注多帧去噪机制设计和真实环境部署验证结果"}]
+    },
+    {
+        date: "2026-07-14",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "A Minimalist Retargeting-Guided Reinforcement Learning Recipe for Dexterous Manipulation",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 提出 REGRIND 方法，以重定向引导的强化学习为核心，用极简配方实现灵巧手操作策略训练 | 💡 创新点: 通过运动重定向提供初始策略信号，大幅简化强化学习训练流程，实现零样本迁移到真实灵巧手 | 📊 实验效果: 在灵巧抓取与操作任务上验证有效性，零样本迁移成功率表现优异 | ⭐ 整体评价: 属于机器人灵巧操作方向。极简训练配方降低仿真到真实的迁移门槛，建议关注重定向策略细节",
+        tags: [["Robotics","green"],["Reinforcement Learning","green"],["Dexterous Manipulation","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.11874"],["PDF","https://arxiv.org/pdf/2607.11874"],["Project","https://yunhaifeng.com/REGRIND"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出 REGRIND 方法，以重定向引导的强化学习为核心，用极简配方实现灵巧手操作策略训练"},{"label":"💡 创新点","text":"通过运动重定向提供初始策略信号，大幅简化强化学习训练流程，实现零样本迁移到真实灵巧手"},{"label":"📊 实验效果","text":"在灵巧抓取与操作任务上验证有效性，零样本迁移成功率表现优异"},{"label":"⭐ 整体评价","text":"属于机器人灵巧操作方向。极简训练配方降低仿真到真实的迁移门槛，建议关注重定向策略细节"}]
+    },
+    {
+        date: "2026-07-14",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "Robust Bipedal Locomotion on Flowable Slopes via Foot-Driven Terrain Manipulation",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 研究双足机器人在可流动斜坡上的稳定行走问题，通过足部驱动地形操控实现主动适应 | 💡 创新点: 提出足部驱动地形操控策略，机器人通过踩踏改变斜坡局部形态以增强稳定性，而非被动适应地形 | 📊 实验效果: 在可流动斜坡运动控制任务上验证有效性，显著提升双足行走的鲁棒性 | ⭐ 整体评价: 属于双足运动控制方向。主动地形操控思路新颖，建议关注仿真到真实迁移的验证结果",
+        tags: [["Robotics","green"],["Bipedal Locomotion","green"],["Control","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.11855"],["PDF","https://arxiv.org/pdf/2607.11855"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"研究双足机器人在可流动斜坡上的稳定行走问题，通过足部驱动地形操控实现主动适应"},{"label":"💡 创新点","text":"提出足部驱动地形操控策略，机器人通过踩踏改变斜坡局部形态以增强稳定性，而非被动适应地形"},{"label":"📊 实验效果","text":"在可流动斜坡运动控制任务上验证有效性，显著提升双足行走的鲁棒性"},{"label":"⭐ 整体评价","text":"属于双足运动控制方向。主动地形操控思路新颖，建议关注仿真到真实迁移的验证结果"}]
+    },
+    {
+        date: "2026-07-14",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "LLM Read It Back: Pretrained MLLMs Are Zero-Shot Reward Models for Text-to-Image Generation",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 利用预训练多模态大模型的零样本能力，将其作为文生图任务的奖励模型，无需额外训练即可评估生成质量 | 💡 创新点: 提出 Self-SpectraReward 框架，让多模态大模型通过回读机制评估图文一致性，统一了多模态奖励信号 | 📊 实验效果: 在 4B 和 235B 规模模型上验证有效，零样本奖励信号显著提升文生图质量对齐 | ⭐ 整体评价: 属于多模态对齐方向。免训练奖励模型降低 RLHF 成本，建议关注跨模态对齐方式和下游任务泛化",
+        tags: [["LLM","green"],["Multimodal","green"],["Reward Model","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.11886"],["PDF","https://arxiv.org/pdf/2607.11886"],["Project","https://huangrh99.github.io/SpectraReward/"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"利用预训练多模态大模型的零样本能力，将其作为文生图任务的奖励模型，无需额外训练即可评估生成质量"},{"label":"💡 创新点","text":"提出 Self-SpectraReward 框架，让多模态大模型通过回读机制评估图文一致性，统一了多模态奖励信号"},{"label":"📊 实验效果","text":"在 4B 和 235B 规模模型上验证有效，零样本奖励信号显著提升文生图质量对齐"},{"label":"⭐ 整体评价","text":"属于多模态对齐方向。免训练奖励模型降低 RLHF 成本，建议关注跨模态对齐方式和下游任务泛化"}]
+    },
+    {
+        date: "2026-07-14",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Metacognition in LLMs: Foundations, Progress, and Opportunities",
+        venue: "arXiv 2026 · Yale NLP",
+        summary: "🔬 技术路线: 系统综述大语言模型元认知能力的研究进展，从理论基础、评估方法和未来方向三个维度全面梳理 | 💡 创新点: 首次构建 LLM 元认知研究的统一分类体系，覆盖自我评估、不确定性表达和反思推理等核心能力 | 📊 实验效果: 综述性工作，系统梳理现有评估基准和方法，为后续研究提供参考框架 | ⭐ 整体评价: 属于大模型推理方向。Yale NLP 出品综述，适合作为元认知研究入门参考，建议关注评估方法论部分",
+        tags: [["LLM","green"],["Survey","green"],["Reasoning","green"],["Metacognition","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.11881"],["PDF","https://arxiv.org/pdf/2607.11881"],["Code","https://github.com/yale-nlp/LLM-Metacognition"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"系统综述大语言模型元认知能力的研究进展，从理论基础、评估方法和未来方向三个维度全面梳理"},{"label":"💡 创新点","text":"首次构建 LLM 元认知研究的统一分类体系，覆盖自我评估、不确定性表达和反思推理等核心能力"},{"label":"📊 实验效果","text":"综述性工作，系统梳理现有评估基准和方法，为后续研究提供参考框架"},{"label":"⭐ 整体评价","text":"属于大模型推理方向。Yale NLP 出品综述，适合作为元认知研究入门参考，建议关注评估方法论部分"}]
+    },
+    {
+        date: "2026-07-14",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Inside the Unfair Judge: A Mechanistic Interpretability Account of LLM-as-Judge Bias",
+        venue: "arXiv 2026 · Meta FAIR · MIT",
+        summary: "🔬 技术路线: 从机制可解释性角度深入分析大模型作为评审时的偏见根源，通过探针和因果干预揭示偏见产生的内部机制 | 💡 创新点: 首次从神经元层面定位 LLM 评审偏见的产生位置和传播路径，而非仅停留在行为层面观察偏见现象 | 📊 实验效果: 在多项评审任务上验证偏见机制假设，因果干预有效缓解位置偏见和长度偏见等常见评审偏差 | ⭐ 整体评价: 属于大模型可解释性方向，Meta FAIR 联合 MIT 出品。从机制层面理解评审偏见有重要价值，建议关注因果干预方法",
+        tags: [["LLM","green"],["Interpretability","green"],["LLM-as-Judge","green"],["Bias","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.11871"],["PDF","https://arxiv.org/pdf/2607.11871"],["Project","https://xzx34.github.io/unfair-judge/"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"从机制可解释性角度深入分析大模型作为评审时的偏见根源，通过探针和因果干预揭示偏见产生的内部机制"},{"label":"💡 创新点","text":"首次从神经元层面定位 LLM 评审偏见的产生位置和传播路径，而非仅停留在行为层面观察偏见现象"},{"label":"📊 实验效果","text":"在多项评审任务上验证偏见机制假设，因果干预有效缓解位置偏见和长度偏见等常见评审偏差"},{"label":"⭐ 整体评价","text":"属于大模型可解释性方向，Meta FAIR 联合 MIT 出品。从机制层面理解评审偏见有重要价值，建议关注因果干预方法"}]
+    },
+    {
+        date: "2026-07-14",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Evidence-Backed Video Question Answering",
+        venue: "arXiv 2026 · Salesforce AI Research",
+        summary: "🔬 技术路线: 构建证据支撑的视频问答框架，模型在回答问题时需同时提供视频中的证据片段，增强可溯源性 | 💡 创新点: 提出证据回溯机制，要求模型不仅给出答案还需定位支持证据，具有可扩展和鲁棒特性 | 📊 实验效果: 构建 16 万条证据标注数据，在 7B 模型上验证有效，证据定位准确率显著提升 | ⭐ 整体评价: 属于视频理解方向。证据支撑机制提升问答可信度，建议关注数据构建流程和证据定位精度",
+        tags: [["LLM","green"],["Video QA","green"],["Reasoning","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.11862"],["PDF","https://arxiv.org/pdf/2607.11862"],["Code","https://github.com/SalesforceAIResearch/EVQA"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"构建证据支撑的视频问答框架，模型在回答问题时需同时提供视频中的证据片段，增强可溯源性"},{"label":"💡 创新点","text":"提出证据回溯机制，要求模型不仅给出答案还需定位支持证据，具有可扩展和鲁棒特性"},{"label":"📊 实验效果","text":"构建 16 万条证据标注数据，在 7B 模型上验证有效，证据定位准确率显著提升"},{"label":"⭐ 整体评价","text":"属于视频理解方向。证据支撑机制提升问答可信度，建议关注数据构建流程和证据定位精度"}]
+    },
+    {
+        date: "2026-07-14",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "AdvancedMathBench: A Benchmark Suite for Advanced Mathematical Proof Generation and Verification",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 构建高级数学证明生成与验证的基准测试套件，覆盖多难度层级的数学证明任务 | 💡 创新点: 首次系统化构建覆盖高级数学证明的评测基准，同时评估证明生成能力和证明验证能力 | 📊 实验效果: 对 GPT-5 等前沿模型进行评测，揭示当前模型在复杂数学推理和严格证明验证上的能力边界 | ⭐ 整体评价: 属于大模型推理方向。数学证明是检验推理能力的金标准，建议关注基准设计难度和模型表现差距",
+        tags: [["LLM","green"],["Math","green"],["Benchmark","green"],["Reasoning","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.11849"],["PDF","https://arxiv.org/pdf/2607.11849"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"构建高级数学证明生成与验证的基准测试套件，覆盖多难度层级的数学证明任务"},{"label":"💡 创新点","text":"首次系统化构建覆盖高级数学证明的评测基准，同时评估证明生成能力和证明验证能力"},{"label":"📊 实验效果","text":"对 GPT-5 等前沿模型进行评测，揭示当前模型在复杂数学推理和严格证明验证上的能力边界"},{"label":"⭐ 整体评价","text":"属于大模型推理方向。数学证明是检验推理能力的金标准，建议关注基准设计难度和模型表现差距"}]
+    },
     // === 2026-07-13 ===
     {
         date: "2026-07-13",
@@ -18014,6 +18105,13 @@ const PAPERS_DB = [
 ];
 
 const DAILY_OVERVIEW = {
+    "2026-07-14": {
+        bannerTitle: "🔥 今日看点",
+        bannerSubtitle: "今日 arXiv 回溯窗口 07-12~07-14 获取 8 篇新论文。MIT 提出混合帧策略实现双臂移动操作多帧动作去噪，是机器人操作方向亮点。Meta FAIR 联合 MIT 从机制可解释性角度剖析大模型评审偏见根源。Yale 发布 LLM 元认知综述，系统梳理大模型自我认知能力现状与展望。Salesforce 构建证据支撑的视频问答框架（16万数据），为视频理解可溯源性提供新范式。",
+        picks: ["Mixture of Frames Policy: Multi-Frame Action Denoising for Bimanual Mobile Manipulation","Inside the Unfair Judge: A Mechanistic Interpretability Account of LLM-as-Judge Bias"],
+        totalPapers: 8,
+        totalNews: 0
+    },
     "2026-07-13": {
         bannerTitle: "🔥 今日看点",
         bannerSubtitle: "周一 arXiv 无新索引，HuggingFace 热门论文 8 篇。今日看点：Insta360 发布 PanoWorld 全景世界生成模型，通过光线条件机制实现真实世界长距离全景生成。腾讯混元发布 Long-Horizon-Terminal-Bench 长时序终端任务基准（25 星开源），最佳成绩仅 15.2% 揭示当前 Agent 长程规划能力瓶颈。Google DeepMind 提出 VGGT-Omega 将视频生成模型作为通用视觉学习器，验证从生成到感知的范式迁移。南加州大学提出 KronQ 基于克罗内克分解海森矩阵的大模型训练后量化方法，在 70B 参数模型上验证有效。香港科技大学从机制层面分析微调中记忆知识无法泛化的根本原因。",
