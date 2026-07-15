@@ -658,6 +658,176 @@
 <script>
 // ===== DATA =====
 const PAPERS_DB = [
+    // === 2026-07-15 ===
+    {
+        date: "2026-07-15",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "DenseReward: Dense Reward Learning via Failure Synthesis for Robotic Manipulation",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 通过失败案例合成方式生成密集奖励信号，用于机器人操作任务的强化学习训练，替代传统稀疏奖励 | 💡 创新点: 利用失败状态合成密集奖励模型，从失败数据中提取细粒度反馈信号，加速策略学习收敛 | 📊 实验效果: 在数据生成和预测任务上验证有效性，密集奖励信号显著提升操作策略训练效率 | ⭐ 整体评价: 属于机器人操作方向。失败合成机制为密集奖励学习提供新思路，建议关注合成数据质量和真机部署验证",
+        tags: [["Robotics","green"],["Reward Learning","green"],["Reinforcement Learning","green"],["Manipulation","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.13033"],["PDF","https://arxiv.org/pdf/2607.13033"],["Project","https://dense-reward.github.io/"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"通过失败案例合成方式生成密集奖励信号，用于机器人操作任务的强化学习训练，替代传统稀疏奖励"},{"label":"💡 创新点","text":"利用失败状态合成密集奖励模型，从失败数据中提取细粒度反馈信号，加速策略学习收敛"},{"label":"📊 实验效果","text":"在数据生成和预测任务上验证有效性，密集奖励信号显著提升操作策略训练效率"},{"label":"⭐ 整体评价","text":"属于机器人操作方向。失败合成机制为密集奖励学习提供新思路，建议关注合成数据质量和真机部署验证"}]
+    },
+    {
+        date: "2026-07-15",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "ABot-N1: Toward a General Visual Language Navigation Foundation Model",
+        venue: "arXiv 2026 · Alibaba AMAP CV Lab",
+        summary: "🔬 技术路线: 构建通用视觉语言导航基础模型，统一多种导航任务的感知与决策，支持跨场景跨任务的能力迁移 | 💡 创新点: 首次提出面向视觉语言导航的通用基础模型架构，以单一模型覆盖室内外多种导航场景 | 📊 实验效果: 关键指标 35.0%、77.3%、95.4%、92.9%，在多个导航基准上表现优异 | ⭐ 整体评价: 阿里高德出品。视觉语言导航基础模型是具身智能重要方向，建议关注跨场景泛化能力和真实部署",
+        tags: [["Robotics","green"],["Navigation","green"],["VLA","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.10383"],["PDF","https://arxiv.org/pdf/2607.10383"],["Project","https://amap-cvlab.github.io/ABot-Navigation/ABot-N1/"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"构建通用视觉语言导航基础模型，统一多种导航任务的感知与决策，支持跨场景跨任务的能力迁移"},{"label":"💡 创新点","text":"首次提出面向视觉语言导航的通用基础模型架构，以单一模型覆盖室内外多种导航场景"},{"label":"📊 实验效果","text":"关键指标 35.0%、77.3%、95.4%、92.9%，在多个导航基准上表现优异"},{"label":"⭐ 整体评价","text":"阿里高德出品。视觉语言导航基础模型是具身智能重要方向，建议关注跨场景泛化能力和真实部署"}]
+    },
+    {
+        date: "2026-07-15",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "Xiaomi-Robotics-U0: Unified Embodied Synthesis with World Foundation Model",
+        venue: "arXiv 2026 · Xiaomi Robotics",
+        summary: "🔬 技术路线: 基于世界基础模型构建统一的具身合成框架，将感知、预测和动作生成整合为一体，支持多模态输入输出 | 💡 创新点: 提出统一的世界基础模型架构用于具身合成，实现多模态感知与动作生成的端到端整合 | 📊 实验效果: 关键指标 36.9%、63.2%，在具身合成任务上验证有效性 | ⭐ 整体评价: 小米机器人出品。统一具身合成是世界模型方向重要进展，建议关注模型规模和真实场景迁移效果",
+        tags: [["Robotics","green"],["World Model","green"],["Embodied","green"],["Generation","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.11643"],["PDF","https://arxiv.org/pdf/2607.11643"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于世界基础模型构建统一的具身合成框架，将感知、预测和动作生成整合为一体，支持多模态输入输出"},{"label":"💡 创新点","text":"提出统一的世界基础模型架构用于具身合成，实现多模态感知与动作生成的端到端整合"},{"label":"📊 实验效果","text":"关键指标 36.9%、63.2%，在具身合成任务上验证有效性"},{"label":"⭐ 整体评价","text":"小米机器人出品。统一具身合成是世界模型方向重要进展，建议关注模型规模和真实场景迁移效果"}]
+    },
+    {
+        date: "2026-07-15",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "FlowWAM: Optical Flow as a Unified Action Representation for World Action Models",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 将光流作为世界动作模型的统一动作表示，利用预训练光流估计器替代传统动作编码方案 | 💡 创新点: 首次提出以光流作为统一动作表征，解决世界动作模型中动作空间异构和跨任务迁移困难问题 | 📊 实验效果: 关键指标 92.94%、92.14%、18.4%，在多项任务上取得优异表现 | ⭐ 整体评价: 属于世界动作模型方向。光流统一动作表征思路新颖，建议关注动作表征泛化性和真机验证",
+        tags: [["World Model","green"],["VLA","green"],["Embodied","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.13017"],["PDF","https://arxiv.org/pdf/2607.13017"],["Project","https://flow-wam.github.io"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"将光流作为世界动作模型的统一动作表示，利用预训练光流估计器替代传统动作编码方案"},{"label":"💡 创新点","text":"首次提出以光流作为统一动作表征，解决世界动作模型中动作空间异构和跨任务迁移困难问题"},{"label":"📊 实验效果","text":"关键指标 92.94%、92.14%、18.4%，在多项任务上取得优异表现"},{"label":"⭐ 整体评价","text":"属于世界动作模型方向。光流统一动作表征思路新颖，建议关注动作表征泛化性和真机验证"}]
+    },
+    {
+        date: "2026-07-15",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "ABot-AgentOS: A General Robotic Agent OS with Lifelong Multi-modal Memory",
+        venue: "arXiv 2026 · Alibaba AMAP CV Lab",
+        summary: "🔬 技术路线: 构建通用机器人智能体操作系统，集成终身多模态记忆模块，支持长时序任务的感知、规划与执行 | 💡 创新点: 提出终身多模态记忆架构，实现跨任务跨场景的知识积累和复用，解决长时序任务中的记忆瓶颈 | 📊 实验效果: 在预测和规划任务上验证有效性，终身记忆机制显著提升长时序任务执行能力 | ⭐ 整体评价: 阿里高德出品。机器人智能体操作系统是具身智能基础设施方向，建议关注记忆机制设计和系统架构",
+        tags: [["VLA","green"],["Agent","green"],["Memory","green"],["Planning","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.10350"],["PDF","https://arxiv.org/pdf/2607.10350"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"构建通用机器人智能体操作系统，集成终身多模态记忆模块，支持长时序任务的感知、规划与执行"},{"label":"💡 创新点","text":"提出终身多模态记忆架构，实现跨任务跨场景的知识积累和复用，解决长时序任务中的记忆瓶颈"},{"label":"📊 实验效果","text":"在预测和规划任务上验证有效性，终身记忆机制显著提升长时序任务执行能力"},{"label":"⭐ 整体评价","text":"阿里高德出品。机器人智能体操作系统是具身智能基础设施方向，建议关注记忆机制设计和系统架构"}]
+    },
+    {
+        date: "2026-07-15",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Do AI Agents Know When a Task Is Simple? Toward Complexity-Aware Reasoning and Execution",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 研究智能体是否具备任务复杂度感知能力，构建复杂度感知的推理与执行框架，让模型根据任务难度自适应调整推理深度 | 💡 创新点: 提出 MSE-Bench 基准，系统评估智能体根据任务难度动态分配计算资源的能力 | 📊 实验效果: 关键指标 100%、85%、91%、92%，在多个评估维度上验证有效 | ⭐ 整体评价: 属于大模型推理方向。复杂度感知是智能体效率优化关键，建议关注自适应推理机制设计",
+        tags: [["LLM","green"],["Reasoning","green"],["Benchmark","green"],["Agent","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.13034"],["PDF","https://arxiv.org/pdf/2607.13034"],["Code","https://github.com/eejyin/Do-AI-Agents-Know-When-a-Task-Is-Simple-Toward-Complexity-Aware-Reasoning-and-Execution"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"研究智能体是否具备任务复杂度感知能力，构建复杂度感知的推理与执行框架，让模型根据任务难度自适应调整推理深度"},{"label":"💡 创新点","text":"提出 MSE-Bench 基准，系统评估智能体根据任务难度动态分配计算资源的能力"},{"label":"📊 实验效果","text":"关键指标 100%、85%、91%、92%，在多个评估维度上验证有效"},{"label":"⭐ 整体评价","text":"属于大模型推理方向。复杂度感知是智能体效率优化关键，建议关注自适应推理机制设计"}]
+    },
+    {
+        date: "2026-07-15",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Win by Silence: Deletion Non-Monotonicity, Autonomous Exploitation, and Typed-State Gating in LLM Plan Evaluation",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 研究大模型计划评估中的删除非单调性问题，通过类型状态门控机制检测和利用计划缺陷 | 💡 创新点: 揭示计划评估中删除操作的非单调性漏洞，提出类型状态门控机制进行自主利用和防御 | 📊 实验效果: 实验验证了方法有效性，类型状态门控有效检测计划评估中的非单调性缺陷 | ⭐ 整体评价: 属于大模型推理与安全方向。计划评估漏洞研究有理论价值，建议关注非单调性分析和防御机制",
+        tags: [["LLM","green"],["Reasoning","green"],["Safety","green"],["Planning","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.12986"],["PDF","https://arxiv.org/pdf/2607.12986"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"研究大模型计划评估中的删除非单调性问题，通过类型状态门控机制检测和利用计划缺陷"},{"label":"💡 创新点","text":"揭示计划评估中删除操作的非单调性漏洞，提出类型状态门控机制进行自主利用和防御"},{"label":"📊 实验效果","text":"实验验证了方法有效性，类型状态门控有效检测计划评估中的非单调性缺陷"},{"label":"⭐ 整体评价","text":"属于大模型推理与安全方向。计划评估漏洞研究有理论价值，建议关注非单调性分析和防御机制"}]
+    },
+    {
+        date: "2026-07-15",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Weak-to-Strong Generalization via Direct On-Policy Distillation",
+        venue: "arXiv 2026 · BytedTsinghua-SIA",
+        summary: "🔬 技术路线: 通过直接在线策略蒸馏实现弱到强泛化，将弱模型的策略信号高效传递给强模型，避免昂贵的强化学习训练 | 💡 创新点: 提出直接在线策略蒸馏方法，简化传统弱到强范式中的训练流程，提升蒸馏效率 | 📊 实验效果: 关键指标 48.3%、58.3%、1.7B，蒸馏效果显著 | ⭐ 整体评价: 字节清华联合出品。弱到强泛化是模型能力提升重要方向，建议关注蒸馏效率和泛化边界",
+        tags: [["LLM","green"],["Distillation","green"],["RL","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.05394"],["PDF","https://arxiv.org/pdf/2607.05394"],["Project","https://bytedtsinghua-sia.github.io/Direct-OPD/"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"通过直接在线策略蒸馏实现弱到强泛化，将弱模型的策略信号高效传递给强模型，避免昂贵的强化学习训练"},{"label":"💡 创新点","text":"提出直接在线策略蒸馏方法，简化传统弱到强范式中的训练流程，提升蒸馏效率"},{"label":"📊 实验效果","text":"关键指标 48.3%、58.3%、1.7B，蒸馏效果显著"},{"label":"⭐ 整体评价","text":"字节清华联合出品。弱到强泛化是模型能力提升重要方向，建议关注蒸馏效率和泛化边界"}]
+    },
+    {
+        date: "2026-07-15",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Proxy Exploration and Reusable Guidance: A Modular LLM Post-Training Paradigm via Proxy-Guided Update Signals",
+        venue: "arXiv 2026 · KnowledgeXLab@Shanghai AI Lab",
+        summary: "🔬 技术路线: 提出模块化的大模型后训练范式，通过代理引导的更新信号优化模型能力，支持训练过程解耦和复用 | 💡 创新点: 设计代理探索和可复用引导机制，将后训练过程模块化，提升训练效率和信号可复用性 | 📊 实验效果: 在生成任务上验证有效性，模块化训练范式降低后训练成本 | ⭐ 整体评价: 上海人工智能实验室出品。模块化后训练范式有工程实用价值，建议关注代理引导信号设计",
+        tags: [["LLM","green"],["Post-Training","green"],["Distillation","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.11505"],["PDF","https://arxiv.org/pdf/2607.11505"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出模块化的大模型后训练范式，通过代理引导的更新信号优化模型能力，支持训练过程解耦和复用"},{"label":"💡 创新点","text":"设计代理探索和可复用引导机制，将后训练过程模块化，提升训练效率和信号可复用性"},{"label":"📊 实验效果","text":"在生成任务上验证有效性，模块化训练范式降低后训练成本"},{"label":"⭐ 整体评价","text":"上海人工智能实验室出品。模块化后训练范式有工程实用价值，建议关注代理引导信号设计"}]
+    },
+    {
+        date: "2026-07-15",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "TerraZero: Procedural Driving Simulation for Zero-Demonstration Self-Play at Scale",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 通过程序化驾驶仿真环境生成实现零样本大规模自博弈训练，无需人工演示数据即可学习驾驶策略 | 💡 创新点: 提出程序化环境生成与零样本自博弈结合的框架，实现大规模无监督驾驶策略学习 | 📊 实验效果: 关键指标 1.3M，在大规模仿真环境上验证有效性 | ⭐ 整体评价: 属于智能体与仿真方向。零样本自博弈降低数据采集成本，建议关注仿真到真实迁移效果",
+        tags: [["Agent","green"],["Simulation","green"],["Driving","green"],["Self-Play","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.13028"],["PDF","https://arxiv.org/pdf/2607.13028"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"通过程序化驾驶仿真环境生成实现零样本大规模自博弈训练，无需人工演示数据即可学习驾驶策略"},{"label":"💡 创新点","text":"提出程序化环境生成与零样本自博弈结合的框架，实现大规模无监督驾驶策略学习"},{"label":"📊 实验效果","text":"关键指标 1.3M，在大规模仿真环境上验证有效性"},{"label":"⭐ 整体评价","text":"属于智能体与仿真方向。零样本自博弈降低数据采集成本，建议关注仿真到真实迁移效果"}]
+    },
+    {
+        date: "2026-07-15",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "PalmClaw: A Native On-Device Agent Framework for Mobile Phones",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 构建原生端侧智能体框架，在手机设备上实现本地化智能体推理与任务执行，支持离线运行 | 💡 创新点: 首次提出面向手机的端侧原生智能体框架，解决移动端资源受限下的智能体部署问题 | 📊 实验效果: 实验验证了方法有效性，端侧推理满足手机资源约束 | ⭐ 整体评价: 属于端侧智能体方向。手机端侧部署是智能体落地关键，建议关注推理效率和资源占用",
+        tags: [["Agent","green"],["Mobile","green"],["On-Device","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.13027"],["PDF","https://arxiv.org/pdf/2607.13027"],["Code","https://github.com/ModalityDance/PalmClaw"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"构建原生端侧智能体框架，在手机设备上实现本地化智能体推理与任务执行，支持离线运行"},{"label":"💡 创新点","text":"首次提出面向手机的端侧原生智能体框架，解决移动端资源受限下的智能体部署问题"},{"label":"📊 实验效果","text":"实验验证了方法有效性，端侧推理满足手机资源约束"},{"label":"⭐ 整体评价","text":"属于端侧智能体方向。手机端侧部署是智能体落地关键，建议关注推理效率和资源占用"}]
+    },
+    {
+        date: "2026-07-15",
+        category: "Other",
+        categoryIcon: "📄",
+        title: "The Seriality Gap in Video Diffusion Models",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 分析视频扩散模型中的序列性差距问题，研究生成过程中时序一致性不足的根本原因 | 💡 创新点: 首次系统定义和量化视频扩散模型的序列性差距，揭示生成过程中的时序断裂现象 | 📊 实验效果: 在生成和视频预测任务上验证有效性，量化分析了时序一致性瓶颈 | ⭐ 整体评价: 属于视频生成方向。序列性差距分析有助于理解扩散模型时序建模瓶颈，建议关注量化指标设计",
+        tags: [["Diffusion","green"],["Video Generation","green"],["Generation","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.13031"],["PDF","https://arxiv.org/pdf/2607.13031"],["Link","https://seriality-gap.jdiazchao.com"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"分析视频扩散模型中的序列性差距问题，研究生成过程中时序一致性不足的根本原因"},{"label":"💡 创新点","text":"首次系统定义和量化视频扩散模型的序列性差距，揭示生成过程中的时序断裂现象"},{"label":"📊 实验效果","text":"在生成和视频预测任务上验证有效性，量化分析了时序一致性瓶颈"},{"label":"⭐ 整体评价","text":"属于视频生成方向。序列性差距分析有助于理解扩散模型时序建模瓶颈，建议关注量化指标设计"}]
+    },
+    {
+        date: "2026-07-15",
+        category: "Other",
+        categoryIcon: "📄",
+        title: "ChunkFlow: Towards Continuity-Consistent Chunked Policy Learning",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 研究分块策略学习中的连续一致性问题，通过视觉语言模型增强分块间过渡平滑性 | 💡 创新点: 提出连续一致性约束的分块策略学习框架，解决分块动作间的断裂和不连贯问题 | 📊 实验效果: 在预测和推理任务上验证有效性，分块间过渡平滑性显著提升 | ⭐ 整体评价: 属于机器人策略学习方向。分块策略连续性是实际部署关键问题，建议关注过渡机制设计",
+        tags: [["Robotics","green"],["Policy Learning","green"],["Vision-Language","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.12992"],["PDF","https://arxiv.org/pdf/2607.12992"],["Project","https://cytoderm-ai.github.io/chunkflow"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"研究分块策略学习中的连续一致性问题，通过视觉语言模型增强分块间过渡平滑性"},{"label":"💡 创新点","text":"提出连续一致性约束的分块策略学习框架，解决分块动作间的断裂和不连贯问题"},{"label":"📊 实验效果","text":"在预测和推理任务上验证有效性，分块间过渡平滑性显著提升"},{"label":"⭐ 整体评价","text":"属于机器人策略学习方向。分块策略连续性是实际部署关键问题，建议关注过渡机制设计"}]
+    },
+    {
+        date: "2026-07-15",
+        category: "Other",
+        categoryIcon: "📄",
+        title: "LightMem-Ego: Your AI Memory for Everyday Life",
+        venue: "arXiv 2026 · ZJUNLP",
+        summary: "🔬 技术路线: 构建面向日常生活的轻量化多模态记忆系统，支持个人场景的长期记忆存储与检索 | 💡 创新点: 提出轻量化多模态记忆框架，实现个人生活场景的高效记忆召回和管理 | 📊 实验效果: 实验验证了方法有效性，记忆召回率和响应速度满足日常使用需求 | ⭐ 整体评价: 浙大 NLP 出品。个人记忆系统是 AI 助手重要方向，建议关注记忆召回率和隐私保护机制",
+        tags: [["Memory","green"],["Multimodal","green"],["Agent","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.11487"],["PDF","https://arxiv.org/pdf/2607.11487"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"构建面向日常生活的轻量化多模态记忆系统，支持个人场景的长期记忆存储与检索"},{"label":"💡 创新点","text":"提出轻量化多模态记忆框架，实现个人生活场景的高效记忆召回和管理"},{"label":"📊 实验效果","text":"实验验证了方法有效性，记忆召回率和响应速度满足日常使用需求"},{"label":"⭐ 整体评价","text":"浙大 NLP 出品。个人记忆系统是 AI 助手重要方向，建议关注记忆召回率和隐私保护机制"}]
+    },
+    {
+        date: "2026-07-15",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "How to manage AI investments in the agentic era",
+        venue: "",
+        summary: "OpenAI 发布博客探讨智能体时代企业如何管理 AI 投资策略。文章分析了从传统 AI 应用向智能体化部署转变过程中，企业在预算分配、技术选型和风险管理方面面临的挑战，并提出了智能体时代的投资框架建议。",
+        tags: [],
+        links: [["来源","https://openai.com/index/managing-ai-investments-in-agentic-era/"]]
+    },
     // === 2026-07-14 ===
     {
         date: "2026-07-14",
@@ -18105,6 +18275,13 @@ const PAPERS_DB = [
 ];
 
 const DAILY_OVERVIEW = {
+    "2026-07-15": {
+        bannerTitle: "🔥 今日看点",
+        bannerSubtitle: "今日 arXiv 8 篇 + HF 热门 6 篇 + 机构博客 1 条。阿里高德同日双发 ABot-N1 视觉语言导航基础模型和 ABot-AgentOS 机器人智能体操作系统，是具身智能方向重磅。小米发布 Xiaomi-Robotics-U0 统一具身合成框架，将世界基础模型引入机器人领域。FlowWAM 首次提出以光流作为世界动作模型的统一动作表征（92.94%）， DenseReward 通过失败合成构建密集奖励信号用于机器人操作训练。字节清华联合提出直接在线策略蒸馏实现弱到强泛化（48.3%/58.3%）。",
+        picks: ["DenseReward: Dense Reward Learning via Failure Synthesis for Robotic Manipulation","ABot-N1: Toward a General Visual Language Navigation Foundation Model","Xiaomi-Robotics-U0: Unified Embodied Synthesis with World Foundation Model","FlowWAM: Optical Flow as a Unified Action Representation for World Action Models","ABot-AgentOS: A General Robotic Agent OS with Lifelong Multi-modal Memory"],
+        totalPapers: 14,
+        totalNews: 1
+    },
     "2026-07-14": {
         bannerTitle: "🔥 今日看点",
         bannerSubtitle: "今日 arXiv 回溯窗口 07-12~07-14 获取 8 篇新论文。MIT 提出混合帧策略实现双臂移动操作多帧动作去噪，是机器人操作方向亮点。Meta FAIR 联合 MIT 从机制可解释性角度剖析大模型评审偏见根源。Yale 发布 LLM 元认知综述，系统梳理大模型自我认知能力现状与展望。Salesforce 构建证据支撑的视频问答框架（16万数据），为视频理解可溯源性提供新范式。",

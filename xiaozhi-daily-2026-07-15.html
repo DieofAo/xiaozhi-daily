@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>小小志AI日报 - 2026年7月15日 周三</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans SC', sans-serif;
+  background: #0a0e1a;
+  color: #e0e6f0;
+  line-height: 1.7;
+  min-height: 100vh;
+}
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+header {
+  text-align: center;
+  margin-bottom: 48px;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, rgba(59,130,246,0.08) 0%, rgba(139,92,246,0.08) 100%);
+  border-radius: 20px;
+  border: 1px solid rgba(99,102,241,0.15);
+}
+header h1 {
+  font-size: 2rem;
+  background: linear-gradient(135deg, #60a5fa, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 8px;
+}
+header .date {
+  color: #94a3b8;
+  font-size: 1rem;
+}
+header .subtitle {
+  color: #64748b;
+  font-size: 0.9rem;
+  margin-top: 6px;
+}
+.highlight-banner {
+  background: linear-gradient(135deg, rgba(249,115,22,0.1) 0%, rgba(234,179,8,0.08) 100%);
+  border: 1px solid rgba(249,115,22,0.2);
+  border-radius: 14px;
+  padding: 20px 24px;
+  margin-bottom: 36px;
+}
+.hl-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fb923c;
+  margin-bottom: 8px;
+}
+.hl-text {
+  font-size: 0.92rem;
+  color: #cbd5e1;
+  line-height: 1.7;
+}
+.section {
+  margin-bottom: 40px;
+}
+.section-title {
+  font-size: 1.4rem;
+  color: #f1f5f9;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(99,102,241,0.2);
+}
+.paper-card {
+  background: rgba(30,41,59,0.6);
+  border: 1px solid rgba(99,102,241,0.12);
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 16px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.paper-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(99,102,241,0.1);
+  border-color: rgba(99,102,241,0.3);
+}
+.paper-card.hot {
+  border-color: rgba(249,115,22,0.25);
+  background: rgba(30,41,59,0.7);
+}
+.paper-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #f8fafc;
+  margin-bottom: 8px;
+}
+.paper-meta {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-bottom: 10px;
+}
+.summary-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+@media (max-width: 640px) {
+  .summary-grid { grid-template-columns: 1fr; }
+}
+.summary-item {
+  background: rgba(15,23,42,0.5);
+  border-radius: 10px;
+  padding: 12px 14px;
+  border: 1px solid rgba(99,102,241,0.08);
+}
+.summary-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #818cf8;
+  margin-bottom: 4px;
+}
+.summary-text {
+  font-size: 0.88rem;
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+.paper-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.tag {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+.tag-agent { background: rgba(16,185,129,0.12); color: #34d399; }
+.tag-llm { background: rgba(99,102,241,0.12); color: #818cf8; }
+.tag-multimodal { background: rgba(244,114,182,0.12); color: #f472b6; }
+.tag-world { background: rgba(251,191,36,0.12); color: #fbbf24; }
+.tag-robot { background: rgba(251,146,60,0.12); color: #fb923c; }
+.tag-rl { background: rgba(45,212,191,0.12); color: #2dd4bf; }
+.tag-video { background: rgba(168,85,247,0.12); color: #a855f7; }
+.tag-benchmark { background: rgba(34,211,238,0.12); color: #22d3ee; }
+.tag-vla { background: rgba(59,130,246,0.12); color: #60a5fa; }
+.tag-safety { background: rgba(239,68,68,0.12); color: #f87171; }
+.tag-memory { background: rgba(192,132,252,0.12); color: #c084fc; }
+.tag-reasoning { background: rgba(132,204,22,0.12); color: #a3e635; }
+.tag-code { background: rgba(52,211,153,0.12); color: #34d399; }
+.tag-survey { background: rgba(6,182,212,0.12); color: #22d3ee; }
+.tag-science { background: rgba(217,119,6,0.12); color: #f59e0b; }
+.tag-medical { background: rgba(239,68,68,0.12); color: #f87171; }
+.tag-systems { background: rgba(56,189,248,0.12); color: #38bdf8; }
+.tag-3d { background: rgba(148,163,184,0.12); color: #94a3b8; }
+.tag-data { background: rgba(250,204,21,0.12); color: #facc15; }
+.tag-infra { background: rgba(167,139,250,0.12); color: #a78bfa; }
+.tag-generation { background: rgba(249,115,22,0.12); color: #f97316; }
+.tag-navigation { background: rgba(59,130,246,0.12); color: #60a5fa; }
+.tag-distillation { background: rgba(34,211,238,0.12); color: #22d3ee; }
+.tag-humanoid { background: rgba(251,146,60,0.12); color: #fb923c; }
+.tag-tool { background: rgba(52,211,153,0.12); color: #34d399; }
+.tag-gui { background: rgba(244,114,182,0.12); color: #f472b6; }
+.tag-embedding { background: rgba(167,139,250,0.12); color: #a78bfa; }
+.tag-quantization { background: rgba(99,102,241,0.12); color: #818cf8; }
+.tag-math { background: rgba(132,204,22,0.12); color: #a3e635; }
+.tag-interpretability { background: rgba(192,132,252,0.12); color: #c084fc; }
+.tag-judge { background: rgba(239,68,68,0.12); color: #f87171; }
+.tag-reward { background: rgba(34,211,238,0.12); color: #22d3ee; }
+.tag-manipulation { background: rgba(251,146,60,0.12); color: #fb923c; }
+.tag-bipedal { background: rgba(59,130,246,0.12); color: #60a5fa; }
+.tag-simulation { background: rgba(56,189,248,0.12); color: #38bdf8; }
+.tag-embodied { background: rgba(251,146,60,0.12); color: #fb923c; }
+.tag-planning { background: rgba(132,204,22,0.12); color: #a3e635; }
+.tag-driving { background: rgba(59,130,246,0.12); color: #60a5fa; }
+.tag-diffusion { background: rgba(168,85,247,0.12); color: #a855f7; }
+.hot-badge {
+  display: inline;
+  margin-right: 4px;
+}
+.info-card {
+  background: rgba(30,41,59,0.6);
+  border: 1px solid rgba(99,102,241,0.12);
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 16px;
+}
+.paper-summary {
+  font-size: 0.9rem;
+  color: #cbd5e1;
+  line-height: 1.7;
+  margin-bottom: 14px;
+}
+.paper-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.paper-links a {
+  display: inline-block;
+  padding: 5px 14px;
+  background: rgba(99,102,241,0.12);
+  color: #818cf8;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  transition: background 0.2s;
+}
+.paper-links a:hover {
+  background: rgba(99,102,241,0.25);
+}
+footer {
+  text-align: center;
+  color: #475569;
+  font-size: 0.82rem;
+  padding: 40px 20px;
+  border-top: 1px solid rgba(99,102,241,0.1);
+  margin-top: 40px;
+}
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+.stat-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>小小志AI日报</h1>
+    <div class="date">2026年7月15日 周三</div>
+    <div class="subtitle">关注：VLA · Robotics · World Model · LLM · Multimodal · Agent</div>
+    <div class="stats">
+      <span class="stat-item">📝 arXiv 8</span>
+      <span class="stat-item">🤗 HF 热门 6</span>
+      <span class="stat-item">🏢 机构博客 1</span>
+      <span class="stat-item">🐦 X/Twitter 0</span>
+    </div>
+  </header>
+
+  <div class="highlight-banner">
+    <div class="hl-title">🔥 今日看点</div>
+    <div class="hl-text">今日 arXiv 8 篇 + HF 热门 6 篇 + 机构博客 1 条。阿里高德同日双发 ABot-N1 视觉语言导航基础模型和 ABot-AgentOS 机器人智能体操作系统，是具身智能方向重磅。小米发布 Xiaomi-Robotics-U0 统一具身合成框架，将世界基础模型引入机器人领域。FlowWAM 首次提出以光流作为世界动作模型的统一动作表征（92.94%）， DenseReward 通过失败合成构建密集奖励信号用于机器人操作训练。字节清华联合提出直接在线策略蒸馏实现弱到强泛化（48.3%/58.3%）。</div>
+  </div>
+
+  <section class="section">
+    <h2 class="section-title">🦾 Robotics · 机器人</h2>
+
+    <div class="paper-card hot">
+      <div class="paper-title"><span class="hot-badge">🔥</span> DenseReward: Dense Reward Learning via Failure Synthesis for Robotic Manipulation</div>
+      <div class="paper-meta">arXiv 2026</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">通过失败案例合成方式生成密集奖励信号，用于机器人操作任务的强化学习训练，替代传统稀疏奖励</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">利用失败状态合成密集奖励模型，从失败数据中提取细粒度反馈信号，加速策略学习收敛</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在数据生成和预测任务上验证有效性，密集奖励信号显著提升操作策略训练效率</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于机器人操作方向。失败合成机制为密集奖励学习提供新思路，建议关注合成数据质量和真机部署验证</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-robot">Robotics</span>
+        <span class="tag tag-reward">Reward Learning</span>
+        <span class="tag tag-rl">Reinforcement Learning</span>
+        <span class="tag tag-manipulation">Manipulation</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2607.13033">arXiv</a>
+        <a href="https://arxiv.org/pdf/2607.13033">PDF</a>
+        <a href="https://dense-reward.github.io/">Project</a>
+      </div>
+    </div>
+
+    <div class="paper-card hot">
+      <div class="paper-title"><span class="hot-badge">🔥</span> ABot-N1: Toward a General Visual Language Navigation Foundation Model</div>
+      <div class="paper-meta">arXiv 2026 · Alibaba AMAP CV Lab</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">构建通用视觉语言导航基础模型，统一多种导航任务的感知与决策，支持跨场景跨任务的能力迁移</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次提出面向视觉语言导航的通用基础模型架构，以单一模型覆盖室内外多种导航场景</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">关键指标 35.0%、77.3%、95.4%、92.9%，在多个导航基准上表现优异</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">阿里高德出品。视觉语言导航基础模型是具身智能重要方向，建议关注跨场景泛化能力和真实部署</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-robot">Robotics</span>
+        <span class="tag tag-navigation">Navigation</span>
+        <span class="tag tag-vla">VLA</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2607.10383">arXiv</a>
+        <a href="https://arxiv.org/pdf/2607.10383">PDF</a>
+        <a href="https://amap-cvlab.github.io/ABot-Navigation/ABot-N1/">Project</a>
+      </div>
+    </div>
+
+    <div class="paper-card hot">
+      <div class="paper-title"><span class="hot-badge">🔥</span> Xiaomi-Robotics-U0: Unified Embodied Synthesis with World Foundation Model</div>
+      <div class="paper-meta">arXiv 2026 · Xiaomi Robotics</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">基于世界基础模型构建统一的具身合成框架，将感知、预测和动作生成整合为一体，支持多模态输入输出</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出统一的世界基础模型架构用于具身合成，实现多模态感知与动作生成的端到端整合</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">关键指标 36.9%、63.2%，在具身合成任务上验证有效性</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">小米机器人出品。统一具身合成是世界模型方向重要进展，建议关注模型规模和真实场景迁移效果</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-robot">Robotics</span>
+        <span class="tag tag-world">World Model</span>
+        <span class="tag tag-embodied">Embodied</span>
+        <span class="tag tag-generation">Generation</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2607.11643">arXiv</a>
+        <a href="https://arxiv.org/pdf/2607.11643">PDF</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">🌍 World Model · 世界模型</h2>
+
+    <div class="paper-card hot">
+      <div class="paper-title"><span class="hot-badge">🔥</span> FlowWAM: Optical Flow as a Unified Action Representation for World Action Models</div>
+      <div class="paper-meta">arXiv 2026</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">将光流作为世界动作模型的统一动作表示，利用预训练光流估计器替代传统动作编码方案</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次提出以光流作为统一动作表征，解决世界动作模型中动作空间异构和跨任务迁移困难问题</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">关键指标 92.94%、92.14%、18.4%，在多项任务上取得优异表现</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于世界动作模型方向。光流统一动作表征思路新颖，建议关注动作表征泛化性和真机验证</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-world">World Model</span>
+        <span class="tag tag-vla">VLA</span>
+        <span class="tag tag-embodied">Embodied</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2607.13017">arXiv</a>
+        <a href="https://arxiv.org/pdf/2607.13017">PDF</a>
+        <a href="https://flow-wam.github.io">Project</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">🤖 VLA · Vision-Language-Action</h2>
+
+    <div class="paper-card hot">
+      <div class="paper-title"><span class="hot-badge">🔥</span> ABot-AgentOS: A General Robotic Agent OS with Lifelong Multi-modal Memory</div>
+      <div class="paper-meta">arXiv 2026 · Alibaba AMAP CV Lab</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">构建通用机器人智能体操作系统，集成终身多模态记忆模块，支持长时序任务的感知、规划与执行</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出终身多模态记忆架构，实现跨任务跨场景的知识积累和复用，解决长时序任务中的记忆瓶颈</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在预测和规划任务上验证有效性，终身记忆机制显著提升长时序任务执行能力</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">阿里高德出品。机器人智能体操作系统是具身智能基础设施方向，建议关注记忆机制设计和系统架构</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-vla">VLA</span>
+        <span class="tag tag-agent">Agent</span>
+        <span class="tag tag-memory">Memory</span>
+        <span class="tag tag-planning">Planning</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2607.10350">arXiv</a>
+        <a href="https://arxiv.org/pdf/2607.10350">PDF</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">🧠 LLM · 大语言模型</h2>
+
+    <div class="paper-card">
+      <div class="paper-title">Do AI Agents Know When a Task Is Simple? Toward Complexity-Aware Reasoning and Execution</div>
+      <div class="paper-meta">arXiv 2026</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">研究智能体是否具备任务复杂度感知能力，构建复杂度感知的推理与执行框架，让模型根据任务难度自适应调整推理深度</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 MSE-Bench 基准，系统评估智能体根据任务难度动态分配计算资源的能力</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">关键指标 100%、85%、91%、92%，在多个评估维度上验证有效</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于大模型推理方向。复杂度感知是智能体效率优化关键，建议关注自适应推理机制设计</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-llm">LLM</span>
+        <span class="tag tag-reasoning">Reasoning</span>
+        <span class="tag tag-benchmark">Benchmark</span>
+        <span class="tag tag-agent">Agent</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2607.13034">arXiv</a>
+        <a href="https://arxiv.org/pdf/2607.13034">PDF</a>
+        <a href="https://github.com/eejyin/Do-AI-Agents-Know-When-a-Task-Is-Simple-Toward-Complexity-Aware-Reasoning-and-Execution">Code</a>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">Win by Silence: Deletion Non-Monotonicity, Autonomous Exploitation, and Typed-State Gating in LLM Plan Evaluation</div>
+      <div class="paper-meta">arXiv 2026</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">研究大模型计划评估中的删除非单调性问题，通过类型状态门控机制检测和利用计划缺陷</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">揭示计划评估中删除操作的非单调性漏洞，提出类型状态门控机制进行自主利用和防御</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">实验验证了方法有效性，类型状态门控有效检测计划评估中的非单调性缺陷</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于大模型推理与安全方向。计划评估漏洞研究有理论价值，建议关注非单调性分析和防御机制</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-llm">LLM</span>
+        <span class="tag tag-reasoning">Reasoning</span>
+        <span class="tag tag-safety">Safety</span>
+        <span class="tag tag-planning">Planning</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2607.12986">arXiv</a>
+        <a href="https://arxiv.org/pdf/2607.12986">PDF</a>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">Weak-to-Strong Generalization via Direct On-Policy Distillation</div>
+      <div class="paper-meta">arXiv 2026 · BytedTsinghua-SIA</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">通过直接在线策略蒸馏实现弱到强泛化，将弱模型的策略信号高效传递给强模型，避免昂贵的强化学习训练</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出直接在线策略蒸馏方法，简化传统弱到强范式中的训练流程，提升蒸馏效率</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">关键指标 48.3%、58.3%、1.7B，蒸馏效果显著</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">字节清华联合出品。弱到强泛化是模型能力提升重要方向，建议关注蒸馏效率和泛化边界</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-llm">LLM</span>
+        <span class="tag tag-distillation">Distillation</span>
+        <span class="tag tag-rl">RL</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2607.05394">arXiv</a>
+        <a href="https://arxiv.org/pdf/2607.05394">PDF</a>
+        <a href="https://bytedtsinghua-sia.github.io/Direct-OPD/">Project</a>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">Proxy Exploration and Reusable Guidance: A Modular LLM Post-Training Paradigm via Proxy-Guided Update Signals</div>
+      <div class="paper-meta">arXiv 2026 · KnowledgeXLab@Shanghai AI Lab</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出模块化的大模型后训练范式，通过代理引导的更新信号优化模型能力，支持训练过程解耦和复用</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">设计代理探索和可复用引导机制，将后训练过程模块化，提升训练效率和信号可复用性</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在生成任务上验证有效性，模块化训练范式降低后训练成本</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">上海人工智能实验室出品。模块化后训练范式有工程实用价值，建议关注代理引导信号设计</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-llm">LLM</span>
+        <span class="tag tag-rl">Post-Training</span>
+        <span class="tag tag-distillation">Distillation</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2607.11505">arXiv</a>
+        <a href="https://arxiv.org/pdf/2607.11505">PDF</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">🧩 Agent · 智能体</h2>
+
+    <div class="paper-card">
+      <div class="paper-title">TerraZero: Procedural Driving Simulation for Zero-Demonstration Self-Play at Scale</div>
+      <div class="paper-meta">arXiv 2026</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">通过程序化驾驶仿真环境生成实现零样本大规模自博弈训练，无需人工演示数据即可学习驾驶策略</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出程序化环境生成与零样本自博弈结合的框架，实现大规模无监督驾驶策略学习</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">关键指标 1.3M，在大规模仿真环境上验证有效性</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于智能体与仿真方向。零样本自博弈降低数据采集成本，建议关注仿真到真实迁移效果</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-agent">Agent</span>
+        <span class="tag tag-simulation">Simulation</span>
+        <span class="tag tag-driving">Driving</span>
+        <span class="tag tag-rl">Self-Play</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2607.13028">arXiv</a>
+        <a href="https://arxiv.org/pdf/2607.13028">PDF</a>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">PalmClaw: A Native On-Device Agent Framework for Mobile Phones</div>
+      <div class="paper-meta">arXiv 2026</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">构建原生端侧智能体框架，在手机设备上实现本地化智能体推理与任务执行，支持离线运行</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次提出面向手机的端侧原生智能体框架，解决移动端资源受限下的智能体部署问题</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">实验验证了方法有效性，端侧推理满足手机资源约束</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于端侧智能体方向。手机端侧部署是智能体落地关键，建议关注推理效率和资源占用</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-agent">Agent</span>
+        <span class="tag tag-gui">Mobile</span>
+        <span class="tag tag-systems">On-Device</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2607.13027">arXiv</a>
+        <a href="https://arxiv.org/pdf/2607.13027">PDF</a>
+        <a href="https://github.com/ModalityDance/PalmClaw">Code</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">📄 Other · 其他</h2>
+
+    <div class="paper-card">
+      <div class="paper-title">The Seriality Gap in Video Diffusion Models</div>
+      <div class="paper-meta">arXiv 2026</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">分析视频扩散模型中的序列性差距问题，研究生成过程中时序一致性不足的根本原因</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次系统定义和量化视频扩散模型的序列性差距，揭示生成过程中的时序断裂现象</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在生成和视频预测任务上验证有效性，量化分析了时序一致性瓶颈</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于视频生成方向。序列性差距分析有助于理解扩散模型时序建模瓶颈，建议关注量化指标设计</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-diffusion">Diffusion</span>
+        <span class="tag tag-video">Video Generation</span>
+        <span class="tag tag-generation">Generation</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2607.13031">arXiv</a>
+        <a href="https://arxiv.org/pdf/2607.13031">PDF</a>
+        <a href="https://seriality-gap.jdiazchao.com">Link</a>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">ChunkFlow: Towards Continuity-Consistent Chunked Policy Learning</div>
+      <div class="paper-meta">arXiv 2026</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">研究分块策略学习中的连续一致性问题，通过视觉语言模型增强分块间过渡平滑性</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出连续一致性约束的分块策略学习框架，解决分块动作间的断裂和不连贯问题</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在预测和推理任务上验证有效性，分块间过渡平滑性显著提升</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于机器人策略学习方向。分块策略连续性是实际部署关键问题，建议关注过渡机制设计</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-robot">Robotics</span>
+        <span class="tag tag-planning">Policy Learning</span>
+        <span class="tag tag-vla">Vision-Language</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2607.12992">arXiv</a>
+        <a href="https://arxiv.org/pdf/2607.12992">PDF</a>
+        <a href="https://cytoderm-ai.github.io/chunkflow">Project</a>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">LightMem-Ego: Your AI Memory for Everyday Life</div>
+      <div class="paper-meta">arXiv 2026 · ZJUNLP</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">构建面向日常生活的轻量化多模态记忆系统，支持个人场景的长期记忆存储与检索</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出轻量化多模态记忆框架，实现个人生活场景的高效记忆召回和管理</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">实验验证了方法有效性，记忆召回率和响应速度满足日常使用需求</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">浙大 NLP 出品。个人记忆系统是 AI 助手重要方向，建议关注记忆召回率和隐私保护机制</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-memory">Memory</span>
+        <span class="tag tag-multimodal">Multimodal</span>
+        <span class="tag tag-agent">Agent</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2607.11487">arXiv</a>
+        <a href="https://arxiv.org/pdf/2607.11487">PDF</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">🏢 行业动态</h2>
+
+    <div class="info-card">
+      <div class="paper-title">How to manage AI investments in the agentic era</div>
+      <div class="paper-summary">OpenAI 发布博客探讨智能体时代企业如何管理 AI 投资策略。文章分析了从传统 AI 应用向智能体化部署转变过程中，企业在预算分配、技术选型和风险管理方面面临的挑战，并提出了智能体时代的投资框架建议。</div>
+      <div class="paper-links">
+        <a href="https://openai.com/index/managing-ai-investments-in-agentic-era/">来源</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>自动生成于 2026-07-15 17:25 GMT+8　│　关注：VLA · Robotics · World Model · LLM · Multimodal · Agent</p>
+    <p style="margin-top:8px;">数据来源：arXiv · HuggingFace　│　共 14 篇论文 + 1 条行业动态</p>
+  </footer>
+</div>
+</body>
+</html>
