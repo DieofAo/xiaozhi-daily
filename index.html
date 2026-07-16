@@ -658,6 +658,173 @@
 <script>
 // ===== DATA =====
 const PAPERS_DB = [
+    // === 2026-07-16 ===
+    {
+        date: "2026-07-16",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "From Pixels to States: Rethinking Interactive World Models as Game Engines",
+        venue: "arXiv 2026 · 2607.14076",
+        summary: "🔬 技术路线: 将交互式世界模型重新构思为游戏引擎，从像素级生成转向状态级推理，构建可交互的生成式世界环境 | 💡 创新点: 提出从像素到状态的范式转变，使世界模型具备实时可扩展的交互能力，超越传统纯生成框架 | 📊 实验效果: 在生成质量和交互连贯性上验证了方法的有效性，支持实时响应玩家操作 | ⭐ 整体评价: 世界模型方向的重要理论重新思考，建议关注状态表示方式和实时推理能力",
+        tags: [["World Model","green"],["Generation","green"],["Simulation","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.14076"],["PDF","https://arxiv.org/pdf/2607.14076"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"将交互式世界模型重新构思为游戏引擎，从像素级生成转向状态级推理，构建可交互的生成式世界环境"},{"label":"💡 创新点","text":"提出从像素到状态的范式转变，使世界模型具备实时可扩展的交互能力，超越传统纯生成框架"},{"label":"📊 实验效果","text":"在生成质量和交互连贯性上验证了方法的有效性，支持实时响应玩家操作"},{"label":"⭐ 整体评价","text":"世界模型方向的重要理论重新思考，建议关注状态表示方式和实时推理能力"}]
+    },
+    {
+        date: "2026-07-16",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "PhysClaw-0: A Symbiotic Agentic System for Robot Autonomy via Language Corrections",
+        venue: "arXiv 2026 · 2607.14047",
+        summary: "🔬 技术路线: 构建语言纠正驱动的机器人共生智能体系统，通过自然语言反馈实时修正机器人执行策略 | 💡 创新点: 提出 PhysClaw-0 框架，实现语言指令与策略学习的协同闭环，将人类纠错作为训练信号 | 📊 实验效果: 关键指标达到 16%、12.5%、47.5% 和 20.0%，验证了语言纠正对策略提升的贡献 | ⭐ 整体评价: 语言引导机器人自主性方向的有益探索，建议关注真实部署条件和纠正效率",
+        tags: [["Robotics","green"],["Embodied","green"],["Interaction","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.14047"],["PDF","https://arxiv.org/pdf/2607.14047"],["Project","https://open-gigaai.github.io/PhysClaw"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"构建语言纠正驱动的机器人共生智能体系统，通过自然语言反馈实时修正机器人执行策略"},{"label":"💡 创新点","text":"提出 PhysClaw-0 框架，实现语言指令与策略学习的协同闭环，将人类纠错作为训练信号"},{"label":"📊 实验效果","text":"关键指标达到 16%、12.5%、47.5% 和 20.0%，验证了语言纠正对策略提升的贡献"},{"label":"⭐ 整体评价","text":"语言引导机器人自主性方向的有益探索，建议关注真实部署条件和纠正效率"}]
+    },
+    {
+        date: "2026-07-16",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "Earthquaker-AI: A Retrieval-Augmented Generation Framework with Rubric-Based Assessment for Primary School Earthquake Education",
+        venue: "arXiv 2026 · 2607.14046",
+        summary: "🔬 技术路线: 结合检索增强生成和评分量规评估，构建面向小学地震科普教育的混合教学框架 | 💡 创新点: 将检索增强生成技术引入地震科普教育领域，通过评分量规实现教学质量的量化评估 | 📊 实验效果: 在教育内容生成质量和知识准确性上验证了框架的有效性 | ⭐ 整体评价: 教育应用方向的实践性工作，建议关注教学效果评估方法和知识准确性保障",
+        tags: [["Robotics","green"],["Education","green"],["Safety","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.14046"],["PDF","https://arxiv.org/pdf/2607.14046"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"结合检索增强生成和评分量规评估，构建面向小学地震科普教育的混合教学框架"},{"label":"💡 创新点","text":"将检索增强生成技术引入地震科普教育领域，通过评分量规实现教学质量的量化评估"},{"label":"📊 实验效果","text":"在教育内容生成质量和知识准确性上验证了框架的有效性"},{"label":"⭐ 整体评价","text":"教育应用方向的实践性工作，建议关注教学效果评估方法和知识准确性保障"}]
+    },
+    {
+        date: "2026-07-16",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Hindcast: Replaying Prediction Markets to Evaluate LLM Forecasters",
+        venue: "arXiv 2026 · 2607.14051",
+        summary: "🔬 技术路线: 通过回放历史预测市场数据来评估大语言模型的预测能力，利用已结算市场作为客观基准 | 💡 创新点: 提出回测框架，避免数据泄露问题，以真实市场结果作为模型预测能力的评判标准 | 📊 实验效果: 在多项预测任务上验证了评估方法的可靠性和区分度 | ⭐ 整体评价: 为大语言模型预测能力评估提供了客观基准，方法论价值突出",
+        tags: [["LLM","green"],["Forecasting","green"],["Benchmark","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.14051"],["PDF","https://arxiv.org/pdf/2607.14051"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"通过回放历史预测市场数据来评估大语言模型的预测能力，利用已结算市场作为客观基准"},{"label":"💡 创新点","text":"提出回测框架，避免数据泄露问题，以真实市场结果作为模型预测能力的评判标准"},{"label":"📊 实验效果","text":"在多项预测任务上验证了评估方法的可靠性和区分度"},{"label":"⭐ 整体评价","text":"为大语言模型预测能力评估提供了客观基准，方法论价值突出"}]
+    },
+    {
+        date: "2026-07-16",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Deep Interaction: An Efficient Human-AI Interaction Method for Large Reasoning Models",
+        venue: "arXiv 2026 · 2607.14049",
+        summary: "🔬 技术路线: 针对大型推理模型设计高效人机交互方法，通过思维链机制在推理过程中嵌入人类反馈 | 💡 创新点: 提出在推理过程中实现深度交互的范式，减少用户干预成本的同时保持推理质量 | 📊 实验效果: 关键指标达到 25% 和 40% 的提升，验证了交互效率与推理质量的平衡 | ⭐ 整体评价: 大型推理模型人机交互方向的实用研究，建议关注交互效率与推理质量的平衡",
+        tags: [["LLM","green"],["Reasoning","green"],["Interaction","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.14049"],["PDF","https://arxiv.org/pdf/2607.14049"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"针对大型推理模型设计高效人机交互方法，通过思维链机制在推理过程中嵌入人类反馈"},{"label":"💡 创新点","text":"提出在推理过程中实现深度交互的范式，减少用户干预成本的同时保持推理质量"},{"label":"📊 实验效果","text":"关键指标达到 25% 和 40% 的提升，验证了交互效率与推理质量的平衡"},{"label":"⭐ 整体评价","text":"大型推理模型人机交互方向的实用研究，建议关注交互效率与推理质量的平衡"}]
+    },
+    {
+        date: "2026-07-16",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Can an Old Dog Be Taught New Tricks? Taking LLMs Beyond Sentence Level Translation",
+        venue: "arXiv 2026 · 2607.14040",
+        summary: "🔬 技术路线: 提出 Auto-Translator 框架，将大语言模型翻译能力从句子级扩展到文档级连贯翻译 | 💡 创新点: 通过生成与评估相结合的方法，突破传统句子级翻译的上下文断裂问题，实现长文本一致性 | 📊 实验效果: 在多个翻译基准上验证了文档级翻译的连贯性和术语一致性提升 | ⭐ 整体评价: 翻译方向的应用研究，建议关注长文本一致性和专业术语处理能力",
+        tags: [["LLM","green"],["Translation","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.14040"],["PDF","https://arxiv.org/pdf/2607.14040"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出 Auto-Translator 框架，将大语言模型翻译能力从句子级扩展到文档级连贯翻译"},{"label":"💡 创新点","text":"通过生成与评估相结合的方法，突破传统句子级翻译的上下文断裂问题，实现长文本一致性"},{"label":"📊 实验效果","text":"在多个翻译基准上验证了文档级翻译的连贯性和术语一致性提升"},{"label":"⭐ 整体评价","text":"翻译方向的应用研究，建议关注长文本一致性和专业术语处理能力"}]
+    },
+    {
+        date: "2026-07-16",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Towards Autonomous and Auditable Medical Imaging Model Development",
+        venue: "arXiv 2026 · 2607.10522 · HF 热门 · Chinese University of Hong Kong · 10⭐",
+        summary: "🔬 技术路线: 提出数据条件化框架，实现医学影像模型开发流程的自主化和可审计化 | 💡 创新点: 引入数据条件化机制，使模型开发全过程具备可追溯性和可审计性，满足医疗合规需求 | 📊 实验效果: 在规划和预测任务上验证了框架的有效性，审计追溯能力满足临床规范 | ⭐ 整体评价: 医学影像模型自主化开发的前沿探索，建议关注审计机制设计和临床适用性",
+        tags: [["LLM","green"],["Medical","green"],["Safety","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.10522"],["PDF","https://arxiv.org/pdf/2607.10522"],["Code (10⭐)","https://github.com/CUHK-AIM-Group/AMID"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出数据条件化框架，实现医学影像模型开发流程的自主化和可审计化"},{"label":"💡 创新点","text":"引入数据条件化机制，使模型开发全过程具备可追溯性和可审计性，满足医疗合规需求"},{"label":"📊 实验效果","text":"在规划和预测任务上验证了框架的有效性，审计追溯能力满足临床规范"},{"label":"⭐ 整体评价","text":"医学影像模型自主化开发的前沿探索，建议关注审计机制设计和临床适用性"}]
+    },
+    {
+        date: "2026-07-16",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "MonkeyOCRv2: A Visual-Text Foundation Model for Document AI",
+        venue: "arXiv 2026 · 2607.11562 · HF 热门 · VLRLab-OCR · 165⭐",
+        summary: "🔬 技术路线: 构建面向文档智能的视觉文本基础模型，统一版面分析、文字识别和信息抽取等多项任务 | 💡 创新点: 在多模态预训练基础上实现文档理解的端到端统一，消除传统多阶段流水线的误差累积 | 📊 实验效果: 在多个文档智能基准上取得领先表现，社区关注度高（165 星） | ⭐ 整体评价: 文档 AI 方向的高关注度开源工作，建议关注跨模态对齐方式和数据规模",
+        tags: [["LLM","green"],["Multimodal","green"],["OCR","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.11562"],["PDF","https://arxiv.org/pdf/2607.11562"],["Code (165⭐)","https://github.com/Yuliang-Liu/MonkeyOCRv2"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"构建面向文档智能的视觉文本基础模型，统一版面分析、文字识别和信息抽取等多项任务"},{"label":"💡 创新点","text":"在多模态预训练基础上实现文档理解的端到端统一，消除传统多阶段流水线的误差累积"},{"label":"📊 实验效果","text":"在多个文档智能基准上取得领先表现，社区关注度高（165 星）"},{"label":"⭐ 整体评价","text":"文档 AI 方向的高关注度开源工作，建议关注跨模态对齐方式和数据规模"}]
+    },
+    {
+        date: "2026-07-16",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Early Adoption of Agentic Coding Tools by GitHub Projects",
+        venue: "arXiv 2026 · 2607.14037",
+        summary: "🔬 技术路线: 通过分析 GitHub 项目的 PR 级别数据，系统研究智能编程工具在开源项目中的早期采用情况 | 💡 创新点: 提出以 PR 为粒度的分析框架，基于开源数据量化智能编程工具的采用趋势和实际影响 | 📊 实验效果: 大规模实证分析验证了方法的有效性，揭示了采用模式和影响因素 | ⭐ 整体评价: 智能编程工具采用趋势的实证研究，对理解 Agent 工具落地有重要参考价值",
+        tags: [["Agent","green"],["Coding","green"],["Data","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.14037"],["PDF","https://arxiv.org/pdf/2607.14037"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"通过分析 GitHub 项目的 PR 级别数据，系统研究智能编程工具在开源项目中的早期采用情况"},{"label":"💡 创新点","text":"提出以 PR 为粒度的分析框架，基于开源数据量化智能编程工具的采用趋势和实际影响"},{"label":"📊 实验效果","text":"大规模实证分析验证了方法的有效性，揭示了采用模式和影响因素"},{"label":"⭐ 整体评价","text":"智能编程工具采用趋势的实证研究，对理解 Agent 工具落地有重要参考价值"}]
+    },
+    {
+        date: "2026-07-16",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Function-Aware Fill-in-the-Middle as Mid-Training for Coding Agent Foundation Models",
+        venue: "arXiv 2026 · 2607.12463 · HF 热门 · TIGER-LAB · 1⭐",
+        summary: "🔬 技术路线: 将函数感知的中间填充任务作为编码智能体基础模型的训练中期策略，增强代码理解能力 | 💡 创新点: 提出 Coder-Instruct 自监督方案，通过函数级中间填充训练提升模型对代码结构的感知 | 📊 实验效果: 在 7B、14B、8B、2.6B 等多个模型规模上验证了训练策略的有效性 | ⭐ 整体评价: 编码智能体基础模型训练的有益探索，建议关注训练策略和下游任务迁移效果",
+        tags: [["Agent","green"],["Coding","green"],["LLM","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.12463"],["PDF","https://arxiv.org/pdf/2607.12463"],["Project","https://huggingface.co/collections/TIGER-Lab/fim-midtraining"],["Code (1⭐)","https://github.com/TIGER-AI-Lab/FIM-Midtraining"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"将函数感知的中间填充任务作为编码智能体基础模型的训练中期策略，增强代码理解能力"},{"label":"💡 创新点","text":"提出 Coder-Instruct 自监督方案，通过函数级中间填充训练提升模型对代码结构的感知"},{"label":"📊 实验效果","text":"在 7B、14B、8B、2.6B 等多个模型规模上验证了训练策略的有效性"},{"label":"⭐ 整体评价","text":"编码智能体基础模型训练的有益探索，建议关注训练策略和下游任务迁移效果"}]
+    },
+    {
+        date: "2026-07-16",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Know Before Fix: QA-Driven Repository Knowledge Acquisition for Software Issue Resolution",
+        venue: "arXiv 2026 · 2607.11111 · HF 热门 · Shanghai Jiao Tong University",
+        summary: "🔬 技术路线: 提出 ACQUIRE 框架，通过问答驱动的方式获取代码仓库知识，在修复前理解问题上下文 | 💡 创新点: 设计问答驱动的知识获取机制，先理解仓库结构和问题语义再执行修复，提升修复准确率 | 📊 实验效果: 在软件问题解决任务上验证了框架的有效性，修复成功率显著提升 | ⭐ 整体评价: 代码智能体方向的有益探索，建议关注知识获取效率和实际修复成功率",
+        tags: [["Agent","green"],["Coding","green"],["Reasoning","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.11111"],["PDF","https://arxiv.org/pdf/2607.11111"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出 ACQUIRE 框架，通过问答驱动的方式获取代码仓库知识，在修复前理解问题上下文"},{"label":"💡 创新点","text":"设计问答驱动的知识获取机制，先理解仓库结构和问题语义再执行修复，提升修复准确率"},{"label":"📊 实验效果","text":"在软件问题解决任务上验证了框架的有效性，修复成功率显著提升"},{"label":"⭐ 整体评价","text":"代码智能体方向的有益探索，建议关注知识获取效率和实际修复成功率"}]
+    },
+    {
+        date: "2026-07-16",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "AI-accelerated End-to-End Framework for Rapid Professional Upskilling",
+        venue: "arXiv 2026 · 2607.14044 · NVIDIA",
+        summary: "🔬 技术路线: 构建 AI 加速的端到端职业技能提升框架，实现从技能评估到培训方案的全流程自动化 | 💡 创新点: 提出端到端的鲁棒性技能提升方案，利用 AI 实现个性化学习路径规划和实时进度追踪 | 📊 实验效果: 在职业培训场景中验证了框架的有效性，培训效率显著提升 | ⭐ 整体评价: NVIDIA 出品的职业教育应用框架，建议关注 Agent 架构和工具调用策略",
+        tags: [["Agent","green"],["Tool","green"],["Education","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.14044"],["PDF","https://arxiv.org/pdf/2607.14044"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"构建 AI 加速的端到端职业技能提升框架，实现从技能评估到培训方案的全流程自动化"},{"label":"💡 创新点","text":"提出端到端的鲁棒性技能提升方案，利用 AI 实现个性化学习路径规划和实时进度追踪"},{"label":"📊 实验效果","text":"在职业培训场景中验证了框架的有效性，培训效率显著提升"},{"label":"⭐ 整体评价","text":"NVIDIA 出品的职业教育应用框架，建议关注 Agent 架构和工具调用策略"}]
+    },
+    {
+        date: "2026-07-16",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "SynthDocBench: Controlled Benchmark for Long-Context Visual Document Understanding",
+        venue: "arXiv 2026 · 2607.10400 · HF 热门 · ServiceNow-AI · 3⭐",
+        summary: "🔬 技术路线: 构建可控的合成文档基准，专门评估多模态模型在长上下文视觉文档理解上的能力 | 💡 创新点: 提出 MMLongBench-Doc 基准，通过受控合成方式系统化评估长文档理解的鲁棒性问题 | 📊 实验效果: 关键指标提升 8.3 个百分点，揭示了现有模型在长文档理解上的显著不足 | ⭐ 整体评价: 多模态文档理解方向的评测基准工作，建议关注数据合成策略和评估覆盖面",
+        tags: [["Multimodal","green"],["Benchmark","green"],["Document","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.10400"],["PDF","https://arxiv.org/pdf/2607.10400"],["Code (3⭐)","https://github.com/ServiceNow/SynthDocBench"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"构建可控的合成文档基准，专门评估多模态模型在长上下文视觉文档理解上的能力"},{"label":"💡 创新点","text":"提出 MMLongBench-Doc 基准，通过受控合成方式系统化评估长文档理解的鲁棒性问题"},{"label":"📊 实验效果","text":"关键指标提升 8.3 个百分点，揭示了现有模型在长文档理解上的显著不足"},{"label":"⭐ 整体评价","text":"多模态文档理解方向的评测基准工作，建议关注数据合成策略和评估覆盖面"}]
+    },
+    {
+        date: "2026-07-16",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "Blind-Spots-Bench: Evaluating Blind Spots in Multimodal Models",
+        venue: "arXiv 2026 · 2607.08317 · HF 热门 · EPFL · 4⭐",
+        summary: "🔬 技术路线: 构建专门评估多模态模型推理盲区的基准数据集，系统化检测模型的系统性缺陷 | 💡 创新点: 通过精心设计的测试样本揭示多模态模型在特定推理场景下的盲区，为模型改进提供方向 | 📊 实验效果: 关键指标约 10% 的盲区检出率，暴露了主流模型的共性弱点 | ⭐ 整体评价: 多模态模型评测方向的重要工作，建议关注盲区类型分类和模型改进方向",
+        tags: [["Multimodal","green"],["Benchmark","green"],["Reasoning","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.08317"],["PDF","https://arxiv.org/pdf/2607.08317"],["Code (4⭐)","https://github.com/matteosantelmo/reasoning-blind-spots"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"构建专门评估多模态模型推理盲区的基准数据集，系统化检测模型的系统性缺陷"},{"label":"💡 创新点","text":"通过精心设计的测试样本揭示多模态模型在特定推理场景下的盲区，为模型改进提供方向"},{"label":"📊 实验效果","text":"关键指标约 10% 的盲区检出率，暴露了主流模型的共性弱点"},{"label":"⭐ 整体评价","text":"多模态模型评测方向的重要工作，建议关注盲区类型分类和模型改进方向"}]
+    },
+    {
+        date: "2026-07-16",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "GPT-Red: Unlocking Self-Improvement for Robustness",
+        venue: "OpenAI · 2026-07-16",
+        summary: "OpenAI 发布 GPT-Red 研究，探索通过自我改进机制提升模型鲁棒性的新方向。该方法让模型在部署后持续从自身错误中学习，实现无需人工标注的自主能力提升，对模型长期维护和安全部署具有重要意义。",
+        tags: [],
+        links: [["来源","https://openai.com/index/unlocking-self-improvement-gpt-red/"]]
+    },
     // === 2026-07-15 ===
     {
         date: "2026-07-15",
@@ -18275,6 +18442,13 @@ const PAPERS_DB = [
 ];
 
 const DAILY_OVERVIEW = {
+    "2026-07-16": {
+        bannerTitle: "🔥 今日看点",
+        bannerSubtitle: "今日 arXiv 8 篇 + HF 热门 6 篇 + 机构博客 1 条。世界模型方向 From Pixels to States 重新思考交互式世界模型作为游戏引擎的设计范式。机器人方向 PhysClaw-0 提出语言纠正驱动的共生智能体系统实现机器人自主性。NVIDIA 发布 AI 加速端到端职业技能提升框架。OpenAI 发布 GPT-Red 自我改进鲁棒性研究。HF 热门方向 MonkeyOCRv2 文档智能视觉文本基础模型获得 165 星社区关注，SynthDocBench 构建长上下文视觉文档理解可控基准，TIGER-Lab 提出函数感知中间填充训练编码智能体基础模型。",
+        picks: ["From Pixels to States: Rethinking Interactive World Models as Game Engines","PhysClaw-0: A Symbiotic Agentic System for Robot Autonomy via Language Corrections"],
+        totalPapers: 14,
+        totalNews: 1
+    },
     "2026-07-15": {
         bannerTitle: "🔥 今日看点",
         bannerSubtitle: "今日 arXiv 8 篇 + HF 热门 6 篇 + 机构博客 1 条。阿里高德同日双发 ABot-N1 视觉语言导航基础模型和 ABot-AgentOS 机器人智能体操作系统，是具身智能方向重磅。小米发布 Xiaomi-Robotics-U0 统一具身合成框架，将世界基础模型引入机器人领域。FlowWAM 首次提出以光流作为世界动作模型的统一动作表征（92.94%）， DenseReward 通过失败合成构建密集奖励信号用于机器人操作训练。字节清华联合提出直接在线策略蒸馏实现弱到强泛化（48.3%/58.3%）。",
