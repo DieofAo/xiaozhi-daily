@@ -658,6 +658,187 @@
 <script>
 // ===== DATA =====
 const PAPERS_DB = [
+    // === 2026-07-17 ===
+    {
+        date: "2026-07-17",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "GigaWorld-Policy-0.5: A Faster and Stronger WAM Empowered by AutoResearch",
+        venue: "arXiv 2026 · 2607.13960 · HF 热门 · GigaAI",
+        summary: "🔬 技术路线: 基于世界动作模型框架构建机器人策略学习系统，结合自动研究流程加速模型迭代优化 | 💡 创新点: 提出 GigaWorld-Policy 系列新版本，通过自动化研究流程赋能世界动作模型实现更快推理和更强策略 | 📊 实验效果: 在动作生成和推理任务上验证了方法的有效性，速度和策略质量均有显著提升 | ⭐ 整体评价: 世界动作模型方向的重要进展，建议关注推理速度优化和策略迁移效果",
+        tags: [["World Model","green"],["Robotics","green"],["Planning","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.13960"],["PDF","https://arxiv.org/pdf/2607.13960"],["Project","https://open-gigaai.github.io/giga-world-policy/"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于世界动作模型框架构建机器人策略学习系统，结合自动研究流程加速模型迭代优化"},{"label":"💡 创新点","text":"提出 GigaWorld-Policy 系列新版本，通过自动化研究流程赋能世界动作模型实现更快推理和更强策略"},{"label":"📊 实验效果","text":"在动作生成和推理任务上验证了方法的有效性，速度和策略质量均有显著提升"},{"label":"⭐ 整体评价","text":"世界动作模型方向的重要进展，建议关注推理速度优化和策略迁移效果"}]
+    },
+    {
+        date: "2026-07-17",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "RoboTTT: Context Scaling for Robot Policies",
+        venue: "arXiv 2026 · 2607.15275 · NVIDIA",
+        summary: "🔬 技术路线: 提出测试时训练方法对机器人策略进行上下文缩放，在推理阶段动态扩展策略的上下文窗口 | 💡 创新点: 将测试时训练范式引入机器人策略学习，通过上下文缩放增强策略对新任务的适应能力 | 📊 实验效果: 关键指标达到 87% 和 62%，上下文从 1K 扩展到 8K 后策略泛化能力显著提升 | ⭐ 整体评价: NVIDIA 出品，测试时训练在机器人领域的创新应用，建议关注真机验证和实时性表现",
+        tags: [["Robotics","green"],["VLA","green"],["Embodied","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.15275"],["PDF","https://arxiv.org/pdf/2607.15275"],["Project","http://research.nvidia.com/labs/gear/robottt/"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出测试时训练方法对机器人策略进行上下文缩放，在推理阶段动态扩展策略的上下文窗口"},{"label":"💡 创新点","text":"将测试时训练范式引入机器人策略学习，通过上下文缩放增强策略对新任务的适应能力"},{"label":"📊 实验效果","text":"关键指标达到 87% 和 62%，上下文从 1K 扩展到 8K 后策略泛化能力显著提升"},{"label":"⭐ 整体评价","text":"NVIDIA 出品，测试时训练在机器人领域的创新应用，建议关注真机验证和实时性表现"}]
+    },
+    {
+        date: "2026-07-17",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Hierarchical Denoising For Multi-Step Visual Reasoning",
+        venue: "arXiv 2026 · 2607.15278",
+        summary: "🔬 技术路线: 基于扩散模型和基础模型构建分层去噪框架，用于多步视觉推理任务的逐步优化 | 💡 创新点: 提出分层去噪机制，将复杂视觉推理分解为多层级去噪步骤，逐步从噪声中恢复结构化推理路径 | 📊 实验效果: 关键指标达到 76.2%、82.9%，在视觉推理基准上验证了分层去噪的有效性 | ⭐ 整体评价: 将扩散模型思想引入视觉推理的新颖尝试，建议关注去噪层级设计和推理质量",
+        tags: [["LLM","green"],["Reasoning","green"],["Diffusion","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.15278"],["PDF","https://arxiv.org/pdf/2607.15278"],["Project","https://hierarchical-diffusion-reasoning.github.io/"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于扩散模型和基础模型构建分层去噪框架，用于多步视觉推理任务的逐步优化"},{"label":"💡 创新点","text":"提出分层去噪机制，将复杂视觉推理分解为多层级去噪步骤，逐步从噪声中恢复结构化推理路径"},{"label":"📊 实验效果","text":"关键指标达到 76.2%、82.9%，在视觉推理基准上验证了分层去噪的有效性"},{"label":"⭐ 整体评价","text":"将扩散模型思想引入视觉推理的新颖尝试，建议关注去噪层级设计和推理质量"}]
+    },
+    {
+        date: "2026-07-17",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Partition, Prompt, Aggregate: Statistical Self-Consistency in Language Models",
+        venue: "arXiv 2026 · 2607.15277",
+        summary: "🔬 技术路线: 提出分区、提示、聚合三阶段框架，利用统计自一致性原理提升大语言模型的推理可靠性 | 💡 创新点: 将统计自一致性概念引入上下文学习，通过对输入分区后多次提示再聚合结果来降低推理方差 | 📊 实验效果: 在多个推理任务上验证了方法的有效性，自一致性显著提升了输出准确率 | ⭐ 整体评价: 大语言模型推理可靠性方向的实用方法，建议关注分区策略和聚合方式的设计",
+        tags: [["LLM","green"],["Reasoning","green"],["Self-Consistency","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.15277"],["PDF","https://arxiv.org/pdf/2607.15277"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出分区、提示、聚合三阶段框架，利用统计自一致性原理提升大语言模型的推理可靠性"},{"label":"💡 创新点","text":"将统计自一致性概念引入上下文学习，通过对输入分区后多次提示再聚合结果来降低推理方差"},{"label":"📊 实验效果","text":"在多个推理任务上验证了方法的有效性，自一致性显著提升了输出准确率"},{"label":"⭐ 整体评价","text":"大语言模型推理可靠性方向的实用方法，建议关注分区策略和聚合方式的设计"}]
+    },
+    {
+        date: "2026-07-17",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "teLLMe Why (Ain't Nothing but a Jam): Exploratory Causal Analysis of Urban Driving Data",
+        venue: "arXiv 2026 · 2607.15254",
+        summary: "🔬 技术路线: 利用大语言模型对城市驾驶数据进行探索性因果分析，从自然语言角度解释交通拥堵成因 | 💡 创新点: 将因果分析方法与自然语言推理结合，用大模型生成驾驶数据中因果关系的人类可读解释 | 📊 实验效果: 在生成任务上验证了方法的有效性，因果解释与领域专家判断具有较高一致性 | ⭐ 整体评价: 大语言模型在交通数据分析中的创新应用，建议关注因果推理能力和解释可信度",
+        tags: [["LLM","green"],["Causal","green"],["Driving","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.15254"],["PDF","https://arxiv.org/pdf/2607.15254"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"利用大语言模型对城市驾驶数据进行探索性因果分析，从自然语言角度解释交通拥堵成因"},{"label":"💡 创新点","text":"将因果分析方法与自然语言推理结合，用大模型生成驾驶数据中因果关系的人类可读解释"},{"label":"📊 实验效果","text":"在生成任务上验证了方法的有效性，因果解释与领域专家判断具有较高一致性"},{"label":"⭐ 整体评价","text":"大语言模型在交通数据分析中的创新应用，建议关注因果推理能力和解释可信度"}]
+    },
+    {
+        date: "2026-07-17",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "OvisOCR2 Technical Report",
+        venue: "arXiv 2026 · 2607.13639 · HF 热门",
+        summary: "🔬 技术路线: 基于视觉语言模型架构构建 OCR 基础模型，通过训练、微调、强化学习和蒸馏多阶段优化 | 💡 创新点: 提出 ATH-MaaS 框架实现端到端鲁棒的文字识别，覆盖 0.8B 和 4B 两种模型规模 | 📊 实验效果: 在多个 OCR 基准上取得领先表现，端到端架构在复杂场景下识别精度显著提升 | ⭐ 整体评价: OCR 方向的技术报告，建议关注多语言支持和复杂版面场景的识别能力",
+        tags: [["LLM","green"],["OCR","green"],["Multimodal","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.13639"],["PDF","https://arxiv.org/pdf/2607.13639"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于视觉语言模型架构构建 OCR 基础模型，通过训练、微调、强化学习和蒸馏多阶段优化"},{"label":"💡 创新点","text":"提出 ATH-MaaS 框架实现端到端鲁棒的文字识别，覆盖 0.8B 和 4B 两种模型规模"},{"label":"📊 实验效果","text":"在多个 OCR 基准上取得领先表现，端到端架构在复杂场景下识别精度显著提升"},{"label":"⭐ 整体评价","text":"OCR 方向的技术报告，建议关注多语言支持和复杂版面场景的识别能力"}]
+    },
+    {
+        date: "2026-07-17",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "PolicyShiftGuard: Benchmarking and Improving Policy-Adaptive Image Guardrails",
+        venue: "arXiv 2026 · 2607.05910 · HF 热门 · Fudan University · 20⭐",
+        summary: "🔬 技术路线: 构建策略自适应的图像安全护栏基准，系统评估不同内容策略下护栏模型的鲁棒性 | 💡 创新点: 提出 RP-SFT 训练方法，使 7B 规模护栏模型能够根据策略变化动态调整判定标准 | 📊 实验效果: 在策略迁移场景下验证了护栏模型的适应能力，误判率显著降低 | ⭐ 整体评价: 内容安全护栏方向的重要工作，建议关注策略适应机制和实际部署效果",
+        tags: [["LLM","green"],["Safety","green"],["Benchmark","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.05910"],["PDF","https://arxiv.org/pdf/2607.05910"],["Project","https://policyshiftguard.github.io/"],["Code (20⭐)","https://github.com/ssmisya/PolicyShiftGuard"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"构建策略自适应的图像安全护栏基准，系统评估不同内容策略下护栏模型的鲁棒性"},{"label":"💡 创新点","text":"提出 RP-SFT 训练方法，使 7B 规模护栏模型能够根据策略变化动态调整判定标准"},{"label":"📊 实验效果","text":"在策略迁移场景下验证了护栏模型的适应能力，误判率显著降低"},{"label":"⭐ 整体评价","text":"内容安全护栏方向的重要工作，建议关注策略适应机制和实际部署效果"}]
+    },
+    {
+        date: "2026-07-17",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Boogu-Image-0.1: Boosting Open-Source Unified Multimodal Understanding and Generation",
+        venue: "arXiv 2026 · 2607.13125 · HF 热门 · Boogu · 760⭐",
+        summary: "🔬 技术路线: 构建统一的多模态理解与生成模型，基于 40 万训练数据实现图像理解和生成的一体化 | 💡 创新点: 提出 Boogu-Image 统一框架，消除理解与生成的分离架构，单一模型同时支持两项任务 | 📊 实验效果: 在多模态理解和图像生成基准上均取得竞争力表现，开源后获得 760 星社区关注 | ⭐ 整体评价: 开源多模态统一模型的高关注度工作，建议关注架构设计和训练数据质量",
+        tags: [["Multimodal","green"],["Generation","green"],["LLM","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.13125"],["PDF","https://arxiv.org/pdf/2607.13125"],["Project","https://boogu.org/"],["Code (760⭐)","https://github.com/boogu-project/Boogu-Image"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"构建统一的多模态理解与生成模型，基于 40 万训练数据实现图像理解和生成的一体化"},{"label":"💡 创新点","text":"提出 Boogu-Image 统一框架，消除理解与生成的分离架构，单一模型同时支持两项任务"},{"label":"📊 实验效果","text":"在多模态理解和图像生成基准上均取得竞争力表现，开源后获得 760 星社区关注"},{"label":"⭐ 整体评价","text":"开源多模态统一模型的高关注度工作，建议关注架构设计和训练数据质量"}]
+    },
+    {
+        date: "2026-07-17",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "KnowAct-GUIClaw: Know Deeply, Act Perfectly, Personal GUI Assistant with Self-Evolving Memory and Skill",
+        venue: "arXiv 2026 · 2607.12625 · HF 热门 · Lychee Team · 60⭐",
+        summary: "🔬 技术路线: 构建具备自进化记忆和技能的个性化图形界面助手，通过深度知识理解驱动精准操作 | 💡 创新点: 提出 KnowAct 框架，将知识获取与动作执行解耦，记忆和技能模块随使用持续进化 | 📊 实验效果: 关键指标达到 64.1% 和 8.5%，在 GUI 操作任务上验证了自进化机制的有效性 | ⭐ 整体评价: GUI Agent 方向的高关注度工作，建议关注记忆更新策略和跨应用泛化能力",
+        tags: [["Agent","green"],["GUI","green"],["Memory","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.12625"],["PDF","https://arxiv.org/pdf/2607.12625"],["Project","https://shibosusu.github.io/KnowAct-GUIClaw/"],["Code (60⭐)","https://github.com/HITsz-TMG/KnowAct"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"构建具备自进化记忆和技能的个性化图形界面助手，通过深度知识理解驱动精准操作"},{"label":"💡 创新点","text":"提出 KnowAct 框架，将知识获取与动作执行解耦，记忆和技能模块随使用持续进化"},{"label":"📊 实验效果","text":"关键指标达到 64.1% 和 8.5%，在 GUI 操作任务上验证了自进化机制的有效性"},{"label":"⭐ 整体评价","text":"GUI Agent 方向的高关注度工作，建议关注记忆更新策略和跨应用泛化能力"}]
+    },
+    {
+        date: "2026-07-17",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Harness Handbook: Making Evolving Agent Harnesses Readable, Navigable, and Editable",
+        venue: "arXiv 2026 · 2607.13285 · HF 热门 · Tencent Hunyuan",
+        summary: "🔬 技术路线: 针对不断演进的智能体框架系统，提出使其可读、可导航、可编辑的系统性方法论 | 💡 创新点: 利用大语言模型辅助分析框架代码结构，生成可读文档和导航索引，支持增量编辑 | 📊 实验效果: 在规划任务上验证了方法的有效性，框架可维护性显著提升 | ⭐ 整体评价: 腾讯混元出品，智能体工程基础设施方向的有益探索，建议关注可扩展性和实际工程效果",
+        tags: [["Agent","green"],["Infrastructure","green"],["Tool","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.13285"],["PDF","https://arxiv.org/pdf/2607.13285"],["Project","https://ruhan-wang.github.io/Harness-Handbook/"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"针对不断演进的智能体框架系统，提出使其可读、可导航、可编辑的系统性方法论"},{"label":"💡 创新点","text":"利用大语言模型辅助分析框架代码结构，生成可读文档和导航索引，支持增量编辑"},{"label":"📊 实验效果","text":"在规划任务上验证了方法的有效性，框架可维护性显著提升"},{"label":"⭐ 整体评价","text":"腾讯混元出品，智能体工程基础设施方向的有益探索，建议关注可扩展性和实际工程效果"}]
+    },
+    {
+        date: "2026-07-17",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "AgentCompass: A Unified Evaluation Infrastructure for Agent Capabilities",
+        venue: "arXiv 2026 · 2607.13705 · HF 热门 · OpenCompass · 43⭐",
+        summary: "🔬 技术路线: 构建统一轻量可扩展的智能体能力评估基础设施，覆盖多维度任务场景和评估指标 | 💡 创新点: 提出基于大语言模型的统一评估框架，支持多种智能体架构的标准化评测和横向对比 | 📊 实验效果: 在多项智能体能力基准上验证了评估框架的覆盖度和区分度 | ⭐ 整体评价: OpenCompass 出品的评估基础设施，建议关注评估维度设计和基准覆盖范围",
+        tags: [["Agent","green"],["Benchmark","green"],["Evaluation","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.13705"],["PDF","https://arxiv.org/pdf/2607.13705"],["Code (43⭐)","https://github.com/open-compass/agentcompass"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"构建统一轻量可扩展的智能体能力评估基础设施，覆盖多维度任务场景和评估指标"},{"label":"💡 创新点","text":"提出基于大语言模型的统一评估框架，支持多种智能体架构的标准化评测和横向对比"},{"label":"📊 实验效果","text":"在多项智能体能力基准上验证了评估框架的覆盖度和区分度"},{"label":"⭐ 整体评价","text":"OpenCompass 出品的评估基础设施，建议关注评估维度设计和基准覆盖范围"}]
+    },
+    {
+        date: "2026-07-17",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Self-Improvements in Modern Agentic Systems: A Survey",
+        venue: "arXiv 2026 · 2607.13104 · HF 热门 · 38⭐",
+        summary: "🔬 技术路线: 系统综述现代智能体系统中的自我改进方法，涵盖提示优化、记忆更新、策略迭代等技术路线 | 💡 创新点: 首次统一梳理智能体自我改进的分类体系，从框架和基础模型双维度分析改进机制 | 📊 实验效果: 综合分析多种自我改进方法的效果，揭示了不同改进策略的适用场景和局限性 | ⭐ 整体评价: 智能体自我改进方向的系统性综述，建议关注分类框架和未来研究方向",
+        tags: [["Agent","green"],["Survey","green"],["Memory","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.13104"],["PDF","https://arxiv.org/pdf/2607.13104"],["Project","https://selfimproving-agent.github.io/"],["Code (38⭐)","https://github.com/selfimproving-agent/awesome-Self-Improving-Agents"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"系统综述现代智能体系统中的自我改进方法，涵盖提示优化、记忆更新、策略迭代等技术路线"},{"label":"💡 创新点","text":"首次统一梳理智能体自我改进的分类体系，从框架和基础模型双维度分析改进机制"},{"label":"📊 实验效果","text":"综合分析多种自我改进方法的效果，揭示了不同改进策略的适用场景和局限性"},{"label":"⭐ 整体评价","text":"智能体自我改进方向的系统性综述，建议关注分类框架和未来研究方向"}]
+    },
+    {
+        date: "2026-07-17",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Beyond Success Rate: Cost-Aware Evaluation of Offensive and Defensive Security Agents",
+        venue: "arXiv 2026 · 2607.15263",
+        summary: "🔬 技术路线: 提出成本感知的评估框架，超越传统成功率指标，综合考量攻防安全智能体的资源消耗 | 💡 创新点: 引入成本维度评估安全智能体，将推理代价、工具调用次数和时间开销纳入综合评价 | 📊 实验效果: 在推理和导航任务上验证了评估方法的有效性，揭示了高成功率背后的隐性成本 | ⭐ 整体评价: 安全智能体评估方法论的重要补充，建议关注成本模型设计和评估指标平衡",
+        tags: [["Agent","green"],["Security","green"],["Evaluation","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.15263"],["PDF","https://arxiv.org/pdf/2607.15263"],["Project","https://evals.frontier.security"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出成本感知的评估框架，超越传统成功率指标，综合考量攻防安全智能体的资源消耗"},{"label":"💡 创新点","text":"引入成本维度评估安全智能体，将推理代价、工具调用次数和时间开销纳入综合评价"},{"label":"📊 实验效果","text":"在推理和导航任务上验证了评估方法的有效性，揭示了高成功率背后的隐性成本"},{"label":"⭐ 整体评价","text":"安全智能体评估方法论的重要补充，建议关注成本模型设计和评估指标平衡"}]
+    },
+    {
+        date: "2026-07-17",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "SearchOS-V1: Towards Robust Open-Domain Information-Seeking Agent Collaboration",
+        venue: "arXiv 2026 · 2607.15257",
+        summary: "🔬 技术路线: 构建鲁棒的开域信息检索智能体协作框架，通过工具集成和策略机制提升多智能体搜索能力 | 💡 创新点: 提出 SearchOS 框架，设计工具集成的协作机制，使多智能体在开放域信息检索中实现优势互补 | 📊 实验效果: 在开放域信息检索任务上验证了协作框架的有效性，检索精度和覆盖度均有提升 | ⭐ 整体评价: 多智能体搜索协作方向的实用工作，建议关注协作策略设计和工具调用效率",
+        tags: [["Agent","green"],["Search","green"],["Tool","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.15257"],["PDF","https://arxiv.org/pdf/2607.15257"],["Code","https://github.com/antins-labs/SearchOS"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"构建鲁棒的开域信息检索智能体协作框架，通过工具集成和策略机制提升多智能体搜索能力"},{"label":"💡 创新点","text":"提出 SearchOS 框架，设计工具集成的协作机制，使多智能体在开放域信息检索中实现优势互补"},{"label":"📊 实验效果","text":"在开放域信息检索任务上验证了协作框架的有效性，检索精度和覆盖度均有提升"},{"label":"⭐ 整体评价","text":"多智能体搜索协作方向的实用工作，建议关注协作策略设计和工具调用效率"}]
+    },
+    {
+        date: "2026-07-17",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "SciDiagramEdit: Learning to Edit Scientific Diagrams from Paper Revisions",
+        venue: "arXiv 2026 · 2607.15272",
+        summary: "🔬 技术路线: 基于论文修订过程学习科学图表的编辑方法，构建从修改指令到图表更新的自动化流程 | 💡 创新点: 提出 SciDiagramEdit 框架，从论文修订历史中学习科学图表的编辑模式，实现自动化图表更新 | 📊 实验效果: 在科学图表编辑任务上验证了方法的有效性，生成质量接近人工修订水平 | ⭐ 整体评价: 科研辅助工具方向的应用研究，建议关注图表理解能力和编辑精度",
+        tags: [["Agent","green"],["Science","green"],["Diagram","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.15272"],["PDF","https://arxiv.org/pdf/2607.15272"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于论文修订过程学习科学图表的编辑方法，构建从修改指令到图表更新的自动化流程"},{"label":"💡 创新点","text":"提出 SciDiagramEdit 框架，从论文修订历史中学习科学图表的编辑模式，实现自动化图表更新"},{"label":"📊 实验效果","text":"在科学图表编辑任务上验证了方法的有效性，生成质量接近人工修订水平"},{"label":"⭐ 整体评价","text":"科研辅助工具方向的应用研究，建议关注图表理解能力和编辑精度"}]
+    },
+    {
+        date: "2026-07-17",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "HoloGeo: Mitigating Landmark Bias in Geo-localization via Evidence-Driven Reasoning",
+        venue: "arXiv 2026 · 2607.15255",
+        summary: "🔬 技术路线: 基于视觉语言模型构建地理定位系统，通过证据驱动推理缓解地标偏差问题 | 💡 创新点: 提出证据驱动的推理框架，引导模型从多角度收集地理证据而非依赖单一地标特征 | 📊 实验效果: 在 3K 至 30K 规模的地理定位基准上验证了方法的有效性，地标偏差显著降低 | ⭐ 整体评价: 地理定位方向的鲁棒性研究，建议关注证据推理机制和跨区域泛化能力",
+        tags: [["Multimodal","green"],["Geo-localization","green"],["Reasoning","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.15255"],["PDF","https://arxiv.org/pdf/2607.15255"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于视觉语言模型构建地理定位系统，通过证据驱动推理缓解地标偏差问题"},{"label":"💡 创新点","text":"提出证据驱动的推理框架，引导模型从多角度收集地理证据而非依赖单一地标特征"},{"label":"📊 实验效果","text":"在 3K 至 30K 规模的地理定位基准上验证了方法的有效性，地标偏差显著降低"},{"label":"⭐ 整体评价","text":"地理定位方向的鲁棒性研究，建议关注证据推理机制和跨区域泛化能力"}]
+    },
     // === 2026-07-16 ===
     {
         date: "2026-07-16",
@@ -18442,6 +18623,13 @@ const PAPERS_DB = [
 ];
 
 const DAILY_OVERVIEW = {
+    "2026-07-17": {
+        bannerTitle: "🔥 今日看点",
+        bannerSubtitle: "今日 arXiv 8 篇 + HF 热门 8 篇。机器人方向 NVIDIA 发布 RoboTTT 提出测试时训练上下文缩放方案提升策略泛化能力。世界模型方向 GigaAI 发布 GigaWorld-Policy-0.5 由自动研究赋能的更快更强的世界动作模型。多模态方向 Boogu-Image-0.1 获 760 星社区关注实现统一多模态理解与生成。Agent 方向密集爆发 7 篇，腾讯混元发布 Harness Handbook 提升智能体框架可读可导航可编辑性，KnowAct-GUIClaw 自进化记忆 GUI 助手获 60 星，OpenCompass 发布 AgentCompass 统一评估基础设施，Self-Improvements 综述系统梳理现代智能体系统的自我改进方法。",
+        picks: ["GigaWorld-Policy-0.5: A Faster and Stronger WAM Empowered by AutoResearch","RoboTTT: Context Scaling for Robot Policies","Boogu-Image-0.1: Boosting Open-Source Unified Multimodal Understanding and Generation","KnowAct-GUIClaw: Know Deeply, Act Perfectly, Personal GUI Assistant with Self-Evolving Memory and Skill"],
+        totalPapers: 16,
+        totalNews: 0
+    },
     "2026-07-16": {
         bannerTitle: "🔥 今日看点",
         bannerSubtitle: "今日 arXiv 8 篇 + HF 热门 6 篇 + 机构博客 1 条。世界模型方向 From Pixels to States 重新思考交互式世界模型作为游戏引擎的设计范式。机器人方向 PhysClaw-0 提出语言纠正驱动的共生智能体系统实现机器人自主性。NVIDIA 发布 AI 加速端到端职业技能提升框架。OpenAI 发布 GPT-Red 自我改进鲁棒性研究。HF 热门方向 MonkeyOCRv2 文档智能视觉文本基础模型获得 165 星社区关注，SynthDocBench 构建长上下文视觉文档理解可控基准，TIGER-Lab 提出函数感知中间填充训练编码智能体基础模型。",
