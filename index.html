@@ -658,6 +658,185 @@
 <script>
 // ===== DATA =====
 const PAPERS_DB = [
+    // === 2026-07-20 ===
+    {
+        date: "2026-07-20",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "Xiaomi-Robotics-1: Scaling Vision-Language-Action Models with over 100K Hours of Real-World Trajectories",
+        venue: "arXiv 2026 · 2607.15330 · HF 热门 · Xiaomi Robotics · 72⭐",
+        summary: "🔬 技术路线: 基于超 10 万小时真实世界机器人操作轨迹数据，采用预训练与微调两阶段训练方案构建视觉语言动作基础模型 | 💡 创新点: 首次以超大规模真实世界轨迹数据驱动 VLA 模型训练，突破数据规模瓶颈实现更强的任务泛化能力 | 📊 实验效果: 在多种机器人操作任务上验证了有效性，开源代码获 72 星社区关注 | ⭐ 整体评价: VLA 方向重磅发布，建议关注数据采集方案、动作表达方式和真机迁移效果",
+        tags: [["VLA","green"],["Robotics","green"],["Data","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.15330"],["PDF","https://arxiv.org/pdf/2607.15330"],["Project","https://robotics.xiaomi.com/xiaomi-robotics-1.html"],["Code","https://github.com/XiaomiRobotics/Xiaomi-Robotics-1"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于超 10 万小时真实世界机器人操作轨迹数据，采用预训练与微调两阶段训练方案构建视觉语言动作基础模型"},{"label":"💡 创新点","text":"首次以超大规模真实世界轨迹数据驱动 VLA 模型训练，突破数据规模瓶颈实现更强的任务泛化能力"},{"label":"📊 实验效果","text":"在多种机器人操作任务上验证了有效性，开源代码获 72 星社区关注"},{"label":"⭐ 整体评价","text":"VLA 方向重磅发布，建议关注数据采集方案、动作表达方式和真机迁移效果"}]
+    },
+    {
+        date: "2026-07-20",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "Handroid: Bridging Dexterous Hand and Humanoid",
+        venue: "arXiv 2026 · 2607.16187",
+        summary: "🔬 技术路线: 提出统一自由度设计框架，将灵巧手与人形机器人进行桥接整合，实现两者协同操作 | 💡 创新点: 首次提出统一自由度方案打通灵巧手与人形机器人的硬件壁垒，降低系统集成复杂度 | 📊 实验效果: 在操作抓取和运动控制任务上验证了方法的有效性，提供项目主页展示实际效果 | ⭐ 整体评价: 机器人硬件集成方向的重要工作，建议关注自由度映射方案和真机实验设置",
+        tags: [["Robotics","green"],["Humanoid","green"],["Dexterous","green"],["Manipulation","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.16187"],["PDF","https://arxiv.org/pdf/2607.16187"],["Project","https://handroid.org"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出统一自由度设计框架，将灵巧手与人形机器人进行桥接整合，实现两者协同操作"},{"label":"💡 创新点","text":"首次提出统一自由度方案打通灵巧手与人形机器人的硬件壁垒，降低系统集成复杂度"},{"label":"📊 实验效果","text":"在操作抓取和运动控制任务上验证了方法的有效性，提供项目主页展示实际效果"},{"label":"⭐ 整体评价","text":"机器人硬件集成方向的重要工作，建议关注自由度映射方案和真机实验设置"}]
+    },
+    {
+        date: "2026-07-20",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "Vision-Language-Motion Maps: An Open-Vocabulary, Uncertainty-Aware, Queryable Motion Attribute for 3D Scene Maps",
+        venue: "arXiv 2026 · 2607.16173",
+        summary: "🔬 技术路线: 构建开放词汇的三维场景运动属性地图，融合不确定性感知机制使机器人能通过语言查询场景运动信息 | 💡 创新点: 提出将运动属性嵌入三维场景地图的方案，支持开放词汇查询和不确定性量化，提升机器人场景理解能力 | 📊 实验效果: 在场景理解和运动预测任务上验证了方法的有效性和鲁棒性 | ⭐ 整体评价: 机器人场景感知方向有实用价值，建议关注地图构建精度和语言查询准确率",
+        tags: [["Robotics","green"],["3D Scene","green"],["Navigation","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.16173"],["PDF","https://arxiv.org/pdf/2607.16173"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"构建开放词汇的三维场景运动属性地图，融合不确定性感知机制使机器人能通过语言查询场景运动信息"},{"label":"💡 创新点","text":"提出将运动属性嵌入三维场景地图的方案，支持开放词汇查询和不确定性量化，提升机器人场景理解能力"},{"label":"📊 实验效果","text":"在场景理解和运动预测任务上验证了方法的有效性和鲁棒性"},{"label":"⭐ 整体评价","text":"机器人场景感知方向有实用价值，建议关注地图构建精度和语言查询准确率"}]
+    },
+    {
+        date: "2026-07-20",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "MotionForesight: Re-purposing Video Models for Future 3D Scene-Flow Prediction",
+        venue: "arXiv 2026 · 2607.16192",
+        summary: "🔬 技术路线: 复用预训练视频生成模型进行未来三维场景流预测，将视频模型的时序建模能力迁移到三维场景理解 | 💡 创新点: 提出轻量化高效方案将视频模型重新用于三维场景流预测，避免从零训练专用模型 | 📊 实验效果: 使用 4 万条数据训练验证了预测精度和场景流生成质量 | ⭐ 整体评价: 世界模型与视频模型迁移方向有启发性，建议关注预测精度和动作可控性",
+        tags: [["World Model","green"],["Video","green"],["3D","green"],["Forecasting","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.16192"],["PDF","https://arxiv.org/pdf/2607.16192"],["Project","https://motionforesight.github.io/"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"复用预训练视频生成模型进行未来三维场景流预测，将视频模型的时序建模能力迁移到三维场景理解"},{"label":"💡 创新点","text":"提出轻量化高效方案将视频模型重新用于三维场景流预测，避免从零训练专用模型"},{"label":"📊 实验效果","text":"使用 4 万条数据训练验证了预测精度和场景流生成质量"},{"label":"⭐ 整体评价","text":"世界模型与视频模型迁移方向有启发性，建议关注预测精度和动作可控性"}]
+    },
+    {
+        date: "2026-07-20",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "Knowing the Self, Understanding the World: A Dual-Cognition Benchmark for UAV Spatio-temporal Reasoning with MLLMs",
+        venue: "arXiv 2026 · 2607.16193",
+        summary: "🔬 技术路线: 面向无人机场景构建双认知时空推理基准，从自我认知和世界认知两个维度评估多模态大模型能力 | 💡 创新点: 提出面向无人机的多模态可扩展轻量化基准，首次系统评估多模态大模型在无人机时空推理任务上的双认知能力 | 📊 实验效果: 在导航和预测任务上验证了基准的有效性，覆盖多种无人机场景 | ⭐ 整体评价: 无人机多模态推理方向有评估价值，建议关注基准任务设计和基线模型表现",
+        tags: [["Multimodal","green"],["UAV","green"],["Benchmark","green"],["Reasoning","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.16193"],["PDF","https://arxiv.org/pdf/2607.16193"],["Project","https://uav-dualcog.lozumi.com"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"面向无人机场景构建双认知时空推理基准，从自我认知和世界认知两个维度评估多模态大模型能力"},{"label":"💡 创新点","text":"提出面向无人机的多模态可扩展轻量化基准，首次系统评估多模态大模型在无人机时空推理任务上的双认知能力"},{"label":"📊 实验效果","text":"在导航和预测任务上验证了基准的有效性，覆盖多种无人机场景"},{"label":"⭐ 整体评价","text":"无人机多模态推理方向有评估价值，建议关注基准任务设计和基线模型表现"}]
+    },
+    {
+        date: "2026-07-20",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "An Exam for Active Observers",
+        venue: "arXiv 2026 · 2607.16165",
+        summary: "🔬 技术路线: 构建主动视觉观测能力评测体系，基于大语言模型架构设计多模态鲁棒的观测任务 | 💡 创新点: 提出面向主动观测者的能力考试框架，系统评估多模态模型在主动视觉场景中的表现 | 📊 实验效果: 关键指标包括 10.6%、3.5%、96.1% 等，覆盖 GPT-5 等前沿模型的评测 | ⭐ 整体评价: 多模态主动视觉评估方向有基础价值，建议关注跨模态对齐方式和下游任务表现",
+        tags: [["Multimodal","green"],["Active Vision","green"],["Benchmark","green"],["Evaluation","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.16165"],["PDF","https://arxiv.org/pdf/2607.16165"],["Project","https://activevision.dev"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"构建主动视觉观测能力评测体系，基于大语言模型架构设计多模态鲁棒的观测任务"},{"label":"💡 创新点","text":"提出面向主动观测者的能力考试框架，系统评估多模态模型在主动视觉场景中的表现"},{"label":"📊 实验效果","text":"关键指标包括 10.6%、3.5%、96.1% 等，覆盖 GPT-5 等前沿模型的评测"},{"label":"⭐ 整体评价","text":"多模态主动视觉评估方向有基础价值，建议关注跨模态对齐方式和下游任务表现"}]
+    },
+    {
+        date: "2026-07-20",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "xHC: Expanded Hyper-Connections",
+        venue: "arXiv 2026 · 2607.14530 · HF 热门 · rednote-hilab · 21⭐",
+        summary: "🔬 技术路线: 提出扩展超连接架构，通过训练和预训练阶段优化大语言模型的层间信息流动机制 | 💡 创新点: 提出超连接扩展方案增强模型层间特征交互，在不显著增加参数量的前提下提升模型表达能力 | 📊 实验效果: 在 18B 和 28B 参数规模模型上验证了方法的有效性 | ⭐ 整体评价: 大模型架构优化方向值得关注，建议关注训练范式和基准测试表现",
+        tags: [["LLM","green"],["Architecture","green"],["Optimization","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.14530"],["PDF","https://arxiv.org/pdf/2607.14530"],["Code","https://github.com/aHapBean/xHC"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出扩展超连接架构，通过训练和预训练阶段优化大语言模型的层间信息流动机制"},{"label":"💡 创新点","text":"提出超连接扩展方案增强模型层间特征交互，在不显著增加参数量的前提下提升模型表达能力"},{"label":"📊 实验效果","text":"在 18B 和 28B 参数规模模型上验证了方法的有效性"},{"label":"⭐ 整体评价","text":"大模型架构优化方向值得关注，建议关注训练范式和基准测试表现"}]
+    },
+    {
+        date: "2026-07-20",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Qwen-Music Technical Report",
+        venue: "arXiv 2026 · 2607.11699 · HF 热门 · Qwen",
+        summary: "🔬 技术路线: 通义千问团队发布音乐生成技术报告，基于预训练和训练机制构建音乐生成基础模型 | 💡 创新点: 提出 Qwen-Music 音乐生成模型，在生成和预测任务上验证了有效性 | 📊 实验效果: 在音乐生成和音频预测任务上验证了方法的有效性 | ⭐ 整体评价: 通义千问在音频生成方向的新探索，建议关注训练范式和音乐生成质量",
+        tags: [["LLM","green"],["Music","green"],["Generation","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.11699"],["PDF","https://arxiv.org/pdf/2607.11699"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"通义千问团队发布音乐生成技术报告，基于预训练和训练机制构建音乐生成基础模型"},{"label":"💡 创新点","text":"提出 Qwen-Music 音乐生成模型，在生成和预测任务上验证了有效性"},{"label":"📊 实验效果","text":"在音乐生成和音频预测任务上验证了方法的有效性"},{"label":"⭐ 整体评价","text":"通义千问在音频生成方向的新探索，建议关注训练范式和音乐生成质量"}]
+    },
+    {
+        date: "2026-07-20",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "RAGU: A Multi-Step GraphRAG Engine with a Compact Domain-Adapted LLM",
+        venue: "arXiv 2026 · 2607.11683 · HF 热门 · Novosibirsk State University · 48⭐",
+        summary: "🔬 技术路线: 基于大语言模型构建多步图检索增强引擎，结合紧凑的领域自适应模型实现高效知识检索 | 💡 创新点: 提出基于 DBSCAN 聚类的图检索方案，通过多步检索策略和领域自适应小模型降低部署成本 | 📊 实验效果: 关键指标包括 12.5% 性能提升，在 7B 和 32B 模型上验证了方法有效性 | ⭐ 整体评价: 图检索增强方向有实用价值，建议关注检索精度和领域自适应效果",
+        tags: [["LLM","green"],["GraphRAG","green"],["Reasoning","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.11683"],["PDF","https://arxiv.org/pdf/2607.11683"],["Code","https://github.com/RaguTeam/RAGU"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于大语言模型构建多步图检索增强引擎，结合紧凑的领域自适应模型实现高效知识检索"},{"label":"💡 创新点","text":"提出基于 DBSCAN 聚类的图检索方案，通过多步检索策略和领域自适应小模型降低部署成本"},{"label":"📊 实验效果","text":"关键指标包括 12.5% 性能提升，在 7B 和 32B 模型上验证了方法有效性"},{"label":"⭐ 整体评价","text":"图检索增强方向有实用价值，建议关注检索精度和领域自适应效果"}]
+    },
+    {
+        date: "2026-07-20",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "RecGPT-V3 Technical Report",
+        venue: "arXiv 2026 · 2607.15591 · HF 热门",
+        summary: "🔬 技术路线: 基于大语言模型和基础模型构建推荐系统，提出 RecGPT-V3 版本技术方案 | 💡 创新点: 在 RecGPT-V1 基础上进行升级，实现高效端到端的推荐生成能力 | 📊 实验效果: 关键指标包括 55.8%、1.28%、1.00%、1.97% 等多项评估数据 | ⭐ 整体评价: 推荐系统与大模型结合方向有应用价值，建议关注推荐精度和端到端架构设计",
+        tags: [["LLM","green"],["Recommendation","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.15591"],["PDF","https://arxiv.org/pdf/2607.15591"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于大语言模型和基础模型构建推荐系统，提出 RecGPT-V3 版本技术方案"},{"label":"💡 创新点","text":"在 RecGPT-V1 基础上进行升级，实现高效端到端的推荐生成能力"},{"label":"📊 实验效果","text":"关键指标包括 55.8%、1.28%、1.00%、1.97% 等多项评估数据"},{"label":"⭐ 整体评价","text":"推荐系统与大模型结合方向有应用价值，建议关注推荐精度和端到端架构设计"}]
+    },
+    {
+        date: "2026-07-20",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "On-Policy Delta Distillation",
+        venue: "arXiv 2026 · 2607.15161 · HF 热门 · NAVER AI Lab · 1⭐",
+        summary: "🔬 技术路线: 基于蒸馏、训练、强化学习和奖励模型的方法，提出在线策略增量蒸馏方案加速模型推理 | 💡 创新点: 提出在线策略增量蒸馏方法，通过策略增量信息实现高效知识压缩和推理加速 | 📊 实验效果: 实验验证了方法在推理加速和性能保持上的有效性 | ⭐ 整体评价: 模型蒸馏加速方向有工程价值，建议关注蒸馏策略和推理速度提升比",
+        tags: [["LLM","green"],["Distillation","green"],["RL","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.15161"],["PDF","https://arxiv.org/pdf/2607.15161"],["Code","https://github.com/naver-ai/opd2"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于蒸馏、训练、强化学习和奖励模型的方法，提出在线策略增量蒸馏方案加速模型推理"},{"label":"💡 创新点","text":"提出在线策略增量蒸馏方法，通过策略增量信息实现高效知识压缩和推理加速"},{"label":"📊 实验效果","text":"实验验证了方法在推理加速和性能保持上的有效性"},{"label":"⭐ 整体评价","text":"模型蒸馏加速方向有工程价值，建议关注蒸馏策略和推理速度提升比"}]
+    },
+    {
+        date: "2026-07-20",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Evaluating Open-Weight LLMs for Generating Structured Threat Information for Autonomous Vehicle Vulnerabilities",
+        venue: "arXiv 2026 · 2607.16175",
+        summary: "🔬 技术路线: 基于大语言模型方法评估开源模型在自动驾驶漏洞威胁信息生成中的能力，覆盖多种参数规模模型 | 💡 创新点: 提出面向自动驾驶网络安全漏洞的威胁信息结构化生成评估方案，系统比较不同开源模型表现 | 📊 实验效果: 关键指标覆盖 4B、120B、31B、22B 等多种参数规模模型的评估结果 | ⭐ 整体评价: 自动驾驶安全评估方向有实用价值，建议关注威胁信息生成质量和模型安全能力",
+        tags: [["LLM","green"],["Security","green"],["Autonomous Driving","green"],["Evaluation","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.16175"],["PDF","https://arxiv.org/pdf/2607.16175"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于大语言模型方法评估开源模型在自动驾驶漏洞威胁信息生成中的能力，覆盖多种参数规模模型"},{"label":"💡 创新点","text":"提出面向自动驾驶网络安全漏洞的威胁信息结构化生成评估方案，系统比较不同开源模型表现"},{"label":"📊 实验效果","text":"关键指标覆盖 4B、120B、31B、22B 等多种参数规模模型的评估结果"},{"label":"⭐ 整体评价","text":"自动驾驶安全评估方向有实用价值，建议关注威胁信息生成质量和模型安全能力"}]
+    },
+    {
+        date: "2026-07-20",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Searching Videos as Trees: Self-Correcting Agents for Grounded Long Video QA",
+        venue: "arXiv 2026 · 2607.16189",
+        summary: "🔬 技术路线: 基于框架、微调、强化学习和机制设计的方法，提出将视频搜索建模为树结构的自纠错智能体方案 | 💡 创新点: 提出 CG-Bench 基准和树搜索视频问答框架，通过自纠错机制实现长视频定位和回答 | 📊 实验效果: 在长视频问答和导航任务上验证了方法的有效性 | ⭐ 整体评价: 长视频理解与智能体搜索方向有创新性，建议关注树搜索策略和自纠错机制",
+        tags: [["Agent","green"],["Video","green"],["Search","green"],["Reasoning","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.16189"],["PDF","https://arxiv.org/pdf/2607.16189"],["Code","https://github.com/CeeZh/VTS"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于框架、微调、强化学习和机制设计的方法，提出将视频搜索建模为树结构的自纠错智能体方案"},{"label":"💡 创新点","text":"提出 CG-Bench 基准和树搜索视频问答框架，通过自纠错机制实现长视频定位和回答"},{"label":"📊 实验效果","text":"在长视频问答和导航任务上验证了方法的有效性"},{"label":"⭐ 整体评价","text":"长视频理解与智能体搜索方向有创新性，建议关注树搜索策略和自纠错机制"}]
+    },
+    {
+        date: "2026-07-20",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "When Does Muon Help Agentic Reinforcement Learning?",
+        venue: "arXiv 2026 · 2607.16169",
+        summary: "🔬 技术路线: 基于预训练和训练方法，研究 Muon 优化器在智能体强化学习中的作用机制和适用条件 | 💡 创新点: 提出 Group-in-Group 分组优化方案，系统分析 Muon 优化器对智能体强化学习训练的影响 | 📊 实验效果: 关键指标包括 88% 成功率和 0.5B 参数规模模型的验证结果 | ⭐ 整体评价: 智能体强化学习优化方向有研究价值，建议关注优化器选择策略和训练稳定性",
+        tags: [["Agent","green"],["RL","green"],["Optimization","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.16169"],["PDF","https://arxiv.org/pdf/2607.16169"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于预训练和训练方法，研究 Muon 优化器在智能体强化学习中的作用机制和适用条件"},{"label":"💡 创新点","text":"提出 Group-in-Group 分组优化方案，系统分析 Muon 优化器对智能体强化学习训练的影响"},{"label":"📊 实验效果","text":"关键指标包括 88% 成功率和 0.5B 参数规模模型的验证结果"},{"label":"⭐ 整体评价","text":"智能体强化学习优化方向有研究价值，建议关注优化器选择策略和训练稳定性"}]
+    },
+    {
+        date: "2026-07-20",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Cura 1T: Specialized Model for Agentic Healthcare",
+        venue: "arXiv 2026 · 2607.15314 · HF 热门 · 13⭐",
+        summary: "🔬 技术路线: 基于训练方法构建面向医疗智能体场景的万亿参数专用模型，针对医疗领域的工具调用和推理任务进行优化 | 💡 创新点: 首次提出面向医疗智能体的万亿参数专用基础模型，覆盖医疗场景的智能体工具调用和决策推理 | 📊 实验效果: 在医疗智能体任务上验证了方法的有效性，开源代码获 13 星关注 | ⭐ 整体评价: 医疗智能体方向有应用前景，建议关注医疗工具调用策略和端到端决策准确率",
+        tags: [["Agent","green"],["Healthcare","green"],["LLM","green"],["Tool Use","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.15314"],["PDF","https://arxiv.org/pdf/2607.15314"],["Project","https://actava.ai/cura"],["Code","https://github.com/actava-ai/Cura"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于训练方法构建面向医疗智能体场景的万亿参数专用模型，针对医疗领域的工具调用和推理任务进行优化"},{"label":"💡 创新点","text":"首次提出面向医疗智能体的万亿参数专用基础模型，覆盖医疗场景的智能体工具调用和决策推理"},{"label":"📊 实验效果","text":"在医疗智能体任务上验证了方法的有效性，开源代码获 13 星关注"},{"label":"⭐ 整体评价","text":"医疗智能体方向有应用前景，建议关注医疗工具调用策略和端到端决策准确率"}]
+    },
+    {
+        date: "2026-07-20",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "From Human-Centric to Agentic Code Review: The Impact of Different Generations of Generative AI Technology on Review Quality",
+        venue: "arXiv 2026 · 2607.13196 · HF 热门 · Queen's University",
+        summary: "🔬 技术路线: 基于大语言模型方法，研究不同世代生成式 AI 技术对代码审查质量的影响，从以人为中心转向智能体审查 | 💡 创新点: 提出 AI 辅助代码审查评估方案，系统比较不同世代生成式 AI 在代码审查中的表现差异 | 📊 实验效果: 实验验证了方法在代码审查质量评估上的有效性 | ⭐ 整体评价: 智能体代码审查方向有工程实用价值，建议关注审查准确率和实际部署效果",
+        tags: [["Agent","green"],["Code Review","green"],["Evaluation","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.13196"],["PDF","https://arxiv.org/pdf/2607.13196"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于大语言模型方法，研究不同世代生成式 AI 技术对代码审查质量的影响，从以人为中心转向智能体审查"},{"label":"💡 创新点","text":"提出 AI 辅助代码审查评估方案，系统比较不同世代生成式 AI 在代码审查中的表现差异"},{"label":"📊 实验效果","text":"实验验证了方法在代码审查质量评估上的有效性"},{"label":"⭐ 整体评价","text":"智能体代码审查方向有工程实用价值，建议关注审查准确率和实际部署效果"}]
+    },
     // === 2026-07-18 ===
     {
         date: "2026-07-18",
@@ -18968,6 +19147,13 @@ const PAPERS_DB = [
 ];
 
 const DAILY_OVERVIEW = {
+    "2026-07-20": {
+        bannerTitle: "🔥 今日看点",
+        bannerSubtitle: "今日 arXiv 8 篇 + HF 热门 8 篇。VLA 方向小米发布 Xiaomi-Robotics-1 基于超 10 万小时真实世界轨迹训练视觉语言动作基础模型（72 星）。机器人方向 Handroid 桥接灵巧手与人形机器人实现统一自由度设计，Vision-Language-Motion Maps 构建开放词汇可查询的三维场景运动属性地图。多模态方向 Dual-Cognition 面向无人机时空推理构建双认知基准，An Exam for Active Observers 评估主动视觉观测能力。Agent 方向 Cura 1T 面向医疗智能体的万亿参数专用模型，Searching Videos as Trees 提出自纠错树搜索长视频问答框架。LLM 方向 xHC 扩展超连接架构（小红书）、Qwen-Music 通义千问音乐生成技术报告、RAGU 多步图检索增强引擎值得关注。",
+        picks: ["Xiaomi-Robotics-1: Scaling Vision-Language-Action Models with over 100K Hours of Real-World Trajectories","Handroid: Bridging Dexterous Hand and Humanoid"],
+        totalPapers: 16,
+        totalNews: 0
+    },
     "2026-07-18": {
         bannerTitle: "🔥 周末补漏 · 本周遗漏论文补录",
         bannerSubtitle: "本周补漏共收录 30 篇遗漏论文（检索窗口 2026-07-11 ~ 2026-07-18，候选池 609 篇精选 Top-30）。VLA 方向 NVIDIA 发布 Jetson-PI 实现机载实时机器人控制（8.66 倍加速），SUREFlow 提出状态空间不确定性残差流匹配提升操作鲁棒性。机器人方向腾讯混元发布 HY-Embodied-VLM-1.0 高效物理世界智能体，MIT SoftNav 将三维场景 token 注入视觉语言模型实现具身导航，CMU 毫米波雷达从合成孔径到概率建图。多模态方向 Stanford Symbal 检测模型生成字幕的系统性偏差，Meta FAIR VIABench 面向视障人群的视频基准。Agent 方向 Apple MM-ToolSandBox 统一评估视觉工具调用智能体，Meta FAIR Terminal-Bench 重新审视智能体框架演进评估。LLM 方向 MIT AdaTurn 预算感知测试时缩放，OpenAI 评估 AI 在物理问题求解中的能力。",
