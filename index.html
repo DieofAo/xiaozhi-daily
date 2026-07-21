@@ -658,6 +658,109 @@
 <script>
 // ===== DATA =====
 const PAPERS_DB = [
+    // === 2026-07-21 ===
+    {
+        date: "2026-07-21",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "FM-VLA: Force-based Memory for Vision-Language-Action Models in Contact-Rich Manipulation",
+        venue: "arXiv 2026 · 2607.18231",
+        summary: "🔬 技术路线: 在视觉语言动作模型中引入力觉记忆模块，通过记录和利用历史力反馈信息增强模型在接触密集型操作任务中的感知与决策能力 | 💡 创新点: 首次将力觉记忆机制集成到 VLA 模型中，解决视觉信息在遮挡和接触场景下的感知不足问题 | 📊 实验效果: 在接触密集型操作任务上达到 80% 成功率，显著优于仅依赖视觉的基线方法 | ⭐ 整体评价: VLA 方向将力觉引入记忆机制有实用价值，建议关注力反馈融合策略和真机迁移效果",
+        tags: [["VLA","green"],["Force","green"],["Memory","green"],["Manipulation","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.18231"],["PDF","https://arxiv.org/pdf/2607.18231"],["Project","https://qft-333.github.io/FM-VLA-Page/"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"在视觉语言动作模型中引入力觉记忆模块，通过记录和利用历史力反馈信息增强模型在接触密集型操作任务中的感知与决策能力"},{"label":"💡 创新点","text":"首次将力觉记忆机制集成到 VLA 模型中，解决视觉信息在遮挡和接触场景下的感知不足问题"},{"label":"📊 实验效果","text":"在接触密集型操作任务上达到 80% 成功率，显著优于仅依赖视觉的基线方法"},{"label":"⭐ 整体评价","text":"VLA 方向将力觉引入记忆机制有实用价值，建议关注力反馈融合策略和真机迁移效果"}]
+    },
+    {
+        date: "2026-07-21",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "Patch Policy: Efficient Embodied Control via Dense Visual Representations",
+        venue: "arXiv 2026 · 2607.18236",
+        summary: "🔬 技术路线: 基于预训练视觉变换器提取的密集视觉特征，通过微调 OpenVLA-OFT 构建轻量化具身控制策略 | 💡 创新点: 提出利用密集视觉表征替代全局特征进行策略学习，在保持高效推理的同时提升操作精度 | 📊 实验效果: 关键指标达到 40% 和 18% 成功率，在低数据量 0.7% 设置下仍保持有效控制 | ⭐ 整体评价: 具身控制方向轻量化方案有工程价值，建议关注视觉特征提取方式和真机验证结果",
+        tags: [["Robotics","green"],["Embodied","green"],["Perception","green"],["VLA","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.18236"],["PDF","https://arxiv.org/pdf/2607.18236"],["Project","https://patch-policy.github.io"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于预训练视觉变换器提取的密集视觉特征，通过微调 OpenVLA-OFT 构建轻量化具身控制策略"},{"label":"💡 创新点","text":"提出利用密集视觉表征替代全局特征进行策略学习，在保持高效推理的同时提升操作精度"},{"label":"📊 实验效果","text":"关键指标达到 40% 和 18% 成功率，在低数据量 0.7% 设置下仍保持有效控制"},{"label":"⭐ 整体评价","text":"具身控制方向轻量化方案有工程价值，建议关注视觉特征提取方式和真机验证结果"}]
+    },
+    {
+        date: "2026-07-21",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "The Many Senses of Visual Similarity: A Text-Prompted Image Perceptual Metric",
+        venue: "arXiv 2026 · 2607.18237",
+        summary: "🔬 技术路线: 基于视觉语言模型和微调方法，提出文本提示驱动的图像感知相似度度量指标 | 💡 创新点: 提出文本提示机制将人类对视觉相似性的多维度感知转化为可计算的度量指标 | 📊 实验效果: 在图像生成和感知评估任务上验证了方法的有效性，与人类判断高度一致 | ⭐ 整体评价: 多模态感知度量方向有基础价值，建议关注跨模态对齐方式和下游任务适用性",
+        tags: [["LLM","green"],["Multimodal","green"],["Perception","green"],["Evaluation","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.18237"],["PDF","https://arxiv.org/pdf/2607.18237"],["Project","https://peterwang512.github.io/TPIPS"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于视觉语言模型和微调方法，提出文本提示驱动的图像感知相似度度量指标"},{"label":"💡 创新点","text":"提出文本提示机制将人类对视觉相似性的多维度感知转化为可计算的度量指标"},{"label":"📊 实验效果","text":"在图像生成和感知评估任务上验证了方法的有效性，与人类判断高度一致"},{"label":"⭐ 整体评价","text":"多模态感知度量方向有基础价值，建议关注跨模态对齐方式和下游任务适用性"}]
+    },
+    {
+        date: "2026-07-21",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "It's Not What You Say, It's How You Say It: Evaluating LLM Responses to Expressions of Belief",
+        venue: "arXiv 2026 · 2607.18232",
+        summary: "🔬 技术路线: 构建信念表达查询基准 EoB-query，系统评估大语言模型对不同信念表达方式的响应鲁棒性 | 💡 创新点: 提出从表达方式而非内容本身评估大模型响应的框架，揭示语言风格对模型输出的影响 | 📊 实验效果: 在 1B 到 30B 参数规模模型上验证了方法有效性，发现模型对表达方式敏感 | ⭐ 整体评价: 大模型评估方向有独特视角，建议关注评估基准设计和鲁棒性改进方案",
+        tags: [["LLM","green"],["Evaluation","green"],["Interpretability","green"],["Reasoning","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.18232"],["PDF","https://arxiv.org/pdf/2607.18232"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"构建信念表达查询基准 EoB-query，系统评估大语言模型对不同信念表达方式的响应鲁棒性"},{"label":"💡 创新点","text":"提出从表达方式而非内容本身评估大模型响应的框架，揭示语言风格对模型输出的影响"},{"label":"📊 实验效果","text":"在 1B 到 30B 参数规模模型上验证了方法有效性，发现模型对表达方式敏感"},{"label":"⭐ 整体评价","text":"大模型评估方向有独特视角，建议关注评估基准设计和鲁棒性改进方案"}]
+    },
+    {
+        date: "2026-07-21",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "Simple Domain Generalization for Strong Pixel-Level Image Tampering Detection in Modern VLMs",
+        venue: "arXiv 2026 · 2607.18230",
+        summary: "🔬 技术路线: 基于视觉语言模型训练策略，提出简单高效的域泛化方案实现像素级图像篡改检测 | 💡 创新点: 提出 PIXAR-DG 框架，通过简洁的域泛化策略在多种篡改类型上实现强检测性能 | 📊 实验效果: 关键指标达到 26.1% 和 26.8%，在跨域篡改检测任务上表现鲁棒 | ⭐ 整体评价: 图像安全检测方向有实用价值，建议关注域泛化策略和跨模态对齐方式",
+        tags: [["Multimodal","green"],["Tampering Detection","green"],["Safety","green"],["Evaluation","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.18230"],["PDF","https://arxiv.org/pdf/2607.18230"],["Code","https://github.com/VILA-Lab/PIXAR-DG"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于视觉语言模型训练策略，提出简单高效的域泛化方案实现像素级图像篡改检测"},{"label":"💡 创新点","text":"提出 PIXAR-DG 框架，通过简洁的域泛化策略在多种篡改类型上实现强检测性能"},{"label":"📊 实验效果","text":"关键指标达到 26.1% 和 26.8%，在跨域篡改检测任务上表现鲁棒"},{"label":"⭐ 整体评价","text":"图像安全检测方向有实用价值，建议关注域泛化策略和跨模态对齐方式"}]
+    },
+    {
+        date: "2026-07-21",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "HOMIE: Human-object Centric Video Personalization via Multimodal Intelligent Enhancement",
+        venue: "arXiv 2026 · 2607.18217",
+        summary: "🔬 技术路线: 基于自注意力机制和多模态框架，提出以人-物体为中心的视频个性化生成方案 | 💡 创新点: 提出统一的人-物体中心视频个性化框架，通过多模态智能增强实现高质量定制化生成 | 📊 实验效果: 在视频生成和个性化任务上验证了方法的有效性，生成质量显著提升 | ⭐ 整体评价: 视频个性化生成方向有应用前景，建议关注生成质量和身份保持能力",
+        tags: [["Multimodal","green"],["Video","green"],["Personalization","green"],["Generation","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.18217"],["PDF","https://arxiv.org/pdf/2607.18217"],["Project","https://yiyangcai.github.io/homie-page.github.io/"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于自注意力机制和多模态框架，提出以人-物体为中心的视频个性化生成方案"},{"label":"💡 创新点","text":"提出统一的人-物体中心视频个性化框架，通过多模态智能增强实现高质量定制化生成"},{"label":"📊 实验效果","text":"在视频生成和个性化任务上验证了方法的有效性，生成质量显著提升"},{"label":"⭐ 整体评价","text":"视频个性化生成方向有应用前景，建议关注生成质量和身份保持能力"}]
+    },
+    {
+        date: "2026-07-21",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "RESOURCE2SKILL: Distilling Executable Agent Skills from Human-Created Multimodal Resources",
+        venue: "arXiv 2026 · 2606.29538 · HF 热门 · Microsoft Research · 86⭐",
+        summary: "🔬 技术路线: 从人类创建的多模态资源中蒸馏可执行智能体技能，将非结构化教程和文档转化为可调用的技能接口 | 💡 创新点: 提出从多模态人类资源自动提取和蒸馏可执行技能的框架，实现智能体技能的规模化获取 | 📊 实验效果: 关键指标提升 11.9 个百分点，开源代码获 86 星社区关注 | ⭐ 整体评价: 智能体技能获取方向有重要实用价值，建议关注技能蒸馏流程和执行准确率",
+        tags: [["Multimodal","green"],["Agent","green"],["Skill","green"],["Tool Use","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2606.29538"],["PDF","https://arxiv.org/pdf/2606.29538"],["Project","https://aka.ms/Resources2Skill"],["Code (86⭐)","https://github.com/microsoft/Resource2Skill"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"从人类创建的多模态资源中蒸馏可执行智能体技能，将非结构化教程和文档转化为可调用的技能接口"},{"label":"💡 创新点","text":"提出从多模态人类资源自动提取和蒸馏可执行技能的框架，实现智能体技能的规模化获取"},{"label":"📊 实验效果","text":"关键指标提升 11.9 个百分点，开源代码获 86 星社区关注"},{"label":"⭐ 整体评价","text":"智能体技能获取方向有重要实用价值，建议关注技能蒸馏流程和执行准确率"}]
+    },
+    {
+        date: "2026-07-21",
+        category: "Other",
+        categoryIcon: "📄",
+        title: "Automated Discovery Has No Universally Superior Harness",
+        venue: "arXiv 2026 · 2607.18235",
+        summary: "🔬 技术路线: 提出 TTT-Discover 方法，系统研究自动化科学发现中不存在通用最优框架的问题 | 💡 创新点: 首次从理论和实验层面证明自动化发现任务中不存在普适最优的方法框架，为方法选择提供指导 | 📊 实验效果: 在多种发现任务和提升场景上验证了结论，证明方法泛化能力的差异性 | ⭐ 整体评价: 自动化发现方向有方法论价值，建议关注任务适配策略和方法选择原则",
+        tags: [["LLM","green"],["Discovery","green"],["Evaluation","green"],["Reasoning","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.18235"],["PDF","https://arxiv.org/pdf/2607.18235"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出 TTT-Discover 方法，系统研究自动化科学发现中不存在通用最优框架的问题"},{"label":"💡 创新点","text":"首次从理论和实验层面证明自动化发现任务中不存在普适最优的方法框架，为方法选择提供指导"},{"label":"📊 实验效果","text":"在多种发现任务和提升场景上验证了结论，证明方法泛化能力的差异性"},{"label":"⭐ 整体评价","text":"自动化发现方向有方法论价值，建议关注任务适配策略和方法选择原则"}]
+    },
+    {
+        date: "2026-07-21",
+        category: "Other",
+        categoryIcon: "📄",
+        title: "FlowMimic: Mask-free Visual Editing and Generation with Pixel-pair Warped Flow Field for Online Video Editing Data Generation and Modality Mimicry",
+        venue: "arXiv 2026 · 2607.18227",
+        summary: "🔬 技术路线: 基于像素对扭曲流场实现无掩码视觉编辑和生成，通过在线视频编辑数据生成实现模态模仿 | 💡 创新点: 提出无掩码流场编辑方案，避免传统方法中繁琐的掩码标注步骤，实现可扩展的在线数据生成 | 📊 实验效果: 在视觉编辑和推理任务上验证了方法的有效性，生成质量与掩码方法相当 | ⭐ 整体评价: 视频编辑和数据生成方向有工程价值，建议关注流场估计精度和可扩展性",
+        tags: [["Multimodal","green"],["Editing","green"],["Generation","green"],["Video","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.18227"],["PDF","https://arxiv.org/pdf/2607.18227"],["Model","https://huggingface.co/datasets/FlowMimic/Uncompressed/blob/main/main.pdf"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于像素对扭曲流场实现无掩码视觉编辑和生成，通过在线视频编辑数据生成实现模态模仿"},{"label":"💡 创新点","text":"提出无掩码流场编辑方案，避免传统方法中繁琐的掩码标注步骤，实现可扩展的在线数据生成"},{"label":"📊 实验效果","text":"在视觉编辑和推理任务上验证了方法的有效性，生成质量与掩码方法相当"},{"label":"⭐ 整体评价","text":"视频编辑和数据生成方向有工程价值，建议关注流场估计精度和可扩展性"}]
+    },
     // === 2026-07-20 ===
     {
         date: "2026-07-20",
@@ -19147,6 +19250,13 @@ const PAPERS_DB = [
 ];
 
 const DAILY_OVERVIEW = {
+    "2026-07-21": {
+        bannerTitle: "🔥 今日看点",
+        bannerSubtitle: "今日 arXiv 8 篇 + HF 热门 1 篇。VLA 方向 FM-VLA 引入力觉记忆机制处理接触密集型操作，通过力反馈增强视觉语言动作模型在复杂接触任务中的表现。Robotics 方向 Patch Policy 利用预训练视觉变换器的密集视觉表征实现高效具身控制。Microsoft Research 发布 RESOURCE2SKILL 从人类创建的多模态资源中蒸馏可执行智能体技能（86 星）。多模态方向 HOMIE 面向人-物体中心的视频个性化生成，PIXAR-DG 实现强像素级图像篡改检测的域泛化。LLM 方向 EoB-query 评估大模型对信念表达的响应鲁棒性。",
+        picks: ["FM-VLA: Force-based Memory for Vision-Language-Action Models in Contact-Rich Manipulation","Patch Policy: Efficient Embodied Control via Dense Visual Representations","RESOURCE2SKILL: Distilling Executable Agent Skills from Human-Created Multimodal Resources"],
+        totalPapers: 9,
+        totalNews: 0
+    },
     "2026-07-20": {
         bannerTitle: "🔥 今日看点",
         bannerSubtitle: "今日 arXiv 8 篇 + HF 热门 8 篇。VLA 方向小米发布 Xiaomi-Robotics-1 基于超 10 万小时真实世界轨迹训练视觉语言动作基础模型（72 星）。机器人方向 Handroid 桥接灵巧手与人形机器人实现统一自由度设计，Vision-Language-Motion Maps 构建开放词汇可查询的三维场景运动属性地图。多模态方向 Dual-Cognition 面向无人机时空推理构建双认知基准，An Exam for Active Observers 评估主动视觉观测能力。Agent 方向 Cura 1T 面向医疗智能体的万亿参数专用模型，Searching Videos as Trees 提出自纠错树搜索长视频问答框架。LLM 方向 xHC 扩展超连接架构（小红书）、Qwen-Music 通义千问音乐生成技术报告、RAGU 多步图检索增强引擎值得关注。",

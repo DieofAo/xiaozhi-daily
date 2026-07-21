@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>小小志AI日报 - 2026年7月21日 周二</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans SC', sans-serif;
+  background: #0a0e1a;
+  color: #e0e6f0;
+  line-height: 1.7;
+  min-height: 100vh;
+}
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+header {
+  text-align: center;
+  margin-bottom: 48px;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, rgba(59,130,246,0.08) 0%, rgba(139,92,246,0.08) 100%);
+  border-radius: 20px;
+  border: 1px solid rgba(99,102,241,0.15);
+}
+header h1 {
+  font-size: 2rem;
+  background: linear-gradient(135deg, #60a5fa, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 8px;
+}
+header .date {
+  color: #94a3b8;
+  font-size: 1rem;
+}
+header .subtitle {
+  color: #64748b;
+  font-size: 0.9rem;
+  margin-top: 6px;
+}
+.highlight-banner {
+  background: linear-gradient(135deg, rgba(249,115,22,0.1) 0%, rgba(234,179,8,0.08) 100%);
+  border: 1px solid rgba(249,115,22,0.2);
+  border-radius: 14px;
+  padding: 20px 24px;
+  margin-bottom: 36px;
+}
+.hl-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fb923c;
+  margin-bottom: 8px;
+}
+.hl-text {
+  font-size: 0.92rem;
+  color: #cbd5e1;
+  line-height: 1.7;
+}
+.section {
+  margin-bottom: 40px;
+}
+.section-title {
+  font-size: 1.4rem;
+  color: #f1f5f9;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(99,102,241,0.2);
+}
+.paper-card {
+  background: rgba(30,41,59,0.6);
+  border: 1px solid rgba(99,102,241,0.12);
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 16px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.paper-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(99,102,241,0.1);
+  border-color: rgba(99,102,241,0.3);
+}
+.paper-card.hot {
+  border-color: rgba(249,115,22,0.25);
+  background: rgba(30,41,59,0.7);
+}
+.paper-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #f8fafc;
+  margin-bottom: 8px;
+}
+.paper-meta {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-bottom: 10px;
+}
+.summary-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+@media (max-width: 640px) {
+  .summary-grid { grid-template-columns: 1fr; }
+}
+.summary-item {
+  background: rgba(15,23,42,0.5);
+  border-radius: 10px;
+  padding: 12px 14px;
+  border: 1px solid rgba(99,102,241,0.08);
+}
+.summary-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #818cf8;
+  margin-bottom: 4px;
+}
+.summary-text {
+  font-size: 0.88rem;
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+.paper-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.tag {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+.tag-agent { background: rgba(16,185,129,0.12); color: #34d399; }
+.tag-llm { background: rgba(99,102,241,0.12); color: #818cf8; }
+.tag-multimodal { background: rgba(244,114,182,0.12); color: #f472b6; }
+.tag-world { background: rgba(251,191,36,0.12); color: #fbbf24; }
+.tag-robot { background: rgba(251,146,60,0.12); color: #fb923c; }
+.tag-rl { background: rgba(45,212,191,0.12); color: #2dd4bf; }
+.tag-video { background: rgba(168,85,247,0.12); color: #a855f7; }
+.tag-benchmark { background: rgba(34,211,238,0.12); color: #22d3ee; }
+.tag-vla { background: rgba(59,130,246,0.12); color: #60a5fa; }
+.tag-safety { background: rgba(239,68,68,0.12); color: #f87171; }
+.tag-memory { background: rgba(192,132,252,0.12); color: #c084fc; }
+.tag-reasoning { background: rgba(132,204,22,0.12); color: #a3e635; }
+.tag-code { background: rgba(52,211,153,0.12); color: #34d399; }
+.tag-survey { background: rgba(6,182,212,0.12); color: #22d3ee; }
+.tag-science { background: rgba(217,119,6,0.12); color: #f59e0b; }
+.tag-medical { background: rgba(239,68,68,0.12); color: #f87171; }
+.tag-systems { background: rgba(56,189,248,0.12); color: #38bdf8; }
+.tag-3d { background: rgba(148,163,184,0.12); color: #94a3b8; }
+.tag-data { background: rgba(250,204,21,0.12); color: #facc15; }
+.tag-infra { background: rgba(167,139,250,0.12); color: #a78bfa; }
+.tag-generation { background: rgba(249,115,22,0.12); color: #f97316; }
+.tag-navigation { background: rgba(59,130,246,0.12); color: #60a5fa; }
+.tag-distillation { background: rgba(34,211,238,0.12); color: #22d3ee; }
+.tag-humanoid { background: rgba(251,146,60,0.12); color: #fb923c; }
+.tag-tool { background: rgba(52,211,153,0.12); color: #34d399; }
+.tag-gui { background: rgba(244,114,182,0.12); color: #f472b6; }
+.tag-embedding { background: rgba(167,139,250,0.12); color: #a78bfa; }
+.tag-quantization { background: rgba(99,102,241,0.12); color: #818cf8; }
+.tag-math { background: rgba(132,204,22,0.12); color: #a3e635; }
+.tag-interpretability { background: rgba(192,132,252,0.12); color: #c084fc; }
+.tag-judge { background: rgba(239,68,68,0.12); color: #f87171; }
+.tag-reward { background: rgba(34,211,238,0.12); color: #22d3ee; }
+.tag-manipulation { background: rgba(251,146,60,0.12); color: #fb923c; }
+.tag-bipedal { background: rgba(59,130,246,0.12); color: #60a5fa; }
+.tag-simulation { background: rgba(56,189,248,0.12); color: #38bdf8; }
+.tag-embodied { background: rgba(251,146,60,0.12); color: #fb923c; }
+.tag-planning { background: rgba(132,204,22,0.12); color: #a3e635; }
+.tag-driving { background: rgba(59,130,246,0.12); color: #60a5fa; }
+.tag-diffusion { background: rgba(168,85,247,0.12); color: #a855f7; }
+.tag-ocr { background: rgba(99,102,241,0.12); color: #818cf8; }
+.tag-education { background: rgba(132,204,22,0.12); color: #a3e635; }
+.tag-forecasting { background: rgba(34,211,238,0.12); color: #22d3ee; }
+.tag-translation { background: rgba(56,189,248,0.12); color: #38bdf8; }
+.tag-interaction { background: rgba(244,114,182,0.12); color: #f472b6; }
+.tag-security { background: rgba(239,68,68,0.12); color: #f87171; }
+.tag-evaluation { background: rgba(132,204,22,0.12); color: #a3e635; }
+.tag-geolocation { background: rgba(59,130,246,0.12); color: #60a5fa; }
+.tag-causal { background: rgba(192,132,252,0.12); color: #c084fc; }
+.tag-diagram { background: rgba(148,163,184,0.12); color: #94a3b8; }
+.tag-search { background: rgba(34,211,238,0.12); color: #22d3ee; }
+.tag-music { background: rgba(168,85,247,0.12); color: #a855f7; }
+.tag-architecture { background: rgba(99,102,241,0.12); color: #818cf8; }
+.tag-healthcare { background: rgba(239,68,68,0.12); color: #f87171; }
+.tag-graph { background: rgba(34,211,238,0.12); color: #22d3ee; }
+.tag-recommendation { background: rgba(244,114,182,0.12); color: #f472b6; }
+.tag-optimization { background: rgba(45,212,191,0.12); color: #2dd4bf; }
+.tag-uav { background: rgba(59,130,246,0.12); color: #60a5fa; }
+.tag-scene { background: rgba(148,163,184,0.12); color: #94a3b8; }
+.tag-active { background: rgba(132,204,22,0.12); color: #a3e635; }
+.tag-connectivity { background: rgba(167,139,250,0.12); color: #a78bfa; }
+.tag-hardware { background: rgba(251,146,60,0.12); color: #fb923c; }
+.tag-dexterous { background: rgba(251,146,60,0.12); color: #fb923c; }
+.tag-perception { background: rgba(244,114,182,0.12); color: #f472b6; }
+.tag-tampering { background: rgba(239,68,68,0.12); color: #f87171; }
+.tag-force { background: rgba(251,146,60,0.12); color: #fb923c; }
+.tag-skill { background: rgba(52,211,153,0.12); color: #34d399; }
+.tag-discovery { background: rgba(132,204,22,0.12); color: #a3e635; }
+.tag-editing { background: rgba(168,85,247,0.12); color: #a855f7; }
+.tag-personalization { background: rgba(244,114,182,0.12); color: #f472b6; }
+.hot-badge {
+  display: inline;
+  margin-right: 4px;
+}
+.info-card {
+  background: rgba(30,41,59,0.6);
+  border: 1px solid rgba(99,102,241,0.12);
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 16px;
+}
+.paper-summary {
+  font-size: 0.9rem;
+  color: #cbd5e1;
+  line-height: 1.7;
+  margin-bottom: 14px;
+}
+.paper-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.paper-links a {
+  display: inline-block;
+  padding: 5px 14px;
+  background: rgba(99,102,241,0.12);
+  color: #818cf8;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  transition: background 0.2s;
+}
+.paper-links a:hover {
+  background: rgba(99,102,241,0.25);
+}
+footer {
+  text-align: center;
+  color: #475569;
+  font-size: 0.82rem;
+  padding: 40px 20px;
+  border-top: 1px solid rgba(99,102,241,0.1);
+  margin-top: 40px;
+}
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+.stat-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>小小志AI日报</h1>
+    <div class="date">2026年7月21日 周二</div>
+    <div class="subtitle">关注：VLA · Robotics · World Model · LLM · Multimodal · Agent</div>
+    <div class="stats">
+      <span class="stat-item">📝 arXiv 8</span>
+      <span class="stat-item">🤗 HF 热门 1</span>
+      <span class="stat-item">🐦 X/Twitter 0</span>
+    </div>
+  </header>
+
+  <div class="highlight-banner">
+    <div class="hl-title">🔥 今日看点</div>
+    <div class="hl-text">今日 arXiv 8 篇 + HF 热门 1 篇。VLA 方向 FM-VLA 引入力觉记忆机制处理接触密集型操作，通过力反馈增强视觉语言动作模型在复杂接触任务中的表现。Robotics 方向 Patch Policy 利用预训练视觉变换器的密集视觉表征实现高效具身控制。Microsoft Research 发布 RESOURCE2SKILL 从人类创建的多模态资源中蒸馏可执行智能体技能（86 星）。多模态方向 HOMIE 面向人-物体中心的视频个性化生成，PIXAR-DG 实现强像素级图像篡改检测的域泛化。LLM 方向 EoB-query 评估大模型对信念表达的响应鲁棒性。</div>
+  </div>
+
+  <!-- VLA Section -->
+  <section class="section">
+    <h2 class="section-title">🤖 VLA · Vision-Language-Action</h2>
+
+    <div class="paper-card hot">
+      <div class="paper-title"><span class="hot-badge">🔥</span> FM-VLA: Force-based Memory for Vision-Language-Action Models in Contact-Rich Manipulation</div>
+      <div class="paper-meta">arXiv 2026 · 2607.18231</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">在视觉语言动作模型中引入力觉记忆模块，通过记录和利用历史力反馈信息增强模型在接触密集型操作任务中的感知与决策能力</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次将力觉记忆机制集成到 VLA 模型中，解决视觉信息在遮挡和接触场景下的感知不足问题</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在接触密集型操作任务上达到 80% 成功率，显著优于仅依赖视觉的基线方法</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">VLA 方向将力觉引入记忆机制有实用价值，建议关注力反馈融合策略和真机迁移效果</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-vla">VLA</span>
+        <span class="tag tag-force">Force</span>
+        <span class="tag tag-memory">Memory</span>
+        <span class="tag tag-manipulation">Manipulation</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2607.18231">arXiv</a>
+        <a href="https://arxiv.org/pdf/2607.18231">PDF</a>
+        <a href="https://qft-333.github.io/FM-VLA-Page/">Project</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Robotics Section -->
+  <section class="section">
+    <h2 class="section-title">🦾 Robotics · 机器人</h2>
+
+    <div class="paper-card hot">
+      <div class="paper-title"><span class="hot-badge">🔥</span> Patch Policy: Efficient Embodied Control via Dense Visual Representations</div>
+      <div class="paper-meta">arXiv 2026 · 2607.18236</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">基于预训练视觉变换器提取的密集视觉特征，通过微调 OpenVLA-OFT 构建轻量化具身控制策略</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出利用密集视觉表征替代全局特征进行策略学习，在保持高效推理的同时提升操作精度</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">关键指标达到 40% 和 18% 成功率，在低数据量 0.7% 设置下仍保持有效控制</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">具身控制方向轻量化方案有工程价值，建议关注视觉特征提取方式和真机验证结果</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-robot">Robotics</span>
+        <span class="tag tag-embodied">Embodied</span>
+        <span class="tag tag-perception">Perception</span>
+        <span class="tag tag-vla">VLA</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2607.18236">arXiv</a>
+        <a href="https://arxiv.org/pdf/2607.18236">PDF</a>
+        <a href="https://patch-policy.github.io">Project</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- LLM Section -->
+  <section class="section">
+    <h2 class="section-title">🧠 LLM · 大语言模型</h2>
+
+    <div class="paper-card">
+      <div class="paper-title">The Many Senses of Visual Similarity: A Text-Prompted Image Perceptual Metric</div>
+      <div class="paper-meta">arXiv 2026 · 2607.18237</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">基于视觉语言模型和微调方法，提出文本提示驱动的图像感知相似度度量指标</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出文本提示机制将人类对视觉相似性的多维度感知转化为可计算的度量指标</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在图像生成和感知评估任务上验证了方法的有效性，与人类判断高度一致</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">多模态感知度量方向有基础价值，建议关注跨模态对齐方式和下游任务适用性</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-llm">LLM</span>
+        <span class="tag tag-multimodal">Multimodal</span>
+        <span class="tag tag-perception">Perception</span>
+        <span class="tag tag-evaluation">Evaluation</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2607.18237">arXiv</a>
+        <a href="https://arxiv.org/pdf/2607.18237">PDF</a>
+        <a href="https://peterwang512.github.io/TPIPS">Project</a>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">It's Not What You Say, It's How You Say It: Evaluating LLM Responses to Expressions of Belief</div>
+      <div class="paper-meta">arXiv 2026 · 2607.18232</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">构建信念表达查询基准 EoB-query，系统评估大语言模型对不同信念表达方式的响应鲁棒性</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出从表达方式而非内容本身评估大模型响应的框架，揭示语言风格对模型输出的影响</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在 1B 到 30B 参数规模模型上验证了方法有效性，发现模型对表达方式敏感</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">大模型评估方向有独特视角，建议关注评估基准设计和鲁棒性改进方案</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-llm">LLM</span>
+        <span class="tag tag-evaluation">Evaluation</span>
+        <span class="tag tag-interpretability">Interpretability</span>
+        <span class="tag tag-reasoning">Reasoning</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2607.18232">arXiv</a>
+        <a href="https://arxiv.org/pdf/2607.18232">PDF</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Multimodal Section -->
+  <section class="section">
+    <h2 class="section-title">🎨 Multimodal · 多模态</h2>
+
+    <div class="paper-card">
+      <div class="paper-title">Simple Domain Generalization for Strong Pixel-Level Image Tampering Detection in Modern VLMs</div>
+      <div class="paper-meta">arXiv 2026 · 2607.18230</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">基于视觉语言模型训练策略，提出简单高效的域泛化方案实现像素级图像篡改检测</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 PIXAR-DG 框架，通过简洁的域泛化策略在多种篡改类型上实现强检测性能</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">关键指标达到 26.1% 和 26.8%，在跨域篡改检测任务上表现鲁棒</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">图像安全检测方向有实用价值，建议关注域泛化策略和跨模态对齐方式</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-multimodal">Multimodal</span>
+        <span class="tag tag-tampering">Tampering Detection</span>
+        <span class="tag tag-safety">Safety</span>
+        <span class="tag tag-evaluation">Evaluation</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2607.18230">arXiv</a>
+        <a href="https://arxiv.org/pdf/2607.18230">PDF</a>
+        <a href="https://github.com/VILA-Lab/PIXAR-DG">Code</a>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">HOMIE: Human-object Centric Video Personalization via Multimodal Intelligent Enhancement</div>
+      <div class="paper-meta">arXiv 2026 · 2607.18217</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">基于自注意力机制和多模态框架，提出以人-物体为中心的视频个性化生成方案</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出统一的人-物体中心视频个性化框架，通过多模态智能增强实现高质量定制化生成</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在视频生成和个性化任务上验证了方法的有效性，生成质量显著提升</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">视频个性化生成方向有应用前景，建议关注生成质量和身份保持能力</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-multimodal">Multimodal</span>
+        <span class="tag tag-video">Video</span>
+        <span class="tag tag-personalization">Personalization</span>
+        <span class="tag tag-generation">Generation</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2607.18217">arXiv</a>
+        <a href="https://arxiv.org/pdf/2607.18217">PDF</a>
+        <a href="https://yiyangcai.github.io/homie-page.github.io/">Project</a>
+      </div>
+    </div>
+
+    <div class="paper-card hot">
+      <div class="paper-title"><span class="hot-badge">🔥</span> RESOURCE2SKILL: Distilling Executable Agent Skills from Human-Created Multimodal Resources</div>
+      <div class="paper-meta">arXiv 2026 · 2606.29538 · HF 热门 · Microsoft Research · 86⭐</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">从人类创建的多模态资源中蒸馏可执行智能体技能，将非结构化教程和文档转化为可调用的技能接口</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出从多模态人类资源自动提取和蒸馏可执行技能的框架，实现智能体技能的规模化获取</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">关键指标提升 11.9 个百分点，开源代码获 86 星社区关注</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">智能体技能获取方向有重要实用价值，建议关注技能蒸馏流程和执行准确率</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-multimodal">Multimodal</span>
+        <span class="tag tag-agent">Agent</span>
+        <span class="tag tag-skill">Skill</span>
+        <span class="tag tag-tool">Tool Use</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2606.29538">arXiv</a>
+        <a href="https://arxiv.org/pdf/2606.29538">PDF</a>
+        <a href="https://aka.ms/Resources2Skill">Project</a>
+        <a href="https://github.com/microsoft/Resource2Skill">Code (86⭐)</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Other Section -->
+  <section class="section">
+    <h2 class="section-title">📄 Other · 其他</h2>
+
+    <div class="paper-card">
+      <div class="paper-title">Automated Discovery Has No Universally Superior Harness</div>
+      <div class="paper-meta">arXiv 2026 · 2607.18235</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出 TTT-Discover 方法，系统研究自动化科学发现中不存在通用最优框架的问题</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次从理论和实验层面证明自动化发现任务中不存在普适最优的方法框架，为方法选择提供指导</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在多种发现任务和提升场景上验证了结论，证明方法泛化能力的差异性</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">自动化发现方向有方法论价值，建议关注任务适配策略和方法选择原则</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-llm">LLM</span>
+        <span class="tag tag-discovery">Discovery</span>
+        <span class="tag tag-evaluation">Evaluation</span>
+        <span class="tag tag-reasoning">Reasoning</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2607.18235">arXiv</a>
+        <a href="https://arxiv.org/pdf/2607.18235">PDF</a>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">FlowMimic: Mask-free Visual Editing and Generation with Pixel-pair Warped Flow Field for Online Video Editing Data Generation and Modality Mimicry</div>
+      <div class="paper-meta">arXiv 2026 · 2607.18227</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">基于像素对扭曲流场实现无掩码视觉编辑和生成，通过在线视频编辑数据生成实现模态模仿</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出无掩码流场编辑方案，避免传统方法中繁琐的掩码标注步骤，实现可扩展的在线数据生成</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在视觉编辑和推理任务上验证了方法的有效性，生成质量与掩码方法相当</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">视频编辑和数据生成方向有工程价值，建议关注流场估计精度和可扩展性</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-multimodal">Multimodal</span>
+        <span class="tag tag-editing">Editing</span>
+        <span class="tag tag-generation">Generation</span>
+        <span class="tag tag-video">Video</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2607.18227">arXiv</a>
+        <a href="https://arxiv.org/pdf/2607.18227">PDF</a>
+        <a href="https://huggingface.co/datasets/FlowMimic/Uncompressed/blob/main/main.pdf">Model</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>自动生成于 2026-07-21 17:25 · 关注：VLA · Robotics · World Model · LLM · Multimodal · Agent</p>
+    <p>小小志AI日报 · 每日精选 AI 前沿论文与行业动态</p>
+  </footer>
+</div>
+</body>
+</html>
