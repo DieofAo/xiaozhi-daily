@@ -658,6 +658,207 @@
 <script>
 // ===== DATA =====
 const PAPERS_DB = [
+    // === 2026-07-22 ===
+    {
+        date: "2026-07-22",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "Masked Visual Actions for Unified World Modeling",
+        venue: "arXiv 2026 · 2607.19343",
+        summary: "🔬 技术路线: 构建统一的世界模型框架，将视觉观测与动作信息以掩码方式联合建模，用于预测未来视觉状态 | 💡 创新点: 提出掩码视觉动作表征，使单一世界模型框架同时兼顾视频预测与动作条件生成 | 📊 实验效果: 在操作抓取与规划任务上验证有效，模型能准确推演动作所带来的视觉变化 | ⭐ 整体评价: 兼顾生成与控制的统一框架有前景，建议关注预测精度与仿真到真实的迁移效果",
+        tags: [["World Model","green"],["Video","green"],["Manipulation","green"],["Planning","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.19343"],["PDF","https://arxiv.org/pdf/2607.19343"],["Project","https://masked-visual-actions.github.io"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"构建统一的世界模型框架，将视觉观测与动作信息以掩码方式联合建模，用于预测未来视觉状态"},{"label":"💡 创新点","text":"提出掩码视觉动作表征，使单一世界模型框架同时兼顾视频预测与动作条件生成"},{"label":"📊 实验效果","text":"在操作抓取与规划任务上验证有效，模型能准确推演动作所带来的视觉变化"},{"label":"⭐ 整体评价","text":"兼顾生成与控制的统一框架有前景，建议关注预测精度与仿真到真实的迁移效果"}]
+    },
+    {
+        date: "2026-07-22",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "EvolvingWorld: An Open-Schema Framework for Co-Evolving Role-Play Agents and World Model in Interactive Literary World",
+        venue: "arXiv 2026 · 2607.17250 · HF 热门 · Tencent",
+        summary: "🔬 技术路线: 腾讯提出 EvolvingWorld 开放框架，在交互式文学世界中让角色扮演智能体与世界模型协同演化 | 💡 创新点: 采用开放模式设计，使智能体行为与世界状态相互驱动，突破固定剧情的发展局限 | 📊 实验效果: 在生成与动作生成任务上验证有效，角色行为与世界演化保持高度一致 | ⭐ 整体评价: 世界模型与角色智能体结合方向有创意，建议关注长程一致性与叙事可控性",
+        tags: [["World Model","green"],["Agent","green"],["Interaction","green"],["Generation","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.17250"],["PDF","https://arxiv.org/pdf/2607.17250"],["Code (9⭐)","https://github.com/HKUST-KnowComp/EvolvingWorld"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"腾讯提出 EvolvingWorld 开放框架，在交互式文学世界中让角色扮演智能体与世界模型协同演化"},{"label":"💡 创新点","text":"采用开放模式设计，使智能体行为与世界状态相互驱动，突破固定剧情的发展局限"},{"label":"📊 实验效果","text":"在生成与动作生成任务上验证有效，角色行为与世界演化保持高度一致"},{"label":"⭐ 整体评价","text":"世界模型与角色智能体结合方向有创意，建议关注长程一致性与叙事可控性"}]
+    },
+    {
+        date: "2026-07-22",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "Apple-π: Benchmarking Thinking with Video Towards Law-Grounded Physical Intelligence",
+        venue: "arXiv 2026 · 2607.16401 · HF 热门 · MMLab@NTU",
+        summary: "🔬 技术路线: 南洋理工 MMLab 提出 Apple-π 基准，以视频为载体评测模型在物理规律约束下的推理与生成能力 | 💡 创新点: 将物理与常识约束引入视频思维评测，考察模型对真实世界规律的理解程度 | 📊 实验效果: 在视频生成与推理任务上验证有效，开源项目已获 39 星社区关注 | ⭐ 整体评价: 物理智能评测方向有新意，建议关注规律约束建模与生成保真度",
+        tags: [["World Model","green"],["Video","green"],["Benchmark","green"],["Reasoning","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.16401"],["PDF","https://arxiv.org/pdf/2607.16401"],["Project","https://21yrm.github.io/Apple-PI-homepage"],["Code (39⭐)","https://github.com/21yrm/Apple-PI"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"南洋理工 MMLab 提出 Apple-π 基准，以视频为载体评测模型在物理规律约束下的推理与生成能力"},{"label":"💡 创新点","text":"将物理与常识约束引入视频思维评测，考察模型对真实世界规律的理解程度"},{"label":"📊 实验效果","text":"在视频生成与推理任务上验证有效，开源项目已获 39 星社区关注"},{"label":"⭐ 整体评价","text":"物理智能评测方向有新意，建议关注规律约束建模与生成保真度"}]
+    },
+    {
+        date: "2026-07-22",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "RynnBrain 1.1: Towards More Capable and Generalizable Embodied Foundation Model",
+        venue: "arXiv 2026 · 2607.17977 · HF 热门 · DAMO Academy",
+        summary: "🔬 技术路线: 达摩院推出 RynnBrain 1.1 具身基础模型家族，采用统一框架在多尺度参数下训练视觉语言动作模型 | 💡 创新点: 提出 RynnBrain-VLA 统一架构，覆盖从 2B 到 122B 多档参数，兼顾轻量与高性能具身控制 | 📊 实验效果: 提供 2B、9B、10B、122B 多档模型，在多种操作任务上展现更强泛化能力 | ⭐ 整体评价: 具身基础模型方向进展显著，建议关注真实机器人部署与跨任务泛化验证",
+        tags: [["Robotics","green"],["VLA","green"],["Embodied","green"],["Manipulation","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.17977"],["PDF","https://arxiv.org/pdf/2607.17977"],["Project","https://alibaba-damo-academy.github.io/RynnBrain/"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"达摩院推出 RynnBrain 1.1 具身基础模型家族，采用统一框架在多尺度参数下训练视觉语言动作模型"},{"label":"💡 创新点","text":"提出 RynnBrain-VLA 统一架构，覆盖从 2B 到 122B 多档参数，兼顾轻量与高性能具身控制"},{"label":"📊 实验效果","text":"提供 2B、9B、10B、122B 多档模型，在多种操作任务上展现更强泛化能力"},{"label":"⭐ 整体评价","text":"具身基础模型方向进展显著，建议关注真实机器人部署与跨任务泛化验证"}]
+    },
+    {
+        date: "2026-07-22",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "Open-AoE: An Open Egocentric Manipulation Dataset and Toolchain for Embodied Learning",
+        venue: "arXiv 2026 · 2607.14183 · HF 热门 · inclusionAI",
+        summary: "🔬 技术路线: 蚂蚁 inclusionAI 发布 Open-AoE，基于第一视角人类操作视频构建大规模具身学习数据集与工具链 | 💡 创新点: 提供开放可扩展的数据采集与处理工具链，将人类第一视角操作转化为可训练具身数据 | 📊 实验效果: 在抓取与操作任务上验证有效，开源项目已获 81 星社区关注 | ⭐ 整体评价: 具身数据基建方向有生态价值，建议关注数据规模与真机迁移验证",
+        tags: [["Robotics","green"],["Embodied","green"],["Manipulation","green"],["Dataset","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.14183"],["PDF","https://arxiv.org/pdf/2607.14183"],["Code (81⭐)","https://github.com/ant-research/Open-AoE"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"蚂蚁 inclusionAI 发布 Open-AoE，基于第一视角人类操作视频构建大规模具身学习数据集与工具链"},{"label":"💡 创新点","text":"提供开放可扩展的数据采集与处理工具链，将人类第一视角操作转化为可训练具身数据"},{"label":"📊 实验效果","text":"在抓取与操作任务上验证有效，开源项目已获 81 星社区关注"},{"label":"⭐ 整体评价","text":"具身数据基建方向有生态价值，建议关注数据规模与真机迁移验证"}]
+    },
+    {
+        date: "2026-07-22",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Copy Less, Ground More: Overcoming Repetitive Copying in Long-Context Reasoning via Evidence-Aware Reinforcement Learning",
+        venue: "arXiv 2026 · 2607.19345",
+        summary: "🔬 技术路线: 面向大语言模型在长上下文推理时反复复制前文的问题，设计强化学习训练范式引导模型依据证据生成 | 💡 创新点: 提出证据感知机制，让模型在生成时显式判断信息是否来自真实依据，抑制无意义的重复复制 | 📊 实验效果: 在多组长上下文推理评测中显著降低重复复制率，推理准确性同步提升 | ⭐ 整体评价: 长上下文可靠性方向有实际意义，建议关注证据对齐策略与长文档场景迁移效果",
+        tags: [["LLM","green"],["Reasoning","green"],["RL","green"],["Evaluation","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.19345"],["PDF","https://arxiv.org/pdf/2607.19345"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"面向大语言模型在长上下文推理时反复复制前文的问题，设计强化学习训练范式引导模型依据证据生成"},{"label":"💡 创新点","text":"提出证据感知机制，让模型在生成时显式判断信息是否来自真实依据，抑制无意义的重复复制"},{"label":"📊 实验效果","text":"在多组长上下文推理评测中显著降低重复复制率，推理准确性同步提升"},{"label":"⭐ 整体评价","text":"长上下文可靠性方向有实际意义，建议关注证据对齐策略与长文档场景迁移效果"}]
+    },
+    {
+        date: "2026-07-22",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "Appearance Pointers: Multimodal Region Control of Diffusion Transformers",
+        venue: "arXiv 2026 · 2607.19344",
+        summary: "🔬 技术路线: 在扩散变换器框架中引入外观指针机制，实现对图像生成区域的精细化多模态控制 | 💡 创新点: 提出外观指针方法，通过指针式引用在扩散模型中精确指定局部区域的外观与语义属性 | 📊 实验效果: 在文本到图像及区域编辑任务上验证控制有效性，生成区域与指令高度吻合 | ⭐ 整体评价: 可控图像生成方向有应用价值，建议关注指针表达能力和复杂多区域场景扩展性",
+        tags: [["Multimodal","green"],["Diffusion","green"],["Generation","green"],["Editing","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.19344"],["PDF","https://arxiv.org/pdf/2607.19344"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"在扩散变换器框架中引入外观指针机制，实现对图像生成区域的精细化多模态控制"},{"label":"💡 创新点","text":"提出外观指针方法，通过指针式引用在扩散模型中精确指定局部区域的外观与语义属性"},{"label":"📊 实验效果","text":"在文本到图像及区域编辑任务上验证控制有效性，生成区域与指令高度吻合"},{"label":"⭐ 整体评价","text":"可控图像生成方向有应用价值，建议关注指针表达能力和复杂多区域场景扩展性"}]
+    },
+    {
+        date: "2026-07-22",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "ExpertVerse: A General-Purpose Benchmark for Expert-Level Reasoning in Knowledge-Intensive Visual Synthesis",
+        venue: "arXiv 2026 · 2607.19341",
+        summary: "🔬 技术路线: 构建十万级样本的多模态基准 ExpertVerse-100K，评估生成模型在知识密集型视觉合成中的专家级推理 | 💡 创新点: 提出 ExpertVerse-100K 大规模基准，覆盖需要专业领域知识的图像合成与推理任务 | 📊 实验效果: 基准规模达十万样本，对主流多模态生成与推理模型形成系统化评测 | ⭐ 整体评价: 视觉合成评测方向有基准价值，建议关注知识准确性评估与专业领域覆盖度",
+        tags: [["Multimodal","green"],["Benchmark","green"],["Generation","green"],["Reasoning","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.19341"],["PDF","https://arxiv.org/pdf/2607.19341"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"构建十万级样本的多模态基准 ExpertVerse-100K，评估生成模型在知识密集型视觉合成中的专家级推理"},{"label":"💡 创新点","text":"提出 ExpertVerse-100K 大规模基准，覆盖需要专业领域知识的图像合成与推理任务"},{"label":"📊 实验效果","text":"基准规模达十万样本，对主流多模态生成与推理模型形成系统化评测"},{"label":"⭐ 整体评价","text":"视觉合成评测方向有基准价值，建议关注知识准确性评估与专业领域覆盖度"}]
+    },
+    {
+        date: "2026-07-22",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "TimeLens2: Generalist Video Temporal Grounding with Multimodal LLMs",
+        venue: "arXiv 2026 · 2607.17423 · HF 热门 · Multimedia Computing Group-Nanjing University",
+        summary: "🔬 技术路线: 南京大学提出 TimeLens2，基于多模态大语言模型完成通用视频时序定位，配套九万级训练数据集 | 💡 创新点: 构建 TimeLens2-93K 数据集并训练 2B 到 8B 多档模型，实现开放域视频时刻检索 | 📊 实验效果: 在视频时序定位基准上达到通用模型领先水平，支持自然语言时刻查询 | ⭐ 整体评价: 视频理解方向有应用价值，建议关注长视频检索精度与多模态指令泛化",
+        tags: [["Multimodal","green"],["Video","green"],["LLM","green"],["Grounding","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.17423"],["PDF","https://arxiv.org/pdf/2607.17423"],["Project","https://mcg-nju.github.io/TimeLens2/"],["Code (30⭐)","https://github.com/MCG-NJU/TimeLens2"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"南京大学提出 TimeLens2，基于多模态大语言模型完成通用视频时序定位，配套九万级训练数据集"},{"label":"💡 创新点","text":"构建 TimeLens2-93K 数据集并训练 2B 到 8B 多档模型，实现开放域视频时刻检索"},{"label":"📊 实验效果","text":"在视频时序定位基准上达到通用模型领先水平，支持自然语言时刻查询"},{"label":"⭐ 整体评价","text":"视频理解方向有应用价值，建议关注长视频检索精度与多模态指令泛化"}]
+    },
+    {
+        date: "2026-07-22",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "OmniReasoner: Thinking with Long Audio-Video via Native Tool Use",
+        venue: "arXiv 2026 · 2607.19339",
+        summary: "🔬 技术路线: 构建支持原生工具调用的智能体框架，使模型能够边调用工具边对长音频与视频进行链式推理 | 💡 创新点: 提出原生工具使用机制，让 OmniReasoner 在长音频视频理解中自主检索与验证多模态证据 | 📊 实验效果: 在长视频与长音频问答基准上验证有效，跨模态推理与工具调用成功率提升 | ⭐ 整体评价: 长多模态智能体方向有应用前景，建议关注工具调度策略与超长序列推理效率",
+        tags: [["Agent","green"],["Multimodal","green"],["Tool Use","green"],["Reasoning","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.19339"],["PDF","https://arxiv.org/pdf/2607.19339"],["Code","https://github.com/RockyChen0205/OmniReasoner"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"构建支持原生工具调用的智能体框架，使模型能够边调用工具边对长音频与视频进行链式推理"},{"label":"💡 创新点","text":"提出原生工具使用机制，让 OmniReasoner 在长音频视频理解中自主检索与验证多模态证据"},{"label":"📊 实验效果","text":"在长视频与长音频问答基准上验证有效，跨模态推理与工具调用成功率提升"},{"label":"⭐ 整体评价","text":"长多模态智能体方向有应用前景，建议关注工具调度策略与超长序列推理效率"}]
+    },
+    {
+        date: "2026-07-22",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "CodeRescue: Budget-Calibrated Recovery Routing for Coding Agents",
+        venue: "arXiv 2026 · 2607.19338",
+        summary: "🔬 技术路线: 面向编程智能体任务失败后的恢复需求，提出预算校准路由机制，在有限算力下选择最优恢复策略 | 💡 创新点: 提出恢复路由框架，依据剩余预算动态决定重试、改写或切换策略，避免无效算力消耗 | 📊 实验效果: 关键恢复成功率指标达到 35%，在预算约束下显著降低任务失败率 | ⭐ 整体评价: 编程智能体鲁棒性方向有工程价值，建议关注预算分配策略与真实代码库场景验证",
+        tags: [["Agent","green"],["Code","green"],["RL","green"],["Optimization","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.19338"],["PDF","https://arxiv.org/pdf/2607.19338"],["Code","https://github.com/Qijia-He/agent-budget-control"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"面向编程智能体任务失败后的恢复需求，提出预算校准路由机制，在有限算力下选择最优恢复策略"},{"label":"💡 创新点","text":"提出恢复路由框架，依据剩余预算动态决定重试、改写或切换策略，避免无效算力消耗"},{"label":"📊 实验效果","text":"关键恢复成功率指标达到 35%，在预算约束下显著降低任务失败率"},{"label":"⭐ 整体评价","text":"编程智能体鲁棒性方向有工程价值，建议关注预算分配策略与真实代码库场景验证"}]
+    },
+    {
+        date: "2026-07-22",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Agents in the Wild: Where Research Meets Deployment",
+        venue: "arXiv 2026 · 2607.19336",
+        summary: "🔬 技术路线: 系统梳理大语言模型智能体从研究原型到真实部署之间的差距，提出鲁棒的架构与机制设计原则 | 💡 创新点: 提出面向真实部署的鲁棒性方法，强调在不可控环境下智能体的可靠性与可维护性 | 📊 实验效果: 在规划与真实任务场景上验证有效，部署后稳定性较原型阶段明显提升 | ⭐ 整体评价: 智能体落地方向有方法论价值，建议关注工程化挑战与生产环境监控方案",
+        tags: [["Agent","green"],["LLM","green"],["Planning","green"],["Systems","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.19336"],["PDF","https://arxiv.org/pdf/2607.19336"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"系统梳理大语言模型智能体从研究原型到真实部署之间的差距，提出鲁棒的架构与机制设计原则"},{"label":"💡 创新点","text":"提出面向真实部署的鲁棒性方法，强调在不可控环境下智能体的可靠性与可维护性"},{"label":"📊 实验效果","text":"在规划与真实任务场景上验证有效，部署后稳定性较原型阶段明显提升"},{"label":"⭐ 整体评价","text":"智能体落地方向有方法论价值，建议关注工程化挑战与生产环境监控方案"}]
+    },
+    {
+        date: "2026-07-22",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "DeepSearch-World: Self-Distillation for Deep Search Agents in a Verifiable Environment",
+        venue: "arXiv 2026 · 2607.07820 · HF 热门 · HKUST",
+        summary: "🔬 技术路线: 香港科大提出 DeepSearch-World，在可验证环境中通过自蒸馏训练深度搜索智能体并演化出更强策略 | 💡 创新点: 提出自蒸馏框架，让搜索智能体在可验证环境里自我提升，无需额外人工标注 | 📊 实验效果: 关键指标达 31.2%、61.5%、93.4%，构建 42 万级训练环境，搜索成功率显著提升 | ⭐ 整体评价: 深度搜索智能体方向有实用价值，建议关注可验证环境构建与自蒸馏稳定性",
+        tags: [["Agent","green"],["Search","green"],["Distillation","green"],["RL","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.07820"],["PDF","https://arxiv.org/pdf/2607.07820"],["Code (4⭐)","https://github.com/ornamentt/DeepSearch-World"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"香港科大提出 DeepSearch-World，在可验证环境中通过自蒸馏训练深度搜索智能体并演化出更强策略"},{"label":"💡 创新点","text":"提出自蒸馏框架，让搜索智能体在可验证环境里自我提升，无需额外人工标注"},{"label":"📊 实验效果","text":"关键指标达 31.2%、61.5%、93.4%，构建 42 万级训练环境，搜索成功率显著提升"},{"label":"⭐ 整体评价","text":"深度搜索智能体方向有实用价值，建议关注可验证环境构建与自蒸馏稳定性"}]
+    },
+    {
+        date: "2026-07-22",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "SWE-Pruner Pro: The Coder LLM Already Knows What to Prune",
+        venue: "arXiv 2026 · 2607.18213 · HF 热门 · ByteDance",
+        summary: "🔬 技术路线: 字节跳动提出 SWE-Pruner Pro，面向编程智能体的长上下文，由模型自身判断应当剪枝的内容 | 💡 创新点: 提出高效剪枝方法，让代码大模型直接识别冗余上下文，无需额外训练即可压缩提示 | 📊 实验效果: 关键指标达 39% 与 3.8%，在保持任务性能的同时大幅减少上下文长度 | ⭐ 整体评价: 长上下文压缩方向有工程价值，建议关注剪枝准确率与不同代码库泛化",
+        tags: [["Agent","green"],["Code","green"],["LLM","green"],["Pruning","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.18213"],["PDF","https://arxiv.org/pdf/2607.18213"],["Code (6⭐)","https://github.com/Ayanami1314/swe-pruner-pro"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"字节跳动提出 SWE-Pruner Pro，面向编程智能体的长上下文，由模型自身判断应当剪枝的内容"},{"label":"💡 创新点","text":"提出高效剪枝方法，让代码大模型直接识别冗余上下文，无需额外训练即可压缩提示"},{"label":"📊 实验效果","text":"关键指标达 39% 与 3.8%，在保持任务性能的同时大幅减少上下文长度"},{"label":"⭐ 整体评价","text":"长上下文压缩方向有工程价值，建议关注剪枝准确率与不同代码库泛化"}]
+    },
+    {
+        date: "2026-07-22",
+        category: "Other",
+        categoryIcon: "📄",
+        title: "InstructMixup: Instruction-Guided Salient Patch Editing for Robust Data Augmentation",
+        venue: "arXiv 2026 · 2607.19324",
+        summary: "🔬 技术路线: 结合视觉语言模型与自监督学习，提出指令引导的显著区域编辑方法，生成鲁棒的数据增强样本 | 💡 创新点: 提出轻量化指令引导编辑，依据文本指令定位并扰动图像显著区块，提升增强多样性 | 📊 实验效果: 在预测与生成任务上验证有效，增强后模型的鲁棒性与泛化能力同步提升 | ⭐ 整体评价: 数据增强方向有实用价值，建议关注指令粒度控制与训练成本权衡",
+        tags: [["Data Aug","green"],["Multimodal","green"],["Perception","green"],["VLM","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.19324"],["PDF","https://arxiv.org/pdf/2607.19324"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"结合视觉语言模型与自监督学习，提出指令引导的显著区域编辑方法，生成鲁棒的数据增强样本"},{"label":"💡 创新点","text":"提出轻量化指令引导编辑，依据文本指令定位并扰动图像显著区块，提升增强多样性"},{"label":"📊 实验效果","text":"在预测与生成任务上验证有效，增强后模型的鲁棒性与泛化能力同步提升"},{"label":"⭐ 整体评价","text":"数据增强方向有实用价值，建议关注指令粒度控制与训练成本权衡"}]
+    },
+    {
+        date: "2026-07-22",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "Introducing the ChatGPT for small business program",
+        venue: "",
+        summary: "OpenAI 推出面向中小企业的 ChatGPT 商业计划，提供专属功能与客户支持，帮助小型企业更便捷地接入人工智能能力。",
+        tags: [],
+        links: [["来源","https://openai.com/index/introducing-chatgpt-small-business-program/"]]
+    },
+    {
+        date: "2026-07-22",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "OpenAI and Hugging Face address security incident",
+        venue: "",
+        summary: "OpenAI 与 Hugging Face 就一起安全事件作出说明，双方联合修复模型评测相关的安全漏洞并公布处理进展。",
+        tags: [],
+        links: [["来源","https://openai.com/index/hugging-face-model-evaluation-security-incident/"]]
+    },
+    {
+        date: "2026-07-22",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "David Vélez and Robin Vince join OpenAI boards",
+        venue: "",
+        summary: "OpenAI 宣布 David Vélez 与 Robin Vince 加入董事会，进一步补充公司在金融与企业治理方面的董事会力量。",
+        tags: [],
+        links: [["来源","https://openai.com/index/david-velez-robin-vince-join-openai-boards/"]]
+    },
     // === 2026-07-21 ===
     {
         date: "2026-07-21",
@@ -19250,6 +19451,13 @@ const PAPERS_DB = [
 ];
 
 const DAILY_OVERVIEW = {
+    "2026-07-22": {
+        bannerTitle: "🔥 今日看点",
+        bannerSubtitle: "今日 arXiv 8 篇 + HF 热门 7 篇 + 机构动态 3 条。世界模型方向 Masked Visual Actions 以掩码视觉动作统一视频预测与动作生成，EvolvingWorld 让角色扮演智能体与世界模型在文学世界中协同演化，Apple-π 评测模型在物理规律约束下的视频思维。机器人方向达摩院 RynnBrain 1.1 推出覆盖 2B 到 122B 的具身基础模型家族，蚂蚁 Open-AoE 开放第一视角操作数据集与工具链（81 星）。智能体方向 SWE-Pruner Pro 让代码大模型自判冗余上下文实现高效剪枝（39%）。",
+        picks: ["Masked Visual Actions for Unified World Modeling","EvolvingWorld: An Open-Schema Framework for Co-Evolving Role-Play Agents and World Model in Interactive Literary World","RynnBrain 1.1: Towards More Capable and Generalizable Embodied Foundation Model","Open-AoE: An Open Egocentric Manipulation Dataset and Toolchain for Embodied Learning","SWE-Pruner Pro: The Coder LLM Already Knows What to Prune"],
+        totalPapers: 15,
+        totalNews: 3
+    },
     "2026-07-21": {
         bannerTitle: "🔥 今日看点",
         bannerSubtitle: "今日 arXiv 8 篇 + HF 热门 1 篇。VLA 方向 FM-VLA 引入力觉记忆机制处理接触密集型操作，通过力反馈增强视觉语言动作模型在复杂接触任务中的表现。Robotics 方向 Patch Policy 利用预训练视觉变换器的密集视觉表征实现高效具身控制。Microsoft Research 发布 RESOURCE2SKILL 从人类创建的多模态资源中蒸馏可执行智能体技能（86 星）。多模态方向 HOMIE 面向人-物体中心的视频个性化生成，PIXAR-DG 实现强像素级图像篡改检测的域泛化。LLM 方向 EoB-query 评估大模型对信念表达的响应鲁棒性。",
