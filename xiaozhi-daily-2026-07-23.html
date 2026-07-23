@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>小小志AI日报 - 2026年7月23日 周四</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans SC', sans-serif;
+  background: #0a0e1a;
+  color: #e0e6f0;
+  line-height: 1.7;
+  min-height: 100vh;
+}
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+header {
+  text-align: center;
+  margin-bottom: 48px;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, rgba(59,130,246,0.08) 0%, rgba(139,92,246,0.08) 100%);
+  border-radius: 20px;
+  border: 1px solid rgba(99,102,241,0.15);
+}
+header h1 {
+  font-size: 2rem;
+  background: linear-gradient(135deg, #60a5fa, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 8px;
+}
+header .date {
+  color: #94a3b8;
+  font-size: 1rem;
+}
+header .subtitle {
+  color: #64748b;
+  font-size: 0.9rem;
+  margin-top: 6px;
+}
+.highlight-banner {
+  background: linear-gradient(135deg, rgba(249,115,22,0.1) 0%, rgba(234,179,8,0.08) 100%);
+  border: 1px solid rgba(249,115,22,0.2);
+  border-radius: 14px;
+  padding: 20px 24px;
+  margin-bottom: 36px;
+}
+.hl-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fb923c;
+  margin-bottom: 8px;
+}
+.hl-text {
+  font-size: 0.92rem;
+  color: #cbd5e1;
+  line-height: 1.7;
+}
+.section {
+  margin-bottom: 40px;
+}
+.section-title {
+  font-size: 1.4rem;
+  color: #f1f5f9;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(99,102,241,0.2);
+}
+.paper-card {
+  background: rgba(30,41,59,0.6);
+  border: 1px solid rgba(99,102,241,0.12);
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 16px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.paper-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(99,102,241,0.1);
+  border-color: rgba(99,102,241,0.3);
+}
+.paper-card.hot {
+  border-color: rgba(249,115,22,0.25);
+  background: rgba(30,41,59,0.7);
+}
+.paper-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #f8fafc;
+  margin-bottom: 8px;
+}
+.paper-meta {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-bottom: 10px;
+}
+.summary-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+@media (max-width: 640px) {
+  .summary-grid { grid-template-columns: 1fr; }
+}
+.summary-item {
+  background: rgba(15,23,42,0.5);
+  border-radius: 10px;
+  padding: 12px 14px;
+  border: 1px solid rgba(99,102,241,0.08);
+}
+.summary-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #818cf8;
+  margin-bottom: 4px;
+}
+.summary-text {
+  font-size: 0.88rem;
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+.paper-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.tag {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+.tag-agent { background: rgba(16,185,129,0.12); color: #34d399; }
+.tag-llm { background: rgba(99,102,241,0.12); color: #818cf8; }
+.tag-multimodal { background: rgba(244,114,182,0.12); color: #f472b6; }
+.tag-world { background: rgba(251,191,36,0.12); color: #fbbf24; }
+.tag-robot { background: rgba(251,146,60,0.12); color: #fb923c; }
+.tag-rl { background: rgba(45,212,191,0.12); color: #2dd4bf; }
+.tag-video { background: rgba(168,85,247,0.12); color: #a855f7; }
+.tag-benchmark { background: rgba(34,211,238,0.12); color: #22d3ee; }
+.tag-vla { background: rgba(59,130,246,0.12); color: #60a5fa; }
+.tag-safety { background: rgba(239,68,68,0.12); color: #f87171; }
+.tag-memory { background: rgba(192,132,252,0.12); color: #c084fc; }
+.tag-reasoning { background: rgba(132,204,22,0.12); color: #a3e635; }
+.tag-code { background: rgba(52,211,153,0.12); color: #34d399; }
+.tag-survey { background: rgba(6,182,212,0.12); color: #22d3ee; }
+.tag-science { background: rgba(217,119,6,0.12); color: #f59e0b; }
+.tag-medical { background: rgba(239,68,68,0.12); color: #f87171; }
+.tag-systems { background: rgba(56,189,248,0.12); color: #38bdf8; }
+.tag-3d { background: rgba(148,163,184,0.12); color: #94a3b8; }
+.tag-data { background: rgba(250,204,21,0.12); color: #facc15; }
+.tag-infra { background: rgba(167,139,250,0.12); color: #a78bfa; }
+.tag-generation { background: rgba(249,115,22,0.12); color: #f97316; }
+.tag-navigation { background: rgba(59,130,246,0.12); color: #60a5fa; }
+.tag-distillation { background: rgba(34,211,238,0.12); color: #22d3ee; }
+.tag-humanoid { background: rgba(251,146,60,0.12); color: #fb923c; }
+.tag-tool { background: rgba(52,211,153,0.12); color: #34d399; }
+.tag-gui { background: rgba(244,114,182,0.12); color: #f472b6; }
+.tag-embedding { background: rgba(167,139,250,0.12); color: #a78bfa; }
+.tag-quantization { background: rgba(99,102,241,0.12); color: #818cf8; }
+.tag-math { background: rgba(132,204,22,0.12); color: #a3e635; }
+.tag-interpretability { background: rgba(192,132,252,0.12); color: #c084fc; }
+.tag-judge { background: rgba(239,68,68,0.12); color: #f87171; }
+.tag-reward { background: rgba(34,211,238,0.12); color: #22d3ee; }
+.tag-manipulation { background: rgba(251,146,60,0.12); color: #fb923c; }
+.tag-bipedal { background: rgba(59,130,246,0.12); color: #60a5fa; }
+.tag-simulation { background: rgba(56,189,248,0.12); color: #38bdf8; }
+.tag-embodied { background: rgba(251,146,60,0.12); color: #fb923c; }
+.tag-planning { background: rgba(132,204,22,0.12); color: #a3e635; }
+.tag-driving { background: rgba(59,130,246,0.12); color: #60a5fa; }
+.tag-diffusion { background: rgba(168,85,247,0.12); color: #a855f7; }
+.tag-ocr { background: rgba(99,102,241,0.12); color: #818cf8; }
+.tag-education { background: rgba(132,204,22,0.12); color: #a3e635; }
+.tag-forecasting { background: rgba(34,211,238,0.12); color: #22d3ee; }
+.tag-translation { background: rgba(56,189,248,0.12); color: #38bdf8; }
+.tag-interaction { background: rgba(244,114,182,0.12); color: #f472b6; }
+.tag-security { background: rgba(239,68,68,0.12); color: #f87171; }
+.tag-evaluation { background: rgba(132,204,22,0.12); color: #a3e635; }
+.tag-geolocation { background: rgba(59,130,246,0.12); color: #60a5fa; }
+.tag-causal { background: rgba(192,132,252,0.12); color: #c084fc; }
+.tag-diagram { background: rgba(148,163,184,0.12); color: #94a3b8; }
+.tag-search { background: rgba(34,211,238,0.12); color: #22d3ee; }
+.tag-music { background: rgba(168,85,247,0.12); color: #a855f7; }
+.tag-architecture { background: rgba(99,102,241,0.12); color: #818cf8; }
+.tag-healthcare { background: rgba(239,68,68,0.12); color: #f87171; }
+.tag-graph { background: rgba(34,211,238,0.12); color: #22d3ee; }
+.tag-recommendation { background: rgba(244,114,182,0.12); color: #f472b6; }
+.tag-optimization { background: rgba(45,212,191,0.12); color: #2dd4bf; }
+.tag-uav { background: rgba(59,130,246,0.12); color: #60a5fa; }
+.tag-scene { background: rgba(148,163,184,0.12); color: #94a3b8; }
+.tag-active { background: rgba(132,204,22,0.12); color: #a3e635; }
+.tag-connectivity { background: rgba(167,139,250,0.12); color: #a78bfa; }
+.tag-hardware { background: rgba(251,146,60,0.12); color: #fb923c; }
+.tag-dexterous { background: rgba(251,146,60,0.12); color: #fb923c; }
+.tag-perception { background: rgba(244,114,182,0.12); color: #f472b6; }
+.tag-tampering { background: rgba(239,68,68,0.12); color: #f87171; }
+.tag-force { background: rgba(251,146,60,0.12); color: #fb923c; }
+.tag-skill { background: rgba(52,211,153,0.12); color: #34d399; }
+.tag-discovery { background: rgba(132,204,22,0.12); color: #a3e635; }
+.tag-editing { background: rgba(168,85,247,0.12); color: #a855f7; }
+.tag-personalization { background: rgba(244,114,182,0.12); color: #f472b6; }
+.hot-badge {
+  display: inline;
+  margin-right: 4px;
+}
+.info-card {
+  background: rgba(30,41,59,0.6);
+  border: 1px solid rgba(99,102,241,0.12);
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 16px;
+}
+.paper-summary {
+  font-size: 0.9rem;
+  color: #cbd5e1;
+  line-height: 1.7;
+  margin-bottom: 14px;
+}
+.paper-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.paper-links a {
+  display: inline-block;
+  padding: 5px 14px;
+  background: rgba(99,102,241,0.12);
+  color: #818cf8;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  transition: background 0.2s;
+}
+.paper-links a:hover {
+  background: rgba(99,102,241,0.25);
+}
+footer {
+  text-align: center;
+  color: #475569;
+  font-size: 0.82rem;
+  padding: 40px 20px;
+  border-top: 1px solid rgba(99,102,241,0.1);
+  margin-top: 40px;
+}
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+.stat-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>小小志AI日报</h1>
+    <div class="date">2026年7月23日 周四</div>
+    <div class="subtitle">关注：VLA · Robotics · World Model · LLM · Multimodal · Agent</div>
+    <div class="stats">
+      <span class="stat-item">📝 arXiv 8</span>
+      <span class="stat-item">🤗 HF 热门 8</span>
+      <span class="stat-item">🏢 机构 2</span>
+      <span class="stat-item">🐦 X/Twitter 0</span>
+    </div>
+  </header>
+
+  <div class="highlight-banner">
+    <div class="hl-title">🔥 今日看点</div>
+    <div class="hl-text">今日 arXiv 8 篇 + HF 热门 8 篇 + 机构动态 2 条。世界模型方向今日三连发：高德 ABot-World-0 在单张桌面级 GPU 上实现 720P、16 FPS 的无限交互式世界推演（835 星），Alaya Lab 同日放出 AlayaWorld 完整技术报告（15B 参数，618 星）与游戏级实时生成渲染器 AlayaRenderer-Flash。多模态方向微软 Mage-Flow 以 4B 参数实现原生分辨率图像生成与编辑统一（189 星）。VLA 方向聚焦零售人形机器人从实验室到门店的落地闭环。腾讯混元提出陈旧度自适应信任域稳定异步强化学习训练。OpenAI 发布环境感知新产品 Presence。</div>
+  </div>
+
+  <!-- World Model Section -->
+  <section class="section">
+    <h2 class="section-title">🌍 World Model · 世界模型</h2>
+
+    <div class="paper-card hot">
+      <div class="paper-title"><span class="hot-badge">🔥</span> ABot-World-0: Infinite Interactive World Rollout on a Single Desktop GPU</div>
+      <div class="paper-meta">arXiv 2026 · 2607.19191 · Alibaba AMAP CV Lab · GitHub 835⭐</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">构建动作条件视频世界模型，通过蒸馏压缩推理成本，将交互式世界推演部署到单张桌面级 GPU 上</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次在消费级单卡上实现无限时长的可交互世界生成，兼顾实时性、统一架构与轻量化部署</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在 720P 分辨率下达到 16 FPS 的实时交互推演，开源代码已获 835 星社区关注</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">把世界模型推向消费级硬件的重要工程突破，建议关注长时序一致性与动作可控精度</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-world">World Model</span>
+        <span class="tag tag-video">Interactive Video</span>
+        <span class="tag tag-infra">Efficiency</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2607.19191">arXiv</a>
+        <a href="https://arxiv.org/pdf/2607.19191">PDF</a>
+        <a href="https://abot-world.amap.com/">Project</a>
+        <a href="https://github.com/amap-cvlab/ABot-World">Code</a>
+      </div>
+    </div>
+
+    <div class="paper-card hot">
+      <div class="paper-title"><span class="hot-badge">🔥</span> AlayaWorld: Interactive Long-Horizon World Modeling -- Full Technical Report</div>
+      <div class="paper-meta">arXiv 2026 · 2607.18367 · Alaya Lab · GitHub 618⭐</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">基于扩散 Transformer 的世界模型架构，结合蒸馏技术训练 15B 参数的交互式长时序世界生成模型</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">公开完整技术报告披露数据、训练与蒸馏全流程，为长时序可交互世界建模提供可复现的工程参考</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">支持 540p 与 720p 分辨率的长时序交互生成，开源仓库已获 618 星</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">世界模型方向少见的全量技术报告，建议关注长视野记忆保持能力与开源生态进展</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-world">World Model</span>
+        <span class="tag tag-diffusion">Diffusion Transformer</span>
+        <span class="tag tag-distillation">Distillation</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2607.18367">arXiv</a>
+        <a href="https://arxiv.org/pdf/2607.18367">PDF</a>
+        <a href="https://alaya-lab.github.io/AlayaWorld/">Project</a>
+        <a href="https://github.com/AlayaLab/AlayaWorld">Code</a>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">Generative World Renderer at the Speed of Play</div>
+      <div class="paper-meta">arXiv 2026 · 2607.18703 · Alaya Lab · GitHub 47⭐</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">以世界模型为核心构建生成式渲染器 AlayaRenderer-Flash，追求达到游戏可玩帧率的实时生成渲染</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">将生成式渲染速度从每秒不足一帧大幅提升到游戏级帧率，实现实时、轻量、高效的世界渲染</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">渲染速度从基线 0.56 FPS 提升至 31.54 FPS，稳定超过 30 FPS 的可玩标准</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">生成式渲染迈向游戏级实时性的标志性工作，建议关注画质与速度的权衡表现</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-world">World Model</span>
+        <span class="tag tag-generation">Rendering</span>
+        <span class="tag tag-infra">Real-time</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2607.18703">arXiv</a>
+        <a href="https://arxiv.org/pdf/2607.18703">PDF</a>
+        <a href="https://alaya-renderer-flash.alayalab.ai/">Project</a>
+        <a href="https://github.com/AlayaLab/AlayaRenderer-Flash">Code</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- VLA Section -->
+  <section class="section">
+    <h2 class="section-title">🤖 VLA · Vision-Language-Action</h2>
+
+    <div class="paper-card">
+      <div class="paper-title">Closing the Lab-to-Store Gap: A Data-Efficient Post-Training and Experience-Driven Learning VLA Framework for Retail Humanoids</div>
+      <div class="paper-meta">arXiv 2026 · 2607.20345</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">在视觉-语言-动作基础模型上进行数据高效的后训练与微调，并引入经验驱动的持续学习机制</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">面向零售门店场景的人形机器人提出完整落地框架，弥合基准性能与真实商店可靠部署之间的差距</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在零售人形机器人任务上验证了框架有效性，少量数据即可完成场景适配</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">聚焦真实商业场景落地的 VLA 工作，建议关注长期运行稳定性与经验积累的增益曲线</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-vla">VLA</span>
+        <span class="tag tag-humanoid">Humanoid</span>
+        <span class="tag tag-embodied">Deployment</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2607.20345">arXiv</a>
+        <a href="https://arxiv.org/pdf/2607.20345">PDF</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Robotics Section -->
+  <section class="section">
+    <h2 class="section-title">🦾 Robotics · 机器人</h2>
+
+    <div class="paper-card">
+      <div class="paper-title">Towards Miniature Humanoid Tele-Loco-Manipulation Using Virtual Reality and Reinforcement Learning</div>
+      <div class="paper-meta">arXiv 2026 · 2607.20399</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">结合虚拟现实遥操作接口与强化学习控制器，构建小型人形机器人的移动加操作一体化控制框架</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">将全尺寸人形机器人的遥操作能力下沉到小型化平台，同时覆盖行走与抓取操作两类任务</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在运动控制与操作抓取任务上验证了方法有效性，遥操作与自主控制可协同工作</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">小型人形平台的遥操作探索有实用价值，建议关注真机延迟表现与操作精度</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-robot">Robotics</span>
+        <span class="tag tag-humanoid">Humanoid</span>
+        <span class="tag tag-rl">RL</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2607.20399">arXiv</a>
+        <a href="https://arxiv.org/pdf/2607.20399">PDF</a>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">Distributed Acoustic Localization Array Deployed Using a Soft Everting Vine Robot</div>
+      <div class="paper-meta">arXiv 2026 · 2607.20392</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">利用软体外翻藤蔓机器人在受限空间内铺设分布式声学定位阵列，为软体机器人提供外部感知能力</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">将声学定位与藤蔓式软体机器人结合，机器人生长过程即完成传感器网络部署，无需人工布设</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">实验验证了阵列部署与声学定位的可行性，可在管道等狭窄环境中工作</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">软体机器人感知方向的新颖尝试，建议关注定位精度与复杂环境下的鲁棒性</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-robot">Robotics</span>
+        <span class="tag tag-perception">Soft Robot</span>
+        <span class="tag tag-hardware">Sensing</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2607.20392">arXiv</a>
+        <a href="https://arxiv.org/pdf/2607.20392">PDF</a>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">Distributed Motion Planning with Safety Guarantees for Self-Reconfiguring Robotic Boats</div>
+      <div class="paper-meta">arXiv 2026 · 2607.20352</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">基于控制屏障函数设计分布式运动规划框架，用于水面自重构机器人船的编队与拼接</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">在分布式架构下提供形式化安全保证，规划方法可随机器人数量扩展，避免碰撞与死锁</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">实验验证了多船自重构过程中的安全性与可扩展性，能可靠完成目标构型拼装</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">水面多机器人系统的安全规划方案，建议关注真实水域扰动下的鲁棒表现</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-robot">Robotics</span>
+        <span class="tag tag-planning">Motion Planning</span>
+        <span class="tag tag-safety">Safety</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2607.20352">arXiv</a>
+        <a href="https://arxiv.org/pdf/2607.20352">PDF</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Agent Section -->
+  <section class="section">
+    <h2 class="section-title">🧩 Agent · 智能体</h2>
+
+    <div class="paper-card">
+      <div class="paper-title">DataFlow-Harness: A Grounded Code-Agent Platform for Constructing Editable LLM Data Pipelines</div>
+      <div class="paper-meta">arXiv 2026 · 2607.16617 · Peking University</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">以代码智能体为核心构建数据管线平台，让大语言模型通过生成和修改代码来搭建可编辑的数据处理流程</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">将数据管线构建过程落地为可检查、可编辑的代码产物，实现端到端的透明数据工程工作流</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">相比基线方法在下游任务上取得约 0.9 个百分点的提升，管线可被人工二次编辑复用</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">面向数据工程的实用智能体平台，建议关注复杂管线场景下的成功率与可维护性</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-agent">Agent</span>
+        <span class="tag tag-code">Code Agent</span>
+        <span class="tag tag-data">Data Pipeline</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2607.16617">arXiv</a>
+        <a href="https://arxiv.org/pdf/2607.16617">PDF</a>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">AgentDebugX: An Open-Source Toolkit for Failure Observability, Attribution, and Recovery in LLM Agents</div>
+      <div class="paper-meta">arXiv 2026 · 2607.18754 · University of Illinois at Urbana-Champaign · GitHub 16⭐</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">构建覆盖失败观测、归因分析与自动恢复三个环节的开源工具链，对大模型智能体运行轨迹进行诊断</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">将智能体调试系统化为可观测性框架，从失败现象定位根因并给出恢复策略，填补工程工具空白</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在多个智能体任务上验证了失败归因与恢复能力，支持 9B 等规模模型的调试分析</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">智能体可靠性工程的实用工具，建议关注归因准确率与对不同框架的适配能力</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-agent">Agent</span>
+        <span class="tag tag-evaluation">Debugging</span>
+        <span class="tag tag-infra">Toolkit</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2607.18754">arXiv</a>
+        <a href="https://arxiv.org/pdf/2607.18754">PDF</a>
+        <a href="https://www.agentdebugx.com/">Project</a>
+        <a href="https://github.com/AgentDebugX/AgentDebugX">Code</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- LLM Section -->
+  <section class="section">
+    <h2 class="section-title">🧠 LLM · 大语言模型</h2>
+
+    <div class="paper-card">
+      <div class="paper-title">Stale but Stable: Staleness-Adaptive Trust Regions for Stabilizing Asynchronous Reinforcement Learning</div>
+      <div class="paper-meta">arXiv 2026 · 2607.18722 · Tencent Hunyuan · GitHub 17⭐</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">针对异步强化学习中样本陈旧问题，提出根据数据陈旧程度自适应调节信任域大小的策略优化方法</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">将陈旧度显式纳入信任域约束，让异步训练在保持高吞吐的同时避免策略更新发散</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在 3B 与 30B 规模模型上验证了训练稳定性提升，异步训练收敛质量接近同步基线</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">大模型异步 RL 训练的重要稳定性改进，建议关注不同陈旧度分布下的泛化表现</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-llm">LLM</span>
+        <span class="tag tag-rl">RL</span>
+        <span class="tag tag-infra">Async Training</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2607.18722">arXiv</a>
+        <a href="https://arxiv.org/pdf/2607.18722">PDF</a>
+        <a href="https://jyyang26.github.io/stable_async_analysis/">Project</a>
+        <a href="https://github.com/jyyang26/SAT">Code</a>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">Notes to Self: Can LLMs Benefit from Experiential Abstractions?</div>
+      <div class="paper-meta">arXiv 2026 · 2607.20372</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">让大语言模型从自身解题经历中自动提取经验摘要，并在后续推理时将这些自提取笔记作为上下文复用</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">系统研究经验抽象对模型的增益机制，验证自我笔记能否替代重复的完整推理过程</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在推理类任务上验证了经验笔记带来的性能增益，结合训练与强化学习进一步放大效果</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">面向模型自我改进的有趣探索，建议关注笔记质量控制与跨任务迁移能力</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-llm">LLM</span>
+        <span class="tag tag-memory">Memory</span>
+        <span class="tag tag-reasoning">Reasoning</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2607.20372">arXiv</a>
+        <a href="https://arxiv.org/pdf/2607.20372">PDF</a>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">LKValues: Aligning Large Language Models with Sri Lankan Societal Values</div>
+      <div class="paper-meta">arXiv 2026 · 2607.20410</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">构建斯里兰卡本土价值观数据集并对大语言模型进行微调，建立面向特定社会文化的对齐框架</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次针对斯里兰卡社会价值观做系统化对齐研究，为低资源文化背景的模型本地化提供范例</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">基于 15 万条数据，在 4B、8B、9B 等规模模型上验证了价值观对齐效果</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">文化本地化对齐的代表性工作，建议关注数据构建方法对其他地区的可迁移性</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-llm">LLM</span>
+        <span class="tag tag-safety">Alignment</span>
+        <span class="tag tag-data">Dataset</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2607.20410">arXiv</a>
+        <a href="https://arxiv.org/pdf/2607.20410">PDF</a>
+        <a href="https://github.com/NextME14/LKValues">Code</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Multimodal Section -->
+  <section class="section">
+    <h2 class="section-title">🎨 Multimodal · 多模态</h2>
+
+    <div class="paper-card hot">
+      <div class="paper-title"><span class="hot-badge">🔥</span> Mage-Flow: An Efficient Native-Resolution Foundation Model for Image Generation and Editing</div>
+      <div class="paper-meta">arXiv 2026 · 2607.19064 · Microsoft · GitHub 189⭐</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">基于扩散 Transformer 架构，结合大规模训练、蒸馏与微调，构建原生分辨率的图像生成与编辑基础模型</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">以 4B 轻量参数统一图像生成与编辑两类任务，原生支持任意分辨率而无需缩放预处理</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">4B 参数规模下取得与更大模型相当的生成与编辑质量，开源仓库已获 189 星</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">高效率图像基础模型的代表工作，建议关注编辑一致性与高分辨率细节保真度</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-multimodal">Multimodal</span>
+        <span class="tag tag-generation">Image Generation</span>
+        <span class="tag tag-editing">Editing</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2607.19064">arXiv</a>
+        <a href="https://arxiv.org/pdf/2607.19064">PDF</a>
+        <a href="https://microsoft.github.io/Mage/">Project</a>
+        <a href="https://github.com/microsoft/Mage">Code</a>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">Look Less, Think Faster: Joint Token-Compute Adaptation for Multimodal LLMs</div>
+      <div class="paper-meta">arXiv 2026 · 2607.20357</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">对多模态大语言模型的视觉 token 数量与计算量进行联合自适应调节，按输入难度动态分配资源</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">将看多少与算多久两个维度统一优化，简单样本少看快答、复杂样本多看深想</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在视觉语言任务上以更低推理开销保持了原有精度，实现了效率与性能的平衡</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">多模态推理效率优化的实用方案，建议关注难度判别策略在真实分布下的稳定性</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-multimodal">Multimodal</span>
+        <span class="tag tag-infra">Efficiency</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2607.20357">arXiv</a>
+        <a href="https://arxiv.org/pdf/2607.20357">PDF</a>
+        <a href="https://www.schaterji.io/publications/2026/jointtokencompute">Project</a>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">Test-Time Training for Modality Order Consistency in Vision-Language Models</div>
+      <div class="paper-meta">arXiv 2026 · 2607.20351</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">在推理阶段引入测试时训练机制，约束视觉-语言模型在不同模态输入顺序下给出一致的输出</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">发现并量化模态顺序敏感问题，用轻量的测试时自适应修正顺序相关的预测偏差</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">实验验证了方法能显著降低模态顺序扰动带来的输出不一致，提升模型可靠性</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">关注模型一致性缺陷的务实工作，建议关注测试时训练的额外推理开销</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-multimodal">Multimodal</span>
+        <span class="tag tag-evaluation">Consistency</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2607.20351">arXiv</a>
+        <a href="https://arxiv.org/pdf/2607.20351">PDF</a>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">HPD-Parsing: Hierarchical Parallel Document Parsing</div>
+      <div class="paper-meta">arXiv 2026 · 2607.18839 · PaddlePaddle</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">基于视觉-语言模型构建层次化并行文档解析框架，将版面分析与内容识别分层并行处理</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">以层次化并行策略统一文档解析各子任务，兼顾解析速度与结构还原的完整性</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在文档内容生成与结构预测任务上验证了有效性，解析吞吐显著优于串行方案</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">文档智能方向的工程化改进，建议关注复杂版面与多语言文档下的解析质量</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-multimodal">Multimodal</span>
+        <span class="tag tag-ocr">Document Parsing</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2607.18839">arXiv</a>
+        <a href="https://arxiv.org/pdf/2607.18839">PDF</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Informations Section -->
+  <section class="section">
+    <h2 class="section-title">📰 Informations · 行业动态</h2>
+
+    <div class="info-card">
+      <div class="paper-title">How news organizations use AI to advance their vital missions</div>
+      <div class="paper-summary">OpenAI 分享新闻机构应用人工智能的实践案例，展示 AI 如何帮助新闻编辑室提升报道效率、拓展调查能力并服务公共使命。</div>
+      <div class="paper-links">
+        <a href="https://openai.com/index/how-news-organizations-are-using-ai/">来源</a>
+      </div>
+    </div>
+
+    <div class="info-card">
+      <div class="paper-title">Introducing OpenAI Presence</div>
+      <div class="paper-summary">OpenAI 发布新产品 Presence，进一步拓展其产品矩阵，具体能力与开放范围以官方博客说明为准。</div>
+      <div class="paper-links">
+        <a href="https://openai.com/index/introducing-openai-presence/">来源</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>自动生成于 2026-07-23 · 关注：VLA · Robotics · World Model · LLM · Multimodal · Agent</p>
+    <p>小小志AI日报 · 每日精选 AI 前沿论文与行业动态</p>
+  </footer>
+</div>
+</body>
+</html>
