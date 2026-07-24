@@ -658,6 +658,174 @@
 <script>
 // ===== DATA =====
 const PAPERS_DB = [
+    // === 2026-07-24 ===
+    {
+        date: "2026-07-24",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "Streaming Multi-Agent Autoregressive Diffusion Model with World State Registers",
+        venue: "arXiv 2026 · 2607.21594 · WorldWeaver (UCLA VAIL)",
+        summary: "🔬 技术路线: 采用自回归扩散模型进行流式世界生成，引入\"世界状态寄存器\"显式维护多智能体交互中的共享环境状态 | 💡 创新点: 首次面向多智能体交互场景设计流式自回归扩散世界模型，用状态寄存器解决多方交互下的一致性与长时序记忆 | 📊 实验效果: 在多智能体交互世界生成任务上验证了状态一致性与流式生成能力，具体指标详见原文 | ⭐ 整体评价: 属于世界模型方向，建议关注多智能体一致性、流式实时性与长时序状态保持能力",
+        tags: [["World Model","green"],["Autoregressive Diffusion","green"],["Multi-Agent","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.21594"],["PDF","https://arxiv.org/pdf/2607.21594"],["Project","https://vail-ucla.github.io/worldweaver/"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"采用自回归扩散模型进行流式世界生成，引入\"世界状态寄存器\"显式维护多智能体交互中的共享环境状态"},{"label":"💡 创新点","text":"首次面向多智能体交互场景设计流式自回归扩散世界模型，用状态寄存器解决多方交互下的一致性与长时序记忆"},{"label":"📊 实验效果","text":"在多智能体交互世界生成任务上验证了状态一致性与流式生成能力，具体指标详见原文"},{"label":"⭐ 整体评价","text":"属于世界模型方向，建议关注多智能体一致性、流式实时性与长时序状态保持能力"}]
+    },
+    {
+        date: "2026-07-24",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "AXIS: A Growable Community-Driven Data Engine for Scalable Robot Manipulation",
+        venue: "arXiv 2026 · 2607.21588 · AXIS (RoboCasa365)",
+        summary: "🔬 技术路线: 构建可增长的社区驱动数据引擎 AXIS，持续汇聚并标准化多样化机器人操作数据以支撑可扩展策略训练 | 💡 创新点: 提出社区共建、可持续增长的机器人数据引擎与 RoboCasa365 场景体系，破解操作数据多样性不足的瓶颈 | 📊 实验效果: 数据规模达 50K，任务成功率相关指标分别提升 5.8% 与 37.3% | ⭐ 整体评价: 属于机器人数据基础设施方向，建议关注数据质量、社区共建可持续性与真机泛化效果",
+        tags: [["Robotics","green"],["Data Engine","green"],["Manipulation","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.21588"],["PDF","https://arxiv.org/pdf/2607.21588"],["Project","https://axisaiorg.github.io/AXIS-V1/"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"构建可增长的社区驱动数据引擎 AXIS，持续汇聚并标准化多样化机器人操作数据以支撑可扩展策略训练"},{"label":"💡 创新点","text":"提出社区共建、可持续增长的机器人数据引擎与 RoboCasa365 场景体系，破解操作数据多样性不足的瓶颈"},{"label":"📊 实验效果","text":"数据规模达 50K，任务成功率相关指标分别提升 5.8% 与 37.3%"},{"label":"⭐ 整体评价","text":"属于机器人数据基础设施方向，建议关注数据质量、社区共建可持续性与真机泛化效果"}]
+    },
+    {
+        date: "2026-07-24",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "Scale Up Strategically: Learning Compositional Generalization via Bias-Aware Evaluation and Data Collection for Robotic Manipulation",
+        venue: "arXiv 2026 · 2607.21582",
+        summary: "🔬 技术路线: 从偏差感知的评估与数据采集入手，研究机器人操作中组合泛化能力如何随数据规模策略性扩展 | 💡 创新点: 提出偏差感知的评估与数据采集框架，指导有策略地扩充数据以提升组合泛化，而非盲目堆量 | 📊 实验效果: 实验验证了策略性扩展数据对组合泛化的有效性，具体数据详见原文 | ⭐ 整体评价: 属于机器人算法与控制方向，建议重点关注评估设置、数据采集策略与真实部署条件",
+        tags: [["Robotics","green"],["Compositional Generalization","green"],["Data Collection","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.21582"],["PDF","https://arxiv.org/pdf/2607.21582"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"从偏差感知的评估与数据采集入手，研究机器人操作中组合泛化能力如何随数据规模策略性扩展"},{"label":"💡 创新点","text":"提出偏差感知的评估与数据采集框架，指导有策略地扩充数据以提升组合泛化，而非盲目堆量"},{"label":"📊 实验效果","text":"实验验证了策略性扩展数据对组合泛化的有效性，具体数据详见原文"},{"label":"⭐ 整体评价","text":"属于机器人算法与控制方向，建议重点关注评估设置、数据采集策略与真实部署条件"}]
+    },
+    {
+        date: "2026-07-24",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "Beyond Episodic Evaluation: Memory Architectural Bottlenecks in Sequential Embodied Question Answering",
+        venue: "arXiv 2026 · 2607.21571",
+        summary: "🔬 技术路线: 面向序列化具身问答（EQA）任务，系统分析不同记忆架构在连续交互中的表现与瓶颈 | 💡 创新点: 突破传统单回合评估范式，首次揭示序列化具身问答中记忆架构的结构性瓶颈 | 📊 实验效果: 在导航与具身问答任务上验证了记忆架构对连续任务表现的关键影响，具体数据详见原文 | ⭐ 整体评价: 属于具身智能评估方向，建议关注长时序记忆机制设计与序列化评估基准价值",
+        tags: [["Embodied QA","green"],["Memory","green"],["Evaluation","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.21571"],["PDF","https://arxiv.org/pdf/2607.21571"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"面向序列化具身问答（EQA）任务，系统分析不同记忆架构在连续交互中的表现与瓶颈"},{"label":"💡 创新点","text":"突破传统单回合评估范式，首次揭示序列化具身问答中记忆架构的结构性瓶颈"},{"label":"📊 实验效果","text":"在导航与具身问答任务上验证了记忆架构对连续任务表现的关键影响，具体数据详见原文"},{"label":"⭐ 整体评价","text":"属于具身智能评估方向，建议关注长时序记忆机制设计与序列化评估基准价值"}]
+    },
+    {
+        date: "2026-07-24",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "3D-Aware VLMs with Implicit and Explicit Geometries",
+        venue: "arXiv 2026 · 2607.21595 · VLM-IE3D",
+        summary: "🔬 技术路线: 在视觉-语言模型中同时引入隐式与显式几何表征，构建具备三维感知能力的 VLM-IE3D 框架 | 💡 创新点: 提出隐式与显式几何统一建模，使视觉-语言模型获得更强的三维空间理解与推理能力 | 📊 实验效果: 实验验证了隐式-显式几何融合对三维感知任务的有效性，具体数据详见原文 | ⭐ 整体评价: 属于多模态方向，建议关注三维几何表征方式、跨模态对齐与下游空间任务表现",
+        tags: [["Multimodal","green"],["3D-Aware","green"],["Geometry","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.21595"],["PDF","https://arxiv.org/pdf/2607.21595"],["Code","https://github.com/Vegetebird/VLM-IE3D"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"在视觉-语言模型中同时引入隐式与显式几何表征，构建具备三维感知能力的 VLM-IE3D 框架"},{"label":"💡 创新点","text":"提出隐式与显式几何统一建模，使视觉-语言模型获得更强的三维空间理解与推理能力"},{"label":"📊 实验效果","text":"实验验证了隐式-显式几何融合对三维感知任务的有效性，具体数据详见原文"},{"label":"⭐ 整体评价","text":"属于多模态方向，建议关注三维几何表征方式、跨模态对齐与下游空间任务表现"}]
+    },
+    {
+        date: "2026-07-24",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "SLAI T-Rex: Full-Parameter Post-training of the DeepSeek-V4 Family on Ascend SuperPOD",
+        venue: "arXiv 2026 · 2607.20145 · SLAI · GitHub 19⭐",
+        summary: "🔬 技术路线: 在昇腾 Ascend SuperPOD 集群上对 DeepSeek-V4 系列进行全参数后训练，打通国产算力的大模型后训练全流程 | 💡 创新点: 公开在昇腾超节点上完成 DeepSeek-V4 全参数后训练的工程实践，验证国产硬件后训练的可行性 | 📊 实验效果: 关键指标达 34.22% 与 71.81%，训练效率提升 2.93 倍，相关指标提升 11.27 个百分点（开源 19 星） | ⭐ 整体评价: 属于大语言模型训练方向，建议关注国产算力适配、全参数后训练稳定性与成本效益",
+        tags: [["LLM","green"],["Ascend","green"],["Post-training","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.20145"],["PDF","https://arxiv.org/pdf/2607.20145"],["Code","https://github.com/SLAI-AITP/SLAI-T-Rex"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"在昇腾 Ascend SuperPOD 集群上对 DeepSeek-V4 系列进行全参数后训练，打通国产算力的大模型后训练全流程"},{"label":"💡 创新点","text":"公开在昇腾超节点上完成 DeepSeek-V4 全参数后训练的工程实践，验证国产硬件后训练的可行性"},{"label":"📊 实验效果","text":"关键指标达 34.22% 与 71.81%，训练效率提升 2.93 倍，相关指标提升 11.27 个百分点（开源 19 星）"},{"label":"⭐ 整体评价","text":"属于大语言模型训练方向，建议关注国产算力适配、全参数后训练稳定性与成本效益"}]
+    },
+    {
+        date: "2026-07-24",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Beyond Relevance-Centric Retrieval: Rubric-Oriented Document Set Selection and Ranking",
+        venue: "arXiv 2026 · 2607.19747 · Tencent · GitHub 32⭐",
+        summary: "🔬 技术路线: 提出面向评分量规（rubric）的文档集选择与排序框架 SetwiseEvalKit，超越以相关性为中心的传统检索 | 💡 创新点: 将检索目标从单点相关性转向以量规为导向的文档\"集合\"级选择与排序，更贴合复杂检索需求 | 📊 实验效果: 相关指标提升约 45%，数据规模达 28K，开源仓库获 32 星 | ⭐ 整体评价: 属于大语言模型/检索方向，建议关注量规设计合理性、集合级排序策略与实际检索收益",
+        tags: [["LLM","green"],["Retrieval","green"],["Rubric","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.19747"],["PDF","https://arxiv.org/pdf/2607.19747"],["Project","https://rubric4setwise.github.io/"],["Code","https://github.com/Rubric4Setwise/Rubric4Setwise"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出面向评分量规（rubric）的文档集选择与排序框架 SetwiseEvalKit，超越以相关性为中心的传统检索"},{"label":"💡 创新点","text":"将检索目标从单点相关性转向以量规为导向的文档\"集合\"级选择与排序，更贴合复杂检索需求"},{"label":"📊 实验效果","text":"相关指标提升约 45%，数据规模达 28K，开源仓库获 32 星"},{"label":"⭐ 整体评价","text":"属于大语言模型/检索方向，建议关注量规设计合理性、集合级排序策略与实际检索收益"}]
+    },
+    {
+        date: "2026-07-24",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Scaling Laws for Hypernetwork-Based Knowledge Injection in Large Language Models",
+        venue: "arXiv 2026 · 2607.19604 · GitHub 13⭐",
+        summary: "🔬 技术路线: 借助超网络（hypernetwork）向大语言模型注入知识，并系统研究该机制下的规模化扩展规律 | 💡 创新点: 刻画基于超网络的知识注入所遵循的缩放定律，为参数高效的知识更新提供理论依据 | 📊 实验效果: 在最高 5M 规模的知识注入设置下验证缩放规律，结合 LoRA 实现高效注入（开源 13 星） | ⭐ 整体评价: 属于大语言模型方向，建议关注知识注入可扩展性、遗忘控制与参数高效性的权衡",
+        tags: [["LLM","green"],["Hypernetwork","green"],["Knowledge Injection","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.19604"],["PDF","https://arxiv.org/pdf/2607.19604"],["Project","https://www.nace.ai/research/scaling-law-for-hypernetwork"],["Code","https://github.com/hdnndh/Latent-Geometry-Beyond-Search-Amortizing-Planning-in-World-Models"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"借助超网络（hypernetwork）向大语言模型注入知识，并系统研究该机制下的规模化扩展规律"},{"label":"💡 创新点","text":"刻画基于超网络的知识注入所遵循的缩放定律，为参数高效的知识更新提供理论依据"},{"label":"📊 实验效果","text":"在最高 5M 规模的知识注入设置下验证缩放规律，结合 LoRA 实现高效注入（开源 13 星）"},{"label":"⭐ 整体评价","text":"属于大语言模型方向，建议关注知识注入可扩展性、遗忘控制与参数高效性的权衡"}]
+    },
+    {
+        date: "2026-07-24",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Beyond Euclidean Clipping: Overcoming Exploration Collapse in LLM RL via Riemannian Isometric Policy Optimization",
+        venue: "arXiv 2026 · 2607.10169 · GenSI",
+        summary: "🔬 技术路线: 针对大语言模型强化学习中的探索坍缩问题，提出黎曼等距策略优化 RIPO，改进传统欧氏空间裁剪 | 💡 创新点: 用黎曼几何视角替代 PPO-Clip 的欧氏裁剪，从几何层面缓解 LLM 强化学习中的探索坍缩 | 📊 实验效果: 相关指标提升约 60%，验证了几何化裁剪对维持探索多样性的有效性 | ⭐ 整体评价: 属于大语言模型/强化学习方向，建议关注几何优化的稳定性、计算开销与训练收敛表现",
+        tags: [["LLM","green"],["RL","green"],["Policy Optimization","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.10169"],["PDF","https://arxiv.org/pdf/2607.10169"],["Code","https://github.com/Aiolus-X/RIPO"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"针对大语言模型强化学习中的探索坍缩问题，提出黎曼等距策略优化 RIPO，改进传统欧氏空间裁剪"},{"label":"💡 创新点","text":"用黎曼几何视角替代 PPO-Clip 的欧氏裁剪，从几何层面缓解 LLM 强化学习中的探索坍缩"},{"label":"📊 实验效果","text":"相关指标提升约 60%，验证了几何化裁剪对维持探索多样性的有效性"},{"label":"⭐ 整体评价","text":"属于大语言模型/强化学习方向，建议关注几何优化的稳定性、计算开销与训练收敛表现"}]
+    },
+    {
+        date: "2026-07-24",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "MedGame: Storytelling Gamification Empowered by Large Language Models for Medical Education",
+        venue: "arXiv 2026 · 2607.21570 · MedGame",
+        summary: "🔬 技术路线: 基于大语言模型构建叙事化游戏框架 MedGame，将医学教育内容转化为交互式故事化学习体验 | 💡 创新点: 将大语言模型驱动的叙事游戏化机制系统应用于医学教育，提升学习者的参与度与情境代入感 | 📊 实验效果: 在医学教育场景的内容生成与交互任务上验证了框架的有效性，具体数据详见原文 | ⭐ 整体评价: 属于大语言模型应用方向，建议关注教学效果评估、内容准确性与临床知识可靠性",
+        tags: [["LLM","green"],["Education","green"],["Medical","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.21570"],["PDF","https://arxiv.org/pdf/2607.21570"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于大语言模型构建叙事化游戏框架 MedGame，将医学教育内容转化为交互式故事化学习体验"},{"label":"💡 创新点","text":"将大语言模型驱动的叙事游戏化机制系统应用于医学教育，提升学习者的参与度与情境代入感"},{"label":"📊 实验效果","text":"在医学教育场景的内容生成与交互任务上验证了框架的有效性，具体数据详见原文"},{"label":"⭐ 整体评价","text":"属于大语言模型应用方向，建议关注教学效果评估、内容准确性与临床知识可靠性"}]
+    },
+    {
+        date: "2026-07-24",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Beyond Sycophancy: Structured Resistance and Compliance in LLM Moral Reasoning",
+        venue: "arXiv 2026 · 2607.21558",
+        summary: "🔬 技术路线: 研究大语言模型在道德推理中的顺从与抵抗行为，构建结构化框架刻画其何时坚持何时妥协 | 💡 创新点: 超越单纯的\"谄媚\"视角，结构化区分模型在道德推理中的合理抵抗与盲目顺从 | 📊 实验效果: 实验验证了模型在道德情境下抵抗与顺从行为的可测量结构，具体数据详见原文 | ⭐ 整体评价: 属于大语言模型对齐与安全方向，建议关注道德推理鲁棒性与价值对齐评估方法",
+        tags: [["LLM","green"],["Alignment","green"],["Moral Reasoning","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.21558"],["PDF","https://arxiv.org/pdf/2607.21558"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"研究大语言模型在道德推理中的顺从与抵抗行为，构建结构化框架刻画其何时坚持何时妥协"},{"label":"💡 创新点","text":"超越单纯的\"谄媚\"视角，结构化区分模型在道德推理中的合理抵抗与盲目顺从"},{"label":"📊 实验效果","text":"实验验证了模型在道德情境下抵抗与顺从行为的可测量结构，具体数据详见原文"},{"label":"⭐ 整体评价","text":"属于大语言模型对齐与安全方向，建议关注道德推理鲁棒性与价值对齐评估方法"}]
+    },
+    {
+        date: "2026-07-24",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "OpenForgeRL: Train Harness-native Agents in Any Environment",
+        venue: "arXiv 2026 · 2607.21557 · OpenForgeRL",
+        summary: "🔬 技术路线: 提出开源框架 OpenForgeRL，支持在多样化环境中端到端训练与运行框架原生（harness-native）智能体 | 💡 创新点: 面向\"任意环境\"提供统一的框架原生智能体端到端强化学习训练方案，降低跨环境训练门槛 | 📊 实验效果: 在多样化环境中验证了端到端训练智能体的可行性，具体指标详见原文 | ⭐ 整体评价: 属于 Agent/工具使用方向，建议关注框架通用性、工具调用策略与端到端成功率",
+        tags: [["Agent","green"],["RL","green"],["Harness","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.21557"],["PDF","https://arxiv.org/pdf/2607.21557"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出开源框架 OpenForgeRL，支持在多样化环境中端到端训练与运行框架原生（harness-native）智能体"},{"label":"💡 创新点","text":"面向\"任意环境\"提供统一的框架原生智能体端到端强化学习训练方案，降低跨环境训练门槛"},{"label":"📊 实验效果","text":"在多样化环境中验证了端到端训练智能体的可行性，具体指标详见原文"},{"label":"⭐ 整体评价","text":"属于 Agent/工具使用方向，建议关注框架通用性、工具调用策略与端到端成功率"}]
+    },
+    {
+        date: "2026-07-24",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "DocOps: A Verifiable Benchmark for Autonomous Agents in Complex Document Operations",
+        venue: "arXiv 2026 · 2607.19865 · DocOps · GitHub 3⭐",
+        summary: "🔬 技术路线: 构建可验证的自主智能体基准 DocOps，覆盖复杂文档操作任务并提供客观可复现的评测机制 | 💡 创新点: 面向复杂文档操作场景提出可验证基准，弥补现有 Agent 评测在文档处理可靠性上的空白 | 📊 实验效果: 在文档操作与任务执行评测中验证了基准的鲁棒性与区分度（开源 3 星） | ⭐ 整体评价: 属于 Agent/工具使用方向，建议关注任务覆盖广度、验证机制严谨性与主流智能体表现",
+        tags: [["Agent","green"],["Benchmark","green"],["Document Ops","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.19865"],["PDF","https://arxiv.org/pdf/2607.19865"],["Project","https://docopsbench.github.io"],["Code","https://github.com/icip-cas/DocOps"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"构建可验证的自主智能体基准 DocOps，覆盖复杂文档操作任务并提供客观可复现的评测机制"},{"label":"💡 创新点","text":"面向复杂文档操作场景提出可验证基准，弥补现有 Agent 评测在文档处理可靠性上的空白"},{"label":"📊 实验效果","text":"在文档操作与任务执行评测中验证了基准的鲁棒性与区分度（开源 3 星）"},{"label":"⭐ 整体评价","text":"属于 Agent/工具使用方向，建议关注任务覆盖广度、验证机制严谨性与主流智能体表现"}]
+    },
+    {
+        date: "2026-07-24",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "ICAE-Bench: Evaluating Coding Agents as Interactive Project Builders",
+        venue: "arXiv 2026 · 2607.21217 · ICAE-Bench · GitHub 3⭐",
+        summary: "🔬 技术路线: 提出 ICAE-Bench，将编码智能体视为交互式项目构建者进行评测，覆盖规划、工具使用与迭代构建 | 💡 创新点: 从\"交互式项目构建\"视角评估编码智能体，超越单点代码生成，强调长程规划与工程落地能力 | 📊 实验效果: 在规划与项目构建任务上验证了基准有效性，可区分不同编码智能体的能力（开源 3 星） | ⭐ 整体评价: 属于 Agent/工具使用方向，建议关注项目级评测的真实性、工具调用策略与端到端构建成功率",
+        tags: [["Agent","green"],["Coding Agent","green"],["Benchmark","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.21217"],["PDF","https://arxiv.org/pdf/2607.21217"],["Code","https://github.com/ALEX-nlp/ICAE-EVAL"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出 ICAE-Bench，将编码智能体视为交互式项目构建者进行评测，覆盖规划、工具使用与迭代构建"},{"label":"💡 创新点","text":"从\"交互式项目构建\"视角评估编码智能体，超越单点代码生成，强调长程规划与工程落地能力"},{"label":"📊 实验效果","text":"在规划与项目构建任务上验证了基准有效性，可区分不同编码智能体的能力（开源 3 星）"},{"label":"⭐ 整体评价","text":"属于 Agent/工具使用方向，建议关注项目级评测的真实性、工具调用策略与端到端构建成功率"}]
+    },
+    {
+        date: "2026-07-24",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "Launching Health in ChatGPT",
+        venue: "",
+        summary: "OpenAI 正式在 ChatGPT 中上线健康功能 Health in ChatGPT，将健康相关能力引入 ChatGPT，帮助用户获取健康信息与支持，具体能力与开放范围以官方博客说明为准。",
+        tags: [],
+        links: [["来源","https://openai.com/index/health-in-chatgpt/"]]
+    },
     // === 2026-07-23 ===
     {
         date: "2026-07-23",
@@ -19651,6 +19819,13 @@ const PAPERS_DB = [
 ];
 
 const DAILY_OVERVIEW = {
+    "2026-07-24": {
+        bannerTitle: "🔥 今日看点",
+        bannerSubtitle: "今日 arXiv 8 篇 + HF 热门 6 篇 + 机构动态 1 条。世界模型方向 WorldWeaver 提出面向多智能体交互的流式自回归扩散世界模型，用\"世界状态寄存器\"显式维护多方共享环境状态。机器人方向 AXIS 构建可增长的社区驱动数据引擎（含 RoboCasa365 场景体系，5 万级数据）破解操作数据多样性瓶颈。大模型训练方向 SLAI 团队在昇腾 SuperPOD 上完成 DeepSeek-V4 全参数后训练（效率提升 2.93 倍），腾讯提出面向评分量规的集合级文档检索框架。Agent 方向双基准 DocOps 与 ICAE-Bench 分别聚焦复杂文档操作与交互式项目构建。OpenAI 正式在 ChatGPT 中上线健康功能 Health in ChatGPT。",
+        picks: ["Streaming Multi-Agent Autoregressive Diffusion Model with World State Registers","AXIS: A Growable Community-Driven Data Engine for Scalable Robot Manipulation","SLAI T-Rex: Full-Parameter Post-training of the DeepSeek-V4 Family on Ascend SuperPOD"],
+        totalPapers: 14,
+        totalNews: 1
+    },
     "2026-07-23": {
         bannerTitle: "🔥 今日看点",
         bannerSubtitle: "今日 arXiv 8 篇 + HF 热门 8 篇 + 机构动态 2 条。世界模型方向今日三连发：高德 ABot-World-0 在单张桌面级 GPU 上实现 720P、16 FPS 的无限交互式世界推演（835 星），Alaya Lab 同日放出 AlayaWorld 完整技术报告（15B 参数，618 星）与游戏级实时生成渲染器 AlayaRenderer-Flash。多模态方向微软 Mage-Flow 以 4B 参数实现原生分辨率图像生成与编辑统一（189 星）。VLA 方向聚焦零售人形机器人从实验室到门店的落地闭环。腾讯混元提出陈旧度自适应信任域稳定异步强化学习训练。OpenAI 发布环境感知新产品 Presence。",

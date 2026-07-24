@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>小小志AI日报 - 2026年7月24日 周五</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans SC', sans-serif;
+  background: #0a0e1a;
+  color: #e0e6f0;
+  line-height: 1.7;
+  min-height: 100vh;
+}
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+header {
+  text-align: center;
+  margin-bottom: 48px;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, rgba(59,130,246,0.08) 0%, rgba(139,92,246,0.08) 100%);
+  border-radius: 20px;
+  border: 1px solid rgba(99,102,241,0.15);
+}
+header h1 {
+  font-size: 2rem;
+  background: linear-gradient(135deg, #60a5fa, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 8px;
+}
+header .date {
+  color: #94a3b8;
+  font-size: 1rem;
+}
+header .subtitle {
+  color: #64748b;
+  font-size: 0.9rem;
+  margin-top: 6px;
+}
+.highlight-banner {
+  background: linear-gradient(135deg, rgba(249,115,22,0.1) 0%, rgba(234,179,8,0.08) 100%);
+  border: 1px solid rgba(249,115,22,0.2);
+  border-radius: 14px;
+  padding: 20px 24px;
+  margin-bottom: 36px;
+}
+.hl-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fb923c;
+  margin-bottom: 8px;
+}
+.hl-text {
+  font-size: 0.92rem;
+  color: #cbd5e1;
+  line-height: 1.7;
+}
+.section {
+  margin-bottom: 40px;
+}
+.section-title {
+  font-size: 1.4rem;
+  color: #f1f5f9;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(99,102,241,0.2);
+}
+.paper-card {
+  background: rgba(30,41,59,0.6);
+  border: 1px solid rgba(99,102,241,0.12);
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 16px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.paper-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(99,102,241,0.1);
+  border-color: rgba(99,102,241,0.3);
+}
+.paper-card.hot {
+  border-color: rgba(249,115,22,0.25);
+  background: rgba(30,41,59,0.7);
+}
+.paper-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #f8fafc;
+  margin-bottom: 8px;
+}
+.paper-meta {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-bottom: 10px;
+}
+.summary-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+@media (max-width: 640px) {
+  .summary-grid { grid-template-columns: 1fr; }
+}
+.summary-item {
+  background: rgba(15,23,42,0.5);
+  border-radius: 10px;
+  padding: 12px 14px;
+  border: 1px solid rgba(99,102,241,0.08);
+}
+.summary-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #818cf8;
+  margin-bottom: 4px;
+}
+.summary-text {
+  font-size: 0.88rem;
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+.paper-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.tag {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+.tag-agent { background: rgba(16,185,129,0.12); color: #34d399; }
+.tag-llm { background: rgba(99,102,241,0.12); color: #818cf8; }
+.tag-multimodal { background: rgba(244,114,182,0.12); color: #f472b6; }
+.tag-world { background: rgba(251,191,36,0.12); color: #fbbf24; }
+.tag-robot { background: rgba(251,146,60,0.12); color: #fb923c; }
+.tag-rl { background: rgba(45,212,191,0.12); color: #2dd4bf; }
+.tag-video { background: rgba(168,85,247,0.12); color: #a855f7; }
+.tag-benchmark { background: rgba(34,211,238,0.12); color: #22d3ee; }
+.tag-vla { background: rgba(59,130,246,0.12); color: #60a5fa; }
+.tag-safety { background: rgba(239,68,68,0.12); color: #f87171; }
+.tag-memory { background: rgba(192,132,252,0.12); color: #c084fc; }
+.tag-reasoning { background: rgba(132,204,22,0.12); color: #a3e635; }
+.tag-code { background: rgba(52,211,153,0.12); color: #34d399; }
+.tag-survey { background: rgba(6,182,212,0.12); color: #22d3ee; }
+.tag-science { background: rgba(217,119,6,0.12); color: #f59e0b; }
+.tag-medical { background: rgba(239,68,68,0.12); color: #f87171; }
+.tag-systems { background: rgba(56,189,248,0.12); color: #38bdf8; }
+.tag-3d { background: rgba(148,163,184,0.12); color: #94a3b8; }
+.tag-data { background: rgba(250,204,21,0.12); color: #facc15; }
+.tag-infra { background: rgba(167,139,250,0.12); color: #a78bfa; }
+.tag-generation { background: rgba(249,115,22,0.12); color: #f97316; }
+.tag-navigation { background: rgba(59,130,246,0.12); color: #60a5fa; }
+.tag-distillation { background: rgba(34,211,238,0.12); color: #22d3ee; }
+.tag-humanoid { background: rgba(251,146,60,0.12); color: #fb923c; }
+.tag-tool { background: rgba(52,211,153,0.12); color: #34d399; }
+.tag-gui { background: rgba(244,114,182,0.12); color: #f472b6; }
+.tag-embedding { background: rgba(167,139,250,0.12); color: #a78bfa; }
+.tag-quantization { background: rgba(99,102,241,0.12); color: #818cf8; }
+.tag-math { background: rgba(132,204,22,0.12); color: #a3e635; }
+.tag-interpretability { background: rgba(192,132,252,0.12); color: #c084fc; }
+.tag-judge { background: rgba(239,68,68,0.12); color: #f87171; }
+.tag-reward { background: rgba(34,211,238,0.12); color: #22d3ee; }
+.tag-manipulation { background: rgba(251,146,60,0.12); color: #fb923c; }
+.tag-bipedal { background: rgba(59,130,246,0.12); color: #60a5fa; }
+.tag-simulation { background: rgba(56,189,248,0.12); color: #38bdf8; }
+.tag-embodied { background: rgba(251,146,60,0.12); color: #fb923c; }
+.tag-planning { background: rgba(132,204,22,0.12); color: #a3e635; }
+.tag-driving { background: rgba(59,130,246,0.12); color: #60a5fa; }
+.tag-diffusion { background: rgba(168,85,247,0.12); color: #a855f7; }
+.tag-ocr { background: rgba(99,102,241,0.12); color: #818cf8; }
+.tag-education { background: rgba(132,204,22,0.12); color: #a3e635; }
+.tag-forecasting { background: rgba(34,211,238,0.12); color: #22d3ee; }
+.tag-translation { background: rgba(56,189,248,0.12); color: #38bdf8; }
+.tag-interaction { background: rgba(244,114,182,0.12); color: #f472b6; }
+.tag-security { background: rgba(239,68,68,0.12); color: #f87171; }
+.tag-evaluation { background: rgba(132,204,22,0.12); color: #a3e635; }
+.tag-geolocation { background: rgba(59,130,246,0.12); color: #60a5fa; }
+.tag-causal { background: rgba(192,132,252,0.12); color: #c084fc; }
+.tag-diagram { background: rgba(148,163,184,0.12); color: #94a3b8; }
+.tag-search { background: rgba(34,211,238,0.12); color: #22d3ee; }
+.tag-music { background: rgba(168,85,247,0.12); color: #a855f7; }
+.tag-architecture { background: rgba(99,102,241,0.12); color: #818cf8; }
+.tag-healthcare { background: rgba(239,68,68,0.12); color: #f87171; }
+.tag-graph { background: rgba(34,211,238,0.12); color: #22d3ee; }
+.tag-recommendation { background: rgba(244,114,182,0.12); color: #f472b6; }
+.tag-optimization { background: rgba(45,212,191,0.12); color: #2dd4bf; }
+.tag-uav { background: rgba(59,130,246,0.12); color: #60a5fa; }
+.tag-scene { background: rgba(148,163,184,0.12); color: #94a3b8; }
+.tag-active { background: rgba(132,204,22,0.12); color: #a3e635; }
+.tag-connectivity { background: rgba(167,139,250,0.12); color: #a78bfa; }
+.tag-hardware { background: rgba(251,146,60,0.12); color: #fb923c; }
+.tag-dexterous { background: rgba(251,146,60,0.12); color: #fb923c; }
+.tag-perception { background: rgba(244,114,182,0.12); color: #f472b6; }
+.tag-tampering { background: rgba(239,68,68,0.12); color: #f87171; }
+.tag-force { background: rgba(251,146,60,0.12); color: #fb923c; }
+.tag-skill { background: rgba(52,211,153,0.12); color: #34d399; }
+.tag-discovery { background: rgba(132,204,22,0.12); color: #a3e635; }
+.tag-editing { background: rgba(168,85,247,0.12); color: #a855f7; }
+.tag-personalization { background: rgba(244,114,182,0.12); color: #f472b6; }
+.tag-retrieval { background: rgba(34,211,238,0.12); color: #22d3ee; }
+.hot-badge {
+  display: inline;
+  margin-right: 4px;
+}
+.info-card {
+  background: rgba(30,41,59,0.6);
+  border: 1px solid rgba(99,102,241,0.12);
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 16px;
+}
+.paper-summary {
+  font-size: 0.9rem;
+  color: #cbd5e1;
+  line-height: 1.7;
+  margin-bottom: 14px;
+}
+.paper-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.paper-links a {
+  display: inline-block;
+  padding: 5px 14px;
+  background: rgba(99,102,241,0.12);
+  color: #818cf8;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  transition: background 0.2s;
+}
+.paper-links a:hover {
+  background: rgba(99,102,241,0.25);
+}
+footer {
+  text-align: center;
+  color: #475569;
+  font-size: 0.82rem;
+  padding: 40px 20px;
+  border-top: 1px solid rgba(99,102,241,0.1);
+  margin-top: 40px;
+}
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+.stat-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>小小志AI日报</h1>
+    <div class="date">2026年7月24日 周五</div>
+    <div class="subtitle">关注：VLA · Robotics · World Model · LLM · Multimodal · Agent</div>
+    <div class="stats">
+      <span class="stat-item">📝 arXiv 8</span>
+      <span class="stat-item">🤗 HF 热门 6</span>
+      <span class="stat-item">🏢 机构 1</span>
+      <span class="stat-item">🐦 X/Twitter 0</span>
+    </div>
+  </header>
+
+  <div class="highlight-banner">
+    <div class="hl-title">🔥 今日看点</div>
+    <div class="hl-text">今日 arXiv 8 篇 + HF 热门 6 篇 + 机构动态 1 条。世界模型方向 WorldWeaver 提出面向多智能体交互的流式自回归扩散世界模型，用"世界状态寄存器"显式维护多方共享环境状态。机器人方向 AXIS 构建可增长的社区驱动数据引擎（含 RoboCasa365 场景体系，5 万级数据）破解操作数据多样性瓶颈。大模型训练方向 SLAI 团队在昇腾 SuperPOD 上完成 DeepSeek-V4 全参数后训练（效率提升 2.93 倍），腾讯提出面向评分量规的集合级文档检索框架。Agent 方向双基准 DocOps 与 ICAE-Bench 分别聚焦复杂文档操作与交互式项目构建。OpenAI 正式在 ChatGPT 中上线健康功能 Health in ChatGPT。</div>
+  </div>
+
+  <!-- World Model Section -->
+  <section class="section">
+    <h2 class="section-title">🌍 World Model · 世界模型</h2>
+
+    <div class="paper-card hot">
+      <div class="paper-title"><span class="hot-badge">🔥</span> Streaming Multi-Agent Autoregressive Diffusion Model with World State Registers</div>
+      <div class="paper-meta">arXiv 2026 · 2607.21594 · WorldWeaver (UCLA VAIL)</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">采用自回归扩散模型进行流式世界生成，引入"世界状态寄存器"显式维护多智能体交互中的共享环境状态</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次面向多智能体交互场景设计流式自回归扩散世界模型，用状态寄存器解决多方交互下的一致性与长时序记忆</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在多智能体交互世界生成任务上验证了状态一致性与流式生成能力，具体指标详见原文</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于世界模型方向，建议关注多智能体一致性、流式实时性与长时序状态保持能力</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-world">World Model</span>
+        <span class="tag tag-diffusion">Autoregressive Diffusion</span>
+        <span class="tag tag-agent">Multi-Agent</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2607.21594">arXiv</a>
+        <a href="https://arxiv.org/pdf/2607.21594">PDF</a>
+        <a href="https://vail-ucla.github.io/worldweaver/">Project</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Robotics Section -->
+  <section class="section">
+    <h2 class="section-title">🦾 Robotics · 机器人</h2>
+
+    <div class="paper-card hot">
+      <div class="paper-title"><span class="hot-badge">🔥</span> AXIS: A Growable Community-Driven Data Engine for Scalable Robot Manipulation</div>
+      <div class="paper-meta">arXiv 2026 · 2607.21588 · AXIS (RoboCasa365)</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">构建可增长的社区驱动数据引擎 AXIS，持续汇聚并标准化多样化机器人操作数据以支撑可扩展策略训练</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出社区共建、可持续增长的机器人数据引擎与 RoboCasa365 场景体系，破解操作数据多样性不足的瓶颈</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">数据规模达 50K，任务成功率相关指标分别提升 5.8% 与 37.3%</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于机器人数据基础设施方向，建议关注数据质量、社区共建可持续性与真机泛化效果</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-robot">Robotics</span>
+        <span class="tag tag-data">Data Engine</span>
+        <span class="tag tag-manipulation">Manipulation</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2607.21588">arXiv</a>
+        <a href="https://arxiv.org/pdf/2607.21588">PDF</a>
+        <a href="https://axisaiorg.github.io/AXIS-V1/">Project</a>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">Scale Up Strategically: Learning Compositional Generalization via Bias-Aware Evaluation and Data Collection for Robotic Manipulation</div>
+      <div class="paper-meta">arXiv 2026 · 2607.21582</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">从偏差感知的评估与数据采集入手，研究机器人操作中组合泛化能力如何随数据规模策略性扩展</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出偏差感知的评估与数据采集框架，指导有策略地扩充数据以提升组合泛化，而非盲目堆量</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">实验验证了策略性扩展数据对组合泛化的有效性，具体数据详见原文</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于机器人算法与控制方向，建议重点关注评估设置、数据采集策略与真实部署条件</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-robot">Robotics</span>
+        <span class="tag tag-manipulation">Compositional Generalization</span>
+        <span class="tag tag-data">Data Collection</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2607.21582">arXiv</a>
+        <a href="https://arxiv.org/pdf/2607.21582">PDF</a>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">Beyond Episodic Evaluation: Memory Architectural Bottlenecks in Sequential Embodied Question Answering</div>
+      <div class="paper-meta">arXiv 2026 · 2607.21571</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">面向序列化具身问答（EQA）任务，系统分析不同记忆架构在连续交互中的表现与瓶颈</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">突破传统单回合评估范式，首次揭示序列化具身问答中记忆架构的结构性瓶颈</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在导航与具身问答任务上验证了记忆架构对连续任务表现的关键影响，具体数据详见原文</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于具身智能评估方向，建议关注长时序记忆机制设计与序列化评估基准价值</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-embodied">Embodied QA</span>
+        <span class="tag tag-memory">Memory</span>
+        <span class="tag tag-evaluation">Evaluation</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2607.21571">arXiv</a>
+        <a href="https://arxiv.org/pdf/2607.21571">PDF</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Multimodal Section -->
+  <section class="section">
+    <h2 class="section-title">🎨 Multimodal · 多模态</h2>
+
+    <div class="paper-card">
+      <div class="paper-title">3D-Aware VLMs with Implicit and Explicit Geometries</div>
+      <div class="paper-meta">arXiv 2026 · 2607.21595 · VLM-IE3D</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">在视觉-语言模型中同时引入隐式与显式几何表征，构建具备三维感知能力的 VLM-IE3D 框架</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出隐式与显式几何统一建模，使视觉-语言模型获得更强的三维空间理解与推理能力</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">实验验证了隐式-显式几何融合对三维感知任务的有效性，具体数据详见原文</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于多模态方向，建议关注三维几何表征方式、跨模态对齐与下游空间任务表现</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-multimodal">Multimodal</span>
+        <span class="tag tag-3d">3D-Aware</span>
+        <span class="tag tag-perception">Geometry</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2607.21595">arXiv</a>
+        <a href="https://arxiv.org/pdf/2607.21595">PDF</a>
+        <a href="https://github.com/Vegetebird/VLM-IE3D">Code</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- LLM Section -->
+  <section class="section">
+    <h2 class="section-title">🧠 LLM · 大语言模型</h2>
+
+    <div class="paper-card hot">
+      <div class="paper-title"><span class="hot-badge">🔥</span> SLAI T-Rex: Full-Parameter Post-training of the DeepSeek-V4 Family on Ascend SuperPOD</div>
+      <div class="paper-meta">arXiv 2026 · 2607.20145 · SLAI · GitHub 19⭐</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">在昇腾 Ascend SuperPOD 集群上对 DeepSeek-V4 系列进行全参数后训练，打通国产算力的大模型后训练全流程</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">公开在昇腾超节点上完成 DeepSeek-V4 全参数后训练的工程实践，验证国产硬件后训练的可行性</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">关键指标达 34.22% 与 71.81%，训练效率提升 2.93 倍，相关指标提升 11.27 个百分点（开源 19 星）</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于大语言模型训练方向，建议关注国产算力适配、全参数后训练稳定性与成本效益</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-llm">LLM</span>
+        <span class="tag tag-hardware">Ascend</span>
+        <span class="tag tag-infra">Post-training</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2607.20145">arXiv</a>
+        <a href="https://arxiv.org/pdf/2607.20145">PDF</a>
+        <a href="https://github.com/SLAI-AITP/SLAI-T-Rex">Code</a>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">Beyond Relevance-Centric Retrieval: Rubric-Oriented Document Set Selection and Ranking</div>
+      <div class="paper-meta">arXiv 2026 · 2607.19747 · Tencent · GitHub 32⭐</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出面向评分量规（rubric）的文档集选择与排序框架 SetwiseEvalKit，超越以相关性为中心的传统检索</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">将检索目标从单点相关性转向以量规为导向的文档"集合"级选择与排序，更贴合复杂检索需求</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">相关指标提升约 45%，数据规模达 28K，开源仓库获 32 星</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于大语言模型/检索方向，建议关注量规设计合理性、集合级排序策略与实际检索收益</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-llm">LLM</span>
+        <span class="tag tag-retrieval">Retrieval</span>
+        <span class="tag tag-evaluation">Rubric</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2607.19747">arXiv</a>
+        <a href="https://arxiv.org/pdf/2607.19747">PDF</a>
+        <a href="https://rubric4setwise.github.io/">Project</a>
+        <a href="https://github.com/Rubric4Setwise/Rubric4Setwise">Code</a>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">Scaling Laws for Hypernetwork-Based Knowledge Injection in Large Language Models</div>
+      <div class="paper-meta">arXiv 2026 · 2607.19604 · GitHub 13⭐</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">借助超网络（hypernetwork）向大语言模型注入知识，并系统研究该机制下的规模化扩展规律</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">刻画基于超网络的知识注入所遵循的缩放定律，为参数高效的知识更新提供理论依据</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在最高 5M 规模的知识注入设置下验证缩放规律，结合 LoRA 实现高效注入（开源 13 星）</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于大语言模型方向，建议关注知识注入可扩展性、遗忘控制与参数高效性的权衡</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-llm">LLM</span>
+        <span class="tag tag-architecture">Hypernetwork</span>
+        <span class="tag tag-memory">Knowledge Injection</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2607.19604">arXiv</a>
+        <a href="https://arxiv.org/pdf/2607.19604">PDF</a>
+        <a href="https://www.nace.ai/research/scaling-law-for-hypernetwork">Project</a>
+        <a href="https://github.com/hdnndh/Latent-Geometry-Beyond-Search-Amortizing-Planning-in-World-Models">Code</a>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">Beyond Euclidean Clipping: Overcoming Exploration Collapse in LLM RL via Riemannian Isometric Policy Optimization</div>
+      <div class="paper-meta">arXiv 2026 · 2607.10169 · GenSI</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">针对大语言模型强化学习中的探索坍缩问题，提出黎曼等距策略优化 RIPO，改进传统欧氏空间裁剪</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">用黎曼几何视角替代 PPO-Clip 的欧氏裁剪，从几何层面缓解 LLM 强化学习中的探索坍缩</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">相关指标提升约 60%，验证了几何化裁剪对维持探索多样性的有效性</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于大语言模型/强化学习方向，建议关注几何优化的稳定性、计算开销与训练收敛表现</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-llm">LLM</span>
+        <span class="tag tag-rl">RL</span>
+        <span class="tag tag-optimization">Policy Optimization</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2607.10169">arXiv</a>
+        <a href="https://arxiv.org/pdf/2607.10169">PDF</a>
+        <a href="https://github.com/Aiolus-X/RIPO">Code</a>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">MedGame: Storytelling Gamification Empowered by Large Language Models for Medical Education</div>
+      <div class="paper-meta">arXiv 2026 · 2607.21570 · MedGame</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">基于大语言模型构建叙事化游戏框架 MedGame，将医学教育内容转化为交互式故事化学习体验</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">将大语言模型驱动的叙事游戏化机制系统应用于医学教育，提升学习者的参与度与情境代入感</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在医学教育场景的内容生成与交互任务上验证了框架的有效性，具体数据详见原文</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于大语言模型应用方向，建议关注教学效果评估、内容准确性与临床知识可靠性</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-llm">LLM</span>
+        <span class="tag tag-education">Education</span>
+        <span class="tag tag-medical">Medical</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2607.21570">arXiv</a>
+        <a href="https://arxiv.org/pdf/2607.21570">PDF</a>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">Beyond Sycophancy: Structured Resistance and Compliance in LLM Moral Reasoning</div>
+      <div class="paper-meta">arXiv 2026 · 2607.21558</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">研究大语言模型在道德推理中的顺从与抵抗行为，构建结构化框架刻画其何时坚持何时妥协</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">超越单纯的"谄媚"视角，结构化区分模型在道德推理中的合理抵抗与盲目顺从</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">实验验证了模型在道德情境下抵抗与顺从行为的可测量结构，具体数据详见原文</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于大语言模型对齐与安全方向，建议关注道德推理鲁棒性与价值对齐评估方法</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-llm">LLM</span>
+        <span class="tag tag-safety">Alignment</span>
+        <span class="tag tag-reasoning">Moral Reasoning</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2607.21558">arXiv</a>
+        <a href="https://arxiv.org/pdf/2607.21558">PDF</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Agent Section -->
+  <section class="section">
+    <h2 class="section-title">🧩 Agent · 智能体</h2>
+
+    <div class="paper-card">
+      <div class="paper-title">OpenForgeRL: Train Harness-native Agents in Any Environment</div>
+      <div class="paper-meta">arXiv 2026 · 2607.21557 · OpenForgeRL</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出开源框架 OpenForgeRL，支持在多样化环境中端到端训练与运行框架原生（harness-native）智能体</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">面向"任意环境"提供统一的框架原生智能体端到端强化学习训练方案，降低跨环境训练门槛</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在多样化环境中验证了端到端训练智能体的可行性，具体指标详见原文</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于 Agent/工具使用方向，建议关注框架通用性、工具调用策略与端到端成功率</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-agent">Agent</span>
+        <span class="tag tag-rl">RL</span>
+        <span class="tag tag-tool">Harness</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2607.21557">arXiv</a>
+        <a href="https://arxiv.org/pdf/2607.21557">PDF</a>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">DocOps: A Verifiable Benchmark for Autonomous Agents in Complex Document Operations</div>
+      <div class="paper-meta">arXiv 2026 · 2607.19865 · DocOps · GitHub 3⭐</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">构建可验证的自主智能体基准 DocOps，覆盖复杂文档操作任务并提供客观可复现的评测机制</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">面向复杂文档操作场景提出可验证基准，弥补现有 Agent 评测在文档处理可靠性上的空白</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在文档操作与任务执行评测中验证了基准的鲁棒性与区分度（开源 3 星）</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于 Agent/工具使用方向，建议关注任务覆盖广度、验证机制严谨性与主流智能体表现</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-agent">Agent</span>
+        <span class="tag tag-benchmark">Benchmark</span>
+        <span class="tag tag-tool">Document Ops</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2607.19865">arXiv</a>
+        <a href="https://arxiv.org/pdf/2607.19865">PDF</a>
+        <a href="https://docopsbench.github.io">Project</a>
+        <a href="https://github.com/icip-cas/DocOps">Code</a>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">ICAE-Bench: Evaluating Coding Agents as Interactive Project Builders</div>
+      <div class="paper-meta">arXiv 2026 · 2607.21217 · ICAE-Bench · GitHub 3⭐</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出 ICAE-Bench，将编码智能体视为交互式项目构建者进行评测，覆盖规划、工具使用与迭代构建</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">从"交互式项目构建"视角评估编码智能体，超越单点代码生成，强调长程规划与工程落地能力</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在规划与项目构建任务上验证了基准有效性，可区分不同编码智能体的能力（开源 3 星）</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于 Agent/工具使用方向，建议关注项目级评测的真实性、工具调用策略与端到端构建成功率</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-agent">Agent</span>
+        <span class="tag tag-code">Coding Agent</span>
+        <span class="tag tag-benchmark">Benchmark</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2607.21217">arXiv</a>
+        <a href="https://arxiv.org/pdf/2607.21217">PDF</a>
+        <a href="https://github.com/ALEX-nlp/ICAE-EVAL">Code</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Informations Section -->
+  <section class="section">
+    <h2 class="section-title">📰 Informations · 行业动态</h2>
+
+    <div class="info-card">
+      <div class="paper-title">Launching Health in ChatGPT</div>
+      <div class="paper-summary">OpenAI 正式在 ChatGPT 中上线健康功能 Health in ChatGPT，将健康相关能力引入 ChatGPT，帮助用户获取健康信息与支持，具体能力与开放范围以官方博客说明为准。</div>
+      <div class="paper-links">
+        <a href="https://openai.com/index/health-in-chatgpt/">来源</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>自动生成于 2026-07-24 · 关注：VLA · Robotics · World Model · LLM · Multimodal · Agent</p>
+    <p>小小志AI日报 · 每日精选 AI 前沿论文与行业动态</p>
+  </footer>
+</div>
+</body>
+</html>
