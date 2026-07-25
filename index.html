@@ -658,6 +658,341 @@
 <script>
 // ===== DATA =====
 const PAPERS_DB = [
+    // === 2026-07-25 ===
+    {
+        date: "2026-07-25",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "Reasoning as a Double-Edged Sword: Architecture and Cross-Stage Robustness in Vision-Language-Action Models",
+        venue: "arXiv 2026 · 2607.17786 · Meta FAIR",
+        summary: "🔬 技术路线: 围绕视觉-语言-动作模型的架构设计与跨阶段鲁棒性展开系统分析，重点考察思维链推理的引入方式 | 💡 创新点: 揭示推理链在 VLA 模型中的双刃剑效应：既能提升任务理解，也可能在跨阶段传播错误、削弱鲁棒性 | 📊 实验效果: 在推理任务上验证了架构选择与鲁棒性之间的权衡关系，具体数据详见原文 | ⭐ 整体评价: 属于 VLA 与具身控制方向，建议关注任务泛化能力、动作表达方式与真机验证结果",
+        tags: [["VLA","green"],["Reasoning","green"],["Robustness","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.17786"],["PDF","https://arxiv.org/pdf/2607.17786"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"围绕视觉-语言-动作模型的架构设计与跨阶段鲁棒性展开系统分析，重点考察思维链推理的引入方式"},{"label":"💡 创新点","text":"揭示推理链在 VLA 模型中的双刃剑效应：既能提升任务理解，也可能在跨阶段传播错误、削弱鲁棒性"},{"label":"📊 实验效果","text":"在推理任务上验证了架构选择与鲁棒性之间的权衡关系，具体数据详见原文"},{"label":"⭐ 整体评价","text":"属于 VLA 与具身控制方向，建议关注任务泛化能力、动作表达方式与真机验证结果"}]
+    },
+    {
+        date: "2026-07-25",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "PhyAgentOS: A Self-Evolving Operating System for Embodied Agents with Decoupled Cognitive Planning and Physical Execution",
+        venue: "arXiv 2026 · 2607.16636 · Physical Intelligence",
+        summary: "🔬 技术路线: 基于视觉-语言-动作模型与世界模型构建自进化具身智能体操作系统，将认知规划与物理执行解耦 | 💡 创新点: 提出统一的智能体操作系统架构，支持规划与执行分离演进，实现系统能力的持续自我进化 | 📊 实验效果: 在规划任务上验证了框架的有效性，具体数据详见原文 | ⭐ 整体评价: 属于 VLA 与具身控制方向，建议关注任务泛化能力、动作表达方式与真机验证结果",
+        tags: [["VLA","green"],["Embodied","green"],["Planning","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.16636"],["PDF","https://arxiv.org/pdf/2607.16636"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于视觉-语言-动作模型与世界模型构建自进化具身智能体操作系统，将认知规划与物理执行解耦"},{"label":"💡 创新点","text":"提出统一的智能体操作系统架构，支持规划与执行分离演进，实现系统能力的持续自我进化"},{"label":"📊 实验效果","text":"在规划任务上验证了框架的有效性，具体数据详见原文"},{"label":"⭐ 整体评价","text":"属于 VLA 与具身控制方向，建议关注任务泛化能力、动作表达方式与真机验证结果"}]
+    },
+    {
+        date: "2026-07-25",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "PAVXploreRL: Physical-Action-Visual World Model Reinforcement Learning with Action Exploration",
+        venue: "arXiv 2026 · 2607.16602",
+        summary: "🔬 技术路线: 基于世界模型与强化学习框架构建训练流程，引入动作条件化的物理-动作-视觉联合建模 | 💡 创新点: 提出动作探索驱动的世界模型强化学习方法，具有可扩展与鲁棒特性 | 📊 实验效果: 关键指标提升 5.6% | ⭐ 整体评价: 属于世界模型与动作生成方向，建议关注预测精度、动作可控性和 Sim-to-Real 迁移效果",
+        tags: [["World Model","green"],["RL","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.16602"],["PDF","https://arxiv.org/pdf/2607.16602"],["Code","https://github.com/Social-AI-Studio/PAVXploreRL"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于世界模型与强化学习框架构建训练流程，引入动作条件化的物理-动作-视觉联合建模"},{"label":"💡 创新点","text":"提出动作探索驱动的世界模型强化学习方法，具有可扩展与鲁棒特性"},{"label":"📊 实验效果","text":"关键指标提升 5.6%"},{"label":"⭐ 整体评价","text":"属于世界模型与动作生成方向，建议关注预测精度、动作可控性和 Sim-to-Real 迁移效果"}]
+    },
+    {
+        date: "2026-07-25",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "ReferTrack: Referring Then Tracking for Embodied Visual Tracking",
+        venue: "arXiv 2026 · 2607.20061",
+        summary: "🔬 技术路线: 采用先指代后跟踪的两阶段训练方法，实现具身视觉跟踪 | 💡 创新点: 提出 Refer-QA 数据构造方式，将指代理解与目标跟踪结合，具有鲁棒特性 | 📊 实验效果: 关键指标达到 89.4%、73.3%、74.1% | ⭐ 整体评价: 属于具身控制方向，建议关注任务泛化能力、动作表达方式与真机验证结果",
+        tags: [["Robotics","green"],["Tracking","green"],["Embodied","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.20061"],["PDF","https://arxiv.org/pdf/2607.20061"],["Code","https://github.com/MedlarTea/referTrack"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"采用先指代后跟踪的两阶段训练方法，实现具身视觉跟踪"},{"label":"💡 创新点","text":"提出 Refer-QA 数据构造方式，将指代理解与目标跟踪结合，具有鲁棒特性"},{"label":"📊 实验效果","text":"关键指标达到 89.4%、73.3%、74.1%"},{"label":"⭐ 整体评价","text":"属于具身控制方向，建议关注任务泛化能力、动作表达方式与真机验证结果"}]
+    },
+    {
+        date: "2026-07-25",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "Eversion-based robots can enable safe access, steering and endoscopic imaging within the spinal subarachnoid space",
+        venue: "arXiv 2026 · 2607.19274 · MIT",
+        summary: "🔬 技术路线: 基于外翻式软体机器人实现脊髓蛛网膜下腔的安全进入、转向与内窥成像 | 💡 创新点: 将外翻推进机制引入脊柱微创介入场景，结合多模态成像降低操作风险 | 📊 实验效果: 关键指标达到 65.2%、48.0% | ⭐ 整体评价: 属于机器人算法与控制方向，建议重点看实验设置、基线对比和真实部署条件",
+        tags: [["Robotics","green"],["Medical","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.19274"],["PDF","https://arxiv.org/pdf/2607.19274"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于外翻式软体机器人实现脊髓蛛网膜下腔的安全进入、转向与内窥成像"},{"label":"💡 创新点","text":"将外翻推进机制引入脊柱微创介入场景，结合多模态成像降低操作风险"},{"label":"📊 实验效果","text":"关键指标达到 65.2%、48.0%"},{"label":"⭐ 整体评价","text":"属于机器人算法与控制方向，建议重点看实验设置、基线对比和真实部署条件"}]
+    },
+    {
+        date: "2026-07-25",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "SeededGrasp: Language-Guided Grasping in Complex Scenes with Multiple Embodiments",
+        venue: "arXiv 2026 · 2607.20207",
+        summary: "🔬 技术路线: 基于视觉-语言模型构建训练框架，实现复杂场景下跨本体的语言引导抓取 | 💡 创新点: 提出高效、轻量化、端到端的语言引导抓取方案，支持多种机器人本体 | 📊 实验效果: 关键指标达到 72%、78%，训练数据规模 250 万 | ⭐ 整体评价: 属于机器人算法与控制方向，建议重点看实验设置、基线对比和真实部署条件",
+        tags: [["Robotics","green"],["Grasping","green"],["Manipulation","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.20207"],["PDF","https://arxiv.org/pdf/2607.20207"],["Project","https://uoft-isl.github.io/seeded-grasp/"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于视觉-语言模型构建训练框架，实现复杂场景下跨本体的语言引导抓取"},{"label":"💡 创新点","text":"提出高效、轻量化、端到端的语言引导抓取方案，支持多种机器人本体"},{"label":"📊 实验效果","text":"关键指标达到 72%、78%，训练数据规模 250 万"},{"label":"⭐ 整体评价","text":"属于机器人算法与控制方向，建议重点看实验设置、基线对比和真实部署条件"}]
+    },
+    {
+        date: "2026-07-25",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "Scene-SAM3D: Multi-View Scene Asset Generation Without Fine-Tuning",
+        venue: "arXiv 2026 · 2607.16805",
+        summary: "🔬 技术路线: 基于免微调框架实现多视角场景资产生成 | 💡 创新点: 无需微调即可生成高质量场景资产，具有高效、轻量化特性 | 📊 实验效果: 关键指标达到 43.8%、30.9%、20% | ⭐ 整体评价: 属于机器人相关三维生成方向，建议重点看实验设置、基线对比和真实部署条件",
+        tags: [["Robotics","green"],["3D","green"],["Generation","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.16805"],["PDF","https://arxiv.org/pdf/2607.16805"],["Code","https://github.com/xibi777/Scene-SAM3D"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于免微调框架实现多视角场景资产生成"},{"label":"💡 创新点","text":"无需微调即可生成高质量场景资产，具有高效、轻量化特性"},{"label":"📊 实验效果","text":"关键指标达到 43.8%、30.9%、20%"},{"label":"⭐ 整体评价","text":"属于机器人相关三维生成方向，建议重点看实验设置、基线对比和真实部署条件"}]
+    },
+    {
+        date: "2026-07-25",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "Move First, Commit Later: Selective LiDAR-to-BIM Global Initialization via Sequential Consensus with Symmetry-Aware Abstention",
+        venue: "arXiv 2026 · 2607.17103 · MIT",
+        summary: "🔬 技术路线: 提出 LiDAR 到 BIM 的全局初始化方法，采用序贯共识与对称感知弃权机制，结合仿真评估的模块化设计 | 💡 创新点: 先移动后确认的选择性定位策略，在对称结构场景中主动弃权以避免错误初始化 | 📊 实验效果: 在 top-1 命中率等指标上取得提升 | ⭐ 整体评价: 属于机器人算法与控制方向，建议重点看实验设置、基线对比和真实部署条件",
+        tags: [["Robotics","green"],["Localization","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.17103"],["PDF","https://arxiv.org/pdf/2607.17103"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出 LiDAR 到 BIM 的全局初始化方法，采用序贯共识与对称感知弃权机制，结合仿真评估的模块化设计"},{"label":"💡 创新点","text":"先移动后确认的选择性定位策略，在对称结构场景中主动弃权以避免错误初始化"},{"label":"📊 实验效果","text":"在 top-1 命中率等指标上取得提升"},{"label":"⭐ 整体评价","text":"属于机器人算法与控制方向，建议重点看实验设置、基线对比和真实部署条件"}]
+    },
+    {
+        date: "2026-07-25",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "Future Rendering ≠ Future Surface: A Benchmark and Dataset for Dynamic Surface Reconstruction Beyond the Observed Window",
+        venue: "arXiv 2026 · 2607.21471",
+        summary: "🔬 技术路线: 面向动态场景构建基准与数据集，评估观测窗口之外的动态表面重建能力，覆盖部署与规划场景 | 💡 创新点: 指出未来渲染不等于未来表面，首次系统评估超出观测窗口的表面重建问题 | 📊 实验效果: 关键指标达到 75% | ⭐ 整体评价: 属于机器人算法与控制方向，建议重点看实验设置、基线对比和真实部署条件",
+        tags: [["Robotics","green"],["Benchmark","green"],["3D","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.21471"],["PDF","https://arxiv.org/pdf/2607.21471"],["Code","https://github.com/Ricky-S/futuresurf"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"面向动态场景构建基准与数据集，评估观测窗口之外的动态表面重建能力，覆盖部署与规划场景"},{"label":"💡 创新点","text":"指出未来渲染不等于未来表面，首次系统评估超出观测窗口的表面重建问题"},{"label":"📊 实验效果","text":"关键指标达到 75%"},{"label":"⭐ 整体评价","text":"属于机器人算法与控制方向，建议重点看实验设置、基线对比和真实部署条件"}]
+    },
+    {
+        date: "2026-07-25",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "Robostral Navigate",
+        venue: "arXiv 2026 · 2607.20785",
+        summary: "🔬 技术路线: 基于视觉-语言模型与强化学习训练导航策略 | 💡 创新点: 在 Room-to-Room 等基准上构建高效、可扩展且鲁棒的导航模型 | 📊 实验效果: 关键指标达到 77.4%、75.1%，实现 22 倍加速，模型规模 8B | ⭐ 整体评价: 属于机器人算法与控制方向，建议重点看实验设置、基线对比和真实部署条件",
+        tags: [["Robotics","green"],["Navigation","green"],["RL","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.20785"],["PDF","https://arxiv.org/pdf/2607.20785"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于视觉-语言模型与强化学习训练导航策略"},{"label":"💡 创新点","text":"在 Room-to-Room 等基准上构建高效、可扩展且鲁棒的导航模型"},{"label":"📊 实验效果","text":"关键指标达到 77.4%、75.1%，实现 22 倍加速，模型规模 8B"},{"label":"⭐ 整体评价","text":"属于机器人算法与控制方向，建议重点看实验设置、基线对比和真实部署条件"}]
+    },
+    {
+        date: "2026-07-25",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "Evaluating medical AI under missing information: same-provider judges and human raters change apparent safety",
+        venue: "arXiv 2026 · 2607.18828 · MIT",
+        summary: "🔬 技术路线: 构建多模态基准测试，评估信息缺失条件下医疗 AI 的安全性表现，覆盖 GPT-5 等模型 | 💡 创新点: 揭示同厂商评审模型与人类评分者会显著改变医疗 AI 的表观安全性结论 | 📊 实验效果: 关键指标达到 84%、52% | ⭐ 整体评价: 属于多模态方向，建议关注跨模态对齐方式、数据规模和下游任务表现",
+        tags: [["Multimodal","green"],["Medical","green"],["Evaluation","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.18828"],["PDF","https://arxiv.org/pdf/2607.18828"],["Code","https://github.com/KAVentures/health-ai-readiness-robustness"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"构建多模态基准测试，评估信息缺失条件下医疗 AI 的安全性表现，覆盖 GPT-5 等模型"},{"label":"💡 创新点","text":"揭示同厂商评审模型与人类评分者会显著改变医疗 AI 的表观安全性结论"},{"label":"📊 实验效果","text":"关键指标达到 84%、52%"},{"label":"⭐ 整体评价","text":"属于多模态方向，建议关注跨模态对齐方式、数据规模和下游任务表现"}]
+    },
+    {
+        date: "2026-07-25",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "Quality Action Assurance: Multimodal Verification of Examiner Claims in VR OSCEs",
+        venue: "arXiv 2026 · 2607.19063 · Meta FAIR",
+        summary: "🔬 技术路线: 基于大语言模型构建多模态验证框架，核验 VR 客观结构化临床考试中考官的操作声明 | 💡 创新点: 将多模态证据与文本声明交叉验证，实现考试质量的自动化保障 | 📊 实验效果: 关键指标达到 99.2%、93.4%，误差控制在 0.7% 与 1.9% | ⭐ 整体评价: 属于多模态方向，建议关注跨模态对齐方式、数据规模和下游任务表现",
+        tags: [["Multimodal","green"],["Medical","green"],["Evaluation","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.19063"],["PDF","https://arxiv.org/pdf/2607.19063"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于大语言模型构建多模态验证框架，核验 VR 客观结构化临床考试中考官的操作声明"},{"label":"💡 创新点","text":"将多模态证据与文本声明交叉验证，实现考试质量的自动化保障"},{"label":"📊 实验效果","text":"关键指标达到 99.2%、93.4%，误差控制在 0.7% 与 1.9%"},{"label":"⭐ 整体评价","text":"属于多模态方向，建议关注跨模态对齐方式、数据规模和下游任务表现"}]
+    },
+    {
+        date: "2026-07-25",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "Multimodal Pretraining for Generalizable EEG Representation Learning",
+        venue: "arXiv 2026 · 2607.21384 · MIT",
+        summary: "🔬 技术路线: 基于基础模型与自监督学习构建多模态预训练架构，学习可泛化的脑电表征 | 💡 创新点: 在 CHB-MIT 等数据集上实现自监督、多模态且轻量化的脑电表征学习 | 📊 实验效果: 实验验证了方法的有效性，具体数据详见原文 | ⭐ 整体评价: 属于多模态方向，建议关注跨模态对齐方式、数据规模和下游任务表现",
+        tags: [["Multimodal","green"],["EEG","green"],["Representation","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.21384"],["PDF","https://arxiv.org/pdf/2607.21384"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于基础模型与自监督学习构建多模态预训练架构，学习可泛化的脑电表征"},{"label":"💡 创新点","text":"在 CHB-MIT 等数据集上实现自监督、多模态且轻量化的脑电表征学习"},{"label":"📊 实验效果","text":"实验验证了方法的有效性，具体数据详见原文"},{"label":"⭐ 整体评价","text":"属于多模态方向，建议关注跨模态对齐方式、数据规模和下游任务表现"}]
+    },
+    {
+        date: "2026-07-25",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "Unlearning Under Imbalance: Benchmarking Fairness in Multimodal LLM Unlearning",
+        venue: "arXiv 2026 · 2607.21300 · Meta FAIR",
+        summary: "🔬 技术路线: 基于大语言模型微调与遗忘算法机制，研究数据不均衡下的多模态遗忘公平性 | 💡 创新点: 提出 FAIRGET 基准，首次系统评估多模态大模型遗忘过程中的公平性问题 | 📊 实验效果: 实验验证了方法的有效性，具体数据详见原文 | ⭐ 整体评价: 属于多模态方向，建议关注跨模态对齐方式、数据规模和下游任务表现",
+        tags: [["Multimodal","green"],["Fairness","green"],["Benchmark","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.21300"],["PDF","https://arxiv.org/pdf/2607.21300"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于大语言模型微调与遗忘算法机制，研究数据不均衡下的多模态遗忘公平性"},{"label":"💡 创新点","text":"提出 FAIRGET 基准，首次系统评估多模态大模型遗忘过程中的公平性问题"},{"label":"📊 实验效果","text":"实验验证了方法的有效性，具体数据详见原文"},{"label":"⭐ 整体评价","text":"属于多模态方向，建议关注跨模态对齐方式、数据规模和下游任务表现"}]
+    },
+    {
+        date: "2026-07-25",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "PathReportEval: A Systematic Benchmark for Pathology Report Generation",
+        venue: "arXiv 2026 · 2607.18448 · Meta FAIR",
+        summary: "🔬 技术路线: 基于框架化训练方法构建病理报告生成的系统性评测基准 | 💡 创新点: 基于 UNI2-h 等模型构建多模态病理报告生成评估体系 | 📊 实验效果: 在生成任务上验证了有效性，具体数据详见原文 | ⭐ 整体评价: 属于多模态方向，建议关注跨模态对齐方式、数据规模和下游任务表现",
+        tags: [["Multimodal","green"],["Medical","green"],["Benchmark","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.18448"],["PDF","https://arxiv.org/pdf/2607.18448"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于框架化训练方法构建病理报告生成的系统性评测基准"},{"label":"💡 创新点","text":"基于 UNI2-h 等模型构建多模态病理报告生成评估体系"},{"label":"📊 实验效果","text":"在生成任务上验证了有效性，具体数据详见原文"},{"label":"⭐ 整体评价","text":"属于多模态方向，建议关注跨模态对齐方式、数据规模和下游任务表现"}]
+    },
+    {
+        date: "2026-07-25",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Harness Engineering for LLM-Driven GPU Kernel Generation",
+        venue: "arXiv 2026 · 2607.17979 · NVIDIA",
+        summary: "🔬 技术路线: 基于大语言模型驱动的 GPU 内核生成，系统研究执行框架工程对生成质量的影响 | 💡 创新点: 提出 LLM 驱动的内核生成工程方法论，通过执行框架优化释放模型潜力 | 📊 实验效果: 关键指标实现 1.62 倍、18.05 倍、29.68 倍、1.12 倍加速 | ⭐ 整体评价: 属于 Agent 与工具使用方向，建议关注 Agent 架构、工具调用策略和端到端成功率",
+        tags: [["LLM","green"],["Code","green"],["Systems","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.17979"],["PDF","https://arxiv.org/pdf/2607.17979"],["Code","https://github.com/syhya/mlsys26-flashinfer-contest"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于大语言模型驱动的 GPU 内核生成，系统研究执行框架工程对生成质量的影响"},{"label":"💡 创新点","text":"提出 LLM 驱动的内核生成工程方法论，通过执行框架优化释放模型潜力"},{"label":"📊 实验效果","text":"关键指标实现 1.62 倍、18.05 倍、29.68 倍、1.12 倍加速"},{"label":"⭐ 整体评价","text":"属于 Agent 与工具使用方向，建议关注 Agent 架构、工具调用策略和端到端成功率"}]
+    },
+    {
+        date: "2026-07-25",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "FIFA World Cup 2026 as a Contamination-Free Benchmark for LLM Forecasting Agents: Four Models, a Bookmaker, and 104 Matches",
+        venue: "arXiv 2026 · 2607.17765 · MIT",
+        summary: "🔬 技术路线: 以 2026 世界杯 104 场比赛为免污染测试场，评估大语言模型预测智能体的真实能力 | 💡 创新点: 提出 WC2026-Agents 基准，以未来事件天然规避训练数据污染，并与博彩公司基准对照 | 📊 实验效果: 关键指标覆盖 92%、18%、10%、12% | ⭐ 整体评价: 属于大语言模型与推理方向，建议关注训练范式、推理机制和基准表现",
+        tags: [["LLM","green"],["Forecasting","green"],["Benchmark","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.17765"],["PDF","https://arxiv.org/pdf/2607.17765"],["Code","https://github.com/graphuofm/FIFA2026LLM"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"以 2026 世界杯 104 场比赛为免污染测试场，评估大语言模型预测智能体的真实能力"},{"label":"💡 创新点","text":"提出 WC2026-Agents 基准，以未来事件天然规避训练数据污染，并与博彩公司基准对照"},{"label":"📊 实验效果","text":"关键指标覆盖 92%、18%、10%、12%"},{"label":"⭐ 整体评价","text":"属于大语言模型与推理方向，建议关注训练范式、推理机制和基准表现"}]
+    },
+    {
+        date: "2026-07-25",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Supra Cognitive Modes: A Routed Architecture for Agent Memory",
+        venue: "arXiv 2026 · 2607.19096 · MIT",
+        summary: "🔬 技术路线: 基于路由式架构设计智能体记忆系统，按认知模式分发记忆读写 | 💡 创新点: 提出面向智能体记忆的路由架构，具有端到端特性 | 📊 实验效果: 关键指标达到 84.87%、68.61%、61.49%、86.00% | ⭐ 整体评价: 属于大语言模型与推理方向，建议关注训练范式、推理机制和基准表现",
+        tags: [["LLM","green"],["Memory","green"],["Agent","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.19096"],["PDF","https://arxiv.org/pdf/2607.19096"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于路由式架构设计智能体记忆系统，按认知模式分发记忆读写"},{"label":"💡 创新点","text":"提出面向智能体记忆的路由架构，具有端到端特性"},{"label":"📊 实验效果","text":"关键指标达到 84.87%、68.61%、61.49%、86.00%"},{"label":"⭐ 整体评价","text":"属于大语言模型与推理方向，建议关注训练范式、推理机制和基准表现"}]
+    },
+    {
+        date: "2026-07-25",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "When Shippers Become Algorithms: Candidate Exposure, Information Design, and the Concentration of LLM-Mediated Freight Markets",
+        venue: "arXiv 2026 · 2607.19967 · OpenAI · Anthropic",
+        summary: "🔬 技术路线: 基于大语言模型分析货运市场中算法中介带来的候选曝光与信息设计问题 | 💡 创新点: 首次系统研究 LLM 中介化货运市场的集中度效应与信息设计机制 | 📊 实验效果: 关键指标达到 76% | ⭐ 整体评价: 属于大语言模型与推理方向，建议关注训练范式、推理机制和基准表现",
+        tags: [["LLM","green"],["Market","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.19967"],["PDF","https://arxiv.org/pdf/2607.19967"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于大语言模型分析货运市场中算法中介带来的候选曝光与信息设计问题"},{"label":"💡 创新点","text":"首次系统研究 LLM 中介化货运市场的集中度效应与信息设计机制"},{"label":"📊 实验效果","text":"关键指标达到 76%"},{"label":"⭐ 整体评价","text":"属于大语言模型与推理方向，建议关注训练范式、推理机制和基准表现"}]
+    },
+    {
+        date: "2026-07-25",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "When Are Reasoning-Based Guardrails Not Efficient? ResponseGuard: A Fast Vision-Language Guard for Real-Time Moderation",
+        venue: "arXiv 2026 · 2607.21401",
+        summary: "🔬 技术路线: 基于视觉-语言模型构建快速实时内容审核护栏 | 💡 创新点: 提出 ResponseGuard，指出推理式护栏的效率瓶颈并给出轻量多模态替代方案 | 📊 实验效果: 覆盖 2B、3B 参数规模的模型验证 | ⭐ 整体评价: 属于多模态安全方向，建议关注跨模态对齐方式、数据规模和下游任务表现",
+        tags: [["LLM","green"],["Safety","green"],["Multimodal","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.21401"],["PDF","https://arxiv.org/pdf/2607.21401"],["Project","https://ndb796.github.io/ResponseGuard"],["Code","https://github.com/ndb796/ResponseGuard"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于视觉-语言模型构建快速实时内容审核护栏"},{"label":"💡 创新点","text":"提出 ResponseGuard，指出推理式护栏的效率瓶颈并给出轻量多模态替代方案"},{"label":"📊 实验效果","text":"覆盖 2B、3B 参数规模的模型验证"},{"label":"⭐ 整体评价","text":"属于多模态安全方向，建议关注跨模态对齐方式、数据规模和下游任务表现"}]
+    },
+    {
+        date: "2026-07-25",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "FORGE-plus: Force-Budgeted Recovery for Contact-Rich Assembly with a Frozen LLM Supervisor",
+        venue: "arXiv 2026 · 2607.21227 · MIT",
+        summary: "🔬 技术路线: 基于强化学习框架与冻结大语言模型监督器，实现接触密集装配任务的力预算恢复策略 | 💡 创新点: 提出力条件化的恢复机制，由冻结 LLM 充当监督器提升装配鲁棒性 | 📊 实验效果: 关键指标从 40% 提升至 64% | ⭐ 整体评价: 属于机器人算法与控制方向，建议重点看实验设置、基线对比和真实部署条件",
+        tags: [["LLM","green"],["Robotics","green"],["Assembly","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.21227"],["PDF","https://arxiv.org/pdf/2607.21227"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于强化学习框架与冻结大语言模型监督器，实现接触密集装配任务的力预算恢复策略"},{"label":"💡 创新点","text":"提出力条件化的恢复机制，由冻结 LLM 充当监督器提升装配鲁棒性"},{"label":"📊 实验效果","text":"关键指标从 40% 提升至 64%"},{"label":"⭐ 整体评价","text":"属于机器人算法与控制方向，建议重点看实验设置、基线对比和真实部署条件"}]
+    },
+    {
+        date: "2026-07-25",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "PRO-LONG: Programmatic Memory Enables Long-Horizon Reasoning",
+        venue: "arXiv 2026 · 2607.20064",
+        summary: "🔬 技术路线: 基于大语言模型与持续学习策略框架，用程序化记忆支撑长时程推理 | 💡 创新点: 提出程序化记忆机制，高效管理长时程任务的中间状态与知识 | 📊 实验效果: 关键指标达到 76.1%、97.4%，实现 5.8 倍效率提升与 18 个百分点增益 | ⭐ 整体评价: 属于 Agent 与工具使用方向，建议关注 Agent 架构、工具调用策略和端到端成功率",
+        tags: [["LLM","green"],["Memory","green"],["Reasoning","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.20064"],["PDF","https://arxiv.org/pdf/2607.20064"],["Code","https://github.com/alexisfox7/PRO-LONG"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于大语言模型与持续学习策略框架，用程序化记忆支撑长时程推理"},{"label":"💡 创新点","text":"提出程序化记忆机制，高效管理长时程任务的中间状态与知识"},{"label":"📊 实验效果","text":"关键指标达到 76.1%、97.4%，实现 5.8 倍效率提升与 18 个百分点增益"},{"label":"⭐ 整体评价","text":"属于 Agent 与工具使用方向，建议关注 Agent 架构、工具调用策略和端到端成功率"}]
+    },
+    {
+        date: "2026-07-25",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "IssueTrojanBench: Benchmarking AI Coding Agents Against Malicious Issue Requests",
+        venue: "arXiv 2026 · 2607.20759 · OpenAI · Anthropic · MIT",
+        summary: "🔬 技术路线: 基于训练、架构与策略层面构建评测框架，检验编码智能体面对恶意 Issue 请求的防御能力 | 💡 创新点: 覆盖 GPT-5 等前沿模型，首次系统化评估编码智能体的 Issue 注入攻击面 | 📊 实验效果: 关键指标达到 66.5% | ⭐ 整体评价: 属于 Agent 与工具使用方向，建议关注 Agent 架构、工具调用策略和端到端成功率",
+        tags: [["Agent","green"],["Security","green"],["Code","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.20759"],["PDF","https://arxiv.org/pdf/2607.20759"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于训练、架构与策略层面构建评测框架，检验编码智能体面对恶意 Issue 请求的防御能力"},{"label":"💡 创新点","text":"覆盖 GPT-5 等前沿模型，首次系统化评估编码智能体的 Issue 注入攻击面"},{"label":"📊 实验效果","text":"关键指标达到 66.5%"},{"label":"⭐ 整体评价","text":"属于 Agent 与工具使用方向，建议关注 Agent 架构、工具调用策略和端到端成功率"}]
+    },
+    {
+        date: "2026-07-25",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Tencent WorkBuddy Bench: A Multi-Domain Coding-Agent Benchmark with Contamination-Resistant Task Construction",
+        venue: "arXiv 2026 · 2607.20911 · MIT · Tencent",
+        summary: "🔬 技术路线: 基于统一框架构建多领域编码智能体基准，采用抗污染的任务构造方法 | 💡 创新点: 提出 WorkBuddy Bench，以抗污染任务构造保证评测公平性，覆盖多领域编码场景 | 📊 实验效果: 实验验证了基准的有效性，具体数据详见原文 | ⭐ 整体评价: 属于 Agent 与工具使用方向，建议关注 Agent 架构、工具调用策略和端到端成功率",
+        tags: [["Agent","green"],["Code","green"],["Benchmark","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.20911"],["PDF","https://arxiv.org/pdf/2607.20911"],["Link","https://workbuddybench.com/"],["Code","https://github.com/Tencent/workbuddy-bench"],["Model","https://huggingface.co/datasets/tencent/workbuddy-bench"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于统一框架构建多领域编码智能体基准，采用抗污染的任务构造方法"},{"label":"💡 创新点","text":"提出 WorkBuddy Bench，以抗污染任务构造保证评测公平性，覆盖多领域编码场景"},{"label":"📊 实验效果","text":"实验验证了基准的有效性，具体数据详见原文"},{"label":"⭐ 整体评价","text":"属于 Agent 与工具使用方向，建议关注 Agent 架构、工具调用策略和端到端成功率"}]
+    },
+    {
+        date: "2026-07-25",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "The Shared Discovery Paradox: How a One-Answer Rule Turns Better Information into Worse Search",
+        venue: "arXiv 2026 · 2607.18045 · MIT",
+        summary: "🔬 技术路线: 基于基准测试与准确率分析的研究方法，考察单一答案规则对搜索行为的影响 | 💡 创新点: 揭示共享发现悖论：更好的信息在单一答案约束下反而导致更差的搜索结果 | 📊 实验效果: 实验验证了该悖论的存在性，具体数据详见原文 | ⭐ 整体评价: 属于 Agent 与工具使用方向，建议关注 Agent 架构、工具调用策略和端到端成功率",
+        tags: [["Agent","green"],["Search","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.18045"],["PDF","https://arxiv.org/pdf/2607.18045"],["Code","https://github.com/yoheinakajima/shared-discovery-paradox"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于基准测试与准确率分析的研究方法，考察单一答案规则对搜索行为的影响"},{"label":"💡 创新点","text":"揭示共享发现悖论：更好的信息在单一答案约束下反而导致更差的搜索结果"},{"label":"📊 实验效果","text":"实验验证了该悖论的存在性，具体数据详见原文"},{"label":"⭐ 整体评价","text":"属于 Agent 与工具使用方向，建议关注 Agent 架构、工具调用策略和端到端成功率"}]
+    },
+    {
+        date: "2026-07-25",
+        category: "Other",
+        categoryIcon: "📄",
+        title: "Rushes: A Human Preference Dataset for Pluralistic Alignment",
+        venue: "arXiv 2026 · 2607.20767 · Microsoft",
+        summary: "🔬 技术路线: 构建人类偏好数据集与基准测试，面向多元化价值对齐研究 | 💡 创新点: 纳入 AI 生成内容的偏好标注，数据集具有鲁棒特性，支持多元对齐评估 | 📊 实验效果: 关键指标达到 37.7%、34.23%、36.4% | ⭐ 整体评价: 属于大语言模型与推理方向，建议关注训练范式、推理机制和基准表现",
+        tags: [["Dataset","green"],["Alignment","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.20767"],["PDF","https://arxiv.org/pdf/2607.20767"],["Code","https://github.com/microsoft/rushes"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"构建人类偏好数据集与基准测试，面向多元化价值对齐研究"},{"label":"💡 创新点","text":"纳入 AI 生成内容的偏好标注，数据集具有鲁棒特性，支持多元对齐评估"},{"label":"📊 实验效果","text":"关键指标达到 37.7%、34.23%、36.4%"},{"label":"⭐ 整体评价","text":"属于大语言模型与推理方向，建议关注训练范式、推理机制和基准表现"}]
+    },
+    {
+        date: "2026-07-25",
+        category: "Other",
+        categoryIcon: "📄",
+        title: "ZeroSplat: Generalized Referring Segmentation in 3D Gaussian Splatting",
+        venue: "arXiv 2026 · 2607.18801 · MIT",
+        summary: "🔬 技术路线: 基于视觉-语言模型与训练框架策略，实现三维高斯泼溅中的泛化指代分割 | 💡 创新点: 提出 GR-LERF 方法，将指代分割泛化到三维高斯表示，具有鲁棒特性 | 📊 实验效果: 实验验证了方法的有效性，具体数据详见原文 | ⭐ 整体评价: 属于多模态三维理解方向，建议关注跨模态对齐方式、数据规模和下游任务表现",
+        tags: [["3D","green"],["Multimodal","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.18801"],["PDF","https://arxiv.org/pdf/2607.18801"],["Project","https://inkmind-ai.github.io/ZeroSplat"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于视觉-语言模型与训练框架策略，实现三维高斯泼溅中的泛化指代分割"},{"label":"💡 创新点","text":"提出 GR-LERF 方法，将指代分割泛化到三维高斯表示，具有鲁棒特性"},{"label":"📊 实验效果","text":"实验验证了方法的有效性，具体数据详见原文"},{"label":"⭐ 整体评价","text":"属于多模态三维理解方向，建议关注跨模态对齐方式、数据规模和下游任务表现"}]
+    },
+    {
+        date: "2026-07-25",
+        category: "Other",
+        categoryIcon: "📄",
+        title: "CoGoal3D: Collaborative 3D Object Detection with 3D-Aware Fusion and Refinement",
+        venue: "arXiv 2026 · 2607.19036",
+        summary: "🔬 技术路线: 基于框架化训练策略，实现具备三维感知融合与精化的协同三维目标检测 | 💡 创新点: 在 DAIR-V2X 等数据集上提出三维感知的多智能体融合精化机制 | 📊 实验效果: 关键指标提升 10.86%、10.34%、10.18%，通信开销降低 2 倍 | ⭐ 整体评价: 属于协同感知方向，建议关注融合机制、通信效率和真实路测表现",
+        tags: [["3D","green"],["Driving","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.19036"],["PDF","https://arxiv.org/pdf/2607.19036"],["Code","https://github.com/Megalo-f/CoGoal3D"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于框架化训练策略，实现具备三维感知融合与精化的协同三维目标检测"},{"label":"💡 创新点","text":"在 DAIR-V2X 等数据集上提出三维感知的多智能体融合精化机制"},{"label":"📊 实验效果","text":"关键指标提升 10.86%、10.34%、10.18%，通信开销降低 2 倍"},{"label":"⭐ 整体评价","text":"属于协同感知方向，建议关注融合机制、通信效率和真实路测表现"}]
+    },
+    {
+        date: "2026-07-25",
+        category: "Other",
+        categoryIcon: "📄",
+        title: "SinD 2.0: A Multi-City UAV Dataset with Semantic Risk Annotations for SOTIF-Oriented Safety Validation at Signalized Intersections",
+        venue: "arXiv 2026 · 2607.16943 · MIT",
+        summary: "🔬 技术路线: 基于无人机航拍构建多城市数据集，附带语义风险标注，服务信号交叉口的安全验证 | 💡 创新点: 面向 SOTIF 安全验证提供跨域场景数据，支持交叉口风险行为分析 | 📊 实验效果: 在预测任务上验证了数据集的有效性 | ⭐ 整体评价: 属于自动驾驶数据方向，建议结合原文进一步判断创新点与复现价值",
+        tags: [["UAV","green"],["Dataset","green"],["Driving","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.16943"],["PDF","https://arxiv.org/pdf/2607.16943"],["Code","https://github.com/SOTIF-AVLab/SinD/tree/main"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于无人机航拍构建多城市数据集，附带语义风险标注，服务信号交叉口的安全验证"},{"label":"💡 创新点","text":"面向 SOTIF 安全验证提供跨域场景数据，支持交叉口风险行为分析"},{"label":"📊 实验效果","text":"在预测任务上验证了数据集的有效性"},{"label":"⭐ 整体评价","text":"属于自动驾驶数据方向，建议结合原文进一步判断创新点与复现价值"}]
+    },
+    {
+        date: "2026-07-25",
+        category: "Other",
+        categoryIcon: "📄",
+        title: "Public perceptions of AI-driven decision-making in healthcare: A structural equation modeling approach",
+        venue: "arXiv 2026 · 2607.18884 · Meta FAIR",
+        summary: "🔬 技术路线: 采用结构方程建模方法，研究公众对医疗领域 AI 决策的认知与态度 | 💡 创新点: 将深度学习相关的 AI 生成决策纳入公众感知量化分析框架 | 📊 实验效果: 实验验证了建模方法的有效性，具体数据详见原文 | ⭐ 整体评价: 属于 AI 与社会方向，建议关注样本代表性与结论的外推边界",
+        tags: [["Healthcare","green"],["Survey","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.18884"],["PDF","https://arxiv.org/pdf/2607.18884"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"采用结构方程建模方法，研究公众对医疗领域 AI 决策的认知与态度"},{"label":"💡 创新点","text":"将深度学习相关的 AI 生成决策纳入公众感知量化分析框架"},{"label":"📊 实验效果","text":"实验验证了建模方法的有效性，具体数据详见原文"},{"label":"⭐ 整体评价","text":"属于 AI 与社会方向，建议关注样本代表性与结论的外推边界"}]
+    },
     // === 2026-07-24 ===
     {
         date: "2026-07-24",
@@ -19819,6 +20154,13 @@ const PAPERS_DB = [
 ];
 
 const DAILY_OVERVIEW = {
+    "2026-07-25": {
+        bannerTitle: "🔥 周末补漏 · 本周遗漏论文补录",
+        bannerSubtitle: "本周补漏共收录 30 篇遗漏论文（检索窗口 2026-07-18 ~ 2026-07-25，候选池 546 篇精选 Top-30）。Agent 方向腾讯联合 MIT 发布 WorkBuddy Bench 抗污染多领域编码智能体基准，IssueTrojanBench 评估编码智能体面对恶意 Issue 请求的安全性。VLA 方向 Physical Intelligence 提出 PhyAgentOS 自进化具身智能体操作系统，Meta FAIR 分析推理链在视觉-语言-动作模型中的双刃剑效应。LLM 方向 NVIDIA 探索 LLM 驱动的 GPU 内核生成工程（最高 29.68 倍加速），MIT 以 FIFA 世界杯 2026 构建免污染预测基准。机器人方向 SeededGrasp 实现复杂场景多本体语言引导抓取，Robostral Navigate 以 8B 模型取得 77.4% 导航成功率并实现 22 倍加速。另有 Microsoft Rushes 多元对齐偏好数据集、EEG 多模态预训练等值得关注。当天正文 8 篇论文与 OpenAI 机构动态均已在 7 月 24 日日报收录，本期不再重复。",
+        picks: ["PhyAgentOS: A Self-Evolving Operating System for Embodied Agents with Decoupled Cognitive Planning and Physical Execution","Robostral Navigate","Harness Engineering for LLM-Driven GPU Kernel Generation","Tencent WorkBuddy Bench: A Multi-Domain Coding-Agent Benchmark with Contamination-Resistant Task Construction"],
+        totalPapers: 30,
+        totalNews: 0
+    },
     "2026-07-24": {
         bannerTitle: "🔥 今日看点",
         bannerSubtitle: "今日 arXiv 8 篇 + HF 热门 6 篇 + 机构动态 1 条。世界模型方向 WorldWeaver 提出面向多智能体交互的流式自回归扩散世界模型，用\"世界状态寄存器\"显式维护多方共享环境状态。机器人方向 AXIS 构建可增长的社区驱动数据引擎（含 RoboCasa365 场景体系，5 万级数据）破解操作数据多样性瓶颈。大模型训练方向 SLAI 团队在昇腾 SuperPOD 上完成 DeepSeek-V4 全参数后训练（效率提升 2.93 倍），腾讯提出面向评分量规的集合级文档检索框架。Agent 方向双基准 DocOps 与 ICAE-Bench 分别聚焦复杂文档操作与交互式项目构建。OpenAI 正式在 ChatGPT 中上线健康功能 Health in ChatGPT。",
