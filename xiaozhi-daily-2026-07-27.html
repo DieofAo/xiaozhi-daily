@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>小小志AI日报 - 2026年7月27日</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans SC', sans-serif;
+  background: #0a0e1a;
+  color: #e0e6f0;
+  line-height: 1.7;
+  min-height: 100vh;
+}
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+header {
+  text-align: center;
+  margin-bottom: 48px;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, rgba(59,130,246,0.08) 0%, rgba(139,92,246,0.08) 100%);
+  border-radius: 20px;
+  border: 1px solid rgba(99,102,241,0.15);
+}
+header h1 {
+  font-size: 2rem;
+  background: linear-gradient(135deg, #60a5fa, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 8px;
+}
+header .date {
+  color: #94a3b8;
+  font-size: 1rem;
+}
+header .subtitle {
+  color: #64748b;
+  font-size: 0.9rem;
+  margin-top: 6px;
+}
+.highlight-banner {
+  background: linear-gradient(135deg, rgba(249,115,22,0.1) 0%, rgba(234,179,8,0.08) 100%);
+  border: 1px solid rgba(249,115,22,0.2);
+  border-radius: 14px;
+  padding: 20px 24px;
+  margin-bottom: 36px;
+}
+.hl-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fb923c;
+  margin-bottom: 8px;
+}
+.hl-text {
+  font-size: 0.92rem;
+  color: #cbd5e1;
+  line-height: 1.7;
+}
+.section {
+  margin-bottom: 40px;
+}
+.section-title {
+  font-size: 1.4rem;
+  color: #f1f5f9;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(99,102,241,0.2);
+}
+.paper-card {
+  background: rgba(30,41,59,0.6);
+  border: 1px solid rgba(99,102,241,0.12);
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 16px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.paper-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(99,102,241,0.1);
+  border-color: rgba(99,102,241,0.3);
+}
+.paper-card.hot {
+  border-color: rgba(249,115,22,0.25);
+  background: rgba(30,41,59,0.7);
+}
+.paper-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #f8fafc;
+  margin-bottom: 8px;
+}
+.paper-meta {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-bottom: 10px;
+}
+.summary-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+@media (max-width: 640px) {
+  .summary-grid { grid-template-columns: 1fr; }
+}
+.summary-item {
+  background: rgba(15,23,42,0.5);
+  border-radius: 10px;
+  padding: 12px 14px;
+  border: 1px solid rgba(99,102,241,0.08);
+}
+.summary-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #818cf8;
+  margin-bottom: 4px;
+}
+.summary-text {
+  font-size: 0.88rem;
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+.paper-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.tag {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+.tag-agent { background: rgba(16,185,129,0.12); color: #34d399; }
+.tag-llm { background: rgba(99,102,241,0.12); color: #818cf8; }
+.tag-multimodal { background: rgba(244,114,182,0.12); color: #f472b6; }
+.tag-world { background: rgba(251,191,36,0.12); color: #fbbf24; }
+.tag-robot { background: rgba(251,146,60,0.12); color: #fb923c; }
+.tag-rl { background: rgba(45,212,191,0.12); color: #2dd4bf; }
+.tag-benchmark { background: rgba(34,211,238,0.12); color: #22d3ee; }
+.tag-vla { background: rgba(59,130,246,0.12); color: #60a5fa; }
+.tag-memory { background: rgba(192,132,252,0.12); color: #c084fc; }
+.tag-reasoning { background: rgba(132,204,22,0.12); color: #a3e635; }
+.tag-data { background: rgba(250,204,21,0.12); color: #facc15; }
+.tag-infra { background: rgba(167,139,250,0.12); color: #a78bfa; }
+.tag-embodied { background: rgba(251,146,60,0.12); color: #fb923c; }
+.tag-3d { background: rgba(148,163,184,0.12); color: #94a3b8; }
+.tag-tool { background: rgba(52,211,153,0.12); color: #34d399; }
+.hot-badge {
+  display: inline;
+  margin-right: 4px;
+}
+.info-card {
+  background: rgba(30,41,59,0.6);
+  border: 1px solid rgba(99,102,241,0.12);
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 16px;
+}
+.paper-summary {
+  font-size: 0.9rem;
+  color: #cbd5e1;
+  line-height: 1.7;
+  margin-bottom: 14px;
+}
+.paper-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.paper-links a {
+  display: inline-block;
+  padding: 5px 14px;
+  background: rgba(99,102,241,0.12);
+  color: #818cf8;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  transition: background 0.2s;
+}
+.paper-links a:hover {
+  background: rgba(99,102,241,0.25);
+}
+footer {
+  text-align: center;
+  color: #475569;
+  font-size: 0.82rem;
+  padding: 40px 20px;
+  border-top: 1px solid rgba(99,102,241,0.1);
+  margin-top: 40px;
+}
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+.stat-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>小小志AI日报</h1>
+    <div class="date">2026年7月27日 · 星期一</div>
+    <div class="subtitle">关注：VLA · Robotics · World Model · LLM · Multimodal · Agent</div>
+    <div class="stats">
+      <span class="stat-item">📰 HF 热门论文 8</span>
+      <span class="stat-item">📝 arXiv 0（采集超时）</span>
+      <span class="stat-item">🤗 HF 模型 0</span>
+    </div>
+  </header>
+
+  <div class="highlight-banner">
+    <div class="hl-title">🔥 今日看点</div>
+    <div class="hl-text">本期收录 8 篇 HuggingFace 社区热门论文，Agent 方向集中爆发（4 篇）。NVIDIA 开源 Molt——面向智能体强化学习的 PyTorch 原生可扩展训练框架（GitHub 605 星）；Qwen 团队提出 Skill Self-Play，通过技能协同进化的自博弈机制持续推高大模型能力边界；腾讯混元发布从零开始的原生多模态预训练规模化研究。此外，Agentic Context Management 将智能体记忆与成本视为生命周期与架构问题进行统一求解，SceneActBench 则拷问智能体能否在其"看到"的三维场景中真正行动。</div>
+  </div>
+
+  <section class="section">
+    <h2 class="section-title">🧩 Agent · 智能体</h2>
+
+    <div class="paper-card hot">
+      <div class="paper-title"><span class="hot-badge">🔥</span> Molt: A Scalable PyTorch-Native Training Framework for Agentic Reinforcement Learning</div>
+      <div class="paper-meta">arXiv 2026 · 2607.21653 · NVIDIA</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">面向智能体强化学习场景构建 PyTorch 原生的可扩展训练框架，覆盖训练与算法迭代全流程</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">以原生 PyTorch 组件应对智能体强化学习算法频繁变化的研究现状，兼顾灵活性与规模化训练能力</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">框架已开源并获得社区广泛关注，GitHub 仓库累计 605 星，具体实验数据详见原文</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于 Agent 训练基础设施方向，建议关注框架的扩展能力、算法适配灵活度与端到端训练效率</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-agent">Agent</span>
+        <span class="tag tag-rl">RL</span>
+        <span class="tag tag-infra">Infra</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2607.21653">arXiv</a>
+        <a href="https://arxiv.org/pdf/2607.21653">PDF</a>
+        <a href="https://github.com/NVIDIA-NeMo/labs-molt">Code (605⭐)</a>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">Agentic Context Management: Solving Agent Memory and Cost by Treating Them as Lifecycle and Architecture Problems</div>
+      <div class="paper-meta">arXiv 2026 · 2607.21503</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">将智能体的记忆管理与推理成本重新建模为上下文生命周期与系统架构问题，并在 LongMemEval 等基准上验证</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">跳出单纯扩充上下文窗口的思路，通过生命周期管理机制统一解决记忆保持与成本控制两大难题</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在长程记忆评测中取得 92% 至 93.2% 的关键指标表现，兼顾召回率与准确率</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于 Agent 记忆管理方向，建议关注上下文管理架构、长程任务稳定性与推理成本的平衡</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-agent">Agent</span>
+        <span class="tag tag-memory">Memory</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2607.21503">arXiv</a>
+        <a href="https://arxiv.org/pdf/2607.21503">PDF</a>
+        <a href="https://maximem.ai/synap">Project</a>
+        <a href="https://github.com/maximem-ai/eval_benchmark_runs_output">Code</a>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">Multi-Head Latent Control: A Unified Interface for LLM Agent Decision Making</div>
+      <div class="paper-meta">arXiv 2026 · 2607.14277 · Huawei</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">基于大语言模型微调，构建多头潜空间控制机制，为智能体决策提供统一的控制接口</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出多头潜空间控制的统一决策接口，以轻量化方式介入模型内部表征来引导智能体行为</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在预测与推理类任务上验证了方法的有效性，具体数据详见原文</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于 Agent 决策控制方向，建议关注接口的通用性、干预粒度与对下游任务成功率的影响</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-agent">Agent</span>
+        <span class="tag tag-llm">LLM</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2607.14277">arXiv</a>
+        <a href="https://arxiv.org/pdf/2607.14277">PDF</a>
+        <a href="https://github.com/Amirhosein-gh98/Multi-Head-Latent-Control">Code</a>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">IDEAgent: Agentic Quality-Diversity Search for Research Idea Generation</div>
+      <div class="paper-meta">arXiv 2026 · 2607.22375 · DeCLaRe Lab</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">基于大语言模型构建智能体化的质量-多样性搜索框架，用于自动化科研选题与创意生成</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">将质量-多样性搜索思想引入研究想法生成，在保证创意质量的同时系统性扩大探索空间</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">关键指标取得 3.89 倍与 8 倍量级的提升，具体实验设置详见原文</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于科研辅助智能体方向，建议关注创意的新颖性评估标准与人类专家评审的一致性</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-agent">Agent</span>
+        <span class="tag tag-tool">Research</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2607.22375">arXiv</a>
+        <a href="https://arxiv.org/pdf/2607.22375">PDF</a>
+        <a href="https://github.com/declare-lab/IDEAgent">Code</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">🧠 LLM · 大语言模型</h2>
+
+    <div class="paper-card hot">
+      <div class="paper-title"><span class="hot-badge">🔥</span> Skill Self-Play: Pushing the Frontier of LLM Capability with Co-Evolving Skills</div>
+      <div class="paper-meta">arXiv 2026 · 2607.22529 · Qwen (通义千问教育业务团队)</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">基于强化学习训练框架构建技能自博弈机制，让模型的多项技能在对抗与协作中共同进化</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出技能协同进化的 Self-Play 范式，无需持续依赖外部标注即可推高模型能力上限，具备较强鲁棒性</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在生成类任务上验证了方法的有效性，具体指标详见原文</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于大模型自我提升方向，建议关注自博弈的训练稳定性、技能覆盖广度与能力迁移效果</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-llm">LLM</span>
+        <span class="tag tag-rl">Self-Play</span>
+        <span class="tag tag-agent">Skill</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2607.22529">arXiv</a>
+        <a href="https://arxiv.org/pdf/2607.22529">PDF</a>
+        <a href="https://github.com/Qwen-Applications/skill-self-play">Code</a>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">DataPrep-Bench: Benchmarking LLMs as Training Data Preparators</div>
+      <div class="paper-meta">arXiv 2026 · 2607.20465 · OpenDCAI</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">构建统一基准评估大语言模型作为训练数据准备者的能力，覆盖数据清洗、标注与微调准备等环节</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次将"大模型驱动的数据准备"系统化为可评测任务，提供统一的评估协议与任务集</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">基准包含约 1.5 万条评测样本，并在 8B 规模模型上开展了系统评估</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于数据工程与评测方向，建议关注评测任务的覆盖面以及与下游训练收益的相关性</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-llm">LLM</span>
+        <span class="tag tag-data">Data</span>
+        <span class="tag tag-benchmark">Benchmark</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2607.20465">arXiv</a>
+        <a href="https://arxiv.org/pdf/2607.20465">PDF</a>
+        <a href="https://datapreparationbench.github.io/">Project</a>
+        <a href="https://github.com/OpenDCAI/Data-Preparation-Bench">Code (218⭐)</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">🎨 Multimodal · 多模态</h2>
+
+    <div class="paper-card hot">
+      <div class="paper-title"><span class="hot-badge">🔥</span> Scaling Native Multimodal Pre-Training From Scratch</div>
+      <div class="paper-meta">arXiv 2026 · 2607.22043 · Tencent Hunyuan（腾讯混元）</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">从零开始进行原生多模态预训练，系统研究架构设计与数据规模对多模态大模型能力的影响</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">摒弃"先训练语言模型再拼接视觉模块"的常规做法，探索原生统一的跨模态预训练规模化路线</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">实验验证了原生多模态预训练路线的有效性，具体数据详见原文</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于多模态预训练方向，建议关注跨模态对齐方式、扩展规律与下游任务综合表现</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-multimodal">Multimodal</span>
+        <span class="tag tag-llm">Pre-Training</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2607.22043">arXiv</a>
+        <a href="https://arxiv.org/pdf/2607.22043">PDF</a>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">SceneActBench: Can Agents Act on the 3D Scenes They See?</div>
+      <div class="paper-meta">arXiv 2026 · 2607.22393</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">基于视觉-语言模型构建三维场景行动能力评测基准，考察智能体从场景感知到动作执行的完整链路</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出统一的评测框架，首次系统性检验智能体能否在其感知到的三维场景中做出正确行动</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">实验验证了基准的区分度并揭示了现有模型的能力短板，具体数据详见原文</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于多模态与具身评测方向，建议关注三维感知与行动的衔接能力及各模型的基准表现差异</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-multimodal">Multimodal</span>
+        <span class="tag tag-3d">3D</span>
+        <span class="tag tag-embodied">Embodied</span>
+        <span class="tag tag-benchmark">Benchmark</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2607.22393">arXiv</a>
+        <a href="https://arxiv.org/pdf/2607.22393">PDF</a>
+        <a href="https://feinaldo2.github.io/sceneactbench-project-page/">Project</a>
+        <a href="https://github.com/Feinaldo2/SceneActBench">Code</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>小小志AI日报 · 2026-07-27 · 自动生成</p>
+    <p>数据来源：HuggingFace Daily Papers（arXiv 采集当日超时，X/Twitter RSS 不可用）</p>
+  </footer>
+</div>
+</body>
+</html>

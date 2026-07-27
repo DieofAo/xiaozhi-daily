@@ -658,6 +658,98 @@
 <script>
 // ===== DATA =====
 const PAPERS_DB = [
+    // === 2026-07-27 ===
+    {
+        date: "2026-07-27",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Molt: A Scalable PyTorch-Native Training Framework for Agentic Reinforcement Learning",
+        venue: "arXiv 2026 · 2607.21653 · NVIDIA",
+        summary: "🔬 技术路线: 面向智能体强化学习场景构建 PyTorch 原生的可扩展训练框架，覆盖训练与算法迭代全流程 | 💡 创新点: 以原生 PyTorch 组件应对智能体强化学习算法频繁变化的研究现状，兼顾灵活性与规模化训练能力 | 📊 实验效果: 框架已开源并获得社区广泛关注，GitHub 仓库累计 605 星，具体实验数据详见原文 | ⭐ 整体评价: 属于 Agent 训练基础设施方向，建议关注框架的扩展能力、算法适配灵活度与端到端训练效率",
+        tags: [["Agent","green"],["RL","green"],["Infra","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.21653"],["PDF","https://arxiv.org/pdf/2607.21653"],["Code (605⭐)","https://github.com/NVIDIA-NeMo/labs-molt"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"面向智能体强化学习场景构建 PyTorch 原生的可扩展训练框架，覆盖训练与算法迭代全流程"},{"label":"💡 创新点","text":"以原生 PyTorch 组件应对智能体强化学习算法频繁变化的研究现状，兼顾灵活性与规模化训练能力"},{"label":"📊 实验效果","text":"框架已开源并获得社区广泛关注，GitHub 仓库累计 605 星，具体实验数据详见原文"},{"label":"⭐ 整体评价","text":"属于 Agent 训练基础设施方向，建议关注框架的扩展能力、算法适配灵活度与端到端训练效率"}]
+    },
+    {
+        date: "2026-07-27",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Agentic Context Management: Solving Agent Memory and Cost by Treating Them as Lifecycle and Architecture Problems",
+        venue: "arXiv 2026 · 2607.21503",
+        summary: "🔬 技术路线: 将智能体的记忆管理与推理成本重新建模为上下文生命周期与系统架构问题，并在 LongMemEval 等基准上验证 | 💡 创新点: 跳出单纯扩充上下文窗口的思路，通过生命周期管理机制统一解决记忆保持与成本控制两大难题 | 📊 实验效果: 在长程记忆评测中取得 92% 至 93.2% 的关键指标表现，兼顾召回率与准确率 | ⭐ 整体评价: 属于 Agent 记忆管理方向，建议关注上下文管理架构、长程任务稳定性与推理成本的平衡",
+        tags: [["Agent","green"],["Memory","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.21503"],["PDF","https://arxiv.org/pdf/2607.21503"],["Project","https://maximem.ai/synap"],["Code","https://github.com/maximem-ai/eval_benchmark_runs_output"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"将智能体的记忆管理与推理成本重新建模为上下文生命周期与系统架构问题，并在 LongMemEval 等基准上验证"},{"label":"💡 创新点","text":"跳出单纯扩充上下文窗口的思路，通过生命周期管理机制统一解决记忆保持与成本控制两大难题"},{"label":"📊 实验效果","text":"在长程记忆评测中取得 92% 至 93.2% 的关键指标表现，兼顾召回率与准确率"},{"label":"⭐ 整体评价","text":"属于 Agent 记忆管理方向，建议关注上下文管理架构、长程任务稳定性与推理成本的平衡"}]
+    },
+    {
+        date: "2026-07-27",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Multi-Head Latent Control: A Unified Interface for LLM Agent Decision Making",
+        venue: "arXiv 2026 · 2607.14277 · Huawei",
+        summary: "🔬 技术路线: 基于大语言模型微调，构建多头潜空间控制机制，为智能体决策提供统一的控制接口 | 💡 创新点: 提出多头潜空间控制的统一决策接口，以轻量化方式介入模型内部表征来引导智能体行为 | 📊 实验效果: 在预测与推理类任务上验证了方法的有效性，具体数据详见原文 | ⭐ 整体评价: 属于 Agent 决策控制方向，建议关注接口的通用性、干预粒度与对下游任务成功率的影响",
+        tags: [["Agent","green"],["LLM","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.14277"],["PDF","https://arxiv.org/pdf/2607.14277"],["Code","https://github.com/Amirhosein-gh98/Multi-Head-Latent-Control"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于大语言模型微调，构建多头潜空间控制机制，为智能体决策提供统一的控制接口"},{"label":"💡 创新点","text":"提出多头潜空间控制的统一决策接口，以轻量化方式介入模型内部表征来引导智能体行为"},{"label":"📊 实验效果","text":"在预测与推理类任务上验证了方法的有效性，具体数据详见原文"},{"label":"⭐ 整体评价","text":"属于 Agent 决策控制方向，建议关注接口的通用性、干预粒度与对下游任务成功率的影响"}]
+    },
+    {
+        date: "2026-07-27",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "IDEAgent: Agentic Quality-Diversity Search for Research Idea Generation",
+        venue: "arXiv 2026 · 2607.22375 · DeCLaRe Lab",
+        summary: "🔬 技术路线: 基于大语言模型构建智能体化的质量-多样性搜索框架，用于自动化科研选题与创意生成 | 💡 创新点: 将质量-多样性搜索思想引入研究想法生成，在保证创意质量的同时系统性扩大探索空间 | 📊 实验效果: 关键指标取得 3.89 倍与 8 倍量级的提升，具体实验设置详见原文 | ⭐ 整体评价: 属于科研辅助智能体方向，建议关注创意的新颖性评估标准与人类专家评审的一致性",
+        tags: [["Agent","green"],["Research","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.22375"],["PDF","https://arxiv.org/pdf/2607.22375"],["Code","https://github.com/declare-lab/IDEAgent"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于大语言模型构建智能体化的质量-多样性搜索框架，用于自动化科研选题与创意生成"},{"label":"💡 创新点","text":"将质量-多样性搜索思想引入研究想法生成，在保证创意质量的同时系统性扩大探索空间"},{"label":"📊 实验效果","text":"关键指标取得 3.89 倍与 8 倍量级的提升，具体实验设置详见原文"},{"label":"⭐ 整体评价","text":"属于科研辅助智能体方向，建议关注创意的新颖性评估标准与人类专家评审的一致性"}]
+    },
+    {
+        date: "2026-07-27",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Skill Self-Play: Pushing the Frontier of LLM Capability with Co-Evolving Skills",
+        venue: "arXiv 2026 · 2607.22529 · Qwen (通义千问教育业务团队)",
+        summary: "🔬 技术路线: 基于强化学习训练框架构建技能自博弈机制，让模型的多项技能在对抗与协作中共同进化 | 💡 创新点: 提出技能协同进化的 Self-Play 范式，无需持续依赖外部标注即可推高模型能力上限，具备较强鲁棒性 | 📊 实验效果: 在生成类任务上验证了方法的有效性，具体指标详见原文 | ⭐ 整体评价: 属于大模型自我提升方向，建议关注自博弈的训练稳定性、技能覆盖广度与能力迁移效果",
+        tags: [["LLM","green"],["Self-Play","green"],["Skill","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.22529"],["PDF","https://arxiv.org/pdf/2607.22529"],["Code","https://github.com/Qwen-Applications/skill-self-play"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于强化学习训练框架构建技能自博弈机制，让模型的多项技能在对抗与协作中共同进化"},{"label":"💡 创新点","text":"提出技能协同进化的 Self-Play 范式，无需持续依赖外部标注即可推高模型能力上限，具备较强鲁棒性"},{"label":"📊 实验效果","text":"在生成类任务上验证了方法的有效性，具体指标详见原文"},{"label":"⭐ 整体评价","text":"属于大模型自我提升方向，建议关注自博弈的训练稳定性、技能覆盖广度与能力迁移效果"}]
+    },
+    {
+        date: "2026-07-27",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "DataPrep-Bench: Benchmarking LLMs as Training Data Preparators",
+        venue: "arXiv 2026 · 2607.20465 · OpenDCAI",
+        summary: "🔬 技术路线: 构建统一基准评估大语言模型作为训练数据准备者的能力，覆盖数据清洗、标注与微调准备等环节 | 💡 创新点: 首次将\"大模型驱动的数据准备\"系统化为可评测任务，提供统一的评估协议与任务集 | 📊 实验效果: 基准包含约 1.5 万条评测样本，并在 8B 规模模型上开展了系统评估 | ⭐ 整体评价: 属于数据工程与评测方向，建议关注评测任务的覆盖面以及与下游训练收益的相关性",
+        tags: [["LLM","green"],["Data","green"],["Benchmark","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.20465"],["PDF","https://arxiv.org/pdf/2607.20465"],["Project","https://datapreparationbench.github.io/"],["Code (218⭐)","https://github.com/OpenDCAI/Data-Preparation-Bench"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"构建统一基准评估大语言模型作为训练数据准备者的能力，覆盖数据清洗、标注与微调准备等环节"},{"label":"💡 创新点","text":"首次将\"大模型驱动的数据准备\"系统化为可评测任务，提供统一的评估协议与任务集"},{"label":"📊 实验效果","text":"基准包含约 1.5 万条评测样本，并在 8B 规模模型上开展了系统评估"},{"label":"⭐ 整体评价","text":"属于数据工程与评测方向，建议关注评测任务的覆盖面以及与下游训练收益的相关性"}]
+    },
+    {
+        date: "2026-07-27",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "Scaling Native Multimodal Pre-Training From Scratch",
+        venue: "arXiv 2026 · 2607.22043 · Tencent Hunyuan（腾讯混元）",
+        summary: "🔬 技术路线: 从零开始进行原生多模态预训练，系统研究架构设计与数据规模对多模态大模型能力的影响 | 💡 创新点: 摒弃\"先训练语言模型再拼接视觉模块\"的常规做法，探索原生统一的跨模态预训练规模化路线 | 📊 实验效果: 实验验证了原生多模态预训练路线的有效性，具体数据详见原文 | ⭐ 整体评价: 属于多模态预训练方向，建议关注跨模态对齐方式、扩展规律与下游任务综合表现",
+        tags: [["Multimodal","green"],["Pre-Training","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.22043"],["PDF","https://arxiv.org/pdf/2607.22043"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"从零开始进行原生多模态预训练，系统研究架构设计与数据规模对多模态大模型能力的影响"},{"label":"💡 创新点","text":"摒弃\"先训练语言模型再拼接视觉模块\"的常规做法，探索原生统一的跨模态预训练规模化路线"},{"label":"📊 实验效果","text":"实验验证了原生多模态预训练路线的有效性，具体数据详见原文"},{"label":"⭐ 整体评价","text":"属于多模态预训练方向，建议关注跨模态对齐方式、扩展规律与下游任务综合表现"}]
+    },
+    {
+        date: "2026-07-27",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "SceneActBench: Can Agents Act on the 3D Scenes They See?",
+        venue: "arXiv 2026 · 2607.22393",
+        summary: "🔬 技术路线: 基于视觉-语言模型构建三维场景行动能力评测基准，考察智能体从场景感知到动作执行的完整链路 | 💡 创新点: 提出统一的评测框架，首次系统性检验智能体能否在其感知到的三维场景中做出正确行动 | 📊 实验效果: 实验验证了基准的区分度并揭示了现有模型的能力短板，具体数据详见原文 | ⭐ 整体评价: 属于多模态与具身评测方向，建议关注三维感知与行动的衔接能力及各模型的基准表现差异",
+        tags: [["Multimodal","green"],["3D","green"],["Embodied","green"],["Benchmark","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.22393"],["PDF","https://arxiv.org/pdf/2607.22393"],["Project","https://feinaldo2.github.io/sceneactbench-project-page/"],["Code","https://github.com/Feinaldo2/SceneActBench"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于视觉-语言模型构建三维场景行动能力评测基准，考察智能体从场景感知到动作执行的完整链路"},{"label":"💡 创新点","text":"提出统一的评测框架，首次系统性检验智能体能否在其感知到的三维场景中做出正确行动"},{"label":"📊 实验效果","text":"实验验证了基准的区分度并揭示了现有模型的能力短板，具体数据详见原文"},{"label":"⭐ 整体评价","text":"属于多模态与具身评测方向，建议关注三维感知与行动的衔接能力及各模型的基准表现差异"}]
+    },
     // === 2026-07-25 ===
     {
         date: "2026-07-25",
@@ -20154,6 +20246,13 @@ const PAPERS_DB = [
 ];
 
 const DAILY_OVERVIEW = {
+    "2026-07-27": {
+        bannerTitle: "🔥 今日看点",
+        bannerSubtitle: "本期收录 8 篇 HuggingFace 社区热门论文，Agent 方向集中爆发（4 篇）。NVIDIA 开源 Molt——面向智能体强化学习的 PyTorch 原生可扩展训练框架（GitHub 605 星）；Qwen 团队提出 Skill Self-Play，通过技能协同进化的自博弈机制持续推高大模型能力边界；腾讯混元发布从零开始的原生多模态预训练规模化研究。此外，Agentic Context Management 将智能体记忆与成本视为生命周期与架构问题进行统一求解，SceneActBench 则拷问智能体能否在其\"看到\"的三维场景中真正行动。",
+        picks: ["Molt: A Scalable PyTorch-Native Training Framework for Agentic Reinforcement Learning","Skill Self-Play: Pushing the Frontier of LLM Capability with Co-Evolving Skills","Scaling Native Multimodal Pre-Training From Scratch"],
+        totalPapers: 8,
+        totalNews: 0
+    },
     "2026-07-25": {
         bannerTitle: "🔥 周末补漏 · 本周遗漏论文补录",
         bannerSubtitle: "本周补漏共收录 30 篇遗漏论文（检索窗口 2026-07-18 ~ 2026-07-25，候选池 546 篇精选 Top-30）。Agent 方向腾讯联合 MIT 发布 WorkBuddy Bench 抗污染多领域编码智能体基准，IssueTrojanBench 评估编码智能体面对恶意 Issue 请求的安全性。VLA 方向 Physical Intelligence 提出 PhyAgentOS 自进化具身智能体操作系统，Meta FAIR 分析推理链在视觉-语言-动作模型中的双刃剑效应。LLM 方向 NVIDIA 探索 LLM 驱动的 GPU 内核生成工程（最高 29.68 倍加速），MIT 以 FIFA 世界杯 2026 构建免污染预测基准。机器人方向 SeededGrasp 实现复杂场景多本体语言引导抓取，Robostral Navigate 以 8B 模型取得 77.4% 导航成功率并实现 22 倍加速。另有 Microsoft Rushes 多元对齐偏好数据集、EEG 多模态预训练等值得关注。当天正文 8 篇论文与 OpenAI 机构动态均已在 7 月 24 日日报收录，本期不再重复。",
