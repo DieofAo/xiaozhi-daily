@@ -658,6 +658,129 @@
 <script>
 // ===== DATA =====
 const PAPERS_DB = [
+    // === 2026-07-28 ===
+    {
+        date: "2026-07-28",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "Data Pyramid for Embodied Manipulation",
+        venue: "arXiv 2026 · 2607.24744 · MIT",
+        summary: "🔬 技术路线: 围绕具身操作任务构建数据金字塔框架，系统梳理基础模型训练中不同层级数据对视觉-语言-动作模型的作用 | 💡 创新点: 提出 UMI 式的多模态数据组织范式，将异构具身数据按规模与质量分层，具备良好的可扩展性 | 📊 实验效果: 在规划与动作生成任务上验证了数据分层策略的有效性，并配套开源项目主页与资源仓库 | ⭐ 整体评价: 属于 VLA 与具身控制方向，建议关注其任务泛化能力、动作表达方式与真机验证结果",
+        tags: [["Robotics","green"],["VLA","green"],["Embodied","green"],["Data","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.24744"],["PDF","https://arxiv.org/pdf/2607.24744"],["Project","https://jasper-aaa.github.io/embodied-data-pyramid/"],["Code","https://github.com/worldbench/awesome-embodied-data-pyramid"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"围绕具身操作任务构建数据金字塔框架，系统梳理基础模型训练中不同层级数据对视觉-语言-动作模型的作用"},{"label":"💡 创新点","text":"提出 UMI 式的多模态数据组织范式，将异构具身数据按规模与质量分层，具备良好的可扩展性"},{"label":"📊 实验效果","text":"在规划与动作生成任务上验证了数据分层策略的有效性，并配套开源项目主页与资源仓库"},{"label":"⭐ 整体评价","text":"属于 VLA 与具身控制方向，建议关注其任务泛化能力、动作表达方式与真机验证结果"}]
+    },
+    {
+        date: "2026-07-28",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "The Physics of Multi-Turn Long-Horizon Planning: From Pre-training to Post-training via Single- and Multi-Teacher On-Policy Agentic Distillation",
+        venue: "arXiv 2026 · 2607.24720",
+        summary: "🔬 技术路线: 以基础模型为起点，通过单教师与多教师的在线智能体蒸馏，贯通预训练到后训练的多轮长程规划能力培养路径 | 💡 创新点: 从\"物理规律\"视角统一刻画多轮规划能力的形成机制，提出面向智能体的在线蒸馏统一框架 | 📊 实验效果: 在多轮长程规划任务上验证了蒸馏策略的有效性，具体数据详见原文 | ⭐ 整体评价: 属于智能体训练与世界模型方向，建议关注蒸馏配方的可迁移性、规划步长上限与训练成本",
+        tags: [["Agent","green"],["Planning","green"],["Distillation","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.24720"],["PDF","https://arxiv.org/pdf/2607.24720"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"以基础模型为起点，通过单教师与多教师的在线智能体蒸馏，贯通预训练到后训练的多轮长程规划能力培养路径"},{"label":"💡 创新点","text":"从\"物理规律\"视角统一刻画多轮规划能力的形成机制，提出面向智能体的在线蒸馏统一框架"},{"label":"📊 实验效果","text":"在多轮长程规划任务上验证了蒸馏策略的有效性，具体数据详见原文"},{"label":"⭐ 整体评价","text":"属于智能体训练与世界模型方向，建议关注蒸馏配方的可迁移性、规划步长上限与训练成本"}]
+    },
+    {
+        date: "2026-07-28",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "DataOrchestra: Learning to Orchestrate Per-Example Curation of Pretraining Data",
+        venue: "arXiv 2026 · 2607.24717",
+        summary: "🔬 技术路线: 构建可学习的预训练数据编排框架，由模型驱动地对每条样本进行精细化筛选与调度 | 💡 创新点: 将数据治理从整批过滤细化到逐样本编排，用学习策略替代人工启发式规则 | 📊 实验效果: 在 0.5B 与 7B 规模模型上验证了数据编排策略带来的训练收益 | ⭐ 整体评价: 属于大模型数据工程方向，建议关注编排策略的计算开销与对下游基准的实际增益",
+        tags: [["LLM","green"],["Data","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.24717"],["PDF","https://arxiv.org/pdf/2607.24717"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"构建可学习的预训练数据编排框架，由模型驱动地对每条样本进行精细化筛选与调度"},{"label":"💡 创新点","text":"将数据治理从整批过滤细化到逐样本编排，用学习策略替代人工启发式规则"},{"label":"📊 实验效果","text":"在 0.5B 与 7B 规模模型上验证了数据编排策略带来的训练收益"},{"label":"⭐ 整体评价","text":"属于大模型数据工程方向，建议关注编排策略的计算开销与对下游基准的实际增益"}]
+    },
+    {
+        date: "2026-07-28",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Efficient LLM-Generated Shuttling Compilers for Complex Trapped-Ion Architectures",
+        venue: "arXiv 2026 · 2607.24714",
+        summary: "🔬 技术路线: 利用大语言模型自动生成面向复杂囚禁离子量子架构的穿梭编译器，替代人工设计的调度算法 | 💡 创新点: 首次将大模型代码生成能力引入囚禁离子量子计算的编译优化环节，兼顾生成效率与方案质量 | 📊 实验效果: 关键指标分别达到 76% 与 39%，验证了自动生成编译器的可行性 | ⭐ 整体评价: 属于大模型跨领域应用方向，建议关注生成编译器的正确性保障与对不同硬件拓扑的适配能力",
+        tags: [["LLM","green"],["Code Gen","green"],["Quantum","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.24714"],["PDF","https://arxiv.org/pdf/2607.24714"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"利用大语言模型自动生成面向复杂囚禁离子量子架构的穿梭编译器，替代人工设计的调度算法"},{"label":"💡 创新点","text":"首次将大模型代码生成能力引入囚禁离子量子计算的编译优化环节，兼顾生成效率与方案质量"},{"label":"📊 实验效果","text":"关键指标分别达到 76% 与 39%，验证了自动生成编译器的可行性"},{"label":"⭐ 整体评价","text":"属于大模型跨领域应用方向，建议关注生成编译器的正确性保障与对不同硬件拓扑的适配能力"}]
+    },
+    {
+        date: "2026-07-28",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Interactive Training 2: Auditable Control Plane for Live Model Training",
+        venue: "arXiv 2026 · 2607.18314 · University of Waterloo · HF 社区热门",
+        summary: "🔬 技术路线: 为进行中的模型训练构建可审计的控制平面，支持在训练过程中实时介入、调整与记录 | 💡 创新点: 将训练干预操作全程留痕并可审计，使\"边训练边调控\"成为可复现、可追溯的工程实践 | 📊 实验效果: 系统已上线在线演示，实验验证了交互式训练控制的有效性，具体数据详见原文 | ⭐ 整体评价: 属于训练基础设施方向，建议关注控制面板的干预粒度、审计完整性与对训练稳定性的影响",
+        tags: [["LLM","green"],["Infra","green"],["Training","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.18314"],["PDF","https://arxiv.org/pdf/2607.18314"],["Project","https://interactivetraining.ai/live"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"为进行中的模型训练构建可审计的控制平面，支持在训练过程中实时介入、调整与记录"},{"label":"💡 创新点","text":"将训练干预操作全程留痕并可审计，使\"边训练边调控\"成为可复现、可追溯的工程实践"},{"label":"📊 实验效果","text":"系统已上线在线演示，实验验证了交互式训练控制的有效性，具体数据详见原文"},{"label":"⭐ 整体评价","text":"属于训练基础设施方向，建议关注控制面板的干预粒度、审计完整性与对训练稳定性的影响"}]
+    },
+    {
+        date: "2026-07-28",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "ClinFusion: A Vision-Centric Multimodal LLM System for Holistic Medical Understanding",
+        venue: "arXiv 2026 · 2607.24743 · Alibaba DAMO Academy（阿里达摩院）",
+        summary: "🔬 技术路线: 以视觉为中心构建医疗多模态大语言模型系统，融合影像与文本实现整体化的医学理解 | 💡 创新点: 提出空间感知的视觉中心架构，面向医疗场景统一多模态输入，并开源代码与模型权重 | 📊 实验效果: 在医学理解与生成任务上验证了系统的有效性，具体数据详见原文 | ⭐ 整体评价: 属于医疗多模态方向，建议关注跨模态对齐方式、临床任务覆盖面与真实场景可靠性",
+        tags: [["Multimodal","green"],["Medical LLM","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.24743"],["PDF","https://arxiv.org/pdf/2607.24743"],["Code","https://github.com/alibaba-damo-academy/ClinFusion"],["Model","https://huggingface.co/collections/Alibaba-DAMO-Academy/clinfusion"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"以视觉为中心构建医疗多模态大语言模型系统，融合影像与文本实现整体化的医学理解"},{"label":"💡 创新点","text":"提出空间感知的视觉中心架构，面向医疗场景统一多模态输入，并开源代码与模型权重"},{"label":"📊 实验效果","text":"在医学理解与生成任务上验证了系统的有效性，具体数据详见原文"},{"label":"⭐ 整体评价","text":"属于医疗多模态方向，建议关注跨模态对齐方式、临床任务覆盖面与真实场景可靠性"}]
+    },
+    {
+        date: "2026-07-28",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "KANEx: Translating Kolmogorov-Arnold Networks' Interpretability to Medical Explainability",
+        venue: "arXiv 2026 · 2607.24730",
+        summary: "🔬 技术路线: 基于 Kolmogorov-Arnold 网络的可解释结构，结合视觉-语言模型构建面向医学影像的可解释框架 | 💡 创新点: 将 KAN 网络的数学可解释性转化为 X 光等医学影像诊断中的临床可解释性输出 | 📊 实验效果: 关键指标提升约 10%，验证了可解释框架在医学任务上的有效性 | ⭐ 整体评价: 属于可解释多模态方向，建议关注解释结果与医生判读的一致性及跨病种泛化能力",
+        tags: [["Multimodal","green"],["Interpretability","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.24730"],["PDF","https://arxiv.org/pdf/2607.24730"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于 Kolmogorov-Arnold 网络的可解释结构，结合视觉-语言模型构建面向医学影像的可解释框架"},{"label":"💡 创新点","text":"将 KAN 网络的数学可解释性转化为 X 光等医学影像诊断中的临床可解释性输出"},{"label":"📊 实验效果","text":"关键指标提升约 10%，验证了可解释框架在医学任务上的有效性"},{"label":"⭐ 整体评价","text":"属于可解释多模态方向，建议关注解释结果与医生判读的一致性及跨病种泛化能力"}]
+    },
+    {
+        date: "2026-07-28",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "ERUnderstand: Evaluating Vision-Language Models on Structured ER Diagrams",
+        venue: "arXiv 2026 · 2607.24707",
+        summary: "🔬 技术路线: 构建面向实体-关系图的结构化图表理解评测基准，系统考察视觉-语言模型的图表解析能力 | 💡 创新点: 首次将 ER 图这类高度结构化的工程图表纳入多模态评测体系，揭示模型在符号化视觉理解上的短板 | 📊 实验效果: 现有模型在该基准上的表现存在约 25% 的显著差距，暴露出结构化理解能力的不足 | ⭐ 整体评价: 属于多模态评测方向，建议关注评测任务设计、模型间差异与结构化推理能力的改进空间",
+        tags: [["Multimodal","green"],["Benchmark","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.24707"],["PDF","https://arxiv.org/pdf/2607.24707"],["Code","https://github.com/salinaria/ERUnderstand"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"构建面向实体-关系图的结构化图表理解评测基准，系统考察视觉-语言模型的图表解析能力"},{"label":"💡 创新点","text":"首次将 ER 图这类高度结构化的工程图表纳入多模态评测体系，揭示模型在符号化视觉理解上的短板"},{"label":"📊 实验效果","text":"现有模型在该基准上的表现存在约 25% 的显著差距，暴露出结构化理解能力的不足"},{"label":"⭐ 整体评价","text":"属于多模态评测方向，建议关注评测任务设计、模型间差异与结构化推理能力的改进空间"}]
+    },
+    {
+        date: "2026-07-28",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "Spatio-Temporal Conditional Denoising Transformer for Modality-Missing RGBT Tracking",
+        venue: "arXiv 2026 · 2607.24701",
+        summary: "🔬 技术路线: 提出时空条件去噪 Transformer 架构，针对可见光与热红外模态缺失场景下的目标跟踪任务 | 💡 创新点: 以条件去噪机制统一处理模态缺失问题，使跟踪器在部分模态失效时仍保持鲁棒表现 | 📊 实验效果: 实验验证了方法在模态缺失条件下的跟踪有效性，具体数据详见原文 | ⭐ 整体评价: 属于多模态感知方向，建议关注跨模态补偿机制、实时性表现与实际部署场景的适配性",
+        tags: [["Multimodal","green"],["Tracking","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.24701"],["PDF","https://arxiv.org/pdf/2607.24701"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出时空条件去噪 Transformer 架构，针对可见光与热红外模态缺失场景下的目标跟踪任务"},{"label":"💡 创新点","text":"以条件去噪机制统一处理模态缺失问题，使跟踪器在部分模态失效时仍保持鲁棒表现"},{"label":"📊 实验效果","text":"实验验证了方法在模态缺失条件下的跟踪有效性，具体数据详见原文"},{"label":"⭐ 整体评价","text":"属于多模态感知方向，建议关注跨模态补偿机制、实时性表现与实际部署场景的适配性"}]
+    },
+    {
+        date: "2026-07-28",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "O-VAD: Industrial Video Anomaly Detection through Object-Centric Tracking and Reasoning",
+        venue: "arXiv 2026 · 2607.18142 · Carnegie Mellon University · HF 社区热门",
+        summary: "🔬 技术路线: 基于视觉-语言模型微调，构建以物体为中心的跟踪与推理框架，面向工业视频异常检测 | 💡 创新点: 将物体级跟踪与语义推理相结合，使异常判断从整帧画面细化到具体对象的行为链路 | 📊 实验效果: 在工业异常检测与推理任务上验证了框架的有效性，并开源了项目主页与代码 | ⭐ 整体评价: 属于工业视觉与推理方向，建议关注误报率控制、推理链可解释性与产线部署成本",
+        tags: [["Multimodal","green"],["Reasoning","green"],["Industrial","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.18142"],["PDF","https://arxiv.org/pdf/2607.18142"],["Project","https://o-vad.github.io/"],["Code","https://github.com/o-vad/O-VAD"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于视觉-语言模型微调，构建以物体为中心的跟踪与推理框架，面向工业视频异常检测"},{"label":"💡 创新点","text":"将物体级跟踪与语义推理相结合，使异常判断从整帧画面细化到具体对象的行为链路"},{"label":"📊 实验效果","text":"在工业异常检测与推理任务上验证了框架的有效性，并开源了项目主页与代码"},{"label":"⭐ 整体评价","text":"属于工业视觉与推理方向，建议关注误报率控制、推理链可解释性与产线部署成本"}]
+    },
+    {
+        date: "2026-07-28",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "OpenAI：AI 如何拓展人们的工作内容",
+        venue: "",
+        summary: "OpenAI 发布最新研究《How AI is expanding what people do at work》，探讨 AI 工具在真实工作场景中的使用方式，以及其如何改变和扩展人们在工作中所承担的任务边界。",
+        tags: [],
+        links: [["来源","https://openai.com/index/how-ai-is-expanding-what-people-do-at-work/"]]
+    },
     // === 2026-07-27 ===
     {
         date: "2026-07-27",
@@ -20246,6 +20369,13 @@ const PAPERS_DB = [
 ];
 
 const DAILY_OVERVIEW = {
+    "2026-07-28": {
+        bannerTitle: "🔥 今日看点",
+        bannerSubtitle: "本期收录 10 篇论文与 1 条机构动态。具身智能方向，MIT 提出面向具身操作的数据金字塔（Data Pyramid for Embodied Manipulation），系统梳理 UMI 式多模态数据在 VLA 训练中的分层价值；阿里达摩院开源以视觉为中心的医疗多模态大模型系统 ClinFusion。Agent 方向聚焦多轮长程规划的\"物理学\"，通过单教师与多教师在线智能体蒸馏打通预训练到后训练全链路。此外，DataOrchestra 探索预训练数据的逐样本编排，滑铁卢大学的 Interactive Training 2 为在线模型训练提供可审计控制面板。行业侧，OpenAI 发布关于 AI 如何拓展人类工作边界的最新研究。",
+        picks: ["Data Pyramid for Embodied Manipulation","ClinFusion: A Vision-Centric Multimodal LLM System for Holistic Medical Understanding"],
+        totalPapers: 10,
+        totalNews: 1
+    },
     "2026-07-27": {
         bannerTitle: "🔥 今日看点",
         bannerSubtitle: "本期收录 8 篇 HuggingFace 社区热门论文，Agent 方向集中爆发（4 篇）。NVIDIA 开源 Molt——面向智能体强化学习的 PyTorch 原生可扩展训练框架（GitHub 605 星）；Qwen 团队提出 Skill Self-Play，通过技能协同进化的自博弈机制持续推高大模型能力边界；腾讯混元发布从零开始的原生多模态预训练规模化研究。此外，Agentic Context Management 将智能体记忆与成本视为生命周期与架构问题进行统一求解，SceneActBench 则拷问智能体能否在其\"看到\"的三维场景中真正行动。",

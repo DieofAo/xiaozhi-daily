@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>小小志AI日报 - 2026年7月28日</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans SC', sans-serif;
+  background: #0a0e1a;
+  color: #e0e6f0;
+  line-height: 1.7;
+  min-height: 100vh;
+}
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+header {
+  text-align: center;
+  margin-bottom: 48px;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, rgba(59,130,246,0.08) 0%, rgba(139,92,246,0.08) 100%);
+  border-radius: 20px;
+  border: 1px solid rgba(99,102,241,0.15);
+}
+header h1 {
+  font-size: 2rem;
+  background: linear-gradient(135deg, #60a5fa, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 8px;
+}
+header .date {
+  color: #94a3b8;
+  font-size: 1rem;
+}
+header .subtitle {
+  color: #64748b;
+  font-size: 0.9rem;
+  margin-top: 6px;
+}
+.highlight-banner {
+  background: linear-gradient(135deg, rgba(249,115,22,0.1) 0%, rgba(234,179,8,0.08) 100%);
+  border: 1px solid rgba(249,115,22,0.2);
+  border-radius: 14px;
+  padding: 20px 24px;
+  margin-bottom: 36px;
+}
+.hl-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fb923c;
+  margin-bottom: 8px;
+}
+.hl-text {
+  font-size: 0.92rem;
+  color: #cbd5e1;
+  line-height: 1.7;
+}
+.section {
+  margin-bottom: 40px;
+}
+.section-title {
+  font-size: 1.4rem;
+  color: #f1f5f9;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(99,102,241,0.2);
+}
+.paper-card {
+  background: rgba(30,41,59,0.6);
+  border: 1px solid rgba(99,102,241,0.12);
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 16px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.paper-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(99,102,241,0.1);
+  border-color: rgba(99,102,241,0.3);
+}
+.paper-card.hot {
+  border-color: rgba(249,115,22,0.25);
+  background: rgba(30,41,59,0.7);
+}
+.paper-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #f8fafc;
+  margin-bottom: 8px;
+}
+.paper-meta {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-bottom: 10px;
+}
+.summary-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+@media (max-width: 640px) {
+  .summary-grid { grid-template-columns: 1fr; }
+}
+.summary-item {
+  background: rgba(15,23,42,0.5);
+  border-radius: 10px;
+  padding: 12px 14px;
+  border: 1px solid rgba(99,102,241,0.08);
+}
+.summary-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #818cf8;
+  margin-bottom: 4px;
+}
+.summary-text {
+  font-size: 0.88rem;
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+.paper-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.tag {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+.tag-agent { background: rgba(16,185,129,0.12); color: #34d399; }
+.tag-llm { background: rgba(99,102,241,0.12); color: #818cf8; }
+.tag-multimodal { background: rgba(244,114,182,0.12); color: #f472b6; }
+.tag-world { background: rgba(251,191,36,0.12); color: #fbbf24; }
+.tag-robot { background: rgba(251,146,60,0.12); color: #fb923c; }
+.tag-rl { background: rgba(45,212,191,0.12); color: #2dd4bf; }
+.tag-benchmark { background: rgba(34,211,238,0.12); color: #22d3ee; }
+.tag-vla { background: rgba(59,130,246,0.12); color: #60a5fa; }
+.tag-memory { background: rgba(192,132,252,0.12); color: #c084fc; }
+.tag-reasoning { background: rgba(132,204,22,0.12); color: #a3e635; }
+.tag-data { background: rgba(250,204,21,0.12); color: #facc15; }
+.tag-infra { background: rgba(167,139,250,0.12); color: #a78bfa; }
+.tag-embodied { background: rgba(251,146,60,0.12); color: #fb923c; }
+.tag-3d { background: rgba(148,163,184,0.12); color: #94a3b8; }
+.tag-tool { background: rgba(52,211,153,0.12); color: #34d399; }
+.hot-badge {
+  display: inline;
+  margin-right: 4px;
+}
+.info-card {
+  background: rgba(30,41,59,0.6);
+  border: 1px solid rgba(99,102,241,0.12);
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 16px;
+}
+.paper-summary {
+  font-size: 0.9rem;
+  color: #cbd5e1;
+  line-height: 1.7;
+  margin-bottom: 14px;
+}
+.paper-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.paper-links a {
+  display: inline-block;
+  padding: 5px 14px;
+  background: rgba(99,102,241,0.12);
+  color: #818cf8;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  transition: background 0.2s;
+}
+.paper-links a:hover {
+  background: rgba(99,102,241,0.25);
+}
+footer {
+  text-align: center;
+  color: #475569;
+  font-size: 0.82rem;
+  padding: 40px 20px;
+  border-top: 1px solid rgba(99,102,241,0.1);
+  margin-top: 40px;
+}
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+.stat-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>小小志AI日报</h1>
+    <div class="date">2026年7月28日 · 星期二</div>
+    <div class="subtitle">关注：VLA · Robotics · World Model · LLM · Multimodal · Agent</div>
+    <div class="stats">
+      <span class="stat-item">📝 arXiv 论文 8</span>
+      <span class="stat-item">📰 HF 热门论文 2</span>
+      <span class="stat-item">🏢 机构动态 1</span>
+    </div>
+  </header>
+
+  <div class="highlight-banner">
+    <div class="hl-title">🔥 今日看点</div>
+    <div class="hl-text">本期收录 10 篇论文与 1 条机构动态。具身智能方向，MIT 提出面向具身操作的数据金字塔（Data Pyramid for Embodied Manipulation），系统梳理 UMI 式多模态数据在 VLA 训练中的分层价值；阿里达摩院开源以视觉为中心的医疗多模态大模型系统 ClinFusion。Agent 方向聚焦多轮长程规划的"物理学"，通过单教师与多教师在线智能体蒸馏打通预训练到后训练全链路。此外，DataOrchestra 探索预训练数据的逐样本编排，滑铁卢大学的 Interactive Training 2 为在线模型训练提供可审计控制面板。行业侧，OpenAI 发布关于 AI 如何拓展人类工作边界的最新研究。</div>
+  </div>
+
+  <section class="section">
+    <h2 class="section-title">🦾 Robotics · 具身智能</h2>
+
+    <div class="paper-card hot">
+      <div class="paper-title"><span class="hot-badge">🔥</span> Data Pyramid for Embodied Manipulation</div>
+      <div class="paper-meta">arXiv 2026 · 2607.24744 · MIT</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">围绕具身操作任务构建数据金字塔框架，系统梳理基础模型训练中不同层级数据对视觉-语言-动作模型的作用</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 UMI 式的多模态数据组织范式，将异构具身数据按规模与质量分层，具备良好的可扩展性</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在规划与动作生成任务上验证了数据分层策略的有效性，并配套开源项目主页与资源仓库</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于 VLA 与具身控制方向，建议关注其任务泛化能力、动作表达方式与真机验证结果</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-robot">Robotics</span>
+        <span class="tag tag-vla">VLA</span>
+        <span class="tag tag-embodied">Embodied</span>
+        <span class="tag tag-data">Data</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2607.24744">arXiv</a>
+        <a href="https://arxiv.org/pdf/2607.24744">PDF</a>
+        <a href="https://jasper-aaa.github.io/embodied-data-pyramid/">Project</a>
+        <a href="https://github.com/worldbench/awesome-embodied-data-pyramid">Code</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">🧩 Agent · 智能体</h2>
+
+    <div class="paper-card">
+      <div class="paper-title">The Physics of Multi-Turn Long-Horizon Planning: From Pre-training to Post-training via Single- and Multi-Teacher On-Policy Agentic Distillation</div>
+      <div class="paper-meta">arXiv 2026 · 2607.24720</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">以基础模型为起点，通过单教师与多教师的在线智能体蒸馏，贯通预训练到后训练的多轮长程规划能力培养路径</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">从"物理规律"视角统一刻画多轮规划能力的形成机制，提出面向智能体的在线蒸馏统一框架</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在多轮长程规划任务上验证了蒸馏策略的有效性，具体数据详见原文</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于智能体训练与世界模型方向，建议关注蒸馏配方的可迁移性、规划步长上限与训练成本</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-agent">Agent</span>
+        <span class="tag tag-world">Planning</span>
+        <span class="tag tag-llm">Distillation</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2607.24720">arXiv</a>
+        <a href="https://arxiv.org/pdf/2607.24720">PDF</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">🧠 LLM · 大语言模型</h2>
+
+    <div class="paper-card">
+      <div class="paper-title">DataOrchestra: Learning to Orchestrate Per-Example Curation of Pretraining Data</div>
+      <div class="paper-meta">arXiv 2026 · 2607.24717</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">构建可学习的预训练数据编排框架，由模型驱动地对每条样本进行精细化筛选与调度</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">将数据治理从整批过滤细化到逐样本编排，用学习策略替代人工启发式规则</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在 0.5B 与 7B 规模模型上验证了数据编排策略带来的训练收益</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于大模型数据工程方向，建议关注编排策略的计算开销与对下游基准的实际增益</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-llm">LLM</span>
+        <span class="tag tag-data">Data</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2607.24717">arXiv</a>
+        <a href="https://arxiv.org/pdf/2607.24717">PDF</a>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">Efficient LLM-Generated Shuttling Compilers for Complex Trapped-Ion Architectures</div>
+      <div class="paper-meta">arXiv 2026 · 2607.24714</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">利用大语言模型自动生成面向复杂囚禁离子量子架构的穿梭编译器，替代人工设计的调度算法</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次将大模型代码生成能力引入囚禁离子量子计算的编译优化环节，兼顾生成效率与方案质量</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">关键指标分别达到 76% 与 39%，验证了自动生成编译器的可行性</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于大模型跨领域应用方向，建议关注生成编译器的正确性保障与对不同硬件拓扑的适配能力</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-llm">LLM</span>
+        <span class="tag tag-tool">Code Gen</span>
+        <span class="tag tag-infra">Quantum</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2607.24714">arXiv</a>
+        <a href="https://arxiv.org/pdf/2607.24714">PDF</a>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">Interactive Training 2: Auditable Control Plane for Live Model Training</div>
+      <div class="paper-meta">arXiv 2026 · 2607.18314 · University of Waterloo · HF 社区热门</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">为进行中的模型训练构建可审计的控制平面，支持在训练过程中实时介入、调整与记录</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">将训练干预操作全程留痕并可审计，使"边训练边调控"成为可复现、可追溯的工程实践</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">系统已上线在线演示，实验验证了交互式训练控制的有效性，具体数据详见原文</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于训练基础设施方向，建议关注控制面板的干预粒度、审计完整性与对训练稳定性的影响</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-llm">LLM</span>
+        <span class="tag tag-infra">Infra</span>
+        <span class="tag tag-tool">Training</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2607.18314">arXiv</a>
+        <a href="https://arxiv.org/pdf/2607.18314">PDF</a>
+        <a href="https://interactivetraining.ai/live">Project</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">🎨 Multimodal · 多模态</h2>
+
+    <div class="paper-card hot">
+      <div class="paper-title"><span class="hot-badge">🔥</span> ClinFusion: A Vision-Centric Multimodal LLM System for Holistic Medical Understanding</div>
+      <div class="paper-meta">arXiv 2026 · 2607.24743 · Alibaba DAMO Academy（阿里达摩院）</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">以视觉为中心构建医疗多模态大语言模型系统，融合影像与文本实现整体化的医学理解</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出空间感知的视觉中心架构，面向医疗场景统一多模态输入，并开源代码与模型权重</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在医学理解与生成任务上验证了系统的有效性，具体数据详见原文</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于医疗多模态方向，建议关注跨模态对齐方式、临床任务覆盖面与真实场景可靠性</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-multimodal">Multimodal</span>
+        <span class="tag tag-llm">Medical LLM</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2607.24743">arXiv</a>
+        <a href="https://arxiv.org/pdf/2607.24743">PDF</a>
+        <a href="https://github.com/alibaba-damo-academy/ClinFusion">Code</a>
+        <a href="https://huggingface.co/collections/Alibaba-DAMO-Academy/clinfusion">Model</a>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">KANEx: Translating Kolmogorov-Arnold Networks' Interpretability to Medical Explainability</div>
+      <div class="paper-meta">arXiv 2026 · 2607.24730</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">基于 Kolmogorov-Arnold 网络的可解释结构，结合视觉-语言模型构建面向医学影像的可解释框架</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">将 KAN 网络的数学可解释性转化为 X 光等医学影像诊断中的临床可解释性输出</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">关键指标提升约 10%，验证了可解释框架在医学任务上的有效性</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于可解释多模态方向，建议关注解释结果与医生判读的一致性及跨病种泛化能力</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-multimodal">Multimodal</span>
+        <span class="tag tag-reasoning">Interpretability</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2607.24730">arXiv</a>
+        <a href="https://arxiv.org/pdf/2607.24730">PDF</a>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">ERUnderstand: Evaluating Vision-Language Models on Structured ER Diagrams</div>
+      <div class="paper-meta">arXiv 2026 · 2607.24707</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">构建面向实体-关系图的结构化图表理解评测基准，系统考察视觉-语言模型的图表解析能力</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次将 ER 图这类高度结构化的工程图表纳入多模态评测体系，揭示模型在符号化视觉理解上的短板</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">现有模型在该基准上的表现存在约 25% 的显著差距，暴露出结构化理解能力的不足</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于多模态评测方向，建议关注评测任务设计、模型间差异与结构化推理能力的改进空间</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-multimodal">Multimodal</span>
+        <span class="tag tag-benchmark">Benchmark</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2607.24707">arXiv</a>
+        <a href="https://arxiv.org/pdf/2607.24707">PDF</a>
+        <a href="https://github.com/salinaria/ERUnderstand">Code</a>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">Spatio-Temporal Conditional Denoising Transformer for Modality-Missing RGBT Tracking</div>
+      <div class="paper-meta">arXiv 2026 · 2607.24701</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出时空条件去噪 Transformer 架构，针对可见光与热红外模态缺失场景下的目标跟踪任务</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">以条件去噪机制统一处理模态缺失问题，使跟踪器在部分模态失效时仍保持鲁棒表现</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">实验验证了方法在模态缺失条件下的跟踪有效性，具体数据详见原文</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于多模态感知方向，建议关注跨模态补偿机制、实时性表现与实际部署场景的适配性</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-multimodal">Multimodal</span>
+        <span class="tag tag-robot">Tracking</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2607.24701">arXiv</a>
+        <a href="https://arxiv.org/pdf/2607.24701">PDF</a>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">O-VAD: Industrial Video Anomaly Detection through Object-Centric Tracking and Reasoning</div>
+      <div class="paper-meta">arXiv 2026 · 2607.18142 · Carnegie Mellon University · HF 社区热门</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">基于视觉-语言模型微调，构建以物体为中心的跟踪与推理框架，面向工业视频异常检测</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">将物体级跟踪与语义推理相结合，使异常判断从整帧画面细化到具体对象的行为链路</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在工业异常检测与推理任务上验证了框架的有效性，并开源了项目主页与代码</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于工业视觉与推理方向，建议关注误报率控制、推理链可解释性与产线部署成本</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-multimodal">Multimodal</span>
+        <span class="tag tag-reasoning">Reasoning</span>
+        <span class="tag tag-tool">Industrial</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2607.18142">arXiv</a>
+        <a href="https://arxiv.org/pdf/2607.18142">PDF</a>
+        <a href="https://o-vad.github.io/">Project</a>
+        <a href="https://github.com/o-vad/O-VAD">Code</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">📰 行业动态 · Informations</h2>
+
+    <div class="info-card">
+      <div class="paper-title">OpenAI：AI 如何拓展人们的工作内容</div>
+      <div class="paper-summary">OpenAI 发布最新研究《How AI is expanding what people do at work》，探讨 AI 工具在真实工作场景中的使用方式，以及其如何改变和扩展人们在工作中所承担的任务边界。</div>
+      <div class="paper-links">
+        <a href="https://openai.com/index/how-ai-is-expanding-what-people-do-at-work/">来源</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>小小志AI日报 · 2026-07-28 · 自动生成</p>
+    <p>数据来源：arXiv（回溯窗口 07-26~07-28）+ HuggingFace Daily Papers + 机构博客（X/Twitter RSS 不可用）</p>
+  </footer>
+</div>
+</body>
+</html>
