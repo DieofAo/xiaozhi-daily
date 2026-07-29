@@ -658,6 +658,187 @@
 <script>
 // ===== DATA =====
 const PAPERS_DB = [
+    // === 2026-07-29 ===
+    {
+        date: "2026-07-29",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "Wonder: Video World Model Done Better",
+        venue: "arXiv 2026 · 2607.26037",
+        summary: "🔬 技术路线: 构建通用视频世界模型，围绕模型机制、训练策略与推理效率进行系统性优化，支持实时交互式视频生成 | 💡 创新点: 在生成质量与推理速度之间取得更优平衡，提供可交互的通用世界建模能力并配套项目主页 | 📊 实验效果: 实现 16 FPS 的实时视频世界生成，在生成保真度与时序一致性上均有验证 | ⭐ 整体评价: 属于视频世界模型方向，建议关注其长时序稳定性、动作可控性与算力开销",
+        tags: [["World Model","green"],["Video Gen","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.26037"],["PDF","https://arxiv.org/pdf/2607.26037"],["Project","https://wonder-world-model.github.io/"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"构建通用视频世界模型，围绕模型机制、训练策略与推理效率进行系统性优化，支持实时交互式视频生成"},{"label":"💡 创新点","text":"在生成质量与推理速度之间取得更优平衡，提供可交互的通用世界建模能力并配套项目主页"},{"label":"📊 实验效果","text":"实现 16 FPS 的实时视频世界生成，在生成保真度与时序一致性上均有验证"},{"label":"⭐ 整体评价","text":"属于视频世界模型方向，建议关注其长时序稳定性、动作可控性与算力开销"}]
+    },
+    {
+        date: "2026-07-29",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "INTACT: Isomorphic Intent-to-Action Learning for Search-Free World Models",
+        venue: "arXiv 2026 · 2607.26056",
+        summary: "🔬 技术路线: 基于前向潜空间世界模型预测动作对场景的改变，通过意图与动作的同构映射直接完成决策，无需在线搜索 | 💡 创新点: 提出免搜索的意图到动作学习范式，端到端地将高层意图对齐到底层动作空间，具备较强鲁棒性 | 📊 实验效果: 在推理与规划类任务上验证了同构学习框架的有效性，省去规划搜索带来的推理开销 | ⭐ 整体评价: 属于世界模型与动作生成方向，建议关注其预测精度、动作可控性与仿真到真实迁移效果",
+        tags: [["World Model","green"],["Planning","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.26056"],["PDF","https://arxiv.org/pdf/2607.26056"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于前向潜空间世界模型预测动作对场景的改变，通过意图与动作的同构映射直接完成决策，无需在线搜索"},{"label":"💡 创新点","text":"提出免搜索的意图到动作学习范式，端到端地将高层意图对齐到底层动作空间，具备较强鲁棒性"},{"label":"📊 实验效果","text":"在推理与规划类任务上验证了同构学习框架的有效性，省去规划搜索带来的推理开销"},{"label":"⭐ 整体评价","text":"属于世界模型与动作生成方向，建议关注其预测精度、动作可控性与仿真到真实迁移效果"}]
+    },
+    {
+        date: "2026-07-29",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "Progress Reward Modeling for Robotic Learning: A Comprehensive Survey",
+        venue: "arXiv 2026 · 2607.21655 · Northwestern University · HF 社区热门",
+        summary: "🔬 技术路线: 面向动态环境与长时序任务的机器人学习，系统梳理进度奖励建模的框架、机制与代表性方法 | 💡 创新点: 首次以统一视角整合任务进度信号在奖励设计中的作用，并配套维护开源论文清单仓库 | 📊 实验效果: 覆盖操作、导航等多类机器人任务的方法对比与开放问题分析，代码仓库已获 46 星 | ⭐ 整体评价: 属于机器人奖励建模方向的综述，适合作为稀疏奖励与长时序学习问题的入门参考",
+        tags: [["Robotics","green"],["Reward Model","green"],["Survey","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.21655"],["PDF","https://arxiv.org/pdf/2607.21655"],["Code","https://github.com/sterzhang/Awesome-Progress-Models"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"面向动态环境与长时序任务的机器人学习，系统梳理进度奖励建模的框架、机制与代表性方法"},{"label":"💡 创新点","text":"首次以统一视角整合任务进度信号在奖励设计中的作用，并配套维护开源论文清单仓库"},{"label":"📊 实验效果","text":"覆盖操作、导航等多类机器人任务的方法对比与开放问题分析，代码仓库已获 46 星"},{"label":"⭐ 整体评价","text":"属于机器人奖励建模方向的综述，适合作为稀疏奖励与长时序学习问题的入门参考"}]
+    },
+    {
+        date: "2026-07-29",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "πR²: Reactive Real-time Flow Policies",
+        venue: "arXiv 2026 · 2607.26055",
+        summary: "🔬 技术路线: 基于流匹配策略架构构建反应式实时控制方案，兼容 GR00T-N1 等机器人基础模型的多模态输入 | 💡 创新点: 让流策略具备实时反应能力，在动作生成过程中对环境变化即时响应，降低控制延迟 | 📊 实验效果: 在操作抓取与规划任务上验证了实时反应式策略的有效性，并提供项目主页展示 | ⭐ 整体评价: 属于机器人控制策略方向，建议重点看实验设置、基线对比与真实部署条件",
+        tags: [["Robotics","green"],["Flow Policy","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.26055"],["PDF","https://arxiv.org/pdf/2607.26055"],["Project","https://pi-r2-flow.github.io/"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于流匹配策略架构构建反应式实时控制方案，兼容 GR00T-N1 等机器人基础模型的多模态输入"},{"label":"💡 创新点","text":"让流策略具备实时反应能力，在动作生成过程中对环境变化即时响应，降低控制延迟"},{"label":"📊 实验效果","text":"在操作抓取与规划任务上验证了实时反应式策略的有效性，并提供项目主页展示"},{"label":"⭐ 整体评价","text":"属于机器人控制策略方向，建议重点看实验设置、基线对比与真实部署条件"}]
+    },
+    {
+        date: "2026-07-29",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "S2A2: Audio-Visual Imitation Learning for Manipulation Tasks Using Acoustic Spatial Information",
+        venue: "arXiv 2026 · 2607.26047",
+        summary: "🔬 技术路线: 在模仿学习框架中引入声学空间信息，将空间-频谱特征与视觉观测融合用于操作任务策略学习 | 💡 创新点: 利用声音的空间线索弥补视觉遮挡盲区，为接触密集型操作提供额外感知模态 | 📊 实验效果: 在多个操作抓取任务上验证了视听融合策略相对纯视觉基线的提升，并提供项目主页 | ⭐ 整体评价: 属于多模态机器人操作方向，建议关注麦克风阵列硬件要求与噪声环境下的鲁棒性",
+        tags: [["Robotics","green"],["Audio-Visual","green"],["Manipulation","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.26047"],["PDF","https://arxiv.org/pdf/2607.26047"],["Project","https://azuma413.github.io/projects/s2a2"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"在模仿学习框架中引入声学空间信息，将空间-频谱特征与视觉观测融合用于操作任务策略学习"},{"label":"💡 创新点","text":"利用声音的空间线索弥补视觉遮挡盲区，为接触密集型操作提供额外感知模态"},{"label":"📊 实验效果","text":"在多个操作抓取任务上验证了视听融合策略相对纯视觉基线的提升，并提供项目主页"},{"label":"⭐ 整体评价","text":"属于多模态机器人操作方向，建议关注麦克风阵列硬件要求与噪声环境下的鲁棒性"}]
+    },
+    {
+        date: "2026-07-29",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "EmbodiedDF-diffusion 开源模型",
+        venue: "🤗 HF 模型 · jzcan · Robotics",
+        summary: "🔬 技术路线: jzcan 在 HuggingFace 发布 EmbodiedDF-diffusion 模型，采用扩散策略路线面向具身操作场景 | 💡 创新点: 提供可直接下载使用的具身扩散策略权重，方便社区在自有任务上进行微调与评测 | 📊 实验效果: 模型已于今日上架 HuggingFace 平台，标签覆盖机器人与扩散模型方向 | ⭐ 整体评价: 开源具身扩散模型补充了社区可用基线，建议关注其训练数据来源与支持的任务范围",
+        tags: [["Robotics","green"],["Diffusion Policy","green"]],
+        links: [["HuggingFace","https://huggingface.co/jzcan/EmbodiedDF-diffusion"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"jzcan 在 HuggingFace 发布 EmbodiedDF-diffusion 模型，采用扩散策略路线面向具身操作场景"},{"label":"💡 创新点","text":"提供可直接下载使用的具身扩散策略权重，方便社区在自有任务上进行微调与评测"},{"label":"📊 实验效果","text":"模型已于今日上架 HuggingFace 平台，标签覆盖机器人与扩散模型方向"},{"label":"⭐ 整体评价","text":"开源具身扩散模型补充了社区可用基线，建议关注其训练数据来源与支持的任务范围"}]
+    },
+    {
+        date: "2026-07-29",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "StateAct: Program State, before Pixels, for Long-Horizon Computer-Use Agents",
+        venue: "arXiv 2026 · 2607.22798 · Salesforce AI Research · HF 社区热门",
+        summary: "🔬 技术路线: 让计算机操作智能体优先读取程序内部状态而非屏幕像素，以结构化状态支撑长时序任务决策 | 💡 创新点: 颠倒\"先看屏幕再行动\"的常规范式，用程序状态作为第一信息源，降低视觉感知误差的级联影响 | 📊 实验效果: 在长程计算机操作基准上相对基线取得 20.6%、26.9% 等多项提升，最高成功率达 54.8% | ⭐ 整体评价: 属于计算机使用智能体方向，建议关注状态接口的通用性与对闭源应用的适配能力",
+        tags: [["Agent","green"],["Computer Use","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.22798"],["PDF","https://arxiv.org/pdf/2607.22798"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"让计算机操作智能体优先读取程序内部状态而非屏幕像素，以结构化状态支撑长时序任务决策"},{"label":"💡 创新点","text":"颠倒\"先看屏幕再行动\"的常规范式，用程序状态作为第一信息源，降低视觉感知误差的级联影响"},{"label":"📊 实验效果","text":"在长程计算机操作基准上相对基线取得 20.6%、26.9% 等多项提升，最高成功率达 54.8%"},{"label":"⭐ 整体评价","text":"属于计算机使用智能体方向，建议关注状态接口的通用性与对闭源应用的适配能力"}]
+    },
+    {
+        date: "2026-07-29",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Desktop-Delta Bench: Do Computer-Use Models Understand Desktop GUI Transitions?",
+        venue: "arXiv 2026 · 2607.26041",
+        summary: "🔬 技术路线: 构建面向桌面 GUI 状态转换理解的基准测试，系统评估计算机使用模型对界面变化的感知与推理能力 | 💡 创新点: 首次聚焦操作前后界面差异这一关键环节，将长时序 GUI 任务拆解为可度量的状态转换理解问题 | 📊 实验效果: 主流模型准确率仅 65.1% 至 65.7%，与人类水平存在明显差距，改进方法带来 6.9 个百分点提升 | ⭐ 整体评价: 属于智能体评估基准方向，揭示计算机使用模型的感知短板，适合指导 GUI 智能体训练改进",
+        tags: [["Agent","green"],["Benchmark","green"],["GUI","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.26041"],["PDF","https://arxiv.org/pdf/2607.26041"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"构建面向桌面 GUI 状态转换理解的基准测试，系统评估计算机使用模型对界面变化的感知与推理能力"},{"label":"💡 创新点","text":"首次聚焦操作前后界面差异这一关键环节，将长时序 GUI 任务拆解为可度量的状态转换理解问题"},{"label":"📊 实验效果","text":"主流模型准确率仅 65.1% 至 65.7%，与人类水平存在明显差距，改进方法带来 6.9 个百分点提升"},{"label":"⭐ 整体评价","text":"属于智能体评估基准方向，揭示计算机使用模型的感知短板，适合指导 GUI 智能体训练改进"}]
+    },
+    {
+        date: "2026-07-29",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "UniMem: Complementary Episodic-to-Parametric Memory for Boundary-Agnostic Task Streams",
+        venue: "arXiv 2026 · 2607.26017",
+        summary: "🔬 技术路线: 构建情景记忆与参数记忆互补的统一记忆框架，面向无任务边界的连续任务流场景 | 💡 创新点: 将短期情景经验逐步固化为参数化长期记忆，无需显式任务边界即可实现记忆迁移与巩固 | 📊 实验效果: 在连续推理任务流上验证了互补记忆机制的有效性，兼顾记忆容量与检索效率 | ⭐ 整体评价: 属于智能体记忆机制方向，建议关注记忆固化时机的选择策略与灾难性遗忘的抑制效果",
+        tags: [["Agent","green"],["Memory","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.26017"],["PDF","https://arxiv.org/pdf/2607.26017"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"构建情景记忆与参数记忆互补的统一记忆框架，面向无任务边界的连续任务流场景"},{"label":"💡 创新点","text":"将短期情景经验逐步固化为参数化长期记忆，无需显式任务边界即可实现记忆迁移与巩固"},{"label":"📊 实验效果","text":"在连续推理任务流上验证了互补记忆机制的有效性，兼顾记忆容量与检索效率"},{"label":"⭐ 整体评价","text":"属于智能体记忆机制方向，建议关注记忆固化时机的选择策略与灾难性遗忘的抑制效果"}]
+    },
+    {
+        date: "2026-07-29",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "From Proprietary to Open-Source: Bridging the Distribution Gap via Multi-Agent Protocol Distillation in Agentic Search",
+        venue: "arXiv 2026 · 2607.24280 · HF 社区热门",
+        summary: "🔬 技术路线: 通过多智能体协议蒸馏，将闭源大模型的智能体搜索能力迁移到开源小模型，结合强化学习弥合分布差距 | 💡 创新点: 以协议级蒸馏取代单纯的轨迹模仿，保留多智能体协作结构，提升开源模型的搜索鲁棒性 | 📊 实验效果: 在 1.7B 与 4B 规模的开源模型上验证了蒸馏方案的有效性，显著缩小与闭源系统的差距 | ⭐ 整体评价: 属于智能体搜索与知识蒸馏方向，建议关注蒸馏数据构造成本与跨任务泛化能力",
+        tags: [["Agent","green"],["Distillation","green"],["Search","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.24280"],["PDF","https://arxiv.org/pdf/2607.24280"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"通过多智能体协议蒸馏，将闭源大模型的智能体搜索能力迁移到开源小模型，结合强化学习弥合分布差距"},{"label":"💡 创新点","text":"以协议级蒸馏取代单纯的轨迹模仿，保留多智能体协作结构，提升开源模型的搜索鲁棒性"},{"label":"📊 实验效果","text":"在 1.7B 与 4B 规模的开源模型上验证了蒸馏方案的有效性，显著缩小与闭源系统的差距"},{"label":"⭐ 整体评价","text":"属于智能体搜索与知识蒸馏方向，建议关注蒸馏数据构造成本与跨任务泛化能力"}]
+    },
+    {
+        date: "2026-07-29",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "VetClaw: An Edge-Cloud Multimodal Agentic System for Veterinary Disease Screening",
+        venue: "arXiv 2026 · 2607.26042",
+        summary: "🔬 技术路线: 基于视觉-语言模型构建端云协同的多模态智能体系统，面向兽医疾病筛查场景分配端侧与云侧算力 | 💡 创新点: 将智能体架构引入兽医诊断垂直领域，支持零样本疾病识别并兼顾边缘设备的实时性约束 | 📊 实验效果: 在疾病预测任务上验证了端云协同方案的有效性，展示了垂直领域落地可行性 | ⭐ 整体评价: 属于垂直领域智能体应用方向，建议关注其数据合规性、误诊风险控制与部署成本",
+        tags: [["Agent","green"],["Multimodal","green"],["Edge-Cloud","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.26042"],["PDF","https://arxiv.org/pdf/2607.26042"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于视觉-语言模型构建端云协同的多模态智能体系统，面向兽医疾病筛查场景分配端侧与云侧算力"},{"label":"💡 创新点","text":"将智能体架构引入兽医诊断垂直领域，支持零样本疾病识别并兼顾边缘设备的实时性约束"},{"label":"📊 实验效果","text":"在疾病预测任务上验证了端云协同方案的有效性，展示了垂直领域落地可行性"},{"label":"⭐ 整体评价","text":"属于垂直领域智能体应用方向，建议关注其数据合规性、误诊风险控制与部署成本"}]
+    },
+    {
+        date: "2026-07-29",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Kimi K3: Open Frontier Intelligence",
+        venue: "arXiv 2026 · 2607.24653 · Moonshot AI · HF 社区热门 · GitHub 3654⭐",
+        summary: "🔬 技术路线: 月之暗面发布 Kimi K3 技术报告，采用混合专家架构，结合大规模强化学习与训练算法优化打造开放前沿模型 | 💡 创新点: 以开放权重路线对标前沿闭源模型，在训练效率与推理能力上进行系统性算法创新，兼顾鲁棒与高效 | 📊 实验效果: 关键效率指标实现 2.5 倍提升，开源仓库发布当日即获 3654 星，社区反响热烈 | ⭐ 整体评价: 属于开源基础模型的重磅发布，建议关注其智能体能力评测、推理成本与生态工具链建设",
+        tags: [["LLM","green"],["RL","green"],["MoE","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.24653"],["PDF","https://arxiv.org/pdf/2607.24653"],["Project","https://www.kimi.com/blog/kimi-k3"],["Code","https://github.com/MoonshotAI/Kimi-K3"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"月之暗面发布 Kimi K3 技术报告，采用混合专家架构，结合大规模强化学习与训练算法优化打造开放前沿模型"},{"label":"💡 创新点","text":"以开放权重路线对标前沿闭源模型，在训练效率与推理能力上进行系统性算法创新，兼顾鲁棒与高效"},{"label":"📊 实验效果","text":"关键效率指标实现 2.5 倍提升，开源仓库发布当日即获 3654 星，社区反响热烈"},{"label":"⭐ 整体评价","text":"属于开源基础模型的重磅发布，建议关注其智能体能力评测、推理成本与生态工具链建设"}]
+    },
+    {
+        date: "2026-07-29",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Sol-Attn: Accelerating Video Generation Inference via On-the-Fly Attention Sparsification",
+        venue: "arXiv 2026 · 2607.24027 · NVIDIA · HF 社区热门",
+        summary: "🔬 技术路线: 面向扩散 Transformer 视频生成模型，在推理阶段动态执行注意力稀疏化，无需重新训练即可加速 | 💡 创新点: 提出免训练的即时稀疏化机制，根据生成内容自适应裁剪注意力计算，实现端到端推理提速 | 📊 实验效果: 在视频生成任务上验证了显著的推理加速效果，同时保持生成质量基本无损 | ⭐ 整体评价: 属于生成模型推理加速方向，建议关注不同分辨率与时长下的加速比及质量权衡",
+        tags: [["LLM","green"],["Inference","green"],["Video Gen","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.24027"],["PDF","https://arxiv.org/pdf/2607.24027"],["Project","http://nvlabs.github.io/Sana/Sol-Attn/"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"面向扩散 Transformer 视频生成模型，在推理阶段动态执行注意力稀疏化，无需重新训练即可加速"},{"label":"💡 创新点","text":"提出免训练的即时稀疏化机制，根据生成内容自适应裁剪注意力计算，实现端到端推理提速"},{"label":"📊 实验效果","text":"在视频生成任务上验证了显著的推理加速效果，同时保持生成质量基本无损"},{"label":"⭐ 整体评价","text":"属于生成模型推理加速方向，建议关注不同分辨率与时长下的加速比及质量权衡"}]
+    },
+    {
+        date: "2026-07-29",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "CHARM: A Multimodal Graph Foundation Model with Hierarchical Context Modeling for Zero-Shot Transfer",
+        venue: "arXiv 2026 · 2607.26023",
+        summary: "🔬 技术路线: 构建多模态图基础模型，通过层次化上下文建模融合大语言模型能力，支持跨图数据的统一表征 | 💡 创新点: 将层次化上下文引入图基础模型预训练，实现真实场景下的零样本与跨模态迁移 | 📊 实验效果: 在多个下游图任务上验证了零样本迁移的有效性，具体数据详见原文 | ⭐ 整体评价: 属于多模态图学习方向，建议关注跨模态对齐方式、数据规模与下游任务表现",
+        tags: [["Multimodal","green"],["Foundation Model","green"],["Graph","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.26023"],["PDF","https://arxiv.org/pdf/2607.26023"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"构建多模态图基础模型，通过层次化上下文建模融合大语言模型能力，支持跨图数据的统一表征"},{"label":"💡 创新点","text":"将层次化上下文引入图基础模型预训练，实现真实场景下的零样本与跨模态迁移"},{"label":"📊 实验效果","text":"在多个下游图任务上验证了零样本迁移的有效性，具体数据详见原文"},{"label":"⭐ 整体评价","text":"属于多模态图学习方向，建议关注跨模态对齐方式、数据规模与下游任务表现"}]
+    },
+    {
+        date: "2026-07-29",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "JarvisHub: An Open Harness for Canvas-Native Multimodal Creative Agents",
+        venue: "arXiv 2026 · 2607.23588 · HF 社区热门 · GitHub 85⭐",
+        summary: "🔬 技术路线: 基于生成模型构建画布原生的多模态创意智能体开放框架，统一图文等创作工具的调用与编排 | 💡 创新点: 以画布为一等交互界面组织多模态创作流程，提供可扩展的开放智能体运行环境 | 📊 实验效果: 在图像生成与创意编辑任务上验证了框架有效性，开源仓库已获 85 星并提供在线体验站点 | ⭐ 整体评价: 属于多模态创作智能体方向，建议关注其工具生态丰富度与复杂创作任务的完成质量",
+        tags: [["Multimodal","green"],["Agent","green"],["Creative","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.23588"],["PDF","https://arxiv.org/pdf/2607.23588"],["Project","https://www.jarvishub.site/"],["Code","https://github.com/LYL1015/JarvisHub"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于生成模型构建画布原生的多模态创意智能体开放框架，统一图文等创作工具的调用与编排"},{"label":"💡 创新点","text":"以画布为一等交互界面组织多模态创作流程，提供可扩展的开放智能体运行环境"},{"label":"📊 实验效果","text":"在图像生成与创意编辑任务上验证了框架有效性，开源仓库已获 85 星并提供在线体验站点"},{"label":"⭐ 整体评价","text":"属于多模态创作智能体方向，建议关注其工具生态丰富度与复杂创作任务的完成质量"}]
+    },
+    {
+        date: "2026-07-29",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "Rethinking Classifier-Free Guidance in On-Policy Diffusion Distillation",
+        venue: "arXiv 2026 · 2607.24731 · HF 社区热门",
+        summary: "🔬 技术路线: 重新审视在线策略扩散蒸馏中无分类器引导的作用机制，分析其对蒸馏后模型行为的影响 | 💡 创新点: 纠正无分类器引导在蒸馏场景下的常见使用误区，提出更鲁棒的引导策略配置方案 | 📊 实验效果: 在生成质量预测与推理任务上验证了改进方案的有效性，并开源代码与项目主页 | ⭐ 整体评价: 属于扩散模型蒸馏方向，建议关注其对少步生成质量的实际增益与超参敏感性",
+        tags: [["Diffusion","green"],["Distillation","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.24731"],["PDF","https://arxiv.org/pdf/2607.24731"],["Project","https://rethinking-cfg-opd.github.io"],["Code","https://github.com/rethinking-cfg-opd/Rethinking-CFG-OPD"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"重新审视在线策略扩散蒸馏中无分类器引导的作用机制，分析其对蒸馏后模型行为的影响"},{"label":"💡 创新点","text":"纠正无分类器引导在蒸馏场景下的常见使用误区，提出更鲁棒的引导策略配置方案"},{"label":"📊 实验效果","text":"在生成质量预测与推理任务上验证了改进方案的有效性，并开源代码与项目主页"},{"label":"⭐ 整体评价","text":"属于扩散模型蒸馏方向，建议关注其对少步生成质量的实际增益与超参敏感性"}]
+    },
     // === 2026-07-28 ===
     {
         date: "2026-07-28",
@@ -20369,6 +20550,13 @@ const PAPERS_DB = [
 ];
 
 const DAILY_OVERVIEW = {
+    "2026-07-29": {
+        bannerTitle: "🔥 今日看点",
+        bannerSubtitle: "本期收录 15 篇论文与 1 个开源模型。最大看点：月之暗面发布 Kimi K3 开放前沿智能技术报告（GitHub 3654 星），混合专家架构结合强化学习实现 2.5 倍效率提升。世界模型方向双发——Wonder 通用视频世界模型以 16 FPS 实现实时交互生成，INTACT 提出免搜索的意图到动作同构学习。机器人方向，西北大学发布机器人学习进度奖励建模全景综述，πR² 反应式实时流策略面向 GR00T 类基础模型。Agent 方向密集：Salesforce 提出 StateAct 用程序状态先于像素支撑长程计算机操作，Desktop-Delta Bench 揭示计算机使用模型对桌面 GUI 状态转换理解不足，UniMem 打通情景记忆到参数记忆的互补通路。NVIDIA Sol-Attn 免训练注意力稀疏化加速视频生成推理。",
+        picks: ["Wonder: Video World Model Done Better","Progress Reward Modeling for Robotic Learning: A Comprehensive Survey","Kimi K3: Open Frontier Intelligence","Sol-Attn: Accelerating Video Generation Inference via On-the-Fly Attention Sparsification"],
+        totalPapers: 16,
+        totalNews: 0
+    },
     "2026-07-28": {
         bannerTitle: "🔥 今日看点",
         bannerSubtitle: "本期收录 10 篇论文与 1 条机构动态。具身智能方向，MIT 提出面向具身操作的数据金字塔（Data Pyramid for Embodied Manipulation），系统梳理 UMI 式多模态数据在 VLA 训练中的分层价值；阿里达摩院开源以视觉为中心的医疗多模态大模型系统 ClinFusion。Agent 方向聚焦多轮长程规划的\"物理学\"，通过单教师与多教师在线智能体蒸馏打通预训练到后训练全链路。此外，DataOrchestra 探索预训练数据的逐样本编排，滑铁卢大学的 Interactive Training 2 为在线模型训练提供可审计控制面板。行业侧，OpenAI 发布关于 AI 如何拓展人类工作边界的最新研究。",
