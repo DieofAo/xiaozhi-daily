@@ -658,6 +658,205 @@
 <script>
 // ===== DATA =====
 const PAPERS_DB = [
+    // === 2026-07-30 ===
+    {
+        date: "2026-07-30",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "TurboVLA: Real-Time Vision-Language-Action Model at 32 Hz on an RTX 4090 with <1 GB VRAM",
+        venue: "arXiv 2026 · 2607.27205",
+        summary: "🔬 技术路线: 对基于大语言模型骨干的 VLA 架构做极致轻量化改造，构建 0.2B 参数的实时视觉-语言-动作模型 | 💡 创新点: 在单张 RTX 4090 上实现 32 Hz 推理频率且显存占用不足 1 GB，大幅降低 VLA 真机部署门槛 | 📊 实验效果: 操作任务成功率达 97.7%，以 0.2B 的参数量取得与更大模型相当的表现，并开源代码 | ⭐ 整体评价: 属于 VLA 具身控制方向，建议关注其任务泛化能力、动作表达方式与真机验证细节",
+        tags: [["VLA","green"],["Efficiency","green"],["Real-Time","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.27205"],["PDF","https://arxiv.org/pdf/2607.27205"],["Code","https://github.com/H-EmbodVis/TurboVLA"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"对基于大语言模型骨干的 VLA 架构做极致轻量化改造，构建 0.2B 参数的实时视觉-语言-动作模型"},{"label":"💡 创新点","text":"在单张 RTX 4090 上实现 32 Hz 推理频率且显存占用不足 1 GB，大幅降低 VLA 真机部署门槛"},{"label":"📊 实验效果","text":"操作任务成功率达 97.7%，以 0.2B 的参数量取得与更大模型相当的表现，并开源代码"},{"label":"⭐ 整体评价","text":"属于 VLA 具身控制方向，建议关注其任务泛化能力、动作表达方式与真机验证细节"}]
+    },
+    {
+        date: "2026-07-30",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "Mental World Modeling",
+        venue: "arXiv 2026 · 2607.27201",
+        summary: "🔬 技术路线: 以世界模型作为规划与推理的预测性底座，探索基于大语言模型的心智世界建模训练框架 | 💡 创新点: 提出\"心智世界建模\"视角，让模型在内部表征中演练未来状态，而非依赖显式环境模拟器 | 📊 实验效果: 在规划与生成类任务上验证了该建模方式的有效性，并提供项目主页展示细节 | ⭐ 整体评价: 属于世界模型方向，建议关注其状态预测精度、可控性以及与下游决策任务的衔接方式",
+        tags: [["World Model","green"],["Planning","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.27201"],["PDF","https://arxiv.org/pdf/2607.27201"],["Project","https://mental-world.github.io/"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"以世界模型作为规划与推理的预测性底座，探索基于大语言模型的心智世界建模训练框架"},{"label":"💡 创新点","text":"提出\"心智世界建模\"视角，让模型在内部表征中演练未来状态，而非依赖显式环境模拟器"},{"label":"📊 实验效果","text":"在规划与生成类任务上验证了该建模方式的有效性，并提供项目主页展示细节"},{"label":"⭐ 整体评价","text":"属于世界模型方向，建议关注其状态预测精度、可控性以及与下游决策任务的衔接方式"}]
+    },
+    {
+        date: "2026-07-30",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "HiFi-UMI: Learning Deployable Manipulation Policies from High-Fidelity UMI Data Alone",
+        venue: "arXiv 2026 · 2607.25895 · Simple World Lab · HF 社区热门",
+        summary: "🔬 技术路线: 仅使用高保真 UMI 手持夹爪采集的数据训练操作策略，绕开昂贵的真机遥操作数据采集流程 | 💡 创新点: 系统性提升 UMI 数据的保真度与一致性，证明高质量手持数据可单独支撑可部署的真机策略 | 📊 实验效果: 真机操作成功率达 85%，相比基线提升 41%，关键设置下带来 18.1 个百分点的增益 | ⭐ 整体评价: 属于机器人数据与策略学习方向，建议关注其数据采集规范、跨本体迁移与部署鲁棒性",
+        tags: [["Robotics","green"],["Data Collection","green"],["Manipulation","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.25895"],["PDF","https://arxiv.org/pdf/2607.25895"],["Project","https://cloud.simpleai.tech/simple-world-lab/hifi-umi/"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"仅使用高保真 UMI 手持夹爪采集的数据训练操作策略，绕开昂贵的真机遥操作数据采集流程"},{"label":"💡 创新点","text":"系统性提升 UMI 数据的保真度与一致性，证明高质量手持数据可单独支撑可部署的真机策略"},{"label":"📊 实验效果","text":"真机操作成功率达 85%，相比基线提升 41%，关键设置下带来 18.1 个百分点的增益"},{"label":"⭐ 整体评价","text":"属于机器人数据与策略学习方向，建议关注其数据采集规范、跨本体迁移与部署鲁棒性"}]
+    },
+    {
+        date: "2026-07-30",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Can AI agents conduct open-ended AI research? Early evidence from two case studies",
+        venue: "arXiv 2026 · 2607.27191 · MIT",
+        summary: "🔬 技术路线: 通过两个真实案例研究，评估 AI 智能体端到端开展开放式 AI 研究的能力边界与失败模式 | 💡 创新点: 聚焦\"开放式科研\"而非封闭基准，检验智能体生成的研究成果在质量与鲁棒性上的真实水平 | 📊 实验效果: 给出智能体自主科研的早期证据，剖析其在问题定义、实验设计与结论验证环节的差距 | ⭐ 整体评价: 属于智能体自主科研方向，建议关注案例设计的代表性以及对科研智能体系统的启示",
+        tags: [["Agent","green"],["AI for Science","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.27191"],["PDF","https://arxiv.org/pdf/2607.27191"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"通过两个真实案例研究，评估 AI 智能体端到端开展开放式 AI 研究的能力边界与失败模式"},{"label":"💡 创新点","text":"聚焦\"开放式科研\"而非封闭基准，检验智能体生成的研究成果在质量与鲁棒性上的真实水平"},{"label":"📊 实验效果","text":"给出智能体自主科研的早期证据，剖析其在问题定义、实验设计与结论验证环节的差距"},{"label":"⭐ 整体评价","text":"属于智能体自主科研方向，建议关注案例设计的代表性以及对科研智能体系统的启示"}]
+    },
+    {
+        date: "2026-07-30",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Partner Capability Estimation for Task-Agnostic Adaptation in Ad-Hoc Teamwork",
+        venue: "arXiv 2026 · 2607.27177",
+        summary: "🔬 技术路线: 提出 CE-CM 方法，基于预训练模型在线估计临时队友的能力水平，支撑任务无关的协作适应 | 💡 创新点: 将队友能力估计与具体任务解耦，使智能体无需针对新任务重新训练即可调整协作策略 | 📊 实验效果: 在多类规划协作任务上验证了方法的有效性，对陌生队友表现出较强的鲁棒性 | ⭐ 整体评价: 属于多智能体协作方向，建议关注能力估计的在线更新效率与人机混合团队场景的适用性",
+        tags: [["Agent","green"],["Multi-Agent","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.27177"],["PDF","https://arxiv.org/pdf/2607.27177"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出 CE-CM 方法，基于预训练模型在线估计临时队友的能力水平，支撑任务无关的协作适应"},{"label":"💡 创新点","text":"将队友能力估计与具体任务解耦，使智能体无需针对新任务重新训练即可调整协作策略"},{"label":"📊 实验效果","text":"在多类规划协作任务上验证了方法的有效性，对陌生队友表现出较强的鲁棒性"},{"label":"⭐ 整体评价","text":"属于多智能体协作方向，建议关注能力估计的在线更新效率与人机混合团队场景的适用性"}]
+    },
+    {
+        date: "2026-07-30",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "A New Role for Relevance: Guiding Corpus Interaction in Agentic Search",
+        venue: "arXiv 2026 · 2607.24223 · Tencent · HF 社区热门",
+        summary: "🔬 技术路线: 提出相关性感知框架 RARG，把传统检索中的相关性信号重新用于引导智能体与语料库的多轮交互 | 💡 创新点: 赋予相关性新角色：不再只做结果排序，而是作为智能体搜索过程中的行动指引信号 | 📊 实验效果: 在问答类智能体搜索任务上提升了检索准确率与答案质量，代码已开源并获社区关注 | ⭐ 整体评价: 属于智能体搜索方向，建议关注相关性信号与推理规划的耦合方式及其跨语料泛化能力",
+        tags: [["Agent","green"],["Search","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.24223"],["PDF","https://arxiv.org/pdf/2607.24223"],["Project","https://qdcassie-li.github.io/RARG/"],["Code","https://github.com/LeqsNaN/RARG"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出相关性感知框架 RARG，把传统检索中的相关性信号重新用于引导智能体与语料库的多轮交互"},{"label":"💡 创新点","text":"赋予相关性新角色：不再只做结果排序，而是作为智能体搜索过程中的行动指引信号"},{"label":"📊 实验效果","text":"在问答类智能体搜索任务上提升了检索准确率与答案质量，代码已开源并获社区关注"},{"label":"⭐ 整体评价","text":"属于智能体搜索方向，建议关注相关性信号与推理规划的耦合方式及其跨语料泛化能力"}]
+    },
+    {
+        date: "2026-07-30",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "CodeNib: A Multi-View Data System for Serving Repository Context to Coding Agents",
+        venue: "arXiv 2026 · 2607.25431 · SysEvol AI Research · HF 社区热门",
+        summary: "🔬 技术路线: 构建多视图数据系统 CodeNib，将代码仓库组织为可供编码智能体高效查询的结构化上下文 | 💡 创新点: 用统一的数据服务层替代智能体逐文件浏览仓库的方式，显著减少上下文获取的冗余开销 | 📊 实验效果: 上下文检索速度提升 25.4 倍，相关任务准确率分别达到 63% 与 87%，代码已开源 | ⭐ 整体评价: 属于编码智能体基础设施方向，建议关注其对大型仓库的扩展性与多智能体共享场景收益",
+        tags: [["Coding Agent","green"],["Infra","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.25431"],["PDF","https://arxiv.org/pdf/2607.25431"],["Project","https://codenib.ai"],["Code","https://github.com/sysevol-ai/CodeNib"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"构建多视图数据系统 CodeNib，将代码仓库组织为可供编码智能体高效查询的结构化上下文"},{"label":"💡 创新点","text":"用统一的数据服务层替代智能体逐文件浏览仓库的方式，显著减少上下文获取的冗余开销"},{"label":"📊 实验效果","text":"上下文检索速度提升 25.4 倍，相关任务准确率分别达到 63% 与 87%，代码已开源"},{"label":"⭐ 整体评价","text":"属于编码智能体基础设施方向，建议关注其对大型仓库的扩展性与多智能体共享场景收益"}]
+    },
+    {
+        date: "2026-07-30",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "ReDesign: Recovering Editable Design Structures from Images via Agentic Decomposition",
+        venue: "arXiv 2026 · 2607.25565 · KAIST AI · HF 社区热门",
+        summary: "🔬 技术路线: 提出智能体化分解框架，将静态设计图像逐层拆解并逆向恢复为可编辑的结构化设计文件 | 💡 创新点: 用多模态智能体协同完成元素识别、图层分离与属性推断，实现从像素到设计源文件的还原 | 📊 实验效果: 在设计结构还原任务上验证了框架的有效性，恢复结果可直接二次编辑，代码已开源 | ⭐ 整体评价: 属于智能体应用方向，建议关注复杂排版场景下的分解精度与对真实设计工作流的接入",
+        tags: [["Agent","green"],["Design","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.25565"],["PDF","https://arxiv.org/pdf/2607.25565"],["Project","https://jintae-00.github.io/ReDesign/"],["Code","https://github.com/jintae-00/ReDesign"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出智能体化分解框架，将静态设计图像逐层拆解并逆向恢复为可编辑的结构化设计文件"},{"label":"💡 创新点","text":"用多模态智能体协同完成元素识别、图层分离与属性推断，实现从像素到设计源文件的还原"},{"label":"📊 实验效果","text":"在设计结构还原任务上验证了框架的有效性，恢复结果可直接二次编辑，代码已开源"},{"label":"⭐ 整体评价","text":"属于智能体应用方向，建议关注复杂排版场景下的分解精度与对真实设计工作流的接入"}]
+    },
+    {
+        date: "2026-07-30",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Keep It InMind: Benchmarking the Implicit-Association Blind Spot in Agent Memory",
+        venue: "arXiv 2026 · 2607.24368 · muset.ai · HF 社区热门",
+        summary: "🔬 技术路线: 构建 InMind 基准，系统评估智能体长期记忆在隐式关联信息上的存取与召回能力 | 💡 创新点: 首次聚焦\"隐式关联盲区\"：信息未被显式提及但需通过关联推断才能正确回忆的记忆场景 | 📊 实验效果: 评测揭示现有智能体记忆系统在隐式关联召回上普遍存在短板，基准与代码已开源 | ⭐ 整体评价: 属于智能体记忆评估方向，建议关注其对记忆检索机制设计与长程个性化助手的指导意义",
+        tags: [["Agent","green"],["Memory","green"],["Benchmark","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.24368"],["PDF","https://arxiv.org/pdf/2607.24368"],["Project","https://keep-it-inmind.github.io"],["Code","https://github.com/imlrz/InMind"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"构建 InMind 基准，系统评估智能体长期记忆在隐式关联信息上的存取与召回能力"},{"label":"💡 创新点","text":"首次聚焦\"隐式关联盲区\"：信息未被显式提及但需通过关联推断才能正确回忆的记忆场景"},{"label":"📊 实验效果","text":"评测揭示现有智能体记忆系统在隐式关联召回上普遍存在短板，基准与代码已开源"},{"label":"⭐ 整体评价","text":"属于智能体记忆评估方向，建议关注其对记忆检索机制设计与长程个性化助手的指导意义"}]
+    },
+    {
+        date: "2026-07-30",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "SpecFirst: Behavioral Specification Elicitation as a First-Class Step in Agent-Based Program Synthesis from Scratch",
+        venue: "arXiv 2026 · 2607.27167",
+        summary: "🔬 技术路线: 在基于智能体的从零程序合成流程中，将行为规格说明的澄清与获取提升为独立的首要环节 | 💡 创新点: 先系统性澄清需求规格再编码，避免智能体在模糊需求下直接生成代码导致的返工与偏差 | 📊 实验效果: 相比直接合成基线在多项指标上提升，最高带来 21.3% 的改进，其余增益为 6.9% 与 9.4% | ⭐ 整体评价: 属于代码生成方向，建议关注规格澄清的交互成本与其在真实软件工程需求中的适配性",
+        tags: [["LLM","green"],["Code Synthesis","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.27167"],["PDF","https://arxiv.org/pdf/2607.27167"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"在基于智能体的从零程序合成流程中，将行为规格说明的澄清与获取提升为独立的首要环节"},{"label":"💡 创新点","text":"先系统性澄清需求规格再编码，避免智能体在模糊需求下直接生成代码导致的返工与偏差"},{"label":"📊 实验效果","text":"相比直接合成基线在多项指标上提升，最高带来 21.3% 的改进，其余增益为 6.9% 与 9.4%"},{"label":"⭐ 整体评价","text":"属于代码生成方向，建议关注规格澄清的交互成本与其在真实软件工程需求中的适配性"}]
+    },
+    {
+        date: "2026-07-30",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Improving Item Discoverability in e-Commerce Search via Related Intent Generation",
+        venue: "arXiv 2026 · 2607.27172",
+        summary: "🔬 技术路线: 利用大语言模型生成相关搜索意图并结合蒸馏得到轻量部署模型，改进电商搜索的商品可发现性 | 💡 创新点: 引入 LLM-as-a-judge 评估生成意图质量，构建可扩展的端到端相关意图生成管线 | 📊 实验效果: 关键指标分别达到 60%、80% 与 30% 的提升，验证了生成式意图扩展在搜索场景的价值 | ⭐ 整体评价: 属于大模型产业应用方向，建议关注线上服务的延迟成本与意图生成的质量控制机制",
+        tags: [["LLM","green"],["Search","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.27172"],["PDF","https://arxiv.org/pdf/2607.27172"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"利用大语言模型生成相关搜索意图并结合蒸馏得到轻量部署模型，改进电商搜索的商品可发现性"},{"label":"💡 创新点","text":"引入 LLM-as-a-judge 评估生成意图质量，构建可扩展的端到端相关意图生成管线"},{"label":"📊 实验效果","text":"关键指标分别达到 60%、80% 与 30% 的提升，验证了生成式意图扩展在搜索场景的价值"},{"label":"⭐ 整体评价","text":"属于大模型产业应用方向，建议关注线上服务的延迟成本与意图生成的质量控制机制"}]
+    },
+    {
+        date: "2026-07-30",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Pass the Baton: Trajectory-Relayed On-Policy Distillation",
+        venue: "arXiv 2026 · 2607.26057 · Zhejiang University · HF 社区热门",
+        summary: "🔬 技术路线: 提出轨迹接力式在线策略蒸馏 Relay-OPD，让学生模型在教师生成轨迹的接力点上继续采样学习 | 💡 创新点: 以\"传递接力棒\"的方式衔接教师与学生的生成轨迹，缓解纯在线蒸馏中学生早期探索质量差的问题 | 📊 实验效果: 在 4B 规模模型上取得 5.73% 与 1.49% 的指标提升，部分设置下相对增益达 50%，代码开源 | ⭐ 整体评价: 属于模型蒸馏方向，建议关注接力点选取策略与该方法在推理类任务上的稳定性",
+        tags: [["LLM","green"],["Distillation","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.26057"],["PDF","https://arxiv.org/pdf/2607.26057"],["Project","https://zju-real.github.io/Relay-OPD/"],["Code","https://github.com/ZJU-REAL/Relay-OPD"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出轨迹接力式在线策略蒸馏 Relay-OPD，让学生模型在教师生成轨迹的接力点上继续采样学习"},{"label":"💡 创新点","text":"以\"传递接力棒\"的方式衔接教师与学生的生成轨迹，缓解纯在线蒸馏中学生早期探索质量差的问题"},{"label":"📊 实验效果","text":"在 4B 规模模型上取得 5.73% 与 1.49% 的指标提升，部分设置下相对增益达 50%，代码开源"},{"label":"⭐ 整体评价","text":"属于模型蒸馏方向，建议关注接力点选取策略与该方法在推理类任务上的稳定性"}]
+    },
+    {
+        date: "2026-07-30",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "Mage-VL: An Efficient Codec-Native Streaming Multimodal Foundation Model",
+        venue: "arXiv 2026 · 2607.24904 · Microsoft · HF 社区热门",
+        summary: "🔬 技术路线: 构建编解码器原生的流式多模态基础模型 Mage-VL，直接在压缩码流上进行视觉-语言联合建模 | 💡 创新点: 跳过传统像素级解码环节，以 560M 视觉模块与 100M 级组件实现高效实时的流式多模态理解 | 📊 实验效果: 流式场景推理加速 3.5 倍，关键基准达到 75% 的表现，开源仓库获 922 星社区关注 | ⭐ 整体评价: 属于多模态基础模型方向，建议关注码流域建模的精度损失与端侧实时部署潜力",
+        tags: [["Multimodal","green"],["Streaming","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.24904"],["PDF","https://arxiv.org/pdf/2607.24904"],["Project","https://microsoft.github.io/Mage"],["Code","https://github.com/microsoft/Mage"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"构建编解码器原生的流式多模态基础模型 Mage-VL，直接在压缩码流上进行视觉-语言联合建模"},{"label":"💡 创新点","text":"跳过传统像素级解码环节，以 560M 视觉模块与 100M 级组件实现高效实时的流式多模态理解"},{"label":"📊 实验效果","text":"流式场景推理加速 3.5 倍，关键基准达到 75% 的表现，开源仓库获 922 星社区关注"},{"label":"⭐ 整体评价","text":"属于多模态基础模型方向，建议关注码流域建模的精度损失与端侧实时部署潜力"}]
+    },
+    {
+        date: "2026-07-30",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "HumanCLAW: Can Vision-Language Models Act Through a Body?",
+        venue: "arXiv 2026 · 2607.27180",
+        summary: "🔬 技术路线: 构建 HumanCLAW-Bench 评测框架，检验视觉-语言模型能否通过身体化载体完成真实行动任务 | 💡 创新点: 将 VLM 的评估从\"看图回答\"推进到\"具身行动\"，直接度量模型驱动身体交互的能力 | 📊 实验效果: 现有模型整体成功率仅 16.8%，揭示视觉-语言模型在具身行动上与人类的显著差距 | ⭐ 整体评价: 属于具身评测方向，建议关注任务体系设计以及该基准对 VLA 模型训练的反哺价值",
+        tags: [["Multimodal","green"],["Embodied","green"],["Benchmark","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.27180"],["PDF","https://arxiv.org/pdf/2607.27180"],["Project","https://human-claw.github.io/"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"构建 HumanCLAW-Bench 评测框架，检验视觉-语言模型能否通过身体化载体完成真实行动任务"},{"label":"💡 创新点","text":"将 VLM 的评估从\"看图回答\"推进到\"具身行动\"，直接度量模型驱动身体交互的能力"},{"label":"📊 实验效果","text":"现有模型整体成功率仅 16.8%，揭示视觉-语言模型在具身行动上与人类的显著差距"},{"label":"⭐ 整体评价","text":"属于具身评测方向，建议关注任务体系设计以及该基准对 VLA 模型训练的反哺价值"}]
+    },
+    {
+        date: "2026-07-30",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "VidMap: Exploiting Temporal Structure for Video-Based Structure-from-Motion",
+        venue: "arXiv 2026 · 2607.27194 · CVG",
+        summary: "🔬 技术路线: 面向视频序列的运动恢复结构任务，显式利用帧间时序连续性来约束相机位姿与三维重建 | 💡 创新点: 用时序结构替代无序图像集合假设，使重建流程更适配视频输入并提升实时性与鲁棒性 | 📊 实验效果: 在导航相关场景的重建任务上验证了有效性，对动态干扰表现出较强鲁棒性，代码开源 | ⭐ 整体评价: 属于三维视觉方向，建议关注其在长视频与大场景下的漂移控制及与 SLAM 系统的对比",
+        tags: [["3D Vision","green"],["Video","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.27194"],["PDF","https://arxiv.org/pdf/2607.27194"],["Code","https://github.com/cvg/vidmap"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"面向视频序列的运动恢复结构任务，显式利用帧间时序连续性来约束相机位姿与三维重建"},{"label":"💡 创新点","text":"用时序结构替代无序图像集合假设，使重建流程更适配视频输入并提升实时性与鲁棒性"},{"label":"📊 实验效果","text":"在导航相关场景的重建任务上验证了有效性，对动态干扰表现出较强鲁棒性，代码开源"},{"label":"⭐ 整体评价","text":"属于三维视觉方向，建议关注其在长视频与大场景下的漂移控制及与 SLAM 系统的对比"}]
+    },
+    {
+        date: "2026-07-30",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "OpenAI：两个设置调整让 ARC-AGI-3 基准得分翻三倍",
+        venue: "",
+        summary: "OpenAI 发布技术博客，分享通过启用两项关键设置使模型在 ARC-AGI-3 抽象推理基准上的得分提升至原来三倍的实践经验，展示了推理配置调优对前沿基准表现的显著影响。",
+        tags: [],
+        links: [["来源","https://openai.com/index/how-two-settings-tripled-our-arc-agi-3-scores/"]]
+    },
+    {
+        date: "2026-07-30",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "OpenAI：面向学术研究者的 ChatGPT 加速科学发现",
+        venue: "",
+        summary: "OpenAI 推出面向学术研究者的 ChatGPT 方案，介绍其在文献调研、实验设计与数据分析等科研环节中加速科学发现的应用方式与案例。",
+        tags: [],
+        links: [["来源","https://openai.com/index/chatgpt-for-academic-researchers/"]]
+    },
+    {
+        date: "2026-07-30",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "OpenAI：GPT-5.6 如何融合前沿智能与前沿效率",
+        venue: "",
+        summary: "OpenAI 发布解读文章，阐述 GPT-5.6 在保持前沿智能水平的同时实现推理效率大幅优化的技术思路，涵盖架构与推理服务层面的关键改进。",
+        tags: [],
+        links: [["来源","https://openai.com/index/gpt-5-6-frontier-intelligence-efficiency/"]]
+    },
     // === 2026-07-29 ===
     {
         date: "2026-07-29",
@@ -20550,6 +20749,13 @@ const PAPERS_DB = [
 ];
 
 const DAILY_OVERVIEW = {
+    "2026-07-30": {
+        bannerTitle: "🔥 今日看点",
+        bannerSubtitle: "本期收录 15 篇论文与 3 条机构动态。最大看点：微软发布 Mage-VL 编解码器原生流式多模态基础模型（GitHub 922 星），560M 视觉编码在流式场景实现 3.5 倍加速。VLA 方向 TurboVLA 在单张 RTX 4090 上以 32 Hz 实时推理、显存占用不足 1 GB，成功率达 97.7%。机器人方向 HiFi-UMI 证明仅用高保真 UMI 手持采集数据即可训练可部署操作策略（真机成功率 85%）。Agent 方向密集六篇：MIT 用两个案例研究检验 AI 智能体开展开放式科研的能力，腾讯 RARG 用相关性信号引导智能体搜索的语料交互，CodeNib 多视图数据系统为编码智能体提供仓库上下文（检索加速 25.4 倍），KAIST ReDesign 从图像逆向恢复可编辑设计结构。OpenAI 三连发：ARC-AGI-3 得分翻三倍的设置调优、面向学术研究者的 ChatGPT，以及 GPT-5.6 前沿智能与效率融合解读。",
+        picks: ["TurboVLA: Real-Time Vision-Language-Action Model at 32 Hz on an RTX 4090 with <1 GB VRAM","HiFi-UMI: Learning Deployable Manipulation Policies from High-Fidelity UMI Data Alone","Mage-VL: An Efficient Codec-Native Streaming Multimodal Foundation Model"],
+        totalPapers: 15,
+        totalNews: 3
+    },
     "2026-07-29": {
         bannerTitle: "🔥 今日看点",
         bannerSubtitle: "本期收录 15 篇论文与 1 个开源模型。最大看点：月之暗面发布 Kimi K3 开放前沿智能技术报告（GitHub 3654 星），混合专家架构结合强化学习实现 2.5 倍效率提升。世界模型方向双发——Wonder 通用视频世界模型以 16 FPS 实现实时交互生成，INTACT 提出免搜索的意图到动作同构学习。机器人方向，西北大学发布机器人学习进度奖励建模全景综述，πR² 反应式实时流策略面向 GR00T 类基础模型。Agent 方向密集：Salesforce 提出 StateAct 用程序状态先于像素支撑长程计算机操作，Desktop-Delta Bench 揭示计算机使用模型对桌面 GUI 状态转换理解不足，UniMem 打通情景记忆到参数记忆的互补通路。NVIDIA Sol-Attn 免训练注意力稀疏化加速视频生成推理。",
