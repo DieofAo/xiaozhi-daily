@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>小小志AI日报 - 2026年7月31日</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans SC', sans-serif;
+  background: #0a0e1a;
+  color: #e0e6f0;
+  line-height: 1.7;
+  min-height: 100vh;
+}
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+header {
+  text-align: center;
+  margin-bottom: 48px;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, rgba(59,130,246,0.08) 0%, rgba(139,92,246,0.08) 100%);
+  border-radius: 20px;
+  border: 1px solid rgba(99,102,241,0.15);
+}
+header h1 {
+  font-size: 2rem;
+  background: linear-gradient(135deg, #60a5fa, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 8px;
+}
+header .date {
+  color: #94a3b8;
+  font-size: 1rem;
+}
+header .subtitle {
+  color: #64748b;
+  font-size: 0.9rem;
+  margin-top: 6px;
+}
+.highlight-banner {
+  background: linear-gradient(135deg, rgba(249,115,22,0.1) 0%, rgba(234,179,8,0.08) 100%);
+  border: 1px solid rgba(249,115,22,0.2);
+  border-radius: 14px;
+  padding: 20px 24px;
+  margin-bottom: 36px;
+}
+.hl-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fb923c;
+  margin-bottom: 8px;
+}
+.hl-text {
+  font-size: 0.92rem;
+  color: #cbd5e1;
+  line-height: 1.7;
+}
+.section {
+  margin-bottom: 40px;
+}
+.section-title {
+  font-size: 1.4rem;
+  color: #f1f5f9;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(99,102,241,0.2);
+}
+.paper-card {
+  background: rgba(30,41,59,0.6);
+  border: 1px solid rgba(99,102,241,0.12);
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 16px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.paper-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(99,102,241,0.1);
+  border-color: rgba(99,102,241,0.3);
+}
+.paper-card.hot {
+  border-color: rgba(249,115,22,0.25);
+  background: rgba(30,41,59,0.7);
+}
+.paper-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #f8fafc;
+  margin-bottom: 8px;
+}
+.paper-meta {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-bottom: 10px;
+}
+.summary-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+@media (max-width: 640px) {
+  .summary-grid { grid-template-columns: 1fr; }
+}
+.summary-item {
+  background: rgba(15,23,42,0.5);
+  border-radius: 10px;
+  padding: 12px 14px;
+  border: 1px solid rgba(99,102,241,0.08);
+}
+.summary-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #818cf8;
+  margin-bottom: 4px;
+}
+.summary-text {
+  font-size: 0.88rem;
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+.paper-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.tag {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+.tag-agent { background: rgba(16,185,129,0.12); color: #34d399; }
+.tag-llm { background: rgba(99,102,241,0.12); color: #818cf8; }
+.tag-multimodal { background: rgba(244,114,182,0.12); color: #f472b6; }
+.tag-world { background: rgba(251,191,36,0.12); color: #fbbf24; }
+.tag-robot { background: rgba(251,146,60,0.12); color: #fb923c; }
+.tag-rl { background: rgba(45,212,191,0.12); color: #2dd4bf; }
+.tag-benchmark { background: rgba(34,211,238,0.12); color: #22d3ee; }
+.tag-vla { background: rgba(59,130,246,0.12); color: #60a5fa; }
+.tag-memory { background: rgba(192,132,252,0.12); color: #c084fc; }
+.tag-reasoning { background: rgba(132,204,22,0.12); color: #a3e635; }
+.tag-data { background: rgba(250,204,21,0.12); color: #facc15; }
+.tag-infra { background: rgba(167,139,250,0.12); color: #a78bfa; }
+.tag-embodied { background: rgba(251,146,60,0.12); color: #fb923c; }
+.tag-3d { background: rgba(148,163,184,0.12); color: #94a3b8; }
+.tag-tool { background: rgba(52,211,153,0.12); color: #34d399; }
+.hot-badge {
+  display: inline;
+  margin-right: 4px;
+}
+.info-card {
+  background: rgba(30,41,59,0.6);
+  border: 1px solid rgba(99,102,241,0.12);
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 16px;
+}
+.paper-summary {
+  font-size: 0.9rem;
+  color: #cbd5e1;
+  line-height: 1.7;
+  margin-bottom: 14px;
+}
+.paper-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.paper-links a {
+  display: inline-block;
+  padding: 5px 14px;
+  background: rgba(99,102,241,0.12);
+  color: #818cf8;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  transition: background 0.2s;
+}
+.paper-links a:hover {
+  background: rgba(99,102,241,0.25);
+}
+footer {
+  text-align: center;
+  color: #475569;
+  font-size: 0.82rem;
+  padding: 40px 20px;
+  border-top: 1px solid rgba(99,102,241,0.1);
+  margin-top: 40px;
+}
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+.stat-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>小小志AI日报</h1>
+    <div class="date">2026年7月31日 · 星期五</div>
+    <div class="subtitle">关注：VLA · Robotics · World Model · LLM · Multimodal · Agent</div>
+    <div class="stats">
+      <span class="stat-item">📝 arXiv 论文 8</span>
+      <span class="stat-item">📰 HF 热门论文 6</span>
+      <span class="stat-item">🏢 机构动态 1</span>
+    </div>
+  </header>
+
+  <div class="highlight-banner">
+    <div class="hl-title">🔥 今日看点</div>
+    <div class="hl-text">本期收录 14 篇论文与 1 条机构动态。具身智能方向，ACE-Data-0 直面具身数据瓶颈，以人为中心的环境采集构建数据引擎，规模达 1700 万；PAC-MAN 把感知感知型控制障碍函数与强化学习结合，让人形机器人在躲避球场景中实现全身安全，成功率 95%。多模态方向，Chimera 系统研究混合视觉扩散 Transformer 的架构设计与 Chinchilla 缩放规律，训练效率提升 1.7 至 7.3 倍。Agent 方向本期最密集，共六篇：AskChem 以论断为中心构建化学文献综合基础设施，语料规模 240 万；Change2Task 把真实仓库变更自动转化为可执行的编码智能体任务与环境；SkillRise 用智能体强化学习实现跨任务技能进化，提升 8.5 个百分点。大模型方向，字节跳动 CoRT 提出词元级量规引导策略优化的反事实回放机制，Qwen 团队 DecoEvo 让解题器与量规生成器在文本空间分数解耦协同进化。OpenAI 同日发布 GPT-5.6 价格性能前沿推进的解读。</div>
+  </div>
+
+  <section class="section">
+    <h2 class="section-title">🦾 Robotics · 机器人与具身智能</h2>
+
+    <div class="paper-card hot">
+      <div class="paper-title"><span class="hot-badge">🔥</span> ACE-Data-0: Human-Centric Ambient Capture as Embodied Data Engine</div>
+      <div class="paper-meta">arXiv 2026 · 2607.28625</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">以人为中心的环境化采集作为具身数据引擎，结合模仿学习与世界模型方法，从日常人类活动中规模化提取可用于机器人训练的数据。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">针对具身智能长期存在的数据瓶颈，提出统一且可扩展的采集范式 ACE-Data-0，把环境中自然发生的人类操作转化为具身训练资产。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">构建的数据规模达到 1700 万量级，为具身操作策略训练提供了远超传统遥操作采集的数据体量。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于具身控制与数据基建方向，建议重点关注采集数据的动作表达方式、跨本体迁移能力与真机验证结果。</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-embodied">Embodied</span>
+        <span class="tag tag-data">Data Engine</span>
+        <span class="tag tag-robot">Manipulation</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2607.28625">arXiv</a>
+        <a href="https://arxiv.org/pdf/2607.28625">PDF</a>
+        <a href="https://ace-data-engine.github.io/ACE-Data-0/">Project</a>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">PAC-MAN: Perception-Aware CBF-RL for Whole-Body Safety in Humanoid Dodgeball</div>
+      <div class="paper-meta">arXiv 2026 · 2607.28623</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">将感知感知型控制障碍函数与强化学习融合，构建面向人形机器人全身安全控制的训练框架，在策略学习中显式约束安全边界。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出轻量化的 PAC-MAN 框架，把有限视野下的感知不确定性纳入安全约束，并具备零样本迁移能力，适配躲避球这类高动态对抗场景。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在人形机器人躲避球任务中安全性关键指标达到 95%，验证了感知受限条件下全身避障的可行性。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于机器人算法与控制方向，建议重点看实验设置、基线对比与真实机器人部署条件下的安全裕度。</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-robot">Humanoid</span>
+        <span class="tag tag-rl">RL</span>
+        <span class="tag tag-embodied">Safety</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2607.28623">arXiv</a>
+        <a href="https://arxiv.org/pdf/2607.28623">PDF</a>
+        <a href="https://lzyang2000.github.io/perceptive_cbf_rl/">Project</a>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">FA-RDP: A Frequency-Adaptive Reactive Diffusion Policy for Contact-Rich Manipulation</div>
+      <div class="paper-meta">arXiv 2026 · 2607.28596</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">基于蒸馏方法构建频率自适应的反应式扩散策略，让动作生成频率随接触状态动态调整，以适配富接触操作的实时控制需求。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 FA-RDP，在扩散策略中引入频率自适应机制并支持多模态输入，兼顾长时程规划的平滑性与接触瞬间所需的高频反应。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在操作与抓取类富接触任务上验证了方法有效性，展示了反应式扩散策略在接触密集场景中的适用性。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于机器人算法与控制方向，建议重点看接触力反馈的引入方式、控制频率切换策略与真实部署条件。</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-robot">Manipulation</span>
+        <span class="tag tag-multimodal">Diffusion Policy</span>
+        <span class="tag tag-infra">Real-Time</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2607.28596">arXiv</a>
+        <a href="https://arxiv.org/pdf/2607.28596">PDF</a>
+        <a href="https://fa-rdp.github.io">Project</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">🧩 Agent · 智能体与工具使用</h2>
+
+    <div class="paper-card">
+      <div class="paper-title">AskChem: Claim-Centered Infrastructure for Chemistry Literature Synthesis</div>
+      <div class="paper-meta">arXiv 2026 · 2607.28618</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">基于深度学习方法构建以论断为中心的化学文献综合基础设施，把海量论文拆解为可检索、可核验的结构化论断单元，并配套评测基准 AskChem-Bench。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">用论断而非全文段落作为知识组织的最小单位，使化学领域的文献综合与证据溯源具备可验证性，配套基准填补了该场景的评测空白。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">论断库规模达 240 万条，覆盖 14.7 万篇文献，关键任务指标最高达 100%，综合准确率 88.3%。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于智能体与工具使用方向，建议关注其检索架构、论断抽取质量与端到端综合任务的成功率。</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-agent">Agent</span>
+        <span class="tag tag-benchmark">Benchmark</span>
+        <span class="tag tag-data">Scientific Corpus</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2607.28618">arXiv</a>
+        <a href="https://arxiv.org/pdf/2607.28618">PDF</a>
+        <a href="https://askchem.org">Project</a>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">Beacon: Knowing When and How to Perform Agentic Visual Reasoning</div>
+      <div class="paper-meta">arXiv 2026 · 2607.28595</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">结合大语言模型与强化学习，设计必要性感知机制，让智能体在视觉推理过程中自主判断何时该调用工具、以何种方式展开推理。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出必要性感知的推理触发机制，把"要不要推理"与"怎么推理"解耦，在多模态场景下兼顾效果与推理开销。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在视觉推理系列任务上验证了方法有效性，展示了按需触发相比全程深度推理在效率上的优势。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于智能体与工具使用方向，建议关注其智能体架构、工具调用策略与端到端成功率。</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-agent">Agent</span>
+        <span class="tag tag-reasoning">Visual Reasoning</span>
+        <span class="tag tag-rl">RL</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2607.28595">arXiv</a>
+        <a href="https://arxiv.org/pdf/2607.28595">PDF</a>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">Change2Task: From Repository Changes to Executable Coding Agent Tasks and Environments</div>
+      <div class="paper-meta">arXiv 2026 · 2607.28591</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">基于训练驱动的流水线，把真实代码仓库的历史变更自动转化为可执行的编码智能体任务及配套运行环境，实现训练数据的自动化生产。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">将仓库变更这一天然存在的监督信号转化为带可执行验证环境的任务实例，摆脱人工构造编码任务的高成本瓶颈。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">环境可执行率达 98.0%，任务构造有效率 79.6%，相关指标较基线分别取得 29.2% 与 10.8% 的表现差异。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于智能体与工具使用方向，建议关注任务难度分布、环境复现稳定性与对编码智能体训练的实际增益。</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-agent">Coding Agent</span>
+        <span class="tag tag-data">Task Synthesis</span>
+        <span class="tag tag-infra">Environment</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2607.28591">arXiv</a>
+        <a href="https://arxiv.org/pdf/2607.28591">PDF</a>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">CAST: Game Solvers as Turn-Level Teachers for LLM Agents</div>
+      <div class="paper-meta">HF 热门 · 2607.25308 · LongCat</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">融合训练、强化学习与蒸馏，把博弈求解器作为回合级教师信号，为大语言模型智能体的每一步决策提供密集监督。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">用可求解博弈的最优解替代稀疏的结果奖励，实现回合粒度的教师指导，并在 WebShop 等交互场景中展现零样本迁移能力。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">实验验证了回合级教师信号相比结果级奖励的有效性，代码已开源并获得 8 星关注。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于大语言模型推理与智能体训练方向，建议关注其训练范式、教师信号构造与基准表现。</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-agent">Agent</span>
+        <span class="tag tag-rl">RL</span>
+        <span class="tag tag-llm">Distillation</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2607.25308">arXiv</a>
+        <a href="https://arxiv.org/pdf/2607.25308">PDF</a>
+        <a href="https://github.com/Wloner0809/CAST">Code</a>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">SkillRise: Agentic Reinforcement Learning for Cross-Task Skill Evolution</div>
+      <div class="paper-meta">HF 热门 · 2607.26784</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">基于大语言模型的智能体强化学习框架，在多任务训练过程中持续沉淀并演化可复用技能，形成跨任务的技能库。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出统一且高效的 SkillRise 框架，让技能在不同任务间迁移与迭代进化，而非为每个任务从零训练策略。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">相比基线方法提升 8.5 个百分点，代码已开源并获得 7 星关注。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于智能体与工具使用方向，建议关注技能表示形式、技能复用触发条件与端到端成功率。</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-agent">Agent</span>
+        <span class="tag tag-rl">Agentic RL</span>
+        <span class="tag tag-memory">Skill Library</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2607.26784">arXiv</a>
+        <a href="https://arxiv.org/pdf/2607.26784">PDF</a>
+        <a href="https://github.com/Within-yao/SkillRise">Code</a>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">MindForge: Teaching Small Language Models Whole-Life-Cycle Software Engineering via Source-Free Program Synthesis</div>
+      <div class="paper-meta">HF 热门 · 2607.27146 · Centre for Software Excellence</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">通过训练框架与微调组合，采用无源程序合成方式，教会小参数量语言模型完成覆盖全生命周期的软件工程任务。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出可扩展的无源程序合成训练路径，在不依赖原始源码数据的前提下构建训练语料，让小模型具备端到端软件工程能力。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">关键任务表现从 37.98% 提升至 49.51%，以 27B 规模模型取得显著增益，部分场景数据成本仅占原来的 1%。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于智能体与工具使用方向，建议关注合成数据质量、小模型能力上限与真实工程任务的端到端成功率。</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-agent">Coding Agent</span>
+        <span class="tag tag-llm">Small LM</span>
+        <span class="tag tag-data">Synthesis</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2607.27146">arXiv</a>
+        <a href="https://arxiv.org/pdf/2607.27146">PDF</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">🧠 LLM · 大语言模型与推理</h2>
+
+    <div class="paper-card hot">
+      <div class="paper-title"><span class="hot-badge">🔥</span> CoRT: Counterfactual Replay for Token-Level Rubric-Guided Policy Optimization</div>
+      <div class="paper-meta">HF 热门 · 2607.25659 · ByteDance</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">在强化学习训练中引入词元级量规引导的策略优化机制，配合反事实回放对生成轨迹中的关键词元重新评估并回传更精细的奖励。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">把基于量规的奖励从整段回答细化到词元粒度，用反事实回放定位真正影响质量的生成决策，缓解量规奖励过于稀疏的问题。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">相比基线方法提升 4.4 个百分点，验证了词元级量规信号在语言模型后训练中的有效性。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于大语言模型推理与后训练方向，建议关注量规设计成本、训练稳定性与基准表现。</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-llm">LLM</span>
+        <span class="tag tag-rl">RLHF</span>
+        <span class="tag tag-reasoning">Rubric</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2607.25659">arXiv</a>
+        <a href="https://arxiv.org/pdf/2607.25659">PDF</a>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">DecoEvo: Score-Decoupled Co-Evolution of Solver and Rubric-Generator Skills in Text Space</div>
+      <div class="paper-meta">HF 热门 · 2607.25675 · Qwen Business Unit</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">基于大语言模型在文本空间开展协同进化，让解题器与量规生成器两类能力分别迭代，并通过分数解耦避免相互干扰。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出文本空间的分数解耦协同进化范式，使评分标准的生成能力与问题求解能力可以独立优化又彼此促进。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">实验验证了协同进化范式的有效性，量规生成与解题两侧能力均获得提升，具体数据详见原文。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于大语言模型推理方向，建议关注其进化轮次设计、分数解耦机制与基准表现。</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-llm">LLM</span>
+        <span class="tag tag-reasoning">Self-Evolution</span>
+        <span class="tag tag-rl">Rubric</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2607.25675">arXiv</a>
+        <a href="https://arxiv.org/pdf/2607.25675">PDF</a>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">OSReward: Instituting Standardized Evaluation for Cross-Platform Computer-Use Reward Models</div>
+      <div class="paper-meta">arXiv 2026 · 2607.28609</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">结合强化学习、视觉语言模型与奖励模型，为跨平台计算机使用类智能体建立标准化的奖励模型评测体系。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">针对计算机使用场景奖励信号难以统一衡量的问题，构建覆盖多操作系统平台的标准评测方案，使不同奖励模型可横向对比。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">评测数据规模达 10 万条，覆盖 9B 与 35B 两个参数量级的模型，关键指标最高达 60%。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于多模态与智能体评测方向，建议关注跨平台任务覆盖度、奖励模型与真实成功率的相关性。</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-llm">Reward Model</span>
+        <span class="tag tag-benchmark">Benchmark</span>
+        <span class="tag tag-agent">Computer Use</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2607.28609">arXiv</a>
+        <a href="https://arxiv.org/pdf/2607.28609">PDF</a>
+        <a href="https://os-copilot.github.io/OSReward-Home/">Project</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">🎨 Multimodal · 多模态</h2>
+
+    <div class="paper-card hot">
+      <div class="paper-title"><span class="hot-badge">🔥</span> Chimera: Designing and Chinchilla-Scaling Hybrid Visual Diffusion Transformers</div>
+      <div class="paper-meta">arXiv 2026 · 2607.28611</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">从架构设计、预训练到微调系统性研究混合式视觉扩散 Transformer，并按照 Chinchilla 思路推导该类模型的计算最优缩放规律。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">引入多头混合结构，兼顾多模态处理能力、计算高效性与零样本泛化，首次为视觉扩散 Transformer 给出系统化的缩放设计准则。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在最高 11B 参数规模上验证，训练效率提升 1.7 至 7.3 倍，关键质量指标改善 6.5%。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于多模态生成方向，建议关注跨模态对齐方式、缩放规律的外推可靠性与下游任务表现。</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-multimodal">Diffusion</span>
+        <span class="tag tag-infra">Scaling Law</span>
+        <span class="tag tag-llm">Architecture</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2607.28611">arXiv</a>
+        <a href="https://arxiv.org/pdf/2607.28611">PDF</a>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">CLBench-V: Evaluating Multimodal Context Learning from Grounding to Knowledge Acquisition</div>
+      <div class="paper-meta">HF 热门 · 2607.25294</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">面向预训练多模态模型构建上下文学习评测基准，评测维度从视觉定位一直延伸到新知识获取，形成分层能力刻画。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出贴近真实场景的多模态上下文学习基准 CLBench-V，把定位能力与知识吸收能力区分评测，揭示两类能力的发展并不同步。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">覆盖从 3B 到 30B 多个参数量级的模型对比，代码已开源并获得 3 星关注。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于多模态评测方向，建议关注任务构造方式、上下文示例设计与不同规模模型的表现差异。</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-multimodal">Multimodal</span>
+        <span class="tag tag-benchmark">Benchmark</span>
+        <span class="tag tag-reasoning">ICL</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2607.25294">arXiv</a>
+        <a href="https://arxiv.org/pdf/2607.25294">PDF</a>
+        <a href="https://github.com/IamLihua/CLBench-V">Code</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">📰 行业动态</h2>
+
+    <div class="info-card">
+      <div class="paper-title">OpenAI：GPT-5.6 推进价格与性能前沿</div>
+      <div class="paper-summary">OpenAI 发布官方博客，介绍 GPT-5.6 在价格性能前沿上的推进，阐述如何在维持前沿智能水平的同时进一步优化单位成本表现。</div>
+      <div class="paper-links">
+        <a href="https://openai.com/index/advancing-the-price-performance-frontier-with-gpt-5-6/">来源</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>小小志AI日报 · 自动生成于 2026-07-31</p>
+    <p>数据来源：arXiv · HuggingFace Daily Papers · 机构官方博客</p>
+  </footer>
+</div>
+</body>
+</html>

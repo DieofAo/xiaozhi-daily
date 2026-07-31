@@ -658,6 +658,174 @@
 <script>
 // ===== DATA =====
 const PAPERS_DB = [
+    // === 2026-07-31 ===
+    {
+        date: "2026-07-31",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "ACE-Data-0: Human-Centric Ambient Capture as Embodied Data Engine",
+        venue: "arXiv 2026 · 2607.28625",
+        summary: "🔬 技术路线: 以人为中心的环境化采集作为具身数据引擎，结合模仿学习与世界模型方法，从日常人类活动中规模化提取可用于机器人训练的数据。 | 💡 创新点: 针对具身智能长期存在的数据瓶颈，提出统一且可扩展的采集范式 ACE-Data-0，把环境中自然发生的人类操作转化为具身训练资产。 | 📊 实验效果: 构建的数据规模达到 1700 万量级，为具身操作策略训练提供了远超传统遥操作采集的数据体量。 | ⭐ 整体评价: 属于具身控制与数据基建方向，建议重点关注采集数据的动作表达方式、跨本体迁移能力与真机验证结果。",
+        tags: [["Embodied","green"],["Data Engine","green"],["Manipulation","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.28625"],["PDF","https://arxiv.org/pdf/2607.28625"],["Project","https://ace-data-engine.github.io/ACE-Data-0/"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"以人为中心的环境化采集作为具身数据引擎，结合模仿学习与世界模型方法，从日常人类活动中规模化提取可用于机器人训练的数据。"},{"label":"💡 创新点","text":"针对具身智能长期存在的数据瓶颈，提出统一且可扩展的采集范式 ACE-Data-0，把环境中自然发生的人类操作转化为具身训练资产。"},{"label":"📊 实验效果","text":"构建的数据规模达到 1700 万量级，为具身操作策略训练提供了远超传统遥操作采集的数据体量。"},{"label":"⭐ 整体评价","text":"属于具身控制与数据基建方向，建议重点关注采集数据的动作表达方式、跨本体迁移能力与真机验证结果。"}]
+    },
+    {
+        date: "2026-07-31",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "PAC-MAN: Perception-Aware CBF-RL for Whole-Body Safety in Humanoid Dodgeball",
+        venue: "arXiv 2026 · 2607.28623",
+        summary: "🔬 技术路线: 将感知感知型控制障碍函数与强化学习融合，构建面向人形机器人全身安全控制的训练框架，在策略学习中显式约束安全边界。 | 💡 创新点: 提出轻量化的 PAC-MAN 框架，把有限视野下的感知不确定性纳入安全约束，并具备零样本迁移能力，适配躲避球这类高动态对抗场景。 | 📊 实验效果: 在人形机器人躲避球任务中安全性关键指标达到 95%，验证了感知受限条件下全身避障的可行性。 | ⭐ 整体评价: 属于机器人算法与控制方向，建议重点看实验设置、基线对比与真实机器人部署条件下的安全裕度。",
+        tags: [["Humanoid","green"],["RL","green"],["Safety","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.28623"],["PDF","https://arxiv.org/pdf/2607.28623"],["Project","https://lzyang2000.github.io/perceptive_cbf_rl/"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"将感知感知型控制障碍函数与强化学习融合，构建面向人形机器人全身安全控制的训练框架，在策略学习中显式约束安全边界。"},{"label":"💡 创新点","text":"提出轻量化的 PAC-MAN 框架，把有限视野下的感知不确定性纳入安全约束，并具备零样本迁移能力，适配躲避球这类高动态对抗场景。"},{"label":"📊 实验效果","text":"在人形机器人躲避球任务中安全性关键指标达到 95%，验证了感知受限条件下全身避障的可行性。"},{"label":"⭐ 整体评价","text":"属于机器人算法与控制方向，建议重点看实验设置、基线对比与真实机器人部署条件下的安全裕度。"}]
+    },
+    {
+        date: "2026-07-31",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "FA-RDP: A Frequency-Adaptive Reactive Diffusion Policy for Contact-Rich Manipulation",
+        venue: "arXiv 2026 · 2607.28596",
+        summary: "🔬 技术路线: 基于蒸馏方法构建频率自适应的反应式扩散策略，让动作生成频率随接触状态动态调整，以适配富接触操作的实时控制需求。 | 💡 创新点: 提出 FA-RDP，在扩散策略中引入频率自适应机制并支持多模态输入，兼顾长时程规划的平滑性与接触瞬间所需的高频反应。 | 📊 实验效果: 在操作与抓取类富接触任务上验证了方法有效性，展示了反应式扩散策略在接触密集场景中的适用性。 | ⭐ 整体评价: 属于机器人算法与控制方向，建议重点看接触力反馈的引入方式、控制频率切换策略与真实部署条件。",
+        tags: [["Manipulation","green"],["Diffusion Policy","green"],["Real-Time","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.28596"],["PDF","https://arxiv.org/pdf/2607.28596"],["Project","https://fa-rdp.github.io"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于蒸馏方法构建频率自适应的反应式扩散策略，让动作生成频率随接触状态动态调整，以适配富接触操作的实时控制需求。"},{"label":"💡 创新点","text":"提出 FA-RDP，在扩散策略中引入频率自适应机制并支持多模态输入，兼顾长时程规划的平滑性与接触瞬间所需的高频反应。"},{"label":"📊 实验效果","text":"在操作与抓取类富接触任务上验证了方法有效性，展示了反应式扩散策略在接触密集场景中的适用性。"},{"label":"⭐ 整体评价","text":"属于机器人算法与控制方向，建议重点看接触力反馈的引入方式、控制频率切换策略与真实部署条件。"}]
+    },
+    {
+        date: "2026-07-31",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "AskChem: Claim-Centered Infrastructure for Chemistry Literature Synthesis",
+        venue: "arXiv 2026 · 2607.28618",
+        summary: "🔬 技术路线: 基于深度学习方法构建以论断为中心的化学文献综合基础设施，把海量论文拆解为可检索、可核验的结构化论断单元，并配套评测基准 AskChem-Bench。 | 💡 创新点: 用论断而非全文段落作为知识组织的最小单位，使化学领域的文献综合与证据溯源具备可验证性，配套基准填补了该场景的评测空白。 | 📊 实验效果: 论断库规模达 240 万条，覆盖 14.7 万篇文献，关键任务指标最高达 100%，综合准确率 88.3%。 | ⭐ 整体评价: 属于智能体与工具使用方向，建议关注其检索架构、论断抽取质量与端到端综合任务的成功率。",
+        tags: [["Agent","green"],["Benchmark","green"],["Scientific Corpus","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.28618"],["PDF","https://arxiv.org/pdf/2607.28618"],["Project","https://askchem.org"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于深度学习方法构建以论断为中心的化学文献综合基础设施，把海量论文拆解为可检索、可核验的结构化论断单元，并配套评测基准 AskChem-Bench。"},{"label":"💡 创新点","text":"用论断而非全文段落作为知识组织的最小单位，使化学领域的文献综合与证据溯源具备可验证性，配套基准填补了该场景的评测空白。"},{"label":"📊 实验效果","text":"论断库规模达 240 万条，覆盖 14.7 万篇文献，关键任务指标最高达 100%，综合准确率 88.3%。"},{"label":"⭐ 整体评价","text":"属于智能体与工具使用方向，建议关注其检索架构、论断抽取质量与端到端综合任务的成功率。"}]
+    },
+    {
+        date: "2026-07-31",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Beacon: Knowing When and How to Perform Agentic Visual Reasoning",
+        venue: "arXiv 2026 · 2607.28595",
+        summary: "🔬 技术路线: 结合大语言模型与强化学习，设计必要性感知机制，让智能体在视觉推理过程中自主判断何时该调用工具、以何种方式展开推理。 | 💡 创新点: 提出必要性感知的推理触发机制，把\"要不要推理\"与\"怎么推理\"解耦，在多模态场景下兼顾效果与推理开销。 | 📊 实验效果: 在视觉推理系列任务上验证了方法有效性，展示了按需触发相比全程深度推理在效率上的优势。 | ⭐ 整体评价: 属于智能体与工具使用方向，建议关注其智能体架构、工具调用策略与端到端成功率。",
+        tags: [["Agent","green"],["Visual Reasoning","green"],["RL","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.28595"],["PDF","https://arxiv.org/pdf/2607.28595"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"结合大语言模型与强化学习，设计必要性感知机制，让智能体在视觉推理过程中自主判断何时该调用工具、以何种方式展开推理。"},{"label":"💡 创新点","text":"提出必要性感知的推理触发机制，把\"要不要推理\"与\"怎么推理\"解耦，在多模态场景下兼顾效果与推理开销。"},{"label":"📊 实验效果","text":"在视觉推理系列任务上验证了方法有效性，展示了按需触发相比全程深度推理在效率上的优势。"},{"label":"⭐ 整体评价","text":"属于智能体与工具使用方向，建议关注其智能体架构、工具调用策略与端到端成功率。"}]
+    },
+    {
+        date: "2026-07-31",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Change2Task: From Repository Changes to Executable Coding Agent Tasks and Environments",
+        venue: "arXiv 2026 · 2607.28591",
+        summary: "🔬 技术路线: 基于训练驱动的流水线，把真实代码仓库的历史变更自动转化为可执行的编码智能体任务及配套运行环境，实现训练数据的自动化生产。 | 💡 创新点: 将仓库变更这一天然存在的监督信号转化为带可执行验证环境的任务实例，摆脱人工构造编码任务的高成本瓶颈。 | 📊 实验效果: 环境可执行率达 98.0%，任务构造有效率 79.6%，相关指标较基线分别取得 29.2% 与 10.8% 的表现差异。 | ⭐ 整体评价: 属于智能体与工具使用方向，建议关注任务难度分布、环境复现稳定性与对编码智能体训练的实际增益。",
+        tags: [["Coding Agent","green"],["Task Synthesis","green"],["Environment","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.28591"],["PDF","https://arxiv.org/pdf/2607.28591"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于训练驱动的流水线，把真实代码仓库的历史变更自动转化为可执行的编码智能体任务及配套运行环境，实现训练数据的自动化生产。"},{"label":"💡 创新点","text":"将仓库变更这一天然存在的监督信号转化为带可执行验证环境的任务实例，摆脱人工构造编码任务的高成本瓶颈。"},{"label":"📊 实验效果","text":"环境可执行率达 98.0%，任务构造有效率 79.6%，相关指标较基线分别取得 29.2% 与 10.8% 的表现差异。"},{"label":"⭐ 整体评价","text":"属于智能体与工具使用方向，建议关注任务难度分布、环境复现稳定性与对编码智能体训练的实际增益。"}]
+    },
+    {
+        date: "2026-07-31",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "CAST: Game Solvers as Turn-Level Teachers for LLM Agents",
+        venue: "HF 热门 · 2607.25308 · LongCat",
+        summary: "🔬 技术路线: 融合训练、强化学习与蒸馏，把博弈求解器作为回合级教师信号，为大语言模型智能体的每一步决策提供密集监督。 | 💡 创新点: 用可求解博弈的最优解替代稀疏的结果奖励，实现回合粒度的教师指导，并在 WebShop 等交互场景中展现零样本迁移能力。 | 📊 实验效果: 实验验证了回合级教师信号相比结果级奖励的有效性，代码已开源并获得 8 星关注。 | ⭐ 整体评价: 属于大语言模型推理与智能体训练方向，建议关注其训练范式、教师信号构造与基准表现。",
+        tags: [["Agent","green"],["RL","green"],["Distillation","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.25308"],["PDF","https://arxiv.org/pdf/2607.25308"],["Code","https://github.com/Wloner0809/CAST"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"融合训练、强化学习与蒸馏，把博弈求解器作为回合级教师信号，为大语言模型智能体的每一步决策提供密集监督。"},{"label":"💡 创新点","text":"用可求解博弈的最优解替代稀疏的结果奖励，实现回合粒度的教师指导，并在 WebShop 等交互场景中展现零样本迁移能力。"},{"label":"📊 实验效果","text":"实验验证了回合级教师信号相比结果级奖励的有效性，代码已开源并获得 8 星关注。"},{"label":"⭐ 整体评价","text":"属于大语言模型推理与智能体训练方向，建议关注其训练范式、教师信号构造与基准表现。"}]
+    },
+    {
+        date: "2026-07-31",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "SkillRise: Agentic Reinforcement Learning for Cross-Task Skill Evolution",
+        venue: "HF 热门 · 2607.26784",
+        summary: "🔬 技术路线: 基于大语言模型的智能体强化学习框架，在多任务训练过程中持续沉淀并演化可复用技能，形成跨任务的技能库。 | 💡 创新点: 提出统一且高效的 SkillRise 框架，让技能在不同任务间迁移与迭代进化，而非为每个任务从零训练策略。 | 📊 实验效果: 相比基线方法提升 8.5 个百分点，代码已开源并获得 7 星关注。 | ⭐ 整体评价: 属于智能体与工具使用方向，建议关注技能表示形式、技能复用触发条件与端到端成功率。",
+        tags: [["Agent","green"],["Agentic RL","green"],["Skill Library","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.26784"],["PDF","https://arxiv.org/pdf/2607.26784"],["Code","https://github.com/Within-yao/SkillRise"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于大语言模型的智能体强化学习框架，在多任务训练过程中持续沉淀并演化可复用技能，形成跨任务的技能库。"},{"label":"💡 创新点","text":"提出统一且高效的 SkillRise 框架，让技能在不同任务间迁移与迭代进化，而非为每个任务从零训练策略。"},{"label":"📊 实验效果","text":"相比基线方法提升 8.5 个百分点，代码已开源并获得 7 星关注。"},{"label":"⭐ 整体评价","text":"属于智能体与工具使用方向，建议关注技能表示形式、技能复用触发条件与端到端成功率。"}]
+    },
+    {
+        date: "2026-07-31",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "MindForge: Teaching Small Language Models Whole-Life-Cycle Software Engineering via Source-Free Program Synthesis",
+        venue: "HF 热门 · 2607.27146 · Centre for Software Excellence",
+        summary: "🔬 技术路线: 通过训练框架与微调组合，采用无源程序合成方式，教会小参数量语言模型完成覆盖全生命周期的软件工程任务。 | 💡 创新点: 提出可扩展的无源程序合成训练路径，在不依赖原始源码数据的前提下构建训练语料，让小模型具备端到端软件工程能力。 | 📊 实验效果: 关键任务表现从 37.98% 提升至 49.51%，以 27B 规模模型取得显著增益，部分场景数据成本仅占原来的 1%。 | ⭐ 整体评价: 属于智能体与工具使用方向，建议关注合成数据质量、小模型能力上限与真实工程任务的端到端成功率。",
+        tags: [["Coding Agent","green"],["Small LM","green"],["Synthesis","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.27146"],["PDF","https://arxiv.org/pdf/2607.27146"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"通过训练框架与微调组合，采用无源程序合成方式，教会小参数量语言模型完成覆盖全生命周期的软件工程任务。"},{"label":"💡 创新点","text":"提出可扩展的无源程序合成训练路径，在不依赖原始源码数据的前提下构建训练语料，让小模型具备端到端软件工程能力。"},{"label":"📊 实验效果","text":"关键任务表现从 37.98% 提升至 49.51%，以 27B 规模模型取得显著增益，部分场景数据成本仅占原来的 1%。"},{"label":"⭐ 整体评价","text":"属于智能体与工具使用方向，建议关注合成数据质量、小模型能力上限与真实工程任务的端到端成功率。"}]
+    },
+    {
+        date: "2026-07-31",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "CoRT: Counterfactual Replay for Token-Level Rubric-Guided Policy Optimization",
+        venue: "HF 热门 · 2607.25659 · ByteDance",
+        summary: "🔬 技术路线: 在强化学习训练中引入词元级量规引导的策略优化机制，配合反事实回放对生成轨迹中的关键词元重新评估并回传更精细的奖励。 | 💡 创新点: 把基于量规的奖励从整段回答细化到词元粒度，用反事实回放定位真正影响质量的生成决策，缓解量规奖励过于稀疏的问题。 | 📊 实验效果: 相比基线方法提升 4.4 个百分点，验证了词元级量规信号在语言模型后训练中的有效性。 | ⭐ 整体评价: 属于大语言模型推理与后训练方向，建议关注量规设计成本、训练稳定性与基准表现。",
+        tags: [["LLM","green"],["RLHF","green"],["Rubric","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.25659"],["PDF","https://arxiv.org/pdf/2607.25659"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"在强化学习训练中引入词元级量规引导的策略优化机制，配合反事实回放对生成轨迹中的关键词元重新评估并回传更精细的奖励。"},{"label":"💡 创新点","text":"把基于量规的奖励从整段回答细化到词元粒度，用反事实回放定位真正影响质量的生成决策，缓解量规奖励过于稀疏的问题。"},{"label":"📊 实验效果","text":"相比基线方法提升 4.4 个百分点，验证了词元级量规信号在语言模型后训练中的有效性。"},{"label":"⭐ 整体评价","text":"属于大语言模型推理与后训练方向，建议关注量规设计成本、训练稳定性与基准表现。"}]
+    },
+    {
+        date: "2026-07-31",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "DecoEvo: Score-Decoupled Co-Evolution of Solver and Rubric-Generator Skills in Text Space",
+        venue: "HF 热门 · 2607.25675 · Qwen Business Unit",
+        summary: "🔬 技术路线: 基于大语言模型在文本空间开展协同进化，让解题器与量规生成器两类能力分别迭代，并通过分数解耦避免相互干扰。 | 💡 创新点: 提出文本空间的分数解耦协同进化范式，使评分标准的生成能力与问题求解能力可以独立优化又彼此促进。 | 📊 实验效果: 实验验证了协同进化范式的有效性，量规生成与解题两侧能力均获得提升，具体数据详见原文。 | ⭐ 整体评价: 属于大语言模型推理方向，建议关注其进化轮次设计、分数解耦机制与基准表现。",
+        tags: [["LLM","green"],["Self-Evolution","green"],["Rubric","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.25675"],["PDF","https://arxiv.org/pdf/2607.25675"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于大语言模型在文本空间开展协同进化，让解题器与量规生成器两类能力分别迭代，并通过分数解耦避免相互干扰。"},{"label":"💡 创新点","text":"提出文本空间的分数解耦协同进化范式，使评分标准的生成能力与问题求解能力可以独立优化又彼此促进。"},{"label":"📊 实验效果","text":"实验验证了协同进化范式的有效性，量规生成与解题两侧能力均获得提升，具体数据详见原文。"},{"label":"⭐ 整体评价","text":"属于大语言模型推理方向，建议关注其进化轮次设计、分数解耦机制与基准表现。"}]
+    },
+    {
+        date: "2026-07-31",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "OSReward: Instituting Standardized Evaluation for Cross-Platform Computer-Use Reward Models",
+        venue: "arXiv 2026 · 2607.28609",
+        summary: "🔬 技术路线: 结合强化学习、视觉语言模型与奖励模型，为跨平台计算机使用类智能体建立标准化的奖励模型评测体系。 | 💡 创新点: 针对计算机使用场景奖励信号难以统一衡量的问题，构建覆盖多操作系统平台的标准评测方案，使不同奖励模型可横向对比。 | 📊 实验效果: 评测数据规模达 10 万条，覆盖 9B 与 35B 两个参数量级的模型，关键指标最高达 60%。 | ⭐ 整体评价: 属于多模态与智能体评测方向，建议关注跨平台任务覆盖度、奖励模型与真实成功率的相关性。",
+        tags: [["Reward Model","green"],["Benchmark","green"],["Computer Use","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.28609"],["PDF","https://arxiv.org/pdf/2607.28609"],["Project","https://os-copilot.github.io/OSReward-Home/"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"结合强化学习、视觉语言模型与奖励模型，为跨平台计算机使用类智能体建立标准化的奖励模型评测体系。"},{"label":"💡 创新点","text":"针对计算机使用场景奖励信号难以统一衡量的问题，构建覆盖多操作系统平台的标准评测方案，使不同奖励模型可横向对比。"},{"label":"📊 实验效果","text":"评测数据规模达 10 万条，覆盖 9B 与 35B 两个参数量级的模型，关键指标最高达 60%。"},{"label":"⭐ 整体评价","text":"属于多模态与智能体评测方向，建议关注跨平台任务覆盖度、奖励模型与真实成功率的相关性。"}]
+    },
+    {
+        date: "2026-07-31",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "Chimera: Designing and Chinchilla-Scaling Hybrid Visual Diffusion Transformers",
+        venue: "arXiv 2026 · 2607.28611",
+        summary: "🔬 技术路线: 从架构设计、预训练到微调系统性研究混合式视觉扩散 Transformer，并按照 Chinchilla 思路推导该类模型的计算最优缩放规律。 | 💡 创新点: 引入多头混合结构，兼顾多模态处理能力、计算高效性与零样本泛化，首次为视觉扩散 Transformer 给出系统化的缩放设计准则。 | 📊 实验效果: 在最高 11B 参数规模上验证，训练效率提升 1.7 至 7.3 倍，关键质量指标改善 6.5%。 | ⭐ 整体评价: 属于多模态生成方向，建议关注跨模态对齐方式、缩放规律的外推可靠性与下游任务表现。",
+        tags: [["Diffusion","green"],["Scaling Law","green"],["Architecture","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.28611"],["PDF","https://arxiv.org/pdf/2607.28611"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"从架构设计、预训练到微调系统性研究混合式视觉扩散 Transformer，并按照 Chinchilla 思路推导该类模型的计算最优缩放规律。"},{"label":"💡 创新点","text":"引入多头混合结构，兼顾多模态处理能力、计算高效性与零样本泛化，首次为视觉扩散 Transformer 给出系统化的缩放设计准则。"},{"label":"📊 实验效果","text":"在最高 11B 参数规模上验证，训练效率提升 1.7 至 7.3 倍，关键质量指标改善 6.5%。"},{"label":"⭐ 整体评价","text":"属于多模态生成方向，建议关注跨模态对齐方式、缩放规律的外推可靠性与下游任务表现。"}]
+    },
+    {
+        date: "2026-07-31",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "CLBench-V: Evaluating Multimodal Context Learning from Grounding to Knowledge Acquisition",
+        venue: "HF 热门 · 2607.25294",
+        summary: "🔬 技术路线: 面向预训练多模态模型构建上下文学习评测基准，评测维度从视觉定位一直延伸到新知识获取，形成分层能力刻画。 | 💡 创新点: 提出贴近真实场景的多模态上下文学习基准 CLBench-V，把定位能力与知识吸收能力区分评测，揭示两类能力的发展并不同步。 | 📊 实验效果: 覆盖从 3B 到 30B 多个参数量级的模型对比，代码已开源并获得 3 星关注。 | ⭐ 整体评价: 属于多模态评测方向，建议关注任务构造方式、上下文示例设计与不同规模模型的表现差异。",
+        tags: [["Multimodal","green"],["Benchmark","green"],["ICL","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2607.25294"],["PDF","https://arxiv.org/pdf/2607.25294"],["Code","https://github.com/IamLihua/CLBench-V"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"面向预训练多模态模型构建上下文学习评测基准，评测维度从视觉定位一直延伸到新知识获取，形成分层能力刻画。"},{"label":"💡 创新点","text":"提出贴近真实场景的多模态上下文学习基准 CLBench-V，把定位能力与知识吸收能力区分评测，揭示两类能力的发展并不同步。"},{"label":"📊 实验效果","text":"覆盖从 3B 到 30B 多个参数量级的模型对比，代码已开源并获得 3 星关注。"},{"label":"⭐ 整体评价","text":"属于多模态评测方向，建议关注任务构造方式、上下文示例设计与不同规模模型的表现差异。"}]
+    },
+    {
+        date: "2026-07-31",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "OpenAI：GPT-5.6 推进价格与性能前沿",
+        venue: "",
+        summary: "OpenAI 发布官方博客，介绍 GPT-5.6 在价格性能前沿上的推进，阐述如何在维持前沿智能水平的同时进一步优化单位成本表现。",
+        tags: [],
+        links: [["来源","https://openai.com/index/advancing-the-price-performance-frontier-with-gpt-5-6/"]]
+    },
     // === 2026-07-30 ===
     {
         date: "2026-07-30",
@@ -20749,6 +20917,13 @@ const PAPERS_DB = [
 ];
 
 const DAILY_OVERVIEW = {
+    "2026-07-31": {
+        bannerTitle: "🔥 今日看点",
+        bannerSubtitle: "本期收录 14 篇论文与 1 条机构动态。具身智能方向，ACE-Data-0 直面具身数据瓶颈，以人为中心的环境采集构建数据引擎，规模达 1700 万；PAC-MAN 把感知感知型控制障碍函数与强化学习结合，让人形机器人在躲避球场景中实现全身安全，成功率 95%。多模态方向，Chimera 系统研究混合视觉扩散 Transformer 的架构设计与 Chinchilla 缩放规律，训练效率提升 1.7 至 7.3 倍。Agent 方向本期最密集，共六篇：AskChem 以论断为中心构建化学文献综合基础设施，语料规模 240 万；Change2Task 把真实仓库变更自动转化为可执行的编码智能体任务与环境；SkillRise 用智能体强化学习实现跨任务技能进化，提升 8.5 个百分点。大模型方向，字节跳动 CoRT 提出词元级量规引导策略优化的反事实回放机制，Qwen 团队 DecoEvo 让解题器与量规生成器在文本空间分数解耦协同进化。OpenAI 同日发布 GPT-5.6 价格性能前沿推进的解读。",
+        picks: ["ACE-Data-0: Human-Centric Ambient Capture as Embodied Data Engine","CoRT: Counterfactual Replay for Token-Level Rubric-Guided Policy Optimization","Chimera: Designing and Chinchilla-Scaling Hybrid Visual Diffusion Transformers"],
+        totalPapers: 14,
+        totalNews: 1
+    },
     "2026-07-30": {
         bannerTitle: "🔥 今日看点",
         bannerSubtitle: "本期收录 15 篇论文与 3 条机构动态。最大看点：微软发布 Mage-VL 编解码器原生流式多模态基础模型（GitHub 922 星），560M 视觉编码在流式场景实现 3.5 倍加速。VLA 方向 TurboVLA 在单张 RTX 4090 上以 32 Hz 实时推理、显存占用不足 1 GB，成功率达 97.7%。机器人方向 HiFi-UMI 证明仅用高保真 UMI 手持采集数据即可训练可部署操作策略（真机成功率 85%）。Agent 方向密集六篇：MIT 用两个案例研究检验 AI 智能体开展开放式科研的能力，腾讯 RARG 用相关性信号引导智能体搜索的语料交互，CodeNib 多视图数据系统为编码智能体提供仓库上下文（检索加速 25.4 倍），KAIST ReDesign 从图像逆向恢复可编辑设计结构。OpenAI 三连发：ARC-AGI-3 得分翻三倍的设置调优、面向学术研究者的 ChatGPT，以及 GPT-5.6 前沿智能与效率融合解读。",
