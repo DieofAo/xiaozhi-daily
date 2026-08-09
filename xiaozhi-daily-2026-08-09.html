@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>小小志AI日报 - 2026年8月9日</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans SC', sans-serif;
+  background: #0a0e1a;
+  color: #e0e6f0;
+  line-height: 1.7;
+  min-height: 100vh;
+}
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+header {
+  text-align: center;
+  margin-bottom: 48px;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, rgba(59,130,246,0.08) 0%, rgba(139,92,246,0.08) 100%);
+  border-radius: 20px;
+  border: 1px solid rgba(99,102,241,0.15);
+}
+header h1 {
+  font-size: 2rem;
+  background: linear-gradient(135deg, #60a5fa, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 8px;
+}
+header .date {
+  color: #94a3b8;
+  font-size: 1rem;
+}
+header .subtitle {
+  color: #64748b;
+  font-size: 0.9rem;
+  margin-top: 6px;
+}
+.highlight-banner {
+  background: linear-gradient(135deg, rgba(249,115,22,0.1) 0%, rgba(234,179,8,0.08) 100%);
+  border: 1px solid rgba(249,115,22,0.2);
+  border-radius: 14px;
+  padding: 20px 24px;
+  margin-bottom: 36px;
+}
+.hl-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fb923c;
+  margin-bottom: 8px;
+}
+.hl-text {
+  font-size: 0.92rem;
+  color: #cbd5e1;
+  line-height: 1.7;
+}
+.section {
+  margin-bottom: 40px;
+}
+.section-title {
+  font-size: 1.4rem;
+  color: #f1f5f9;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(99,102,241,0.2);
+}
+.paper-card {
+  background: rgba(30,41,59,0.6);
+  border: 1px solid rgba(99,102,241,0.12);
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 16px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.paper-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(99,102,241,0.1);
+  border-color: rgba(99,102,241,0.3);
+}
+.paper-card.hot {
+  border-color: rgba(249,115,22,0.25);
+  background: rgba(30,41,59,0.7);
+}
+.paper-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #f8fafc;
+  margin-bottom: 8px;
+}
+.paper-meta {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-bottom: 10px;
+}
+.summary-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+@media (max-width: 640px) {
+  .summary-grid { grid-template-columns: 1fr; }
+}
+.summary-item {
+  background: rgba(15,23,42,0.5);
+  border-radius: 10px;
+  padding: 12px 14px;
+  border: 1px solid rgba(99,102,241,0.08);
+}
+.summary-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #818cf8;
+  margin-bottom: 4px;
+}
+.summary-text {
+  font-size: 0.88rem;
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+.paper-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.tag {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+.tag-agent { background: rgba(16,185,129,0.12); color: #34d399; }
+.tag-llm { background: rgba(99,102,241,0.12); color: #818cf8; }
+.tag-multimodal { background: rgba(244,114,182,0.12); color: #f472b6; }
+.tag-world { background: rgba(251,191,36,0.12); color: #fbbf24; }
+.tag-robot { background: rgba(251,146,60,0.12); color: #fb923c; }
+.tag-rl { background: rgba(45,212,191,0.12); color: #2dd4bf; }
+.tag-benchmark { background: rgba(34,211,238,0.12); color: #22d3ee; }
+.tag-vla { background: rgba(59,130,246,0.12); color: #60a5fa; }
+.tag-memory { background: rgba(192,132,252,0.12); color: #c084fc; }
+.tag-reasoning { background: rgba(132,204,22,0.12); color: #a3e635; }
+.tag-data { background: rgba(250,204,21,0.12); color: #facc15; }
+.tag-infra { background: rgba(167,139,250,0.12); color: #a78bfa; }
+.tag-embodied { background: rgba(251,146,60,0.12); color: #fb923c; }
+.tag-3d { background: rgba(148,163,184,0.12); color: #94a3b8; }
+.tag-tool { background: rgba(52,211,153,0.12); color: #34d399; }
+.hot-badge {
+  display: inline;
+  margin-right: 4px;
+}
+.info-card {
+  background: rgba(30,41,59,0.6);
+  border: 1px solid rgba(99,102,241,0.12);
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 16px;
+}
+.paper-summary {
+  font-size: 0.9rem;
+  color: #cbd5e1;
+  line-height: 1.7;
+  margin-bottom: 14px;
+}
+.paper-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.paper-links a {
+  display: inline-block;
+  padding: 5px 14px;
+  background: rgba(99,102,241,0.12);
+  color: #818cf8;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  transition: background 0.2s;
+}
+.paper-links a:hover {
+  background: rgba(99,102,241,0.25);
+}
+footer {
+  text-align: center;
+  color: #475569;
+  font-size: 0.82rem;
+  padding: 40px 20px;
+  border-top: 1px solid rgba(99,102,241,0.1);
+  margin-top: 40px;
+}
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+.stat-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>小小志AI日报</h1>
+    <div class="date">2026年8月9日 · 星期日</div>
+    <div class="subtitle">关注：VLA · Robotics · World Model · LLM · Multimodal · Agent</div>
+    <div class="stats">
+      <span class="stat-item">📝 arXiv 论文 8</span>
+      <span class="stat-item">🏢 机构动态 4</span>
+    </div>
+  </header>
+
+  <div class="highlight-banner">
+    <div class="hl-title">🔥 今日看点</div>
+    <div class="hl-text">本期收录 8 篇论文与 4 条机构动态。因当日 arXiv 索引尚未更新，内容取自 2026 年 8 月 7 日检索窗口。具身智能方向，ω-0 提出潜在预测式世界动作模型，让人形机器人在移动的同时并发完成操作任务，直指家庭场景中移动与操作难以解耦的痛点；DyPES-VLA 把共享动力学先验与本体专属控制拆开建模，缓解跨本体迁移的形态差异，关键指标达到 98.0%。Agent 方向本期最密集，共五篇：《工具调用的苦涩教训》指出精心设计的调用脚手架终将被更强的通用模型能力取代；MIT 的 AV-AIVAT 借助任意时刻有效的统计停止准则，把不完美信息博弈中的智能体评测成本压低到约七十四分之一；CalibForge 用对抗式求解器标定规模化构造真正有训练价值的终端任务，数据集与代码均已开源。医疗与治理方向亦有两篇值得留意的工作。OpenAI 同期连发四条动态，覆盖关键网络能力应对、GPT-5.6 模型更新与青少年 AI 安全合作。</div>
+  </div>
+
+  <section class="section">
+    <h2 class="section-title">🤖 VLA · Vision-Language-Action</h2>
+
+    <div class="paper-card hot">
+      <div class="paper-title"><span class="hot-badge">🔥</span> DyPES-VLA: Learning Shared Dynamics Priors and Embodiment-Specific Control for Cross-Embodiment Manipulation</div>
+      <div class="paper-meta">arXiv 2026 · 2608.06374</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">在视觉-语言-动作模型框架下训练跨本体操作策略，把共享动力学先验与本体专属控制模块解耦，分别承担通用物理规律建模与具体机器人适配。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 DyPES-VLA，让不同形态的机器人共享同一套动力学先验，同时各自保留专属控制头，从而缓解跨本体迁移中的形态差异与动作空间错配问题。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">关键指标分别达到 98.0%、89.02% 与 59.25%，验证了共享先验对跨本体操作任务的增益作用。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于 VLA 与具身控制方向，建议关注本体差异的表征方式、跨机器人迁移的能力边界以及真机部署下的稳定性。</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-vla">VLA</span>
+        <span class="tag tag-embodied">Cross-Embodiment</span>
+        <span class="tag tag-robot">Manipulation</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2608.06374">arXiv</a>
+        <a href="https://arxiv.org/pdf/2608.06374">PDF</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">🦾 Robotics · 机器人与具身智能</h2>
+
+    <div class="paper-card hot">
+      <div class="paper-title"><span class="hot-badge">🔥</span> ω-0: A Latent Predictive World Action Model for Concurrent Humanoid Loco-Manipulation</div>
+      <div class="paper-meta">arXiv 2026 · 2608.06375</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">以模仿学习为基础构建潜在预测式世界动作模型，把环境动态预测与动作生成统一到同一潜空间，服务于人形机器人的移动与操作协同控制。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 ω-0 模型并面向真实场景做轻量化设计，使人形机器人能在行走过程中并发完成操作任务，而不必把移动与操作拆成串行阶段执行。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在操作抓取与运动控制两类任务上完成验证，展示了并发式移动操作在家庭日常任务中的可行性。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于 VLA 与具身控制方向，建议重点关注任务泛化能力、潜空间动作表达方式以及真机验证结果。</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-robot">Humanoid</span>
+        <span class="tag tag-world">World Model</span>
+        <span class="tag tag-embodied">Loco-Manipulation</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2608.06375">arXiv</a>
+        <a href="https://arxiv.org/pdf/2608.06375">PDF</a>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">A Master-Slave Robot Manipulator for Needle-Based Teleoperation in MRI Chamber</div>
+      <div class="paper-meta">arXiv 2026 · 2608.06354</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">设计面向核磁共振舱内使用的主从式机器人操作臂，采用低摩擦传动结构与磁共振兼容材料，支持穿刺针类操作的实时远程操控。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">把低摩擦机构与多模态反馈相结合，使术者可以在强磁场环境下远程完成针刺操作，同时兼顾设备的磁共振安全性与操作手感真实度。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">完成样机实验验证，证明该主从结构可在核磁舱内实现稳定的实时遥操作，具体量化数据详见原文。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于医疗机器人与遥操作方向，建议重点看机械结构设计、磁共振兼容性验证方法以及末端定位精度指标。</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-robot">Teleoperation</span>
+        <span class="tag tag-embodied">Medical Robot</span>
+        <span class="tag tag-infra">Real-Time</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2608.06354">arXiv</a>
+        <a href="https://arxiv.org/pdf/2608.06354">PDF</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">🧩 Agent · 智能体与工具使用</h2>
+
+    <div class="paper-card hot">
+      <div class="paper-title"><span class="hot-badge">🔥</span> The Bitter Lesson of Tool Calling</div>
+      <div class="paper-meta">arXiv 2026 · 2608.06370</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">围绕语言模型的工具调用能力展开系统性研究，对比人工设计的调用脚手架与依靠规模化训练自然涌现的调用能力两条路径。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">借用苦涩的教训这一经典视角指出，精心设计的工具调用规则往往会被更强的通用模型能力所取代，并在 GPT-5 级别模型上验证该结论的鲁棒性。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">报告了 10.6% 与 2.3% 两项关键差距指标，量化了不同工具调用方案之间的性能落差。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于 Agent 与工具使用方向，建议关注实验中工具集的构造方式、评测任务分布，以及该结论在小参数模型上是否同样成立。</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-agent">Agent</span>
+        <span class="tag tag-tool">Tool Use</span>
+        <span class="tag tag-llm">LLM</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2608.06370">arXiv</a>
+        <a href="https://arxiv.org/pdf/2608.06370">PDF</a>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">AV-AIVAT: 74x Cheaper Agent Evaluation with Certified Anytime-Valid Stopping in Imperfect-Information Games</div>
+      <div class="paper-meta">arXiv 2026 · MIT · 2608.06362</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">在不完美信息博弈的智能体评测中引入动作感知的方差缩减估计量，并结合任意时刻均有效的统计停止准则来控制所需样本量。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 AV-AIVAT 方法，使评测过程能在保持统计置信保证的前提下随时提前停止，从而把智能体评估成本压低到常规做法的约七十四分之一。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在推理类任务上完成验证，评测开销相比基线降低 74 倍，同时结论的置信水平不受损失。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于 Agent 评测方法方向，建议关注估计量的无偏性证明、适用的博弈类型范围以及在非博弈任务上的可推广性。</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-agent">Agent</span>
+        <span class="tag tag-benchmark">Evaluation</span>
+        <span class="tag tag-reasoning">Game Theory</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2608.06362">arXiv</a>
+        <a href="https://arxiv.org/pdf/2608.06362">PDF</a>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">CalibForge: Adversarial Solver Calibration for Scaling Learnable Terminal Tasks</div>
+      <div class="paper-meta">arXiv 2026 · 2608.06352</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">通过对抗式的求解器标定来扩展可学习的终端任务集合，在训练过程中动态调节任务难度，使任务始终落在模型能力边界附近。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">引入多求解器机制进行对抗标定，自动筛除过易与过难的样本，从而规模化构造出对智能体真正具备训练价值的命令行终端任务。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">报告关键指标 32.58% 与 47.57%，并给出 24.71 个百分点的提升幅度，数据集与代码均已开源。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于 Agent 训练数据构造方向，建议关注难度标定过程的稳定性、任务多样性覆盖以及跨基准的迁移效果。</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-agent">Agent</span>
+        <span class="tag tag-data">Task Synthesis</span>
+        <span class="tag tag-rl">Training</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2608.06352">arXiv</a>
+        <a href="https://arxiv.org/pdf/2608.06352">PDF</a>
+        <a href="https://github.com/AweAI-Team/CalibForge">Code</a>
+        <a href="https://huggingface.co/datasets/AweAI-Team/CalibForge">Dataset</a>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">Tracing the Heart: An Evidence-Linked Pipeline for Heart-Failure Feature Engineering</div>
+      <div class="paper-meta">arXiv 2026 · 2608.06366</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">以大语言模型为核心搭建证据可溯源的特征工程流水线，面向心力衰竭这一临床场景自动完成特征构造与医学证据关联。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">采用多智能体协作分工，让每一项生成特征都能回链到具体医学证据，缓解大模型在医疗特征工程中不可解释、难以审计的固有问题。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">报告关键指标 45% 与 81.5%，验证了证据链接机制对特征质量与结果可信度的提升作用。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于 Agent 与垂直领域应用方向，建议关注证据检索的准确性、临床实际可用性以及与专家人工特征的对比结果。</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-agent">Multi-Agent</span>
+        <span class="tag tag-llm">LLM</span>
+        <span class="tag tag-data">Healthcare</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2608.06366">arXiv</a>
+        <a href="https://arxiv.org/pdf/2608.06366">PDF</a>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">Resourced Authority: A Mechanism-Design Model for Participatory Governance of Deployed AI Agents</div>
+      <div class="paper-meta">arXiv 2026 · 2608.06353</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">从机制设计的角度对已部署 AI 智能体的治理问题建模，把被赋予资源的权威形式化为可分析、可推演的制度安排。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出参与式治理框架，让受智能体影响的利益相关方通过资源分配与授权机制形成实际约束力，而非仅依赖部署之后的问责追溯。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">全文以理论建模与机制分析为主，未给出量化性能指标，重点在于论证治理机制的制度可行性。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于 AI 治理与智能体部署方向，建议关注机制的激励相容性假设，以及在真实组织环境中的落地路径设计。</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-agent">Agent</span>
+        <span class="tag tag-infra">Governance</span>
+        <span class="tag tag-reasoning">Mechanism Design</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2608.06353">arXiv</a>
+        <a href="https://arxiv.org/pdf/2608.06353">PDF</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">📰 行业动态</h2>
+
+    <div class="info-card">
+      <div class="paper-title">OpenAI：应对关键网络能力的下一个前沿</div>
+      <div class="paper-summary">OpenAI 发布官方博客，讨论前沿模型在关键网络安全能力上的进展与相应的应对举措，说明如何在能力提升的同时控制滥用风险。</div>
+      <div class="paper-links">
+        <a href="https://openai.com/index/responding-next-frontier-critical-cyber-capabilities/">来源</a>
+      </div>
+    </div>
+
+    <div class="info-card">
+      <div class="paper-title">OpenAI：改进 ChatGPT 中的 GPT-5.6 Sol，并向免费用户开放 GPT-5.6 Luna</div>
+      <div class="paper-summary">OpenAI 宣布对 ChatGPT 内的 GPT-5.6 Sol 模型进行改进，同时把 GPT-5.6 Luna 的使用权限扩展至免费用户，进一步降低前沿模型的使用门槛。</div>
+      <div class="paper-links">
+        <a href="https://openai.com/index/improving-gpt-5-6-sol-in-chatgpt/">来源</a>
+      </div>
+    </div>
+
+    <div class="info-card">
+      <div class="paper-title">OpenAI 与美国心理学会合作推进面向青少年的负责任 AI</div>
+      <div class="paper-summary">OpenAI 宣布与美国心理学会建立合作，围绕青少年群体的心理健康与使用安全，共同推进负责任的 AI 产品设计与使用规范。</div>
+      <div class="paper-links">
+        <a href="https://openai.com/index/openai-and-apa-partner-to-advance-responsible-ai/">来源</a>
+      </div>
+    </div>
+
+    <div class="info-card">
+      <div class="paper-title">OpenAI：全球用户如何把 ChatGPT 用于实际工作</div>
+      <div class="paper-summary">OpenAI 梳理了全球范围内 ChatGPT 在真实工作场景中的应用情况，展示不同行业与岗位的典型用法与落地效果。</div>
+      <div class="paper-links">
+        <a href="https://openai.com/index/how-the-world-is-putting-chatgpt-to-work/">来源</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>小小志AI日报 · 自动生成于 2026-08-09</p>
+    <p>数据来源：arXiv · HuggingFace Daily Papers · 机构官方博客</p>
+  </footer>
+</div>
+</body>
+</html>

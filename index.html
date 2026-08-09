@@ -658,6 +658,138 @@
 <script>
 // ===== DATA =====
 const PAPERS_DB = [
+    // === 2026-08-09 ===
+    {
+        date: "2026-08-09",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "DyPES-VLA: Learning Shared Dynamics Priors and Embodiment-Specific Control for Cross-Embodiment Manipulation",
+        venue: "arXiv 2026 · 2608.06374",
+        summary: "🔬 技术路线: 在视觉-语言-动作模型框架下训练跨本体操作策略，把共享动力学先验与本体专属控制模块解耦，分别承担通用物理规律建模与具体机器人适配。 | 💡 创新点: 提出 DyPES-VLA，让不同形态的机器人共享同一套动力学先验，同时各自保留专属控制头，从而缓解跨本体迁移中的形态差异与动作空间错配问题。 | 📊 实验效果: 关键指标分别达到 98.0%、89.02% 与 59.25%，验证了共享先验对跨本体操作任务的增益作用。 | ⭐ 整体评价: 属于 VLA 与具身控制方向，建议关注本体差异的表征方式、跨机器人迁移的能力边界以及真机部署下的稳定性。",
+        tags: [["VLA","green"],["Cross-Embodiment","green"],["Manipulation","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2608.06374"],["PDF","https://arxiv.org/pdf/2608.06374"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"在视觉-语言-动作模型框架下训练跨本体操作策略，把共享动力学先验与本体专属控制模块解耦，分别承担通用物理规律建模与具体机器人适配。"},{"label":"💡 创新点","text":"提出 DyPES-VLA，让不同形态的机器人共享同一套动力学先验，同时各自保留专属控制头，从而缓解跨本体迁移中的形态差异与动作空间错配问题。"},{"label":"📊 实验效果","text":"关键指标分别达到 98.0%、89.02% 与 59.25%，验证了共享先验对跨本体操作任务的增益作用。"},{"label":"⭐ 整体评价","text":"属于 VLA 与具身控制方向，建议关注本体差异的表征方式、跨机器人迁移的能力边界以及真机部署下的稳定性。"}]
+    },
+    {
+        date: "2026-08-09",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "ω-0: A Latent Predictive World Action Model for Concurrent Humanoid Loco-Manipulation",
+        venue: "arXiv 2026 · 2608.06375",
+        summary: "🔬 技术路线: 以模仿学习为基础构建潜在预测式世界动作模型，把环境动态预测与动作生成统一到同一潜空间，服务于人形机器人的移动与操作协同控制。 | 💡 创新点: 提出 ω-0 模型并面向真实场景做轻量化设计，使人形机器人能在行走过程中并发完成操作任务，而不必把移动与操作拆成串行阶段执行。 | 📊 实验效果: 在操作抓取与运动控制两类任务上完成验证，展示了并发式移动操作在家庭日常任务中的可行性。 | ⭐ 整体评价: 属于 VLA 与具身控制方向，建议重点关注任务泛化能力、潜空间动作表达方式以及真机验证结果。",
+        tags: [["Humanoid","green"],["World Model","green"],["Loco-Manipulation","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2608.06375"],["PDF","https://arxiv.org/pdf/2608.06375"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"以模仿学习为基础构建潜在预测式世界动作模型，把环境动态预测与动作生成统一到同一潜空间，服务于人形机器人的移动与操作协同控制。"},{"label":"💡 创新点","text":"提出 ω-0 模型并面向真实场景做轻量化设计，使人形机器人能在行走过程中并发完成操作任务，而不必把移动与操作拆成串行阶段执行。"},{"label":"📊 实验效果","text":"在操作抓取与运动控制两类任务上完成验证，展示了并发式移动操作在家庭日常任务中的可行性。"},{"label":"⭐ 整体评价","text":"属于 VLA 与具身控制方向，建议重点关注任务泛化能力、潜空间动作表达方式以及真机验证结果。"}]
+    },
+    {
+        date: "2026-08-09",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "A Master-Slave Robot Manipulator for Needle-Based Teleoperation in MRI Chamber",
+        venue: "arXiv 2026 · 2608.06354",
+        summary: "🔬 技术路线: 设计面向核磁共振舱内使用的主从式机器人操作臂，采用低摩擦传动结构与磁共振兼容材料，支持穿刺针类操作的实时远程操控。 | 💡 创新点: 把低摩擦机构与多模态反馈相结合，使术者可以在强磁场环境下远程完成针刺操作，同时兼顾设备的磁共振安全性与操作手感真实度。 | 📊 实验效果: 完成样机实验验证，证明该主从结构可在核磁舱内实现稳定的实时遥操作，具体量化数据详见原文。 | ⭐ 整体评价: 属于医疗机器人与遥操作方向，建议重点看机械结构设计、磁共振兼容性验证方法以及末端定位精度指标。",
+        tags: [["Teleoperation","green"],["Medical Robot","green"],["Real-Time","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2608.06354"],["PDF","https://arxiv.org/pdf/2608.06354"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"设计面向核磁共振舱内使用的主从式机器人操作臂，采用低摩擦传动结构与磁共振兼容材料，支持穿刺针类操作的实时远程操控。"},{"label":"💡 创新点","text":"把低摩擦机构与多模态反馈相结合，使术者可以在强磁场环境下远程完成针刺操作，同时兼顾设备的磁共振安全性与操作手感真实度。"},{"label":"📊 实验效果","text":"完成样机实验验证，证明该主从结构可在核磁舱内实现稳定的实时遥操作，具体量化数据详见原文。"},{"label":"⭐ 整体评价","text":"属于医疗机器人与遥操作方向，建议重点看机械结构设计、磁共振兼容性验证方法以及末端定位精度指标。"}]
+    },
+    {
+        date: "2026-08-09",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "The Bitter Lesson of Tool Calling",
+        venue: "arXiv 2026 · 2608.06370",
+        summary: "🔬 技术路线: 围绕语言模型的工具调用能力展开系统性研究，对比人工设计的调用脚手架与依靠规模化训练自然涌现的调用能力两条路径。 | 💡 创新点: 借用苦涩的教训这一经典视角指出，精心设计的工具调用规则往往会被更强的通用模型能力所取代，并在 GPT-5 级别模型上验证该结论的鲁棒性。 | 📊 实验效果: 报告了 10.6% 与 2.3% 两项关键差距指标，量化了不同工具调用方案之间的性能落差。 | ⭐ 整体评价: 属于 Agent 与工具使用方向，建议关注实验中工具集的构造方式、评测任务分布，以及该结论在小参数模型上是否同样成立。",
+        tags: [["Agent","green"],["Tool Use","green"],["LLM","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2608.06370"],["PDF","https://arxiv.org/pdf/2608.06370"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"围绕语言模型的工具调用能力展开系统性研究，对比人工设计的调用脚手架与依靠规模化训练自然涌现的调用能力两条路径。"},{"label":"💡 创新点","text":"借用苦涩的教训这一经典视角指出，精心设计的工具调用规则往往会被更强的通用模型能力所取代，并在 GPT-5 级别模型上验证该结论的鲁棒性。"},{"label":"📊 实验效果","text":"报告了 10.6% 与 2.3% 两项关键差距指标，量化了不同工具调用方案之间的性能落差。"},{"label":"⭐ 整体评价","text":"属于 Agent 与工具使用方向，建议关注实验中工具集的构造方式、评测任务分布，以及该结论在小参数模型上是否同样成立。"}]
+    },
+    {
+        date: "2026-08-09",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "AV-AIVAT: 74x Cheaper Agent Evaluation with Certified Anytime-Valid Stopping in Imperfect-Information Games",
+        venue: "arXiv 2026 · MIT · 2608.06362",
+        summary: "🔬 技术路线: 在不完美信息博弈的智能体评测中引入动作感知的方差缩减估计量，并结合任意时刻均有效的统计停止准则来控制所需样本量。 | 💡 创新点: 提出 AV-AIVAT 方法，使评测过程能在保持统计置信保证的前提下随时提前停止，从而把智能体评估成本压低到常规做法的约七十四分之一。 | 📊 实验效果: 在推理类任务上完成验证，评测开销相比基线降低 74 倍，同时结论的置信水平不受损失。 | ⭐ 整体评价: 属于 Agent 评测方法方向，建议关注估计量的无偏性证明、适用的博弈类型范围以及在非博弈任务上的可推广性。",
+        tags: [["Agent","green"],["Evaluation","green"],["Game Theory","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2608.06362"],["PDF","https://arxiv.org/pdf/2608.06362"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"在不完美信息博弈的智能体评测中引入动作感知的方差缩减估计量，并结合任意时刻均有效的统计停止准则来控制所需样本量。"},{"label":"💡 创新点","text":"提出 AV-AIVAT 方法，使评测过程能在保持统计置信保证的前提下随时提前停止，从而把智能体评估成本压低到常规做法的约七十四分之一。"},{"label":"📊 实验效果","text":"在推理类任务上完成验证，评测开销相比基线降低 74 倍，同时结论的置信水平不受损失。"},{"label":"⭐ 整体评价","text":"属于 Agent 评测方法方向，建议关注估计量的无偏性证明、适用的博弈类型范围以及在非博弈任务上的可推广性。"}]
+    },
+    {
+        date: "2026-08-09",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "CalibForge: Adversarial Solver Calibration for Scaling Learnable Terminal Tasks",
+        venue: "arXiv 2026 · 2608.06352",
+        summary: "🔬 技术路线: 通过对抗式的求解器标定来扩展可学习的终端任务集合，在训练过程中动态调节任务难度，使任务始终落在模型能力边界附近。 | 💡 创新点: 引入多求解器机制进行对抗标定，自动筛除过易与过难的样本，从而规模化构造出对智能体真正具备训练价值的命令行终端任务。 | 📊 实验效果: 报告关键指标 32.58% 与 47.57%，并给出 24.71 个百分点的提升幅度，数据集与代码均已开源。 | ⭐ 整体评价: 属于 Agent 训练数据构造方向，建议关注难度标定过程的稳定性、任务多样性覆盖以及跨基准的迁移效果。",
+        tags: [["Agent","green"],["Task Synthesis","green"],["Training","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2608.06352"],["PDF","https://arxiv.org/pdf/2608.06352"],["Code","https://github.com/AweAI-Team/CalibForge"],["Dataset","https://huggingface.co/datasets/AweAI-Team/CalibForge"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"通过对抗式的求解器标定来扩展可学习的终端任务集合，在训练过程中动态调节任务难度，使任务始终落在模型能力边界附近。"},{"label":"💡 创新点","text":"引入多求解器机制进行对抗标定，自动筛除过易与过难的样本，从而规模化构造出对智能体真正具备训练价值的命令行终端任务。"},{"label":"📊 实验效果","text":"报告关键指标 32.58% 与 47.57%，并给出 24.71 个百分点的提升幅度，数据集与代码均已开源。"},{"label":"⭐ 整体评价","text":"属于 Agent 训练数据构造方向，建议关注难度标定过程的稳定性、任务多样性覆盖以及跨基准的迁移效果。"}]
+    },
+    {
+        date: "2026-08-09",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Tracing the Heart: An Evidence-Linked Pipeline for Heart-Failure Feature Engineering",
+        venue: "arXiv 2026 · 2608.06366",
+        summary: "🔬 技术路线: 以大语言模型为核心搭建证据可溯源的特征工程流水线，面向心力衰竭这一临床场景自动完成特征构造与医学证据关联。 | 💡 创新点: 采用多智能体协作分工，让每一项生成特征都能回链到具体医学证据，缓解大模型在医疗特征工程中不可解释、难以审计的固有问题。 | 📊 实验效果: 报告关键指标 45% 与 81.5%，验证了证据链接机制对特征质量与结果可信度的提升作用。 | ⭐ 整体评价: 属于 Agent 与垂直领域应用方向，建议关注证据检索的准确性、临床实际可用性以及与专家人工特征的对比结果。",
+        tags: [["Multi-Agent","green"],["LLM","green"],["Healthcare","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2608.06366"],["PDF","https://arxiv.org/pdf/2608.06366"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"以大语言模型为核心搭建证据可溯源的特征工程流水线，面向心力衰竭这一临床场景自动完成特征构造与医学证据关联。"},{"label":"💡 创新点","text":"采用多智能体协作分工，让每一项生成特征都能回链到具体医学证据，缓解大模型在医疗特征工程中不可解释、难以审计的固有问题。"},{"label":"📊 实验效果","text":"报告关键指标 45% 与 81.5%，验证了证据链接机制对特征质量与结果可信度的提升作用。"},{"label":"⭐ 整体评价","text":"属于 Agent 与垂直领域应用方向，建议关注证据检索的准确性、临床实际可用性以及与专家人工特征的对比结果。"}]
+    },
+    {
+        date: "2026-08-09",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Resourced Authority: A Mechanism-Design Model for Participatory Governance of Deployed AI Agents",
+        venue: "arXiv 2026 · 2608.06353",
+        summary: "🔬 技术路线: 从机制设计的角度对已部署 AI 智能体的治理问题建模，把被赋予资源的权威形式化为可分析、可推演的制度安排。 | 💡 创新点: 提出参与式治理框架，让受智能体影响的利益相关方通过资源分配与授权机制形成实际约束力，而非仅依赖部署之后的问责追溯。 | 📊 实验效果: 全文以理论建模与机制分析为主，未给出量化性能指标，重点在于论证治理机制的制度可行性。 | ⭐ 整体评价: 属于 AI 治理与智能体部署方向，建议关注机制的激励相容性假设，以及在真实组织环境中的落地路径设计。",
+        tags: [["Agent","green"],["Governance","green"],["Mechanism Design","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2608.06353"],["PDF","https://arxiv.org/pdf/2608.06353"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"从机制设计的角度对已部署 AI 智能体的治理问题建模，把被赋予资源的权威形式化为可分析、可推演的制度安排。"},{"label":"💡 创新点","text":"提出参与式治理框架，让受智能体影响的利益相关方通过资源分配与授权机制形成实际约束力，而非仅依赖部署之后的问责追溯。"},{"label":"📊 实验效果","text":"全文以理论建模与机制分析为主，未给出量化性能指标，重点在于论证治理机制的制度可行性。"},{"label":"⭐ 整体评价","text":"属于 AI 治理与智能体部署方向，建议关注机制的激励相容性假设，以及在真实组织环境中的落地路径设计。"}]
+    },
+    {
+        date: "2026-08-09",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "OpenAI：应对关键网络能力的下一个前沿",
+        venue: "",
+        summary: "OpenAI 发布官方博客，讨论前沿模型在关键网络安全能力上的进展与相应的应对举措，说明如何在能力提升的同时控制滥用风险。",
+        tags: [],
+        links: [["来源","https://openai.com/index/responding-next-frontier-critical-cyber-capabilities/"]]
+    },
+    {
+        date: "2026-08-09",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "OpenAI：改进 ChatGPT 中的 GPT-5.6 Sol，并向免费用户开放 GPT-5.6 Luna",
+        venue: "",
+        summary: "OpenAI 宣布对 ChatGPT 内的 GPT-5.6 Sol 模型进行改进，同时把 GPT-5.6 Luna 的使用权限扩展至免费用户，进一步降低前沿模型的使用门槛。",
+        tags: [],
+        links: [["来源","https://openai.com/index/improving-gpt-5-6-sol-in-chatgpt/"]]
+    },
+    {
+        date: "2026-08-09",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "OpenAI 与美国心理学会合作推进面向青少年的负责任 AI",
+        venue: "",
+        summary: "OpenAI 宣布与美国心理学会建立合作，围绕青少年群体的心理健康与使用安全，共同推进负责任的 AI 产品设计与使用规范。",
+        tags: [],
+        links: [["来源","https://openai.com/index/openai-and-apa-partner-to-advance-responsible-ai/"]]
+    },
+    {
+        date: "2026-08-09",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "OpenAI：全球用户如何把 ChatGPT 用于实际工作",
+        venue: "",
+        summary: "OpenAI 梳理了全球范围内 ChatGPT 在真实工作场景中的应用情况，展示不同行业与岗位的典型用法与落地效果。",
+        tags: [],
+        links: [["来源","https://openai.com/index/how-the-world-is-putting-chatgpt-to-work/"]]
+    },
     // === 2026-07-31 ===
     {
         date: "2026-07-31",
@@ -20917,6 +21049,13 @@ const PAPERS_DB = [
 ];
 
 const DAILY_OVERVIEW = {
+    "2026-08-09": {
+        bannerTitle: "🔥 今日看点",
+        bannerSubtitle: "本期收录 8 篇论文与 4 条机构动态。因当日 arXiv 索引尚未更新，内容取自 2026 年 8 月 7 日检索窗口。具身智能方向，ω-0 提出潜在预测式世界动作模型，让人形机器人在移动的同时并发完成操作任务，直指家庭场景中移动与操作难以解耦的痛点；DyPES-VLA 把共享动力学先验与本体专属控制拆开建模，缓解跨本体迁移的形态差异，关键指标达到 98.0%。Agent 方向本期最密集，共五篇：《工具调用的苦涩教训》指出精心设计的调用脚手架终将被更强的通用模型能力取代；MIT 的 AV-AIVAT 借助任意时刻有效的统计停止准则，把不完美信息博弈中的智能体评测成本压低到约七十四分之一；CalibForge 用对抗式求解器标定规模化构造真正有训练价值的终端任务，数据集与代码均已开源。医疗与治理方向亦有两篇值得留意的工作。OpenAI 同期连发四条动态，覆盖关键网络能力应对、GPT-5.6 模型更新与青少年 AI 安全合作。",
+        picks: ["DyPES-VLA: Learning Shared Dynamics Priors and Embodiment-Specific Control for Cross-Embodiment Manipulation","ω-0: A Latent Predictive World Action Model for Concurrent Humanoid Loco-Manipulation","The Bitter Lesson of Tool Calling"],
+        totalPapers: 8,
+        totalNews: 4
+    },
     "2026-07-31": {
         bannerTitle: "🔥 今日看点",
         bannerSubtitle: "本期收录 14 篇论文与 1 条机构动态。具身智能方向，ACE-Data-0 直面具身数据瓶颈，以人为中心的环境采集构建数据引擎，规模达 1700 万；PAC-MAN 把感知感知型控制障碍函数与强化学习结合，让人形机器人在躲避球场景中实现全身安全，成功率 95%。多模态方向，Chimera 系统研究混合视觉扩散 Transformer 的架构设计与 Chinchilla 缩放规律，训练效率提升 1.7 至 7.3 倍。Agent 方向本期最密集，共六篇：AskChem 以论断为中心构建化学文献综合基础设施，语料规模 240 万；Change2Task 把真实仓库变更自动转化为可执行的编码智能体任务与环境；SkillRise 用智能体强化学习实现跨任务技能进化，提升 8.5 个百分点。大模型方向，字节跳动 CoRT 提出词元级量规引导策略优化的反事实回放机制，Qwen 团队 DecoEvo 让解题器与量规生成器在文本空间分数解耦协同进化。OpenAI 同日发布 GPT-5.6 价格性能前沿推进的解读。",
