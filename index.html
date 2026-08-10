@@ -658,6 +658,99 @@
 <script>
 // ===== DATA =====
 const PAPERS_DB = [
+    // === 2026-08-10 ===
+    {
+        date: "2026-08-10",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "Beyond Simply Environment Scaling: Designing Effective Environment Distributions for Multimodal Agent Learning",
+        venue: "HF Daily Papers · Chinese Academic of Science Institute of Automation · 2608.03571",
+        summary: "🔬 技术路线: 面向多模态智能体学习，研究如何通过设计更有效的训练环境分布来提升能力，而非简单扩大环境规模，并引入课程学习式的训练安排。 | 💡 创新点: 提出能力感知的环境构建思路，让训练环境围绕智能体的能力短板进行组织，强调多模态交互特性在环境设计中的作用。 | 📊 实验效果: 在多个多模态智能体任务上验证了所提环境分布设计相比单纯扩大规模更具训练价值，具体指标详见原文。 | ⭐ 整体评价: 属于多模态智能体训练方向，建议关注环境分布的构造准则、课程学习节奏，以及不同下游任务上的泛化表现。",
+        tags: [["Multimodal","green"],["Agent Learning","green"],["Environment","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2608.03571"],["PDF","https://arxiv.org/pdf/2608.03571"],["Code","https://github.com/GaryStack/Beyond-MMEnv-Scaling"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"面向多模态智能体学习，研究如何通过设计更有效的训练环境分布来提升能力，而非简单扩大环境规模，并引入课程学习式的训练安排。"},{"label":"💡 创新点","text":"提出能力感知的环境构建思路，让训练环境围绕智能体的能力短板进行组织，强调多模态交互特性在环境设计中的作用。"},{"label":"📊 实验效果","text":"在多个多模态智能体任务上验证了所提环境分布设计相比单纯扩大规模更具训练价值，具体指标详见原文。"},{"label":"⭐ 整体评价","text":"属于多模态智能体训练方向，建议关注环境分布的构造准则、课程学习节奏，以及不同下游任务上的泛化表现。"}]
+    },
+    {
+        date: "2026-08-10",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "Douyin Multimodal Embedding Model Technical Report",
+        venue: "HF Daily Papers · ByteDance · 2608.02148",
+        summary: "🔬 技术路线: 发布面向真实业务的多模态嵌入模型技术报告，介绍其预训练机制与训练流程，统一处理文本与视觉等多种模态的表征学习。 | 💡 创新点: 强调真实场景数据与高效统一的表征设计，提供 2B 与 9B 两种规模的模型，兼顾性能表现与部署成本。 | 📊 实验效果: 报告给出 2.92%、0.1% 等关键指标，展示了不同规模模型在检索与表征任务上的表现，具体基准见原文。 | ⭐ 整体评价: 属于多模态表征学习方向，建议关注跨模态对齐方式、数据规模，以及在推荐与搜索等下游任务的实际收益。",
+        tags: [["Multimodal","green"],["Embedding","green"],["Efficient","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2608.02148"],["PDF","https://arxiv.org/pdf/2608.02148"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"发布面向真实业务的多模态嵌入模型技术报告，介绍其预训练机制与训练流程，统一处理文本与视觉等多种模态的表征学习。"},{"label":"💡 创新点","text":"强调真实场景数据与高效统一的表征设计，提供 2B 与 9B 两种规模的模型，兼顾性能表现与部署成本。"},{"label":"📊 实验效果","text":"报告给出 2.92%、0.1% 等关键指标，展示了不同规模模型在检索与表征任务上的表现，具体基准见原文。"},{"label":"⭐ 整体评价","text":"属于多模态表征学习方向，建议关注跨模态对齐方式、数据规模，以及在推荐与搜索等下游任务的实际收益。"}]
+    },
+    {
+        date: "2026-08-10",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "SFT Conflicts, RL Coexists: A Theoretical and Empirical Analysis of Multi-Task Learning for LLMs",
+        venue: "HF Daily Papers · Chinese Academic of Science Institute of Automation · 2608.03573",
+        summary: "🔬 技术路线: 从理论与实证两个层面分析大语言模型多任务学习中的冲突现象，重点考察监督微调与强化学习在共享参数下如何相互影响。 | 💡 创新点: 揭示监督微调阶段存在的任务间梯度冲突，而强化学习阶段各类目标能够共存，为\"先微调后强化\"的训练范式提供理论解释。 | 📊 实验效果: 在多项多任务基准上对比了不同训练顺序的影响，验证了强化学习阶段对任务冲突具有更强的包容能力，具体数据见原文。 | ⭐ 整体评价: 属于大语言模型训练范式方向，建议关注任务分组策略、损失权重设计，以及该结论在不同规模模型上的稳健性。",
+        tags: [["LLM","green"],["RL","green"],["Multi-Task","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2608.03573"],["PDF","https://arxiv.org/pdf/2608.03573"],["Code","https://github.com/GaryStack/Parallel-RL"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"从理论与实证两个层面分析大语言模型多任务学习中的冲突现象，重点考察监督微调与强化学习在共享参数下如何相互影响。"},{"label":"💡 创新点","text":"揭示监督微调阶段存在的任务间梯度冲突，而强化学习阶段各类目标能够共存，为\"先微调后强化\"的训练范式提供理论解释。"},{"label":"📊 实验效果","text":"在多项多任务基准上对比了不同训练顺序的影响，验证了强化学习阶段对任务冲突具有更强的包容能力，具体数据见原文。"},{"label":"⭐ 整体评价","text":"属于大语言模型训练范式方向，建议关注任务分组策略、损失权重设计，以及该结论在不同规模模型上的稳健性。"}]
+    },
+    {
+        date: "2026-08-10",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Reinforcement Learning with Evolving Rubrics as Rewards for Audio Reasoning",
+        venue: "HF Daily Papers · University of Maryland College Park · 2608.02831",
+        summary: "🔬 技术路线: 把可演化的评分量规用作强化学习的奖励信号，引导语言模型在音频推理任务上完成更符合人类标准的训练。 | 💡 创新点: 提出 AudioRubrics，让评分标准在训练过程中持续演化，缓解固定奖励函数难以刻画复杂音频推理质量的难题，项目与代码已开源。 | 📊 实验效果: 在音频推理相关基准上对比了演化量规与静态奖励的差异，展示了奖励质量提升对推理能力的带动，具体数据见原文。 | ⭐ 整体评价: 属于大语言模型推理与音频方向，建议关注量规演化的稳定性、奖励稀疏性问题，以及跨音频任务的迁移表现。",
+        tags: [["LLM","green"],["RL","green"],["Audio Reasoning","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2608.02831"],["PDF","https://arxiv.org/pdf/2608.02831"],["Project","https://audiorubrics.github.io/"],["Code","https://github.com/tianyi-lab/AudioRubrics"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"把可演化的评分量规用作强化学习的奖励信号，引导语言模型在音频推理任务上完成更符合人类标准的训练。"},{"label":"💡 创新点","text":"提出 AudioRubrics，让评分标准在训练过程中持续演化，缓解固定奖励函数难以刻画复杂音频推理质量的难题，项目与代码已开源。"},{"label":"📊 实验效果","text":"在音频推理相关基准上对比了演化量规与静态奖励的差异，展示了奖励质量提升对推理能力的带动，具体数据见原文。"},{"label":"⭐ 整体评价","text":"属于大语言模型推理与音频方向，建议关注量规演化的稳定性、奖励稀疏性问题，以及跨音频任务的迁移表现。"}]
+    },
+    {
+        date: "2026-08-10",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Skaling: Chinchilla's Exponents Meet Kaplan's Coupling",
+        venue: "HF Daily Papers · AI at Meta · 2608.07222",
+        summary: "🔬 技术路线: 把 Chinchilla 缩放定律中的幂指数与 Kaplan 提出的耦合关系相结合，重新刻画语言模型在参数量与数据量之间的缩放规律。 | 💡 创新点: 提出 Skaling 方法，给出更鲁棒且更高效的缩放刻画方式，使训练资源规划在不确定的耦合假设下仍然可靠。 | 📊 实验效果: 报告给出 3x 与 10x 等提升指标，显示在相同算力预算下相比基线可获得明显更优的模型表现。 | ⭐ 整体评价: 属于语言模型缩放定律方向，建议关注幂指数估计的稳健性、不同数据质量的敏感性，以及在预训练预算分配上的实用性。",
+        tags: [["LLM","green"],["Scaling Law","green"],["Training","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2608.07222"],["PDF","https://arxiv.org/pdf/2608.07222"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"把 Chinchilla 缩放定律中的幂指数与 Kaplan 提出的耦合关系相结合，重新刻画语言模型在参数量与数据量之间的缩放规律。"},{"label":"💡 创新点","text":"提出 Skaling 方法，给出更鲁棒且更高效的缩放刻画方式，使训练资源规划在不确定的耦合假设下仍然可靠。"},{"label":"📊 实验效果","text":"报告给出 3x 与 10x 等提升指标，显示在相同算力预算下相比基线可获得明显更优的模型表现。"},{"label":"⭐ 整体评价","text":"属于语言模型缩放定律方向，建议关注幂指数估计的稳健性、不同数据质量的敏感性，以及在预训练预算分配上的实用性。"}]
+    },
+    {
+        date: "2026-08-10",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "StreamArena: Toward Continuous, Interactive, and Long-Horizon Agentic Streaming Video Understanding",
+        venue: "HF Daily Papers · Xiaohongshu · 2608.05703",
+        summary: "🔬 技术路线: 构建面向流式视频的智能体理解与评测框架，让模型在视频持续播放的过程中进行实时交互式推理，而非看完整个片段再作答。 | 💡 创新点: 提出 StreamArena 基准，强调连续、交互、长时程三大特性，将多模态视频理解从离线问答推进到在线流式智能体范式。 | 📊 实验效果: 在长视频流式理解任务上验证了框架对实时交互能力的区分度，相关项目页面与代码均已公开，具体指标见原文。 | ⭐ 整体评价: 属于多模态视频理解方向，建议关注流式推理的延迟、长程记忆机制，以及智能体在真实直播场景的可用性。",
+        tags: [["Agent","green"],["Multimodal","green"],["Benchmark","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2608.05703"],["PDF","https://arxiv.org/pdf/2608.05703"],["Project","https://hkuzxc.github.io/StreamArena_web/"],["Code","https://github.com/JIA-Lab-research/StreamArena"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"构建面向流式视频的智能体理解与评测框架，让模型在视频持续播放的过程中进行实时交互式推理，而非看完整个片段再作答。"},{"label":"💡 创新点","text":"提出 StreamArena 基准，强调连续、交互、长时程三大特性，将多模态视频理解从离线问答推进到在线流式智能体范式。"},{"label":"📊 实验效果","text":"在长视频流式理解任务上验证了框架对实时交互能力的区分度，相关项目页面与代码均已公开，具体指标见原文。"},{"label":"⭐ 整体评价","text":"属于多模态视频理解方向，建议关注流式推理的延迟、长程记忆机制，以及智能体在真实直播场景的可用性。"}]
+    },
+    {
+        date: "2026-08-10",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "Addressable Memory for Video World Models",
+        venue: "HF Daily Papers · NVIDIA · 2608.07408",
+        summary: "🔬 技术路线: 在视频世界模型中引入可寻址的记忆机制，以键值结构组织历史视觉信息，支撑交互式视频的生成与预测。 | 💡 创新点: 提出基于键值寻址的记忆模块，让世界模型能够按需读取特定历史片段，缓解长视频中信息被平均池化而丢失的问题。 | 📊 实验效果: 报告给出 15.5% 与 19.5% 等关键提升指标，在视频世界模型的预测质量与可控性上优于无显式记忆的基线，详见原文。 | ⭐ 整体评价: 属于世界模型与视频生成方向，建议关注记忆寻址的粒度、长程一致性，以及交互式视频编辑等下游应用潜力。",
+        tags: [["World Model","green"],["Video","green"],["Memory","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2608.07408"],["PDF","https://arxiv.org/pdf/2608.07408"],["Project","https://research.nvidia.com/labs/sil/projects/WorldTrace/"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"在视频世界模型中引入可寻址的记忆机制，以键值结构组织历史视觉信息，支撑交互式视频的生成与预测。"},{"label":"💡 创新点","text":"提出基于键值寻址的记忆模块，让世界模型能够按需读取特定历史片段，缓解长视频中信息被平均池化而丢失的问题。"},{"label":"📊 实验效果","text":"报告给出 15.5% 与 19.5% 等关键提升指标，在视频世界模型的预测质量与可控性上优于无显式记忆的基线，详见原文。"},{"label":"⭐ 整体评价","text":"属于世界模型与视频生成方向，建议关注记忆寻址的粒度、长程一致性，以及交互式视频编辑等下游应用潜力。"}]
+    },
+    {
+        date: "2026-08-10",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "Uncertainty-Aware World Model for Aerial Image-Goal Navigation",
+        venue: "HF Daily Papers · Tsinghua University · 2608.05597",
+        summary: "🔬 技术路线: 面向无人机空中图像目标导航任务，构建能够感知自身预测不确定性的世界模型，在未知环境中规划抵达目标影像的飞行路径。 | 💡 创新点: 提出不确定性感知的世界模型，让导航决策能够区分高置信与低置信区域，从而在预测不可靠时采取更保守的探索策略。 | 📊 实验效果: 实验表明该模型在多项空中导航基准上稳定优于现有导航世界模型，同时保持较低的推理延迟，具体指标见原文。 | ⭐ 整体评价: 属于世界模型与机器人导航方向，建议关注不确定性量化方式、Sim-to-Real 迁移效果，以及复杂环境下的泛化能力。",
+        tags: [["World Model","green"],["Aerial Navigation","green"],["Embodied","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2608.05597"],["PDF","https://arxiv.org/pdf/2608.05597"],["Project","https://duryi.github.io/UA-NWM-Project-Page"],["Code","https://github.com/DurYi/UA-NWM"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"面向无人机空中图像目标导航任务，构建能够感知自身预测不确定性的世界模型，在未知环境中规划抵达目标影像的飞行路径。"},{"label":"💡 创新点","text":"提出不确定性感知的世界模型，让导航决策能够区分高置信与低置信区域，从而在预测不可靠时采取更保守的探索策略。"},{"label":"📊 实验效果","text":"实验表明该模型在多项空中导航基准上稳定优于现有导航世界模型，同时保持较低的推理延迟，具体指标见原文。"},{"label":"⭐ 整体评价","text":"属于世界模型与机器人导航方向，建议关注不确定性量化方式、Sim-to-Real 迁移效果，以及复杂环境下的泛化能力。"}]
+    },
     // === 2026-08-09 ===
     {
         date: "2026-08-09",
@@ -21049,6 +21142,13 @@ const PAPERS_DB = [
 ];
 
 const DAILY_OVERVIEW = {
+    "2026-08-10": {
+        bannerTitle: "🔥 今日看点",
+        bannerSubtitle: "本期收录 8 篇论文，均来自 HuggingFace 每日论文社区（当日 arXiv 索引尚未更新）。多模态方向，字节跳动发布 Douyin 多模态嵌入模型技术报告，提供 2B 与 9B 两种规模，统一文本与视觉表征；中科院自动化所则从环境分布设计切入，提出能力感知的多模态智能体训练范式。大语言模型方向，Meta 的 Skaling 把 Chinchilla 与 Kaplan 缩放定律结合，在相同算力下取得 3x 到 10x 的提升；马里兰大学提出 AudioRubrics，用可演化的评分量规作为强化学习奖励优化音频推理。世界模型方向，英伟达的 Addressable Memory 以键值寻址记忆提升视频世界模型预测质量（关键指标 15.5%、19.5%）；清华大学的 UA-NWM 则引入不确定性感知，在空中图像目标导航上稳定优于现有方法并保持低延迟。",
+        picks: ["Douyin Multimodal Embedding Model Technical Report","Skaling: Chinchilla's Exponents Meet Kaplan's Coupling","Addressable Memory for Video World Models","Uncertainty-Aware World Model for Aerial Image-Goal Navigation"],
+        totalPapers: 8,
+        totalNews: 0
+    },
     "2026-08-09": {
         bannerTitle: "🔥 今日看点",
         bannerSubtitle: "本期收录 8 篇论文与 4 条机构动态。因当日 arXiv 索引尚未更新，内容取自 2026 年 8 月 7 日检索窗口。具身智能方向，ω-0 提出潜在预测式世界动作模型，让人形机器人在移动的同时并发完成操作任务，直指家庭场景中移动与操作难以解耦的痛点；DyPES-VLA 把共享动力学先验与本体专属控制拆开建模，缓解跨本体迁移的形态差异，关键指标达到 98.0%。Agent 方向本期最密集，共五篇：《工具调用的苦涩教训》指出精心设计的调用脚手架终将被更强的通用模型能力取代；MIT 的 AV-AIVAT 借助任意时刻有效的统计停止准则，把不完美信息博弈中的智能体评测成本压低到约七十四分之一；CalibForge 用对抗式求解器标定规模化构造真正有训练价值的终端任务，数据集与代码均已开源。医疗与治理方向亦有两篇值得留意的工作。OpenAI 同期连发四条动态，覆盖关键网络能力应对、GPT-5.6 模型更新与青少年 AI 安全合作。",

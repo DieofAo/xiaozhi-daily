@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>小小志AI日报 - 2026年8月10日</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans SC', sans-serif;
+  background: #0a0e1a;
+  color: #e0e6f0;
+  line-height: 1.7;
+  min-height: 100vh;
+}
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+header {
+  text-align: center;
+  margin-bottom: 48px;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, rgba(59,130,246,0.08) 0%, rgba(139,92,246,0.08) 100%);
+  border-radius: 20px;
+  border: 1px solid rgba(99,102,241,0.15);
+}
+header h1 {
+  font-size: 2rem;
+  background: linear-gradient(135deg, #60a5fa, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 8px;
+}
+header .date {
+  color: #94a3b8;
+  font-size: 1rem;
+}
+header .subtitle {
+  color: #64748b;
+  font-size: 0.9rem;
+  margin-top: 6px;
+}
+.highlight-banner {
+  background: linear-gradient(135deg, rgba(249,115,22,0.1) 0%, rgba(234,179,8,0.08) 100%);
+  border: 1px solid rgba(249,115,22,0.2);
+  border-radius: 14px;
+  padding: 20px 24px;
+  margin-bottom: 36px;
+}
+.hl-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fb923c;
+  margin-bottom: 8px;
+}
+.hl-text {
+  font-size: 0.92rem;
+  color: #cbd5e1;
+  line-height: 1.7;
+}
+.section {
+  margin-bottom: 40px;
+}
+.section-title {
+  font-size: 1.4rem;
+  color: #f1f5f9;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(99,102,241,0.2);
+}
+.paper-card {
+  background: rgba(30,41,59,0.6);
+  border: 1px solid rgba(99,102,241,0.12);
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 16px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.paper-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(99,102,241,0.1);
+  border-color: rgba(99,102,241,0.3);
+}
+.paper-card.hot {
+  border-color: rgba(249,115,22,0.25);
+  background: rgba(30,41,59,0.7);
+}
+.paper-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #f8fafc;
+  margin-bottom: 8px;
+}
+.paper-meta {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-bottom: 10px;
+}
+.summary-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+@media (max-width: 640px) {
+  .summary-grid { grid-template-columns: 1fr; }
+}
+.summary-item {
+  background: rgba(15,23,42,0.5);
+  border-radius: 10px;
+  padding: 12px 14px;
+  border: 1px solid rgba(99,102,241,0.08);
+}
+.summary-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #818cf8;
+  margin-bottom: 4px;
+}
+.summary-text {
+  font-size: 0.88rem;
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+.paper-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.tag {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+.tag-agent { background: rgba(16,185,129,0.12); color: #34d399; }
+.tag-llm { background: rgba(99,102,241,0.12); color: #818cf8; }
+.tag-multimodal { background: rgba(244,114,182,0.12); color: #f472b6; }
+.tag-world { background: rgba(251,191,36,0.12); color: #fbbf24; }
+.tag-robot { background: rgba(251,146,60,0.12); color: #fb923c; }
+.tag-rl { background: rgba(45,212,191,0.12); color: #2dd4bf; }
+.tag-benchmark { background: rgba(34,211,238,0.12); color: #22d3ee; }
+.tag-vla { background: rgba(59,130,246,0.12); color: #60a5fa; }
+.tag-memory { background: rgba(192,132,252,0.12); color: #c084fc; }
+.tag-reasoning { background: rgba(132,204,22,0.12); color: #a3e635; }
+.tag-data { background: rgba(250,204,21,0.12); color: #facc15; }
+.tag-infra { background: rgba(167,139,250,0.12); color: #a78bfa; }
+.tag-embodied { background: rgba(251,146,60,0.12); color: #fb923c; }
+.tag-3d { background: rgba(148,163,184,0.12); color: #94a3b8; }
+.tag-tool { background: rgba(52,211,153,0.12); color: #34d399; }
+.hot-badge {
+  display: inline;
+  margin-right: 4px;
+}
+.info-card {
+  background: rgba(30,41,59,0.6);
+  border: 1px solid rgba(99,102,241,0.12);
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 16px;
+}
+.paper-summary {
+  font-size: 0.9rem;
+  color: #cbd5e1;
+  line-height: 1.7;
+  margin-bottom: 14px;
+}
+.paper-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.paper-links a {
+  display: inline-block;
+  padding: 5px 14px;
+  background: rgba(99,102,241,0.12);
+  color: #818cf8;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  transition: background 0.2s;
+}
+.paper-links a:hover {
+  background: rgba(99,102,241,0.25);
+}
+footer {
+  text-align: center;
+  color: #475569;
+  font-size: 0.82rem;
+  padding: 40px 20px;
+  border-top: 1px solid rgba(99,102,241,0.1);
+  margin-top: 40px;
+}
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+.stat-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>小小志AI日报</h1>
+    <div class="date">2026年8月10日 · 星期一</div>
+    <div class="subtitle">关注：VLA · Robotics · World Model · LLM · Multimodal · Agent</div>
+    <div class="stats">
+      <span class="stat-item">📰 HF 热门论文 8</span>
+      <span class="stat-item">📝 arXiv 论文 0</span>
+    </div>
+  </header>
+
+  <div class="highlight-banner">
+    <div class="hl-title">🔥 今日看点</div>
+    <div class="hl-text">本期收录 8 篇论文，均来自 HuggingFace 每日论文社区（当日 arXiv 索引尚未更新）。多模态方向，字节跳动发布 Douyin 多模态嵌入模型技术报告，提供 2B 与 9B 两种规模，统一文本与视觉表征；中科院自动化所则从环境分布设计切入，提出能力感知的多模态智能体训练范式。大语言模型方向，Meta 的 Skaling 把 Chinchilla 与 Kaplan 缩放定律结合，在相同算力下取得 3x 到 10x 的提升；马里兰大学提出 AudioRubrics，用可演化的评分量规作为强化学习奖励优化音频推理。世界模型方向，英伟达的 Addressable Memory 以键值寻址记忆提升视频世界模型预测质量（关键指标 15.5%、19.5%）；清华大学的 UA-NWM 则引入不确定性感知，在空中图像目标导航上稳定优于现有方法并保持低延迟。</div>
+  </div>
+
+  <section class="section">
+    <h2 class="section-title">🎨 Multimodal · 多模态学习</h2>
+
+    <div class="paper-card">
+      <div class="paper-title">Beyond Simply Environment Scaling: Designing Effective Environment Distributions for Multimodal Agent Learning</div>
+      <div class="paper-meta">HF Daily Papers · Chinese Academic of Science Institute of Automation · 2608.03571</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">面向多模态智能体学习，研究如何通过设计更有效的训练环境分布来提升能力，而非简单扩大环境规模，并引入课程学习式的训练安排。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出能力感知的环境构建思路，让训练环境围绕智能体的能力短板进行组织，强调多模态交互特性在环境设计中的作用。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在多个多模态智能体任务上验证了所提环境分布设计相比单纯扩大规模更具训练价值，具体指标详见原文。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于多模态智能体训练方向，建议关注环境分布的构造准则、课程学习节奏，以及不同下游任务上的泛化表现。</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-multimodal">Multimodal</span>
+        <span class="tag tag-agent">Agent Learning</span>
+        <span class="tag tag-data">Environment</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2608.03571">arXiv</a>
+        <a href="https://arxiv.org/pdf/2608.03571">PDF</a>
+        <a href="https://github.com/GaryStack/Beyond-MMEnv-Scaling">Code</a>
+      </div>
+    </div>
+
+    <div class="paper-card hot">
+      <div class="paper-title"><span class="hot-badge">🔥</span> Douyin Multimodal Embedding Model Technical Report</div>
+      <div class="paper-meta">HF Daily Papers · ByteDance · 2608.02148</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">发布面向真实业务的多模态嵌入模型技术报告，介绍其预训练机制与训练流程，统一处理文本与视觉等多种模态的表征学习。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">强调真实场景数据与高效统一的表征设计，提供 2B 与 9B 两种规模的模型，兼顾性能表现与部署成本。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">报告给出 2.92%、0.1% 等关键指标，展示了不同规模模型在检索与表征任务上的表现，具体基准见原文。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于多模态表征学习方向，建议关注跨模态对齐方式、数据规模，以及在推荐与搜索等下游任务的实际收益。</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-multimodal">Multimodal</span>
+        <span class="tag tag-data">Embedding</span>
+        <span class="tag tag-infra">Efficient</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2608.02148">arXiv</a>
+        <a href="https://arxiv.org/pdf/2608.02148">PDF</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">🧠 LLM · 大语言模型</h2>
+
+    <div class="paper-card">
+      <div class="paper-title">SFT Conflicts, RL Coexists: A Theoretical and Empirical Analysis of Multi-Task Learning for LLMs</div>
+      <div class="paper-meta">HF Daily Papers · Chinese Academic of Science Institute of Automation · 2608.03573</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">从理论与实证两个层面分析大语言模型多任务学习中的冲突现象，重点考察监督微调与强化学习在共享参数下如何相互影响。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">揭示监督微调阶段存在的任务间梯度冲突，而强化学习阶段各类目标能够共存，为"先微调后强化"的训练范式提供理论解释。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在多项多任务基准上对比了不同训练顺序的影响，验证了强化学习阶段对任务冲突具有更强的包容能力，具体数据见原文。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于大语言模型训练范式方向，建议关注任务分组策略、损失权重设计，以及该结论在不同规模模型上的稳健性。</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-llm">LLM</span>
+        <span class="tag tag-rl">RL</span>
+        <span class="tag tag-reasoning">Multi-Task</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2608.03573">arXiv</a>
+        <a href="https://arxiv.org/pdf/2608.03573">PDF</a>
+        <a href="https://github.com/GaryStack/Parallel-RL">Code</a>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">Reinforcement Learning with Evolving Rubrics as Rewards for Audio Reasoning</div>
+      <div class="paper-meta">HF Daily Papers · University of Maryland College Park · 2608.02831</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">把可演化的评分量规用作强化学习的奖励信号，引导语言模型在音频推理任务上完成更符合人类标准的训练。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 AudioRubrics，让评分标准在训练过程中持续演化，缓解固定奖励函数难以刻画复杂音频推理质量的难题，项目与代码已开源。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在音频推理相关基准上对比了演化量规与静态奖励的差异，展示了奖励质量提升对推理能力的带动，具体数据见原文。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于大语言模型推理与音频方向，建议关注量规演化的稳定性、奖励稀疏性问题，以及跨音频任务的迁移表现。</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-llm">LLM</span>
+        <span class="tag tag-rl">RL</span>
+        <span class="tag tag-reasoning">Audio Reasoning</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2608.02831">arXiv</a>
+        <a href="https://arxiv.org/pdf/2608.02831">PDF</a>
+        <a href="https://audiorubrics.github.io/">Project</a>
+        <a href="https://github.com/tianyi-lab/AudioRubrics">Code</a>
+      </div>
+    </div>
+
+    <div class="paper-card hot">
+      <div class="paper-title"><span class="hot-badge">🔥</span> Skaling: Chinchilla's Exponents Meet Kaplan's Coupling</div>
+      <div class="paper-meta">HF Daily Papers · AI at Meta · 2608.07222</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">把 Chinchilla 缩放定律中的幂指数与 Kaplan 提出的耦合关系相结合，重新刻画语言模型在参数量与数据量之间的缩放规律。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 Skaling 方法，给出更鲁棒且更高效的缩放刻画方式，使训练资源规划在不确定的耦合假设下仍然可靠。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">报告给出 3x 与 10x 等提升指标，显示在相同算力预算下相比基线可获得明显更优的模型表现。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于语言模型缩放定律方向，建议关注幂指数估计的稳健性、不同数据质量的敏感性，以及在预训练预算分配上的实用性。</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-llm">LLM</span>
+        <span class="tag tag-data">Scaling Law</span>
+        <span class="tag tag-infra">Training</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2608.07222">arXiv</a>
+        <a href="https://arxiv.org/pdf/2608.07222">PDF</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">🧩 Agent · 智能体与工具使用</h2>
+
+    <div class="paper-card">
+      <div class="paper-title">StreamArena: Toward Continuous, Interactive, and Long-Horizon Agentic Streaming Video Understanding</div>
+      <div class="paper-meta">HF Daily Papers · Xiaohongshu · 2608.05703</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">构建面向流式视频的智能体理解与评测框架，让模型在视频持续播放的过程中进行实时交互式推理，而非看完整个片段再作答。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 StreamArena 基准，强调连续、交互、长时程三大特性，将多模态视频理解从离线问答推进到在线流式智能体范式。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在长视频流式理解任务上验证了框架对实时交互能力的区分度，相关项目页面与代码均已公开，具体指标见原文。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于多模态视频理解方向，建议关注流式推理的延迟、长程记忆机制，以及智能体在真实直播场景的可用性。</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-agent">Agent</span>
+        <span class="tag tag-multimodal">Multimodal</span>
+        <span class="tag tag-benchmark">Benchmark</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2608.05703">arXiv</a>
+        <a href="https://arxiv.org/pdf/2608.05703">PDF</a>
+        <a href="https://hkuzxc.github.io/StreamArena_web/">Project</a>
+        <a href="https://github.com/JIA-Lab-research/StreamArena">Code</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">🌍 World Model · 世界模型</h2>
+
+    <div class="paper-card hot">
+      <div class="paper-title"><span class="hot-badge">🔥</span> Addressable Memory for Video World Models</div>
+      <div class="paper-meta">HF Daily Papers · NVIDIA · 2608.07408</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">在视频世界模型中引入可寻址的记忆机制，以键值结构组织历史视觉信息，支撑交互式视频的生成与预测。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出基于键值寻址的记忆模块，让世界模型能够按需读取特定历史片段，缓解长视频中信息被平均池化而丢失的问题。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">报告给出 15.5% 与 19.5% 等关键提升指标，在视频世界模型的预测质量与可控性上优于无显式记忆的基线，详见原文。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于世界模型与视频生成方向，建议关注记忆寻址的粒度、长程一致性，以及交互式视频编辑等下游应用潜力。</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-world">World Model</span>
+        <span class="tag tag-vla">Video</span>
+        <span class="tag tag-data">Memory</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2608.07408">arXiv</a>
+        <a href="https://arxiv.org/pdf/2608.07408">PDF</a>
+        <a href="https://research.nvidia.com/labs/sil/projects/WorldTrace/">Project</a>
+      </div>
+    </div>
+
+    <div class="paper-card hot">
+      <div class="paper-title"><span class="hot-badge">🔥</span> Uncertainty-Aware World Model for Aerial Image-Goal Navigation</div>
+      <div class="paper-meta">HF Daily Papers · Tsinghua University · 2608.05597</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">面向无人机空中图像目标导航任务，构建能够感知自身预测不确定性的世界模型，在未知环境中规划抵达目标影像的飞行路径。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出不确定性感知的世界模型，让导航决策能够区分高置信与低置信区域，从而在预测不可靠时采取更保守的探索策略。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">实验表明该模型在多项空中导航基准上稳定优于现有导航世界模型，同时保持较低的推理延迟，具体指标见原文。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于世界模型与机器人导航方向，建议关注不确定性量化方式、Sim-to-Real 迁移效果，以及复杂环境下的泛化能力。</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-world">World Model</span>
+        <span class="tag tag-robot">Aerial Navigation</span>
+        <span class="tag tag-embodied">Embodied</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2608.05597">arXiv</a>
+        <a href="https://arxiv.org/pdf/2608.05597">PDF</a>
+        <a href="https://duryi.github.io/UA-NWM-Project-Page">Project</a>
+        <a href="https://github.com/DurYi/UA-NWM">Code</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>小小志AI日报 · 自动生成于 2026-08-10</p>
+    <p>数据来源：arXiv · HuggingFace Daily Papers · 机构官方博客</p>
+  </footer>
+</div>
+</body>
+</html>
