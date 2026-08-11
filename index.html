@@ -658,6 +658,91 @@
 <script>
 // ===== DATA =====
 const PAPERS_DB = [
+    // === 2026-08-11 ===
+    {
+        date: "2026-08-11",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "MatrAIx: Simulating the World with 8.3 Billion Persona Agents",
+        venue: "HF Daily Papers · MatrAIx · 2608.04205",
+        summary: "🔬 技术路线: 构建包含 83 亿个人格化智能体的大规模世界模拟系统，采用端到端可扩展框架，让每个智能体拥有独立行为画像与交互能力。 | 💡 创新点: 以人格化智能体为核心，将现实世界个体行为抽象为可计算单元，实现大规模社会与群体行为的高保真仿真。 | 📊 实验效果: 在多项评测中取得 91.5% 等核心指标，基于 80 亿参数模型支撑 83 亿智能体的并行仿真，详见原文。 | ⭐ 整体评价: 属于智能体与社会仿真方向，建议关注个体行为建模真实度、仿真可扩展性，以及在城市规划与政策推演等场景的应用潜力。",
+        tags: [["Agent","green"],["Simulation","green"],["Persona","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2608.04205"],["PDF","https://arxiv.org/pdf/2608.04205"],["Project","https://matraix.ai/"],["Code","https://github.com/MatrAIx-ai/MatrAIx-Persona-8B"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"构建包含 83 亿个人格化智能体的大规模世界模拟系统，采用端到端可扩展框架，让每个智能体拥有独立行为画像与交互能力。"},{"label":"💡 创新点","text":"以人格化智能体为核心，将现实世界个体行为抽象为可计算单元，实现大规模社会与群体行为的高保真仿真。"},{"label":"📊 实验效果","text":"在多项评测中取得 91.5% 等核心指标，基于 80 亿参数模型支撑 83 亿智能体的并行仿真，详见原文。"},{"label":"⭐ 整体评价","text":"属于智能体与社会仿真方向，建议关注个体行为建模真实度、仿真可扩展性，以及在城市规划与政策推演等场景的应用潜力。"}]
+    },
+    {
+        date: "2026-08-11",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "DCAS: Decoupling CLI Agent Scaffolding to Internalize Planning across Scaffolds",
+        venue: "HF Daily Papers · Centre for Software Excellence · 2608.06113",
+        summary: "🔬 技术路线: 研究基于命令行（CLI）的智能体脚手架，将脚手架结构与规划能力解耦，使模型在不同脚手架下复用相同规划策略。 | 💡 创新点: 提出 DCAS 方法，把命令行脚手架搭建与内在规划能力分离，让规划能力脱离具体脚手架固化到模型内部，提升跨脚手架泛化。 | 📊 实验效果: 在命令行规划相关任务上验证了该方法相比耦合式设计的有效性，具体指标详见原文。 | ⭐ 整体评价: 属于智能体与代码自动化方向，建议关注解耦前后泛化差异、脚手架迁移成本，以及生产环境命令行助手的可用性。",
+        tags: [["Agent","green"],["CLI","green"],["Planning","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2608.06113"],["PDF","https://arxiv.org/pdf/2608.06113"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"研究基于命令行（CLI）的智能体脚手架，将脚手架结构与规划能力解耦，使模型在不同脚手架下复用相同规划策略。"},{"label":"💡 创新点","text":"提出 DCAS 方法，把命令行脚手架搭建与内在规划能力分离，让规划能力脱离具体脚手架固化到模型内部，提升跨脚手架泛化。"},{"label":"📊 实验效果","text":"在命令行规划相关任务上验证了该方法相比耦合式设计的有效性，具体指标详见原文。"},{"label":"⭐ 整体评价","text":"属于智能体与代码自动化方向，建议关注解耦前后泛化差异、脚手架迁移成本，以及生产环境命令行助手的可用性。"}]
+    },
+    {
+        date: "2026-08-11",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Efficient Knowledge Distillation for LLMs: Offline Top-K Logits and a Fused Chunked KL Loss",
+        venue: "HF Daily Papers · Multiverse Computing · 2608.03796",
+        summary: "🔬 技术路线: 面向大语言模型设计高效知识蒸馏方案，采用离线提取的 Top-K 对数概率作为教师信号，以分块融合的 KL 散度损失进行对齐。 | 💡 创新点: 提出 Full-Chunked-KL-Loss，将 KL 损失按块融合计算，配合离线 Top-K 对数概率，在降低计算开销的同时保留蒸馏质量。 | 📊 实验效果: 在 4K 至 256K 等规模区间验证了压缩与蒸馏效果，关键指标详见原文，代码与项目页面均已开源。 | ⭐ 整体评价: 属于大语言模型压缩与蒸馏方向，建议关注 Top-K 截断的信息损失、分块损失的数值稳定性，以及在端侧部署上的收益。",
+        tags: [["LLM","green"],["Compression","green"],["Distillation","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2608.03796"],["PDF","https://arxiv.org/pdf/2608.03796"],["Project","https://multiversecomputing.com"],["Code","https://github.com/CompactifAI/Full-Chunked-KL-Loss"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"面向大语言模型设计高效知识蒸馏方案，采用离线提取的 Top-K 对数概率作为教师信号，以分块融合的 KL 散度损失进行对齐。"},{"label":"💡 创新点","text":"提出 Full-Chunked-KL-Loss，将 KL 损失按块融合计算，配合离线 Top-K 对数概率，在降低计算开销的同时保留蒸馏质量。"},{"label":"📊 实验效果","text":"在 4K 至 256K 等规模区间验证了压缩与蒸馏效果，关键指标详见原文，代码与项目页面均已开源。"},{"label":"⭐ 整体评价","text":"属于大语言模型压缩与蒸馏方向，建议关注 Top-K 截断的信息损失、分块损失的数值稳定性，以及在端侧部署上的收益。"}]
+    },
+    {
+        date: "2026-08-11",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "What building an AI-native finance function taught me",
+        venue: "",
+        summary: "OpenAI 分享将企业财务职能改造为 AI 原生的实践经验，探讨大模型如何重塑财务流程与组织方式。",
+        tags: [],
+        links: [["来源","https://openai.com/index/building-an-ai-native-finance-function/"]]
+    },
+    {
+        date: "2026-08-11",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "Expanding Daybreak as the Cyber Defense Window Narrows",
+        venue: "",
+        summary: "OpenAI 介绍 Daybreak 网络防御项目最新进展，强调网络防御窗口正在收窄，需要加速防御能力部署。",
+        tags: [],
+        links: [["来源","https://openai.com/index/expanding-daybreak-as-the-cyber-defense-window-narrows/"]]
+    },
+    {
+        date: "2026-08-11",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "Putting frontier cyber models in more trusted hands",
+        venue: "",
+        summary: "OpenAI 讨论将前沿网络模型交给更可信赖的主体使用，关注先进模型的安全分发与治理机制。",
+        tags: [],
+        links: [["来源","https://openai.com/index/putting-frontier-cyber-models-in-more-trusted-hands/"]]
+    },
+    {
+        date: "2026-08-11",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "Premium seats are coming to ChatGPT Business",
+        venue: "",
+        summary: "OpenAI 宣布 ChatGPT Business 将推出高级席位（Premium seats），为企业团队提供更多能力层级选择。",
+        tags: [],
+        links: [["来源","https://openai.com/index/premium-seats-chatgpt-business/"]]
+    },
+    {
+        date: "2026-08-11",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "Learning more about Claude's mathematical capabilities",
+        venue: "",
+        summary: "Anthropic 发布关于 Claude 数学能力的研究，探讨模型在黎曼函数等数学难题上的表现与内在机理。",
+        tags: [],
+        links: [["来源","https://www.anthropic.com/research/riemann-zeta"]]
+    },
     // === 2026-08-10 ===
     {
         date: "2026-08-10",
@@ -21142,6 +21227,13 @@ const PAPERS_DB = [
 ];
 
 const DAILY_OVERVIEW = {
+    "2026-08-11": {
+        bannerTitle: "🔥 今日看点",
+        bannerSubtitle: "本期 arXiv 索引采集超时，共收录 3 篇 HuggingFace 每日热门论文与 5 条机构官方动态。智能体方向，MatrAIx 用 83 亿人格化智能体构建大规模世界仿真（核心指标 91.5%），DCAS 将命令行脚手架与内在规划解耦以提升跨脚手架泛化。大语言模型方向，Multiverse Computing 提出 Full-Chunked-KL-Loss 分块融合知识蒸馏损失，配合离线 Top-K 对数概率在 4K 至 256K 区间高效压缩模型。机构动态方面，OpenAI 密集发布 AI 原生财务、网络防御（Daybreak）与 ChatGPT Business 高级席位等更新，Anthropic 则公开了 Claude 数学能力（黎曼函数）研究。",
+        picks: ["MatrAIx: Simulating the World with 8.3 Billion Persona Agents"],
+        totalPapers: 3,
+        totalNews: 5
+    },
     "2026-08-10": {
         bannerTitle: "🔥 今日看点",
         bannerSubtitle: "本期收录 8 篇论文，均来自 HuggingFace 每日论文社区（当日 arXiv 索引尚未更新）。多模态方向，字节跳动发布 Douyin 多模态嵌入模型技术报告，提供 2B 与 9B 两种规模，统一文本与视觉表征；中科院自动化所则从环境分布设计切入，提出能力感知的多模态智能体训练范式。大语言模型方向，Meta 的 Skaling 把 Chinchilla 与 Kaplan 缩放定律结合，在相同算力下取得 3x 到 10x 的提升；马里兰大学提出 AudioRubrics，用可演化的评分量规作为强化学习奖励优化音频推理。世界模型方向，英伟达的 Addressable Memory 以键值寻址记忆提升视频世界模型预测质量（关键指标 15.5%、19.5%）；清华大学的 UA-NWM 则引入不确定性感知，在空中图像目标导航上稳定优于现有方法并保持低延迟。",
