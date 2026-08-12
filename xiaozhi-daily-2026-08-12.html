@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>小小志AI日报 - 2026年8月12日</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans SC', sans-serif;
+  background: #0a0e1a;
+  color: #e0e6f0;
+  line-height: 1.7;
+  min-height: 100vh;
+}
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+header {
+  text-align: center;
+  margin-bottom: 48px;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, rgba(59,130,246,0.08) 0%, rgba(139,92,246,0.08) 100%);
+  border-radius: 20px;
+  border: 1px solid rgba(99,102,241,0.15);
+}
+header h1 {
+  font-size: 2rem;
+  background: linear-gradient(135deg, #60a5fa, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 8px;
+}
+header .date {
+  color: #94a3b8;
+  font-size: 1rem;
+}
+header .subtitle {
+  color: #64748b;
+  font-size: 0.9rem;
+  margin-top: 6px;
+}
+.highlight-banner {
+  background: linear-gradient(135deg, rgba(249,115,22,0.1) 0%, rgba(234,179,8,0.08) 100%);
+  border: 1px solid rgba(249,115,22,0.2);
+  border-radius: 14px;
+  padding: 20px 24px;
+  margin-bottom: 36px;
+}
+.hl-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fb923c;
+  margin-bottom: 8px;
+}
+.hl-text {
+  font-size: 0.92rem;
+  color: #cbd5e1;
+  line-height: 1.7;
+}
+.section {
+  margin-bottom: 40px;
+}
+.section-title {
+  font-size: 1.4rem;
+  color: #f1f5f9;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(99,102,241,0.2);
+}
+.paper-card {
+  background: rgba(30,41,59,0.6);
+  border: 1px solid rgba(99,102,241,0.12);
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 16px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.paper-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(99,102,241,0.1);
+  border-color: rgba(99,102,241,0.3);
+}
+.paper-card.hot {
+  border-color: rgba(249,115,22,0.25);
+  background: rgba(30,41,59,0.7);
+}
+.paper-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #f8fafc;
+  margin-bottom: 8px;
+}
+.paper-meta {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-bottom: 10px;
+}
+.summary-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+@media (max-width: 640px) {
+  .summary-grid { grid-template-columns: 1fr; }
+}
+.summary-item {
+  background: rgba(15,23,42,0.5);
+  border-radius: 10px;
+  padding: 12px 14px;
+  border: 1px solid rgba(99,102,241,0.08);
+}
+.summary-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #818cf8;
+  margin-bottom: 4px;
+}
+.summary-text {
+  font-size: 0.88rem;
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+.paper-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.tag {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+.tag-agent { background: rgba(16,185,129,0.12); color: #34d399; }
+.tag-llm { background: rgba(99,102,241,0.12); color: #818cf8; }
+.tag-multimodal { background: rgba(244,114,182,0.12); color: #f472b6; }
+.tag-world { background: rgba(251,191,36,0.12); color: #fbbf24; }
+.tag-robot { background: rgba(251,146,60,0.12); color: #fb923c; }
+.tag-rl { background: rgba(45,212,191,0.12); color: #2dd4bf; }
+.tag-benchmark { background: rgba(34,211,238,0.12); color: #22d3ee; }
+.tag-vla { background: rgba(59,130,246,0.12); color: #60a5fa; }
+.tag-memory { background: rgba(192,132,252,0.12); color: #c084fc; }
+.tag-reasoning { background: rgba(132,204,22,0.12); color: #a3e635; }
+.tag-data { background: rgba(250,204,21,0.12); color: #facc15; }
+.tag-infra { background: rgba(167,139,250,0.12); color: #a78bfa; }
+.tag-embodied { background: rgba(251,146,60,0.12); color: #fb923c; }
+.tag-3d { background: rgba(148,163,184,0.12); color: #94a3b8; }
+.tag-tool { background: rgba(52,211,153,0.12); color: #34d399; }
+.hot-badge {
+  display: inline;
+  margin-right: 4px;
+}
+.info-card {
+  background: rgba(30,41,59,0.6);
+  border: 1px solid rgba(99,102,241,0.12);
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 16px;
+}
+.paper-summary {
+  font-size: 0.9rem;
+  color: #cbd5e1;
+  line-height: 1.7;
+  margin-bottom: 14px;
+}
+.paper-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.paper-links a {
+  display: inline-block;
+  padding: 5px 14px;
+  background: rgba(99,102,241,0.12);
+  color: #818cf8;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  transition: background 0.2s;
+}
+.paper-links a:hover {
+  background: rgba(99,102,241,0.25);
+}
+footer {
+  text-align: center;
+  color: #475569;
+  font-size: 0.82rem;
+  padding: 40px 20px;
+  border-top: 1px solid rgba(99,102,241,0.1);
+  margin-top: 40px;
+}
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+.stat-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>小小志AI日报</h1>
+    <div class="date">2026年8月12日 · 星期三</div>
+    <div class="subtitle">关注：VLA · Robotics · World Model · LLM · Multimodal · Agent</div>
+    <div class="stats">
+      <span class="stat-item">📰 HF 热门论文 8</span>
+      <span class="stat-item">📝 arXiv 论文 0</span>
+      <span class="stat-item">🏢 机构发布 2</span>
+    </div>
+  </header>
+
+  <div class="highlight-banner">
+    <div class="hl-title">🔥 今日看点</div>
+    <div class="hl-text">本期 arXiv 索引采集超时，共收录 8 篇 HuggingFace 每日热门论文与 2 条机构官方动态。智能体方向，字节跳动发布 SWE-Bench ProMax 大规模多语言代码重构基准（关键通过率 60% 与 41.2%），Ouroboros 提出评审驱动的闭环自演进编程智能体（终端任务 86.74%、90.69%，开源逾千星），KAIST 提出层级教师记忆蒸馏让 4B 小模型继承大模型经验。大语言模型方向，加州大学圣地亚哥分校的无监督在线自蒸馏取得 8.5% 等提升，Motif 3 以混合专家架构支持 256K 长上下文。机构动态方面，OpenAI 宣布在 ChatGPT 中测试广告，并将 Daybreak 模型上线亚马逊云科技。</div>
+  </div>
+
+  <section class="section">
+    <h2 class="section-title">🧩 Agent · 智能体与工具使用</h2>
+
+    <div class="paper-card hot">
+      <div class="paper-title"><span class="hot-badge">🔥</span> SWE-Bench ProMax: Benchmarking Agents on Large-Scale Multilingual Code Refactoring</div>
+      <div class="paper-meta">HF Daily Papers · ByteDance · 2608.09802</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">构建面向大规模多语言代码重构的智能体基准，将真实仓库中的重构任务标准化为可自动评测的问答对，覆盖多种编程语言与复杂长程改动。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 SWE-Bench ProMax，把评测重点从单文件补丁扩展到跨文件、跨语言的大规模重构，更贴近工业级代码维护的真实场景。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在基准上以 60% 与 41.2% 等关键通过率刻画当前智能体能力上限，具体分项目标与分项结果详见原文。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于智能体代码重构评测方向，建议关注多语言覆盖度、长程依赖追踪能力，以及该基准对真实软件工程任务的区分度。</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-agent">Agent</span>
+        <span class="tag tag-benchmark">Benchmark</span>
+        <span class="tag tag-tool">Code</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2608.09802">arXiv</a>
+        <a href="https://arxiv.org/pdf/2608.09802">PDF</a>
+        <a href="https://huggingface.co/datasets/swe-bench-promax/SWE-Bench-ProMax">Project</a>
+      </div>
+    </div>
+
+    <div class="paper-card hot">
+      <div class="paper-title"><span class="hot-badge">🔥</span> Ouroboros: A Self-Developing Frontier Coding Agent with Reviewed Core Evolution</div>
+      <div class="paper-meta">HF Daily Papers · 2608.08311</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">构建可自我演进的前沿编程智能体，引入经评审的核心演化机制，让智能体在终端任务上迭代改进自身代码与策略，形成自我开发闭环。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 Ouroboros，以评审驱动的闭环演化替代一次性训练，使智能体基于外部反馈持续打磨核心能力，摆脱对静态权重的依赖。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在终端任务基准上取得 86.74% 与 90.69% 等表现，代码已开源并获逾千星标，验证了闭环演化的有效性。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于自改进编程智能体方向，建议关注评审反馈的质量门槛、演化过程的安全边界，以及开源实现在工程任务上的可复现性。</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-agent">Agent</span>
+        <span class="tag tag-reasoning">Self-Evolving</span>
+        <span class="tag tag-tool">Coding</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2608.08311">arXiv</a>
+        <a href="https://arxiv.org/pdf/2608.08311">PDF</a>
+        <a href="https://ouroboros-agent.ai">Project</a>
+        <a href="https://github.com/razzant/ouroboros">Code</a>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">Macaron-V1: Towards Open Continual Learning with Self-Improvement and Mixture-of-LoRA</div>
+      <div class="paper-meta">HF Daily Papers · Mind Lab · 2608.09819</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">面向开放持续学习场景构建具备自我改进能力的智能体框架，采用混合低秩适配机制在单一模型中储存多任务能力，并通过自蒸馏巩固旧知识。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 Macaron-V1，将混合低秩专家与持续学习结合，使模型在吸收新任务时无需全量重训即可增量更新，缓解灾难性遗忘。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">以 744B 与 50B 的参数规模配置在持续学习基准上验证方法，关键指标与分项详见原文。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于智能体持续学习方向，建议关注多任务能力的隔离与复用、低秩模块的路由开销，以及长周期任务上的稳定性。</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-agent">Agent</span>
+        <span class="tag tag-memory">Continual</span>
+        <span class="tag tag-data">LoRA</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2608.09819">arXiv</a>
+        <a href="https://arxiv.org/pdf/2608.09819">PDF</a>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">Agent Memory Distillation: Empowering Small LLM Agents with Hierarchical Teacher Memory</div>
+      <div class="paper-meta">HF Daily Papers · KAIST AI · 2608.07169</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出面向小型智能体的层级化教师记忆蒸馏方法，让大模型以结构化记忆层级作为教师，把长期经验压缩进小模型的上下文与参数中。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 Agent Memory Distillation，用分层教师记忆替代单条示范，使小模型在有限上下文下也能继承大模型的长期规划与工具使用经验。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在智能体任务上取得 27.2%、11.2%、3.4% 等提升，并以 4B 规模小模型验证蒸馏收益，代码已开源。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于轻量化智能体方向，建议关注教师记忆的压缩比、小模型在长程任务上的留存率，以及蒸馏带来的能力上限变化。</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-agent">Agent</span>
+        <span class="tag tag-memory">Memory</span>
+        <span class="tag tag-data">Distillation</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2608.07169">arXiv</a>
+        <a href="https://arxiv.org/pdf/2608.07169">PDF</a>
+        <a href="https://agent-memory-distillation.github.io">Project</a>
+        <a href="https://github.com/taeilkim2465/agentic_memory_distillation">Code</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">🧠 LLM · 大语言模型</h2>
+
+    <div class="paper-card">
+      <div class="paper-title">On-Policy Self-Distillation without Any Supervision</div>
+      <div class="paper-meta">HF Daily Papers · University of California at San Diego · 2608.06296</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出无需任何外部监督信号的在线自蒸馏方法，让语言模型以自身最新策略作为教师，在训练过程中持续对齐当前策略分布。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 On-Policy 自蒸馏框架，去除对教师模型或标注数据的依赖，仅依靠模型自身生成样本进行策略内知识迁移。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在多项基准上取得 8.5%、10.7%、3.2%、2.3% 等提升，验证无监督自蒸馏相比基线更优。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于大语言模型训练范式方向，建议关注自蒸馏目标与训练信号稳定性、对推理能力的实际增益，以及超参敏感性。</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-llm">LLM</span>
+        <span class="tag tag-data">Distillation</span>
+        <span class="tag tag-infra">Unsupervised</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2608.06296">arXiv</a>
+        <a href="https://arxiv.org/pdf/2608.06296">PDF</a>
+        <a href="https://williamium3000.github.io/u-opsd/">Project</a>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">Stealing Reasoning Traces from Proprietary LLM APIs</div>
+      <div class="paper-meta">HF Daily Papers · 2608.09867</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">研究如何从闭源大语言模型的应用程序接口中提取其隐藏的推理轨迹，通过构造查询与观测输出来反向推断模型内部的中间推理步骤。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出一种可扩展的推理轨迹窃取方法，可在不对目标模型做白盒访问的前提下，规模化重建专有模型的思维链与推理过程。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">实验验证了该方法在不同规模专有模型上的可迁移性，具体数据详见原文。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于模型安全与推理隐私方向，建议关注闭源服务商对推理轨迹的暴露面、防御蒸馏式攻击的必要性，以及由此引发的合规风险。</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-llm">LLM</span>
+        <span class="tag tag-reasoning">Reasoning</span>
+        <span class="tag tag-infra">Security</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2608.09867">arXiv</a>
+        <a href="https://arxiv.org/pdf/2608.09867">PDF</a>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">Motif 3: Technical Report</div>
+      <div class="paper-meta">HF Daily Papers · Motif Technologies · 2608.09119</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">发布 Motif 3 技术报告，采用混合专家架构构建大语言模型，统一预训练、监督微调与推理阶段，并支持长上下文处理。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出以统一架构承载预训练到微调全流程的混合专家模型，强调高效与统一，并以 256K 上下文长度支撑长文档与多轮任务。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在长上下文与通用能力基准上验证了 256K 长度下的表现，具体分数详见技术报告。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于前沿大语言模型方向，建议关注混合专家路由效率、长上下文下的显存与延迟，以及与同代开源模型的性价比对比。</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-llm">LLM</span>
+        <span class="tag tag-infra">MoE</span>
+        <span class="tag tag-data">Long-Context</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2608.09119">arXiv</a>
+        <a href="https://arxiv.org/pdf/2608.09119">PDF</a>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">Sci-VBench: Evaluating Knowledge- and Reasoning-Intensive Video Generation in Science Domains</div>
+      <div class="paper-meta">HF Daily Papers · 2608.09873</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出 Sci-VBench 基准，用于评估科学领域中依赖知识与推理的视频生成能力，将学科知识与推理链纳入视频生成质量的评测维度。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 Sci-VBench，把评测从画面美感扩展到科学正确性与推理一致性，要求生成视频同时满足学科事实与逻辑连贯。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在科学视频生成任务上验证了该基准对现有方法的区分能力，代码已开源，具体分项详见原文。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于视频生成评测方向，建议关注学科知识注入方式、生成与事实的一致性，以及该基准对科教内容生产的指导意义。</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-llm">LLM</span>
+        <span class="tag tag-multimodal">Video</span>
+        <span class="tag tag-benchmark">Benchmark</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2608.09873">arXiv</a>
+        <a href="https://arxiv.org/pdf/2608.09873">PDF</a>
+        <a href="https://github.com/sci-vbench/sci-vbench">Code</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">🏢 行业动态 · 重点机构发布</h2>
+
+    <div class="info-card">
+      <div class="paper-title">Testing ads in ChatGPTCompany</div>
+      <div class="paper-summary">OpenAI 宣布开始在 ChatGPT 中测试广告投放，探索在对话产品中引入商业化广告位的全新变现方式。</div>
+      <div class="paper-links">
+        <a href="https://openai.com/index/testing-ads-in-chatgpt/">来源</a>
+      </div>
+    </div>
+
+    <div class="info-card">
+      <div class="paper-title">Daybreak models are now available on AWS</div>
+      <div class="paper-summary">OpenAI 宣布将 Daybreak 系列模型上线亚马逊云科技，使云端用户可在托管环境中调用相关前沿能力。</div>
+      <div class="paper-links">
+        <a href="https://openai.com/index/daybreak-models-are-now-available-on-aws/">来源</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>小小志AI日报 · 自动生成于 2026-08-12</p>
+    <p>数据来源：arXiv · HuggingFace Daily Papers · 机构官方博客</p>
+  </footer>
+</div>
+</body>
+</html>

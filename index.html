@@ -658,6 +658,117 @@
 <script>
 // ===== DATA =====
 const PAPERS_DB = [
+    // === 2026-08-12 ===
+    {
+        date: "2026-08-12",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "SWE-Bench ProMax: Benchmarking Agents on Large-Scale Multilingual Code Refactoring",
+        venue: "HF Daily Papers · ByteDance · 2608.09802",
+        summary: "🔬 技术路线: 构建面向大规模多语言代码重构的智能体基准，将真实仓库中的重构任务标准化为可自动评测的问答对，覆盖多种编程语言与复杂长程改动。 | 💡 创新点: 提出 SWE-Bench ProMax，把评测重点从单文件补丁扩展到跨文件、跨语言的大规模重构，更贴近工业级代码维护的真实场景。 | 📊 实验效果: 在基准上以 60% 与 41.2% 等关键通过率刻画当前智能体能力上限，具体分项目标与分项结果详见原文。 | ⭐ 整体评价: 属于智能体代码重构评测方向，建议关注多语言覆盖度、长程依赖追踪能力，以及该基准对真实软件工程任务的区分度。",
+        tags: [["Agent","green"],["Benchmark","green"],["Code","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2608.09802"],["PDF","https://arxiv.org/pdf/2608.09802"],["Project","https://huggingface.co/datasets/swe-bench-promax/SWE-Bench-ProMax"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"构建面向大规模多语言代码重构的智能体基准，将真实仓库中的重构任务标准化为可自动评测的问答对，覆盖多种编程语言与复杂长程改动。"},{"label":"💡 创新点","text":"提出 SWE-Bench ProMax，把评测重点从单文件补丁扩展到跨文件、跨语言的大规模重构，更贴近工业级代码维护的真实场景。"},{"label":"📊 实验效果","text":"在基准上以 60% 与 41.2% 等关键通过率刻画当前智能体能力上限，具体分项目标与分项结果详见原文。"},{"label":"⭐ 整体评价","text":"属于智能体代码重构评测方向，建议关注多语言覆盖度、长程依赖追踪能力，以及该基准对真实软件工程任务的区分度。"}]
+    },
+    {
+        date: "2026-08-12",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Ouroboros: A Self-Developing Frontier Coding Agent with Reviewed Core Evolution",
+        venue: "HF Daily Papers · 2608.08311",
+        summary: "🔬 技术路线: 构建可自我演进的前沿编程智能体，引入经评审的核心演化机制，让智能体在终端任务上迭代改进自身代码与策略，形成自我开发闭环。 | 💡 创新点: 提出 Ouroboros，以评审驱动的闭环演化替代一次性训练，使智能体基于外部反馈持续打磨核心能力，摆脱对静态权重的依赖。 | 📊 实验效果: 在终端任务基准上取得 86.74% 与 90.69% 等表现，代码已开源并获逾千星标，验证了闭环演化的有效性。 | ⭐ 整体评价: 属于自改进编程智能体方向，建议关注评审反馈的质量门槛、演化过程的安全边界，以及开源实现在工程任务上的可复现性。",
+        tags: [["Agent","green"],["Self-Evolving","green"],["Coding","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2608.08311"],["PDF","https://arxiv.org/pdf/2608.08311"],["Project","https://ouroboros-agent.ai"],["Code","https://github.com/razzant/ouroboros"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"构建可自我演进的前沿编程智能体，引入经评审的核心演化机制，让智能体在终端任务上迭代改进自身代码与策略，形成自我开发闭环。"},{"label":"💡 创新点","text":"提出 Ouroboros，以评审驱动的闭环演化替代一次性训练，使智能体基于外部反馈持续打磨核心能力，摆脱对静态权重的依赖。"},{"label":"📊 实验效果","text":"在终端任务基准上取得 86.74% 与 90.69% 等表现，代码已开源并获逾千星标，验证了闭环演化的有效性。"},{"label":"⭐ 整体评价","text":"属于自改进编程智能体方向，建议关注评审反馈的质量门槛、演化过程的安全边界，以及开源实现在工程任务上的可复现性。"}]
+    },
+    {
+        date: "2026-08-12",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Macaron-V1: Towards Open Continual Learning with Self-Improvement and Mixture-of-LoRA",
+        venue: "HF Daily Papers · Mind Lab · 2608.09819",
+        summary: "🔬 技术路线: 面向开放持续学习场景构建具备自我改进能力的智能体框架，采用混合低秩适配机制在单一模型中储存多任务能力，并通过自蒸馏巩固旧知识。 | 💡 创新点: 提出 Macaron-V1，将混合低秩专家与持续学习结合，使模型在吸收新任务时无需全量重训即可增量更新，缓解灾难性遗忘。 | 📊 实验效果: 以 744B 与 50B 的参数规模配置在持续学习基准上验证方法，关键指标与分项详见原文。 | ⭐ 整体评价: 属于智能体持续学习方向，建议关注多任务能力的隔离与复用、低秩模块的路由开销，以及长周期任务上的稳定性。",
+        tags: [["Agent","green"],["Continual","green"],["LoRA","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2608.09819"],["PDF","https://arxiv.org/pdf/2608.09819"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"面向开放持续学习场景构建具备自我改进能力的智能体框架，采用混合低秩适配机制在单一模型中储存多任务能力，并通过自蒸馏巩固旧知识。"},{"label":"💡 创新点","text":"提出 Macaron-V1，将混合低秩专家与持续学习结合，使模型在吸收新任务时无需全量重训即可增量更新，缓解灾难性遗忘。"},{"label":"📊 实验效果","text":"以 744B 与 50B 的参数规模配置在持续学习基准上验证方法，关键指标与分项详见原文。"},{"label":"⭐ 整体评价","text":"属于智能体持续学习方向，建议关注多任务能力的隔离与复用、低秩模块的路由开销，以及长周期任务上的稳定性。"}]
+    },
+    {
+        date: "2026-08-12",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Agent Memory Distillation: Empowering Small LLM Agents with Hierarchical Teacher Memory",
+        venue: "HF Daily Papers · KAIST AI · 2608.07169",
+        summary: "🔬 技术路线: 提出面向小型智能体的层级化教师记忆蒸馏方法，让大模型以结构化记忆层级作为教师，把长期经验压缩进小模型的上下文与参数中。 | 💡 创新点: 提出 Agent Memory Distillation，用分层教师记忆替代单条示范，使小模型在有限上下文下也能继承大模型的长期规划与工具使用经验。 | 📊 实验效果: 在智能体任务上取得 27.2%、11.2%、3.4% 等提升，并以 4B 规模小模型验证蒸馏收益，代码已开源。 | ⭐ 整体评价: 属于轻量化智能体方向，建议关注教师记忆的压缩比、小模型在长程任务上的留存率，以及蒸馏带来的能力上限变化。",
+        tags: [["Agent","green"],["Memory","green"],["Distillation","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2608.07169"],["PDF","https://arxiv.org/pdf/2608.07169"],["Project","https://agent-memory-distillation.github.io"],["Code","https://github.com/taeilkim2465/agentic_memory_distillation"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出面向小型智能体的层级化教师记忆蒸馏方法，让大模型以结构化记忆层级作为教师，把长期经验压缩进小模型的上下文与参数中。"},{"label":"💡 创新点","text":"提出 Agent Memory Distillation，用分层教师记忆替代单条示范，使小模型在有限上下文下也能继承大模型的长期规划与工具使用经验。"},{"label":"📊 实验效果","text":"在智能体任务上取得 27.2%、11.2%、3.4% 等提升，并以 4B 规模小模型验证蒸馏收益，代码已开源。"},{"label":"⭐ 整体评价","text":"属于轻量化智能体方向，建议关注教师记忆的压缩比、小模型在长程任务上的留存率，以及蒸馏带来的能力上限变化。"}]
+    },
+    {
+        date: "2026-08-12",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "On-Policy Self-Distillation without Any Supervision",
+        venue: "HF Daily Papers · University of California at San Diego · 2608.06296",
+        summary: "🔬 技术路线: 提出无需任何外部监督信号的在线自蒸馏方法，让语言模型以自身最新策略作为教师，在训练过程中持续对齐当前策略分布。 | 💡 创新点: 提出 On-Policy 自蒸馏框架，去除对教师模型或标注数据的依赖，仅依靠模型自身生成样本进行策略内知识迁移。 | 📊 实验效果: 在多项基准上取得 8.5%、10.7%、3.2%、2.3% 等提升，验证无监督自蒸馏相比基线更优。 | ⭐ 整体评价: 属于大语言模型训练范式方向，建议关注自蒸馏目标与训练信号稳定性、对推理能力的实际增益，以及超参敏感性。",
+        tags: [["LLM","green"],["Distillation","green"],["Unsupervised","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2608.06296"],["PDF","https://arxiv.org/pdf/2608.06296"],["Project","https://williamium3000.github.io/u-opsd/"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出无需任何外部监督信号的在线自蒸馏方法，让语言模型以自身最新策略作为教师，在训练过程中持续对齐当前策略分布。"},{"label":"💡 创新点","text":"提出 On-Policy 自蒸馏框架，去除对教师模型或标注数据的依赖，仅依靠模型自身生成样本进行策略内知识迁移。"},{"label":"📊 实验效果","text":"在多项基准上取得 8.5%、10.7%、3.2%、2.3% 等提升，验证无监督自蒸馏相比基线更优。"},{"label":"⭐ 整体评价","text":"属于大语言模型训练范式方向，建议关注自蒸馏目标与训练信号稳定性、对推理能力的实际增益，以及超参敏感性。"}]
+    },
+    {
+        date: "2026-08-12",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Stealing Reasoning Traces from Proprietary LLM APIs",
+        venue: "HF Daily Papers · 2608.09867",
+        summary: "🔬 技术路线: 研究如何从闭源大语言模型的应用程序接口中提取其隐藏的推理轨迹，通过构造查询与观测输出来反向推断模型内部的中间推理步骤。 | 💡 创新点: 提出一种可扩展的推理轨迹窃取方法，可在不对目标模型做白盒访问的前提下，规模化重建专有模型的思维链与推理过程。 | 📊 实验效果: 实验验证了该方法在不同规模专有模型上的可迁移性，具体数据详见原文。 | ⭐ 整体评价: 属于模型安全与推理隐私方向，建议关注闭源服务商对推理轨迹的暴露面、防御蒸馏式攻击的必要性，以及由此引发的合规风险。",
+        tags: [["LLM","green"],["Reasoning","green"],["Security","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2608.09867"],["PDF","https://arxiv.org/pdf/2608.09867"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"研究如何从闭源大语言模型的应用程序接口中提取其隐藏的推理轨迹，通过构造查询与观测输出来反向推断模型内部的中间推理步骤。"},{"label":"💡 创新点","text":"提出一种可扩展的推理轨迹窃取方法，可在不对目标模型做白盒访问的前提下，规模化重建专有模型的思维链与推理过程。"},{"label":"📊 实验效果","text":"实验验证了该方法在不同规模专有模型上的可迁移性，具体数据详见原文。"},{"label":"⭐ 整体评价","text":"属于模型安全与推理隐私方向，建议关注闭源服务商对推理轨迹的暴露面、防御蒸馏式攻击的必要性，以及由此引发的合规风险。"}]
+    },
+    {
+        date: "2026-08-12",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Motif 3: Technical Report",
+        venue: "HF Daily Papers · Motif Technologies · 2608.09119",
+        summary: "🔬 技术路线: 发布 Motif 3 技术报告，采用混合专家架构构建大语言模型，统一预训练、监督微调与推理阶段，并支持长上下文处理。 | 💡 创新点: 提出以统一架构承载预训练到微调全流程的混合专家模型，强调高效与统一，并以 256K 上下文长度支撑长文档与多轮任务。 | 📊 实验效果: 在长上下文与通用能力基准上验证了 256K 长度下的表现，具体分数详见技术报告。 | ⭐ 整体评价: 属于前沿大语言模型方向，建议关注混合专家路由效率、长上下文下的显存与延迟，以及与同代开源模型的性价比对比。",
+        tags: [["LLM","green"],["MoE","green"],["Long-Context","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2608.09119"],["PDF","https://arxiv.org/pdf/2608.09119"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"发布 Motif 3 技术报告，采用混合专家架构构建大语言模型，统一预训练、监督微调与推理阶段，并支持长上下文处理。"},{"label":"💡 创新点","text":"提出以统一架构承载预训练到微调全流程的混合专家模型，强调高效与统一，并以 256K 上下文长度支撑长文档与多轮任务。"},{"label":"📊 实验效果","text":"在长上下文与通用能力基准上验证了 256K 长度下的表现，具体分数详见技术报告。"},{"label":"⭐ 整体评价","text":"属于前沿大语言模型方向，建议关注混合专家路由效率、长上下文下的显存与延迟，以及与同代开源模型的性价比对比。"}]
+    },
+    {
+        date: "2026-08-12",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Sci-VBench: Evaluating Knowledge- and Reasoning-Intensive Video Generation in Science Domains",
+        venue: "HF Daily Papers · 2608.09873",
+        summary: "🔬 技术路线: 提出 Sci-VBench 基准，用于评估科学领域中依赖知识与推理的视频生成能力，将学科知识与推理链纳入视频生成质量的评测维度。 | 💡 创新点: 提出 Sci-VBench，把评测从画面美感扩展到科学正确性与推理一致性，要求生成视频同时满足学科事实与逻辑连贯。 | 📊 实验效果: 在科学视频生成任务上验证了该基准对现有方法的区分能力，代码已开源，具体分项详见原文。 | ⭐ 整体评价: 属于视频生成评测方向，建议关注学科知识注入方式、生成与事实的一致性，以及该基准对科教内容生产的指导意义。",
+        tags: [["LLM","green"],["Video","green"],["Benchmark","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2608.09873"],["PDF","https://arxiv.org/pdf/2608.09873"],["Code","https://github.com/sci-vbench/sci-vbench"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出 Sci-VBench 基准，用于评估科学领域中依赖知识与推理的视频生成能力，将学科知识与推理链纳入视频生成质量的评测维度。"},{"label":"💡 创新点","text":"提出 Sci-VBench，把评测从画面美感扩展到科学正确性与推理一致性，要求生成视频同时满足学科事实与逻辑连贯。"},{"label":"📊 实验效果","text":"在科学视频生成任务上验证了该基准对现有方法的区分能力，代码已开源，具体分项详见原文。"},{"label":"⭐ 整体评价","text":"属于视频生成评测方向，建议关注学科知识注入方式、生成与事实的一致性，以及该基准对科教内容生产的指导意义。"}]
+    },
+    {
+        date: "2026-08-12",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "Testing ads in ChatGPTCompany",
+        venue: "",
+        summary: "OpenAI 宣布开始在 ChatGPT 中测试广告投放，探索在对话产品中引入商业化广告位的全新变现方式。",
+        tags: [],
+        links: [["来源","https://openai.com/index/testing-ads-in-chatgpt/"]]
+    },
+    {
+        date: "2026-08-12",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "Daybreak models are now available on AWS",
+        venue: "",
+        summary: "OpenAI 宣布将 Daybreak 系列模型上线亚马逊云科技，使云端用户可在托管环境中调用相关前沿能力。",
+        tags: [],
+        links: [["来源","https://openai.com/index/daybreak-models-are-now-available-on-aws/"]]
+    },
     // === 2026-08-11 ===
     {
         date: "2026-08-11",
@@ -21227,6 +21338,13 @@ const PAPERS_DB = [
 ];
 
 const DAILY_OVERVIEW = {
+    "2026-08-12": {
+        bannerTitle: "🔥 今日看点",
+        bannerSubtitle: "本期 arXiv 索引采集超时，共收录 8 篇 HuggingFace 每日热门论文与 2 条机构官方动态。智能体方向，字节跳动发布 SWE-Bench ProMax 大规模多语言代码重构基准（关键通过率 60% 与 41.2%），Ouroboros 提出评审驱动的闭环自演进编程智能体（终端任务 86.74%、90.69%，开源逾千星），KAIST 提出层级教师记忆蒸馏让 4B 小模型继承大模型经验。大语言模型方向，加州大学圣地亚哥分校的无监督在线自蒸馏取得 8.5% 等提升，Motif 3 以混合专家架构支持 256K 长上下文。机构动态方面，OpenAI 宣布在 ChatGPT 中测试广告，并将 Daybreak 模型上线亚马逊云科技。",
+        picks: ["SWE-Bench ProMax: Benchmarking Agents on Large-Scale Multilingual Code Refactoring","Ouroboros: A Self-Developing Frontier Coding Agent with Reviewed Core Evolution"],
+        totalPapers: 8,
+        totalNews: 2
+    },
     "2026-08-11": {
         bannerTitle: "🔥 今日看点",
         bannerSubtitle: "本期 arXiv 索引采集超时，共收录 3 篇 HuggingFace 每日热门论文与 5 条机构官方动态。智能体方向，MatrAIx 用 83 亿人格化智能体构建大规模世界仿真（核心指标 91.5%），DCAS 将命令行脚手架与内在规划解耦以提升跨脚手架泛化。大语言模型方向，Multiverse Computing 提出 Full-Chunked-KL-Loss 分块融合知识蒸馏损失，配合离线 Top-K 对数概率在 4K 至 256K 区间高效压缩模型。机构动态方面，OpenAI 密集发布 AI 原生财务、网络防御（Daybreak）与 ChatGPT Business 高级席位等更新，Anthropic 则公开了 Claude 数学能力（黎曼函数）研究。",
