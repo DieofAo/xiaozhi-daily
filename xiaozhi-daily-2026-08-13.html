@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>小小志AI日报 - 2026年8月13日</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans SC', sans-serif;
+  background: #0a0e1a;
+  color: #e0e6f0;
+  line-height: 1.7;
+  min-height: 100vh;
+}
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+header {
+  text-align: center;
+  margin-bottom: 48px;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, rgba(59,130,246,0.08) 0%, rgba(139,92,246,0.08) 100%);
+  border-radius: 20px;
+  border: 1px solid rgba(99,102,241,0.15);
+}
+header h1 {
+  font-size: 2rem;
+  background: linear-gradient(135deg, #60a5fa, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 8px;
+}
+header .date {
+  color: #94a3b8;
+  font-size: 1rem;
+}
+header .subtitle {
+  color: #64748b;
+  font-size: 0.9rem;
+  margin-top: 6px;
+}
+.highlight-banner {
+  background: linear-gradient(135deg, rgba(249,115,22,0.1) 0%, rgba(234,179,8,0.08) 100%);
+  border: 1px solid rgba(249,115,22,0.2);
+  border-radius: 14px;
+  padding: 20px 24px;
+  margin-bottom: 36px;
+}
+.hl-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fb923c;
+  margin-bottom: 8px;
+}
+.hl-text {
+  font-size: 0.92rem;
+  color: #cbd5e1;
+  line-height: 1.7;
+}
+.section {
+  margin-bottom: 40px;
+}
+.section-title {
+  font-size: 1.4rem;
+  color: #f1f5f9;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(99,102,241,0.2);
+}
+.paper-card {
+  background: rgba(30,41,59,0.6);
+  border: 1px solid rgba(99,102,241,0.12);
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 16px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.paper-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(99,102,241,0.1);
+  border-color: rgba(99,102,241,0.3);
+}
+.paper-card.hot {
+  border-color: rgba(249,115,22,0.25);
+  background: rgba(30,41,59,0.7);
+}
+.paper-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #f8fafc;
+  margin-bottom: 8px;
+}
+.paper-meta {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-bottom: 10px;
+}
+.summary-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+@media (max-width: 640px) {
+  .summary-grid { grid-template-columns: 1fr; }
+}
+.summary-item {
+  background: rgba(15,23,42,0.5);
+  border-radius: 10px;
+  padding: 12px 14px;
+  border: 1px solid rgba(99,102,241,0.08);
+}
+.summary-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #818cf8;
+  margin-bottom: 4px;
+}
+.summary-text {
+  font-size: 0.88rem;
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+.paper-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.tag {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+.tag-agent { background: rgba(16,185,129,0.12); color: #34d399; }
+.tag-llm { background: rgba(99,102,241,0.12); color: #818cf8; }
+.tag-multimodal { background: rgba(244,114,182,0.12); color: #f472b6; }
+.tag-world { background: rgba(251,191,36,0.12); color: #fbbf24; }
+.tag-robot { background: rgba(251,146,60,0.12); color: #fb923c; }
+.tag-rl { background: rgba(45,212,191,0.12); color: #2dd4bf; }
+.tag-benchmark { background: rgba(34,211,238,0.12); color: #22d3ee; }
+.tag-vla { background: rgba(59,130,246,0.12); color: #60a5fa; }
+.tag-memory { background: rgba(192,132,252,0.12); color: #c084fc; }
+.tag-reasoning { background: rgba(132,204,22,0.12); color: #a3e635; }
+.tag-data { background: rgba(250,204,21,0.12); color: #facc15; }
+.tag-infra { background: rgba(167,139,250,0.12); color: #a78bfa; }
+.tag-embodied { background: rgba(251,146,60,0.12); color: #fb923c; }
+.tag-3d { background: rgba(148,163,184,0.12); color: #94a3b8; }
+.tag-tool { background: rgba(52,211,153,0.12); color: #34d399; }
+.hot-badge {
+  display: inline;
+  margin-right: 4px;
+}
+.info-card {
+  background: rgba(30,41,59,0.6);
+  border: 1px solid rgba(99,102,241,0.12);
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 16px;
+}
+.paper-summary {
+  font-size: 0.9rem;
+  color: #cbd5e1;
+  line-height: 1.7;
+  margin-bottom: 14px;
+}
+.paper-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.paper-links a {
+  display: inline-block;
+  padding: 5px 14px;
+  background: rgba(99,102,241,0.12);
+  color: #818cf8;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  transition: background 0.2s;
+}
+.paper-links a:hover {
+  background: rgba(99,102,241,0.25);
+}
+footer {
+  text-align: center;
+  color: #475569;
+  font-size: 0.82rem;
+  padding: 40px 20px;
+  border-top: 1px solid rgba(99,102,241,0.1);
+  margin-top: 40px;
+}
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+.stat-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>小小志AI日报</h1>
+    <div class="date">2026年8月13日 · 星期四</div>
+    <div class="subtitle">关注：VLA · Robotics · World Model · LLM · Multimodal · Agent</div>
+    <div class="stats">
+      <span class="stat-item">📰 HF 热门论文 8</span>
+      <span class="stat-item">📝 arXiv 论文 8</span>
+      <span class="stat-item">🏢 机构发布 1</span>
+    </div>
+  </header>
+
+  <div class="highlight-banner">
+    <div class="hl-title">🔥 今日看点</div>
+    <div class="hl-text">本期共收录 16 篇论文（arXiv 8 篇 + HuggingFace 每日热门 8 篇）与 1 条机构动态。机器人方向，DreamFly 引入因果记忆与滚动时域扩散规划，让无人机在语言指令下完成空中视觉导航；ComBodied Agents 提出以人为本、通信与具身一体化的智能体新范式；Ex-Omni-2D 让对话模型以原生视觉在场更具表现力地表达（17 星）。智能体方向，IBM 的 VAKRA 在工具策略约束下评测跨接口多跳推理，Mendel Gödel Machine 以比较演化实现编程智能体递归自改进，SkillZip 则免评估压缩技能库。大语言模型方向，VibeLifeBench 考察生活智能体的主动性与持久性，小米发布免参考多语言翻译后训练方法。机构动态方面，OpenAI 发布《How enterprises put AI to work》。</div>
+  </div>
+
+  <section class="section">
+    <h2 class="section-title">🦾 Robotics · 机器人与具身智能</h2>
+
+    <div class="paper-card">
+      <div class="paper-title">DreamFly: Causal Memory and Receding-Horizon Diffusion Planning for Aerial Vision-Language Navigation</div>
+      <div class="paper-meta">arXiv 论文 · 2608.12308</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出 DreamFly，面向空中视觉-语言导航，结合因果记忆与滚动时域扩散规划，在飞行场景中完成语言指令跟随与路径规划。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">引入因果记忆机制保留历史观测的因果结构，并以滚动时域扩散模型生成多步动作，兼顾长程依赖与实时重规划。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在多个空中导航基准上取得 32.04%、29.46%、28.22%、23.54% 等成功率，验证了方法的有效性。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于具身导航方向，建议关注真实无人机上的计算开销、动态环境下的安全约束以及遮挡场景下的鲁棒性。</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-robot">Robotics</span>
+        <span class="tag tag-vla">VLN</span>
+        <span class="tag tag-world">Diffusion</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2608.12308">arXiv</a>
+        <a href="https://arxiv.org/pdf/2608.12308">PDF</a>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">ComBodied Agents: a New Paradigm of Human-Centric Agentic AI</div>
+      <div class="paper-meta">HF 每日热门 · 2608.10915</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出 ComBodied 智能体新范式，将具身与通信能力结合，构建以人为中心、可介入日常生活的协作式智能体。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">强调人机共生的通信-具身一体化设计，使智能体在理解人类意图的同时以身体化方式提供持续协助。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">以遗漏服药等生活场景验证了该范式在人性化协助上的可行性，具体指标详见原文。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于以人为本的具身智能方向，建议关注隐私保护、长期陪伴中的信任建立以及真实家庭场景的安全边界。</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-robot">Robotics</span>
+        <span class="tag tag-embodied">Embodied</span>
+        <span class="tag tag-agent">Human-Centric</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2608.10915">arXiv</a>
+        <a href="https://arxiv.org/pdf/2608.10915">PDF</a>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">Ex-Omni-2D: Expressive Omni-Modal Dialogue Models with Native Visual Presence</div>
+      <div class="paper-meta">HF 每日热门 · CUHK-SZ · 2608.10720</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出 Ex-Omni-2D 全模态对话模型，将视觉存在感原生融入对话，使模型在文本之外以视觉方式自然表达情绪与意图。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">以原生视觉在场替代纯文本表达，让对话模型具备更具表现力的多模态输出能力。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在生成与推理任务上验证了全模态对话的有效性，配套代码已获 17 星关注。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于多模态对话方向，建议关注视觉表达的可控性、与语言的一致性以及生成内容的安全性。</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-robot">Robotics</span>
+        <span class="tag tag-multimodal">Multimodal</span>
+        <span class="tag tag-agent">Dialogue</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2608.10720">arXiv</a>
+        <a href="https://arxiv.org/pdf/2608.10720">PDF</a>
+        <a href="https://logo-cuhksz.github.io/Ex-Omni-2D">Project</a>
+        <a href="https://github.com/LOGO-CUHKSZ/Ex-Omni-2D-Code">Code</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">🧩 Agent · 智能体与工具使用</h2>
+
+    <div class="paper-card">
+      <div class="paper-title">AVA-Encoder: Towards Agent-Native Video Representation Learning</div>
+      <div class="paper-meta">arXiv 论文 · 2608.12313</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出面向智能体的视频表征学习框架 AVA-Encoder，以自动编码器结构学习对下游智能体任务友好的视频表示。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">从为人类观看的视频表征转向为智能体行动的原生表征，使视频编码直接服务动作决策与任务规划。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在相关视频理解与智能体基准上达到 74.3% 等指标，较基线提升 20.7 个百分点。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于智能体视频表征方向，建议关注表征对长时序动作的可迁移性以及与具身控制策略的联合训练效果。</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-agent">Agent</span>
+        <span class="tag tag-vla">Video</span>
+        <span class="tag tag-data">Representation</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2608.12313">arXiv</a>
+        <a href="https://arxiv.org/pdf/2608.12313">PDF</a>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">Beyond Trial-and-Error: Agentic Optimization for Image-to-Video Adherence</div>
+      <div class="paper-meta">arXiv 论文 · 2608.12290</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出以智能体优化替代试错式调参的框架，用于提升图像到视频生成中视频对参考图像的内容与风格一致性。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">将生成过程建模为智能体可迭代优化的闭环，通过反馈信号自动调整生成策略，而非依赖人工反复尝试。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在生成与视频生成一致性任务上验证了方法的有效性，具体指标详见原文。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于多模态生成控制方向，建议关注反馈评估器的可信度、对复杂语义的遵循能力以及迭代优化的收敛成本。</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-agent">Agent</span>
+        <span class="tag tag-multimodal">I2V</span>
+        <span class="tag tag-tool">Generation</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2608.12290">arXiv</a>
+        <a href="https://arxiv.org/pdf/2608.12290">PDF</a>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">VAKRA: Evaluating Multi-Hop Reasoning Across APIs and Retrieval Under Tool-Use Policies</div>
+      <div class="paper-meta">arXiv 论文 · IBM · 2608.12282</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出 VAKRA 基准，评估智能体在工具使用策略约束下跨越多个应用程序接口与检索系统的多跳推理能力。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">把工具调用策略（权限、顺序、成本）显式纳入评测，考察智能体在受约束环境中完成多步跨源推理的可靠性。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">实验验证了基准对现有方法差异的区分能力，并配套发布代码与数据集，具体数据详见原文。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于智能体评测方向，建议关注策略约束下的失败模式、跨接口状态一致性以及基准对真实企业系统的覆盖度。</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-agent">Agent</span>
+        <span class="tag tag-benchmark">Benchmark</span>
+        <span class="tag tag-tool">Tool-Use</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2608.12282">arXiv</a>
+        <a href="https://arxiv.org/pdf/2608.12282">PDF</a>
+        <a href="https://github.com/IBM/VAKRA">Code</a>
+        <a href="https://huggingface.co/datasets/ibm-research/VAKRA">Model</a>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">Convergent Detour Hijacking: Task-Preserving Resource Amplification in Skill-Based LLM Agents</div>
+      <div class="paper-meta">arXiv 论文 · 2608.12273</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出收敛式绕道劫持机制，在基于技能的智能体中通过绕道调用放大可用资源，同时保持原始任务目标不变。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">以任务保持的方式对技能执行路径进行资源扩增，使智能体在不偏离目标的前提下借由中间步骤获得更强算力或上下文。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在相关智能体任务上取得 80.02%、66.91%、92.45% 等表现，验证了资源扩增带来的收益。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于技能型智能体方向，建议关注绕道路径的可解释性与安全性、资源扩增的边际收益以及任务保持的严格性。</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-agent">Agent</span>
+        <span class="tag tag-memory">Skill</span>
+        <span class="tag tag-infra">Resource</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2608.12273">arXiv</a>
+        <a href="https://arxiv.org/pdf/2608.12273">PDF</a>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">Co-Evolution in Agentic Systems: Toward Self-Directed Evolution Beyond Human Design</div>
+      <div class="paper-meta">HF 每日热门 · 2608.10299</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出智能体系统协同演化框架，使多个智能体在互作中自发形成超越人工预设的自我导向演化机制。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">以协同演化替代静态人工设计，让智能体群体通过相互竞争与合作持续改进自身的结构与策略。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">实验验证了协同演化能涌现出更优的智能体组织形态，具体数据详见原文，代码已获 30 星开源。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于自组织智能体方向，建议关注演化过程的可控性、涌现行为的可解释性以及避免失控的安全护栏。</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-agent">Agent</span>
+        <span class="tag tag-reasoning">Co-Evolution</span>
+        <span class="tag tag-memory">Self-Directed</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2608.10299">arXiv</a>
+        <a href="https://arxiv.org/pdf/2608.10299">PDF</a>
+        <a href="https://github.com/zongqing0068/awesome-co-evolution">Code</a>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">Mendel Gödel Machine: Recursive Self-Improving Coding Agents via Comparative Evolution</div>
+      <div class="paper-meta">HF 每日热门 · LMU Munich · 2608.07645</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出 Mendel Gödel Machine，以比较式演化驱动编程智能体递归式自我改进，不断重写自身代码以提升能力。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">将哥德尔机的自指改进思想与比较演化结合，以变异-比较-保留循环实现编程智能体的递归优化。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">实验验证了递归自改进在编程任务上的有效性，具体数据详见原文，代码与项目已开源。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于自改进智能体方向，建议关注改进过程的验证成本、回归风险以及自修改带来的安全与可审计性问题。</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-agent">Agent</span>
+        <span class="tag tag-reasoning">Self-Improving</span>
+        <span class="tag tag-tool">Coding</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2608.07645">arXiv</a>
+        <a href="https://arxiv.org/pdf/2608.07645">PDF</a>
+        <a href="https://reallcz.github.io/MGM/">Project</a>
+        <a href="https://github.com/RealLcz/MGM">Code</a>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">SkillZip: Evaluation-Free Skill Compression for Self-Evolving Agents by Discovering Reusable Structure</div>
+      <div class="paper-meta">HF 每日热门 · 2608.11079</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出 SkillZip，通过发现可复用结构对智能体技能进行免评估压缩，使自演进智能体在无需重新评测的情况下精简技能库。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">以结构复用替代逐技能评估，让智能体自主识别并合并相似技能，降低技能库膨胀与维护成本。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">实验验证了免评估压缩在保持能力的同时精简技能的有效性，具体数据详见原文。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于自演进智能体方向，建议关注可复用结构的发现精度、压缩后的能力留存以及长期演进中的技能退化。</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-agent">Agent</span>
+        <span class="tag tag-memory">Skill</span>
+        <span class="tag tag-data">Compression</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2608.11079">arXiv</a>
+        <a href="https://arxiv.org/pdf/2608.11079">PDF</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">🧠 LLM · 大语言模型</h2>
+
+    <div class="paper-card">
+      <div class="paper-title">VibeLifeBench: Can Your Life Agent Be Proactive and Persistent in a Living World?</div>
+      <div class="paper-meta">HF 每日热门 · dots studio · 2608.10875</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出 VibeLifeBench 基准，在持续演进的生活世界中评测生活类智能体的主动性与持久性。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">以动态生活场景考察智能体是否能主动发起行动并保持长期一致，而非被动响应用户指令。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">实验揭示了当前生活智能体在主动性与持久性上的不足，具体数据详见原文，代码已开源。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于智能体评测方向，建议关注长周期记忆一致性、主动行为的恰当性以及生活场景的多样覆盖。</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-llm">LLM</span>
+        <span class="tag tag-benchmark">Benchmark</span>
+        <span class="tag tag-agent">Life Agent</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2608.10875">arXiv</a>
+        <a href="https://arxiv.org/pdf/2608.10875">PDF</a>
+        <a href="https://vibebench.github.io/VibeLifeBench_homepage/">Project</a>
+        <a href="https://github.com/evolvent-ai/VibeLifeBench">Code</a>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">Decoding-Level Taboo: A Diagnostic Stress Test for LLM Robustness</div>
+      <div class="paper-meta">HF 每日热门 · 2608.09900</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出解码层禁忌测试，作为一种诊断式压力测试，考察大模型在解码阶段对受限词或约束的鲁棒性。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">将鲁棒性评测下沉到解码层面，以禁忌约束揭示模型在生成过程中对指令遵从与内容安全的脆弱点。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在生成任务上验证了该方法对模型脆弱性的揭示能力，具体数据详见原文。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于大语言模型鲁棒性评测方向，建议关注解码约束与输出质量之间的权衡、对安全对齐的启发以及跨模型可比性。</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-llm">LLM</span>
+        <span class="tag tag-reasoning">Robustness</span>
+        <span class="tag tag-benchmark">Stress Test</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2608.09900">arXiv</a>
+        <a href="https://arxiv.org/pdf/2608.09900">PDF</a>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">Reference-Free Post-Training of Open Large Language Models for Multilingual Machine Translation</div>
+      <div class="paper-meta">HF 每日热门 · Xiaomi Research · 2608.10812</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出免参考的后训练方法，对开源大语言模型进行多语言机器翻译适配，无需平行语料参考即可优化翻译质量。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">发布 MiLMMT-46-v0，以免参考训练突破对双语标注数据的依赖，使开源模型在多种语言间获得更稳健的翻译能力。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">实验验证了免参考后训练在多语言翻译上的有效性，具体数据详见原文，代码已获 70 星开源。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于机器翻译方向，建议关注免参考训练对低资源语言的实际增益、与有参考方法的差距以及译文的事实一致性。</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-llm">LLM</span>
+        <span class="tag tag-data">Translation</span>
+        <span class="tag tag-multimodal">Multilingual</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2608.10812">arXiv</a>
+        <a href="https://arxiv.org/pdf/2608.10812">PDF</a>
+        <a href="https://github.com/xiaomi-research/gemmax">Code</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">🎨 Multimodal · 多模态与基准</h2>
+
+    <div class="paper-card">
+      <div class="paper-title">Diagram-MMU: A Multi-Modal Benchmark for Scientific Diagrams</div>
+      <div class="paper-meta">arXiv 论文 · OpenAI · 2608.12262</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出 Diagram-MMU 多模态基准，用于评测模型对科学图表的理解能力，覆盖图表解析、推理与跨模态对齐。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">面向科学领域构建大规模图表理解与推理评测，强调模型对专业图示结构与含义的准确把握。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">基准包含约 3.7k 图表与 18.3k 评测样本，用于刻画当前模型在科学图表上的能力边界。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于多模态评测方向，建议关注模型对复杂图例与坐标的解析能力、对领域知识的依赖以及评测的公平性。</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-multimodal">Multimodal</span>
+        <span class="tag tag-benchmark">Benchmark</span>
+        <span class="tag tag-data">Scientific</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2608.12262">arXiv</a>
+        <a href="https://arxiv.org/pdf/2608.12262">PDF</a>
+        <a href="https://vi-ocean.github.io/projects/diagram-mmu">Project</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">🎯 RL · 强化学习与世界模型（交叉方向）</h2>
+
+    <div class="paper-card">
+      <div class="paper-title">StateFlow: Building, Evolving, and Accessing 3D World States for Previsualization</div>
+      <div class="paper-meta">arXiv 论文 · 2608.12314</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出 StateFlow 框架，以结构化 3D 世界状态作为核心表示，支持在生成式预可视化流程中构建、演化与检索场景状态。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">用可演化的状态图替代线性镜头脚本，使创作者能以状态机方式组织 3D 场景，并在不同分支间复用与回溯。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">论文以预可视化场景验证了框架的可用性，具体指标详见原文。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于世界模型与 3D 内容生成交叉方向，建议关注状态演化的一致性、与主流 3D 引擎的接口以及长序列多分支场景的可扩展性。</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-world">World Model</span>
+        <span class="tag tag-3d">3D</span>
+        <span class="tag tag-data">Previsualization</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2608.12314">arXiv</a>
+        <a href="https://arxiv.org/pdf/2608.12314">PDF</a>
+        <a href="https://yuyangyin.github.io/StateFlow">Project</a>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">Redistribution-based Cost Inference Improves Sparse Safe Offline RL</div>
+      <div class="paper-meta">arXiv 论文 · University of the Witwatersrand · 2608.12306</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出基于回报再分配的成本推断方法，针对稀疏奖励下的安全离线强化学习，从有限安全标注中推断逐步成本信号。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">通过回报再分配将稀疏的安全反馈传播到单步决策，缓解安全离线强化学习中成本信号稀缺导致的惩罚滞后问题。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在推理与操作、抓取等安全关键任务上验证了方法的有效性，具体指标详见原文。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于安全强化学习方向，建议关注成本推断的准确率、离线分布偏移下的保守性以及真实机器人上的安全保证。</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-rl">RL</span>
+        <span class="tag tag-reasoning">Safe RL</span>
+        <span class="tag tag-data">Offline</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2608.12306">arXiv</a>
+        <a href="https://arxiv.org/pdf/2608.12306">PDF</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">🏢 行业动态 · 重点机构发布</h2>
+
+    <div class="info-card">
+      <div class="paper-title">How enterprises put AI to work</div>
+      <div class="paper-summary">OpenAI 发布《How enterprises put AI to work》，介绍企业如何将人工智能投入实际工作场景，分享落地实践与组织应用案例。</div>
+      <div class="paper-links">
+        <a href="https://openai.com/index/how-enterprises-put-ai-to-work/">来源</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>小小志AI日报 · 自动生成于 2026-08-13</p>
+    <p>数据来源：arXiv · HuggingFace Daily Papers · 机构官方博客</p>
+  </footer>
+</div>
+</body>
+</html>
