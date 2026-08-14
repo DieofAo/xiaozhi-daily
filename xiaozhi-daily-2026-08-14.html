@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>小小志AI日报 - 2026年8月14日</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans SC', sans-serif;
+  background: #0a0e1a;
+  color: #e0e6f0;
+  line-height: 1.7;
+  min-height: 100vh;
+}
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+header {
+  text-align: center;
+  margin-bottom: 48px;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, rgba(59,130,246,0.08) 0%, rgba(139,92,246,0.08) 100%);
+  border-radius: 20px;
+  border: 1px solid rgba(99,102,241,0.15);
+}
+header h1 {
+  font-size: 2rem;
+  background: linear-gradient(135deg, #60a5fa, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 8px;
+}
+header .date {
+  color: #94a3b8;
+  font-size: 1rem;
+}
+header .subtitle {
+  color: #64748b;
+  font-size: 0.9rem;
+  margin-top: 6px;
+}
+.highlight-banner {
+  background: linear-gradient(135deg, rgba(249,115,22,0.1) 0%, rgba(234,179,8,0.08) 100%);
+  border: 1px solid rgba(249,115,22,0.2);
+  border-radius: 14px;
+  padding: 20px 24px;
+  margin-bottom: 36px;
+}
+.hl-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fb923c;
+  margin-bottom: 8px;
+}
+.hl-text {
+  font-size: 0.92rem;
+  color: #cbd5e1;
+  line-height: 1.7;
+}
+.section {
+  margin-bottom: 40px;
+}
+.section-title {
+  font-size: 1.4rem;
+  color: #f1f5f9;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(99,102,241,0.2);
+}
+.paper-card {
+  background: rgba(30,41,59,0.6);
+  border: 1px solid rgba(99,102,241,0.12);
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 16px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.paper-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(99,102,241,0.1);
+  border-color: rgba(99,102,241,0.3);
+}
+.paper-card.hot {
+  border-color: rgba(249,115,22,0.25);
+  background: rgba(30,41,59,0.7);
+}
+.paper-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #f8fafc;
+  margin-bottom: 8px;
+}
+.paper-meta {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-bottom: 10px;
+}
+.summary-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+@media (max-width: 640px) {
+  .summary-grid { grid-template-columns: 1fr; }
+}
+.summary-item {
+  background: rgba(15,23,42,0.5);
+  border-radius: 10px;
+  padding: 12px 14px;
+  border: 1px solid rgba(99,102,241,0.08);
+}
+.summary-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #818cf8;
+  margin-bottom: 4px;
+}
+.summary-text {
+  font-size: 0.88rem;
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+.paper-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.tag {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+.tag-agent { background: rgba(16,185,129,0.12); color: #34d399; }
+.tag-llm { background: rgba(99,102,241,0.12); color: #818cf8; }
+.tag-multimodal { background: rgba(244,114,182,0.12); color: #f472b6; }
+.tag-world { background: rgba(251,191,36,0.12); color: #fbbf24; }
+.tag-robot { background: rgba(251,146,60,0.12); color: #fb923c; }
+.tag-rl { background: rgba(45,212,191,0.12); color: #2dd4bf; }
+.tag-benchmark { background: rgba(34,211,238,0.12); color: #22d3ee; }
+.tag-vla { background: rgba(59,130,246,0.12); color: #60a5fa; }
+.tag-memory { background: rgba(192,132,252,0.12); color: #c084fc; }
+.tag-reasoning { background: rgba(132,204,22,0.12); color: #a3e635; }
+.tag-data { background: rgba(250,204,21,0.12); color: #facc15; }
+.tag-infra { background: rgba(167,139,250,0.12); color: #a78bfa; }
+.tag-embodied { background: rgba(251,146,60,0.12); color: #fb923c; }
+.tag-3d { background: rgba(148,163,184,0.12); color: #94a3b8; }
+.tag-tool { background: rgba(52,211,153,0.12); color: #34d399; }
+.hot-badge {
+  display: inline;
+  margin-right: 4px;
+}
+.info-card {
+  background: rgba(30,41,59,0.6);
+  border: 1px solid rgba(99,102,241,0.12);
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 16px;
+}
+.paper-summary {
+  font-size: 0.9rem;
+  color: #cbd5e1;
+  line-height: 1.7;
+  margin-bottom: 14px;
+}
+.paper-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.paper-links a {
+  display: inline-block;
+  padding: 5px 14px;
+  background: rgba(99,102,241,0.12);
+  color: #818cf8;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  transition: background 0.2s;
+}
+.paper-links a:hover {
+  background: rgba(99,102,241,0.25);
+}
+footer {
+  text-align: center;
+  color: #475569;
+  font-size: 0.82rem;
+  padding: 40px 20px;
+  border-top: 1px solid rgba(99,102,241,0.1);
+  margin-top: 40px;
+}
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+.stat-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>小小志AI日报</h1>
+    <div class="date">2026年8月14日 · 星期五</div>
+    <div class="subtitle">关注：VLA · Robotics · World Model · LLM · Multimodal · Agent</div>
+    <div class="stats">
+      <span class="stat-item">📝 arXiv 论文 8</span>
+      <span class="stat-item">📰 HF 热门论文 7</span>
+      <span class="stat-item">🏢 机构发布 3</span>
+    </div>
+  </header>
+
+  <div class="highlight-banner">
+    <div class="hl-title">🔥 今日看点</div>
+    <div class="hl-text">本期共收录 18 条动态，含 15 篇论文（arXiv 8 篇 + HuggingFace 每日热门 7 篇）与 3 条机构发布。世界模型方向，Meta FAIR 的 PlayWorld 以智能体扮演方式长程评测视频世界模型，Alaya-EVOKE 引入持久记忆实现持续演化的世界建模。智能体方向，AutoDesign 把长程设计当作可优化元问题，Vero 用形式化验证作为智能体软件工程的硬指标，OpenART 以开放式环境演化规模化红队测试，NCP-Bench 检验智能体长程剧情一致性。大语言模型方向，LittleLearner 以教学式知识暴露训练模型，SAEVerbalizer 自动为可解释特征生成语言解释，Spark-to-Paper 端到端生成科研论文。具身方向，Self-Evolving Embodied Agents 通过技能-框架演化实现自进化。机构方面，OpenAI 发布 GPT-5.6 应用指南与最高 14 倍速的 Ultrafast 模式，并任命新任首席营收官。</div>
+  </div>
+
+  <section class="section">
+    <h2 class="section-title">🌍 World Model · 世界模型</h2>
+
+    <div class="paper-card">
+      <div class="paper-title">PlayWorld: Benchmarking World Models with Agent Players over Long-Horizon Objectives</div>
+      <div class="paper-meta">arXiv 论文 · Meta FAIR · 2608.13552</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出 PlayWorld 基准，让智能体玩家在长程目标驱动下与视频世界模型交互，系统评估模型的长期预测与可控生成能力。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">以"智能体扮演"取代被动片段评测，考察世界模型在目标导向多步决策中的一致性与动作可控性。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">视频世界模型在长程目标条件下生成未来状态，实验验证了基准对模型能力的区分作用（详见原文）。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于世界模型/视频生成方向，建议关注预测精度、动作可控性及长程一致性评测标准的建立。</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-world">World Model</span>
+        <span class="tag tag-vla">Video</span>
+        <span class="tag tag-benchmark">Benchmark</span>
+      </div>
+      <div class="paper-links">
+        <a href="http://arxiv.org/abs/2608.13552v1">arXiv</a>
+        <a href="http://arxiv.org/pdf/2608.13552v1">PDF</a>
+        <a href="https://kxding.github.io/project/PlayWorld/">Project</a>
+        <a href="https://github.com/kxding/PlayWorld">Code</a>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">Alaya-EVOKE: From Linear-Scaling Supervision to Endless World</div>
+      <div class="paper-meta">arXiv 论文 · 2608.13546</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出 Alaya-EVOKE 交互式世界模型，引入持久化记忆与持续演化机制，支持在线性扩展监督下的长期生成。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">构建 VBench-Long 长程视频评测，配合持久记忆使世界模型可持续学习而无需整体重新训练。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在长视频生成任务上验证了方法的有效性，展现出持续演化的世界建模能力（详见原文）。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于世界模型方向，建议关注记忆持久化、长期一致性及与真实环境的贴合程度。</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-world">World Model</span>
+        <span class="tag tag-memory">Memory</span>
+        <span class="tag tag-benchmark">VBench-Long</span>
+      </div>
+      <div class="paper-links">
+        <a href="http://arxiv.org/abs/2608.13546v1">arXiv</a>
+        <a href="http://arxiv.org/pdf/2608.13546v1">PDF</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">🦾 Robotics · 机器人与具身智能</h2>
+
+    <div class="paper-card">
+      <div class="paper-title">Self-Evolving Embodied Agents via Skill-Harness Evolution</div>
+      <div class="paper-meta">HF 每日热门 · 2608.11350</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出基于技能-框架协同演化的具身智能体自进化方法，结合微调与强化学习让智能体持续成长。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">引入 ESI-Bench 评测基准，使具身智能体通过技能与约束框架的协同演化实现能力自我提升。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在实验设置中验证了自进化流程的有效性，具体量化指标详见原文。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于机器人算法与控制方向，建议重点看实验设置、基线对比与真实部署条件下的表现。</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-robot">Robotics</span>
+        <span class="tag tag-embodied">Embodied</span>
+        <span class="tag tag-rl">Self-Evolve</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2608.11350">arXiv</a>
+        <a href="https://arxiv.org/pdf/2608.11350">PDF</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">🧩 Agent · 智能体与工具使用</h2>
+
+    <div class="paper-card">
+      <div class="paper-title">AutoDesign: Meta-Harness Optimization for Long-Horizon Agentic Design</div>
+      <div class="paper-meta">arXiv 论文 · 2608.13560</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出 AutoDesign 元框架，将长程智能体设计任务本身作为可优化的元问题，自动搜索并编排子任务求解流程。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">引入 PosterBench-mini 多模态评测基准，把设计质量拆解为可度量维度，实现自动化迭代优化。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在 PosterBench-mini 基准上以 12.4% 的关键指标验证了元框架对长程设计的有效性。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于智能体/工具使用方向，建议关注元搜索开销、子任务组合策略及在真实设计场景的泛化。</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-agent">Agent</span>
+        <span class="tag tag-tool">Design</span>
+        <span class="tag tag-benchmark">PosterBench-mini</span>
+      </div>
+      <div class="paper-links">
+        <a href="http://arxiv.org/abs/2608.13560v1">arXiv</a>
+        <a href="http://arxiv.org/pdf/2608.13560v1">PDF</a>
+        <a href="https://github.com/Yaxin9Luo/AutoDesign">Code</a>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">OmniScientist: An Omni-Modal Omni-Discipline AI Scientist</div>
+      <div class="paper-meta">arXiv 论文 · 2608.13558</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">构建全模态、全学科的人工智能科学家系统，统一处理文本、图像、表格等多模态科研输入并端到端产出研究。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 OmniScientist 框架，打通文献理解、假设生成到实验验证的科研闭环，支持跨学科协作。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在综合评测中取得约 85% 的任务完成率，验证全模态科研流程的可行性。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于智能体/科研自动化方向，建议关注跨学科泛化、可信度与对真实科研的辅助边界。</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-agent">Agent</span>
+        <span class="tag tag-multimodal">Omni-Modal</span>
+        <span class="tag tag-tool">AI Scientist</span>
+      </div>
+      <div class="paper-links">
+        <a href="http://arxiv.org/abs/2608.13558v1">arXiv</a>
+        <a href="http://arxiv.org/pdf/2608.13558v1">PDF</a>
+        <a href="https://omni-scientist.github.io/">Project</a>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">QuoteBench: How Matched Scores Can Hide Command-Path Failures</div>
+      <div class="paper-meta">arXiv 论文 · 2608.13547</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出 QuoteBench 基准，检验智能体执行命令行任务时，表面分数匹配是否掩盖了底层命令路径的错误。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">区分"输出分数匹配"与"真实命令路径正确"，揭示评测指标与实际执行之间的系统性脱节。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">实验观察到高达 73.2 个百分点的分数与路径一致性差距，量化暴露了评测盲区。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于智能体/工具使用方向，建议关注评测协议严谨性、命令路径正确性及指标设计的可靠性。</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-agent">Agent</span>
+        <span class="tag tag-tool">Command</span>
+        <span class="tag tag-benchmark">QuoteBench</span>
+      </div>
+      <div class="paper-links">
+        <a href="http://arxiv.org/abs/2608.13547v1">arXiv</a>
+        <a href="http://arxiv.org/pdf/2608.13547v1">PDF</a>
+        <a href="https://quotebench.lsamc.website/">Link</a>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">Vero: Can AI Agents Build Formally Verified Software Repositories?</div>
+      <div class="paper-meta">arXiv 论文 · 2608.13522</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出 Vero 框架，考察智能体能否自主构建经过形式化验证的软件仓库，涵盖证明生成与代码产出。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">将形式化验证作为智能体软件工程能力的硬性验收标准，而非仅看功能正确性。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在代码生成与形式化验证任务上验证了方法的可行性，展示智能体产出可验证仓库的潜力。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于智能体/软件工程方向，建议关注验证覆盖率、证明可维护性与人机协作边界。</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-agent">Agent</span>
+        <span class="tag tag-tool">Verification</span>
+        <span class="tag tag-reasoning">Software</span>
+      </div>
+      <div class="paper-links">
+        <a href="http://arxiv.org/abs/2608.13522v1">arXiv</a>
+        <a href="http://arxiv.org/pdf/2608.13522v1">PDF</a>
+        <a href="https://github.com/sunblaze-ucb/vero">Code</a>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">OpenART: Scaling Agent Red Teaming via Open-Ended Environment Evolution</div>
+      <div class="paper-meta">HF 每日热门 · 2608.00677</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出 OpenART，通过开放式环境演化对智能体红队测试进行规模化，自动构造多样化对抗场景。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">以统一、可扩展的环境演化机制替代手工设计攻击，持续提升红队测试的覆盖与强度。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在评测中报告 85.0% 等关键指标，展现开放式环境演化的可扩展性与攻击覆盖能力。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于智能体/安全评测方向，建议关注环境多样性、自动演化稳定性及评测偏差。</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-agent">Agent</span>
+        <span class="tag tag-rl">Red Teaming</span>
+        <span class="tag tag-reasoning">Safety</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2608.00677">arXiv</a>
+        <a href="https://arxiv.org/pdf/2608.00677">PDF</a>
+        <a href="https://github.com/AI45Lab/OpenART">Code</a>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">Mechanist: AI as a Scientific Instrument for Discovering the Mechanisms of Intelligence</div>
+      <div class="paper-meta">HF 每日热门 · ZJUNLP · 2608.12036</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出 Mechanist，把人工智能当作发现智能机制的科学仪器，系统性探索模型内部运作规律。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">以 AI 作为主动科学探究工具，自动化提出并验证关于智能机制的假设，形成研究闭环。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在机制发现任务上验证了方法的有效性，开源项目获得 30 星关注。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于智能体/科研自动化方向，建议关注可解释性深度、假设可信度及对认知科学的启发。</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-agent">Agent</span>
+        <span class="tag tag-reasoning">Mechanism</span>
+        <span class="tag tag-tool">AI Scientist</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2608.12036">arXiv</a>
+        <a href="https://arxiv.org/pdf/2608.12036">PDF</a>
+        <a href="http://mechanist.openkg.cn/">Project</a>
+        <a href="https://github.com/zjunlp/Mechanist">Code</a>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">Can LLM Agents Stick to the Script? A Benchmark for Long-Horizon Consistency in Interactive Narratives</div>
+      <div class="paper-meta">HF 每日热门 · 2608.08160</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出 NCP-Bench 基准，检验智能体在交互式叙事中能否长期遵循既定剧情脚本、保持一致性。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">聚焦长程一致性这一被忽视的维度，量化智能体在多轮交互中偏离脚本的程度。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在评测中报告 42%、40%、68% 等一致性指标，揭示当前模型的长程遵循短板。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于大语言模型/智能体评测方向，建议关注脚本遵循机制、长程记忆与多轮对话稳定性。</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-agent">Agent</span>
+        <span class="tag tag-llm">LLM</span>
+        <span class="tag tag-benchmark">NCP-Bench</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2608.08160">arXiv</a>
+        <a href="https://arxiv.org/pdf/2608.08160">PDF</a>
+        <a href="https://github.com/yingpengma/NCP-Bench">Code</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">🧠 LLM · 大语言模型</h2>
+
+    <div class="paper-card">
+      <div class="paper-title">LittleLearner: Language Models Under Pedagogically Controlled Knowledge Exposure</div>
+      <div class="paper-meta">arXiv 论文 · 2608.13545</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出 LittleLearner，以"教学式可控知识暴露"训练语言模型，模拟循序渐进的知识注入过程。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">将教育学中的知识呈现顺序引入模型训练，控制不同规模模型（5B/88B）接触知识的节奏。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在实验中使用 88B 与 5B 规模模型验证，观察可控暴露对知识习得的影响。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于大语言模型/训练范式方向，建议关注知识暴露策略、课程设计与小模型对齐效果。</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-llm">LLM</span>
+        <span class="tag tag-reasoning">Training</span>
+        <span class="tag tag-data">Curriculum</span>
+      </div>
+      <div class="paper-links">
+        <a href="http://arxiv.org/abs/2608.13545v1">arXiv</a>
+        <a href="http://arxiv.org/pdf/2608.13545v1">PDF</a>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">SAEVerbalizer: Generating Explanations for Sparse Autoencoder Features via Representation Verbalization</div>
+      <div class="paper-meta">arXiv 论文 · 2608.13538</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出 SAEVerbalizer，通过表征语言化为稀疏自编码器的特征自动生成自然语言解释。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">以轻量化方式将可解释性特征映射到可阅读的解释，降低人工标注特征语义的成本。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在稀疏自编码器特征解释任务上验证了方法的有效性，解释质量得到实验确认。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于大语言模型/可解释性方向，建议关注解释准确性、特征覆盖度及对安全研究的实用价值。</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-llm">LLM</span>
+        <span class="tag tag-reasoning">Interpretability</span>
+        <span class="tag tag-tool">SAE</span>
+      </div>
+      <div class="paper-links">
+        <a href="http://arxiv.org/abs/2608.13538v1">arXiv</a>
+        <a href="http://arxiv.org/pdf/2608.13538v1">PDF</a>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">Spark-to-Paper: End-to-End Research Paper Generation as a Composable Skill</div>
+      <div class="paper-meta">HF 每日热门 · 2608.11924</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出 Spark-to-Paper，将科研论文撰写拆解为可组合技能，端到端从研究构思生成完整论文。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">以可组合技能链替代单模型生成，提升论文结构完整性与内容连贯性，兼顾轻量化。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在评测中取得 99.5%、96.4%、92% 等指标，开源项目获得 547 星关注。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于大语言模型/科研自动化方向，建议关注引用准确性、方法论严谨及对学术诚信的影响。</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-llm">LLM</span>
+        <span class="tag tag-tool">Paper Gen</span>
+        <span class="tag tag-data">Skill</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2608.11924">arXiv</a>
+        <a href="https://arxiv.org/pdf/2608.11924">PDF</a>
+        <a href="https://spark-to-paper-skills.github.io/spark-to-paper-skills/">Project</a>
+        <a href="https://github.com/Spark-To-Paper-Skills/spark-to-paper-skills">Code</a>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">AI4AI at Test-Time: Strong-to-Weak Capability Transfer via Harnesses</div>
+      <div class="paper-meta">HF 每日热门 · UIUC · 2608.12307</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出在测试时通过"评测框架"实现强模型到弱模型的能力迁移，属于测试时蒸馏方法。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">引入心智理论式的强弱能力迁移机制，让弱模型在强模型构建的评测框架引导下提升表现。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在实验中观察到约 5% 的能力迁移增益，验证了测试时强弱迁移的可行性。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于大语言模型/蒸馏方向，建议关注迁移稳定性、适用任务范围与对弱模型泛化的影响。</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-llm">LLM</span>
+        <span class="tag tag-reasoning">Distillation</span>
+        <span class="tag tag-data">Test-Time</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2608.12307">arXiv</a>
+        <a href="https://arxiv.org/pdf/2608.12307">PDF</a>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">SkillZip: Contract-Preserving Graph Compression for Scalable Agent Skill Libraries</div>
+      <div class="paper-meta">HF 每日热门 · 2608.05604</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出 SkillZip，以保契约的图压缩方法压缩智能体技能库，在保留功能语义的前提下缩减规模。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">在压缩过程中保持技能契约（接口与行为约束）不变，避免压缩破坏技能可用性。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在评测中取得 99.2%、98.7% 等保留率，压缩比达 3.46 倍，支持 10 万规模技能库。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于大语言模型/智能体基础设施方向，建议关注压缩保真度、大规模检索效率与真实部署成本。</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-llm">LLM</span>
+        <span class="tag tag-agent">Agent</span>
+        <span class="tag tag-infra">Compression</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2608.05604">arXiv</a>
+        <a href="https://arxiv.org/pdf/2608.05604">PDF</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">🏢 行业动态 · 重点机构发布</h2>
+
+    <div class="info-card">
+      <div class="paper-title">The builder's guide to GPT-5.6 Applied AI</div>
+      <div class="paper-summary">OpenAI 发布《The builder's guide to GPT-5.6 Applied AI》，面向开发者介绍如何在应用开发中运用 GPT-5.6，分享工程实践与集成指南。</div>
+      <div class="paper-links">
+        <a href="https://openai.com/index/builders-guide-to-gpt-5-6/">来源</a>
+      </div>
+    </div>
+
+    <div class="info-card">
+      <div class="paper-title">Previewing Ultrafast mode: GPT-5.6 Sol at up to 14X the speed</div>
+      <div class="paper-summary">OpenAI 预览 Ultrafast 模式，GPT-5.6 Sol 推理速度最高可达原有水平的 14 倍，面向对延迟敏感的实时应用场景。</div>
+      <div class="paper-links">
+        <a href="https://openai.com/index/previewing-ultrafast/">来源</a>
+      </div>
+    </div>
+
+    <div class="info-card">
+      <div class="paper-title">OpenAI appoints Dali Rajic as Chief Revenue Officer</div>
+      <div class="paper-summary">OpenAI 任命 Dali Rajic 出任首席营收官，负责公司商业化与营收体系建设，体现其加速企业级市场拓展的战略布局。</div>
+      <div class="paper-links">
+        <a href="https://openai.com/index/dali-rajic-chief-revenue-officer/">来源</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>小小志AI日报 · 自动生成于 2026-08-14</p>
+    <p>数据来源：arXiv · HuggingFace Daily Papers · 机构官方博客</p>
+  </footer>
+</div>
+</body>
+</html>

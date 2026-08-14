@@ -658,6 +658,202 @@
 <script>
 // ===== DATA =====
 const PAPERS_DB = [
+    // === 2026-08-14 ===
+    {
+        date: "2026-08-14",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "PlayWorld: Benchmarking World Models with Agent Players over Long-Horizon Objectives",
+        venue: "arXiv 论文 · Meta FAIR · 2608.13552",
+        summary: "🔬 技术路线: 提出 PlayWorld 基准，让智能体玩家在长程目标驱动下与视频世界模型交互，系统评估模型的长期预测与可控生成能力。 | 💡 创新点: 以\"智能体扮演\"取代被动片段评测，考察世界模型在目标导向多步决策中的一致性与动作可控性。 | 📊 实验效果: 视频世界模型在长程目标条件下生成未来状态，实验验证了基准对模型能力的区分作用（详见原文）。 | ⭐ 整体评价: 属于世界模型/视频生成方向，建议关注预测精度、动作可控性及长程一致性评测标准的建立。",
+        tags: [["World Model","green"],["Video","green"],["Benchmark","green"]],
+        links: [["arXiv","http://arxiv.org/abs/2608.13552v1"],["PDF","http://arxiv.org/pdf/2608.13552v1"],["Project","https://kxding.github.io/project/PlayWorld/"],["Code","https://github.com/kxding/PlayWorld"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出 PlayWorld 基准，让智能体玩家在长程目标驱动下与视频世界模型交互，系统评估模型的长期预测与可控生成能力。"},{"label":"💡 创新点","text":"以\"智能体扮演\"取代被动片段评测，考察世界模型在目标导向多步决策中的一致性与动作可控性。"},{"label":"📊 实验效果","text":"视频世界模型在长程目标条件下生成未来状态，实验验证了基准对模型能力的区分作用（详见原文）。"},{"label":"⭐ 整体评价","text":"属于世界模型/视频生成方向，建议关注预测精度、动作可控性及长程一致性评测标准的建立。"}]
+    },
+    {
+        date: "2026-08-14",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "Alaya-EVOKE: From Linear-Scaling Supervision to Endless World",
+        venue: "arXiv 论文 · 2608.13546",
+        summary: "🔬 技术路线: 提出 Alaya-EVOKE 交互式世界模型，引入持久化记忆与持续演化机制，支持在线性扩展监督下的长期生成。 | 💡 创新点: 构建 VBench-Long 长程视频评测，配合持久记忆使世界模型可持续学习而无需整体重新训练。 | 📊 实验效果: 在长视频生成任务上验证了方法的有效性，展现出持续演化的世界建模能力（详见原文）。 | ⭐ 整体评价: 属于世界模型方向，建议关注记忆持久化、长期一致性及与真实环境的贴合程度。",
+        tags: [["World Model","green"],["Memory","green"],["VBench-Long","green"]],
+        links: [["arXiv","http://arxiv.org/abs/2608.13546v1"],["PDF","http://arxiv.org/pdf/2608.13546v1"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出 Alaya-EVOKE 交互式世界模型，引入持久化记忆与持续演化机制，支持在线性扩展监督下的长期生成。"},{"label":"💡 创新点","text":"构建 VBench-Long 长程视频评测，配合持久记忆使世界模型可持续学习而无需整体重新训练。"},{"label":"📊 实验效果","text":"在长视频生成任务上验证了方法的有效性，展现出持续演化的世界建模能力（详见原文）。"},{"label":"⭐ 整体评价","text":"属于世界模型方向，建议关注记忆持久化、长期一致性及与真实环境的贴合程度。"}]
+    },
+    {
+        date: "2026-08-14",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "Self-Evolving Embodied Agents via Skill-Harness Evolution",
+        venue: "HF 每日热门 · 2608.11350",
+        summary: "🔬 技术路线: 提出基于技能-框架协同演化的具身智能体自进化方法，结合微调与强化学习让智能体持续成长。 | 💡 创新点: 引入 ESI-Bench 评测基准，使具身智能体通过技能与约束框架的协同演化实现能力自我提升。 | 📊 实验效果: 在实验设置中验证了自进化流程的有效性，具体量化指标详见原文。 | ⭐ 整体评价: 属于机器人算法与控制方向，建议重点看实验设置、基线对比与真实部署条件下的表现。",
+        tags: [["Robotics","green"],["Embodied","green"],["Self-Evolve","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2608.11350"],["PDF","https://arxiv.org/pdf/2608.11350"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出基于技能-框架协同演化的具身智能体自进化方法，结合微调与强化学习让智能体持续成长。"},{"label":"💡 创新点","text":"引入 ESI-Bench 评测基准，使具身智能体通过技能与约束框架的协同演化实现能力自我提升。"},{"label":"📊 实验效果","text":"在实验设置中验证了自进化流程的有效性，具体量化指标详见原文。"},{"label":"⭐ 整体评价","text":"属于机器人算法与控制方向，建议重点看实验设置、基线对比与真实部署条件下的表现。"}]
+    },
+    {
+        date: "2026-08-14",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "AutoDesign: Meta-Harness Optimization for Long-Horizon Agentic Design",
+        venue: "arXiv 论文 · 2608.13560",
+        summary: "🔬 技术路线: 提出 AutoDesign 元框架，将长程智能体设计任务本身作为可优化的元问题，自动搜索并编排子任务求解流程。 | 💡 创新点: 引入 PosterBench-mini 多模态评测基准，把设计质量拆解为可度量维度，实现自动化迭代优化。 | 📊 实验效果: 在 PosterBench-mini 基准上以 12.4% 的关键指标验证了元框架对长程设计的有效性。 | ⭐ 整体评价: 属于智能体/工具使用方向，建议关注元搜索开销、子任务组合策略及在真实设计场景的泛化。",
+        tags: [["Agent","green"],["Design","green"],["PosterBench-mini","green"]],
+        links: [["arXiv","http://arxiv.org/abs/2608.13560v1"],["PDF","http://arxiv.org/pdf/2608.13560v1"],["Code","https://github.com/Yaxin9Luo/AutoDesign"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出 AutoDesign 元框架，将长程智能体设计任务本身作为可优化的元问题，自动搜索并编排子任务求解流程。"},{"label":"💡 创新点","text":"引入 PosterBench-mini 多模态评测基准，把设计质量拆解为可度量维度，实现自动化迭代优化。"},{"label":"📊 实验效果","text":"在 PosterBench-mini 基准上以 12.4% 的关键指标验证了元框架对长程设计的有效性。"},{"label":"⭐ 整体评价","text":"属于智能体/工具使用方向，建议关注元搜索开销、子任务组合策略及在真实设计场景的泛化。"}]
+    },
+    {
+        date: "2026-08-14",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "OmniScientist: An Omni-Modal Omni-Discipline AI Scientist",
+        venue: "arXiv 论文 · 2608.13558",
+        summary: "🔬 技术路线: 构建全模态、全学科的人工智能科学家系统，统一处理文本、图像、表格等多模态科研输入并端到端产出研究。 | 💡 创新点: 提出 OmniScientist 框架，打通文献理解、假设生成到实验验证的科研闭环，支持跨学科协作。 | 📊 实验效果: 在综合评测中取得约 85% 的任务完成率，验证全模态科研流程的可行性。 | ⭐ 整体评价: 属于智能体/科研自动化方向，建议关注跨学科泛化、可信度与对真实科研的辅助边界。",
+        tags: [["Agent","green"],["Omni-Modal","green"],["AI Scientist","green"]],
+        links: [["arXiv","http://arxiv.org/abs/2608.13558v1"],["PDF","http://arxiv.org/pdf/2608.13558v1"],["Project","https://omni-scientist.github.io/"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"构建全模态、全学科的人工智能科学家系统，统一处理文本、图像、表格等多模态科研输入并端到端产出研究。"},{"label":"💡 创新点","text":"提出 OmniScientist 框架，打通文献理解、假设生成到实验验证的科研闭环，支持跨学科协作。"},{"label":"📊 实验效果","text":"在综合评测中取得约 85% 的任务完成率，验证全模态科研流程的可行性。"},{"label":"⭐ 整体评价","text":"属于智能体/科研自动化方向，建议关注跨学科泛化、可信度与对真实科研的辅助边界。"}]
+    },
+    {
+        date: "2026-08-14",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "QuoteBench: How Matched Scores Can Hide Command-Path Failures",
+        venue: "arXiv 论文 · 2608.13547",
+        summary: "🔬 技术路线: 提出 QuoteBench 基准，检验智能体执行命令行任务时，表面分数匹配是否掩盖了底层命令路径的错误。 | 💡 创新点: 区分\"输出分数匹配\"与\"真实命令路径正确\"，揭示评测指标与实际执行之间的系统性脱节。 | 📊 实验效果: 实验观察到高达 73.2 个百分点的分数与路径一致性差距，量化暴露了评测盲区。 | ⭐ 整体评价: 属于智能体/工具使用方向，建议关注评测协议严谨性、命令路径正确性及指标设计的可靠性。",
+        tags: [["Agent","green"],["Command","green"],["QuoteBench","green"]],
+        links: [["arXiv","http://arxiv.org/abs/2608.13547v1"],["PDF","http://arxiv.org/pdf/2608.13547v1"],["Link","https://quotebench.lsamc.website/"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出 QuoteBench 基准，检验智能体执行命令行任务时，表面分数匹配是否掩盖了底层命令路径的错误。"},{"label":"💡 创新点","text":"区分\"输出分数匹配\"与\"真实命令路径正确\"，揭示评测指标与实际执行之间的系统性脱节。"},{"label":"📊 实验效果","text":"实验观察到高达 73.2 个百分点的分数与路径一致性差距，量化暴露了评测盲区。"},{"label":"⭐ 整体评价","text":"属于智能体/工具使用方向，建议关注评测协议严谨性、命令路径正确性及指标设计的可靠性。"}]
+    },
+    {
+        date: "2026-08-14",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Vero: Can AI Agents Build Formally Verified Software Repositories?",
+        venue: "arXiv 论文 · 2608.13522",
+        summary: "🔬 技术路线: 提出 Vero 框架，考察智能体能否自主构建经过形式化验证的软件仓库，涵盖证明生成与代码产出。 | 💡 创新点: 将形式化验证作为智能体软件工程能力的硬性验收标准，而非仅看功能正确性。 | 📊 实验效果: 在代码生成与形式化验证任务上验证了方法的可行性，展示智能体产出可验证仓库的潜力。 | ⭐ 整体评价: 属于智能体/软件工程方向，建议关注验证覆盖率、证明可维护性与人机协作边界。",
+        tags: [["Agent","green"],["Verification","green"],["Software","green"]],
+        links: [["arXiv","http://arxiv.org/abs/2608.13522v1"],["PDF","http://arxiv.org/pdf/2608.13522v1"],["Code","https://github.com/sunblaze-ucb/vero"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出 Vero 框架，考察智能体能否自主构建经过形式化验证的软件仓库，涵盖证明生成与代码产出。"},{"label":"💡 创新点","text":"将形式化验证作为智能体软件工程能力的硬性验收标准，而非仅看功能正确性。"},{"label":"📊 实验效果","text":"在代码生成与形式化验证任务上验证了方法的可行性，展示智能体产出可验证仓库的潜力。"},{"label":"⭐ 整体评价","text":"属于智能体/软件工程方向，建议关注验证覆盖率、证明可维护性与人机协作边界。"}]
+    },
+    {
+        date: "2026-08-14",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "OpenART: Scaling Agent Red Teaming via Open-Ended Environment Evolution",
+        venue: "HF 每日热门 · 2608.00677",
+        summary: "🔬 技术路线: 提出 OpenART，通过开放式环境演化对智能体红队测试进行规模化，自动构造多样化对抗场景。 | 💡 创新点: 以统一、可扩展的环境演化机制替代手工设计攻击，持续提升红队测试的覆盖与强度。 | 📊 实验效果: 在评测中报告 85.0% 等关键指标，展现开放式环境演化的可扩展性与攻击覆盖能力。 | ⭐ 整体评价: 属于智能体/安全评测方向，建议关注环境多样性、自动演化稳定性及评测偏差。",
+        tags: [["Agent","green"],["Red Teaming","green"],["Safety","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2608.00677"],["PDF","https://arxiv.org/pdf/2608.00677"],["Code","https://github.com/AI45Lab/OpenART"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出 OpenART，通过开放式环境演化对智能体红队测试进行规模化，自动构造多样化对抗场景。"},{"label":"💡 创新点","text":"以统一、可扩展的环境演化机制替代手工设计攻击，持续提升红队测试的覆盖与强度。"},{"label":"📊 实验效果","text":"在评测中报告 85.0% 等关键指标，展现开放式环境演化的可扩展性与攻击覆盖能力。"},{"label":"⭐ 整体评价","text":"属于智能体/安全评测方向，建议关注环境多样性、自动演化稳定性及评测偏差。"}]
+    },
+    {
+        date: "2026-08-14",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Mechanist: AI as a Scientific Instrument for Discovering the Mechanisms of Intelligence",
+        venue: "HF 每日热门 · ZJUNLP · 2608.12036",
+        summary: "🔬 技术路线: 提出 Mechanist，把人工智能当作发现智能机制的科学仪器，系统性探索模型内部运作规律。 | 💡 创新点: 以 AI 作为主动科学探究工具，自动化提出并验证关于智能机制的假设，形成研究闭环。 | 📊 实验效果: 在机制发现任务上验证了方法的有效性，开源项目获得 30 星关注。 | ⭐ 整体评价: 属于智能体/科研自动化方向，建议关注可解释性深度、假设可信度及对认知科学的启发。",
+        tags: [["Agent","green"],["Mechanism","green"],["AI Scientist","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2608.12036"],["PDF","https://arxiv.org/pdf/2608.12036"],["Project","http://mechanist.openkg.cn/"],["Code","https://github.com/zjunlp/Mechanist"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出 Mechanist，把人工智能当作发现智能机制的科学仪器，系统性探索模型内部运作规律。"},{"label":"💡 创新点","text":"以 AI 作为主动科学探究工具，自动化提出并验证关于智能机制的假设，形成研究闭环。"},{"label":"📊 实验效果","text":"在机制发现任务上验证了方法的有效性，开源项目获得 30 星关注。"},{"label":"⭐ 整体评价","text":"属于智能体/科研自动化方向，建议关注可解释性深度、假设可信度及对认知科学的启发。"}]
+    },
+    {
+        date: "2026-08-14",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Can LLM Agents Stick to the Script? A Benchmark for Long-Horizon Consistency in Interactive Narratives",
+        venue: "HF 每日热门 · 2608.08160",
+        summary: "🔬 技术路线: 提出 NCP-Bench 基准，检验智能体在交互式叙事中能否长期遵循既定剧情脚本、保持一致性。 | 💡 创新点: 聚焦长程一致性这一被忽视的维度，量化智能体在多轮交互中偏离脚本的程度。 | 📊 实验效果: 在评测中报告 42%、40%、68% 等一致性指标，揭示当前模型的长程遵循短板。 | ⭐ 整体评价: 属于大语言模型/智能体评测方向，建议关注脚本遵循机制、长程记忆与多轮对话稳定性。",
+        tags: [["Agent","green"],["LLM","green"],["NCP-Bench","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2608.08160"],["PDF","https://arxiv.org/pdf/2608.08160"],["Code","https://github.com/yingpengma/NCP-Bench"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出 NCP-Bench 基准，检验智能体在交互式叙事中能否长期遵循既定剧情脚本、保持一致性。"},{"label":"💡 创新点","text":"聚焦长程一致性这一被忽视的维度，量化智能体在多轮交互中偏离脚本的程度。"},{"label":"📊 实验效果","text":"在评测中报告 42%、40%、68% 等一致性指标，揭示当前模型的长程遵循短板。"},{"label":"⭐ 整体评价","text":"属于大语言模型/智能体评测方向，建议关注脚本遵循机制、长程记忆与多轮对话稳定性。"}]
+    },
+    {
+        date: "2026-08-14",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "LittleLearner: Language Models Under Pedagogically Controlled Knowledge Exposure",
+        venue: "arXiv 论文 · 2608.13545",
+        summary: "🔬 技术路线: 提出 LittleLearner，以\"教学式可控知识暴露\"训练语言模型，模拟循序渐进的知识注入过程。 | 💡 创新点: 将教育学中的知识呈现顺序引入模型训练，控制不同规模模型（5B/88B）接触知识的节奏。 | 📊 实验效果: 在实验中使用 88B 与 5B 规模模型验证，观察可控暴露对知识习得的影响。 | ⭐ 整体评价: 属于大语言模型/训练范式方向，建议关注知识暴露策略、课程设计与小模型对齐效果。",
+        tags: [["LLM","green"],["Training","green"],["Curriculum","green"]],
+        links: [["arXiv","http://arxiv.org/abs/2608.13545v1"],["PDF","http://arxiv.org/pdf/2608.13545v1"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出 LittleLearner，以\"教学式可控知识暴露\"训练语言模型，模拟循序渐进的知识注入过程。"},{"label":"💡 创新点","text":"将教育学中的知识呈现顺序引入模型训练，控制不同规模模型（5B/88B）接触知识的节奏。"},{"label":"📊 实验效果","text":"在实验中使用 88B 与 5B 规模模型验证，观察可控暴露对知识习得的影响。"},{"label":"⭐ 整体评价","text":"属于大语言模型/训练范式方向，建议关注知识暴露策略、课程设计与小模型对齐效果。"}]
+    },
+    {
+        date: "2026-08-14",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "SAEVerbalizer: Generating Explanations for Sparse Autoencoder Features via Representation Verbalization",
+        venue: "arXiv 论文 · 2608.13538",
+        summary: "🔬 技术路线: 提出 SAEVerbalizer，通过表征语言化为稀疏自编码器的特征自动生成自然语言解释。 | 💡 创新点: 以轻量化方式将可解释性特征映射到可阅读的解释，降低人工标注特征语义的成本。 | 📊 实验效果: 在稀疏自编码器特征解释任务上验证了方法的有效性，解释质量得到实验确认。 | ⭐ 整体评价: 属于大语言模型/可解释性方向，建议关注解释准确性、特征覆盖度及对安全研究的实用价值。",
+        tags: [["LLM","green"],["Interpretability","green"],["SAE","green"]],
+        links: [["arXiv","http://arxiv.org/abs/2608.13538v1"],["PDF","http://arxiv.org/pdf/2608.13538v1"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出 SAEVerbalizer，通过表征语言化为稀疏自编码器的特征自动生成自然语言解释。"},{"label":"💡 创新点","text":"以轻量化方式将可解释性特征映射到可阅读的解释，降低人工标注特征语义的成本。"},{"label":"📊 实验效果","text":"在稀疏自编码器特征解释任务上验证了方法的有效性，解释质量得到实验确认。"},{"label":"⭐ 整体评价","text":"属于大语言模型/可解释性方向，建议关注解释准确性、特征覆盖度及对安全研究的实用价值。"}]
+    },
+    {
+        date: "2026-08-14",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Spark-to-Paper: End-to-End Research Paper Generation as a Composable Skill",
+        venue: "HF 每日热门 · 2608.11924",
+        summary: "🔬 技术路线: 提出 Spark-to-Paper，将科研论文撰写拆解为可组合技能，端到端从研究构思生成完整论文。 | 💡 创新点: 以可组合技能链替代单模型生成，提升论文结构完整性与内容连贯性，兼顾轻量化。 | 📊 实验效果: 在评测中取得 99.5%、96.4%、92% 等指标，开源项目获得 547 星关注。 | ⭐ 整体评价: 属于大语言模型/科研自动化方向，建议关注引用准确性、方法论严谨及对学术诚信的影响。",
+        tags: [["LLM","green"],["Paper Gen","green"],["Skill","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2608.11924"],["PDF","https://arxiv.org/pdf/2608.11924"],["Project","https://spark-to-paper-skills.github.io/spark-to-paper-skills/"],["Code","https://github.com/Spark-To-Paper-Skills/spark-to-paper-skills"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出 Spark-to-Paper，将科研论文撰写拆解为可组合技能，端到端从研究构思生成完整论文。"},{"label":"💡 创新点","text":"以可组合技能链替代单模型生成，提升论文结构完整性与内容连贯性，兼顾轻量化。"},{"label":"📊 实验效果","text":"在评测中取得 99.5%、96.4%、92% 等指标，开源项目获得 547 星关注。"},{"label":"⭐ 整体评价","text":"属于大语言模型/科研自动化方向，建议关注引用准确性、方法论严谨及对学术诚信的影响。"}]
+    },
+    {
+        date: "2026-08-14",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "AI4AI at Test-Time: Strong-to-Weak Capability Transfer via Harnesses",
+        venue: "HF 每日热门 · UIUC · 2608.12307",
+        summary: "🔬 技术路线: 提出在测试时通过\"评测框架\"实现强模型到弱模型的能力迁移，属于测试时蒸馏方法。 | 💡 创新点: 引入心智理论式的强弱能力迁移机制，让弱模型在强模型构建的评测框架引导下提升表现。 | 📊 实验效果: 在实验中观察到约 5% 的能力迁移增益，验证了测试时强弱迁移的可行性。 | ⭐ 整体评价: 属于大语言模型/蒸馏方向，建议关注迁移稳定性、适用任务范围与对弱模型泛化的影响。",
+        tags: [["LLM","green"],["Distillation","green"],["Test-Time","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2608.12307"],["PDF","https://arxiv.org/pdf/2608.12307"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出在测试时通过\"评测框架\"实现强模型到弱模型的能力迁移，属于测试时蒸馏方法。"},{"label":"💡 创新点","text":"引入心智理论式的强弱能力迁移机制，让弱模型在强模型构建的评测框架引导下提升表现。"},{"label":"📊 实验效果","text":"在实验中观察到约 5% 的能力迁移增益，验证了测试时强弱迁移的可行性。"},{"label":"⭐ 整体评价","text":"属于大语言模型/蒸馏方向，建议关注迁移稳定性、适用任务范围与对弱模型泛化的影响。"}]
+    },
+    {
+        date: "2026-08-14",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "SkillZip: Contract-Preserving Graph Compression for Scalable Agent Skill Libraries",
+        venue: "HF 每日热门 · 2608.05604",
+        summary: "🔬 技术路线: 提出 SkillZip，以保契约的图压缩方法压缩智能体技能库，在保留功能语义的前提下缩减规模。 | 💡 创新点: 在压缩过程中保持技能契约（接口与行为约束）不变，避免压缩破坏技能可用性。 | 📊 实验效果: 在评测中取得 99.2%、98.7% 等保留率，压缩比达 3.46 倍，支持 10 万规模技能库。 | ⭐ 整体评价: 属于大语言模型/智能体基础设施方向，建议关注压缩保真度、大规模检索效率与真实部署成本。",
+        tags: [["LLM","green"],["Agent","green"],["Compression","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2608.05604"],["PDF","https://arxiv.org/pdf/2608.05604"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出 SkillZip，以保契约的图压缩方法压缩智能体技能库，在保留功能语义的前提下缩减规模。"},{"label":"💡 创新点","text":"在压缩过程中保持技能契约（接口与行为约束）不变，避免压缩破坏技能可用性。"},{"label":"📊 实验效果","text":"在评测中取得 99.2%、98.7% 等保留率，压缩比达 3.46 倍，支持 10 万规模技能库。"},{"label":"⭐ 整体评价","text":"属于大语言模型/智能体基础设施方向，建议关注压缩保真度、大规模检索效率与真实部署成本。"}]
+    },
+    {
+        date: "2026-08-14",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "The builder's guide to GPT-5.6 Applied AI",
+        venue: "",
+        summary: "OpenAI 发布《The builder's guide to GPT-5.6 Applied AI》，面向开发者介绍如何在应用开发中运用 GPT-5.6，分享工程实践与集成指南。",
+        tags: [],
+        links: [["来源","https://openai.com/index/builders-guide-to-gpt-5-6/"]]
+    },
+    {
+        date: "2026-08-14",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "Previewing Ultrafast mode: GPT-5.6 Sol at up to 14X the speed",
+        venue: "",
+        summary: "OpenAI 预览 Ultrafast 模式，GPT-5.6 Sol 推理速度最高可达原有水平的 14 倍，面向对延迟敏感的实时应用场景。",
+        tags: [],
+        links: [["来源","https://openai.com/index/previewing-ultrafast/"]]
+    },
+    {
+        date: "2026-08-14",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "OpenAI appoints Dali Rajic as Chief Revenue Officer",
+        venue: "",
+        summary: "OpenAI 任命 Dali Rajic 出任首席营收官，负责公司商业化与营收体系建设，体现其加速企业级市场拓展的战略布局。",
+        tags: [],
+        links: [["来源","https://openai.com/index/dali-rajic-chief-revenue-officer/"]]
+    },
     // === 2026-08-13 ===
     {
         date: "2026-08-13",
@@ -21525,6 +21721,13 @@ const PAPERS_DB = [
 ];
 
 const DAILY_OVERVIEW = {
+    "2026-08-14": {
+        bannerTitle: "🔥 今日看点",
+        bannerSubtitle: "本期共收录 18 条动态，含 15 篇论文（arXiv 8 篇 + HuggingFace 每日热门 7 篇）与 3 条机构发布。世界模型方向，Meta FAIR 的 PlayWorld 以智能体扮演方式长程评测视频世界模型，Alaya-EVOKE 引入持久记忆实现持续演化的世界建模。智能体方向，AutoDesign 把长程设计当作可优化元问题，Vero 用形式化验证作为智能体软件工程的硬指标，OpenART 以开放式环境演化规模化红队测试，NCP-Bench 检验智能体长程剧情一致性。大语言模型方向，LittleLearner 以教学式知识暴露训练模型，SAEVerbalizer 自动为可解释特征生成语言解释，Spark-to-Paper 端到端生成科研论文。具身方向，Self-Evolving Embodied Agents 通过技能-框架演化实现自进化。机构方面，OpenAI 发布 GPT-5.6 应用指南与最高 14 倍速的 Ultrafast 模式，并任命新任首席营收官。",
+        picks: ["Spark-to-Paper: End-to-End Research Paper Generation as a Composable Skill","Mechanist: AI as a Scientific Instrument for Discovering the Mechanisms of Intelligence","OpenART: Scaling Agent Red Teaming via Open-Ended Environment Evolution","Alaya-EVOKE: From Linear-Scaling Supervision to Endless World","AI4AI at Test-Time: Strong-to-Weak Capability Transfer via Harnesses"],
+        totalPapers: 15,
+        totalNews: 3
+    },
     "2026-08-13": {
         bannerTitle: "🔥 今日看点",
         bannerSubtitle: "本期共收录 16 篇论文（arXiv 8 篇 + HuggingFace 每日热门 8 篇）与 1 条机构动态。机器人方向，DreamFly 引入因果记忆与滚动时域扩散规划，让无人机在语言指令下完成空中视觉导航；ComBodied Agents 提出以人为本、通信与具身一体化的智能体新范式；Ex-Omni-2D 让对话模型以原生视觉在场更具表现力地表达（17 星）。智能体方向，IBM 的 VAKRA 在工具策略约束下评测跨接口多跳推理，Mendel Gödel Machine 以比较演化实现编程智能体递归自改进，SkillZip 则免评估压缩技能库。大语言模型方向，VibeLifeBench 考察生活智能体的主动性与持久性，小米发布免参考多语言翻译后训练方法。机构动态方面，OpenAI 发布《How enterprises put AI to work》。",
