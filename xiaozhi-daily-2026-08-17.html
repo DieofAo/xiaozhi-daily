@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>小小志AI日报 - 2026年8月17日</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans SC', sans-serif;
+  background: #0a0e1a;
+  color: #e0e6f0;
+  line-height: 1.7;
+  min-height: 100vh;
+}
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+header {
+  text-align: center;
+  margin-bottom: 48px;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, rgba(59,130,246,0.08) 0%, rgba(139,92,246,0.08) 100%);
+  border-radius: 20px;
+  border: 1px solid rgba(99,102,241,0.15);
+}
+header h1 {
+  font-size: 2rem;
+  background: linear-gradient(135deg, #60a5fa, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 8px;
+}
+header .date {
+  color: #94a3b8;
+  font-size: 1rem;
+}
+header .subtitle {
+  color: #64748b;
+  font-size: 0.9rem;
+  margin-top: 6px;
+}
+.highlight-banner {
+  background: linear-gradient(135deg, rgba(249,115,22,0.1) 0%, rgba(234,179,8,0.08) 100%);
+  border: 1px solid rgba(249,115,22,0.2);
+  border-radius: 14px;
+  padding: 20px 24px;
+  margin-bottom: 36px;
+}
+.hl-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fb923c;
+  margin-bottom: 8px;
+}
+.hl-text {
+  font-size: 0.92rem;
+  color: #cbd5e1;
+  line-height: 1.7;
+}
+.section {
+  margin-bottom: 40px;
+}
+.section-title {
+  font-size: 1.4rem;
+  color: #f1f5f9;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(99,102,241,0.2);
+}
+.paper-card {
+  background: rgba(30,41,59,0.6);
+  border: 1px solid rgba(99,102,241,0.12);
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 16px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.paper-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(99,102,241,0.1);
+  border-color: rgba(99,102,241,0.3);
+}
+.paper-card.hot {
+  border-color: rgba(249,115,22,0.25);
+  background: rgba(30,41,59,0.7);
+}
+.paper-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #f8fafc;
+  margin-bottom: 8px;
+}
+.paper-meta {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-bottom: 10px;
+}
+.summary-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+@media (max-width: 640px) {
+  .summary-grid { grid-template-columns: 1fr; }
+}
+.summary-item {
+  background: rgba(15,23,42,0.5);
+  border-radius: 10px;
+  padding: 12px 14px;
+  border: 1px solid rgba(99,102,241,0.08);
+}
+.summary-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #818cf8;
+  margin-bottom: 4px;
+}
+.summary-text {
+  font-size: 0.88rem;
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+.paper-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.tag {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+.tag-agent { background: rgba(16,185,129,0.12); color: #34d399; }
+.tag-llm { background: rgba(99,102,241,0.12); color: #818cf8; }
+.tag-multimodal { background: rgba(244,114,182,0.12); color: #f472b6; }
+.tag-world { background: rgba(251,191,36,0.12); color: #fbbf24; }
+.tag-robot { background: rgba(251,146,60,0.12); color: #fb923c; }
+.tag-rl { background: rgba(45,212,191,0.12); color: #2dd4bf; }
+.tag-benchmark { background: rgba(34,211,238,0.12); color: #22d3ee; }
+.tag-vla { background: rgba(59,130,246,0.12); color: #60a5fa; }
+.tag-memory { background: rgba(192,132,252,0.12); color: #c084fc; }
+.tag-reasoning { background: rgba(132,204,22,0.12); color: #a3e635; }
+.tag-data { background: rgba(250,204,21,0.12); color: #facc15; }
+.tag-infra { background: rgba(167,139,250,0.12); color: #a78bfa; }
+.tag-embodied { background: rgba(251,146,60,0.12); color: #fb923c; }
+.tag-3d { background: rgba(148,163,184,0.12); color: #94a3b8; }
+.tag-tool { background: rgba(52,211,153,0.12); color: #34d399; }
+.hot-badge {
+  display: inline;
+  margin-right: 4px;
+}
+.info-card {
+  background: rgba(30,41,59,0.6);
+  border: 1px solid rgba(99,102,241,0.12);
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 16px;
+}
+.paper-summary {
+  font-size: 0.9rem;
+  color: #cbd5e1;
+  line-height: 1.7;
+  margin-bottom: 14px;
+}
+.paper-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.paper-links a {
+  display: inline-block;
+  padding: 5px 14px;
+  background: rgba(99,102,241,0.12);
+  color: #818cf8;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  transition: background 0.2s;
+}
+.paper-links a:hover {
+  background: rgba(99,102,241,0.25);
+}
+footer {
+  text-align: center;
+  color: #475569;
+  font-size: 0.82rem;
+  padding: 40px 20px;
+  border-top: 1px solid rgba(99,102,241,0.1);
+  margin-top: 40px;
+}
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+.stat-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>小小志AI日报</h1>
+    <div class="date">2026年8月17日 · 星期一</div>
+    <div class="subtitle">关注：VLA · Robotics · World Model · LLM · Multimodal · Agent</div>
+    <div class="stats">
+      <span class="stat-item">📝 arXiv 论文 0</span>
+      <span class="stat-item">🤗 HF 热门 8</span>
+      <span class="stat-item">🔁 跨日去重移除 0</span>
+    </div>
+  </header>
+
+  <div class="highlight-banner">
+    <div class="hl-title">🔥 今日看点</div>
+    <div class="hl-text">本期 HuggingFace 热门共 8 篇，呈现三类趋势：一是自蒸馏与在线蒸馏成为小模型能力跃迁的核心路径，视觉策略蒸馏、长上下文推理蒸馏、隐空间自蒸馏三篇同台亮相；二是世界模型 Marionette 把下一刻状态预测、三维几何重建与表面外观绘制统一到一个框架；三是长程智能体过程级评测与一年尺度移动记忆，揭示经验复用对任务完成的真实增益。</div>
+  </div>
+
+  <section class="section">
+    <h2 class="section-title">🌍 World Model · 世界模型</h2>
+
+    <div class="paper-card">
+      <div class="paper-title">Marionette: Predicting World States, Rendering Geometry, Painting Appearance</div>
+      <div class="paper-meta">arXiv 2608 · Alaya Lab</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">构建交互式游戏世界模型，联合预测下一时刻的世界状态、渲染三维几何并生成表面外观。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">将世界状态预测、几何重建与外观绘制统一到单一世界模型框架，实现可交互的游戏场景生成。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在交互式游戏世界建模任务上取得 31% 与 66% 等量化指标，验证状态、几何、外观联合建模的可行性。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于世界模型方向，关注可交互场景的联合生成，建议留意其预测精度与动作可控性表现。</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-world">World Model</span>
+        <span class="tag tag-3d">3D</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2608.14530">arXiv</a>
+        <a href="https://arxiv.org/pdf/2608.14530">PDF</a>
+        <a href="https://alayalab.github.io/Marionette/">Project</a>
+      </div>
+    </div>
+
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">🧩 Agent · 智能体</h2>
+
+    <div class="paper-card">
+      <div class="paper-title">Beyond Final Scores: A Systematic Evaluation of Agents for Long-Horizon AI Research and Development</div>
+      <div class="paper-meta">arXiv 2608 · LongCat</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出面向长程人工智能研发任务的智能体评测框架，不只看最终结果分数，而是拆解研发全过程能力。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次系统化评估智能体在长程科研与开发中的表现，建立超越终局得分的过程级评测方法。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在多个长程研发任务上对比不同智能体，揭示仅看最终得分会掩盖关键失败环节的问题。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于智能体评测方向，对长程任务的可靠性评估有价值，建议关注过程透明度与失败归因。</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-agent">Agent</span>
+        <span class="tag tag-benchmark">Benchmark</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2608.13417">arXiv</a>
+        <a href="https://arxiv.org/pdf/2608.13417">PDF</a>
+        <a href="https://yiwei98.github.io/AutoResearchEval">Project</a>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">MobileMem: Learning from a Year of Mobile Experiences</div>
+      <div class="paper-meta">arXiv 2608 · ZJUNLP / OpenKG Consortium</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">构建从长达一年的移动端交互记录中学习的记忆系统，让智能体积累并复用真实使用经验。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 MobileMem，具备多模态特性，首次利用一年尺度移动经验进行智能体记忆建模与检索。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在移动端任务生成与推理上验证有效性，并开源代码（11 星），展示长期经验对任务完成的增益。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于多模态记忆方向，关注长周期经验复用，对个性化手机智能体有实用价值。</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-agent">Agent</span>
+        <span class="tag tag-memory">Memory</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2608.13606">arXiv</a>
+        <a href="https://arxiv.org/pdf/2608.13606">PDF</a>
+        <a href="https://zjunlp.github.io/MobileMem/">Project</a>
+        <a href="https://github.com/zjunlp/MobileMem">Code (11⭐)</a>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">Latent On-Policy Self-Distillation</div>
+      <div class="paper-meta">arXiv 2608 · National University of Singapore</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出隐空间在线自蒸馏方法，让模型在训练中以自身过往状态作为教师进行策略优化。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">将在线策略与自蒸馏结合到隐空间，具备端到端可扩展特性，无需额外教师模型即可自我提升。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在多个基准上取得约 30% 的提升指标，验证隐空间自蒸馏在稳定性与扩展性上的优势。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于智能体训练方向，关注自监督式能力进化，适合需要持续优化的在线学习场景。</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-agent">Agent</span>
+        <span class="tag tag-rl">RL</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2608.13040">arXiv</a>
+        <a href="https://arxiv.org/pdf/2608.13040">PDF</a>
+        <a href="https://github.com/bingreeky/LOPD">Code (20⭐)</a>
+      </div>
+    </div>
+
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">🧠 LLM · 大语言模型</h2>
+
+    <div class="paper-card">
+      <div class="paper-title">SimpleOPD: Simple Tokenizer-Agnostic On-Policy Distillation for Long-Context Reasoning</div>
+      <div class="paper-meta">arXiv 2608 · Shanghai AI Laboratory</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出与分词器无关的长上下文推理在线蒸馏方法，让小模型在长文本推理上接近大模型表现。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">设计 SimpleOPD，突破分词器差异限制，以在线策略方式将长上下文推理能力高效迁移到小模型。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在长上下文推理基准上验证有效性，并开源代码（3 星），展示该方法在降低训练成本上的优势。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于大语言模型推理方向，关注训练范式与推理机制，适合低成本长上下文能力构建。</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-llm">LLM</span>
+        <span class="tag tag-reasoning">Reasoning</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2608.14277">arXiv</a>
+        <a href="https://arxiv.org/pdf/2608.14277">PDF</a>
+        <a href="https://hhnqqq.github.io/SimpleOPD-project-page">Project</a>
+        <a href="https://github.com/hhnqqq/SimpleOPD">Code (3⭐)</a>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">Claim-Level Reliability Assessment for Efficient Test-Time Reasoning</div>
+      <div class="paper-meta">arXiv 2608 · WeiboAI</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出论断级可靠性评估方法，在测试时推理过程中逐条判断模型论断的可信度以提效。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">以论断为基本单元评估可靠性，替代整体输出打分，实现更细粒度的测试时推理质量控制。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">以 20B 规模模型验证方法有效性，在相同算力下提升推理结果的可靠性与可用性。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于大语言模型推理方向，关注测试时计算效率与可信度，适合资源受限的落地场景。</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-llm">LLM</span>
+        <span class="tag tag-reasoning">Reasoning</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2608.11994">arXiv</a>
+        <a href="https://arxiv.org/pdf/2608.11994">PDF</a>
+        <a href="https://github.com/WeiboAI/CLR">Code (1⭐)</a>
+      </div>
+    </div>
+
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">📄 Other · 其他</h2>
+
+    <div class="paper-card">
+      <div class="paper-title">Can We Defend Against AI-Generated Video Attacks on Real-World Crisis Events? A Systematic Evaluation of Detectors, Generators and Social Dissemination</div>
+      <div class="paper-meta">arXiv 2608 · Hugging Face</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">构建系统化评测基准，对深度伪造危机视频的检测器与生成器进行双向评估，并分析其在社交媒体上的传播路径。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 RA-Bench 基准，覆盖零样本、多模态、鲁棒性三大特性，首次针对真实危机事件视频攻击做系统性评测。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在公开危机视频数据上对比多种检测器与生成器，揭示现有防御手段在真实事件场景下的显著脆弱性。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">聚焦 AI 生成视频对真实危机事件的攻击与防御，对事实核查与应急舆论治理有现实意义。</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-multimodal">Multimodal</span>
+        <span class="tag tag-benchmark">Benchmark</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2608.14391">arXiv</a>
+        <a href="https://arxiv.org/pdf/2608.14391">PDF</a>
+        <a href="https://ra-bench-crisis-video.yxgma811120.chatgpt.site/">Project</a>
+        <a href="https://github.com/24029100313/RA-Bench">Code (2⭐)</a>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">Self-Supervised Visual On-Policy Distillation</div>
+      <div class="paper-meta">arXiv 2608 · UC San Diego</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出自监督的视觉策略在线蒸馏方法，让小模型在无需额外标注的情况下从在线策略中学习视觉表征。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">将自监督信号与在线策略蒸馏结合，摆脱对专家示范或标注数据的依赖，实现端到端策略压缩。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在多个视觉控制与推理基准上取得 70.7%、77.4%、96% 等指标，并以 4B 规模模型验证有效性。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于策略蒸馏与模型压缩方向，关注无标注条件下的高效策略迁移，适合端侧部署场景。</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-multimodal">Multimodal</span>
+        <span class="tag tag-rl">RL</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2608.14144">arXiv</a>
+        <a href="https://arxiv.org/pdf/2608.14144">PDF</a>
+        <a href="https://williamium3000.github.io/s2vopd/">Project</a>
+      </div>
+    </div>
+
+  </section>
+
+  <footer>
+    <p>小小志AI日报 · 自动生成于 2026-08-17　│　跨日去重：0 篇重复论文</p>
+    <p>关注：VLA · Robotics · World Model · LLM · Multimodal · Agent</p>
+  </footer>
+</div>
+</body>
+</html>

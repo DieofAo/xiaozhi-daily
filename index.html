@@ -658,6 +658,95 @@
 <script>
 // ===== DATA =====
 const PAPERS_DB = [
+    // === 2026-08-17 ===
+    {
+        date: "2026-08-17",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "Marionette: Predicting World States, Rendering Geometry, Painting Appearance",
+        venue: "arXiv 2608 · Alaya Lab",
+        summary: "🔬 技术路线: 构建交互式游戏世界模型，联合预测下一时刻的世界状态、渲染三维几何并生成表面外观。 | 💡 创新点: 将世界状态预测、几何重建与外观绘制统一到单一世界模型框架，实现可交互的游戏场景生成。 | 📊 实验效果: 在交互式游戏世界建模任务上取得 31% 与 66% 等量化指标，验证状态、几何、外观联合建模的可行性。 | ⭐ 整体评价: 属于世界模型方向，关注可交互场景的联合生成，建议留意其预测精度与动作可控性表现。",
+        tags: [["World Model","green"],["3D","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2608.14530"],["PDF","https://arxiv.org/pdf/2608.14530"],["Project","https://alayalab.github.io/Marionette/"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"构建交互式游戏世界模型，联合预测下一时刻的世界状态、渲染三维几何并生成表面外观。"},{"label":"💡 创新点","text":"将世界状态预测、几何重建与外观绘制统一到单一世界模型框架，实现可交互的游戏场景生成。"},{"label":"📊 实验效果","text":"在交互式游戏世界建模任务上取得 31% 与 66% 等量化指标，验证状态、几何、外观联合建模的可行性。"},{"label":"⭐ 整体评价","text":"属于世界模型方向，关注可交互场景的联合生成，建议留意其预测精度与动作可控性表现。"}]
+    },
+    {
+        date: "2026-08-17",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Beyond Final Scores: A Systematic Evaluation of Agents for Long-Horizon AI Research and Development",
+        venue: "arXiv 2608 · LongCat",
+        summary: "🔬 技术路线: 提出面向长程人工智能研发任务的智能体评测框架，不只看最终结果分数，而是拆解研发全过程能力。 | 💡 创新点: 首次系统化评估智能体在长程科研与开发中的表现，建立超越终局得分的过程级评测方法。 | 📊 实验效果: 在多个长程研发任务上对比不同智能体，揭示仅看最终得分会掩盖关键失败环节的问题。 | ⭐ 整体评价: 属于智能体评测方向，对长程任务的可靠性评估有价值，建议关注过程透明度与失败归因。",
+        tags: [["Agent","green"],["Benchmark","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2608.13417"],["PDF","https://arxiv.org/pdf/2608.13417"],["Project","https://yiwei98.github.io/AutoResearchEval"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出面向长程人工智能研发任务的智能体评测框架，不只看最终结果分数，而是拆解研发全过程能力。"},{"label":"💡 创新点","text":"首次系统化评估智能体在长程科研与开发中的表现，建立超越终局得分的过程级评测方法。"},{"label":"📊 实验效果","text":"在多个长程研发任务上对比不同智能体，揭示仅看最终得分会掩盖关键失败环节的问题。"},{"label":"⭐ 整体评价","text":"属于智能体评测方向，对长程任务的可靠性评估有价值，建议关注过程透明度与失败归因。"}]
+    },
+    {
+        date: "2026-08-17",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "MobileMem: Learning from a Year of Mobile Experiences",
+        venue: "arXiv 2608 · ZJUNLP / OpenKG Consortium",
+        summary: "🔬 技术路线: 构建从长达一年的移动端交互记录中学习的记忆系统，让智能体积累并复用真实使用经验。 | 💡 创新点: 提出 MobileMem，具备多模态特性，首次利用一年尺度移动经验进行智能体记忆建模与检索。 | 📊 实验效果: 在移动端任务生成与推理上验证有效性，并开源代码（11 星），展示长期经验对任务完成的增益。 | ⭐ 整体评价: 属于多模态记忆方向，关注长周期经验复用，对个性化手机智能体有实用价值。",
+        tags: [["Agent","green"],["Memory","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2608.13606"],["PDF","https://arxiv.org/pdf/2608.13606"],["Project","https://zjunlp.github.io/MobileMem/"],["Code (11⭐)","https://github.com/zjunlp/MobileMem"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"构建从长达一年的移动端交互记录中学习的记忆系统，让智能体积累并复用真实使用经验。"},{"label":"💡 创新点","text":"提出 MobileMem，具备多模态特性，首次利用一年尺度移动经验进行智能体记忆建模与检索。"},{"label":"📊 实验效果","text":"在移动端任务生成与推理上验证有效性，并开源代码（11 星），展示长期经验对任务完成的增益。"},{"label":"⭐ 整体评价","text":"属于多模态记忆方向，关注长周期经验复用，对个性化手机智能体有实用价值。"}]
+    },
+    {
+        date: "2026-08-17",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Latent On-Policy Self-Distillation",
+        venue: "arXiv 2608 · National University of Singapore",
+        summary: "🔬 技术路线: 提出隐空间在线自蒸馏方法，让模型在训练中以自身过往状态作为教师进行策略优化。 | 💡 创新点: 将在线策略与自蒸馏结合到隐空间，具备端到端可扩展特性，无需额外教师模型即可自我提升。 | 📊 实验效果: 在多个基准上取得约 30% 的提升指标，验证隐空间自蒸馏在稳定性与扩展性上的优势。 | ⭐ 整体评价: 属于智能体训练方向，关注自监督式能力进化，适合需要持续优化的在线学习场景。",
+        tags: [["Agent","green"],["RL","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2608.13040"],["PDF","https://arxiv.org/pdf/2608.13040"],["Code (20⭐)","https://github.com/bingreeky/LOPD"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出隐空间在线自蒸馏方法，让模型在训练中以自身过往状态作为教师进行策略优化。"},{"label":"💡 创新点","text":"将在线策略与自蒸馏结合到隐空间，具备端到端可扩展特性，无需额外教师模型即可自我提升。"},{"label":"📊 实验效果","text":"在多个基准上取得约 30% 的提升指标，验证隐空间自蒸馏在稳定性与扩展性上的优势。"},{"label":"⭐ 整体评价","text":"属于智能体训练方向，关注自监督式能力进化，适合需要持续优化的在线学习场景。"}]
+    },
+    {
+        date: "2026-08-17",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "SimpleOPD: Simple Tokenizer-Agnostic On-Policy Distillation for Long-Context Reasoning",
+        venue: "arXiv 2608 · Shanghai AI Laboratory",
+        summary: "🔬 技术路线: 提出与分词器无关的长上下文推理在线蒸馏方法，让小模型在长文本推理上接近大模型表现。 | 💡 创新点: 设计 SimpleOPD，突破分词器差异限制，以在线策略方式将长上下文推理能力高效迁移到小模型。 | 📊 实验效果: 在长上下文推理基准上验证有效性，并开源代码（3 星），展示该方法在降低训练成本上的优势。 | ⭐ 整体评价: 属于大语言模型推理方向，关注训练范式与推理机制，适合低成本长上下文能力构建。",
+        tags: [["LLM","green"],["Reasoning","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2608.14277"],["PDF","https://arxiv.org/pdf/2608.14277"],["Project","https://hhnqqq.github.io/SimpleOPD-project-page"],["Code (3⭐)","https://github.com/hhnqqq/SimpleOPD"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出与分词器无关的长上下文推理在线蒸馏方法，让小模型在长文本推理上接近大模型表现。"},{"label":"💡 创新点","text":"设计 SimpleOPD，突破分词器差异限制，以在线策略方式将长上下文推理能力高效迁移到小模型。"},{"label":"📊 实验效果","text":"在长上下文推理基准上验证有效性，并开源代码（3 星），展示该方法在降低训练成本上的优势。"},{"label":"⭐ 整体评价","text":"属于大语言模型推理方向，关注训练范式与推理机制，适合低成本长上下文能力构建。"}]
+    },
+    {
+        date: "2026-08-17",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Claim-Level Reliability Assessment for Efficient Test-Time Reasoning",
+        venue: "arXiv 2608 · WeiboAI",
+        summary: "🔬 技术路线: 提出论断级可靠性评估方法，在测试时推理过程中逐条判断模型论断的可信度以提效。 | 💡 创新点: 以论断为基本单元评估可靠性，替代整体输出打分，实现更细粒度的测试时推理质量控制。 | 📊 实验效果: 以 20B 规模模型验证方法有效性，在相同算力下提升推理结果的可靠性与可用性。 | ⭐ 整体评价: 属于大语言模型推理方向，关注测试时计算效率与可信度，适合资源受限的落地场景。",
+        tags: [["LLM","green"],["Reasoning","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2608.11994"],["PDF","https://arxiv.org/pdf/2608.11994"],["Code (1⭐)","https://github.com/WeiboAI/CLR"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出论断级可靠性评估方法，在测试时推理过程中逐条判断模型论断的可信度以提效。"},{"label":"💡 创新点","text":"以论断为基本单元评估可靠性，替代整体输出打分，实现更细粒度的测试时推理质量控制。"},{"label":"📊 实验效果","text":"以 20B 规模模型验证方法有效性，在相同算力下提升推理结果的可靠性与可用性。"},{"label":"⭐ 整体评价","text":"属于大语言模型推理方向，关注测试时计算效率与可信度，适合资源受限的落地场景。"}]
+    },
+    {
+        date: "2026-08-17",
+        category: "Other",
+        categoryIcon: "📄",
+        title: "Can We Defend Against AI-Generated Video Attacks on Real-World Crisis Events? A Systematic Evaluation of Detectors, Generators and Social Dissemination",
+        venue: "arXiv 2608 · Hugging Face",
+        summary: "🔬 技术路线: 构建系统化评测基准，对深度伪造危机视频的检测器与生成器进行双向评估，并分析其在社交媒体上的传播路径。 | 💡 创新点: 提出 RA-Bench 基准，覆盖零样本、多模态、鲁棒性三大特性，首次针对真实危机事件视频攻击做系统性评测。 | 📊 实验效果: 在公开危机视频数据上对比多种检测器与生成器，揭示现有防御手段在真实事件场景下的显著脆弱性。 | ⭐ 整体评价: 聚焦 AI 生成视频对真实危机事件的攻击与防御，对事实核查与应急舆论治理有现实意义。",
+        tags: [["Multimodal","green"],["Benchmark","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2608.14391"],["PDF","https://arxiv.org/pdf/2608.14391"],["Project","https://ra-bench-crisis-video.yxgma811120.chatgpt.site/"],["Code (2⭐)","https://github.com/24029100313/RA-Bench"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"构建系统化评测基准，对深度伪造危机视频的检测器与生成器进行双向评估，并分析其在社交媒体上的传播路径。"},{"label":"💡 创新点","text":"提出 RA-Bench 基准，覆盖零样本、多模态、鲁棒性三大特性，首次针对真实危机事件视频攻击做系统性评测。"},{"label":"📊 实验效果","text":"在公开危机视频数据上对比多种检测器与生成器，揭示现有防御手段在真实事件场景下的显著脆弱性。"},{"label":"⭐ 整体评价","text":"聚焦 AI 生成视频对真实危机事件的攻击与防御，对事实核查与应急舆论治理有现实意义。"}]
+    },
+    {
+        date: "2026-08-17",
+        category: "Other",
+        categoryIcon: "📄",
+        title: "Self-Supervised Visual On-Policy Distillation",
+        venue: "arXiv 2608 · UC San Diego",
+        summary: "🔬 技术路线: 提出自监督的视觉策略在线蒸馏方法，让小模型在无需额外标注的情况下从在线策略中学习视觉表征。 | 💡 创新点: 将自监督信号与在线策略蒸馏结合，摆脱对专家示范或标注数据的依赖，实现端到端策略压缩。 | 📊 实验效果: 在多个视觉控制与推理基准上取得 70.7%、77.4%、96% 等指标，并以 4B 规模模型验证有效性。 | ⭐ 整体评价: 属于策略蒸馏与模型压缩方向，关注无标注条件下的高效策略迁移，适合端侧部署场景。",
+        tags: [["Multimodal","green"],["RL","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2608.14144"],["PDF","https://arxiv.org/pdf/2608.14144"],["Project","https://williamium3000.github.io/s2vopd/"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出自监督的视觉策略在线蒸馏方法，让小模型在无需额外标注的情况下从在线策略中学习视觉表征。"},{"label":"💡 创新点","text":"将自监督信号与在线策略蒸馏结合，摆脱对专家示范或标注数据的依赖，实现端到端策略压缩。"},{"label":"📊 实验效果","text":"在多个视觉控制与推理基准上取得 70.7%、77.4%、96% 等指标，并以 4B 规模模型验证有效性。"},{"label":"⭐ 整体评价","text":"属于策略蒸馏与模型压缩方向，关注无标注条件下的高效策略迁移，适合端侧部署场景。"}]
+    },
     // === 2026-08-16 ===
     {
         date: "2026-08-16",
@@ -22083,6 +22172,13 @@ const PAPERS_DB = [
 ];
 
 const DAILY_OVERVIEW = {
+    "2026-08-17": {
+        bannerTitle: "🔥 今日看点",
+        bannerSubtitle: "本期 HuggingFace 热门共 8 篇，呈现三类趋势：一是自蒸馏与在线蒸馏成为小模型能力跃迁的核心路径，视觉策略蒸馏、长上下文推理蒸馏、隐空间自蒸馏三篇同台亮相；二是世界模型 Marionette 把下一刻状态预测、三维几何重建与表面外观绘制统一到一个框架；三是长程智能体过程级评测与一年尺度移动记忆，揭示经验复用对任务完成的真实增益。",
+        picks: ["Can We Defend Against AI-Generated Video Attacks on Real-World Crisis Events? A Systematic Evaluation of Detectors, Generators and Social Dissemination","SimpleOPD: Simple Tokenizer-Agnostic On-Policy Distillation for Long-Context Reasoning","MobileMem: Learning from a Year of Mobile Experiences","Beyond Final Scores: A Systematic Evaluation of Agents for Long-Horizon AI Research and Development","Marionette: Predicting World States, Rendering Geometry, Painting Appearance"],
+        totalPapers: 8,
+        totalNews: 0
+    },
     "2026-08-16": {
         bannerTitle: "🔥 今日看点",
         bannerSubtitle: "本期自动采集内容全部为 2026-08-14 已发布内容的回填（当日 arXiv 索引为空，脚本自动回溯至 08-14）。经跨日去重验证，8 篇 arXiv 论文均与 08-14 日报重复，已按规则全部移除。下方保留 3 条 OpenAI 机构动态，本期无新增论文。",
