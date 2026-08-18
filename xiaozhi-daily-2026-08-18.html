@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>小小志AI日报 - 2026年8月18日</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans SC', sans-serif;
+  background: #0a0e1a;
+  color: #e0e6f0;
+  line-height: 1.7;
+  min-height: 100vh;
+}
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+header {
+  text-align: center;
+  margin-bottom: 48px;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, rgba(59,130,246,0.08) 0%, rgba(139,92,246,0.08) 100%);
+  border-radius: 20px;
+  border: 1px solid rgba(99,102,241,0.15);
+}
+header h1 {
+  font-size: 2rem;
+  background: linear-gradient(135deg, #60a5fa, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 8px;
+}
+header .date {
+  color: #94a3b8;
+  font-size: 1rem;
+}
+header .subtitle {
+  color: #64748b;
+  font-size: 0.9rem;
+  margin-top: 6px;
+}
+.highlight-banner {
+  background: linear-gradient(135deg, rgba(249,115,22,0.1) 0%, rgba(234,179,8,0.08) 100%);
+  border: 1px solid rgba(249,115,22,0.2);
+  border-radius: 14px;
+  padding: 20px 24px;
+  margin-bottom: 36px;
+}
+.hl-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fb923c;
+  margin-bottom: 8px;
+}
+.hl-text {
+  font-size: 0.92rem;
+  color: #cbd5e1;
+  line-height: 1.7;
+}
+.section {
+  margin-bottom: 40px;
+}
+.section-title {
+  font-size: 1.4rem;
+  color: #f1f5f9;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(99,102,241,0.2);
+}
+.paper-card {
+  background: rgba(30,41,59,0.6);
+  border: 1px solid rgba(99,102,241,0.12);
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 16px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.paper-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(99,102,241,0.1);
+  border-color: rgba(99,102,241,0.3);
+}
+.paper-card.hot {
+  border-color: rgba(249,115,22,0.25);
+  background: rgba(30,41,59,0.7);
+}
+.paper-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #f8fafc;
+  margin-bottom: 8px;
+}
+.paper-meta {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-bottom: 10px;
+}
+.summary-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+@media (max-width: 640px) {
+  .summary-grid { grid-template-columns: 1fr; }
+}
+.summary-item {
+  background: rgba(15,23,42,0.5);
+  border-radius: 10px;
+  padding: 12px 14px;
+  border: 1px solid rgba(99,102,241,0.08);
+}
+.summary-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #818cf8;
+  margin-bottom: 4px;
+}
+.summary-text {
+  font-size: 0.88rem;
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+.paper-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.tag {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+.tag-agent { background: rgba(16,185,129,0.12); color: #34d399; }
+.tag-llm { background: rgba(99,102,241,0.12); color: #818cf8; }
+.tag-multimodal { background: rgba(244,114,182,0.12); color: #f472b6; }
+.tag-world { background: rgba(251,191,36,0.12); color: #fbbf24; }
+.tag-robot { background: rgba(251,146,60,0.12); color: #fb923c; }
+.tag-rl { background: rgba(45,212,191,0.12); color: #2dd4bf; }
+.tag-benchmark { background: rgba(34,211,238,0.12); color: #22d3ee; }
+.tag-vla { background: rgba(59,130,246,0.12); color: #60a5fa; }
+.tag-memory { background: rgba(192,132,252,0.12); color: #c084fc; }
+.tag-reasoning { background: rgba(132,204,22,0.12); color: #a3e635; }
+.tag-data { background: rgba(250,204,21,0.12); color: #facc15; }
+.tag-infra { background: rgba(167,139,250,0.12); color: #a78bfa; }
+.tag-embodied { background: rgba(251,146,60,0.12); color: #fb923c; }
+.tag-3d { background: rgba(148,163,184,0.12); color: #94a3b8; }
+.tag-tool { background: rgba(52,211,153,0.12); color: #34d399; }
+.hot-badge {
+  display: inline;
+  margin-right: 4px;
+}
+.info-card {
+  background: rgba(30,41,59,0.6);
+  border: 1px solid rgba(99,102,241,0.12);
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 16px;
+}
+.paper-summary {
+  font-size: 0.9rem;
+  color: #cbd5e1;
+  line-height: 1.7;
+  margin-bottom: 14px;
+}
+.paper-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.paper-links a {
+  display: inline-block;
+  padding: 5px 14px;
+  background: rgba(99,102,241,0.12);
+  color: #818cf8;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  transition: background 0.2s;
+}
+.paper-links a:hover {
+  background: rgba(99,102,241,0.25);
+}
+footer {
+  text-align: center;
+  color: #475569;
+  font-size: 0.82rem;
+  padding: 40px 20px;
+  border-top: 1px solid rgba(99,102,241,0.1);
+  margin-top: 40px;
+}
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+.stat-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>小小志AI日报</h1>
+    <div class="date">2026年8月18日 · 星期二</div>
+    <div class="subtitle">关注：VLA · Robotics · World Model · LLM · Multimodal · Agent</div>
+    <div class="stats">
+      <span class="stat-item">📝 arXiv 论文 8</span>
+      <span class="stat-item">🤗 HF 热门 1</span>
+      <span class="stat-item">🔁 跨日去重移除 0</span>
+    </div>
+  </header>
+
+  <div class="highlight-banner">
+    <div class="hl-title">🔥 今日看点</div>
+    <div class="hl-text">本期聚焦具身智能与机器人长程操作：VLA 方向两篇亮点，BATON 用智能体式子任务探索加转移感知记忆攻克长程接触丰富操作，HAF 以分层动作流与谱隐空间强化学习把通用视觉语言动作模型适配到人形全身运动操作；τ₀-VLA 引入世界模型引导的测试时计算，构建分层机器人基础模型；FlexWorm 解决多段吸盘式软体机器人的接触运动规划；另有具身智能体安全综述系统梳理攻击面、攻击、防御与评估四个维度。</div>
+  </div>
+
+  <section class="section">
+    <h2 class="section-title">🤖 VLA · 视觉语言动作</h2>
+
+    <div class="paper-card">
+      <div class="paper-title">Don't Drop the BATON: Long-Horizon Robot Manipulation via Agentic Subtask Exploration and Transition-aware Memory</div>
+      <div class="paper-meta">arXiv 2608 · VLA / 长程操作</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出 BATON 框架，通过智能体式子任务探索将长程操作拆解为可管理子步骤，并维护跨子任务的转移记忆。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">引入转移感知记忆机制，让机器人在长程任务中保持子任务衔接的连贯性，避免环节断裂与错误累积。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在长程接触丰富的操作任务上验证有效性，相比缺乏记忆衔接的基线显著提升任务完成连贯性与成功率。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于 VLA 具身控制方向，关注长程任务泛化与真机稳定性，建议留意子任务拆解粒度与真实部署条件。</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-vla">VLA</span>
+        <span class="tag tag-robot">Manipulation</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2608.16889">arXiv</a>
+        <a href="https://arxiv.org/pdf/2608.16889">PDF</a>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">HAF: Adapting Generalist VLAs to Humanoid Whole-Body Loco-manipulation via Hierarchical Action Flow and Spectral Latent RL</div>
+      <div class="paper-meta">arXiv 2608 · VLA / 人形全身</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出 HAF-VLA，用分层动作流与谱隐空间强化学习把通用视觉语言动作模型适配到人形全身运动操作。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">引入分层动作流与谱隐空间强化学习，高效地把通用视觉语言动作模型迁移到全身移动与操作协同任务。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在操作抓取与运动控制任务上验证有效性，展示人形全身移动操作协同能力的提升与动作表达稳定性。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于 VLA 具身控制方向，关注真机验证与泛化，建议看全身协同效率与训练稳定性表现。</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-vla">VLA</span>
+        <span class="tag tag-robot">Humanoid</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2608.16837">arXiv</a>
+        <a href="https://arxiv.org/pdf/2608.16837">PDF</a>
+        <a href="https://grange007.github.io/HAF">Project</a>
+      </div>
+    </div>
+
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">🦾 Robotics · 机器人</h2>
+
+    <div class="paper-card">
+      <div class="paper-title">τ₀-VLA: a Hierarchical Robot Foundation Model with World-Model-Guided Test-Time Computation</div>
+      <div class="paper-meta">arXiv 2608 · Robotics / 基础模型</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">构建分层机器人基础模型，由上层世界模型在测试时引导下层动作模型的在线计算与决策。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 τ₀-VLA，把世界模型引导的测试时计算引入分层架构，使长程操作具备可扩展的多模态推理能力。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在操作与抓取任务上验证方法有效性，展示长程任务下动作生成质量与稳定性的提升。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于 VLA 具身控制方向，关注任务泛化与真机验证，建议重点看分层推理开销与虚实迁移表现。</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-robot">Robotics</span>
+        <span class="tag tag-vla">VLA</span>
+        <span class="tag tag-world">World Model</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2608.16885">arXiv</a>
+        <a href="https://arxiv.org/pdf/2608.16885">PDF</a>
+        <a href="https://tau0-vla.github.io/">Project</a>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">FlexWorm: Primitive-augmented Hybrid Contact-motion Planning for Suction-based Multi-segment Deformable Robots</div>
+      <div class="paper-meta">arXiv 2608 · Robotics / 软体机器人</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出 FlexWorm，面向多段吸盘式软体机器人，融合基本动作原语与混合接触运动规划完成形变操控。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">把接触运动基元与分段规划结合，解决多段可变形软体机器人在复杂接触下的运动规划难题。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在规划与导航任务上验证有效性，展示软体机器人对不规则目标的稳定吸附与形变操控能力。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于机器人算法与控制方向，关注基线对比与真实部署，建议看软体形变建模精度与鲁棒性。</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-robot">Robotics</span>
+        <span class="tag tag-robot">Soft Robot</span>
+        <span class="tag tag-rl">Planning</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2608.16853">arXiv</a>
+        <a href="https://arxiv.org/pdf/2608.16853">PDF</a>
+        <a href="https://youtu.be/OQR5Sx5Bwnc">Video</a>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">Adaptive Repulsive Pheromone Clustering for Foraging Robot Swarms</div>
+      <div class="paper-meta">arXiv 2608 · Robotics / 集群</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出基于自适应排斥信息素的聚类方法，让觅食机器人集群通过信息素场完成协同聚集与分工。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">设计网格化的自适应排斥信息素机制，使集群在可扩展与鲁棒的前提下完成动态聚类。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在导航与聚集任务上验证有效性，展示集群在变化环境下的自适应分工与稳定聚类能力。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于机器人集群算法方向，关注可扩展与鲁棒性，建议看规模扩展与真实环境噪声表现。</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-robot">Robotics</span>
+        <span class="tag tag-robot">Swarm</span>
+        <span class="tag tag-rl">RL</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2608.16822">arXiv</a>
+        <a href="https://arxiv.org/pdf/2608.16822">PDF</a>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">PRM-as-a-Judge 1.5: A Toolkit for Robot Process Assessment</div>
+      <div class="paper-meta">HF 热门 · arXiv 2608 · Robotics / 评测</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出 PRM-as-a-Judge 1.5 工具箱，用过程奖励模型对机器人执行过程做细粒度的质量评估。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">升级为细粒度过程评估，提供可复用的机器人流程评测工具链，并开源配套代码与项目页面。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在操作抓取与生成任务上验证有效性，相比仅看终局结果的评估更能刻画过程质量。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于机器人评测方向，关注流程级质量刻画，建议看评测覆盖度与标注成本。</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-robot">Robotics</span>
+        <span class="tag tag-benchmark">Evaluation</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2608.14284">arXiv</a>
+        <a href="https://arxiv.org/pdf/2608.14284">PDF</a>
+        <a href="https://prm-as-a-judge.github.io/">Project</a>
+        <a href="https://github.com/YuyangLiu2003/PRM-as-a-Judge">Code</a>
+      </div>
+    </div>
+
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">🌍 World Model · 世界模型</h2>
+
+    <div class="paper-card">
+      <div class="paper-title">Security of Foundation-Model-Powered Embodied Agents: Attack Surfaces, Attacks, Defenses, and Evaluation</div>
+      <div class="paper-meta">arXiv 2608 · World Model / 安全</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">系统梳理基础模型驱动的具身智能体的攻击面，分类攻击方式与防御手段并建立评估框架。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次从攻击面、攻击、防御、评估四个维度对具身智能体安全性做统一的综述与分类。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在规划与动作生成相关场景上整理并验证了多种攻防手段的有效性边界。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于世界模型与具身安全方向，关注攻防评估，建议看真实部署下的安全风险与防御代价。</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-world">World Model</span>
+        <span class="tag tag-robot">Embodied</span>
+        <span class="tag tag-benchmark">Security</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2608.16843">arXiv</a>
+        <a href="https://arxiv.org/pdf/2608.16843">PDF</a>
+      </div>
+    </div>
+
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">🧠 LLM · 大语言模型</h2>
+
+    <div class="paper-card">
+      <div class="paper-title">HarnessEval-W: Agentifying the Evaluation of Visual Worlds</div>
+      <div class="paper-meta">arXiv 2608 · LLM / 世界模型评测</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出 HarnessEval-W，把视觉世界模型的评测本身智能体化，用智能体驱动对生成世界的系统化检验。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">把评估封装为可执行任务的智能体，自动探查视觉世界模型在几何、时序与一致性上的缺陷。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在视觉世界模型评测上验证方法有效性，相比人工评测更能暴露细粒度生成错误。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于世界模型评测方向，关注预测精度与一致性检查，建议看评测覆盖度与失败归因能力。</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-llm">LLM</span>
+        <span class="tag tag-world">World Model</span>
+        <span class="tag tag-benchmark">Benchmark</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2608.16859">arXiv</a>
+        <a href="https://arxiv.org/pdf/2608.16859">PDF</a>
+        <a href="https://mirros-lab.github.io/HarnessEval-W">Project</a>
+      </div>
+    </div>
+
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">📄 Other · 其他</h2>
+
+    <div class="paper-card">
+      <div class="paper-title">AutoSR: Automatic Symbolic Regression by Searching Research States</div>
+      <div class="paper-meta">arXiv 2608 · Other / 符号回归</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出 AutoSR，将符号回归建模为研究状态空间中的搜索问题，结合蒙特卡洛树搜索寻找简洁表达式。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">设计研究状态空间与搜索机制，把符号回归从手工设计流程转为自动化的状态空间探索过程。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在多个符号回归基准上验证方法有效性，能够自动发现可拟合数据的简洁数学公式。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于科学发现与自动建模方向，关注可解释表达式的自动挖掘，建议看搜索效率与泛化能力。</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-llm">Reasoning</span>
+        <span class="tag tag-reasoning">Symbolic Regression</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2608.16876">arXiv</a>
+        <a href="https://arxiv.org/pdf/2608.16876">PDF</a>
+      </div>
+    </div>
+
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">🏢 行业动态</h2>
+
+    <div class="info-card">
+      <div class="paper-title">The Defender's Window</div>
+      <div class="paper-summary">OpenAI 发布文章，探讨网络安全防御中"防御者窗口"持续收窄的趋势，分析攻击方与防御方之间的时间差变化，并提出以更快响应与自动化手段应对高风险网络威胁的思路。</div>
+      <div class="paper-links">
+        <a href="https://openai.com/index/the-defenders-window/">来源</a>
+      </div>
+    </div>
+
+    <div class="info-card">
+      <div class="paper-title">OpenAI joins PORTS-Pike project</div>
+      <div class="paper-summary">OpenAI 宣布加入 PORTS-Pike 全球事务项目，参与推动港口与关键基础设施相关的国际安全与合作研究，聚焦人工智能在关键基础设施防护中的应用。</div>
+      <div class="paper-links">
+        <a href="https://openai.com/index/openai-joins-ports-pike-project/">来源</a>
+      </div>
+    </div>
+
+  </section>
+
+  <footer>
+    <p>小小志AI日报 · 自动生成于 2026-08-18　│　跨日去重：0 篇重复论文</p>
+    <p>关注：VLA · Robotics · World Model · LLM · Multimodal · Agent</p>
+  </footer>
+</div>
+</body>
+</html>

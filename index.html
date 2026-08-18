@@ -658,6 +658,126 @@
 <script>
 // ===== DATA =====
 const PAPERS_DB = [
+    // === 2026-08-18 ===
+    {
+        date: "2026-08-18",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "Don't Drop the BATON: Long-Horizon Robot Manipulation via Agentic Subtask Exploration and Transition-aware Memory",
+        venue: "arXiv 2608 · VLA / 长程操作",
+        summary: "🔬 技术路线: 提出 BATON 框架，通过智能体式子任务探索将长程操作拆解为可管理子步骤，并维护跨子任务的转移记忆。 | 💡 创新点: 引入转移感知记忆机制，让机器人在长程任务中保持子任务衔接的连贯性，避免环节断裂与错误累积。 | 📊 实验效果: 在长程接触丰富的操作任务上验证有效性，相比缺乏记忆衔接的基线显著提升任务完成连贯性与成功率。 | ⭐ 整体评价: 属于 VLA 具身控制方向，关注长程任务泛化与真机稳定性，建议留意子任务拆解粒度与真实部署条件。",
+        tags: [["VLA","green"],["Manipulation","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2608.16889"],["PDF","https://arxiv.org/pdf/2608.16889"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出 BATON 框架，通过智能体式子任务探索将长程操作拆解为可管理子步骤，并维护跨子任务的转移记忆。"},{"label":"💡 创新点","text":"引入转移感知记忆机制，让机器人在长程任务中保持子任务衔接的连贯性，避免环节断裂与错误累积。"},{"label":"📊 实验效果","text":"在长程接触丰富的操作任务上验证有效性，相比缺乏记忆衔接的基线显著提升任务完成连贯性与成功率。"},{"label":"⭐ 整体评价","text":"属于 VLA 具身控制方向，关注长程任务泛化与真机稳定性，建议留意子任务拆解粒度与真实部署条件。"}]
+    },
+    {
+        date: "2026-08-18",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "HAF: Adapting Generalist VLAs to Humanoid Whole-Body Loco-manipulation via Hierarchical Action Flow and Spectral Latent RL",
+        venue: "arXiv 2608 · VLA / 人形全身",
+        summary: "🔬 技术路线: 提出 HAF-VLA，用分层动作流与谱隐空间强化学习把通用视觉语言动作模型适配到人形全身运动操作。 | 💡 创新点: 引入分层动作流与谱隐空间强化学习，高效地把通用视觉语言动作模型迁移到全身移动与操作协同任务。 | 📊 实验效果: 在操作抓取与运动控制任务上验证有效性，展示人形全身移动操作协同能力的提升与动作表达稳定性。 | ⭐ 整体评价: 属于 VLA 具身控制方向，关注真机验证与泛化，建议看全身协同效率与训练稳定性表现。",
+        tags: [["VLA","green"],["Humanoid","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2608.16837"],["PDF","https://arxiv.org/pdf/2608.16837"],["Project","https://grange007.github.io/HAF"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出 HAF-VLA，用分层动作流与谱隐空间强化学习把通用视觉语言动作模型适配到人形全身运动操作。"},{"label":"💡 创新点","text":"引入分层动作流与谱隐空间强化学习，高效地把通用视觉语言动作模型迁移到全身移动与操作协同任务。"},{"label":"📊 实验效果","text":"在操作抓取与运动控制任务上验证有效性，展示人形全身移动操作协同能力的提升与动作表达稳定性。"},{"label":"⭐ 整体评价","text":"属于 VLA 具身控制方向，关注真机验证与泛化，建议看全身协同效率与训练稳定性表现。"}]
+    },
+    {
+        date: "2026-08-18",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "τ₀-VLA: a Hierarchical Robot Foundation Model with World-Model-Guided Test-Time Computation",
+        venue: "arXiv 2608 · Robotics / 基础模型",
+        summary: "🔬 技术路线: 构建分层机器人基础模型，由上层世界模型在测试时引导下层动作模型的在线计算与决策。 | 💡 创新点: 提出 τ₀-VLA，把世界模型引导的测试时计算引入分层架构，使长程操作具备可扩展的多模态推理能力。 | 📊 实验效果: 在操作与抓取任务上验证方法有效性，展示长程任务下动作生成质量与稳定性的提升。 | ⭐ 整体评价: 属于 VLA 具身控制方向，关注任务泛化与真机验证，建议重点看分层推理开销与虚实迁移表现。",
+        tags: [["Robotics","green"],["VLA","green"],["World Model","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2608.16885"],["PDF","https://arxiv.org/pdf/2608.16885"],["Project","https://tau0-vla.github.io/"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"构建分层机器人基础模型，由上层世界模型在测试时引导下层动作模型的在线计算与决策。"},{"label":"💡 创新点","text":"提出 τ₀-VLA，把世界模型引导的测试时计算引入分层架构，使长程操作具备可扩展的多模态推理能力。"},{"label":"📊 实验效果","text":"在操作与抓取任务上验证方法有效性，展示长程任务下动作生成质量与稳定性的提升。"},{"label":"⭐ 整体评价","text":"属于 VLA 具身控制方向，关注任务泛化与真机验证，建议重点看分层推理开销与虚实迁移表现。"}]
+    },
+    {
+        date: "2026-08-18",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "FlexWorm: Primitive-augmented Hybrid Contact-motion Planning for Suction-based Multi-segment Deformable Robots",
+        venue: "arXiv 2608 · Robotics / 软体机器人",
+        summary: "🔬 技术路线: 提出 FlexWorm，面向多段吸盘式软体机器人，融合基本动作原语与混合接触运动规划完成形变操控。 | 💡 创新点: 把接触运动基元与分段规划结合，解决多段可变形软体机器人在复杂接触下的运动规划难题。 | 📊 实验效果: 在规划与导航任务上验证有效性，展示软体机器人对不规则目标的稳定吸附与形变操控能力。 | ⭐ 整体评价: 属于机器人算法与控制方向，关注基线对比与真实部署，建议看软体形变建模精度与鲁棒性。",
+        tags: [["Robotics","green"],["Soft Robot","green"],["Planning","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2608.16853"],["PDF","https://arxiv.org/pdf/2608.16853"],["Video","https://youtu.be/OQR5Sx5Bwnc"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出 FlexWorm，面向多段吸盘式软体机器人，融合基本动作原语与混合接触运动规划完成形变操控。"},{"label":"💡 创新点","text":"把接触运动基元与分段规划结合，解决多段可变形软体机器人在复杂接触下的运动规划难题。"},{"label":"📊 实验效果","text":"在规划与导航任务上验证有效性，展示软体机器人对不规则目标的稳定吸附与形变操控能力。"},{"label":"⭐ 整体评价","text":"属于机器人算法与控制方向，关注基线对比与真实部署，建议看软体形变建模精度与鲁棒性。"}]
+    },
+    {
+        date: "2026-08-18",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "Adaptive Repulsive Pheromone Clustering for Foraging Robot Swarms",
+        venue: "arXiv 2608 · Robotics / 集群",
+        summary: "🔬 技术路线: 提出基于自适应排斥信息素的聚类方法，让觅食机器人集群通过信息素场完成协同聚集与分工。 | 💡 创新点: 设计网格化的自适应排斥信息素机制，使集群在可扩展与鲁棒的前提下完成动态聚类。 | 📊 实验效果: 在导航与聚集任务上验证有效性，展示集群在变化环境下的自适应分工与稳定聚类能力。 | ⭐ 整体评价: 属于机器人集群算法方向，关注可扩展与鲁棒性，建议看规模扩展与真实环境噪声表现。",
+        tags: [["Robotics","green"],["Swarm","green"],["RL","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2608.16822"],["PDF","https://arxiv.org/pdf/2608.16822"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出基于自适应排斥信息素的聚类方法，让觅食机器人集群通过信息素场完成协同聚集与分工。"},{"label":"💡 创新点","text":"设计网格化的自适应排斥信息素机制，使集群在可扩展与鲁棒的前提下完成动态聚类。"},{"label":"📊 实验效果","text":"在导航与聚集任务上验证有效性，展示集群在变化环境下的自适应分工与稳定聚类能力。"},{"label":"⭐ 整体评价","text":"属于机器人集群算法方向，关注可扩展与鲁棒性，建议看规模扩展与真实环境噪声表现。"}]
+    },
+    {
+        date: "2026-08-18",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "PRM-as-a-Judge 1.5: A Toolkit for Robot Process Assessment",
+        venue: "HF 热门 · arXiv 2608 · Robotics / 评测",
+        summary: "🔬 技术路线: 提出 PRM-as-a-Judge 1.5 工具箱，用过程奖励模型对机器人执行过程做细粒度的质量评估。 | 💡 创新点: 升级为细粒度过程评估，提供可复用的机器人流程评测工具链，并开源配套代码与项目页面。 | 📊 实验效果: 在操作抓取与生成任务上验证有效性，相比仅看终局结果的评估更能刻画过程质量。 | ⭐ 整体评价: 属于机器人评测方向，关注流程级质量刻画，建议看评测覆盖度与标注成本。",
+        tags: [["Robotics","green"],["Evaluation","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2608.14284"],["PDF","https://arxiv.org/pdf/2608.14284"],["Project","https://prm-as-a-judge.github.io/"],["Code","https://github.com/YuyangLiu2003/PRM-as-a-Judge"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出 PRM-as-a-Judge 1.5 工具箱，用过程奖励模型对机器人执行过程做细粒度的质量评估。"},{"label":"💡 创新点","text":"升级为细粒度过程评估，提供可复用的机器人流程评测工具链，并开源配套代码与项目页面。"},{"label":"📊 实验效果","text":"在操作抓取与生成任务上验证有效性，相比仅看终局结果的评估更能刻画过程质量。"},{"label":"⭐ 整体评价","text":"属于机器人评测方向，关注流程级质量刻画，建议看评测覆盖度与标注成本。"}]
+    },
+    {
+        date: "2026-08-18",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "Security of Foundation-Model-Powered Embodied Agents: Attack Surfaces, Attacks, Defenses, and Evaluation",
+        venue: "arXiv 2608 · World Model / 安全",
+        summary: "🔬 技术路线: 系统梳理基础模型驱动的具身智能体的攻击面，分类攻击方式与防御手段并建立评估框架。 | 💡 创新点: 首次从攻击面、攻击、防御、评估四个维度对具身智能体安全性做统一的综述与分类。 | 📊 实验效果: 在规划与动作生成相关场景上整理并验证了多种攻防手段的有效性边界。 | ⭐ 整体评价: 属于世界模型与具身安全方向，关注攻防评估，建议看真实部署下的安全风险与防御代价。",
+        tags: [["World Model","green"],["Embodied","green"],["Security","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2608.16843"],["PDF","https://arxiv.org/pdf/2608.16843"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"系统梳理基础模型驱动的具身智能体的攻击面，分类攻击方式与防御手段并建立评估框架。"},{"label":"💡 创新点","text":"首次从攻击面、攻击、防御、评估四个维度对具身智能体安全性做统一的综述与分类。"},{"label":"📊 实验效果","text":"在规划与动作生成相关场景上整理并验证了多种攻防手段的有效性边界。"},{"label":"⭐ 整体评价","text":"属于世界模型与具身安全方向，关注攻防评估，建议看真实部署下的安全风险与防御代价。"}]
+    },
+    {
+        date: "2026-08-18",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "HarnessEval-W: Agentifying the Evaluation of Visual Worlds",
+        venue: "arXiv 2608 · LLM / 世界模型评测",
+        summary: "🔬 技术路线: 提出 HarnessEval-W，把视觉世界模型的评测本身智能体化，用智能体驱动对生成世界的系统化检验。 | 💡 创新点: 把评估封装为可执行任务的智能体，自动探查视觉世界模型在几何、时序与一致性上的缺陷。 | 📊 实验效果: 在视觉世界模型评测上验证方法有效性，相比人工评测更能暴露细粒度生成错误。 | ⭐ 整体评价: 属于世界模型评测方向，关注预测精度与一致性检查，建议看评测覆盖度与失败归因能力。",
+        tags: [["LLM","green"],["World Model","green"],["Benchmark","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2608.16859"],["PDF","https://arxiv.org/pdf/2608.16859"],["Project","https://mirros-lab.github.io/HarnessEval-W"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出 HarnessEval-W，把视觉世界模型的评测本身智能体化，用智能体驱动对生成世界的系统化检验。"},{"label":"💡 创新点","text":"把评估封装为可执行任务的智能体，自动探查视觉世界模型在几何、时序与一致性上的缺陷。"},{"label":"📊 实验效果","text":"在视觉世界模型评测上验证方法有效性，相比人工评测更能暴露细粒度生成错误。"},{"label":"⭐ 整体评价","text":"属于世界模型评测方向，关注预测精度与一致性检查，建议看评测覆盖度与失败归因能力。"}]
+    },
+    {
+        date: "2026-08-18",
+        category: "Other",
+        categoryIcon: "📄",
+        title: "AutoSR: Automatic Symbolic Regression by Searching Research States",
+        venue: "arXiv 2608 · Other / 符号回归",
+        summary: "🔬 技术路线: 提出 AutoSR，将符号回归建模为研究状态空间中的搜索问题，结合蒙特卡洛树搜索寻找简洁表达式。 | 💡 创新点: 设计研究状态空间与搜索机制，把符号回归从手工设计流程转为自动化的状态空间探索过程。 | 📊 实验效果: 在多个符号回归基准上验证方法有效性，能够自动发现可拟合数据的简洁数学公式。 | ⭐ 整体评价: 属于科学发现与自动建模方向，关注可解释表达式的自动挖掘，建议看搜索效率与泛化能力。",
+        tags: [["Reasoning","green"],["Symbolic Regression","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2608.16876"],["PDF","https://arxiv.org/pdf/2608.16876"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出 AutoSR，将符号回归建模为研究状态空间中的搜索问题，结合蒙特卡洛树搜索寻找简洁表达式。"},{"label":"💡 创新点","text":"设计研究状态空间与搜索机制，把符号回归从手工设计流程转为自动化的状态空间探索过程。"},{"label":"📊 实验效果","text":"在多个符号回归基准上验证方法有效性，能够自动发现可拟合数据的简洁数学公式。"},{"label":"⭐ 整体评价","text":"属于科学发现与自动建模方向，关注可解释表达式的自动挖掘，建议看搜索效率与泛化能力。"}]
+    },
+    {
+        date: "2026-08-18",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "The Defender's Window",
+        venue: "",
+        summary: "OpenAI 发布文章，探讨网络安全防御中\"防御者窗口\"持续收窄的趋势，分析攻击方与防御方之间的时间差变化，并提出以更快响应与自动化手段应对高风险网络威胁的思路。",
+        tags: [],
+        links: [["来源","https://openai.com/index/the-defenders-window/"]]
+    },
+    {
+        date: "2026-08-18",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "OpenAI joins PORTS-Pike project",
+        venue: "",
+        summary: "OpenAI 宣布加入 PORTS-Pike 全球事务项目，参与推动港口与关键基础设施相关的国际安全与合作研究，聚焦人工智能在关键基础设施防护中的应用。",
+        tags: [],
+        links: [["来源","https://openai.com/index/openai-joins-ports-pike-project/"]]
+    },
     // === 2026-08-17 ===
     {
         date: "2026-08-17",
@@ -22172,6 +22292,13 @@ const PAPERS_DB = [
 ];
 
 const DAILY_OVERVIEW = {
+    "2026-08-18": {
+        bannerTitle: "🔥 今日看点",
+        bannerSubtitle: "本期聚焦具身智能与机器人长程操作：VLA 方向两篇亮点，BATON 用智能体式子任务探索加转移感知记忆攻克长程接触丰富操作，HAF 以分层动作流与谱隐空间强化学习把通用视觉语言动作模型适配到人形全身运动操作；τ₀-VLA 引入世界模型引导的测试时计算，构建分层机器人基础模型；FlexWorm 解决多段吸盘式软体机器人的接触运动规划；另有具身智能体安全综述系统梳理攻击面、攻击、防御与评估四个维度。",
+        picks: ["HarnessEval-W: Agentifying the Evaluation of Visual Worlds","PRM-as-a-Judge 1.5: A Toolkit for Robot Process Assessment","FlexWorm: Primitive-augmented Hybrid Contact-motion Planning for Suction-based Multi-segment Deformable Robots","HAF: Adapting Generalist VLAs to Humanoid Whole-Body Loco-manipulation via Hierarchical Action Flow and Spectral Latent RL","τ₀-VLA: a Hierarchical Robot Foundation Model with World-Model-Guided Test-Time Computation"],
+        totalPapers: 9,
+        totalNews: 2
+    },
     "2026-08-17": {
         bannerTitle: "🔥 今日看点",
         bannerSubtitle: "本期 HuggingFace 热门共 8 篇，呈现三类趋势：一是自蒸馏与在线蒸馏成为小模型能力跃迁的核心路径，视觉策略蒸馏、长上下文推理蒸馏、隐空间自蒸馏三篇同台亮相；二是世界模型 Marionette 把下一刻状态预测、三维几何重建与表面外观绘制统一到一个框架；三是长程智能体过程级评测与一年尺度移动记忆，揭示经验复用对任务完成的真实增益。",
