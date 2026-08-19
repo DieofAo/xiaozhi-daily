@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>小小志AI日报 - 2026年8月19日</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans SC', sans-serif;
+  background: #0a0e1a;
+  color: #e0e6f0;
+  line-height: 1.7;
+  min-height: 100vh;
+}
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+header {
+  text-align: center;
+  margin-bottom: 48px;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, rgba(59,130,246,0.08) 0%, rgba(139,92,246,0.08) 100%);
+  border-radius: 20px;
+  border: 1px solid rgba(99,102,241,0.15);
+}
+header h1 {
+  font-size: 2rem;
+  background: linear-gradient(135deg, #60a5fa, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 8px;
+}
+header .date {
+  color: #94a3b8;
+  font-size: 1rem;
+}
+header .subtitle {
+  color: #64748b;
+  font-size: 0.9rem;
+  margin-top: 6px;
+}
+.highlight-banner {
+  background: linear-gradient(135deg, rgba(249,115,22,0.1) 0%, rgba(234,179,8,0.08) 100%);
+  border: 1px solid rgba(249,115,22,0.2);
+  border-radius: 14px;
+  padding: 20px 24px;
+  margin-bottom: 36px;
+}
+.hl-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fb923c;
+  margin-bottom: 8px;
+}
+.hl-text {
+  font-size: 0.92rem;
+  color: #cbd5e1;
+  line-height: 1.7;
+}
+.section {
+  margin-bottom: 40px;
+}
+.section-title {
+  font-size: 1.4rem;
+  color: #f1f5f9;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(99,102,241,0.2);
+}
+.paper-card {
+  background: rgba(30,41,59,0.6);
+  border: 1px solid rgba(99,102,241,0.12);
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 16px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.paper-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(99,102,241,0.1);
+  border-color: rgba(99,102,241,0.3);
+}
+.paper-card.hot {
+  border-color: rgba(249,115,22,0.25);
+  background: rgba(30,41,59,0.7);
+}
+.paper-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #f8fafc;
+  margin-bottom: 8px;
+}
+.paper-meta {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-bottom: 10px;
+}
+.summary-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+@media (max-width: 640px) {
+  .summary-grid { grid-template-columns: 1fr; }
+}
+.summary-item {
+  background: rgba(15,23,42,0.5);
+  border-radius: 10px;
+  padding: 12px 14px;
+  border: 1px solid rgba(99,102,241,0.08);
+}
+.summary-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #818cf8;
+  margin-bottom: 4px;
+}
+.summary-text {
+  font-size: 0.88rem;
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+.paper-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.tag {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+.tag-agent { background: rgba(16,185,129,0.12); color: #34d399; }
+.tag-llm { background: rgba(99,102,241,0.12); color: #818cf8; }
+.tag-multimodal { background: rgba(244,114,182,0.12); color: #f472b6; }
+.tag-world { background: rgba(251,191,36,0.12); color: #fbbf24; }
+.tag-robot { background: rgba(251,146,60,0.12); color: #fb923c; }
+.tag-rl { background: rgba(45,212,191,0.12); color: #2dd4bf; }
+.tag-benchmark { background: rgba(34,211,238,0.12); color: #22d3ee; }
+.tag-vla { background: rgba(59,130,246,0.12); color: #60a5fa; }
+.tag-memory { background: rgba(192,132,252,0.12); color: #c084fc; }
+.tag-reasoning { background: rgba(132,204,22,0.12); color: #a3e635; }
+.tag-data { background: rgba(250,204,21,0.12); color: #facc15; }
+.tag-infra { background: rgba(167,139,250,0.12); color: #a78bfa; }
+.tag-embodied { background: rgba(251,146,60,0.12); color: #fb923c; }
+.tag-3d { background: rgba(148,163,184,0.12); color: #94a3b8; }
+.tag-tool { background: rgba(52,211,153,0.12); color: #34d399; }
+.hot-badge {
+  display: inline;
+  margin-right: 4px;
+}
+.info-card {
+  background: rgba(30,41,59,0.6);
+  border: 1px solid rgba(99,102,241,0.12);
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 16px;
+}
+.paper-summary {
+  font-size: 0.9rem;
+  color: #cbd5e1;
+  line-height: 1.7;
+  margin-bottom: 14px;
+}
+.paper-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.paper-links a {
+  display: inline-block;
+  padding: 5px 14px;
+  background: rgba(99,102,241,0.12);
+  color: #818cf8;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  transition: background 0.2s;
+}
+.paper-links a:hover {
+  background: rgba(99,102,241,0.25);
+}
+footer {
+  text-align: center;
+  color: #475569;
+  font-size: 0.82rem;
+  padding: 40px 20px;
+  border-top: 1px solid rgba(99,102,241,0.1);
+  margin-top: 40px;
+}
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+.stat-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>小小志AI日报</h1>
+    <div class="date">2026年8月19日 · 星期三</div>
+    <div class="subtitle">关注：VLA · Robotics · World Model · LLM · Multimodal · Agent</div>
+    <div class="stats">
+      <span class="stat-item">📝 arXiv 论文 8</span>
+      <span class="stat-item">🤗 HF 热门 0</span>
+      <span class="stat-item">🔁 跨日去重移除 0</span>
+    </div>
+  </header>
+
+  <div class="highlight-banner">
+    <div class="hl-title">🔥 今日看点</div>
+    <div class="hl-text">本期以智能体与世界模型为主力：英伟达推出通用世界模型 Hydra-0，以动作流为条件统一建模世界动态与控制，零样本预测精度达 90.4%；多智能体方向集中爆发，涵盖放射科报告质控、自改进智能体的脆弱性、推荐系统中的委托不对称，以及面向知识工作的版本化工作区；多模态通用图像生成提出以能力为中心的数据设计范式，语言模型研究则从语义可塑性角度重新审视解释机制。</div>
+  </div>
+
+  <section class="section">
+    <h2 class="section-title">🌍 World Model · 世界模型</h2>
+
+    <div class="paper-card">
+      <div class="paper-title">Hydra-0: Action Flow for Generalist World Modeling and Control</div>
+      <div class="paper-meta">arXiv 2608 · NVIDIA · World Model / 动作生成</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出 Hydra-0 通用世界模型，以动作流为条件对视觉观测进行预测与生成，统一建模世界动态与控制信号。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">以动作流作为条件实现通用世界建模与控制，支持零样本场景下对多任务动态的高效预测与生成。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在关键世界模型预测与生成指标上取得 90.4% 与 60.2% 的表现，验证动作可控生成的精度。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于世界模型与动作生成方向，关注预测精度、动作可控性与仿真到真实的迁移表现。</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-world">World Model</span>
+        <span class="tag tag-vla">Control</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2608.18077">arXiv</a>
+        <a href="https://arxiv.org/pdf/2608.18077">PDF</a>
+        <a href="https://nvidia-isaac.github.io/video_to_data/hydra-0/">Project</a>
+      </div>
+    </div>
+
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">🖼️ Multimodal · 多模态生成</h2>
+
+    <div class="paper-card">
+      <div class="paper-title">From Corpora to Co-Evolving Capabilities: Capability-Centric Data Design for Generalist Image Generation</div>
+      <div class="paper-meta">arXiv 2608 · Multimodal / 图像生成</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出以能力为中心的数据设计范式，用大规模扩散框架构建通用图像生成的数据与训练流程。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">从能力协同演化的视角重新组织训练数据，使图像生成模型的能力随数据设计同步成长。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在 440M、120M、27M 与 3B 等多档规模上验证数据设计对生成质量与覆盖度的影响。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于多模态生成方向，关注跨模态对齐、数据规模与下游生成任务的表现。</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-multimodal">Multimodal</span>
+        <span class="tag tag-data">Data Design</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2608.18076">arXiv</a>
+        <a href="https://arxiv.org/pdf/2608.18076">PDF</a>
+      </div>
+    </div>
+
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">🧩 Agent · 智能体</h2>
+
+    <div class="paper-card">
+      <div class="paper-title">Multi-Agent AI System for Radiology Report Structuring and Quality Assurance with Independent Radiologist Evaluation</div>
+      <div class="paper-meta">arXiv 2608 · Meta FAIR · Agent / 医疗质控</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">构建多智能体系统，用大语言模型对放射科报告进行结构化整理，并由独立放射科医生评估质量。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">采用多智能体分工完成报告结构化与质控，并引入独立医生评估环节保障结果可靠性。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在结构化与质量评估指标上取得 14.1%、12.5%、69% 与 4% 等关键表现，验证流程有效性。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于智能体工具使用方向，关注多智能体架构、工具调用策略与端到端可靠率。</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-agent">Agent</span>
+        <span class="tag tag-tool">QA</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2608.18072">arXiv</a>
+        <a href="https://arxiv.org/pdf/2608.18072">PDF</a>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">On the Fragility of Self-Improving Agents: Variance, Task Order, and Underspecification</div>
+      <div class="paper-meta">arXiv 2608 · Salesforce AI Research · Agent / 自改进</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">研究基于记忆的自改进智能体，分析其在持续训练与自我提升过程中的稳健性与脆弱来源。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">揭示自改进智能体对任务顺序与设定欠明确的敏感，提出以记忆式机制作为脆弱性来源。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">通过评估验证了方法有效性，并开源代码与数据集以支撑对自改进脆弱性的复现研究。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于智能体工具使用方向，关注架构稳健性、任务顺序影响与端到端成功率。</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-agent">Agent</span>
+        <span class="tag tag-memory">Memory</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2608.18066">arXiv</a>
+        <a href="https://arxiv.org/pdf/2608.18066">PDF</a>
+        <a href="https://github.com/SalesforceAIResearch/self-improve-fragility">Code</a>
+        <a href="https://huggingface.co/datasets/Salesforce/self-improve-fragility">Model</a>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">Delegation Asymmetry in Agentic Recommender Systems: Measuring Two-Sided Receptivity in Online Dating</div>
+      <div class="paper-meta">arXiv 2608 · Agent / 推荐系统</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">在智能体推荐系统中研究委托不对称，量化在线交友场景两端用户对推荐的接受差异。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出双侧接受度度量方法，刻画推荐委托中供需两端的不对称与行为差异。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">关键指标显示 13% 与 3.1 倍差异，量化了委托不对称在真实推荐场景中的显著性。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于智能体工具使用方向，关注推荐架构、用户接受度度量与端到端匹配效果。</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-agent">Agent</span>
+        <span class="tag tag-tool">Recommender</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2608.18058">arXiv</a>
+        <a href="https://arxiv.org/pdf/2608.18058">PDF</a>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">StagedWorkspace: A Versioned Workspace for Knowledge-Work Agents</div>
+      <div class="paper-meta">arXiv 2608 · MIT · Agent / 知识工作</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出带版本管理的暂存工作区，为知识工作智能体提供可回溯、可比较的协作环境。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">设计 APEX-Agents 基准与版本化工作区，让多智能体在受控空间中分阶段推进知识任务。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在基准上取得 63.9% 与 29.3% 的表现，验证版本化工作区对协作质量的提升。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于智能体工具使用方向，关注架构、工具调用策略与端到端成功率。</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-agent">Agent</span>
+        <span class="tag tag-tool">Knowledge-Work</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2608.18050">arXiv</a>
+        <a href="https://arxiv.org/pdf/2608.18050">PDF</a>
+      </div>
+    </div>
+
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">💬 LLM · 大语言模型</h2>
+
+    <div class="paper-card">
+      <div class="paper-title">Language Has Two Parameters: Narrative-Induced Semantic Plasticity and Phase-Sensitive Interpretation</div>
+      <div class="paper-meta">arXiv 2608 · University of Utah · LLM / 语义可塑性</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">从语言模型架构出发，研究叙述诱导的语义可塑性以及相位敏感的解释机制。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出语言具有两个可调参数的视角，刻画叙述语境如何改变语义解释与推理表现。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在推理与预测任务上验证语义可塑性的存在，展示相位敏感解释对结果的影响。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于大语言模型与推理方向，关注训练范式、推理机制与基准表现。</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-llm">LLM</span>
+        <span class="tag tag-reasoning">Reasoning</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2608.18041">arXiv</a>
+        <a href="https://arxiv.org/pdf/2608.18041">PDF</a>
+      </div>
+    </div>
+
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">🤖 VLA · 视觉语言动作</h2>
+
+    <div class="paper-card">
+      <div class="paper-title">Plug-and-Play Traffic Element Awareness for End-to-End Autonomous Driving</div>
+      <div class="paper-meta">arXiv 2608 · VLA / 端到端自动驾驶</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出可插拔的交通要素感知模块，嵌入端到端自动驾驶框架以统一预测与规划。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 NAVSIM-v1 统一方案，以端到端、统一且鲁棒的方式增强交通要素感知。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在预测与规划任务上验证有效性，展示端到端驾驶在复杂交通场景下的稳健表现。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于 VLA 具身控制方向，关注任务泛化、动作表达方式与真机验证结果。</div></div>
+      </div>
+      <div class="paper-tags">
+        <span class="tag tag-vla">VLA</span>
+        <span class="tag tag-robot">Autonomous Driving</span>
+      </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2608.18035">arXiv</a>
+        <a href="https://arxiv.org/pdf/2608.18035">PDF</a>
+        <a href="https://zzongzheng0918.github.io/TE-Aware-E2E-AD/">Project</a>
+      </div>
+    </div>
+
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">🏢 行业动态</h2>
+
+    <div class="info-card">
+      <div class="paper-title">ChatGPT Ads expands across Europe</div>
+      <div class="paper-summary">OpenAI 宣布将 ChatGPT 广告业务扩展至欧洲多个市场，在保持用户体验的前提下探索新的商业化路径与广告呈现方式。</div>
+      <div class="paper-links">
+        <a href="https://openai.com/index/chatgpt-ads-expands-across-europe/">来源</a>
+      </div>
+    </div>
+
+    <div class="info-card">
+      <div class="paper-title">Partnering with CodeAI to prepare the first AI generation</div>
+      <div class="paper-summary">OpenAI 与 CodeAI 达成合作，共同筹备首个面向代码生成的智能能力，推动开发者工具与编程工作流的智能化。</div>
+      <div class="paper-links">
+        <a href="https://openai.com/index/partnering-with-codeai/">来源</a>
+      </div>
+    </div>
+
+    <div class="info-card">
+      <div class="paper-title">Pacing model development in an era of cyber-critical capabilities</div>
+      <div class="paper-summary">OpenAI 发布文章，探讨在网络安全关键能力时代如何为模型发展节奏设定边界，平衡能力进展与潜在风险的责任考量。</div>
+      <div class="paper-links">
+        <a href="https://openai.com/index/pacing-model-development-cyber-capabilities/">来源</a>
+      </div>
+    </div>
+
+    <div class="info-card">
+      <div class="paper-title">Introducing ChatGPT for Teens</div>
+      <div class="paper-summary">OpenAI 推出面向青少年用户的 ChatGPT 版本，在内容安全、家长监护与使用引导等方面做了针对性的适龄化设计。</div>
+      <div class="paper-links">
+        <a href="https://openai.com/index/chatgpt-for-teens/">来源</a>
+      </div>
+    </div>
+
+  </section>
+
+  <footer>
+    <p>小小志AI日报 · 自动生成于 2026-08-19　│　跨日去重：0 篇重复论文</p>
+    <p>关注：VLA · Robotics · World Model · LLM · Multimodal · Agent</p>
+  </footer>
+</div>
+</body>
+</html>
