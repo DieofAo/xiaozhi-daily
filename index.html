@@ -658,6 +658,171 @@
 <script>
 // ===== DATA =====
 const PAPERS_DB = [
+    // === 2026-09-01 ===
+    {
+        date: "2026-09-01",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "SUN: Persistent Programs For Language-Grounded Control-to-Learning-to-Real Policies",
+        venue: "arXiv 2608 · Robotics · 语言驱动长程控制",
+        summary: "🔬 技术路线: 提出可持久保存的\"程序\"表示，将基于模型的控制与学得策略结合，用于语言驱动的长程机器人操控任务。 | 💡 创新点: 引入 Stage-BC 统一框架，桥接仿真到真实环境的连续学习，兼顾模型控制的稳定与策略学习的泛化。 | 📊 实验效果: 在多项长程操控任务上给出成功率指标，关键数据 82.03%、35.67%、24.75%、46.0%。 | ⭐ 整体评价: 属机器人控制与学习方向，建议关注真实部署条件、基线对比与 sim-to-real 的鲁棒性。",
+        tags: [["Robotics","green"],["Control","green"],["Sim-to-Real","green"]],
+        links: [["arXiv","http://arxiv.org/abs/2608.31167v1"],["PDF","http://arxiv.org/pdf/2608.31167v1"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出可持久保存的\"程序\"表示，将基于模型的控制与学得策略结合，用于语言驱动的长程机器人操控任务。"},{"label":"💡 创新点","text":"引入 Stage-BC 统一框架，桥接仿真到真实环境的连续学习，兼顾模型控制的稳定与策略学习的泛化。"},{"label":"📊 实验效果","text":"在多项长程操控任务上给出成功率指标，关键数据 82.03%、35.67%、24.75%、46.0%。"},{"label":"⭐ 整体评价","text":"属机器人控制与学习方向，建议关注真实部署条件、基线对比与 sim-to-real 的鲁棒性。"}]
+    },
+    {
+        date: "2026-09-01",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "Act with Intent: Distilling Behavior Intent for Vision-Language-Action Models",
+        venue: "HF 热门 · 2608 · Pohang University of Science and Technology",
+        summary: "🔬 技术路线: 以行为意图作为中间表征，对视觉-语言-动作模型做蒸馏，使多模态条件更好地指导动作生成。 | 💡 创新点: 提出 INDI 方法，将高层行为意图显式蒸馏出来，增强模型在语义条件下的决策质量。 | 📊 实验效果: 在多项具身任务上给出指标，关键数据 64.3%、84.7%、64.1%、70.3%。 | ⭐ 整体评价: 属 VLA 具身控制方向，核心关注任务泛化能力、动作表达方式与真机验证结果。",
+        tags: [["VLA","green"],["Embodied","green"],["Distillation","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2608.23478"],["PDF","https://arxiv.org/pdf/2608.23478"],["Project","https://leesangoh.github.io/indi-project-page/"],["Code","https://github.com/Leesangoh/INDI"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"以行为意图作为中间表征，对视觉-语言-动作模型做蒸馏，使多模态条件更好地指导动作生成。"},{"label":"💡 创新点","text":"提出 INDI 方法，将高层行为意图显式蒸馏出来，增强模型在语义条件下的决策质量。"},{"label":"📊 实验效果","text":"在多项具身任务上给出指标，关键数据 64.3%、84.7%、64.1%、70.3%。"},{"label":"⭐ 整体评价","text":"属 VLA 具身控制方向，核心关注任务泛化能力、动作表达方式与真机验证结果。"}]
+    },
+    {
+        date: "2026-09-01",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "DIASENTINEL: An Auditable Multi-Agent System for Guideline-Grounded Diabetes Risk Screening",
+        venue: "arXiv 2608 · Agent · 医疗筛查",
+        summary: "🔬 技术路线: 构建由多个大语言模型智能体协作的系统，依据临床指南对糖尿病风险做可审计的筛查。 | 💡 创新点: 提出 DIASENTINEL 多智能体架构，强调过程可审计与实时响应，便于临床追溯。 | 📊 实验效果: 在生成与预测类筛查任务上验证方法有效性，关注端到端准确率与合规。 | ⭐ 整体评价: 属医疗 Agent 方向，建议关注可解释性、指南贴合度与实际部署的安全边界。",
+        tags: [["Agent","green"],["Healthcare","green"]],
+        links: [["arXiv","http://arxiv.org/abs/2608.31128v1"],["PDF","http://arxiv.org/pdf/2608.31128v1"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"构建由多个大语言模型智能体协作的系统，依据临床指南对糖尿病风险做可审计的筛查。"},{"label":"💡 创新点","text":"提出 DIASENTINEL 多智能体架构，强调过程可审计与实时响应，便于临床追溯。"},{"label":"📊 实验效果","text":"在生成与预测类筛查任务上验证方法有效性，关注端到端准确率与合规。"},{"label":"⭐ 整体评价","text":"属医疗 Agent 方向，建议关注可解释性、指南贴合度与实际部署的安全边界。"}]
+    },
+    {
+        date: "2026-09-01",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "LoopArena: Benchmarking Models as Runtime Controllers for Loop Engineering",
+        venue: "HF 热门 · 2608 · AMAP-ML",
+        summary: "🔬 技术路线: 将大语言模型当作循环工程的运行时控制器来评测，考察其在动态循环中的调度能力。 | 💡 创新点: 提出 LoopArena 端到端基准，系统衡量模型作为运行时控制器的表现与稳定性。 | 📊 实验效果: 在多种推理与循环控制任务上验证基准区分度，并附项目页与开源代码。 | ⭐ 整体评价: 属 Agent 基准方向，关注运行时控制、长程一致性与端到端成功率。",
+        tags: [["Agent","green"],["Benchmark","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2608.28281"],["PDF","https://arxiv.org/pdf/2608.28281"],["Project","https://amap-ml.github.io/LoopArena/"],["Code","https://github.com/AMAP-ML/LoopArena"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"将大语言模型当作循环工程的运行时控制器来评测，考察其在动态循环中的调度能力。"},{"label":"💡 创新点","text":"提出 LoopArena 端到端基准，系统衡量模型作为运行时控制器的表现与稳定性。"},{"label":"📊 实验效果","text":"在多种推理与循环控制任务上验证基准区分度，并附项目页与开源代码。"},{"label":"⭐ 整体评价","text":"属 Agent 基准方向，关注运行时控制、长程一致性与端到端成功率。"}]
+    },
+    {
+        date: "2026-09-01",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "DART-SD: Diamond-topology Aware Retrieval and Tuning for Self-Distillation of Multi-Turn Tool-Calling Agents",
+        venue: "HF 热门 · 2608 · ByteDance",
+        summary: "🔬 技术路线: 面向多轮工具调用智能体，设计钻石拓扑的检索与调优流程，用于自蒸馏训练。 | 💡 创新点: 提出 DART-SD 框架，针对多轮工具调用的中间状态做自蒸馏优化。 | 📊 实验效果: 实验验证方法在多轮工具调用上的有效性，具体数据见原文。 | ⭐ 整体评价: 属 Agent 自蒸馏方向，关注工具调用策略、多轮一致性与训练效率。",
+        tags: [["Agent","green"],["Tool-Calling","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2608.18524"],["PDF","https://arxiv.org/pdf/2608.18524"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"面向多轮工具调用智能体，设计钻石拓扑的检索与调优流程，用于自蒸馏训练。"},{"label":"💡 创新点","text":"提出 DART-SD 框架，针对多轮工具调用的中间状态做自蒸馏优化。"},{"label":"📊 实验效果","text":"实验验证方法在多轮工具调用上的有效性，具体数据见原文。"},{"label":"⭐ 整体评价","text":"属 Agent 自蒸馏方向，关注工具调用策略、多轮一致性与训练效率。"}]
+    },
+    {
+        date: "2026-09-01",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "StarHarness: Evolving Harnesses with Stratified Search for Enterprise Environments",
+        venue: "HF 热门 · 2608 · ServiceNow-AI",
+        summary: "🔬 技术路线: 用分层搜索自动演化和优化企业环境下的任务框架（harness），提升执行质量。 | 💡 创新点: 提出由 MCP 支撑的 StarHarness，结合分层搜索策略自动演化框架结构。 | 📊 实验效果: 在企业环境任务上取得收益，关键指标提升 35 个百分点。 | ⭐ 整体评价: 属企业级 Agent 方向，关注框架演化、落地收益与工程可维护性。",
+        tags: [["Agent","green"],["Enterprise","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2608.24804"],["PDF","https://arxiv.org/pdf/2608.24804"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"用分层搜索自动演化和优化企业环境下的任务框架（harness），提升执行质量。"},{"label":"💡 创新点","text":"提出由 MCP 支撑的 StarHarness，结合分层搜索策略自动演化框架结构。"},{"label":"📊 实验效果","text":"在企业环境任务上取得收益，关键指标提升 35 个百分点。"},{"label":"⭐ 整体评价","text":"属企业级 Agent 方向，关注框架演化、落地收益与工程可维护性。"}]
+    },
+    {
+        date: "2026-09-01",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "When Does Bigger Help? A Controlled Study of LLM Scale for Ontology Learning",
+        venue: "arXiv 2608 · LLM · 规模研究",
+        summary: "🔬 技术路线: 以受控实验比较不同规模大语言模型在本体学习上的表现，并考察混合专家架构。 | 💡 创新点: 系统刻画模型规模对本体学习的作用边界，明确\"更大\"何时真正带来收益。 | 📊 实验效果: 给出规模与性能的关系数据，关键规模涵盖 9B、27B 等档位。 | ⭐ 整体评价: 属大模型规模研究，关注成本与收益的权衡，以及何时扩大模型才有意义。",
+        tags: [["LLM","green"],["Scaling","green"]],
+        links: [["arXiv","http://arxiv.org/abs/2608.31118v1"],["PDF","http://arxiv.org/pdf/2608.31118v1"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"以受控实验比较不同规模大语言模型在本体学习上的表现，并考察混合专家架构。"},{"label":"💡 创新点","text":"系统刻画模型规模对本体学习的作用边界，明确\"更大\"何时真正带来收益。"},{"label":"📊 实验效果","text":"给出规模与性能的关系数据，关键规模涵盖 9B、27B 等档位。"},{"label":"⭐ 整体评价","text":"属大模型规模研究，关注成本与收益的权衡，以及何时扩大模型才有意义。"}]
+    },
+    {
+        date: "2026-09-01",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "BLOOM-WILT: Logit Tilting for Behaviour Elicitation in Automated LLM Auditing",
+        venue: "arXiv 2608 · LLM · 自动审计",
+        summary: "🔬 技术路线: 通过对数几率倾斜（logit tilting）在自动审计中引导模型暴露目标行为。 | 💡 创新点: 提出 BLOOM-WILT 高效审计方法，无需重新训练即可诱发并观测特定行为。 | 📊 实验效果: 在行为诱导上给出指标，关键数据 51%、100%、模型规模 4B。 | ⭐ 整体评价: 属模型审计与安全方向，关注行为诱导效率、可复现性与审计覆盖面。",
+        tags: [["LLM","green"],["Auditing","green"]],
+        links: [["arXiv","http://arxiv.org/abs/2608.31105v1"],["PDF","http://arxiv.org/pdf/2608.31105v1"],["Code","https://github.com/AdrSkapars/bloom-wilt"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"通过对数几率倾斜（logit tilting）在自动审计中引导模型暴露目标行为。"},{"label":"💡 创新点","text":"提出 BLOOM-WILT 高效审计方法，无需重新训练即可诱发并观测特定行为。"},{"label":"📊 实验效果","text":"在行为诱导上给出指标，关键数据 51%、100%、模型规模 4B。"},{"label":"⭐ 整体评价","text":"属模型审计与安全方向，关注行为诱导效率、可复现性与审计覆盖面。"}]
+    },
+    {
+        date: "2026-09-01",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "LLM Post-Training as Brownfield Maintenance: An Industrial Perspective on Dataware Engineering",
+        venue: "arXiv 2608 · LLM · 后训练工程",
+        summary: "🔬 技术路线: 将大模型后训练类比为\"棕地维护\"，从工业数据工程视角构建可持续的数据管线。 | 💡 创新点: 提出以数据资产工程为核心的后训练方法论，强调端到端可维护与可迭代。 | 📊 实验效果: 在生成类任务上验证方法有效性，关注数据质量对后训练的影响。 | ⭐ 整体评价: 属工业级后训练工程方向，关注数据治理、流程可持续性与落地成本。",
+        tags: [["LLM","green"],["Post-Training","green"]],
+        links: [["arXiv","http://arxiv.org/abs/2608.31102v1"],["PDF","http://arxiv.org/pdf/2608.31102v1"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"将大模型后训练类比为\"棕地维护\"，从工业数据工程视角构建可持续的数据管线。"},{"label":"💡 创新点","text":"提出以数据资产工程为核心的后训练方法论，强调端到端可维护与可迭代。"},{"label":"📊 实验效果","text":"在生成类任务上验证方法有效性，关注数据质量对后训练的影响。"},{"label":"⭐ 整体评价","text":"属工业级后训练工程方向，关注数据治理、流程可持续性与落地成本。"}]
+    },
+    {
+        date: "2026-09-01",
+        category: "Other",
+        categoryIcon: "📄",
+        title: "OntoAligner-Ensemble: Voting-Based Fusion across Heterogeneous Ontology Alignment Techniques",
+        venue: "arXiv 2608 · Other · 本体对齐",
+        summary: "🔬 技术路线: 用多个基于大语言模型的异构本体对齐技术分别求解，再通过投票机制融合结果。 | 💡 创新点: 提出 OntoAligner-Ensemble 集成框架，轻量且鲁棒，统一多种对齐策略的输出。 | 📊 实验效果: 在预测与生成类本体对齐任务上验证融合策略的有效性。 | ⭐ 整体评价: 属本体对齐与知识图谱方向，关注融合策略、跨数据集泛化与稳定性。",
+        tags: [["LLM","green"],["Ontology","green"]],
+        links: [["arXiv","http://arxiv.org/abs/2608.31137v1"],["PDF","http://arxiv.org/pdf/2608.31137v1"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"用多个基于大语言模型的异构本体对齐技术分别求解，再通过投票机制融合结果。"},{"label":"💡 创新点","text":"提出 OntoAligner-Ensemble 集成框架，轻量且鲁棒，统一多种对齐策略的输出。"},{"label":"📊 实验效果","text":"在预测与生成类本体对齐任务上验证融合策略的有效性。"},{"label":"⭐ 整体评价","text":"属本体对齐与知识图谱方向，关注融合策略、跨数据集泛化与稳定性。"}]
+    },
+    {
+        date: "2026-09-01",
+        category: "Other",
+        categoryIcon: "📄",
+        title: "Aspire: Can Models Self-Evolve from Vague Goals?",
+        venue: "arXiv 2608 · Other · 自演化智能体",
+        summary: "🔬 技术路线: 研究模型能否从模糊目标出发自我演化，基于训练与强化式探索逐步细化任务。 | 💡 创新点: 提出以 Qwen-Agent 为基座的自演化框架，从含糊目标自动细化为可执行步骤。 | 📊 实验效果: 实验验证方法在自演化上的有效性，具体数据见原文。 | ⭐ 整体评价: 属自演化智能体方向，关注目标细化、持续学习与自主改进能力。",
+        tags: [["Self-Evolve","green"],["LLM","green"]],
+        links: [["arXiv","http://arxiv.org/abs/2608.31111v1"],["PDF","http://arxiv.org/pdf/2608.31111v1"],["Project","https://self-developing-agents.github.io/"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"研究模型能否从模糊目标出发自我演化，基于训练与强化式探索逐步细化任务。"},{"label":"💡 创新点","text":"提出以 Qwen-Agent 为基座的自演化框架，从含糊目标自动细化为可执行步骤。"},{"label":"📊 实验效果","text":"实验验证方法在自演化上的有效性，具体数据见原文。"},{"label":"⭐ 整体评价","text":"属自演化智能体方向，关注目标细化、持续学习与自主改进能力。"}]
+    },
+    {
+        date: "2026-09-01",
+        category: "Other",
+        categoryIcon: "📄",
+        title: "DreamX-Creator: Democratizing Native Audio-Video Generation at 2K Resolution",
+        venue: "arXiv 2608 · Other · MIT · 多模态生成",
+        summary: "🔬 技术路线: 训练 7B 规模的原生音视频联合生成模型，统一生成带声音的视频内容。 | 💡 创新点: 提出 DreamX-Creator 跨模态统一框架，降低高质量音视频生成的门槛。 | 📊 实验效果: 关键指标为 7B 参数规模与 2K 分辨率输出能力。 | ⭐ 整体评价: 属多模态生成方向，关注跨模态对齐方式、数据规模与下游任务表现。",
+        tags: [["Multimodal","green"],["AV-Gen","green"]],
+        links: [["arXiv","http://arxiv.org/abs/2608.31106v1"],["PDF","http://arxiv.org/pdf/2608.31106v1"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"训练 7B 规模的原生音视频联合生成模型，统一生成带声音的视频内容。"},{"label":"💡 创新点","text":"提出 DreamX-Creator 跨模态统一框架，降低高质量音视频生成的门槛。"},{"label":"📊 实验效果","text":"关键指标为 7B 参数规模与 2K 分辨率输出能力。"},{"label":"⭐ 整体评价","text":"属多模态生成方向，关注跨模态对齐方式、数据规模与下游任务表现。"}]
+    },
+    {
+        date: "2026-09-01",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "pi05-sort-three-vlm-lora-checkpoints",
+        venue: "🤗 HuggingFace 模型 · alanoob · VLA",
+        summary: "发布面向三类分拣任务的视觉-语言-动作模型 LoRA 微调检查点，可用于 Pi05 等平台的视觉语言操控微调。",
+        tags: [],
+        links: [["模型","https://huggingface.co/alanoob/pi05-sort-three-vlm-lora-checkpoints"]]
+    },
+    {
+        date: "2026-09-01",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "OpenAI supports California's bill to advance youth AI safety",
+        venue: "🏢 重点机构发布 · OpenAI",
+        summary: "OpenAI 发布声明，公开支持加利福尼亚州推进青少年 AI 安全的法案，阐述其在未成年人保护方面的立场。",
+        tags: [],
+        links: [["来源","https://openai.com/index/supporting-california-bill-advance-ai-youth-safety/"]]
+    },
+    {
+        date: "2026-09-01",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "A milestone in expanding access to AI",
+        venue: "🏢 重点机构发布 · OpenAI",
+        summary: "OpenAI 宣布在 ChatGPT 中引入广告以扩展 AI 可及性，作为扩大用户触达与免费访问的里程碑举措。",
+        tags: [],
+        links: [["来源","https://openai.com/index/expanding-access-to-ai-with-chatgpt-ads/"]]
+    },
     // === 2026-08-31 ===
     {
         date: "2026-08-31",
@@ -22512,6 +22677,13 @@ const PAPERS_DB = [
 ];
 
 const DAILY_OVERVIEW = {
+    "2026-09-01": {
+        bannerTitle: "🔥 今日看点",
+        bannerSubtitle: "今日共 15 条动态，其中 12 篇含 arXiv 论文，另含 1 个 VLA 模型发布与 2 条 OpenAI 机构动态。机器人方向 SUN 提出\"持久程序\"以桥接基于模型的控制与学得策略，并给出 82.03% 等多组指标；VLA 方向 INDI 通过蒸馏行为意图提升视觉-语言-动作模型，关键指标 64.3%、84.7%、64.1%、70.3%。智能体方向覆盖循环工程基准 LoopArena、多轮工具调用自蒸馏 DART-SD、企业级框架演化 StarHarness（提升 35 个百分点）。语言模型方向聚焦规模边界研究、对数几率倾斜自动审计、以及工业级后训练数据工程视角。",
+        picks: ["SUN: Persistent Programs For Language-Grounded Control-to-Learning-to-Real Policies","Act with Intent: Distilling Behavior Intent for Vision-Language-Action Models"],
+        totalPapers: 12,
+        totalNews: 3
+    },
     "2026-08-31": {
         bannerTitle: "🔥 今日看点",
         bannerSubtitle: "本期 arXiv 索引未返回新论文，8 篇内容全部来自 HuggingFace 社区热榜。具身方向两篇最值得看：Star VLA 提出以表征为中心的继续预训练，指出机器人数据规模化并非唯一路径，操作成功率提升约 20%；EASEL 基准把评测从静态问答推向灵巧视觉工具使用，当前最强模型准确率仅 6.3%，能力缺口显著。智能体方向三篇分别覆盖产物创作体系综述、代码化可执行世界表示，以及腾讯 ContextPilot 的主动上下文管理。语言模型方向聚焦长尾分歧知识下的认知短视、消费级显卡低成本预训练与步级安全护栏。",
