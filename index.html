@@ -658,6 +658,176 @@
 <script>
 // ===== DATA =====
 const PAPERS_DB = [
+    // === 2026-09-02 ===
+    {
+        date: "2026-09-02",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "Facet-0: A Robotic Foundation Model for Contact-Rich Precise Manipulation",
+        venue: "arXiv 2609 · Robotics · 富接触精密操作基础模型",
+        summary: "🔬 技术路线: 以机器人基础模型为骨架，结合强化学习与大规模训练，专门面向富接触的精密操作场景，覆盖亚毫米级公差的真机装配任务。 | 💡 创新点: 把通常只在仿真中成立的精密装配推进到真实世界，模型同时兼顾鲁棒性、多模态输入与轻量化部署，命名为 Facet-0。 | 📊 实验效果: 论文报告了 82% 的关键成功率指标、约 15% 的相对提升幅度，以及 1K 量级的数据规模，具体设置需查阅原文。 | ⭐ 整体评价: 属于机器人算法与控制方向，与力控、接触建模关系密切。建议重点核对基线选取、夹具标定精度与真机部署条件。",
+        tags: [["Robotics","green"],["Manipulation","green"],["RL","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.01596"],["PDF","https://arxiv.org/pdf/2609.01596"],["Project","https://pine-lab-ntu.github.io/facet-0/"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"以机器人基础模型为骨架，结合强化学习与大规模训练，专门面向富接触的精密操作场景，覆盖亚毫米级公差的真机装配任务。"},{"label":"💡 创新点","text":"把通常只在仿真中成立的精密装配推进到真实世界，模型同时兼顾鲁棒性、多模态输入与轻量化部署，命名为 Facet-0。"},{"label":"📊 实验效果","text":"论文报告了 82% 的关键成功率指标、约 15% 的相对提升幅度，以及 1K 量级的数据规模，具体设置需查阅原文。"},{"label":"⭐ 整体评价","text":"属于机器人算法与控制方向，与力控、接触建模关系密切。建议重点核对基线选取、夹具标定精度与真机部署条件。"}]
+    },
+    {
+        date: "2026-09-02",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "Lucida: Parse, Generate, and Place for Composable Real-to-Sim Scene Modeling",
+        venue: "arXiv 2608 · HF 热门 · ByteDance Seed",
+        summary: "🔬 技术路线: 把真实到仿真的场景重建拆成解析、生成、摆放三个阶段的流水线，逐步恢复真实室内场景并输出可组合的仿真资产。 | 💡 创新点: 提出 R2S-Scene 方案，让场景以可组合方式建模，单个物体可被替换或重排，而非生成一整块不可拆分的网格。 | 📊 实验效果: 论文给出 69%、57.8%、83.4% 三组精度类指标，并涉及 1M 量级的数据规模，覆盖多项场景建模评测。 | ⭐ 整体评价: 对搭建机器人仿真环境很实用，可显著降低场景资产构建成本。建议关注物体摆放的物理合理性与仿真到真机的迁移损失。",
+        tags: [["Robotics","green"],["Real-to-Sim","green"],["Scene","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2608.30821"],["PDF","https://arxiv.org/pdf/2608.30821"],["Project","https://lucida-r2s.github.io/"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"把真实到仿真的场景重建拆成解析、生成、摆放三个阶段的流水线，逐步恢复真实室内场景并输出可组合的仿真资产。"},{"label":"💡 创新点","text":"提出 R2S-Scene 方案，让场景以可组合方式建模，单个物体可被替换或重排，而非生成一整块不可拆分的网格。"},{"label":"📊 实验效果","text":"论文给出 69%、57.8%、83.4% 三组精度类指标，并涉及 1M 量级的数据规模，覆盖多项场景建模评测。"},{"label":"⭐ 整体评价","text":"对搭建机器人仿真环境很实用，可显著降低场景资产构建成本。建议关注物体摆放的物理合理性与仿真到真机的迁移损失。"}]
+    },
+    {
+        date: "2026-09-02",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "LightNav-0: Eliciting VLM Spatial Intelligence for Generalist Embodied Navigation",
+        venue: "arXiv 2608 · HF 热门 · Light Origins",
+        summary: "🔬 技术路线: 以视觉-语言模型为底座，通过训练、微调与强化学习相结合的方式，把模型内部已有的空间理解能力激发出来用于导航决策。 | 💡 创新点: 提出 LightNav-0，用统一框架处理异构导航指令，并具备零样本泛化能力，无需针对每类任务单独训练策略。 | 📊 实验效果: 论文涉及 2K 与 4K 两档规模设置，代码已开源并累计 253 星，具体导航成功率指标需查阅原文。 | ⭐ 整体评价: 通用具身导航方向的代表性工作，思路是复用大模型空间先验而非重训。建议关注长程导航的累积误差与真机部署延迟。",
+        tags: [["Embodied","green"],["VLM","green"],["Navigation","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2608.30935"],["PDF","https://arxiv.org/pdf/2608.30935"],["Project","https://www.lightorigins.com/en/blog/lightnav-0"],["Code","https://github.com/lightorigins/LightNav-0"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"以视觉-语言模型为底座，通过训练、微调与强化学习相结合的方式，把模型内部已有的空间理解能力激发出来用于导航决策。"},{"label":"💡 创新点","text":"提出 LightNav-0，用统一框架处理异构导航指令，并具备零样本泛化能力，无需针对每类任务单独训练策略。"},{"label":"📊 实验效果","text":"论文涉及 2K 与 4K 两档规模设置，代码已开源并累计 253 星，具体导航成功率指标需查阅原文。"},{"label":"⭐ 整体评价","text":"通用具身导航方向的代表性工作，思路是复用大模型空间先验而非重训。建议关注长程导航的累积误差与真机部署延迟。"}]
+    },
+    {
+        date: "2026-09-02",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Efficient SWE Agent Benchmarking via Trajectory-Aware Evaluation",
+        venue: "arXiv 2609 · Agent · 软件工程智能体评测",
+        summary: "🔬 技术路线: 构建一套面向软件工程智能体的评测框架，不只看最终结果对错，而是把智能体解题过程中的完整轨迹纳入评价。 | 💡 创新点: 提出 PTA-IRT 方法，核心目标是提升评测效率，用更少的评测开销得到与全量评测接近的排序结论。 | 📊 实验效果: 论文通过实验验证了轨迹感知评测的有效性，代码已在 GitHub 开源，具体加速比与相关性数据需查阅原文。 | ⭐ 整体评价: 属于智能体评测基础设施方向，对降低评测成本有直接价值。建议关注轨迹打分是否会引入新的评测偏置。",
+        tags: [["Agent","green"],["Benchmark","green"],["SWE","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.01603"],["PDF","https://arxiv.org/pdf/2609.01603"],["Code","https://github.com/DeepSoftwareAnalytics/PTA-IRT"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"构建一套面向软件工程智能体的评测框架，不只看最终结果对错，而是把智能体解题过程中的完整轨迹纳入评价。"},{"label":"💡 创新点","text":"提出 PTA-IRT 方法，核心目标是提升评测效率，用更少的评测开销得到与全量评测接近的排序结论。"},{"label":"📊 实验效果","text":"论文通过实验验证了轨迹感知评测的有效性，代码已在 GitHub 开源，具体加速比与相关性数据需查阅原文。"},{"label":"⭐ 整体评价","text":"属于智能体评测基础设施方向，对降低评测成本有直接价值。建议关注轨迹打分是否会引入新的评测偏置。"}]
+    },
+    {
+        date: "2026-09-02",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "The Rise of Verbal Reinforcement Learning",
+        venue: "arXiv 2609 · Agent · 语言化强化学习",
+        summary: "🔬 技术路线: 围绕语言模型与强化学习的结合展开梳理，讨论用自然语言反馈替代或补充数值奖励来驱动智能体改进的训练范式。 | 💡 创新点: 提供统一视角，把散落在各类工作中的语言化反馈优化方法归入同一框架，厘清与传统策略梯度方法的边界。 | 📊 实验效果: 论文以实验佐证所讨论范式的有效性，属偏综述与立场性质的工作，具体对比数据需查阅原文。 | ⭐ 整体评价: 适合作为理解语言反馈类优化的入口读物。建议关注它对奖励稀疏与信用分配问题给出的实际解法而非概念命名。",
+        tags: [["Agent","green"],["RL","green"],["Survey","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.01597"],["PDF","https://arxiv.org/pdf/2609.01597"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"围绕语言模型与强化学习的结合展开梳理，讨论用自然语言反馈替代或补充数值奖励来驱动智能体改进的训练范式。"},{"label":"💡 创新点","text":"提供统一视角，把散落在各类工作中的语言化反馈优化方法归入同一框架，厘清与传统策略梯度方法的边界。"},{"label":"📊 实验效果","text":"论文以实验佐证所讨论范式的有效性，属偏综述与立场性质的工作，具体对比数据需查阅原文。"},{"label":"⭐ 整体评价","text":"适合作为理解语言反馈类优化的入口读物。建议关注它对奖励稀疏与信用分配问题给出的实际解法而非概念命名。"}]
+    },
+    {
+        date: "2026-09-02",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Mechanism Design for Alignment and Control",
+        venue: "arXiv 2609 · Agent · 对齐与控制机制设计",
+        summary: "🔬 技术路线: 从机制设计角度切入模型对齐与控制问题，把智能体行为约束建模为激励与规则的设计问题，而非单纯的训练目标调整。 | 💡 创新点: 给出一套可扩展的框架，使对齐约束能随参与方数量与能力增长而延展，不依赖对单个模型的逐一微调。 | 📊 实验效果: 论文通过实验验证机制设计思路的有效性，偏理论与框架论述，具体量化结果需查阅原文。 | ⭐ 整体评价: 属于智能体治理与安全交叉方向，视角较新。建议关注机制假设在真实多方博弈中的可执行性。",
+        tags: [["Agent","green"],["Alignment","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.01595"],["PDF","https://arxiv.org/pdf/2609.01595"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"从机制设计角度切入模型对齐与控制问题，把智能体行为约束建模为激励与规则的设计问题，而非单纯的训练目标调整。"},{"label":"💡 创新点","text":"给出一套可扩展的框架，使对齐约束能随参与方数量与能力增长而延展，不依赖对单个模型的逐一微调。"},{"label":"📊 实验效果","text":"论文通过实验验证机制设计思路的有效性，偏理论与框架论述，具体量化结果需查阅原文。"},{"label":"⭐ 整体评价","text":"属于智能体治理与安全交叉方向，视角较新。建议关注机制假设在真实多方博弈中的可执行性。"}]
+    },
+    {
+        date: "2026-09-02",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "CogEvol: Towards Efficient and Reliable Learning Environment Generation",
+        venue: "arXiv 2608 · HF 热门 · 元知进化（北京）科技",
+        summary: "🔬 技术路线: 围绕自动生成智能体训练环境展开，采用基于群体相对策略优化的训练流程，并配套构建了对应的基准测试集合。 | 💡 创新点: 目标是让学习环境的生成既高效又可靠，避免自动生成任务出现不可解或答案错误，降低无效训练样本比例。 | 📊 实验效果: 论文报告 76% 的关键指标、约 26.9 倍的效率提升，涉及 220k 数据规模与 27B 参数模型，代码已开源。 | ⭐ 整体评价: 属于智能体数据与环境合成方向，26.9 倍效率提升值得核实口径。建议关注生成环境的多样性与可靠性验证方式。",
+        tags: [["Agent","green"],["Env Synthesis","green"],["GRPO","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2608.30968"],["PDF","https://arxiv.org/pdf/2608.30968"],["Code","https://github.com/CogEvol/CogEvol-4B"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"围绕自动生成智能体训练环境展开，采用基于群体相对策略优化的训练流程，并配套构建了对应的基准测试集合。"},{"label":"💡 创新点","text":"目标是让学习环境的生成既高效又可靠，避免自动生成任务出现不可解或答案错误，降低无效训练样本比例。"},{"label":"📊 实验效果","text":"论文报告 76% 的关键指标、约 26.9 倍的效率提升，涉及 220k 数据规模与 27B 参数模型，代码已开源。"},{"label":"⭐ 整体评价","text":"属于智能体数据与环境合成方向，26.9 倍效率提升值得核实口径。建议关注生成环境的多样性与可靠性验证方式。"}]
+    },
+    {
+        date: "2026-09-02",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Super Library Agent: Joint Generation and Maintenance of Multiple Applications Beyond the Single Codebase",
+        venue: "arXiv 2608 · HF 热门 · KAIST AI",
+        summary: "🔬 技术路线: 让智能体跳出单一代码库的限制，同时生成并维护多个应用，通过共享库的方式统一管理跨应用的复用代码。 | 💡 创新点: 配合 WebGen-Bench 评测，强调零样本条件下的跨应用协同能力，把库的抽取与维护纳入智能体职责范围。 | 📊 实验效果: 论文通过实验验证联合生成与维护策略的有效性，代码与项目页均已公开，具体通过率数据需查阅原文。 | ⭐ 整体评价: 代码智能体从单仓库走向多仓库协同的探索，工程意义明确。建议关注共享库演进时的破坏性变更处理能力。",
+        tags: [["Agent","green"],["Code Gen","green"],["Benchmark","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2608.29310"],["PDF","https://arxiv.org/pdf/2608.29310"],["Project","https://sbigstar0310.github.io/super-library-agent/"],["Code","https://github.com/sbigstar0310/super-library-agent"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"让智能体跳出单一代码库的限制，同时生成并维护多个应用，通过共享库的方式统一管理跨应用的复用代码。"},{"label":"💡 创新点","text":"配合 WebGen-Bench 评测，强调零样本条件下的跨应用协同能力，把库的抽取与维护纳入智能体职责范围。"},{"label":"📊 实验效果","text":"论文通过实验验证联合生成与维护策略的有效性，代码与项目页均已公开，具体通过率数据需查阅原文。"},{"label":"⭐ 整体评价","text":"代码智能体从单仓库走向多仓库协同的探索，工程意义明确。建议关注共享库演进时的破坏性变更处理能力。"}]
+    },
+    {
+        date: "2026-09-02",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Beyond Scores: Understanding LLM-as-a-Judge Mechanisms in Summarization Evaluation",
+        venue: "arXiv 2609 · LLM · 评判模型机理分析",
+        summary: "🔬 技术路线: 结合训练、架构与微调层面的分析手段，拆解语言模型充当评判者时的内部机制，而不只是比较其打出的分数。 | 💡 创新点: 把摘要评测中的评判行为从黑盒变为可解释对象，定位模型实际依赖的判别信号，解释分数一致但理由不同的现象。 | 📊 实验效果: 实验覆盖 8B 与 7B 两档模型规模，代码已在 GitHub 开源，具体相关性与偏置量化结果需查阅原文。 | ⭐ 整体评价: 对依赖模型自动评测的团队有直接参考价值。建议关注结论在更大规模模型上的可迁移性与评判偏置的缓解手段。",
+        tags: [["LLM","green"],["Evaluation","green"],["Interpretability","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.01604"],["PDF","https://arxiv.org/pdf/2609.01604"],["Code","https://github.com/himil-v/judge-mech"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"结合训练、架构与微调层面的分析手段，拆解语言模型充当评判者时的内部机制，而不只是比较其打出的分数。"},{"label":"💡 创新点","text":"把摘要评测中的评判行为从黑盒变为可解释对象，定位模型实际依赖的判别信号，解释分数一致但理由不同的现象。"},{"label":"📊 实验效果","text":"实验覆盖 8B 与 7B 两档模型规模，代码已在 GitHub 开源，具体相关性与偏置量化结果需查阅原文。"},{"label":"⭐ 整体评价","text":"对依赖模型自动评测的团队有直接参考价值。建议关注结论在更大规模模型上的可迁移性与评判偏置的缓解手段。"}]
+    },
+    {
+        date: "2026-09-02",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Adaptive Critical Token-Aware Retrieval for Repository-Level Code Generation",
+        venue: "arXiv 2609 · LLM · 仓库级代码生成检索",
+        summary: "🔬 技术路线: 面向仓库级代码生成设计检索框架，识别生成过程中的关键词元位置，并在这些位置自适应地触发上下文检索。 | 💡 创新点: 提出 ACToR 方法并在 RepoExec 上评估，把检索时机从固定策略改为按关键词元动态决定，减少无效检索开销。 | 📊 实验效果: 论文报告 8.4% 与 15.4% 两组提升幅度，代码已在 GitHub 开源，完整基线对比需查阅原文。 | ⭐ 整体评价: 思路贴近工程实际，对大仓库补全场景有借鉴价值。建议关注关键词元判定本身的额外推理成本。",
+        tags: [["LLM","green"],["Code Gen","green"],["Retrieval","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.01601"],["PDF","https://arxiv.org/pdf/2609.01601"],["Code","https://github.com/DeepSoftwareAnalytics/ACToR"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"面向仓库级代码生成设计检索框架，识别生成过程中的关键词元位置，并在这些位置自适应地触发上下文检索。"},{"label":"💡 创新点","text":"提出 ACToR 方法并在 RepoExec 上评估，把检索时机从固定策略改为按关键词元动态决定，减少无效检索开销。"},{"label":"📊 实验效果","text":"论文报告 8.4% 与 15.4% 两组提升幅度，代码已在 GitHub 开源，完整基线对比需查阅原文。"},{"label":"⭐ 整体评价","text":"思路贴近工程实际，对大仓库补全场景有借鉴价值。建议关注关键词元判定本身的额外推理成本。"}]
+    },
+    {
+        date: "2026-09-02",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "CordisBench: Can Language Models Reason About Component Lifecycles in Dynamic Agent Harnesses?",
+        venue: "arXiv 2609 · LLM · 组件生命周期推理评测",
+        summary: "🔬 技术路线: 构建评测集考察语言模型能否推理动态智能体运行框架中各组件的生命周期，涵盖创建、状态迁移与销毁等环节。 | 💡 创新点: 把此前少被系统评测的组件生命周期推理单列为任务，并以 GPT-5 等前沿模型作为参照，数据集已在平台公开。 | 📊 实验效果: 论文在推理类任务上验证了该基准的区分度，代码与数据集均已开源，各模型具体得分需查阅原文。 | ⭐ 整体评价: 对构建长期运行智能体系统的团队价值较高，暴露了状态管理这一常见短板。建议关注基准难度是否会快速饱和。",
+        tags: [["LLM","green"],["Benchmark","green"],["Harness","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.01600"],["PDF","https://arxiv.org/pdf/2609.01600"],["Code","https://github.com/sileod/cordis-bench"],["Dataset","https://huggingface.co/datasets/sileod/cordis-bench"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"构建评测集考察语言模型能否推理动态智能体运行框架中各组件的生命周期，涵盖创建、状态迁移与销毁等环节。"},{"label":"💡 创新点","text":"把此前少被系统评测的组件生命周期推理单列为任务，并以 GPT-5 等前沿模型作为参照，数据集已在平台公开。"},{"label":"📊 实验效果","text":"论文在推理类任务上验证了该基准的区分度，代码与数据集均已开源，各模型具体得分需查阅原文。"},{"label":"⭐ 整体评价","text":"对构建长期运行智能体系统的团队价值较高，暴露了状态管理这一常见短板。建议关注基准难度是否会快速饱和。"}]
+    },
+    {
+        date: "2026-09-02",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Does On-Policy Distillation Really Distill? From Noisy Teacher to Self-Improvement",
+        venue: "arXiv 2608 · HF 热门 · Purdue University",
+        summary: "🔬 技术路线: 围绕同策略蒸馏展开对照分析，把蒸馏、强化学习与常规训练放在同一设定下比较，追问知识究竟从何而来。 | 💡 创新点: 指出当教师模型本身带噪声时，同策略蒸馏的收益更接近学生自我改进，而非真正意义上的知识迁移。 | 📊 实验效果: 实验涉及 1.7B 规模模型，代码与项目页均已公开，含 16 星开源实现，完整消融结果需查阅原文。 | ⭐ 整体评价: 对蒸馏这一常用手段提出了有价值的质疑，结论若成立会影响小模型训练策略选择。建议关注教师噪声的量化定义。",
+        tags: [["LLM","green"],["Distillation","green"],["Analysis","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2608.31046"],["PDF","https://arxiv.org/pdf/2608.31046"],["Project","https://dripnowhy.github.io/On-Policy-Self-Adaptation/"],["Code","https://github.com/DripNowhy/On-Policy-Self-Adaptation"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"围绕同策略蒸馏展开对照分析，把蒸馏、强化学习与常规训练放在同一设定下比较，追问知识究竟从何而来。"},{"label":"💡 创新点","text":"指出当教师模型本身带噪声时，同策略蒸馏的收益更接近学生自我改进，而非真正意义上的知识迁移。"},{"label":"📊 实验效果","text":"实验涉及 1.7B 规模模型，代码与项目页均已公开，含 16 星开源实现，完整消融结果需查阅原文。"},{"label":"⭐ 整体评价","text":"对蒸馏这一常用手段提出了有价值的质疑，结论若成立会影响小模型训练策略选择。建议关注教师噪声的量化定义。"}]
+    },
+    {
+        date: "2026-09-02",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "SHAPE of Chain-of-Thought in Math Reasoning",
+        venue: "arXiv 2608 · HF 热门 · Seoul National University",
+        summary: "🔬 技术路线: 从形态角度分析数学推理中的思维链，结合训练与强化学习手段考察推理链的结构特征而非仅看最终答案正确率。 | 💡 创新点: 把思维链的形状作为可度量对象纳入分析框架，用于解释同样正确的答案背后推理路径质量的差异。 | 📊 实验效果: 论文通过数学推理实验验证了所提分析框架的有效性，代码已开源，具体基准数据需查阅原文。 | ⭐ 整体评价: 对理解推理过程质量有帮助，可用于筛选训练数据。建议关注形态指标与最终准确率之间的因果关系是否成立。",
+        tags: [["LLM","green"],["Reasoning","green"],["RL","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2608.28600"],["PDF","https://arxiv.org/pdf/2608.28600"],["Code","https://github.com/holi-lab/SHAPE-of-CoT"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"从形态角度分析数学推理中的思维链，结合训练与强化学习手段考察推理链的结构特征而非仅看最终答案正确率。"},{"label":"💡 创新点","text":"把思维链的形状作为可度量对象纳入分析框架，用于解释同样正确的答案背后推理路径质量的差异。"},{"label":"📊 实验效果","text":"论文通过数学推理实验验证了所提分析框架的有效性，代码已开源，具体基准数据需查阅原文。"},{"label":"⭐ 整体评价","text":"对理解推理过程质量有帮助，可用于筛选训练数据。建议关注形态指标与最终准确率之间的因果关系是否成立。"}]
+    },
+    {
+        date: "2026-09-02",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "Uncovering Understanding-Generation Synergy in Native Unified Multimodal Models: From Representation, Task to System",
+        venue: "arXiv 2609 · Multimodal · 理解与生成协同",
+        summary: "🔬 技术路线: 从表征、任务到系统三个层次考察原生统一多模态模型，采用端到端架构分析理解能力与生成能力之间的相互作用。 | 💡 创新点: 系统揭示统一模型中理解与生成并非零和关系，给出二者协同增益出现与消失的条件，而非简单堆叠两类任务。 | 📊 实验效果: 论文在生成类任务上验证了所述协同效应的有效性，具体基准与提升幅度需查阅原文。 | ⭐ 整体评价: 属于多模态方向的机理性工作，对统一模型架构选型有参考价值。建议关注跨模态对齐方式与数据规模的影响。",
+        tags: [["Multimodal","green"],["Unified Model","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.01607"],["PDF","https://arxiv.org/pdf/2609.01607"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"从表征、任务到系统三个层次考察原生统一多模态模型，采用端到端架构分析理解能力与生成能力之间的相互作用。"},{"label":"💡 创新点","text":"系统揭示统一模型中理解与生成并非零和关系，给出二者协同增益出现与消失的条件，而非简单堆叠两类任务。"},{"label":"📊 实验效果","text":"论文在生成类任务上验证了所述协同效应的有效性，具体基准与提升幅度需查阅原文。"},{"label":"⭐ 整体评价","text":"属于多模态方向的机理性工作，对统一模型架构选型有参考价值。建议关注跨模态对齐方式与数据规模的影响。"}]
+    },
+    {
+        date: "2026-09-02",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "GenFirst: Generation Before Reconstruction for Stable End-to-End Latent Generative Modeling",
+        venue: "arXiv 2608 · HF 热门 · ByteDance Seed",
+        summary: "🔬 技术路线: 针对潜空间生成模型常见的两阶段流程，调整训练顺序，让生成先于重建，配合相应的训练策略与整体框架设计。 | 💡 创新点: 借助分布散度约束实现端到端统一训练，缓解先训自编码器再训生成器所带来的目标不一致与训练不稳定问题。 | 📊 实验效果: 论文在多项生成建模与生成任务上验证了训练稳定性与效果，具体指标数值需查阅原文。 | ⭐ 整体评价: 对生成模型训练流程的结构性调整，工程价值明确。建议关注端到端训练的显存开销与超参敏感度。",
+        tags: [["Generation","green"],["Latent Model","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2608.29335"],["PDF","https://arxiv.org/pdf/2608.29335"],["Project","https://tom-zgt.github.io/GenFirst/"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"针对潜空间生成模型常见的两阶段流程，调整训练顺序，让生成先于重建，配合相应的训练策略与整体框架设计。"},{"label":"💡 创新点","text":"借助分布散度约束实现端到端统一训练，缓解先训自编码器再训生成器所带来的目标不一致与训练不稳定问题。"},{"label":"📊 实验效果","text":"论文在多项生成建模与生成任务上验证了训练稳定性与效果，具体指标数值需查阅原文。"},{"label":"⭐ 整体评价","text":"对生成模型训练流程的结构性调整，工程价值明确。建议关注端到端训练的显存开销与超参敏感度。"}]
+    },
     // === 2026-09-01 ===
     {
         date: "2026-09-01",
@@ -22677,6 +22847,13 @@ const PAPERS_DB = [
 ];
 
 const DAILY_OVERVIEW = {
+    "2026-09-02": {
+        bannerTitle: "🔥 今日看点",
+        bannerSubtitle: "今日共 15 篇论文，机器人与具身方向出现三项重量级工作：Facet-0 面向富接触精密装配，给出 82%、15%、1K 等关键指标；字节 Seed 的 Lucida 做可组合真实到仿真场景建模，报告 69%、57.8%、83.4%、1M 等数据；LightNav-0 激发视觉-语言模型的空间智能以支撑通用具身导航，并已开源（253 星）。智能体方向覆盖 SWE 智能体轨迹感知评测、语言化强化学习综述、面向对齐与控制的机制设计三条路径。大语言模型方向聚焦评判机制与蒸馏本质：一篇拆解摘要评测中充当评判者的内部机理，另一篇追问同策略蒸馏究竟蒸出了什么。多模态方向则探讨原生统一模型中理解与生成的协同关系。",
+        picks: ["Facet-0: A Robotic Foundation Model for Contact-Rich Precise Manipulation","Lucida: Parse, Generate, and Place for Composable Real-to-Sim Scene Modeling","LightNav-0: Eliciting VLM Spatial Intelligence for Generalist Embodied Navigation","GenFirst: Generation Before Reconstruction for Stable End-to-End Latent Generative Modeling"],
+        totalPapers: 15,
+        totalNews: 0
+    },
     "2026-09-01": {
         bannerTitle: "🔥 今日看点",
         bannerSubtitle: "今日共 15 条动态，其中 12 篇含 arXiv 论文，另含 1 个 VLA 模型发布与 2 条 OpenAI 机构动态。机器人方向 SUN 提出\"持久程序\"以桥接基于模型的控制与学得策略，并给出 82.03% 等多组指标；VLA 方向 INDI 通过蒸馏行为意图提升视觉-语言-动作模型，关键指标 64.3%、84.7%、64.1%、70.3%。智能体方向覆盖循环工程基准 LoopArena、多轮工具调用自蒸馏 DART-SD、企业级框架演化 StarHarness（提升 35 个百分点）。语言模型方向聚焦规模边界研究、对数几率倾斜自动审计、以及工业级后训练数据工程视角。",
