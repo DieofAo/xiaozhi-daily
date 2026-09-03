@@ -658,6 +658,187 @@
 <script>
 // ===== DATA =====
 const PAPERS_DB = [
+    // === 2026-09-03 ===
+    {
+        date: "2026-09-03",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "Discriminative World Models for Web Agents",
+        venue: "arXiv 2609 · World Model · Web智能体判别式世界模型",
+        summary: "🔬 技术路线: 面向网页智能体，把世界模型用于测试时的动作选择，采用判别式建模直接判别动作优劣，而非生成式地想象未来轨迹。 | 💡 创新点: 提出 Go-Browse 框架，以端到端方式训练判别式世界模型，把动作选择转化为判别问题，绕开了生成式模型的误差累积。 | 📊 实验效果: 在网页智能体的预测类任务上验证了方法有效性，相较基线在动作判别准确度上有提升，具体数值需查阅原文。 | ⭐ 整体评价: 属于世界模型与动作生成方向，对网页自动化有意义。建议关注判别精度、动作可控性以及从仿真到真实网页的迁移表现。",
+        tags: [["World Model","green"],["Web Agent","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.02885"],["PDF","https://arxiv.org/pdf/2609.02885"],["Project","https://dhruvpendharkar.github.io/dwm/"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"面向网页智能体，把世界模型用于测试时的动作选择，采用判别式建模直接判别动作优劣，而非生成式地想象未来轨迹。"},{"label":"💡 创新点","text":"提出 Go-Browse 框架，以端到端方式训练判别式世界模型，把动作选择转化为判别问题，绕开了生成式模型的误差累积。"},{"label":"📊 实验效果","text":"在网页智能体的预测类任务上验证了方法有效性，相较基线在动作判别准确度上有提升，具体数值需查阅原文。"},{"label":"⭐ 整体评价","text":"属于世界模型与动作生成方向，对网页自动化有意义。建议关注判别精度、动作可控性以及从仿真到真实网页的迁移表现。"}]
+    },
+    {
+        date: "2026-09-03",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "H3-World: Turning Language Understanding into World Control",
+        venue: "HF 热门 2609 · World Model · 语言理解驱动世界控制",
+        summary: "🔬 技术路线: 把语言理解能力转为世界控制能力，构建兼具高效与轻量的世界模型，支持零样本场景下的动作生成。 | 💡 创新点: 提出 H3-World，以语言理解为桥梁驱动世界控制，具备零样本与轻量化特性，降低世界模型的部署成本。 | 📊 实验效果: 论文给出 0.199% 与 33B 两档关键指标，在相应评测上展示了语言到控制的转化能力，并已完成开源。 | ⭐ 整体评价: 属于世界模型与动作生成方向。建议关注预测精度、动作可控性以及从仿真到真实控制的迁移效果。",
+        tags: [["World Model","green"],["Language","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.01560"],["PDF","https://arxiv.org/pdf/2609.01560"],["Project","https://danzer1xxxxchan.github.io/H3-World/"],["Code","https://github.com/Danzer1xxxxChan/H3-World"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"把语言理解能力转为世界控制能力，构建兼具高效与轻量的世界模型，支持零样本场景下的动作生成。"},{"label":"💡 创新点","text":"提出 H3-World，以语言理解为桥梁驱动世界控制，具备零样本与轻量化特性，降低世界模型的部署成本。"},{"label":"📊 实验效果","text":"论文给出 0.199% 与 33B 两档关键指标，在相应评测上展示了语言到控制的转化能力，并已完成开源。"},{"label":"⭐ 整体评价","text":"属于世界模型与动作生成方向。建议关注预测精度、动作可控性以及从仿真到真实控制的迁移效果。"}]
+    },
+    {
+        date: "2026-09-03",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "Towards Trustworthy Autonomous Robots: An Explainable AI-Based Decision Framework",
+        venue: "arXiv 2609 · Robotics · 可解释自主机器人决策框架",
+        summary: "🔬 技术路线: 以可解释人工智能为核心，构建决策框架，让深度学习驱动的自主机器人给出可追溯的决策依据，而非黑箱输出。 | 💡 创新点: 提出事后解释机制，对机器人决策过程进行可解释归因，增强关键场景下的可信度与可审查性。 | 📊 实验效果: 论文报告了 98.6%、99.0%、98.1% 三档关键指标，覆盖了决策可信度与解释质量相关评测。 | ⭐ 整体评价: 属于机器人算法与控制方向。建议重点核对实验设置、基线对比以及在真实部署条件下的稳定性与延迟。",
+        tags: [["Robotics","green"],["Explainable","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.02861"],["PDF","https://arxiv.org/pdf/2609.02861"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"以可解释人工智能为核心，构建决策框架，让深度学习驱动的自主机器人给出可追溯的决策依据，而非黑箱输出。"},{"label":"💡 创新点","text":"提出事后解释机制，对机器人决策过程进行可解释归因，增强关键场景下的可信度与可审查性。"},{"label":"📊 实验效果","text":"论文报告了 98.6%、99.0%、98.1% 三档关键指标，覆盖了决策可信度与解释质量相关评测。"},{"label":"⭐ 整体评价","text":"属于机器人算法与控制方向。建议重点核对实验设置、基线对比以及在真实部署条件下的稳定性与延迟。"}]
+    },
+    {
+        date: "2026-09-03",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "Toward Robust LiDAR Semantic Segmentation for Real-World Deployment",
+        venue: "arXiv 2609 · Robotics · 真实部署鲁棒激光雷达分割",
+        summary: "🔬 技术路线: 面向真实部署的激光雷达语义分割，系统评估在粗标签、恶劣条件与域偏移下的鲁棒性，给出统一处理思路。 | 💡 创新点: 提出以激光雷达为基础的鲁棒分割方案，统一应对标注噪声、恶劣天气与跨域差异，提升野外可用性。 | 📊 实验效果: 在语义分割精度与推理速度任务上验证了有效性，覆盖了多种真实扰动与域偏移场景。 | ⭐ 整体评价: 属于机器人感知与控制方向。建议关注基线对比、标注成本以及真实部署时的算力与延迟约束。",
+        tags: [["Robotics","green"],["LiDAR","green"],["Segmentation","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.02830"],["PDF","https://arxiv.org/pdf/2609.02830"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"面向真实部署的激光雷达语义分割，系统评估在粗标签、恶劣条件与域偏移下的鲁棒性，给出统一处理思路。"},{"label":"💡 创新点","text":"提出以激光雷达为基础的鲁棒分割方案，统一应对标注噪声、恶劣天气与跨域差异，提升野外可用性。"},{"label":"📊 实验效果","text":"在语义分割精度与推理速度任务上验证了有效性，覆盖了多种真实扰动与域偏移场景。"},{"label":"⭐ 整体评价","text":"属于机器人感知与控制方向。建议关注基线对比、标注成本以及真实部署时的算力与延迟约束。"}]
+    },
+    {
+        date: "2026-09-03",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "Do Better Imagined Rollouts Mean Better Robot Control? A Controlled Study of World-Model Evaluation Under Feedback",
+        venue: "arXiv 2609 · Robotics · 世界模型想象展开评测研究",
+        summary: "🔬 技术路线: 以受控实验研究世界模型想象展开质量与机器人控制效果之间的关系，用扩展卡尔曼滤波锚定评估。 | 💡 创新点: 提出以扩展卡尔曼滤波锚定的评估协议，在反馈条件下公平比较不同世界模型的想象展开质量。 | 📊 实验效果: 在规划与预测任务上验证了评估协议的有效性，揭示更优展开并不必然带来更优控制的反直觉结论。 | ⭐ 整体评价: 属于机器人算法与世界模型评测方向。建议结合代码复现，关注评测协议对控制增益的归因方式。",
+        tags: [["Robotics","green"],["World Model","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.02811"],["PDF","https://arxiv.org/pdf/2609.02811"],["Code","https://github.com/rdharini2001/Robot_World_Model"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"以受控实验研究世界模型想象展开质量与机器人控制效果之间的关系，用扩展卡尔曼滤波锚定评估。"},{"label":"💡 创新点","text":"提出以扩展卡尔曼滤波锚定的评估协议，在反馈条件下公平比较不同世界模型的想象展开质量。"},{"label":"📊 实验效果","text":"在规划与预测任务上验证了评估协议的有效性，揭示更优展开并不必然带来更优控制的反直觉结论。"},{"label":"⭐ 整体评价","text":"属于机器人算法与世界模型评测方向。建议结合代码复现，关注评测协议对控制增益的归因方式。"}]
+    },
+    {
+        date: "2026-09-03",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "ZimaBlue: Evolving Generalizable World Action Models through Scalable Video Pre-training",
+        venue: "HF 热门 2609 · Robotics · 可扩展视频预训练世界动作模型",
+        summary: "🔬 技术路线: 通过可扩展视频预训练学习可泛化的世界动作模型，从大规模视频中提炼通用动作表征。 | 💡 创新点: 提出 ZimaBlue 框架，以可扩展方式从海量视频学习世界动作模型，提升跨场景的泛化与迁移能力。 | 📊 实验效果: 在相应世界动作模型基准上验证了泛化能力，代码已开源，具体指标需查阅原文实验部分。 | ⭐ 整体评价: 属于世界模型与动作生成方向。建议关注视频预训练规模、动作表征质量以及真实机器人上的迁移验证。",
+        tags: [["Robotics","green"],["World Action Model","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.00188"],["PDF","https://arxiv.org/pdf/2609.00188"],["Project","https://zimablue-wam.github.io/"],["Code","https://github.com/ZimaBlue-WAM/ZimaBlue"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"通过可扩展视频预训练学习可泛化的世界动作模型，从大规模视频中提炼通用动作表征。"},{"label":"💡 创新点","text":"提出 ZimaBlue 框架，以可扩展方式从海量视频学习世界动作模型，提升跨场景的泛化与迁移能力。"},{"label":"📊 实验效果","text":"在相应世界动作模型基准上验证了泛化能力，代码已开源，具体指标需查阅原文实验部分。"},{"label":"⭐ 整体评价","text":"属于世界模型与动作生成方向。建议关注视频预训练规模、动作表征质量以及真实机器人上的迁移验证。"}]
+    },
+    {
+        date: "2026-09-03",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "User Feedback Provides a Unique Signal that LLMs Can not Detect",
+        venue: "arXiv 2609 · LLM · 用户反馈独特信号",
+        summary: "🔬 技术路线: 研究用户反馈信号，探讨大语言模型自身无法自行识别的反馈信息，从训练与推理层面分析其对齐价值。 | 💡 创新点: 指出现有模型缺乏直接感知用户真实反馈的机制，提出把用户反馈作为独立监督信号用于改进对齐。 | 📊 实验效果: 通过实验验证用户反馈信号的独特价值，方法在多项对齐与偏好任务上体现出有效性，数据见原文。 | ⭐ 整体评价: 属于大语言模型与推理方向。建议关注训练范式、反馈采集方式以及该信号与现有偏好方法的互补性。",
+        tags: [["LLM","green"],["Alignment","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.02859"],["PDF","https://arxiv.org/pdf/2609.02859"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"研究用户反馈信号，探讨大语言模型自身无法自行识别的反馈信息，从训练与推理层面分析其对齐价值。"},{"label":"💡 创新点","text":"指出现有模型缺乏直接感知用户真实反馈的机制，提出把用户反馈作为独立监督信号用于改进对齐。"},{"label":"📊 实验效果","text":"通过实验验证用户反馈信号的独特价值，方法在多项对齐与偏好任务上体现出有效性，数据见原文。"},{"label":"⭐ 整体评价","text":"属于大语言模型与推理方向。建议关注训练范式、反馈采集方式以及该信号与现有偏好方法的互补性。"}]
+    },
+    {
+        date: "2026-09-03",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Large Language Models (LLMs) for Telecom Root Cause Analysis (RCA): A Structured Reasoning Framework for Evidence-Grounded Diagnosis",
+        venue: "arXiv 2609 · LLM · Jianzhong · 电信根因分析",
+        summary: "🔬 技术路线: 面向电信根因分析，构建结构化推理框架，让大语言模型基于证据进行可追溯的故障诊断与定位。 | 💡 创新点: 提出以大语言模型驱动的电信根因分析框架，把分散告警与日志组织为证据链，支持可审计诊断。 | 📊 实验效果: 在生成式诊断任务上验证了方法有效性，能够给出带证据支撑的根因结论，指标详见原文。 | ⭐ 整体评价: 属于大语言模型与工具使用方向。建议关注证据检索质量、误报率以及在生产告警洪流下的稳定性。",
+        tags: [["LLM","green"],["RCA","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.02805"],["PDF","https://arxiv.org/pdf/2609.02805"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"面向电信根因分析，构建结构化推理框架，让大语言模型基于证据进行可追溯的故障诊断与定位。"},{"label":"💡 创新点","text":"提出以大语言模型驱动的电信根因分析框架，把分散告警与日志组织为证据链，支持可审计诊断。"},{"label":"📊 实验效果","text":"在生成式诊断任务上验证了方法有效性，能够给出带证据支撑的根因结论，指标详见原文。"},{"label":"⭐ 整体评价","text":"属于大语言模型与工具使用方向。建议关注证据检索质量、误报率以及在生产告警洪流下的稳定性。"}]
+    },
+    {
+        date: "2026-09-03",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "SafeEvolve: Harness-Policy Co-Evolution from Agent Experience for Safety Alignment",
+        venue: "arXiv 2609 · LLM · 安全对齐协同演化",
+        summary: "🔬 技术路线: 从智能体经验出发，让约束规则与策略协同演化，以迭代方式实现既安全又实用的对齐。 | 💡 创新点: 提出 SafeEvolve，使安全约束与策略从智能体交互经验中共同进化，避免静态规则导致的过度僵化。 | 📊 实验效果: 论文给出 59.79%、61.86% 两档关键指标，并涉及 4B 量级模型规模，验证了协同演化的安全收益。 | ⭐ 整体评价: 属于大语言模型与工具使用方向。建议关注约束泛化能力、演化稳定性以及部署时的安全边界保证。",
+        tags: [["LLM","green"],["Safety","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.02786"],["PDF","https://arxiv.org/pdf/2609.02786"],["Code","https://github.com/MaoPopovich/SafeEvolve"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"从智能体经验出发，让约束规则与策略协同演化，以迭代方式实现既安全又实用的对齐。"},{"label":"💡 创新点","text":"提出 SafeEvolve，使安全约束与策略从智能体交互经验中共同进化，避免静态规则导致的过度僵化。"},{"label":"📊 实验效果","text":"论文给出 59.79%、61.86% 两档关键指标，并涉及 4B 量级模型规模，验证了协同演化的安全收益。"},{"label":"⭐ 整体评价","text":"属于大语言模型与工具使用方向。建议关注约束泛化能力、演化稳定性以及部署时的安全边界保证。"}]
+    },
+    {
+        date: "2026-09-03",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "StudentSim: Training LLM-based Student Simulators",
+        venue: "HF 热门 2609 · LLM · Microsoft Research",
+        summary: "🔬 技术路线: 训练以大语言模型为基础的学生模拟器，结合奖励模型与强化学习，用于模拟学习者行为以支撑教育场景。 | 💡 创新点: 提出 StudentSim，用大语言模型构建可交互的学生模拟器，替代昂贵真人被试，支持规模化教学研究。 | 📊 实验效果: 在多个教学交互基准上验证了模拟器保真度，代码已开源并获社区关注，具体指标见原文。 | ⭐ 整体评价: 属于大语言模型与推理方向。建议关注模拟真实度、偏差控制以及与真人学生行为的对齐程度。",
+        tags: [["LLM","green"],["Simulator","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.01591"],["PDF","https://arxiv.org/pdf/2609.01591"],["Project","https://microsoft.github.io/StudentSim/"],["Code","https://github.com/microsoft/StudentSim"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"训练以大语言模型为基础的学生模拟器，结合奖励模型与强化学习，用于模拟学习者行为以支撑教育场景。"},{"label":"💡 创新点","text":"提出 StudentSim，用大语言模型构建可交互的学生模拟器，替代昂贵真人被试，支持规模化教学研究。"},{"label":"📊 实验效果","text":"在多个教学交互基准上验证了模拟器保真度，代码已开源并获社区关注，具体指标见原文。"},{"label":"⭐ 整体评价","text":"属于大语言模型与推理方向。建议关注模拟真实度、偏差控制以及与真人学生行为的对齐程度。"}]
+    },
+    {
+        date: "2026-09-03",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "SMELT: Scaling Laws for Compute-Matched MoE Looped Transformers",
+        venue: "HF 热门 2609 · LLM · ByteDance Seed",
+        summary: "🔬 技术路线: 研究计算量匹配下混合专家与循环变换器的缩放规律，给出可预测的算力分配与性能关系。 | 💡 创新点: 提出 SMELT，把循环变换器与混合专家结合，系统刻画其在固定算力下的缩放行为。 | 📊 实验效果: 论文涉及 54B 量级的规模设置，给出混合专家循环结构的缩放曲线，指导算力受限下的模型设计。 | ⭐ 整体评价: 属于大语言模型与推理方向。建议关注缩放规律的适用边界、与标准变换器的性价比对比。",
+        tags: [["LLM","green"],["Scaling Law","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.01343"],["PDF","https://arxiv.org/pdf/2609.01343"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"研究计算量匹配下混合专家与循环变换器的缩放规律，给出可预测的算力分配与性能关系。"},{"label":"💡 创新点","text":"提出 SMELT，把循环变换器与混合专家结合，系统刻画其在固定算力下的缩放行为。"},{"label":"📊 实验效果","text":"论文涉及 54B 量级的规模设置，给出混合专家循环结构的缩放曲线，指导算力受限下的模型设计。"},{"label":"⭐ 整体评价","text":"属于大语言模型与推理方向。建议关注缩放规律的适用边界、与标准变换器的性价比对比。"}]
+    },
+    {
+        date: "2026-09-03",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "From Production Traffic to Post-Training: Building a Self-Hosted LLM That Covers the Corporate Request Mix",
+        venue: "HF 热门 2609 · LLM · T-Tech",
+        summary: "🔬 技术路线: 从生产流量出发设计后训练方案，构建自托管大语言模型以覆盖企业真实请求分布。 | 💡 创新点: 提出以数据驻留为核心的方法，用生产流量刻画企业请求组合，指导自托管模型的后训练对齐。 | 📊 实验效果: 论文给出 50% 与 116M 两档关键指标，展示了自托管模型对企业请求混合的覆盖能力。 | ⭐ 整体评价: 属于大语言模型与推理方向。建议关注数据隐私、请求分布漂移下的持续训练以及部署成本。",
+        tags: [["LLM","green"],["Self-Hosted","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.01572"],["PDF","https://arxiv.org/pdf/2609.01572"],["Project","https://huggingface.co/t-tech/T-pro-it-2.1"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"从生产流量出发设计后训练方案，构建自托管大语言模型以覆盖企业真实请求分布。"},{"label":"💡 创新点","text":"提出以数据驻留为核心的方法，用生产流量刻画企业请求组合，指导自托管模型的后训练对齐。"},{"label":"📊 实验效果","text":"论文给出 50% 与 116M 两档关键指标，展示了自托管模型对企业请求混合的覆盖能力。"},{"label":"⭐ 整体评价","text":"属于大语言模型与推理方向。建议关注数据隐私、请求分布漂移下的持续训练以及部署成本。"}]
+    },
+    {
+        date: "2026-09-03",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "UI-Venus-2 Technical Report",
+        venue: "HF 热门 2609 · Agent · Ant Group",
+        summary: "🔬 技术路线: 面向图形界面智能体，构建多模态统一框架，结合训练与机制设计支撑网页与应用的自动化操作。 | 💡 创新点: 提出 UI-Venus-2，以多模态、统一且高效的设计承载界面智能体任务，提升跨应用操作能力。 | 📊 实验效果: 在生成式界面操作任务上验证了方法有效性，覆盖了多种界面交互场景，指标见原文。 | ⭐ 整体评价: 属于智能体与工具使用方向。建议关注操作成功率、长程任务规划能力以及真实软件的泛化表现。",
+        tags: [["Agent","green"],["UI","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.00028"],["PDF","https://arxiv.org/pdf/2609.00028"],["Project","https://ui-venus.github.io/UI-Venus-2/"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"面向图形界面智能体，构建多模态统一框架，结合训练与机制设计支撑网页与应用的自动化操作。"},{"label":"💡 创新点","text":"提出 UI-Venus-2，以多模态、统一且高效的设计承载界面智能体任务，提升跨应用操作能力。"},{"label":"📊 实验效果","text":"在生成式界面操作任务上验证了方法有效性，覆盖了多种界面交互场景，指标见原文。"},{"label":"⭐ 整体评价","text":"属于智能体与工具使用方向。建议关注操作成功率、长程任务规划能力以及真实软件的泛化表现。"}]
+    },
+    {
+        date: "2026-09-03",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "Evaluating Multimodal LLMs as Generalist Vision-Language-Action Agents for Drone Control: Commanding, Approaching, Tracking and Searching",
+        venue: "HF 热门 2609 · VLA · HyperCLOVA X",
+        summary: "🔬 技术路线: 评估多模态大语言模型作为通用视觉-语言-动作智能体在无人机控制中的表现，覆盖指挥、接近、跟踪与搜索。 | 💡 创新点: 提出 DroneCATS-Agent，以多模态特性统一处理无人机多种任务，给出系统化的通用控制评测协议。 | 📊 实验效果: 论文涉及 2B 量级模型规模，在指令跟随与多任务控制上验证了通用智能体的可行性。 | ⭐ 整体评价: 属于视觉-语言-动作与具身控制方向。建议关注任务泛化、动作表达方式以及真机验证的安全约束。",
+        tags: [["VLA","green"],["Drone","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.01404"],["PDF","https://arxiv.org/pdf/2609.01404"],["Project","https://github.com/naver-ai/DroneCATS"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"评估多模态大语言模型作为通用视觉-语言-动作智能体在无人机控制中的表现，覆盖指挥、接近、跟踪与搜索。"},{"label":"💡 创新点","text":"提出 DroneCATS-Agent，以多模态特性统一处理无人机多种任务，给出系统化的通用控制评测协议。"},{"label":"📊 实验效果","text":"论文涉及 2B 量级模型规模，在指令跟随与多任务控制上验证了通用智能体的可行性。"},{"label":"⭐ 整体评价","text":"属于视觉-语言-动作与具身控制方向。建议关注任务泛化、动作表达方式以及真机验证的安全约束。"}]
+    },
+    {
+        date: "2026-09-03",
+        category: "Other",
+        categoryIcon: "📄",
+        title: "DiscoSign: Discourse-Aware Text to Sign Language Gloss Translation",
+        venue: "arXiv 2609 · Other · 篇章感知手语翻译",
+        summary: "🔬 技术路线: 面向手语翻译，提出篇章感知的文本到手语词汇翻译方法，结合问答机制处理长文本的语篇结构。 | 💡 创新点: 引入篇章层级理解与问答辅助，缓解文本到手语词汇翻译中长程指代与语篇连贯丢失的问题。 | 📊 实验效果: 实验验证了篇章感知方法的有效性，在翻译连贯性与准确率上相较基线有所提升，数据见原文。 | ⭐ 整体评价: 属于多语言与无障碍方向。建议关注语料规模、手语词汇覆盖度以及真人手语表达的可用性评估。",
+        tags: [["Sign Language","green"],["Discourse","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.02796"],["PDF","https://arxiv.org/pdf/2609.02796"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"面向手语翻译，提出篇章感知的文本到手语词汇翻译方法，结合问答机制处理长文本的语篇结构。"},{"label":"💡 创新点","text":"引入篇章层级理解与问答辅助，缓解文本到手语词汇翻译中长程指代与语篇连贯丢失的问题。"},{"label":"📊 实验效果","text":"实验验证了篇章感知方法的有效性，在翻译连贯性与准确率上相较基线有所提升，数据见原文。"},{"label":"⭐ 整体评价","text":"属于多语言与无障碍方向。建议关注语料规模、手语词汇覆盖度以及真人手语表达的可用性评估。"}]
+    },
+    {
+        date: "2026-09-03",
+        category: "Other",
+        categoryIcon: "📄",
+        title: "Qwen-Drive-1.0: An Initial Step towards a Vision-Language Foundation Model for Autonomous Driving",
+        venue: "HF 热门 2609 · Other · Qwen",
+        summary: "🔬 技术路线: 朝向自动驾驶，提出以视觉-语言模型为基础的驾驶基础模型，融合感知、运动规划与目标检测能力。 | 💡 创新点: 提出 Qwen-Drive-1.0，用统一视觉-语言基座承载自动驾驶多任务，迈出驾驶大模型的第一步。 | 📊 实验效果: 在运动规划与目标检测任务上验证了有效性，展示了统一模型处理驾驶子任务的可行性。 | ⭐ 整体评价: 属于机器人感知与控制方向。建议关注基线对比、闭环评测以及真实道路部署的安全冗余设计。",
+        tags: [["VLM","green"],["Driving","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.00111"],["PDF","https://arxiv.org/pdf/2609.00111"],["Project","https://qwen.ai/blog?id=qwen-drive-1.0"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"朝向自动驾驶，提出以视觉-语言模型为基础的驾驶基础模型，融合感知、运动规划与目标检测能力。"},{"label":"💡 创新点","text":"提出 Qwen-Drive-1.0，用统一视觉-语言基座承载自动驾驶多任务，迈出驾驶大模型的第一步。"},{"label":"📊 实验效果","text":"在运动规划与目标检测任务上验证了有效性，展示了统一模型处理驾驶子任务的可行性。"},{"label":"⭐ 整体评价","text":"属于机器人感知与控制方向。建议关注基线对比、闭环评测以及真实道路部署的安全冗余设计。"}]
+    },
     // === 2026-09-02 ===
     {
         date: "2026-09-02",
@@ -22847,6 +23028,13 @@ const PAPERS_DB = [
 ];
 
 const DAILY_OVERVIEW = {
+    "2026-09-03": {
+        bannerTitle: "🔥 今日看点",
+        bannerSubtitle: "今日共 16 篇论文（arXiv 8 篇 +  HuggingFace 热门 8 篇），覆盖世界模型、机器人、大语言模型、智能体、视觉-语言-动作五大方向。世界模型方向，判别式网页智能体世界模型 Go-Browse 把动作选择转为判别问题，H3-World 用语言理解驱动世界控制，ZimaBlue 以可扩展视频预训练学习通用世界动作模型。机器人方向，可解释自主决策框架给出 98.6% 至 99.0% 的可信度指标，激光雷达鲁棒分割统一应对域偏移，受控研究则揭示更优想象展开未必带来更优控制。大语言模型方向，电信根因分析用结构化推理做可追溯诊断，SafeEvolve 让安全约束与策略协同演化，StudentSim 用大模型模拟学生，SMELT 刻画混合专家循环变换器的缩放规律，另有面向企业请求混合的自托管后训练方案。多模态方向，Qwen-Drive-1.0 迈出驾驶视觉-语言基础模型第一步，DroneCATS-Agent 把多模态大模型用作无人机通用控制智能体。",
+        picks: ["Towards Trustworthy Autonomous Robots: An Explainable AI-Based Decision Framework","Toward Robust LiDAR Semantic Segmentation for Real-World Deployment","Do Better Imagined Rollouts Mean Better Robot Control? A Controlled Study of World-Model Evaluation Under Feedback","SMELT: Scaling Laws for Compute-Matched MoE Looped Transformers"],
+        totalPapers: 16,
+        totalNews: 0
+    },
     "2026-09-02": {
         bannerTitle: "🔥 今日看点",
         bannerSubtitle: "今日共 15 篇论文，机器人与具身方向出现三项重量级工作：Facet-0 面向富接触精密装配，给出 82%、15%、1K 等关键指标；字节 Seed 的 Lucida 做可组合真实到仿真场景建模，报告 69%、57.8%、83.4%、1M 等数据；LightNav-0 激发视觉-语言模型的空间智能以支撑通用具身导航，并已开源（253 星）。智能体方向覆盖 SWE 智能体轨迹感知评测、语言化强化学习综述、面向对齐与控制的机制设计三条路径。大语言模型方向聚焦评判机制与蒸馏本质：一篇拆解摘要评测中充当评判者的内部机理，另一篇追问同策略蒸馏究竟蒸出了什么。多模态方向则探讨原生统一模型中理解与生成的协同关系。",
