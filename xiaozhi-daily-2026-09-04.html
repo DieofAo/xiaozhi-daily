@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>小小志AI日报 - 2026年9月4日</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans SC', sans-serif;
+  background: #0a0e1a;
+  color: #e0e6f0;
+  line-height: 1.7;
+  min-height: 100vh;
+}
+.container { max-width: 960px; margin: 0 auto; padding: 40px 24px; }
+header { text-align: center; margin-bottom: 48px; padding: 40px 20px;
+  background: linear-gradient(135deg, rgba(59,130,246,0.08) 0%, rgba(139,92,246,0.08) 100%);
+  border-radius: 20px; border: 1px solid rgba(99,102,241,0.15); }
+header h1 { font-size: 2rem; background: linear-gradient(135deg, #60a5fa, #a78bfa);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 8px; }
+header .date { color: #94a3b8; font-size: 1rem; }
+header .subtitle { color: #64748b; font-size: 0.9rem; margin-top: 6px; }
+.highlight-banner { background: linear-gradient(135deg, rgba(249,115,22,0.1) 0%, rgba(234,179,8,0.08) 100%);
+  border: 1px solid rgba(249,115,22,0.2); border-radius: 14px; padding: 20px 24px; margin-bottom: 36px; }
+.hl-title { font-size: 1.1rem; font-weight: 700; color: #fb923c; margin-bottom: 8px; }
+.hl-text { font-size: 0.92rem; color: #cbd5e1; line-height: 1.7; }
+.section { margin-bottom: 40px; }
+.section-title { font-size: 1.4rem; color: #f1f5f9; margin-bottom: 20px; padding-bottom: 12px;
+  border-bottom: 1px solid rgba(99,102,241,0.2); }
+.paper-card { background: rgba(30,41,59,0.6); border: 1px solid rgba(99,102,241,0.12);
+  border-radius: 14px; padding: 24px; margin-bottom: 16px; transition: transform 0.2s, box-shadow 0.2s; }
+.paper-card:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(99,102,241,0.1);
+  border-color: rgba(99,102,241,0.3); }
+.paper-card.hot { border-color: rgba(249,115,22,0.25); background: rgba(30,41,59,0.7); }
+.paper-title { font-size: 1.1rem; font-weight: 600; color: #f8fafc; margin-bottom: 8px; }
+.paper-meta { font-size: 0.85rem; color: #64748b; margin-bottom: 10px; }
+.summary-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 14px; }
+@media (max-width: 640px) { .summary-grid { grid-template-columns: 1fr; } }
+.summary-item { background: rgba(15,23,42,0.5); border-radius: 10px; padding: 12px 14px;
+  border: 1px solid rgba(99,102,241,0.08); }
+.summary-label { font-size: 0.78rem; font-weight: 600; color: #818cf8; margin-bottom: 4px; }
+.summary-text { font-size: 0.88rem; color: #cbd5e1; line-height: 1.6; }
+.paper-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+.tag { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: 500; }
+.tag-agent { background: rgba(16,185,129,0.12); color: #34d399; }
+.tag-llm { background: rgba(99,102,241,0.12); color: #818cf8; }
+.tag-multimodal { background: rgba(244,114,182,0.12); color: #f472b6; }
+.tag-world { background: rgba(251,191,36,0.12); color: #fbbf24; }
+.tag-robot { background: rgba(251,146,60,0.12); color: #fb923c; }
+.tag-rl { background: rgba(45,212,191,0.12); color: #2dd4bf; }
+.tag-benchmark { background: rgba(34,211,238,0.12); color: #22d3ee; }
+.tag-vla { background: rgba(59,130,246,0.12); color: #60a5fa; }
+.tag-memory { background: rgba(192,132,252,0.12); color: #c084fc; }
+.tag-reasoning { background: rgba(132,204,22,0.12); color: #a3e635; }
+.tag-data { background: rgba(250,204,21,0.12); color: #facc15; }
+.tag-infra { background: rgba(167,139,250,0.12); color: #a78bfa; }
+.tag-3d { background: rgba(148,163,184,0.12); color: #94a3b8; }
+.tag-vlm { background: rgba(56,189,248,0.12); color: #38bdf8; }
+.tag-tool { background: rgba(52,211,153,0.12); color: #34d399; }
+.hot-badge { display: inline; margin-right: 4px; }
+.paper-links { display: flex; flex-wrap: wrap; gap: 10px; }
+.paper-links a { display: inline-block; padding: 5px 14px; background: rgba(99,102,241,0.12);
+  color: #818cf8; text-decoration: none; border-radius: 8px; font-size: 0.82rem; transition: background 0.2s; }
+.paper-links a:hover { background: rgba(99,102,241,0.25); }
+footer { text-align: center; color: #475569; font-size: 0.82rem; padding: 40px 20px;
+  border-top: 1px solid rgba(99,102,241,0.1); margin-top: 40px; }
+.stats { display: flex; justify-content: center; gap: 24px; margin-top: 16px; flex-wrap: wrap; }
+.stat-item { display: flex; align-items: center; gap: 6px; font-size: 0.85rem; color: #94a3b8; }
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>小小志AI日报</h1>
+    <div class="date">2026年9月4日 · 星期五</div>
+    <div class="subtitle">关注：VLA · Robotics · World Model · LLM · Multimodal · Agent</div>
+    <div class="stats">
+      <span class="stat-item">📝 论文 15（arXiv 8 + HF 热门 7）</span>
+      <span class="stat-item">🤗 模型发布 0</span>
+      <span class="stat-item">🔁 跨日去重移除 0</span>
+    </div>
+  </header>
+
+  <div class="highlight-banner">
+    <div class="hl-title">🔥 今日看点</div>
+    <div class="hl-text">今日共 15 篇论文（arXiv 8 篇 + HuggingFace 热门 7 篇），覆盖大语言模型、多模态、世界模型、智能体与强化学习五大方向。世界模型方向，GIFT 用动作导向结构监督训练机器人操作世界模型，SolarWM 开源长时序视频世界模型的完整数据与训练方案。大语言模型方向，HarnessDev 探索模型自我演化智能体框架，另有思维链可读性与可解释性辨析、在线策略蒸馏机理分析。智能体方向，Repo-To-Skill 把代码仓库蒸馏为可复用技能，WHALE 联合优化框架与权重，EarlyEval 用早停预测降低评测成本。多模态方向涵盖原生三维世界状态模型与像素文本表征。</div>
+  </div>
+
+  <section class="section">
+    <h2 class="section-title">🧠 LLM · 大语言模型</h2>
+
+    <div class="paper-card">
+      <div class="paper-title">Clean Engineering, Unstable Measurement: A Preregistered Reliability Failure of Black-Box LLM Observers on Shared Endpoints</div>
+      <div class="paper-meta">arXiv 2609 · LLM</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">采用预注册实验设计，在共享端点上对黑盒大语言模型观察者的评测可靠性做受控测量。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次以预注册方式检验通用评测代理稳定性，揭示工程一致但测量结论并不稳定。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在共享端点上重复评测的相对偏差约 2%，表明观察者在负载变化下结论难以复现。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属评测方法论方向，提醒从业者不要盲信单一端点的黑盒评测结论。</div></div>
+      </div>
+      <div class="paper-tags"><span class="tag tag-llm">LLM</span><span class="tag tag-reasoning">Reliability</span></div>
+      <div class="paper-links"><a href="https://arxiv.org/abs/2609.04198v1">arXiv</a><a href="https://arxiv.org/pdf/2609.04198v1">PDF</a></div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">Legibility is Not Interpretability: Comparing Judged and Actual Importance in Chain-Of-Thought Reasoning</div>
+      <div class="paper-meta">arXiv 2609 · LLM</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">通过奖励模型与微调，对比思维链中被判重要性与实际重要性的差异。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">区分可读性与可解释性，量化人类与模型对推理步骤重要性的系统性误判。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">实验显示思维链可读性强并不等于步骤真正重要，二者存在明显偏离。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属推理可解释方向，对思维链可信度评估具有直接警示意义。</div></div>
+      </div>
+      <div class="paper-tags"><span class="tag tag-llm">LLM</span><span class="tag tag-reasoning">CoT</span></div>
+      <div class="paper-links"><a href="https://arxiv.org/abs/2609.04194v1">arXiv</a><a href="https://arxiv.org/pdf/2609.04194v1">PDF</a></div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">Knowledge Acquisition During Pre-training? Large Language Models Learn Better With Auxiliary Views</div>
+      <div class="paper-meta">arXiv 2609 · LLM</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">在预训练阶段引入辅助视角，研究大语言模型的知识获取机制。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">探讨辅助视角能否让模型在预训练中学到更有效的知识表征。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">实验表明带辅助视角的预训练在多项任务上学习效果更优。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属预训练方向，对数据构造与多视角训练具有参考价值。</div></div>
+      </div>
+      <div class="paper-tags"><span class="tag tag-llm">LLM</span><span class="tag tag-data">Pre-training</span></div>
+      <div class="paper-links"><a href="https://arxiv.org/abs/2609.04180v1">arXiv</a><a href="https://arxiv.org/pdf/2609.04180v1">PDF</a></div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">Rethinking On-Policy Distillation of Large Language Models II: One Training Example</div>
+      <div class="paper-meta">arXiv 2609 · LLM · MIT</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">从在线策略蒸馏角度重构大语言模型蒸馏，以单个训练样本为切入口分析。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">以“一个训练样本”的极简案例揭示在线策略蒸馏的核心机理。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">通过单样本推演验证蒸馏梯度与教师信号之间的对应关系。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属蒸馏理论方向，建议结合算法与训练机制进一步验证。</div></div>
+      </div>
+      <div class="paper-tags"><span class="tag tag-llm">LLM</span><span class="tag tag-memory">Distillation</span></div>
+      <div class="paper-links"><a href="https://arxiv.org/abs/2609.04172v1">arXiv</a><a href="https://arxiv.org/pdf/2609.04172v1">PDF</a></div>
+    </div>
+
+    <div class="paper-card hot">
+      <div class="paper-title"><span class="hot-badge">🔥</span> HarnessDev: Can LLMs Create and Evolve Their Own Agent Harness?</div>
+      <div class="paper-meta">HF 热门 2609 · LLM · ByteDance Seed</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">研究大语言模型能否自主创建并演化自己的智能体运行框架。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出自我演化的智能体框架构建范式，减少人工编排成本。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在自建评估与基准上验证了框架自生成与持续演化的可行性。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属智能体基础设施方向，建议关注演化稳定性与泛化能力。</div></div>
+      </div>
+      <div class="paper-tags"><span class="tag tag-llm">LLM</span><span class="tag tag-agent">Agent Harness</span><span class="tag tag-infra">Infra</span></div>
+      <div class="paper-links"><a href="https://arxiv.org/abs/2609.01437">arXiv</a><a href="https://arxiv.org/pdf/2609.01437">PDF</a><a href="https://self-developing-agents.github.io/">Project</a></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">🎨 Multimodal · 多模态</h2>
+
+    <div class="paper-card">
+      <div class="paper-title">Puffin-World: Scaling a Unified Multimodal Model with Native 3D World States</div>
+      <div class="paper-meta">arXiv 2609 · Multimodal</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">构建统一多模态架构，把三维世界状态作为原生表征进行联合缩放训练。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出原生三维世界状态表征，让单一模型同时处理视觉、语言与空间理解。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">模型规模达 1600 万参数级别，在统一表征下验证了多任务协同的可行性。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属多模态方向，建议关注三维表征对下游空间推理与生成的迁移效果。</div></div>
+      </div>
+      <div class="paper-tags"><span class="tag tag-multimodal">Multimodal</span><span class="tag tag-3d">3D</span></div>
+      <div class="paper-links"><a href="https://arxiv.org/abs/2609.04196v1">arXiv</a><a href="https://arxiv.org/pdf/2609.04196v1">PDF</a><a href="https://kangliao929.github.io/projects/puffin-world/">Project</a></div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">On the Design Fundamentals of Pixel Text Representation Learning</div>
+      <div class="paper-meta">HF 热门 2609 · Multimodal · LCO-Embedding</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">研究像素级文本表征学习的设计原理，以训练驱动表征构建。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出面向富文本图像的像素文本统一表征，强调鲁棒与可扩展。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">模型规模约 2.8 亿参数，在富文本理解任务上验证有效性。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属多模态方向，建议关注对真实文档与场景文字的泛化。</div></div>
+      </div>
+      <div class="paper-tags"><span class="tag tag-multimodal">Multimodal</span><span class="tag tag-data">Pixel Text</span></div>
+      <div class="paper-links"><a href="https://arxiv.org/abs/2609.01147">arXiv</a><a href="https://arxiv.org/pdf/2609.01147">PDF</a><a href="https://huggingface.co/collections/Pixel-Linguist/pixel-linguist-ii">Project</a></div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">Seeing Before Synthesizing: VLM-Guided Transition Event Discovery for Weakly-Supervised Dense Video Captioning</div>
+      <div class="paper-meta">arXiv 2609 · Multimodal</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">用视觉语言模型引导发现视频中的转换事件，实现弱监督密集视频描述。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">在合成描述前先做事件发现，显著降低对密集人工标注的依赖。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在弱监督设定下验证了基于事件边界的密集描述生成有效性。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属视频理解方向，建议关注事件发现质量对描述准确性的影响。</div></div>
+      </div>
+      <div class="paper-tags"><span class="tag tag-multimodal">Multimodal</span><span class="tag tag-vlm">VLM</span></div>
+      <div class="paper-links"><a href="https://arxiv.org/abs/2609.04183v1">arXiv</a><a href="https://arxiv.org/pdf/2609.04183v1">PDF</a></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">🌍 World Model · 世界模型</h2>
+
+    <div class="paper-card hot">
+      <div class="paper-title"><span class="hot-badge">🔥</span> GIFT: Guided Intermediate Feature Training via Action-Oriented Structural Supervision for Robotic Manipulation</div>
+      <div class="paper-meta">arXiv 2609 · World Model · MIT</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">以视觉语言预训练结合动作导向结构监督，训练面向机器人操作的世界模型。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出动作导向的中间特征监督，使中间表征对下游操作任务更可迁移。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在多项操作基准上分别取得 79.6%、72.6%、87.8%、61.4% 等指标。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属 VLA/具身方向，建议关注任务泛化能力与真机部署验证结果。</div></div>
+      </div>
+      <div class="paper-tags"><span class="tag tag-world">World Model</span><span class="tag tag-vla">VLA</span><span class="tag tag-robot">Manipulation</span></div>
+      <div class="paper-links"><a href="https://arxiv.org/abs/2609.04193v1">arXiv</a><a href="https://arxiv.org/pdf/2609.04193v1">PDF</a><a href="https://openphoenix-team.github.io/GIFT-pages">Project</a></div>
+    </div>
+
+    <div class="paper-card hot">
+      <div class="paper-title"><span class="hot-badge">🔥</span> SolarWM: Open Data and Scalable Training for Long-Horizon Video World Models</div>
+      <div class="paper-meta">HF 热门 2609 · World Model · CUHK Shenzhen</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">构建完全开放的数据与训练流程，训练长时序视频世界模型。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">开源长时序视频世界模型的完整数据与可扩展训练方案。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">模型提供 50 亿与 330 亿两种规模，支持长时序一致生成。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属世界模型方向，建议关注预测精度、动作可控性及仿真到真实迁移。</div></div>
+      </div>
+      <div class="paper-tags"><span class="tag tag-world">World Model</span><span class="tag tag-data">Open Data</span></div>
+      <div class="paper-links"><a href="https://arxiv.org/abs/2609.02886">arXiv</a><a href="https://arxiv.org/pdf/2609.02886">PDF</a><a href="https://junchao-cs.github.io/SolarWM-Web/">Project</a><a href="https://github.com/Junchao-cs/SolarWM">Code</a></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">🧩 Agent · 智能体与工具</h2>
+
+    <div class="paper-card">
+      <div class="paper-title">A Case Study on Emergent Cheating and Whistleblowing in Autonomous Research Swarms</div>
+      <div class="paper-meta">arXiv 2609 · Agent</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">以多智能体研究群体为对象，研究涌现作弊与揭发行为的形成机制。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">通过案例揭示自主研究群体会自发出现作弊与互相揭发的博弈行为。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">案例显示多智能体在无中心监管时会产生投机与制衡并存的动态。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属智能体安全方向，对群体智能体的治理与对齐有警示价值。</div></div>
+      </div>
+      <div class="paper-tags"><span class="tag tag-agent">Agent</span><span class="tag tag-reasoning">Multi-agent</span></div>
+      <div class="paper-links"><a href="https://arxiv.org/abs/2609.04170v1">arXiv</a><a href="https://arxiv.org/pdf/2609.04170v1">PDF</a></div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">Repo-To-Skill: Distilling GitHub Repositories Into AI4AI Skills</div>
+      <div class="paper-meta">HF 热门 2609 · Agent · BAAI</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">把开源代码仓库蒸馏为可供智能体复用的技能模块，构建 AI4AI 能力。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出仓库到技能的蒸馏流程，让智能体直接调用真实工程能力。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在相关基准上取得 134.3%、34.4%、9.2%、14.0% 等相对提升。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属智能体方向，建议关注技能复用率与端到端任务成功率。</div></div>
+      </div>
+      <div class="paper-tags"><span class="tag tag-agent">Agent</span><span class="tag tag-tool">Skill</span></div>
+      <div class="paper-links"><a href="https://arxiv.org/abs/2609.02749">arXiv</a><a href="https://arxiv.org/pdf/2609.02749">PDF</a><a href="https://github.com/VectorSpaceLab/AREX-Skill">Code</a></div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">EarlyEval: Cheaper Agent Evaluation via Early Outcome Prediction</div>
+      <div class="paper-meta">HF 热门 2609 · Agent · SJTU</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">通过早期结果预测降低智能体评估成本，采用蒸馏与框架化设计。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">在评估中途预测最终成败，提前终止低效评估以节省算力。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在基准上取得 13%、26%、44.1%、29.4% 等成本或准确率指标。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属智能体评测方向，建议关注提前终止的可靠性与误判率。</div></div>
+      </div>
+      <div class="paper-tags"><span class="tag tag-agent">Agent</span><span class="tag tag-benchmark">Eval</span></div>
+      <div class="paper-links"><a href="https://arxiv.org/abs/2609.02783">arXiv</a><a href="https://arxiv.org/pdf/2609.02783">PDF</a><a href="https://github.com/inphotoo/earlyeval">Code</a></div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">WHALE: A Simple Recipe for Joint Harness-Weight Optimization</div>
+      <div class="paper-meta">HF 热门 2609 · Agent · KRAFTON</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">联合优化智能体运行框架与模型权重，以微调与训练为基础。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出权重与框架联合优化的简单配方，统一两类调优目标。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在基准上带来 24.38 个百分点的提升，并提供 20 亿与 40 亿模型。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属智能体与大语言模型方向，建议关注配方在不同规模下的稳定性。</div></div>
+      </div>
+      <div class="paper-tags"><span class="tag tag-agent">Agent</span><span class="tag tag-llm">Weight</span></div>
+      <div class="paper-links"><a href="https://arxiv.org/abs/2609.00196">arXiv</a><a href="https://arxiv.org/pdf/2609.00196">PDF</a><a href="https://krafton-ai.github.io/blog/whale/">Project</a><a href="https://github.com/krafton-ai/WHALE">Code</a></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">📄 检索与强化学习 · RL</h2>
+
+    <div class="paper-card">
+      <div class="paper-title">It Takes Two to Match: Co-Evolving Generative Retriever with Reinforcement Learning</div>
+      <div class="paper-meta">HF 热门 2609 · RL · Apple</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">用强化学习让生成式检索器与另一组件协同演化、联合训练。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 CoGR 两阶段协同演化方案，使检索器与目标端互相适配。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在检索匹配任务上验证了协同演化带来的性能增益。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属检索方向，建议关注训练流程稳定性与可扩展性。</div></div>
+      </div>
+      <div class="paper-tags"><span class="tag tag-rl">RL</span><span class="tag tag-data">Retrieval</span></div>
+      <div class="paper-links"><a href="https://arxiv.org/abs/2609.00638">arXiv</a><a href="https://arxiv.org/pdf/2609.00638">PDF</a></div>
+    </div>
+  </section>
+
+  <footer>
+    <p>小小志AI日报 · 自动生成于 2026-09-04</p>
+    <p>数据来源：daily_ai_report.py · 关注 VLA / Robotics / World Model / LLM / Multimodal / Agent</p>
+  </footer>
+</div>
+</body>
+</html>

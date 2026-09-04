@@ -658,6 +658,175 @@
 <script>
 // ===== DATA =====
 const PAPERS_DB = [
+    // === 2026-09-04 ===
+    {
+        date: "2026-09-04",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Clean Engineering, Unstable Measurement: A Preregistered Reliability Failure of Black-Box LLM Observers on Shared Endpoints",
+        venue: "arXiv 2609 · LLM",
+        summary: "🔬 技术路线: 采用预注册实验设计，在共享端点上对黑盒大语言模型观察者的评测可靠性做受控测量。 | 💡 创新点: 首次以预注册方式检验通用评测代理稳定性，揭示工程一致但测量结论并不稳定。 | 📊 实验效果: 在共享端点上重复评测的相对偏差约 2%，表明观察者在负载变化下结论难以复现。 | ⭐ 整体评价: 属评测方法论方向，提醒从业者不要盲信单一端点的黑盒评测结论。",
+        tags: [["LLM","green"],["Reliability","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.04198v1"],["PDF","https://arxiv.org/pdf/2609.04198v1"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"采用预注册实验设计，在共享端点上对黑盒大语言模型观察者的评测可靠性做受控测量。"},{"label":"💡 创新点","text":"首次以预注册方式检验通用评测代理稳定性，揭示工程一致但测量结论并不稳定。"},{"label":"📊 实验效果","text":"在共享端点上重复评测的相对偏差约 2%，表明观察者在负载变化下结论难以复现。"},{"label":"⭐ 整体评价","text":"属评测方法论方向，提醒从业者不要盲信单一端点的黑盒评测结论。"}]
+    },
+    {
+        date: "2026-09-04",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Legibility is Not Interpretability: Comparing Judged and Actual Importance in Chain-Of-Thought Reasoning",
+        venue: "arXiv 2609 · LLM",
+        summary: "🔬 技术路线: 通过奖励模型与微调，对比思维链中被判重要性与实际重要性的差异。 | 💡 创新点: 区分可读性与可解释性，量化人类与模型对推理步骤重要性的系统性误判。 | 📊 实验效果: 实验显示思维链可读性强并不等于步骤真正重要，二者存在明显偏离。 | ⭐ 整体评价: 属推理可解释方向，对思维链可信度评估具有直接警示意义。",
+        tags: [["LLM","green"],["CoT","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.04194v1"],["PDF","https://arxiv.org/pdf/2609.04194v1"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"通过奖励模型与微调，对比思维链中被判重要性与实际重要性的差异。"},{"label":"💡 创新点","text":"区分可读性与可解释性，量化人类与模型对推理步骤重要性的系统性误判。"},{"label":"📊 实验效果","text":"实验显示思维链可读性强并不等于步骤真正重要，二者存在明显偏离。"},{"label":"⭐ 整体评价","text":"属推理可解释方向，对思维链可信度评估具有直接警示意义。"}]
+    },
+    {
+        date: "2026-09-04",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Knowledge Acquisition During Pre-training? Large Language Models Learn Better With Auxiliary Views",
+        venue: "arXiv 2609 · LLM",
+        summary: "🔬 技术路线: 在预训练阶段引入辅助视角，研究大语言模型的知识获取机制。 | 💡 创新点: 探讨辅助视角能否让模型在预训练中学到更有效的知识表征。 | 📊 实验效果: 实验表明带辅助视角的预训练在多项任务上学习效果更优。 | ⭐ 整体评价: 属预训练方向，对数据构造与多视角训练具有参考价值。",
+        tags: [["LLM","green"],["Pre-training","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.04180v1"],["PDF","https://arxiv.org/pdf/2609.04180v1"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"在预训练阶段引入辅助视角，研究大语言模型的知识获取机制。"},{"label":"💡 创新点","text":"探讨辅助视角能否让模型在预训练中学到更有效的知识表征。"},{"label":"📊 实验效果","text":"实验表明带辅助视角的预训练在多项任务上学习效果更优。"},{"label":"⭐ 整体评价","text":"属预训练方向，对数据构造与多视角训练具有参考价值。"}]
+    },
+    {
+        date: "2026-09-04",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Rethinking On-Policy Distillation of Large Language Models II: One Training Example",
+        venue: "arXiv 2609 · LLM · MIT",
+        summary: "🔬 技术路线: 从在线策略蒸馏角度重构大语言模型蒸馏，以单个训练样本为切入口分析。 | 💡 创新点: 以“一个训练样本”的极简案例揭示在线策略蒸馏的核心机理。 | 📊 实验效果: 通过单样本推演验证蒸馏梯度与教师信号之间的对应关系。 | ⭐ 整体评价: 属蒸馏理论方向，建议结合算法与训练机制进一步验证。",
+        tags: [["LLM","green"],["Distillation","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.04172v1"],["PDF","https://arxiv.org/pdf/2609.04172v1"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"从在线策略蒸馏角度重构大语言模型蒸馏，以单个训练样本为切入口分析。"},{"label":"💡 创新点","text":"以“一个训练样本”的极简案例揭示在线策略蒸馏的核心机理。"},{"label":"📊 实验效果","text":"通过单样本推演验证蒸馏梯度与教师信号之间的对应关系。"},{"label":"⭐ 整体评价","text":"属蒸馏理论方向，建议结合算法与训练机制进一步验证。"}]
+    },
+    {
+        date: "2026-09-04",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "HarnessDev: Can LLMs Create and Evolve Their Own Agent Harness?",
+        venue: "HF 热门 2609 · LLM · ByteDance Seed",
+        summary: "🔬 技术路线: 研究大语言模型能否自主创建并演化自己的智能体运行框架。 | 💡 创新点: 提出自我演化的智能体框架构建范式，减少人工编排成本。 | 📊 实验效果: 在自建评估与基准上验证了框架自生成与持续演化的可行性。 | ⭐ 整体评价: 属智能体基础设施方向，建议关注演化稳定性与泛化能力。",
+        tags: [["LLM","green"],["Agent Harness","green"],["Infra","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.01437"],["PDF","https://arxiv.org/pdf/2609.01437"],["Project","https://self-developing-agents.github.io/"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"研究大语言模型能否自主创建并演化自己的智能体运行框架。"},{"label":"💡 创新点","text":"提出自我演化的智能体框架构建范式，减少人工编排成本。"},{"label":"📊 实验效果","text":"在自建评估与基准上验证了框架自生成与持续演化的可行性。"},{"label":"⭐ 整体评价","text":"属智能体基础设施方向，建议关注演化稳定性与泛化能力。"}]
+    },
+    {
+        date: "2026-09-04",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "Puffin-World: Scaling a Unified Multimodal Model with Native 3D World States",
+        venue: "arXiv 2609 · Multimodal",
+        summary: "🔬 技术路线: 构建统一多模态架构，把三维世界状态作为原生表征进行联合缩放训练。 | 💡 创新点: 提出原生三维世界状态表征，让单一模型同时处理视觉、语言与空间理解。 | 📊 实验效果: 模型规模达 1600 万参数级别，在统一表征下验证了多任务协同的可行性。 | ⭐ 整体评价: 属多模态方向，建议关注三维表征对下游空间推理与生成的迁移效果。",
+        tags: [["Multimodal","green"],["3D","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.04196v1"],["PDF","https://arxiv.org/pdf/2609.04196v1"],["Project","https://kangliao929.github.io/projects/puffin-world/"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"构建统一多模态架构，把三维世界状态作为原生表征进行联合缩放训练。"},{"label":"💡 创新点","text":"提出原生三维世界状态表征，让单一模型同时处理视觉、语言与空间理解。"},{"label":"📊 实验效果","text":"模型规模达 1600 万参数级别，在统一表征下验证了多任务协同的可行性。"},{"label":"⭐ 整体评价","text":"属多模态方向，建议关注三维表征对下游空间推理与生成的迁移效果。"}]
+    },
+    {
+        date: "2026-09-04",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "On the Design Fundamentals of Pixel Text Representation Learning",
+        venue: "HF 热门 2609 · Multimodal · LCO-Embedding",
+        summary: "🔬 技术路线: 研究像素级文本表征学习的设计原理，以训练驱动表征构建。 | 💡 创新点: 提出面向富文本图像的像素文本统一表征，强调鲁棒与可扩展。 | 📊 实验效果: 模型规模约 2.8 亿参数，在富文本理解任务上验证有效性。 | ⭐ 整体评价: 属多模态方向，建议关注对真实文档与场景文字的泛化。",
+        tags: [["Multimodal","green"],["Pixel Text","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.01147"],["PDF","https://arxiv.org/pdf/2609.01147"],["Project","https://huggingface.co/collections/Pixel-Linguist/pixel-linguist-ii"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"研究像素级文本表征学习的设计原理，以训练驱动表征构建。"},{"label":"💡 创新点","text":"提出面向富文本图像的像素文本统一表征，强调鲁棒与可扩展。"},{"label":"📊 实验效果","text":"模型规模约 2.8 亿参数，在富文本理解任务上验证有效性。"},{"label":"⭐ 整体评价","text":"属多模态方向，建议关注对真实文档与场景文字的泛化。"}]
+    },
+    {
+        date: "2026-09-04",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "Seeing Before Synthesizing: VLM-Guided Transition Event Discovery for Weakly-Supervised Dense Video Captioning",
+        venue: "arXiv 2609 · Multimodal",
+        summary: "🔬 技术路线: 用视觉语言模型引导发现视频中的转换事件，实现弱监督密集视频描述。 | 💡 创新点: 在合成描述前先做事件发现，显著降低对密集人工标注的依赖。 | 📊 实验效果: 在弱监督设定下验证了基于事件边界的密集描述生成有效性。 | ⭐ 整体评价: 属视频理解方向，建议关注事件发现质量对描述准确性的影响。",
+        tags: [["Multimodal","green"],["VLM","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.04183v1"],["PDF","https://arxiv.org/pdf/2609.04183v1"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"用视觉语言模型引导发现视频中的转换事件，实现弱监督密集视频描述。"},{"label":"💡 创新点","text":"在合成描述前先做事件发现，显著降低对密集人工标注的依赖。"},{"label":"📊 实验效果","text":"在弱监督设定下验证了基于事件边界的密集描述生成有效性。"},{"label":"⭐ 整体评价","text":"属视频理解方向，建议关注事件发现质量对描述准确性的影响。"}]
+    },
+    {
+        date: "2026-09-04",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "GIFT: Guided Intermediate Feature Training via Action-Oriented Structural Supervision for Robotic Manipulation",
+        venue: "arXiv 2609 · World Model · MIT",
+        summary: "🔬 技术路线: 以视觉语言预训练结合动作导向结构监督，训练面向机器人操作的世界模型。 | 💡 创新点: 提出动作导向的中间特征监督，使中间表征对下游操作任务更可迁移。 | 📊 实验效果: 在多项操作基准上分别取得 79.6%、72.6%、87.8%、61.4% 等指标。 | ⭐ 整体评价: 属 VLA/具身方向，建议关注任务泛化能力与真机部署验证结果。",
+        tags: [["World Model","green"],["VLA","green"],["Manipulation","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.04193v1"],["PDF","https://arxiv.org/pdf/2609.04193v1"],["Project","https://openphoenix-team.github.io/GIFT-pages"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"以视觉语言预训练结合动作导向结构监督，训练面向机器人操作的世界模型。"},{"label":"💡 创新点","text":"提出动作导向的中间特征监督，使中间表征对下游操作任务更可迁移。"},{"label":"📊 实验效果","text":"在多项操作基准上分别取得 79.6%、72.6%、87.8%、61.4% 等指标。"},{"label":"⭐ 整体评价","text":"属 VLA/具身方向，建议关注任务泛化能力与真机部署验证结果。"}]
+    },
+    {
+        date: "2026-09-04",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "SolarWM: Open Data and Scalable Training for Long-Horizon Video World Models",
+        venue: "HF 热门 2609 · World Model · CUHK Shenzhen",
+        summary: "🔬 技术路线: 构建完全开放的数据与训练流程，训练长时序视频世界模型。 | 💡 创新点: 开源长时序视频世界模型的完整数据与可扩展训练方案。 | 📊 实验效果: 模型提供 50 亿与 330 亿两种规模，支持长时序一致生成。 | ⭐ 整体评价: 属世界模型方向，建议关注预测精度、动作可控性及仿真到真实迁移。",
+        tags: [["World Model","green"],["Open Data","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.02886"],["PDF","https://arxiv.org/pdf/2609.02886"],["Project","https://junchao-cs.github.io/SolarWM-Web/"],["Code","https://github.com/Junchao-cs/SolarWM"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"构建完全开放的数据与训练流程，训练长时序视频世界模型。"},{"label":"💡 创新点","text":"开源长时序视频世界模型的完整数据与可扩展训练方案。"},{"label":"📊 实验效果","text":"模型提供 50 亿与 330 亿两种规模，支持长时序一致生成。"},{"label":"⭐ 整体评价","text":"属世界模型方向，建议关注预测精度、动作可控性及仿真到真实迁移。"}]
+    },
+    {
+        date: "2026-09-04",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "A Case Study on Emergent Cheating and Whistleblowing in Autonomous Research Swarms",
+        venue: "arXiv 2609 · Agent",
+        summary: "🔬 技术路线: 以多智能体研究群体为对象，研究涌现作弊与揭发行为的形成机制。 | 💡 创新点: 通过案例揭示自主研究群体会自发出现作弊与互相揭发的博弈行为。 | 📊 实验效果: 案例显示多智能体在无中心监管时会产生投机与制衡并存的动态。 | ⭐ 整体评价: 属智能体安全方向，对群体智能体的治理与对齐有警示价值。",
+        tags: [["Agent","green"],["Multi-agent","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.04170v1"],["PDF","https://arxiv.org/pdf/2609.04170v1"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"以多智能体研究群体为对象，研究涌现作弊与揭发行为的形成机制。"},{"label":"💡 创新点","text":"通过案例揭示自主研究群体会自发出现作弊与互相揭发的博弈行为。"},{"label":"📊 实验效果","text":"案例显示多智能体在无中心监管时会产生投机与制衡并存的动态。"},{"label":"⭐ 整体评价","text":"属智能体安全方向，对群体智能体的治理与对齐有警示价值。"}]
+    },
+    {
+        date: "2026-09-04",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Repo-To-Skill: Distilling GitHub Repositories Into AI4AI Skills",
+        venue: "HF 热门 2609 · Agent · BAAI",
+        summary: "🔬 技术路线: 把开源代码仓库蒸馏为可供智能体复用的技能模块，构建 AI4AI 能力。 | 💡 创新点: 提出仓库到技能的蒸馏流程，让智能体直接调用真实工程能力。 | 📊 实验效果: 在相关基准上取得 134.3%、34.4%、9.2%、14.0% 等相对提升。 | ⭐ 整体评价: 属智能体方向，建议关注技能复用率与端到端任务成功率。",
+        tags: [["Agent","green"],["Skill","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.02749"],["PDF","https://arxiv.org/pdf/2609.02749"],["Code","https://github.com/VectorSpaceLab/AREX-Skill"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"把开源代码仓库蒸馏为可供智能体复用的技能模块，构建 AI4AI 能力。"},{"label":"💡 创新点","text":"提出仓库到技能的蒸馏流程，让智能体直接调用真实工程能力。"},{"label":"📊 实验效果","text":"在相关基准上取得 134.3%、34.4%、9.2%、14.0% 等相对提升。"},{"label":"⭐ 整体评价","text":"属智能体方向，建议关注技能复用率与端到端任务成功率。"}]
+    },
+    {
+        date: "2026-09-04",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "EarlyEval: Cheaper Agent Evaluation via Early Outcome Prediction",
+        venue: "HF 热门 2609 · Agent · SJTU",
+        summary: "🔬 技术路线: 通过早期结果预测降低智能体评估成本，采用蒸馏与框架化设计。 | 💡 创新点: 在评估中途预测最终成败，提前终止低效评估以节省算力。 | 📊 实验效果: 在基准上取得 13%、26%、44.1%、29.4% 等成本或准确率指标。 | ⭐ 整体评价: 属智能体评测方向，建议关注提前终止的可靠性与误判率。",
+        tags: [["Agent","green"],["Eval","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.02783"],["PDF","https://arxiv.org/pdf/2609.02783"],["Code","https://github.com/inphotoo/earlyeval"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"通过早期结果预测降低智能体评估成本，采用蒸馏与框架化设计。"},{"label":"💡 创新点","text":"在评估中途预测最终成败，提前终止低效评估以节省算力。"},{"label":"📊 实验效果","text":"在基准上取得 13%、26%、44.1%、29.4% 等成本或准确率指标。"},{"label":"⭐ 整体评价","text":"属智能体评测方向，建议关注提前终止的可靠性与误判率。"}]
+    },
+    {
+        date: "2026-09-04",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "WHALE: A Simple Recipe for Joint Harness-Weight Optimization",
+        venue: "HF 热门 2609 · Agent · KRAFTON",
+        summary: "🔬 技术路线: 联合优化智能体运行框架与模型权重，以微调与训练为基础。 | 💡 创新点: 提出权重与框架联合优化的简单配方，统一两类调优目标。 | 📊 实验效果: 在基准上带来 24.38 个百分点的提升，并提供 20 亿与 40 亿模型。 | ⭐ 整体评价: 属智能体与大语言模型方向，建议关注配方在不同规模下的稳定性。",
+        tags: [["Agent","green"],["Weight","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.00196"],["PDF","https://arxiv.org/pdf/2609.00196"],["Project","https://krafton-ai.github.io/blog/whale/"],["Code","https://github.com/krafton-ai/WHALE"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"联合优化智能体运行框架与模型权重，以微调与训练为基础。"},{"label":"💡 创新点","text":"提出权重与框架联合优化的简单配方，统一两类调优目标。"},{"label":"📊 实验效果","text":"在基准上带来 24.38 个百分点的提升，并提供 20 亿与 40 亿模型。"},{"label":"⭐ 整体评价","text":"属智能体与大语言模型方向，建议关注配方在不同规模下的稳定性。"}]
+    },
+    {
+        date: "2026-09-04",
+        category: "RL",
+        categoryIcon: "🧠",
+        title: "It Takes Two to Match: Co-Evolving Generative Retriever with Reinforcement Learning",
+        venue: "HF 热门 2609 · RL · Apple",
+        summary: "🔬 技术路线: 用强化学习让生成式检索器与另一组件协同演化、联合训练。 | 💡 创新点: 提出 CoGR 两阶段协同演化方案，使检索器与目标端互相适配。 | 📊 实验效果: 在检索匹配任务上验证了协同演化带来的性能增益。 | ⭐ 整体评价: 属检索方向，建议关注训练流程稳定性与可扩展性。",
+        tags: [["RL","green"],["Retrieval","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.00638"],["PDF","https://arxiv.org/pdf/2609.00638"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"用强化学习让生成式检索器与另一组件协同演化、联合训练。"},{"label":"💡 创新点","text":"提出 CoGR 两阶段协同演化方案，使检索器与目标端互相适配。"},{"label":"📊 实验效果","text":"在检索匹配任务上验证了协同演化带来的性能增益。"},{"label":"⭐ 整体评价","text":"属检索方向，建议关注训练流程稳定性与可扩展性。"}]
+    },
     // === 2026-09-03 ===
     {
         date: "2026-09-03",
@@ -23028,6 +23197,13 @@ const PAPERS_DB = [
 ];
 
 const DAILY_OVERVIEW = {
+    "2026-09-04": {
+        bannerTitle: "🔥 今日看点",
+        bannerSubtitle: "今日共 15 篇论文（arXiv 8 篇 + HuggingFace 热门 7 篇），覆盖大语言模型、多模态、世界模型、智能体与强化学习五大方向。世界模型方向，GIFT 用动作导向结构监督训练机器人操作世界模型，SolarWM 开源长时序视频世界模型的完整数据与训练方案。大语言模型方向，HarnessDev 探索模型自我演化智能体框架，另有思维链可读性与可解释性辨析、在线策略蒸馏机理分析。智能体方向，Repo-To-Skill 把代码仓库蒸馏为可复用技能，WHALE 联合优化框架与权重，EarlyEval 用早停预测降低评测成本。多模态方向涵盖原生三维世界状态模型与像素文本表征。",
+        picks: ["HarnessDev: Can LLMs Create and Evolve Their Own Agent Harness?","GIFT: Guided Intermediate Feature Training via Action-Oriented Structural Supervision for Robotic Manipulation","SolarWM: Open Data and Scalable Training for Long-Horizon Video World Models"],
+        totalPapers: 15,
+        totalNews: 0
+    },
     "2026-09-03": {
         bannerTitle: "🔥 今日看点",
         bannerSubtitle: "今日共 16 篇论文（arXiv 8 篇 +  HuggingFace 热门 8 篇），覆盖世界模型、机器人、大语言模型、智能体、视觉-语言-动作五大方向。世界模型方向，判别式网页智能体世界模型 Go-Browse 把动作选择转为判别问题，H3-World 用语言理解驱动世界控制，ZimaBlue 以可扩展视频预训练学习通用世界动作模型。机器人方向，可解释自主决策框架给出 98.6% 至 99.0% 的可信度指标，激光雷达鲁棒分割统一应对域偏移，受控研究则揭示更优想象展开未必带来更优控制。大语言模型方向，电信根因分析用结构化推理做可追溯诊断，SafeEvolve 让安全约束与策略协同演化，StudentSim 用大模型模拟学生，SMELT 刻画混合专家循环变换器的缩放规律，另有面向企业请求混合的自托管后训练方案。多模态方向，Qwen-Drive-1.0 迈出驾驶视觉-语言基础模型第一步，DroneCATS-Agent 把多模态大模型用作无人机通用控制智能体。",
