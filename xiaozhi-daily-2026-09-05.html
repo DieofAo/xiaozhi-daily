@@ -28,14 +28,14 @@ header .subtitle { color: #64748b; font-size: 0.9rem; margin-top: 6px; }
 .summary-label { font-size: 0.78rem; font-weight: 600; color: #818cf8; margin-bottom: 4px; }
 .summary-text { font-size: 0.88rem; color: #cbd5e1; line-height: 1.6; }
 .paper-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
-.tag { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: 500; }
+.tag { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: 500; background: rgba(99,102,241,0.12); color: #818cf8; }
 .tag-agent { background: rgba(16,185,129,0.12); color: #34d399; }
 .tag-llm { background: rgba(99,102,241,0.12); color: #818cf8; }
 .tag-multimodal { background: rgba(244,114,182,0.12); color: #f472b6; }
 .tag-world { background: rgba(251,191,36,0.12); color: #fbbf24; }
 .tag-robot { background: rgba(251,146,60,0.12); color: #fb923c; }
 .tag-vla { background: rgba(59,130,246,0.12); color: #60a5fa; }
-.tag-reasoning { background: rgba(132,204,22,0.12); color: #a3e635; }
+.tag-other { background: rgba(148,163,184,0.12); color: #94a3b8; }
 .hot-badge { display: inline; margin-right: 4px; }
 .paper-links { display: flex; flex-wrap: wrap; gap: 10px; }
 .paper-links a { display: inline-block; padding: 5px 14px; background: rgba(99,102,241,0.12); color: #818cf8; text-decoration: none; border-radius: 8px; font-size: 0.82rem; font-weight: 500; transition: background 0.2s; }
@@ -55,576 +55,403 @@ header .subtitle { color: #64748b; font-size: 0.9rem; margin-top: 6px; }
 
 <div class="highlight-banner">
   <div class="hl-title">🔥 今日看点（周末补漏）</div>
-  <div class="hl-text">本周补漏覆盖 2026-08-29 ~ 2026-09-05 共 7 天检索窗口，精选 30 篇工作日日报遗漏的重要论文，涵盖具身智能、大语言模型、智能体、多模态与机器人等方向。</div>
+  <div class="hl-text">本周补漏覆盖 2026-08-29 至 2026-09-05 共 7 天检索窗口，精选 30 篇工作日日报遗漏的重要论文，涵盖具身智能、大语言模型、智能体、多模态与机器人等方向。</div>
 </div>
 
 <div class="catchup-banner">
   ⏪ 本周补漏专栏 — 以下论文在工作日日报中遗漏，现于周六补充收录，共 30 篇
 </div>
 
-<!-- 🤖 VLA · Vision-Language-Action Section -->
 <section class="section">
   <h2 class="section-title">🤖 VLA · Vision-Language-Action</h2>
   <div class="paper-card">
-    <div class="paper-title">VLA REFACTOR-VLA: Unsupervised Library Learning of Typed Motor Programs</div>
-    <div class="paper-meta">arXiv 2026 · MIT · VLA</div>
+    <div class="paper-title">REFACTOR-VLA: Unsupervised Library Learning of Typed Motor Programs</div>
+    <div class="paper-meta">arXiv 2026 · MIT</div>
     <div class="summary-grid">
-      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">详见原文</div></div>
-      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">详见原文</div></div>
-      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">详见原文实验部分</div></div>
-      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">建议结合原文进一步了解创新点与实验设置</div></div>
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">无监督学习类型化运动程序库，重构视觉-语言-动作模型的动作表达。</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 REFACTOR-VLA，从零构建可复用的运动原语程序库。</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">操作任务成功率达 95%，模型规模涵盖 1B、188M 与 430M。</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">VLA 与具身控制方向，关注动作表达方式与真机验证结果。</div></div>
     </div>
-    <div class="paper-tags">
-      <span class="tag tag-vla">VLA</span>
-    </div>
-    <div class="paper-links">
-      <a href="http://arxiv.org/abs/2609.01215v1">arXiv</a>
-      <a href="http://arxiv.org/pdf/2609.01215v1">PDF</a>
-    </div>
+    <div class="paper-tags"><span class="tag tag-vla">VLA</span> <span class="tag tag-manipulation">Manipulation</span></div>
+    <div class="paper-links"><a href="http://arxiv.org/abs/2609.01215v1">arXiv</a> <a href="http://arxiv.org/pdf/2609.01215v1">PDF</a></div>
   </div>
   <div class="paper-card">
-    <div class="paper-title">VLA ZETA: A Controlled Study of Zero-Shot Cross-Embodiment VLA Transfer for Tabletop Manipulation</div>
-    <div class="paper-meta">arXiv 2026 · VLA</div>
+    <div class="paper-title">ZETA: A Controlled Study of Zero-Shot Cross-Embodiment VLA Transfer for Tabletop Manipulation</div>
+    <div class="paper-meta">arXiv 2026</div>
     <div class="summary-grid">
-      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">详见原文</div></div>
-      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">详见原文</div></div>
-      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">详见原文实验部分</div></div>
-      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">建议结合原文进一步了解创新点与实验设置</div></div>
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">受控研究零样本跨本体视觉-语言-动作模型的桌面操作迁移。</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出零样本跨本体迁移的受控实验框架 ZETA。</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">迁移差距为 5%，相对提升 7 与 13.4 个百分点。</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">VLA 与具身控制方向，关注动作表达与真机验证结果。</div></div>
     </div>
-    <div class="paper-tags">
-      <span class="tag tag-vla">VLA</span>
-    </div>
-    <div class="paper-links">
-      <a href="http://arxiv.org/abs/2609.02546v1">arXiv</a>
-      <a href="http://arxiv.org/pdf/2609.02546v1">PDF</a>
-    </div>
+    <div class="paper-tags"><span class="tag tag-vla">VLA</span> <span class="tag tag-transfer">Transfer</span></div>
+    <div class="paper-links"><a href="http://arxiv.org/abs/2609.02546v1">arXiv</a> <a href="http://arxiv.org/pdf/2609.02546v1">PDF</a></div>
   </div>
   <div class="paper-card">
-    <div class="paper-title">VLA Temporal Forcing: 4D Representation Alignment for Vision-Language-Action Models</div>
-    <div class="paper-meta">arXiv 2026 · VLA</div>
+    <div class="paper-title">Temporal Forcing: 4D Representation Alignment for Vision-Language-Action Models</div>
+    <div class="paper-meta">arXiv 2026</div>
     <div class="summary-grid">
-      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出时间驱动（Temporal Forcing）方法，通过 4D 表征对齐将时序约束融入视觉-语言-动作模型训练</div></div>
-      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次将 4D 表征对齐引入 VLA 训练，使动作生成获得时序一致性约束</div></div>
-      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">详见原文实验部分</div></div>
-      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于 VLA/具身控制方向，建议关注其任务泛化能力、动作表达方式与真机验证结果</div></div>
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">用时序强制与 4D 表征对齐训练视觉-语言-动作模型。</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">首次将 4D 表征对齐引入 VLA 训练，约束生成动作的时序一致性。</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在动作生成的时序一致性上验证了方法的有效性。</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">VLA 与具身控制方向，关注任务泛化与真机验证结果。</div></div>
     </div>
-    <div class="paper-tags">
-      <span class="tag tag-vla">VLA</span>
-    </div>
-    <div class="paper-links">
-      <a href="http://arxiv.org/abs/2608.30643v1">arXiv</a>
-      <a href="http://arxiv.org/pdf/2608.30643v1">PDF</a>
-    </div>
+    <div class="paper-tags"><span class="tag tag-vla">VLA</span> <span class="tag tag-alignment">Alignment</span></div>
+    <div class="paper-links"><a href="http://arxiv.org/abs/2608.30643v1">arXiv</a> <a href="http://arxiv.org/pdf/2608.30643v1">PDF</a></div>
   </div>
 </section>
 
-<!-- 🦾 Robotics Section -->
 <section class="section">
   <h2 class="section-title">🦾 Robotics</h2>
   <div class="paper-card">
-    <div class="paper-title">Robotics Non-Prehensile Throwing: A Reinforcement Learning Perspective</div>
-    <div class="paper-meta">arXiv 2026 · MIT · Robotics</div>
+    <div class="paper-title">Non-Prehensile Throwing: A Reinforcement Learning Perspective</div>
+    <div class="paper-meta">arXiv 2026 · MIT</div>
     <div class="summary-grid">
-      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">详见原文</div></div>
-      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">详见原文</div></div>
-      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">详见原文实验部分</div></div>
-      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">建议结合原文进一步了解创新点与实验设置</div></div>
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">用强化学习训练非抓取式抛掷操作策略，学习抛出轨迹与落点。</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出关节加加速度约束，提升抛掷动作的鲁棒性与安全性。</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">抛掷成功率达 99% 与 97%，训练效率提升约 20 倍。</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">机器人操作方向，建议关注实验设置、基线对比与真实部署。</div></div>
     </div>
-    <div class="paper-tags">
-      <span class="tag tag-robot">Robotics</span>
-    </div>
-    <div class="paper-links">
-      <a href="http://arxiv.org/abs/2609.00771v1">arXiv</a>
-      <a href="http://arxiv.org/pdf/2609.00771v1">PDF</a>
-    </div>
+    <div class="paper-tags"><span class="tag tag-robotics">Robotics</span> <span class="tag tag-rl">RL</span></div>
+    <div class="paper-links"><a href="http://arxiv.org/abs/2609.00771v1">arXiv</a> <a href="http://arxiv.org/pdf/2609.00771v1">PDF</a></div>
   </div>
   <div class="paper-card">
-    <div class="paper-title">Robotics Seeing Through Extreme Visual Sparsity: Surface Understanding from a Single Random Visual Patch</div>
-    <div class="paper-meta">arXiv 2026 · Meta FAIR · Robotics</div>
+    <div class="paper-title">Seeing Through Extreme Visual Sparsity: Surface Understanding from a Single Random Visual Patch</div>
+    <div class="paper-meta">arXiv 2026 · Meta FAIR</div>
     <div class="summary-grid">
-      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">详见原文</div></div>
-      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">详见原文</div></div>
-      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">详见原文实验部分</div></div>
-      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">建议结合原文进一步了解创新点与实验设置</div></div>
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">从单张随机视觉小片重建表面理解，应对极端稀疏观测。</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 Touch-and-Go 机制，实现统一且实时的稀疏感知。</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在稀疏条件下表面理解达 89.21%，相对基线提升 10%。</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">机器人感知方向，关注真实部署条件与基线对比设置。</div></div>
     </div>
-    <div class="paper-tags">
-      <span class="tag tag-robot">Robotics</span>
-    </div>
-    <div class="paper-links">
-      <a href="http://arxiv.org/abs/2608.29475v1">arXiv</a>
-      <a href="http://arxiv.org/pdf/2608.29475v1">PDF</a>
-    </div>
+    <div class="paper-tags"><span class="tag tag-robotics">Robotics</span> <span class="tag tag-perception">Perception</span></div>
+    <div class="paper-links"><a href="http://arxiv.org/abs/2608.29475v1">arXiv</a> <a href="http://arxiv.org/pdf/2608.29475v1">PDF</a></div>
   </div>
   <div class="paper-card">
-    <div class="paper-title">Robotics One Demonstration, Many Objects: Generalizing Manipulation via Local Contact Geometry</div>
-    <div class="paper-meta">arXiv 2026 · MIT · Robotics</div>
+    <div class="paper-title">One Demonstration, Many Objects: Generalizing Manipulation via Local Contact Geometry</div>
+    <div class="paper-meta">arXiv 2026 · MIT</div>
     <div class="summary-grid">
-      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">详见原文</div></div>
-      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">详见原文</div></div>
-      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">详见原文实验部分</div></div>
-      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">建议结合原文进一步了解创新点与实验设置</div></div>
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">以局部接触几何作为表征，实现单演示到多物体的操作泛化。</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出基于真实接触几何的泛化表征，降低演示依赖。</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">操作泛化成功率达 71%。</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">机器人操作方向，关注实验设置与真实部署条件。</div></div>
     </div>
-    <div class="paper-tags">
-      <span class="tag tag-robot">Robotics</span>
-    </div>
-    <div class="paper-links">
-      <a href="http://arxiv.org/abs/2609.01938v2">arXiv</a>
-      <a href="http://arxiv.org/pdf/2609.01938v2">PDF</a>
-    </div>
+    <div class="paper-tags"><span class="tag tag-robotics">Robotics</span> <span class="tag tag-manipulation">Manipulation</span></div>
+    <div class="paper-links"><a href="http://arxiv.org/abs/2609.01938v2">arXiv</a> <a href="http://arxiv.org/pdf/2609.01938v2">PDF</a></div>
   </div>
   <div class="paper-card">
-    <div class="paper-title">Robotics ShallowStream: Index Shallow then Answer Deep for Streaming Video Understanding</div>
-    <div class="paper-meta">arXiv 2026 · Robotics</div>
+    <div class="paper-title">ShallowStream: Index Shallow then Answer Deep for Streaming Video Understanding</div>
+    <div class="paper-meta">arXiv 2026</div>
     <div class="summary-grid">
-      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">详见原文</div></div>
-      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">详见原文</div></div>
-      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">详见原文实验部分</div></div>
-      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">建议结合原文进一步了解创新点与实验设置</div></div>
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">浅层索引加深层回答的流式视频理解框架。</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 ShallowStream，多模态轻量化且端到端的视频理解架构。</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">视频理解效率提升 52.1 倍与 11.9 倍。</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">机器人感知方向，关注实验设置与基线对比结果。</div></div>
     </div>
-    <div class="paper-tags">
-      <span class="tag tag-robot">Robotics</span>
-    </div>
-    <div class="paper-links">
-      <a href="http://arxiv.org/abs/2609.02780v1">arXiv</a>
-      <a href="http://arxiv.org/pdf/2609.02780v1">PDF</a>
-      <a href="https://github.com/CURRENTF/ShallowStream">Code</a>
-    </div>
+    <div class="paper-tags"><span class="tag tag-robotics">Robotics</span> <span class="tag tag-video">Video</span></div>
+    <div class="paper-links"><a href="http://arxiv.org/abs/2609.02780v1">arXiv</a> <a href="http://arxiv.org/pdf/2609.02780v1">PDF</a> <a href="https://github.com/CURRENTF/ShallowStream">Code</a></div>
   </div>
   <div class="paper-card">
-    <div class="paper-title">Robotics OptiGeo: Efficient Monocular Geometry for Embodied Perception in Optically Challenging Scenes</div>
-    <div class="paper-meta">arXiv 2026 · Robotics</div>
+    <div class="paper-title">OptiGeo: Efficient Monocular Geometry for Embodied Perception in Optically Challenging Scenes</div>
+    <div class="paper-meta">arXiv 2026</div>
     <div class="summary-grid">
-      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">详见原文</div></div>
-      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">详见原文</div></div>
-      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">详见原文实验部分</div></div>
-      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">建议结合原文进一步了解创新点与实验设置</div></div>
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">单目几何估计方法，提升光学困难场景下的具身感知能力。</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出真实场景高效单目几何方法 OptiGeo，兼顾精度与效率。</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">模型规模分别为 30M 与 300M，适配不同算力约束。</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">机器人感知方向，关注真实部署与基线对比设置。</div></div>
     </div>
-    <div class="paper-tags">
-      <span class="tag tag-robot">Robotics</span>
-    </div>
-    <div class="paper-links">
-      <a href="http://arxiv.org/abs/2608.29881v1">arXiv</a>
-      <a href="http://arxiv.org/pdf/2608.29881v1">PDF</a>
-      <a href="https://mx-liu6.github.io/OptiGeo-web/">🏠 Project</a>
-    </div>
+    <div class="paper-tags"><span class="tag tag-robotics">Robotics</span> <span class="tag tag-perception">Perception</span></div>
+    <div class="paper-links"><a href="http://arxiv.org/abs/2608.29881v1">arXiv</a> <a href="http://arxiv.org/pdf/2608.29881v1">PDF</a> <a href="https://mx-liu6.github.io/OptiGeo-web/">Project</a></div>
   </div>
 </section>
 
-<!-- 🌍 World Model Section -->
 <section class="section">
   <h2 class="section-title">🌍 World Model</h2>
   <div class="paper-card">
-    <div class="paper-title">World Model Building Pretraining Data for World Models: An Unreal Engine-Based Pipeline for Action-Conditioned Video Generation</div>
-    <div class="paper-meta">arXiv 2026 · NVIDIA · World Model</div>
+    <div class="paper-title">Building Pretraining Data for World Models: An Unreal Engine-Based Pipeline for Action-Conditioned Video Generation</div>
+    <div class="paper-meta">arXiv 2026 · NVIDIA</div>
     <div class="summary-grid">
-      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">详见原文</div></div>
-      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">详见原文</div></div>
-      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">详见原文实验部分</div></div>
-      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">建议结合原文进一步了解创新点与实验设置</div></div>
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">用虚幻引擎构建动作条件视频生成的世界模型预训练数据管线。</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出动作条件数据生成管线，自动化生产可控训练样本。</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">生成视频分辨率达到 1080p 与 720p 两档。</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">世界模型方向，关注数据规模、动作可控性与仿真保真度。</div></div>
     </div>
-    <div class="paper-tags">
-      <span class="tag tag-world">World Model</span>
-    </div>
-    <div class="paper-links">
-      <a href="http://arxiv.org/abs/2609.03557v1">arXiv</a>
-      <a href="http://arxiv.org/pdf/2609.03557v1">PDF</a>
-    </div>
+    <div class="paper-tags"><span class="tag tag-world-model">World Model</span> <span class="tag tag-simulation">Simulation</span></div>
+    <div class="paper-links"><a href="http://arxiv.org/abs/2609.03557v1">arXiv</a> <a href="http://arxiv.org/pdf/2609.03557v1">PDF</a></div>
   </div>
 </section>
 
-<!-- 🧠 LLM Section -->
 <section class="section">
   <h2 class="section-title">🧠 LLM</h2>
   <div class="paper-card">
-    <div class="paper-title">LLM Debias-SparseGPT: Bias-Aware Pruning for Large Language Models</div>
-    <div class="paper-meta">arXiv 2026 · Meta FAIR · LLM</div>
+    <div class="paper-title">Debias-SparseGPT: Bias-Aware Pruning for Large Language Models</div>
+    <div class="paper-meta">arXiv 2026 · Meta FAIR</div>
     <div class="summary-grid">
-      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">详见原文</div></div>
-      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">详见原文</div></div>
-      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">详见原文实验部分</div></div>
-      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">建议结合原文进一步了解创新点与实验设置</div></div>
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">在稀疏化剪枝流程中引入偏差感知，同步降低大模型偏见。</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出偏差感知剪枝方法 Debias-SparseGPT，兼顾压缩比与公平性。</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在 25% 与 50% 稀疏度下保持性能并明显降低偏见水平。</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">大语言模型压缩与公平性方向，关注训练范式与 benchmark 表现。</div></div>
     </div>
-    <div class="paper-tags">
-      <span class="tag tag-llm">LLM</span>
-    </div>
-    <div class="paper-links">
-      <a href="http://arxiv.org/abs/2609.02496v1">arXiv</a>
-      <a href="http://arxiv.org/pdf/2609.02496v1">PDF</a>
-      <a href="https://github.com/upunaprosk/debias-llm-compressor">Code</a>
-    </div>
+    <div class="paper-tags"><span class="tag tag-llm">LLM</span> <span class="tag tag-pruning">Pruning</span></div>
+    <div class="paper-links"><a href="http://arxiv.org/abs/2609.02496v1">arXiv</a> <a href="http://arxiv.org/pdf/2609.02496v1">PDF</a> <a href="https://github.com/upunaprosk/debias-llm-compressor">Code</a></div>
   </div>
 </section>
 
-<!-- 🧩 Agent Section -->
-<section class="section">
-  <h2 class="section-title">🧩 Agent</h2>
-  <div class="paper-card">
-    <div class="paper-title">Agent Counterfactual Fairness Audits of Multi-Step Clinical LLM Agents Require a Measured Per-Action Instability Floor</div>
-    <div class="paper-meta">arXiv 2026 · Meta FAIR · Agent</div>
-    <div class="summary-grid">
-      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">详见原文</div></div>
-      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">详见原文</div></div>
-      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">详见原文实验部分</div></div>
-      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">建议结合原文进一步了解创新点与实验设置</div></div>
-    </div>
-    <div class="paper-tags">
-      <span class="tag tag-agent">Agent</span>
-    </div>
-    <div class="paper-links">
-      <a href="http://arxiv.org/abs/2609.03221v1">arXiv</a>
-      <a href="http://arxiv.org/pdf/2609.03221v1">PDF</a>
-      <a href="https://github.com/rohithreddybc/FairMedAgent">Code</a>
-    </div>
-  </div>
-  <div class="paper-card">
-    <div class="paper-title">Agent Parsing the Stream: A Live Trace Model for Long-Horizon Agents and Their Observers</div>
-    <div class="paper-meta">arXiv 2026 · MIT · Agent</div>
-    <div class="summary-grid">
-      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">详见原文</div></div>
-      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">详见原文</div></div>
-      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">详见原文实验部分</div></div>
-      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">建议结合原文进一步了解创新点与实验设置</div></div>
-    </div>
-    <div class="paper-tags">
-      <span class="tag tag-agent">Agent</span>
-    </div>
-    <div class="paper-links">
-      <a href="http://arxiv.org/abs/2609.01466v1">arXiv</a>
-      <a href="http://arxiv.org/pdf/2609.01466v1">PDF</a>
-      <a href="https://github.com/SalesforceAIResearch/tracelab">Code</a>
-      <a href="https://huggingface.co/datasets/Salesforce/tracelab-comprehend">🤗 Model</a>
-    </div>
-  </div>
-  <div class="paper-card">
-    <div class="paper-title">Agent Beyond Outcome Gaps: Process-Aware Fairness Diagnosis for LLM-based Multi-Agent Decision Systems</div>
-    <div class="paper-meta">arXiv 2026 · Meta FAIR · Agent</div>
-    <div class="summary-grid">
-      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">详见原文</div></div>
-      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">详见原文</div></div>
-      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">详见原文实验部分</div></div>
-      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">建议结合原文进一步了解创新点与实验设置</div></div>
-    </div>
-    <div class="paper-tags">
-      <span class="tag tag-agent">Agent</span>
-    </div>
-    <div class="paper-links">
-      <a href="http://arxiv.org/abs/2609.02092v1">arXiv</a>
-      <a href="http://arxiv.org/pdf/2609.02092v1">PDF</a>
-      <a href="https://scoped-hiring-project-page.vercel.app/">🏠 Project</a>
-    </div>
-  </div>
-  <div class="paper-card">
-    <div class="paper-title">Agent SkillGLoW: Procedural-Family Skill Consolidation for Self-Improving Agents on Long-Horizon Task Streams</div>
-    <div class="paper-meta">arXiv 2026 · MIT · Agent</div>
-    <div class="summary-grid">
-      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">详见原文</div></div>
-      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">详见原文</div></div>
-      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">详见原文实验部分</div></div>
-      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">建议结合原文进一步了解创新点与实验设置</div></div>
-    </div>
-    <div class="paper-tags">
-      <span class="tag tag-agent">Agent</span>
-    </div>
-    <div class="paper-links">
-      <a href="http://arxiv.org/abs/2609.02217v1">arXiv</a>
-      <a href="http://arxiv.org/pdf/2609.02217v1">PDF</a>
-    </div>
-  </div>
-  <div class="paper-card">
-    <div class="paper-title">Agent Deploying and Evaluating a Smart-Agriculture Agentic Engine for Full-Season Soybean Farm Operations</div>
-    <div class="paper-meta">arXiv 2026 · Meta FAIR · Agent</div>
-    <div class="summary-grid">
-      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">详见原文</div></div>
-      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">详见原文</div></div>
-      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">详见原文实验部分</div></div>
-      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">建议结合原文进一步了解创新点与实验设置</div></div>
-    </div>
-    <div class="paper-tags">
-      <span class="tag tag-agent">Agent</span>
-    </div>
-    <div class="paper-links">
-      <a href="http://arxiv.org/abs/2609.00106v1">arXiv</a>
-      <a href="http://arxiv.org/pdf/2609.00106v1">PDF</a>
-    </div>
-  </div>
-  <div class="paper-card">
-    <div class="paper-title">Agent Retrieved but not ranked: surface-form bias in structural retrieval, from mathematics to agent trajectories</div>
-    <div class="paper-meta">arXiv 2026 · Agent</div>
-    <div class="summary-grid">
-      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">详见原文</div></div>
-      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">详见原文</div></div>
-      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">详见原文实验部分</div></div>
-      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">建议结合原文进一步了解创新点与实验设置</div></div>
-    </div>
-    <div class="paper-tags">
-      <span class="tag tag-agent">Agent</span>
-    </div>
-    <div class="paper-links">
-      <a href="http://arxiv.org/abs/2609.01556v1">arXiv</a>
-      <a href="http://arxiv.org/pdf/2609.01556v1">PDF</a>
-      <a href="https://github.com/nabirarashid/structural-retrieval">Code</a>
-    </div>
-  </div>
-  <div class="paper-card">
-    <div class="paper-title">Agent Value-Preserving Architectures for Agentic AI Systems</div>
-    <div class="paper-meta">arXiv 2026 · Meta FAIR · Agent</div>
-    <div class="summary-grid">
-      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">详见原文</div></div>
-      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">详见原文</div></div>
-      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">详见原文实验部分</div></div>
-      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">建议结合原文进一步了解创新点与实验设置</div></div>
-    </div>
-    <div class="paper-tags">
-      <span class="tag tag-agent">Agent</span>
-    </div>
-    <div class="paper-links">
-      <a href="http://arxiv.org/abs/2609.03920v1">arXiv</a>
-      <a href="http://arxiv.org/pdf/2609.03920v1">PDF</a>
-    </div>
-  </div>
-  <div class="paper-card">
-    <div class="paper-title">Agent A Blind Trust, the Bloody Thrust: When Attacker-Controlled Hook Updates Steer AI Agent Harnesses towards Malicious Behaviors</div>
-    <div class="paper-meta">arXiv 2026 · Microsoft · Agent</div>
-    <div class="summary-grid">
-      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">详见原文</div></div>
-      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">详见原文</div></div>
-      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">详见原文实验部分</div></div>
-      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">建议结合原文进一步了解创新点与实验设置</div></div>
-    </div>
-    <div class="paper-tags">
-      <span class="tag tag-agent">Agent</span>
-    </div>
-    <div class="paper-links">
-      <a href="http://arxiv.org/abs/2609.03884v1">arXiv</a>
-      <a href="http://arxiv.org/pdf/2609.03884v1">PDF</a>
-    </div>
-  </div>
-  <div class="paper-card">
-    <div class="paper-title">Agent VIPS: Vehicle-Infrastructure Cooperative Planning Benchmark via Pseudo-Simulation</div>
-    <div class="paper-meta">arXiv 2026 · MIT · Agent</div>
-    <div class="summary-grid">
-      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">详见原文</div></div>
-      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">详见原文</div></div>
-      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">详见原文实验部分</div></div>
-      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">建议结合原文进一步了解创新点与实验设置</div></div>
-    </div>
-    <div class="paper-tags">
-      <span class="tag tag-agent">Agent</span>
-    </div>
-    <div class="paper-links">
-      <a href="http://arxiv.org/abs/2609.02462v1">arXiv</a>
-      <a href="http://arxiv.org/pdf/2609.02462v1">PDF</a>
-      <a href="https://vips2026.github.io">🏠 Project</a>
-    </div>
-  </div>
-  <div class="paper-card">
-    <div class="paper-title">Agent Zeta-Lite: A Concurrent, Branchable In-Browser SQL Database for Agentic Memory</div>
-    <div class="paper-meta">arXiv 2026 · MIT · Agent</div>
-    <div class="summary-grid">
-      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">详见原文</div></div>
-      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">详见原文</div></div>
-      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">详见原文实验部分</div></div>
-      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">建议结合原文进一步了解创新点与实验设置</div></div>
-    </div>
-    <div class="paper-tags">
-      <span class="tag tag-agent">Agent</span>
-    </div>
-    <div class="paper-links">
-      <a href="http://arxiv.org/abs/2609.01818v1">arXiv</a>
-      <a href="http://arxiv.org/pdf/2609.01818v1">PDF</a>
-    </div>
-  </div>
-</section>
-
-<!-- 🎨 Multimodal Section -->
 <section class="section">
   <h2 class="section-title">🎨 Multimodal</h2>
   <div class="paper-card">
-    <div class="paper-title">Multimodal Continuous Actions from Discrete Minds: Latent-Aligned Planning for End-to-End Autonomous Driving</div>
-    <div class="paper-meta">arXiv 2026 · NVIDIA · Multimodal</div>
+    <div class="paper-title">Continuous Actions from Discrete Minds: Latent-Aligned Planning for End-to-End Autonomous Driving</div>
+    <div class="paper-meta">arXiv 2026 · NVIDIA</div>
     <div class="summary-grid">
-      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">详见原文</div></div>
-      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">详见原文</div></div>
-      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">详见原文实验部分</div></div>
-      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">建议结合原文进一步了解创新点与实验设置</div></div>
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">用离散潜空间规划生成连续驾驶动作，构建端到端自动驾驶策略。</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出潜对齐规划，统一离散符号推理与连续控制输出。</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在基准上提升 15.52%，关键指标差距缩小 33.34 个百分点。</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于多模态与自动驾驶方向，建议关注跨模态对齐与实车验证结果。</div></div>
     </div>
-    <div class="paper-tags">
-      <span class="tag tag-multimodal">Multimodal</span>
-    </div>
-    <div class="paper-links">
-      <a href="http://arxiv.org/abs/2609.04070v1">arXiv</a>
-      <a href="http://arxiv.org/pdf/2609.04070v1">PDF</a>
-    </div>
+    <div class="paper-tags"><span class="tag tag-multimodal">Multimodal</span> <span class="tag tag-autonomous-driving">Autonomous-Driving</span></div>
+    <div class="paper-links"><a href="http://arxiv.org/abs/2609.04070v1">arXiv</a> <a href="http://arxiv.org/pdf/2609.04070v1">PDF</a></div>
   </div>
   <div class="paper-card">
-    <div class="paper-title">Multimodal FairLens: Benchmarking Fairness in Vision-Language Models for High-Stakes Decision-Making</div>
-    <div class="paper-meta">arXiv 2026 · Meta FAIR · Multimodal</div>
+    <div class="paper-title">FairLens: Benchmarking Fairness in Vision-Language Models for High-Stakes Decision-Making</div>
+    <div class="paper-meta">arXiv 2026 · Meta FAIR</div>
     <div class="summary-grid">
-      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">详见原文</div></div>
-      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">详见原文</div></div>
-      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">详见原文实验部分</div></div>
-      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">建议结合原文进一步了解创新点与实验设置</div></div>
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">构建面向视觉-语言模型的高风险决策公平性评测基准。</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 FairLens 基准，系统量化多模态模型在敏感属性上的偏差。</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">覆盖 99% 的高风险测试场景，评测规模达 100K 样本。</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">多模态方向，关注跨模态对齐方式与下游高风险任务表现。</div></div>
     </div>
-    <div class="paper-tags">
-      <span class="tag tag-multimodal">Multimodal</span>
-    </div>
-    <div class="paper-links">
-      <a href="http://arxiv.org/abs/2609.01691v1">arXiv</a>
-      <a href="http://arxiv.org/pdf/2609.01691v1">PDF</a>
-      <a href="https://vectorinstitute.github.io/fairlens">🏠 Project</a>
-    </div>
+    <div class="paper-tags"><span class="tag tag-multimodal">Multimodal</span> <span class="tag tag-fairness">Fairness</span></div>
+    <div class="paper-links"><a href="http://arxiv.org/abs/2609.01691v1">arXiv</a> <a href="http://arxiv.org/pdf/2609.01691v1">PDF</a> <a href="https://vectorinstitute.github.io/fairlens">Project</a></div>
   </div>
   <div class="paper-card">
-    <div class="paper-title">Multimodal NeoMME: A Single-Tower Multimodal-Native Multilingual Foundation Encoder for Efficient Fine-Tuning and Inference</div>
-    <div class="paper-meta">arXiv 2026 · NVIDIA · Multimodal</div>
+    <div class="paper-title">NeoMME: A Single-Tower Multimodal-Native Multilingual Foundation Encoder for Efficient Fine-Tuning and Inference</div>
+    <div class="paper-meta">arXiv 2026 · NVIDIA</div>
     <div class="summary-grid">
-      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">详见原文</div></div>
-      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">详见原文</div></div>
-      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">详见原文实验部分</div></div>
-      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">建议结合原文进一步了解创新点与实验设置</div></div>
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">单塔多模态原生多语言基础编码器，兼顾高效微调与高效推理。</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 NeoMME-Retriever，原生融合多模态与多语言信号。</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">准确率 95%，检索提速 2048 倍，推理提速 2 倍与 255 倍。</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">多模态方向，关注跨模态对齐、数据规模与下游任务表现。</div></div>
     </div>
-    <div class="paper-tags">
-      <span class="tag tag-multimodal">Multimodal</span>
-    </div>
-    <div class="paper-links">
-      <a href="http://arxiv.org/abs/2609.01657v1">arXiv</a>
-      <a href="http://arxiv.org/pdf/2609.01657v1">PDF</a>
-      <a href="https://hf.co/collections/Hcompany/neomme">🔗 Link</a>
-    </div>
+    <div class="paper-tags"><span class="tag tag-multimodal">Multimodal</span> <span class="tag tag-encoder">Encoder</span></div>
+    <div class="paper-links"><a href="http://arxiv.org/abs/2609.01657v1">arXiv</a> <a href="http://arxiv.org/pdf/2609.01657v1">PDF</a> <a href="https://hf.co/collections/Hcompany/neomme">Link</a></div>
   </div>
   <div class="paper-card">
-    <div class="paper-title">Multimodal MARS: What Retrieval Signals Are Hidden in Multimodal Large Language Models for Text-Video Retrieval?</div>
-    <div class="paper-meta">arXiv 2026 · MIT · Multimodal</div>
+    <div class="paper-title">MARS: What Retrieval Signals Are Hidden in Multimodal Large Language Models for Text-Video Retrieval?</div>
+    <div class="paper-meta">arXiv 2026 · MIT</div>
     <div class="summary-grid">
-      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">详见原文</div></div>
-      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">详见原文</div></div>
-      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">详见原文实验部分</div></div>
-      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">建议结合原文进一步了解创新点与实验设置</div></div>
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">探究多模态大模型在文本-视频检索中隐含的可利用检索信号。</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 MARS，揭示多模态检索中被忽略的隐藏信号来源。</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在文本-视频检索多个基准上验证了信号的有效性。</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">多模态方向，关注检索信号挖掘与下游任务表现。</div></div>
     </div>
-    <div class="paper-tags">
-      <span class="tag tag-multimodal">Multimodal</span>
-    </div>
-    <div class="paper-links">
-      <a href="http://arxiv.org/abs/2609.02565v1">arXiv</a>
-      <a href="http://arxiv.org/pdf/2609.02565v1">PDF</a>
-      <a href="https://github.com/sejong-rcv/MARS">Code</a>
-    </div>
+    <div class="paper-tags"><span class="tag tag-multimodal">Multimodal</span> <span class="tag tag-retrieval">Retrieval</span></div>
+    <div class="paper-links"><a href="http://arxiv.org/abs/2609.02565v1">arXiv</a> <a href="http://arxiv.org/pdf/2609.02565v1">PDF</a> <a href="https://github.com/sejong-rcv/MARS">Code</a></div>
   </div>
   <div class="paper-card">
-    <div class="paper-title">Multimodal Occlusion-Robust Multimodal Emotion Recognition in VR via Fusion of Facial Images and EMG</div>
-    <div class="paper-meta">arXiv 2026 · MIT · Multimodal</div>
+    <div class="paper-title">Occlusion-Robust Multimodal Emotion Recognition in VR via Fusion of Facial Images and EMG</div>
+    <div class="paper-meta">arXiv 2026 · MIT</div>
     <div class="summary-grid">
-      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">详见原文</div></div>
-      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">详见原文</div></div>
-      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">详见原文实验部分</div></div>
-      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">建议结合原文进一步了解创新点与实验设置</div></div>
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">融合人脸图像与肌电信号，实现虚拟现实中的多模态情绪识别。</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出头戴式融合方案，具备抗遮挡与实时处理能力。</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">情绪识别相关指标达 51%、41% 与 43%。</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">多模态方向，关注跨模态对齐方式与鲁棒性表现。</div></div>
     </div>
-    <div class="paper-tags">
-      <span class="tag tag-multimodal">Multimodal</span>
-    </div>
-    <div class="paper-links">
-      <a href="http://arxiv.org/abs/2609.03569v1">arXiv</a>
-      <a href="http://arxiv.org/pdf/2609.03569v1">PDF</a>
-    </div>
+    <div class="paper-tags"><span class="tag tag-multimodal">Multimodal</span> <span class="tag tag-emotion">Emotion</span></div>
+    <div class="paper-links"><a href="http://arxiv.org/abs/2609.03569v1">arXiv</a> <a href="http://arxiv.org/pdf/2609.03569v1">PDF</a></div>
   </div>
   <div class="paper-card">
-    <div class="paper-title">Multimodal DICS: Exploring Data Intrinsic Consistency for Visual Instruction Selection</div>
-    <div class="paper-meta">arXiv 2026 · Multimodal</div>
+    <div class="paper-title">DICS: Exploring Data Intrinsic Consistency for Visual Instruction Selection</div>
+    <div class="paper-meta">arXiv 2026</div>
     <div class="summary-grid">
-      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">详见原文</div></div>
-      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">详见原文</div></div>
-      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">详见原文实验部分</div></div>
-      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">建议结合原文进一步了解创新点与实验设置</div></div>
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">利用数据内在一致性筛选视觉指令微调训练样本。</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出一致性筛选框架 DICS，提升视觉指令数据的有效性。</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在 25% 数据量下达到 665K、6M 与 8B 规模的有效效果。</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">多模态方向，关注数据规模、微调效率与下游任务。</div></div>
     </div>
-    <div class="paper-tags">
-      <span class="tag tag-multimodal">Multimodal</span>
-    </div>
-    <div class="paper-links">
-      <a href="http://arxiv.org/abs/2608.30209v3">arXiv</a>
-      <a href="http://arxiv.org/pdf/2608.30209v3">PDF</a>
-      <a href="https://github.com/cqu-student/DICS">Code</a>
-    </div>
+    <div class="paper-tags"><span class="tag tag-multimodal">Multimodal</span> <span class="tag tag-data">Data</span></div>
+    <div class="paper-links"><a href="http://arxiv.org/abs/2608.30209v3">arXiv</a> <a href="http://arxiv.org/pdf/2608.30209v3">PDF</a> <a href="https://github.com/cqu-student/DICS">Code</a></div>
   </div>
 </section>
 
-<!-- 📄 Other Section -->
+<section class="section">
+  <h2 class="section-title">🧩 Agent</h2>
+  <div class="paper-card">
+    <div class="paper-title">Counterfactual Fairness Audits of Multi-Step Clinical LLM Agents Require a Measured Per-Action Instability Floor</div>
+    <div class="paper-meta">arXiv 2026 · Meta FAIR</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出对多步临床大模型智能体做反事实公平性审计的方法，量化每步决策的不确定性。</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">指出需为审计设定逐动作不稳定性下限，使公平性评估可被度量与比较。</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在多项临床决策指标上测得不稳定度为 8.7%、6.7% 与 39%。</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">关注医疗智能体的公平性可审计性，对高风险部署具有参考与合规价值。</div></div>
+    </div>
+    <div class="paper-tags"><span class="tag tag-agent">Agent</span> <span class="tag tag-fairness">Fairness</span></div>
+    <div class="paper-links"><a href="http://arxiv.org/abs/2609.03221v1">arXiv</a> <a href="http://arxiv.org/pdf/2609.03221v1">PDF</a> <a href="https://github.com/rohithreddybc/FairMedAgent">Code</a></div>
+  </div>
+  <div class="paper-card">
+    <div class="paper-title">Parsing the Stream: A Live Trace Model for Long-Horizon Agents and Their Observers</div>
+    <div class="paper-meta">arXiv 2026 · MIT</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">构建实时轨迹模型，刻画长程智能体及其观察者之间的行为数据流。</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出实时轨迹解析模型，支持对长程行为的可观测理解。</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在轨迹解析与理解任务上分别提速 14 倍、15 倍与 7 倍。</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于智能体与大模型推理方向，关注长程建模与 benchmark 表现。</div></div>
+    </div>
+    <div class="paper-tags"><span class="tag tag-agent">Agent</span> <span class="tag tag-long-horizon">Long-Horizon</span></div>
+    <div class="paper-links"><a href="http://arxiv.org/abs/2609.01466v1">arXiv</a> <a href="http://arxiv.org/pdf/2609.01466v1">PDF</a> <a href="https://github.com/SalesforceAIResearch/tracelab">Code</a> <a href="https://huggingface.co/datasets/Salesforce/tracelab-comprehend">Model</a></div>
+  </div>
+  <div class="paper-card">
+    <div class="paper-title">Beyond Outcome Gaps: Process-Aware Fairness Diagnosis for LLM-based Multi-Agent Decision Systems</div>
+    <div class="paper-meta">arXiv 2026 · Meta FAIR</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">从结果差距转向过程感知，系统诊断多智能体决策的公平性。</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出过程感知公平性诊断框架，定位决策链路中的偏置来源。</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">诊断准确率达 72.3%，相对提升 1.86 个百分点，覆盖 311K 样本。</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">智能体决策方向，关注架构设计与端到端成功率表现。</div></div>
+    </div>
+    <div class="paper-tags"><span class="tag tag-agent">Agent</span> <span class="tag tag-fairness">Fairness</span></div>
+    <div class="paper-links"><a href="http://arxiv.org/abs/2609.02092v1">arXiv</a> <a href="http://arxiv.org/pdf/2609.02092v1">PDF</a> <a href="https://scoped-hiring-project-page.vercel.app/">Project</a></div>
+  </div>
+  <div class="paper-card">
+    <div class="paper-title">SkillGLoW: Procedural-Family Skill Consolidation for Self-Improving Agents on Long-Horizon Task Streams</div>
+    <div class="paper-meta">arXiv 2026 · MIT</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">面向长程任务流的技能巩固机制，支撑自改进智能体持续学习。</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出全局-局部技能整合机制 Global-Local，凝聚程序化技能族。</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">任务表现达 73.9% 与 83.9%，效率提升 3.6 倍。</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">智能体方向，关注长时序学习、基准测试与端到端效果。</div></div>
+    </div>
+    <div class="paper-tags"><span class="tag tag-agent">Agent</span> <span class="tag tag-skill">Skill</span></div>
+    <div class="paper-links"><a href="http://arxiv.org/abs/2609.02217v1">arXiv</a> <a href="http://arxiv.org/pdf/2609.02217v1">PDF</a></div>
+  </div>
+  <div class="paper-card">
+    <div class="paper-title">Deploying and Evaluating a Smart-Agriculture Agentic Engine for Full-Season Soybean Farm Operations</div>
+    <div class="paper-meta">arXiv 2026 · Meta FAIR</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">构建并评估覆盖大豆全生长周期的智慧农业智能体引擎。</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出以事件为世界模型基本单元的架构，统一调度农事操作。</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在全季大豆作业场景中验证了流程的可行性与稳定性。</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">世界模型与动作生成方向，关注 Sim-to-Real 迁移效果。</div></div>
+    </div>
+    <div class="paper-tags"><span class="tag tag-agent">Agent</span> <span class="tag tag-agriculture">Agriculture</span></div>
+    <div class="paper-links"><a href="http://arxiv.org/abs/2609.00106v1">arXiv</a> <a href="http://arxiv.org/pdf/2609.00106v1">PDF</a></div>
+  </div>
+  <div class="paper-card">
+    <div class="paper-title">Retrieved but not ranked: surface-form bias in structural retrieval, from mathematics to agent trajectories</div>
+    <div class="paper-meta">arXiv 2026</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">研究结构化检索中的表面形式偏差，从数学推导延伸到智能体轨迹。</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 MathNet-Retrieve，以零样本方式识别结构检索中的偏差。</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在数学与轨迹检索任务上取得 95%、99.8% 与 36% 等指标。</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">智能体检索方向，关注基准测试与零样本能力表现。</div></div>
+    </div>
+    <div class="paper-tags"><span class="tag tag-agent">Agent</span> <span class="tag tag-retrieval">Retrieval</span></div>
+    <div class="paper-links"><a href="http://arxiv.org/abs/2609.01556v1">arXiv</a> <a href="http://arxiv.org/pdf/2609.01556v1">PDF</a> <a href="https://github.com/nabirarashid/structural-retrieval">Code</a></div>
+  </div>
+  <div class="paper-card">
+    <div class="paper-title">Value-Preserving Architectures for Agentic AI Systems</div>
+    <div class="paper-meta">arXiv 2026 · Meta FAIR</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">设计保值的智能体系统架构，在多次迭代中维持任务价值稳定。</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出大模型驱动的保值架构，兼顾鲁棒性与统一性。</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在多种智能体任务中验证了架构的稳定性与有效性。</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">智能体方向，关注架构设计与端到端成功率表现。</div></div>
+    </div>
+    <div class="paper-tags"><span class="tag tag-agent">Agent</span> <span class="tag tag-architecture">Architecture</span></div>
+    <div class="paper-links"><a href="http://arxiv.org/abs/2609.03920v1">arXiv</a> <a href="http://arxiv.org/pdf/2609.03920v1">PDF</a></div>
+  </div>
+  <div class="paper-card">
+    <div class="paper-title">A Blind Trust, the Bloody Thrust: When Attacker-Controlled Hook Updates Steer AI Agent Harnesses towards Malicious Behaviors</div>
+    <div class="paper-meta">arXiv 2026 · Microsoft</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">研究攻击者通过钩子更新劫持智能体运行框架的攻击面。</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 HookPry，端到端揭示恶意钩子注入的诱导风险。</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">攻击成功率达 92.5%，正常率降至 0%，拦截率 47.5%。</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">智能体安全方向，关注大模型推理机制与 benchmark 表现。</div></div>
+    </div>
+    <div class="paper-tags"><span class="tag tag-agent">Agent</span> <span class="tag tag-security">Security</span></div>
+    <div class="paper-links"><a href="http://arxiv.org/abs/2609.03884v1">arXiv</a> <a href="http://arxiv.org/pdf/2609.03884v1">PDF</a></div>
+  </div>
+  <div class="paper-card">
+    <div class="paper-title">VIPS: Vehicle-Infrastructure Cooperative Planning Benchmark via Pseudo-Simulation</div>
+    <div class="paper-meta">arXiv 2026 · MIT</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">通过伪仿真构建车路协同规划的评测基准 VIPS。</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出端到端、可扩展的伪仿真评测框架，降低实采成本。</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">评测效率相较传统方式提升约 2 倍。</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">智能体方向，关注架构设计与端到端成功率表现。</div></div>
+    </div>
+    <div class="paper-tags"><span class="tag tag-agent">Agent</span> <span class="tag tag-planning">Planning</span></div>
+    <div class="paper-links"><a href="http://arxiv.org/abs/2609.02462v1">arXiv</a> <a href="http://arxiv.org/pdf/2609.02462v1">PDF</a> <a href="https://vips2026.github.io">Project</a></div>
+  </div>
+  <div class="paper-card">
+    <div class="paper-title">Zeta-Lite: A Concurrent, Branchable In-Browser SQL Database for Agentic Memory</div>
+    <div class="paper-meta">arXiv 2026 · MIT</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">浏览器内并发可分支的结构化数据库，服务智能体记忆存储。</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 Zeta-Lite，支持并发访问与分支演化的记忆组织。</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在记忆查询场景上达到 268k 与 315k 规模的实测表现。</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">智能体记忆方向，关注架构设计与端到端效率。</div></div>
+    </div>
+    <div class="paper-tags"><span class="tag tag-agent">Agent</span> <span class="tag tag-memory">Memory</span></div>
+    <div class="paper-links"><a href="http://arxiv.org/abs/2609.01818v1">arXiv</a> <a href="http://arxiv.org/pdf/2609.01818v1">PDF</a></div>
+  </div>
+</section>
+
 <section class="section">
   <h2 class="section-title">📄 Other</h2>
   <div class="paper-card">
-    <div class="paper-title">Other From Multi-Fisheye Sensing to Panoramic Perception: A Parallax-Aware Onboard Platform for Ultra-Low-Altitude UAVs</div>
-    <div class="paper-meta">arXiv 2026 · NVIDIA · Other</div>
+    <div class="paper-title">From Multi-Fisheye Sensing to Panoramic Perception: A Parallax-Aware Onboard Platform for Ultra-Low-Altitude UAVs</div>
+    <div class="paper-meta">arXiv 2026 · NVIDIA</div>
     <div class="summary-grid">
-      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">详见原文</div></div>
-      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">详见原文</div></div>
-      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">详见原文实验部分</div></div>
-      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">建议结合原文进一步了解创新点与实验设置</div></div>
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">多鱼眼相机拼接结合视差感知，构建超低空无人机全景感知平台。</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出视差感知板载平台，缓解超低空场景下的拼接畸变。</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">全景拼接精度 41.6% 与 90.8%，输出分辨率达 1280x。</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">机器人感知方向，建议关注真实部署条件与基线对比设置。</div></div>
     </div>
-    <div class="paper-tags">
-      <span class="tag tag-reasoning">Research</span>
-    </div>
-    <div class="paper-links">
-      <a href="http://arxiv.org/abs/2609.02319v1">arXiv</a>
-      <a href="http://arxiv.org/pdf/2609.02319v1">PDF</a>
-      <a href="https://github.com/DUNDAI1998/parallax-aware-uav-panorama">Code</a>
-    </div>
+    <div class="paper-tags"><span class="tag tag-other">Other</span> <span class="tag tag-uav">UAV</span></div>
+    <div class="paper-links"><a href="http://arxiv.org/abs/2609.02319v1">arXiv</a> <a href="http://arxiv.org/pdf/2609.02319v1">PDF</a> <a href="https://github.com/DUNDAI1998/parallax-aware-uav-panorama">Code</a></div>
   </div>
   <div class="paper-card">
-    <div class="paper-title">Other Air-Ground Collaborative Vision-and-Language Navigation via Shared Bird's-Eye Maps</div>
-    <div class="paper-meta">arXiv 2026 · Other</div>
+    <div class="paper-title">Air-Ground Collaborative Vision-and-Language Navigation via Shared Bird&#x27;s-Eye Maps</div>
+    <div class="paper-meta">arXiv 2026</div>
     <div class="summary-grid">
-      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">详见原文</div></div>
-      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">详见原文</div></div>
-      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">详见原文实验部分</div></div>
-      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">建议结合原文进一步了解创新点与实验设置</div></div>
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">通过共享俯视图实现空地协同的视觉-语言导航规划。</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出空地协同框架，以统一鸟瞰地图表征环境与指令。</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">导航成功率达 77.0%，路径指标为 27.0%、50.0% 与 53.0%。</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">具身导航方向，关注任务泛化能力与真机验证结果。</div></div>
     </div>
-    <div class="paper-tags">
-      <span class="tag tag-reasoning">Research</span>
-    </div>
-    <div class="paper-links">
-      <a href="http://arxiv.org/abs/2609.03483v1">arXiv</a>
-      <a href="http://arxiv.org/pdf/2609.03483v1">PDF</a>
-      <a href="https://github.com/ZSN2024/AGC-VLN">Code</a>
-    </div>
+    <div class="paper-tags"><span class="tag tag-other">Other</span> <span class="tag tag-navigation">Navigation</span></div>
+    <div class="paper-links"><a href="http://arxiv.org/abs/2609.03483v1">arXiv</a> <a href="http://arxiv.org/pdf/2609.03483v1">PDF</a> <a href="https://github.com/ZSN2024/AGC-VLN">Code</a></div>
   </div>
   <div class="paper-card">
-    <div class="paper-title">Other A Wearable Pneumatic Device for Continuous, Closed-Loop, Bidirectional Tactile Interaction</div>
-    <div class="paper-meta">arXiv 2026 · MIT · Other</div>
+    <div class="paper-title">A Wearable Pneumatic Device for Continuous, Closed-Loop, Bidirectional Tactile Interaction</div>
+    <div class="paper-meta">arXiv 2026 · MIT</div>
     <div class="summary-grid">
-      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">详见原文</div></div>
-      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">详见原文</div></div>
-      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">详见原文实验部分</div></div>
-      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">建议结合原文进一步了解创新点与实验设置</div></div>
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">可穿戴气动装置，实现连续闭环的双向触觉交互反馈。</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出装置级双向触觉反馈，支持闭环触觉控制回路。</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">触觉识别相关指标达 23.1%、27.4% 与 18.8%。</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">机器人触觉方向，关注硬件部署与实验设置细节。</div></div>
     </div>
-    <div class="paper-tags">
-      <span class="tag tag-reasoning">Research</span>
-    </div>
-    <div class="paper-links">
-      <a href="http://arxiv.org/abs/2609.00612v1">arXiv</a>
-      <a href="http://arxiv.org/pdf/2609.00612v1">PDF</a>
-    </div>
+    <div class="paper-tags"><span class="tag tag-other">Other</span> <span class="tag tag-tactile">Tactile</span></div>
+    <div class="paper-links"><a href="http://arxiv.org/abs/2609.00612v1">arXiv</a> <a href="http://arxiv.org/pdf/2609.00612v1">PDF</a></div>
   </div>
   <div class="paper-card">
-    <div class="paper-title">Other Local Updates, Global Learning (LUGL): Playing Games with non-incremental Learners</div>
-    <div class="paper-meta">arXiv 2026 · Meta FAIR · Other</div>
+    <div class="paper-title">Local Updates, Global Learning (LUGL): Playing Games with non-incremental Learners</div>
+    <div class="paper-meta">arXiv 2026 · Meta FAIR</div>
     <div class="summary-grid">
-      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">详见原文</div></div>
-      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">详见原文</div></div>
-      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">详见原文实验部分</div></div>
-      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">建议结合原文进一步了解创新点与实验设置</div></div>
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">用局部更新驱动全局学习的非增量学习博弈框架 LUGL。</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 Q 值驱动的局部-全局学习机制，协调分布式节点。</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在分布式学习场景中验证了收敛性与学习效果。</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">智能体与学习方向，关注架构设计与端到端效果。</div></div>
     </div>
-    <div class="paper-tags">
-      <span class="tag tag-reasoning">Research</span>
-    </div>
-    <div class="paper-links">
-      <a href="http://arxiv.org/abs/2609.03660v1">arXiv</a>
-      <a href="http://arxiv.org/pdf/2609.03660v1">PDF</a>
-    </div>
+    <div class="paper-tags"><span class="tag tag-other">Other</span> <span class="tag tag-learning">Learning</span></div>
+    <div class="paper-links"><a href="http://arxiv.org/abs/2609.03660v1">arXiv</a> <a href="http://arxiv.org/pdf/2609.03660v1">PDF</a></div>
   </div>
 </section>
 
 <div class="stats">
-  <p>📡 自动生成于 2026年9月5日 · 周末补漏 · 关注 VLA · Robotics · World Model · LLM · Multimodal · Agent</p>
-  <p>数据来源：arXiv（HuggingFace Models / HF Daily Papers / X-Twitter 采集超时已跳过）</p>
+  <p>📊 本期共收录 30 篇论文（周六补漏）　│　数据来源：daily_ai_report.py　│　生成于 2026-09-05</p>
 </div>
 
 </div>
