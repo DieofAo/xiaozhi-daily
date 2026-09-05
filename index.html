@@ -658,6 +658,337 @@
 <script>
 // ===== DATA =====
 const PAPERS_DB = [
+    // === 2026-09-05 ===
+    {
+        date: "2026-09-05",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "VLA REFACTOR-VLA: Unsupervised Library Learning of Typed Motor Programs",
+        venue: "arXiv 2026 · MIT · VLA",
+        summary: "🔬 技术路线: 详见原文 | 💡 创新点: 详见原文 | 📊 实验效果: 详见原文实验部分 | ⭐ 整体评价: 建议结合原文进一步了解创新点与实验设置",
+        tags: [["VLA","green"]],
+        links: [["arXiv","http://arxiv.org/abs/2609.01215v1"],["PDF","http://arxiv.org/pdf/2609.01215v1"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"详见原文"},{"label":"💡 创新点","text":"详见原文"},{"label":"📊 实验效果","text":"详见原文实验部分"},{"label":"⭐ 整体评价","text":"建议结合原文进一步了解创新点与实验设置"}]
+    },
+    {
+        date: "2026-09-05",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "VLA ZETA: A Controlled Study of Zero-Shot Cross-Embodiment VLA Transfer for Tabletop Manipulation",
+        venue: "arXiv 2026 · VLA",
+        summary: "🔬 技术路线: 详见原文 | 💡 创新点: 详见原文 | 📊 实验效果: 详见原文实验部分 | ⭐ 整体评价: 建议结合原文进一步了解创新点与实验设置",
+        tags: [["VLA","green"]],
+        links: [["arXiv","http://arxiv.org/abs/2609.02546v1"],["PDF","http://arxiv.org/pdf/2609.02546v1"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"详见原文"},{"label":"💡 创新点","text":"详见原文"},{"label":"📊 实验效果","text":"详见原文实验部分"},{"label":"⭐ 整体评价","text":"建议结合原文进一步了解创新点与实验设置"}]
+    },
+    {
+        date: "2026-09-05",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "VLA Temporal Forcing: 4D Representation Alignment for Vision-Language-Action Models",
+        venue: "arXiv 2026 · VLA",
+        summary: "🔬 技术路线: 提出时间驱动（Temporal Forcing）方法，通过 4D 表征对齐将时序约束融入视觉-语言-动作模型训练 | 💡 创新点: 首次将 4D 表征对齐引入 VLA 训练，使动作生成获得时序一致性约束 | 📊 实验效果: 详见原文实验部分 | ⭐ 整体评价: 属于 VLA/具身控制方向，建议关注其任务泛化能力、动作表达方式与真机验证结果",
+        tags: [["VLA","green"]],
+        links: [["arXiv","http://arxiv.org/abs/2608.30643v1"],["PDF","http://arxiv.org/pdf/2608.30643v1"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出时间驱动（Temporal Forcing）方法，通过 4D 表征对齐将时序约束融入视觉-语言-动作模型训练"},{"label":"💡 创新点","text":"首次将 4D 表征对齐引入 VLA 训练，使动作生成获得时序一致性约束"},{"label":"📊 实验效果","text":"详见原文实验部分"},{"label":"⭐ 整体评价","text":"属于 VLA/具身控制方向，建议关注其任务泛化能力、动作表达方式与真机验证结果"}]
+    },
+    {
+        date: "2026-09-05",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "Robotics Non-Prehensile Throwing: A Reinforcement Learning Perspective",
+        venue: "arXiv 2026 · MIT · Robotics",
+        summary: "🔬 技术路线: 详见原文 | 💡 创新点: 详见原文 | 📊 实验效果: 详见原文实验部分 | ⭐ 整体评价: 建议结合原文进一步了解创新点与实验设置",
+        tags: [["Robotics","green"]],
+        links: [["arXiv","http://arxiv.org/abs/2609.00771v1"],["PDF","http://arxiv.org/pdf/2609.00771v1"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"详见原文"},{"label":"💡 创新点","text":"详见原文"},{"label":"📊 实验效果","text":"详见原文实验部分"},{"label":"⭐ 整体评价","text":"建议结合原文进一步了解创新点与实验设置"}]
+    },
+    {
+        date: "2026-09-05",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "Robotics Seeing Through Extreme Visual Sparsity: Surface Understanding from a Single Random Visual Patch",
+        venue: "arXiv 2026 · Meta FAIR · Robotics",
+        summary: "🔬 技术路线: 详见原文 | 💡 创新点: 详见原文 | 📊 实验效果: 详见原文实验部分 | ⭐ 整体评价: 建议结合原文进一步了解创新点与实验设置",
+        tags: [["Robotics","green"]],
+        links: [["arXiv","http://arxiv.org/abs/2608.29475v1"],["PDF","http://arxiv.org/pdf/2608.29475v1"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"详见原文"},{"label":"💡 创新点","text":"详见原文"},{"label":"📊 实验效果","text":"详见原文实验部分"},{"label":"⭐ 整体评价","text":"建议结合原文进一步了解创新点与实验设置"}]
+    },
+    {
+        date: "2026-09-05",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "Robotics One Demonstration, Many Objects: Generalizing Manipulation via Local Contact Geometry",
+        venue: "arXiv 2026 · MIT · Robotics",
+        summary: "🔬 技术路线: 详见原文 | 💡 创新点: 详见原文 | 📊 实验效果: 详见原文实验部分 | ⭐ 整体评价: 建议结合原文进一步了解创新点与实验设置",
+        tags: [["Robotics","green"]],
+        links: [["arXiv","http://arxiv.org/abs/2609.01938v2"],["PDF","http://arxiv.org/pdf/2609.01938v2"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"详见原文"},{"label":"💡 创新点","text":"详见原文"},{"label":"📊 实验效果","text":"详见原文实验部分"},{"label":"⭐ 整体评价","text":"建议结合原文进一步了解创新点与实验设置"}]
+    },
+    {
+        date: "2026-09-05",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "Robotics ShallowStream: Index Shallow then Answer Deep for Streaming Video Understanding",
+        venue: "arXiv 2026 · Robotics",
+        summary: "🔬 技术路线: 详见原文 | 💡 创新点: 详见原文 | 📊 实验效果: 详见原文实验部分 | ⭐ 整体评价: 建议结合原文进一步了解创新点与实验设置",
+        tags: [["Robotics","green"]],
+        links: [["arXiv","http://arxiv.org/abs/2609.02780v1"],["PDF","http://arxiv.org/pdf/2609.02780v1"],["Code","https://github.com/CURRENTF/ShallowStream"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"详见原文"},{"label":"💡 创新点","text":"详见原文"},{"label":"📊 实验效果","text":"详见原文实验部分"},{"label":"⭐ 整体评价","text":"建议结合原文进一步了解创新点与实验设置"}]
+    },
+    {
+        date: "2026-09-05",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "Robotics OptiGeo: Efficient Monocular Geometry for Embodied Perception in Optically Challenging Scenes",
+        venue: "arXiv 2026 · Robotics",
+        summary: "🔬 技术路线: 详见原文 | 💡 创新点: 详见原文 | 📊 实验效果: 详见原文实验部分 | ⭐ 整体评价: 建议结合原文进一步了解创新点与实验设置",
+        tags: [["Robotics","green"]],
+        links: [["arXiv","http://arxiv.org/abs/2608.29881v1"],["PDF","http://arxiv.org/pdf/2608.29881v1"],["🏠 Project","https://mx-liu6.github.io/OptiGeo-web/"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"详见原文"},{"label":"💡 创新点","text":"详见原文"},{"label":"📊 实验效果","text":"详见原文实验部分"},{"label":"⭐ 整体评价","text":"建议结合原文进一步了解创新点与实验设置"}]
+    },
+    {
+        date: "2026-09-05",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "World Model Building Pretraining Data for World Models: An Unreal Engine-Based Pipeline for Action-Conditioned Video Generation",
+        venue: "arXiv 2026 · NVIDIA · World Model",
+        summary: "🔬 技术路线: 详见原文 | 💡 创新点: 详见原文 | 📊 实验效果: 详见原文实验部分 | ⭐ 整体评价: 建议结合原文进一步了解创新点与实验设置",
+        tags: [["World Model","green"]],
+        links: [["arXiv","http://arxiv.org/abs/2609.03557v1"],["PDF","http://arxiv.org/pdf/2609.03557v1"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"详见原文"},{"label":"💡 创新点","text":"详见原文"},{"label":"📊 实验效果","text":"详见原文实验部分"},{"label":"⭐ 整体评价","text":"建议结合原文进一步了解创新点与实验设置"}]
+    },
+    {
+        date: "2026-09-05",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "LLM Debias-SparseGPT: Bias-Aware Pruning for Large Language Models",
+        venue: "arXiv 2026 · Meta FAIR · LLM",
+        summary: "🔬 技术路线: 详见原文 | 💡 创新点: 详见原文 | 📊 实验效果: 详见原文实验部分 | ⭐ 整体评价: 建议结合原文进一步了解创新点与实验设置",
+        tags: [["LLM","green"]],
+        links: [["arXiv","http://arxiv.org/abs/2609.02496v1"],["PDF","http://arxiv.org/pdf/2609.02496v1"],["Code","https://github.com/upunaprosk/debias-llm-compressor"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"详见原文"},{"label":"💡 创新点","text":"详见原文"},{"label":"📊 实验效果","text":"详见原文实验部分"},{"label":"⭐ 整体评价","text":"建议结合原文进一步了解创新点与实验设置"}]
+    },
+    {
+        date: "2026-09-05",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Agent Counterfactual Fairness Audits of Multi-Step Clinical LLM Agents Require a Measured Per-Action Instability Floor",
+        venue: "arXiv 2026 · Meta FAIR · Agent",
+        summary: "🔬 技术路线: 详见原文 | 💡 创新点: 详见原文 | 📊 实验效果: 详见原文实验部分 | ⭐ 整体评价: 建议结合原文进一步了解创新点与实验设置",
+        tags: [["Agent","green"]],
+        links: [["arXiv","http://arxiv.org/abs/2609.03221v1"],["PDF","http://arxiv.org/pdf/2609.03221v1"],["Code","https://github.com/rohithreddybc/FairMedAgent"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"详见原文"},{"label":"💡 创新点","text":"详见原文"},{"label":"📊 实验效果","text":"详见原文实验部分"},{"label":"⭐ 整体评价","text":"建议结合原文进一步了解创新点与实验设置"}]
+    },
+    {
+        date: "2026-09-05",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Agent Parsing the Stream: A Live Trace Model for Long-Horizon Agents and Their Observers",
+        venue: "arXiv 2026 · MIT · Agent",
+        summary: "🔬 技术路线: 详见原文 | 💡 创新点: 详见原文 | 📊 实验效果: 详见原文实验部分 | ⭐ 整体评价: 建议结合原文进一步了解创新点与实验设置",
+        tags: [["Agent","green"]],
+        links: [["arXiv","http://arxiv.org/abs/2609.01466v1"],["PDF","http://arxiv.org/pdf/2609.01466v1"],["Code","https://github.com/SalesforceAIResearch/tracelab"],["🤗 Model","https://huggingface.co/datasets/Salesforce/tracelab-comprehend"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"详见原文"},{"label":"💡 创新点","text":"详见原文"},{"label":"📊 实验效果","text":"详见原文实验部分"},{"label":"⭐ 整体评价","text":"建议结合原文进一步了解创新点与实验设置"}]
+    },
+    {
+        date: "2026-09-05",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Agent Beyond Outcome Gaps: Process-Aware Fairness Diagnosis for LLM-based Multi-Agent Decision Systems",
+        venue: "arXiv 2026 · Meta FAIR · Agent",
+        summary: "🔬 技术路线: 详见原文 | 💡 创新点: 详见原文 | 📊 实验效果: 详见原文实验部分 | ⭐ 整体评价: 建议结合原文进一步了解创新点与实验设置",
+        tags: [["Agent","green"]],
+        links: [["arXiv","http://arxiv.org/abs/2609.02092v1"],["PDF","http://arxiv.org/pdf/2609.02092v1"],["🏠 Project","https://scoped-hiring-project-page.vercel.app/"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"详见原文"},{"label":"💡 创新点","text":"详见原文"},{"label":"📊 实验效果","text":"详见原文实验部分"},{"label":"⭐ 整体评价","text":"建议结合原文进一步了解创新点与实验设置"}]
+    },
+    {
+        date: "2026-09-05",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Agent SkillGLoW: Procedural-Family Skill Consolidation for Self-Improving Agents on Long-Horizon Task Streams",
+        venue: "arXiv 2026 · MIT · Agent",
+        summary: "🔬 技术路线: 详见原文 | 💡 创新点: 详见原文 | 📊 实验效果: 详见原文实验部分 | ⭐ 整体评价: 建议结合原文进一步了解创新点与实验设置",
+        tags: [["Agent","green"]],
+        links: [["arXiv","http://arxiv.org/abs/2609.02217v1"],["PDF","http://arxiv.org/pdf/2609.02217v1"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"详见原文"},{"label":"💡 创新点","text":"详见原文"},{"label":"📊 实验效果","text":"详见原文实验部分"},{"label":"⭐ 整体评价","text":"建议结合原文进一步了解创新点与实验设置"}]
+    },
+    {
+        date: "2026-09-05",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Agent Deploying and Evaluating a Smart-Agriculture Agentic Engine for Full-Season Soybean Farm Operations",
+        venue: "arXiv 2026 · Meta FAIR · Agent",
+        summary: "🔬 技术路线: 详见原文 | 💡 创新点: 详见原文 | 📊 实验效果: 详见原文实验部分 | ⭐ 整体评价: 建议结合原文进一步了解创新点与实验设置",
+        tags: [["Agent","green"]],
+        links: [["arXiv","http://arxiv.org/abs/2609.00106v1"],["PDF","http://arxiv.org/pdf/2609.00106v1"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"详见原文"},{"label":"💡 创新点","text":"详见原文"},{"label":"📊 实验效果","text":"详见原文实验部分"},{"label":"⭐ 整体评价","text":"建议结合原文进一步了解创新点与实验设置"}]
+    },
+    {
+        date: "2026-09-05",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Agent Retrieved but not ranked: surface-form bias in structural retrieval, from mathematics to agent trajectories",
+        venue: "arXiv 2026 · Agent",
+        summary: "🔬 技术路线: 详见原文 | 💡 创新点: 详见原文 | 📊 实验效果: 详见原文实验部分 | ⭐ 整体评价: 建议结合原文进一步了解创新点与实验设置",
+        tags: [["Agent","green"]],
+        links: [["arXiv","http://arxiv.org/abs/2609.01556v1"],["PDF","http://arxiv.org/pdf/2609.01556v1"],["Code","https://github.com/nabirarashid/structural-retrieval"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"详见原文"},{"label":"💡 创新点","text":"详见原文"},{"label":"📊 实验效果","text":"详见原文实验部分"},{"label":"⭐ 整体评价","text":"建议结合原文进一步了解创新点与实验设置"}]
+    },
+    {
+        date: "2026-09-05",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Agent Value-Preserving Architectures for Agentic AI Systems",
+        venue: "arXiv 2026 · Meta FAIR · Agent",
+        summary: "🔬 技术路线: 详见原文 | 💡 创新点: 详见原文 | 📊 实验效果: 详见原文实验部分 | ⭐ 整体评价: 建议结合原文进一步了解创新点与实验设置",
+        tags: [["Agent","green"]],
+        links: [["arXiv","http://arxiv.org/abs/2609.03920v1"],["PDF","http://arxiv.org/pdf/2609.03920v1"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"详见原文"},{"label":"💡 创新点","text":"详见原文"},{"label":"📊 实验效果","text":"详见原文实验部分"},{"label":"⭐ 整体评价","text":"建议结合原文进一步了解创新点与实验设置"}]
+    },
+    {
+        date: "2026-09-05",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Agent A Blind Trust, the Bloody Thrust: When Attacker-Controlled Hook Updates Steer AI Agent Harnesses towards Malicious Behaviors",
+        venue: "arXiv 2026 · Microsoft · Agent",
+        summary: "🔬 技术路线: 详见原文 | 💡 创新点: 详见原文 | 📊 实验效果: 详见原文实验部分 | ⭐ 整体评价: 建议结合原文进一步了解创新点与实验设置",
+        tags: [["Agent","green"]],
+        links: [["arXiv","http://arxiv.org/abs/2609.03884v1"],["PDF","http://arxiv.org/pdf/2609.03884v1"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"详见原文"},{"label":"💡 创新点","text":"详见原文"},{"label":"📊 实验效果","text":"详见原文实验部分"},{"label":"⭐ 整体评价","text":"建议结合原文进一步了解创新点与实验设置"}]
+    },
+    {
+        date: "2026-09-05",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Agent VIPS: Vehicle-Infrastructure Cooperative Planning Benchmark via Pseudo-Simulation",
+        venue: "arXiv 2026 · MIT · Agent",
+        summary: "🔬 技术路线: 详见原文 | 💡 创新点: 详见原文 | 📊 实验效果: 详见原文实验部分 | ⭐ 整体评价: 建议结合原文进一步了解创新点与实验设置",
+        tags: [["Agent","green"]],
+        links: [["arXiv","http://arxiv.org/abs/2609.02462v1"],["PDF","http://arxiv.org/pdf/2609.02462v1"],["🏠 Project","https://vips2026.github.io"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"详见原文"},{"label":"💡 创新点","text":"详见原文"},{"label":"📊 实验效果","text":"详见原文实验部分"},{"label":"⭐ 整体评价","text":"建议结合原文进一步了解创新点与实验设置"}]
+    },
+    {
+        date: "2026-09-05",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Agent Zeta-Lite: A Concurrent, Branchable In-Browser SQL Database for Agentic Memory",
+        venue: "arXiv 2026 · MIT · Agent",
+        summary: "🔬 技术路线: 详见原文 | 💡 创新点: 详见原文 | 📊 实验效果: 详见原文实验部分 | ⭐ 整体评价: 建议结合原文进一步了解创新点与实验设置",
+        tags: [["Agent","green"]],
+        links: [["arXiv","http://arxiv.org/abs/2609.01818v1"],["PDF","http://arxiv.org/pdf/2609.01818v1"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"详见原文"},{"label":"💡 创新点","text":"详见原文"},{"label":"📊 实验效果","text":"详见原文实验部分"},{"label":"⭐ 整体评价","text":"建议结合原文进一步了解创新点与实验设置"}]
+    },
+    {
+        date: "2026-09-05",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "Multimodal Continuous Actions from Discrete Minds: Latent-Aligned Planning for End-to-End Autonomous Driving",
+        venue: "arXiv 2026 · NVIDIA · Multimodal",
+        summary: "🔬 技术路线: 详见原文 | 💡 创新点: 详见原文 | 📊 实验效果: 详见原文实验部分 | ⭐ 整体评价: 建议结合原文进一步了解创新点与实验设置",
+        tags: [["Multimodal","green"]],
+        links: [["arXiv","http://arxiv.org/abs/2609.04070v1"],["PDF","http://arxiv.org/pdf/2609.04070v1"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"详见原文"},{"label":"💡 创新点","text":"详见原文"},{"label":"📊 实验效果","text":"详见原文实验部分"},{"label":"⭐ 整体评价","text":"建议结合原文进一步了解创新点与实验设置"}]
+    },
+    {
+        date: "2026-09-05",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "Multimodal FairLens: Benchmarking Fairness in Vision-Language Models for High-Stakes Decision-Making",
+        venue: "arXiv 2026 · Meta FAIR · Multimodal",
+        summary: "🔬 技术路线: 详见原文 | 💡 创新点: 详见原文 | 📊 实验效果: 详见原文实验部分 | ⭐ 整体评价: 建议结合原文进一步了解创新点与实验设置",
+        tags: [["Multimodal","green"]],
+        links: [["arXiv","http://arxiv.org/abs/2609.01691v1"],["PDF","http://arxiv.org/pdf/2609.01691v1"],["🏠 Project","https://vectorinstitute.github.io/fairlens"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"详见原文"},{"label":"💡 创新点","text":"详见原文"},{"label":"📊 实验效果","text":"详见原文实验部分"},{"label":"⭐ 整体评价","text":"建议结合原文进一步了解创新点与实验设置"}]
+    },
+    {
+        date: "2026-09-05",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "Multimodal NeoMME: A Single-Tower Multimodal-Native Multilingual Foundation Encoder for Efficient Fine-Tuning and Inference",
+        venue: "arXiv 2026 · NVIDIA · Multimodal",
+        summary: "🔬 技术路线: 详见原文 | 💡 创新点: 详见原文 | 📊 实验效果: 详见原文实验部分 | ⭐ 整体评价: 建议结合原文进一步了解创新点与实验设置",
+        tags: [["Multimodal","green"]],
+        links: [["arXiv","http://arxiv.org/abs/2609.01657v1"],["PDF","http://arxiv.org/pdf/2609.01657v1"],["🔗 Link","https://hf.co/collections/Hcompany/neomme"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"详见原文"},{"label":"💡 创新点","text":"详见原文"},{"label":"📊 实验效果","text":"详见原文实验部分"},{"label":"⭐ 整体评价","text":"建议结合原文进一步了解创新点与实验设置"}]
+    },
+    {
+        date: "2026-09-05",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "Multimodal MARS: What Retrieval Signals Are Hidden in Multimodal Large Language Models for Text-Video Retrieval?",
+        venue: "arXiv 2026 · MIT · Multimodal",
+        summary: "🔬 技术路线: 详见原文 | 💡 创新点: 详见原文 | 📊 实验效果: 详见原文实验部分 | ⭐ 整体评价: 建议结合原文进一步了解创新点与实验设置",
+        tags: [["Multimodal","green"]],
+        links: [["arXiv","http://arxiv.org/abs/2609.02565v1"],["PDF","http://arxiv.org/pdf/2609.02565v1"],["Code","https://github.com/sejong-rcv/MARS"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"详见原文"},{"label":"💡 创新点","text":"详见原文"},{"label":"📊 实验效果","text":"详见原文实验部分"},{"label":"⭐ 整体评价","text":"建议结合原文进一步了解创新点与实验设置"}]
+    },
+    {
+        date: "2026-09-05",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "Multimodal Occlusion-Robust Multimodal Emotion Recognition in VR via Fusion of Facial Images and EMG",
+        venue: "arXiv 2026 · MIT · Multimodal",
+        summary: "🔬 技术路线: 详见原文 | 💡 创新点: 详见原文 | 📊 实验效果: 详见原文实验部分 | ⭐ 整体评价: 建议结合原文进一步了解创新点与实验设置",
+        tags: [["Multimodal","green"]],
+        links: [["arXiv","http://arxiv.org/abs/2609.03569v1"],["PDF","http://arxiv.org/pdf/2609.03569v1"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"详见原文"},{"label":"💡 创新点","text":"详见原文"},{"label":"📊 实验效果","text":"详见原文实验部分"},{"label":"⭐ 整体评价","text":"建议结合原文进一步了解创新点与实验设置"}]
+    },
+    {
+        date: "2026-09-05",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "Multimodal DICS: Exploring Data Intrinsic Consistency for Visual Instruction Selection",
+        venue: "arXiv 2026 · Multimodal",
+        summary: "🔬 技术路线: 详见原文 | 💡 创新点: 详见原文 | 📊 实验效果: 详见原文实验部分 | ⭐ 整体评价: 建议结合原文进一步了解创新点与实验设置",
+        tags: [["Multimodal","green"]],
+        links: [["arXiv","http://arxiv.org/abs/2608.30209v3"],["PDF","http://arxiv.org/pdf/2608.30209v3"],["Code","https://github.com/cqu-student/DICS"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"详见原文"},{"label":"💡 创新点","text":"详见原文"},{"label":"📊 实验效果","text":"详见原文实验部分"},{"label":"⭐ 整体评价","text":"建议结合原文进一步了解创新点与实验设置"}]
+    },
+    {
+        date: "2026-09-05",
+        category: "Other",
+        categoryIcon: "📄",
+        title: "Other From Multi-Fisheye Sensing to Panoramic Perception: A Parallax-Aware Onboard Platform for Ultra-Low-Altitude UAVs",
+        venue: "arXiv 2026 · NVIDIA · Other",
+        summary: "🔬 技术路线: 详见原文 | 💡 创新点: 详见原文 | 📊 实验效果: 详见原文实验部分 | ⭐ 整体评价: 建议结合原文进一步了解创新点与实验设置",
+        tags: [["Research","green"]],
+        links: [["arXiv","http://arxiv.org/abs/2609.02319v1"],["PDF","http://arxiv.org/pdf/2609.02319v1"],["Code","https://github.com/DUNDAI1998/parallax-aware-uav-panorama"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"详见原文"},{"label":"💡 创新点","text":"详见原文"},{"label":"📊 实验效果","text":"详见原文实验部分"},{"label":"⭐ 整体评价","text":"建议结合原文进一步了解创新点与实验设置"}]
+    },
+    {
+        date: "2026-09-05",
+        category: "Other",
+        categoryIcon: "📄",
+        title: "Other Air-Ground Collaborative Vision-and-Language Navigation via Shared Bird's-Eye Maps",
+        venue: "arXiv 2026 · Other",
+        summary: "🔬 技术路线: 详见原文 | 💡 创新点: 详见原文 | 📊 实验效果: 详见原文实验部分 | ⭐ 整体评价: 建议结合原文进一步了解创新点与实验设置",
+        tags: [["Research","green"]],
+        links: [["arXiv","http://arxiv.org/abs/2609.03483v1"],["PDF","http://arxiv.org/pdf/2609.03483v1"],["Code","https://github.com/ZSN2024/AGC-VLN"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"详见原文"},{"label":"💡 创新点","text":"详见原文"},{"label":"📊 实验效果","text":"详见原文实验部分"},{"label":"⭐ 整体评价","text":"建议结合原文进一步了解创新点与实验设置"}]
+    },
+    {
+        date: "2026-09-05",
+        category: "Other",
+        categoryIcon: "📄",
+        title: "Other A Wearable Pneumatic Device for Continuous, Closed-Loop, Bidirectional Tactile Interaction",
+        venue: "arXiv 2026 · MIT · Other",
+        summary: "🔬 技术路线: 详见原文 | 💡 创新点: 详见原文 | 📊 实验效果: 详见原文实验部分 | ⭐ 整体评价: 建议结合原文进一步了解创新点与实验设置",
+        tags: [["Research","green"]],
+        links: [["arXiv","http://arxiv.org/abs/2609.00612v1"],["PDF","http://arxiv.org/pdf/2609.00612v1"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"详见原文"},{"label":"💡 创新点","text":"详见原文"},{"label":"📊 实验效果","text":"详见原文实验部分"},{"label":"⭐ 整体评价","text":"建议结合原文进一步了解创新点与实验设置"}]
+    },
+    {
+        date: "2026-09-05",
+        category: "Other",
+        categoryIcon: "📄",
+        title: "Other Local Updates, Global Learning (LUGL): Playing Games with non-incremental Learners",
+        venue: "arXiv 2026 · Meta FAIR · Other",
+        summary: "🔬 技术路线: 详见原文 | 💡 创新点: 详见原文 | 📊 实验效果: 详见原文实验部分 | ⭐ 整体评价: 建议结合原文进一步了解创新点与实验设置",
+        tags: [["Research","green"]],
+        links: [["arXiv","http://arxiv.org/abs/2609.03660v1"],["PDF","http://arxiv.org/pdf/2609.03660v1"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"详见原文"},{"label":"💡 创新点","text":"详见原文"},{"label":"📊 实验效果","text":"详见原文实验部分"},{"label":"⭐ 整体评价","text":"建议结合原文进一步了解创新点与实验设置"}]
+    },
     // === 2026-09-04 ===
     {
         date: "2026-09-04",
@@ -23197,6 +23528,13 @@ const PAPERS_DB = [
 ];
 
 const DAILY_OVERVIEW = {
+    "2026-09-05": {
+        bannerTitle: "🔥 今日看点（周末补漏）",
+        bannerSubtitle: "本周补漏覆盖 2026-08-29 ~ 2026-09-05 共 7 天检索窗口，精选 30 篇工作日日报遗漏的重要论文，涵盖具身智能、大语言模型、智能体、多模态与机器人等方向。",
+        picks: ["LLM Debias-SparseGPT: Bias-Aware Pruning for Large Language Models","Agent Counterfactual Fairness Audits of Multi-Step Clinical LLM Agents Require a Measured Per-Action Instability Floor","Agent Parsing the Stream: A Live Trace Model for Long-Horizon Agents and Their Observers","Multimodal MARS: What Retrieval Signals Are Hidden in Multimodal Large Language Models for Text-Video Retrieval?","Other From Multi-Fisheye Sensing to Panoramic Perception: A Parallax-Aware Onboard Platform for Ultra-Low-Altitude UAVs"],
+        totalPapers: 30,
+        totalNews: 0
+    },
     "2026-09-04": {
         bannerTitle: "🔥 今日看点",
         bannerSubtitle: "今日共 15 篇论文（arXiv 8 篇 + HuggingFace 热门 7 篇），覆盖大语言模型、多模态、世界模型、智能体与强化学习五大方向。世界模型方向，GIFT 用动作导向结构监督训练机器人操作世界模型，SolarWM 开源长时序视频世界模型的完整数据与训练方案。大语言模型方向，HarnessDev 探索模型自我演化智能体框架，另有思维链可读性与可解释性辨析、在线策略蒸馏机理分析。智能体方向，Repo-To-Skill 把代码仓库蒸馏为可复用技能，WHALE 联合优化框架与权重，EarlyEval 用早停预测降低评测成本。多模态方向涵盖原生三维世界状态模型与像素文本表征。",
