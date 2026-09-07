@@ -658,6 +658,95 @@
 <script>
 // ===== DATA =====
 const PAPERS_DB = [
+    // === 2026-09-07 ===
+    {
+        date: "2026-09-07",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Agent Iris: Climbing to the Search Frontier",
+        venue: "HF 热门 2609 · Agent · AllSpark Research",
+        summary: "🔬 技术路线: 构建面向搜索前沿的智能体，采用基于训练的方法端到端学习工具调用与检索策略。 | 💡 创新点: 提出轻量变体 Iris-mini，在保持搜索能力的同时显著降低推理与部署开销。 | 📊 实验效果: 关键模型规模覆盖 35B、3B、397B、17B，验证了不同容量下的可用性。 | ⭐ 整体评价: 属 Agent/工具使用方向，建议关注搜索成功率、工具调度与端到端泛化。",
+        tags: [["Agent","green"],["Tool Use","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.04304"],["PDF","https://arxiv.org/pdf/2609.04304"],["Code","https://github.com/AllSpark-Research/Iris"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"构建面向搜索前沿的智能体，采用基于训练的方法端到端学习工具调用与检索策略。"},{"label":"💡 创新点","text":"提出轻量变体 Iris-mini，在保持搜索能力的同时显著降低推理与部署开销。"},{"label":"📊 实验效果","text":"关键模型规模覆盖 35B、3B、397B、17B，验证了不同容量下的可用性。"},{"label":"⭐ 整体评价","text":"属 Agent/工具使用方向，建议关注搜索成功率、工具调度与端到端泛化。"}]
+    },
+    {
+        date: "2026-09-07",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "MaxKernel: Agentic Kernel Generation for TPUs",
+        venue: "HF 热门 2609 · Agent · Google",
+        summary: "🔬 技术路线: 以大语言模型生成面向张量处理单元的内核代码，结合智能体迭代优化。 | 💡 创新点: 提出人在回路的内核生成范式，支持实时反馈修正，提升生成内核质量。 | 📊 实验效果: 在生成与规划任务上验证有效，配套开源代码获得社区较多关注。 | ⭐ 整体评价: 属 Agent/工具使用方向，建议关注生成内核的正确性与硬件适配。",
+        tags: [["Agent","green"],["TPU","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.04523"],["PDF","https://arxiv.org/pdf/2609.04523"],["Code","https://github.com/AI-Hypercomputer/accelerator-agents"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"以大语言模型生成面向张量处理单元的内核代码，结合智能体迭代优化。"},{"label":"💡 创新点","text":"提出人在回路的内核生成范式，支持实时反馈修正，提升生成内核质量。"},{"label":"📊 实验效果","text":"在生成与规划任务上验证有效，配套开源代码获得社区较多关注。"},{"label":"⭐ 整体评价","text":"属 Agent/工具使用方向，建议关注生成内核的正确性与硬件适配。"}]
+    },
+    {
+        date: "2026-09-07",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Enoki: Efficient Multi-Level Hallucination Detection",
+        venue: "HF 热门 2609 · LLM · s-nlp",
+        summary: "🔬 技术路线: 采用基于框架的方法，对大语言模型生成内容做多级幻觉检测。 | 💡 创新点: 提出面向大语言模型的多级幻觉识别机制，覆盖不同粒度的错误类型。 | 📊 实验效果: 在推理任务上验证方法有效，并开源项目与代码供社区复现。 | ⭐ 整体评价: 属大语言模型方向，建议关注检测召回率与对长文本的支持。",
+        tags: [["LLM","green"],["Hallucination","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.00581"],["PDF","https://arxiv.org/pdf/2609.00581"],["Project","https://huggingface.co/collections/s-nlp/enoki"],["Code","https://github.com/s-nlp/Enoki"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"采用基于框架的方法，对大语言模型生成内容做多级幻觉检测。"},{"label":"💡 创新点","text":"提出面向大语言模型的多级幻觉识别机制，覆盖不同粒度的错误类型。"},{"label":"📊 实验效果","text":"在推理任务上验证方法有效，并开源项目与代码供社区复现。"},{"label":"⭐ 整体评价","text":"属大语言模型方向，建议关注检测召回率与对长文本的支持。"}]
+    },
+    {
+        date: "2026-09-07",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Ask Before You Optimize: Dynamic Pre-Formulation Clarification for Interactive Optimization",
+        venue: "HF 热门 2609 · LLM · AIOR",
+        summary: "🔬 技术路线: 将大语言模型用于交互式优化，在求解前先与用户澄清目标与约束。 | 💡 创新点: 提出动态预配方澄清机制，让模型先理解需求再做优化求解。 | 📊 实验效果: 实验验证澄清步骤对优化结果质量有明显提升作用。 | ⭐ 整体评价: 属大语言模型方向，建议关注澄清效率与人工负担的权衡。",
+        tags: [["LLM","green"],["Optimization","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.05258"],["PDF","https://arxiv.org/pdf/2609.05258"],["Project","https://github.com/AIOR-Research/InterOpt"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"将大语言模型用于交互式优化，在求解前先与用户澄清目标与约束。"},{"label":"💡 创新点","text":"提出动态预配方澄清机制，让模型先理解需求再做优化求解。"},{"label":"📊 实验效果","text":"实验验证澄清步骤对优化结果质量有明显提升作用。"},{"label":"⭐ 整体评价","text":"属大语言模型方向，建议关注澄清效率与人工负担的权衡。"}]
+    },
+    {
+        date: "2026-09-07",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Don't Drop Dropout: Optimizing Layer Sparsity for Efficient LLM Training and Inference",
+        venue: "HF 热门 2609 · LLM · Cerebras",
+        summary: "🔬 技术路线: 研究大语言模型训练与推理中的层稀疏化，重新审视丢弃机制的作用。 | 💡 创新点: 提出 CS-3 方案，在保持鲁棒与零样本能力的同时优化层稀疏。 | 📊 实验效果: 关键指标达 25%、加速 1.5 倍、参数量 271M、规模 8.2B，验证高效性。 | ⭐ 整体评价: 属大语言模型方向，建议关注稀疏策略对下游任务的影响。",
+        tags: [["LLM","green"],["Efficiency","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.05275"],["PDF","https://arxiv.org/pdf/2609.05275"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"研究大语言模型训练与推理中的层稀疏化，重新审视丢弃机制的作用。"},{"label":"💡 创新点","text":"提出 CS-3 方案，在保持鲁棒与零样本能力的同时优化层稀疏。"},{"label":"📊 实验效果","text":"关键指标达 25%、加速 1.5 倍、参数量 271M、规模 8.2B，验证高效性。"},{"label":"⭐ 整体评价","text":"属大语言模型方向，建议关注稀疏策略对下游任务的影响。"}]
+    },
+    {
+        date: "2026-09-07",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "RISE: Recursive Improvement via Self-Extrapolating Policy Distillation",
+        venue: "HF 热门 2609 · LLM · Salesforce AI Research",
+        summary: "🔬 技术路线: 通过同策略自外推的策略蒸馏，实现模型的递归式自我提升。 | 💡 创新点: 提出基于同策略蒸馏的递归改进机制，让模型逐步自我增强。 | 📊 实验效果: 在代码生成任务上验证递归改进带来的性能提升。 | ⭐ 整体评价: 属大语言模型蒸馏方向，建议关注训练稳定性与误差累积。",
+        tags: [["LLM","green"],["Distillation","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.05295"],["PDF","https://arxiv.org/pdf/2609.05295"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"通过同策略自外推的策略蒸馏，实现模型的递归式自我提升。"},{"label":"💡 创新点","text":"提出基于同策略蒸馏的递归改进机制，让模型逐步自我增强。"},{"label":"📊 实验效果","text":"在代码生成任务上验证递归改进带来的性能提升。"},{"label":"⭐ 整体评价","text":"属大语言模型蒸馏方向，建议关注训练稳定性与误差累积。"}]
+    },
+    {
+        date: "2026-09-07",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "Motion-Omni: End-to-End Joint Speech and Full-Body Motion for Spoken Dialogue",
+        venue: "HF 热门 2609 · Multimodal · Peking University",
+        summary: "🔬 技术路线: 构建端到端框架，联合建模语音对话与全身动作生成。 | 💡 创新点: 提出 Motion-Omni，实现语音到全身动作的可扩展端到端生成。 | 📊 实验效果: 关键指标约 2%、2.62%、7B，验证语音驱动动作的可行性。 | ⭐ 整体评价: 属多模态方向，建议关注语音理解与动作自然的耦合效果。",
+        tags: [["Multimodal","green"],["Speech2Motion","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.04250"],["PDF","https://arxiv.org/pdf/2609.04250"],["Project","https://step-out.github.io/Motion-Omni-Page/"],["Code","https://github.com/step-out/Motion-Omni"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"构建端到端框架，联合建模语音对话与全身动作生成。"},{"label":"💡 创新点","text":"提出 Motion-Omni，实现语音到全身动作的可扩展端到端生成。"},{"label":"📊 实验效果","text":"关键指标约 2%、2.62%、7B，验证语音驱动动作的可行性。"},{"label":"⭐ 整体评价","text":"属多模态方向，建议关注语音理解与动作自然的耦合效果。"}]
+    },
+    {
+        date: "2026-09-07",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "WorldSculpt: Generating Compositional Worlds from Grounded Videos",
+        venue: "HF 热门 2609 · Multimodal · Alaya Lab",
+        summary: "🔬 技术路线: 基于真实视频学习组合式世界生成，利用几何信息做基础建模。 | 💡 创新点: 提出基于几何的可扩展世界生成方法，从视频中构造组合场景。 | 📊 实验效果: 在生成任务上验证有效性，并开源项目与代码供社区复现。 | ⭐ 整体评价: 属多模态/世界模型方向，建议关注场景组合与真实部署条件。",
+        tags: [["Multimodal","green"],["World Gen","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.05416"],["PDF","https://arxiv.org/pdf/2609.05416"],["Project","https://alaya-lab.github.io/WorldSculpt/"],["Code","https://github.com/AlayaLab/WorldSculpt"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于真实视频学习组合式世界生成，利用几何信息做基础建模。"},{"label":"💡 创新点","text":"提出基于几何的可扩展世界生成方法，从视频中构造组合场景。"},{"label":"📊 实验效果","text":"在生成任务上验证有效性，并开源项目与代码供社区复现。"},{"label":"⭐ 整体评价","text":"属多模态/世界模型方向，建议关注场景组合与真实部署条件。"}]
+    },
     // === 2026-09-06 ===
     {
         date: "2026-09-06",
@@ -23539,6 +23628,13 @@ const PAPERS_DB = [
 ];
 
 const DAILY_OVERVIEW = {
+    "2026-09-07": {
+        bannerTitle: "🔥 今日看点",
+        bannerSubtitle: "今日共 8 篇论文，全部来自 HuggingFace 热门榜单（arXiv 当日检索为 0 条），覆盖智能体、大语言模型与多模态三大方向。智能体方向，Iris 构建面向搜索前沿的工具调用智能体并推出轻量变体，MaxKernel 用大语言模型生成张量处理单元内核并支持人在回路修正。大语言模型方向，Enoki 做多级幻觉检测，InterOpt 在优化前先与用户澄清目标，RISE 用同策略蒸馏实现递归自提升，另有重新审视丢弃机制的训练效率研究。多模态方向，Motion-Omni 端到端联合语音与全身动作，WorldSculpt 从真实视频生成组合式世界。",
+        picks: ["Agent Iris: Climbing to the Search Frontier","Motion-Omni: End-to-End Joint Speech and Full-Body Motion for Spoken Dialogue","WorldSculpt: Generating Compositional Worlds from Grounded Videos","Enoki: Efficient Multi-Level Hallucination Detection","Ask Before You Optimize: Dynamic Pre-Formulation Clarification for Interactive Optimization"],
+        totalPapers: 8,
+        totalNews: 0
+    },
     "2026-09-06": {
         bannerTitle: "🔥 今日看点",
         bannerSubtitle: "今日（2026-09-06）arXiv 索引延迟无新匹配，脚本回退展示 2026-09-04 内容。经跨日去重核验，回退的 8 篇论文均已在 09-04 日报中发布，按去重规则全部剔除，故本站今日无新增论文。HuggingFace 热门论文与模型采集超时、X/Twitter 源不可用，下期将恢复推送新内容。",
