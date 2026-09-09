@@ -658,6 +658,253 @@
 <script>
 // ===== DATA =====
 const PAPERS_DB = [
+    // === 2026-09-09 ===
+    {
+        date: "2026-09-09",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "TANGO: Humanoid Navigation in Cluttered Environments with a Whole-Body Vision-Language-Action Model",
+        venue: "arXiv 2609 · VLA · 人形导航",
+        summary: "🔬 技术路线: 提出面向人形机器人的全身视觉-语言-动作模型，端到端地将视觉观测与语言指令映射为全身导航动作。 | 💡 创新点: 引入基于强化学习的导航策略，具备零样本迁移与对杂乱室内环境的鲁棒适应能力。 | 📊 实验效果: 在导航与路径规划任务上验证了方法有效性，具体指标详见原文。 | ⭐ 整体评价: 属 VLA/具身控制方向，建议关注任务泛化能力、全身动作表达与真实部署条件。",
+        tags: [["VLA","green"],["Navigation","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.09158"],["PDF","https://arxiv.org/pdf/2609.09158"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出面向人形机器人的全身视觉-语言-动作模型，端到端地将视觉观测与语言指令映射为全身导航动作。"},{"label":"💡 创新点","text":"引入基于强化学习的导航策略，具备零样本迁移与对杂乱室内环境的鲁棒适应能力。"},{"label":"📊 实验效果","text":"在导航与路径规划任务上验证了方法有效性，具体指标详见原文。"},{"label":"⭐ 整体评价","text":"属 VLA/具身控制方向，建议关注任务泛化能力、全身动作表达与真实部署条件。"}]
+    },
+    {
+        date: "2026-09-09",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "EmbodiedSkills: A Unified Framework for Orchestrating, Training, and Deploying VLA Agents",
+        venue: "HF 热门 2609 · VLA · 具身智能体",
+        summary: "🔬 技术路线: 提供统一框架，将 VLA 智能体的编排、训练与部署串成完整落地链路。 | 💡 创新点: 提出视觉-语言-动作一体化框架，统一三类流程并显著降低落地门槛。 | 📊 实验效果: 关键指标达 86.20% 与 97.40%，并在 12.5% 设定下验证了框架有效性。 | ⭐ 整体评价: 属 VLA/具身控制方向，建议关注任务泛化、动作表达方式与真机验证结果。",
+        tags: [["VLA","green"],["Manipulation","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.01281"],["PDF","https://arxiv.org/pdf/2609.01281"],["Code","https://github.com/DCDmllm/EmbodiedSkills"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提供统一框架，将 VLA 智能体的编排、训练与部署串成完整落地链路。"},{"label":"💡 创新点","text":"提出视觉-语言-动作一体化框架，统一三类流程并显著降低落地门槛。"},{"label":"📊 实验效果","text":"关键指标达 86.20% 与 97.40%，并在 12.5% 设定下验证了框架有效性。"},{"label":"⭐ 整体评价","text":"属 VLA/具身控制方向，建议关注任务泛化、动作表达方式与真机验证结果。"}]
+    },
+    {
+        date: "2026-09-09",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "SimpleMemVLA: A Simple but Effective Native-Video Memory for Vision-Language-Action Models",
+        venue: "HF 热门 2609 · VLA · OpenBMB",
+        summary: "🔬 技术路线: 为视觉-语言-动作模型设计原生视频记忆机制，显式保留长程视觉上下文。 | 💡 创新点: 提出 SimpleMemVLA，以简洁有效的原生视频记忆增强长时序操作能力。 | 📊 实验效果: 在操作与抓取任务上验证了方法有效性，展示了长程记忆带来的收益。 | ⭐ 整体评价: 属 VLA/具身控制方向，建议关注任务泛化、记忆表达与真机验证结果。",
+        tags: [["VLA","green"],["Memory","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.05533"],["PDF","https://arxiv.org/pdf/2609.05533"],["Project","https://huggingface.co/collections/yinchenghust/simplememvla"],["Code","https://github.com/wadeKeith/SimpleMemVLA"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"为视觉-语言-动作模型设计原生视频记忆机制，显式保留长程视觉上下文。"},{"label":"💡 创新点","text":"提出 SimpleMemVLA，以简洁有效的原生视频记忆增强长时序操作能力。"},{"label":"📊 实验效果","text":"在操作与抓取任务上验证了方法有效性，展示了长程记忆带来的收益。"},{"label":"⭐ 整体评价","text":"属 VLA/具身控制方向，建议关注任务泛化、记忆表达与真机验证结果。"}]
+    },
+    {
+        date: "2026-09-09",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "SyncWorld: Visual Calibration Enables World Models as Zero-Shot Simulators",
+        venue: "arXiv 2609 · World Model · 零样本模拟",
+        summary: "🔬 技术路线: 通过视觉校准对齐世界模型的预测分布，使其可作为策略在环的模拟器使用。 | 💡 创新点: 提出 SyncWorld，赋予世界模型零样本模拟能力，无需针对新任务重新训练。 | 📊 实验效果: 实验验证了方法有效性，具体数据详见原文。 | ⭐ 整体评价: 属世界模型/动作生成方向，建议关注预测精度、动作可控性与 Sim-to-Real 迁移。",
+        tags: [["World Model","green"],["Simulator","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.09155"],["PDF","https://arxiv.org/pdf/2609.09155"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"通过视觉校准对齐世界模型的预测分布，使其可作为策略在环的模拟器使用。"},{"label":"💡 创新点","text":"提出 SyncWorld，赋予世界模型零样本模拟能力，无需针对新任务重新训练。"},{"label":"📊 实验效果","text":"实验验证了方法有效性，具体数据详见原文。"},{"label":"⭐ 整体评价","text":"属世界模型/动作生成方向，建议关注预测精度、动作可控性与 Sim-to-Real 迁移。"}]
+    },
+    {
+        date: "2026-09-09",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "Proxy Policy Steering",
+        venue: "arXiv 2609 · Robotics · 策略转向",
+        summary: "🔬 技术路线: 以训练与微调方式对通用机器人策略做轻量重定向，实现行为导向的转向控制。 | 💡 创新点: 提出基于 LoRA 的代理策略转向方法，以轻量化方式适配新任务目标。 | 📊 实验效果: 关键指标达 53%，验证了转向策略在目标达成上的有效性。 | ⭐ 整体评价: 属机器人算法与控制方向，建议重点看实验设置、基线对比与真实部署条件。",
+        tags: [["Robotics","green"],["LoRA","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.09148"],["PDF","https://arxiv.org/pdf/2609.09148"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"以训练与微调方式对通用机器人策略做轻量重定向，实现行为导向的转向控制。"},{"label":"💡 创新点","text":"提出基于 LoRA 的代理策略转向方法，以轻量化方式适配新任务目标。"},{"label":"📊 实验效果","text":"关键指标达 53%，验证了转向策略在目标达成上的有效性。"},{"label":"⭐ 整体评价","text":"属机器人算法与控制方向，建议重点看实验设置、基线对比与真实部署条件。"}]
+    },
+    {
+        date: "2026-09-09",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "🤗 新模型发布：robot_models",
+        venue: "",
+        summary: "LhLuke 于 2026-09-09 在 HuggingFace 发布 robot_models 模型，标签含 license 等相关信息，面向机器人应用场景。详情以模型卡片为准。",
+        tags: [],
+        links: [["模型卡片","https://huggingface.co/LhLuke/robot_models"]]
+    },
+    {
+        date: "2026-09-09",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "ReCite: Agentic Reasoning for Faithful Citation",
+        venue: "arXiv 2609 · Agent · 可信引用",
+        summary: "🔬 技术路线: 构建智能体式引用推理框架，让模型在生成内容时自动检索并核对引用来源。 | 💡 创新点: 提出 ReCite 机制，以轻量化方式提升生成内容的可信引用与可追溯性。 | 📊 实验效果: 在规划与生成任务上验证了方法有效性，配套项目主页已公开。 | ⭐ 整体评价: 属 Agent/工具使用方向，建议关注引用准确率、工具调度与端到端成功率。",
+        tags: [["Agent","green"],["Citation","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.09156"],["PDF","https://arxiv.org/pdf/2609.09156"],["Project","https://hyy279.github.io/ReCite"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"构建智能体式引用推理框架，让模型在生成内容时自动检索并核对引用来源。"},{"label":"💡 创新点","text":"提出 ReCite 机制，以轻量化方式提升生成内容的可信引用与可追溯性。"},{"label":"📊 实验效果","text":"在规划与生成任务上验证了方法有效性，配套项目主页已公开。"},{"label":"⭐ 整体评价","text":"属 Agent/工具使用方向，建议关注引用准确率、工具调度与端到端成功率。"}]
+    },
+    {
+        date: "2026-09-09",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Procedural Graphs: Self-Evolving Execution Structures for LLM Agents",
+        venue: "arXiv 2609 · Agent · 执行结构",
+        summary: "🔬 技术路线: 用大语言模型驱动可执行流程图的自我演化，将任务拆解为可重构的执行结构。 | 💡 创新点: 提出程序化图结构，使智能体在运行中持续演化并复用执行流程。 | 📊 实验效果: 在生成任务上验证了方法有效性，展示流程自演化的可行性。 | ⭐ 整体评价: 属大语言模型/推理方向，建议关注训练范式、推理机制与基准表现。",
+        tags: [["Agent","green"],["LLM","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.09153"],["PDF","https://arxiv.org/pdf/2609.09153"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"用大语言模型驱动可执行流程图的自我演化，将任务拆解为可重构的执行结构。"},{"label":"💡 创新点","text":"提出程序化图结构，使智能体在运行中持续演化并复用执行流程。"},{"label":"📊 实验效果","text":"在生成任务上验证了方法有效性，展示流程自演化的可行性。"},{"label":"⭐ 整体评价","text":"属大语言模型/推理方向，建议关注训练范式、推理机制与基准表现。"}]
+    },
+    {
+        date: "2026-09-09",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Copying explains the collective behavior of AI agents in the wild",
+        venue: "arXiv 2609 · Agent · 群体行为",
+        summary: "🔬 技术路线: 采用深度学习方法研究真实部署中多智能体集体行为的形成机制。 | 💡 创新点: 提出以\"复制\"解释野外部署智能体群体行为的分析视角。 | 📊 实验效果: 实验验证了方法有效性，具体数据详见原文。 | ⭐ 整体评价: 属 Agent/工具使用方向，建议关注群体涌现、复制机制与端到端成功率。",
+        tags: [["Agent","green"],["LLM","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.09150"],["PDF","https://arxiv.org/pdf/2609.09150"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"采用深度学习方法研究真实部署中多智能体集体行为的形成机制。"},{"label":"💡 创新点","text":"提出以\"复制\"解释野外部署智能体群体行为的分析视角。"},{"label":"📊 实验效果","text":"实验验证了方法有效性，具体数据详见原文。"},{"label":"⭐ 整体评价","text":"属 Agent/工具使用方向，建议关注群体涌现、复制机制与端到端成功率。"}]
+    },
+    {
+        date: "2026-09-09",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "Studying Image Tokenizers as Visual Languages in Unified Multimodal Models",
+        venue: "arXiv 2609 · Multimodal · 图像分词",
+        summary: "🔬 技术路线: 将图像分词器视作统一多模态模型中的视觉语言，研究其表征与表达能力。 | 💡 创新点: 提出统一且多模态的新视角，把图像分词器作为可学习的视觉语言使用。 | 📊 实验效果: 在生成与预测任务上验证了方法有效性，展示分词器的关键作用。 | ⭐ 整体评价: 属多模态方向，建议关注跨模态对齐方式、数据规模与下游任务表现。",
+        tags: [["Multimodal","green"],["Tokenizer","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.09143"],["PDF","https://arxiv.org/pdf/2609.09143"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"将图像分词器视作统一多模态模型中的视觉语言，研究其表征与表达能力。"},{"label":"💡 创新点","text":"提出统一且多模态的新视角，把图像分词器作为可学习的视觉语言使用。"},{"label":"📊 实验效果","text":"在生成与预测任务上验证了方法有效性，展示分词器的关键作用。"},{"label":"⭐ 整体评价","text":"属多模态方向，建议关注跨模态对齐方式、数据规模与下游任务表现。"}]
+    },
+    {
+        date: "2026-09-09",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "NOAH: Learning the Full Patient Journey. A Longitudinal Multimodal Time-Aware Model for Representation and Forecasting",
+        venue: "arXiv 2609 · Multimodal · 医疗时序",
+        summary: "🔬 技术路线: 构建纵向多模态时序模型，统一建模患者全流程的表征学习与未来预测。 | 💡 创新点: 提出 NOAH，具备多模态、零样本与可扩展特性，覆盖长周期医疗轨迹。 | 📊 实验效果: 在生成模型与预测任务上验证了方法有效性，展示时序建模能力。 | ⭐ 整体评价: 属多模态方向，建议关注跨模态对齐、数据规模与下游预测表现。",
+        tags: [["Multimodal","green"],["Healthcare","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.09140"],["PDF","https://arxiv.org/pdf/2609.09140"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"构建纵向多模态时序模型，统一建模患者全流程的表征学习与未来预测。"},{"label":"💡 创新点","text":"提出 NOAH，具备多模态、零样本与可扩展特性，覆盖长周期医疗轨迹。"},{"label":"📊 实验效果","text":"在生成模型与预测任务上验证了方法有效性，展示时序建模能力。"},{"label":"⭐ 整体评价","text":"属多模态方向，建议关注跨模态对齐、数据规模与下游预测表现。"}]
+    },
+    {
+        date: "2026-09-09",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Unlocking Lossless Speedups in LLMs via Discrete Diffusion",
+        venue: "HF 热门 2609 · LLM · Institute of Foundation Models",
+        summary: "🔬 技术路线: 用离散扩散重塑大语言模型生成过程，在保持质量的前提下提升推理速度。 | 💡 创新点: 提出 DiffusionGemma，以轻量化方式实现无损加速的大语言模型生成。 | 📊 实验效果: 关键模型规模覆盖 8B 与 26B，验证了加速与质量的可兼得。 | ⭐ 整体评价: 属大语言模型/推理方向，建议关注加速比、生成质量与部署成本。",
+        tags: [["LLM","green"],["Diffusion","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.04010"],["PDF","https://arxiv.org/pdf/2609.04010"],["Project","https://s-sahoo.com/uno/"],["Code","https://github.com/ifm-ai/uno"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"用离散扩散重塑大语言模型生成过程，在保持质量的前提下提升推理速度。"},{"label":"💡 创新点","text":"提出 DiffusionGemma，以轻量化方式实现无损加速的大语言模型生成。"},{"label":"📊 实验效果","text":"关键模型规模覆盖 8B 与 26B，验证了加速与质量的可兼得。"},{"label":"⭐ 整体评价","text":"属大语言模型/推理方向，建议关注加速比、生成质量与部署成本。"}]
+    },
+    {
+        date: "2026-09-09",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "FlowBalance: Verifier-Grounded Self-Improvement from On-Policy Reasoning Experience",
+        venue: "HF 热门 2609 · LLM · Tencent Hunyuan",
+        summary: "🔬 技术路线: 基于训练与策略方法，用验证器对同策略推理经验做自改进优化。 | 💡 创新点: 提出 FlowBalance，以验证器为锚点实现扎根于推理经验的自我提升。 | 📊 实验效果: 关键指标覆盖 4B 与 8B 规模，验证了自改进方法的有效性。 | ⭐ 整体评价: 属大语言模型/推理方向，建议关注验证器质量、训练范式与基准表现。",
+        tags: [["LLM","green"],["Self-Improvement","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.03241"],["PDF","https://arxiv.org/pdf/2609.03241"],["Project","https://alexhuang13.github.io/FlowBalance-Blog/"],["Code","https://github.com/alexhuang13/FlowBalance"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于训练与策略方法，用验证器对同策略推理经验做自改进优化。"},{"label":"💡 创新点","text":"提出 FlowBalance，以验证器为锚点实现扎根于推理经验的自我提升。"},{"label":"📊 实验效果","text":"关键指标覆盖 4B 与 8B 规模，验证了自改进方法的有效性。"},{"label":"⭐ 整体评价","text":"属大语言模型/推理方向，建议关注验证器质量、训练范式与基准表现。"}]
+    },
+    {
+        date: "2026-09-09",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "ENEAS: Embedding-guided Neural Ensemble for Adaptive Segmentation",
+        venue: "HF 热门 2609 · LLM · speridlabs",
+        summary: "🔬 技术路线: 基于基础模型与架构方法，用嵌入引导的神经网络集成做自适应分割。 | 💡 创新点: 提出可由文本提示驱动的集成分割机制，具备统一与鲁棒特性。 | 📊 实验效果: 实验验证了方法有效性，具体数据详见原文；代码已开源。 | ⭐ 整体评价: 属大语言模型/推理方向，建议关注分割精度、提示鲁棒性与部署条件。",
+        tags: [["LLM","green"],["Segmentation","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.03756"],["PDF","https://arxiv.org/pdf/2609.03756"],["Project","https://speridlabs.com/research/eneas"],["Code","https://github.com/speridlabs/eneas"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于基础模型与架构方法，用嵌入引导的神经网络集成做自适应分割。"},{"label":"💡 创新点","text":"提出可由文本提示驱动的集成分割机制，具备统一与鲁棒特性。"},{"label":"📊 实验效果","text":"实验验证了方法有效性，具体数据详见原文；代码已开源。"},{"label":"⭐ 整体评价","text":"属大语言模型/推理方向，建议关注分割精度、提示鲁棒性与部署条件。"}]
+    },
+    {
+        date: "2026-09-09",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Verify Before You Distill: Prompt-Level Teacher Gating for On-Policy Distillation",
+        venue: "HF 热门 2609 · LLM · 同策略蒸馏",
+        summary: "🔬 技术路线: 基于蒸馏与训练方法，在提示层级对教师模型做门控筛选后再执行蒸馏。 | 💡 创新点: 提出基于同策略的教师门控机制，先验证教师质量再执行蒸馏。 | 📊 实验效果: 关键指标达 9.8%、78.9%、4B 与 35B，验证门控带来的收益。 | ⭐ 整体评价: 属大语言模型/推理方向，建议关注门控策略、蒸馏稳定性与基准表现。",
+        tags: [["LLM","green"],["Distillation","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.02998"],["PDF","https://arxiv.org/pdf/2609.02998"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于蒸馏与训练方法，在提示层级对教师模型做门控筛选后再执行蒸馏。"},{"label":"💡 创新点","text":"提出基于同策略的教师门控机制，先验证教师质量再执行蒸馏。"},{"label":"📊 实验效果","text":"关键指标达 9.8%、78.9%、4B 与 35B，验证门控带来的收益。"},{"label":"⭐ 整体评价","text":"属大语言模型/推理方向，建议关注门控策略、蒸馏稳定性与基准表现。"}]
+    },
+    {
+        date: "2026-09-09",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "One Symptom, Three Levers: A Critical Review of On-Policy Self-Distillation",
+        venue: "HF 热门 2608 · LLM · OVHai LLM",
+        summary: "🔬 技术路线: 基于蒸馏、语言模型、模仿学习与强化学习，系统梳理同策略自蒸馏。 | 💡 创新点: 提出以\"一个症状、三个杠杆\"的框架，批判性重新审视同策略自蒸馏。 | 📊 实验效果: 在生成任务上验证了方法有效性，揭示不同杠杆的作用边界。 | ⭐ 整体评价: 属大语言模型/推理方向，建议关注训练范式、推理机制与基准表现。",
+        tags: [["LLM","green"],["Distillation","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2608.25936"],["PDF","https://arxiv.org/pdf/2608.25936"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于蒸馏、语言模型、模仿学习与强化学习，系统梳理同策略自蒸馏。"},{"label":"💡 创新点","text":"提出以\"一个症状、三个杠杆\"的框架，批判性重新审视同策略自蒸馏。"},{"label":"📊 实验效果","text":"在生成任务上验证了方法有效性，揭示不同杠杆的作用边界。"},{"label":"⭐ 整体评价","text":"属大语言模型/推理方向，建议关注训练范式、推理机制与基准表现。"}]
+    },
+    {
+        date: "2026-09-09",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Safety for Whom? Boundary-Aware Self-Distillation for Controlled LLM Safety Refusal",
+        venue: "HF 热门 2609 · LLM · Multiverse Computing",
+        summary: "🔬 技术路线: 基于框架与训练方法，用边界感知的自蒸馏控制大语言模型的安全拒答。 | 💡 创新点: 提出单次边界感知自蒸馏，精准控制安全拒答的行为边界。 | 📊 实验效果: 关键指标达 19.88%、0.20%、9.47% 与 84.75%，验证拒答的可控性。 | ⭐ 整体评价: 属大语言模型/安全方向，建议关注安全边界、误拒率与真实部署条件。",
+        tags: [["LLM","green"],["Safety","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.04482"],["PDF","https://arxiv.org/pdf/2609.04482"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于框架与训练方法，用边界感知的自蒸馏控制大语言模型的安全拒答。"},{"label":"💡 创新点","text":"提出单次边界感知自蒸馏，精准控制安全拒答的行为边界。"},{"label":"📊 实验效果","text":"关键指标达 19.88%、0.20%、9.47% 与 84.75%，验证拒答的可控性。"},{"label":"⭐ 整体评价","text":"属大语言模型/安全方向，建议关注安全边界、误拒率与真实部署条件。"}]
+    },
+    {
+        date: "2026-09-09",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "How GPT-5.6 Sol helps run quantum computing experiments",
+        venue: "",
+        summary: "OpenAI 介绍 Codex 如何协助运行量子计算实验，展示大模型在复杂科学工作流中的实际落地能力。",
+        tags: [],
+        links: [["来源","https://openai.com/index/codex-quantum-computing-experiments/"]]
+    },
+    {
+        date: "2026-09-09",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "The Work Now Within Reach",
+        venue: "",
+        summary: "OpenAI 回顾近期在能力与产品边界上的进展，阐述当下已可实现的工作范围与未来可达目标。",
+        tags: [],
+        links: [["来源","https://openai.com/index/the-work-now-within-reach/"]]
+    },
+    {
+        date: "2026-09-09",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "Introducing ChatGPT Images 2.5",
+        venue: "",
+        summary: "OpenAI 发布 ChatGPT 图像生成 2.5 版本，提升图像生成的保真度与指令遵循能力。",
+        tags: [],
+        links: [["来源","https://openai.com/index/introducing-chatgpt-images-2-5/"]]
+    },
+    {
+        date: "2026-09-09",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "An OpenAI model proposes a solution to the Navier–Stokes problem",
+        venue: "",
+        summary: "OpenAI 模型针对纳维-斯托克斯问题提出一种解法，体现大模型在基础科学难题上的探索。",
+        tags: [],
+        links: [["来源","https://openai.com/index/navier-stokes-solution/"]]
+    },
+    {
+        date: "2026-09-09",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "Funding grants for new research into AI and teen development",
+        venue: "",
+        summary: "OpenAI 设立资助计划，支持面向人工智能与青少年发展关系的新研究。",
+        tags: [],
+        links: [["来源","https://openai.com/index/teen-development-research-grants/"]]
+    },
+    {
+        date: "2026-09-09",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "Supporting journalism from classrooms to newsrooms",
+        venue: "",
+        summary: "OpenAI 推出面向课堂与新闻编辑室的新闻业支持举措，推动媒体场景的产品应用。",
+        tags: [],
+        links: [["来源","https://openai.com/index/supporting-journalism-from-classrooms-to-newsrooms/"]]
+    },
     // === 2026-09-08 ===
     {
         date: "2026-09-08",
@@ -23651,6 +23898,13 @@ const PAPERS_DB = [
 ];
 
 const DAILY_OVERVIEW = {
+    "2026-09-09": {
+        bannerTitle: "🔥 今日看点",
+        bannerSubtitle: "今日共 16 篇论文（arXiv 8 + HF 热门 8）与 6 条 OpenAI 机构动态。VLA 方向，TANGO 用全身视觉-语言-动作模型解决杂乱室内人形导航，EmbodiedSkills 提供统一框架编排、训练与部署 VLA 智能体，SimpleMemVLA 引入原生视频记忆增强长时序操作。世界模型方向，SyncWorld 通过视觉校准让世界模型成为零样本模拟器。机器人方向，Proxy Policy Steering 用 LoRA 轻量转向通用策略（关键指标 53%）。智能体方向，ReCite 做可信引用推理，Procedural Graphs 让执行结构自我演化。大语言模型方向，离散扩散实现无损加速，FlowBalance、Verify Before You Distill、Safety for Whom 聚焦蒸馏与安全拒答的可控性。",
+        picks: ["FlowBalance: Verifier-Grounded Self-Improvement from On-Policy Reasoning Experience","Unlocking Lossless Speedups in LLMs via Discrete Diffusion","ENEAS: Embedding-guided Neural Ensemble for Adaptive Segmentation","EmbodiedSkills: A Unified Framework for Orchestrating, Training, and Deploying VLA Agents","SimpleMemVLA: A Simple but Effective Native-Video Memory for Vision-Language-Action Models"],
+        totalPapers: 16,
+        totalNews: 7
+    },
     "2026-09-08": {
         bannerTitle: "🔥 今日看点",
         bannerSubtitle: "今日共 2 篇论文，全部来自 HuggingFace 热门榜单（arXiv 当日检索为 0 条），均属智能体方向。第一篇 Dr. Claw 提出面向\"氛围式科研\"的智能体工作台，将文献检索、实验设计与代码编写集成到统一对话界面，降低从想法到原型的门槛。第二篇 Bilevel Coordinated Reflection 引入博弈论视角的双层协调反思机制，让多个智能体在对抗与协作中迭代优化决策，在基准上取得 72.2% 与 70.8% 的关键指标。",
