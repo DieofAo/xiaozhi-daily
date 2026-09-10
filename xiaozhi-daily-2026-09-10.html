@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>小小志AI日报 - 2026年9月10日</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans SC', sans-serif;
+  background: #0a0e1a;
+  color: #e0e6f0;
+  line-height: 1.7;
+  min-height: 100vh;
+}
+.container { max-width: 960px; margin: 0 auto; padding: 40px 24px; }
+header { text-align: center; margin-bottom: 48px; padding: 40px 20px;
+  background: linear-gradient(135deg, rgba(59,130,246,0.08) 0%, rgba(139,92,246,0.08) 100%);
+  border-radius: 20px; border: 1px solid rgba(99,102,241,0.15); }
+header h1 { font-size: 2rem; background: linear-gradient(135deg, #60a5fa, #a78bfa);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 8px; }
+header .date { color: #94a3b8; font-size: 1rem; }
+header .subtitle { color: #64748b; font-size: 0.9rem; margin-top: 6px; }
+.highlight-banner { background: linear-gradient(135deg, rgba(249,115,22,0.1) 0%, rgba(234,179,8,0.08) 100%);
+  border: 1px solid rgba(249,115,22,0.2); border-radius: 14px; padding: 20px 24px; margin-bottom: 36px; }
+.hl-title { font-size: 1.1rem; font-weight: 700; color: #fb923c; margin-bottom: 8px; }
+.hl-text { font-size: 0.92rem; color: #cbd5e1; line-height: 1.7; }
+.section { margin-bottom: 40px; }
+.section-title { font-size: 1.4rem; color: #f1f5f9; margin-bottom: 20px; padding-bottom: 12px;
+  border-bottom: 1px solid rgba(99,102,241,0.2); }
+.paper-card { background: rgba(30,41,59,0.6); border: 1px solid rgba(99,102,241,0.12);
+  border-radius: 14px; padding: 24px; margin-bottom: 16px; transition: transform 0.2s, box-shadow 0.2s; }
+.paper-card:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(99,102,241,0.1);
+  border-color: rgba(99,102,241,0.3); }
+.paper-card.hot { border-color: rgba(249,115,22,0.25); background: rgba(30,41,59,0.7); }
+.paper-title { font-size: 1.1rem; font-weight: 600; color: #f8fafc; margin-bottom: 8px; }
+.paper-meta { font-size: 0.85rem; color: #64748b; margin-bottom: 10px; }
+.summary-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 14px; }
+@media (max-width: 640px) { .summary-grid { grid-template-columns: 1fr; } }
+.summary-item { background: rgba(15,23,42,0.5); border-radius: 10px; padding: 12px 14px;
+  border: 1px solid rgba(99,102,241,0.08); }
+.summary-label { font-size: 0.78rem; font-weight: 600; color: #818cf8; margin-bottom: 4px; }
+.summary-text { font-size: 0.88rem; color: #cbd5e1; line-height: 1.6; }
+.paper-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+.tag { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: 500; }
+.tag-agent { background: rgba(16,185,129,0.12); color: #34d399; }
+.tag-llm { background: rgba(99,102,241,0.12); color: #818cf8; }
+.tag-multimodal { background: rgba(244,114,182,0.12); color: #f472b6; }
+.tag-world { background: rgba(251,191,36,0.12); color: #fbbf24; }
+.tag-robot { background: rgba(251,146,60,0.12); color: #fb923c; }
+.tag-rl { background: rgba(45,212,191,0.12); color: #2dd4bf; }
+.tag-benchmark { background: rgba(34,211,238,0.12); color: #22d3ee; }
+.tag-vla { background: rgba(59,130,246,0.12); color: #60a5fa; }
+.tag-memory { background: rgba(192,132,252,0.12); color: #c084fc; }
+.tag-reasoning { background: rgba(132,204,22,0.12); color: #a3e635; }
+.tag-data { background: rgba(250,204,21,0.12); color: #facc15; }
+.tag-infra { background: rgba(167,139,250,0.12); color: #a78bfa; }
+.tag-3d { background: rgba(148,163,184,0.12); color: #94a3b8; }
+.tag-vlm { background: rgba(56,189,248,0.12); color: #38bdf8; }
+.tag-tool { background: rgba(52,211,153,0.12); color: #34d399; }
+.hot-badge { display: inline; margin-right: 4px; }
+.info-card { background: rgba(30,41,59,0.5); border: 1px solid rgba(99,102,241,0.1);
+  border-radius: 14px; padding: 20px 24px; margin-bottom: 14px; }
+.paper-summary { font-size: 0.88rem; color: #cbd5e1; line-height: 1.6; margin-bottom: 12px; }
+.paper-links { display: flex; flex-wrap: wrap; gap: 10px; }
+.paper-links a { display: inline-block; padding: 5px 14px; background: rgba(99,102,241,0.12);
+  color: #818cf8; text-decoration: none; border-radius: 8px; font-size: 0.82rem; transition: background 0.2s; }
+.paper-links a:hover { background: rgba(99,102,241,0.25); }
+footer { text-align: center; color: #475569; font-size: 0.82rem; padding: 40px 20px;
+  border-top: 1px solid rgba(99,102,241,0.1); margin-top: 40px; }
+.stats { display: flex; justify-content: center; gap: 24px; margin-top: 16px; flex-wrap: wrap; }
+.stat-item { display: flex; align-items: center; gap: 6px; font-size: 0.85rem; color: #94a3b8; }
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>小小志AI日报</h1>
+    <div class="date">2026年9月10日 · 星期四</div>
+    <div class="subtitle">关注：VLA · Robotics · World Model · LLM · Multimodal · Agent</div>
+    <div class="stats">
+      <span class="stat-item">📝 论文 16（arXiv 8 + HF 热门 8）</span>
+      <span class="stat-item">🤗 模型发布 0</span>
+      <span class="stat-item">🔁 跨日去重移除 0</span>
+    </div>
+  </header>
+
+  <div class="highlight-banner">
+    <div class="hl-title">🔥 今日看点</div>
+    <div class="hl-text">今日共 16 篇论文（arXiv 8 + HF 热门 8）与 2 条 OpenAI 机构动态。世界模型方向，Programmable World Model 提出可编程框架与 CombatStateBench 基准，DUET-DINO 做跨视角动作条件世界建模，Semigroup-JEPA 以语义群约束实现零样本物理泛化。机器人方向，Show-Harness 证明纯视觉-语言模型智能体即可操控机器人，OpenWAM 与 GE-Act 2.0 推进世界-动作模型预训练与规模化，DriveZero 以闭环学习超越人类示范。智能体方向，NeoHorse-1 探索递归自改进，Omni Interaction Agent 构建全模态交互框架。多模态方向，AuK 开源语音生成编辑基础模型，Marigold V2 刷新单目深度估计。</div>
+  </div>
+
+  <section class="section">
+    <h2 class="section-title">🌍 World Model · 世界模型</h2>
+
+    <div class="paper-card">
+      <div class="paper-title">Programmable World Model</div>
+      <div class="paper-meta">arXiv 2609 · World Model · Alaya Lab</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出可编程的世界模型框架，将场景机制与动力学以模块化方式组合，支持交互式生成可控视频。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">发布轻量级基准 CombatStateBench，用于评测世界模型在状态推演与可控生成上的能力。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">关键指标达 94% 与 98%，在状态一致性与生成质量上表现突出。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属世界模型/动作生成方向，建议关注预测精度、动作可控性与 Sim-to-Real 迁移。</div></div>
+      </div>
+      <div class="paper-tags"><span class="tag tag-world">World Model</span><span class="tag tag-vla">Controllable</span></div>
+      <div class="paper-links"><a href="https://arxiv.org/abs/2609.10540">arXiv</a><a href="https://arxiv.org/pdf/2609.10540">PDF</a><a href="https://alaya-lab.github.io/pwm">Project</a><a href="https://github.com/AlayaLab/pwm">Code</a></div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">DUET-DINO: Simultaneous Cross-View World Modeling for Latent Planning in Robot Manipulation</div>
+      <div class="paper-meta">arXiv 2609 · World Model · 跨视角世界模型</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">构建动作条件化的跨视角世界模型，在隐空间内联合建模多视角未来预测。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 DUET-DINO，实现跨视角同步世界建模，支撑机器人操作的潜空间规划。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">关键指标达 92%、72.5% 与 60.0%，在预测与规划任务上表现良好。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属世界模型/动作生成方向，建议关注预测精度、动作可控性与 Sim-to-Real 迁移。</div></div>
+      </div>
+      <div class="paper-tags"><span class="tag tag-world">World Model</span><span class="tag tag-robot">Manipulation</span></div>
+      <div class="paper-links"><a href="https://arxiv.org/abs/2609.10506">arXiv</a><a href="https://arxiv.org/pdf/2609.10506">PDF</a><a href="https://utn-air.github.io/DUET-DINO">Project</a></div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">Semigroup-JEPA: Latent Dynamics Consistency for Zero-Shot Physics Generalization</div>
+      <div class="paper-meta">arXiv 2609 · World Model · 物理泛化</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">以联合嵌入预测架构构建世界模型，用语义群约束保持潜空间动力学一致性。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 Semigroup-JEPA，通过潜空间动力学一致性实现零样本物理泛化。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在预测与规划任务上验证有效性，展示跨物理场景的迁移能力。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属世界模型/动作生成方向，建议关注预测精度、动作可控性与 Sim-to-Real 迁移。</div></div>
+      </div>
+      <div class="paper-tags"><span class="tag tag-world">World Model</span><span class="tag tag-vla">JEPA</span></div>
+      <div class="paper-links"><a href="https://arxiv.org/abs/2609.10464">arXiv</a><a href="https://arxiv.org/pdf/2609.10464">PDF</a><a href="https://sg-jepa.github.io">Project</a></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">🦾 Robotics · 机器人</h2>
+
+    <div class="paper-card">
+      <div class="paper-title">Show-Harness: Just a VLM Agent Can Play Robots</div>
+      <div class="paper-meta">arXiv 2609 · Robotics · 视觉-语言模型</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">以纯视觉-语言模型智能体驱动机器人，将任务演示转化为可执行的操控策略。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 Show-Harness 框架，具备零样本与鲁棒特性，无需针对机器人专门微调。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在多种操作与抓取任务上验证有效性，展示通用视觉模型的具身潜力。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属 VLA/具身控制方向，建议关注任务泛化、动作表达与真机验证结果。</div></div>
+      </div>
+      <div class="paper-tags"><span class="tag tag-robot">Robotics</span><span class="tag tag-vlm">VLM</span></div>
+      <div class="paper-links"><a href="https://arxiv.org/abs/2609.10522">arXiv</a><a href="https://arxiv.org/pdf/2609.10522">PDF</a><a href="https://showlab.github.io/Show-Harness">Project</a></div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">Coastal Environment Generation with HoloOcean</div>
+      <div class="paper-meta">arXiv 2609 · Robotics · 海洋仿真</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">基于算法生成沿海海域环境，为水下与水面机器人提供可配置的仿真场景。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 HoloOcean 环境生成方案，以安全低成本方式替代真实海洋试验。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在环境生成任务上验证有效性，展示对机器人仿真训练的支持。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属机器人算法与控制方向，建议重点看实验设置、基线对比与真实部署条件。</div></div>
+      </div>
+      <div class="paper-tags"><span class="tag tag-robot">Robotics</span><span class="tag tag-rl">Simulation</span></div>
+      <div class="paper-links"><a href="https://arxiv.org/abs/2609.10484">arXiv</a><a href="https://arxiv.org/pdf/2609.10484">PDF</a></div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">OpenWAM: An Open, Modular Exploration Towards Systematic World-Action Model Pretraining</div>
+      <div class="paper-meta">HF 热门 2609 · Robotics · 世界-动作模型</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">以开放模块化框架系统性预训练世界-动作模型，统一感知与操控表征。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 World-Action 统一架构，以开源模块化方式降低预训练门槛。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在推理与操作抓取任务上验证有效性，展示预训练带来的迁移收益。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属机器人算法与控制方向，建议重点看实验设置、基线对比与真实部署条件。</div></div>
+      </div>
+      <div class="paper-tags"><span class="tag tag-robot">Robotics</span><span class="tag tag-world">World-Action</span></div>
+      <div class="paper-links"><a href="https://arxiv.org/abs/2609.07398">arXiv</a><a href="https://arxiv.org/pdf/2609.07398">PDF</a><a href="https://openwam-official.github.io/">Project</a><a href="https://github.com/OpenWAM-Official/OpenWAM">Code</a></div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">GE-Act 2.0: Pretraining and Scaling a World-Action Model for Robotic Manipulation</div>
+      <div class="paper-meta">HF 热门 2609 · Robotics · 世界-动作模型</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">通过预训练与规模化训练世界-动作模型，面向机器人操作任务统一建模。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 GE-Act 2.0 的世界-动作架构，具备零样本特性，支持快速迁移。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">关键指标为 17.1%、44.1%、13.4% 与 31.1%，在操作任务上表现突出。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属机器人算法与控制方向，建议重点看实验设置、基线对比与真实部署条件。</div></div>
+      </div>
+      <div class="paper-tags"><span class="tag tag-robot">Robotics</span><span class="tag tag-world">World-Action</span></div>
+      <div class="paper-links"><a href="https://arxiv.org/abs/2609.05588">arXiv</a><a href="https://arxiv.org/pdf/2609.05588">PDF</a><a href="https://ge-act-v2.github.io/">Project</a></div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">DriveZero: End-to-End Driving Beyond Human Demonstrations</div>
+      <div class="paper-meta">HF 热门 2609 · Robotics · 端到端驾驶</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">在动作端引入 DriveRL 闭环学习框架，让端到端驾驶超越人类示范数据。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 Test14-hard 评测集，具备端到端特性，聚焦极限驾驶场景。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在端到端驾驶任务上验证有效性，具体指标详见原文实验部分。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属机器人/自动驾驶方向，建议关注闭环学习、安全边界与真实道路表现。</div></div>
+      </div>
+      <div class="paper-tags"><span class="tag tag-robot">Robotics</span><span class="tag tag-rl">Driving</span></div>
+      <div class="paper-links"><a href="https://arxiv.org/abs/2609.06055">arXiv</a><a href="https://arxiv.org/pdf/2609.06055">PDF</a><a href="https://xiaomiautol3.github.io/DriveZero/">Project</a><a href="https://github.com/XiaomiAutoL3/DriveZero">Code</a></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">🧩 Agent · 智能体</h2>
+
+    <div class="paper-card">
+      <div class="paper-title">JarvisGUI: Towards Cross-Device GUI Agents with Dynamic Task Composition</div>
+      <div class="paper-meta">arXiv 2609 · Agent · 跨设备 GUI</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">构建跨设备图形界面智能体框架，将界面操作组合为动态可编排的任务流。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 JarvisGUI，具备轻量化与统一特性，面向真实多端界面交互场景。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">实验验证方法有效性，展示跨设备界面任务的组合执行能力。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属 Agent/工具使用方向，建议关注智能体架构、工具调用策略与端到端成功率。</div></div>
+      </div>
+      <div class="paper-tags"><span class="tag tag-agent">Agent</span><span class="tag tag-tool">GUI</span></div>
+      <div class="paper-links"><a href="https://arxiv.org/abs/2609.10451">arXiv</a><a href="https://arxiv.org/pdf/2609.10451">PDF</a></div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">NeoHorse-1: Towards Recursive Self-Improvement via Agentic Post-Training with Routing Harness</div>
+      <div class="paper-meta">HF 热门 2609 · Agent · 递归自改进</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">以智能体化后训练与路由机制驱动模型递归自改进，在训练闭环中迭代增强。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 NeoHorse-1，结合路由框架实现可控的递归式自我提升。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">关键模型规模覆盖 4B 与 9B，验证自改进路线的可行性与收益。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属 Agent/工具使用方向，建议关注智能体架构、工具调用策略与端到端成功率。</div></div>
+      </div>
+      <div class="paper-tags"><span class="tag tag-agent">Agent</span><span class="tag tag-vla">Self-Improvement</span></div>
+      <div class="paper-links"><a href="https://arxiv.org/abs/2609.08183">arXiv</a><a href="https://arxiv.org/pdf/2609.08183">PDF</a><a href="https://huggingface.co/collections/TokenRhythm/neohorse-1">Project</a><a href="https://github.com/TokenRhythm/NeoHorse">Code</a></div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">Omni Interaction Agent Technical Report</div>
+      <div class="paper-meta">HF 热门 2609 · Agent · 全模态交互</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">构建全模态交互智能体架构，将感知、决策与执行统一在端到端框架内。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 Cerebellum-Brain 结构，具备端到端、统一与鲁棒特性，协调多模态交互。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">实验验证方法有效性，展示全模态交互场景下的稳定表现。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属 Agent/工具使用方向，建议关注智能体架构、工具调用策略与端到端成功率。</div></div>
+      </div>
+      <div class="paper-tags"><span class="tag tag-agent">Agent</span><span class="tag tag-multimodal">Multimodal</span></div>
+      <div class="paper-links"><a href="https://arxiv.org/abs/2609.08977">arXiv</a><a href="https://arxiv.org/pdf/2609.08977">PDF</a><a href="https://omni-interaction-gander.github.io/Omni-Interaction-Agent/">Project</a><a href="https://github.com/Omni-Interaction-Gander/Omni-Interaction-Agent">Code</a></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">🧠 LLM · 大语言模型</h2>
+
+    <div class="paper-card">
+      <div class="paper-title">ConvMem: Convolutional Memory for Long-Context Reasoning</div>
+      <div class="paper-meta">arXiv 2609 · LLM · 长上下文记忆</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">用卷积式记忆机制增强大语言模型，在长上下文推理中保留与检索关键信息。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 ConvMem 与多核记忆结构，具备鲁棒特性，缓解长程依赖遗忘。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">实验验证方法有效性，展示长上下文推理在记忆结构上的收益。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属大语言模型/推理方向，建议关注训练范式、推理机制与基准表现。</div></div>
+      </div>
+      <div class="paper-tags"><span class="tag tag-llm">LLM</span><span class="tag tag-memory">Memory</span></div>
+      <div class="paper-links"><a href="https://arxiv.org/abs/2609.10441">arXiv</a><a href="https://arxiv.org/pdf/2609.10441">PDF</a></div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">Eliciting Weak-to-Strong Generalization with On-Policy Reverse Distillation</div>
+      <div class="paper-meta">HF 热门 2609 · LLM · 弱到强蒸馏</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">以同策略反向蒸馏在强弱模型间迁移能力，让弱监督激发强模型潜力。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出弱到强泛化机制，通过反向蒸馏对齐强弱模型的能力边界。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在生成任务上验证有效性，展示弱监督下强模型的泛化提升。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属大语言模型/蒸馏方向，建议关注蒸馏稳定性、能力对齐与基准表现。</div></div>
+      </div>
+      <div class="paper-tags"><span class="tag tag-llm">LLM</span><span class="tag tag-memory">Distillation</span></div>
+      <div class="paper-links"><a href="https://arxiv.org/abs/2609.08798">arXiv</a><a href="https://arxiv.org/pdf/2609.08798">PDF</a><a href="https://github.com/raymin0223/on_policy_reverse_distillation">Code</a></div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">IdeaAMBIG: Benchmarking Implementation-Critical Gaps in Research-Idea Specifications</div>
+      <div class="paper-meta">arXiv 2609 · LLM · 研究构思基准</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">构建研究构思基准，系统衡量科研想法在可落地实现层面存在的歧义与缺口。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 IdeaAMBIG 评测体系，聚焦"实现关键缺口"，让想法规格更可执行。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">关键指标为 9.6%、80.6%、14% 与 98%，覆盖歧义识别与补全率。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属科研自动化/评测方向，建议关注基准设计、可复现性与对智能体研究的启发。</div></div>
+      </div>
+      <div class="paper-tags"><span class="tag tag-llm">LLM</span><span class="tag tag-benchmark">Benchmark</span></div>
+      <div class="paper-links"><a href="https://arxiv.org/abs/2609.10539">arXiv</a><a href="https://arxiv.org/pdf/2609.10539">PDF</a></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">🎨 Multimodal · 多模态</h2>
+
+    <div class="paper-card">
+      <div class="paper-title">AuK Technical Report: An Open-Source Foundational Model for Speech Generation and Editing</div>
+      <div class="paper-meta">HF 热门 2609 · Multimodal · 语音生成</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">以开源基础模型统一语音生成与编辑，结合大语言模型训练与强化学习。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 AuK-Flash，具备多模态、统一与零样本特性，覆盖语音创作全流程。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在语音生成与编辑任务上验证有效性，展示开源模型的实用能力。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属多模态方向，建议关注跨模态对齐方式、数据规模与下游任务表现。</div></div>
+      </div>
+      <div class="paper-tags"><span class="tag tag-multimodal">Multimodal</span><span class="tag tag-vlm">Speech</span></div>
+      <div class="paper-links"><a href="https://arxiv.org/abs/2609.08936">arXiv</a><a href="https://arxiv.org/pdf/2609.08936">PDF</a><a href="https://auk-project.github.io/">Project</a><a href="https://github.com/Tencent-Hunyuan/AuK">Code</a></div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-title">Marigold V2: Revisiting Diffusion Transformers for Monocular Depth Estimation</div>
+      <div class="paper-meta">HF 热门 2609 · Multimodal · 单目深度估计</div>
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">以扩散 Transformer 重新审视单目深度估计，重构架构、训练与微调流程。</div></div>
+        <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出基于 Sinkhorn 的优化机制，提升深度预测的一致性与精度。</div></div>
+        <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">关键指标达 26%，在单目深度估计上展示明显改进。</div></div>
+        <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属多模态/视觉方向，建议关注深度精度、跨域泛化与下游应用表现。</div></div>
+      </div>
+      <div class="paper-tags"><span class="tag tag-multimodal">Multimodal</span><span class="tag tag-3d">Depth</span></div>
+      <div class="paper-links"><a href="https://arxiv.org/abs/2609.08084">arXiv</a><a href="https://arxiv.org/pdf/2609.08084">PDF</a><a href="https://hf.co/spaces/huawei-bayerlab/marigold-v2-web">Project</a><a href="https://github.com/huawei-bayerlab/marigold-v2">Code</a></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">🏢 行业动态 · 机构发布</h2>
+
+    <div class="info-card">
+      <div class="paper-title">GPT-6 Astra: The next generation in intelligence for work</div>
+      <div class="paper-summary">OpenAI 发布 GPT-6 Astra，定位为面向工作的下一代智能，强调在生产力场景中的能力提升。</div>
+      <div class="paper-links"><a href="https://openai.com/index/gpt-6-astra-next-generation-work/">来源</a></div>
+    </div>
+
+    <div class="info-card">
+      <div class="paper-title">Paul Christiano joins OpenAI Foundation Board</div>
+      <div class="paper-summary">OpenAI 宣布 Paul Christiano 加入 OpenAI 基金会董事会，强化其在安全与对齐领域的治理。</div>
+      <div class="paper-links"><a href="https://openai.com/index/paul-christiano-joins-openai-foundation-board/">来源</a></div>
+    </div>
+  </section>
+
+  <footer>
+    <p>小小志AI日报 · 自动生成于 2026-09-10</p>
+    <p>数据来源：daily_ai_report.py · 关注 VLA / Robotics / World Model / LLM / Multimodal / Agent</p>
+  </footer>
+</div>
+</body>
+</html>
