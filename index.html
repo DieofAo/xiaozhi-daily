@@ -658,6 +658,171 @@
 <script>
 // ===== DATA =====
 const PAPERS_DB = [
+    // === 2026-09-11 ===
+    {
+        date: "2026-09-11",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "SenseNova-U1.5: Towards Native Unified Visual Intelligence",
+        venue: "arXiv 2609 · Multimodal · OpenSenseNova",
+        summary: "🔬 技术路线: 提出统一多模态视觉智能模型 SenseNova-U1.5，以 8B 参数规模原生支持图像与文本的统一理解与生成，上下文窗口达 4K，通过架构统一与蒸馏训练实现跨模态对齐。 | 💡 创新点: 强调\"原生统一\"的视觉智能路线，将视觉理解与生成整合到单一端到端框架，而非多模型拼接，降低多模态任务的流水线复杂度。 | 📊 实验效果: 以 8B 规模与 4K 上下文部署，关键指标标注为 8B、4K，配套代码已在 OpenSenseNova 仓库开源。 | ⭐ 整体评价: 属多模态方向，建议关注跨模态对齐方式、训练数据规模与下游视觉-语言任务的真实表现。",
+        tags: [["Multimodal","green"],["VLM","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.11929"],["PDF","https://arxiv.org/pdf/2609.11929"],["Code","https://github.com/OpenSenseNova/SenseNova-U1"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出统一多模态视觉智能模型 SenseNova-U1.5，以 8B 参数规模原生支持图像与文本的统一理解与生成，上下文窗口达 4K，通过架构统一与蒸馏训练实现跨模态对齐。"},{"label":"💡 创新点","text":"强调\"原生统一\"的视觉智能路线，将视觉理解与生成整合到单一端到端框架，而非多模型拼接，降低多模态任务的流水线复杂度。"},{"label":"📊 实验效果","text":"以 8B 规模与 4K 上下文部署，关键指标标注为 8B、4K，配套代码已在 OpenSenseNova 仓库开源。"},{"label":"⭐ 整体评价","text":"属多模态方向，建议关注跨模态对齐方式、训练数据规模与下游视觉-语言任务的真实表现。"}]
+    },
+    {
+        date: "2026-09-11",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "Can Edge-Deployable Vision-Language Models Identify Species?",
+        venue: "arXiv 2609 · Multimodal · Qwen3-VL",
+        summary: "🔬 技术路线: 研究边缘可部署的视觉-语言模型（基于 Qwen3-VL，8B 规模）在物种识别任务上的可行性，面向低算力设备的实际落地场景。 | 💡 创新点: 验证轻量级多模态模型在生物多样性与物种识别场景的鲁棒性，相较基线有显著提升，证明边缘端模型具备实用识别能力。 | 📊 实验效果: 在物种识别基准上取得 9.6% 的提升与 26.6、59.2 个百分点的增益，显示出边缘端 8B 视觉-语言模型的实用价值。 | ⭐ 整体评价: 属多模态方向，建议关注模型压缩、跨模态对齐与真实边缘硬件上的推理效率。",
+        tags: [["Multimodal","green"],["VLM","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.11916"],["PDF","https://arxiv.org/pdf/2609.11916"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"研究边缘可部署的视觉-语言模型（基于 Qwen3-VL，8B 规模）在物种识别任务上的可行性，面向低算力设备的实际落地场景。"},{"label":"💡 创新点","text":"验证轻量级多模态模型在生物多样性与物种识别场景的鲁棒性，相较基线有显著提升，证明边缘端模型具备实用识别能力。"},{"label":"📊 实验效果","text":"在物种识别基准上取得 9.6% 的提升与 26.6、59.2 个百分点的增益，显示出边缘端 8B 视觉-语言模型的实用价值。"},{"label":"⭐ 整体评价","text":"属多模态方向，建议关注模型压缩、跨模态对齐与真实边缘硬件上的推理效率。"}]
+    },
+    {
+        date: "2026-09-11",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "EVPeriscope: Extended Perception across Aerial and Ground Vehicles with Event-based Propeller Tracking",
+        venue: "arXiv 2609 · Robotics · 空地协同",
+        summary: "🔬 技术路线: 针对空地协同场景，提出基于事件相机螺旋桨跟踪的相对定位方法，实现空中飞行器与地面车辆之间的鲁棒相对位姿估计。 | 💡 创新点: 利用事件相机高时间分辨率特性追踪旋翼螺旋桨，在遮挡与运动模糊下仍能稳定估计空地相对位姿，扩展无人机对地面平台的感知范围。 | 📊 实验效果: 在空地相对定位任务上验证有效性，相比依赖传统帧相机的方法在动态场景下更稳健，配套项目主页已公开。 | ⭐ 整体评价: 属机器人感知与导航方向，建议重点看实验设置、基线对比与真实室外部署条件。",
+        tags: [["Robotics","green"],["Perception","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.11920"],["PDF","https://arxiv.org/pdf/2609.11920"],["Project","https://ongdexter.github.io/evperiscope"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"针对空地协同场景，提出基于事件相机螺旋桨跟踪的相对定位方法，实现空中飞行器与地面车辆之间的鲁棒相对位姿估计。"},{"label":"💡 创新点","text":"利用事件相机高时间分辨率特性追踪旋翼螺旋桨，在遮挡与运动模糊下仍能稳定估计空地相对位姿，扩展无人机对地面平台的感知范围。"},{"label":"📊 实验效果","text":"在空地相对定位任务上验证有效性，相比依赖传统帧相机的方法在动态场景下更稳健，配套项目主页已公开。"},{"label":"⭐ 整体评价","text":"属机器人感知与导航方向，建议重点看实验设置、基线对比与真实室外部署条件。"}]
+    },
+    {
+        date: "2026-09-11",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "🤗 新模型发布：open-bird-robot-mujoco-ppo（artnfull）",
+        venue: "",
+        summary: "由 artnfull 发布的机器人强化学习模型，基于 MuJoCo 物理仿真与近端策略优化（PPO）训练鸟类机器人，面向具身控制与仿真到实物的迁移研究。",
+        tags: [],
+        links: [["HuggingFace","https://huggingface.co/artnfull/open-bird-robot-mujoco-ppo"]]
+    },
+    {
+        date: "2026-09-11",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Artificial Id: Drive and Persistent Alignment in Agentic AI",
+        venue: "arXiv 2609 · Agent · 对齐机制",
+        summary: "🔬 技术路线: 提出以\"人工标识\"驱动的智能体持久对齐机制，借助机制设计与策略约束让多智能体系统在长期运行中保持一致目标。 | 💡 创新点: 引入可扩展的对齐结构，将智能体的身份与目标建模为可追踪的状态，支持在复杂协作中维持持久对齐，避免目标漂移。 | 📊 实验效果: 实验验证了方法在保持智能体对齐上的有效性，相较未加约束的基线更稳定，具体数据详见原文。 | ⭐ 整体评价: 属 Agent/工具使用方向，建议关注智能体架构、对齐机制与端到端协作任务的成功率。",
+        tags: [["Agent","green"],["Alignment","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.11911"],["PDF","https://arxiv.org/pdf/2609.11911"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出以\"人工标识\"驱动的智能体持久对齐机制，借助机制设计与策略约束让多智能体系统在长期运行中保持一致目标。"},{"label":"💡 创新点","text":"引入可扩展的对齐结构，将智能体的身份与目标建模为可追踪的状态，支持在复杂协作中维持持久对齐，避免目标漂移。"},{"label":"📊 实验效果","text":"实验验证了方法在保持智能体对齐上的有效性，相较未加约束的基线更稳定，具体数据详见原文。"},{"label":"⭐ 整体评价","text":"属 Agent/工具使用方向，建议关注智能体架构、对齐机制与端到端协作任务的成功率。"}]
+    },
+    {
+        date: "2026-09-11",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Caption-once, Frames-on-Demand: Visual-Need Routing for Budget-Aware Agentic Long Video Understanding",
+        venue: "arXiv 2609 · Agent · 长视频理解",
+        summary: "🔬 技术路线: 面向长视频理解提出\"按需取帧\"的视觉需求路由机制，先生成一次全局描述，再按需选择性解码关键帧，控制算力预算。 | 💡 创新点: 提出轻量化长视频智能体路由框架，将描述生成与帧解码解耦，避免对整段视频均匀密集处理，显著节省上下文与计算开销。 | 📊 实验效果: 实验验证了预算受限下的长视频理解有效性，相较均匀采样基线在关键片段召回上更优，具体数据详见原文。 | ⭐ 整体评价: 属 Agent/工具使用方向，建议关注智能体取帧策略、工具调用与端到端长视频问答成功率。",
+        tags: [["Agent","green"],["Long Video","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.11899"],["PDF","https://arxiv.org/pdf/2609.11899"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"面向长视频理解提出\"按需取帧\"的视觉需求路由机制，先生成一次全局描述，再按需选择性解码关键帧，控制算力预算。"},{"label":"💡 创新点","text":"提出轻量化长视频智能体路由框架，将描述生成与帧解码解耦，避免对整段视频均匀密集处理，显著节省上下文与计算开销。"},{"label":"📊 实验效果","text":"实验验证了预算受限下的长视频理解有效性，相较均匀采样基线在关键片段召回上更优，具体数据详见原文。"},{"label":"⭐ 整体评价","text":"属 Agent/工具使用方向，建议关注智能体取帧策略、工具调用与端到端长视频问答成功率。"}]
+    },
+    {
+        date: "2026-09-11",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "AgentGrad: Intervention-guided Prompt Optimization for Multi Agent Systems",
+        venue: "HF 热门 2609 · Agent · 提示词优化",
+        summary: "🔬 技术路线: 面向多智能体系统提出干预引导的提示词优化方法 AgentGrad，通过梯度式干预定位并改进对协作影响最大的提示。 | 💡 创新点: 提出干预引导优化框架，将提示词优化视为可干预的过程，自动识别多智能体中影响最大的提示并迭代改进。 | 📊 实验效果: 实验验证了方法在多智能体协作任务上的有效性，相较手工提示与随机优化更稳定，具体数据详见原文。 | ⭐ 整体评价: 属 Agent/工具使用方向，建议关注智能体架构、提示优化策略与端到端成功率。",
+        tags: [["Agent","green"],["Prompt","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.08572"],["PDF","https://arxiv.org/pdf/2609.08572"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"面向多智能体系统提出干预引导的提示词优化方法 AgentGrad，通过梯度式干预定位并改进对协作影响最大的提示。"},{"label":"💡 创新点","text":"提出干预引导优化框架，将提示词优化视为可干预的过程，自动识别多智能体中影响最大的提示并迭代改进。"},{"label":"📊 实验效果","text":"实验验证了方法在多智能体协作任务上的有效性，相较手工提示与随机优化更稳定，具体数据详见原文。"},{"label":"⭐ 整体评价","text":"属 Agent/工具使用方向，建议关注智能体架构、提示优化策略与端到端成功率。"}]
+    },
+    {
+        date: "2026-09-11",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "T1: Terminal Agent Reinforcement Learning for Long-Horizon Tasks",
+        venue: "HF 热门 2609 · Agent · 腾讯混元",
+        summary: "🔬 技术路线: 由腾讯混元提出，用强化学习训练终端智能体 T1 完成长程任务，结合混合专家结构处理长周期交互。 | 💡 创新点: 提出混合专家等机制支撑长程终端智能体，将强化学习用于终端操作任务的策略学习，面向长跨度目标规划。 | 📊 实验效果: 关键指标标注 43.8%、64.0%、27.9% 与 122B 规模，在长程终端任务上相较基线有显著提升。 | ⭐ 整体评价: 属大语言模型/智能体方向，建议关注训练范式、推理机制与长程任务 benchmark 表现。",
+        tags: [["Agent","green"],["RL","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.11042"],["PDF","https://arxiv.org/pdf/2609.11042"],["Project","https://jyyang26.github.io/t1/"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"由腾讯混元提出，用强化学习训练终端智能体 T1 完成长程任务，结合混合专家结构处理长周期交互。"},{"label":"💡 创新点","text":"提出混合专家等机制支撑长程终端智能体，将强化学习用于终端操作任务的策略学习，面向长跨度目标规划。"},{"label":"📊 实验效果","text":"关键指标标注 43.8%、64.0%、27.9% 与 122B 规模，在长程终端任务上相较基线有显著提升。"},{"label":"⭐ 整体评价","text":"属大语言模型/智能体方向，建议关注训练范式、推理机制与长程任务 benchmark 表现。"}]
+    },
+    {
+        date: "2026-09-11",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "SWE-Bench Pro Verified: A Reliable Benchmark for Software Engineering Agents",
+        venue: "HF 热门 2609 · Agent · 上海人工智能实验室",
+        summary: "🔬 技术路线: 由上海人工智能实验室提出 SWE-Bench Pro Verified，构建更可靠的软件工程智能体基准，强化测试与评估流程。 | 💡 创新点: 提出经过校验的软件工程智能体基准，针对原有基准的噪声与不可靠问题做筛选与验证，提升评测可信度。 | 📊 实验效果: 实验验证了基准在区分智能体能力上的有效性，相较原版更能稳定反映真实工程表现，具体数据详见原文。 | ⭐ 整体评价: 属 Agent/工具使用方向，建议关注智能体架构、代码修复策略与端到端工程任务成功率。",
+        tags: [["Agent","green"],["Benchmark","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.08149"],["PDF","https://arxiv.org/pdf/2609.08149"],["Project","https://agent-compass.mintlify.app/en/user_guide/modules/benchmarks/swebench_pro_verified"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"由上海人工智能实验室提出 SWE-Bench Pro Verified，构建更可靠的软件工程智能体基准，强化测试与评估流程。"},{"label":"💡 创新点","text":"提出经过校验的软件工程智能体基准，针对原有基准的噪声与不可靠问题做筛选与验证，提升评测可信度。"},{"label":"📊 实验效果","text":"实验验证了基准在区分智能体能力上的有效性，相较原版更能稳定反映真实工程表现，具体数据详见原文。"},{"label":"⭐ 整体评价","text":"属 Agent/工具使用方向，建议关注智能体架构、代码修复策略与端到端工程任务成功率。"}]
+    },
+    {
+        date: "2026-09-11",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "PARSER: Read in Parallel, Reason in Depth for Long-Context LLM Agents",
+        venue: "HF 热门 2609 · Agent · 长上下文",
+        summary: "🔬 技术路线: 提出 PARSER 长上下文智能体框架，采用\"并行读取、深度推理\"策略处理超长文档，结合强化学习优化算力分配。 | 💡 创新点: 提出并行读取与深度推理解耦的框架，让智能体先并行扫描全文再重点推理，避免对超长上下文串行处理的低效。 | 📊 实验效果: 关键指标标注 11x 加速、7K 至 896K 上下文、4B 规模，在长上下文任务上相较串行读取有明显提速与提升。 | ⭐ 整体评价: 属大语言模型/智能体方向，建议关注训练范式、长上下文推理机制与 benchmark 表现。",
+        tags: [["Agent","green"],["Long Context","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.06702"],["PDF","https://arxiv.org/pdf/2609.06702"],["Project","https://cuhk-parser.github.io/"],["Code","https://github.com/cuhk-parser/PARSER"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出 PARSER 长上下文智能体框架，采用\"并行读取、深度推理\"策略处理超长文档，结合强化学习优化算力分配。"},{"label":"💡 创新点","text":"提出并行读取与深度推理解耦的框架，让智能体先并行扫描全文再重点推理，避免对超长上下文串行处理的低效。"},{"label":"📊 实验效果","text":"关键指标标注 11x 加速、7K 至 896K 上下文、4B 规模，在长上下文任务上相较串行读取有明显提速与提升。"},{"label":"⭐ 整体评价","text":"属大语言模型/智能体方向，建议关注训练范式、长上下文推理机制与 benchmark 表现。"}]
+    },
+    {
+        date: "2026-09-11",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "MindTopo: Can Foundation Models Reason in Topological Space?",
+        venue: "arXiv 2609 · LLM · Qwen3-VL-2B",
+        summary: "🔬 技术路线: 探究基础模型（基于 Qwen3-VL-2B-Instruct，2B 规模）在拓扑空间中的推理能力，将空间拓扑结构引入大模型推理。 | 💡 创新点: 提出 MindTopo 评测与生成框架，检验模型能否在拓扑而非欧氏空间中完成推理，拓展了基础模型的空间认知边界。 | 📊 实验效果: 以 2B 规模模型验证拓扑推理可行性，配套项目主页已公开，关键指标标注为 2B。 | ⭐ 整体评价: 属大语言模型/推理方向，建议关注训练范式、推理机制与拓扑类基准表现。",
+        tags: [["LLM","green"],["Reasoning","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.11900"],["PDF","https://arxiv.org/pdf/2609.11900"],["Project","https://mind-topo.github.io/"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"探究基础模型（基于 Qwen3-VL-2B-Instruct，2B 规模）在拓扑空间中的推理能力，将空间拓扑结构引入大模型推理。"},{"label":"💡 创新点","text":"提出 MindTopo 评测与生成框架，检验模型能否在拓扑而非欧氏空间中完成推理，拓展了基础模型的空间认知边界。"},{"label":"📊 实验效果","text":"以 2B 规模模型验证拓扑推理可行性，配套项目主页已公开，关键指标标注为 2B。"},{"label":"⭐ 整体评价","text":"属大语言模型/推理方向，建议关注训练范式、推理机制与拓扑类基准表现。"}]
+    },
+    {
+        date: "2026-09-11",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Nuha-Speech: Building General-Purpose Arabic Speech-LLMs",
+        venue: "arXiv 2609 · LLM · 语音",
+        summary: "🔬 技术路线: 构建面向阿拉伯语的通用语语音大语言模型 Nuha-Speech，结合大语言模型、训练与微调流程，处理阿拉伯语语音理解与生成。 | 💡 创新点: 提出 Nuha-Speech 多任务阿拉伯语语音框架，覆盖语音识别、合成与理解，针对阿拉伯语方言多样的特点做专门优化。 | 📊 实验效果: 实验验证了模型在阿拉伯语语音任务上的有效性，相较通用基线更适配阿拉伯语场景，具体数据详见原文。 | ⭐ 整体评价: 属大语言模型/语音方向，建议关注训练数据覆盖、方言鲁棒性与端到端语音任务表现。",
+        tags: [["LLM","green"],["Speech","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.11892"],["PDF","https://arxiv.org/pdf/2609.11892"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"构建面向阿拉伯语的通用语语音大语言模型 Nuha-Speech，结合大语言模型、训练与微调流程，处理阿拉伯语语音理解与生成。"},{"label":"💡 创新点","text":"提出 Nuha-Speech 多任务阿拉伯语语音框架，覆盖语音识别、合成与理解，针对阿拉伯语方言多样的特点做专门优化。"},{"label":"📊 实验效果","text":"实验验证了模型在阿拉伯语语音任务上的有效性，相较通用基线更适配阿拉伯语场景，具体数据详见原文。"},{"label":"⭐ 整体评价","text":"属大语言模型/语音方向，建议关注训练数据覆盖、方言鲁棒性与端到端语音任务表现。"}]
+    },
+    {
+        date: "2026-09-11",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "WearableQA: A Benchmark for Health Reasoning over Real-World Wearable Data",
+        venue: "HF 热门 2609 · LLM · Meta",
+        summary: "🔬 技术路线: 由 Meta 提出 WearableQA 基准，检验大语言模型在真实可穿戴设备数据上的健康推理能力，配套代码已开源。 | 💡 创新点: 提出面向可穿戴时序数据的健康推理基准，覆盖连续监测信号到健康问答的推理链条，填补真实场景评测空白。 | 📊 实验效果: 关键指标标注 19.6%、72.9%、10%、60%，显示当前模型在真实可穿戴健康推理上仍有明显差距。 | ⭐ 整体评价: 属大语言模型/推理方向，建议关注训练范式、推理机制与健康类基准表现。",
+        tags: [["LLM","green"],["Benchmark","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.05405"],["PDF","https://arxiv.org/pdf/2609.05405"],["Code","https://github.com/facebookresearch/WearableQA"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"由 Meta 提出 WearableQA 基准，检验大语言模型在真实可穿戴设备数据上的健康推理能力，配套代码已开源。"},{"label":"💡 创新点","text":"提出面向可穿戴时序数据的健康推理基准，覆盖连续监测信号到健康问答的推理链条，填补真实场景评测空白。"},{"label":"📊 实验效果","text":"关键指标标注 19.6%、72.9%、10%、60%，显示当前模型在真实可穿戴健康推理上仍有明显差距。"},{"label":"⭐ 整体评价","text":"属大语言模型/推理方向，建议关注训练范式、推理机制与健康类基准表现。"}]
+    },
+    {
+        date: "2026-09-11",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "Scaling Automatic Research Agents via World Models",
+        venue: "HF 热门 2608 · World Model · UIUC",
+        summary: "🔬 技术路线: 用世界模型扩展自动化科研智能体，通过逆方差加权等方法将世界模型用于科研实验的规划与缩放，模型规模覆盖 4B 至 48B。 | 💡 创新点: 提出逆方差等机制，将世界模型引入科研智能体的实验缩放，使智能体能在仿真中预估实验收益并优先探索高价值方向。 | 📊 实验效果: 关键指标标注 4x 加速、4B 至 48B 规模，在自动化科研任务上相较无世界模型的基线有明显提升。 | ⭐ 整体评价: 属世界模型/具身控制方向，建议关注任务泛化、动作表达方式与真实实验验证结果。",
+        tags: [["World Model","green"],["Agent","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2608.12564"],["PDF","https://arxiv.org/pdf/2608.12564"],["Project","https://xiyuanyang45.github.io/WMRL/"],["Code","https://github.com/xiyuanyang45/WMRL"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"用世界模型扩展自动化科研智能体，通过逆方差加权等方法将世界模型用于科研实验的规划与缩放，模型规模覆盖 4B 至 48B。"},{"label":"💡 创新点","text":"提出逆方差等机制，将世界模型引入科研智能体的实验缩放，使智能体能在仿真中预估实验收益并优先探索高价值方向。"},{"label":"📊 实验效果","text":"关键指标标注 4x 加速、4B 至 48B 规模，在自动化科研任务上相较无世界模型的基线有明显提升。"},{"label":"⭐ 整体评价","text":"属世界模型/具身控制方向，建议关注任务泛化、动作表达方式与真实实验验证结果。"}]
+    },
+    {
+        date: "2026-09-11",
+        category: "Other",
+        categoryIcon: "📄",
+        title: "Biology-in-the-loop: Amortized Adaptive Hit Discovery in CRISPR Screens",
+        venue: "arXiv 2609 · Other · AI4Science",
+        summary: "🔬 技术路线: 提出\"生物在环\"的 CRISPR 筛选框架 AssayBench-Loop，将机器学习与湿实验迭代闭环，做 amortized 自适应命中发现。 | 💡 创新点: 提出 AssayBench-Loop 高效闭环筛选机制，用模型预测指导实验批次设计，降低筛选成本并加速候选命中发现。 | 📊 实验效果: 关键指标标注命中发现提升 27.7%、成本降低 5%，验证了闭环筛选相较静态筛选的高效性。 | ⭐ 整体评价: 属计算生物学/AI4Science 方向，建议关注模型-实验闭环设计、数据效率与真实生物实验验证。",
+        tags: [["Bio","green"],["AI4Science","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.11877"],["PDF","https://arxiv.org/pdf/2609.11877"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出\"生物在环\"的 CRISPR 筛选框架 AssayBench-Loop，将机器学习与湿实验迭代闭环，做 amortized 自适应命中发现。"},{"label":"💡 创新点","text":"提出 AssayBench-Loop 高效闭环筛选机制，用模型预测指导实验批次设计，降低筛选成本并加速候选命中发现。"},{"label":"📊 实验效果","text":"关键指标标注命中发现提升 27.7%、成本降低 5%，验证了闭环筛选相较静态筛选的高效性。"},{"label":"⭐ 整体评价","text":"属计算生物学/AI4Science 方向，建议关注模型-实验闭环设计、数据效率与真实生物实验验证。"}]
+    },
     // === 2026-09-10 ===
     {
         date: "2026-09-10",
@@ -24095,6 +24260,13 @@ const PAPERS_DB = [
 ];
 
 const DAILY_OVERVIEW = {
+    "2026-09-11": {
+        bannerTitle: "🔥 今日看点",
+        bannerSubtitle: "今日共 15 条动态（arXiv 8 + HF 热门 6 + HF 模型 1），覆盖多模态、机器人、智能体、语言模型与世界模型等方向。重点包括：EVPeriscope 用事件相机实现空地协同的相对定位；世界模型驱动的自动化科研智能体（WMRL）用逆方差加权将实验缩放加速 4 倍（4B 至 48B）；WearableQA 揭示当前大模型在真实可穿戴健康推理上仍有明显差距（关键指标 19.6% / 72.9%）；腾讯混元 T1 用强化学习训练长程终端智能体（关键指标 43.8% / 64.0%）。",
+        picks: ["Scaling Automatic Research Agents via World Models","SenseNova-U1.5: Towards Native Unified Visual Intelligence","AgentGrad: Intervention-guided Prompt Optimization for Multi Agent Systems","WearableQA: A Benchmark for Health Reasoning over Real-World Wearable Data","T1: Terminal Agent Reinforcement Learning for Long-Horizon Tasks"],
+        totalPapers: 14,
+        totalNews: 1
+    },
     "2026-09-10": {
         bannerTitle: "🔥 今日看点",
         bannerSubtitle: "今日共 16 篇论文（arXiv 8 + HF 热门 8）与 2 条 OpenAI 机构动态。世界模型方向，Programmable World Model 提出可编程框架与 CombatStateBench 基准，DUET-DINO 做跨视角动作条件世界建模，Semigroup-JEPA 以语义群约束实现零样本物理泛化。机器人方向，Show-Harness 证明纯视觉-语言模型智能体即可操控机器人，OpenWAM 与 GE-Act 2.0 推进世界-动作模型预训练与规模化，DriveZero 以闭环学习超越人类示范。智能体方向，NeoHorse-1 探索递归自改进，Omni Interaction Agent 构建全模态交互框架。多模态方向，AuK 开源语音生成编辑基础模型，Marigold V2 刷新单目深度估计。",
