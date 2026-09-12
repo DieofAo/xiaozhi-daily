@@ -658,6 +658,17 @@
 <script>
 // ===== DATA =====
 const PAPERS_DB = [
+    // === 2026-09-12 ===
+    {
+        date: "2026-09-12",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "Rapidly scaling online storage to serve over 1 billion ChatGPT users",
+        venue: "",
+        summary: "OpenAI 发布工程博客，介绍其在线存储系统如何快速扩展以支撑超过 10 亿 ChatGPT 用户的访问需求，分享了服务规模高速增长下的架构演进、容量规划与稳定性保障经验。",
+        tags: [],
+        links: [["来源","https://openai.com/index/scaling-storage-one-billion-users-part-one/"]]
+    },
     // === 2026-09-11 ===
     {
         date: "2026-09-11",
@@ -24260,6 +24271,13 @@ const PAPERS_DB = [
 ];
 
 const DAILY_OVERVIEW = {
+    "2026-09-12": {
+        bannerTitle: "🔥 今日看点",
+        bannerSubtitle: "今日 arXiv 检索未匹配到论文，HuggingFace 热门论文与模型源因网络超时未采集，X/Twitter 源仍不可用。全站仅收录 1 条 OpenAI 机构动态：其工程博客讲述在线存储系统如何快速扩展，以支撑超过 10 亿 ChatGPT 用户的访问需求，分享了大规模服务下的架构演进与容量规划经验。",
+        picks: [],
+        totalPapers: 0,
+        totalNews: 1
+    },
     "2026-09-11": {
         bannerTitle: "🔥 今日看点",
         bannerSubtitle: "今日共 15 条动态（arXiv 8 + HF 热门 6 + HF 模型 1），覆盖多模态、机器人、智能体、语言模型与世界模型等方向。重点包括：EVPeriscope 用事件相机实现空地协同的相对定位；世界模型驱动的自动化科研智能体（WMRL）用逆方差加权将实验缩放加速 4 倍（4B 至 48B）；WearableQA 揭示当前大模型在真实可穿戴健康推理上仍有明显差距（关键指标 19.6% / 72.9%）；腾讯混元 T1 用强化学习训练长程终端智能体（关键指标 43.8% / 64.0%）。",
