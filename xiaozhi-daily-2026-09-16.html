@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>小小志AI日报 - 2026年9月16日</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans SC', sans-serif;
+  background: #0a0e1a;
+  color: #e0e6f0;
+  line-height: 1.7;
+  min-height: 100vh;
+}
+.container { max-width: 960px; margin: 0 auto; padding: 40px 24px; }
+header { text-align: center; margin-bottom: 48px; padding: 40px 20px;
+  background: linear-gradient(135deg, rgba(59,130,246,0.08) 0%, rgba(139,92,246,0.08) 100%);
+  border-radius: 20px; border: 1px solid rgba(99,102,241,0.15); }
+header h1 { font-size: 2rem; background: linear-gradient(135deg, #60a5fa, #a78bfa);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 8px; }
+header .date { color: #94a3b8; font-size: 1rem; }
+header .subtitle { color: #64748b; font-size: 0.9rem; margin-top: 6px; }
+.highlight-banner { background: linear-gradient(135deg, rgba(249,115,22,0.1) 0%, rgba(234,179,8,0.08) 100%);
+  border: 1px solid rgba(249,115,22,0.2); border-radius: 14px; padding: 20px 24px; margin-bottom: 36px; }
+.hl-title { font-size: 1.1rem; font-weight: 700; color: #fb923c; margin-bottom: 8px; }
+.hl-text { font-size: 0.92rem; color: #cbd5e1; line-height: 1.7; }
+.section { margin-bottom: 40px; }
+.section-title { font-size: 1.4rem; color: #f1f5f9; margin-bottom: 20px; padding-bottom: 12px;
+  border-bottom: 1px solid rgba(99,102,241,0.2); }
+.paper-card { background: rgba(30,41,59,0.6); border: 1px solid rgba(99,102,241,0.12);
+  border-radius: 14px; padding: 24px; margin-bottom: 16px; transition: transform 0.2s, box-shadow 0.2s; }
+.paper-card:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(99,102,241,0.1);
+  border-color: rgba(99,102,241,0.3); }
+.paper-card.hot { border-color: rgba(249,115,22,0.25); background: rgba(30,41,59,0.7); }
+.paper-title { font-size: 1.1rem; font-weight: 600; color: #f8fafc; margin-bottom: 8px; }
+.paper-meta { font-size: 0.85rem; color: #64748b; margin-bottom: 10px; }
+.summary-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 14px; }
+@media (max-width: 640px) { .summary-grid { grid-template-columns: 1fr; } }
+.summary-item { background: rgba(15,23,42,0.5); border-radius: 10px; padding: 12px 14px;
+  border: 1px solid rgba(99,102,241,0.08); }
+.summary-label { font-size: 0.78rem; font-weight: 600; color: #818cf8; margin-bottom: 4px; }
+.summary-text { font-size: 0.88rem; color: #cbd5e1; line-height: 1.6; }
+.paper-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+.tag { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: 500; }
+.tag-agent { background: rgba(16,185,129,0.12); color: #34d399; }
+.tag-llm { background: rgba(99,102,241,0.12); color: #818cf8; }
+.tag-multimodal { background: rgba(244,114,182,0.12); color: #f472b6; }
+.tag-world { background: rgba(251,191,36,0.12); color: #fbbf24; }
+.tag-robot { background: rgba(251,146,60,0.12); color: #fb923c; }
+.tag-rl { background: rgba(45,212,191,0.12); color: #2dd4bf; }
+.tag-benchmark { background: rgba(34,211,238,0.12); color: #22d3ee; }
+.tag-vla { background: rgba(59,130,246,0.12); color: #60a5fa; }
+.tag-memory { background: rgba(192,132,252,0.12); color: #c084fc; }
+.tag-reasoning { background: rgba(132,204,22,0.12); color: #a3e635; }
+.tag-data { background: rgba(250,204,21,0.12); color: #facc15; }
+.tag-infra { background: rgba(167,139,250,0.12); color: #a78bfa; }
+.tag-3d { background: rgba(148,163,184,0.12); color: #94a3b8; }
+.tag-vlm { background: rgba(56,189,248,0.12); color: #38bdf8; }
+.tag-tool { background: rgba(52,211,153,0.12); color: #34d399; }
+.tag-bio { background: rgba(52,211,153,0.12); color: #34d399; }
+.tag-speech { background: rgba(56,189,248,0.12); color: #38bdf8; }
+.hot-badge { display: inline; margin-right: 4px; }
+.paper-links { display: flex; flex-wrap: wrap; gap: 10px; }
+.paper-links a { display: inline-block; padding: 5px 14px; background: rgba(99,102,241,0.12);
+  color: #818cf8; text-decoration: none; border-radius: 8px; font-size: 0.82rem; transition: background 0.2s; }
+.paper-links a:hover { background: rgba(99,102,241,0.25); }
+.info-card { background: rgba(30,41,59,0.6); border: 1px solid rgba(99,102,241,0.12);
+  border-radius: 14px; padding: 24px; margin-bottom: 16px; }
+.info-card .paper-summary { font-size: 0.9rem; color: #cbd5e1; line-height: 1.7; margin-bottom: 14px; }
+footer { text-align: center; color: #475569; font-size: 0.82rem; padding: 40px 20px;
+  border-top: 1px solid rgba(99,102,241,0.1); margin-top: 40px; }
+.stats { display: flex; justify-content: center; gap: 24px; margin-top: 16px; flex-wrap: wrap; }
+.stat-item { display: flex; align-items: center; gap: 6px; font-size: 0.85rem; color: #94a3b8; }
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>小小志AI日报</h1>
+    <div class="date">2026年9月16日 · 星期三</div>
+    <div class="subtitle">关注：VLA · Robotics · World Model · LLM · Multimodal · Agent</div>
+    <div class="stats">
+      <span class="stat-item">📝 论文 16</span>
+      <span class="stat-item">🤗 模型 0</span>
+      <span class="stat-item">🔁 跨日去重移除 0</span>
+    </div>
+  </header>
+
+  <div class="highlight-banner">
+    <div class="hl-title">🔥 今日看点</div>
+    <div class="hl-text">今日 arXiv 8 篇 + HuggingFace 热门 8 篇，共 16 条。机器人方向：PhysStream 将物理接地与场景记忆融入流式视频生成，实现细粒度动作控制；Dissecting Motion-Prior 剖析运动先验正则化在小样本机械臂插入上的作用（成功率 87.5%、86.3% 等）。Agent 方向集中涌现递归自我改进范式（ScienceBuddy、Dream-RSI、RSIAgent）与智能体超级智能探索（Atria Dawn）；LLM 方向聚焦选择性拒答与可验证社交推理，兼顾安全与可靠性。</div>
+  </div>
+
+<section class="section">
+  <h2 class="section-title">🧠 LLM · 大语言模型</h2>
+<div class="paper-card">
+  <div class="paper-title">When Should LLMs Abstain? Chain-of-Self-Questioning for Selective Risk Control</div>
+  <div class="paper-meta">arXiv 2026</div>
+  <div class="summary-grid">
+    <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">设计自我提问链式推理机制，让大模型在不确定时主动评估风险并选择拒答。</div></div>
+    <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出以自问自答方式量化置信度，并据此触发选择性拒答的风险控制思路。</div></div>
+    <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在风险可控拒答上取得 13.1%、8.9%、32.1%、86.9% 等关键指标表现。</div></div>
+    <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属 LLM 安全与可靠性方向，建议关注拒答边界与任务覆盖之间的实际折中。</div></div>
+  </div>
+  <div class="paper-tags"><span class="tag tag-llm">LLM</span><span class="tag tag-reasoning">Safety</span></div>
+  <div class="paper-links"><a href="https://arxiv.org/abs/2609.17516">arXiv</a> <a href="https://arxiv.org/pdf/2609.17516">PDF</a></div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">Verifiable Social Reasoning for LLM Assistants</div>
+  <div class="paper-meta">arXiv 2026</div>
+  <div class="summary-grid">
+    <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">面向社交推理任务构建可验证流程，提升大模型助手对社会情境的理解能力。</div></div>
+    <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出可验证社交推理框架，使助手的社交决策具备可核查的推理依据。</div></div>
+    <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在约 24k、21k 量级的社交推理数据上验证方法的有效性与规模。</div></div>
+    <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属 LLM 社交智能方向，建议关注可验证性对信任建立与安全落地的价值。</div></div>
+  </div>
+  <div class="paper-tags"><span class="tag tag-llm">LLM</span><span class="tag tag-reasoning">Social</span></div>
+  <div class="paper-links"><a href="https://arxiv.org/abs/2609.17496">arXiv</a> <a href="https://arxiv.org/pdf/2609.17496">PDF</a></div>
+</div>
+</section>
+
+<section class="section">
+  <h2 class="section-title">🦾 Robotics · 具身智能</h2>
+<div class="paper-card">
+  <div class="paper-title">PhysStream: Streaming Physics-Grounded Video Generation with Structured Scene Memory and Fine-Grained Motion Control</div>
+  <div class="paper-meta">arXiv 2026</div>
+  <div class="summary-grid">
+    <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">构建流式物理接地视频生成框架，结合结构化场景记忆与细粒度动作控制。</div></div>
+    <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 PhysStream，将物理一致性约束与场景记忆融入生成，实现可控编辑。</div></div>
+    <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在物理合理性与动作控制上取得 33%、12%、85% 等关键指标表现。</div></div>
+    <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属 Robotics 视频生成方向，建议关注物理保真度与真实机器人控制的迁移。</div></div>
+  </div>
+  <div class="paper-tags"><span class="tag tag-robot">Robotics</span><span class="tag tag-vla">Video</span></div>
+  <div class="paper-links"><a href="https://arxiv.org/abs/2609.17521">arXiv</a> <a href="https://arxiv.org/pdf/2609.17521">PDF</a> <a href="https://czzzzh.github.io/PhysStream">Project</a></div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">Dissecting Motion-Prior Regularization for Data-Scarce Robotic Insertion</div>
+  <div class="paper-meta">arXiv 2026</div>
+  <div class="summary-grid">
+    <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">剖析训练期运动先验正则化对数据稀缺机械臂插入任务的作用机理。</div></div>
+    <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出具备鲁棒性的运动先验正则化方法，缓解小样本插入任务的过拟合。</div></div>
+    <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在插入任务上取得 87.5%、86.3%、82.5%、83.8% 等成功率指标。</div></div>
+    <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属 Robotics 控制方向，与机械臂插拔实操强相关，建议关注真实部署泛化。</div></div>
+  </div>
+  <div class="paper-tags"><span class="tag tag-robot">Robotics</span><span class="tag tag-rl">Insertion</span></div>
+  <div class="paper-links"><a href="https://arxiv.org/abs/2609.17484">arXiv</a> <a href="https://arxiv.org/pdf/2609.17484">PDF</a></div>
+</div>
+</section>
+
+<section class="section">
+  <h2 class="section-title">🤖 Agent · 智能体</h2>
+<div class="paper-card">
+  <div class="paper-title">Agentic Societies Need a Social Harness</div>
+  <div class="paper-meta">arXiv 2026</div>
+  <div class="summary-grid">
+    <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">研究多智能体社会协作的架构设计，关注个体间的社会化协调与约束机制。</div></div>
+    <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出为智能体社会引入社交约束框架，规范多体协作中的角色与交互边界。</div></div>
+    <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在协作任务场景中验证框架有效性，具体量化指标详见原文。</div></div>
+    <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属 Agent 多体协作方向，建议关注社会规范的可扩展性与真实部署鲁棒性。</div></div>
+  </div>
+  <div class="paper-tags"><span class="tag tag-agent">Agent</span><span class="tag tag-tool">Social</span></div>
+  <div class="paper-links"><a href="https://arxiv.org/abs/2609.17527">arXiv</a> <a href="https://arxiv.org/pdf/2609.17527">PDF</a></div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">ScienceBuddy: Recursive-in-Recursive Self-Improvement for Interactive Scientific Agents</div>
+  <div class="paper-meta">arXiv 2026</div>
+  <div class="summary-grid">
+    <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">采用递归嵌套的自我改进范式，结合持续学习与强化学习训练科学智能体。</div></div>
+    <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 ScienceBuddy，以递归中递归机制让智能体在交互中迭代优化能力。</div></div>
+    <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在交互式科学任务上验证方法有效性，具体指标详见原项目主页。</div></div>
+    <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属 Agent 自改进方向，建议关注递归深度带来的稳定性与计算开销。</div></div>
+  </div>
+  <div class="paper-tags"><span class="tag tag-agent">Agent</span><span class="tag tag-reasoning">Self-Improvement</span></div>
+  <div class="paper-links"><a href="https://arxiv.org/abs/2609.17523">arXiv</a> <a href="https://arxiv.org/pdf/2609.17523">PDF</a> <a href="http://science-buddy.io">Link</a> <a href="https://github.com/Gen-Verse/ScienceBuddy-RSI">Code</a></div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">What Breaks Under Pruning in Smart Homes, and When? Evaluating LLM Degradation Across Architectures and Task Complexity</div>
+  <div class="paper-meta">arXiv 2026</div>
+  <div class="summary-grid">
+    <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">在智能家居场景量化裁剪大模型后的能力退化，覆盖多种架构与任务复杂度。</div></div>
+    <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出跨架构与任务复杂度的系统性剪枝退化评估框架。</div></div>
+    <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">实验验证了不同剪枝策略下模型退化差异，具体数据详见原文。</div></div>
+    <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属 Agent 端侧部署方向，建议关注剪枝后长尾任务的可靠性表现。</div></div>
+  </div>
+  <div class="paper-tags"><span class="tag tag-agent">Agent</span><span class="tag tag-infra">Pruning</span></div>
+  <div class="paper-links"><a href="https://arxiv.org/abs/2609.17515">arXiv</a> <a href="https://arxiv.org/pdf/2609.17515">PDF</a></div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">Atria Dawn: The Dawn of Agentic Superintelligence</div>
+  <div class="paper-meta">arXiv 2026 · Intern Large Models</div>
+  <div class="summary-grid">
+    <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">探索面向智能体超级智能的基础架构，结合语言模型与自动化辅助构建能力。</div></div>
+    <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 Atria Dawn 框架，以 AI 辅助方式推进自主智能体的能力跃迁。</div></div>
+    <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">社区开源预览版获 330 星关注，具体能力指标详见项目主页。</div></div>
+    <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属 Agent 超级智能方向，建议关注自主性与可控性之间的平衡设计。</div></div>
+  </div>
+  <div class="paper-tags"><span class="tag tag-agent">Agent</span><span class="tag tag-tool">Superintelligence</span></div>
+  <div class="paper-links"><a href="https://arxiv.org/abs/2609.15818">arXiv</a> <a href="https://arxiv.org/pdf/2609.15818">PDF</a> <a href="https://atria-asi.ai">Project</a> <a href="https://github.com/atria-asi/Atria-Dawn-Preview">Code</a></div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">ZGCM-1: A Fully Open and Extremely Efficient Foundation Model for Math and Agentic Search</div>
+  <div class="paper-meta">arXiv 2026 · ZGCAGI</div>
+  <div class="summary-grid">
+    <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">构建完全开源且高效的基础模型，统一支持数学推理与智能体搜索两类任务。</div></div>
+    <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 ZGCM-1，以端到端设计在单机环境下实现高效率推理与检索。</div></div>
+    <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在效率与上下文上取得 4.2 倍加速、7B 参数、256K 上下文、16K 检索表现。</div></div>
+    <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属 Agent 基础模型方向，开源且高效，建议关注数学与搜索的联合增益。</div></div>
+  </div>
+  <div class="paper-tags"><span class="tag tag-agent">Agent</span><span class="tag tag-llm">Foundation</span></div>
+  <div class="paper-links"><a href="https://arxiv.org/abs/2609.13356">arXiv</a> <a href="https://arxiv.org/pdf/2609.13356">PDF</a> <a href="https://mp.weixin.qq.com/s/kzScxJki8hY2IHIl32l5cQ">Project</a> <a href="https://github.com/zgcagi/ZGCM-1">Code</a></div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">Dream-RSI: Recursive Self-Improvement through Evolving Worlds</div>
+  <div class="paper-meta">arXiv 2026 · Google</div>
+  <div class="summary-grid">
+    <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">在演化世界中借助递归自我改进提升智能体能力，结合框架与算法设计。</div></div>
+    <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 Dream-RSI，以可扩展且轻量化的方式实现跨世界的自我迭代优化。</div></div>
+    <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">社区开源版获 52 星关注，具体改进幅度详见原文。</div></div>
+    <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属 Agent 自改进方向，建议关注演化环境的多样性与迭代稳定性。</div></div>
+  </div>
+  <div class="paper-tags"><span class="tag tag-agent">Agent</span><span class="tag tag-reasoning">RSI</span></div>
+  <div class="paper-links"><a href="https://arxiv.org/abs/2609.14858">arXiv</a> <a href="https://arxiv.org/pdf/2609.14858">PDF</a> <a href="https://dream-rsi.com/">Project</a> <a href="https://github.com/zhengkid/Dream-RSI">Code</a></div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">RSIAgent: Autonomous Exploration for Recursive Self-improvement in New Environments</div>
+  <div class="paper-meta">arXiv 2026 · AetherLabs-AI</div>
+  <div class="summary-grid">
+    <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">构建自主探索智能体，在新环境中通过递归自我改进持续提升适应能力。</div></div>
+    <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 RSIAgent 并引入 OSWorld-v2 评测环境，支撑开放场景的能力迭代。</div></div>
+    <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">社区开源版获 215 星关注，自主探索与改进效果详见原文。</div></div>
+    <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属 Agent 自改进方向，建议关注新环境探索效率与灾难性遗忘问题。</div></div>
+  </div>
+  <div class="paper-tags"><span class="tag tag-agent">Agent</span><span class="tag tag-tool">Exploration</span></div>
+  <div class="paper-links"><a href="https://arxiv.org/abs/2609.15364">arXiv</a> <a href="https://arxiv.org/pdf/2609.15364">PDF</a> <a href="https://aetherlabsai.github.io/RSIAgent/">Project</a> <a href="https://github.com/AetherLabsAI/RSIAgent">Code</a></div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">Discovery Foundation Models: Toward Open-Ended Discovery Intelligence</div>
+  <div class="paper-meta">arXiv 2026</div>
+  <div class="summary-grid">
+    <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">面向开放式科学发现，构建基础模型以自动化驱动假设生成与实验规划。</div></div>
+    <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 Dry-Lab，以统一框架支撑从文献到实验的开放式发现智能。</div></div>
+    <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">社区开源版获 7 星关注，发现流程的有效性详见项目主页。</div></div>
+    <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属 Agent 科学发现方向，建议关注发现结果的可靠性与可复现性。</div></div>
+  </div>
+  <div class="paper-tags"><span class="tag tag-agent">Agent</span><span class="tag tag-reasoning">Discovery</span></div>
+  <div class="paper-links"><a href="https://arxiv.org/abs/2609.15973">arXiv</a> <a href="https://arxiv.org/pdf/2609.15973">PDF</a> <a href="https://phai-labs.com/collaborate/">Project</a> <a href="https://github.com/Gen-Verse/DFM-Plans">Code</a></div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">BVB: Benchmarking Agentic Video Understanding via Programmatic Reconstruction in Blender</div>
+  <div class="paper-meta">arXiv 2026</div>
+  <div class="summary-grid">
+    <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">借助 Blender 程序化重建构建智能体视频理解基准，检验模型对视频结构的还原。</div></div>
+    <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 BVB 与 Blender-VideoBench，以程序化重建量化视频理解的可还原性。</div></div>
+    <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在视频理解基准上取得 53.7% 等关键指标表现。</div></div>
+    <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属 Agent 视频理解评测方向，建议关注重建指标对真实理解能力的反映度。</div></div>
+  </div>
+  <div class="paper-tags"><span class="tag tag-agent">Agent</span><span class="tag tag-benchmark">Benchmark</span></div>
+  <div class="paper-links"><a href="https://arxiv.org/abs/2609.15478">arXiv</a> <a href="https://arxiv.org/pdf/2609.15478">PDF</a> <a href="https://yoloytang.me/BVB">Project</a> <a href="https://github.com/yunlong10/BVB">Code</a></div>
+</div>
+</section>
+
+<section class="section">
+  <h2 class="section-title">🎨 Multimodal · 多模态</h2>
+<div class="paper-card">
+  <div class="paper-title">ENCP: Episode-Normalized Conformal Prediction for Vision-and-Language Navigation</div>
+  <div class="paper-meta">arXiv 2026</div>
+  <div class="summary-grid">
+    <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出回合归一化共形预测方法，为视觉-语言导航提供带置信度的不确定性估计。</div></div>
+    <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 ENCP，以回合级归一化缓解导航任务中不确定性校准的分布偏移。</div></div>
+    <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在视觉-语言导航与预测任务上验证方法的有效性。</div></div>
+    <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属 Multimodal 导航方向，建议关注不确定性校准对安全落地的实际增益。</div></div>
+  </div>
+  <div class="paper-tags"><span class="tag tag-multimodal">Multimodal</span><span class="tag tag-vlm">VLN</span></div>
+  <div class="paper-links"><a href="https://arxiv.org/abs/2609.17499">arXiv</a> <a href="https://arxiv.org/pdf/2609.17499">PDF</a></div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">PhysBrain 1.5: From Vision-Language Models to Physical Foundation Models</div>
+  <div class="paper-meta">arXiv 2026 · DeepCybo</div>
+  <div class="summary-grid">
+    <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">将视觉-语言模型扩展为面向物理世界的物理基础模型，融合预训练与微调。</div></div>
+    <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 PhysBrain 1.5，以统一多模态预训练打通视觉-语言到物理推理的链路。</div></div>
+    <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">基于 8B 参数规模验证物理理解与推理能力，详见项目主页。</div></div>
+    <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属 Multimodal 具身方向，建议关注物理推理在真实操作任务中的迁移效果。</div></div>
+  </div>
+  <div class="paper-tags"><span class="tag tag-multimodal">Multimodal</span><span class="tag tag-vlm">VLM</span></div>
+  <div class="paper-links"><a href="https://arxiv.org/abs/2609.14973">arXiv</a> <a href="https://arxiv.org/pdf/2609.14973">PDF</a> <a href="https://deepcybo-physai.github.io/PhysBrain-1.5/">Project</a> <a href="https://github.com/DeepCybo-PhysAI/PhysBrain-1.5">Code</a></div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">LynnReal-Omni: Native multi-modal Video Generation for Agentic Visual Workflows</div>
+  <div class="paper-meta">arXiv 2026</div>
+  <div class="summary-grid">
+    <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">采用扩散模型与扩散 Transformer 构建原生多模态视频生成，服务智能体工作流。</div></div>
+    <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 LynnReal-Omni，以统一实时架构生成多模态视频支撑智能体任务。</div></div>
+    <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在生成规模上达到 32B、27B 参数与 540p 分辨率等关键指标。</div></div>
+    <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属 Multimodal 视频生成方向，建议关注实时性与智能体工作流的集成度。</div></div>
+  </div>
+  <div class="paper-tags"><span class="tag tag-multimodal">Multimodal</span><span class="tag tag-vlm">Video</span></div>
+  <div class="paper-links"><a href="https://arxiv.org/abs/2609.15863">arXiv</a> <a href="https://arxiv.org/pdf/2609.15863">PDF</a> <a href="https://github.com/LynnReal-AI/LynnReal-Omni">Project</a> <a href="https://github.com/LynnReal-AI/LynnReal-Omni">Code</a></div>
+</div>
+</section>
+
+  <footer>
+    小小志AI日报 · 自动生成于 2026-09-16 · 数据来源 daily_ai_report.py
+  </footer>
+</div>
+</body>
+</html>
