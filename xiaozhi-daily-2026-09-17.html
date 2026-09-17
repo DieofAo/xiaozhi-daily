@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>小小志AI日报 - 2026年9月17日</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans SC', sans-serif;
+  background: #0a0e1a;
+  color: #e0e6f0;
+  line-height: 1.7;
+  min-height: 100vh;
+}
+.container { max-width: 960px; margin: 0 auto; padding: 40px 24px; }
+header { text-align: center; margin-bottom: 48px; padding: 40px 20px;
+  background: linear-gradient(135deg, rgba(59,130,246,0.08) 0%, rgba(139,92,246,0.08) 100%);
+  border-radius: 20px; border: 1px solid rgba(99,102,241,0.15); }
+header h1 { font-size: 2rem; background: linear-gradient(135deg, #60a5fa, #a78bfa);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 8px; }
+header .date { color: #94a3b8; font-size: 1rem; }
+header .subtitle { color: #64748b; font-size: 0.9rem; margin-top: 6px; }
+.highlight-banner { background: linear-gradient(135deg, rgba(249,115,22,0.1) 0%, rgba(234,179,8,0.08) 100%);
+  border: 1px solid rgba(249,115,22,0.2); border-radius: 14px; padding: 20px 24px; margin-bottom: 36px; }
+.hl-title { font-size: 1.1rem; font-weight: 700; color: #fb923c; margin-bottom: 8px; }
+.hl-text { font-size: 0.92rem; color: #cbd5e1; line-height: 1.7; }
+.section { margin-bottom: 40px; }
+.section-title { font-size: 1.4rem; color: #f1f5f9; margin-bottom: 20px; padding-bottom: 12px;
+  border-bottom: 1px solid rgba(99,102,241,0.2); }
+.paper-card { background: rgba(30,41,59,0.6); border: 1px solid rgba(99,102,241,0.12);
+  border-radius: 14px; padding: 24px; margin-bottom: 16px; transition: transform 0.2s, box-shadow 0.2s; }
+.paper-card:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(99,102,241,0.1);
+  border-color: rgba(99,102,241,0.3); }
+.paper-card.hot { border-color: rgba(249,115,22,0.25); background: rgba(30,41,59,0.7); }
+.paper-title { font-size: 1.1rem; font-weight: 600; color: #f8fafc; margin-bottom: 8px; }
+.paper-meta { font-size: 0.85rem; color: #64748b; margin-bottom: 10px; }
+.summary-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 14px; }
+@media (max-width: 640px) { .summary-grid { grid-template-columns: 1fr; } }
+.summary-item { background: rgba(15,23,42,0.5); border-radius: 10px; padding: 12px 14px;
+  border: 1px solid rgba(99,102,241,0.08); }
+.summary-label { font-size: 0.78rem; font-weight: 600; color: #818cf8; margin-bottom: 4px; }
+.summary-text { font-size: 0.88rem; color: #cbd5e1; line-height: 1.6; }
+.paper-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+.tag { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: 500; }
+.tag-agent { background: rgba(16,185,129,0.12); color: #34d399; }
+.tag-llm { background: rgba(99,102,241,0.12); color: #818cf8; }
+.tag-multimodal { background: rgba(244,114,182,0.12); color: #f472b6; }
+.tag-world { background: rgba(251,191,36,0.12); color: #fbbf24; }
+.tag-robot { background: rgba(251,146,60,0.12); color: #fb923c; }
+.tag-rl { background: rgba(45,212,191,0.12); color: #2dd4bf; }
+.tag-benchmark { background: rgba(34,211,238,0.12); color: #22d3ee; }
+.tag-vla { background: rgba(59,130,246,0.12); color: #60a5fa; }
+.tag-memory { background: rgba(192,132,252,0.12); color: #c084fc; }
+.tag-reasoning { background: rgba(132,204,22,0.12); color: #a3e635; }
+.tag-data { background: rgba(250,204,21,0.12); color: #facc15; }
+.tag-infra { background: rgba(167,139,250,0.12); color: #a78bfa; }
+.tag-3d { background: rgba(148,163,184,0.12); color: #94a3b8; }
+.tag-vlm { background: rgba(56,189,248,0.12); color: #38bdf8; }
+.tag-tool { background: rgba(52,211,153,0.12); color: #34d399; }
+.tag-bio { background: rgba(52,211,153,0.12); color: #34d399; }
+.tag-speech { background: rgba(56,189,248,0.12); color: #38bdf8; }
+.hot-badge { display: inline; margin-right: 4px; }
+.paper-links { display: flex; flex-wrap: wrap; gap: 10px; }
+.paper-links a { display: inline-block; padding: 5px 14px; background: rgba(99,102,241,0.12);
+  color: #818cf8; text-decoration: none; border-radius: 8px; font-size: 0.82rem; transition: background 0.2s; }
+.paper-links a:hover { background: rgba(99,102,241,0.25); }
+.info-card { background: rgba(30,41,59,0.6); border: 1px solid rgba(99,102,241,0.12);
+  border-radius: 14px; padding: 24px; margin-bottom: 16px; }
+.info-card .paper-summary { font-size: 0.9rem; color: #cbd5e1; line-height: 1.7; margin-bottom: 14px; }
+footer { text-align: center; color: #475569; font-size: 0.82rem; padding: 40px 20px;
+  border-top: 1px solid rgba(99,102,241,0.1); margin-top: 40px; }
+.stats { display: flex; justify-content: center; gap: 24px; margin-top: 16px; flex-wrap: wrap; }
+.stat-item { display: flex; align-items: center; gap: 6px; font-size: 0.85rem; color: #94a3b8; }
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>小小志AI日报</h1>
+    <div class="date">2026年9月17日 · 星期四</div>
+    <div class="subtitle">关注：VLA · Robotics · World Model · LLM · Multimodal · Agent</div>
+    <div class="stats">
+      <span class="stat-item">📝 论文 15</span>
+      <span class="stat-item">🤗 模型 0</span>
+      <span class="stat-item">🔁 跨日去重移除 0</span>
+    </div>
+  </header>
+
+  <div class="highlight-banner">
+    <div class="hl-title">🔥 今日看点</div>
+    <div class="hl-text">今日 arXiv 8 篇 + HuggingFace 热门 7 篇，共 15 条。世界模型方向：PointZero 用三维点轨迹补全学习可迁移动力学，AI for Games 综述基础模型如何重塑游戏世界建模。机器人方向：GPT-策略让视觉语言模型在上下文中即时学习操作策略，Dreaming the Sound 借视频音频生成实现零样本力觉感知操作，HarnessVLN 以无需训练的编排器统一具身导航（多基准约六成水平）。智能体方向密集涌现：ScienceIDE 把科学代码库变成可训练环境，双过程语言智能体引入记忆与自反思，Affora 定义面向智能体的界面规范，广义智能体迭代给出递归自我改进的形式框架。多模态与语音：PANORAMA 统一全景分割与描述，StepAudio 3 实时边想边说（约 56%），FLAT 用柔性长度对齐 token 串联图文。</div>
+  </div>
+
+<section class="section">
+  <h2 class="section-title">🧠 LLM · 大语言模型</h2>
+<div class="paper-card">
+  <div class="paper-title">A Zeroth-Order Paradigm for LLM Preference Alignment</div>
+  <div class="paper-meta">arXiv 2026</div>
+  <div class="summary-grid">
+    <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出零阶优化范式用于大语言模型偏好对齐，绕过显式梯度、直接依据奖励信号估计参数更新方向。</div></div>
+    <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">将零阶方法引入偏好对齐，绕开强化学习或监督微调，降低对梯度可微性的依赖。</div></div>
+    <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在文本生成任务上验证了对齐有效性，表现与主流对齐方法相当。</div></div>
+    <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属大语言模型对齐方向，建议关注大规模训练的稳定性、计算开销与奖励设计敏感度。</div></div>
+  </div>
+  <div class="paper-tags"><span class="tag tag-llm">LLM</span><span class="tag tag-reasoning">Alignment</span></div>
+  <div class="paper-links"><a href="https://arxiv.org/abs/2609.19144">arXiv</a> <a href="https://arxiv.org/pdf/2609.19144">PDF</a></div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">StepAudio 3 Realtime Technical Report</div>
+  <div class="paper-meta">arXiv 2026 · StepFun</div>
+  <div class="summary-grid">
+    <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">基于基础模型构建实时语音大模型，采用流式生成与边思考边说话的推理机制。</div></div>
+    <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出边想边说策略，在生成语音的同时进行推理规划，显著降低对话响应延迟。</div></div>
+    <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在实时语音交互基准上取得约 56.0% 的关键指标，具备竞争力。</div></div>
+    <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属语音大模型方向，建议关注流式推理延迟、语音自然度与打断恢复能力。</div></div>
+  </div>
+  <div class="paper-tags"><span class="tag tag-llm">LLM</span><span class="tag tag-speech">Speech</span></div>
+  <div class="paper-links"><a href="https://arxiv.org/abs/2609.14005">arXiv</a> <a href="https://arxiv.org/pdf/2609.14005">PDF</a></div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">The Last AI Built by Humans: Toward Genuine Recursive Self-Improvement</div>
+  <div class="paper-meta">arXiv 2026 · Theseus Labs</div>
+  <div class="summary-grid">
+    <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">基于策略优化研究真正的递归式自我改进，探讨人工智能脱离人类闭环后的自主提升。</div></div>
+    <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出闭环关闭概念，形式化人类参与退出后自我改进的能力上限与边界。</div></div>
+    <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">配套开源方法汇总仓库（约 56 星），提供理论与资源集合。</div></div>
+    <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属自我改进方向，建议关注收敛性、安全边界与可验证的改进证据。</div></div>
+  </div>
+  <div class="paper-tags"><span class="tag tag-llm">LLM</span><span class="tag tag-reasoning">RSI</span></div>
+  <div class="paper-links"><a href="https://arxiv.org/abs/2609.11873">arXiv</a> <a href="https://arxiv.org/pdf/2609.11873">PDF</a> <a href="https://theseus-labs-rsi.github.io/">Project</a> <a href="https://github.com/theseus-labs-rsi/awesome-rsi">Code</a></div>
+</div>
+</section>
+
+<section class="section">
+  <h2 class="section-title">🌍 World Model · 世界模型</h2>
+<div class="paper-card hot">
+  <div class="paper-title"><span class="hot-badge">🔥</span>PointZero: 3D Point Track Completion for Learning Transferable 3D Dynamics</div>
+  <div class="paper-meta">arXiv 2026</div>
+  <div class="summary-grid">
+    <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">基于世界模型与 RGB-D 点轨迹补全，学习可迁移的三维动力学，结合预训练与模仿学习。</div></div>
+    <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">用点轨迹补全构建三维动力学表征，使感知系统具备预测未来状态的能力。</div></div>
+    <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在状态预测与操作抓取任务上验证有效，展现仿真到真实的迁移潜力。</div></div>
+    <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属世界模型方向，建议关注预测精度、动作可控性与 Sim-to-Real 迁移效果。</div></div>
+  </div>
+  <div class="paper-tags"><span class="tag tag-world">World Model</span><span class="tag tag-3d">3D</span></div>
+  <div class="paper-links"><a href="https://arxiv.org/abs/2609.19142">arXiv</a> <a href="https://arxiv.org/pdf/2609.19142">PDF</a> <a href="https://pointzero-wm.github.io/">Project</a></div>
+</div>
+<div class="paper-card hot">
+  <div class="paper-title"><span class="hot-badge">🔥</span>AI for Games in the Foundation Model Era</div>
+  <div class="paper-meta">arXiv 2026 · National University of Singapore</div>
+  <div class="summary-grid">
+    <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">基于基础模型与世界模型梳理游戏领域人工智能进展，整理学习式游戏世界生成方法。</div></div>
+    <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">系统综述基础模型如何重塑游戏世界建模、内容生成与智能体控制。</div></div>
+    <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">配套开源汇总仓库（约 167 星），汇集大量方法与资源。</div></div>
+    <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属世界模型方向，建议关注游戏世界生成、可控内容生成与迁移效果。</div></div>
+  </div>
+  <div class="paper-tags"><span class="tag tag-world">World Model</span><span class="tag tag-rl">Game</span></div>
+  <div class="paper-links"><a href="https://arxiv.org/abs/2609.16679">arXiv</a> <a href="https://arxiv.org/pdf/2609.16679">PDF</a> <a href="https://eurekaleo.github.io/awesome-ai-for-games/">Project</a> <a href="https://github.com/Eurekaleo/awesome-ai-for-games">Code</a></div>
+</div>
+</section>
+
+<section class="section">
+  <h2 class="section-title">🦾 Robotics · 机器人</h2>
+<div class="paper-card hot">
+  <div class="paper-title"><span class="hot-badge">🔥</span>In-Context Robot Learning with VLM Agents</div>
+  <div class="paper-meta">arXiv 2026</div>
+  <div class="summary-grid">
+    <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出通用策略框架，以视觉语言模型作为智能体在上下文中即时学习机器人策略。</div></div>
+    <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">将视觉语言模型转变为免重训练的策略生成器，可即时适应新任务。</div></div>
+    <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在多个机器人操作任务上验证上下文学习能力，详见原文实验设置。</div></div>
+    <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属机器人算法方向，建议重点看真实部署条件、泛化能力与基线对比。</div></div>
+  </div>
+  <div class="paper-tags"><span class="tag tag-robot">Robotics</span><span class="tag tag-vlm">VLM</span></div>
+  <div class="paper-links"><a href="https://arxiv.org/abs/2609.19138">arXiv</a> <a href="https://arxiv.org/pdf/2609.19138">PDF</a> <a href="https://cheng-haha.github.io/GPT-Policy">Project</a> <a href="https://github.com/cheng-haha/GPT-Policy">Code</a></div>
+</div>
+<div class="paper-card hot">
+  <div class="paper-title"><span class="hot-badge">🔥</span>Dreaming the Sound of Contact: Leveraging Video and Audio Generation for Zero-Shot Force-Aware Manipulation and Data Generation</div>
+  <div class="paper-meta">arXiv 2026</div>
+  <div class="summary-grid">
+    <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">利用视频与音频生成模型，实现零样本、具备力觉意识的机器人操作与数据生成。</div></div>
+    <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">把接触声音生成融入操作学习，使机器人在无力传感器时也能感知接触与力。</div></div>
+    <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在视频生成与操作任务上验证有效，支持力觉感知的零样本操作与数据增强。</div></div>
+    <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属机器人方向，建议关注接触力估计精度、真实部署条件与数据生成质量。</div></div>
+  </div>
+  <div class="paper-tags"><span class="tag tag-robot">Robotics</span><span class="tag tag-multimodal">Audio</span></div>
+  <div class="paper-links"><a href="https://arxiv.org/abs/2609.19137">arXiv</a> <a href="https://arxiv.org/pdf/2609.19137">PDF</a> <a href="https://dreamingcontactsound.github.io/">Project</a></div>
+</div>
+<div class="paper-card hot">
+  <div class="paper-title"><span class="hot-badge">🔥</span>HarnessVLN: Unifying Training-Free Embodied Navigation through an Agent Harness</div>
+  <div class="paper-meta">arXiv 2026 · AgiBot</div>
+  <div class="summary-grid">
+    <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">基于训练、大语言模型与统一框架，实现无需训练的具身导航智能体编排。</div></div>
+    <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出免训练的统一导航编排器，具备多模态、零样本与统一接口特性。</div></div>
+    <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在多个导航基准上取得约 60.8%、53.9%、76.0%、59.3% 的关键指标。</div></div>
+    <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属机器人导航方向，建议重点看零样本泛化、真实部署与基线对比。</div></div>
+  </div>
+  <div class="paper-tags"><span class="tag tag-robot">Robotics</span><span class="tag tag-vlm">Navigation</span></div>
+  <div class="paper-links"><a href="https://arxiv.org/abs/2609.15195">arXiv</a> <a href="https://arxiv.org/pdf/2609.15195">PDF</a> <a href="https://agibot-harnessvln.netlify.app/">Project</a></div>
+</div>
+</section>
+
+<section class="section">
+  <h2 class="section-title">🧩 Agent · 智能体</h2>
+<div class="paper-card">
+  <div class="paper-title">ScienceIDE: Turning World's Scientific Codebase into Agent Learnable Environments</div>
+  <div class="paper-meta">arXiv 2026</div>
+  <div class="summary-grid">
+    <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">基于微调与强化学习，将全球科学代码库转化为可供智能体学习的交互式环境。</div></div>
+    <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出系列模型（72B、9B、4B），把科研代码运行环境变成可训练智能体沙盒。</div></div>
+    <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">模型规模覆盖 72B、9B、4B，验证在科学代码任务上的可用性。</div></div>
+    <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属智能体方向，建议关注环境覆盖率、推理机制与真实科研流程成功率。</div></div>
+  </div>
+  <div class="paper-tags"><span class="tag tag-agent">Agent</span><span class="tag tag-tool">Code</span></div>
+  <div class="paper-links"><a href="https://arxiv.org/abs/2609.19134">arXiv</a> <a href="https://arxiv.org/pdf/2609.19134">PDF</a> <a href="https://github.com/aitofound/ScienceIDE">Code</a></div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">Cognitive Extensions for Dual-Process Language Agents: Memory and Self-Reflection in Interactive Environments</div>
+  <div class="paper-meta">arXiv 2026</div>
+  <div class="summary-grid">
+    <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出双过程语言智能体框架，引入长时序记忆与自我反思模块提升交互适应能力。</div></div>
+    <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">以自我反思机制组织记忆与规划，模拟快慢思考的双过程分工。</div></div>
+    <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在交互任务上取得约 43.17% 的关键指标，优于基线方法。</div></div>
+    <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属智能体方向，建议关注架构设计、工具调用策略与端到端任务成功率。</div></div>
+  </div>
+  <div class="paper-tags"><span class="tag tag-agent">Agent</span><span class="tag tag-memory">Memory</span></div>
+  <div class="paper-links"><a href="https://arxiv.org/abs/2609.19128">arXiv</a> <a href="https://arxiv.org/pdf/2609.19128">PDF</a></div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">Affora: A Design System for Agent-Friendly Interfaces</div>
+  <div class="paper-meta">arXiv 2026</div>
+  <div class="summary-grid">
+    <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出面向智能体的界面设计系统，基于计算机操作评估定义人机协作交互规范。</div></div>
+    <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">以智能体友好为核心给出界面设计准则，降低智能体使用图形界面的门槛。</div></div>
+    <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">通过评估实验验证设计系统在智能体操作任务上的有效性。</div></div>
+    <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属智能体方向，建议关注接口标准化、真实软件环境成功率与可迁移性。</div></div>
+  </div>
+  <div class="paper-tags"><span class="tag tag-agent">Agent</span><span class="tag tag-tool">UI</span></div>
+  <div class="paper-links"><a href="https://arxiv.org/abs/2609.19125">arXiv</a> <a href="https://arxiv.org/pdf/2609.19125">PDF</a></div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">Generalized Agent Iteration: One Formal Framework for Iterative Policy Improvement and Recursive Self-Improvement</div>
+  <div class="paper-meta">arXiv 2026</div>
+  <div class="summary-grid">
+    <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出统一的迭代策略改进形式框架，刻画递归式自我提升的收敛过程。</div></div>
+    <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">给出通用框架描述迭代式策略改进与递归自我改进，形式化其理论边界。</div></div>
+    <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">通过框架分析验证其在策略迭代任务上的通用性与收敛性。</div></div>
+    <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属智能体方向，建议关注框架假设、与现有强化学习方法的对应关系。</div></div>
+  </div>
+  <div class="paper-tags"><span class="tag tag-agent">Agent</span><span class="tag tag-reasoning">RSI</span></div>
+  <div class="paper-links"><a href="https://arxiv.org/abs/2609.13406">arXiv</a> <a href="https://arxiv.org/pdf/2609.13406">PDF</a></div>
+</div>
+</section>
+
+<section class="section">
+  <h2 class="section-title">🎨 Multimodal · 多模态</h2>
+<div class="paper-card">
+  <div class="paper-title">PANORAMA: Panoptic Grounded Captioning via Mask Proposal Selection</div>
+  <div class="paper-meta">arXiv 2026</div>
+  <div class="summary-grid">
+    <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">基于视觉语言模型与掩码提议选择，实现全景分割与接地描述一体化图像理解。</div></div>
+    <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出统一方案将全景分割与通用描述生成结合，提升细粒度区域可解释性。</div></div>
+    <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在图像描述与分割任务上验证有效，区域级描述质量优于朴素描述。</div></div>
+    <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属多模态方向，建议关注跨模态对齐方式、数据规模与下游任务表现。</div></div>
+  </div>
+  <div class="paper-tags"><span class="tag tag-multimodal">Multimodal</span><span class="tag tag-vlm">VLM</span></div>
+  <div class="paper-links"><a href="https://arxiv.org/abs/2609.19143">arXiv</a> <a href="https://arxiv.org/pdf/2609.19143">PDF</a> <a href="https://www.di.ens.fr/willow/research/panorama/">Link</a></div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">StepAudio 3 Music Technical Report</div>
+  <div class="paper-meta">arXiv 2026 · StepFun</div>
+  <div class="summary-grid">
+    <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">基于训练、扩散 Transformer 与强化学习构建音乐生成模型，结合自监督与微调。</div></div>
+    <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出混合专家结构，具备自监督特性，提升音乐生成效率与可控性。</div></div>
+    <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在音乐生成与规划任务上验证有效，质量与可控性优于基线。</div></div>
+    <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属多模态生成方向，建议关注音乐连贯性、风格可控性与生成长度。</div></div>
+  </div>
+  <div class="paper-tags"><span class="tag tag-multimodal">Multimodal</span><span class="tag tag-speech">Music</span></div>
+  <div class="paper-links"><a href="https://arxiv.org/abs/2609.16034">arXiv</a> <a href="https://arxiv.org/pdf/2609.16034">PDF</a> <a href="https://stepaudiollm.github.io/step-audio-3-music/">Project</a></div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">FLAT: Resampling Image and Text into 1D Flexible-Length Aligned Transmodal Tokens for Retrieval and Generation</div>
+  <div class="paper-meta">arXiv 2026 · Meta</div>
+  <div class="summary-grid">
+    <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">基于生成模型、预训练与微调，将图像与文本重采样为变长的一维对齐跨模态 token。</div></div>
+    <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出柔性长度对齐 token，具备多模态、自监督与跨模态对齐特性。</div></div>
+    <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在检索与生成任务上验证有效，上下文可控约 30K token。</div></div>
+    <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属多模态方向，建议关注跨模态对齐质量、数据规模与下游任务表现。</div></div>
+  </div>
+  <div class="paper-tags"><span class="tag tag-multimodal">Multimodal</span><span class="tag tag-vlm">Retrieval</span></div>
+  <div class="paper-links"><a href="https://arxiv.org/abs/2609.16591">arXiv</a> <a href="https://arxiv.org/pdf/2609.16591">PDF</a> <a href="https://guangyusun.com/flat-website/">Project</a></div>
+</div>
+</section>
+
+  <footer>
+    小小志AI日报 · 自动生成于 2026-09-17 · 数据来源 daily_ai_report.py
+  </footer>
+</div>
+</body>
+</html>

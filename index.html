@@ -658,6 +658,497 @@
 <script>
 // ===== DATA =====
 const PAPERS_DB = [
+    // === 2026-09-17 ===
+    {
+        date: "2026-09-17",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "A Zeroth-Order Paradigm for LLM Preference Alignment",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 提出零阶优化范式用于大语言模型偏好对齐，绕过显式梯度、直接依据奖励信号估计参数更新方向。 | 💡 创新点: 将零阶方法引入偏好对齐，绕开强化学习或监督微调，降低对梯度可微性的依赖。 | 📊 实验效果: 在文本生成任务上验证了对齐有效性，表现与主流对齐方法相当。 | ⭐ 整体评价: 属大语言模型对齐方向，建议关注大规模训练的稳定性、计算开销与奖励设计敏感度。",
+        tags: [["LLM","green"],["Alignment","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.19144"],["PDF","https://arxiv.org/pdf/2609.19144"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出零阶优化范式用于大语言模型偏好对齐，绕过显式梯度、直接依据奖励信号估计参数更新方向。"},{"label":"💡 创新点","text":"将零阶方法引入偏好对齐，绕开强化学习或监督微调，降低对梯度可微性的依赖。"},{"label":"📊 实验效果","text":"在文本生成任务上验证了对齐有效性，表现与主流对齐方法相当。"},{"label":"⭐ 整体评价","text":"属大语言模型对齐方向，建议关注大规模训练的稳定性、计算开销与奖励设计敏感度。"}]
+    },
+    {
+        date: "2026-09-17",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "StepAudio 3 Realtime Technical Report",
+        venue: "arXiv 2026 · StepFun",
+        summary: "🔬 技术路线: 基于基础模型构建实时语音大模型，采用流式生成与边思考边说话的推理机制。 | 💡 创新点: 提出边想边说策略，在生成语音的同时进行推理规划，显著降低对话响应延迟。 | 📊 实验效果: 在实时语音交互基准上取得约 56.0% 的关键指标，具备竞争力。 | ⭐ 整体评价: 属语音大模型方向，建议关注流式推理延迟、语音自然度与打断恢复能力。",
+        tags: [["LLM","green"],["Speech","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.14005"],["PDF","https://arxiv.org/pdf/2609.14005"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于基础模型构建实时语音大模型，采用流式生成与边思考边说话的推理机制。"},{"label":"💡 创新点","text":"提出边想边说策略，在生成语音的同时进行推理规划，显著降低对话响应延迟。"},{"label":"📊 实验效果","text":"在实时语音交互基准上取得约 56.0% 的关键指标，具备竞争力。"},{"label":"⭐ 整体评价","text":"属语音大模型方向，建议关注流式推理延迟、语音自然度与打断恢复能力。"}]
+    },
+    {
+        date: "2026-09-17",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "The Last AI Built by Humans: Toward Genuine Recursive Self-Improvement",
+        venue: "arXiv 2026 · Theseus Labs",
+        summary: "🔬 技术路线: 基于策略优化研究真正的递归式自我改进，探讨人工智能脱离人类闭环后的自主提升。 | 💡 创新点: 提出闭环关闭概念，形式化人类参与退出后自我改进的能力上限与边界。 | 📊 实验效果: 配套开源方法汇总仓库（约 56 星），提供理论与资源集合。 | ⭐ 整体评价: 属自我改进方向，建议关注收敛性、安全边界与可验证的改进证据。",
+        tags: [["LLM","green"],["RSI","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.11873"],["PDF","https://arxiv.org/pdf/2609.11873"],["Project","https://theseus-labs-rsi.github.io/"],["Code","https://github.com/theseus-labs-rsi/awesome-rsi"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于策略优化研究真正的递归式自我改进，探讨人工智能脱离人类闭环后的自主提升。"},{"label":"💡 创新点","text":"提出闭环关闭概念，形式化人类参与退出后自我改进的能力上限与边界。"},{"label":"📊 实验效果","text":"配套开源方法汇总仓库（约 56 星），提供理论与资源集合。"},{"label":"⭐ 整体评价","text":"属自我改进方向，建议关注收敛性、安全边界与可验证的改进证据。"}]
+    },
+    {
+        date: "2026-09-17",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "PointZero: 3D Point Track Completion for Learning Transferable 3D Dynamics",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 基于世界模型与 RGB-D 点轨迹补全，学习可迁移的三维动力学，结合预训练与模仿学习。 | 💡 创新点: 用点轨迹补全构建三维动力学表征，使感知系统具备预测未来状态的能力。 | 📊 实验效果: 在状态预测与操作抓取任务上验证有效，展现仿真到真实的迁移潜力。 | ⭐ 整体评价: 属世界模型方向，建议关注预测精度、动作可控性与 Sim-to-Real 迁移效果。",
+        tags: [["World Model","green"],["3D","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.19142"],["PDF","https://arxiv.org/pdf/2609.19142"],["Project","https://pointzero-wm.github.io/"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于世界模型与 RGB-D 点轨迹补全，学习可迁移的三维动力学，结合预训练与模仿学习。"},{"label":"💡 创新点","text":"用点轨迹补全构建三维动力学表征，使感知系统具备预测未来状态的能力。"},{"label":"📊 实验效果","text":"在状态预测与操作抓取任务上验证有效，展现仿真到真实的迁移潜力。"},{"label":"⭐ 整体评价","text":"属世界模型方向，建议关注预测精度、动作可控性与 Sim-to-Real 迁移效果。"}]
+    },
+    {
+        date: "2026-09-17",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "AI for Games in the Foundation Model Era",
+        venue: "arXiv 2026 · National University of Singapore",
+        summary: "🔬 技术路线: 基于基础模型与世界模型梳理游戏领域人工智能进展，整理学习式游戏世界生成方法。 | 💡 创新点: 系统综述基础模型如何重塑游戏世界建模、内容生成与智能体控制。 | 📊 实验效果: 配套开源汇总仓库（约 167 星），汇集大量方法与资源。 | ⭐ 整体评价: 属世界模型方向，建议关注游戏世界生成、可控内容生成与迁移效果。",
+        tags: [["World Model","green"],["Game","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.16679"],["PDF","https://arxiv.org/pdf/2609.16679"],["Project","https://eurekaleo.github.io/awesome-ai-for-games/"],["Code","https://github.com/Eurekaleo/awesome-ai-for-games"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于基础模型与世界模型梳理游戏领域人工智能进展，整理学习式游戏世界生成方法。"},{"label":"💡 创新点","text":"系统综述基础模型如何重塑游戏世界建模、内容生成与智能体控制。"},{"label":"📊 实验效果","text":"配套开源汇总仓库（约 167 星），汇集大量方法与资源。"},{"label":"⭐ 整体评价","text":"属世界模型方向，建议关注游戏世界生成、可控内容生成与迁移效果。"}]
+    },
+    {
+        date: "2026-09-17",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "In-Context Robot Learning with VLM Agents",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 提出通用策略框架，以视觉语言模型作为智能体在上下文中即时学习机器人策略。 | 💡 创新点: 将视觉语言模型转变为免重训练的策略生成器，可即时适应新任务。 | 📊 实验效果: 在多个机器人操作任务上验证上下文学习能力，详见原文实验设置。 | ⭐ 整体评价: 属机器人算法方向，建议重点看真实部署条件、泛化能力与基线对比。",
+        tags: [["Robotics","green"],["VLM","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.19138"],["PDF","https://arxiv.org/pdf/2609.19138"],["Project","https://cheng-haha.github.io/GPT-Policy"],["Code","https://github.com/cheng-haha/GPT-Policy"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出通用策略框架，以视觉语言模型作为智能体在上下文中即时学习机器人策略。"},{"label":"💡 创新点","text":"将视觉语言模型转变为免重训练的策略生成器，可即时适应新任务。"},{"label":"📊 实验效果","text":"在多个机器人操作任务上验证上下文学习能力，详见原文实验设置。"},{"label":"⭐ 整体评价","text":"属机器人算法方向，建议重点看真实部署条件、泛化能力与基线对比。"}]
+    },
+    {
+        date: "2026-09-17",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "Dreaming the Sound of Contact: Leveraging Video and Audio Generation for Zero-Shot Force-Aware Manipulation and Data Generation",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 利用视频与音频生成模型，实现零样本、具备力觉意识的机器人操作与数据生成。 | 💡 创新点: 把接触声音生成融入操作学习，使机器人在无力传感器时也能感知接触与力。 | 📊 实验效果: 在视频生成与操作任务上验证有效，支持力觉感知的零样本操作与数据增强。 | ⭐ 整体评价: 属机器人方向，建议关注接触力估计精度、真实部署条件与数据生成质量。",
+        tags: [["Robotics","green"],["Audio","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.19137"],["PDF","https://arxiv.org/pdf/2609.19137"],["Project","https://dreamingcontactsound.github.io/"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"利用视频与音频生成模型，实现零样本、具备力觉意识的机器人操作与数据生成。"},{"label":"💡 创新点","text":"把接触声音生成融入操作学习，使机器人在无力传感器时也能感知接触与力。"},{"label":"📊 实验效果","text":"在视频生成与操作任务上验证有效，支持力觉感知的零样本操作与数据增强。"},{"label":"⭐ 整体评价","text":"属机器人方向，建议关注接触力估计精度、真实部署条件与数据生成质量。"}]
+    },
+    {
+        date: "2026-09-17",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "HarnessVLN: Unifying Training-Free Embodied Navigation through an Agent Harness",
+        venue: "arXiv 2026 · AgiBot",
+        summary: "🔬 技术路线: 基于训练、大语言模型与统一框架，实现无需训练的具身导航智能体编排。 | 💡 创新点: 提出免训练的统一导航编排器，具备多模态、零样本与统一接口特性。 | 📊 实验效果: 在多个导航基准上取得约 60.8%、53.9%、76.0%、59.3% 的关键指标。 | ⭐ 整体评价: 属机器人导航方向，建议重点看零样本泛化、真实部署与基线对比。",
+        tags: [["Robotics","green"],["Navigation","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.15195"],["PDF","https://arxiv.org/pdf/2609.15195"],["Project","https://agibot-harnessvln.netlify.app/"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于训练、大语言模型与统一框架，实现无需训练的具身导航智能体编排。"},{"label":"💡 创新点","text":"提出免训练的统一导航编排器，具备多模态、零样本与统一接口特性。"},{"label":"📊 实验效果","text":"在多个导航基准上取得约 60.8%、53.9%、76.0%、59.3% 的关键指标。"},{"label":"⭐ 整体评价","text":"属机器人导航方向，建议重点看零样本泛化、真实部署与基线对比。"}]
+    },
+    {
+        date: "2026-09-17",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "ScienceIDE: Turning World's Scientific Codebase into Agent Learnable Environments",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 基于微调与强化学习，将全球科学代码库转化为可供智能体学习的交互式环境。 | 💡 创新点: 提出系列模型（72B、9B、4B），把科研代码运行环境变成可训练智能体沙盒。 | 📊 实验效果: 模型规模覆盖 72B、9B、4B，验证在科学代码任务上的可用性。 | ⭐ 整体评价: 属智能体方向，建议关注环境覆盖率、推理机制与真实科研流程成功率。",
+        tags: [["Agent","green"],["Code","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.19134"],["PDF","https://arxiv.org/pdf/2609.19134"],["Code","https://github.com/aitofound/ScienceIDE"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于微调与强化学习，将全球科学代码库转化为可供智能体学习的交互式环境。"},{"label":"💡 创新点","text":"提出系列模型（72B、9B、4B），把科研代码运行环境变成可训练智能体沙盒。"},{"label":"📊 实验效果","text":"模型规模覆盖 72B、9B、4B，验证在科学代码任务上的可用性。"},{"label":"⭐ 整体评价","text":"属智能体方向，建议关注环境覆盖率、推理机制与真实科研流程成功率。"}]
+    },
+    {
+        date: "2026-09-17",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Cognitive Extensions for Dual-Process Language Agents: Memory and Self-Reflection in Interactive Environments",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 提出双过程语言智能体框架，引入长时序记忆与自我反思模块提升交互适应能力。 | 💡 创新点: 以自我反思机制组织记忆与规划，模拟快慢思考的双过程分工。 | 📊 实验效果: 在交互任务上取得约 43.17% 的关键指标，优于基线方法。 | ⭐ 整体评价: 属智能体方向，建议关注架构设计、工具调用策略与端到端任务成功率。",
+        tags: [["Agent","green"],["Memory","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.19128"],["PDF","https://arxiv.org/pdf/2609.19128"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出双过程语言智能体框架，引入长时序记忆与自我反思模块提升交互适应能力。"},{"label":"💡 创新点","text":"以自我反思机制组织记忆与规划，模拟快慢思考的双过程分工。"},{"label":"📊 实验效果","text":"在交互任务上取得约 43.17% 的关键指标，优于基线方法。"},{"label":"⭐ 整体评价","text":"属智能体方向，建议关注架构设计、工具调用策略与端到端任务成功率。"}]
+    },
+    {
+        date: "2026-09-17",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Affora: A Design System for Agent-Friendly Interfaces",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 提出面向智能体的界面设计系统，基于计算机操作评估定义人机协作交互规范。 | 💡 创新点: 以智能体友好为核心给出界面设计准则，降低智能体使用图形界面的门槛。 | 📊 实验效果: 通过评估实验验证设计系统在智能体操作任务上的有效性。 | ⭐ 整体评价: 属智能体方向，建议关注接口标准化、真实软件环境成功率与可迁移性。",
+        tags: [["Agent","green"],["UI","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.19125"],["PDF","https://arxiv.org/pdf/2609.19125"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出面向智能体的界面设计系统，基于计算机操作评估定义人机协作交互规范。"},{"label":"💡 创新点","text":"以智能体友好为核心给出界面设计准则，降低智能体使用图形界面的门槛。"},{"label":"📊 实验效果","text":"通过评估实验验证设计系统在智能体操作任务上的有效性。"},{"label":"⭐ 整体评价","text":"属智能体方向，建议关注接口标准化、真实软件环境成功率与可迁移性。"}]
+    },
+    {
+        date: "2026-09-17",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Generalized Agent Iteration: One Formal Framework for Iterative Policy Improvement and Recursive Self-Improvement",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 提出统一的迭代策略改进形式框架，刻画递归式自我提升的收敛过程。 | 💡 创新点: 给出通用框架描述迭代式策略改进与递归自我改进，形式化其理论边界。 | 📊 实验效果: 通过框架分析验证其在策略迭代任务上的通用性与收敛性。 | ⭐ 整体评价: 属智能体方向，建议关注框架假设、与现有强化学习方法的对应关系。",
+        tags: [["Agent","green"],["RSI","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.13406"],["PDF","https://arxiv.org/pdf/2609.13406"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出统一的迭代策略改进形式框架，刻画递归式自我提升的收敛过程。"},{"label":"💡 创新点","text":"给出通用框架描述迭代式策略改进与递归自我改进，形式化其理论边界。"},{"label":"📊 实验效果","text":"通过框架分析验证其在策略迭代任务上的通用性与收敛性。"},{"label":"⭐ 整体评价","text":"属智能体方向，建议关注框架假设、与现有强化学习方法的对应关系。"}]
+    },
+    {
+        date: "2026-09-17",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "PANORAMA: Panoptic Grounded Captioning via Mask Proposal Selection",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 基于视觉语言模型与掩码提议选择，实现全景分割与接地描述一体化图像理解。 | 💡 创新点: 提出统一方案将全景分割与通用描述生成结合，提升细粒度区域可解释性。 | 📊 实验效果: 在图像描述与分割任务上验证有效，区域级描述质量优于朴素描述。 | ⭐ 整体评价: 属多模态方向，建议关注跨模态对齐方式、数据规模与下游任务表现。",
+        tags: [["Multimodal","green"],["VLM","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.19143"],["PDF","https://arxiv.org/pdf/2609.19143"],["Link","https://www.di.ens.fr/willow/research/panorama/"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于视觉语言模型与掩码提议选择，实现全景分割与接地描述一体化图像理解。"},{"label":"💡 创新点","text":"提出统一方案将全景分割与通用描述生成结合，提升细粒度区域可解释性。"},{"label":"📊 实验效果","text":"在图像描述与分割任务上验证有效，区域级描述质量优于朴素描述。"},{"label":"⭐ 整体评价","text":"属多模态方向，建议关注跨模态对齐方式、数据规模与下游任务表现。"}]
+    },
+    {
+        date: "2026-09-17",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "StepAudio 3 Music Technical Report",
+        venue: "arXiv 2026 · StepFun",
+        summary: "🔬 技术路线: 基于训练、扩散 Transformer 与强化学习构建音乐生成模型，结合自监督与微调。 | 💡 创新点: 提出混合专家结构，具备自监督特性，提升音乐生成效率与可控性。 | 📊 实验效果: 在音乐生成与规划任务上验证有效，质量与可控性优于基线。 | ⭐ 整体评价: 属多模态生成方向，建议关注音乐连贯性、风格可控性与生成长度。",
+        tags: [["Multimodal","green"],["Music","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.16034"],["PDF","https://arxiv.org/pdf/2609.16034"],["Project","https://stepaudiollm.github.io/step-audio-3-music/"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于训练、扩散 Transformer 与强化学习构建音乐生成模型，结合自监督与微调。"},{"label":"💡 创新点","text":"提出混合专家结构，具备自监督特性，提升音乐生成效率与可控性。"},{"label":"📊 实验效果","text":"在音乐生成与规划任务上验证有效，质量与可控性优于基线。"},{"label":"⭐ 整体评价","text":"属多模态生成方向，建议关注音乐连贯性、风格可控性与生成长度。"}]
+    },
+    {
+        date: "2026-09-17",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "FLAT: Resampling Image and Text into 1D Flexible-Length Aligned Transmodal Tokens for Retrieval and Generation",
+        venue: "arXiv 2026 · Meta",
+        summary: "🔬 技术路线: 基于生成模型、预训练与微调，将图像与文本重采样为变长的一维对齐跨模态 token。 | 💡 创新点: 提出柔性长度对齐 token，具备多模态、自监督与跨模态对齐特性。 | 📊 实验效果: 在检索与生成任务上验证有效，上下文可控约 30K token。 | ⭐ 整体评价: 属多模态方向，建议关注跨模态对齐质量、数据规模与下游任务表现。",
+        tags: [["Multimodal","green"],["Retrieval","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.16591"],["PDF","https://arxiv.org/pdf/2609.16591"],["Project","https://guangyusun.com/flat-website/"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于生成模型、预训练与微调，将图像与文本重采样为变长的一维对齐跨模态 token。"},{"label":"💡 创新点","text":"提出柔性长度对齐 token，具备多模态、自监督与跨模态对齐特性。"},{"label":"📊 实验效果","text":"在检索与生成任务上验证有效，上下文可控约 30K token。"},{"label":"⭐ 整体评价","text":"属多模态方向，建议关注跨模态对齐质量、数据规模与下游任务表现。"}]
+    },
+    // === 2026-09-16 ===
+    {
+        date: "2026-09-16",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "When Should LLMs Abstain? Chain-of-Self-Questioning for Selective Risk Control",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 设计自我提问链式推理机制，让大模型在不确定时主动评估风险并选择拒答。 | 💡 创新点: 提出以自问自答方式量化置信度，并据此触发选择性拒答的风险控制思路。 | 📊 实验效果: 在风险可控拒答上取得 13.1%、8.9%、32.1%、86.9% 等关键指标表现。 | ⭐ 整体评价: 属 LLM 安全与可靠性方向，建议关注拒答边界与任务覆盖之间的实际折中。",
+        tags: [["LLM","green"],["Safety","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.17516"],["PDF","https://arxiv.org/pdf/2609.17516"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"设计自我提问链式推理机制，让大模型在不确定时主动评估风险并选择拒答。"},{"label":"💡 创新点","text":"提出以自问自答方式量化置信度，并据此触发选择性拒答的风险控制思路。"},{"label":"📊 实验效果","text":"在风险可控拒答上取得 13.1%、8.9%、32.1%、86.9% 等关键指标表现。"},{"label":"⭐ 整体评价","text":"属 LLM 安全与可靠性方向，建议关注拒答边界与任务覆盖之间的实际折中。"}]
+    },
+    {
+        date: "2026-09-16",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Verifiable Social Reasoning for LLM Assistants",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 面向社交推理任务构建可验证流程，提升大模型助手对社会情境的理解能力。 | 💡 创新点: 提出可验证社交推理框架，使助手的社交决策具备可核查的推理依据。 | 📊 实验效果: 在约 24k、21k 量级的社交推理数据上验证方法的有效性与规模。 | ⭐ 整体评价: 属 LLM 社交智能方向，建议关注可验证性对信任建立与安全落地的价值。",
+        tags: [["LLM","green"],["Social","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.17496"],["PDF","https://arxiv.org/pdf/2609.17496"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"面向社交推理任务构建可验证流程，提升大模型助手对社会情境的理解能力。"},{"label":"💡 创新点","text":"提出可验证社交推理框架，使助手的社交决策具备可核查的推理依据。"},{"label":"📊 实验效果","text":"在约 24k、21k 量级的社交推理数据上验证方法的有效性与规模。"},{"label":"⭐ 整体评价","text":"属 LLM 社交智能方向，建议关注可验证性对信任建立与安全落地的价值。"}]
+    },
+    {
+        date: "2026-09-16",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "PhysStream: Streaming Physics-Grounded Video Generation with Structured Scene Memory and Fine-Grained Motion Control",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 构建流式物理接地视频生成框架，结合结构化场景记忆与细粒度动作控制。 | 💡 创新点: 提出 PhysStream，将物理一致性约束与场景记忆融入生成，实现可控编辑。 | 📊 实验效果: 在物理合理性与动作控制上取得 33%、12%、85% 等关键指标表现。 | ⭐ 整体评价: 属 Robotics 视频生成方向，建议关注物理保真度与真实机器人控制的迁移。",
+        tags: [["Robotics","green"],["Video","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.17521"],["PDF","https://arxiv.org/pdf/2609.17521"],["Project","https://czzzzh.github.io/PhysStream"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"构建流式物理接地视频生成框架，结合结构化场景记忆与细粒度动作控制。"},{"label":"💡 创新点","text":"提出 PhysStream，将物理一致性约束与场景记忆融入生成，实现可控编辑。"},{"label":"📊 实验效果","text":"在物理合理性与动作控制上取得 33%、12%、85% 等关键指标表现。"},{"label":"⭐ 整体评价","text":"属 Robotics 视频生成方向，建议关注物理保真度与真实机器人控制的迁移。"}]
+    },
+    {
+        date: "2026-09-16",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "Dissecting Motion-Prior Regularization for Data-Scarce Robotic Insertion",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 剖析训练期运动先验正则化对数据稀缺机械臂插入任务的作用机理。 | 💡 创新点: 提出具备鲁棒性的运动先验正则化方法，缓解小样本插入任务的过拟合。 | 📊 实验效果: 在插入任务上取得 87.5%、86.3%、82.5%、83.8% 等成功率指标。 | ⭐ 整体评价: 属 Robotics 控制方向，与机械臂插拔实操强相关，建议关注真实部署泛化。",
+        tags: [["Robotics","green"],["Insertion","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.17484"],["PDF","https://arxiv.org/pdf/2609.17484"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"剖析训练期运动先验正则化对数据稀缺机械臂插入任务的作用机理。"},{"label":"💡 创新点","text":"提出具备鲁棒性的运动先验正则化方法，缓解小样本插入任务的过拟合。"},{"label":"📊 实验效果","text":"在插入任务上取得 87.5%、86.3%、82.5%、83.8% 等成功率指标。"},{"label":"⭐ 整体评价","text":"属 Robotics 控制方向，与机械臂插拔实操强相关，建议关注真实部署泛化。"}]
+    },
+    {
+        date: "2026-09-16",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Agentic Societies Need a Social Harness",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 研究多智能体社会协作的架构设计，关注个体间的社会化协调与约束机制。 | 💡 创新点: 提出为智能体社会引入社交约束框架，规范多体协作中的角色与交互边界。 | 📊 实验效果: 在协作任务场景中验证框架有效性，具体量化指标详见原文。 | ⭐ 整体评价: 属 Agent 多体协作方向，建议关注社会规范的可扩展性与真实部署鲁棒性。",
+        tags: [["Agent","green"],["Social","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.17527"],["PDF","https://arxiv.org/pdf/2609.17527"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"研究多智能体社会协作的架构设计，关注个体间的社会化协调与约束机制。"},{"label":"💡 创新点","text":"提出为智能体社会引入社交约束框架，规范多体协作中的角色与交互边界。"},{"label":"📊 实验效果","text":"在协作任务场景中验证框架有效性，具体量化指标详见原文。"},{"label":"⭐ 整体评价","text":"属 Agent 多体协作方向，建议关注社会规范的可扩展性与真实部署鲁棒性。"}]
+    },
+    {
+        date: "2026-09-16",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "ScienceBuddy: Recursive-in-Recursive Self-Improvement for Interactive Scientific Agents",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 采用递归嵌套的自我改进范式，结合持续学习与强化学习训练科学智能体。 | 💡 创新点: 提出 ScienceBuddy，以递归中递归机制让智能体在交互中迭代优化能力。 | 📊 实验效果: 在交互式科学任务上验证方法有效性，具体指标详见原项目主页。 | ⭐ 整体评价: 属 Agent 自改进方向，建议关注递归深度带来的稳定性与计算开销。",
+        tags: [["Agent","green"],["Self-Improvement","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.17523"],["PDF","https://arxiv.org/pdf/2609.17523"],["Link","http://science-buddy.io"],["Code","https://github.com/Gen-Verse/ScienceBuddy-RSI"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"采用递归嵌套的自我改进范式，结合持续学习与强化学习训练科学智能体。"},{"label":"💡 创新点","text":"提出 ScienceBuddy，以递归中递归机制让智能体在交互中迭代优化能力。"},{"label":"📊 实验效果","text":"在交互式科学任务上验证方法有效性，具体指标详见原项目主页。"},{"label":"⭐ 整体评价","text":"属 Agent 自改进方向，建议关注递归深度带来的稳定性与计算开销。"}]
+    },
+    {
+        date: "2026-09-16",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "What Breaks Under Pruning in Smart Homes, and When? Evaluating LLM Degradation Across Architectures and Task Complexity",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 在智能家居场景量化裁剪大模型后的能力退化，覆盖多种架构与任务复杂度。 | 💡 创新点: 提出跨架构与任务复杂度的系统性剪枝退化评估框架。 | 📊 实验效果: 实验验证了不同剪枝策略下模型退化差异，具体数据详见原文。 | ⭐ 整体评价: 属 Agent 端侧部署方向，建议关注剪枝后长尾任务的可靠性表现。",
+        tags: [["Agent","green"],["Pruning","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.17515"],["PDF","https://arxiv.org/pdf/2609.17515"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"在智能家居场景量化裁剪大模型后的能力退化，覆盖多种架构与任务复杂度。"},{"label":"💡 创新点","text":"提出跨架构与任务复杂度的系统性剪枝退化评估框架。"},{"label":"📊 实验效果","text":"实验验证了不同剪枝策略下模型退化差异，具体数据详见原文。"},{"label":"⭐ 整体评价","text":"属 Agent 端侧部署方向，建议关注剪枝后长尾任务的可靠性表现。"}]
+    },
+    {
+        date: "2026-09-16",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Atria Dawn: The Dawn of Agentic Superintelligence",
+        venue: "arXiv 2026 · Intern Large Models",
+        summary: "🔬 技术路线: 探索面向智能体超级智能的基础架构，结合语言模型与自动化辅助构建能力。 | 💡 创新点: 提出 Atria Dawn 框架，以 AI 辅助方式推进自主智能体的能力跃迁。 | 📊 实验效果: 社区开源预览版获 330 星关注，具体能力指标详见项目主页。 | ⭐ 整体评价: 属 Agent 超级智能方向，建议关注自主性与可控性之间的平衡设计。",
+        tags: [["Agent","green"],["Superintelligence","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.15818"],["PDF","https://arxiv.org/pdf/2609.15818"],["Project","https://atria-asi.ai"],["Code","https://github.com/atria-asi/Atria-Dawn-Preview"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"探索面向智能体超级智能的基础架构，结合语言模型与自动化辅助构建能力。"},{"label":"💡 创新点","text":"提出 Atria Dawn 框架，以 AI 辅助方式推进自主智能体的能力跃迁。"},{"label":"📊 实验效果","text":"社区开源预览版获 330 星关注，具体能力指标详见项目主页。"},{"label":"⭐ 整体评价","text":"属 Agent 超级智能方向，建议关注自主性与可控性之间的平衡设计。"}]
+    },
+    {
+        date: "2026-09-16",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "ZGCM-1: A Fully Open and Extremely Efficient Foundation Model for Math and Agentic Search",
+        venue: "arXiv 2026 · ZGCAGI",
+        summary: "🔬 技术路线: 构建完全开源且高效的基础模型，统一支持数学推理与智能体搜索两类任务。 | 💡 创新点: 提出 ZGCM-1，以端到端设计在单机环境下实现高效率推理与检索。 | 📊 实验效果: 在效率与上下文上取得 4.2 倍加速、7B 参数、256K 上下文、16K 检索表现。 | ⭐ 整体评价: 属 Agent 基础模型方向，开源且高效，建议关注数学与搜索的联合增益。",
+        tags: [["Agent","green"],["Foundation","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.13356"],["PDF","https://arxiv.org/pdf/2609.13356"],["Project","https://mp.weixin.qq.com/s/kzScxJki8hY2IHIl32l5cQ"],["Code","https://github.com/zgcagi/ZGCM-1"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"构建完全开源且高效的基础模型，统一支持数学推理与智能体搜索两类任务。"},{"label":"💡 创新点","text":"提出 ZGCM-1，以端到端设计在单机环境下实现高效率推理与检索。"},{"label":"📊 实验效果","text":"在效率与上下文上取得 4.2 倍加速、7B 参数、256K 上下文、16K 检索表现。"},{"label":"⭐ 整体评价","text":"属 Agent 基础模型方向，开源且高效，建议关注数学与搜索的联合增益。"}]
+    },
+    {
+        date: "2026-09-16",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Dream-RSI: Recursive Self-Improvement through Evolving Worlds",
+        venue: "arXiv 2026 · Google",
+        summary: "🔬 技术路线: 在演化世界中借助递归自我改进提升智能体能力，结合框架与算法设计。 | 💡 创新点: 提出 Dream-RSI，以可扩展且轻量化的方式实现跨世界的自我迭代优化。 | 📊 实验效果: 社区开源版获 52 星关注，具体改进幅度详见原文。 | ⭐ 整体评价: 属 Agent 自改进方向，建议关注演化环境的多样性与迭代稳定性。",
+        tags: [["Agent","green"],["RSI","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.14858"],["PDF","https://arxiv.org/pdf/2609.14858"],["Project","https://dream-rsi.com/"],["Code","https://github.com/zhengkid/Dream-RSI"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"在演化世界中借助递归自我改进提升智能体能力，结合框架与算法设计。"},{"label":"💡 创新点","text":"提出 Dream-RSI，以可扩展且轻量化的方式实现跨世界的自我迭代优化。"},{"label":"📊 实验效果","text":"社区开源版获 52 星关注，具体改进幅度详见原文。"},{"label":"⭐ 整体评价","text":"属 Agent 自改进方向，建议关注演化环境的多样性与迭代稳定性。"}]
+    },
+    {
+        date: "2026-09-16",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "RSIAgent: Autonomous Exploration for Recursive Self-improvement in New Environments",
+        venue: "arXiv 2026 · AetherLabs-AI",
+        summary: "🔬 技术路线: 构建自主探索智能体，在新环境中通过递归自我改进持续提升适应能力。 | 💡 创新点: 提出 RSIAgent 并引入 OSWorld-v2 评测环境，支撑开放场景的能力迭代。 | 📊 实验效果: 社区开源版获 215 星关注，自主探索与改进效果详见原文。 | ⭐ 整体评价: 属 Agent 自改进方向，建议关注新环境探索效率与灾难性遗忘问题。",
+        tags: [["Agent","green"],["Exploration","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.15364"],["PDF","https://arxiv.org/pdf/2609.15364"],["Project","https://aetherlabsai.github.io/RSIAgent/"],["Code","https://github.com/AetherLabsAI/RSIAgent"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"构建自主探索智能体，在新环境中通过递归自我改进持续提升适应能力。"},{"label":"💡 创新点","text":"提出 RSIAgent 并引入 OSWorld-v2 评测环境，支撑开放场景的能力迭代。"},{"label":"📊 实验效果","text":"社区开源版获 215 星关注，自主探索与改进效果详见原文。"},{"label":"⭐ 整体评价","text":"属 Agent 自改进方向，建议关注新环境探索效率与灾难性遗忘问题。"}]
+    },
+    {
+        date: "2026-09-16",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Discovery Foundation Models: Toward Open-Ended Discovery Intelligence",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 面向开放式科学发现，构建基础模型以自动化驱动假设生成与实验规划。 | 💡 创新点: 提出 Dry-Lab，以统一框架支撑从文献到实验的开放式发现智能。 | 📊 实验效果: 社区开源版获 7 星关注，发现流程的有效性详见项目主页。 | ⭐ 整体评价: 属 Agent 科学发现方向，建议关注发现结果的可靠性与可复现性。",
+        tags: [["Agent","green"],["Discovery","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.15973"],["PDF","https://arxiv.org/pdf/2609.15973"],["Project","https://phai-labs.com/collaborate/"],["Code","https://github.com/Gen-Verse/DFM-Plans"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"面向开放式科学发现，构建基础模型以自动化驱动假设生成与实验规划。"},{"label":"💡 创新点","text":"提出 Dry-Lab，以统一框架支撑从文献到实验的开放式发现智能。"},{"label":"📊 实验效果","text":"社区开源版获 7 星关注，发现流程的有效性详见项目主页。"},{"label":"⭐ 整体评价","text":"属 Agent 科学发现方向，建议关注发现结果的可靠性与可复现性。"}]
+    },
+    {
+        date: "2026-09-16",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "BVB: Benchmarking Agentic Video Understanding via Programmatic Reconstruction in Blender",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 借助 Blender 程序化重建构建智能体视频理解基准，检验模型对视频结构的还原。 | 💡 创新点: 提出 BVB 与 Blender-VideoBench，以程序化重建量化视频理解的可还原性。 | 📊 实验效果: 在视频理解基准上取得 53.7% 等关键指标表现。 | ⭐ 整体评价: 属 Agent 视频理解评测方向，建议关注重建指标对真实理解能力的反映度。",
+        tags: [["Agent","green"],["Benchmark","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.15478"],["PDF","https://arxiv.org/pdf/2609.15478"],["Project","https://yoloytang.me/BVB"],["Code","https://github.com/yunlong10/BVB"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"借助 Blender 程序化重建构建智能体视频理解基准，检验模型对视频结构的还原。"},{"label":"💡 创新点","text":"提出 BVB 与 Blender-VideoBench，以程序化重建量化视频理解的可还原性。"},{"label":"📊 实验效果","text":"在视频理解基准上取得 53.7% 等关键指标表现。"},{"label":"⭐ 整体评价","text":"属 Agent 视频理解评测方向，建议关注重建指标对真实理解能力的反映度。"}]
+    },
+    {
+        date: "2026-09-16",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "ENCP: Episode-Normalized Conformal Prediction for Vision-and-Language Navigation",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 提出回合归一化共形预测方法，为视觉-语言导航提供带置信度的不确定性估计。 | 💡 创新点: 提出 ENCP，以回合级归一化缓解导航任务中不确定性校准的分布偏移。 | 📊 实验效果: 在视觉-语言导航与预测任务上验证方法的有效性。 | ⭐ 整体评价: 属 Multimodal 导航方向，建议关注不确定性校准对安全落地的实际增益。",
+        tags: [["Multimodal","green"],["VLN","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.17499"],["PDF","https://arxiv.org/pdf/2609.17499"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出回合归一化共形预测方法，为视觉-语言导航提供带置信度的不确定性估计。"},{"label":"💡 创新点","text":"提出 ENCP，以回合级归一化缓解导航任务中不确定性校准的分布偏移。"},{"label":"📊 实验效果","text":"在视觉-语言导航与预测任务上验证方法的有效性。"},{"label":"⭐ 整体评价","text":"属 Multimodal 导航方向，建议关注不确定性校准对安全落地的实际增益。"}]
+    },
+    {
+        date: "2026-09-16",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "PhysBrain 1.5: From Vision-Language Models to Physical Foundation Models",
+        venue: "arXiv 2026 · DeepCybo",
+        summary: "🔬 技术路线: 将视觉-语言模型扩展为面向物理世界的物理基础模型，融合预训练与微调。 | 💡 创新点: 提出 PhysBrain 1.5，以统一多模态预训练打通视觉-语言到物理推理的链路。 | 📊 实验效果: 基于 8B 参数规模验证物理理解与推理能力，详见项目主页。 | ⭐ 整体评价: 属 Multimodal 具身方向，建议关注物理推理在真实操作任务中的迁移效果。",
+        tags: [["Multimodal","green"],["VLM","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.14973"],["PDF","https://arxiv.org/pdf/2609.14973"],["Project","https://deepcybo-physai.github.io/PhysBrain-1.5/"],["Code","https://github.com/DeepCybo-PhysAI/PhysBrain-1.5"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"将视觉-语言模型扩展为面向物理世界的物理基础模型，融合预训练与微调。"},{"label":"💡 创新点","text":"提出 PhysBrain 1.5，以统一多模态预训练打通视觉-语言到物理推理的链路。"},{"label":"📊 实验效果","text":"基于 8B 参数规模验证物理理解与推理能力，详见项目主页。"},{"label":"⭐ 整体评价","text":"属 Multimodal 具身方向，建议关注物理推理在真实操作任务中的迁移效果。"}]
+    },
+    {
+        date: "2026-09-16",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "LynnReal-Omni: Native multi-modal Video Generation for Agentic Visual Workflows",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 采用扩散模型与扩散 Transformer 构建原生多模态视频生成，服务智能体工作流。 | 💡 创新点: 提出 LynnReal-Omni，以统一实时架构生成多模态视频支撑智能体任务。 | 📊 实验效果: 在生成规模上达到 32B、27B 参数与 540p 分辨率等关键指标。 | ⭐ 整体评价: 属 Multimodal 视频生成方向，建议关注实时性与智能体工作流的集成度。",
+        tags: [["Multimodal","green"],["Video","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.15863"],["PDF","https://arxiv.org/pdf/2609.15863"],["Project","https://github.com/LynnReal-AI/LynnReal-Omni"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"采用扩散模型与扩散 Transformer 构建原生多模态视频生成，服务智能体工作流。"},{"label":"💡 创新点","text":"提出 LynnReal-Omni，以统一实时架构生成多模态视频支撑智能体任务。"},{"label":"📊 实验效果","text":"在生成规模上达到 32B、27B 参数与 540p 分辨率等关键指标。"},{"label":"⭐ 整体评价","text":"属 Multimodal 视频生成方向，建议关注实时性与智能体工作流的集成度。"}]
+    },
+    // === 2026-09-15 ===
+    {
+        date: "2026-09-15",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "ReactHuman: A Physics-Grounded Benchmark for Human-Like Reactive Decision-Making in Embodied Multimodal LLMs",
+        venue: "arXiv 2026 · HuggingFace Daily Papers",
+        summary: "🔬 技术路线: 构建基于物理仿真的具身多模态大模型反应决策基准，模拟物体滑落、突发碰撞等真实物理危险场景，要求模型即时做出反应。 | 💡 创新点: 提出 ReactHuman 基准，将物理真实性与人类反应式决策结合，强调在突发危险下的快速、类人应对能力。 | 📊 实验效果: 在导航与物体交互任务上验证基准有效性，能够区分模型在突发状况下的反应质量与决策合理性。 | ⭐ 整体评价: 属具身智能与机器人评测方向，对安全关键场景下的多模态决策研究有推动作用，建议关注真实部署泛化与基线对比。",
+        tags: [["Robotics","green"],["Benchmark","green"],["Multimodal LLM","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.10895"],["PDF","https://arxiv.org/pdf/2609.10895"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"构建基于物理仿真的具身多模态大模型反应决策基准，模拟物体滑落、突发碰撞等真实物理危险场景，要求模型即时做出反应。"},{"label":"💡 创新点","text":"提出 ReactHuman 基准，将物理真实性与人类反应式决策结合，强调在突发危险下的快速、类人应对能力。"},{"label":"📊 实验效果","text":"在导航与物体交互任务上验证基准有效性，能够区分模型在突发状况下的反应质量与决策合理性。"},{"label":"⭐ 整体评价","text":"属具身智能与机器人评测方向，对安全关键场景下的多模态决策研究有推动作用，建议关注真实部署泛化与基线对比。"}]
+    },
+    {
+        date: "2026-09-15",
+        category: "RL",
+        categoryIcon: "🧠",
+        title: "DataFlex-RL: An Evaluation Platform for RLVR Data Policies",
+        venue: "arXiv 2026 · Peking University",
+        summary: "🔬 技术路线: 构建面向强化学习可验证奖励的数据策略评测平台，系统比较不同数据筛选与配比方案对训练效果的影响。 | 💡 创新点: 提出 DataFlex-RL，将强化学习可验证奖励训练中的数据策略作为独立变量进行可控评测，支持灵活组合与对比。 | 📊 实验效果: 在 7B 与 8B 模型上验证，相较基线最高提升 7.76 个百分点，最优数据策略组合达到 95% 指标水平。 | ⭐ 整体评价: 属大语言模型训练数据工程方向，对强化学习可验证奖励的数据策略选型有实用参考价值，建议关注评测覆盖维度与可复现性。",
+        tags: [["RL","green"],["Data Policy","green"],["LLM","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.06107"],["PDF","https://arxiv.org/pdf/2609.06107"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"构建面向强化学习可验证奖励的数据策略评测平台，系统比较不同数据筛选与配比方案对训练效果的影响。"},{"label":"💡 创新点","text":"提出 DataFlex-RL，将强化学习可验证奖励训练中的数据策略作为独立变量进行可控评测，支持灵活组合与对比。"},{"label":"📊 实验效果","text":"在 7B 与 8B 模型上验证，相较基线最高提升 7.76 个百分点，最优数据策略组合达到 95% 指标水平。"},{"label":"⭐ 整体评价","text":"属大语言模型训练数据工程方向，对强化学习可验证奖励的数据策略选型有实用参考价值，建议关注评测覆盖维度与可复现性。"}]
+    },
+    // === 2026-09-14 ===
+    {
+        date: "2026-09-14",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "LLM Benchmark Radar: A Living Database and Search Engine for AI Benchmarks and Evaluation",
+        venue: "arXiv 2026 · Carnegie Mellon University",
+        summary: "🔬 技术路线: 构建持续更新的基准测试数据库与检索引擎，系统性收集并标注各类 AI 评测基准。 | 💡 创新点: 以活数据库理念维护基准元数据，支持按任务、模态、机构等多维度检索与对比。 | 📊 实验效果: 覆盖大量公开基准并提供检索与对比功能，具体收录规模详见项目主页。 | ⭐ 整体评价: 属 LLM 评测基础设施方向，对基准选型与横向对比有实用价值，建议关注覆盖完整度。",
+        tags: [["LLM","green"],["Benchmark","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.11115"],["PDF","https://arxiv.org/pdf/2609.11115"],["Project","https://benchmark-radar.org"],["Code","https://github.com/ktwu01/benchmark-radar"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"构建持续更新的基准测试数据库与检索引擎，系统性收集并标注各类 AI 评测基准。"},{"label":"💡 创新点","text":"以活数据库理念维护基准元数据，支持按任务、模态、机构等多维度检索与对比。"},{"label":"📊 实验效果","text":"覆盖大量公开基准并提供检索与对比功能，具体收录规模详见项目主页。"},{"label":"⭐ 整体评价","text":"属 LLM 评测基础设施方向，对基准选型与横向对比有实用价值，建议关注覆盖完整度。"}]
+    },
+    {
+        date: "2026-09-14",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "SAS: Simple Attention Sparsification via End-to-End Optimization of Context Ranking",
+        venue: "arXiv 2026 · Tencent Hunyuan",
+        summary: "🔬 技术路线: 通过对上下文排序做端到端优化实现注意力稀疏化，降低长上下文推理计算开销。 | 💡 创新点: 提出轻量化后训练方案，无需重训主干即可学习保留关键上下文位置。 | 📊 实验效果: 在预测任务上验证有效性，在保持精度的同时显著减少注意力计算量。 | ⭐ 整体评价: 属 LLM 高效推理方向，落地门槛低，建议关注长文本场景的加速比与精度折损。",
+        tags: [["LLM","green"],["Efficiency","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.13141"],["PDF","https://arxiv.org/pdf/2609.13141"],["Code","https://github.com/Tencent-Hunyuan/Simple-Attention-Sparsification"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"通过对上下文排序做端到端优化实现注意力稀疏化，降低长上下文推理计算开销。"},{"label":"💡 创新点","text":"提出轻量化后训练方案，无需重训主干即可学习保留关键上下文位置。"},{"label":"📊 实验效果","text":"在预测任务上验证有效性，在保持精度的同时显著减少注意力计算量。"},{"label":"⭐ 整体评价","text":"属 LLM 高效推理方向，落地门槛低，建议关注长文本场景的加速比与精度折损。"}]
+    },
+    {
+        date: "2026-09-14",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Online Learning with LLM Experts from Limited Feedback",
+        venue: "arXiv 2026",
+        summary: "🔬 技术路线: 在有限反馈条件下，借助大语言模型专家实现模型的在线持续学习。 | 💡 创新点: 提出利用专家模型输出作为弱监督信号的新方法，降低反馈获取成本。 | 📊 实验效果: 在在线学习设定下验证有效性，具体指标详见原文。 | ⭐ 整体评价: 属 LLM 在线学习方向，适合反馈稀缺场景，建议关注反馈效率与遗忘问题。",
+        tags: [["LLM","green"],["Online","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.05820"],["PDF","https://arxiv.org/pdf/2609.05820"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"在有限反馈条件下，借助大语言模型专家实现模型的在线持续学习。"},{"label":"💡 创新点","text":"提出利用专家模型输出作为弱监督信号的新方法，降低反馈获取成本。"},{"label":"📊 实验效果","text":"在在线学习设定下验证有效性，具体指标详见原文。"},{"label":"⭐ 整体评价","text":"属 LLM 在线学习方向，适合反馈稀缺场景，建议关注反馈效率与遗忘问题。"}]
+    },
+    {
+        date: "2026-09-14",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "PLC-DPO: Posterior Label Correction in Noisy and Ambiguous Preference Optimization",
+        venue: "arXiv 2026 · KAIST AI",
+        summary: "🔬 技术路线: 在后验层面做标签校正，缓解偏好数据中噪声与歧义对 DPO 训练的干扰。 | 💡 创新点: 提出 PLC-DPO，在偏好优化中引入后验标签修正机制以提升鲁棒性。 | 📊 实验效果: 在含噪偏好数据上验证方法有效性，具体指标详见原文。 | ⭐ 整体评价: 属偏好优化方向，对真实标注噪声有现实意义，建议关注修正开销与稳定性。",
+        tags: [["LLM","green"],["Preference","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2608.30597"],["PDF","https://arxiv.org/pdf/2608.30597"],["Code","https://github.com/VennTum99/PLC-DPO"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"在后验层面做标签校正，缓解偏好数据中噪声与歧义对 DPO 训练的干扰。"},{"label":"💡 创新点","text":"提出 PLC-DPO，在偏好优化中引入后验标签修正机制以提升鲁棒性。"},{"label":"📊 实验效果","text":"在含噪偏好数据上验证方法有效性，具体指标详见原文。"},{"label":"⭐ 整体评价","text":"属偏好优化方向，对真实标注噪声有现实意义，建议关注修正开销与稳定性。"}]
+    },
+    {
+        date: "2026-09-14",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "Breaking the Vision-Action Shortcut: Latent Interface Training for Generalizable Robotics Foundation Models",
+        venue: "arXiv 2026 · National University of Singapore",
+        summary: "🔬 技术路线: 提出潜在接口训练方法，在视觉与动作间引入潜空间解耦，削弱模型对表面视觉捷径的依赖。 | 💡 创新点: 提出 FAST-WAM 接口机制，迫使策略学习可迁移的潜在表征而非视觉-动作伪相关。 | 📊 实验效果: 在跨本体与分布外场景下泛化成功率提升 10.70 个百分点。 | ⭐ 整体评价: 属 VLA/具身控制方向，直击泛化痛点，建议关注真机验证与跨任务迁移表现。",
+        tags: [["Robotics","green"],["VLA","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.12641"],["PDF","https://arxiv.org/pdf/2609.12641"],["Project","https://magiclab-nus.github.io/LIT/?v=37955c5"],["Code","https://github.com/MAGICLAB-NUS/LIT"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出潜在接口训练方法，在视觉与动作间引入潜空间解耦，削弱模型对表面视觉捷径的依赖。"},{"label":"💡 创新点","text":"提出 FAST-WAM 接口机制，迫使策略学习可迁移的潜在表征而非视觉-动作伪相关。"},{"label":"📊 实验效果","text":"在跨本体与分布外场景下泛化成功率提升 10.70 个百分点。"},{"label":"⭐ 整体评价","text":"属 VLA/具身控制方向，直击泛化痛点，建议关注真机验证与跨任务迁移表现。"}]
+    },
+    {
+        date: "2026-09-14",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "robotics-vision-language-finetune · mkdemir8",
+        venue: "",
+        summary: "mkdemir8 发布的视觉-语言-动作联合微调机器人模型，面向多模态操作策略训练。",
+        tags: [],
+        links: [["📎 HuggingFace","https://huggingface.co/mkdemir8/robotics-vision-language-finetune"]]
+    },
+    {
+        date: "2026-09-14",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "embodied-ai-study · klein8734",
+        venue: "",
+        summary: "klein8734 发布的具身智能研究模型/数据集，探索机器人感知与决策能力。",
+        tags: [],
+        links: [["📎 HuggingFace","https://huggingface.co/klein8734/embodied-ai-study"]]
+    },
+    {
+        date: "2026-09-14",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "pi05-robotwin-random20-ft · QRP123",
+        venue: "",
+        summary: "QRP123 基于 RoboTwin 随机 20 场景微调的 pi0.5 策略，用于机械臂操作任务。",
+        tags: [],
+        links: [["📎 HuggingFace","https://huggingface.co/QRP123/pi05-robotwin-random20-ft"]]
+    },
+    {
+        date: "2026-09-14",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "COBRA-Skills: Contextual Bandit-Guided Evolution for Agent Skill Optimization",
+        venue: "arXiv 2026 · Chinese University of Hong Kong, Shenzhen",
+        summary: "🔬 技术路线: 用上下文赌博机建模技能选择，驱动智能体在交互中持续演化与优选技能。 | 💡 创新点: 提出 COBRA-Skills 框架，将技能优化转化为探索-利用的在线决策问题。 | 📊 实验效果: 在生成类任务上验证有效性，技能调用质量随演化轮次稳步提升。 | ⭐ 整体评价: 属 Agent 技能优化方向，兼顾鲁棒与效率，建议关注多任务长程场景的泛化。",
+        tags: [["Agent","green"],["Skill","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.11682"],["PDF","https://arxiv.org/pdf/2609.11682"],["Code","https://github.com/Jerry-LuP/COBRA-Skills"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"用上下文赌博机建模技能选择，驱动智能体在交互中持续演化与优选技能。"},{"label":"💡 创新点","text":"提出 COBRA-Skills 框架，将技能优化转化为探索-利用的在线决策问题。"},{"label":"📊 实验效果","text":"在生成类任务上验证有效性，技能调用质量随演化轮次稳步提升。"},{"label":"⭐ 整体评价","text":"属 Agent 技能优化方向，兼顾鲁棒与效率，建议关注多任务长程场景的泛化。"}]
+    },
+    {
+        date: "2026-09-14",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Feyospace-v1: How the Cyber Mercury Seven Trained Frontier Cyber Models",
+        venue: "arXiv 2026 · feyospace",
+        summary: "🔬 技术路线: 以网络七人组协作训练范式，构建面向网络安全的前沿模型训练流程。 | 💡 创新点: 提出 Feyospace-s1 端到端训练方案，将专家协作经验固化进模型能力。 | 📊 实验效果: 在相关评测中取得 23.76%、10.49%、63.24% 等关键指标表现。 | ⭐ 整体评价: 属 Agent/安全方向，强调专家协同训练，建议关注其在真实攻防场景的可用性。",
+        tags: [["Agent","green"],["Cyber","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.08418"],["PDF","https://arxiv.org/pdf/2609.08418"],["Project","https://verapraxis.ai/feyospace"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"以网络七人组协作训练范式，构建面向网络安全的前沿模型训练流程。"},{"label":"💡 创新点","text":"提出 Feyospace-s1 端到端训练方案，将专家协作经验固化进模型能力。"},{"label":"📊 实验效果","text":"在相关评测中取得 23.76%、10.49%、63.24% 等关键指标表现。"},{"label":"⭐ 整体评价","text":"属 Agent/安全方向，强调专家协同训练，建议关注其在真实攻防场景的可用性。"}]
+    },
+    {
+        date: "2026-09-14",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "StepAudio 3 Gen Technical Report",
+        venue: "arXiv 2026 · StepAudio",
+        summary: "🔬 技术路线: 采用扩散 Transformer 与语言模型结合的生成架构，统一建模语音合成流程。 | 💡 创新点: 提出基于 Transformer 的统一框架，支持零样本与轻量化部署。 | 📊 实验效果: 在语音生成任务上验证有效性，具体指标详见技术报告。 | ⭐ 整体评价: 属语音生成方向，统一架构具备工程价值，建议关注零样本音色与可控性表现。",
+        tags: [["Speech","green"],["TTS","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.12945"],["PDF","https://arxiv.org/pdf/2609.12945"],["Project","https://stepaudiollm.github.io/step-audio-3-gen/"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"采用扩散 Transformer 与语言模型结合的生成架构，统一建模语音合成流程。"},{"label":"💡 创新点","text":"提出基于 Transformer 的统一框架，支持零样本与轻量化部署。"},{"label":"📊 实验效果","text":"在语音生成任务上验证有效性，具体指标详见技术报告。"},{"label":"⭐ 整体评价","text":"属语音生成方向，统一架构具备工程价值，建议关注零样本音色与可控性表现。"}]
+    },
     // === 2026-09-12 ===
     {
         date: "2026-09-12",
@@ -24271,6 +24762,34 @@ const PAPERS_DB = [
 ];
 
 const DAILY_OVERVIEW = {
+    "2026-09-17": {
+        bannerTitle: "🔥 今日看点",
+        bannerSubtitle: "今日 arXiv 8 篇 + HuggingFace 热门 7 篇，共 15 条。世界模型方向：PointZero 用三维点轨迹补全学习可迁移动力学，AI for Games 综述基础模型如何重塑游戏世界建模。机器人方向：GPT-策略让视觉语言模型在上下文中即时学习操作策略，Dreaming the Sound 借视频音频生成实现零样本力觉感知操作，HarnessVLN 以无需训练的编排器统一具身导航（多基准约六成水平）。智能体方向密集涌现：ScienceIDE 把科学代码库变成可训练环境，双过程语言智能体引入记忆与自反思，Affora 定义面向智能体的界面规范，广义智能体迭代给出递归自我改进的形式框架。多模态与语音：PANORAMA 统一全景分割与描述，StepAudio 3 实时边想边说（约 56%），FLAT 用柔性长度对齐 token 串联图文。",
+        picks: ["PointZero: 3D Point Track Completion for Learning Transferable 3D Dynamics","AI for Games in the Foundation Model Era","In-Context Robot Learning with VLM Agents","Dreaming the Sound of Contact: Leveraging Video and Audio Generation for Zero-Shot Force-Aware Manipulation and Data Generation","HarnessVLN: Unifying Training-Free Embodied Navigation through an Agent Harness"],
+        totalPapers: 15,
+        totalNews: 0
+    },
+    "2026-09-16": {
+        bannerTitle: "🔥 今日看点",
+        bannerSubtitle: "今日 arXiv 8 篇 + HuggingFace 热门 8 篇，共 16 条。机器人方向：PhysStream 将物理接地与场景记忆融入流式视频生成，实现细粒度动作控制；Dissecting Motion-Prior 剖析运动先验正则化在小样本机械臂插入上的作用（成功率 87.5%、86.3% 等）。Agent 方向集中涌现递归自我改进范式（ScienceBuddy、Dream-RSI、RSIAgent）与智能体超级智能探索（Atria Dawn）；LLM 方向聚焦选择性拒答与可验证社交推理，兼顾安全与可靠性。",
+        picks: ["Dream-RSI: Recursive Self-Improvement through Evolving Worlds","RSIAgent: Autonomous Exploration for Recursive Self-improvement in New Environments","Atria Dawn: The Dawn of Agentic Superintelligence","ZGCM-1: A Fully Open and Extremely Efficient Foundation Model for Math and Agentic Search","PhysBrain 1.5: From Vision-Language Models to Physical Foundation Models"],
+        totalPapers: 16,
+        totalNews: 0
+    },
+    "2026-09-15": {
+        bannerTitle: "🔥 今日看点",
+        bannerSubtitle: "今日 HuggingFace 热门 2 篇（arXiv 索引采集超时跳过）。重点：ReactHuman 提出基于物理仿真的具身多模态大模型突发危险反应决策基准，聚焦打滑物体接住等真实物理交互；DataFlex-RL 提供面向强化学习可验证奖励的数据策略评测平台，在 7B 与 8B 模型上最优组合达到 95% 指标水平。",
+        picks: ["ReactHuman: A Physics-Grounded Benchmark for Human-Like Reactive Decision-Making in Embodied Multimodal LLMs","DataFlex-RL: An Evaluation Platform for RLVR Data Policies"],
+        totalPapers: 2,
+        totalNews: 0
+    },
+    "2026-09-14": {
+        bannerTitle: "🔥 今日看点",
+        bannerSubtitle: "今日 HuggingFace 热门 8 篇（arXiv 索引采集超时跳过），另有 3 个机器人方向模型发布。重点：新加坡国立大学提出潜在接口训练（LIT）打破视觉-动作捷径，跨本体泛化提升 10.70 个百分点；腾讯混元发布端到端注意力稀疏化后训练方案；社区集中涌现视觉-语言-动作机器人微调模型，具身智能热度持续走高。",
+        picks: ["Breaking the Vision-Action Shortcut: Latent Interface Training for Generalizable Robotics Foundation Models"],
+        totalPapers: 8,
+        totalNews: 3
+    },
     "2026-09-12": {
         bannerTitle: "🔥 今日看点",
         bannerSubtitle: "今日 arXiv 检索未匹配到论文，HuggingFace 热门论文与模型源因网络超时未采集，X/Twitter 源仍不可用。全站仅收录 1 条 OpenAI 机构动态：其工程博客讲述在线存储系统如何快速扩展，以支撑超过 10 亿 ChatGPT 用户的访问需求，分享了大规模服务下的架构演进与容量规划经验。",
