@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>小小志AI日报 - 2026年9月20日 周日 · 周末补漏</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans SC', sans-serif;
+  background: #0a0e1a;
+  color: #e0e6f0;
+  line-height: 1.7;
+  min-height: 100vh;
+}
+.container { max-width: 960px; margin: 0 auto; padding: 40px 24px; }
+header { text-align: center; margin-bottom: 48px; padding: 40px 20px;
+  background: linear-gradient(135deg, rgba(59,130,246,0.08) 0%, rgba(139,92,246,0.08) 100%);
+  border-radius: 20px; border: 1px solid rgba(99,102,241,0.15); }
+header h1 { font-size: 2rem; background: linear-gradient(135deg, #60a5fa, #a78bfa);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 8px; }
+header .date { color: #94a3b8; font-size: 1rem; }
+header .subtitle { color: #64748b; font-size: 0.9rem; margin-top: 6px; }
+.highlight-banner { background: linear-gradient(135deg, rgba(249,115,22,0.1) 0%, rgba(234,179,8,0.08) 100%);
+  border: 1px solid rgba(249,115,22,0.2); border-radius: 14px; padding: 20px 24px; margin-bottom: 36px; }
+.hl-title { font-size: 1.1rem; font-weight: 700; color: #fb923c; margin-bottom: 8px; }
+.hl-text { font-size: 0.92rem; color: #cbd5e1; line-height: 1.7; }
+.catchup-banner { background: linear-gradient(135deg, rgba(139,92,246,0.1) 0%, rgba(59,130,246,0.08) 100%);
+  border: 1px solid rgba(139,92,246,0.2); border-radius: 14px; padding: 16px 24px; margin-bottom: 36px;
+  text-align: center; color: #a78bfa; font-size: 0.95rem; }
+.section { margin-bottom: 40px; }
+.section-title { font-size: 1.4rem; color: #f1f5f9; margin-bottom: 20px; padding-bottom: 12px;
+  border-bottom: 1px solid rgba(99,102,241,0.2); }
+.paper-card { background: rgba(30,41,59,0.6); border: 1px solid rgba(99,102,241,0.12);
+  border-radius: 14px; padding: 24px; margin-bottom: 16px; transition: transform 0.2s, box-shadow 0.2s; }
+.paper-card:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(99,102,241,0.1);
+  border-color: rgba(99,102,241,0.3); }
+.paper-card.hot { border-color: rgba(249,115,22,0.25); background: rgba(30,41,59,0.7); }
+.paper-title { font-size: 1.1rem; font-weight: 600; color: #f8fafc; margin-bottom: 8px; }
+.paper-meta { font-size: 0.85rem; color: #64748b; margin-bottom: 10px; }
+.summary-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 14px; }
+@media (max-width: 640px) { .summary-grid { grid-template-columns: 1fr; } }
+.summary-item { background: rgba(15,23,42,0.5); border-radius: 10px; padding: 12px 14px;
+  border: 1px solid rgba(99,102,241,0.08); }
+.summary-label { font-size: 0.78rem; font-weight: 600; color: #818cf8; margin-bottom: 4px; }
+.summary-text { font-size: 0.88rem; color: #cbd5e1; line-height: 1.6; }
+.paper-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+.tag { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: 500; }
+.tag-agent { background: rgba(16,185,129,0.12); color: #34d399; }
+.tag-llm { background: rgba(99,102,241,0.12); color: #818cf8; }
+.tag-multimodal { background: rgba(244,114,182,0.12); color: #f472b6; }
+.tag-world { background: rgba(251,191,36,0.12); color: #fbbf24; }
+.tag-robot { background: rgba(251,146,60,0.12); color: #fb923c; }
+.tag-vla { background: rgba(59,130,246,0.12); color: #60a5fa; }
+.tag-reasoning { background: rgba(132,204,22,0.12); color: #a3e635; }
+.hot-badge { display: inline; margin-right: 4px; }
+.paper-links { display: flex; flex-wrap: wrap; gap: 10px; }
+.paper-links a { display: inline-block; padding: 5px 14px; background: rgba(99,102,241,0.12);
+  color: #818cf8; text-decoration: none; border-radius: 8px; font-size: 0.82rem; font-weight: 500; transition: background 0.2s; }
+.paper-links a:hover { background: rgba(99,102,241,0.25); }
+.stats { text-align: center; padding: 30px; margin-top: 40px; background: rgba(30,41,59,0.4);
+  border-radius: 14px; border: 1px solid rgba(99,102,241,0.1); }
+.stats p { color: #94a3b8; font-size: 0.88rem; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <h1>📡 小小志AI日报</h1>
+  <div class="date">2026年9月20日 周日 · 周末补漏</div>
+  <div class="subtitle">⏪ 展示 2026-09-19 最新内容 · 跨日去重后共 5 篇</div>
+</header>
+
+<div class="highlight-banner">
+  <div class="hl-title">🔥 今日看点（周末补漏）</div>
+  <div class="hl-text">
+    Agent 方向《SoL-Pi: Recursively Scaling Auto-Research Loops》提出递归自我改进研究循环，在智能体基准上取得 49.0% 的相对提升，社区关注度极高。World Model 方向《JEPA-Anything》将联合嵌入预测架构扩展到跨世界场景，开源配套代码。今日数据取自 2026-09-19 的 HuggingFace 热门论文，经跨日去重后保留 5 篇新增内容。
+  </div>
+</div>
+
+<div class="catchup-banner">
+  ⏪ 周末补漏专栏 — 当日 arXiv 索引暂无新数据，以下展示最近一期 HuggingFace 热门论文，已剔除与历史日报重复的条目
+</div>
+
+<!-- 🧩 Agent Section -->
+<section class="section">
+  <h2 class="section-title">🧩 Agent · 智能体</h2>
+
+  <div class="paper-card hot">
+    <div class="paper-title"><span class="hot-badge">🔥</span>SoL-Pi: Recursively Scaling Auto-Research Loops for Efficient Agent Harness</div>
+    <div class="paper-meta">arXiv 2026 · NVIDIA · Agent</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">借鉴递归自我改进机制，构建可自动扩展研究循环的智能体框架，提升复杂任务求解效率。</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出受递归自我改进启发的扩展策略，使智能体无需人工干预即可自我迭代研究流程。</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在智能体基准上取得 49.0% 的相对提升，项目已在社区获得两千余星关注。</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于智能体工具使用方向，建议关注架构设计、工具调用策略与端到端成功率。</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-agent">Agent</span>
+      <span class="tag tag-reasoning">Auto-Research</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2609.20519">arXiv</a>
+      <a href="https://arxiv.org/pdf/2609.20519">PDF</a>
+      <a href="https://nvlabs.github.io/SoL-Pi/">Project</a>
+      <a href="https://github.com/NVlabs/SoL-Pi">Code</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">DeepSeek-V4.1-Flash: Pushing the Limits of KV Cache Compression</div>
+    <div class="paper-meta">arXiv 2026 · DeepSeek · Agent / LLM</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">重构注意力架构与训练策略，大幅压缩键值缓存占用，在保持多模态能力的同时提升推理吞吐。</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 DeepSeek-V4 系列，兼具多模态理解与极致高效特性，将缓存压缩推向新的极限。</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">模型规模覆盖 552B、16B、8B 三档，在长上下文场景下显著降低显存与延迟开销。</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于大语言模型与智能体基础方向，建议关注长序列推理成本与实际部署收益。</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-agent">Agent</span>
+      <span class="tag tag-llm">KV Cache</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2609.19969">arXiv</a>
+      <a href="https://arxiv.org/pdf/2609.19969">PDF</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">Self-Evolving Search Index</div>
+    <div class="paper-meta">arXiv 2026 · Agent</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">结合策略学习与框架设计，构建可自我演化的搜索索引，让检索系统随使用持续自动优化。</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 SELF-INDEX 机制，使搜索索引能够自主更新与扩展，显著降低人工维护成本。</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在多个检索场景验证了方法有效性，索引质量随迭代轮次稳步提升。</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于智能体工具使用方向，建议关注索引演化策略与大规模检索的可扩展性。</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-agent">Agent</span>
+      <span class="tag tag-multimodal">Search</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2609.19656">arXiv</a>
+      <a href="https://arxiv.org/pdf/2609.19656">PDF</a>
+      <a href="https://augustinlib.github.io/Self-Index/">Project</a>
+    </div>
+  </div>
+</section>
+
+<!-- 🧠 LLM Section -->
+<section class="section">
+  <h2 class="section-title">🧠 LLM · 大语言模型</h2>
+
+  <div class="paper-card">
+    <div class="paper-title">When EOS Tokens Disagree: Understanding Length Inflation in On-Policy Distillation</div>
+    <div class="paper-meta">arXiv 2026 · Microsoft · LLM</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">采用在线策略蒸馏训练范式，研究师生模型在结束符预测上不一致所导致的生成长度膨胀现象。</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 K2-Horizon 方法，针对性缓解蒸馏过程中的长度失真问题，提升输出一致性。</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在多项生成任务上验证了方法有效性，显著改善了长度膨胀与质量退化问题。</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于大语言模型推理与训练方向，建议关注蒸馏稳定性与长度控制机制。</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-llm">LLM</span>
+      <span class="tag tag-reasoning">Distillation</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2609.20511">arXiv</a>
+      <a href="https://arxiv.org/pdf/2609.20511">PDF</a>
+      <a href="https://uncsciml.github.io/opd-eos-website/">Project</a>
+      <a href="https://github.com/UNCSciML/opd-eos">Code</a>
+    </div>
+  </div>
+</section>
+
+<!-- 🌍 World Model Section -->
+<section class="section">
+  <h2 class="section-title">🌍 World Model · 世界模型</h2>
+
+  <div class="paper-card hot">
+    <div class="paper-title"><span class="hot-badge">🔥</span>JEPA-Anything: Learning Predictive Models across Different Worlds</div>
+    <div class="paper-meta">arXiv 2026 · World Model</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">基于联合嵌入预测架构，学习跨不同世界的通用预测模型，统一建模多领域状态转移。</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 JEPA-Anything 框架，将预测式世界模型扩展到异构环境与多模态场景。</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在跨世界预测任务上取得 34.8% 的关键指标表现，并开源配套代码。</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于世界模型与动作生成方向，建议关注预测精度、动作可控性与仿真到现实的迁移效果。</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-world">World Model</span>
+      <span class="tag tag-robot">Predictive</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2609.20800">arXiv</a>
+      <a href="https://arxiv.org/pdf/2609.20800">PDF</a>
+      <a href="https://github.com/Gen-Verse/JEPA-Anything">Code</a>
+    </div>
+  </div>
+</section>
+
+<div class="stats">
+  <p>📊 本期共 5 篇（经跨日去重移除 1 篇重复：MiniMax-H3 / 2609.18323）　│　数据来源：HuggingFace 热门论文</p>
+</div>
+
+</div>
+</body>
+</html>
