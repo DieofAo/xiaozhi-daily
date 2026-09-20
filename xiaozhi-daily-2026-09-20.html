@@ -58,6 +58,9 @@ header .subtitle { color: #64748b; font-size: 0.9rem; margin-top: 6px; }
 .paper-links a { display: inline-block; padding: 5px 14px; background: rgba(99,102,241,0.12);
   color: #818cf8; text-decoration: none; border-radius: 8px; font-size: 0.82rem; font-weight: 500; transition: background 0.2s; }
 .paper-links a:hover { background: rgba(99,102,241,0.25); }
+.info-card { background: rgba(30,41,59,0.5); border: 1px solid rgba(139,92,246,0.15);
+  border-radius: 14px; padding: 20px 24px; margin-bottom: 16px; }
+.paper-summary { font-size: 0.9rem; color: #cbd5e1; line-height: 1.7; margin-bottom: 14px; }
 .stats { text-align: center; padding: 30px; margin-top: 40px; background: rgba(30,41,59,0.4);
   border-radius: 14px; border: 1px solid rgba(99,102,241,0.1); }
 .stats p { color: #94a3b8; font-size: 0.88rem; }
@@ -69,13 +72,13 @@ header .subtitle { color: #64748b; font-size: 0.9rem; margin-top: 6px; }
 <header>
   <h1>📡 小小志AI日报</h1>
   <div class="date">2026年9月20日 周日 · 周末补漏</div>
-  <div class="subtitle">⏪ 展示 2026-09-19 最新内容 · 跨日去重后共 5 篇</div>
+  <div class="subtitle">⏪ 展示 2026-09-19 最新内容 · 跨日去重后共 5 篇论文 + 1 条机构动态</div>
 </header>
 
 <div class="highlight-banner">
   <div class="hl-title">🔥 今日看点（周末补漏）</div>
   <div class="hl-text">
-    Agent 方向《SoL-Pi: Recursively Scaling Auto-Research Loops》提出递归自我改进研究循环，在智能体基准上取得 49.0% 的相对提升，社区关注度极高。World Model 方向《JEPA-Anything》将联合嵌入预测架构扩展到跨世界场景，开源配套代码。今日数据取自 2026-09-19 的 HuggingFace 热门论文，经跨日去重后保留 5 篇新增内容。
+    Agent 方向《SoL-Pi: Recursively Scaling Auto-Research Loops》提出递归自我改进研究循环，在智能体基准上取得 49.0% 的相对提升，社区关注度极高。World Model 方向《JEPA-Anything》将联合嵌入预测架构扩展到跨世界场景，开源配套代码。今日数据取自 2026-09-19 的 HuggingFace 热门论文，经跨日去重后保留 5 篇新增内容，另附 1 条重点机构动态。
   </div>
 </div>
 
@@ -199,8 +202,21 @@ header .subtitle { color: #64748b; font-size: 0.9rem; margin-top: 6px; }
   </div>
 </section>
 
+<!-- 🏢 行业动态 Section -->
+<section class="section">
+  <h2 class="section-title">🏢 行业动态 · 重点机构发布</h2>
+
+  <div class="info-card">
+    <div class="paper-title">Introducing the Australian Youth Safety Blueprint</div>
+    <div class="paper-summary">OpenAI 发布面向青少年安全的蓝图框架，聚焦未成年人保护、内容安全治理与负责任的人工智能使用规范，为多地区青少年上网安全提供指导性方案。</div>
+    <div class="paper-links">
+      <a href="https://openai.com/index/australian-youth-safety-blueprint/">来源</a>
+    </div>
+  </div>
+</section>
+
 <div class="stats">
-  <p>📊 本期共 5 篇（经跨日去重移除 1 篇重复论文：MiniMax-H3）　│　数据来源：HuggingFace 热门论文</p>
+  <p>📊 本期共 5 篇论文（经跨日去重移除 1 篇重复论文：MiniMax-H3）＋ 1 条机构动态　│　数据来源：HuggingFace 热门论文 / 重点机构博客</p>
 </div>
 
 </div>
