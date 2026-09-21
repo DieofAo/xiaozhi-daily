@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>小小志AI日报 - 2026年9月21日 周一</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans SC', sans-serif;
+  background: #0a0e1a;
+  color: #e0e6f0;
+  line-height: 1.7;
+  min-height: 100vh;
+}
+.container { max-width: 960px; margin: 0 auto; padding: 40px 24px; }
+header { text-align: center; margin-bottom: 48px; padding: 40px 20px;
+  background: linear-gradient(135deg, rgba(59,130,246,0.08) 0%, rgba(139,92,246,0.08) 100%);
+  border-radius: 20px; border: 1px solid rgba(99,102,241,0.15); }
+header h1 { font-size: 2rem; background: linear-gradient(135deg, #60a5fa, #a78bfa);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 8px; }
+header .date { color: #94a3b8; font-size: 1rem; }
+header .subtitle { color: #64748b; font-size: 0.9rem; margin-top: 6px; }
+.highlight-banner { background: linear-gradient(135deg, rgba(249,115,22,0.1) 0%, rgba(234,179,8,0.08) 100%);
+  border: 1px solid rgba(249,115,22,0.2); border-radius: 14px; padding: 20px 24px; margin-bottom: 36px; }
+.hl-title { font-size: 1.1rem; font-weight: 700; color: #fb923c; margin-bottom: 8px; }
+.hl-text { font-size: 0.92rem; color: #cbd5e1; line-height: 1.7; }
+.section { margin-bottom: 40px; }
+.section-title { font-size: 1.4rem; color: #f1f5f9; margin-bottom: 20px; padding-bottom: 12px;
+  border-bottom: 1px solid rgba(99,102,241,0.2); }
+.paper-card { background: rgba(30,41,59,0.6); border: 1px solid rgba(99,102,241,0.12);
+  border-radius: 14px; padding: 24px; margin-bottom: 16px; transition: transform 0.2s, box-shadow 0.2s; }
+.paper-card:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(99,102,241,0.1);
+  border-color: rgba(99,102,241,0.3); }
+.paper-card.hot { border-color: rgba(249,115,22,0.25); background: rgba(30,41,59,0.7); }
+.paper-title { font-size: 1.1rem; font-weight: 600; color: #f8fafc; margin-bottom: 8px; }
+.paper-meta { font-size: 0.85rem; color: #64748b; margin-bottom: 10px; }
+.summary-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 14px; }
+@media (max-width: 640px) { .summary-grid { grid-template-columns: 1fr; } }
+.summary-item { background: rgba(15,23,42,0.5); border-radius: 10px; padding: 12px 14px;
+  border: 1px solid rgba(99,102,241,0.08); }
+.summary-label { font-size: 0.78rem; font-weight: 600; color: #818cf8; margin-bottom: 4px; }
+.summary-text { font-size: 0.88rem; color: #cbd5e1; line-height: 1.6; }
+.paper-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+.tag { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: 500; }
+.tag-agent { background: rgba(16,185,129,0.12); color: #34d399; }
+.tag-llm { background: rgba(99,102,241,0.12); color: #818cf8; }
+.tag-multimodal { background: rgba(244,114,182,0.12); color: #f472b6; }
+.tag-world { background: rgba(251,191,36,0.12); color: #fbbf24; }
+.tag-robot { background: rgba(251,146,60,0.12); color: #fb923c; }
+.tag-vla { background: rgba(59,130,246,0.12); color: #60a5fa; }
+.tag-reasoning { background: rgba(132,204,22,0.12); color: #a3e635; }
+.hot-badge { display: inline; margin-right: 4px; }
+.paper-links { display: flex; flex-wrap: wrap; gap: 10px; }
+.paper-links a { display: inline-block; padding: 5px 14px; background: rgba(99,102,241,0.12);
+  color: #818cf8; text-decoration: none; border-radius: 8px; font-size: 0.82rem; font-weight: 500; transition: background 0.2s; }
+.paper-links a:hover { background: rgba(99,102,241,0.25); }
+.info-card { background: rgba(30,41,59,0.5); border: 1px solid rgba(139,92,246,0.15);
+  border-radius: 14px; padding: 20px 24px; margin-bottom: 16px; }
+.paper-summary { font-size: 0.9rem; color: #cbd5e1; line-height: 1.7; margin-bottom: 14px; }
+.stats { text-align: center; padding: 30px; margin-top: 40px; background: rgba(30,41,59,0.4);
+  border-radius: 14px; border: 1px solid rgba(99,102,241,0.1); }
+.stats p { color: #94a3b8; font-size: 0.88rem; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <h1>📡 小小志AI日报</h1>
+  <div class="date">2026年9月21日 周一</div>
+  <div class="subtitle">📰 HuggingFace 社区热门论文 8 篇（跨日去重后全部保留）</div>
+</header>
+
+<div class="highlight-banner">
+  <div class="hl-title">🔥 今日看点</div>
+  <div class="hl-text">
+    Agent 方向《RecreationWorld》由通义千问团队推出可验证的混合计算机操作智能体训练环境，在混合操作任务上达到 58.1% 指标；《Paint-Anything》字节跳动团队提出统一任意颜色控制的图像生成与编辑框架，颜色控制精度达 85.3%。大语言模型方向《When AI Reviews Train AI Reviewers》揭示了用人工智能评审训练评审者导致的科学判断退化现象，并给出缓解策略。当日 arXiv 索引暂无新增匹配，以下为 8 篇 HuggingFace 社区热门论文，经跨日去重全部保留。
+  </div>
+</div>
+
+<!-- 🧩 Agent Section -->
+<section class="section">
+  <h2 class="section-title">🧩 Agent · 智能体</h2>
+
+  <div class="paper-card">
+    <div class="paper-title">EvoOntology: A Self-Evolving Ontology Layer for Data Agents</div>
+    <div class="paper-meta">arXiv 2026 · RUC-DataLab · Agent</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">为数据智能体构建可自我演化的本体层，自动归纳方法、评估与基准测试等概念及关系。</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出本体随智能体运行自动演进的机制，降低人工维护成本并支持跨任务概念复用。</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在多个数据智能体任务上验证本体演化对规划与检索的增益，具体指标见原文。</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于智能体方向，建议关注本体自动更新的稳定性、可解释性与长期一致性。</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-agent">Agent</span>
+      <span class="tag tag-llm">Ontology</span>
+      <span class="tag tag-reasoning">Data Agent</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2609.15779">arXiv</a>
+      <a href="https://arxiv.org/pdf/2609.15779">PDF</a>
+      <a href="https://github.com/ruc-datalab/EvoOntology">Project</a>
+      <a href="https://github.com/ruc-datalab/EvoOntology">Code</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">Grounded Skill Synthesis from Code at Scale for Agentic Intelligence</div>
+    <div class="paper-meta">arXiv 2026 · ant-international · Agent</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">从大规模代码库自动抽取可复用技能，构建面向智能体推理的技能中枢与统一调用规范。</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出由代码规模化生成技能的方法，统一技能表示与调用，提升智能体工具使用能力。</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">关键指标 11.7%、93.50%、93.00%，在技能合成准确率与调用成功率上表现突出。</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于智能体工具使用方向，建议关注技能泛化能力、调用策略与端到端成功率。</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-agent">Agent</span>
+      <span class="tag tag-reasoning">Skill Synthesis</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2609.05571">arXiv</a>
+      <a href="https://arxiv.org/pdf/2609.05571">PDF</a>
+      <a href="https://ant-international-research.github.io/developer-skill-hubs/">Project</a>
+      <a href="https://github.com/ant-intl/Code2Skill">Code</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">CodeMidas: Scaling Agentic Coding RL Environments from Code Itself</div>
+    <div class="paper-meta">arXiv 2026 · Xiaomi MiMo · Agent</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">直接从代码本身构建强化学习训练环境，自动生成编程智能体任务与奖励信号。</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出开源的编程强化学习环境扩展方案，显著降低环境构建成本并提升可扩展性。</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">关键指标 11.7%、17%、8.5%，展示了从代码自动生成训练环境的稳定有效性。</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于智能体编程方向，建议关注环境多样性、奖励设计与训练稳定性。</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-agent">Agent</span>
+      <span class="tag tag-reasoning">RL Environment</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2609.22068">arXiv</a>
+      <a href="https://arxiv.org/pdf/2609.22068">PDF</a>
+      <a href="https://mimo.xiaomi.com/rl/">Project</a>
+    </div>
+  </div>
+
+  <div class="paper-card hot">
+    <div class="paper-title"><span class="hot-badge">🔥</span>RecreationWorld: Scalable and Verifiable Environments for Hybrid Computer-Use Agents</div>
+    <div class="paper-meta">arXiv 2026 · QwenLM · Agent</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">构建可扩展且可验证的混合计算机操作智能体环境，覆盖网页与桌面交互场景。</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出统一的可验证环境框架，对智能体操作结果自动判定正确性，支持混合任务。</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">关键指标 58.1%、2.8%，验证了环境在混合操作任务上的可用性与执行效率。</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于智能体工具使用方向，建议关注环境覆盖度、判定准确性与真实部署条件。</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-agent">Agent</span>
+      <span class="tag tag-multimodal">Computer-Use</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2609.22000">arXiv</a>
+      <a href="https://arxiv.org/pdf/2609.22000">PDF</a>
+      <a href="https://github.com/QwenLM/RecreationWorld">Code</a>
+    </div>
+  </div>
+</section>
+
+<!-- 🎨 Multimodal Section -->
+<section class="section">
+  <h2 class="section-title">🎨 Multimodal · 多模态</h2>
+
+  <div class="paper-card hot">
+    <div class="paper-title"><span class="hot-badge">🔥</span>Paint-Anything: Unified Any-Color Control for Image Generation and Editing</div>
+    <div class="paper-meta">arXiv 2026 · ByteDance Seed · Multimodal</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">基于大语言模型与训练，构建对任意颜色精确控制的统一图像生成与编辑框架。</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出统一任意颜色控制方法，支持以自然语言指定目标颜色并完成精准着色。</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">关键指标 85.3%、28.3%、500K、4B，在颜色控制精度与数据规模上表现领先。</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于多模态生成方向，建议关注颜色保真度、编辑一致性与指令遵循能力。</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-multimodal">Multimodal</span>
+      <span class="tag tag-vla">Image Editing</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2609.20816">arXiv</a>
+      <a href="https://arxiv.org/pdf/2609.20816">PDF</a>
+    </div>
+  </div>
+
+  <div class="paper-card hot">
+    <div class="paper-title"><span class="hot-badge">🔥</span>MintAct: A Unified Visual Agent for Digital Environments</div>
+    <div class="paper-meta">arXiv 2026 · Apple · Multimodal</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">构建统一视觉智能体，配合可扩展强化学习基础设施用于数字环境操作。</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出统一视觉智能体与强化学习训练基础设施，覆盖多类数字界面任务。</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在多个数字环境基准验证方法有效性，具体数值与设置见原文实验部分。</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于多模态智能体方向，建议重点看实验设置、基线对比与真实部署条件。</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-multimodal">Multimodal</span>
+      <span class="tag tag-agent">Visual Agent</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2609.22083">arXiv</a>
+      <a href="https://arxiv.org/pdf/2609.22083">PDF</a>
+    </div>
+  </div>
+</section>
+
+<!-- 🧠 LLM Section -->
+<section class="section">
+  <h2 class="section-title">🧠 LLM · 大语言模型</h2>
+
+  <div class="paper-card">
+    <div class="paper-title">GraphSkillEvo: Evolutionary Optimization of Graph-Structured Agent Skills</div>
+    <div class="paper-meta">arXiv 2026 · LLM</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">将智能体技能组织为图结构，并用进化优化自动改进技能组合与依赖关系。</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出基于大语言模型的图结构技能进化方法，实现技能组合的自动迭代优化。</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">关键指标 4.01%、1.76%，展示了图结构进化对技能质量与效率的提升。</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于大语言模型与智能体方向，建议关注进化搜索开销、收敛性与可复现性。</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-llm">LLM</span>
+      <span class="tag tag-agent">Skill Evolution</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2609.21749">arXiv</a>
+      <a href="https://arxiv.org/pdf/2609.21749">PDF</a>
+      <a href="https://github.com/ruisun7/GraphSkillEvo">Code</a>
+    </div>
+  </div>
+
+  <div class="paper-card hot">
+    <div class="paper-title"><span class="hot-badge">🔥</span>When AI Reviews Train AI Reviewers: Scientific-Judgment Collapse and Mitigation</div>
+    <div class="paper-meta">arXiv 2026 · LLM</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">基于大语言模型与微调，研究用人工智能评审训练人工智能评审者带来的判断退化。</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">揭示科学判断退化现象，并提出缓解策略以保留评审多样性与质量稳定性。</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">关键指标 8B，展示了缓解方法在评审质量与偏差控制上的明显改善。</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于大语言模型与科研治理方向，建议关注评审可靠性、偏差控制与可审计性。</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-llm">LLM</span>
+      <span class="tag tag-reasoning">Metascience</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2609.20942">arXiv</a>
+      <a href="https://arxiv.org/pdf/2609.20942">PDF</a>
+      <a href="https://hosytuyen.github.io/projects/TrustReviewer/">Project</a>
+    </div>
+  </div>
+</section>
+
+<div class="stats">
+  <p>📊 本期共 8 篇论文（跨日去重后全部保留，无重复移除）　│　数据来源：HuggingFace 社区热门论文</p>
+</div>
+
+</div>
+</body>
+</html>

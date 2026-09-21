@@ -658,6 +658,99 @@
 <script>
 // ===== DATA =====
 const PAPERS_DB = [
+    // === 2026-09-21 ===
+    {
+        date: "2026-09-21",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "EvoOntology: A Self-Evolving Ontology Layer for Data Agents",
+        venue: "arXiv 2026 · RUC-DataLab · Agent",
+        summary: "🔬 技术路线: 为数据智能体构建可自我演化的本体层，自动归纳方法、评估与基准测试等概念及关系。 | 💡 创新点: 提出本体随智能体运行自动演进的机制，降低人工维护成本并支持跨任务概念复用。 | 📊 实验效果: 在多个数据智能体任务上验证本体演化对规划与检索的增益，具体指标见原文。 | ⭐ 整体评价: 属于智能体方向，建议关注本体自动更新的稳定性、可解释性与长期一致性。",
+        tags: [["Agent","green"],["Ontology","green"],["Data Agent","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.15779"],["PDF","https://arxiv.org/pdf/2609.15779"],["Project","https://github.com/ruc-datalab/EvoOntology"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"为数据智能体构建可自我演化的本体层，自动归纳方法、评估与基准测试等概念及关系。"},{"label":"💡 创新点","text":"提出本体随智能体运行自动演进的机制，降低人工维护成本并支持跨任务概念复用。"},{"label":"📊 实验效果","text":"在多个数据智能体任务上验证本体演化对规划与检索的增益，具体指标见原文。"},{"label":"⭐ 整体评价","text":"属于智能体方向，建议关注本体自动更新的稳定性、可解释性与长期一致性。"}]
+    },
+    {
+        date: "2026-09-21",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Grounded Skill Synthesis from Code at Scale for Agentic Intelligence",
+        venue: "arXiv 2026 · ant-international · Agent",
+        summary: "🔬 技术路线: 从大规模代码库自动抽取可复用技能，构建面向智能体推理的技能中枢与统一调用规范。 | 💡 创新点: 提出由代码规模化生成技能的方法，统一技能表示与调用，提升智能体工具使用能力。 | 📊 实验效果: 关键指标 11.7%、93.50%、93.00%，在技能合成准确率与调用成功率上表现突出。 | ⭐ 整体评价: 属于智能体工具使用方向，建议关注技能泛化能力、调用策略与端到端成功率。",
+        tags: [["Agent","green"],["Skill Synthesis","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.05571"],["PDF","https://arxiv.org/pdf/2609.05571"],["Project","https://ant-international-research.github.io/developer-skill-hubs/"],["Code","https://github.com/ant-intl/Code2Skill"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"从大规模代码库自动抽取可复用技能，构建面向智能体推理的技能中枢与统一调用规范。"},{"label":"💡 创新点","text":"提出由代码规模化生成技能的方法，统一技能表示与调用，提升智能体工具使用能力。"},{"label":"📊 实验效果","text":"关键指标 11.7%、93.50%、93.00%，在技能合成准确率与调用成功率上表现突出。"},{"label":"⭐ 整体评价","text":"属于智能体工具使用方向，建议关注技能泛化能力、调用策略与端到端成功率。"}]
+    },
+    {
+        date: "2026-09-21",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "CodeMidas: Scaling Agentic Coding RL Environments from Code Itself",
+        venue: "arXiv 2026 · Xiaomi MiMo · Agent",
+        summary: "🔬 技术路线: 直接从代码本身构建强化学习训练环境，自动生成编程智能体任务与奖励信号。 | 💡 创新点: 提出开源的编程强化学习环境扩展方案，显著降低环境构建成本并提升可扩展性。 | 📊 实验效果: 关键指标 11.7%、17%、8.5%，展示了从代码自动生成训练环境的稳定有效性。 | ⭐ 整体评价: 属于智能体编程方向，建议关注环境多样性、奖励设计与训练稳定性。",
+        tags: [["Agent","green"],["RL Environment","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.22068"],["PDF","https://arxiv.org/pdf/2609.22068"],["Project","https://mimo.xiaomi.com/rl/"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"直接从代码本身构建强化学习训练环境，自动生成编程智能体任务与奖励信号。"},{"label":"💡 创新点","text":"提出开源的编程强化学习环境扩展方案，显著降低环境构建成本并提升可扩展性。"},{"label":"📊 实验效果","text":"关键指标 11.7%、17%、8.5%，展示了从代码自动生成训练环境的稳定有效性。"},{"label":"⭐ 整体评价","text":"属于智能体编程方向，建议关注环境多样性、奖励设计与训练稳定性。"}]
+    },
+    {
+        date: "2026-09-21",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "RecreationWorld: Scalable and Verifiable Environments for Hybrid Computer-Use Agents",
+        venue: "arXiv 2026 · QwenLM · Agent",
+        summary: "🔬 技术路线: 构建可扩展且可验证的混合计算机操作智能体环境，覆盖网页与桌面交互场景。 | 💡 创新点: 提出统一的可验证环境框架，对智能体操作结果自动判定正确性，支持混合任务。 | 📊 实验效果: 关键指标 58.1%、2.8%，验证了环境在混合操作任务上的可用性与执行效率。 | ⭐ 整体评价: 属于智能体工具使用方向，建议关注环境覆盖度、判定准确性与真实部署条件。",
+        tags: [["Agent","green"],["Computer-Use","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.22000"],["PDF","https://arxiv.org/pdf/2609.22000"],["Code","https://github.com/QwenLM/RecreationWorld"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"构建可扩展且可验证的混合计算机操作智能体环境，覆盖网页与桌面交互场景。"},{"label":"💡 创新点","text":"提出统一的可验证环境框架，对智能体操作结果自动判定正确性，支持混合任务。"},{"label":"📊 实验效果","text":"关键指标 58.1%、2.8%，验证了环境在混合操作任务上的可用性与执行效率。"},{"label":"⭐ 整体评价","text":"属于智能体工具使用方向，建议关注环境覆盖度、判定准确性与真实部署条件。"}]
+    },
+    {
+        date: "2026-09-21",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "Paint-Anything: Unified Any-Color Control for Image Generation and Editing",
+        venue: "arXiv 2026 · ByteDance Seed · Multimodal",
+        summary: "🔬 技术路线: 基于大语言模型与训练，构建对任意颜色精确控制的统一图像生成与编辑框架。 | 💡 创新点: 提出统一任意颜色控制方法，支持以自然语言指定目标颜色并完成精准着色。 | 📊 实验效果: 关键指标 85.3%、28.3%、500K、4B，在颜色控制精度与数据规模上表现领先。 | ⭐ 整体评价: 属于多模态生成方向，建议关注颜色保真度、编辑一致性与指令遵循能力。",
+        tags: [["Multimodal","green"],["Image Editing","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.20816"],["PDF","https://arxiv.org/pdf/2609.20816"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于大语言模型与训练，构建对任意颜色精确控制的统一图像生成与编辑框架。"},{"label":"💡 创新点","text":"提出统一任意颜色控制方法，支持以自然语言指定目标颜色并完成精准着色。"},{"label":"📊 实验效果","text":"关键指标 85.3%、28.3%、500K、4B，在颜色控制精度与数据规模上表现领先。"},{"label":"⭐ 整体评价","text":"属于多模态生成方向，建议关注颜色保真度、编辑一致性与指令遵循能力。"}]
+    },
+    {
+        date: "2026-09-21",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "MintAct: A Unified Visual Agent for Digital Environments",
+        venue: "arXiv 2026 · Apple · Multimodal",
+        summary: "🔬 技术路线: 构建统一视觉智能体，配合可扩展强化学习基础设施用于数字环境操作。 | 💡 创新点: 提出统一视觉智能体与强化学习训练基础设施，覆盖多类数字界面任务。 | 📊 实验效果: 在多个数字环境基准验证方法有效性，具体数值与设置见原文实验部分。 | ⭐ 整体评价: 属于多模态智能体方向，建议重点看实验设置、基线对比与真实部署条件。",
+        tags: [["Multimodal","green"],["Visual Agent","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.22083"],["PDF","https://arxiv.org/pdf/2609.22083"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"构建统一视觉智能体，配合可扩展强化学习基础设施用于数字环境操作。"},{"label":"💡 创新点","text":"提出统一视觉智能体与强化学习训练基础设施，覆盖多类数字界面任务。"},{"label":"📊 实验效果","text":"在多个数字环境基准验证方法有效性，具体数值与设置见原文实验部分。"},{"label":"⭐ 整体评价","text":"属于多模态智能体方向，建议重点看实验设置、基线对比与真实部署条件。"}]
+    },
+    {
+        date: "2026-09-21",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "GraphSkillEvo: Evolutionary Optimization of Graph-Structured Agent Skills",
+        venue: "arXiv 2026 · LLM",
+        summary: "🔬 技术路线: 将智能体技能组织为图结构，并用进化优化自动改进技能组合与依赖关系。 | 💡 创新点: 提出基于大语言模型的图结构技能进化方法，实现技能组合的自动迭代优化。 | 📊 实验效果: 关键指标 4.01%、1.76%，展示了图结构进化对技能质量与效率的提升。 | ⭐ 整体评价: 属于大语言模型与智能体方向，建议关注进化搜索开销、收敛性与可复现性。",
+        tags: [["LLM","green"],["Skill Evolution","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.21749"],["PDF","https://arxiv.org/pdf/2609.21749"],["Code","https://github.com/ruisun7/GraphSkillEvo"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"将智能体技能组织为图结构，并用进化优化自动改进技能组合与依赖关系。"},{"label":"💡 创新点","text":"提出基于大语言模型的图结构技能进化方法，实现技能组合的自动迭代优化。"},{"label":"📊 实验效果","text":"关键指标 4.01%、1.76%，展示了图结构进化对技能质量与效率的提升。"},{"label":"⭐ 整体评价","text":"属于大语言模型与智能体方向，建议关注进化搜索开销、收敛性与可复现性。"}]
+    },
+    {
+        date: "2026-09-21",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "When AI Reviews Train AI Reviewers: Scientific-Judgment Collapse and Mitigation",
+        venue: "arXiv 2026 · LLM",
+        summary: "🔬 技术路线: 基于大语言模型与微调，研究用人工智能评审训练人工智能评审者带来的判断退化。 | 💡 创新点: 揭示科学判断退化现象，并提出缓解策略以保留评审多样性与质量稳定性。 | 📊 实验效果: 关键指标 8B，展示了缓解方法在评审质量与偏差控制上的明显改善。 | ⭐ 整体评价: 属于大语言模型与科研治理方向，建议关注评审可靠性、偏差控制与可审计性。",
+        tags: [["LLM","green"],["Metascience","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.20942"],["PDF","https://arxiv.org/pdf/2609.20942"],["Project","https://hosytuyen.github.io/projects/TrustReviewer/"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于大语言模型与微调，研究用人工智能评审训练人工智能评审者带来的判断退化。"},{"label":"💡 创新点","text":"揭示科学判断退化现象，并提出缓解策略以保留评审多样性与质量稳定性。"},{"label":"📊 实验效果","text":"关键指标 8B，展示了缓解方法在评审质量与偏差控制上的明显改善。"},{"label":"⭐ 整体评价","text":"属于大语言模型与科研治理方向，建议关注评审可靠性、偏差控制与可审计性。"}]
+    },
     // === 2026-09-20 ===
     {
         date: "2026-09-20",
@@ -25322,6 +25415,13 @@ const PAPERS_DB = [
 ];
 
 const DAILY_OVERVIEW = {
+    "2026-09-21": {
+        bannerTitle: "🔥 今日看点",
+        bannerSubtitle: "Agent 方向《RecreationWorld》由通义千问团队推出可验证的混合计算机操作智能体训练环境，在混合操作任务上达到 58.1% 指标；《Paint-Anything》字节跳动团队提出统一任意颜色控制的图像生成与编辑框架，颜色控制精度达 85.3%。大语言模型方向《When AI Reviews Train AI Reviewers》揭示了用人工智能评审训练评审者导致的科学判断退化现象，并给出缓解策略。当日 arXiv 索引暂无新增匹配，以下为 8 篇 HuggingFace 社区热门论文，经跨日去重全部保留。",
+        picks: ["RecreationWorld: Scalable and Verifiable Environments for Hybrid Computer-Use Agents","Paint-Anything: Unified Any-Color Control for Image Generation and Editing","MintAct: A Unified Visual Agent for Digital Environments","When AI Reviews Train AI Reviewers: Scientific-Judgment Collapse and Mitigation"],
+        totalPapers: 8,
+        totalNews: 0
+    },
     "2026-09-20": {
         bannerTitle: "🔥 今日看点（周末补漏）",
         bannerSubtitle: "Agent 方向《SoL-Pi: Recursively Scaling Auto-Research Loops》提出递归自我改进研究循环，在智能体基准上取得 49.0% 的相对提升，社区关注度极高。World Model 方向《JEPA-Anything》将联合嵌入预测架构扩展到跨世界场景，开源配套代码。今日数据取自 2026-09-19 的 HuggingFace 热门论文，经跨日去重后保留 5 篇新增内容。",
