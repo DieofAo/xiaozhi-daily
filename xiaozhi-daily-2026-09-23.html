@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>小小志AI日报 - 2026年9月23日 周三</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans SC', sans-serif;
+  background: #0a0e1a;
+  color: #e0e6f0;
+  line-height: 1.7;
+  min-height: 100vh;
+}
+.container { max-width: 960px; margin: 0 auto; padding: 40px 24px; }
+header { text-align: center; margin-bottom: 48px; padding: 40px 20px;
+  background: linear-gradient(135deg, rgba(59,130,246,0.08) 0%, rgba(139,92,246,0.08) 100%);
+  border-radius: 20px; border: 1px solid rgba(99,102,241,0.15); }
+header h1 { font-size: 2rem; background: linear-gradient(135deg, #60a5fa, #a78bfa);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 8px; }
+header .date { color: #94a3b8; font-size: 1rem; }
+header .subtitle { color: #64748b; font-size: 0.9rem; margin-top: 6px; }
+.highlight-banner { background: linear-gradient(135deg, rgba(249,115,22,0.1) 0%, rgba(234,179,8,0.08) 100%);
+  border: 1px solid rgba(249,115,22,0.2); border-radius: 14px; padding: 20px 24px; margin-bottom: 36px; }
+.hl-title { font-size: 1.1rem; font-weight: 700; color: #fb923c; margin-bottom: 8px; }
+.hl-text { font-size: 0.92rem; color: #cbd5e1; line-height: 1.7; }
+.section { margin-bottom: 40px; }
+.section-title { font-size: 1.4rem; color: #f1f5f9; margin-bottom: 20px; padding-bottom: 12px;
+  border-bottom: 1px solid rgba(99,102,241,0.2); }
+.paper-card { background: rgba(30,41,59,0.6); border: 1px solid rgba(99,102,241,0.12);
+  border-radius: 14px; padding: 24px; margin-bottom: 16px; transition: transform 0.2s, box-shadow 0.2s; }
+.paper-card:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(99,102,241,0.1);
+  border-color: rgba(99,102,241,0.3); }
+.paper-card.hot { border-color: rgba(249,115,22,0.25); background: rgba(30,41,59,0.7); }
+.paper-title { font-size: 1.1rem; font-weight: 600; color: #f8fafc; margin-bottom: 8px; }
+.paper-meta { font-size: 0.85rem; color: #64748b; margin-bottom: 10px; }
+.summary-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 14px; }
+@media (max-width: 640px) { .summary-grid { grid-template-columns: 1fr; } }
+.summary-item { background: rgba(15,23,42,0.5); border-radius: 10px; padding: 12px 14px;
+  border: 1px solid rgba(99,102,241,0.08); }
+.summary-label { font-size: 0.78rem; font-weight: 600; color: #818cf8; margin-bottom: 4px; }
+.summary-text { font-size: 0.88rem; color: #cbd5e1; line-height: 1.6; }
+.paper-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+.tag { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: 500; }
+.tag-agent { background: rgba(16,185,129,0.12); color: #34d399; }
+.tag-llm { background: rgba(99,102,241,0.12); color: #818cf8; }
+.tag-multimodal { background: rgba(244,114,182,0.12); color: #f472b6; }
+.tag-world { background: rgba(251,191,36,0.12); color: #fbbf24; }
+.tag-robot { background: rgba(251,146,60,0.12); color: #fb923c; }
+.tag-vla { background: rgba(59,130,246,0.12); color: #60a5fa; }
+.tag-reasoning { background: rgba(132,204,22,0.12); color: #a3e635; }
+.hot-badge { display: inline; margin-right: 4px; }
+.paper-links { display: flex; flex-wrap: wrap; gap: 10px; }
+.paper-links a { display: inline-block; padding: 5px 14px; background: rgba(99,102,241,0.12);
+  color: #818cf8; text-decoration: none; border-radius: 8px; font-size: 0.82rem; font-weight: 500; transition: background 0.2s; }
+.paper-links a:hover { background: rgba(99,102,241,0.25); }
+.info-card { background: rgba(30,41,59,0.5); border: 1px solid rgba(139,92,246,0.15);
+  border-radius: 14px; padding: 20px 24px; margin-bottom: 16px; }
+.paper-summary { font-size: 0.9rem; color: #cbd5e1; line-height: 1.7; margin-bottom: 14px; }
+.stats { text-align: center; padding: 30px; margin-top: 40px; background: rgba(30,41,59,0.4);
+  border-radius: 14px; border: 1px solid rgba(99,102,241,0.1); }
+.stats p { color: #94a3b8; font-size: 0.88rem; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <h1>📡 小小志AI日报</h1>
+  <div class="date">2026年9月23日 周三</div>
+  <div class="subtitle">📰 arXiv 8 篇 · HuggingFace 热门 4 篇 · HuggingFace 模型 1 个（跨日去重后全部保留，共 12 篇论文）</div>
+</header>
+
+<div class="highlight-banner">
+  <div class="hl-title">🔥 今日看点</div>
+  <div class="hl-text">
+    机器人方向今日有两篇值得关注：将视觉语言模型智能迁移到机器人控制的 RoboDawn 实现零样本操作泛化；以三维场景定位为底层基础的 Abot-M0 让操作策略精准聚焦关键物体。智能体方向延续工程化主线，Agensh 将多智能体协作规模扩展到 1024 个，One to More 提出类别感知的迭代专家训练。语言模型推理侧 Flash-dLLM 通过感知带宽的键值缓存与并行解码大幅提速。当日 12 篇论文经跨日去重全部保留。
+  </div>
+</div>
+
+<!-- 🦾 Robotics Section -->
+<section class="section">
+  <h2 class="section-title">🦾 Robotics · 机器人</h2>
+
+  <div class="paper-card hot">
+    <div class="paper-title"><span class="hot-badge">🔥</span>Transferring the Intelligence of VLMs to Robotic Control</div>
+    <div class="paper-meta">arXiv 2026 · 机器人算法与控制</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">将视觉语言模型的泛化能力迁移到机器人控制，利用上下文学习实现零样本操作，无需逐任务微调。</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 RoboDawn 方法，使机器人具备零样本泛化能力，把大模型常识直接转化为可执行控制策略。</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">关键指标显示任务成功率显著提升，分别为 53.2%、73.6%、46.0% 与 35.67%。</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于机器人算法与控制方向，建议重点看实验设置、基线对比与真实部署条件下的稳定性。</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-robot">Robotics</span>
+      <span class="tag tag-vla">VLM-to-Control</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2609.22966">arXiv</a>
+      <a href="https://arxiv.org/pdf/2609.22966">PDF</a>
+    </div>
+  </div>
+
+  <div class="paper-card hot">
+    <div class="paper-title"><span class="hot-badge">🔥</span>Grounded Action Model: 3D Grounding as a Foundation for Robotics</div>
+    <div class="paper-meta">arXiv 2026 · National University of Singapore · 视觉语言动作</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">以三维场景定位为基础构建视觉语言动作模型，让操作策略明确关注任务相关的关键物体。</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 Abot-M0，将三维定位作为机器人动作生成的底层基础，而非事后对齐模块。</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">关键指标显示操作性能提升，分别为 55.3%、52.0%、47.6% 与 30.4%。</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于视觉语言动作与具身控制方向，建议关注任务泛化、动作表达方式与真机验证结果。</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-robot">Robotics</span>
+      <span class="tag tag-vla">VLA</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2609.23863">arXiv</a>
+      <a href="https://arxiv.org/pdf/2609.23863">PDF</a>
+      <a href="https://grounded-action-model.github.io/">Project</a>
+      <a href="https://github.com/GehaoZhang6/Grounded-Action-Model">Code</a>
+    </div>
+  </div>
+
+</section>
+
+<!-- 🧠 LLM Section -->
+<section class="section">
+  <h2 class="section-title">🧠 LLM · 大语言模型</h2>
+
+  <div class="paper-card">
+    <div class="paper-title">Flash-dLLM: IO-Aware KV Caching and Parallel Decoding for Fast, Memory-Efficient Diffusion LLMs</div>
+    <div class="paper-meta">arXiv 2026 · 大语言模型推理加速</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">面向扩散语言模型，设计感知输入输出带宽的键值缓存机制，并采用并行解码策略加速生成。</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 Flash-dLLM 方法，将键值缓存与并行解码协同优化，兼顾速度、显存与吞吐表现。</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在 8K 上下文下验证了高效推理能力，显著降低显存占用并提升解码速度。</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于大语言模型推理加速方向，建议关注在长上下文与实时部署下的实际收益与稳定性。</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-llm">LLM</span>
+      <span class="tag tag-reasoning">Inference</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2609.26796">arXiv</a>
+      <a href="https://arxiv.org/pdf/2609.26796">PDF</a>
+      <a href="https://github.com/VILA-Lab/Flash-dLLM">Code</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">SpeakerMem-R1: Speaker-Centered Dual-Track Memory for Multi-Party Dialogue</div>
+    <div class="paper-meta">arXiv 2026 · 大语言模型对话</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">面向多方对话，构建以说话人为中心的双轨记忆机制，区分不同角色的信息与意图。</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出说话人中心的双轨记忆结构，显式建模长期对话上下文与角色归属。</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">关键指标显示对话理解明显提升，分别为 47.9%、69.2%、61.9% 与 62.33%。</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于大语言模型对话方向，建议关注记忆检索精度、角色区分能力与长对话一致性。</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-llm">LLM</span>
+      <span class="tag tag-multimodal">Dialogue</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2609.26780">arXiv</a>
+      <a href="https://arxiv.org/pdf/2609.26780">PDF</a>
+      <a href="https://2022hpsk.github.io/SpeakerMemR1">Project</a>
+      <a href="https://github.com/2022hpsk/SpeakerMemR1">Code</a>
+    </div>
+  </div>
+
+</section>
+
+<!-- 🎨 Multimodal Section -->
+<section class="section">
+  <h2 class="section-title">🎨 Multimodal · 多模态</h2>
+
+  <div class="paper-card">
+    <div class="paper-title">Document Retrieval-Aware Chunking (D-RAC): Universal Retrieval-Aware Ingestion of Enterprise Documents via PDF Normalization and Multimodal Markdown Conversion</div>
+    <div class="paper-meta">arXiv 2026 · Yellow.ai · 多模态检索</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">面向企业文档，通过 PDF 归一化与多模态 Markdown 转换，实现检索友好的分块摄入。</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出检索感知的通用分块框架，融合多模态信息并保持轻量化部署。</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">关键指标显示检索质量较高，分别为 95.7%、77.8%、85.6% 与 75%。</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于多模态检索方向，建议关注分块粒度、跨文档一致性与企业落地实际效果。</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-multimodal">Multimodal</span>
+      <span class="tag tag-llm">Retrieval</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2609.24220">arXiv</a>
+      <a href="https://arxiv.org/pdf/2609.24220">PDF</a>
+    </div>
+  </div>
+
+</section>
+
+<!-- 🧩 Agent Section -->
+<section class="section">
+  <h2 class="section-title">🧩 Agent · 智能体</h2>
+
+  <div class="paper-card">
+    <div class="paper-title">HARMONY: Hierarchical Agentic Reasoning for MONocular Image-to-Scene Synthesis</div>
+    <div class="paper-meta">arXiv 2026 · 智能体三维生成</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">面向单目图像到三维场景生成，采用分层智能体推理组织场景结构与物体布局。</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出分层智能体协同框架，将场景合成拆解为可组合的推理子任务逐步完成。</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">实验验证了方法在图像到场景合成任务上的有效性与可组合性。</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于智能体与三维生成方向，建议关注场景一致性、物体摆放合理性与端到端成功率。</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-agent">Agent</span>
+      <span class="tag tag-world">Scene Synthesis</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2609.26793">arXiv</a>
+      <a href="https://arxiv.org/pdf/2609.26793">PDF</a>
+      <a href="http://cwchenwang.github.io/harmony">Project</a>
+    </div>
+  </div>
+
+  <div class="paper-card hot">
+    <div class="paper-title"><span class="hot-badge">🔥</span>Agensh: Scaling Organizational Intelligence to 1,024 Agents</div>
+    <div class="paper-meta">arXiv 2026 · 多智能体协作</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">面向大规模多智能体协作，研究组织智能的扩展规律与可扩展协作架构。</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出可扩展的多智能体组织框架，将协作规模提升至 1024 个智能体。</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">关键指标显示协作效率随规模提升，分别为 19.31%、28.78%、49% 与 33.89%。</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于智能体协作方向，建议关注通信开销、分工机制与大规模下的整体稳定性。</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-agent">Agent</span>
+      <span class="tag tag-reasoning">Scaling</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2609.26781">arXiv</a>
+      <a href="https://arxiv.org/pdf/2609.26781">PDF</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">CliffCompaction: Cost-Efficient Compaction for Long-Horizon Coding Agents</div>
+    <div class="paper-meta">arXiv 2026 · 智能体工程</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">面向长程编码智能体，设计低成本上下文压缩机制以控制推理开销与历史长度。</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出高效压缩策略，在保留关键信息的同时削减历史上下文规模。</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">关键指标显示压缩后任务成功率保持约 50%，较基线提升 10 个百分点。</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于智能体工程方向，建议关注压缩信息损失、长程任务稳定性与成本收益。</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-agent">Agent</span>
+      <span class="tag tag-llm">Coding</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2609.26779">arXiv</a>
+      <a href="https://arxiv.org/pdf/2609.26779">PDF</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">SWE-Serve: Benchmarking Agentic Engineering For Production Inference Serving</div>
+    <div class="paper-meta">arXiv 2026 · 智能体工程基准</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">面向生产级推理服务，构建智能体工程能力基准，评测端到端部署水平。</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 SWE-Serve 基准，将推理服务工程化能力纳入统一评测体系。</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">关键指标显示基准区分度良好，分别为 75%、45.9% 与 69.4%。</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于智能体工程基准方向，建议关注评测覆盖度、真实服务场景与结果可复现性。</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-agent">Agent</span>
+      <span class="tag tag-reasoning">Benchmark</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2609.26777">arXiv</a>
+      <a href="https://arxiv.org/pdf/2609.26777">PDF</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">One to More, More to One: Category-Aware Iterative Expert Training for Software Engineering Agents</div>
+    <div class="paper-meta">arXiv 2026 · alibaba · 智能体工程</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">面向软件工程智能体，提出类别感知的迭代专家训练框架，平衡专长与通用性。</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">受类别权衡机制启发，构建类别级训练与协作策略框架，提升专家复用效率。</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在软件工程基准上验证了方法对专家协作与开发任务的有效性。</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于智能体工程方向，建议关注专家划分方式、迭代策略与端到端开发成功率。</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-agent">Agent</span>
+      <span class="tag tag-llm">Software Engineering</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2609.23377">arXiv</a>
+      <a href="https://arxiv.org/pdf/2609.23377">PDF</a>
+      <a href="https://github.com/alibaba/AgenticBigBang">Project</a>
+      <a href="https://github.com/alibaba/AgenticBigBang">Code</a>
+    </div>
+  </div>
+
+</section>
+
+<!-- 📐 Simulation Section -->
+<section class="section">
+  <h2 class="section-title">📐 Simulation · 仿真与三维</h2>
+
+  <div class="paper-card">
+    <div class="paper-title">φ-RIE: From Photorealistic Reconstruction to Interactive Environments</div>
+    <div class="paper-meta">arXiv 2026 · 三维重建与仿真</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">以三维高斯溅射为基础，构建从照片级重建到可交互环境的端到端处理流程。</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 Gaussian-native 框架，将重建结果与仿真交互统一在同一表示之下。</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在操作与抓取任务上验证了重建环境的交互有效性与可用性。</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于三维重建与仿真方向，建议重点看重建保真度、交互接口与真机部署条件。</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-world">3D Gaussian</span>
+      <span class="tag tag-robot">Reconstruction</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2609.26795">arXiv</a>
+      <a href="https://arxiv.org/pdf/2609.26795">PDF</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">DreamStream: Towards Policy-Oriented Generative Simulation for End-to-End Driving</div>
+    <div class="paper-meta">arXiv 2026 · 自动驾驶仿真</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">面向端到端自动驾驶，构建以策略为导向的生成式仿真环境，用于训练与评测。</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出生成式仿真框架，强化仿真到真实场景的迁移能力与策略适配。</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在端到端驾驶任务上验证了生成仿真对策略训练的增益。</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于自动驾驶仿真方向，建议重点看仿真保真度、泛化能力与真实道路验证。</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-world">Simulation</span>
+      <span class="tag tag-robot">Driving</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2609.26792">arXiv</a>
+      <a href="https://arxiv.org/pdf/2609.26792">PDF</a>
+      <a href="https://vail-ucla.github.io/DreamStream/">Project</a>
+      <a href="https://github.com/VAIL-UCLA/DreamStream">Code</a>
+    </div>
+  </div>
+
+</section>
+
+<div class="stats">
+  <p>📊 今日共收录 <strong>12</strong> 篇论文（arXiv 8 + HuggingFace 热门 4），跨日去重后全部保留 · 生成于 2026-09-23</p>
+</div>
+
+</div>
+</body>
+</html>

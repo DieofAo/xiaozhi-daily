@@ -658,6 +658,142 @@
 <script>
 // ===== DATA =====
 const PAPERS_DB = [
+    // === 2026-09-23 ===
+    {
+        date: "2026-09-23",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "Transferring the Intelligence of VLMs to Robotic Control",
+        venue: "arXiv 2026 · 机器人算法与控制",
+        summary: "🔬 技术路线: 将视觉语言模型的泛化能力迁移到机器人控制，利用上下文学习实现零样本操作，无需逐任务微调。 | 💡 创新点: 提出 RoboDawn 方法，使机器人具备零样本泛化能力，把大模型常识直接转化为可执行控制策略。 | 📊 实验效果: 关键指标显示任务成功率显著提升，分别为 53.2%、73.6%、46.0% 与 35.67%。 | ⭐ 整体评价: 属于机器人算法与控制方向，建议重点看实验设置、基线对比与真实部署条件下的稳定性。",
+        tags: [["Robotics","green"],["VLM-to-Control","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.22966"],["PDF","https://arxiv.org/pdf/2609.22966"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"将视觉语言模型的泛化能力迁移到机器人控制，利用上下文学习实现零样本操作，无需逐任务微调。"},{"label":"💡 创新点","text":"提出 RoboDawn 方法，使机器人具备零样本泛化能力，把大模型常识直接转化为可执行控制策略。"},{"label":"📊 实验效果","text":"关键指标显示任务成功率显著提升，分别为 53.2%、73.6%、46.0% 与 35.67%。"},{"label":"⭐ 整体评价","text":"属于机器人算法与控制方向，建议重点看实验设置、基线对比与真实部署条件下的稳定性。"}]
+    },
+    {
+        date: "2026-09-23",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "Grounded Action Model: 3D Grounding as a Foundation for Robotics",
+        venue: "arXiv 2026 · National University of Singapore · 视觉语言动作",
+        summary: "🔬 技术路线: 以三维场景定位为基础构建视觉语言动作模型，让操作策略明确关注任务相关的关键物体。 | 💡 创新点: 提出 Abot-M0，将三维定位作为机器人动作生成的底层基础，而非事后对齐模块。 | 📊 实验效果: 关键指标显示操作性能提升，分别为 55.3%、52.0%、47.6% 与 30.4%。 | ⭐ 整体评价: 属于视觉语言动作与具身控制方向，建议关注任务泛化、动作表达方式与真机验证结果。",
+        tags: [["Robotics","green"],["VLA","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.23863"],["PDF","https://arxiv.org/pdf/2609.23863"],["Project","https://grounded-action-model.github.io/"],["Code","https://github.com/GehaoZhang6/Grounded-Action-Model"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"以三维场景定位为基础构建视觉语言动作模型，让操作策略明确关注任务相关的关键物体。"},{"label":"💡 创新点","text":"提出 Abot-M0，将三维定位作为机器人动作生成的底层基础，而非事后对齐模块。"},{"label":"📊 实验效果","text":"关键指标显示操作性能提升，分别为 55.3%、52.0%、47.6% 与 30.4%。"},{"label":"⭐ 整体评价","text":"属于视觉语言动作与具身控制方向，建议关注任务泛化、动作表达方式与真机验证结果。"}]
+    },
+    {
+        date: "2026-09-23",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Flash-dLLM: IO-Aware KV Caching and Parallel Decoding for Fast, Memory-Efficient Diffusion LLMs",
+        venue: "arXiv 2026 · 大语言模型推理加速",
+        summary: "🔬 技术路线: 面向扩散语言模型，设计感知输入输出带宽的键值缓存机制，并采用并行解码策略加速生成。 | 💡 创新点: 提出 Flash-dLLM 方法，将键值缓存与并行解码协同优化，兼顾速度、显存与吞吐表现。 | 📊 实验效果: 在 8K 上下文下验证了高效推理能力，显著降低显存占用并提升解码速度。 | ⭐ 整体评价: 属于大语言模型推理加速方向，建议关注在长上下文与实时部署下的实际收益与稳定性。",
+        tags: [["LLM","green"],["Inference","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.26796"],["PDF","https://arxiv.org/pdf/2609.26796"],["Code","https://github.com/VILA-Lab/Flash-dLLM"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"面向扩散语言模型，设计感知输入输出带宽的键值缓存机制，并采用并行解码策略加速生成。"},{"label":"💡 创新点","text":"提出 Flash-dLLM 方法，将键值缓存与并行解码协同优化，兼顾速度、显存与吞吐表现。"},{"label":"📊 实验效果","text":"在 8K 上下文下验证了高效推理能力，显著降低显存占用并提升解码速度。"},{"label":"⭐ 整体评价","text":"属于大语言模型推理加速方向，建议关注在长上下文与实时部署下的实际收益与稳定性。"}]
+    },
+    {
+        date: "2026-09-23",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "SpeakerMem-R1: Speaker-Centered Dual-Track Memory for Multi-Party Dialogue",
+        venue: "arXiv 2026 · 大语言模型对话",
+        summary: "🔬 技术路线: 面向多方对话，构建以说话人为中心的双轨记忆机制，区分不同角色的信息与意图。 | 💡 创新点: 提出说话人中心的双轨记忆结构，显式建模长期对话上下文与角色归属。 | 📊 实验效果: 关键指标显示对话理解明显提升，分别为 47.9%、69.2%、61.9% 与 62.33%。 | ⭐ 整体评价: 属于大语言模型对话方向，建议关注记忆检索精度、角色区分能力与长对话一致性。",
+        tags: [["LLM","green"],["Dialogue","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.26780"],["PDF","https://arxiv.org/pdf/2609.26780"],["Project","https://2022hpsk.github.io/SpeakerMemR1"],["Code","https://github.com/2022hpsk/SpeakerMemR1"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"面向多方对话，构建以说话人为中心的双轨记忆机制，区分不同角色的信息与意图。"},{"label":"💡 创新点","text":"提出说话人中心的双轨记忆结构，显式建模长期对话上下文与角色归属。"},{"label":"📊 实验效果","text":"关键指标显示对话理解明显提升，分别为 47.9%、69.2%、61.9% 与 62.33%。"},{"label":"⭐ 整体评价","text":"属于大语言模型对话方向，建议关注记忆检索精度、角色区分能力与长对话一致性。"}]
+    },
+    {
+        date: "2026-09-23",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "Document Retrieval-Aware Chunking (D-RAC): Universal Retrieval-Aware Ingestion of Enterprise Documents via PDF Normalization and Multimodal Markdown Conversion",
+        venue: "arXiv 2026 · Yellow.ai · 多模态检索",
+        summary: "🔬 技术路线: 面向企业文档，通过 PDF 归一化与多模态 Markdown 转换，实现检索友好的分块摄入。 | 💡 创新点: 提出检索感知的通用分块框架，融合多模态信息并保持轻量化部署。 | 📊 实验效果: 关键指标显示检索质量较高，分别为 95.7%、77.8%、85.6% 与 75%。 | ⭐ 整体评价: 属于多模态检索方向，建议关注分块粒度、跨文档一致性与企业落地实际效果。",
+        tags: [["Multimodal","green"],["Retrieval","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.24220"],["PDF","https://arxiv.org/pdf/2609.24220"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"面向企业文档，通过 PDF 归一化与多模态 Markdown 转换，实现检索友好的分块摄入。"},{"label":"💡 创新点","text":"提出检索感知的通用分块框架，融合多模态信息并保持轻量化部署。"},{"label":"📊 实验效果","text":"关键指标显示检索质量较高，分别为 95.7%、77.8%、85.6% 与 75%。"},{"label":"⭐ 整体评价","text":"属于多模态检索方向，建议关注分块粒度、跨文档一致性与企业落地实际效果。"}]
+    },
+    {
+        date: "2026-09-23",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "HARMONY: Hierarchical Agentic Reasoning for MONocular Image-to-Scene Synthesis",
+        venue: "arXiv 2026 · 智能体三维生成",
+        summary: "🔬 技术路线: 面向单目图像到三维场景生成，采用分层智能体推理组织场景结构与物体布局。 | 💡 创新点: 提出分层智能体协同框架，将场景合成拆解为可组合的推理子任务逐步完成。 | 📊 实验效果: 实验验证了方法在图像到场景合成任务上的有效性与可组合性。 | ⭐ 整体评价: 属于智能体与三维生成方向，建议关注场景一致性、物体摆放合理性与端到端成功率。",
+        tags: [["Agent","green"],["Scene Synthesis","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.26793"],["PDF","https://arxiv.org/pdf/2609.26793"],["Project","http://cwchenwang.github.io/harmony"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"面向单目图像到三维场景生成，采用分层智能体推理组织场景结构与物体布局。"},{"label":"💡 创新点","text":"提出分层智能体协同框架，将场景合成拆解为可组合的推理子任务逐步完成。"},{"label":"📊 实验效果","text":"实验验证了方法在图像到场景合成任务上的有效性与可组合性。"},{"label":"⭐ 整体评价","text":"属于智能体与三维生成方向，建议关注场景一致性、物体摆放合理性与端到端成功率。"}]
+    },
+    {
+        date: "2026-09-23",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Agensh: Scaling Organizational Intelligence to 1,024 Agents",
+        venue: "arXiv 2026 · 多智能体协作",
+        summary: "🔬 技术路线: 面向大规模多智能体协作，研究组织智能的扩展规律与可扩展协作架构。 | 💡 创新点: 提出可扩展的多智能体组织框架，将协作规模提升至 1024 个智能体。 | 📊 实验效果: 关键指标显示协作效率随规模提升，分别为 19.31%、28.78%、49% 与 33.89%。 | ⭐ 整体评价: 属于智能体协作方向，建议关注通信开销、分工机制与大规模下的整体稳定性。",
+        tags: [["Agent","green"],["Scaling","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.26781"],["PDF","https://arxiv.org/pdf/2609.26781"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"面向大规模多智能体协作，研究组织智能的扩展规律与可扩展协作架构。"},{"label":"💡 创新点","text":"提出可扩展的多智能体组织框架，将协作规模提升至 1024 个智能体。"},{"label":"📊 实验效果","text":"关键指标显示协作效率随规模提升，分别为 19.31%、28.78%、49% 与 33.89%。"},{"label":"⭐ 整体评价","text":"属于智能体协作方向，建议关注通信开销、分工机制与大规模下的整体稳定性。"}]
+    },
+    {
+        date: "2026-09-23",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "CliffCompaction: Cost-Efficient Compaction for Long-Horizon Coding Agents",
+        venue: "arXiv 2026 · 智能体工程",
+        summary: "🔬 技术路线: 面向长程编码智能体，设计低成本上下文压缩机制以控制推理开销与历史长度。 | 💡 创新点: 提出高效压缩策略，在保留关键信息的同时削减历史上下文规模。 | 📊 实验效果: 关键指标显示压缩后任务成功率保持约 50%，较基线提升 10 个百分点。 | ⭐ 整体评价: 属于智能体工程方向，建议关注压缩信息损失、长程任务稳定性与成本收益。",
+        tags: [["Agent","green"],["Coding","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.26779"],["PDF","https://arxiv.org/pdf/2609.26779"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"面向长程编码智能体，设计低成本上下文压缩机制以控制推理开销与历史长度。"},{"label":"💡 创新点","text":"提出高效压缩策略，在保留关键信息的同时削减历史上下文规模。"},{"label":"📊 实验效果","text":"关键指标显示压缩后任务成功率保持约 50%，较基线提升 10 个百分点。"},{"label":"⭐ 整体评价","text":"属于智能体工程方向，建议关注压缩信息损失、长程任务稳定性与成本收益。"}]
+    },
+    {
+        date: "2026-09-23",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "SWE-Serve: Benchmarking Agentic Engineering For Production Inference Serving",
+        venue: "arXiv 2026 · 智能体工程基准",
+        summary: "🔬 技术路线: 面向生产级推理服务，构建智能体工程能力基准，评测端到端部署水平。 | 💡 创新点: 提出 SWE-Serve 基准，将推理服务工程化能力纳入统一评测体系。 | 📊 实验效果: 关键指标显示基准区分度良好，分别为 75%、45.9% 与 69.4%。 | ⭐ 整体评价: 属于智能体工程基准方向，建议关注评测覆盖度、真实服务场景与结果可复现性。",
+        tags: [["Agent","green"],["Benchmark","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.26777"],["PDF","https://arxiv.org/pdf/2609.26777"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"面向生产级推理服务，构建智能体工程能力基准，评测端到端部署水平。"},{"label":"💡 创新点","text":"提出 SWE-Serve 基准，将推理服务工程化能力纳入统一评测体系。"},{"label":"📊 实验效果","text":"关键指标显示基准区分度良好，分别为 75%、45.9% 与 69.4%。"},{"label":"⭐ 整体评价","text":"属于智能体工程基准方向，建议关注评测覆盖度、真实服务场景与结果可复现性。"}]
+    },
+    {
+        date: "2026-09-23",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "One to More, More to One: Category-Aware Iterative Expert Training for Software Engineering Agents",
+        venue: "arXiv 2026 · alibaba · 智能体工程",
+        summary: "🔬 技术路线: 面向软件工程智能体，提出类别感知的迭代专家训练框架，平衡专长与通用性。 | 💡 创新点: 受类别权衡机制启发，构建类别级训练与协作策略框架，提升专家复用效率。 | 📊 实验效果: 在软件工程基准上验证了方法对专家协作与开发任务的有效性。 | ⭐ 整体评价: 属于智能体工程方向，建议关注专家划分方式、迭代策略与端到端开发成功率。",
+        tags: [["Agent","green"],["Software Engineering","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.23377"],["PDF","https://arxiv.org/pdf/2609.23377"],["Project","https://github.com/alibaba/AgenticBigBang"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"面向软件工程智能体，提出类别感知的迭代专家训练框架，平衡专长与通用性。"},{"label":"💡 创新点","text":"受类别权衡机制启发，构建类别级训练与协作策略框架，提升专家复用效率。"},{"label":"📊 实验效果","text":"在软件工程基准上验证了方法对专家协作与开发任务的有效性。"},{"label":"⭐ 整体评价","text":"属于智能体工程方向，建议关注专家划分方式、迭代策略与端到端开发成功率。"}]
+    },
+    {
+        date: "2026-09-23",
+        category: "Simulation",
+        categoryIcon: "🛠️",
+        title: "φ-RIE: From Photorealistic Reconstruction to Interactive Environments",
+        venue: "arXiv 2026 · 三维重建与仿真",
+        summary: "🔬 技术路线: 以三维高斯溅射为基础，构建从照片级重建到可交互环境的端到端处理流程。 | 💡 创新点: 提出 Gaussian-native 框架，将重建结果与仿真交互统一在同一表示之下。 | 📊 实验效果: 在操作与抓取任务上验证了重建环境的交互有效性与可用性。 | ⭐ 整体评价: 属于三维重建与仿真方向，建议重点看重建保真度、交互接口与真机部署条件。",
+        tags: [["3D Gaussian","green"],["Reconstruction","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.26795"],["PDF","https://arxiv.org/pdf/2609.26795"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"以三维高斯溅射为基础，构建从照片级重建到可交互环境的端到端处理流程。"},{"label":"💡 创新点","text":"提出 Gaussian-native 框架，将重建结果与仿真交互统一在同一表示之下。"},{"label":"📊 实验效果","text":"在操作与抓取任务上验证了重建环境的交互有效性与可用性。"},{"label":"⭐ 整体评价","text":"属于三维重建与仿真方向，建议重点看重建保真度、交互接口与真机部署条件。"}]
+    },
+    {
+        date: "2026-09-23",
+        category: "Simulation",
+        categoryIcon: "🛠️",
+        title: "DreamStream: Towards Policy-Oriented Generative Simulation for End-to-End Driving",
+        venue: "arXiv 2026 · 自动驾驶仿真",
+        summary: "🔬 技术路线: 面向端到端自动驾驶，构建以策略为导向的生成式仿真环境，用于训练与评测。 | 💡 创新点: 提出生成式仿真框架，强化仿真到真实场景的迁移能力与策略适配。 | 📊 实验效果: 在端到端驾驶任务上验证了生成仿真对策略训练的增益。 | ⭐ 整体评价: 属于自动驾驶仿真方向，建议重点看仿真保真度、泛化能力与真实道路验证。",
+        tags: [["Simulation","green"],["Driving","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.26792"],["PDF","https://arxiv.org/pdf/2609.26792"],["Project","https://vail-ucla.github.io/DreamStream/"],["Code","https://github.com/VAIL-UCLA/DreamStream"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"面向端到端自动驾驶，构建以策略为导向的生成式仿真环境，用于训练与评测。"},{"label":"💡 创新点","text":"提出生成式仿真框架，强化仿真到真实场景的迁移能力与策略适配。"},{"label":"📊 实验效果","text":"在端到端驾驶任务上验证了生成仿真对策略训练的增益。"},{"label":"⭐ 整体评价","text":"属于自动驾驶仿真方向，建议重点看仿真保真度、泛化能力与真实道路验证。"}]
+    },
     // === 2026-09-22 ===
     {
         date: "2026-09-22",
@@ -25561,6 +25697,13 @@ const PAPERS_DB = [
 ];
 
 const DAILY_OVERVIEW = {
+    "2026-09-23": {
+        bannerTitle: "🔥 今日看点",
+        bannerSubtitle: "机器人方向今日有两篇值得关注：将视觉语言模型智能迁移到机器人控制的 RoboDawn 实现零样本操作泛化；以三维场景定位为底层基础的 Abot-M0 让操作策略精准聚焦关键物体。智能体方向延续工程化主线，Agensh 将多智能体协作规模扩展到 1024 个，One to More 提出类别感知的迭代专家训练。语言模型推理侧 Flash-dLLM 通过感知带宽的键值缓存与并行解码大幅提速。当日 12 篇论文经跨日去重全部保留。",
+        picks: ["Transferring the Intelligence of VLMs to Robotic Control","Grounded Action Model: 3D Grounding as a Foundation for Robotics","Agensh: Scaling Organizational Intelligence to 1,024 Agents"],
+        totalPapers: 12,
+        totalNews: 0
+    },
     "2026-09-22": {
         bannerTitle: "🔥 今日看点",
         bannerSubtitle: "机器人方向亮眼：《Learning Beyond What Humans Can Demonstrate》提出 GLIDE 方法，让机械臂学会超出人类示范范围的操作；《MIGU》用受贝叶斯启发的统一框架在不确定条件下完成指令落地；《DexTacWAM》融合视觉与触觉构建灵巧操作世界动作模型，推理速度较基线分别提升 2.26 倍与 1.29 倍。世界模型方向《WorldCrafter》引入隐式三维感知记忆，保证视频世界模型的时空一致性。智能体方向延续自我改进主线，《Harness-Zero》与《RRSI》分别探索工具外壳蒸馏与带正则的递归自改进。当日 11 篇论文经跨日去重全部保留。",
