@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>小小志AI日报 - 2026年9月24日 周四</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans SC', sans-serif;
+  background: #0a0e1a;
+  color: #e0e6f0;
+  line-height: 1.7;
+  min-height: 100vh;
+}
+.container { max-width: 960px; margin: 0 auto; padding: 40px 24px; }
+header { text-align: center; margin-bottom: 48px; padding: 40px 20px;
+  background: linear-gradient(135deg, rgba(59,130,246,0.08) 0%, rgba(139,92,246,0.08) 100%);
+  border-radius: 20px; border: 1px solid rgba(99,102,241,0.15); }
+header h1 { font-size: 2rem; background: linear-gradient(135deg, #60a5fa, #a78bfa);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 8px; }
+header .date { color: #94a3b8; font-size: 1rem; }
+header .subtitle { color: #64748b; font-size: 0.9rem; margin-top: 6px; }
+.highlight-banner { background: linear-gradient(135deg, rgba(249,115,22,0.1) 0%, rgba(234,179,8,0.08) 100%);
+  border: 1px solid rgba(249,115,22,0.2); border-radius: 14px; padding: 20px 24px; margin-bottom: 36px; }
+.hl-title { font-size: 1.1rem; font-weight: 700; color: #fb923c; margin-bottom: 8px; }
+.hl-text { font-size: 0.92rem; color: #cbd5e1; line-height: 1.7; }
+.section { margin-bottom: 40px; }
+.section-title { font-size: 1.4rem; color: #f1f5f9; margin-bottom: 20px; padding-bottom: 12px;
+  border-bottom: 1px solid rgba(99,102,241,0.2); }
+.paper-card { background: rgba(30,41,59,0.6); border: 1px solid rgba(99,102,241,0.12);
+  border-radius: 14px; padding: 24px; margin-bottom: 16px; transition: transform 0.2s, box-shadow 0.2s; }
+.paper-card:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(99,102,241,0.1);
+  border-color: rgba(99,102,241,0.3); }
+.paper-card.hot { border-color: rgba(249,115,22,0.25); background: rgba(30,41,59,0.7); }
+.paper-title { font-size: 1.1rem; font-weight: 600; color: #f8fafc; margin-bottom: 8px; }
+.paper-meta { font-size: 0.85rem; color: #64748b; margin-bottom: 10px; }
+.summary-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 14px; }
+@media (max-width: 640px) { .summary-grid { grid-template-columns: 1fr; } }
+.summary-item { background: rgba(15,23,42,0.5); border-radius: 10px; padding: 12px 14px;
+  border: 1px solid rgba(99,102,241,0.08); }
+.summary-label { font-size: 0.78rem; font-weight: 600; color: #818cf8; margin-bottom: 4px; }
+.summary-text { font-size: 0.88rem; color: #cbd5e1; line-height: 1.6; }
+.paper-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+.tag { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: 500; }
+.tag-agent { background: rgba(16,185,129,0.12); color: #34d399; }
+.tag-llm { background: rgba(99,102,241,0.12); color: #818cf8; }
+.tag-multimodal { background: rgba(244,114,182,0.12); color: #f472b6; }
+.tag-world { background: rgba(251,191,36,0.12); color: #fbbf24; }
+.tag-robot { background: rgba(251,146,60,0.12); color: #fb923c; }
+.tag-vla { background: rgba(59,130,246,0.12); color: #60a5fa; }
+.tag-reasoning { background: rgba(132,204,22,0.12); color: #a3e635; }
+.hot-badge { display: inline; margin-right: 4px; }
+.paper-links { display: flex; flex-wrap: wrap; gap: 10px; }
+.paper-links a { display: inline-block; padding: 5px 14px; background: rgba(99,102,241,0.12);
+  color: #818cf8; text-decoration: none; border-radius: 8px; font-size: 0.82rem; font-weight: 500; transition: background 0.2s; }
+.paper-links a:hover { background: rgba(99,102,241,0.25); }
+.info-card { background: rgba(30,41,59,0.5); border: 1px solid rgba(139,92,246,0.15);
+  border-radius: 14px; padding: 20px 24px; margin-bottom: 16px; }
+.paper-summary { font-size: 0.9rem; color: #cbd5e1; line-height: 1.7; margin-bottom: 14px; }
+.stats { text-align: center; padding: 30px; margin-top: 40px; background: rgba(30,41,59,0.4);
+  border-radius: 14px; border: 1px solid rgba(99,102,241,0.1); }
+.stats p { color: #94a3b8; font-size: 0.88rem; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <h1>📡 小小志AI日报</h1>
+  <div class="date">2026年9月24日 周四</div>
+  <div class="subtitle">📰 arXiv 8 篇 · HuggingFace 热门 7 篇 · 机构博客 1 篇（跨日去重后全部保留，共 15 篇论文）</div>
+</header>
+
+<div class="highlight-banner">
+  <div class="hl-title">🔥 今日看点</div>
+  <div class="hl-text">
+    机器人方向今日聚焦两类问题：群体加入通过语言引导预测目标点实现自主编队，永不下线的机器人则在并发具身数据流中持续观察、回忆与行动。具身操作侧，LiMA 用异步扩散把长期想象与实时灵巧操作桥接起来。世界模型方向重新思考智能体世界建模，引入编辑机制修正生成状态。机构侧 Anthropic 发布 Claude 发现新型酶系统的研究成果。当日 15 篇论文经跨日去重全部保留。
+  </div>
+</div>
+
+<!-- 🦾 Robotics Section -->
+<section class="section">
+  <h2 class="section-title">🦾 Robotics · 机器人</h2>
+
+  <div class="paper-card hot">
+    <div class="paper-title"><span class="hot-badge">🔥</span>Where Should I Join? Robot Group Joining via Language-Guided Goal Prediction</div>
+    <div class="paper-meta">arXiv 2026 · 机器人算法与控制</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">面向机器人编队加入场景，通过语言引导预测加入目标点，结合导航与多模态感知实现实时决策。</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出语言引导的目标预测机制，让机器人自主决定在何处加入行进中的群体，而非依赖预设目标。</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在导航与推理任务上验证了方法在真实机器人场景中的有效性与实时性。</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于机器人算法与控制方向，建议重点看实验设置、基线对比与真实部署条件下的稳定性。</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-robot">Robotics</span>
+      <span class="tag tag-vla">Navigation</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2609.28467">arXiv</a>
+      <a href="https://arxiv.org/pdf/2609.28467">PDF</a>
+    </div>
+  </div>
+
+  <div class="paper-card hot">
+    <div class="paper-title"><span class="hot-badge">🔥</span>Watch, Recall, Act: Always-On Robots in Concurrent Embodied Streams</div>
+    <div class="paper-meta">arXiv 2026 · 具身智能与持续学习</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">面向永不下线的机器人，在并发具身数据流中通过"观察、回忆、行动"循环持续做出决策。</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 Always-on 持续运行机制，使机器人无需场景重置即可处理连续不断的任务流。</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">关键指标显示方法在持续场景中的表现，分别为 45% 与 28%。</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于机器人算法与控制方向，建议重点看实验设置、基线对比与真实部署条件下的稳定性。</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-robot">Robotics</span>
+      <span class="tag tag-vla">Embodied</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2609.28429">arXiv</a>
+      <a href="https://arxiv.org/pdf/2609.28429">PDF</a>
+    </div>
+  </div>
+
+</section>
+
+<!-- 🤖 VLA Section -->
+<section class="section">
+  <h2 class="section-title">🤖 VLA · Vision-Language-Action</h2>
+
+  <div class="paper-card hot">
+    <div class="paper-title"><span class="hot-badge">🔥</span>LiMA: Bridging Long-term Imagination to Real-time Dexterous Manipulation via Asynchronous Diffusion</div>
+    <div class="paper-meta">arXiv 2026 · 视觉语言动作与灵巧操作</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">采用异步扩散框架，将长期想象生成的规划与实时灵巧操作解耦，实现长时序到短时延的衔接。</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 LiMA 方法，把长期想象与实时操作通过异步机制结合，兼顾前瞻性与响应速度。</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">关键指标显示操作成功率显著提升，分别为 45.8%、70.8% 与 78.9%。</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于视觉语言动作与具身控制方向，建议关注任务泛化、动作表达方式与真机验证。</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-vla">VLA</span>
+      <span class="tag tag-robot">Manipulation</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2609.28431">arXiv</a>
+      <a href="https://arxiv.org/pdf/2609.28431">PDF</a>
+      <a href="https://ccdcs.github.io/LiMA_repo/">Project</a>
+    </div>
+  </div>
+
+</section>
+
+<!-- 🌍 World Model Section -->
+<section class="section">
+  <h2 class="section-title">🌍 World Model · 世界模型</h2>
+
+  <div class="paper-card hot">
+    <div class="paper-title"><span class="hot-badge">🔥</span>Agent-Editing World Model: Rethinking World Modeling for LLM Agents</div>
+    <div class="paper-meta">arXiv 2026 · 世界模型与智能体</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">重新思考面向智能体世界模型的构建方式，引入智能体编辑机制对生成的环境状态进行修正。</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 Agent-Editing 世界模型，把智能体行为作为编辑操作融入世界模型的预测与更新。</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在智能体任务上验证了世界模型对状态预测与规划支持的改进效果。</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于世界模型与动作生成方向，建议关注预测精度、动作可控性与仿真到真实的迁移。</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-world">World Model</span>
+      <span class="tag tag-agent">Agent</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2609.28416">arXiv</a>
+      <a href="https://arxiv.org/pdf/2609.28416">PDF</a>
+    </div>
+  </div>
+
+</section>
+
+<!-- 🧠 LLM Section -->
+<section class="section">
+  <h2 class="section-title">🧠 LLM · 大语言模型</h2>
+
+  <div class="paper-card">
+    <div class="paper-title">StudentBench: AI and human tutoring yield equivalent GRE learning gains</div>
+    <div class="paper-meta">arXiv 2026 · 教育应用与基准</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">构建学生辅导基准，比较人工智能辅导与人类辅导在 GRE 学习增益上的表现，覆盖教学与评估全过程。</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 StudentBench 基准，首次系统量化人工智能辅导与人类辅导的学习效果是否等价。</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在标准 GRE 学习场景中对辅导效果进行对比验证，结果显示两类辅导可达相当的增益。</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于大语言模型教育应用方向，建议关注基准设计、评估维度与辅导质量的真实差异。</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-llm">LLM</span>
+      <span class="tag tag-reasoning">Education</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2609.28470">arXiv</a>
+      <a href="https://arxiv.org/pdf/2609.28470">PDF</a>
+      <a href="https://studentbench.org">Link</a>
+      <a href="https://github.com/Handshake-AI-Research/studentbench">Code</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">Can LLMs Reason About Runtime Behavior? A Repository-Level Dynamic Benchmark</div>
+    <div class="paper-meta">arXiv 2026 · 代码推理与基准</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出仓库级动态基准，要求模型在运行时行为层面进行推理，而非仅做静态代码理解。</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">构建动态评测框架，把推理对象从代码片段扩展到完整仓库的运行期行为。</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">关键指标显示当前模型在运行期推理上的表现有限，分别为 37% 与 90%。</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于大语言模型推理方向，建议关注基准覆盖度、推理深度与真实仓库场景的泛化。</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-llm">LLM</span>
+      <span class="tag tag-reasoning">Reasoning</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2609.28449">arXiv</a>
+      <a href="https://arxiv.org/pdf/2609.28449">PDF</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">MultiVENT-Raw: A Benchmark for Retrieval and Reasoning over Raw Videos</div>
+    <div class="paper-meta">arXiv 2026 · 视频检索与推理</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">构建面向原始视频的检索与推理基准，要求模型直接在未加工视频上完成检索与多步推理。</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 MultiVENT-Raw 基准，把评测从文本描述延伸到原始视频内容的理解与推理。</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在生成与跨模态任务上验证了基准对视频检索与推理能力的区分能力。</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于多模态与视频理解方向，建议关注数据规模、标注质量与下游任务表现。</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-llm">LLM</span>
+      <span class="tag tag-multimodal">Video</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2609.28437">arXiv</a>
+      <a href="https://arxiv.org/pdf/2609.28437">PDF</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">Cross-Scale Transfer Learning for Depression Severity Prediction: From PHQ-8 to HAMD-17 Across Languages and Clinical Paradigms</div>
+    <div class="paper-meta">arXiv 2026 · 医疗健康机器学习</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">研究跨量表抑郁严重程度预测，把 PHQ-8 上学到的模型迁移到 HAMD-17，跨越语言与临床范式。</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出跨尺度迁移框架，在小规模临床数据上实现不同量表与语种间的知识复用。</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">模型规模分别为 0.6B 与 1.7B，验证了跨量表与跨语言迁移的可行性。</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于医疗健康机器学习方向，建议关注数据隐私、临床有效性与跨人群泛化。</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-llm">LLM</span>
+      <span class="tag tag-reasoning">Healthcare</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2609.28430">arXiv</a>
+      <a href="https://arxiv.org/pdf/2609.28430">PDF</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">Bellman Policy Optimization</div>
+    <div class="paper-meta">arXiv 2026 · 强化学习与推理</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">将贝尔曼方程思想引入策略优化，用于提升大语言模型在可验证奖励下的推理能力。</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出基于贝尔曼方程的策略优化方法，改进带可验证奖励的强化学习训练过程。</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在推理基准上验证了方法对大模型推理能力的提升效果。</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于大语言模型推理方向，建议关注奖励设计、训练稳定性与推理泛化能力。</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-llm">LLM</span>
+      <span class="tag tag-reasoning">RL</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2609.15987">arXiv</a>
+      <a href="https://arxiv.org/pdf/2609.15987">PDF</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">JEV-as-a-Judge: Accept When Confident, Escalate When Unsure</div>
+    <div class="paper-meta">arXiv 2026 · 模型评估与卡内基梅隆大学</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">构建"评判即陪审"的评估框架，模型在确信时直接判定，不确定时升级交由更高层处理。</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出置信度驱动的升级机制，把不确定样本交由更强模型处理以提升评估可靠性。</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">关键指标显示评估准确率达到 99%，不确定样本占比约 0.36%。</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于大语言模型评估方向，建议关注置信度校准、升级策略与评估成本权衡。</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-llm">LLM</span>
+      <span class="tag tag-reasoning">Evaluation</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2609.26550">arXiv</a>
+      <a href="https://arxiv.org/pdf/2609.26550">PDF</a>
+      <a href="https://yubol-bobo.github.io/jev-as-a-judge/">Project</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">From Pattern Recognizers to Personalized Companions: A Survey of Large Language Models in Mental Health</div>
+    <div class="paper-meta">arXiv 2026 · 心理健康综述</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">系统综述大语言模型在心理健康领域的应用，从模式识别能力延伸到个性化陪伴角色。</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出从模式识别到个性化陪伴的视角转变，梳理心理健康大语言模型的研究全景。</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在生成与规划相关任务上归纳了现有方法的进展与局限。</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于大语言模型应用综述方向，建议关注伦理风险、个性化能力与临床可用性。</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-llm">LLM</span>
+      <span class="tag tag-reasoning">Survey</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2609.25186">arXiv</a>
+      <a href="https://arxiv.org/pdf/2609.25186">PDF</a>
+      <a href="https://github.com/Emo-gml/Awesome-Mental-Health-LLMs">Code</a>
+    </div>
+  </div>
+
+</section>
+
+<!-- 🧩 Agent Section -->
+<section class="section">
+  <h2 class="section-title">🧩 Agent · 智能体</h2>
+
+  <div class="paper-card">
+    <div class="paper-title">The Tasteful Agent: Measuring and Improving Taste in Long-Horizon Tasks</div>
+    <div class="paper-meta">arXiv 2026 · 微软研究院</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">面向长时序任务，提出品味评估与改进框架，衡量并提升智能体在长程决策中的"品味"。</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 Taste-Bench 基准，首次将"品味"作为可度量、可优化的智能体长程行为能力。</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">关键指标显示优化后的智能体在长时序任务上表现提升，达到 59.7%。</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于智能体方向，建议关注智能体架构、长程规划与端到端任务成功率。</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-agent">Agent</span>
+      <span class="tag tag-llm">Long-horizon</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2609.25804">arXiv</a>
+      <a href="https://arxiv.org/pdf/2609.25804">PDF</a>
+      <a href="https://github.com/wbopan/tastebench">Code</a>
+    </div>
+  </div>
+
+</section>
+
+<!-- 🎨 Multimodal Section -->
+<section class="section">
+  <h2 class="section-title">🎨 Multimodal · 多模态</h2>
+
+  <div class="paper-card">
+    <div class="paper-title">RULER: Instance-aware Rubric Rewards for SVG Generation</div>
+    <div class="paper-meta">arXiv 2026 · 阿里 inclusionAI</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">面向可缩放矢量图形生成，提出实例感知的评分规则奖励，用强化学习优化生成质量。</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出实例感知的 Rubric 奖励机制，对矢量图形生成进行细粒度、可扩展的奖励建模。</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在矢量图形生成任务上验证了方法对生成质量的提升效果。</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于多模态生成方向，建议关注奖励设计、生成保真度与下游应用适配。</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-multimodal">Multimodal</span>
+      <span class="tag tag-reasoning">Generation</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2609.25270">arXiv</a>
+      <a href="https://arxiv.org/pdf/2609.25270">PDF</a>
+      <a href="https://hangyuran.github.io/RULER/">Project</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">All-in-One Multilingual Scene Text Recognition with Script-aware Mixture-of-Experts</div>
+    <div class="paper-meta">arXiv 2026 · 复旦大学</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">采用脚本感知的混合专家架构，构建统一模型处理多语种场景文字识别任务。</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 TextMuSS-10M 数据集与脚本感知专家机制，实现多语种端到端统一识别。</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">关键指标显示识别性能领先，分别为 82.06%、1.31%、65.71% 与 80.89%。</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于多模态与光学字符识别方向，建议关注跨语种对齐、数据规模与鲁棒性。</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-multimodal">Multimodal</span>
+      <span class="tag tag-vla">OCR</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2609.24058">arXiv</a>
+      <a href="https://arxiv.org/pdf/2609.24058">PDF</a>
+      <a href="https://huggingface.co/spaces/Yesianrohn/MultilingualOCR-Demo">Project</a>
+      <a href="https://github.com/YesianRohn/ScriptMoE">Code</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">Ovis-Embedding: Pushing the Frontiers of Universal Omni-Modal Embeddings</div>
+    <div class="paper-meta">arXiv 2026 · ATH-MaaS</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">构建通用全模态嵌入模型，统一处理文本、图像等多种模态的表示学习。</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出 Ovis-Embedding，以多模态统一架构把不同模态映射到一致嵌入空间。</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在推理与检索任务上验证了全模态嵌入的通用性与有效性。</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于多模态表示学习方向，建议关注模态覆盖、对齐方式与下游任务迁移。</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-multimodal">Multimodal</span>
+      <span class="tag tag-llm">Embedding</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2609.25165">arXiv</a>
+      <a href="https://arxiv.org/pdf/2609.25165">PDF</a>
+      <a href="https://github.com/ATH-MaaS/Ovis-Omni-Embedding">Code</a>
+    </div>
+  </div>
+
+</section>
+
+<!-- 🏢 行业动态 Section -->
+<section class="section">
+  <h2 class="section-title">🏢 行业动态 · 机构发布</h2>
+
+  <div class="info-card">
+    <div class="paper-title">Science — Anthropic</div>
+    <div class="paper-summary">Anthropic 发布最新研究成果，Claude 在科学发现中识别出新型酶系统，展示大模型在生物化学探索中的潜力。</div>
+    <div class="paper-links">
+      <a href="https://www.anthropic.com/news/claude-discovers-novel-enzyme-system">来源</a>
+    </div>
+  </div>
+
+</section>
+
+<div class="stats">
+  <p>📊 今日共收录 <strong>15</strong> 篇论文（arXiv 8 + HuggingFace 热门 7），跨日去重后全部保留 · 生成于 2026-09-24</p>
+</div>
+
+</div>
+</body>
+</html>
