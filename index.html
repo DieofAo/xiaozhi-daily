@@ -658,6 +658,86 @@
 <script>
 // ===== DATA =====
 const PAPERS_DB = [
+    // === 2026-09-28 ===
+    {
+        date: "2026-09-28",
+        category: "World Model",
+        categoryIcon: "🌍",
+        title: "InternW0-Δ: A World Action Model Bridging Predictive Dynamics and Actions with 20K+ Hours of Open Data",
+        venue: "arXiv 2026 · InternRobotics · 世界模型与动作生成",
+        summary: "🔬 技术路线: 提出世界动作模型框架，统一建模视觉动态与动作，并在超过两万小时的开放数据上完成大规模预训练。 | 💡 创新点: 将预测式动态建模与动作生成桥接为单一模型，借助海量开放数据提升泛化能力与动作可控性。 | 📊 实验效果: 在开放数据上完成预训练，关键体现为 20K+ 小时数据规模，具体下游表现详见原文实验部分。 | ⭐ 整体评价: 属于世界模型与动作生成方向，建议关注预测精度、动作可控性与仿真到真实的迁移效果。",
+        tags: [["World Model","green"],["Action Model","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.31394"],["PDF","https://arxiv.org/pdf/2609.31394"],["Project","https://internrobotics.github.io/InternW0-Delta/"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出世界动作模型框架，统一建模视觉动态与动作，并在超过两万小时的开放数据上完成大规模预训练。"},{"label":"💡 创新点","text":"将预测式动态建模与动作生成桥接为单一模型，借助海量开放数据提升泛化能力与动作可控性。"},{"label":"📊 实验效果","text":"在开放数据上完成预训练，关键体现为 20K+ 小时数据规模，具体下游表现详见原文实验部分。"},{"label":"⭐ 整体评价","text":"属于世界模型与动作生成方向，建议关注预测精度、动作可控性与仿真到真实的迁移效果。"}]
+    },
+    {
+        date: "2026-09-28",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Block Sparse Attention with Log-Linear Complexity",
+        venue: "arXiv 2026 · ByteDance Seed · 高效注意力与长上下文",
+        summary: "🔬 技术路线: 提出分块稀疏注意力机制，以对数线性复杂度扩展大语言模型的长上下文处理能力。 | 💡 创新点: 设计基于 Top-K 的分块选择策略，在保持长程依赖的同时大幅降低注意力计算开销。 | 📊 实验效果: 在长上下文推理任务上验证了方法与全注意力相当的效果，同时显著降低资源消耗。 | ⭐ 整体评价: 属于大语言模型与高效注意力方向，建议关注长文本推理、显存占用与实际部署成本。",
+        tags: [["LLM","green"],["Attention","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.31093"],["PDF","https://arxiv.org/pdf/2609.31093"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出分块稀疏注意力机制，以对数线性复杂度扩展大语言模型的长上下文处理能力。"},{"label":"💡 创新点","text":"设计基于 Top-K 的分块选择策略，在保持长程依赖的同时大幅降低注意力计算开销。"},{"label":"📊 实验效果","text":"在长上下文推理任务上验证了方法与全注意力相当的效果，同时显著降低资源消耗。"},{"label":"⭐ 整体评价","text":"属于大语言模型与高效注意力方向，建议关注长文本推理、显存占用与实际部署成本。"}]
+    },
+    {
+        date: "2026-09-28",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Game Arena: Strategic LLM Evaluation in Competitive Environments",
+        venue: "arXiv 2026 · Kaggle · 大语言模型评测",
+        summary: "🔬 技术路线: 提出基于竞争环境的策略性评测框架，在博弈场景中评估大语言模型的决策与规划能力。 | 💡 创新点: 设计鲁棒的对抗式评测方法，使模型在动态对抗中暴露真实推理与策略短板。 | 📊 实验效果: 在规划与策略任务上验证了评测框架对模型能力的区分度与稳定性。 | ⭐ 整体评价: 属于大语言模型评测方向，建议关注评测公平性、对抗设置与真实决策表现。",
+        tags: [["LLM","green"],["Evaluation","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.31473"],["PDF","https://arxiv.org/pdf/2609.31473"],["Project","https://www.kaggle.com/game-arena"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出基于竞争环境的策略性评测框架，在博弈场景中评估大语言模型的决策与规划能力。"},{"label":"💡 创新点","text":"设计鲁棒的对抗式评测方法，使模型在动态对抗中暴露真实推理与策略短板。"},{"label":"📊 实验效果","text":"在规划与策略任务上验证了评测框架对模型能力的区分度与稳定性。"},{"label":"⭐ 整体评价","text":"属于大语言模型评测方向，建议关注评测公平性、对抗设置与真实决策表现。"}]
+    },
+    {
+        date: "2026-09-28",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Do Implicit Personalization and Explicit Styles Conflict? PsPLUG: A Lightweight Plug-in for Balancing Personalization and Style in Customized LLMs",
+        venue: "arXiv 2026 · UC Irvine · 大语言模型定制",
+        summary: "🔬 技术路线: 提出轻量级插件 PsPLUG，用于调和定制化大语言模型中的隐式个性化与显式风格控制。 | 💡 创新点: 设计可插拔机制，在保持个性化响应的同时显式控制输出风格，缓解两者之间的冲突。 | 📊 实验效果: 在定制化语言模型任务上验证了方法对个性化与风格平衡的改善效果。 | ⭐ 整体评价: 属于大语言模型定制方向，建议关注个性化精度、风格可控性与实际对话体验。",
+        tags: [["LLM","green"],["Personalization","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2601.06362"],["PDF","https://arxiv.org/pdf/2601.06362"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出轻量级插件 PsPLUG，用于调和定制化大语言模型中的隐式个性化与显式风格控制。"},{"label":"💡 创新点","text":"设计可插拔机制，在保持个性化响应的同时显式控制输出风格，缓解两者之间的冲突。"},{"label":"📊 实验效果","text":"在定制化语言模型任务上验证了方法对个性化与风格平衡的改善效果。"},{"label":"⭐ 整体评价","text":"属于大语言模型定制方向，建议关注个性化精度、风格可控性与实际对话体验。"}]
+    },
+    {
+        date: "2026-09-28",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "Enhancing Photogrammetric Digital Surface Models with Pretrained Diffusion Models and Multimodal Conditioning",
+        venue: "arXiv 2026 · Thales · 多模态三维重建",
+        summary: "🔬 技术路线: 结合预训练扩散模型与多模态条件控制，提升摄影测量数字表面模型的重建质量。 | 💡 创新点: 引入多模态条件引导，将语义信息融入扩散生成过程以补全与细化地表模型。 | 📊 实验效果: 在数字表面模型重建任务上验证了方法对细节还原与几何完整性的提升。 | ⭐ 整体评价: 属于多模态三维重建方向，建议关注跨模态对齐方式、数据规模与下游测绘表现。",
+        tags: [["Multimodal","green"],["3D","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.31199"],["PDF","https://arxiv.org/pdf/2609.31199"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"结合预训练扩散模型与多模态条件控制，提升摄影测量数字表面模型的重建质量。"},{"label":"💡 创新点","text":"引入多模态条件引导，将语义信息融入扩散生成过程以补全与细化地表模型。"},{"label":"📊 实验效果","text":"在数字表面模型重建任务上验证了方法对细节还原与几何完整性的提升。"},{"label":"⭐ 整体评价","text":"属于多模态三维重建方向，建议关注跨模态对齐方式、数据规模与下游测绘表现。"}]
+    },
+    {
+        date: "2026-09-28",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Jev in the Wild: A Data-Driven Analysis of the Jev Model's Functionality, Applications and Ecosystem",
+        venue: "arXiv 2026 · The Chinese University of Hong Kong · 智能体与工具使用",
+        summary: "🔬 技术路线: 采用数据驱动方法，对 Jev 模型的功能、应用与生态进行系统性分析，并辅以开源代码复现。 | 💡 创新点: 从真实使用场景出发构建评估框架，揭示该模型在工具调用与生态中的实际表现与边界。 | 📊 实验效果: 在多项应用与生态指标上完成量化分析，具体数据详见原文与开源仓库。 | ⭐ 整体评价: 属于智能体与工具使用方向，建议关注 Agent 架构、工具调用策略与端到端成功率。",
+        tags: [["Agent","green"],["Ecosystem","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.30216"],["PDF","https://arxiv.org/pdf/2609.30216"],["Code","https://github.com/godxue1/Jev_in_the_wild"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"采用数据驱动方法，对 Jev 模型的功能、应用与生态进行系统性分析，并辅以开源代码复现。"},{"label":"💡 创新点","text":"从真实使用场景出发构建评估框架，揭示该模型在工具调用与生态中的实际表现与边界。"},{"label":"📊 实验效果","text":"在多项应用与生态指标上完成量化分析，具体数据详见原文与开源仓库。"},{"label":"⭐ 整体评价","text":"属于智能体与工具使用方向，建议关注 Agent 架构、工具调用策略与端到端成功率。"}]
+    },
+    {
+        date: "2026-09-28",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "AgentWorld: Benchmarking Long-Horizon Collaboration of Multi-agent LLMs",
+        venue: "arXiv 2026 · 多智能体协作基准",
+        summary: "🔬 技术路线: 构建多智能体协作基准，评估大语言模型在长时序任务中的协同规划与沟通能力。 | 💡 创新点: 提出面向长时序协作的评测环境，关键指标包括 52.0% 成功率与 70B 规模模型对比。 | 📊 实验效果: 在长时序协作基准上对比了不同规模模型，验证了协作规划的有效性与瓶颈所在。 | ⭐ 整体评价: 属于智能体协作方向，建议关注多智能体通信协议、任务分解与失败恢复机制。",
+        tags: [["Agent","green"],["Benchmark","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.31590"],["PDF","https://arxiv.org/pdf/2609.31590"],["Project","https://agentworld.io/"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"构建多智能体协作基准，评估大语言模型在长时序任务中的协同规划与沟通能力。"},{"label":"💡 创新点","text":"提出面向长时序协作的评测环境，关键指标包括 52.0% 成功率与 70B 规模模型对比。"},{"label":"📊 实验效果","text":"在长时序协作基准上对比了不同规模模型，验证了协作规划的有效性与瓶颈所在。"},{"label":"⭐ 整体评价","text":"属于智能体协作方向，建议关注多智能体通信协议、任务分解与失败恢复机制。"}]
+    },
     // === 2026-09-26 ===
     {
         date: "2026-09-26",
@@ -26300,6 +26380,13 @@ const PAPERS_DB = [
 ];
 
 const DAILY_OVERVIEW = {
+    "2026-09-28": {
+        bannerTitle: "🔥 今日看点",
+        bannerSubtitle: "世界模型方向今日亮点突出：InternW0-Δ 提出世界动作模型，将视觉动态与动作统一建模，并在超过两万小时开放数据上预训练，桥接预测式动态与动作生成。大语言模型方向，字节跳动 Seed 提出分块稀疏注意力，以对数线性复杂度扩展长上下文处理，显著降低注意力计算开销。多智能体协作基准 AgentWorld 评估长时序协同规划能力，关键指标达 52.0% 成功率。当日 7 篇论文经跨日去重全部保留。",
+        picks: ["InternW0-Δ: A World Action Model Bridging Predictive Dynamics and Actions with 20K+ Hours of Open Data","Block Sparse Attention with Log-Linear Complexity"],
+        totalPapers: 7,
+        totalNews: 0
+    },
     "2026-09-26": {
         bannerTitle: "🔥 今日看点（周末补漏）",
         bannerSubtitle: "Agent方向《Agent SLCA-GRPO: Resolving Cross-Segment Credit Misattribution in Tool-Calling R》值得关注。Agent方向《Agent SkinAgent AI: A Safety-Grounded Multimodal Agentic Framework for Non-Diagn》值得关注。Other方向《Other Shared Execution-Clock Drifting Policy for Dynamic Precision Manipulation》值得关注。LLM方向《LLM NavProbe: Evidence-Grounded Reasoning with Active Memory Retrieval for Zero-》值得关注。本周补漏覆盖 2026-09-19 ~ 2026-09-26 共 7 天检索窗口，精选 30 篇工作日遗漏的重要论文。",

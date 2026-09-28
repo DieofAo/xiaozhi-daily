@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>小小志AI日报 - 2026年9月28日 周一</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans SC', sans-serif;
+  background: #0a0e1a;
+  color: #e0e6f0;
+  line-height: 1.7;
+  min-height: 100vh;
+}
+.container { max-width: 960px; margin: 0 auto; padding: 40px 24px; }
+header { text-align: center; margin-bottom: 48px; padding: 40px 20px;
+  background: linear-gradient(135deg, rgba(59,130,246,0.08) 0%, rgba(139,92,246,0.08) 100%);
+  border-radius: 20px; border: 1px solid rgba(99,102,241,0.15); }
+header h1 { font-size: 2rem; background: linear-gradient(135deg, #60a5fa, #a78bfa);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 8px; }
+header .date { color: #94a3b8; font-size: 1rem; }
+header .subtitle { color: #64748b; font-size: 0.9rem; margin-top: 6px; }
+.highlight-banner { background: linear-gradient(135deg, rgba(249,115,22,0.1) 0%, rgba(234,179,8,0.08) 100%);
+  border: 1px solid rgba(249,115,22,0.2); border-radius: 14px; padding: 20px 24px; margin-bottom: 36px; }
+.hl-title { font-size: 1.1rem; font-weight: 700; color: #fb923c; margin-bottom: 8px; }
+.hl-text { font-size: 0.92rem; color: #cbd5e1; line-height: 1.7; }
+.section { margin-bottom: 40px; }
+.section-title { font-size: 1.4rem; color: #f1f5f9; margin-bottom: 20px; padding-bottom: 12px;
+  border-bottom: 1px solid rgba(99,102,241,0.2); }
+.paper-card { background: rgba(30,41,59,0.6); border: 1px solid rgba(99,102,241,0.12);
+  border-radius: 14px; padding: 24px; margin-bottom: 16px; transition: transform 0.2s, box-shadow 0.2s; }
+.paper-card:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(99,102,241,0.1);
+  border-color: rgba(99,102,241,0.3); }
+.paper-card.hot { border-color: rgba(249,115,22,0.25); background: rgba(30,41,59,0.7); }
+.paper-title { font-size: 1.1rem; font-weight: 600; color: #f8fafc; margin-bottom: 8px; }
+.paper-meta { font-size: 0.85rem; color: #64748b; margin-bottom: 10px; }
+.summary-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 14px; }
+@media (max-width: 640px) { .summary-grid { grid-template-columns: 1fr; } }
+.summary-item { background: rgba(15,23,42,0.5); border-radius: 10px; padding: 12px 14px;
+  border: 1px solid rgba(99,102,241,0.08); }
+.summary-label { font-size: 0.78rem; font-weight: 600; color: #818cf8; margin-bottom: 4px; }
+.summary-text { font-size: 0.88rem; color: #cbd5e1; line-height: 1.6; }
+.paper-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+.tag { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: 500; }
+.tag-agent { background: rgba(16,185,129,0.12); color: #34d399; }
+.tag-llm { background: rgba(99,102,241,0.12); color: #818cf8; }
+.tag-multimodal { background: rgba(244,114,182,0.12); color: #f472b6; }
+.tag-world { background: rgba(251,191,36,0.12); color: #fbbf24; }
+.tag-robot { background: rgba(251,146,60,0.12); color: #fb923c; }
+.tag-vla { background: rgba(59,130,246,0.12); color: #60a5fa; }
+.tag-reasoning { background: rgba(132,204,22,0.12); color: #a3e635; }
+.hot-badge { display: inline; margin-right: 4px; }
+.paper-links { display: flex; flex-wrap: wrap; gap: 10px; }
+.paper-links a { display: inline-block; padding: 5px 14px; background: rgba(99,102,241,0.12);
+  color: #818cf8; text-decoration: none; border-radius: 8px; font-size: 0.82rem; font-weight: 500; transition: background 0.2s; }
+.paper-links a:hover { background: rgba(99,102,241,0.25); }
+.info-card { background: rgba(30,41,59,0.5); border: 1px solid rgba(139,92,246,0.15);
+  border-radius: 14px; padding: 20px 24px; margin-bottom: 16px; }
+.paper-summary { font-size: 0.9rem; color: #cbd5e1; line-height: 1.7; margin-bottom: 14px; }
+.stats { text-align: center; padding: 30px; margin-top: 40px; background: rgba(30,41,59,0.4);
+  border-radius: 14px; border: 1px solid rgba(99,102,241,0.1); }
+.stats p { color: #94a3b8; font-size: 0.88rem; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <h1>📡 小小志AI日报</h1>
+  <div class="date">2026年9月28日 周一</div>
+  <div class="subtitle">📰 arXiv 当日 0 匹配 · HuggingFace 热门 7 篇 · HF 模型/X/Twitter 不可用（跨日去重后全部保留，共 7 篇论文）</div>
+</header>
+
+<div class="highlight-banner">
+  <div class="hl-title">🔥 今日看点</div>
+  <div class="hl-text">
+    世界模型方向今日亮点突出：InternW0-Δ 提出世界动作模型，将视觉动态与动作统一建模，并在超过两万小时开放数据上预训练，桥接预测式动态与动作生成。大语言模型方向，字节跳动 Seed 提出分块稀疏注意力，以对数线性复杂度扩展长上下文处理，显著降低注意力计算开销。多智能体协作基准 AgentWorld 评估长时序协同规划能力，关键指标达 52.0% 成功率。当日 7 篇论文经跨日去重全部保留。
+  </div>
+</div>
+
+<!-- 🌍 World Model Section -->
+<section class="section">
+  <h2 class="section-title">🌍 World Model · 世界模型</h2>
+
+  <div class="paper-card hot">
+    <div class="paper-title"><span class="hot-badge">🔥</span>InternW0-Δ: A World Action Model Bridging Predictive Dynamics and Actions with 20K+ Hours of Open Data</div>
+    <div class="paper-meta">arXiv 2026 · InternRobotics · 世界模型与动作生成</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出世界动作模型框架，统一建模视觉动态与动作，并在超过两万小时的开放数据上完成大规模预训练。</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">将预测式动态建模与动作生成桥接为单一模型，借助海量开放数据提升泛化能力与动作可控性。</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在开放数据上完成预训练，关键体现为 20K+ 小时数据规模，具体下游表现详见原文实验部分。</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于世界模型与动作生成方向，建议关注预测精度、动作可控性与仿真到真实的迁移效果。</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-world">World Model</span>
+      <span class="tag tag-robot">Action Model</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2609.31394">arXiv</a>
+      <a href="https://arxiv.org/pdf/2609.31394">PDF</a>
+      <a href="https://internrobotics.github.io/InternW0-Delta/">Project</a>
+    </div>
+  </div>
+
+</section>
+
+<!-- 🧠 LLM Section -->
+<section class="section">
+  <h2 class="section-title">🧠 LLM · 大语言模型</h2>
+
+  <div class="paper-card hot">
+    <div class="paper-title"><span class="hot-badge">🔥</span>Block Sparse Attention with Log-Linear Complexity</div>
+    <div class="paper-meta">arXiv 2026 · ByteDance Seed · 高效注意力与长上下文</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出分块稀疏注意力机制，以对数线性复杂度扩展大语言模型的长上下文处理能力。</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">设计基于 Top-K 的分块选择策略，在保持长程依赖的同时大幅降低注意力计算开销。</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在长上下文推理任务上验证了方法与全注意力相当的效果，同时显著降低资源消耗。</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于大语言模型与高效注意力方向，建议关注长文本推理、显存占用与实际部署成本。</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-llm">LLM</span>
+      <span class="tag tag-reasoning">Attention</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2609.31093">arXiv</a>
+      <a href="https://arxiv.org/pdf/2609.31093">PDF</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">Game Arena: Strategic LLM Evaluation in Competitive Environments</div>
+    <div class="paper-meta">arXiv 2026 · Kaggle · 大语言模型评测</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出基于竞争环境的策略性评测框架，在博弈场景中评估大语言模型的决策与规划能力。</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">设计鲁棒的对抗式评测方法，使模型在动态对抗中暴露真实推理与策略短板。</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在规划与策略任务上验证了评测框架对模型能力的区分度与稳定性。</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于大语言模型评测方向，建议关注评测公平性、对抗设置与真实决策表现。</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-llm">LLM</span>
+      <span class="tag tag-reasoning">Evaluation</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2609.31473">arXiv</a>
+      <a href="https://arxiv.org/pdf/2609.31473">PDF</a>
+      <a href="https://www.kaggle.com/game-arena">Project</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">Do Implicit Personalization and Explicit Styles Conflict? PsPLUG: A Lightweight Plug-in for Balancing Personalization and Style in Customized LLMs</div>
+    <div class="paper-meta">arXiv 2026 · UC Irvine · 大语言模型定制</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">提出轻量级插件 PsPLUG，用于调和定制化大语言模型中的隐式个性化与显式风格控制。</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">设计可插拔机制，在保持个性化响应的同时显式控制输出风格，缓解两者之间的冲突。</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在定制化语言模型任务上验证了方法对个性化与风格平衡的改善效果。</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于大语言模型定制方向，建议关注个性化精度、风格可控性与实际对话体验。</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-llm">LLM</span>
+      <span class="tag tag-reasoning">Personalization</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2601.06362">arXiv</a>
+      <a href="https://arxiv.org/pdf/2601.06362">PDF</a>
+    </div>
+  </div>
+
+</section>
+
+<!-- 🎨 Multimodal Section -->
+<section class="section">
+  <h2 class="section-title">🎨 Multimodal · 多模态</h2>
+
+  <div class="paper-card">
+    <div class="paper-title">Enhancing Photogrammetric Digital Surface Models with Pretrained Diffusion Models and Multimodal Conditioning</div>
+    <div class="paper-meta">arXiv 2026 · Thales · 多模态三维重建</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">结合预训练扩散模型与多模态条件控制，提升摄影测量数字表面模型的重建质量。</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">引入多模态条件引导，将语义信息融入扩散生成过程以补全与细化地表模型。</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在数字表面模型重建任务上验证了方法对细节还原与几何完整性的提升。</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于多模态三维重建方向，建议关注跨模态对齐方式、数据规模与下游测绘表现。</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-multimodal">Multimodal</span>
+      <span class="tag tag-vla">3D</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2609.31199">arXiv</a>
+      <a href="https://arxiv.org/pdf/2609.31199">PDF</a>
+    </div>
+  </div>
+
+</section>
+
+<!-- 🧩 Agent Section -->
+<section class="section">
+  <h2 class="section-title">🧩 Agent · 智能体</h2>
+
+  <div class="paper-card">
+    <div class="paper-title">Jev in the Wild: A Data-Driven Analysis of the Jev Model's Functionality, Applications and Ecosystem</div>
+    <div class="paper-meta">arXiv 2026 · The Chinese University of Hong Kong · 智能体与工具使用</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">采用数据驱动方法，对 Jev 模型的功能、应用与生态进行系统性分析，并辅以开源代码复现。</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">从真实使用场景出发构建评估框架，揭示该模型在工具调用与生态中的实际表现与边界。</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在多项应用与生态指标上完成量化分析，具体数据详见原文与开源仓库。</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于智能体与工具使用方向，建议关注 Agent 架构、工具调用策略与端到端成功率。</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-agent">Agent</span>
+      <span class="tag tag-reasoning">Ecosystem</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2609.30216">arXiv</a>
+      <a href="https://arxiv.org/pdf/2609.30216">PDF</a>
+      <a href="https://github.com/godxue1/Jev_in_the_wild">Code</a>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="paper-title">AgentWorld: Benchmarking Long-Horizon Collaboration of Multi-agent LLMs</div>
+    <div class="paper-meta">arXiv 2026 · 多智能体协作基准</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-label">🔬 技术路线</div><div class="summary-text">构建多智能体协作基准，评估大语言模型在长时序任务中的协同规划与沟通能力。</div></div>
+      <div class="summary-item"><div class="summary-label">💡 创新点</div><div class="summary-text">提出面向长时序协作的评测环境，关键指标包括 52.0% 成功率与 70B 规模模型对比。</div></div>
+      <div class="summary-item"><div class="summary-label">📊 实验效果</div><div class="summary-text">在长时序协作基准上对比了不同规模模型，验证了协作规划的有效性与瓶颈所在。</div></div>
+      <div class="summary-item"><div class="summary-label">⭐ 整体评价</div><div class="summary-text">属于智能体协作方向，建议关注多智能体通信协议、任务分解与失败恢复机制。</div></div>
+    </div>
+    <div class="paper-tags">
+      <span class="tag tag-agent">Agent</span>
+      <span class="tag tag-reasoning">Benchmark</span>
+    </div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2609.31590">arXiv</a>
+      <a href="https://arxiv.org/pdf/2609.31590">PDF</a>
+      <a href="https://agentworld.io/">Project</a>
+    </div>
+  </div>
+
+</section>
+
+<div class="stats">
+  <p>📊 今日共收录 <strong>7</strong> 篇论文（HuggingFace 热门 7），跨日去重后全部保留 · 生成于 2026-09-28</p>
+</div>
+
+</div>
+</body>
+</html>
