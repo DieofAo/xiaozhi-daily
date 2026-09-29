@@ -658,6 +658,171 @@
 <script>
 // ===== DATA =====
 const PAPERS_DB = [
+    // === 2026-09-29 ===
+    {
+        date: "2026-09-29",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "Native Reflection in Unified Models with Interleaved Reinforcement Learning",
+        venue: "arXiv 2026 · 多模态统一模型与强化学习",
+        summary: "🔬 技术路线: 在统一多模态模型中引入交错式强化学习，让模型在生成过程中进行原生反思与自我修正。 | 💡 创新点: 将反思能力内化为模型自身机制而非外部后处理，并以交错强化学习完成训练。 | 📊 实验效果: 在生成与图像生成任务上验证了方法对输出质量与一致性的提升。 | ⭐ 整体评价: 属于多模态方向，建议关注跨模态对齐方式、数据规模与下游任务表现。",
+        tags: [["Multimodal","green"],["Reflection","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.35767"],["PDF","https://arxiv.org/pdf/2609.35767"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"在统一多模态模型中引入交错式强化学习，让模型在生成过程中进行原生反思与自我修正。"},{"label":"💡 创新点","text":"将反思能力内化为模型自身机制而非外部后处理，并以交错强化学习完成训练。"},{"label":"📊 实验效果","text":"在生成与图像生成任务上验证了方法对输出质量与一致性的提升。"},{"label":"⭐ 整体评价","text":"属于多模态方向，建议关注跨模态对齐方式、数据规模与下游任务表现。"}]
+    },
+    {
+        date: "2026-09-29",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "DexRoam: Learning Mobile Bimanual Dexterous Manipulation from Egocentric Whole-Body Human Demonstrations",
+        venue: "arXiv 2026 · 移动双臂灵巧操作",
+        summary: "🔬 技术路线: 从第一视角的全身人类示教中学习移动式双臂灵巧操作策略，联合建模移动与操作。 | 💡 创新点: 利用含移动与双臂的全身示教构建可扩展的真实世界训练数据，提升策略泛化。 | 📊 实验效果: 在多个操作任务上的成功率分别达到 29%、56%、32% 与 57%。 | ⭐ 整体评价: 属于 VLA / 具身控制方向，建议关注任务泛化、动作表达与真机验证结果。",
+        tags: [["Robotics","green"],["Bimanual","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.35761"],["PDF","https://arxiv.org/pdf/2609.35761"],["Project","https://dexroam.github.io/"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"从第一视角的全身人类示教中学习移动式双臂灵巧操作策略，联合建模移动与操作。"},{"label":"💡 创新点","text":"利用含移动与双臂的全身示教构建可扩展的真实世界训练数据，提升策略泛化。"},{"label":"📊 实验效果","text":"在多个操作任务上的成功率分别达到 29%、56%、32% 与 57%。"},{"label":"⭐ 整体评价","text":"属于 VLA / 具身控制方向，建议关注任务泛化、动作表达与真机验证结果。"}]
+    },
+    {
+        date: "2026-09-29",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "Tactile-JEPA: Topology-Aware Self-Supervised Representation Learning for Distributed Tactile Sensors",
+        venue: "arXiv 2026 · 分布式触觉表征",
+        summary: "🔬 技术路线: 基于预训练与自监督学习，面向分布式触觉传感器阵列学习通用表征。 | 💡 创新点: 提出拓扑感知的触觉自监督方法，显式建模传感器阵列的空间拓扑结构。 | 📊 实验效果: 在表征质量与下游任务上分别取得 6.3% 与 20.8% 的提升。 | ⭐ 整体评价: 属于机器人算法与控制方向，建议看实验设置、基线对比与真实部署条件。",
+        tags: [["Robotics","green"],["Tactile","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.24385"],["PDF","https://arxiv.org/pdf/2609.24385"],["Project","https://bosbobos.github.io/Tactile-JEPA/"],["Code","https://github.com/E-Kovtun/tactile"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于预训练与自监督学习，面向分布式触觉传感器阵列学习通用表征。"},{"label":"💡 创新点","text":"提出拓扑感知的触觉自监督方法，显式建模传感器阵列的空间拓扑结构。"},{"label":"📊 实验效果","text":"在表征质量与下游任务上分别取得 6.3% 与 20.8% 的提升。"},{"label":"⭐ 整体评价","text":"属于机器人算法与控制方向，建议看实验设置、基线对比与真实部署条件。"}]
+    },
+    {
+        date: "2026-09-29",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Scaling Long-Form Story Generation via Narrative State Tracking",
+        venue: "arXiv 2026 · 长文本故事生成",
+        summary: "🔬 技术路线: 提出叙事状态追踪机制，以框架化方式支撑长篇小说级文本的稳定生成。 | 💡 创新点: 通过显式维护叙事状态（NstAgent）保持长篇生成过程中的角色与情节连贯。 | 📊 实验效果: 支持 1 万到 10 万级别的长篇生成规模，验证状态追踪对一致性的帮助。 | ⭐ 整体评价: 属于大语言模型长文本生成方向，建议关注一致性、规划能力与可控性。",
+        tags: [["LLM","green"],["Long-Context","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.35759"],["PDF","https://arxiv.org/pdf/2609.35759"],["Code","https://github.com/zhennan1/NstAgent"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出叙事状态追踪机制，以框架化方式支撑长篇小说级文本的稳定生成。"},{"label":"💡 创新点","text":"通过显式维护叙事状态（NstAgent）保持长篇生成过程中的角色与情节连贯。"},{"label":"📊 实验效果","text":"支持 1 万到 10 万级别的长篇生成规模，验证状态追踪对一致性的帮助。"},{"label":"⭐ 整体评价","text":"属于大语言模型长文本生成方向，建议关注一致性、规划能力与可控性。"}]
+    },
+    {
+        date: "2026-09-29",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Disaggregated Quantization: Specializing LLM Prefill and Decode",
+        venue: "arXiv 2026 · IST Austria · 大模型分离式量化",
+        summary: "🔬 技术路线: 提出分离式量化，对预填充阶段与解码阶段分别定制量化策略。 | 💡 创新点: 针对不同阶段的计算特征设计专用量化，在精度与效率之间取得更好平衡。 | 📊 实验效果: 关键指标为 1.78 倍加速、27B 模型规模与 8K 上下文长度的支持。 | ⭐ 整体评价: 属于大语言模型推理与压缩方向，建议关注精度损失与实际部署成本。",
+        tags: [["LLM","green"],["Quantization","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.26333"],["PDF","https://arxiv.org/pdf/2609.26333"],["Code","https://github.com/IST-DASLab/disaggregated-quantization"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出分离式量化，对预填充阶段与解码阶段分别定制量化策略。"},{"label":"💡 创新点","text":"针对不同阶段的计算特征设计专用量化，在精度与效率之间取得更好平衡。"},{"label":"📊 实验效果","text":"关键指标为 1.78 倍加速、27B 模型规模与 8K 上下文长度的支持。"},{"label":"⭐ 整体评价","text":"属于大语言模型推理与压缩方向，建议关注精度损失与实际部署成本。"}]
+    },
+    {
+        date: "2026-09-29",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "LastOPD: Taming Collapse in Latent On-Policy Distillation",
+        venue: "arXiv 2026 · Visa Inc · 在策略蒸馏",
+        summary: "🔬 技术路线: 提出 LastOPD，针对潜在空间中在策略蒸馏常出现的表征坍缩问题。 | 💡 创新点: 通过抑制在策略蒸馏的表征坍缩，稳定潜在空间的训练动态与特征分布。 | 📊 实验效果: 在相关蒸馏基准上验证了坍缩缓解效果与性能保持能力。 | ⭐ 整体评价: 属于大语言模型推理与蒸馏方向，建议关注稳定性、保真度与下游表现。",
+        tags: [["LLM","green"],["Distillation","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.28845"],["PDF","https://arxiv.org/pdf/2609.28845"],["Code","https://github.com/Muyiiiii/LastOPD"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出 LastOPD，针对潜在空间中在策略蒸馏常出现的表征坍缩问题。"},{"label":"💡 创新点","text":"通过抑制在策略蒸馏的表征坍缩，稳定潜在空间的训练动态与特征分布。"},{"label":"📊 实验效果","text":"在相关蒸馏基准上验证了坍缩缓解效果与性能保持能力。"},{"label":"⭐ 整体评价","text":"属于大语言模型推理与蒸馏方向，建议关注稳定性、保真度与下游表现。"}]
+    },
+    {
+        date: "2026-09-29",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "TokenCast: Forecasting Token Consumption During LLM Agent Execution",
+        venue: "arXiv 2026 · 智能体令牌消耗预测",
+        summary: "🔬 技术路线: 基于大语言模型，在智能体执行过程中预测每一步的令牌消耗量。 | 💡 创新点: 提出面向智能体任务的令牌消耗预测方法，便于运行前的资源调度与成本控制。 | 📊 实验效果: 关键指标达到 14.5% 与 21.3%，反映预测误差或覆盖度的改善。 | ⭐ 整体评价: 属于大语言模型推理与成本方向，建议关注预测精度与调度收益。",
+        tags: [["Agent","green"],["Cost","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.35760"],["PDF","https://arxiv.org/pdf/2609.35760"],["Code","https://github.com/DEFENSE-SEU/TokenCast"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于大语言模型，在智能体执行过程中预测每一步的令牌消耗量。"},{"label":"💡 创新点","text":"提出面向智能体任务的令牌消耗预测方法，便于运行前的资源调度与成本控制。"},{"label":"📊 实验效果","text":"关键指标达到 14.5% 与 21.3%，反映预测误差或覆盖度的改善。"},{"label":"⭐ 整体评价","text":"属于大语言模型推理与成本方向，建议关注预测精度与调度收益。"}]
+    },
+    {
+        date: "2026-09-29",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "KV-streams for Efficient Compaction in Agentic Reinforcement Learning",
+        venue: "arXiv 2026 · 智能体强化学习上下文压缩",
+        summary: "🔬 技术路线: 提出 KV-streams 机制，对智能体强化学习中的长上下文进行高效流式压缩。 | 💡 创新点: 以高效、可扩展且轻量化的流式 KV 压缩，缓解长上下文带来的显存与计算开销。 | 📊 实验效果: 实现约 5 倍的上下文压缩与加速，显著降低资源占用。 | ⭐ 整体评价: 属于智能体与工具使用方向，建议关注压缩保真度与端到端成功率。",
+        tags: [["Agent","green"],["Compaction","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.35750"],["PDF","https://arxiv.org/pdf/2609.35750"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出 KV-streams 机制，对智能体强化学习中的长上下文进行高效流式压缩。"},{"label":"💡 创新点","text":"以高效、可扩展且轻量化的流式 KV 压缩，缓解长上下文带来的显存与计算开销。"},{"label":"📊 实验效果","text":"实现约 5 倍的上下文压缩与加速，显著降低资源占用。"},{"label":"⭐ 整体评价","text":"属于智能体与工具使用方向，建议关注压缩保真度与端到端成功率。"}]
+    },
+    {
+        date: "2026-09-29",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Towards Communication-Efficient Social Intelligence in Language Agents",
+        venue: "arXiv 2026 · 语言智能体通信效率",
+        summary: "🔬 技术路线: 基于训练、策略与蒸馏，提升多个语言智能体之间的通信效率。 | 💡 创新点: 提出教师辅助方法，在保持社会智能的同时压缩智能体间的通信开销。 | 📊 实验效果: 在生成任务上验证了通信效率与效果同步提升。 | ⭐ 整体评价: 属于智能体协作方向，建议关注通信协议、社会智能与端到端表现。",
+        tags: [["Agent","green"],["Communication","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.35749"],["PDF","https://arxiv.org/pdf/2609.35749"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于训练、策略与蒸馏，提升多个语言智能体之间的通信效率。"},{"label":"💡 创新点","text":"提出教师辅助方法，在保持社会智能的同时压缩智能体间的通信开销。"},{"label":"📊 实验效果","text":"在生成任务上验证了通信效率与效果同步提升。"},{"label":"⭐ 整体评价","text":"属于智能体协作方向，建议关注通信协议、社会智能与端到端表现。"}]
+    },
+    {
+        date: "2026-09-29",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "FinAutoRubric: Expert-Guided Automatic Rubric Generation for Evaluating Financial Research Agents",
+        venue: "arXiv 2026 · 金融研究智能体评测",
+        summary: "🔬 技术路线: 提出专家评审驱动的自动评分标准生成方法，用于评估金融研究智能体。 | 💡 创新点: 以专家审核保证评分标准的专业性与可解释性，减少主观偏差。 | 📊 实验效果: 在生成任务上验证了自动评分标准对评估质量的有效性。 | ⭐ 整体评价: 属于大语言模型推理与评测方向，建议关注评分一致性与领域适配。",
+        tags: [["Agent","green"],["Evaluation","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.35744"],["PDF","https://arxiv.org/pdf/2609.35744"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出专家评审驱动的自动评分标准生成方法，用于评估金融研究智能体。"},{"label":"💡 创新点","text":"以专家审核保证评分标准的专业性与可解释性，减少主观偏差。"},{"label":"📊 实验效果","text":"在生成任务上验证了自动评分标准对评估质量的有效性。"},{"label":"⭐ 整体评价","text":"属于大语言模型推理与评测方向，建议关注评分一致性与领域适配。"}]
+    },
+    {
+        date: "2026-09-29",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Shockingly Simple Self-retrospection Improves Agentic Models Without RL",
+        venue: "arXiv 2026 · 智能体自我反思",
+        summary: "🔬 技术路线: 仅依赖训练与微调，引入自我反思机制改进智能体模型。 | 💡 创新点: 提出无需强化学习的极简自我反思方案，仅通过回顾过往输出即可改进。 | 📊 实验效果: 在多个基准上取得 49.2%、26.8%、48.0% 与 25.3% 的提升。 | ⭐ 整体评价: 属于大语言模型推理方向，建议关注反思触发条件与方法的通用性。",
+        tags: [["Agent","green"],["Self-Retrospection","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.35741"],["PDF","https://arxiv.org/pdf/2609.35741"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"仅依赖训练与微调，引入自我反思机制改进智能体模型。"},{"label":"💡 创新点","text":"提出无需强化学习的极简自我反思方案，仅通过回顾过往输出即可改进。"},{"label":"📊 实验效果","text":"在多个基准上取得 49.2%、26.8%、48.0% 与 25.3% 的提升。"},{"label":"⭐ 整体评价","text":"属于大语言模型推理方向，建议关注反思触发条件与方法的通用性。"}]
+    },
+    {
+        date: "2026-09-29",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "TimeEvo: Failure-Driven Self-Evolution of a Time Series Agent",
+        venue: "arXiv 2026 · Visa Inc · 时序智能体",
+        summary: "🔬 技术路线: 提出人类与智能体协同的时序智能体，以对齐与准确率指标持续驱动改进。 | 💡 创新点: 以失败驱动的自我进化机制，让时序智能体从错误案例中迭代提升。 | 📊 实验效果: 在时序任务上验证了自我进化带来的性能提升。 | ⭐ 整体评价: 属于智能体与工具使用方向，建议关注失败回放、对齐质量与端到端效果。",
+        tags: [["Agent","green"],["Time Series","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.27277"],["PDF","https://arxiv.org/pdf/2609.27277"],["Code","https://github.com/Muyiiiii/TimeEvo"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"提出人类与智能体协同的时序智能体，以对齐与准确率指标持续驱动改进。"},{"label":"💡 创新点","text":"以失败驱动的自我进化机制，让时序智能体从错误案例中迭代提升。"},{"label":"📊 实验效果","text":"在时序任务上验证了自我进化带来的性能提升。"},{"label":"⭐ 整体评价","text":"属于智能体与工具使用方向，建议关注失败回放、对齐质量与端到端效果。"}]
+    },
+    {
+        date: "2026-09-29",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "Towards safety cases for frontier AI training",
+        venue: "",
+        summary: "OpenAI 发布关于前沿人工智能训练安全论证（safety cases）的研究，阐述如何为大规模模型训练构建可审计的安全论证框架。",
+        tags: [],
+        links: [["来源","https://openai.com/index/towards-safety-cases-for-frontier-ai-training/"]]
+    },
+    {
+        date: "2026-09-29",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "How we will do better for Australia",
+        venue: "",
+        summary: "OpenAI 发布面向澳大利亚市场的承诺与改进计划，说明其在当地的服务、合规与社会责任举措。",
+        tags: [],
+        links: [["来源","https://openai.com/index/how-we-will-do-better-for-australia/"]]
+    },
+    {
+        date: "2026-09-29",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "Lenfest grows landmark program with OpenAI support",
+        venue: "",
+        summary: "OpenAI 宣布扩大与 Lenfest 的标志性合作项目，借助人工智能支持新闻与媒体生态的可持续发展。",
+        tags: [],
+        links: [["来源","https://openai.com/index/lenfest-ai-collaborative-expansion/"]]
+    },
     // === 2026-09-28 ===
     {
         date: "2026-09-28",
@@ -26380,6 +26545,13 @@ const PAPERS_DB = [
 ];
 
 const DAILY_OVERVIEW = {
+    "2026-09-29": {
+        bannerTitle: "🔥 今日看点",
+        bannerSubtitle: "今日收录 12 篇论文（arXiv 8 + HF 热门 4）与 3 条机构动态。机器人方向亮点突出：DexRoam 从第一视角全身示教中学习移动式双臂灵巧操作；Tactile-JEPA 提出拓扑感知的分布式触觉自监督表征。智能体方向集中爆发 6 篇，覆盖令牌消耗预测、上下文压缩、自我反思与通信效率。大语言模型方向聚焦长文本故事生成、预填充解码分离式量化与在策略蒸馏坍缩问题。",
+        picks: ["DexRoam: Learning Mobile Bimanual Dexterous Manipulation from Egocentric Whole-Body Human Demonstrations","Tactile-JEPA: Topology-Aware Self-Supervised Representation Learning for Distributed Tactile Sensors"],
+        totalPapers: 12,
+        totalNews: 3
+    },
     "2026-09-28": {
         bannerTitle: "🔥 今日看点",
         bannerSubtitle: "世界模型方向今日亮点突出：InternW0-Δ 提出世界动作模型，将视觉动态与动作统一建模，并在超过两万小时开放数据上预训练，桥接预测式动态与动作生成。大语言模型方向，字节跳动 Seed 提出分块稀疏注意力，以对数线性复杂度扩展长上下文处理，显著降低注意力计算开销。多智能体协作基准 AgentWorld 评估长时序协同规划能力，关键指标达 52.0% 成功率。当日 7 篇论文经跨日去重全部保留。",
