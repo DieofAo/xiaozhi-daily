@@ -658,6 +658,217 @@
 <script>
 // ===== DATA =====
 const PAPERS_DB = [
+    // === 2026-09-30 ===
+    {
+        date: "2026-09-30",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "Skill-Space Shooting for Autonomous Robot Policy Improvement",
+        venue: "arXiv 2026 · 机器人自主策略改进",
+        summary: "🔬 技术路线: 基于训练有素的机器人与基础模型，构建可在真实物理环境中自动改进的技能空间。 | 💡 创新点: 提出技能空间射击框架，使真实部署的机器人能自主发现薄弱技能并迭代优化。 | 📊 实验效果: 在真实机器人任务上验证了方法的可扩展性与策略自动改进能力。 | ⭐ 整体评价: 属于机器人算法与控制方向，建议看实验设置、基线对比与真实部署条件。",
+        tags: [["Robotics","green"],["Policy Improvement","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.38178"],["PDF","https://arxiv.org/pdf/2609.38178"],["Project","https://skill-space-shooting.github.io"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于训练有素的机器人与基础模型，构建可在真实物理环境中自动改进的技能空间。"},{"label":"💡 创新点","text":"提出技能空间射击框架，使真实部署的机器人能自主发现薄弱技能并迭代优化。"},{"label":"📊 实验效果","text":"在真实机器人任务上验证了方法的可扩展性与策略自动改进能力。"},{"label":"⭐ 整体评价","text":"属于机器人算法与控制方向，建议看实验设置、基线对比与真实部署条件。"}]
+    },
+    {
+        date: "2026-09-30",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "In-context Robot Learning Made Simple: A Democratized Recipe for Manipulation Tasks",
+        venue: "arXiv 2026 · 机器人情境学习",
+        summary: "🔬 技术路线: 基于上下文学习、预训练与微调，给出机器人操作任务的简易实现配方。 | 💡 创新点: 提出 SimpleICL，将机器人情境学习流程标准化、平民化，降低使用门槛。 | 📊 实验效果: 在抓取与操作任务上验证了情境学习方法的有效性与泛化能力。 | ⭐ 整体评价: 属于机器人算法与控制方向，建议看实验设置、基线对比与真实部署条件。",
+        tags: [["Robotics","green"],["In-Context Learning","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.38173"],["PDF","https://arxiv.org/pdf/2609.38173"],["Project","https://simpleicl.github.io/simpleicl"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于上下文学习、预训练与微调，给出机器人操作任务的简易实现配方。"},{"label":"💡 创新点","text":"提出 SimpleICL，将机器人情境学习流程标准化、平民化，降低使用门槛。"},{"label":"📊 实验效果","text":"在抓取与操作任务上验证了情境学习方法的有效性与泛化能力。"},{"label":"⭐ 整体评价","text":"属于机器人算法与控制方向，建议看实验设置、基线对比与真实部署条件。"}]
+    },
+    {
+        date: "2026-09-30",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "Counterfactual Video Generation Enables Scalable Humanoid Loco-Manipulation",
+        venue: "arXiv 2026 · 人形移动操作",
+        summary: "🔬 技术路线: 基于视频生成与微调，构建反事实数据支撑人形机器人移动操作学习。 | 💡 创新点: 提出反事实视频生成方案，以可扩展方式合成训练数据提升移动操作能力。 | 📊 实验效果: 在搬运等移动操作与生成任务上验证了反事实数据的有效性。 | ⭐ 整体评价: 属于机器人算法与控制方向，建议看实验设置、基线对比与真实部署条件。",
+        tags: [["Robotics","green"],["Humanoid","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.38172"],["PDF","https://arxiv.org/pdf/2609.38172"],["Project","https://prism-real2sim2real.github.io/"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于视频生成与微调，构建反事实数据支撑人形机器人移动操作学习。"},{"label":"💡 创新点","text":"提出反事实视频生成方案，以可扩展方式合成训练数据提升移动操作能力。"},{"label":"📊 实验效果","text":"在搬运等移动操作与生成任务上验证了反事实数据的有效性。"},{"label":"⭐ 整体评价","text":"属于机器人算法与控制方向，建议看实验设置、基线对比与真实部署条件。"}]
+    },
+    {
+        date: "2026-09-30",
+        category: "Robotics",
+        categoryIcon: "🦾",
+        title: "Rethinking Representations for World-Action Modeling",
+        venue: "arXiv 2026 · 世界-动作模型",
+        summary: "🔬 技术路线: 基于预训练、策略学习与世界模型，联合建模世界与动作表征。 | 💡 创新点: 提出 ReWAM，重新思考世界-动作模型表征，强化预测与策略的协同。 | 📊 实验效果: 关键指标达到 93.6% 与 8.28%，在预测精度上表现突出。 | ⭐ 整体评价: 属于世界模型与动作生成方向，建议关注预测精度、动作可控与仿真到真实迁移。",
+        tags: [["Robotics","green"],["World-Action","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.38163"],["PDF","https://arxiv.org/pdf/2609.38163"],["Code","https://github.com/hustvl/ReWAM"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于预训练、策略学习与世界模型，联合建模世界与动作表征。"},{"label":"💡 创新点","text":"提出 ReWAM，重新思考世界-动作模型表征，强化预测与策略的协同。"},{"label":"📊 实验效果","text":"关键指标达到 93.6% 与 8.28%，在预测精度上表现突出。"},{"label":"⭐ 整体评价","text":"属于世界模型与动作生成方向，建议关注预测精度、动作可控与仿真到真实迁移。"}]
+    },
+    {
+        date: "2026-09-30",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "Rho: A Foundation for Efficiently Adaptable VLA Models",
+        venue: "arXiv 2026 · 通用 VLA 基础模型",
+        summary: "🔬 技术路线: 基于新架构与训练，构建可高效适配的通用视觉-语言-动作基础模型。 | 💡 创新点: 提出 Rho 作为高效可适配的 VLA 基础，强调轻量化与快速迁移能力。 | 📊 实验效果: 在抓取与操作任务上验证了模型的可适配性与控制有效性。 | ⭐ 整体评价: 属于 VLA 与具身控制方向，建议关注任务泛化、动作表达与真机验证。",
+        tags: [["VLA","green"],["Adaptable","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.38164"],["PDF","https://arxiv.org/pdf/2609.38164"]],
+        highlight: true,
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于新架构与训练，构建可高效适配的通用视觉-语言-动作基础模型。"},{"label":"💡 创新点","text":"提出 Rho 作为高效可适配的 VLA 基础，强调轻量化与快速迁移能力。"},{"label":"📊 实验效果","text":"在抓取与操作任务上验证了模型的可适配性与控制有效性。"},{"label":"⭐ 整体评价","text":"属于 VLA 与具身控制方向，建议关注任务泛化、动作表达与真机验证。"}]
+    },
+    {
+        date: "2026-09-30",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "Self-Evolving Coding Agents: From Digital Programs to Physical-World Intelligence",
+        venue: "arXiv 2026 · HexaFuture · 自演化编码智能体",
+        summary: "🔬 技术路线: 基于训练与架构，将编码智能体能力延伸至物理世界智能。 | 💡 创新点: 提出视觉-语言-动作编码智能体，使数字程序能力向物理世界控制演化。 | 📊 实验效果: 在规划任务上验证了自演化编码智能体在物理场景中的有效性。 | ⭐ 整体评价: 属于 VLA 与具身控制方向，建议关注任务泛化、动作表达与真机验证。",
+        tags: [["VLA","green"],["Physical World","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.35432"],["PDF","https://arxiv.org/pdf/2609.35432"],["Project","https://hexafuture.ai/blog/physical-coding"],["Code","https://github.com/HexaFuture/PhysicalCoding"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于训练与架构，将编码智能体能力延伸至物理世界智能。"},{"label":"💡 创新点","text":"提出视觉-语言-动作编码智能体，使数字程序能力向物理世界控制演化。"},{"label":"📊 实验效果","text":"在规划任务上验证了自演化编码智能体在物理场景中的有效性。"},{"label":"⭐ 整体评价","text":"属于 VLA 与具身控制方向，建议关注任务泛化、动作表达与真机验证。"}]
+    },
+    {
+        date: "2026-09-30",
+        category: "VLA",
+        categoryIcon: "🤖",
+        title: "Recursive Harness Distillation across Agents for Robot Manipulation",
+        venue: "arXiv 2026 · Seoul National University · 跨智能体蒸馏",
+        summary: "🔬 技术路线: 基于蒸馏，提出跨智能体递归约束蒸馏用于机器人操作。 | 💡 创新点: 提出 RHD，以递归方式在多个智能体间传递约束知识，提升操作策略。 | 📊 实验效果: 关键指标达到 37.3%、64.0%、66.7% 与 41.7%，在多项任务上有效。 | ⭐ 整体评价: 属于 VLA 与具身控制方向，建议关注任务泛化、动作表达与真机验证。",
+        tags: [["VLA","green"],["Manipulation","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.33378"],["PDF","https://arxiv.org/pdf/2609.33378"],["Project","https://seungyeon.me/RHD"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于蒸馏，提出跨智能体递归约束蒸馏用于机器人操作。"},{"label":"💡 创新点","text":"提出 RHD，以递归方式在多个智能体间传递约束知识，提升操作策略。"},{"label":"📊 实验效果","text":"关键指标达到 37.3%、64.0%、66.7% 与 41.7%，在多项任务上有效。"},{"label":"⭐ 整体评价","text":"属于 VLA 与具身控制方向，建议关注任务泛化、动作表达与真机验证。"}]
+    },
+    {
+        date: "2026-09-30",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "Groupwise Agentic Grading and Advantage Redistribution for Code Agent RL",
+        venue: "arXiv 2026 · Xiaomi MiMo · 代码智能体强化学习",
+        summary: "🔬 技术路线: 基于强化学习与框架训练，构建面向代码智能体的分组评分与优势分配。 | 💡 创新点: 提出小组级智能体评分与优势重分配，提升代码智能体强化学习训练信号。 | 📊 实验效果: 在代码智能体基准上验证了方法效果，关键规模达 310B 参数级别。 | ⭐ 整体评价: 属于智能体与工具使用方向，建议关注架构、工具调用策略与端到端成功率。",
+        tags: [["Agent","green"],["RL","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.32577"],["PDF","https://arxiv.org/pdf/2609.32577"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于强化学习与框架训练，构建面向代码智能体的分组评分与优势分配。"},{"label":"💡 创新点","text":"提出小组级智能体评分与优势重分配，提升代码智能体强化学习训练信号。"},{"label":"📊 实验效果","text":"在代码智能体基准上验证了方法效果，关键规模达 310B 参数级别。"},{"label":"⭐ 整体评价","text":"属于智能体与工具使用方向，建议关注架构、工具调用策略与端到端成功率。"}]
+    },
+    {
+        date: "2026-09-30",
+        category: "Agent",
+        categoryIcon: "🧩",
+        title: "TraceDance: An Automated System for Building Agent Behavior Benchmarks from Real-World Agent Deployment Traces",
+        venue: "arXiv 2026 · ByteDance · 智能体行为基准",
+        summary: "🔬 技术路线: 基于大语言模型，从真实智能体部署轨迹自动构建行为评测基准。 | 💡 创新点: 提出锚定确认框架，高效从部署轨迹生成可复用的评测用例。 | 📊 实验效果: 关键指标达到 95.3%、84% 与 26.7%，构建效率与质量突出。 | ⭐ 整体评价: 属于智能体与工具使用方向，建议关注架构、工具调用策略与端到端成功率。",
+        tags: [["Agent","green"],["Benchmark","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.33295"],["PDF","https://arxiv.org/pdf/2609.33295"],["Project","https://zhishanq.github.io/TraceDance/"],["Code","https://github.com/ZhishanQ/TraceDance"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于大语言模型，从真实智能体部署轨迹自动构建行为评测基准。"},{"label":"💡 创新点","text":"提出锚定确认框架，高效从部署轨迹生成可复用的评测用例。"},{"label":"📊 实验效果","text":"关键指标达到 95.3%、84% 与 26.7%，构建效率与质量突出。"},{"label":"⭐ 整体评价","text":"属于智能体与工具使用方向，建议关注架构、工具调用策略与端到端成功率。"}]
+    },
+    {
+        date: "2026-09-30",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "LeapQuant: Efficient Linear Attention with Accurate Recurrent State Quantization",
+        venue: "arXiv 2026 · NVIDIA · 线性注意力量化",
+        summary: "🔬 技术路线: 基于训练与线性注意力，提出精确的循环状态量化方法提升效率。 | 💡 创新点: 提出 LeapQuant，对线性注意力的循环状态做高精度量化，兼顾端到端性能。 | 📊 实验效果: 在推理任务上验证了量化后模型保持有效性与运行效率的提升。 | ⭐ 整体评价: 属于大语言模型与推理方向，建议关注训练范式、推理机制与基准表现。",
+        tags: [["LLM","green"],["Quantization","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.38166"],["PDF","https://arxiv.org/pdf/2609.38166"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于训练与线性注意力，提出精确的循环状态量化方法提升效率。"},{"label":"💡 创新点","text":"提出 LeapQuant，对线性注意力的循环状态做高精度量化，兼顾端到端性能。"},{"label":"📊 实验效果","text":"在推理任务上验证了量化后模型保持有效性与运行效率的提升。"},{"label":"⭐ 整体评价","text":"属于大语言模型与推理方向，建议关注训练范式、推理机制与基准表现。"}]
+    },
+    {
+        date: "2026-09-30",
+        category: "LLM / VLM",
+        categoryIcon: "💡",
+        title: "Beyond Teacher Assignment: Domain-Normalized Multi-Teacher On-Policy Distillation",
+        venue: "arXiv 2026 · Nanyang Technological University · 多教师蒸馏",
+        summary: "🔬 技术路线: 基于强化学习与语言模型蒸馏，引入领域归一化多教师策略。 | 💡 创新点: 提出领域归一化多教师在策略蒸馏，缓解教师分配偏差带来的不一致。 | 📊 实验效果: 在相关蒸馏与语言任务上验证了方法对性能的有效提升。 | ⭐ 整体评价: 属于大语言模型与推理方向，建议关注训练范式、推理机制与基准表现。",
+        tags: [["LLM","green"],["Distillation","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.35347"],["PDF","https://arxiv.org/pdf/2609.35347"],["Project","https://lixin.ai/DN-MOPD/"],["Code","https://github.com/LiXin97/DN-MOPD"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于强化学习与语言模型蒸馏，引入领域归一化多教师策略。"},{"label":"💡 创新点","text":"提出领域归一化多教师在策略蒸馏，缓解教师分配偏差带来的不一致。"},{"label":"📊 实验效果","text":"在相关蒸馏与语言任务上验证了方法对性能的有效提升。"},{"label":"⭐ 整体评价","text":"属于大语言模型与推理方向，建议关注训练范式、推理机制与基准表现。"}]
+    },
+    {
+        date: "2026-09-30",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "Imagine3D-LLM: Teaching MLLMs to Imagine 3D Scenes Before Answering",
+        venue: "arXiv 2026 · 三维场景想象",
+        summary: "🔬 技术路线: 在视觉语言模型中引入先想象三维场景再作答的机制，增强空间理解。 | 💡 创新点: 让多模态大模型在回答前先构建三维场景表征，提升对空间关系的推理。 | 📊 实验效果: 在三维场景理解与相关基准上验证了想象机制带来的性能提升。 | ⭐ 整体评价: 属于多模态方向，建议关注跨模态对齐方式、数据规模与下游任务表现。",
+        tags: [["Multimodal","green"],["3D","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.38177"],["PDF","https://arxiv.org/pdf/2609.38177"],["Project","https://cvlab-kaist.github.io/Imagine3D-LLM"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"在视觉语言模型中引入先想象三维场景再作答的机制，增强空间理解。"},{"label":"💡 创新点","text":"让多模态大模型在回答前先构建三维场景表征，提升对空间关系的推理。"},{"label":"📊 实验效果","text":"在三维场景理解与相关基准上验证了想象机制带来的性能提升。"},{"label":"⭐ 整体评价","text":"属于多模态方向，建议关注跨模态对齐方式、数据规模与下游任务表现。"}]
+    },
+    {
+        date: "2026-09-30",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "How Far Are We from Removing the Visual Encoder? Scaling Laws for Encoder-Free Multimodal Pretraining",
+        venue: "arXiv 2026 · Tencent Hunyuan · 无编码器多模态",
+        summary: "🔬 技术路线: 基于大语言模型与架构训练，研究去除视觉编码器的多模态预训练。 | 💡 创新点: 提出无编码器多模态预训练，并以缩放定律刻画其性能边界与规律。 | 📊 实验效果: 在相关多模态基准上验证了无编码器方案的有效性与可扩展性。 | ⭐ 整体评价: 属于多模态方向，建议关注跨模态对齐方式、数据规模与下游任务表现。",
+        tags: [["Multimodal","green"],["Scaling Law","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.35457"],["PDF","https://arxiv.org/pdf/2609.35457"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于大语言模型与架构训练，研究去除视觉编码器的多模态预训练。"},{"label":"💡 创新点","text":"提出无编码器多模态预训练，并以缩放定律刻画其性能边界与规律。"},{"label":"📊 实验效果","text":"在相关多模态基准上验证了无编码器方案的有效性与可扩展性。"},{"label":"⭐ 整体评价","text":"属于多模态方向，建议关注跨模态对齐方式、数据规模与下游任务表现。"}]
+    },
+    {
+        date: "2026-09-30",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "YuE2: Unifying Symbolic and Audio Music Generation at Frontier Quality",
+        venue: "arXiv 2026 · Multimodal Art Projection · 音乐生成",
+        summary: "🔬 技术路线: 基于语言模型与扩散 Transformer，统一符号与音频的音乐生成。 | 💡 创新点: 提出 YuE2，以统一框架实现前沿质量的零样本音乐生成能力。 | 📊 实验效果: 关键指标达到 49.3% 与 34.6%，在音乐生成质量上表现领先。 | ⭐ 整体评价: 属于音乐与多模态生成方向，建议关注统一架构、零样本能力与下游适配。",
+        tags: [["Music","green"],["Unified","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.33757"],["PDF","https://arxiv.org/pdf/2609.33757"],["Project","https://map-yue2.github.io/"],["Code","https://github.com/multimodal-art-projection/YuE"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于语言模型与扩散 Transformer，统一符号与音频的音乐生成。"},{"label":"💡 创新点","text":"提出 YuE2，以统一框架实现前沿质量的零样本音乐生成能力。"},{"label":"📊 实验效果","text":"关键指标达到 49.3% 与 34.6%，在音乐生成质量上表现领先。"},{"label":"⭐ 整体评价","text":"属于音乐与多模态生成方向，建议关注统一架构、零样本能力与下游适配。"}]
+    },
+    {
+        date: "2026-09-30",
+        category: "Multimodal",
+        categoryIcon: "🎨",
+        title: "LongLive-Plug: Once-for-All Distillation for Video Generation",
+        venue: "arXiv 2026 · NVlabs · 视频生成蒸馏",
+        summary: "🔬 技术路线: 基于扩散模型与蒸馏，提出一次训练处处可用的即插即用视频生成方案。 | 💡 创新点: 提出 LongLive-Plug，以一次蒸馏覆盖多种视频生成配置，提升通用性。 | 📊 实验效果: 在视频生成任务上验证了蒸馏方案的有效性与生成质量保持。 | ⭐ 整体评价: 属于视频生成与动作生成方向，建议关注生成质量、可控性与部署成本。",
+        tags: [["Video","green"],["Distillation","green"]],
+        links: [["arXiv","https://arxiv.org/abs/2609.38154"],["PDF","https://arxiv.org/pdf/2609.38154"],["Code","https://github.com/NVlabs/LongLive"]],
+        summaryGrid: [{"label":"🔬 技术路线","text":"基于扩散模型与蒸馏，提出一次训练处处可用的即插即用视频生成方案。"},{"label":"💡 创新点","text":"提出 LongLive-Plug，以一次蒸馏覆盖多种视频生成配置，提升通用性。"},{"label":"📊 实验效果","text":"在视频生成任务上验证了蒸馏方案的有效性与生成质量保持。"},{"label":"⭐ 整体评价","text":"属于视频生成与动作生成方向，建议关注生成质量、可控性与部署成本。"}]
+    },
+    {
+        date: "2026-09-30",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "DevDay 2026 Recap",
+        venue: "",
+        summary: "OpenAI 发布 DevDay 2026 回顾，总结本届开发者大会的核心发布与平台能力更新。",
+        tags: [],
+        links: [["来源","https://openai.com/index/devday-2026-recap/"]]
+    },
+    {
+        date: "2026-09-30",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "Introducing GPT-6.1 Sol",
+        venue: "",
+        summary: "OpenAI 发布 GPT-6.1 Sol，介绍该模型版本的能力定位与主要特性。",
+        tags: [],
+        links: [["来源","https://openai.com/index/introducing-gpt-6-1-sol/"]]
+    },
+    {
+        date: "2026-09-30",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "Addendum: GPT-6.1 Sol",
+        venue: "",
+        summary: "OpenAI 发布 GPT-6.1 Sol 的补充公告，提供部署安全方面的追加说明。",
+        tags: [],
+        links: [["来源","https://deploymentsafety.openai.com/gpt-6-1-sol"]]
+    },
+    {
+        date: "2026-09-30",
+        category: "Informations",
+        categoryIcon: "📡",
+        title: "Introducing dots",
+        venue: "",
+        summary: "OpenAI 发布 dots，介绍这一新产品或功能的方向与核心能力。",
+        tags: [],
+        links: [["来源","https://openai.com/index/introducing-dots/"]]
+    },
     // === 2026-09-29 ===
     {
         date: "2026-09-29",
@@ -26545,6 +26756,13 @@ const PAPERS_DB = [
 ];
 
 const DAILY_OVERVIEW = {
+    "2026-09-30": {
+        bannerTitle: "🔥 今日看点",
+        bannerSubtitle: "今日收录 15 篇论文（arXiv 8 + HuggingFace 热门 7）与 4 条机构动态。机器人方向多点开花：Skill-Space Shooting 让真实部署的机器人自主改进策略；SimpleICL 把情境学习做成可平民化的操作配方；反事实视频生成以可扩展数据支撑人形移动操作；ReWAM 重新思考世界-动作表征，关键指标达 93.6%。VLA 方向亮点突出：Rho 主打高效可适配的基础模型，Self-Evolving Coding Agents 把编码智能体推向物理世界，RHD 用跨智能体递归蒸馏提升操作。智能体方向 TraceDance 从真实部署轨迹自动建基准，指标达 95.3%。",
+        picks: ["Skill-Space Shooting for Autonomous Robot Policy Improvement","In-context Robot Learning Made Simple: A Democratized Recipe for Manipulation Tasks","Counterfactual Video Generation Enables Scalable Humanoid Loco-Manipulation","Rethinking Representations for World-Action Modeling","Rho: A Foundation for Efficiently Adaptable VLA Models"],
+        totalPapers: 15,
+        totalNews: 4
+    },
     "2026-09-29": {
         bannerTitle: "🔥 今日看点",
         bannerSubtitle: "今日收录 12 篇论文（arXiv 8 + HF 热门 4）与 3 条机构动态。机器人方向亮点突出：DexRoam 从第一视角全身示教中学习移动式双臂灵巧操作；Tactile-JEPA 提出拓扑感知的分布式触觉自监督表征。智能体方向集中爆发 6 篇，覆盖令牌消耗预测、上下文压缩、自我反思与通信效率。大语言模型方向聚焦长文本故事生成、预填充解码分离式量化与在策略蒸馏坍缩问题。",
